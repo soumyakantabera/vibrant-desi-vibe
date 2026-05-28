@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#478C5C"/>
+      <stop offset="100%" stop-color="#1A2E20"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BACC81"/>
+      <stop offset="100%" stop-color="#D4E49E"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="48" height="48" rx="14" fill="url(#bg)"/>
+  <text x="28" y="33" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="white" letter-spacing="-0.5">LWS</text>
+  <path d="M16 38 Q28 46 40 38" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="46" cy="10" r="3" fill="#BACC81" opacity="0.9"/>
+  <circle cx="10" cy="46" r="2" fill="#BACC81" opacity="0.7"/>
+</svg>
