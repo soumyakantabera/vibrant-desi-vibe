@@ -392,3 +392,63 @@ function GlassCard({ icon, title, pricing, children }: { icon: any; title: strin
     </div>
   );
 }
+
+/* ---------- Hand-drawn pricing-card icons (consistent set) ----------
+   24x24 viewBox, currentColor strokes, stroke-width 1.75, rounded caps.
+   Built from scratch — no icon library used here. */
+
+function IconFrame({ children, size = 24 }: { children: React.ReactNode; size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {children}
+    </svg>
+  );
+}
+
+// Small Batch — three figures clustered together
+function BatchIcon() {
+  return (
+    <IconFrame>
+      <circle cx="8" cy="8" r="2.4"/>
+      <circle cx="16" cy="8" r="2.4"/>
+      <circle cx="12" cy="6.5" r="2.4"/>
+      <path d="M3.5 18c.6-2.6 2.7-4 4.5-4s2.6.7 3.2 1.8"/>
+      <path d="M20.5 18c-.6-2.6-2.7-4-4.5-4s-2.6.7-3.2 1.8"/>
+      <path d="M7.5 19.5c.7-2.6 2.5-4 4.5-4s3.8 1.4 4.5 4"/>
+    </IconFrame>
+  );
+}
+
+// 1:1 Personalised — one student with spotlight rays
+function OneOnOneIcon() {
+  return (
+    <IconFrame>
+      <circle cx="12" cy="8.5" r="2.8"/>
+      <path d="M6.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/>
+      <path d="M12 2.5v1.6M4.4 5.4l1.1 1.1M19.6 5.4l-1.1 1.1M2.5 11.5h1.6M19.9 11.5h1.6"/>
+    </IconFrame>
+  );
+}
+
+// Free Demo — ticket with a play button
+function FreeDemoIcon() {
+  return (
+    <IconFrame>
+      <path d="M3.5 8.5a1.5 1.5 0 0 1 1.5-1.5h14a1.5 1.5 0 0 1 1.5 1.5v2a2 2 0 0 0 0 3v2a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 3.5 15.5v-2a2 2 0 0 0 0-3z"/>
+      <path d="M10.5 9.5v5l4-2.5z" fill="currentColor" stroke="none"/>
+    </IconFrame>
+  );
+}
+
+// Small check used in feature lists
+function CheckIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
+      className={className}>
+      <path d="M5 12.5l4.2 4.2L19 7"/>
+    </svg>
+  );
+}
+
