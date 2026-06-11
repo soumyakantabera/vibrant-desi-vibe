@@ -216,14 +216,16 @@ function Home() {
       <section className="relative py-16">
         <div className="absolute inset-0 z-0">
           <img src={IMG.graduation} alt="Indian graduates" className="w-full h-full object-cover" loading="lazy"/>
-          <div className="absolute inset-0 bg-brand-deep/90"/>
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/90 to-ink/85"/>
         </div>
-        <div className="container-x grid grid-cols-3 gap-8">
+        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
           <Stat num="7" label="Years Teaching"/>
           <Stat num="500+" label="Learners Helped"/>
+          <Stat num="Max 6" label="Per Batch · 1:1 Option"/>
           <Stat num="4.9★" label="Average Rating"/>
         </div>
       </section>
+
 
       {/* TESTIMONIALS */}
       <section className="section">
