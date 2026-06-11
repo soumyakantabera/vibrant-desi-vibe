@@ -80,11 +80,12 @@ export function WaButton({
 export function Stat({ num, label }: { num: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="font-display text-4xl md:text-6xl font-extrabold text-sunshine drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">{num}</div>
-      <div className="text-sm md:text-base text-white mt-2 font-semibold">{label}</div>
+      <div className="font-display text-4xl md:text-6xl font-extrabold text-sunshine drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">{num}</div>
+      <div className="text-sm md:text-base text-cream mt-2 font-bold tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{label}</div>
     </div>
   );
 }
+
 
 export function MottoBand({ children }: { children: ReactNode }) {
   return (
