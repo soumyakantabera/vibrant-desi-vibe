@@ -218,10 +218,9 @@ function Home() {
           <img src={IMG.graduation} alt="Indian graduates" className="w-full h-full object-cover" loading="lazy"/>
           <div className="absolute inset-0 bg-brand-deep/90"/>
         </div>
-        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container-x grid grid-cols-3 gap-8">
           <Stat num="7" label="Years Teaching"/>
           <Stat num="500+" label="Learners Helped"/>
-          <Stat num="₹999/mo" label="Starts From · EMI"/>
           <Stat num="4.9★" label="Average Rating"/>
         </div>
       </section>
