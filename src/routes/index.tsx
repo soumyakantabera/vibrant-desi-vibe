@@ -238,10 +238,9 @@ function Home() {
         </div>
       </section>
 
-      {/* START TODAY */}
-      <section className="section bg-gradient-to-b from-cream to-brand-soft/40">
       {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
       <section id="pricing" className="section bg-cream">
+
         <div className="container-x">
           <SectionHeader eyebrow="Simple, India-Friendly Pricing" eyebrowTone="indigo" title="Transparent Fees · Monthly EMI · No Hidden Costs" subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."/>
           <div className="grid md:grid-cols-3 gap-5">
