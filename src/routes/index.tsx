@@ -273,7 +273,7 @@ function Home() {
             </article>
             <article className="rounded-2xl p-6 bg-white border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-3">
-                <span className="h-10 w-10 rounded-xl bg-coral/10 text-coral flex items-center justify-center"><Icon name="gift" size={20}/></span>
+                <span className="h-10 w-10 rounded-xl bg-coral/10 text-coral flex items-center justify-center"><Icon name="spark" size={20}/></span>
                 <h3 className="text-ink font-display font-extrabold text-lg">Free Demo</h3>
               </div>
               <p className="font-display font-extrabold text-3xl text-brand-deep">₹0</p>
