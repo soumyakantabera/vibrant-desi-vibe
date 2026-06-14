@@ -106,7 +106,7 @@ function Home() {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
-              <img src={IMG.studentLaptop} alt="Indian student learning online" className="relative rounded-3xl shadow-2xl border-4 border-cream/20 animate-float"/>
+              <SnapshotCard/>
             </div>
           </div>
         </div>
