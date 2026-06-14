@@ -79,7 +79,7 @@ function Home() {
           <img src={IMG.heroClass} alt="Indian students in a live online class" className="w-full h-full object-cover" loading="eager"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60"/>
         </div>
-        <div className="container-x py-20 md:py-32 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+        <div className="container-x py-10 md:py-16 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
           <div className="text-cream">
             <span className="eyebrow eyebrow-white"><Icon name="spark" size={14}/> 7 Years · Kolkata & Pan-India</span>
             <h1 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] text-cream">
