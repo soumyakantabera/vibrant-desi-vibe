@@ -79,22 +79,22 @@ function Home() {
           <img src={IMG.heroClass} alt="Indian students in a live online class" className="w-full h-full object-cover" loading="eager"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60"/>
         </div>
-        <div className="container-x py-20 md:py-32 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+        <div className="container-x py-10 md:py-16 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
           <div className="text-cream">
             <span className="eyebrow eyebrow-white"><Icon name="spark" size={14}/> 7 Years · Kolkata & Pan-India</span>
-            <h1 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] text-cream">
+            <h1 className="mt-3 text-3xl md:text-5xl font-extrabold leading-[1.08] text-cream">
               Speak Better English.<br/>
               <span className="text-sunshine">Master In-Demand Skills.</span><br/>
               <span className="text-sage">Build Future Together.</span>
             </h1>
-            <p className="mt-6 text-lg text-white max-w-xl">
+            <p className="mt-4 text-base md:text-lg text-white max-w-xl">
               Real teachers. Small batches. Gamified, interactive live classes — designed for the demands of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg">🎓 Enroll — Free Demo</WaButton>
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg">Chat on WhatsApp</WaButton>
             </div>
-            <div className="mt-8 flex flex-wrap gap-4 text-sm text-white/95">
+            <div className="mt-5 flex flex-wrap gap-3 text-sm text-white/95">
               {["100% Online · Live", "Flexible Slots: Morning · Evening · Weekend", "Max 6 Per Batch or 1:1", "Monthly EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
                 <span key={s} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
                   <Icon name="check" size={14} className="text-sage"/>{s}
@@ -457,12 +457,12 @@ function SnapshotCard() {
   return (
     <div className="relative animate-float">
       {/* Rotated rating sticker */}
-      <div className="absolute -top-5 -right-5 z-20 rotate-12 bg-sunshine text-ink rounded-full h-20 w-20 flex flex-col items-center justify-center font-display font-extrabold shadow-xl border-4 border-cream">
-        <span className="text-xl leading-none">4.9★</span>
-        <span className="text-[10px] uppercase tracking-wider mt-0.5">Rated</span>
+      <div className="absolute -top-4 -right-4 z-20 rotate-12 bg-sunshine text-ink rounded-full h-16 w-16 flex flex-col items-center justify-center font-display font-extrabold shadow-xl border-4 border-cream">
+        <span className="text-lg leading-none">4.9★</span>
+        <span className="text-[9px] uppercase tracking-wider mt-0.5">Rated</span>
       </div>
 
-      <div className="relative -rotate-2 rounded-3xl bg-cream shadow-2xl border-4 border-cream/40 p-6 overflow-hidden">
+      <div className="relative -rotate-2 rounded-3xl bg-cream shadow-2xl border-4 border-cream/40 p-5 overflow-hidden">
         {/* corner accents */}
         <div className="absolute -top-10 -left-10 w-28 h-28 rounded-full bg-sage/20"/>
         <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-coral/15"/>
@@ -472,16 +472,16 @@ function SnapshotCard() {
             <span className="h-2 w-2 rounded-full bg-wa animate-pulse"/> Live · Enrolling Now
           </span>
 
-          <div className="mt-4">
+          <div className="mt-3">
             <p className="text-ink/70 font-display font-bold text-xs uppercase tracking-wider">Course fees start at</p>
             <p className="font-display font-extrabold text-ink leading-none mt-1">
-              <span className="text-5xl">₹999</span>
-              <span className="text-xl text-ink/70">/month</span>
+              <span className="text-4xl">₹999</span>
+              <span className="text-lg text-ink/70">/month</span>
             </p>
             <p className="text-xs text-ink/70 mt-1">EMI · GST included · UPI accepted</p>
           </div>
 
-          <div className="mt-5 space-y-3">
+          <div className="mt-4 space-y-2.5">
             <SnapRow tone="brand" icon={
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5"/></svg>
             } big="500+" small="Learners taught across India"/>
@@ -493,7 +493,7 @@ function SnapshotCard() {
             } big="Max 6" small="Per batch · or 1:1 option"/>
           </div>
 
-          <div className="mt-5 -mx-6 -mb-6 px-6 py-3 bg-brand-deep text-cream text-center text-[12px] font-display font-bold tracking-wide">
+          <div className="mt-4 -mx-5 -mb-5 px-5 py-2.5 bg-brand-deep text-cream text-center text-[12px] font-display font-bold tracking-wide">
             Free Demo · No Card Needed · WhatsApp Reply in Minutes
           </div>
         </div>
