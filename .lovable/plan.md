@@ -1,81 +1,54 @@
-## Scope
+## 1. Replace hero side image with a "Snapshot Card"
 
-Content + small UI pass. No routing or stack changes.
+In `src/routes/index.tsx`, the right-hand floating student-laptop image inside the HERO (`section:nth-of-type(1)`) is replaced with a hand-built **Snapshot Card** — a tilted, polaroid-style card with layered chips that doubles as the visual focal point and a value summary.
 
-## 1. Homepage (`src/routes/index.tsx`)
+Card content (catchy, India-context, scan-in-2-seconds):
 
-- Replace any "Admission ₹500" pricing pill with **"Starts ₹999/month · Monthly EMI"**. Keep admission-fee mention only on course pages.
-- Shrink the Google Maps + business placeholder section: convert from full-width band to a compact 2-column card (max-width ~5xl, map height 220px instead of 400px, single CTA row).
-- Add an "Always Online · Live · Flexible Timings" hero strip and a dedicated "How Online Live Works" 3-step block (Pick a slot → Join Zoom/Meet → 1:1 feedback every 2 weeks).
+- Header chip: `LIVE · This Month`
+- Primary line: **Courses from ₹999/mo** (highlighted in sunshine)
+- Three stat rows with small SVG glyphs:
+  - 🎓 **500+ learners** taught across India
+  - 📅 **7 years** of live online teaching
+  - 👥 **Max 6 / batch** · or 1:1
+- Footer ribbon: `Free demo · No credit card · WhatsApp in minutes`
+- Decorative: soft sunshine + coral blur halos kept, plus a tiny rotated "★ 4.9 rating" sticker badge in the corner.
 
-## 2. Sitewide content rewrite — "Online Live + Flexible Schedule"
+Styling: cream background card, `rounded-3xl`, drop shadow, `-rotate-2` tilt, animated float kept. Built with Tailwind + inline SVG icons (no new image asset). Reuses existing tokens (`brand-deep`, `sunshine`, `sage`, `coral`, `ink`).
 
-Pages touched: `index.tsx`, `english-career.tsx`, `excel-data.tsx`, `about-us.tsx`, `why-us.tsx`, `success-stories.tsx`, `book-free-demo.tsx`, `blog.tsx`, `CoursePage.tsx`, all `course-*.tsx` (via `src/lib/courses.ts`).
+The hero image (`IMG.studentLaptop`) and its `<img>` tag are removed. The surrounding `hidden lg:block` wrapper + blur halos stay.
 
-Inject consistent messaging on every page:
-- "100% Online Live · Pan-India · Based in Kolkata"
-- "Flexible time slots — morning, evening, weekend batches; reschedule anytime"
-- "Max 6 learners per batch OR 1:1"
-- "Monthly EMI · ₹500 admission (course pages only)"
-- "Customised curriculum · 2 free 1:1 feedback sessions every month"
-- "Extend classes anytime with monthly instalments"
+## 2. GitHub deployment
 
-Rewrite hero taglines, section subtitles, and CTAs to lead with online-live + flexibility. No mention of physical batches outside the small map card on the homepage.
+Add a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds the project and deploys the static output to **GitHub Pages**:
 
-## 3. Remove chat-bubble emoji from "I Want This Result" button
+- Triggers on push to `main` + manual dispatch
+- Steps: checkout → setup Bun → `bun install` → `bun run build` → upload `dist/` (or the Vite output dir) as Pages artifact → deploy via `actions/deploy-pages@v4`
+- Concurrency guard so only one deploy runs at a time
 
-In `TestimonialSlider.tsx` the CTA renders both a chat icon and a 💬 / 🗨 emoji. Remove the emoji; keep the single `Icon name="chat"` (or switch to `whatsapp` brand icon for consistency).
+Also add a short `DEPLOY.md` with the one-time setup: enable Pages → Source = GitHub Actions, and (if using a project page, not a custom domain) set the base path env var described below.
 
-## 4. Founder page — add Soumyakanta Bera (`src/routes/founder.tsx`)
+## 3. Universal path fix (works on any host / subpath)
 
-Restructure to a two-founder layout:
+Goal: the app must work from `/` (Lovable, custom domain) **and** from a subpath like `/<repo-name>/` (GitHub Pages project sites) without 404s on refresh or broken asset URLs.
 
-**Sunanda Dey — Co-Founder & Lead Educator**
-- MSc Design of Sustainable Tourism Systems (ongoing)
-- 7+ years teaching English & Career Development
-- 2 years international & luxury tourism experience
-- Teaches: Spoken English, IELTS, Business English, Interview Prep, Career Counselling
+Changes:
 
-**Soumyakanta Bera — Co-Founder & Data/Quant Mentor**
-- MSc Finance & Risk Management
-- Passionate hobbyist-turned-mentor; helps people around him level up at work
-- Teaches: Excel, Power BI, Python, R, MATLAB, Finance Excel, Data Analytics
-- Academic + applied background in data, business, coding
+- **`vite.config.ts`** — set `base: process.env.BASE_PATH ?? '/'` so a GitHub Pages deploy can pass `BASE_PATH=/<repo>/` at build time; default `/` keeps Lovable unchanged.
+- **`src/router.tsx`** — pass `basepath: import.meta.env.BASE_URL` to `createRouter` so TanStack Router generates correct links under any base.
+- **GitHub Pages SPA refresh fix** — add `public/404.html` that mirrors `index.html` (GitHub Pages serves `404.html` for unknown paths, letting the SPA take over), and a tiny redirect snippet in `index.html` to restore the original path. This is the standard `rafgraph/spa-github-pages` trick. No effect on Lovable hosting.
+- Workflow sets `BASE_PATH` automatically from the repo name when not using a custom domain.
 
-Each gets: portrait image, short bio, "What I promise" bullets, WhatsApp CTA. Generate one new portrait image for Soumyakanta (Indian male educator at laptop) via imagegen → `src/assets/founder-soumya.jpg`. Update `IMG` in `src/lib/images.ts`.
+## Files touched
 
-## 5. Excel & Data — comprehensive curricula + 2 projects per course
-
-In `src/lib/courses.ts`, expand `modules[]` for these 9 courses:
-`ms-office`, `master-excel`, `finance-excel`, `python`, `power-bi`, `r-rstudio`, `matlab`, `tableau`, `data-accelerator`.
-
-For each:
-- Increase modules from ~5 to **8–10 modules**, each with 5–7 specific topics (tools, functions, real techniques — e.g. Power BI: "DAX time-intelligence: SAMEPERIODLASTYEAR, DATESYTD, rolling 12-month").
-- Add a new `projects: { title, brief, deliverable }[]` field with **exactly 2 capstone projects per course** (e.g. Python → "Zomato Bangalore restaurant EDA" + "Nifty 50 returns analyser").
-- Update `CoursePage.tsx` to render a "Capstone Projects" section between Curriculum and Testimonials, using the new `projects` field.
-
-Project examples (India-context):
-- Master Excel: Kirana store monthly P&L dashboard; HR attrition tracker
-- Finance Excel: SIP & loan EMI calculator; 3-statement model for an Indian SME
-- Power BI: Swiggy orders dashboard; sales pipeline KPI report
-- Python: Zomato EDA; Nifty 50 returns analyser
-- R: IPL batting performance analysis; insurance claims regression
-- Tableau: India census visualisation; e-commerce funnel
-- MATLAB: signal-processing demo; portfolio optimisation
-- MS Office: business report + mail-merge campaign; pitch deck
-- Data Accelerator: end-to-end Excel→SQL→Power BI sales analytics; Python ML churn model
-
-## 6. Visibility/contrast — leave as-is unless a touched section regresses.
-
-## Technical notes
-
-- `CourseData` type in `CoursePage.tsx` gains optional `projects?: { title: string; brief: string; deliverable: string }[]`.
-- Render `projects` only when present (backwards-compatible for English/Career courses).
-- Imagegen call: 1 new portrait, premium tier, saved to `src/assets/founder-soumya.jpg`, imported in `images.ts`.
-- No DB, no routes, no new packages.
+- `src/routes/index.tsx` — swap hero image for Snapshot Card (inline component + SVG icons)
+- `vite.config.ts` — `base` from env
+- `src/router.tsx` — `basepath: import.meta.env.BASE_URL`
+- `public/404.html` — new, SPA fallback for GitHub Pages
+- `index.html` — small redirect-restore script (guarded, no-op on normal loads)
+- `.github/workflows/deploy.yml` — new, build + deploy to GitHub Pages
+- `DEPLOY.md` — new, one-page setup notes
 
 ## Out of scope
 
-- Visual redesign of existing components.
-- Adding/removing courses.
-- Logo changes.
+- No changes to pricing section, testimonials, or other routes.
+- No new image assets generated — Snapshot Card is pure CSS/SVG.

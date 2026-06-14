@@ -106,7 +106,7 @@ function Home() {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
-              <img src={IMG.studentLaptop} alt="Indian student learning online" className="relative rounded-3xl shadow-2xl border-4 border-cream/20 animate-float"/>
+              <SnapshotCard/>
             </div>
           </div>
         </div>
@@ -451,4 +451,67 @@ function CheckIcon({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+/* ---------- Hero Snapshot Card ---------- */
+function SnapshotCard() {
+  return (
+    <div className="relative animate-float">
+      {/* Rotated rating sticker */}
+      <div className="absolute -top-5 -right-5 z-20 rotate-12 bg-sunshine text-ink rounded-full h-20 w-20 flex flex-col items-center justify-center font-display font-extrabold shadow-xl border-4 border-cream">
+        <span className="text-xl leading-none">4.9★</span>
+        <span className="text-[10px] uppercase tracking-wider mt-0.5">Rated</span>
+      </div>
+
+      <div className="relative -rotate-2 rounded-3xl bg-cream shadow-2xl border-4 border-cream/40 p-6 overflow-hidden">
+        {/* corner accents */}
+        <div className="absolute -top-10 -left-10 w-28 h-28 rounded-full bg-sage/20"/>
+        <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-coral/15"/>
+
+        <div className="relative">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-wa/15 text-wa font-display font-bold text-[11px] uppercase tracking-widest">
+            <span className="h-2 w-2 rounded-full bg-wa animate-pulse"/> Live · Enrolling Now
+          </span>
+
+          <div className="mt-4">
+            <p className="text-ink/70 font-display font-bold text-xs uppercase tracking-wider">Course fees start at</p>
+            <p className="font-display font-extrabold text-ink leading-none mt-1">
+              <span className="text-5xl">₹999</span>
+              <span className="text-xl text-ink/70">/month</span>
+            </p>
+            <p className="text-xs text-ink/70 mt-1">EMI · GST included · UPI accepted</p>
+          </div>
+
+          <div className="mt-5 space-y-3">
+            <SnapRow tone="brand" icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5"/></svg>
+            } big="500+" small="Learners taught across India"/>
+            <SnapRow tone="indigo" icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg>
+            } big="7 yrs" small="Live online teaching experience"/>
+            <SnapRow tone="coral" icon={
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="9" r="2.5"/><circle cx="16.5" cy="10" r="2"/><path d="M3.5 18c.7-2.8 3-4.2 5.5-4.2s4.8 1.4 5.5 4.2"/><path d="M14.5 17.5c.4-1.8 2-3 3.5-3s2.5.8 3 2.2"/></svg>
+            } big="Max 6" small="Per batch · or 1:1 option"/>
+          </div>
+
+          <div className="mt-5 -mx-6 -mb-6 px-6 py-3 bg-brand-deep text-cream text-center text-[12px] font-display font-bold tracking-wide">
+            Free Demo · No Card Needed · WhatsApp Reply in Minutes
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SnapRow({ icon, big, small, tone }: { icon: React.ReactNode; big: string; small: string; tone: "brand" | "indigo" | "coral" }) {
+  const bg = tone === "brand" ? "bg-brand/10 text-brand" : tone === "indigo" ? "bg-indigo-pop/10 text-indigo-pop" : "bg-coral/15 text-coral";
+  return (
+    <div className="flex items-center gap-3">
+      <span className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${bg}`}>{icon}</span>
+      <div className="min-w-0">
+        <p className="font-display font-extrabold text-ink leading-tight">{big} <span className="font-bold text-ink/80 text-sm">{small}</span></p>
+      </div>
+    </div>
+  );
+}
+
 
