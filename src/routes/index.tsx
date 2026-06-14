@@ -82,19 +82,19 @@ function Home() {
         <div className="container-x py-10 md:py-16 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
           <div className="text-cream">
             <span className="eyebrow eyebrow-white"><Icon name="spark" size={14}/> 7 Years · Kolkata & Pan-India</span>
-            <h1 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] text-cream">
+            <h1 className="mt-3 text-3xl md:text-5xl font-extrabold leading-[1.08] text-cream">
               Speak Better English.<br/>
               <span className="text-sunshine">Master In-Demand Skills.</span><br/>
               <span className="text-sage">Build Future Together.</span>
             </h1>
-            <p className="mt-6 text-lg text-white max-w-xl">
+            <p className="mt-4 text-base md:text-lg text-white max-w-xl">
               Real teachers. Small batches. Gamified, interactive live classes — designed for the demands of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg">🎓 Enroll — Free Demo</WaButton>
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg">Chat on WhatsApp</WaButton>
             </div>
-            <div className="mt-8 flex flex-wrap gap-4 text-sm text-white/95">
+            <div className="mt-5 flex flex-wrap gap-3 text-sm text-white/95">
               {["100% Online · Live", "Flexible Slots: Morning · Evening · Weekend", "Max 6 Per Batch or 1:1", "Monthly EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
                 <span key={s} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
                   <Icon name="check" size={14} className="text-sage"/>{s}
