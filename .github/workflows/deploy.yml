@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Compute base path
+        id: base
+        run: |
+          # For a project page (user.github.io/<repo>/) set base = /<repo>/.
+          # For a user/org root page or a custom CNAME, leave base = /.
+          if [ -f public/CNAME ]; then
+            echo "base=/" >> "$GITHUB_OUTPUT"
+          else
+            REPO_NAME="${GITHUB_REPOSITORY##*/}"
+            echo "base=/${REPO_NAME}/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build
+        env:
+          BASE_PATH: ${{ steps.base.outputs.base }}
+        run: bun run build
+
+      - name: SPA 404 fallback
+        run: |
+          # GitHub Pages serves 404.html for unknown paths, allowing the SPA to
+          # take over and resolve the route on the client.
+          if [ -f dist/index.html ]; then
+            cp dist/index.html dist/404.html
+          fi
+          touch dist/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
