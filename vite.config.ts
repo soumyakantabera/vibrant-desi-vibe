@@ -12,4 +12,9 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  vite: {
+    // Honour BASE_PATH at build time so the same build can be deployed to
+    // Lovable (/) or a GitHub Pages project page (/<repo>/).
+    base: process.env.BASE_PATH ?? "/",
+  },
 });
