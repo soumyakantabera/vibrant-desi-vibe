@@ -457,12 +457,12 @@ function SnapshotCard() {
   return (
     <div className="relative animate-float">
       {/* Rotated rating sticker */}
-      <div className="absolute -top-5 -right-5 z-20 rotate-12 bg-sunshine text-ink rounded-full h-20 w-20 flex flex-col items-center justify-center font-display font-extrabold shadow-xl border-4 border-cream">
-        <span className="text-xl leading-none">4.9★</span>
-        <span className="text-[10px] uppercase tracking-wider mt-0.5">Rated</span>
+      <div className="absolute -top-4 -right-4 z-20 rotate-12 bg-sunshine text-ink rounded-full h-16 w-16 flex flex-col items-center justify-center font-display font-extrabold shadow-xl border-4 border-cream">
+        <span className="text-lg leading-none">4.9★</span>
+        <span className="text-[9px] uppercase tracking-wider mt-0.5">Rated</span>
       </div>
 
-      <div className="relative -rotate-2 rounded-3xl bg-cream shadow-2xl border-4 border-cream/40 p-6 overflow-hidden">
+      <div className="relative -rotate-2 rounded-3xl bg-cream shadow-2xl border-4 border-cream/40 p-5 overflow-hidden">
         {/* corner accents */}
         <div className="absolute -top-10 -left-10 w-28 h-28 rounded-full bg-sage/20"/>
         <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-coral/15"/>
@@ -472,16 +472,16 @@ function SnapshotCard() {
             <span className="h-2 w-2 rounded-full bg-wa animate-pulse"/> Live · Enrolling Now
           </span>
 
-          <div className="mt-4">
+          <div className="mt-3">
             <p className="text-ink/70 font-display font-bold text-xs uppercase tracking-wider">Course fees start at</p>
             <p className="font-display font-extrabold text-ink leading-none mt-1">
-              <span className="text-5xl">₹999</span>
-              <span className="text-xl text-ink/70">/month</span>
+              <span className="text-4xl">₹999</span>
+              <span className="text-lg text-ink/70">/month</span>
             </p>
             <p className="text-xs text-ink/70 mt-1">EMI · GST included · UPI accepted</p>
           </div>
 
-          <div className="mt-5 space-y-3">
+          <div className="mt-4 space-y-2.5">
             <SnapRow tone="brand" icon={
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5"/></svg>
             } big="500+" small="Learners taught across India"/>
@@ -493,7 +493,7 @@ function SnapshotCard() {
             } big="Max 6" small="Per batch · or 1:1 option"/>
           </div>
 
-          <div className="mt-5 -mx-6 -mb-6 px-6 py-3 bg-brand-deep text-cream text-center text-[12px] font-display font-bold tracking-wide">
+          <div className="mt-4 -mx-5 -mb-5 px-5 py-2.5 bg-brand-deep text-cream text-center text-[12px] font-display font-bold tracking-wide">
             Free Demo · No Card Needed · WhatsApp Reply in Minutes
           </div>
         </div>
