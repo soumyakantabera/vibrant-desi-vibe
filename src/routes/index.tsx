@@ -113,7 +113,7 @@ function Home() {
       </section>
 
       {/* STORY BAND */}
-      <section className="bg-brand-deep py-16 md:py-24">
+      <section className="bg-brand-deep py-12 md:py-24">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider"><Icon name="book" size={14}/> Our Story</span>
@@ -213,16 +213,16 @@ function Home() {
       <MottoBand>"Your learning today, <em className="text-sunshine">matters the more</em>, and we build Future Together."</MottoBand>
 
       {/* NUMBERS */}
-      <section className="relative py-16">
+      <section className="relative py-12 md:py-16">
         <div className="absolute inset-0 z-0">
           <img src={IMG.graduation} alt="Indian graduates" className="w-full h-full object-cover" loading="lazy"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/90 to-ink/85"/>
         </div>
-        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Stat num="7" label="Years Teaching"/>
-          <Stat num="500+" label="Learners Helped"/>
-          <Stat num="Max 6" label="Per Batch · 1:1 Option"/>
-          <Stat num="4.9★" label="Average Rating"/>
+        <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
+          <div className="md:pr-4"><Stat num="7" label="Years Teaching"/></div>
+          <div className="md:px-4"><Stat num="500+" label="Learners Helped"/></div>
+          <div className="md:px-4 pt-8 md:pt-0"><Stat num="Max 6" label="Per Batch · 1:1 Option"/></div>
+          <div className="md:pl-4 pt-8 md:pt-0"><Stat num="4.9★" label="Average Rating"/></div>
         </div>
       </section>
 
@@ -239,7 +239,7 @@ function Home() {
       </section>
 
       {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
-      <section id="pricing" className="section bg-cream">
+      <section id="pricing" className="section bg-cream scroll-mt-20">
 
         <div className="container-x">
           <SectionHeader eyebrow="Simple, India-Friendly Pricing" eyebrowTone="indigo" title="Transparent Fees · Monthly EMI · No Hidden Costs" subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."/>
