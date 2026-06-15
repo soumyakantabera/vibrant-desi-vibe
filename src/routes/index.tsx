@@ -318,7 +318,7 @@ function Home() {
       </section>
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
-      <section className="py-12 bg-white">
+      <section className="py-12 pb-24 sm:pb-12 bg-white">
         <div className="container-x max-w-4xl">
           <div className="rounded-2xl overflow-hidden border border-border shadow-md bg-white grid md:grid-cols-[1fr_1.1fr]">
             <div className="relative h-56 md:h-auto min-h-[220px] bg-brand-soft">
