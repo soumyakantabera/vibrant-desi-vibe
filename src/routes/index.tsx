@@ -79,31 +79,31 @@ function Home() {
           <img src={IMG.heroClass} alt="Indian students in a live online class" className="w-full h-full object-cover" loading="eager"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60"/>
         </div>
-        <div className="container-x py-10 md:py-16 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
+        <div className="container-x py-8 md:py-16 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-center">
           <div className="text-cream">
-            <span className="eyebrow eyebrow-white"><Icon name="spark" size={14}/> 7 Years · Kolkata & Pan-India</span>
-            <h1 className="mt-3 text-3xl md:text-5xl font-extrabold leading-[1.08] text-cream">
+            <span className="eyebrow eyebrow-white"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping"/><span className="relative inline-flex h-2 w-2 rounded-full bg-sage"/></span> 7 Years · Kolkata & Pan-India</span>
+            <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.<br/>
               <span className="text-sunshine">Master In-Demand Skills.</span><br/>
               <span className="text-sage">Build Future Together.</span>
             </h1>
-            <p className="mt-4 text-base md:text-lg text-white max-w-xl">
+            <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
               Real teachers. Small batches. Gamified, interactive live classes — designed for the demands of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg">🎓 Enroll — Free Demo</WaButton>
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg">Chat on WhatsApp</WaButton>
+            <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3">
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg" className="w-full sm:w-auto justify-center">🎓 Enroll — Free Demo</WaButton>
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center ring-2 ring-wa/40 ring-offset-2 ring-offset-transparent animate-pulse-soft">Chat on WhatsApp</WaButton>
             </div>
-            <div className="mt-5 flex flex-wrap gap-3 text-sm text-white/95">
-              {["100% Online · Live", "Flexible Slots: Morning · Evening · Weekend", "Max 6 Per Batch or 1:1", "Monthly EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
-                <span key={s} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+            <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
+              {["100% Online · Live", "Morning · Evening · Weekend", "Max 6 or 1:1", "EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
+                <span key={s} className="snap-start shrink-0 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20 whitespace-nowrap">
                   <Icon name="check" size={14} className="text-sage"/>{s}
                 </span>
               ))}
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="relative">
+          <div className="block">
+            <div className="relative max-w-[340px] lg:max-w-none mx-auto scale-[0.94] lg:scale-100 origin-top">
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
               <SnapshotCard/>
