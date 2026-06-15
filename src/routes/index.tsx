@@ -102,8 +102,8 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="block">
-            <div className="relative max-w-[340px] lg:max-w-none mx-auto scale-[0.94] lg:scale-100 origin-top">
+          <div className="w-full min-w-0 flex justify-center lg:block">
+            <div className="relative w-full max-w-[320px] lg:max-w-none">
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
               <SnapshotCard/>
