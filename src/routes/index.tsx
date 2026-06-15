@@ -342,6 +342,22 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Mobile sticky WhatsApp CTA */}
+      <div className="sm:hidden fixed bottom-3 inset-x-3 z-40">
+        <a
+          href="https://wa.me/919674479949?text=Hi%2C%20I%20am%20interested%20in%20a%20free%20demo.%20Please%20guide%20me."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between gap-3 rounded-full bg-wa text-white pl-5 pr-2 py-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] ring-1 ring-white/20"
+        >
+          <span className="flex items-center gap-2 font-display font-extrabold text-sm">
+            <BrandIcon name="whatsapp" size={18} color="#ffffff"/>
+            Free Demo on WhatsApp
+          </span>
+          <span className="bg-white text-wa font-display font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-2">Chat</span>
+        </a>
+      </div>
     </Layout>
   );
 }
