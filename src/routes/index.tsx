@@ -244,12 +244,12 @@ function Home() {
         <div className="container-x">
           <SectionHeader eyebrow="Simple, India-Friendly Pricing" eyebrowTone="indigo" title="Transparent Fees · Monthly EMI · No Hidden Costs" subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."/>
           <div className="grid md:grid-cols-3 gap-5">
-            <article className="rounded-2xl p-6 bg-white border border-border shadow-sm">
+            <article className="order-2 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center"><BatchIcon/></span>
                 <h3 className="text-ink font-display font-extrabold text-lg">Small Batch (Max 6)</h3>
               </div>
-              <p className="font-display font-extrabold text-3xl text-brand-deep">₹999<span className="text-base font-bold text-ink/80">/month</span></p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹999<span className="text-base font-bold text-ink/80">/month</span></p>
               <p className="text-sm text-ink/80 mt-1">EMI · billed monthly</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Live, interactive online classes</li>
@@ -257,13 +257,13 @@ function Home() {
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Recordings & worksheets included</li>
               </ul>
             </article>
-            <article className="rounded-2xl p-6 bg-brand-deep text-cream relative overflow-hidden shadow-lg">
+            <article className="order-1 md:order-none rounded-2xl p-5 sm:p-6 bg-brand-deep text-cream relative overflow-hidden shadow-lg">
               <span className="absolute top-4 right-4 pill bg-sunshine text-ink border-none">Most Popular</span>
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-sunshine/20 text-sunshine flex items-center justify-center"><OneOnOneIcon/></span>
                 <h3 className="text-cream font-display font-extrabold text-lg">1:1 Personalised</h3>
               </div>
-              <p className="font-display font-extrabold text-3xl text-sunshine">Custom<span className="text-base font-bold text-cream/95"> · per goal</span></p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-sunshine">Custom<span className="text-base font-bold text-cream/95"> · per goal</span></p>
               <p className="text-sm text-cream/95 mt-1">Quote shared on WhatsApp in minutes</p>
               <ul className="mt-4 space-y-2 text-sm text-cream">
                 <li className="flex gap-2"><CheckIcon className="text-sunshine mt-0.5 shrink-0"/>Curriculum built around your goal</li>
@@ -271,12 +271,12 @@ function Home() {
                 <li className="flex gap-2"><CheckIcon className="text-sunshine mt-0.5 shrink-0"/>Pan-India · UPI / Cards / Net-banking</li>
               </ul>
             </article>
-            <article className="rounded-2xl p-6 bg-white border border-border shadow-sm">
+            <article className="order-3 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-coral/10 text-coral flex items-center justify-center"><FreeDemoIcon/></span>
                 <h3 className="text-ink font-display font-extrabold text-lg">Free Demo</h3>
               </div>
-              <p className="font-display font-extrabold text-3xl text-brand-deep">₹0</p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹0</p>
               <p className="text-sm text-ink/80 mt-1">First live class — zero commitment</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Meet your teacher live</li>
