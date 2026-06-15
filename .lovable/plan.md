@@ -1,54 +1,49 @@
-## 1. Replace hero side image with a "Snapshot Card"
+## Goal
 
-In `src/routes/index.tsx`, the right-hand floating student-laptop image inside the HERO (`section:nth-of-type(1)`) is replaced with a hand-built **Snapshot Card** — a tilted, polaroid-style card with layered chips that doubles as the visual focal point and a value summary.
+Make the homepage feel catchier and more polished on mobile (≤640px). Desktop layout stays unchanged.
 
-Card content (catchy, India-context, scan-in-2-seconds):
+## Scope
 
-- Header chip: `LIVE · This Month`
-- Primary line: **Courses from ₹999/mo** (highlighted in sunshine)
-- Three stat rows with small SVG glyphs:
-  - 🎓 **500+ learners** taught across India
-  - 📅 **7 years** of live online teaching
-  - 👥 **Max 6 / batch** · or 1:1
-- Footer ribbon: `Free demo · No credit card · WhatsApp in minutes`
-- Decorative: soft sunshine + coral blur halos kept, plus a tiny rotated "★ 4.9 rating" sticker badge in the corner.
+Only `src/routes/index.tsx` and the small `ui-bits`/`SnapshotCard` styles already in the file. No new images, no new routes, no copy rewrites beyond shortening for mobile.
 
-Styling: cream background card, `rounded-3xl`, drop shadow, `-rotate-2` tilt, animated float kept. Built with Tailwind + inline SVG icons (no new image asset). Reuses existing tokens (`brand-deep`, `sunshine`, `sage`, `coral`, `ink`).
+## Changes
 
-The hero image (`IMG.studentLaptop`) and its `<img>` tag are removed. The surrounding `hidden lg:block` wrapper + blur halos stay.
+### 1. Hero — make it pop on mobile
+- Show `SnapshotCard` on mobile too (remove `hidden lg:block`); render it BELOW the CTAs in a compact scale (`scale-[0.92]`) so it sits above the fold on tall phones and acts as a visual hook.
+- Tighten headline on mobile: `text-[28px] leading-[1.1]` at base, current `md:text-5xl` kept.
+- Make primary CTA full-width on mobile (`w-full sm:w-auto`) with a subtle pulse ring on the WhatsApp button to draw the tap.
+- Trust-badge chips: switch to a horizontal scroll row on mobile (`flex-nowrap overflow-x-auto snap-x` with hidden scrollbar) instead of wrapping into 3 lines — feels modern and saves vertical space.
+- Eyebrow: add a tiny live green dot before "7 Years · Kolkata & Pan-India".
 
-## 2. GitHub deployment
+### 2. Snapshot card — mobile-friendly
+- Reduce padding (`p-4 sm:p-5`), shrink the 4.9★ sticker to `h-14 w-14` on mobile, and cap card width `max-w-[340px] mx-auto` so it centers cleanly on phones.
 
-Add a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds the project and deploys the static output to **GitHub Pages**:
+### 3. Stats band
+- Currently `grid-cols-2 md:grid-cols-4 gap-8` — on mobile the `gap-8` creates a tall block. Use `gap-5 sm:gap-8` and add a faint divider grid via `divide-x divide-cream/10` so the four stats feel like a single connected ribbon, not a stack.
+- Add a subtle entrance: numbers get `text-3xl sm:text-4xl` (down from the existing larger size) so 2-column mobile fits without wrapping "Max 6 · 1:1 Option".
 
-- Triggers on push to `main` + manual dispatch
-- Steps: checkout → setup Bun → `bun install` → `bun run build` → upload `dist/` (or the Vite output dir) as Pages artifact → deploy via `actions/deploy-pages@v4`
-- Concurrency guard so only one deploy runs at a time
+### 4. Pricing cards on mobile
+- Stack order: put the highlighted "1:1 Personalised" (brand-deep card) FIRST on mobile via `order-first md:order-none`, so the eye-catching dark card is the first thing users see when they scroll into pricing.
+- Reduce card padding to `p-5 sm:p-6` and price size to `text-2xl sm:text-3xl` so the card height is friendlier on phones.
 
-Also add a short `DEPLOY.md` with the one-time setup: enable Pages → Source = GitHub Actions, and (if using a project page, not a custom domain) set the base path env var described below.
+### 5. Section rhythm
+- Replace `section` default vertical padding for the first few mobile sections by adding `py-12 md:py-20` overrides where currently `py-16 md:py-24` (Story band, Numbers). Keeps mobile from feeling sluggish.
+- Add `scroll-mt-16` to `#pricing` so the in-page anchor lands below the sticky header.
 
-## 3. Universal path fix (works on any host / subpath)
-
-Goal: the app must work from `/` (Lovable, custom domain) **and** from a subpath like `/<repo-name>/` (GitHub Pages project sites) without 404s on refresh or broken asset URLs.
-
-Changes:
-
-- **`vite.config.ts`** — set `base: process.env.BASE_PATH ?? '/'` so a GitHub Pages deploy can pass `BASE_PATH=/<repo>/` at build time; default `/` keeps Lovable unchanged.
-- **`src/router.tsx`** — pass `basepath: import.meta.env.BASE_URL` to `createRouter` so TanStack Router generates correct links under any base.
-- **GitHub Pages SPA refresh fix** — add `public/404.html` that mirrors `index.html` (GitHub Pages serves `404.html` for unknown paths, letting the SPA take over), and a tiny redirect snippet in `index.html` to restore the original path. This is the standard `rafgraph/spa-github-pages` trick. No effect on Lovable hosting.
-- Workflow sets `BASE_PATH` automatically from the repo name when not using a custom domain.
-
-## Files touched
-
-- `src/routes/index.tsx` — swap hero image for Snapshot Card (inline component + SVG icons)
-- `vite.config.ts` — `base` from env
-- `src/router.tsx` — `basepath: import.meta.env.BASE_URL`
-- `public/404.html` — new, SPA fallback for GitHub Pages
-- `index.html` — small redirect-restore script (guarded, no-op on normal loads)
-- `.github/workflows/deploy.yml` — new, build + deploy to GitHub Pages
-- `DEPLOY.md` — new, one-page setup notes
+### 6. Sticky mobile WhatsApp bar (small but catchy)
+- Add a thin sticky bottom bar visible only on mobile (`sm:hidden`) containing a single WhatsApp CTA + "Free demo" label. This is the highest-conversion mobile pattern for Indian audiences. Uses existing `WaButton` with `variant="wa"`; positioned `fixed bottom-3 inset-x-3 z-40 rounded-full shadow-lg`.
 
 ## Out of scope
 
-- No changes to pricing section, testimonials, or other routes.
-- No new image assets generated — Snapshot Card is pure CSS/SVG.
+- No copy rewrites beyond the eyebrow dot.
+- No changes to testimonials, tracks, how-it-works, or footer.
+- No new assets, no design tokens added.
+
+## Verification
+
+After build, open the preview at 390×844 and 360×800, confirm:
+- Snapshot card visible without scrolling past CTAs.
+- Trust chips scroll horizontally, no wrap pile.
+- Sticky WhatsApp bar appears above content.
+- Pricing dark card is first on mobile.
+- Stats fit on one row of 2 without text wrap.

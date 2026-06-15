@@ -79,31 +79,31 @@ function Home() {
           <img src={IMG.heroClass} alt="Indian students in a live online class" className="w-full h-full object-cover" loading="eager"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60"/>
         </div>
-        <div className="container-x py-10 md:py-16 lg:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
-          <div className="text-cream">
-            <span className="eyebrow eyebrow-white"><Icon name="spark" size={14}/> 7 Years · Kolkata & Pan-India</span>
-            <h1 className="mt-3 text-3xl md:text-5xl font-extrabold leading-[1.08] text-cream">
+        <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
+          <div className="text-cream min-w-0 w-full">
+            <span className="eyebrow eyebrow-white"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping"/><span className="relative inline-flex h-2 w-2 rounded-full bg-sage"/></span> 7 Years · Kolkata & Pan-India</span>
+            <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.<br/>
               <span className="text-sunshine">Master In-Demand Skills.</span><br/>
               <span className="text-sage">Build Future Together.</span>
             </h1>
-            <p className="mt-4 text-base md:text-lg text-white max-w-xl">
+            <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
               Real teachers. Small batches. Gamified, interactive live classes — designed for the demands of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg">🎓 Enroll — Free Demo</WaButton>
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg">Chat on WhatsApp</WaButton>
+            <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3">
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg" className="w-full sm:w-auto justify-center">🎓 Enroll — Free Demo</WaButton>
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center shadow-[0_0_0_4px_rgba(37,211,102,0.18)]">Chat on WhatsApp</WaButton>
             </div>
-            <div className="mt-5 flex flex-wrap gap-3 text-sm text-white/95">
-              {["100% Online · Live", "Flexible Slots: Morning · Evening · Weekend", "Max 6 Per Batch or 1:1", "Monthly EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
-                <span key={s} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+            <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
+              {["100% Online · Live", "Morning · Evening · Weekend", "Max 6 or 1:1", "EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
+                <span key={s} className="snap-start shrink-0 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20 whitespace-nowrap">
                   <Icon name="check" size={14} className="text-sage"/>{s}
                 </span>
               ))}
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="relative">
+          <div className="w-full min-w-0 flex justify-center lg:block">
+            <div className="relative w-full max-w-[320px] lg:max-w-none">
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
               <SnapshotCard/>
@@ -113,7 +113,7 @@ function Home() {
       </section>
 
       {/* STORY BAND */}
-      <section className="bg-brand-deep py-16 md:py-24">
+      <section className="bg-brand-deep py-12 md:py-24">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider"><Icon name="book" size={14}/> Our Story</span>
@@ -213,16 +213,16 @@ function Home() {
       <MottoBand>"Your learning today, <em className="text-sunshine">matters the more</em>, and we build Future Together."</MottoBand>
 
       {/* NUMBERS */}
-      <section className="relative py-16">
+      <section className="relative py-12 md:py-16">
         <div className="absolute inset-0 z-0">
           <img src={IMG.graduation} alt="Indian graduates" className="w-full h-full object-cover" loading="lazy"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/90 to-ink/85"/>
         </div>
-        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Stat num="7" label="Years Teaching"/>
-          <Stat num="500+" label="Learners Helped"/>
-          <Stat num="Max 6" label="Per Batch · 1:1 Option"/>
-          <Stat num="4.9★" label="Average Rating"/>
+        <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
+          <div className="md:pr-4"><Stat num="7" label="Years Teaching"/></div>
+          <div className="md:px-4"><Stat num="500+" label="Learners Helped"/></div>
+          <div className="md:px-4 pt-8 md:pt-0"><Stat num="Max 6" label="Per Batch · 1:1 Option"/></div>
+          <div className="md:pl-4 pt-8 md:pt-0"><Stat num="4.9★" label="Average Rating"/></div>
         </div>
       </section>
 
@@ -239,17 +239,17 @@ function Home() {
       </section>
 
       {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
-      <section id="pricing" className="section bg-cream">
+      <section id="pricing" className="section bg-cream scroll-mt-20">
 
         <div className="container-x">
           <SectionHeader eyebrow="Simple, India-Friendly Pricing" eyebrowTone="indigo" title="Transparent Fees · Monthly EMI · No Hidden Costs" subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."/>
           <div className="grid md:grid-cols-3 gap-5">
-            <article className="rounded-2xl p-6 bg-white border border-border shadow-sm">
+            <article className="order-2 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center"><BatchIcon/></span>
                 <h3 className="text-ink font-display font-extrabold text-lg">Small Batch (Max 6)</h3>
               </div>
-              <p className="font-display font-extrabold text-3xl text-brand-deep">₹999<span className="text-base font-bold text-ink/80">/month</span></p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹999<span className="text-base font-bold text-ink/80">/month</span></p>
               <p className="text-sm text-ink/80 mt-1">EMI · billed monthly</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Live, interactive online classes</li>
@@ -257,13 +257,13 @@ function Home() {
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Recordings & worksheets included</li>
               </ul>
             </article>
-            <article className="rounded-2xl p-6 bg-brand-deep text-cream relative overflow-hidden shadow-lg">
+            <article className="order-1 md:order-none rounded-2xl p-5 sm:p-6 bg-brand-deep text-cream relative overflow-hidden shadow-lg">
               <span className="absolute top-4 right-4 pill bg-sunshine text-ink border-none">Most Popular</span>
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-sunshine/20 text-sunshine flex items-center justify-center"><OneOnOneIcon/></span>
                 <h3 className="text-cream font-display font-extrabold text-lg">1:1 Personalised</h3>
               </div>
-              <p className="font-display font-extrabold text-3xl text-sunshine">Custom<span className="text-base font-bold text-cream/95"> · per goal</span></p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-sunshine">Custom<span className="text-base font-bold text-cream/95"> · per goal</span></p>
               <p className="text-sm text-cream/95 mt-1">Quote shared on WhatsApp in minutes</p>
               <ul className="mt-4 space-y-2 text-sm text-cream">
                 <li className="flex gap-2"><CheckIcon className="text-sunshine mt-0.5 shrink-0"/>Curriculum built around your goal</li>
@@ -271,12 +271,12 @@ function Home() {
                 <li className="flex gap-2"><CheckIcon className="text-sunshine mt-0.5 shrink-0"/>Pan-India · UPI / Cards / Net-banking</li>
               </ul>
             </article>
-            <article className="rounded-2xl p-6 bg-white border border-border shadow-sm">
+            <article className="order-3 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-coral/10 text-coral flex items-center justify-center"><FreeDemoIcon/></span>
                 <h3 className="text-ink font-display font-extrabold text-lg">Free Demo</h3>
               </div>
-              <p className="font-display font-extrabold text-3xl text-brand-deep">₹0</p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹0</p>
               <p className="text-sm text-ink/80 mt-1">First live class — zero commitment</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Meet your teacher live</li>
@@ -318,7 +318,7 @@ function Home() {
       </section>
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
-      <section className="py-12 bg-white">
+      <section className="py-12 pb-24 sm:pb-12 bg-white">
         <div className="container-x max-w-4xl">
           <div className="rounded-2xl overflow-hidden border border-border shadow-md bg-white grid md:grid-cols-[1fr_1.1fr]">
             <div className="relative h-56 md:h-auto min-h-[220px] bg-brand-soft">
@@ -342,6 +342,22 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Mobile sticky WhatsApp CTA */}
+      <div className="sm:hidden fixed bottom-3 inset-x-3 z-40">
+        <a
+          href="https://wa.me/919674479949?text=Hi%2C%20I%20am%20interested%20in%20a%20free%20demo.%20Please%20guide%20me."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between gap-3 rounded-full bg-wa text-white pl-5 pr-2 py-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] ring-1 ring-white/20"
+        >
+          <span className="flex items-center gap-2 font-display font-extrabold text-sm">
+            <BrandIcon name="whatsapp" size={18} color="#ffffff"/>
+            Free Demo on WhatsApp
+          </span>
+          <span className="bg-white text-wa font-display font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-2">Chat</span>
+        </a>
+      </div>
     </Layout>
   );
 }
