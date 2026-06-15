@@ -80,7 +80,7 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60"/>
         </div>
         <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
-          <div className="text-cream">
+          <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping"/><span className="relative inline-flex h-2 w-2 rounded-full bg-sage"/></span> 7 Years · Kolkata & Pan-India</span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.<br/>
