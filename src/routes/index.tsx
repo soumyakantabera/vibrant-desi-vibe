@@ -92,7 +92,7 @@ function Home() {
             </p>
             <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3">
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg" className="w-full sm:w-auto justify-center">🎓 Enroll — Free Demo</WaButton>
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center ring-2 ring-wa/40 ring-offset-2 ring-offset-transparent animate-pulse-soft">Chat on WhatsApp</WaButton>
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center shadow-[0_0_0_4px_rgba(37,211,102,0.18)]">Chat on WhatsApp</WaButton>
             </div>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {["100% Online · Live", "Morning · Evening · Weekend", "Max 6 or 1:1", "EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
