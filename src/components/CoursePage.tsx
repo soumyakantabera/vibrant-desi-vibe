@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSlider";
+import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
 
 export type Module = { title: string; items: string[] };
@@ -32,6 +33,23 @@ export type CourseData = {
 export function CoursePage({ data }: { data: CourseData }) {
   const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
+  const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
+  const snapshot = (
+    <SnapshotCard
+      badge={`Live · ${data.format}`}
+      eyebrow="Course fee starts at"
+      headline={priceMatch
+        ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
+        : { big: data.price }}
+      subnote={`${data.duration} · GST included`}
+      rows={[
+        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+        { tone: "indigo", icon: SnapIcons.calendar, big: "7 yrs", small: "Live teaching experience" },
+        { tone: "coral", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
+      ]}
+      footer="Free Demo · No Card Needed · WhatsApp in Minutes"
+    />
+  );
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
@@ -60,8 +78,21 @@ export function CoursePage({ data }: { data: CourseData }) {
               <WaButton message={waSyllabus} variant="wa" size="lg">Get Full Syllabus</WaButton>
             </div>
           </div>
-          <div className="hidden lg:block">
-            <img src={data.midImage} alt={`${data.title} live class`} className="rounded-3xl shadow-2xl border-4 border-cream/15 animate-float" loading="lazy"/>
+          <div className="hidden lg:block relative">
+            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
+            {snapshot}
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile snapshot card */}
+      <section className="lg:hidden bg-brand-deep/95 py-8">
+        <div className="container-x flex justify-center">
+          <div className="relative w-full max-w-[320px]">
+            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
+            {snapshot}
           </div>
         </div>
       </section>
