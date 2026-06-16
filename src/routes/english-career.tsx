@@ -49,20 +49,39 @@ function Page() {
   const wa = "Hi, I am interested in the English & Career track. Please help me choose the right course.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
-      <section className="relative">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={IMG.speaking} alt="English class India" className="w-full h-full object-cover"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/75 to-coral/40"/>
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
-          <span className="eyebrow eyebrow-white"><Icon name="mic" size={14}/> English & Career Track</span>
-          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Speak English. <span className="text-sunshine">Win Interviews.</span> Build a Career.</h1>
-          <p className="mt-5 text-lg text-white">Six 100% online live courses — max 6 per batch (1:1 for Career Counselling). Flexible morning, evening & weekend slots. From <strong className="text-sunshine">₹999/mo</strong>.</p>
+        <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+          <div className="text-cream min-w-0 w-full">
+            <span className="eyebrow eyebrow-white"><Icon name="mic" size={14}/> English & Career Track</span>
+            <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">Speak English. <span className="text-sunshine">Win Interviews.</span> Build a Career.</h1>
+            <p className="mt-5 text-base md:text-lg text-white">Six 100% online live courses — max 6 per batch (1:1 for Career Counselling). Flexible morning, evening & weekend slots. From <strong className="text-sunshine">₹999/mo</strong>.</p>
 
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <WaButton message={wa} variant="sun" size="lg">Free Demo on WhatsApp</WaButton>
-            <WaButton message="Hi, please send me pricing for all English & Career courses." variant="wa" size="lg">Get All Pricing</WaButton>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <WaButton message={wa} variant="sun" size="lg">Free Demo on WhatsApp</WaButton>
+              <WaButton message="Hi, please send me pricing for all English & Career courses." variant="wa" size="lg">Get All Pricing</WaButton>
+            </div>
+          </div>
+          <div className="w-full min-w-0 flex justify-center lg:block">
+            <div className="relative w-full max-w-[320px] lg:max-w-none">
+              <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
+              <SnapshotCard
+                badge="Live · English Track"
+                eyebrow="Whole track from"
+                headline={{ big: "₹999", suffix: "/month" }}
+                subnote="EMI · GST included · UPI accepted"
+                rows={[
+                  { tone: "brand", icon: SnapIcons.book, big: "6 courses", small: "Spoken · IELTS · Business · Interview" },
+                  { tone: "indigo", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
+                  { tone: "coral", icon: SnapIcons.spark, big: "Gamified", small: "Live polls · roleplays · debates" },
+                ]}
+                footer="Free Demo on WhatsApp · Reply in Minutes"
+              />
+            </div>
           </div>
         </div>
       </section>
