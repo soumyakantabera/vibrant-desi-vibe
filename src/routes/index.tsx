@@ -4,6 +4,7 @@ import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/compone
 import { Icon } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
+import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/")({
