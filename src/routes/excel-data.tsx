@@ -49,18 +49,38 @@ function Page() {
   const wa = "Hi, I am interested in the Excel, Data & AI track. Please help me choose.";
   return (
     <Layout waMessage={wa} footerImage={IMG.presentation}>
-      <section className="relative">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={IMG.dataDash} alt="Data dashboards" className="w-full h-full object-cover"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65"/>
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
-          <span className="eyebrow eyebrow-white"><Icon name="chart" size={14}/> Excel, Data & AI Track</span>
-          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">From Excel to <span className="text-sunshine">Data & AI</span> — built for today's jobs.</h1>
-          <p className="mt-5 text-lg text-white">Eight 100% online live courses — 1:1 personalised, flexible morning/evening/weekend slots. Every course ships with India-context capstone projects. Monthly EMI from ₹999/mo.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <WaButton message={wa} variant="sun" size="lg">Free Demo on WhatsApp</WaButton>
-            <WaButton message="Hi, please send me pricing for all Excel, Data & AI courses." variant="wa" size="lg">Get All Pricing</WaButton>
+        <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+          <div className="text-cream min-w-0 w-full">
+            <span className="eyebrow eyebrow-white"><Icon name="chart" size={14}/> Excel, Data & AI Track</span>
+            <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">From Excel to <span className="text-sunshine">Data & AI</span> — built for today's jobs.</h1>
+            <p className="mt-5 text-base md:text-lg text-white">Eight 100% online live courses — 1:1 personalised, flexible morning/evening/weekend slots. Every course ships with India-context capstone projects. Monthly EMI from ₹999/mo.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <WaButton message={wa} variant="sun" size="lg">Free Demo on WhatsApp</WaButton>
+              <WaButton message="Hi, please send me pricing for all Excel, Data & AI courses." variant="wa" size="lg">Get All Pricing</WaButton>
+            </div>
+          </div>
+          <div className="w-full min-w-0 flex justify-center lg:block">
+            <div className="relative w-full max-w-[320px] lg:max-w-none">
+              <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
+              <SnapshotCard
+                badge="Live · Data & AI Track"
+                eyebrow="Whole track from"
+                headline={{ big: "₹999", suffix: "/month" }}
+                subnote="Excel · Python · Power BI · AI · Claude API"
+                rows={[
+                  { tone: "indigo", icon: SnapIcons.chart, big: "8 courses", small: "MS Office → AI Projects" },
+                  { tone: "brand", icon: SnapIcons.spark, big: "Capstone", small: "India-context portfolio projects" },
+                  { tone: "coral", icon: SnapIcons.book, big: "Real data", small: "From Indian companies & sectors" },
+                ]}
+                footer="Free Demo on WhatsApp · Reply in Minutes"
+              />
+            </div>
           </div>
         </div>
       </section>
