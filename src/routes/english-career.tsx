@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
 
