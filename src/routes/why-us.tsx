@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, FeatureCard, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/why-us")({
