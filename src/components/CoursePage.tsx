@@ -78,8 +78,21 @@ export function CoursePage({ data }: { data: CourseData }) {
               <WaButton message={waSyllabus} variant="wa" size="lg">Get Full Syllabus</WaButton>
             </div>
           </div>
-          <div className="hidden lg:block">
-            <img src={data.midImage} alt={`${data.title} live class`} className="rounded-3xl shadow-2xl border-4 border-cream/15 animate-float" loading="lazy"/>
+          <div className="hidden lg:block relative">
+            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
+            {snapshot}
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile snapshot card */}
+      <section className="lg:hidden bg-brand-deep/95 py-8">
+        <div className="container-x flex justify-center">
+          <div className="relative w-full max-w-[320px]">
+            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
+            {snapshot}
           </div>
         </div>
       </section>
