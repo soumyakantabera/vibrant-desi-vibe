@@ -107,7 +107,16 @@ function Home() {
             <div className="relative w-full max-w-[320px] lg:max-w-none">
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl"/>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl"/>
-              <SnapshotCard/>
+              <SnapshotCard
+                eyebrow="Course fees start at"
+                headline={{ big: "₹999", suffix: "/month" }}
+                subnote="EMI · GST included · UPI accepted"
+                rows={[
+                  { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+                  { tone: "indigo", icon: SnapIcons.calendar, big: "7 yrs", small: "Live online teaching experience" },
+                  { tone: "coral", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
+                ]}
+              />
             </div>
           </div>
         </div>
