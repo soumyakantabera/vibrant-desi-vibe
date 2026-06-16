@@ -33,6 +33,23 @@ export type CourseData = {
 export function CoursePage({ data }: { data: CourseData }) {
   const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
+  const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
+  const snapshot = (
+    <SnapshotCard
+      badge={`Live · ${data.format}`}
+      eyebrow="Course fee starts at"
+      headline={priceMatch
+        ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
+        : { big: data.price }}
+      subnote={`${data.duration} · GST included`}
+      rows={[
+        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+        { tone: "indigo", icon: SnapIcons.calendar, big: "7 yrs", small: "Live teaching experience" },
+        { tone: "coral", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
+      ]}
+      footer="Free Demo · No Card Needed · WhatsApp in Minutes"
+    />
+  );
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
