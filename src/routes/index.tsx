@@ -187,9 +187,9 @@ function Home() {
             ].map(s => (
               <div key={s.n} className="text-center">
                 <div className={`mx-auto h-12 w-12 rounded-full flex items-center justify-center font-display font-extrabold text-lg ${
-                  s.c === "wa" ? "bg-wa text-white" :
+                  s.c === "wa" ? "bg-wa text-ink" :
                   s.c === "sunshine" ? "bg-sunshine text-ink" :
-                  s.c === "coral" ? "bg-coral text-white" : "bg-sage text-ink"
+                  s.c === "coral" ? "bg-coral text-ink" : "bg-sage text-ink"
                 }`}>{s.n}</div>
                 <div className="text-cream font-display font-bold mt-3">{s.lbl}</div>
                 <div className="text-white/85 text-xs mt-1">{s.sub}</div>
@@ -359,13 +359,13 @@ function Home() {
           href="https://wa.me/919674479949?text=Hi%2C%20I%20am%20interested%20in%20a%20free%20demo.%20Please%20guide%20me."
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-between gap-3 rounded-full bg-wa text-white pl-5 pr-2 py-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] ring-1 ring-white/20"
+          className="flex items-center justify-between gap-3 rounded-full bg-wa text-ink pl-5 pr-2 py-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] ring-1 ring-white/20"
         >
           <span className="flex items-center gap-2 font-display font-extrabold text-sm">
-            <BrandIcon name="whatsapp" size={18} color="#ffffff"/>
+            <BrandIcon name="whatsapp" size={18} color="#0B1F14"/>
             Free Demo on WhatsApp
           </span>
-          <span className="bg-white text-wa font-display font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-2">Chat</span>
+          <span className="bg-white text-brand-deep font-display font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-2">Chat</span>
         </a>
       </div>
     </Layout>
