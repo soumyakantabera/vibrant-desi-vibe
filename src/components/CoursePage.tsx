@@ -60,7 +60,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream">
-            <Link to={data.category === "Excel & Data Analytics" ? "/excel-data" : "/english-career"} className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline">
+            <Link to="/english-career" className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline">
               <Icon name="arrow-right" size={14} className="rotate-180"/> {data.category}
             </Link>
             <h1 className="mt-3 text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">

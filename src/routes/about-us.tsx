@@ -46,10 +46,10 @@ function Page() {
           <img src={IMG.studentLaptop2} alt="Indian student learning" className="rounded-3xl shadow-lg object-cover h-[400px] w-full"/>
           <div>
             <SectionHeader align="left" eyebrow="Our Story" title="Why We Started Learn With Smile" subtitle="Because complex teaching was leaving good students behind."/>
-            <div className="space-y-4 text-ink/80 leading-relaxed">
+            <div className="space-y-4 text-ink/90 leading-relaxed">
               <p>For seven years we taught students across India and watched the same pattern: bright learners struggling not because they weren't smart, but because lessons were made too complex.</p>
               <p>We started Learn With Smile to fix that — with <strong>simple teaching, small batches, and live classes built around the student</strong>, not the textbook.</p>
-              <p>Today our gamified live classrooms run mornings, evenings and weekends across English, Excel, and data analytics — with a teacher who actually knows your name.</p>
+              <p>Today our gamified live classrooms run mornings, evenings and weekends across English and career skills — with a teacher who actually knows your name.</p>
             </div>
           </div>
         </div>

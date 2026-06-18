@@ -59,14 +59,14 @@ export function SnapshotCard({
 
           {(eyebrow || headline || subnote) && (
             <div className="mt-3">
-              {eyebrow && <p className="text-ink/70 font-display font-bold text-xs uppercase tracking-wider">{eyebrow}</p>}
+              {eyebrow && <p className="text-ink/85 font-display font-bold text-xs uppercase tracking-wider">{eyebrow}</p>}
               {headline && (
                 <p className="font-display font-extrabold text-ink leading-none mt-1">
                   <span className="text-4xl">{headline.big}</span>
-                  {headline.suffix && <span className="text-lg text-ink/70">{headline.suffix}</span>}
+                  {headline.suffix && <span className="text-lg text-ink/85">{headline.suffix}</span>}
                 </p>
               )}
-              {subnote && <p className="text-xs text-ink/70 mt-1">{subnote}</p>}
+              {subnote && <p className="text-xs text-ink/85 mt-1">{subnote}</p>}
             </div>
           )}
 
@@ -76,7 +76,7 @@ export function SnapshotCard({
                 <span className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${TONE[r.tone]}`}>{r.icon}</span>
                 <div className="min-w-0">
                   <p className="font-display font-extrabold text-ink leading-tight">
-                    {r.big} <span className="font-bold text-ink/80 text-sm">{r.small}</span>
+                    {r.big} <span className="font-bold text-ink/90 text-sm">{r.small}</span>
                   </p>
                 </div>
               </div>

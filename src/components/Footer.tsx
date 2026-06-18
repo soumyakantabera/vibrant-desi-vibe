@@ -6,7 +6,6 @@ import { WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 
 const TRACKS = [
   { to: "/english-career", label: "English & Career Hub" },
-  { to: "/excel-data", label: "Excel & Data Hub" },
 ];
 
 const ENGLISH = [
@@ -16,18 +15,6 @@ const ENGLISH = [
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
   { to: "/course-interview-prep", label: "Interview Prep" },
   { to: "/course-career-counselling", label: "Career Counselling" },
-];
-
-const DATA = [
-  { to: "/course-ms-office", label: "MS Office" },
-  { to: "/course-master-excel", label: "Master Excel" },
-  { to: "/course-finance-excel", label: "Finance Excel" },
-  { to: "/course-python", label: "Python" },
-  { to: "/course-power-bi", label: "Power BI (PL-300)" },
-  { to: "/course-r-rstudio", label: "R & RStudio" },
-  { to: "/course-matlab", label: "MATLAB" },
-  { to: "/course-tableau", label: "Tableau" },
-  { to: "/course-data-accelerator", label: "Data Accelerator" },
 ];
 
 const COMPANY = [
@@ -46,7 +33,7 @@ export function Footer({ image }: { image?: string }) {
   return (
     <footer className="bg-ink text-cream pt-16 pb-8 mt-10">
       <div className="container-x">
-        <div className="grid lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-10 mb-12">
+        <div className="grid lg:grid-cols-[1.2fr_1fr_1fr] gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <Logo size={42} />
@@ -56,7 +43,7 @@ export function Footer({ image }: { image?: string }) {
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              7 years teaching English, Excel & data skills online. Small batches (max 6). Gamified live classes. Real results — from ₹999/mo.
+              7 years teaching English & career skills online. Small batches (max 6). Gamified live classes. Real results — from ₹999/mo.
             </p>
             <div className="rounded-2xl overflow-hidden border border-cream/15 mb-5">
               <img src={image || IMG} alt="Indian students learning online" loading="lazy" className="w-full h-40 object-cover"/>
@@ -67,7 +54,6 @@ export function Footer({ image }: { image?: string }) {
           </div>
           <FooterCol title="Tracks" items={[...TRACKS, ...COMPANY.slice(0,2)]}/>
           <FooterCol title="English & Career" items={ENGLISH}/>
-          <FooterCol title="Excel & Data" items={DATA}/>
         </div>
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">

@@ -103,29 +103,27 @@ function Page() {
         <div className="container-x">
           <FounderCard
             name="Soumyakanta Bera"
-            title="Co-Founder · Data, Finance & Coding Mentor"
+            title="Co-Founder · Career & Interview Mentor"
             image={IMG.founderSoumya}
-            intro="Soumyakanta turned a lifelong hobby — helping the people around him crack data, business and coding problems — into a teaching practice. With a strong academic and applied background in quantitative finance, he now mentors learners through Excel, Power BI, Python, R and MATLAB with India-context projects and real-world workflows."
+            intro="Soumyakanta turned a lifelong hobby — helping the people around him plan their careers and crack interviews — into a teaching practice. With a strong academic and applied background in finance, he now mentors learners through interview prep and career counselling with India-context guidance and real-world workflows."
             credentials={[
               "MSc · Finance and Risk Management",
-              "Academic + applied background in data & quant",
+              "Academic + applied background in quantitative analysis",
               "Mentor since college — peers, juniors, working professionals",
-              "Builds India-context capstone projects for every course",
+              "Builds India-context guidance for every learner",
             ]}
             teaches={[
-              "Master Excel · Excel for Finance",
-              "Power BI (PL-300) · DAX · Modelling",
-              "Python for Data & Automation",
-              "R & RStudio · Statistics",
-              "MATLAB · Numerical Methods · Simulink",
+              "Interview Prep · Mock Interviews",
+              "Career Counselling · Roadmapping",
+              "Business English for Working Professionals",
             ]}
             promises={[
               "Concepts broken down to first principles",
-              "Two India-context projects per course — not toy examples",
-              "Honest review of your code, formulas and dashboards",
+              "Real, India-context practice — not toy examples",
+              "Honest review of your answers and approach",
               "Career-aligned roadmap, not just lecture hours",
             ]}
-            waMessage="Hi Soumyakanta, I'd like to book a free demo for Excel / Data / Coding."
+            waMessage="Hi Soumyakanta, I'd like to book a free demo for Interview Prep / Career Counselling."
             reverse
           />
         </div>

