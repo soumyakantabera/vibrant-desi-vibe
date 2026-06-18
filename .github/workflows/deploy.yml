@@ -42,10 +42,10 @@ jobs:
             echo "base=/${REPO_NAME}/" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build
+      - name: Build (static SPA for GitHub Pages)
         env:
           BASE_PATH: ${{ steps.base.outputs.base }}
-        run: bun run build
+        run: bun run build:pages
 
       - name: SPA 404 fallback
         run: |
