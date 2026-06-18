@@ -6,6 +6,7 @@ import { BrandIcon } from "@/components/BrandIcon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
+import { withBasePath } from "@/lib/site-path";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -17,9 +18,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Learn With Smile | Live English, Excel, Data & AI Classes" },
       { property: "og:description", content: "Live online classes from ₹999/mo. English, Excel, Power BI, Python & AI with Claude/ChatGPT. Max 6 per batch or 1:1." },
       { property: "og:image", content: IMG.heroClass },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: withBasePath("/") },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: withBasePath("/") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -477,6 +478,5 @@ function CheckIcon({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
 
 
