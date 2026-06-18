@@ -24,17 +24,6 @@ const ENGLISH_COURSES: NavItem[] = [
   { to: "/course-career-counselling", label: "Career Counselling", icon: "compass", desc: "3 × 60-min · ₹999" },
 ];
 
-const DATA_COURSES: NavItem[] = [
-  { to: "/course-ms-office", label: "MS Office Essentials", icon: "book", desc: "1:1 · ₹999/mo" },
-  { to: "/course-master-excel", label: "Master Excel", icon: "chart", desc: "1:1 · ₹1,999/mo" },
-  { to: "/course-finance-excel", label: "Finance Excel", icon: "rupee", desc: "1:1 · ₹1,999/mo" },
-  { to: "/course-python", label: "Python", icon: "code", desc: "1:1 · ₹1,999/mo" },
-  { to: "/course-power-bi", label: "Power BI", icon: "chart", desc: "1:1 · ₹1,999/mo" },
-  { to: "/course-prompt-engineering", label: "Prompt Engineering", icon: "rocket", desc: "1:1 · ₹1,199/mo" },
-  { to: "/course-ai-builder", label: "Claude API & Agentic AI", icon: "rocket", desc: "1:1 · ₹1,499/mo" },
-  { to: "/course-ai-projects", label: "AI Projects", icon: "trophy", desc: "1:1 · ₹1,999/mo" },
-];
-
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
@@ -61,7 +50,7 @@ export function Nav() {
   }, [coursesOpen]);
 
   const isActive = (to: string) => location.pathname === to;
-  const coursesActive = location.pathname.startsWith("/course-") || location.pathname === "/english-career" || location.pathname === "/excel-data";
+  const coursesActive = location.pathname.startsWith("/course-") || location.pathname === "/english-career";
 
   return (
     <>
@@ -99,21 +88,14 @@ export function Nav() {
               {coursesOpen && (
                 <div
                   onMouseLeave={() => setCoursesOpen(false)}
-                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] max-w-[92vw]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[360px] max-w-[92vw]"
                 >
-                  <div className="rounded-2xl bg-white border border-border shadow-2xl overflow-hidden grid grid-cols-2">
+                  <div className="rounded-2xl bg-white border border-border shadow-2xl overflow-hidden grid grid-cols-1">
                     <CourseColumn
                       title="English & Career"
                       tone="brand"
                       categoryHref="/english-career"
                       items={ENGLISH_COURSES}
-                      onPick={() => setCoursesOpen(false)}
-                    />
-                    <CourseColumn
-                      title="Excel, Data & AI"
-                      tone="indigo"
-                      categoryHref="/excel-data"
-                      items={DATA_COURSES}
                       onPick={() => setCoursesOpen(false)}
                     />
                   </div>
@@ -186,24 +168,9 @@ export function Nav() {
               >
                 View all 6 courses →
               </Link>
-              <div className="grid gap-1">
+              <div className="grid gap-1 pb-6">
                 {ENGLISH_COURSES.map((c) => (
                   <MobileCourseLink key={c.to} item={c} active={isActive(c.to)} tone="brand" onClick={() => setOpen(false)}/>
-                ))}
-              </div>
-
-              {/* Excel & Data */}
-              <SectionLabel>Excel, Data & AI</SectionLabel>
-              <Link
-                to="/excel-data"
-                onClick={() => setOpen(false)}
-                className="block mb-2 px-4 py-2.5 rounded-xl bg-[#E2E2FB] text-indigo-pop font-display font-semibold text-sm hover:bg-[#D6D6F7]"
-              >
-                View all 8 courses →
-              </Link>
-              <div className="grid gap-1 pb-6">
-                {DATA_COURSES.map((c) => (
-                  <MobileCourseLink key={c.to} item={c} active={isActive(c.to)} tone="indigo" onClick={() => setOpen(false)}/>
                 ))}
               </div>
             </div>
@@ -258,7 +225,7 @@ function CourseColumn({
             </span>
             <span className="min-w-0">
               <span className="block font-display font-semibold text-sm text-ink truncate group-hover:text-brand-deep">{c.label}</span>
-              {c.desc && <span className="block text-[11px] text-ink/60">{c.desc}</span>}
+              {c.desc && <span className="block text-[11px] text-ink/75">{c.desc}</span>}
             </span>
           </Link>
         ))}
@@ -268,7 +235,7 @@ function CourseColumn({
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <div className="mt-5 mb-2 px-2 text-[11px] font-display font-bold uppercase tracking-[0.12em] text-ink/50">{children}</div>;
+  return <div className="mt-5 mb-2 px-2 text-[11px] font-display font-bold uppercase tracking-[0.12em] text-ink/75">{children}</div>;
 }
 
 function MobileLink({ to, active, onClick, children }: { to: string; active: boolean; onClick: () => void; children: React.ReactNode }) {
@@ -299,7 +266,7 @@ function MobileCourseLink({ item, active, tone, onClick }: { item: NavItem; acti
       </span>
       <span className="min-w-0 flex-1">
         <span className="block font-display font-semibold text-sm text-ink truncate">{item.label}</span>
-        {item.desc && <span className="block text-[11px] text-ink/60">{item.desc}</span>}
+        {item.desc && <span className="block text-[11px] text-ink/75">{item.desc}</span>}
       </span>
       <Icon name="arrow-right" size={14} className="opacity-30"/>
     </Link>

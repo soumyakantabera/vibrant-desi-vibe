@@ -7,18 +7,17 @@ import { IMG } from "@/lib/images";
 export const Route = createFileRoute("/blog")({
   component: Page,
   head: () => ({ meta: [
-    { title: "Learn With Smile Blog | English, Excel, Data Career Tips" },
-    { name: "description", content: "Practical tips for Indian learners — spoken English, IELTS, Excel, Power BI, Python, career switching. Updated weekly." },
+    { title: "Learn With Smile Blog | English & Career Tips" },
+    { name: "description", content: "Practical tips for Indian learners — spoken English, IELTS, business English, career switching. Updated weekly." },
   ]}),
 });
 
 const POSTS = [
   { tag: "Spoken English", img: IMG.girlReading, title: "5 Speaking Habits That Killed My Hesitation in 30 Days", excerpt: "The smallest daily ritual that built my fluency — no apps, no expensive courses." },
   { tag: "IELTS", img: IMG.ielts, title: "Band 7 Writing: The 4-Paragraph Template That Just Works", excerpt: "A simple Task 2 structure trained 200+ of our students into Band 7+." },
-  { tag: "Excel", img: IMG.excel, title: "XLOOKUP vs VLOOKUP: Why Your Boss Is Asking You to Switch", excerpt: "A 5-minute walkthrough of the function that replaces VLOOKUP for good." },
-  { tag: "Power BI", img: IMG.powerbi, title: "How to Pass PL-300 on the First Attempt (Indian Edition)", excerpt: "The exact 8-week plan our Power BI cohort uses to clear the exam." },
-  { tag: "Python", img: IMG.python, title: "Automate Your Excel Reports with Python in 40 Lines", excerpt: "If you do the same Excel report every week, this script will give you Fridays back." },
-  { tag: "Career", img: IMG.career, title: "BPO to Data Analyst: The Realistic 6-Month Roadmap", excerpt: "What to learn, in what order, and how to talk about it in interviews." },
+  { tag: "Business English", img: IMG.businessEnglish, title: "5 Email Phrases That Make You Sound More Professional", excerpt: "Small wording swaps that instantly upgrade your workplace emails." },
+  { tag: "Interview Prep", img: IMG.presentation, title: "How to Answer 'Tell Me About Yourself' in 60 Seconds", excerpt: "A simple structure our students use to nail the most common interview opener." },
+  { tag: "Career", img: IMG.career, title: "BPO to Client-Facing Role: The Realistic 6-Month Roadmap", excerpt: "What to learn, in what order, and how to talk about it in interviews." },
 ];
 
 function Page() {
@@ -29,7 +28,7 @@ function Page() {
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="book" size={14}/> Blog</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Tips & Stories for <span className="text-sunshine">Indian Learners</span></h1>
-          <p className="mt-5 text-lg text-white">Practical, hype-free articles on English, Excel, data and career building — written by our teachers.</p>
+          <p className="mt-5 text-lg text-white">Practical, hype-free articles on English and career building — written by our teachers.</p>
         </div>
       </section>
 

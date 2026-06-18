@@ -12,22 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as FounderRouteImport } from './routes/founder'
-import { Route as ExcelDataRouteImport } from './routes/excel-data'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
-import { Route as CoursePythonRouteImport } from './routes/course-python'
-import { Route as CoursePromptEngineeringRouteImport } from './routes/course-prompt-engineering'
-import { Route as CoursePowerBiRouteImport } from './routes/course-power-bi'
-import { Route as CourseMsOfficeRouteImport } from './routes/course-ms-office'
-import { Route as CourseMasterExcelRouteImport } from './routes/course-master-excel'
 import { Route as CourseInterviewPrepRouteImport } from './routes/course-interview-prep'
 import { Route as CourseInteractiveSpeakingRouteImport } from './routes/course-interactive-speaking'
 import { Route as CourseIeltsRouteImport } from './routes/course-ielts'
-import { Route as CourseFinanceExcelRouteImport } from './routes/course-finance-excel'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
-import { Route as CourseAiProjectsRouteImport } from './routes/course-ai-projects'
-import { Route as CourseAiBuilderRouteImport } from './routes/course-ai-builder'
 import { Route as BookFreeDemoRouteImport } from './routes/book-free-demo'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutUsRouteImport } from './routes/about-us'
@@ -48,11 +39,6 @@ const FounderRoute = FounderRouteImport.update({
   path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ExcelDataRoute = ExcelDataRouteImport.update({
-  id: '/excel-data',
-  path: '/excel-data',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const EnglishCareerRoute = EnglishCareerRouteImport.update({
   id: '/english-career',
   path: '/english-career',
@@ -61,31 +47,6 @@ const EnglishCareerRoute = EnglishCareerRouteImport.update({
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
   id: '/course-spoken-english',
   path: '/course-spoken-english',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoursePythonRoute = CoursePythonRouteImport.update({
-  id: '/course-python',
-  path: '/course-python',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoursePromptEngineeringRoute = CoursePromptEngineeringRouteImport.update({
-  id: '/course-prompt-engineering',
-  path: '/course-prompt-engineering',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoursePowerBiRoute = CoursePowerBiRouteImport.update({
-  id: '/course-power-bi',
-  path: '/course-power-bi',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CourseMsOfficeRoute = CourseMsOfficeRouteImport.update({
-  id: '/course-ms-office',
-  path: '/course-ms-office',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CourseMasterExcelRoute = CourseMasterExcelRouteImport.update({
-  id: '/course-master-excel',
-  path: '/course-master-excel',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CourseInterviewPrepRoute = CourseInterviewPrepRouteImport.update({
@@ -104,11 +65,6 @@ const CourseIeltsRoute = CourseIeltsRouteImport.update({
   path: '/course-ielts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CourseFinanceExcelRoute = CourseFinanceExcelRouteImport.update({
-  id: '/course-finance-excel',
-  path: '/course-finance-excel',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CourseCareerCounsellingRoute = CourseCareerCounsellingRouteImport.update({
   id: '/course-career-counselling',
   path: '/course-career-counselling',
@@ -117,16 +73,6 @@ const CourseCareerCounsellingRoute = CourseCareerCounsellingRouteImport.update({
 const CourseBusinessEnglishRoute = CourseBusinessEnglishRouteImport.update({
   id: '/course-business-english',
   path: '/course-business-english',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CourseAiProjectsRoute = CourseAiProjectsRouteImport.update({
-  id: '/course-ai-projects',
-  path: '/course-ai-projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CourseAiBuilderRoute = CourseAiBuilderRouteImport.update({
-  id: '/course-ai-builder',
-  path: '/course-ai-builder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookFreeDemoRoute = BookFreeDemoRouteImport.update({
@@ -155,22 +101,13 @@ export interface FileRoutesByFullPath {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/book-free-demo': typeof BookFreeDemoRoute
-  '/course-ai-builder': typeof CourseAiBuilderRoute
-  '/course-ai-projects': typeof CourseAiProjectsRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
-  '/course-finance-excel': typeof CourseFinanceExcelRoute
   '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-prep': typeof CourseInterviewPrepRoute
-  '/course-master-excel': typeof CourseMasterExcelRoute
-  '/course-ms-office': typeof CourseMsOfficeRoute
-  '/course-power-bi': typeof CoursePowerBiRoute
-  '/course-prompt-engineering': typeof CoursePromptEngineeringRoute
-  '/course-python': typeof CoursePythonRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
-  '/excel-data': typeof ExcelDataRoute
   '/founder': typeof FounderRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
@@ -180,22 +117,13 @@ export interface FileRoutesByTo {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/book-free-demo': typeof BookFreeDemoRoute
-  '/course-ai-builder': typeof CourseAiBuilderRoute
-  '/course-ai-projects': typeof CourseAiProjectsRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
-  '/course-finance-excel': typeof CourseFinanceExcelRoute
   '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-prep': typeof CourseInterviewPrepRoute
-  '/course-master-excel': typeof CourseMasterExcelRoute
-  '/course-ms-office': typeof CourseMsOfficeRoute
-  '/course-power-bi': typeof CoursePowerBiRoute
-  '/course-prompt-engineering': typeof CoursePromptEngineeringRoute
-  '/course-python': typeof CoursePythonRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
-  '/excel-data': typeof ExcelDataRoute
   '/founder': typeof FounderRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
@@ -206,22 +134,13 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/blog': typeof BlogRoute
   '/book-free-demo': typeof BookFreeDemoRoute
-  '/course-ai-builder': typeof CourseAiBuilderRoute
-  '/course-ai-projects': typeof CourseAiProjectsRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
-  '/course-finance-excel': typeof CourseFinanceExcelRoute
   '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-prep': typeof CourseInterviewPrepRoute
-  '/course-master-excel': typeof CourseMasterExcelRoute
-  '/course-ms-office': typeof CourseMsOfficeRoute
-  '/course-power-bi': typeof CoursePowerBiRoute
-  '/course-prompt-engineering': typeof CoursePromptEngineeringRoute
-  '/course-python': typeof CoursePythonRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
-  '/excel-data': typeof ExcelDataRoute
   '/founder': typeof FounderRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
@@ -233,22 +152,13 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/book-free-demo'
-    | '/course-ai-builder'
-    | '/course-ai-projects'
     | '/course-business-english'
     | '/course-career-counselling'
-    | '/course-finance-excel'
     | '/course-ielts'
     | '/course-interactive-speaking'
     | '/course-interview-prep'
-    | '/course-master-excel'
-    | '/course-ms-office'
-    | '/course-power-bi'
-    | '/course-prompt-engineering'
-    | '/course-python'
     | '/course-spoken-english'
     | '/english-career'
-    | '/excel-data'
     | '/founder'
     | '/success-stories'
     | '/why-us'
@@ -258,22 +168,13 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/book-free-demo'
-    | '/course-ai-builder'
-    | '/course-ai-projects'
     | '/course-business-english'
     | '/course-career-counselling'
-    | '/course-finance-excel'
     | '/course-ielts'
     | '/course-interactive-speaking'
     | '/course-interview-prep'
-    | '/course-master-excel'
-    | '/course-ms-office'
-    | '/course-power-bi'
-    | '/course-prompt-engineering'
-    | '/course-python'
     | '/course-spoken-english'
     | '/english-career'
-    | '/excel-data'
     | '/founder'
     | '/success-stories'
     | '/why-us'
@@ -283,22 +184,13 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/blog'
     | '/book-free-demo'
-    | '/course-ai-builder'
-    | '/course-ai-projects'
     | '/course-business-english'
     | '/course-career-counselling'
-    | '/course-finance-excel'
     | '/course-ielts'
     | '/course-interactive-speaking'
     | '/course-interview-prep'
-    | '/course-master-excel'
-    | '/course-ms-office'
-    | '/course-power-bi'
-    | '/course-prompt-engineering'
-    | '/course-python'
     | '/course-spoken-english'
     | '/english-career'
-    | '/excel-data'
     | '/founder'
     | '/success-stories'
     | '/why-us'
@@ -309,22 +201,13 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   BlogRoute: typeof BlogRoute
   BookFreeDemoRoute: typeof BookFreeDemoRoute
-  CourseAiBuilderRoute: typeof CourseAiBuilderRoute
-  CourseAiProjectsRoute: typeof CourseAiProjectsRoute
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
-  CourseFinanceExcelRoute: typeof CourseFinanceExcelRoute
   CourseIeltsRoute: typeof CourseIeltsRoute
   CourseInteractiveSpeakingRoute: typeof CourseInteractiveSpeakingRoute
   CourseInterviewPrepRoute: typeof CourseInterviewPrepRoute
-  CourseMasterExcelRoute: typeof CourseMasterExcelRoute
-  CourseMsOfficeRoute: typeof CourseMsOfficeRoute
-  CoursePowerBiRoute: typeof CoursePowerBiRoute
-  CoursePromptEngineeringRoute: typeof CoursePromptEngineeringRoute
-  CoursePythonRoute: typeof CoursePythonRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
-  ExcelDataRoute: typeof ExcelDataRoute
   FounderRoute: typeof FounderRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
   WhyUsRoute: typeof WhyUsRoute
@@ -353,13 +236,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/excel-data': {
-      id: '/excel-data'
-      path: '/excel-data'
-      fullPath: '/excel-data'
-      preLoaderRoute: typeof ExcelDataRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/english-career': {
       id: '/english-career'
       path: '/english-career'
@@ -372,41 +248,6 @@ declare module '@tanstack/react-router' {
       path: '/course-spoken-english'
       fullPath: '/course-spoken-english'
       preLoaderRoute: typeof CourseSpokenEnglishRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-python': {
-      id: '/course-python'
-      path: '/course-python'
-      fullPath: '/course-python'
-      preLoaderRoute: typeof CoursePythonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-prompt-engineering': {
-      id: '/course-prompt-engineering'
-      path: '/course-prompt-engineering'
-      fullPath: '/course-prompt-engineering'
-      preLoaderRoute: typeof CoursePromptEngineeringRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-power-bi': {
-      id: '/course-power-bi'
-      path: '/course-power-bi'
-      fullPath: '/course-power-bi'
-      preLoaderRoute: typeof CoursePowerBiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-ms-office': {
-      id: '/course-ms-office'
-      path: '/course-ms-office'
-      fullPath: '/course-ms-office'
-      preLoaderRoute: typeof CourseMsOfficeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-master-excel': {
-      id: '/course-master-excel'
-      path: '/course-master-excel'
-      fullPath: '/course-master-excel'
-      preLoaderRoute: typeof CourseMasterExcelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-interview-prep': {
@@ -430,13 +271,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CourseIeltsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/course-finance-excel': {
-      id: '/course-finance-excel'
-      path: '/course-finance-excel'
-      fullPath: '/course-finance-excel'
-      preLoaderRoute: typeof CourseFinanceExcelRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/course-career-counselling': {
       id: '/course-career-counselling'
       path: '/course-career-counselling'
@@ -449,20 +283,6 @@ declare module '@tanstack/react-router' {
       path: '/course-business-english'
       fullPath: '/course-business-english'
       preLoaderRoute: typeof CourseBusinessEnglishRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-ai-projects': {
-      id: '/course-ai-projects'
-      path: '/course-ai-projects'
-      fullPath: '/course-ai-projects'
-      preLoaderRoute: typeof CourseAiProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-ai-builder': {
-      id: '/course-ai-builder'
-      path: '/course-ai-builder'
-      fullPath: '/course-ai-builder'
-      preLoaderRoute: typeof CourseAiBuilderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book-free-demo': {
@@ -501,22 +321,13 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   BlogRoute: BlogRoute,
   BookFreeDemoRoute: BookFreeDemoRoute,
-  CourseAiBuilderRoute: CourseAiBuilderRoute,
-  CourseAiProjectsRoute: CourseAiProjectsRoute,
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
-  CourseFinanceExcelRoute: CourseFinanceExcelRoute,
   CourseIeltsRoute: CourseIeltsRoute,
   CourseInteractiveSpeakingRoute: CourseInteractiveSpeakingRoute,
   CourseInterviewPrepRoute: CourseInterviewPrepRoute,
-  CourseMasterExcelRoute: CourseMasterExcelRoute,
-  CourseMsOfficeRoute: CourseMsOfficeRoute,
-  CoursePowerBiRoute: CoursePowerBiRoute,
-  CoursePromptEngineeringRoute: CoursePromptEngineeringRoute,
-  CoursePythonRoute: CoursePythonRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
   EnglishCareerRoute: EnglishCareerRoute,
-  ExcelDataRoute: ExcelDataRoute,
   FounderRoute: FounderRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
   WhyUsRoute: WhyUsRoute,
@@ -524,3 +335,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

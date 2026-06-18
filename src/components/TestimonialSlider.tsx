@@ -24,7 +24,7 @@ export function TestimonialSlider({ items, ctaLabel = "I Want This Result" }: { 
             </div>
           ))}
         </div>
-        <div className="text-center text-xs text-ink/50 font-semibold mt-2">← swipe to read more →</div>
+        <div className="text-center text-xs text-ink/75 font-semibold mt-2">← swipe to read more →</div>
       </div>
     </>
   );

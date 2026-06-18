@@ -12,11 +12,11 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Learn With Smile | Live English, Excel, Data & AI Classes from ₹999" },
-      { name: "description", content: "7 yrs teaching online. Spoken English, IELTS, Excel, Python, Power BI, AI with Claude & ChatGPT — live classes. Max 6 per batch or 1:1. Free demo on WhatsApp." },
-      { name: "keywords", content: "spoken english classes online india, ielts coaching online, excel classes, python online india, power bi training, prompt engineering claude chatgpt, ai courses india, learn with smile, kolkata online classes" },
-      { property: "og:title", content: "Learn With Smile | Live English, Excel, Data & AI Classes" },
-      { property: "og:description", content: "Live online classes from ₹999/mo. English, Excel, Power BI, Python & AI with Claude/ChatGPT. Max 6 per batch or 1:1." },
+      { title: "Learn With Smile | Live English & Career Classes from ₹999" },
+      { name: "description", content: "7 yrs teaching online. Spoken English, Business English, IELTS, Interview Prep & Career Counselling — live classes. Max 6 per batch or 1:1. Free demo on WhatsApp." },
+      { name: "keywords", content: "spoken english classes online india, ielts coaching online, business english, interview preparation, career counselling, learn with smile, kolkata online classes" },
+      { property: "og:title", content: "Learn With Smile | Live English & Career Classes" },
+      { property: "og:description", content: "Live online classes from ₹999/mo. Spoken English, Business English, IELTS & Career Counselling. Max 6 per batch or 1:1." },
       { property: "og:image", content: IMG.heroClass },
       { property: "og:url", content: withBasePath("/") },
     ],
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "Learn With Smile",
           url: "https://learnwithsmile.in",
-          description: "Live online classes in English, Excel, Data Analytics and AI for learners across India, based in Kolkata.",
+          description: "Live online English and career classes for learners across India, based in Kolkata.",
           address: {
             "@type": "PostalAddress",
             streetAddress: "75/2/4, Raja Ram Mohan Roy Road",
@@ -62,14 +62,14 @@ function Home() {
       waMessage: "Hi, I saw Priya's story. I want the same result. Can I get a free demo for Spoken English?",
     },
     {
-      quote: "Cleared PL-300 on first attempt. Showed my three live-built dashboards in the interview and got the BI Analyst role the same week. The live teacher and small batch made all the difference.",
-      name: "Rohan Mehta", detail: "Power BI Mastery · BI Analyst, Bangalore",
-      waMessage: "Hi, I saw Rohan's Power BI story. I want the same result. Can I get a free demo?",
+      quote: "Cleared my IELTS with a band 7.5 on the first attempt. The mock tests and live feedback every week made all the difference.",
+      name: "Rohan Mehta", detail: "IELTS Preparation · BI Analyst, Bangalore",
+      waMessage: "Hi, I saw Rohan's IELTS story. I want the same result. Can I get a free demo?",
     },
     {
-      quote: "Switched from a BPO to a data analyst role. Salary doubled in 4 months. Gamified Python exercises made coding enjoyable, not intimidating. Best decision I made this year.",
-      name: "Siddharth Nair", detail: "Master Python · Data Analyst, Pune",
-      waMessage: "Hi, I saw Siddharth's Python story. I want the same career switch. Can I get a free demo?",
+      quote: "Switched from a BPO to a client-facing role. Salary doubled in 4 months. Gamified speaking exercises made interviews enjoyable, not intimidating. Best decision I made this year.",
+      name: "Siddharth Nair", detail: "Interview Prep · Customer Success, Pune",
+      waMessage: "Hi, I saw Siddharth's story. I want the same career switch. Can I get a free demo?",
     },
   ];
 
@@ -148,10 +148,9 @@ function Home() {
       {/* TRACKS */}
       <section className="section">
         <div className="container-x">
-          <SectionHeader eyebrow="What We Teach" title="Two Powerful Learning Tracks" subtitle="Click either track to explore all courses, full curriculums and module breakdowns." />
-          <div className="grid md:grid-cols-2 gap-6">
+          <SectionHeader eyebrow="What We Teach" title="Our Learning Track" subtitle="Click the track to explore all courses, full curriculums and module breakdowns." />
+          <div className="grid md:grid-cols-1 gap-6">
             <TrackCard to="/english-career" tag="6 Courses · From ₹999/mo" title="English & Career" desc="Spoken English · Business English · Interactive Speaking · IELTS · Interview Prep · Career Counselling" img={IMG.speaking} accent="brand"/>
-            <TrackCard to="/excel-data" tag="8 Courses · From ₹999/mo" title="Excel, Data & AI" desc="MS Office · Master Excel · Finance Excel · Python · Power BI · Prompt Engineering · Claude API · AI Projects" img={IMG.dataDash} accent="indigo"/>
           </div>
           <div className="mt-6 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -181,7 +180,7 @@ function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "14 live programs", c: "sunshine" },
+              { n: 1, lbl: "Choose Course", sub: "6 live programs", c: "sunshine" },
               { n: 2, lbl: "Pick Format", sub: "Batch or 1:1", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Reply in minutes", c: "wa" },
               { n: 4, lbl: "Join Live Class", sub: "First session starts", c: "sage" },
@@ -260,8 +259,8 @@ function Home() {
                 <span className="h-11 w-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center"><BatchIcon/></span>
                 <h3 className="text-ink font-display font-extrabold text-lg">Small Batch (Max 6)</h3>
               </div>
-              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹999<span className="text-base font-bold text-ink/80">/month</span></p>
-              <p className="text-sm text-ink/80 mt-1">EMI · billed monthly</p>
+              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹999<span className="text-base font-bold text-ink/90">/month</span></p>
+              <p className="text-sm text-ink/90 mt-1">EMI · billed monthly</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Live, interactive online classes</li>
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Flexible morning · evening · weekend slots</li>
@@ -288,7 +287,7 @@ function Home() {
                 <h3 className="text-ink font-display font-extrabold text-lg">Free Demo</h3>
               </div>
               <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹0</p>
-              <p className="text-sm text-ink/80 mt-1">First live class — zero commitment</p>
+              <p className="text-sm text-ink/90 mt-1">First live class — zero commitment</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Meet your teacher live</li>
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Get a custom learning plan</li>
@@ -296,7 +295,7 @@ function Home() {
               </ul>
             </article>
           </div>
-          <p className="text-center text-ink/80 text-sm mt-6">All prices in INR. GST included where applicable. Need a quote for your course? Ping us on WhatsApp ↓</p>
+          <p className="text-center text-ink/90 text-sm mt-6">All prices in INR. GST included where applicable. Need a quote for your course? Ping us on WhatsApp ↓</p>
 
         </div>
       </section>

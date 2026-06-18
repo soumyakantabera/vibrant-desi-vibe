@@ -10,13 +10,12 @@ export const Route = createFileRoute("/book-free-demo")({
   component: Page,
   head: () => ({ meta: [
     { title: "Book Free Demo | Learn With Smile" },
-    { name: "description", content: "Book a free live demo class — fill 4 fields, we confirm on WhatsApp instantly. English, Excel, Data Analytics — your choice." },
+    { name: "description", content: "Book a free live demo class — fill 4 fields, we confirm on WhatsApp instantly. English & Career — your choice." },
   ]}),
 });
 
 const COURSES = [
   "Spoken English","IELTS","Business English","Interactive Speaking","Interview Prep","Career Counselling",
-  "MS Office","Master Excel","Finance Excel","Python","Power BI","R & RStudio","MATLAB","Tableau","Data Analyst Accelerator",
 ];
 
 function Page() {
@@ -62,7 +61,7 @@ function Page() {
             <img src={IMG.studentLaptop} alt="Indian learner" className="rounded-3xl shadow-lg object-cover h-[280px] w-full"/>
             <div className="card-soft bg-gradient-to-br from-brand-soft to-cream">
               <h3 className="font-display text-xl text-ink mb-2">What happens after you click send?</h3>
-              <ol className="space-y-2 text-sm text-ink/80 list-decimal pl-4">
+              <ol className="space-y-2 text-sm text-ink/90 list-decimal pl-4">
                 <li>WhatsApp opens with your message pre-filled.</li>
                 <li>You hit send — our team replies within minutes.</li>
                 <li>We confirm the next available live demo slot.</li>
