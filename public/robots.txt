@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://soumyakantabera.github.io/vibrant-desi-vibe/sitemap.xml

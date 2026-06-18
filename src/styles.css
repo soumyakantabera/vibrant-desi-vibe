@@ -52,8 +52,8 @@
   --primary-foreground: #ffffff;
   --secondary: #F5B700;
   --secondary-foreground: #0B1F14;
-  --muted: #F4F6F4;
-  --muted-foreground: #3F4F45;
+  --muted: #F1F4F2;
+  --muted-foreground: #2C3A31;
   --accent: #FFE7B5;
   --accent-foreground: #0B1F14;
   --border: #E5EAE6;
@@ -118,6 +118,74 @@ section > .container-x { position: relative; z-index: 10; }
 }
 .text-cream\/70, .text-cream\/75, .text-cream\/80, .text-cream\/85, .text-cream\/90, .text-cream\/95 {
   color: #F4FAF6 !important;
+}
+
+/* ===== Global contrast safety net (WCAG AA) =====
+   Keep all text legible on every background without rewriting components. */
+
+/* Light backgrounds: never let body copy drop below ~7:1 contrast */
+.text-muted-foreground { color: #2C3A31 !important; }
+.text-foreground\/60, .text-foreground\/70, .text-foreground\/80,
+.text-ink\/50, .text-ink\/60, .text-ink\/70, .text-ink\/75, .text-ink\/80 {
+  color: #1A2A20 !important;
+}
+
+/* Dark backgrounds: force bright text everywhere, incl. muted variants */
+.bg-brand, .bg-brand-deep, .bg-ink, .bg-indigo-pop, .bg-coral,
+.bg-wa, .bg-wa-deep, [class*="bg-gradient"] {
+  color: #FFFFFF;
+}
+.bg-brand .text-muted-foreground, .bg-brand-deep .text-muted-foreground,
+.bg-ink .text-muted-foreground, .bg-indigo-pop .text-muted-foreground,
+.bg-coral .text-muted-foreground, [class*="bg-gradient"] .text-muted-foreground {
+  color: #EAF5EE !important;
+}
+.bg-brand p, .bg-brand li, .bg-brand span:not([class*="bg-"]),
+.bg-indigo-pop p, .bg-indigo-pop li, .bg-indigo-pop span:not([class*="bg-"]),
+.bg-coral p, .bg-coral li, .bg-coral span:not([class*="bg-"]),
+[class*="bg-gradient"] p, [class*="bg-gradient"] li {
+  color: #F4FAF6;
+}
+.bg-brand h1, .bg-brand h2, .bg-brand h3, .bg-brand h4, .bg-brand h5,
+.bg-brand-deep h1, .bg-brand-deep h2, .bg-brand-deep h3, .bg-brand-deep h4, .bg-brand-deep h5,
+.bg-ink h1, .bg-ink h2, .bg-ink h3, .bg-ink h4, .bg-ink h5,
+.bg-indigo-pop h1, .bg-indigo-pop h2, .bg-indigo-pop h3,
+.bg-coral h1, .bg-coral h2, .bg-coral h3,
+[class*="bg-gradient"] h1, [class*="bg-gradient"] h2, [class*="bg-gradient"] h3,
+[class*="bg-gradient"] h4, [class*="bg-gradient"] h5 {
+  color: #FFFFFF;
+}
+
+/* Soft-tinted backgrounds: deepen text so it doesn't disappear */
+.bg-brand-soft, .bg-sage, .bg-accent, .bg-cream, .bg-muted, .bg-secondary {
+  color: #0B1F14;
+}
+.bg-brand-soft p, .bg-sage p, .bg-accent p, .bg-cream p, .bg-muted p, .bg-secondary p,
+.bg-brand-soft li, .bg-sage li, .bg-accent li, .bg-muted li {
+  color: #14281D;
+}
+
+/* Yellow/sunshine on light = very hard to read — darken text */
+.bg-sunshine, .bg-yellow-300, .bg-yellow-400 {
+  color: #1A1300;
+}
+
+/* Translucent white text on light hero overlays (defensive) */
+.text-white\/50, .text-white\/55, .text-white\/60, .text-white\/65 {
+  color: #FFFFFF !important;
+}
+
+/* Links default to brand-deep on light, white on dark sections */
+a { color: inherit; }
+.bg-brand a, .bg-brand-deep a, .bg-ink a,
+[class*="bg-gradient"] a { color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6); }
+
+/* Pills / chips on dark sections */
+.bg-brand .pill, .bg-brand-deep .pill, .bg-ink .pill,
+[class*="bg-gradient"] .pill {
+  background: rgba(255,255,255,.14);
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,.28);
 }
 
 
