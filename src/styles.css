@@ -194,16 +194,26 @@ section > .container-x { position: relative; z-index: 10; }
 [class*="from-brand-soft"] .text-sunshine {
   color: #8A6D00 !important;
 }
+/* …but a dark card nested inside a light section wins — keep it bright there.
+   (Listed last so it beats the amber rule when both ancestors match.) */
+.bg-brand .text-sunshine, .bg-brand-deep .text-sunshine, .bg-ink .text-sunshine,
+[class*="bg-brand-deep/"] .text-sunshine, [class*="bg-ink/"] .text-sunshine,
+[class*="from-ink"] .text-sunshine, [class*="from-brand-deep"] .text-sunshine,
+[class*="via-indigo-pop"] .text-sunshine {
+  color: var(--sunshine) !important;
+}
 
 /* WhatsApp greens: --wa (#25D366) is too light for white text */
 .bg-wa { color: #053B1E; }
 .bg-wa.text-white, .bg-wa .text-white { color: #0B1F14 !important; }
 .text-wa { color: #084633; }
 
-/* Links default to inherit; force white on dark sections + dark gradients */
+/* Plain links go white on dark sections; buttons (.btn) keep their own
+   background/text colours so white/sun/wa buttons stay legible. */
 a { color: inherit; }
-.bg-brand a, .bg-brand-deep a, .bg-ink a,
-[class*="from-ink"] a, [class*="from-brand-deep"] a, [class*="via-indigo-pop"] a {
+.bg-brand a:not(.btn), .bg-brand-deep a:not(.btn), .bg-ink a:not(.btn),
+[class*="from-ink"] a:not(.btn), [class*="from-brand-deep"] a:not(.btn),
+[class*="via-indigo-pop"] a:not(.btn) {
   color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6);
 }
 
