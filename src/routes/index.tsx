@@ -316,7 +316,7 @@ function Home() {
             </div>
             <Link to="/book-free-demo" className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group">
               <img src={IMG.womanLaptop} alt="Indian woman booking a class" className="absolute inset-0 w-full h-full object-cover transition group-hover:scale-105"/>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent"/>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20"/>
               <div className="relative p-7 text-cream">
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2"><Icon name="calendar" size={22}/> Book a Free Demo Class</h3>
                 <p className="text-white mb-4">Fill a 30-second form — name, number, course. We confirm your live demo via WhatsApp instantly.</p>
