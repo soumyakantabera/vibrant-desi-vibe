@@ -52,7 +52,7 @@ export function SnapshotCard({
 
         <div className="relative">
           {badge && (
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-wa/15 text-wa font-display font-bold text-[11px] uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-wa/15 text-brand-deep font-display font-bold text-[11px] uppercase tracking-widest">
               <span className="h-2 w-2 rounded-full bg-wa animate-pulse"/> {badge}
             </span>
           )}

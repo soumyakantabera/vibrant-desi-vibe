@@ -104,15 +104,20 @@ section { isolation: isolate; }
 section > .container-x { position: relative; z-index: 10; }
 
 /* Force high-contrast text on dark backgrounds */
-.bg-brand-deep, .bg-ink, [class*="bg-gradient"] {
+.bg-brand-deep, .bg-ink, [class*="bg-gradient"],
+[class*="bg-brand-deep/"], [class*="bg-ink/"] {
   color: #ffffff;
 }
 .bg-brand-deep p, .bg-ink p,
 .bg-brand-deep li, .bg-ink li,
-.bg-brand-deep span, .bg-ink span {
+.bg-brand-deep span, .bg-ink span,
+[class*="bg-brand-deep/"] p, [class*="bg-ink/"] p,
+[class*="bg-brand-deep/"] li, [class*="bg-ink/"] li,
+[class*="bg-brand-deep/"] span, [class*="bg-ink/"] span {
   color: #F1F8F3;
 }
-.bg-brand-deep strong, .bg-ink strong { color: #FFFFFF; font-weight: 800; }
+.bg-brand-deep strong, .bg-ink strong,
+[class*="bg-brand-deep/"] strong, [class*="bg-ink/"] strong { color: #FFFFFF; font-weight: 800; }
 .text-white\/70, .text-white\/75, .text-white\/80, .text-white\/85, .text-white\/90, .text-white\/95 {
   color: #F4FAF6 !important;
 }
@@ -170,6 +175,10 @@ section > .container-x { position: relative; z-index: 10; }
   color: #1A1300;
 }
 
+/* WhatsApp green (--wa #25D366) is too light for white text — force dark text */
+.bg-wa.text-white, .bg-wa .text-white { color: #0B1F14 !important; }
+.text-wa { color: #084633; }
+
 /* Translucent white text on light hero overlays (defensive) */
 .text-white\/50, .text-white\/55, .text-white\/60, .text-white\/65 {
   color: #FFFFFF !important;
@@ -225,7 +234,7 @@ a { color: inherit; }
   .btn-wa:hover { background: var(--wa-deep); color: #fff; }
   .btn-sun { background: var(--sunshine); color: var(--ink); }
   .btn-sun:hover { background: #E0A800; }
-  .btn-coral { background: var(--coral); color: #fff; }
+  .btn-coral { background: var(--coral); color: var(--ink); }
   .btn-outline { background: transparent; color: var(--brand-deep); border: 2px solid var(--brand); }
   .btn-outline:hover { background: var(--brand); color: #fff; }
   .btn-white { background: #fff; color: var(--brand-deep); }
