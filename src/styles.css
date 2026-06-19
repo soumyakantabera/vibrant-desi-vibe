@@ -103,21 +103,57 @@
 section { isolation: isolate; }
 section > .container-x { position: relative; z-index: 10; }
 
-/* Force high-contrast text on dark backgrounds */
-.bg-brand-deep, .bg-ink, [class*="bg-gradient"],
-[class*="bg-brand-deep/"], [class*="bg-ink/"] {
-  color: #ffffff;
+/* ===== Contrast safety net (WCAG AA) =====
+   Text colour is derived from the *background* it sits on, so copy stays
+   legible everywhere without rewriting components.
+
+   Gradients are the tricky part: this site uses BOTH dark gradients
+   (hero overlays, mottos — `from-ink`/`from-brand-deep`/`via-indigo-pop`)
+   and light gradients (cards — `from-white`/`from-cream`/`from-brand-soft`).
+   We match each by its colour stops so light cards never get white text
+   forced onto a near-white background (which made copy invisible). */
+
+/* --- Dark, solid surfaces + dark gradients: force bright text --- */
+.bg-brand, .bg-brand-deep, .bg-ink, .bg-indigo-pop, .bg-wa-deep,
+[class*="bg-brand-deep/"], [class*="bg-ink/"],
+[class*="from-ink"], [class*="via-ink"],
+[class*="from-brand-deep"], [class*="via-brand-deep"],
+[class*="from-indigo-pop"], [class*="via-indigo-pop"] {
+  color: #FFFFFF;
 }
-.bg-brand-deep p, .bg-ink p,
-.bg-brand-deep li, .bg-ink li,
-.bg-brand-deep span, .bg-ink span,
-[class*="bg-brand-deep/"] p, [class*="bg-ink/"] p,
-[class*="bg-brand-deep/"] li, [class*="bg-ink/"] li,
-[class*="bg-brand-deep/"] span, [class*="bg-ink/"] span {
-  color: #F1F8F3;
+.bg-brand p, .bg-brand li, .bg-brand span:not([class*="bg-"]),
+.bg-brand-deep p, .bg-brand-deep li, .bg-brand-deep span:not([class*="bg-"]),
+.bg-ink p, .bg-ink li, .bg-ink span:not([class*="bg-"]),
+.bg-indigo-pop p, .bg-indigo-pop li, .bg-indigo-pop span:not([class*="bg-"]),
+[class*="bg-brand-deep/"] p, [class*="bg-brand-deep/"] li,
+[class*="bg-ink/"] p, [class*="bg-ink/"] li,
+[class*="from-ink"] p, [class*="from-ink"] li,
+[class*="from-brand-deep"] p, [class*="from-brand-deep"] li,
+[class*="via-indigo-pop"] p, [class*="via-indigo-pop"] li {
+  color: #F4FAF6;
 }
-.bg-brand-deep strong, .bg-ink strong,
-[class*="bg-brand-deep/"] strong, [class*="bg-ink/"] strong { color: #FFFFFF; font-weight: 800; }
+.bg-brand h1, .bg-brand h2, .bg-brand h3, .bg-brand h4, .bg-brand h5,
+.bg-brand-deep h1, .bg-brand-deep h2, .bg-brand-deep h3, .bg-brand-deep h4, .bg-brand-deep h5,
+.bg-ink h1, .bg-ink h2, .bg-ink h3, .bg-ink h4, .bg-ink h5,
+.bg-indigo-pop h1, .bg-indigo-pop h2, .bg-indigo-pop h3,
+[class*="bg-brand-deep/"] h1, [class*="bg-brand-deep/"] h2, [class*="bg-brand-deep/"] h3,
+[class*="from-ink"] h1, [class*="from-ink"] h2, [class*="from-ink"] h3, [class*="from-ink"] h4, [class*="from-ink"] h5,
+[class*="from-brand-deep"] h1, [class*="from-brand-deep"] h2, [class*="from-brand-deep"] h3,
+[class*="via-indigo-pop"] h1, [class*="via-indigo-pop"] h2, [class*="via-indigo-pop"] h3 {
+  color: #FFFFFF;
+}
+.bg-brand strong, .bg-brand-deep strong, .bg-ink strong,
+[class*="bg-brand-deep/"] strong, [class*="bg-ink/"] strong,
+[class*="from-ink"] strong, [class*="from-brand-deep"] strong { color: #FFFFFF; font-weight: 800; }
+
+.bg-brand .text-muted-foreground, .bg-brand-deep .text-muted-foreground,
+.bg-ink .text-muted-foreground, .bg-indigo-pop .text-muted-foreground,
+[class*="from-ink"] .text-muted-foreground, [class*="from-brand-deep"] .text-muted-foreground {
+  color: #EAF5EE !important;
+}
+
+/* Translucent white/cream helper text on dark surfaces — keep it bright */
+.text-white\/50, .text-white\/55, .text-white\/60, .text-white\/65,
 .text-white\/70, .text-white\/75, .text-white\/80, .text-white\/85, .text-white\/90, .text-white\/95 {
   color: #F4FAF6 !important;
 }
@@ -125,73 +161,55 @@ section > .container-x { position: relative; z-index: 10; }
   color: #F4FAF6 !important;
 }
 
-/* ===== Global contrast safety net (WCAG AA) =====
-   Keep all text legible on every background without rewriting components. */
-
-/* Light backgrounds: never let body copy drop below ~7:1 contrast */
+/* --- Light backgrounds: keep body copy at strong contrast --- */
 .text-muted-foreground { color: #2C3A31 !important; }
 .text-foreground\/60, .text-foreground\/70, .text-foreground\/80,
 .text-ink\/50, .text-ink\/60, .text-ink\/70, .text-ink\/75, .text-ink\/80 {
   color: #1A2A20 !important;
 }
 
-/* Dark backgrounds: force bright text everywhere, incl. muted variants */
-.bg-brand, .bg-brand-deep, .bg-ink, .bg-indigo-pop, .bg-coral,
-.bg-wa, .bg-wa-deep, [class*="bg-gradient"] {
-  color: #FFFFFF;
-}
-.bg-brand .text-muted-foreground, .bg-brand-deep .text-muted-foreground,
-.bg-ink .text-muted-foreground, .bg-indigo-pop .text-muted-foreground,
-.bg-coral .text-muted-foreground, [class*="bg-gradient"] .text-muted-foreground {
-  color: #EAF5EE !important;
-}
-.bg-brand p, .bg-brand li, .bg-brand span:not([class*="bg-"]),
-.bg-indigo-pop p, .bg-indigo-pop li, .bg-indigo-pop span:not([class*="bg-"]),
-.bg-coral p, .bg-coral li, .bg-coral span:not([class*="bg-"]),
-[class*="bg-gradient"] p, [class*="bg-gradient"] li {
-  color: #F4FAF6;
-}
-.bg-brand h1, .bg-brand h2, .bg-brand h3, .bg-brand h4, .bg-brand h5,
-.bg-brand-deep h1, .bg-brand-deep h2, .bg-brand-deep h3, .bg-brand-deep h4, .bg-brand-deep h5,
-.bg-ink h1, .bg-ink h2, .bg-ink h3, .bg-ink h4, .bg-ink h5,
-.bg-indigo-pop h1, .bg-indigo-pop h2, .bg-indigo-pop h3,
-.bg-coral h1, .bg-coral h2, .bg-coral h3,
-[class*="bg-gradient"] h1, [class*="bg-gradient"] h2, [class*="bg-gradient"] h3,
-[class*="bg-gradient"] h4, [class*="bg-gradient"] h5 {
-  color: #FFFFFF;
-}
-
-/* Soft-tinted backgrounds: deepen text so it doesn't disappear */
-.bg-brand-soft, .bg-sage, .bg-accent, .bg-cream, .bg-muted, .bg-secondary {
+/* --- Soft / light surfaces + light gradients + coral: force dark text --- */
+.bg-brand-soft, .bg-sage, .bg-accent, .bg-cream, .bg-muted, .bg-secondary, .bg-coral,
+[class*="from-white"], [class*="to-white"],
+[class*="from-cream"], [class*="to-cream"],
+[class*="from-brand-soft"], [class*="to-brand-soft"] {
   color: #0B1F14;
 }
-.bg-brand-soft p, .bg-sage p, .bg-accent p, .bg-cream p, .bg-muted p, .bg-secondary p,
-.bg-brand-soft li, .bg-sage li, .bg-accent li, .bg-muted li {
+.bg-brand-soft p, .bg-sage p, .bg-accent p, .bg-cream p, .bg-muted p, .bg-secondary p, .bg-coral p,
+.bg-brand-soft li, .bg-sage li, .bg-accent li, .bg-muted li, .bg-coral li,
+[class*="from-white"] p, [class*="from-cream"] p, [class*="to-cream"] p, [class*="from-brand-soft"] p,
+[class*="from-white"] li, [class*="from-cream"] li, [class*="to-cream"] li, [class*="from-brand-soft"] li {
   color: #14281D;
 }
 
-/* Yellow/sunshine on light = very hard to read — darken text */
+/* Yellow/sunshine fills on light = very hard to read — darken text */
 .bg-sunshine, .bg-yellow-300, .bg-yellow-400 {
   color: #1A1300;
 }
 
-/* WhatsApp green (--wa #25D366) is too light for white text — force dark text */
+/* Sunshine TEXT only reads on dark; on light surfaces darken to amber */
+.bg-white .text-sunshine, .bg-cream .text-sunshine, .bg-muted .text-sunshine,
+.bg-brand-soft .text-sunshine,
+[class*="from-white"] .text-sunshine, [class*="from-cream"] .text-sunshine,
+[class*="from-brand-soft"] .text-sunshine {
+  color: #8A6D00 !important;
+}
+
+/* WhatsApp greens: --wa (#25D366) is too light for white text */
+.bg-wa { color: #053B1E; }
 .bg-wa.text-white, .bg-wa .text-white { color: #0B1F14 !important; }
 .text-wa { color: #084633; }
 
-/* Translucent white text on light hero overlays (defensive) */
-.text-white\/50, .text-white\/55, .text-white\/60, .text-white\/65 {
-  color: #FFFFFF !important;
-}
-
-/* Links default to brand-deep on light, white on dark sections */
+/* Links default to inherit; force white on dark sections + dark gradients */
 a { color: inherit; }
 .bg-brand a, .bg-brand-deep a, .bg-ink a,
-[class*="bg-gradient"] a { color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6); }
+[class*="from-ink"] a, [class*="from-brand-deep"] a, [class*="via-indigo-pop"] a {
+  color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6);
+}
 
-/* Pills / chips on dark sections */
+/* Pills / chips on dark sections + dark gradients */
 .bg-brand .pill, .bg-brand-deep .pill, .bg-ink .pill,
-[class*="bg-gradient"] .pill {
+[class*="from-ink"] .pill, [class*="from-brand-deep"] .pill, [class*="via-indigo-pop"] .pill {
   background: rgba(255,255,255,.14);
   color: #FFFFFF;
   border-color: rgba(255,255,255,.28);

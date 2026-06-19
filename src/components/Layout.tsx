@@ -13,7 +13,7 @@ export function Layout({
   footerImage?: string;
 }) {
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="min-h-screen flex flex-col bg-background">
       <Nav />
       <main className="flex-1">{children}</main>
       <Footer image={footerImage} />
