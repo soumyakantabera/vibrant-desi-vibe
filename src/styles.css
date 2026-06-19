@@ -200,10 +200,11 @@ section > .container-x { position: relative; z-index: 10; }
 .bg-wa.text-white, .bg-wa .text-white { color: #0B1F14 !important; }
 .text-wa { color: #084633; }
 
-/* Links default to inherit; force white on dark sections + dark gradients */
+/* Links default to inherit; force white on dark sections + dark gradients.
+   Exclude .btn so buttons keep their own variant colors (e.g. btn-white = dark text). */
 a { color: inherit; }
-.bg-brand a, .bg-brand-deep a, .bg-ink a,
-[class*="from-ink"] a, [class*="from-brand-deep"] a, [class*="via-indigo-pop"] a {
+.bg-brand a:not(.btn), .bg-brand-deep a:not(.btn), .bg-ink a:not(.btn),
+[class*="from-ink"] a:not(.btn), [class*="from-brand-deep"] a:not(.btn), [class*="via-indigo-pop"] a:not(.btn) {
   color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6);
 }
 
