@@ -6,8 +6,7 @@ import teacher from "@/assets/teacher.jpg";
 import dataAnalyst from "@/assets/data-analyst.jpg";
 import coder from "@/assets/coder.jpg";
 import interview from "@/assets/interview.jpg";
-import founder from "@/assets/founder.png";
-import founderSoumya from "@/assets/founder-soumya.jpg";
+import founder from "@/assets/founder.jpg";
 import speaking from "@/assets/speaking.jpg";
 import group from "@/assets/group.jpg";
 import presentation from "@/assets/presentation.jpg";
@@ -44,7 +43,6 @@ export const IMG = {
   girlReading: studentLaptop,
   manStudying: ielts,
   founder,
-  founderSoumya,
 
   // Courses — distinct image per topic
   presentation,
