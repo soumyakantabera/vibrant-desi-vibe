@@ -7,8 +7,8 @@ import { IMG } from "@/lib/images";
 export const Route = createFileRoute("/founder")({
   component: Page,
   head: () => ({ meta: [
-    { title: "Meet the Founders | Sunanda Dey & Soumyakanta Bera — Learn With Smile" },
-    { name: "description", content: "Meet Sunanda Dey & Soumyakanta Bera, founders of Learn With Smile. English & career mentor + data/finance mentor — 100% online live, flexible timings, pan-India." },
+    { title: "Meet the Founder | Sunanda Dey — Learn With Smile" },
+    { name: "description", content: "Meet Sunanda Dey, founder of Learn With Smile. English & career mentor — 100% online live, flexible timings, pan-India." },
   ]}),
 });
 
@@ -60,8 +60,8 @@ function Page() {
       <section className="relative">
         <div className="absolute inset-0 z-0"><img src={IMG.teacherWoman} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
-          <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founders</span>
-          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Two mentors. One mission.</h1>
+          <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founder</span>
+          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">One mentor. One mission.</h1>
           <p className="mt-4 text-lg text-white">100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or 1:1 · pan-India, based in Kolkata. Every learner gets two free 1:1 feedback sessions every month.</p>
         </div>
       </section>
@@ -98,42 +98,11 @@ function Page() {
         </div>
       </section>
 
-      {/* SOUMYAKANTA */}
-      <section className="section bg-brand-soft/30">
-        <div className="container-x">
-          <FounderCard
-            name="Soumyakanta Bera"
-            title="Co-Founder · Career & Interview Mentor"
-            image={IMG.founderSoumya}
-            intro="Soumyakanta turned a lifelong hobby — helping the people around him plan their careers and crack interviews — into a teaching practice. With a strong academic and applied background in finance, he now mentors learners through interview prep and career counselling with India-context guidance and real-world workflows."
-            credentials={[
-              "MSc · Finance and Risk Management",
-              "Academic + applied background in quantitative analysis",
-              "Mentor since college — peers, juniors, working professionals",
-              "Builds India-context guidance for every learner",
-            ]}
-            teaches={[
-              "Interview Prep · Mock Interviews",
-              "Career Counselling · Roadmapping",
-              "Business English for Working Professionals",
-            ]}
-            promises={[
-              "Concepts broken down to first principles",
-              "Real, India-context practice — not toy examples",
-              "Honest review of your answers and approach",
-              "Career-aligned roadmap, not just lecture hours",
-            ]}
-            waMessage="Hi Soumyakanta, I'd like to book a free demo for Interview Prep / Career Counselling."
-            reverse
-          />
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="section bg-brand text-cream">
         <div className="container-x text-center">
-          <h2 className="text-cream text-3xl md:text-4xl">Talk to the founders directly.</h2>
-          <p className="mt-3 text-white max-w-xl mx-auto">Tell us your goal — we'll pair you with the right mentor and confirm a free live demo slot on WhatsApp.</p>
+          <h2 className="text-cream text-3xl md:text-4xl">Talk to the founder directly.</h2>
+          <p className="mt-3 text-white max-w-xl mx-auto">Tell us your goal — we'll confirm a free live demo slot on WhatsApp.</p>
           <div className="mt-6"><WaButton message="Hi founders, I want a free demo. Please guide me." variant="sun" size="lg">Book Free Demo on WhatsApp</WaButton></div>
         </div>
       </section>
