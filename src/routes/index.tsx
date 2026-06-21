@@ -319,7 +319,7 @@ function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20"/>
               <div className="relative p-7 text-cream">
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2"><Icon name="calendar" size={22}/> Book a Free Demo Class</h3>
-                <p className="text-white mb-4">Fill a 30-second form — name, number, course. We confirm your live demo via WhatsApp instantly.</p>
+                <p className="text-cream/95 mb-4">Fill a 30-second form — name, number, course. We confirm your live demo via WhatsApp instantly.</p>
                 <span className="btn btn-sun btn-sm">Open Demo Form <Icon name="arrow-right" size={14}/></span>
               </div>
             </Link>
