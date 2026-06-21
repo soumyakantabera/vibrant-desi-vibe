@@ -247,18 +247,25 @@ a { color: inherit; }
   .btn:hover { transform: translateY(-1px); }
   .btn-lg { padding: 1rem 1.5rem; font-size: 1.02rem; min-height: 54px; }
   .btn-sm { padding: .6rem .95rem; font-size: .85rem; min-height: 40px; }
-  .btn-primary { background: var(--brand); color: #fff; }
+  /* Primary CTA: deepened green lifts white-text contrast to ~6.3:1 (was 5.2:1)
+     while staying in the brand-green family. */
+  .btn-primary { background: #0B6E4F; color: #fff; }
   .btn-primary:hover { background: var(--brand-deep); }
   .btn-wa { background: var(--wa); color: #053b1e; }
   .btn-wa:hover { background: var(--wa-deep); color: #fff; }
   .btn-sun { background: var(--sunshine); color: var(--ink); }
   .btn-sun:hover { background: #E0A800; }
   .btn-coral { background: var(--coral); color: var(--ink); }
+  .btn-coral:hover { background: #F0584A; }
   .btn-outline { background: transparent; color: var(--brand-deep); border: 2px solid var(--brand); }
   .btn-outline:hover { background: var(--brand); color: #fff; }
   .btn-white { background: #fff; color: var(--brand-deep); }
   .btn-ghost-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.5); padding: .8rem 1.2rem; border-radius: 999px; display:inline-flex; align-items:center; gap:.4rem; font-family: var(--font-display); font-weight: 700; }
   .btn-ghost-white:hover { background: rgba(255,255,255,.12); }
+  /* Light-fill buttons must keep dark text even inside dark sections, where the
+     contrast safety-net (higher specificity) would otherwise flip it to light
+     and leave it unreadable on yellow/coral. Neither changes text on hover. */
+  .btn-sun, .btn-coral { color: var(--ink) !important; }
 
   .card-soft {
     background: #fff; border-radius: 1.25rem; padding: 1.5rem;
