@@ -188,6 +188,14 @@ section > .container-x { position: relative; z-index: 10; }
   color: #1A1300;
 }
 
+/* Sunshine TEXT on dark backgrounds — keep the bright yellow */
+.bg-brand .text-sunshine, .bg-brand-deep .text-sunshine, .bg-ink .text-sunshine,
+.bg-indigo-pop .text-sunshine,
+[class*="from-ink"] .text-sunshine, [class*="from-brand-deep"] .text-sunshine,
+[class*="via-indigo-pop"] .text-sunshine {
+  color: #F5B700 !important;
+}
+
 /* Sunshine TEXT only reads on dark; on light surfaces darken to amber */
 .bg-white .text-sunshine, .bg-cream .text-sunshine, .bg-muted .text-sunshine,
 .bg-brand-soft .text-sunshine,
