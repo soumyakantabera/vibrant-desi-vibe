@@ -78,6 +78,7 @@
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
+  a { color: inherit; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -202,7 +203,6 @@ section > .container-x { position: relative; z-index: 10; }
 
 /* Links default to inherit; force white on dark sections + dark gradients.
    Exclude .btn so buttons keep their own variant colors (e.g. btn-white = dark text). */
-a { color: inherit; }
 .bg-brand a:not(.btn), .bg-brand-deep a:not(.btn), .bg-ink a:not(.btn),
 [class*="from-ink"] a:not(.btn), [class*="from-brand-deep"] a:not(.btn), [class*="via-indigo-pop"] a:not(.btn) {
   color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6);
