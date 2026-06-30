@@ -73,11 +73,11 @@ function Page() {
             name="Sunanda Dey"
             title="Co-Founder · English & Career Mentor"
             image={IMG.founder}
-            intro="Sunanda has spent the last 7+ years teaching English and helping students build careers — from school students and homemakers to engineers and BPO professionals. She is currently pursuing her MSc in Design of Sustainable Tourism Systems and brings two years of international and luxury tourism work experience to every classroom."
+            intro="Over 7+ years, Sunanda has dedicated herself to teaching English and empowering students to build meaningful careers — from school students and homemakers to working professionals. Her lived experience on a global platform has immersed her in diverse international environments, bringing real-world perspective into every classroom. Having personally navigated the journey of learning French and Italian, she understands the struggle firsthand — and that fuels her passion for turning the complexity of communication into something natural, confident, and achievable."
             credentials={[
-              "MSc · Design of Sustainable Tourism Systems (ongoing)",
               "7+ years teaching English & Career Development",
-              "2 years experience · International & luxury tourism",
+              "Global platform experience · diverse international environments",
+              "Multilingual learner — French & Italian",
               "Trained 500+ learners across India",
             ]}
             teaches={[
