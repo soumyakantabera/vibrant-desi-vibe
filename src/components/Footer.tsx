@@ -58,7 +58,7 @@ export function Footer({ image }: { image?: string }) {
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
             <a href={`tel:${WHATSAPP_DISPLAY}`} className="inline-flex items-center gap-2 hover:text-sunshine"><Icon name="phone" size={16}/>{WHATSAPP_DISPLAY}</a>
-            <a href="mailto:hello@learnwithsmile.in" className="inline-flex items-center gap-2 hover:text-sunshine"><Icon name="mail" size={16}/>hello@learnwithsmile.in</a>
+            <a href="mailto:learnwithsmile.in@gmail.com" className="inline-flex items-center gap-2 hover:text-sunshine"><Icon name="mail" size={16}/>learnwithsmile.in@gmail.com</a>
             <span className="inline-flex items-center gap-2"><Icon name="globe" size={16}/>Kolkata · Online · Pan-India</span>
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">
