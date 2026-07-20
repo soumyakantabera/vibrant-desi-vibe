@@ -68,7 +68,10 @@ export function Footer({ image }: { image?: string }) {
           </div>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
-          <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
+            <p>This website is made and crafted by Soumyakanta Bera.</p>
+          </div>
           <div className="flex gap-3">
             <a href="#" aria-label="Instagram" className="p-2 rounded-full bg-cream/10 hover:bg-sunshine hover:text-ink"><Icon name="instagram" size={16}/></a>
             <a href="#" aria-label="Facebook" className="p-2 rounded-full bg-cream/10 hover:bg-sunshine hover:text-ink"><Icon name="facebook" size={16}/></a>
