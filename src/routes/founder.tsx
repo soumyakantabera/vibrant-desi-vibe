@@ -7,14 +7,15 @@ import { IMG } from "@/lib/images";
 export const Route = createFileRoute("/founder")({
   component: Page,
   head: () => ({ meta: [
-    { title: "Meet the Founder | Sunanda Dey — Learn With Smile" },
-    { name: "description", content: "Meet Sunanda Dey, founder of Learn With Smile. English & career mentor — 100% online live, flexible timings, pan-India." },
+    { title: "Meet the Founders | Soumyakanta Bera & Sunanda Dey — Learn With Smile" },
+    { name: "description", content: "Meet the founders of Learn With Smile — Soumyakanta Bera (Head of Operations) and Sunanda Dey (English & Career Mentor). 100% online live, flexible timings, pan-India." },
   ]}),
 });
 
-function FounderCard({ name, title, image, intro, credentials, teaches, promises, waMessage, reverse }: {
+function FounderCard({ name, title, image, intro, credentials, teaches, teachesLabel = "Teaches", promises, promisesLabel = "What I promise every learner", waMessage, reverse }: {
   name: string; title: string; image: string; intro: string;
-  credentials: string[]; teaches: string[]; promises: string[]; waMessage: string; reverse?: boolean;
+  credentials: string[]; teaches: string[]; teachesLabel?: string;
+  promises: string[]; promisesLabel?: string; waMessage: string; reverse?: boolean;
 }) {
   return (
     <div className={`grid lg:grid-cols-[1fr_1.3fr] gap-10 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
@@ -33,7 +34,7 @@ function FounderCard({ name, title, image, intro, credentials, teaches, promises
             </ul>
           </div>
           <div className="card-soft bg-sunshine/10">
-            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2"><Icon name="book" size={16} className="text-coral"/> Teaches</h4>
+            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2"><Icon name="book" size={16} className="text-coral"/> {teachesLabel}</h4>
             <ul className="space-y-1.5 text-sm text-ink/85">
               {teaches.map(t => <li key={t} className="flex gap-2"><Icon name="check" size={13} className="text-coral mt-1 shrink-0"/>{t}</li>)}
             </ul>
@@ -41,7 +42,7 @@ function FounderCard({ name, title, image, intro, credentials, teaches, promises
         </div>
 
         <div className="mt-4 card-soft bg-gradient-to-br from-brand-soft to-cream">
-          <h4 className="font-display font-bold text-ink mb-2 flex items-center gap-2"><Icon name="heart" size={16} className="text-coral"/> What I promise every learner</h4>
+          <h4 className="font-display font-bold text-ink mb-2 flex items-center gap-2"><Icon name="heart" size={16} className="text-coral"/> {promisesLabel}</h4>
           <ul className="space-y-2 text-sm text-ink/85">
             {promises.map(p => <li key={p} className="flex gap-2"><Icon name="check" size={14} className="text-brand mt-0.5 shrink-0"/>{p}</li>)}
           </ul>
@@ -60,9 +61,42 @@ function Page() {
       <section className="relative">
         <div className="absolute inset-0 z-0"><img src={IMG.teacherWoman} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
-          <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founder</span>
-          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">One mentor. One mission.</h1>
+          <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founders</span>
+          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Two founders. One mission.</h1>
           <p className="mt-4 text-lg text-white">100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or 1:1 · pan-India, based in Kolkata. Every learner gets two free 1:1 feedback sessions every month.</p>
+        </div>
+      </section>
+
+      {/* SOUMYAKANTA */}
+      <section className="section">
+        <div className="container-x">
+          <FounderCard
+            name="Soumyakanta Bera"
+            title="Founding Member · Head of Operations"
+            image={IMG.founderSoumya}
+            intro="Soumyakanta is the operational backbone of Learn With Smile. With a Master's in Finance & Management from the University of Florence, Italy, and a research focus on financial analysis and risk signals, he brings a systems-first mindset to everything behind the scenes — from how batches are scheduled to how every learner is onboarded and supported. His job is simple to state and hard to do well: make sure the experience around each class runs so smoothly that learners can focus entirely on learning."
+            credentials={[
+              "MSc in Finance & Management — University of Florence, Italy",
+              "Research in financial analysis, working capital & risk signals",
+              "Operations, systems & process management",
+              "International academic & professional exposure",
+            ]}
+            teaches={[
+              "Batch scheduling & class coordination",
+              "Student onboarding & support",
+              "Quality assurance & feedback tracking",
+              "Partnerships, growth & day-to-day operations",
+            ]}
+            teachesLabel="Leads"
+            promises={[
+              "Classes that start on time, every time",
+              "A smooth journey from first enquiry to enrolment",
+              "Your questions answered quickly and clearly",
+              "Systems that quietly keep your progress on track",
+            ]}
+            promisesLabel="What I promise every learner"
+            waMessage="Hi Soumyakanta, I read your story. I'd like to book a free demo."
+          />
         </div>
       </section>
 
