@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
+import { trackConversion } from "@/lib/ab";
 
 export function SectionHeader({
   eyebrow,
@@ -60,17 +61,27 @@ export function FeatureCard({
 }
 
 export function WaButton({
-  message, children, variant = "wa", size = "md", className = "",
+  message, children, variant = "wa", size = "md", className = "", goal = "whatsapp_click",
 }: {
   message: string;
   children: ReactNode;
   variant?: "wa" | "primary" | "white" | "sun" | "coral" | "outline";
   size?: "sm" | "md" | "lg";
   className?: string;
+  /** Which CTA fired, so conversions can be attributed to a page position. */
+  goal?: string;
 }) {
   const cls = `btn btn-${variant} ${size === "lg" ? "btn-lg" : size === "sm" ? "btn-sm" : ""} ${className}`;
   return (
-    <a href={waLink(message)} target="_blank" rel="noopener noreferrer" className={cls}>
+    <a
+      href={waLink(message)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cls}
+      // Opening WhatsApp is the site's only conversion, so every one of these
+      // buttons is the goal event for whichever A/B variants are live.
+      onClick={() => trackConversion(goal, message.slice(0, 80))}
+    >
       {variant === "wa" && <BrandIcon name="whatsapp" size={size === "sm" ? 16 : 18} color="#053b1e"/>}
       <span>{children}</span>
     </a>

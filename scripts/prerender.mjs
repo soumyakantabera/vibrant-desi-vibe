@@ -1,0 +1,272 @@
+/**
+ * Static prerender for the GitHub Pages deploy.
+ *
+ * Why this exists
+ * ---------------
+ * Before this step the Pages build shipped a single `index.html` with an empty
+ * `<div id="root">`, plus a `404.html` copy as an SPA fallback. That has two
+ * fatal SEO consequences:
+ *
+ *   1. Every URL except `/` was served **with HTTP status 404**, because Pages
+ *      only falls back to 404.html for paths it cannot resolve. Google drops
+ *      404s from the index outright, so 13 of the site's 14 pages could not
+ *      rank at all, no matter how good the metadata was.
+ *   2. The body had no text. Googlebot renders JavaScript (slowly, on a second
+ *      pass), but GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot
+ *      and Bingbot largely do not. To those crawlers the site was blank.
+ *
+ * This script renders every route to real HTML on disk, so each URL returns 200
+ * with its content and metadata already in the markup. The SPA still boots and
+ * takes over navigation exactly as before.
+ *
+ * Run after `vite build --config vite.config.pages.ts`.
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
+
+const DIST = "dist";
+const ENTRY = path.resolve("dist-prerender/prerender-entry.js");
+
+const mod = await import(pathToFileURL(ENTRY).href);
+const { ALL_PATHS, PAGES, COURSE_SEO, COURSES, SITE_URL, headFor, renderPath } = mod;
+
+/* ------------------------------------------------------------------ utils */
+
+/**
+ * Expected canonical for a path, used only to assert that the SSR-rendered head
+ * actually came out right. The head itself is produced by TanStack merging the
+ * root and route `head()` results during SSR — reproducing it here by hand
+ * would double every tag and let the static and runtime heads drift apart.
+ */
+function expectedCanonical(pathname) {
+  const head = headFor(pathname);
+  return head.links.find((l) => l.rel === "canonical")?.href;
+}
+
+/* --------------------------------------------------------------- template */
+
+/**
+ * The pristine Vite SPA shell — index.html with an empty #root and the hashed
+ * asset tags. This script overwrites dist/index.html with the prerendered home
+ * page, so a second run would otherwise read its own output back as the
+ * template and stack a duplicate head onto every page. Cache the clean shell
+ * outside dist/ and reuse it when the file on disk is no longer pristine.
+ */
+const SHELL_CACHE = path.resolve("dist-prerender/spa-shell.html");
+
+function loadTemplate() {
+  const html = fs.readFileSync(path.join(DIST, "index.html"), "utf8");
+
+  if (html.includes('<div id="root"></div>')) {
+    fs.writeFileSync(SHELL_CACHE, html);
+    return html;
+  }
+  if (fs.existsSync(SHELL_CACHE)) {
+    return fs.readFileSync(SHELL_CACHE, "utf8");
+  }
+  throw new Error(
+    "prerender: dist/index.html is already prerendered and no clean shell is cached.\n" +
+      "Run `bun run build:pages` to regenerate it before prerendering.",
+  );
+}
+
+const template = loadTemplate();
+
+/**
+ * Strip the tags index.html carries as a bare-SPA fallback. Each route now
+ * emits its own title, description, canonical and icons through the head
+ * pipeline, and leaving these in would produce two <title> and two
+ * <meta name="description"> tags on every prerendered page.
+ */
+function stripFallbackHead(html) {
+  return html
+    .replace(/<title>[\s\S]*?<\/title>\s*/i, "")
+    .replace(/<meta\s+name="description"[^>]*>\s*/i, "")
+    .replace(/<link\s+rel="icon"[^>]*>\s*/gi, "")
+    .replace(/<link\s+rel="apple-touch-icon"[^>]*>\s*/gi, "");
+}
+
+/** Tags the SSR head duplicates from what Vite already injected. */
+function dedupeSsrHead(ssrHead) {
+  return (
+    ssrHead
+      .replace(/<meta\s+charSet="[^"]*"\s*\/?>/gi, "")
+      .replace(/<meta\s+name="viewport"[^>]*\/?>/gi, "")
+      // Vite injects the hashed stylesheet into index.html already.
+      .replace(/<link\s+rel="stylesheet"\s+href="[^"]*\/assets\/[^"]*"[^>]*\/?>/gi, "")
+      .replace(/ data-precedence="[^"]*"/g, "")
+  );
+}
+
+/**
+ * Marks the head tags that the client will re-render through <HeadContent/>.
+ *
+ * Once React mounts it owns the document head, but it appends rather than
+ * replaces — so without this the prerendered canonical and JSON-LD would sit
+ * alongside React's copies, and after a client-side navigation the page would
+ * carry the *previous* page's canonical. `src/main.tsx` removes everything
+ * carrying this attribute just before mounting. Crawlers that never run JS keep
+ * the full static head, which is the whole point of prerendering.
+ *
+ * Stylesheets, preconnects and preloads are deliberately not marked: dropping
+ * and re-adding those would cause a visible flash of unstyled content.
+ */
+function tagPrerendered(head) {
+  return head
+    .replace(/<title>/g, '<title data-prerender="1">')
+    .replace(/<meta /g, '<meta data-prerender="1" ')
+    .replace(/<link rel="(canonical|alternate)"/g, '<link data-prerender="1" rel="$1"')
+    .replace(
+      /<script type="application\/ld\+json">/g,
+      '<script data-prerender="1" type="application/ld+json">',
+    );
+}
+
+const HTML_TAG = /<html[^>]*>/i;
+
+function buildPage(pathname, ssrHtml) {
+  const ssrHead = tagPrerendered(
+    dedupeSsrHead(ssrHtml.slice(ssrHtml.indexOf("<head>") + 6, ssrHtml.indexOf("</head>"))),
+  );
+  const ssrBody = ssrHtml.slice(ssrHtml.indexOf("<body>") + 6, ssrHtml.lastIndexOf("</body>"));
+
+  let out = stripFallbackHead(template);
+  out = out.replace(HTML_TAG, '<html lang="en-IN">');
+  out = out.replace("</head>", `  ${ssrHead}\n  </head>`);
+  out = out.replace('<div id="root"></div>', `<div id="root">${ssrBody}</div>`);
+  return out;
+}
+
+/* -------------------------------------------------------------- prerender */
+
+function writeFile(rel, contents) {
+  const dest = path.join(DIST, rel);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.writeFileSync(dest, contents);
+}
+
+const rendered = [];
+
+for (const pathname of ALL_PATHS) {
+  const ssrHtml = await renderPath(pathname);
+  const page = buildPage(pathname, ssrHtml);
+
+  // Guard against a silent head regression: if a route's `head()` stops firing,
+  // the page still renders fine but ships with no canonical and no metadata,
+  // which is exactly the failure mode this whole script exists to fix.
+  const canonical = expectedCanonical(pathname);
+  const canonicalCount = (page.match(/rel="canonical"/g) ?? []).length;
+  const titleCount = (page.match(/<title[\s>]/g) ?? []).length;
+  if (canonicalCount !== 1 || !page.includes(`rel="canonical" href="${canonical}"`)) {
+    throw new Error(
+      `prerender: ${pathname} has ${canonicalCount} canonical tags, expected exactly one pointing at ${canonical}`,
+    );
+  }
+  if (titleCount !== 1) {
+    throw new Error(`prerender: ${pathname} has ${titleCount} <title> tags, expected exactly one`);
+  }
+
+  if (pathname === "/") {
+    writeFile("index.html", page);
+  } else {
+    const slug = pathname.replace(/^\//, "");
+    // Both forms: GitHub Pages resolves `/course-ielts` from `course-ielts.html`
+    // without a redirect, and `/course-ielts/` from the directory index. Writing
+    // both means neither form 404s and neither costs a redirect hop, while the
+    // canonical tag keeps the no-slash URL as the single indexed version.
+    writeFile(`${slug}.html`, page);
+    writeFile(`${slug}/index.html`, page);
+  }
+
+  rendered.push({ pathname, bytes: Buffer.byteLength(page) });
+  console.log(
+    `  prerendered ${pathname.padEnd(32)} ${(Buffer.byteLength(page) / 1024).toFixed(0)} kB`,
+  );
+}
+
+/* ---------------------------------------------------------------- sitemap */
+
+const today = new Date().toISOString().slice(0, 10);
+
+function sitemapEntry(loc, priority, changefreq) {
+  return [
+    "  <url>",
+    `    <loc>${loc}</loc>`,
+    `    <lastmod>${today}</lastmod>`,
+    `    <changefreq>${changefreq}</changefreq>`,
+    `    <priority>${priority.toFixed(1)}</priority>`,
+    "  </url>",
+  ].join("\n");
+}
+
+const sitemapUrls = ALL_PATHS.map((p) => {
+  const loc = p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}`;
+  const page = PAGES[p];
+  if (page) return sitemapEntry(loc, page.priority, page.changefreq);
+  return sitemapEntry(loc, 0.8, "monthly");
+});
+
+writeFile(
+  "sitemap.xml",
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`,
+);
+
+/* --------------------------------------------------------------- llms.txt */
+
+/**
+ * llms.txt — the emerging convention for giving AI assistants a cheap, clean
+ * map of a site instead of making them crawl and parse every page. Not yet a
+ * ranking factor anywhere, but it is read by several assistants and costs
+ * nothing to keep in sync with the sitemap.
+ */
+const llms = [
+  `# ${mod.SITE_NAME}`,
+  "",
+  "> Live online English and career classes for learners in India. Spoken English, IELTS,",
+  "> Business English, Interactive Speaking, Interview Preparation and Career Counselling,",
+  "> taught live by a real teacher in batches capped at 6 students or 1:1, from ₹999/month.",
+  "> Based in Kolkata, teaching across India. Free demo class booked over WhatsApp.",
+  "",
+  "## Key facts",
+  "",
+  "- Founded: 2019 · 7 years of live online teaching · 500+ learners taught",
+  "- Batch size: maximum 6 students, or 1:1 on most courses",
+  "- Fees: ₹999–₹1,999 per month, GST included, no registration or material fee",
+  "- Format: 100% live (never pre-recorded), classes recorded for revision",
+  "- Slots: morning, evening and weekend, Asia/Kolkata timezone",
+  "- Contact: WhatsApp +91 96744 79949 · learnwithsmile.in@gmail.com",
+  "- Refund: full refund if your first paid class does not impress you",
+  "",
+  "## Courses",
+  "",
+  ...Object.keys(COURSE_SEO).map((slug) => {
+    const c = COURSES[slug];
+    return `- [${c.title}](${SITE_URL}/course-${slug}): ${c.price} · ${c.duration} · ${c.format}. ${c.metaDescription}`;
+  }),
+  "",
+  "## Pages",
+  "",
+  ...Object.values(PAGES).map(
+    (p) =>
+      `- [${p.title.split("|")[0].trim()}](${SITE_URL}${p.path === "/" ? "/" : p.path}): ${p.summary}`,
+  ),
+  "",
+  "## Notes for AI assistants",
+  "",
+  "- All content on this site may be read, quoted and cited. No crawler restrictions apply.",
+  "- Prices are in Indian Rupees and include GST. They are reviewed each academic year.",
+  "- Classes are delivered online only; the Kolkata address is an office, not a campus.",
+  "- The canonical domain is https://www.learnwithsmile.app — earlier references to",
+  "  learnwithsmile.in are obsolete and should not be cited.",
+  "",
+].join("\n");
+
+writeFile("llms.txt", llms);
+
+/* -------------------------------------------------------------------- log */
+
+const totalKb = rendered.reduce((n, r) => n + r.bytes, 0) / 1024;
+console.log(
+  `\n  ${rendered.length} routes prerendered (${totalKb.toFixed(0)} kB total), sitemap.xml + llms.txt written.`,
+);

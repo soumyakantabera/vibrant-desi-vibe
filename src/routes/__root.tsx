@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { withBasePath } from "@/lib/site-path";
+import { siteHead } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -69,48 +70,30 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Learn With Smile | Live English & Career Classes" },
-      { name: "description", content: "Live online English, IELTS, Business English & Career Counselling classes for Indian learners. 7 yrs experience, max 6 per batch. Book a FREE demo on WhatsApp." },
-      { name: "author", content: "Learn With Smile" },
-      { name: "theme-color", content: "#0E7C5A" },
-      { property: "og:site_name", content: "Learn With Smile" },
-      { property: "og:title", content: "Learn With Smile | Live English & Career Classes" },
-      { property: "og:description", content: "Live online English, IELTS, Business English & Career Counselling classes for Indian learners. 7 yrs experience, max 6 per batch. Book a FREE demo on WhatsApp." },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "en_IN" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Learn With Smile | Live English & Career Classes" },
-      { name: "twitter:description", content: "Live online English, IELTS, Business English & Career Counselling classes for Indian learners. 7 yrs experience, max 6 per batch. Book a FREE demo on WhatsApp." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6dffc062-9fa7-42e7-827b-cfa1ce5dfbf9" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6dffc062-9fa7-42e7-827b-cfa1ce5dfbf9" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=swap" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "EducationalOrganization",
-          name: "Learn With Smile",
-          url: "https://learnwithsmile.in",
-          areaServed: "IN",
-          telephone: "+919674479949",
-          sameAs: [],
-          description: "Live online classes for English, IELTS, Business English and Career Counselling. Small batches, gamified learning.",
-        }),
-      },
-    ],
-  }),
+  head: () => {
+    // Site-wide only — no title, description, canonical or page JSON-LD here.
+    // Every route supplies those through `pageHead()` / `courseSeo()`.
+    const site = siteHead();
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        ...site.meta,
+      ],
+      links: [
+        { rel: "stylesheet", href: appCss },
+        { rel: "icon", type: "image/svg+xml", href: withBasePath("/favicon.svg") },
+        { rel: "icon", type: "image/png", sizes: "48x48", href: withBasePath("/favicon.png") },
+        { rel: "apple-touch-icon", sizes: "180x180", href: withBasePath("/apple-touch-icon.png") },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=swap" },
+        ...site.links,
+      ],
+      scripts: site.scripts,
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -119,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <HeadContent />
       </head>

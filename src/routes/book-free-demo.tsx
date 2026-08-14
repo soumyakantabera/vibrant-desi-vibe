@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PAGES, pageHead } from "@/lib/seo";
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
+import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
@@ -8,10 +10,7 @@ import { waLink } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/book-free-demo")({
   component: Page,
-  head: () => ({ meta: [
-    { title: "Book Free Demo | Learn With Smile" },
-    { name: "description", content: "Book a free live demo class — fill 4 fields, we confirm on WhatsApp instantly. English & Career — your choice." },
-  ]}),
+  head: () => pageHead("/book-free-demo"),
 });
 
 const COURSES = [
@@ -73,6 +72,14 @@ function Page() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        faqs={PAGES["/book-free-demo"].faqs ?? []}
+        eyebrow="Before You Book"
+        title="What a Free Demo Actually Involves"
+        subtitle="No card, no sales call, no obligation."
+        waMessage="Hi, I have a question about the free demo."
+      />
     </Layout>
   );
 }

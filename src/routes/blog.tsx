@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL, abs, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
@@ -6,10 +7,36 @@ import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/blog")({
   component: Page,
-  head: () => ({ meta: [
-    { title: "Learn With Smile Blog | English & Career Tips" },
-    { name: "description", content: "Practical tips for Indian learners — spoken English, IELTS, business English, career switching. Updated weekly." },
-  ]}),
+  head: () => {
+    const head = pageHead("/blog");
+    // The posts live on this page rather than at their own URLs, so they are
+    // described as a Blog with its posts inline. If they ever get individual
+    // routes, split these into per-URL BlogPosting entities instead.
+    head.scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": `${abs("/blog")}#blog`,
+        name: "Learn With Smile Blog",
+        description:
+          "Practical English and career articles for Indian learners, written by Learn With Smile teachers.",
+        url: abs("/blog"),
+        inLanguage: "en-IN",
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        blogPost: POSTS.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          articleSection: post.tag,
+          inLanguage: "en-IN",
+          author: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+          publisher: { "@id": `${SITE_URL}/#organization` },
+        })),
+      }),
+    });
+    return head;
+  },
 });
 
 const POSTS = [
