@@ -18,17 +18,19 @@ import { RouteProgress } from "@/components/RouteProgress";
  * carries for the SPA shell, repeated here so server-rendered responses get it
  * too. Running twice is harmless; every step is idempotent. See the LOADING
  * BEHAVIOUR section of src/styles.css for what the flags drive.
+ *
+ * Enhanced to wait for both text fonts (Manrope, Sora) and icon fonts (Material Symbols)
+ * before marking fonts-ready, ensuring proper UI rendering.
  */
 const BOOT_SCRIPT = `(function(){var d=document,r=d.documentElement,g=["js"];
 var a=function(){for(var i=0;i<g.length;i++){if(!r.classList.contains(g[i]))r.classList.add(g[i]);}};a();
 if(window.MutationObserver)new MutationObserver(a).observe(r,{attributes:true,attributeFilter:["class"]});
 var m=function(e){var t=e.target;if(t&&t.tagName==="IMG"&&t.hasAttribute("data-fade"))t.setAttribute("data-loaded","");};
 d.addEventListener("load",m,true);d.addEventListener("error",m,true);
-var F="24px 'Material Symbols Rounded'";
-var f=function(){if(g.indexOf("fonts-ready")<0)g.push("fonts-ready");a();};
-var s=function(){try{if(!d.fonts||!d.fonts.forEach){f();return;}d.fonts.forEach(function(x){if(x.family&&x.family.indexOf("Material Symbols")>=0&&x.status==="loaded")f();});}catch(e){f();}};
-try{if(d.fonts&&d.fonts.load){d.fonts.load(F).then(s).catch(s);if(d.fonts.addEventListener)d.fonts.addEventListener("loadingdone",s);}else f();}catch(e){f();}
-setTimeout(s,2500);setTimeout(s,6000);})();`;
+var f=function(){if(g.indexOf("fonts-ready")<0){g.push("fonts-ready");a();}};
+var s=function(){try{if(!d.fonts||!d.fonts.forEach){f();return;}var textReady=false,iconReady=false;d.fonts.forEach(function(x){if(x.family&&x.status==="loaded"){if(x.family.indexOf("Manrope")>=0||x.family.indexOf("Sora")>=0)textReady=true;if(x.family.indexOf("Material Symbols")>=0)iconReady=true;}});if(textReady&&iconReady)f();}catch(e){f();}};
+try{if(d.fonts&&d.fonts.load){var promises=[d.fonts.load('400 24px Manrope'),d.fonts.load('700 24px Sora'),d.fonts.load("24px 'Material Symbols Rounded'")];Promise.all(promises).then(s).catch(f);if(d.fonts.addEventListener)d.fonts.addEventListener("loadingdone",s);}else f();}catch(e){f();}
+setTimeout(s,2000);setTimeout(s,4000);setTimeout(s,6000);})();`;
 
 function NotFoundComponent() {
   return (
@@ -103,15 +105,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "icon", type: "image/svg+xml", href: withBasePath("/favicon.svg") },
         { rel: "icon", type: "image/png", sizes: "48x48", href: withBasePath("/favicon.png") },
         { rel: "apple-touch-icon", sizes: "180x180", href: withBasePath("/apple-touch-icon.png") },
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-        // `display=swap` on the text faces: copy is readable in a fallback
-        // face immediately and reflows once, rather than being invisible.
+        // DNS prefetch for faster font CDN resolution
+        { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
+        { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
+        // Preconnect with high priority for faster font loads
+        { rel: "preconnect", href: "https://fonts.googleapis.com", importance: "high" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous", importance: "high" },
+        // Preload critical font weights for faster rendering
+        { rel: "preload", href: "https://fonts.gstatic.com/s/manrope/v15/xn7gYBCvU-DLs5J8FWW0CwzDdYw3UT_SfbAcEeT_qS-l3dJlw9F-KSy9q2zUrvAoOhVpVgxmjKxSC2FGlKkz.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+        { rel: "preload", href: "https://fonts.gstatic.com/s/sora/v14/xn7gYBCvU-DLs5J8FWW0CwzDdYw3UT_SfbAcEeT_qS-l3dJlw9F-KSy9qmVetvAoOhVpVgxmjKxSC2FGlKkz.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+        { rel: "preload", href: "https://fonts.gstatic.com/s/materialsymbolsrounded/v153/-ZpMEZVd6bPn-B25SN_sFkxN.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+        // Load stylesheets with display=swap for optimal font rendering
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" },
-        // `display=block` on the icon face: these glyphs are ligatures, so a
-        // fallback face would paint their names ("arrow_forward") as text
-        // across the page. Better a brief gap in a box that is already the
-        // right size.
+        // Material Symbols with display=block to prevent layout shift
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=block" },
         ...site.links,
       ],

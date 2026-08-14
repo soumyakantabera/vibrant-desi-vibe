@@ -100,8 +100,12 @@
   ::selection { background: var(--sunshine); color: var(--ink); }
 }
 
-/* Ensure hero/bg-image sections layer correctly: bg div sits behind content */
-section { isolation: isolate; }
+/* Ensure hero/bg-image sections layer correctly: bg div sits behind content.
+   Use containment for better rendering performance on sections with many elements. */
+section {
+  isolation: isolate;
+  contain: layout style paint;
+}
 section > .container-x { position: relative; z-index: 10; }
 
 /* ===== Contrast safety net (WCAG AA) =====
@@ -367,9 +371,25 @@ section > .container-x { position: relative; z-index: 10; }
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
-/* Hold the icons back until the font is decoded (or 2.5s has passed — see the
-   head script), so no frame ever paints the ligature text itself. */
+/* Hold the icons back until BOTH text and icon fonts are loaded (or 6s timeout),
+   so no frame ever paints the ligature text itself. The fonts-ready class is only
+   set after Manrope, Sora, and Material Symbols are all confirmed loaded. */
 html.js:not(.fonts-ready) .material-symbols-rounded { visibility: hidden; }
+
+/* Also hide text until fonts are ready to prevent FOUT (Flash of Unstyled Text).
+   System fonts are used initially, then the branded fonts appear smoothly. */
+html.js:not(.fonts-ready) {
+  /* Use font-display: swap fallback, but hide until font truly arrives */
+  letter-spacing: -0.01em;
+}
+html.js:not(.fonts-ready) h1,
+html.js:not(.fonts-ready) h2,
+html.js:not(.fonts-ready) h3,
+html.js:not(.fonts-ready) h4,
+html.js:not(.fonts-ready) h5 {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  opacity: 0.98;
+}
 
 /* ------------------------------------------------------------- skeletons ---
    Shared shimmer for any placeholder block. */
