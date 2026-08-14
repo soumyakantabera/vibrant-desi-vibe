@@ -484,10 +484,9 @@ html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; 
 
 /* --------------------------------------------------------- first paint ---
    Nothing here. The loading veil that covers the page until it is genuinely
-   ready — and the mark that appears on it if the wait runs long — is inline in
-   the document head, in src/lib/boot-script.ts, because this stylesheet is one
-   of the things it waits for. Rules for it cannot live in the file whose
-   arrival they are meant to cover. */
+   ready is inline in the document head, in src/lib/boot-script.ts, because
+   this stylesheet is one of the things it waits for. Rules for it cannot live
+   in the file whose arrival they are meant to cover. */
 
 /* ------------------------------------------------------ page transitions ---
    Where the browser supports it, the router cross-fades between pages instead
