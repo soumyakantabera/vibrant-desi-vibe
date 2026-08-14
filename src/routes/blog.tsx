@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/blog")({
   component: Page,
@@ -51,7 +52,7 @@ function Page() {
   return (
     <Layout waMessage="Hi, I read the blog. I'd like to discuss my learning goal." footerImage={IMG.blogDesk}>
       <section className="relative">
-        <div className="absolute inset-0 z-0"><img src={IMG.blogDesk} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.blogDesk} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="book" size={14}/> Blog</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Tips & Stories for <span className="text-sunshine">Indian Learners</span></h1>
@@ -65,7 +66,7 @@ function Page() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {POSTS.map(p => (
               <article key={p.title} className="card-soft flex flex-col">
-                <div className="rounded-xl overflow-hidden h-44 mb-4"><img src={p.img} alt={p.title} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition"/></div>
+                <SmartImage src={p.img} alt={p.title} className="rounded-xl h-44 mb-4" imgClassName="hover:scale-105 transition duration-500" sizes="(min-width: 768px) 33vw, 100vw"/>
                 <span className="pill bg-brand-soft text-brand-deep border-brand/20 mb-2">{p.tag}</span>
                 <h3 className="font-display font-bold text-ink text-lg">{p.title}</h3>
                 <p className="text-sm text-ink/85 mt-2 flex-1">{p.excerpt}</p>

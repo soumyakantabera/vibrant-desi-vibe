@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/about-us")({
   component: Page,
@@ -29,7 +30,7 @@ function Page() {
     <Layout waMessage="Hi, I just read About Us. I'd like a free demo." footerImage={IMG.team}>
       <section className="relative">
         <div className="absolute inset-0 z-0">
-          <img src={IMG.team} alt="Indian learners community" className="w-full h-full object-cover"/>
+          <SmartImage src={IMG.team} alt="Indian learners community" fill priority sizes="100vw"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/75 to-indigo-pop/50"/>
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
@@ -41,7 +42,7 @@ function Page() {
 
       <section className="section">
         <div className="container-x grid lg:grid-cols-2 gap-10 items-center">
-          <img src={IMG.studentLaptop2} alt="Indian student learning" className="rounded-3xl shadow-lg object-cover h-[400px] w-full"/>
+          <SmartImage src={IMG.studentLaptop2} alt="Indian student learning" className="rounded-3xl shadow-lg h-[400px] w-full" sizes="(min-width: 1024px) 45vw, 100vw"/>
           <div>
             <SectionHeader align="left" eyebrow="Our Story" title="Why We Started Learn With Smile" subtitle="Because complex teaching was leaving good students behind."/>
             <div className="space-y-4 text-ink/90 leading-relaxed">
@@ -65,7 +66,7 @@ function Page() {
       <MottoBand>"Your learning today, <em className="text-sunshine">matters the more</em>, and we build Future Together."</MottoBand>
 
       <section className="relative py-16">
-        <div className="absolute inset-0 z-0"><img src={IMG.graduation} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-brand-deep/90"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.graduation} alt="" fill sizes="100vw"/><div className="absolute inset-0 bg-brand-deep/90"/></div>
         <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
           <Stat num="7" label="Years Teaching"/><Stat num="500+" label="Learners"/><Stat num="95%" label="Completion"/><Stat num="4.9★" label="Avg Rating"/>
         </div>

@@ -6,6 +6,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
 import { waLink } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/book-free-demo")({
@@ -23,7 +24,7 @@ function Page() {
   return (
     <Layout waMessage="Hi, I'd like to book a free demo." footerImage={IMG.womanLaptop}>
       <section className="relative">
-        <div className="absolute inset-0 z-0"><img src={IMG.womanLaptop} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-sunshine/35"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.womanLaptop} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-sunshine/35"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="calendar" size={14}/> Book a Free Demo</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">A Real Live Class. <span className="text-sunshine">Free.</span></h1>
@@ -57,7 +58,7 @@ function Page() {
             </div>
           </div>
           <div className="space-y-5">
-            <img src={IMG.studentLaptop} alt="Indian learner" className="rounded-3xl shadow-lg object-cover h-[280px] w-full"/>
+            <SmartImage src={IMG.studentLaptop} alt="Indian learner" className="rounded-3xl shadow-lg h-[280px] w-full" sizes="(min-width: 1024px) 45vw, 100vw"/>
             <div className="card-soft bg-gradient-to-br from-brand-soft to-cream">
               <h3 className="font-display text-xl text-ink mb-2">What happens after you click send?</h3>
               <ol className="space-y-2 text-sm text-ink/90 list-decimal pl-4">

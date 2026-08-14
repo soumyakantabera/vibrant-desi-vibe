@@ -6,6 +6,7 @@ import { SectionHeader, FeatureCard, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/why-us")({
   component: Page,
@@ -16,7 +17,7 @@ function Page() {
   return (
     <Layout waMessage="Hi, I'd like to know why Learn With Smile fits me. Free demo please." footerImage={IMG.liveClass}>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0"><img src={IMG.liveClass} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-coral/40"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.liveClass} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-coral/40"/></div>
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white"><Icon name="shield" size={14}/> Why Us</span>
@@ -71,7 +72,7 @@ function Page() {
 
       <section className="section bg-brand-deep">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
-          <img src={IMG.womanLaptop} alt="" className="rounded-3xl shadow-2xl object-cover h-[360px] w-full"/>
+          <SmartImage src={IMG.womanLaptop} alt="" className="rounded-3xl shadow-2xl h-[360px] w-full" sizes="(min-width: 1024px) 45vw, 100vw"/>
           <div className="text-cream">
             <h2 className="text-cream text-3xl md:text-4xl">The First Class Is Free. Always.</h2>
             <p className="mt-3 text-white/95">Walk into a real live class — same teacher, same batch, same energy. If it's not for you, you don't pay a rupee.</p>

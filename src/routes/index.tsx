@@ -6,6 +6,8 @@ import { Icon } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
+import { SmartImage } from "@/components/SmartImage";
+import { Reveal } from "@/components/Reveal";
 import { IMG } from "@/lib/images";
 import { withBasePath } from "@/lib/site-path";
 import { pageHead, PAGES } from "@/lib/seo";
@@ -13,7 +15,19 @@ import { EXPERIMENTS, useVariant } from "@/lib/ab";
 
 export const Route = createFileRoute("/")({
   component: Home,
-  head: () => pageHead("/"),
+  head: () => {
+    const head = pageHead("/");
+    return {
+      ...head,
+      links: [
+        ...head.links,
+        // The hero photo is the largest thing in the first screen, so start it
+        // downloading from the HTML rather than waiting for the bundle to
+        // render the <img> that asks for it.
+        { rel: "preload", as: "image", href: IMG.heroClass, fetchPriority: "high" },
+      ],
+    };
+  },
 });
 
 type HeroHeadline = {
@@ -100,7 +114,9 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={IMG.heroClass} alt="Indian students in a live online class" className="w-full h-full object-cover" loading="eager"/>
+          {/* The one image that is part of the first screen — fetched at high
+              priority; everything else on the page loads lazily. */}
+          <SmartImage src={IMG.heroClass} alt="Indian students in a live online class" fill priority sizes="100vw"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60"/>
         </div>
         <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
@@ -161,12 +177,12 @@ function Home() {
             </div>
             <Link to="/about-us" className="btn btn-ghost-white mt-6"><Icon name="arrow-right" size={16}/> Read Our Full Story</Link>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <Reveal stagger className="grid grid-cols-2 gap-3">
             <StoryTile icon="gamepad" tone="sun" title="Gamified Learning">Flashcards, matching games & live quizzes every session.</StoryTile>
             <StoryTile icon="users" tone="glass" title="Small Batches">Max 6 per batch. Better attention, better learning.</StoryTile>
             <StoryTile icon="heart" tone="glass" title="Collaborative">Group discussions and community building every class.</StoryTile>
             <StoryTile icon="target" tone="sun" title="Live Polls & Quizzes">Real-time interactive activities every session.</StoryTile>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -174,9 +190,9 @@ function Home() {
       <section className="section">
         <div className="container-x">
           <SectionHeader eyebrow="What We Teach" title="Our Learning Track" subtitle="Click the track to explore all courses, full curriculums and module breakdowns." />
-          <div className="grid md:grid-cols-1 gap-6">
+          <Reveal stagger className="grid md:grid-cols-1 gap-6">
             <TrackCard to="/english-career" tag="6 Courses · From ₹999/mo" title="English & Career" desc="Spoken English · Business English · Interactive Speaking · IELTS · Interview Prep · Career Counselling" img={IMG.speaking} accent="brand"/>
-          </div>
+          </Reveal>
           <div className="mt-6 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4">
             <div>
               <strong className="text-cream block text-lg">Not sure which course is right for you?</strong>
@@ -190,20 +206,20 @@ function Home() {
       {/* HOW IT WORKS */}
       <section className="relative section overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={IMG.liveClass} alt="Live online class in India" className="w-full h-full object-cover" loading="lazy"/>
+          <SmartImage src={IMG.liveClass} alt="Live online class in India" fill sizes="100vw"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/90 to-brand-deep/85"/>
         </div>
         <div className="container-x">
           <SectionHeader eyebrowTone="white" eyebrow="The Process" title={<span className="text-cream">How Our Live Classes Work</span>} invert/>
-          <div className="grid md:grid-cols-2 gap-5 mb-12">
+          <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
             <GlassCard icon="users" title="Batch Classes" pricing="From ₹999/mo">
               Scheduled cohorts (max 6). Live teacher feedback, gamified activities, collaborative exercises. Best for structure and accountability.
             </GlassCard>
             <GlassCard icon="user" title="1:1 Private Sessions" pricing="Flexible Pricing">
               Just you and the teacher, at your pace. Fully personalised curriculum, schedule, and feedback. Available on most courses.
             </GlassCard>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          </Reveal>
+          <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { n: 1, lbl: "Choose Course", sub: "6 live programs", c: "sunshine" },
               { n: 2, lbl: "Pick Format", sub: "Batch or 1:1", c: "coral" },
@@ -220,7 +236,7 @@ function Home() {
                 <div className="text-white/85 text-xs mt-1">{s.sub}</div>
               </div>
             ))}
-          </div>
+          </Reveal>
           <div className="text-center mt-10">
             <WaButton message="Hi, I am interested in a free demo. Please guide me." size="lg">Chat With Us on WhatsApp</WaButton>
           </div>
@@ -231,14 +247,14 @@ function Home() {
       <section className="section bg-brand-soft/40">
         <div className="container-x">
           <SectionHeader eyebrow="What We Offer" title="Why Our Teaching Works" subtitle="Our online teaching focuses on practical, interactive, and student-friendly learning — not complex theory." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">Engaging live sessions with direct teacher support — real interaction every class.</FeatureCard>
             <FeatureCard icon="gamepad" color="sunshine" title="Gamified Learning">Flashcards, matching games, live polls & quizzes — learning that actually sticks.</FeatureCard>
             <FeatureCard icon="heart" color="coral" title="Collaborative Learning">Group discussions, debates, and teamwork that build confidence together.</FeatureCard>
             <FeatureCard icon="target" color="indigo" title="Student-Centred Design">Classes designed around each student's needs, goals, and learning style.</FeatureCard>
             <FeatureCard icon="trend" color="sage" title="Live Polls & Quizzes">Real-time activities that improve participation and check understanding.</FeatureCard>
             <FeatureCard icon="clock" color="brand" title="Flexible & Adaptable">Morning, evening, weekend batches — we fit around your life, not the other way round.</FeatureCard>
-          </div>
+          </Reveal>
           <div className="text-center mt-10">
             <Link to="/about-us" className="btn btn-outline">See All 11 Learning Features <Icon name="arrow-right" size={16}/></Link>
           </div>
@@ -250,7 +266,7 @@ function Home() {
       {/* NUMBERS */}
       <section className="relative py-12 md:py-16">
         <div className="absolute inset-0 z-0">
-          <img src={IMG.graduation} alt="Indian graduates" className="w-full h-full object-cover" loading="lazy"/>
+          <SmartImage src={IMG.graduation} alt="Indian graduates" fill sizes="100vw"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/90 to-ink/85"/>
         </div>
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
@@ -278,7 +294,7 @@ function Home() {
 
         <div className="container-x">
           <SectionHeader eyebrow="Simple, India-Friendly Pricing" eyebrowTone="indigo" title="Transparent Fees · Monthly EMI · No Hidden Costs" subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."/>
-          <div className="grid md:grid-cols-3 gap-5">
+          <Reveal stagger className="grid md:grid-cols-3 gap-5">
             <article className="order-2 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center"><BatchIcon/></span>
@@ -319,7 +335,7 @@ function Home() {
                 <li className="flex gap-2"><CheckIcon className="text-brand mt-0.5 shrink-0"/>Refund guarantee after enrolling</li>
               </ul>
             </article>
-          </div>
+          </Reveal>
           <p className="text-center text-ink/90 text-sm mt-6">All prices in INR. GST included where applicable. Need a quote for your course? Ping us on WhatsApp ↓</p>
 
         </div>
@@ -330,7 +346,7 @@ function Home() {
         <div className="container-x">
           <SectionHeader eyebrow="Enroll Today" title="Two Ways to Begin"/>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <Reveal stagger className="grid md:grid-cols-2 gap-6">
             <div className="rounded-3xl p-8 md:p-10 bg-brand-deep text-cream relative overflow-hidden">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-wa/20 rounded-full blur-3xl"/>
               <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-wa text-white mb-4"><Icon name="whatsapp" size={28}/></div>
@@ -340,7 +356,7 @@ function Home() {
               <p className="text-xs text-white/80 mt-4">+91 96744 79949 · Replies in minutes · 7 days a week</p>
             </div>
             <Link to="/book-free-demo" className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group">
-              <img src={IMG.womanLaptop} alt="Indian woman booking a class" className="absolute inset-0 w-full h-full object-cover transition group-hover:scale-105"/>
+              <SmartImage src={IMG.womanLaptop} alt="Indian woman booking a class" fill imgClassName="transition duration-500 group-hover:scale-105" sizes="(min-width: 768px) 50vw, 100vw"/>
               <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20"/>
               <div className="relative p-7 text-cream">
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2"><Icon name="calendar" size={22}/> Book a Free Demo Class</h3>
@@ -348,7 +364,7 @@ function Home() {
                 <span className="btn btn-sun btn-sm">Open Demo Form <Icon name="arrow-right" size={14}/></span>
               </div>
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -427,7 +443,7 @@ function StoryTile({ icon, title, tone, children }: { icon: any; title: string; 
 function TrackCard({ to, tag, title, desc, img, accent }: { to: string; tag: string; title: string; desc: string; img: string; accent: "brand"|"indigo" }) {
   return (
     <Link to={to as any} className="group relative rounded-3xl overflow-hidden min-h-[360px] flex items-end">
-      <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy"/>
+      <SmartImage src={img} alt={title} fill imgClassName="transition duration-500 group-hover:scale-105" sizes="100vw"/>
       <div className={`absolute inset-0 ${accent === "brand" ? "bg-gradient-to-t from-brand-deep via-brand-deep/60 to-transparent" : "bg-gradient-to-t from-indigo-pop/95 via-indigo-pop/50 to-transparent"}`}/>
       <div className="relative p-7 text-cream">
         <span className="pill bg-cream/20 text-cream border-cream/30">{tag}</span>

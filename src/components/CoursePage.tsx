@@ -4,6 +4,8 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
+import { SmartImage } from "@/components/SmartImage";
+import { Reveal } from "@/components/Reveal";
 import {
   COURSE_SEO,
   SITE_NAME,
@@ -65,7 +67,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={data.heroImage} alt={data.title} className="w-full h-full object-cover"/>
+          <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/55"/>
         </div>
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
@@ -110,7 +112,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       {/* OUTCOMES */}
       <section className="section">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
-          <img src={data.midImage} alt={`${data.title} outcomes`} className="rounded-3xl shadow-lg object-cover h-[360px] w-full" loading="lazy"/>
+          <SmartImage src={data.midImage} alt={`${data.title} outcomes`} className="rounded-3xl shadow-lg h-[360px] w-full" sizes="(min-width: 1024px) 45vw, 100vw"/>
           <div>
             <SectionHeader align="left" eyebrow="What You'll Achieve" eyebrowTone="sun" title={<>By the end, you'll be able to…</>} subtitle="Real, measurable outcomes — not just lecture hours."/>
             <ul className="grid sm:grid-cols-2 gap-3">
@@ -130,7 +132,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       <section className="section bg-brand-soft/40">
         <div className="container-x">
           <SectionHeader eyebrow="Curriculum" eyebrowTone="indigo" title={`Full ${data.title} Syllabus`} subtitle="Every module is taught live, with hands-on activities, quizzes and feedback."/>
-          <div className="grid md:grid-cols-2 gap-5">
+          <Reveal stagger className="grid md:grid-cols-2 gap-5">
             {data.modules.map((m, i) => (
               <article key={m.title} className="card-soft">
                 <div className="flex items-center gap-3 mb-3">
@@ -144,7 +146,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 </ul>
               </article>
             ))}
-          </div>
+          </Reveal>
           <div className="mt-8 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4">
             <div>
               <strong className="text-cream block text-lg">Want a printable syllabus PDF?</strong>
@@ -159,7 +161,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         <section className="section">
           <div className="container-x">
             <SectionHeader eyebrow="Capstone Projects" eyebrowTone="sun" title="Two India-Context Projects in This Course" subtitle="You don't just learn — you ship. Every learner builds these two portfolio-grade projects with 1:1 mentor reviews."/>
-            <div className="grid md:grid-cols-2 gap-5">
+            <Reveal stagger className="grid md:grid-cols-2 gap-5">
               {data.projects.map((p, i) => (
                 <article key={p.title} className="card-soft bg-gradient-to-br from-white to-sunshine/10 border-sunshine/30">
                   <div className="flex items-center gap-3 mb-3">
@@ -170,7 +172,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                   <p className="mt-3 text-sm text-ink/90"><strong className="text-brand">Deliverable:</strong> {p.deliverable}</p>
                 </article>
               ))}
-            </div>
+            </Reveal>
           </div>
         </section>
       )}
@@ -191,7 +193,7 @@ export function CoursePage({ data }: { data: CourseData }) {
           <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-10">
             <div>
               <SectionHeader align="left" eyebrow="FAQs" title={`${data.title} — Questions & Answers`} subtitle="Anything else? Ask us on WhatsApp — we reply in minutes."/>
-              <img src={data.footerImage} alt={`${data.title} live online class`} loading="lazy" className="rounded-2xl shadow-md object-cover h-60 w-full"/>
+              <SmartImage src={data.footerImage} alt={`${data.title} live online class`} className="rounded-2xl shadow-md h-60 w-full" sizes="(min-width: 1024px) 40vw, 100vw"/>
             </div>
             <div className="space-y-3">
               {/* Open by default: the answers stay in the DOM either way, but an

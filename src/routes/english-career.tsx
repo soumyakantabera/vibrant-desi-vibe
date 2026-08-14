@@ -6,6 +6,8 @@ import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
+import { Reveal } from "@/components/Reveal";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 
 const SLUGS = ["spoken-english","business-english","interactive-speaking","ielts","interview-prep","career-counselling"];
@@ -47,7 +49,7 @@ function Page() {
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={IMG.speaking} alt="English class India" className="w-full h-full object-cover"/>
+          <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw"/>
           <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/75 to-coral/40"/>
         </div>
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
@@ -85,14 +87,12 @@ function Page() {
       <section className="section">
         <div className="container-x">
           <SectionHeader eyebrow="Explore All 6 Courses" title="Pick Your Goal — Start Today" subtitle="Click any course for the full live curriculum, outcomes, FAQs and pricing."/>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SLUGS.map(s => {
               const c = COURSES[s];
               return (
                 <Link key={s} to={`/course-${s}` as any} className="group card-soft hover:-translate-y-1 transition flex flex-col">
-                  <div className="rounded-xl overflow-hidden mb-4 h-40">
-                    <img src={c.heroImage} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy"/>
-                  </div>
+                  <SmartImage src={c.heroImage} alt={c.title} className="rounded-xl mb-4 h-40" imgClassName="group-hover:scale-105 transition duration-500" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"/>
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span className="h-9 w-9 rounded-xl bg-brand-soft text-brand-deep flex items-center justify-center"><Icon name={c.icon} size={20}/></span>
                     <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">{c.price}</span>
@@ -104,7 +104,7 @@ function Page() {
                 </Link>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -118,7 +118,7 @@ function Page() {
 
       <section className="section bg-brand-deep">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
-          <img src={IMG.womanOffice} alt="Indian professional" className="rounded-3xl shadow-2xl object-cover h-[360px] w-full" loading="lazy"/>
+          <SmartImage src={IMG.womanOffice} alt="Indian professional" className="rounded-3xl shadow-2xl h-[360px] w-full" sizes="(min-width: 1024px) 45vw, 100vw"/>
           <div className="text-cream">
             <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">Tell us your goal — interview, abroad study, office promotion, daily confidence — we'll recommend the right course in minutes on WhatsApp.</p>

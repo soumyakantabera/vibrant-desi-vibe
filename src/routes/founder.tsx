@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/founder")({
   component: Page,
@@ -46,8 +47,7 @@ function FounderCard({ name, title, image, intro, credentials, teaches, promises
 }) {
   return (
     <div className={`grid lg:grid-cols-[1fr_1.3fr] gap-10 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
-      <img src={image} alt={name} loading="lazy" width={1024} height={1024}
-        className="rounded-3xl shadow-xl object-cover h-[420px] w-full border-4 border-cream"/>
+      <SmartImage src={image} alt={name} className="rounded-3xl shadow-xl h-[420px] w-full border-4 border-cream" sizes="(min-width: 1024px) 40vw, 100vw"/>
       <div>
         <span className="eyebrow eyebrow-indigo"><Icon name="spark" size={12}/> {title}</span>
         <h2 className="mt-3 text-3xl md:text-5xl text-ink leading-[1.05]">{name}</h2>
@@ -86,7 +86,7 @@ function Page() {
     <Layout waMessage="Hi, I'd like to speak to the Learn With Smile founders for a free demo." footerImage={IMG.teacherWoman}>
       {/* HERO */}
       <section className="relative">
-        <div className="absolute inset-0 z-0"><img src={IMG.teacherWoman} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.teacherWoman} alt="" fill sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founder</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">One mentor. One mission.</h1>
