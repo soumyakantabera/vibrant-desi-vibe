@@ -1,15 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PAGES, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
+import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/success-stories")({
   component: Page,
-  head: () => ({ meta: [
-    { title: "Student Success Stories | Learn With Smile" },
-    { name: "description", content: "Real Indian learners, real outcomes — career switches, IELTS bands, interview wins, salary jumps. Read verified stories." },
-  ]}),
+  head: () => pageHead("/success-stories"),
 });
 
 const STORIES = [
@@ -39,6 +38,14 @@ function Page() {
           <TestimonialSlider items={STORIES}/>
         </div>
       </section>
+
+      <FaqSection
+        faqs={PAGES["/success-stories"].faqs ?? []}
+        eyebrow="Results FAQs"
+        title="Do Online English Classes Actually Change Careers?"
+        subtitle="What our learners achieved, and what English can and cannot do for you."
+        waMessage="Hi, I read the success stories. I want the same result."
+      />
 
       <section className="section bg-brand-soft/40">
         <div className="container-x text-center">

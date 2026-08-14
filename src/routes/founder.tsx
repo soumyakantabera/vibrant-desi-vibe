@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SITE_URL, abs, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
@@ -6,10 +7,37 @@ import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/founder")({
   component: Page,
-  head: () => ({ meta: [
-    { title: "Meet the Founder | Sunanda Dey — Learn With Smile" },
-    { name: "description", content: "Meet Sunanda Dey, founder of Learn With Smile. English & career mentor — 100% online live, flexible timings, pan-India." },
-  ]}),
+  head: () => {
+    const head = pageHead("/founder");
+    // A Person entity tied to the Organization is what lets Google and AI
+    // assistants answer "who teaches at Learn With Smile" with a name rather
+    // than a shrug — and it is the entity an E-E-A-T assessment looks for.
+    head.scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": `${abs("/founder")}#person`,
+        name: "Sunanda Dey",
+        jobTitle: "Founder & Lead Teacher",
+        description:
+          "English and career mentor with 7 years of live online teaching experience, working with learners across India.",
+        image: abs("/og/founder.jpg"),
+        url: abs("/founder"),
+        knowsAbout: [
+          "Spoken English",
+          "IELTS Preparation",
+          "Business English",
+          "Interview Preparation",
+          "Career Counselling",
+        ],
+        knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
+        worksFor: { "@id": `${SITE_URL}/#organization` },
+        nationality: { "@type": "Country", name: "India" },
+      }),
+    });
+    return head;
+  },
 });
 
 function FounderCard({ name, title, image, intro, credentials, teaches, promises, waMessage, reverse }: {

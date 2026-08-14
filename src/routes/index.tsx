@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
@@ -7,54 +8,75 @@ import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
 import { withBasePath } from "@/lib/site-path";
+import { pageHead, PAGES } from "@/lib/seo";
+import { EXPERIMENTS, useVariant } from "@/lib/ab";
 
 export const Route = createFileRoute("/")({
   component: Home,
-  head: () => ({
-    meta: [
-      { title: "Learn With Smile | Live English & Career Classes from ₹999" },
-      { name: "description", content: "7 yrs teaching online. Spoken English, Business English, IELTS, Interview Prep & Career Counselling — live classes. Max 6 per batch or 1:1. Free demo on WhatsApp." },
-      { name: "keywords", content: "spoken english classes online india, ielts coaching online, business english, interview preparation, career counselling, learn with smile, kolkata online classes" },
-      { property: "og:title", content: "Learn With Smile | Live English & Career Classes" },
-      { property: "og:description", content: "Live online classes from ₹999/mo. Spoken English, Business English, IELTS & Career Counselling. Max 6 per batch or 1:1." },
-      { property: "og:image", content: IMG.heroClass },
-      { property: "og:url", content: withBasePath("/") },
-    ],
-    links: [{ rel: "canonical", href: withBasePath("/") }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Learn With Smile",
-          url: "https://learnwithsmile.in",
-          description: "Live online English and career classes for learners across India, based in Kolkata.",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "75/2/4, Raja Ram Mohan Roy Road",
-            addressLocality: "Kolkata",
-            postalCode: "700008",
-            addressCountry: "IN",
-          },
-          areaServed: "IN",
-          sameAs: ["https://wa.me/919674479949"],
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "Learn With Smile",
-          url: "https://learnwithsmile.in",
-        }),
-      },
-    ],
-  }),
+  head: () => pageHead("/"),
 });
 
+type HeroHeadline = {
+  lines: { text: string; tone: string }[];
+  sub: React.ReactNode;
+};
+
+const HERO_HEADLINES: Record<string, HeroHeadline> = {
+  control: {
+    lines: [
+      { text: "Speak Better English.", tone: "" },
+      { text: "Master In-Demand Skills.", tone: "text-sunshine" },
+      { text: "Build Future Together.", tone: "text-sage" },
+    ],
+    sub: (
+      <>
+        Real teachers. Small batches. Gamified, interactive live classes — designed for the
+        demands of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
+      </>
+    ),
+  },
+  price_anchor: {
+    lines: [
+      { text: "Live English Classes", tone: "" },
+      { text: "From ₹999 a Month.", tone: "text-sunshine" },
+      { text: "Max 6 in a Batch.", tone: "text-sage" },
+    ],
+    sub: (
+      <>
+        A real teacher, three live classes a week, and never more than six students in the
+        room. GST included, no registration fee. <strong className="text-sunshine">First demo class free.</strong>
+      </>
+    ),
+  },
+  outcome: {
+    lines: [
+      { text: "From Freezing Up", tone: "" },
+      { text: "To Speaking Up.", tone: "text-sunshine" },
+      { text: "In 6 Months.", tone: "text-sage" },
+    ],
+    sub: (
+      <>
+        500+ Indian learners have gone from hesitating mid-sentence to leading meetings,
+        clearing interviews and scoring IELTS Band 7+. Live classes from{" "}
+        <strong className="text-sunshine">₹999/mo</strong>.
+      </>
+    ),
+  },
+};
+
+const CTA_LABELS: Record<string, string> = {
+  control: "🎓 Enroll — Free Demo",
+  free_slot: "🎓 Book My Free Demo Slot",
+  no_card: "🎓 Try a Free Class — No Card Needed",
+};
+
 function Home() {
+  // A/B: both variants say the same thing about the same product — one leads on
+  // price, one on outcome. Crawlers and first paint always get `control`, so the
+  // prerendered HTML and the indexed copy never disagree with each other.
+  const headline = HERO_HEADLINES[useVariant(EXPERIMENTS.heroHeadline)] ?? HERO_HEADLINES.control;
+  const ctaLabel = CTA_LABELS[useVariant(EXPERIMENTS.primaryCta)] ?? CTA_LABELS.control;
+
   const TESTIMONIALS = [
     {
       quote: "Joined with zero English confidence. Six months later I was leading client presentations. The gamified exercises and live debates made it genuinely enjoyable — not just effective.",
@@ -85,16 +107,19 @@ function Home() {
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping"/><span className="relative inline-flex h-2 w-2 rounded-full bg-sage"/></span> 7 Years · Kolkata & Pan-India</span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              Speak Better English.<br/>
-              <span className="text-sunshine">Master In-Demand Skills.</span><br/>
-              <span className="text-sage">Build Future Together.</span>
+              {headline.lines.map((line, i) => (
+                <span key={line.text} className={line.tone}>
+                  {line.text}
+                  {i < headline.lines.length - 1 && <br/>}
+                </span>
+              ))}
             </h1>
             <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
-              Real teachers. Small batches. Gamified, interactive live classes — designed for the demands of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
+              {headline.sub}
             </p>
             <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3">
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg" className="w-full sm:w-auto justify-center">🎓 Enroll — Free Demo</WaButton>
-              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center shadow-[0_0_0_4px_rgba(37,211,102,0.18)]">Chat on WhatsApp</WaButton>
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg" className="w-full sm:w-auto justify-center" goal="hero_primary_cta">{ctaLabel}</WaButton>
+              <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center shadow-[0_0_0_4px_rgba(37,211,102,0.18)]" goal="hero_secondary_cta">Chat on WhatsApp</WaButton>
             </div>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {["100% Online · Live", "Morning · Evening · Weekend", "Max 6 or 1:1", "EMI from ₹999/mo", "Reschedule Anytime"].map(s => (
@@ -326,6 +351,14 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        faqs={PAGES["/"].faqs ?? []}
+        eyebrow="Common Questions"
+        title="Online English Classes in India — Your Questions Answered"
+        subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
+        waMessage="Hi, I have a question before booking a demo."
+      />
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
       <section className="py-12 pb-24 sm:pb-12 bg-white">

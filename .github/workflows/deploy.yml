@@ -42,19 +42,43 @@ jobs:
             echo "base=/${REPO_NAME}/" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build (static SPA for GitHub Pages)
+      - name: Build and prerender static pages
         env:
           BASE_PATH: ${{ steps.base.outputs.base }}
         run: bun run build:pages
 
       - name: SPA 404 fallback
         run: |
-          # GitHub Pages serves 404.html for unknown paths, allowing the SPA to
-          # take over and resolve the route on the client.
-          if [ -f dist/index.html ]; then
-            cp dist/index.html dist/404.html
-          fi
+          # Every real route is now a static file on disk (see
+          # scripts/prerender.mjs), so 404.html only ever serves genuinely
+          # missing URLs — which should return 404, as they now do. It uses the
+          # SPA shell rather than a prerendered page so the client router can
+          # still resolve anything added after this build.
+          cp dist-prerender/spa-shell.html dist/404.html
           touch dist/.nojekyll
+
+      - name: Verify crawlability
+        run: |
+          # Fails the deploy if the prerender silently regressed to a blank SPA
+          # shell — the exact failure this pipeline exists to prevent.
+          set -euo pipefail
+          for page in index course-ielts about-us; do
+            file="dist/${page}.html"
+            [ "$page" = "index" ] && file="dist/index.html"
+            if ! grep -q 'rel="canonical"' "$file"; then
+              echo "::error::$file has no canonical tag"; exit 1
+            fi
+            if ! grep -q 'application/ld+json' "$file"; then
+              echo "::error::$file has no structured data"; exit 1
+            fi
+            if grep -q '<div id="root"></div>' "$file"; then
+              echo "::error::$file was not prerendered — #root is empty"; exit 1
+            fi
+          done
+          test -s dist/sitemap.xml
+          test -s dist/robots.txt
+          test -s dist/llms.txt
+          echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."
 
       - uses: actions/configure-pages@v5
 

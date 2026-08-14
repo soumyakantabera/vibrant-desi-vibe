@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
@@ -6,10 +7,7 @@ import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/about-us")({
   component: Page,
-  head: () => ({ meta: [
-    { title: "About Learn With Smile | 7 Years of Live Online Teaching" },
-    { name: "description", content: "Our story, mission, and 11 learning principles. Live online classes for Indian learners — small batches, gamified, student-first." },
-  ]}),
+  head: () => pageHead("/about-us"),
 });
 
 const FEATURES: { icon: any; color: any; t: string; d: string }[] = [

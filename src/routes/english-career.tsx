@@ -1,48 +1,44 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
+import { PAGES, abs, pageHead } from "@/lib/seo";
 
 const SLUGS = ["spoken-english","business-english","interactive-speaking","ielts","interview-prep","career-counselling"];
 
-const pageTitle = "English & Career Online Live Classes India | Learn With Smile";
-const pageDesc = "6 live online courses from ₹999/mo: Basic Spoken English, Business English, Interactive Speaking, IELTS, Interview Prep, Career Counselling. Max 6 per batch.";
-
 export const Route = createFileRoute("/english-career")({
   component: Page,
-  head: () => ({
-    meta: [
-      { title: pageTitle },
-      { name: "description", content: pageDesc },
-      { property: "og:title", content: pageTitle },
-      { property: "og:description", content: pageDesc },
-      { property: "og:image", content: IMG.speaking },
-      { property: "og:url", content: "/english-career" },
-    ],
-    links: [{ rel: "canonical", href: "https://learnwithsmile.in/english-career" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          name: "English & Career Courses — Learn With Smile",
-          itemListElement: SLUGS.map((s, i) => {
-            const c = COURSES[s];
-            return {
-              "@type": "ListItem",
-              position: i + 1,
-              url: `https://learnwithsmile.in/course-${s}`,
-              name: c.title,
-            };
-          }),
+  head: () => {
+    const page = PAGES["/english-career"];
+    const head = pageHead("/english-career");
+    // Course hub: an ItemList of the six courses gives Google (and AI answer
+    // engines) the whole catalogue with prices from a single fetch.
+    head.scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: page.title,
+        description: page.description,
+        numberOfItems: SLUGS.length,
+        itemListElement: SLUGS.map((slug, i) => {
+          const c = COURSES[slug];
+          return {
+            "@type": "ListItem",
+            position: i + 1,
+            url: abs(`/course-${slug}`),
+            name: c.title,
+            description: c.metaDescription,
+          };
         }),
-      },
-    ],
-  }),
+      }),
+    });
+    return head;
+  },
 });
 
 function Page() {
@@ -111,6 +107,14 @@ function Page() {
           </div>
         </div>
       </section>
+
+      <FaqSection
+        faqs={PAGES["/english-career"].faqs ?? []}
+        eyebrow="Course FAQs"
+        title="Choosing Between Our Six Courses"
+        subtitle="Not sure which one fits? Start here."
+        waMessage="Hi, I am not sure which course fits me. Can you help me choose?"
+      />
 
       <section className="section bg-brand-deep">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">

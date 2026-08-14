@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PAGES, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
+import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, FeatureCard, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
@@ -7,10 +9,7 @@ import { IMG } from "@/lib/images";
 
 export const Route = createFileRoute("/why-us")({
   component: Page,
-  head: () => ({ meta: [
-    { title: "Why Learn With Smile | Small Batches, Live Teachers, Real Results" },
-    { name: "description", content: "Why 500+ Indian learners choose us — live small-batch classes, gamified learning, money-back confidence and a real teacher every session." },
-  ]}),
+  head: () => pageHead("/why-us"),
 });
 
 function Page() {
@@ -61,6 +60,14 @@ function Page() {
           <FeatureCard icon="globe" color="sunshine" title="Pan-India, In English & Hindi">Bilingual teaching available — comfort first.</FeatureCard>
         </div>
       </section>
+
+      <FaqSection
+        faqs={PAGES["/why-us"].faqs ?? []}
+        eyebrow="Why Us FAQs"
+        title="How We Teach — Questions Answered"
+        subtitle="Batch size, live vs recorded, and what happens if it is not for you."
+        waMessage="Hi, I want to understand how your classes work."
+      />
 
       <section className="section bg-brand-deep">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">

@@ -4,7 +4,16 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
-import { IMG } from "@/lib/images";
+import {
+  COURSE_SEO,
+  SITE_NAME,
+  SITE_URL,
+  abs,
+  breadcrumbLd,
+  buildHead,
+  faqLd,
+  webPageLd,
+} from "@/lib/seo";
 
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
@@ -34,6 +43,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
+  const faqs = courseFaqs(data);
   const snapshot = (
     <SnapshotCard
       badge={`Live · ${data.format}`}
@@ -176,18 +186,20 @@ export function CoursePage({ data }: { data: CourseData }) {
         </section>
       )}
 
-      {data.faqs && (
-        <section className="section bg-cream">
+      {faqs.length > 0 && (
+        <section className="section bg-cream" id="faq">
           <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-10">
             <div>
-              <SectionHeader align="left" eyebrow="FAQs" title="Quick Answers" subtitle="Anything else? Ask us on WhatsApp — we reply in minutes."/>
-              <img src={data.footerImage} alt="" loading="lazy" className="rounded-2xl shadow-md object-cover h-60 w-full"/>
+              <SectionHeader align="left" eyebrow="FAQs" title={`${data.title} — Questions & Answers`} subtitle="Anything else? Ask us on WhatsApp — we reply in minutes."/>
+              <img src={data.footerImage} alt={`${data.title} live online class`} loading="lazy" className="rounded-2xl shadow-md object-cover h-60 w-full"/>
             </div>
             <div className="space-y-3">
-              {data.faqs.map(f => (
-                <details key={f.q} className="card-soft group">
+              {/* Open by default: the answers stay in the DOM either way, but an
+                  expanded first answer is what search and AI snippets quote. */}
+              {faqs.map((f, i) => (
+                <details key={f.q} className="card-soft group" open={i === 0}>
                   <summary className="cursor-pointer list-none flex items-center justify-between gap-3">
-                    <span className="font-display font-bold text-ink">{f.q}</span>
+                    <h3 className="font-display font-bold text-ink text-base">{f.q}</h3>
                     <Icon name="arrow-right" size={16} className="text-brand rotate-90 group-open:rotate-[-90deg] transition"/>
                   </summary>
                   <p className="mt-3 text-ink/90 text-sm leading-relaxed">{f.a}</p>
@@ -214,15 +226,13 @@ export function CoursePage({ data }: { data: CourseData }) {
   );
 }
 
-const SITE = "https://learnwithsmile.in";
-
 function parsePrice(p: string): number | null {
-  const m = p.replace(/[, ]/g, "").match(/₹(\d+)/);
+  const m = p.replace(/[, ]/g, "").match(/\u20b9(\d+)/);
   return m ? Number(m[1]) : null;
 }
 
 function workloadISO(d: string): string | undefined {
-  // very rough mapping for Google's courseWorkload (ISO 8601 duration)
+  // Rough mapping to Google's courseWorkload (ISO 8601 duration).
   const months = d.match(/(\d+)\s*month/i);
   const weeks = d.match(/(\d+)\s*week/i);
   if (months) return `P${months[1]}M`;
@@ -231,78 +241,103 @@ function workloadISO(d: string): string | undefined {
   return undefined;
 }
 
+/**
+ * FAQs shown on the page and fed to FAQPage schema: the course author's own
+ * questions plus the AI-assistant-phrased ones from src/lib/seo.ts. Both the
+ * visible accordion and the JSON-LD must render the same list, or Google flags
+ * the structured data as not matching the page.
+ */
+export function courseFaqs(d: CourseData) {
+  return [...(d.faqs ?? []), ...(COURSE_SEO[d.slug]?.extraFaqs ?? [])];
+}
+
 export function courseSeo(d: CourseData) {
-  const slug = `/course-${d.slug}`;
-  const url = `${SITE}${slug}`;
+  const path = `/course-${d.slug}`;
+  const url = abs(path);
+  const extra = COURSE_SEO[d.slug];
   const price = parsePrice(d.price);
   const workload = workloadISO(d.duration);
-  const heroAbs = d.heroImage.startsWith("http") ? d.heroImage : `${SITE}${d.heroImage}`;
+  const faqs = courseFaqs(d);
+  const ogImage = extra?.ogImage ?? "/og/default.jpg";
 
-  const courseInstance: any = {
+  const courseInstance: Record<string, unknown> = {
     "@type": "CourseInstance",
     courseMode: "Online",
     inLanguage: "en-IN",
+    courseSchedule: {
+      "@type": "Schedule",
+      scheduleTimezone: "Asia/Kolkata",
+      repeatFrequency: "Weekly",
+    },
     location: { "@type": "VirtualLocation", url },
     instructor: {
       "@type": "Person",
       name: "Sunanda Dey",
-      worksFor: { "@type": "Organization", name: "Learn With Smile" },
+      worksFor: { "@type": "Organization", name: SITE_NAME },
     },
   };
   if (workload) courseInstance.courseWorkload = workload;
 
-  const offers: any = {
+  const offers: Record<string, unknown> = {
     "@type": "Offer",
     priceCurrency: "INR",
     availability: "https://schema.org/InStock",
     category: d.format.includes("1:1") ? "Online 1:1 course" : "Online batch course",
     url,
+    validFrom: "2026-01-01",
   };
   if (price !== null) offers.price = price;
 
-  const ld: any[] = [
+  const jsonLd: unknown[] = [
+    webPageLd({ path, title: d.title, description: d.metaDescription }),
     {
       "@context": "https://schema.org",
       "@type": "Course",
+      "@id": `${url}#course`,
       name: d.title,
       description: d.metaDescription,
       url,
-      image: [heroAbs],
+      image: [abs(ogImage)],
       inLanguage: "en-IN",
+      educationalLevel: d.slug === "spoken-english" ? "Beginner" : "Intermediate",
+      teaches: d.outcomes,
+      timeRequired: workload,
+      isAccessibleForFree: false,
       provider: {
-        "@type": "Organization",
-        name: "Learn With Smile",
-        url: SITE,
-        sameAs: SITE,
+        "@type": "EducationalOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        url: SITE_URL,
       },
-      hasCourseInstance: courseInstance,
       offers,
-    },
-  ];
-  if (d.faqs && d.faqs.length) {
-    ld.push({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: d.faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
+      hasCourseInstance: courseInstance,
+      syllabusSections: d.modules.map((m, i) => ({
+        "@type": "Syllabus",
+        position: i + 1,
+        name: m.title,
+        description: m.items.join(". "),
       })),
-    });
-  }
-  return {
-    meta: [
-      { title: `${d.title} – Live Online Classes | Learn With Smile` },
-      { name: "description", content: d.metaDescription },
-      { property: "og:title", content: `${d.title} – Learn With Smile` },
-      { property: "og:description", content: d.metaDescription },
-      { property: "og:image", content: heroAbs },
-      { property: "og:url", content: url },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: url }],
-    scripts: ld.map((obj) => ({ type: "application/ld+json", children: JSON.stringify(obj) })),
-  };
+    },
+    breadcrumbLd([
+      { name: "Home", path: "/" },
+      { name: "English & Career Courses", path: "/english-career" },
+      { name: d.title, path },
+    ]),
+  ];
+
+  if (faqs.length) jsonLd.push(faqLd(faqs));
+
+  return buildHead({
+    path,
+    // The format claim is the strongest differentiator in the SERP, so it goes
+    // in the title \u2014 but Career Counselling is 1:1, not a batch course, and
+    // claiming "Max 6 Per Batch" there would be simply wrong.
+    title: `${d.title} Online \u2014 ${d.price}, ${
+      d.format.includes("1:1") ? "1:1 Personalised" : "Max 6 Per Batch"
+    } | ${SITE_NAME}`,
+    description: d.metaDescription,
+    keywords: extra?.keywords ?? [],
+    ogImage,
+    jsonLd,
+  });
 }
-
-

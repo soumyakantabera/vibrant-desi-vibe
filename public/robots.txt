@@ -1,4 +1,99 @@
+# robots.txt — https://www.learnwithsmile.app
+#
+# Policy: fully open. Every search engine and every AI assistant is welcome to
+# crawl, index, quote and cite this site. For a small education business,
+# being cited in a ChatGPT or Perplexity answer is worth more than the content
+# is worth withholding, so nothing here is gated — including the training
+# crawlers that a publisher would normally block.
+
+# ---------------------------------------------------------------- everything
 User-agent: *
 Allow: /
+
+# ------------------------------------------------------------ search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Google's separate opt-in for Gemini grounding and AI Overviews. Absent this
+# line Google may still index the site but exclude it from AI answers.
+User-agent: Google-Extended
+Allow: /
+
+# --------------------------------------------------------------- OpenAI
+# GPTBot        — model training crawler
+# OAI-SearchBot — builds the ChatGPT search index (this is the one that decides
+#                 whether the site can appear as a source in ChatGPT answers)
+# ChatGPT-User  — live fetch when a user asks ChatGPT about a specific page
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# --------------------------------------------------------------- Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# --------------------------------------------------------------- Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ------------------------------------------------------- other AI assistants
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Bytespider (ByteDance) is the one crawler with a documented history of
+# ignoring robots.txt and hammering small sites. Disallowed on bandwidth
+# grounds, not content grounds.
+User-agent: Bytespider
+Disallow: /
 
 Sitemap: https://www.learnwithsmile.app/sitemap.xml
