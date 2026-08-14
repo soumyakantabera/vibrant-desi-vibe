@@ -14,9 +14,124 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>Live Online English &amp; Career Classes in India from ₹999/month | Learn With Smile</title>
     <meta name="description" content="Live online Spoken English, IELTS, Business English, Interview Prep and Career Counselling for Indian learners. Max 6 per batch or 1:1, from ₹999/month. Free demo on WhatsApp." />
+    <!--
+      Loading behaviour, before anything else runs. See the LOADING BEHAVIOUR
+      section of src/styles.css for what each flag drives. Kept inline and tiny
+      so it is in force for the very first paint, on the slowest connection,
+      long before the app bundle has downloaded.
+    -->
+    <script>
+      (function () {
+        var d = document,
+          root = d.documentElement,
+          flags = ["js"];
+
+        // `js` marks that scripting is available. Every rule that hides
+        // something while it loads is scoped to it, so with JS off (or still
+        // in flight) the prerendered page shows in full.
+        //
+        // React treats <html> as a singleton it owns: when the app mounts it
+        // takes the element over and drops the attributes it did not render,
+        // classes included. So rather than setting them once, re-apply them
+        // whenever something clears them. The observer fires before the next
+        // paint, so the flags are never missing on screen.
+        var apply = function () {
+          for (var i = 0; i < flags.length; i++) {
+            if (!root.classList.contains(flags[i])) root.classList.add(flags[i]);
+          }
+        };
+        apply();
+        if (window.MutationObserver) {
+          new MutationObserver(apply).observe(root, { attributes: true, attributeFilter: ["class"] });
+        }
+
+        // Fade photos in as they decode. `load` does not bubble, so this
+        // listens in the capture phase — and because it is inline it works
+        // from the first byte, not from whenever React finishes booting.
+        var mark = function (e) {
+          var t = e.target;
+          if (t && t.tagName === "IMG" && t.hasAttribute("data-fade")) t.setAttribute("data-loaded", "");
+        };
+        d.addEventListener("load", mark, true);
+        d.addEventListener("error", mark, true);
+
+        // Icons are ligatures, so until the icon font is in place the browser
+        // has nothing to draw but the glyph names ("arrow_forward"). Reveal
+        // them only once the font is genuinely usable; if it never arrives —
+        // blocked network, dead CDN — leave the boxes empty rather than
+        // filling the page with cropped words. Nothing moves either way: the
+        // space is reserved by the icon's own size.
+        var ICON_FONT = "24px 'Material Symbols Rounded'";
+        var fontsReady = function () {
+          if (flags.indexOf("fonts-ready") < 0) flags.push("fonts-ready");
+          apply();
+        };
+        // `fonts.check()` is no use here: with the stylesheet missing it
+        // happily reports the fallback face as ready. Ask the font set itself
+        // whether a Material Symbols face actually exists and finished
+        // loading.
+        var settle = function () {
+          try {
+            if (!d.fonts || !d.fonts.forEach) {
+              fontsReady();
+              return;
+            }
+            d.fonts.forEach(function (face) {
+              if (face.family && face.family.indexOf("Material Symbols") >= 0 && face.status === "loaded") {
+                fontsReady();
+              }
+            });
+          } catch (err) {
+            fontsReady();
+          }
+        };
+        try {
+          if (d.fonts && d.fonts.load) {
+            d.fonts.load(ICON_FONT).then(settle).catch(settle);
+            if (d.fonts.addEventListener) d.fonts.addEventListener("loadingdone", settle);
+          } else fontsReady();
+        } catch (err) {
+          fontsReady();
+        }
+        setTimeout(settle, 2500);
+        setTimeout(settle, 6000);
+      })();
+    </script>
+    <style>
+      /*
+        Critical styles for the boot splash only — it has to be paintable
+        before the stylesheet bundle arrives, which is the whole point of it.
+        Everything else lives in src/styles.css.
+      */
+      html { background: #fff; }
+      body { margin: 0; }
+      .boot-splash { display: none; }
+      #root:empty ~ .boot-splash {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 70;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.1rem;
+        background: #fff;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      Shown only while #root is empty (see `#root:empty ~ .boot-splash`), i.e.
+      on a bare SPA response. Prerendered pages ship their content inside #root
+      and skip it entirely.
+    -->
+    <div class="boot-splash" aria-hidden="true">
+      <div class="boot-splash-mark">LWS</div>
+      <div class="boot-splash-track"></div>
+      <div class="boot-splash-text">Learn With Smile</div>
+    </div>
     <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>

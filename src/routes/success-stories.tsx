@@ -5,6 +5,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { IMG } from "@/lib/images";
+import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/success-stories")({
   component: Page,
@@ -24,7 +25,7 @@ function Page() {
   return (
     <Layout waMessage="Hi, I read the success stories. I want the same result — free demo please." footerImage={IMG.graduation}>
       <section className="relative">
-        <div className="absolute inset-0 z-0"><img src={IMG.graduation} alt="" className="w-full h-full object-cover"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/75 to-sunshine/40"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.graduation} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/75 to-sunshine/40"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">★ Real Outcomes</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Real Indian Learners. <span className="text-sunshine">Real Results.</span></h1>

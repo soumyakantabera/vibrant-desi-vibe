@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
+import { SmartImage } from "./SmartImage";
 import { WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 
 const TRACKS = [
@@ -45,9 +46,12 @@ export function Footer({ image }: { image?: string }) {
             <p className="text-white/90 text-sm leading-relaxed mb-5">
               7 years teaching English & career skills online. Small batches (max 6). Gamified live classes. Real results — from ₹999/mo.
             </p>
-            <div className="rounded-2xl overflow-hidden border border-cream/15 mb-5">
-              <img src={image || IMG} alt="Indian students learning online" loading="lazy" className="w-full h-40 object-cover"/>
-            </div>
+            <SmartImage
+              src={image || IMG}
+              alt="Indian students learning online"
+              className="rounded-2xl border border-cream/15 mb-5 w-full h-40"
+              sizes="(min-width: 1024px) 30vw, 100vw"
+            />
             <a href={wa} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-sm w-full">
               <BrandIcon name="whatsapp" size={18} color="#053b1e"/> Chat with us on WhatsApp
             </a>

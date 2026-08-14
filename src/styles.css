@@ -331,3 +331,229 @@ section > .container-x { position: relative; z-index: 10; }
   }
   .input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent); }
 }
+
+/* ==========================================================================
+   LOADING BEHAVIOUR
+   ==========================================================================
+   Everything below controls how the site behaves while it is still arriving —
+   on a 3G phone as much as on office fibre.
+
+   The one rule that runs through all of it: nothing is ever hidden unless
+   JavaScript is running. Each hiding rule is scoped to `html.js`, a class set
+   by a two-line inline script in the document head. Pages are prerendered to
+   real HTML, so if the bundle is slow, blocked, or the reader has JS off, they
+   still get the finished page — never a screen of invisible content waiting
+   for a script that may never come.
+   ========================================================================== */
+
+/* ---------------------------------------------------------- icon font ---
+   Icons are ligatures in Material Symbols Rounded: until that font is in
+   place the browser has the literal glyph name ("arrow_forward", "menu") to
+   render. `display=block` in the font URL keeps those hidden rather than
+   showing the raw text, and the rules here reserve the box and clip anything
+   that escapes, so a slow or failed font load costs an icon — never a line of
+   gibberish shoving the layout sideways. */
+.material-symbols-rounded {
+  font-family: "Material Symbols Rounded", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  overflow: hidden;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+/* Hold the icons back until the font is decoded (or 2.5s has passed — see the
+   head script), so no frame ever paints the ligature text itself. */
+html.js:not(.fonts-ready) .material-symbols-rounded { visibility: hidden; }
+
+/* ------------------------------------------------------------- skeletons ---
+   Shared shimmer for any placeholder block. */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--brand) 7%, #eef2ef);
+  border-radius: .5rem;
+}
+.skeleton::after,
+.img-frame-plain:not([data-loaded])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 25%, rgba(255,255,255,.55) 50%, transparent 75%);
+  background-size: 220% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+.skeleton-on-dark { background: rgba(255,255,255,.10); }
+.skeleton-on-dark::after {
+  background: linear-gradient(100deg, transparent 25%, rgba(255,255,255,.18) 50%, transparent 75%);
+  background-size: 220% 100%;
+}
+
+/* ---------------------------------------------------------------- images ---
+   <SmartImage> renders a frame (the layout box, holding the blurred preview)
+   wrapping the photo itself. The box exists at full size from the first paint,
+   so nothing reflows when the photo lands. */
+.img-frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: color-mix(in oklab, var(--brand) 6%, #eef2ef);
+  background-image: var(--img-blur, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.img-frame-fill { position: absolute; inset: 0; width: 100%; height: 100%; }
+.img-el {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .5s ease;
+}
+.img-frame > .img-el { position: absolute; inset: 0; }
+/* Cross-fade the sharp photo over the blurred preview behind it. Opacity only
+   — the frame keeps its own transforms free for hover effects, and a plain
+   fade stays cheap on the low-end phones this is all for. */
+html.js .img-el[data-fade]:not([data-loaded]) { opacity: 0; }
+html.js .img-el[data-fade][data-loaded] { opacity: 1; }
+
+/* --------------------------------------------------------- scroll reveal ---
+   Set by <Reveal> after mount, and only for blocks that are still below the
+   fold — whatever is already on screen is left exactly as it was painted. */
+@keyframes reveal-in {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+html.js [data-reveal="out"],
+html.js [data-reveal-stagger="out"] > * { opacity: 0; }
+html.js [data-reveal="in"] {
+  animation: reveal-in .6s cubic-bezier(.22,.61,.36,1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+html.js [data-reveal-stagger="in"] > * {
+  animation: reveal-in .55s cubic-bezier(.22,.61,.36,1) both;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(1) { animation-delay: 0ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(2) { animation-delay: 70ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(3) { animation-delay: 140ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(4) { animation-delay: 210ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(5) { animation-delay: 260ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(6) { animation-delay: 310ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; }
+
+/* ------------------------------------------------------- route progress ---
+   Shown while the next page's code is downloading. */
+.route-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.route-progress[data-visible] { opacity: 1; }
+.route-progress-bar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--brand) 0%, var(--indigo-pop) 55%, var(--sunshine) 100%);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--brand) 55%, transparent);
+  transition: transform .35s cubic-bezier(.2,.8,.3,1);
+}
+
+/* --------------------------------------------------------- first paint ---
+   The SPA shell (index.html) has an empty #root, so on the hosts that serve
+   it un-prerendered the reader would otherwise stare at a white page until
+   the bundle boots. `#root:empty ~ .boot-splash` shows a branded loader for
+   exactly that case, and pure CSS retires it the moment React paints — no
+   script, no timers, and nothing to go wrong if the bundle never arrives.
+   Prerendered pages have content in #root from the start and never show it. */
+.boot-splash { display: none; }
+#root:empty ~ .boot-splash {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  background: var(--background);
+}
+.boot-splash-mark {
+  height: 68px; width: 68px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0E7C5A 0%, #0A5B43 55%, #1A2E20 100%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  box-shadow: 0 18px 40px -18px rgba(11,31,20,.55);
+  animation: boot-pulse 1.6s ease-in-out infinite;
+}
+.boot-splash-track {
+  width: 168px; height: 4px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--brand) 14%, #eef2ef);
+  overflow: hidden;
+}
+.boot-splash-track::after {
+  content: "";
+  display: block;
+  height: 100%; width: 45%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand), var(--sunshine));
+  animation: boot-slide 1.15s ease-in-out infinite;
+}
+.boot-splash-text {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--ink) 60%, #fff);
+}
+@keyframes boot-pulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-5px) scale(1.03); }
+}
+@keyframes boot-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(240%); }
+}
+
+/* ------------------------------------------------------ page transitions ---
+   Where the browser supports it, the router cross-fades between pages instead
+   of cutting; elsewhere this block simply does nothing. */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) { animation: vt-fade-out .18s ease both; }
+  ::view-transition-new(root) { animation: vt-fade-in .28s ease both; }
+}
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; transform: translate3d(0, 8px, 0); } }
+
+/* ----------------------------------------------------- reduced motion ---
+   Honour the OS setting: content still fades in, nothing slides, shimmers, or
+   bobs, and the reveal animation collapses to "just be visible". */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-wa-pulse, .animate-wa-bob, .animate-float { animation: none; }
+  .skeleton::after, .img-frame-plain:not([data-loaded])::after,
+  .boot-splash-mark, .boot-splash-track::after { animation: none; }
+  html.js [data-reveal="in"], html.js [data-reveal-stagger="in"] > * { animation: none; opacity: 1; }
+  html.js [data-reveal="out"], html.js [data-reveal-stagger="out"] > * { opacity: 1; }
+  .img-el { transition: opacity .2s ease; }
+  .route-progress-bar { transition: none; }
+}
