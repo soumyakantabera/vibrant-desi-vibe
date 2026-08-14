@@ -8,27 +8,17 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { useEffect } from "react";
+
 import appCss from "../styles.css?url";
 import { withBasePath } from "@/lib/site-path";
 import { siteHead } from "@/lib/seo";
 import { RouteProgress } from "@/components/RouteProgress";
+import { BOOT_SCRIPT, BOOT_CSS, FONT_CSS } from "@/lib/boot-script";
+import { markAppReady, prefetchWhenIdle } from "@/lib/boot";
 
-/**
- * Loading behaviour, before anything else runs — the same script index.html
- * carries for the SPA shell, repeated here so server-rendered responses get it
- * too. Running twice is harmless; every step is idempotent. See the LOADING
- * BEHAVIOUR section of src/styles.css for what the flags drive.
- */
-const BOOT_SCRIPT = `(function(){var d=document,r=d.documentElement,g=["js"];
-var a=function(){for(var i=0;i<g.length;i++){if(!r.classList.contains(g[i]))r.classList.add(g[i]);}};a();
-if(window.MutationObserver)new MutationObserver(a).observe(r,{attributes:true,attributeFilter:["class"]});
-var m=function(e){var t=e.target;if(t&&t.tagName==="IMG"&&t.hasAttribute("data-fade"))t.setAttribute("data-loaded","");};
-d.addEventListener("load",m,true);d.addEventListener("error",m,true);
-var F="24px 'Material Symbols Rounded'";
-var f=function(){if(g.indexOf("fonts-ready")<0)g.push("fonts-ready");a();};
-var s=function(){try{if(!d.fonts||!d.fonts.forEach){f();return;}d.fonts.forEach(function(x){if(x.family&&x.family.indexOf("Material Symbols")>=0&&x.status==="loaded")f();});}catch(e){f();}};
-try{if(d.fonts&&d.fonts.load){d.fonts.load(F).then(s).catch(s);if(d.fonts.addEventListener)d.fonts.addEventListener("loadingdone",s);}else f();}catch(e){f();}
-setTimeout(s,2500);setTimeout(s,6000);})();`;
+/** Pages a reader is most likely to open next, fetched during idle time. */
+const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/book-free-demo"];
 
 function NotFoundComponent() {
   return (
@@ -94,7 +84,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     const site = siteHead();
     return {
       meta: [
-        { charSet: "utf-8" },
+        // No charSet here: RootShell renders it literally, above the inline
+        // boot gate, so it stays inside the first 1024 bytes of the document.
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         ...site.meta,
       ],
@@ -103,16 +94,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "icon", type: "image/svg+xml", href: withBasePath("/favicon.svg") },
         { rel: "icon", type: "image/png", sizes: "48x48", href: withBasePath("/favicon.png") },
         { rel: "apple-touch-icon", sizes: "180x180", href: withBasePath("/apple-touch-icon.png") },
+        // Only the connections. The font stylesheets themselves are requested
+        // by the boot gate — see FONT_CSS in src/lib/boot-script.ts for why a
+        // <link> here would be worse than useless.
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-        // `display=swap` on the text faces: copy is readable in a fallback
-        // face immediately and reflows once, rather than being invisible.
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" },
-        // `display=block` on the icon face: these glyphs are ligatures, so a
-        // fallback face would paint their names ("arrow_forward") as text
-        // across the page. Better a brief gap in a box that is already the
-        // right size.
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=block" },
         ...site.links,
       ],
       scripts: site.scripts,
@@ -128,8 +114,30 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN">
       <head>
+        {/* The boot gate — the same code index.html carries for the static
+            build, so both deploys of this site load identically. See
+            src/lib/boot-script.ts.
+
+            As early in the head as React will allow: it hoists the stylesheet
+            links it renders above anything written here, and a classic
+            <script> does not run until the stylesheets above it have loaded.
+            That is survivable for the app's own stylesheet, which the page is
+            waiting for anyway; it is why the fonts are not requested with a
+            <link> at all. The charset goes first of all — it only counts
+            inside the document's first 1024 bytes. */}
+        <meta charSet="utf-8" />
+        <style data-boot="" dangerouslySetInnerHTML={{ __html: BOOT_CSS }} />
+        <script data-boot="" dangerouslySetInnerHTML={{ __html: BOOT_SCRIPT }} />
+        {/* Readers with JavaScript off never reach the line in the gate that
+            asks for the fonts, so ask here on their behalf. Written as raw
+            markup because React hoists a <link> element out of wherever it was
+            rendered — including out of here, which would defeat the point. */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: FONT_CSS.map((href) => `<link rel="stylesheet" href="${href}">`).join(""),
+          }}
+        />
         <HeadContent />
-        <script dangerouslySetInnerHTML={{ __html: BOOT_SCRIPT }} />
       </head>
       <body>
         {children}
@@ -141,6 +149,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  // The page is built and painted: let the boot gate open (once everything
+  // else it waits for has arrived), then quietly warm the next likely pages.
+  useEffect(() => {
+    markAppReady();
+    prefetchWhenIdle((to) => router.preloadRoute({ to }), LIKELY_NEXT);
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>

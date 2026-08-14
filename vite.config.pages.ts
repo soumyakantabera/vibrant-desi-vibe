@@ -8,9 +8,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import path from "node:path";
 
+import { bootScriptPlugin } from "./vite/boot-script-plugin";
+
 export default defineConfig({
   base: process.env.BASE_PATH ?? "/",
   plugins: [
+    bootScriptPlugin(),
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,
