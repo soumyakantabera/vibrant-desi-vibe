@@ -5,8 +5,10 @@
  * **the reader never sees a half-built page.** Not text in the wrong typeface
  * that reflows a second later, not icon ligatures spelling "arrow_forward"
  * across a card, not an unstyled column of links while the CSS is in flight.
- * The page stays behind an opaque veil until the things that decide how it
- * looks are actually in place, and then it fades in, finished.
+ * The page stays behind a plain veil until the things that decide how it looks
+ * are actually in place, and then it fades in, finished. The veil is bare on
+ * purpose — no logo, no spinner. Something to look at while waiting only draws
+ * attention to the wait.
  *
  * What it waits for
  * -----------------
@@ -97,10 +99,6 @@ export const FONT_CSS = [
 const MAX_HOLD = 3000;
 /** The same, on save-data or 2G — a slow link should not wait on webfonts. */
 const MAX_HOLD_SLOW = 700;
-/** Wait this long before showing the loading mark, so a fast load never blinks. */
-const MARK_AFTER = 140;
-/** Once the mark is up, keep it up this long — a strobe is worse than a wait. */
-const MARK_MIN = 420;
 /** Length of the reveal cross-fade; the veil is removed after it. */
 const FADE_MS = 380;
 
@@ -129,21 +127,13 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     new MutationObserver(apply).observe(root, { attributes: true, attributeFilter: ["class"] });
   }
 
-  var t0 = Date.now(), done = false, pending = false;
+  var t0 = Date.now(), done = false;
   var need = { css: false, fonts: false, app: false, media: false };
 
   // ---- reveal ------------------------------------------------------------
   var reveal = function () {
     if (done) return;
-    // Never flash the loading mark on and off: if it has just appeared, let
-    // it finish its moment before fading out.
-    var age = Date.now() - t0;
-    if (age > ${MARK_AFTER} && age < ${MARK_AFTER + MARK_MIN}) {
-      if (!pending) { pending = true; setTimeout(function () { pending = false; reveal(); }, ${MARK_AFTER + MARK_MIN} - age); }
-      return;
-    }
     done = true;
-    drop("booting-slow");
     raise("app-ready");            // fades the veil out, fades the page in
     setTimeout(function () { drop("booting"); }, ${FADE_MS});
   };
@@ -155,7 +145,6 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     slow = !!c && (c.saveData === true || /(^|-)2g$/.test(c.effectiveType || ""));
   } catch (e) {}
   setTimeout(reveal, slow ? ${MAX_HOLD_SLOW} : ${MAX_HOLD});
-  setTimeout(function () { raise("booting-slow"); }, ${MARK_AFTER});
 
   // Request the webfonts, now that the page is guaranteed to appear with or
   // without them. See FONT_CSS in src/lib/boot-script.ts for why they are
@@ -299,51 +288,17 @@ html.js.booting::before {
   transition: opacity ${FADE_MS}ms ease;
   animation: lws-failsafe-out 0s linear 8s forwards;
 }
+/* Lifted on reveal, in step with the page fading in underneath it. */
+html.js.booting.app-ready::before { opacity: 0; pointer-events: none; }
 
-/* The loading mark, held back ${MARK_AFTER}ms so a fast load shows nothing at all. */
-html.js.booting::after {
-  content: "LWS";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin: -36px 0 0 -36px;
-  height: 72px;
-  width: 72px;
-  border-radius: 22px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #0E7C5A 0%, #0A5B43 55%, #1A2E20 100%);
-  color: #fff;
-  font: 800 1rem/1 ui-sans-serif, system-ui, -apple-system, sans-serif;
-  letter-spacing: .04em;
-  box-shadow: 0 18px 40px -18px rgba(11,31,20,.55);
-  z-index: 2147483001;
-  opacity: 0;
-  transition: opacity .3s ease;
-  animation: lws-boot-pulse 1.6s ease-in-out infinite, lws-failsafe-out 0s linear 8s forwards;
-}
-html.js.booting.booting-slow::after { opacity: 1; }
-
-/* Both fade out together on reveal — after .booting-slow, so this wins. */
-html.js.booting.app-ready::before,
-html.js.booting.app-ready::after { opacity: 0; pointer-events: none; }
-
-/* Transform only, so it never fights the opacity transitions above. */
-@keyframes lws-boot-pulse {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%      { transform: translateY(-5px) scale(1.03); }
-}
 /* Last line of defence: if the script above dies after setting .booting, CSS
    alone still hands the reader the page. */
 @keyframes lws-failsafe-out { to { opacity: 0; visibility: hidden; } }
 @keyframes lws-failsafe-in { to { opacity: 1; } }
 
-@media (prefers-reduced-motion: reduce) {
-  html.js.booting::after { animation: lws-failsafe-out 0s linear 8s forwards; }
-}
 @media print {
   html.js.booting body { opacity: 1; }
-  html.js.booting::before, html.js.booting::after { display: none; }
+  html.js.booting::before { display: none; }
 }`;
 
 export const BOOT_CSS = compactCss(BOOT_CSS_SOURCE);
