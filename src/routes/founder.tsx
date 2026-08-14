@@ -86,7 +86,7 @@ function Page() {
     <Layout waMessage="Hi, I'd like to speak to the Learn With Smile founders for a free demo." footerImage={IMG.teacherWoman}>
       {/* HERO */}
       <section className="relative">
-        <div className="absolute inset-0 z-0"><SmartImage src={IMG.teacherWoman} alt="" fill sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.teacherWoman} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founder</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">One mentor. One mission.</h1>

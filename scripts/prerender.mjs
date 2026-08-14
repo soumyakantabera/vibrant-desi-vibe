@@ -97,7 +97,10 @@ function dedupeSsrHead(ssrHead) {
       .replace(/<link\s+rel="stylesheet"\s+href="[^"]*\/assets\/[^"]*"[^>]*\/?>/gi, "")
       // So are the font preconnects, and the <noscript> fallback that asks for
       // the font stylesheets — index.html carries both already.
-      .replace(/<link\s+rel="preconnect"\s+href="https:\/\/fonts\.(googleapis|gstatic)\.com"[^>]*\/?>/gi, "")
+      .replace(
+        /<link\s+rel="preconnect"\s+href="https:\/\/fonts\.(googleapis|gstatic)\.com"[^>]*\/?>/gi,
+        "",
+      )
       .replace(/<noscript>[\s\S]*?<\/noscript>/gi, "")
       // The boot gate too: index.html carries it above every stylesheet, which
       // is the only place it works (a classic script waits for the stylesheets
