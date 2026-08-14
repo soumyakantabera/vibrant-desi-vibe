@@ -95,6 +95,19 @@ function dedupeSsrHead(ssrHead) {
       .replace(/<meta\s+name="viewport"[^>]*\/?>/gi, "")
       // Vite injects the hashed stylesheet into index.html already.
       .replace(/<link\s+rel="stylesheet"\s+href="[^"]*\/assets\/[^"]*"[^>]*\/?>/gi, "")
+      // So are the font preconnects, and the <noscript> fallback that asks for
+      // the font stylesheets — index.html carries both already.
+      .replace(
+        /<link\s+rel="preconnect"\s+href="https:\/\/fonts\.(googleapis|gstatic)\.com"[^>]*\/?>/gi,
+        "",
+      )
+      .replace(/<noscript>[\s\S]*?<\/noscript>/gi, "")
+      // The boot gate too: index.html carries it above every stylesheet, which
+      // is the only place it works (a classic script waits for the stylesheets
+      // declared before it). The SSR shell renders its own copy for the hosts
+      // that serve it directly; here it would be a second, later, redundant one.
+      .replace(/<script data-boot="[^"]*">[\s\S]*?<\/script>/g, "")
+      .replace(/<style data-boot="[^"]*">[\s\S]*?<\/style>/g, "")
       .replace(/ data-precedence="[^"]*"/g, "")
   );
 }

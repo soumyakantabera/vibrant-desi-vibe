@@ -43,6 +43,11 @@
 }
 
 :root {
+  /* Sentinel for the boot gate: the one reliable way for the inline script in
+     the document head to know this stylesheet has *applied*, rather than
+     merely been requested. Do not remove — see src/lib/boot-script.ts. */
+  --app-css: 1;
+
   --radius: 1rem;
   --background: #FFFFFF;
   --foreground: #0B1F14;
@@ -338,12 +343,19 @@ section > .container-x { position: relative; z-index: 10; }
    Everything below controls how the site behaves while it is still arriving —
    on a 3G phone as much as on office fibre.
 
+   The first paint is not here: the boot gate that holds the page back until
+   the stylesheet, the fonts, the app and the hero image are all in place is
+   inline in the document head, because it has to be in force before this file
+   exists. It lives in src/lib/boot-script.ts. What is left below is everything
+   that happens *after* the site has been shown — photos arriving, sections
+   scrolling in, the next page loading.
+
    The one rule that runs through all of it: nothing is ever hidden unless
    JavaScript is running. Each hiding rule is scoped to `html.js`, a class set
-   by a two-line inline script in the document head. Pages are prerendered to
-   real HTML, so if the bundle is slow, blocked, or the reader has JS off, they
-   still get the finished page — never a screen of invisible content waiting
-   for a script that may never come.
+   by that same inline script. Pages are prerendered to real HTML, so if the
+   bundle is slow, blocked, or the reader has JS off, they still get the
+   finished page — never a screen of invisible content waiting for a script
+   that may never come.
    ========================================================================== */
 
 /* ---------------------------------------------------------- icon font ---
@@ -471,68 +483,11 @@ html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; 
 }
 
 /* --------------------------------------------------------- first paint ---
-   The SPA shell (index.html) has an empty #root, so on the hosts that serve
-   it un-prerendered the reader would otherwise stare at a white page until
-   the bundle boots. `#root:empty ~ .boot-splash` shows a branded loader for
-   exactly that case, and pure CSS retires it the moment React paints — no
-   script, no timers, and nothing to go wrong if the bundle never arrives.
-   Prerendered pages have content in #root from the start and never show it. */
-.boot-splash { display: none; }
-#root:empty ~ .boot-splash {
-  display: flex;
-  position: fixed;
-  inset: 0;
-  z-index: 70;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.1rem;
-  background: var(--background);
-}
-.boot-splash-mark {
-  height: 68px; width: 68px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #0E7C5A 0%, #0A5B43 55%, #1A2E20 100%);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  box-shadow: 0 18px 40px -18px rgba(11,31,20,.55);
-  animation: boot-pulse 1.6s ease-in-out infinite;
-}
-.boot-splash-track {
-  width: 168px; height: 4px;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--brand) 14%, #eef2ef);
-  overflow: hidden;
-}
-.boot-splash-track::after {
-  content: "";
-  display: block;
-  height: 100%; width: 45%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--brand), var(--sunshine));
-  animation: boot-slide 1.15s ease-in-out infinite;
-}
-.boot-splash-text {
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: .82rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: color-mix(in oklab, var(--ink) 60%, #fff);
-}
-@keyframes boot-pulse {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%      { transform: translateY(-5px) scale(1.03); }
-}
-@keyframes boot-slide {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(240%); }
-}
+   Nothing here. The loading veil that covers the page until it is genuinely
+   ready — and the mark that appears on it if the wait runs long — is inline in
+   the document head, in src/lib/boot-script.ts, because this stylesheet is one
+   of the things it waits for. Rules for it cannot live in the file whose
+   arrival they are meant to cover. */
 
 /* ------------------------------------------------------ page transitions ---
    Where the browser supports it, the router cross-fades between pages instead
@@ -550,8 +505,7 @@ html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-wa-pulse, .animate-wa-bob, .animate-float { animation: none; }
-  .skeleton::after, .img-frame-plain:not([data-loaded])::after,
-  .boot-splash-mark, .boot-splash-track::after { animation: none; }
+  .skeleton::after, .img-frame-plain:not([data-loaded])::after { animation: none; }
   html.js [data-reveal="in"], html.js [data-reveal-stagger="in"] > * { animation: none; opacity: 1; }
   html.js [data-reveal="out"], html.js [data-reveal-stagger="out"] > * { opacity: 1; }
   .img-el { transition: opacity .2s ease; }

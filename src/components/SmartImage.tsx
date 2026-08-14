@@ -89,6 +89,11 @@ export function SmartImage({
         fetchPriority={priority ? "high" : "auto"}
         decoding="async"
         data-fade
+        // First-screen images are part of "the page is ready": the boot gate
+        // holds the site back until they have decoded, so the hero never fades
+        // in underneath a reader who has already started reading. Bounded by
+        // the gate's own deadline — see src/lib/boot-script.ts.
+        data-boot-hold={priority ? "" : undefined}
         data-loaded={loaded ? "" : undefined}
         onLoad={() => setLoaded(true)}
         // A broken image should not leave a shimmer running forever.
