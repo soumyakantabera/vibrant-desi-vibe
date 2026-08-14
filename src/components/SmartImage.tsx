@@ -34,6 +34,7 @@ export function SmartImage({
   position,
   sizes,
   style,
+  loadThreshold = "250px",
 }: {
   src: string;
   alt: string;
@@ -51,12 +52,40 @@ export function SmartImage({
   position?: string;
   sizes?: string;
   style?: React.CSSProperties;
+  /** IntersectionObserver margin before image loads (default: 250px above viewport). */
+  loadThreshold?: string;
 }) {
   const meta = imageMeta(src);
   const ref = useRef<HTMLImageElement>(null);
+  const frameRef = useRef<HTMLSpanElement>(null);
   // Anything the reader was already looking at before React mounted starts
   // visible — it must not fade in a second time.
   const [loaded, setLoaded] = useState(() => wasPainted(src));
+  const [shouldLoad, setShouldLoad] = useState(priority);
+
+  // Use IntersectionObserver to load images before they're visible (better UX).
+  // This ensures images start loading while the user is still scrolling to them.
+  useEffect(() => {
+    if (priority || shouldLoad) return;
+
+    const frame = frameRef.current;
+    if (!frame) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: loadThreshold }
+    );
+
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, [priority, shouldLoad, loadThreshold]);
 
   // A cached image can finish loading between render and effect — and after a
   // client-side navigation it is usually already in the cache — so the load
@@ -70,6 +99,7 @@ export function SmartImage({
 
   return (
     <span
+      ref={frameRef}
       className={`img-frame ${fill ? "img-frame-fill" : ""} ${meta ? "" : "img-frame-plain"} ${className}`}
       data-loaded={loaded ? "" : undefined}
       style={{
@@ -78,24 +108,25 @@ export function SmartImage({
         ...style,
       }}
     >
-      <img
-        ref={ref}
-        src={src}
-        alt={alt}
-        width={meta?.w}
-        height={meta?.h}
-        sizes={sizes}
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
-        decoding="async"
-        data-fade
-        data-loaded={loaded ? "" : undefined}
-        onLoad={() => setLoaded(true)}
-        // A broken image should not leave a shimmer running forever.
-        onError={() => setLoaded(true)}
-        className={`img-el ${imgClassName}`}
-        style={position ? { objectPosition: position } : undefined}
-      />
+      {(priority || shouldLoad) && (
+        <img
+          ref={ref}
+          src={src}
+          alt={alt}
+          width={meta?.w}
+          height={meta?.h}
+          sizes={sizes}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          decoding="async"
+          data-fade
+          data-loaded={loaded ? "" : undefined}
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
+          className={`img-el ${imgClassName}`}
+          style={position ? { objectPosition: position } : undefined}
+        />
+      )}
     </span>
   );
 }
