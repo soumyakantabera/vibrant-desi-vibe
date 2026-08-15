@@ -15,8 +15,10 @@
 #   https://www.learnwithsmile.app/llms.txt       index: what this site is,
 #                                                 fees, formats, contact, and a
 #                                                 map of every page
-#   https://www.learnwithsmile.app/llms-full.txt  the readable text of all 14
-#                                                 pages in a single file
+#   https://www.learnwithsmile.app/llms-full.txt  the readable text of every
+#                                                 page in a single file
+#                                                 (22 at the time of writing:
+#                                                 14 pages, 5 articles, 3 guides)
 #   <any page URL> + .md                          that one page as clean
 #                                                 Markdown, e.g.
 #                                                 /course-ielts.md
@@ -105,6 +107,15 @@ User-agent: YouBot
 Allow: /
 
 User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: Omgilibot
 Allow: /
 
 # Bytespider (ByteDance) is the one crawler with a documented history of

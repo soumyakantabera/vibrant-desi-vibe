@@ -5,10 +5,14 @@ export const COURSES: Record<string, CourseData> = {
   "spoken-english": {
     slug: "spoken-english",
     title: "Basic Spoken English",
-    tagline: "Speak English with confidence in 6 months — even if you've never spoken a full sentence. Live online, small batches built around gamified practice.",
-    category: "English & Career", categoryColor: "brand",
+    tagline:
+      "Speak English with confidence in 6 months — even if you've never spoken a full sentence. Live online, small batches built around gamified practice.",
+    category: "English & Career",
+    categoryColor: "brand",
     icon: "mic",
-    heroImage: IMG.spokenEnglish, midImage: IMG.womanLaptop, footerImage: IMG.studentLaptop2,
+    heroImage: IMG.spokenEnglish,
+    midImage: IMG.womanLaptop,
+    footerImage: IMG.studentLaptop2,
     duration: "6 months · 3 classes/week",
     format: "Live batch · max 6 students",
     price: "₹999/mo",
@@ -21,33 +25,114 @@ export const COURSES: Record<string, CourseData> = {
       "Lose hesitation and stage fear forever",
     ],
     modules: [
-      { title: "Foundations & Phonetics", items: ["English sounds & pronunciation drill", "Stress, rhythm, intonation", "Common Indian mistakes — fixed live", "Daily 10-min speaking warm-ups"] },
-      { title: "Grammar Without Pain", items: ["Tenses through real conversations", "Articles, prepositions, modals", "Sentence patterns that work everywhere", "Live error-correction games"] },
-      { title: "Vocabulary Builder", items: ["1,000+ everyday words & phrases", "Flashcard game sessions", "Phrasal verbs & collocations", "Synonyms for word-power"] },
-      { title: "Real-Life Conversations", items: ["Shopping, banking, travel role-plays", "Phone & video calls", "Asking for & giving directions", "Small-talk that doesn't feel small"] },
-      { title: "Group Discussions & Debates", items: ["Speak your opinion in 60 seconds", "Active listening exercises", "Disagreeing politely in English", "Live polls & class debates"] },
-      { title: "Confidence & Presentation", items: ["Self-introduction mastery", "Storytelling techniques", "Eye contact, body language, voice", "Final live presentation with feedback"] },
+      {
+        title: "Foundations & Phonetics",
+        items: [
+          "English sounds & pronunciation drill",
+          "Stress, rhythm, intonation",
+          "Common Indian mistakes — fixed live",
+          "Daily 10-min speaking warm-ups",
+        ],
+      },
+      {
+        title: "Grammar Without Pain",
+        items: [
+          "Tenses through real conversations",
+          "Articles, prepositions, modals",
+          "Sentence patterns that work everywhere",
+          "Live error-correction games",
+        ],
+      },
+      {
+        title: "Vocabulary Builder",
+        items: [
+          "1,000+ everyday words & phrases",
+          "Flashcard game sessions",
+          "Phrasal verbs & collocations",
+          "Synonyms for word-power",
+        ],
+      },
+      {
+        title: "Real-Life Conversations",
+        items: [
+          "Shopping, banking, travel role-plays",
+          "Phone & video calls",
+          "Asking for & giving directions",
+          "Small-talk that doesn't feel small",
+        ],
+      },
+      {
+        title: "Group Discussions & Debates",
+        items: [
+          "Speak your opinion in 60 seconds",
+          "Active listening exercises",
+          "Disagreeing politely in English",
+          "Live polls & class debates",
+        ],
+      },
+      {
+        title: "Confidence & Presentation",
+        items: [
+          "Self-introduction mastery",
+          "Storytelling techniques",
+          "Eye contact, body language, voice",
+          "Final live presentation with feedback",
+        ],
+      },
     ],
     faqs: [
-      { q: "I can barely speak. Will this work for me?", a: "Yes — this is exactly who the course is for. We start from absolute basics and build up step by step in a judgment-free batch." },
-      { q: "What's the batch size?", a: "Maximum 6 students per batch so every learner gets real speaking time." },
-      { q: "Is the demo really free?", a: "Yes, 100% free. Attend a full live class before deciding." },
-      { q: "What if I miss a class?", a: "Every class is recorded and shared. You can also rejoin the same module with the next batch." },
+      {
+        q: "I can barely speak. Will this work for me?",
+        a: "Yes — this is exactly who the course is for. We start from absolute basics and build up step by step in a judgment-free batch.",
+      },
+      {
+        q: "What's the batch size?",
+        a: "Maximum 6 students per batch so every learner gets real speaking time.",
+      },
+      {
+        q: "Is the demo really free?",
+        a: "Yes, 100% free. Attend a full live class before deciding.",
+      },
+      {
+        q: "What if I miss a class?",
+        a: "Every class is recorded and shared. You can also rejoin the same module with the next batch.",
+      },
     ],
     testimonials: [
-      { quote: "I couldn't speak two lines without freezing. Six months later I gave a 5-min self-intro in front of 30 colleagues.", name: "Anjali Roy", detail: "Spoken English · Teacher, Howrah", waMessage: "Hi, I want the same Spoken English result as Anjali. Can I get a free demo?" },
-      { quote: "The gamified flashcard sessions are addictive. I look forward to every class now.", name: "Rakesh Verma", detail: "Spoken English · Shopkeeper, Patna", waMessage: "Hi, please share Spoken English demo details." },
-      { quote: "Small batch + real corrections every class. That's what made the difference.", name: "Meera Iyer", detail: "Spoken English · Homemaker, Chennai", waMessage: "Hi, I want to join Spoken English. Free demo please." },
+      {
+        quote:
+          "I couldn't speak two lines without freezing. Six months later I gave a 5-min self-intro in front of 30 colleagues.",
+        name: "Anjali Roy",
+        detail: "Spoken English · Teacher, Howrah",
+        waMessage: "Hi, I want the same Spoken English result as Anjali. Can I get a free demo?",
+      },
+      {
+        quote: "The gamified flashcard sessions are addictive. I look forward to every class now.",
+        name: "Rakesh Verma",
+        detail: "Spoken English · Shopkeeper, Patna",
+        waMessage: "Hi, please share Spoken English demo details.",
+      },
+      {
+        quote: "Small batch + real corrections every class. That's what made the difference.",
+        name: "Meera Iyer",
+        detail: "Spoken English · Homemaker, Chennai",
+        waMessage: "Hi, I want to join Spoken English. Free demo please.",
+      },
     ],
-    metaDescription: "Live online Spoken English classes for Indian learners. 6 months · 3 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
+    metaDescription:
+      "Live online Spoken English classes for Indian learners. 6 months · 3 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
   },
   "business-english": {
     slug: "business-english",
     title: "Business English",
-    tagline: "Speak, write and present like a confident professional. Live online, small batches built for working Indians and ambitious freshers.",
-    category: "English & Career", categoryColor: "brand",
+    tagline:
+      "Speak, write and present like a confident professional. Live online, small batches built for working Indians and ambitious freshers.",
+    category: "English & Career",
+    categoryColor: "brand",
     icon: "headset",
-    heroImage: IMG.businessEnglish, midImage: IMG.womanOffice, footerImage: IMG.presentation,
+    heroImage: IMG.businessEnglish,
+    midImage: IMG.womanOffice,
+    footerImage: IMG.presentation,
     duration: "3 months",
     format: "Live batch · max 6 students",
     price: "₹1,199/mo",
@@ -60,39 +145,115 @@ export const COURSES: Record<string, CourseData> = {
       "Negotiate, disagree and persuade — politely",
     ],
     modules: [
-      { title: "Professional Emails", items: ["Subject lines that get opened", "Tone: formal vs friendly", "Replying to complaints", "Following up without sounding pushy"] },
-      { title: "Meetings & Calls", items: ["Opening & closing meetings", "Agreeing/disagreeing politely", "Phone & video etiquette", "Taking & sending minutes"] },
-      { title: "Presentations", items: ["Storyline & structure", "Slides that don't bore", "Voice, pace, body language", "Handling Q&A confidently"] },
-      { title: "Negotiation & Persuasion", items: ["The 'soft yes' framework", "Saying no without burning bridges", "Persuasive language patterns", "Live negotiation role-plays"] },
+      {
+        title: "Professional Emails",
+        items: [
+          "Subject lines that get opened",
+          "Tone: formal vs friendly",
+          "Replying to complaints",
+          "Following up without sounding pushy",
+        ],
+      },
+      {
+        title: "Meetings & Calls",
+        items: [
+          "Opening & closing meetings",
+          "Agreeing/disagreeing politely",
+          "Phone & video etiquette",
+          "Taking & sending minutes",
+        ],
+      },
+      {
+        title: "Presentations",
+        items: [
+          "Storyline & structure",
+          "Slides that don't bore",
+          "Voice, pace, body language",
+          "Handling Q&A confidently",
+        ],
+      },
+      {
+        title: "Negotiation & Persuasion",
+        items: [
+          "The 'soft yes' framework",
+          "Saying no without burning bridges",
+          "Persuasive language patterns",
+          "Live negotiation role-plays",
+        ],
+      },
     ],
-    metaDescription: "Business English live online classes for working professionals in India. 3 months · max 6 per batch · ₹1,199/mo. Free demo on WhatsApp.",
+    metaDescription:
+      "Business English live online classes for working professionals in India. 3 months · max 6 per batch · ₹1,199/mo. Free demo on WhatsApp.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
-    tagline: "Daily live speaking practice in a friendly online batch. Designed to build fluency through games, debates and storytelling.",
-    category: "English & Career", categoryColor: "brand",
+    tagline:
+      "Daily live speaking practice in a friendly online batch. Designed to build fluency through games, debates and storytelling.",
+    category: "English & Career",
+    categoryColor: "brand",
     icon: "headset",
-    heroImage: IMG.interactiveSpeaking, midImage: IMG.girlReading, footerImage: IMG.groupClass,
+    heroImage: IMG.interactiveSpeaking,
+    midImage: IMG.girlReading,
+    footerImage: IMG.groupClass,
     duration: "3 months",
     format: "Live batch · max 6 students",
     price: "₹999/mo",
-    outcomes: ["Speak for 2 minutes on any topic", "Lead group conversations", "Tell stories that hold attention", "Use idioms naturally", "Think in English, not translate", "Win debates with calm logic"],
-    modules: [
-      { title: "Warm-Ups & Word Games", items: ["Tongue twisters", "1-min just-a-minute", "Word association", "Picture description"] },
-      { title: "Story Telling", items: ["The 4-part story formula", "Personal anecdotes", "Adding humour", "Voice modulation"] },
-      { title: "Debates & Discussions", items: ["For & against structure", "Active listening", "Polite disagreement", "Closing arguments"] },
-      { title: "Role-Plays", items: ["Travel & hotel", "Customer service", "Doctor & patient", "Job networking events"] },
+    outcomes: [
+      "Speak for 2 minutes on any topic",
+      "Lead group conversations",
+      "Tell stories that hold attention",
+      "Use idioms naturally",
+      "Think in English, not translate",
+      "Win debates with calm logic",
     ],
-    metaDescription: "Interactive English speaking classes online. Daily live practice with games, debates and stories. 3 months · max 6 per batch · ₹999/mo.",
+    modules: [
+      {
+        title: "Warm-Ups & Word Games",
+        items: [
+          "Tongue twisters",
+          "1-min just-a-minute",
+          "Word association",
+          "Picture description",
+        ],
+      },
+      {
+        title: "Story Telling",
+        items: [
+          "The 4-part story formula",
+          "Personal anecdotes",
+          "Adding humour",
+          "Voice modulation",
+        ],
+      },
+      {
+        title: "Debates & Discussions",
+        items: [
+          "For & against structure",
+          "Active listening",
+          "Polite disagreement",
+          "Closing arguments",
+        ],
+      },
+      {
+        title: "Role-Plays",
+        items: ["Travel & hotel", "Customer service", "Doctor & patient", "Job networking events"],
+      },
+    ],
+    metaDescription:
+      "Interactive English speaking classes online. Daily live practice with games, debates and stories. 3 months · max 6 per batch · ₹999/mo.",
   },
-  "ielts": {
+  ielts: {
     slug: "ielts",
     title: "IELTS Preparation",
-    tagline: "Target Band 7+ with full-length mocks, speaking labs and live writing feedback — 100% online live, small batches.",
-    category: "English & Career", categoryColor: "brand",
+    tagline:
+      "Target Band 7+ with full-length mocks, speaking labs and live writing feedback — 100% online live, small batches.",
+    category: "English & Career",
+    categoryColor: "brand",
     icon: "trophy",
-    heroImage: IMG.ielts, midImage: IMG.manStudying, footerImage: IMG.graduation,
+    heroImage: IMG.ielts,
+    midImage: IMG.manStudying,
+    footerImage: IMG.graduation,
     duration: "3 months",
     format: "Live batch · max 6 students",
     price: "₹1,999/mo",
@@ -105,58 +266,200 @@ export const COURSES: Record<string, CourseData> = {
       "Take 6+ full-length mock tests with detailed feedback",
     ],
     modules: [
-      { title: "Listening Mastery", items: ["Map, form & matching questions", "Section 3 academic discussions", "Note-taking shorthand", "Accent training: UK, AUS, US"] },
-      { title: "Reading Strategies", items: ["Skim, scan & deep-read", "True/False/Not Given decoder", "Matching headings tactics", "30-minute mock per week"] },
-      { title: "Writing Task 1 & 2", items: ["Academic & GT Task 1 templates", "Task 2 essay structures (5 types)", "Live writing reviewed in class", "Band 7+ vocabulary & connectors"] },
-      { title: "Speaking Labs", items: ["Part 1: home, work, hobbies", "Part 2 cue-card structure", "Part 3 abstract discussion", "Mock interviews with feedback"] },
-      { title: "Mock Tests & Analysis", items: ["6 full-length timed mocks", "Section-wise weakness map", "Personalised improvement plan", "Predicted band score"] },
+      {
+        title: "Listening Mastery",
+        items: [
+          "Map, form & matching questions",
+          "Section 3 academic discussions",
+          "Note-taking shorthand",
+          "Accent training: UK, AUS, US",
+        ],
+      },
+      {
+        title: "Reading Strategies",
+        items: [
+          "Skim, scan & deep-read",
+          "True/False/Not Given decoder",
+          "Matching headings tactics",
+          "30-minute mock per week",
+        ],
+      },
+      {
+        title: "Writing Task 1 & 2",
+        items: [
+          "Academic & GT Task 1 templates",
+          "Task 2 essay structures (5 types)",
+          "Live writing reviewed in class",
+          "Band 7+ vocabulary & connectors",
+        ],
+      },
+      {
+        title: "Speaking Labs",
+        items: [
+          "Part 1: home, work, hobbies",
+          "Part 2 cue-card structure",
+          "Part 3 abstract discussion",
+          "Mock interviews with feedback",
+        ],
+      },
+      {
+        title: "Mock Tests & Analysis",
+        items: [
+          "6 full-length timed mocks",
+          "Section-wise weakness map",
+          "Personalised improvement plan",
+          "Predicted band score",
+        ],
+      },
     ],
     faqs: [
-      { q: "Academic or General Training?", a: "We cover both — your trainer customises drills to your target." },
+      {
+        q: "Academic or General Training?",
+        a: "We cover both — your trainer customises drills to your target.",
+      },
       { q: "How many mocks?", a: "Minimum 6 full-length mocks." },
     ],
     testimonials: [
-      { quote: "Went from 5.5 to 7.5 overall. Writing feedback was a game changer.", name: "Harshit Singh", detail: "IELTS · Now in Toronto", waMessage: "Hi, I saw Harshit's IELTS story. Free demo please." },
-      { quote: "Speaking Part 2 used to scare me. The mock interviews killed that fear.", name: "Sneha Das", detail: "IELTS · Now in Sydney", waMessage: "Hi, want to join IELTS. Demo please." },
+      {
+        quote: "Went from 5.5 to 7.5 overall. Writing feedback was a game changer.",
+        name: "Harshit Singh",
+        detail: "IELTS · Now in Toronto",
+        waMessage: "Hi, I saw Harshit's IELTS story. Free demo please.",
+      },
+      {
+        quote: "Speaking Part 2 used to scare me. The mock interviews killed that fear.",
+        name: "Sneha Das",
+        detail: "IELTS · Now in Sydney",
+        waMessage: "Hi, want to join IELTS. Demo please.",
+      },
     ],
-    metaDescription: "IELTS Preparation live online — 3 months · max 6 per batch · ₹1,999/mo. 6+ full-length mocks, live writing feedback, speaking labs. Free demo.",
+    metaDescription:
+      "IELTS Preparation live online — 3 months · max 6 per batch · ₹1,999/mo. 6+ full-length mocks, live writing feedback, speaking labs. Free demo.",
   },
   "interview-prep": {
     slug: "interview-prep",
     title: "Interview Preparation in English",
-    tagline: "Walk into your next interview with answers ready, body language sharp, and confidence high. HR + behavioural + communication — all covered live online.",
-    category: "English & Career", categoryColor: "brand",
+    tagline:
+      "Walk into your next interview with answers ready, body language sharp, and confidence high. HR + behavioural + communication — all covered live online.",
+    category: "English & Career",
+    categoryColor: "brand",
     icon: "target",
-    heroImage: IMG.interview, midImage: IMG.manOffice, footerImage: IMG.womanOffice,
+    heroImage: IMG.interview,
+    midImage: IMG.manOffice,
+    footerImage: IMG.womanOffice,
     duration: "2 months · intensive",
     format: "Live batch · max 6 students",
     price: "₹1,499/mo",
-    outcomes: ["Crack HR rounds confidently", "Answer 'tell me about yourself' in 90 sec", "Handle behavioural questions (STAR)", "Negotiate salary calmly", "Read interviewer cues", "Build a stand-out LinkedIn & resume"],
-    modules: [
-      { title: "Self-Introduction Mastery", items: ["The 90-second pitch", "Highlighting strengths without bragging", "Story-driven achievements", "Body language & tone"] },
-      { title: "HR Rounds", items: ["Most-asked HR questions", "Why this company / why you", "Strengths & weaknesses framing", "Notice period & salary negotiation"] },
-      { title: "Behavioural (STAR)", items: ["Situation, Task, Action, Result", "Conflict & failure stories", "Leadership examples", "Team disagreements"] },
-      { title: "Resume & LinkedIn", items: ["1-page ATS-friendly resume", "Action-verb bullets", "LinkedIn headline & about", "Recruiter-attracting keywords"] },
-      { title: "Mock Interviews", items: ["3 live mock interviews", "Recorded feedback", "Improvement action plan", "Confidence drills"] },
+    outcomes: [
+      "Crack HR rounds confidently",
+      "Answer 'tell me about yourself' in 90 sec",
+      "Handle behavioural questions (STAR)",
+      "Negotiate salary calmly",
+      "Read interviewer cues",
+      "Build a stand-out LinkedIn & resume",
     ],
-    metaDescription: "Interview Preparation in English live online — HR, behavioural, mock interviews. 2 months · max 6 per batch · ₹1,499/mo. Free demo on WhatsApp.",
+    modules: [
+      {
+        title: "Self-Introduction Mastery",
+        items: [
+          "The 90-second pitch",
+          "Highlighting strengths without bragging",
+          "Story-driven achievements",
+          "Body language & tone",
+        ],
+      },
+      {
+        title: "HR Rounds",
+        items: [
+          "Most-asked HR questions",
+          "Why this company / why you",
+          "Strengths & weaknesses framing",
+          "Notice period & salary negotiation",
+        ],
+      },
+      {
+        title: "Behavioural (STAR)",
+        items: [
+          "Situation, Task, Action, Result",
+          "Conflict & failure stories",
+          "Leadership examples",
+          "Team disagreements",
+        ],
+      },
+      {
+        title: "Resume & LinkedIn",
+        items: [
+          "1-page ATS-friendly resume",
+          "Action-verb bullets",
+          "LinkedIn headline & about",
+          "Recruiter-attracting keywords",
+        ],
+      },
+      {
+        title: "Mock Interviews",
+        items: [
+          "3 live mock interviews",
+          "Recorded feedback",
+          "Improvement action plan",
+          "Confidence drills",
+        ],
+      },
+    ],
+    metaDescription:
+      "Interview Preparation in English live online — HR, behavioural, mock interviews. 2 months · max 6 per batch · ₹1,499/mo. Free demo on WhatsApp.",
   },
   "career-counselling": {
     slug: "career-counselling",
     title: "Career Counselling",
-    tagline: "1:1 online sessions to map your strengths, interests and the right next step — college, course or career switch.",
-    category: "English & Career", categoryColor: "brand",
+    tagline:
+      "1:1 online sessions to map your strengths, interests and the right next step — college, course or career switch.",
+    category: "English & Career",
+    categoryColor: "brand",
     icon: "compass",
-    heroImage: IMG.careerCounselling, midImage: IMG.womanOffice, footerImage: IMG.studentLaptop,
+    heroImage: IMG.careerCounselling,
+    midImage: IMG.womanOffice,
+    footerImage: IMG.studentLaptop,
     duration: "3 sessions × 60 min",
     format: "1:1 personalised",
     price: "₹999 total",
-    outcomes: ["Discover your strengths & interests", "Shortlist 3 right-fit career paths", "Get a 6-month action plan", "Course/college recommendations", "Resume + LinkedIn review", "Clarity, not confusion"],
-    modules: [
-      { title: "Discovery", items: ["Strengths inventory", "Interest assessment", "Values & lifestyle goals", "Skill audit"] },
-      { title: "Mapping", items: ["3 career path comparison", "Salary & growth research", "Pros & cons grid", "Reality check conversation"] },
-      { title: "Action Plan", items: ["6-month milestones", "Course/college options", "Networking targets", "Weekly check-ins (optional)"] },
+    outcomes: [
+      "Discover your strengths & interests",
+      "Shortlist 3 right-fit career paths",
+      "Get a 6-month action plan",
+      "Course/college recommendations",
+      "Resume + LinkedIn review",
+      "Clarity, not confusion",
     ],
-    metaDescription: "1:1 Career Counselling online — 3 × 60-min sessions · ₹999 total. Discover, map and act. Free 15-min intro on WhatsApp.",
+    modules: [
+      {
+        title: "Discovery",
+        items: [
+          "Strengths inventory",
+          "Interest assessment",
+          "Values & lifestyle goals",
+          "Skill audit",
+        ],
+      },
+      {
+        title: "Mapping",
+        items: [
+          "3 career path comparison",
+          "Salary & growth research",
+          "Pros & cons grid",
+          "Reality check conversation",
+        ],
+      },
+      {
+        title: "Action Plan",
+        items: [
+          "6-month milestones",
+          "Course/college options",
+          "Networking targets",
+          "Weekly check-ins (optional)",
+        ],
+      },
+    ],
+    metaDescription:
+      "1:1 Career Counselling online — 3 × 60-min sessions · ₹999 total. Discover, map and act. Free 15-min intro on WhatsApp.",
   },
 };

@@ -1,18 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { SITE_URL, abs, pageHead } from "@/lib/seo";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SITE_URL, abs, blogPath, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
+import { getPostsSorted } from "@/lib/blog";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   component: Page,
   head: () => {
     const head = pageHead("/blog");
-    // The posts live on this page rather than at their own URLs, so they are
-    // described as a Blog with its posts inline. If they ever get individual
-    // routes, split these into per-URL BlogPosting entities instead.
+    // Each post now has its own URL and its own BlogPosting entity (see
+    // src/lib/seo.ts → blogPostHead). This Blog entity is the collection they
+    // belong to, and every entry here carries the url, dates and author it was
+    // previously missing — without those, an entry is a headline with nothing
+    // behind it and is not eligible for anything.
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -25,13 +28,17 @@ export const Route = createFileRoute("/blog")({
         url: abs("/blog"),
         inLanguage: "en-IN",
         publisher: { "@id": `${SITE_URL}/#organization` },
-        blogPost: POSTS.map((post) => ({
+        blogPost: getPostsSorted().map((post) => ({
           "@type": "BlogPosting",
+          "@id": `${abs(blogPath(post))}#post`,
           headline: post.title,
-          description: post.excerpt,
+          description: post.description,
+          url: abs(blogPath(post)),
+          datePublished: post.datePublished,
+          dateModified: post.dateModified,
           articleSection: post.tag,
           inLanguage: "en-IN",
-          author: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+          author: { "@type": "Person", name: post.author, url: abs("/founder") },
           publisher: { "@id": `${SITE_URL}/#organization` },
         })),
       }),
@@ -40,37 +47,92 @@ export const Route = createFileRoute("/blog")({
   },
 });
 
-const POSTS = [
-  { tag: "Spoken English", img: IMG.girlReading, title: "5 Speaking Habits That Killed My Hesitation in 30 Days", excerpt: "The smallest daily ritual that built my fluency — no apps, no expensive courses." },
-  { tag: "IELTS", img: IMG.ielts, title: "Band 7 Writing: The 4-Paragraph Template That Just Works", excerpt: "A simple Task 2 structure trained 200+ of our students into Band 7+." },
-  { tag: "Business English", img: IMG.businessEnglish, title: "5 Email Phrases That Make You Sound More Professional", excerpt: "Small wording swaps that instantly upgrade your workplace emails." },
-  { tag: "Interview Prep", img: IMG.presentation, title: "How to Answer 'Tell Me About Yourself' in 60 Seconds", excerpt: "A simple structure our students use to nail the most common interview opener." },
-  { tag: "Career", img: IMG.career, title: "BPO to Client-Facing Role: The Realistic 6-Month Roadmap", excerpt: "What to learn, in what order, and how to talk about it in interviews." },
-];
+/** Human date for the card. The machine copy lives in <time dateTime>. */
+function formatDate(iso: string): string {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
 
 function Page() {
+  const posts = getPostsSorted();
+
   return (
-    <Layout waMessage="Hi, I read the blog. I'd like to discuss my learning goal." footerImage={IMG.blogDesk}>
+    <Layout
+      waMessage="Hi, I read the blog. I'd like to discuss my learning goal."
+      footerImage={IMG.blogDesk}
+    >
       <section className="relative">
-        <div className="absolute inset-0 z-0"><SmartImage src={IMG.blogDesk} alt="Student reading and taking notes for English practice" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65"/></div>
+        <div className="absolute inset-0 z-0">
+          <SmartImage
+            src={IMG.blogDesk}
+            alt="Student reading and taking notes for English practice"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65" />
+        </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
-          <span className="eyebrow eyebrow-white"><Icon name="book" size={14}/> Blog</span>
-          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Tips & Stories for <span className="text-sunshine">Indian Learners</span></h1>
-          <p className="mt-5 text-lg text-white">Practical, hype-free articles on English and career building — written by our teachers.</p>
+          <span className="eyebrow eyebrow-white">
+            <Icon name="book" size={14} /> Blog
+          </span>
+          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
+            Tips &amp; Stories for <span className="text-sunshine">Indian Learners</span>
+          </h1>
+          <p className="mt-5 text-lg text-white">
+            Practical, hype-free articles on English and career building — written by our teachers.
+          </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container-x">
-          <SectionHeader eyebrow="Latest Posts" title="Read · Apply · Discuss on WhatsApp"/>
+          <SectionHeader eyebrow="Latest Posts" title="Read · Apply · Discuss on WhatsApp" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {POSTS.map(p => (
-              <article key={p.title} className="card-soft flex flex-col">
-                <SmartImage src={p.img} alt={p.title} className="rounded-xl h-44 mb-4" imgClassName="hover:scale-105 transition duration-500" sizes="(min-width: 768px) 33vw, 100vw"/>
-                <span className="pill bg-brand-soft text-brand-deep border-brand/20 mb-2">{p.tag}</span>
-                <h3 className="font-display font-bold text-ink text-lg">{p.title}</h3>
-                <p className="text-sm text-ink/85 mt-2 flex-1">{p.excerpt}</p>
-                <WaButton message={`Hi, I read "${p.title}" and want to know more.`} variant="wa" size="sm" className="mt-4">Ask about this on WhatsApp</WaButton>
+            {posts.map((p) => (
+              <article key={p.slug} className="card-soft flex flex-col">
+                {/* The whole card links to the article. This is the bug the blog
+                    had: the titles were unlinked <h3> elements, so none of the
+                    five posts had a URL a reader or a crawler could reach. */}
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: p.slug }}
+                  className="group flex flex-col flex-1"
+                >
+                  <SmartImage
+                    src={IMG[p.img as keyof typeof IMG] ?? IMG.blogDesk}
+                    alt={p.imgAlt}
+                    className="rounded-xl h-44 mb-4"
+                    imgClassName="group-hover:scale-105 transition duration-500"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                  />
+                  <span className="pill bg-brand-soft text-brand-deep border-brand/20 mb-2 w-fit">
+                    {p.tag}
+                  </span>
+                  <h3 className="font-display font-bold text-ink text-lg group-hover:text-brand transition">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-ink/85 mt-2 flex-1">{p.excerpt}</p>
+                  <p className="text-xs text-ink/70 mt-3">
+                    <time dateTime={p.datePublished}>{formatDate(p.datePublished)}</time> ·{" "}
+                    {p.readingTime} min read
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-brand font-display font-bold text-sm">
+                    Read the article <Icon name="arrow-right" size={14} />
+                  </span>
+                </Link>
+                <WaButton
+                  message={`Hi, I read "${p.title}" and want to know more.`}
+                  variant="wa"
+                  size="sm"
+                  className="mt-4"
+                >
+                  Ask about this on WhatsApp
+                </WaButton>
               </article>
             ))}
           </div>

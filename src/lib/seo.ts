@@ -23,6 +23,7 @@
  */
 
 import { verificationMeta } from "@/lib/analytics";
+import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
@@ -327,7 +328,7 @@ export const PAGES: Record<string, PageSeo> = {
       "how to improve english speaking daily",
     ],
     ogImage: "/og/blog.jpg",
-    priority: 0.6,
+    priority: 0.7,
     changefreq: "weekly",
     summary:
       "Blog: practical English and career articles written by Learn With Smile teachers for Indian learners.",
@@ -864,8 +865,80 @@ export function pageHead(path: string): HeadResult {
   });
 }
 
+/* --------------------------------------------------------------------------
+ * Blog articles
+ * ------------------------------------------------------------------------ */
+
+/** Site-relative path of an article. */
+export function blogPath(post: BlogPost): string {
+  return `/blog/${post.slug}`;
+}
+
+/**
+ * Head payload for one article: `BlogPosting` + `BreadcrumbList` on top of the
+ * usual page metadata.
+ *
+ * The `author` deliberately points at the Person entity already emitted on
+ * `/founder` rather than repeating a bare name string. That link — article to
+ * a real, described author with their own URL — is the strongest E-E-A-T
+ * signal available here, and half of it was already built.
+ */
+export function blogPostHead(post: BlogPost): HeadResult {
+  const path = blogPath(post);
+  const url = abs(path);
+  const image = abs(`/og/blog-${post.slug}.jpg`);
+
+  const head = buildHead({
+    path,
+    title: post.seoTitle,
+    description: post.description,
+    ogImage: `/og/blog-${post.slug}.jpg`,
+    ogType: "article",
+    jsonLd: [
+      webPageLd({ path, title: post.seoTitle, description: post.description }),
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${url}#post`,
+        // Google truncates headline at 110 characters; every title here is well
+        // inside that, and the check below keeps it that way.
+        headline: post.title,
+        description: post.description,
+        url,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        datePublished: post.datePublished,
+        dateModified: post.dateModified,
+        inLanguage: "en-IN",
+        wordCount: post.wordCount,
+        timeRequired: `PT${post.readingTime}M`,
+        articleSection: post.tag,
+        image: [image],
+        author: { "@type": "Person", name: post.author, url: abs("/founder") },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        isPartOf: { "@id": `${abs("/blog")}#blog` },
+      },
+      breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: post.title, path },
+      ]),
+    ],
+  });
+
+  head.meta.push(
+    { name: "author", content: post.author },
+    { property: "article:published_time", content: post.datePublished },
+    { property: "article:modified_time", content: post.dateModified },
+    { property: "article:author", content: post.author },
+    { property: "article:section", content: post.tag },
+  );
+
+  return head;
+}
+
 /** Every indexable path on the site, in sitemap order. */
 export const ALL_PATHS: string[] = [
   ...Object.keys(PAGES),
   ...Object.keys(COURSE_SEO).map((slug) => `/course-${slug}`),
+  ...BLOG_POSTS.map(blogPath),
 ];

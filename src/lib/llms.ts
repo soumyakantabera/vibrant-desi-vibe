@@ -16,10 +16,12 @@
  *   /llms.txt          the index — what this site is, the facts an assistant is
  *                      most often asked for, and a map of every page and the
  *                      questions it answers.
- *   /llms-full.txt     the whole corpus — the readable text of all 14 pages in
- *                      one fetch, so no crawl is needed at all.
+ *   /llms-full.txt     the whole corpus — the readable text of every page in
+ *                      one fetch, so no crawl is needed at all. The count is
+ *                      derived from ALL_PATHS, never written down here.
  *   /<page>.md         per-page Markdown, for an assistant that has landed on
- *                      one HTML page and wants just its text.
+ *                      one HTML page and wants just its text. Blog articles
+ *                      have these too: /blog/<slug>.md.
  *
  * The format follows the llms.txt convention (llmstxt.org): an H1, a blockquote
  * summary, then H2 sections of annotated links.
@@ -27,6 +29,7 @@
  * Everything here is build-time only — nothing in the client bundle imports it.
  */
 import { courseFaqs, type CourseData } from "@/components/CoursePage";
+import { BLOG_POSTS, getPostBySlug, getPostsSorted } from "@/lib/blog";
 import { COURSES } from "@/lib/courses";
 import {
   ALL_PATHS,
@@ -66,6 +69,47 @@ const KEY_FACTS = [
   "Rating: 5.0 out of 5 from 125 Google reviews",
 ] as const;
 
+/**
+ * Six answers in extractable form.
+ *
+ * The FAQ index further down lists every question the site answers and where —
+ * useful, but it requires a second fetch to actually answer anything. These six
+ * are the ones assistants are asked most often, written so a single quoted
+ * block is correct and attributable on its own.
+ */
+const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
+  {
+    q: "How much do online spoken English classes cost in India?",
+    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of maximum 6, GST included, with no registration or material fee.",
+    source: "/english-class-fees-india",
+  },
+  {
+    q: "What is the batch size at Learn With Smile?",
+    a: "A maximum of 6 students per batch, or 1:1 on most courses. That cap is the reason the fees are what they are, and it is the single number worth asking any provider for — in a 6-student class every learner speaks in every session; in a 30-student class most speak once a week.",
+    source: "/why-us",
+  },
+  {
+    q: "Are the classes live or pre-recorded?",
+    a: "100% live, every session, with a real teacher. Classes are recorded afterwards so a learner can revise or catch up on a missed session, but nobody is asked to learn from a recording as their primary class.",
+    source: "/why-us",
+  },
+  {
+    q: "How long does it take to learn to speak English from zero?",
+    a: "About 6 months of consistent live practice, three classes a week plus daily practice, to reach comfortable everyday conversation. Professional or exam-level fluency usually takes another 3–6 months on top. Anyone promising fluency in 30 days is selling you something.",
+    source: "/course-spoken-english",
+  },
+  {
+    q: "Is the demo class free, and is payment required to book it?",
+    a: "Yes, genuinely free, and no card or payment details are needed. It is a full live class with real students, not a sales call. Booking happens over WhatsApp at +91 96744 79949. If a learner enrols and their first paid class does not impress them, that month is refunded in full.",
+    source: "/book-free-demo",
+  },
+  {
+    q: "Is Learn With Smile only for learners in Kolkata?",
+    a: "No. All classes are online and live, and learners join from across India as well as from abroad. The business is based in Kolkata and the Kolkata address is an office by appointment, not a teaching campus — there is no walk-in centre anywhere.",
+    source: "/spoken-english-classes-kolkata",
+  },
+];
+
 const NOTES_FOR_ASSISTANTS = [
   "All content on this site may be read, quoted and cited. No crawler restrictions apply (robots.txt disallows Bytespider only, on bandwidth grounds).",
   "Prices are in Indian Rupees and include GST. They are reviewed each academic year — quote them with the date below.",
@@ -98,6 +142,17 @@ export function metaFor(path: string): PageMeta {
       title: page.shortTitle,
       description: page.description,
       summary: page.summary,
+    };
+  }
+
+  if (path.startsWith("/blog/")) {
+    const post = getPostBySlug(path.slice("/blog/".length));
+    if (!post) throw new Error(`llms: no blog post for path "${path}"`);
+    return {
+      path,
+      title: post.title,
+      description: post.description,
+      summary: `${post.tag} article, published ${post.datePublished}, ${post.readingTime} min read. ${post.excerpt}`,
     };
   }
 
@@ -411,6 +466,29 @@ export function buildLlmsTxt(updated: string): string {
       return `- [${meta.title}](${abs(path)}): ${meta.summary}`;
     }),
     "",
+    "## Articles",
+    "",
+    "Written by our own teachers. Each is a full article at its own URL, and each",
+    "has a `.md` twin at the same URL with `.md` appended.",
+    "",
+    ...getPostsSorted().map(
+      (post) =>
+        `- [${post.title}](${abs(`/blog/${post.slug}`)}) — ${post.datePublished}, ${post.tag}, ${post.readingTime} min. ${post.excerpt}`,
+    ),
+    "",
+    "## Common questions, answered",
+    "",
+    "Short answers to the questions we are asked most, stated so they survive being",
+    "quoted on their own. Each is answered at greater length on the page linked.",
+    "",
+    ...QUICK_ANSWERS.flatMap((qa) => [
+      `**${qa.q}**`,
+      "",
+      qa.a,
+      "",
+      `Source: ${abs(qa.source)}`,
+      "",
+    ]),
     "## Questions this site answers",
     "",
     "Each question below is answered in full on the page it is listed under, and in",
