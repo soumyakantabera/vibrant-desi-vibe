@@ -25,6 +25,18 @@ const COMPANY = [
   { to: "/book-free-demo", label: "Book Free Demo" },
 ];
 
+/**
+ * The long-form landing pages. Linked from every page's footer so they are not
+ * orphans — a page reachable only from the sitemap gets crawled late and passes
+ * no internal link equity, which for three brand-new URLs is most of the
+ * problem.
+ */
+const GUIDES = [
+  { to: "/spoken-english-classes-kolkata", label: "Classes in Kolkata" },
+  { to: "/english-class-fees-india", label: "English Class Fees in India" },
+  { to: "/best-online-spoken-english-classes-india", label: "Compare Online Classes" },
+];
+
 const IMG =
   "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&auto=format&fit=crop&q=80";
 
@@ -33,7 +45,7 @@ export function Footer({ image }: { image?: string }) {
   return (
     <footer className="bg-ink text-cream pt-16 pb-8 mt-10" data-cta-location="footer">
       <div className="container-x">
-        <div className="grid lg:grid-cols-[1.2fr_1fr_1fr] gap-10 mb-12">
+        <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <Logo size={42} />
@@ -65,6 +77,7 @@ export function Footer({ image }: { image?: string }) {
           </div>
           <FooterCol title="Tracks" items={[...TRACKS, ...COMPANY.slice(0, 2)]} />
           <FooterCol title="English & Career" items={ENGLISH} />
+          <FooterCol title="Guides" items={GUIDES} />
         </div>
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">

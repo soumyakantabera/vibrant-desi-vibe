@@ -363,6 +363,161 @@ export const PAGES: Record<string, PageSeo> = {
       },
     ],
   },
+
+  /* ---------------------------------------------------------------------
+   * Landing pages for searches the site had no page for at all.
+   *
+   * Each answers a query the business genuinely serves and previously had
+   * nowhere to rank for. They are not doorway pages: the Kolkata page carries
+   * content that is only true of Kolkata, and the two guides answer their
+   * question honestly enough to be worth citing even by someone who does not
+   * buy anything.
+   * ------------------------------------------------------------------- */
+
+  "/spoken-english-classes-kolkata": {
+    path: "/spoken-english-classes-kolkata",
+    title: "Spoken English Classes in Kolkata — Live Online, ₹999",
+    description:
+      "Live online Spoken English classes from a Kolkata-based teacher. Max 6 students, morning, evening and weekend IST batches, ₹999/month. Free demo class.",
+    shortTitle: "Spoken English Classes in Kolkata",
+    keywords: [
+      "spoken english classes kolkata",
+      "spoken english classes in kolkata online",
+      "english speaking course kolkata fees",
+      "best spoken english institute kolkata",
+      "english classes salt lake kolkata",
+      "spoken english class gariahat",
+      "english speaking classes kolkata bengali medium",
+      "online english classes kolkata working professionals",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Kolkata landing page. Live online Spoken English for Kolkata learners — why online beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, batch timings on IST, and the same ₹999/month fee as everywhere else.",
+    faqs: [
+      {
+        q: "Where in Kolkata are your spoken English classes held?",
+        a: "They are not held anywhere in Kolkata — every class is online and live. Our registered address at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008 is an office you can visit by appointment, not a teaching campus, and there is no walk-in coaching centre. The teacher is Kolkata-based, the batch timings are set for IST, and classmates are usually a mix of Kolkata learners and learners from elsewhere in India.",
+      },
+      {
+        q: "How much do spoken English classes cost in Kolkata?",
+        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch capped at 6, GST included, with no registration or material fee. The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
+      },
+      {
+        q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
+        a: "Yes. Instruction is in English and all practice stays in English, but when a concept is not landing the teacher will explain it in Bengali or Hindi and then go back to English. This matters: a strictly English-only classroom produces silence from genuine beginners, and silence is the one thing a speaking class cannot afford. As your level rises the first-language explanations naturally stop being needed.",
+      },
+      {
+        q: "What batch timings do you run for people working in Sector V or Salt Lake?",
+        a: "Morning batches before office hours, evening batches from about 7pm IST, and weekend batches. Sector V and New Town shifts often run late, so the weekend batch is the most common choice for IT and BPO staff. Every class is recorded, so a missed session because of a release or an escalation does not set you back a week.",
+      },
+      {
+        q: "Is an online class actually better than joining a coaching centre in Kolkata?",
+        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 6-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes of commuting three times a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
+      },
+      {
+        q: "Do you prepare Kolkata students for IELTS and job interviews too?",
+        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹1,999/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Business English at ₹1,199/month for the Sector V and Rajarhat IT and BPO cluster. All of them are live, capped at 6 students, and taught from Kolkata.",
+      },
+    ],
+  },
+
+  "/english-class-fees-india": {
+    path: "/english-class-fees-india",
+    title: "Online English Class Fees in India (2026 Guide)",
+    description:
+      "What online English classes actually cost in India in 2026 — group, 1:1 and app-based pricing compared honestly, with what changes at each price point.",
+    shortTitle: "Online English Class Fees in India",
+    keywords: [
+      "english class fees per month in india",
+      "online english classes fees india",
+      "spoken english course fees",
+      "how much do english classes cost india",
+      "cheapest online english class india",
+      "english speaking course price india",
+      "ielts coaching fees india",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Fees guide. What online English classes actually cost in India — ₹800–₹3,000/month for group classes, ₹100–₹2,000 per 1:1 session, ₹300–₹800/month for apps — what drives the price, the cost-per-speaking-minute calculation, and five hidden costs to check with any provider.",
+    faqs: [
+      {
+        q: "How much do online English classes cost in India per month?",
+        a: "Group online English classes in India generally run ₹800–₹3,000 per month. One-to-one tutoring runs ₹100–₹2,000 per session depending on where the tutor is based, and app-based conversation practice runs ₹300–₹800 per month. Learn With Smile sits at ₹999/month for Spoken English in a batch capped at 6, GST included. Anything under about ₹500 a month is almost always either recorded video or a batch large enough that you will not speak.",
+      },
+      {
+        q: "What is the cheapest way to learn English in India?",
+        a: "Free, and this is worth saying plainly: a language exchange partner, a daily podcast, and speaking to one person in English every day costs nothing and works, if you are disciplined. Paid classes buy you three things free options do not — a fixed syllabus so you are not guessing what to study next, someone who corrects the same mistake until it goes away, and a schedule you are accountable to. If you are already disciplined and just need practice, spend nothing.",
+      },
+      {
+        q: "Why do some online English classes cost ₹500 and others ₹5,000?",
+        a: "Batch size, overwhelmingly. A teacher earning a viable hourly rate has to divide it among the students in the room, so a ₹500/month class needs 30–40 learners in it and a ₹2,000/month class can run with 6. After that: live teaching costs more than recorded video, foreign-based tutors cost more than Indian ones, exam prep costs more than general conversation, and a recognised certificate adds a fee that has nothing to do with teaching quality.",
+      },
+      {
+        q: "Are expensive English classes better than cheap ones?",
+        a: "Not reliably. Price buys smaller batches and live teaching, which are real advantages, but it does not buy better teachers or faster results — plenty of ₹5,000/month institutes run 30-student batches, and plenty of ₹1,000/month classes are taught by someone with a decade of experience. The two things worth paying for are speaking time per class and individual correction. Ask any provider their batch size before you ask anything else.",
+      },
+      {
+        q: "Do online English class fees in India include GST?",
+        a: "Often not, and it is the most common surprise on the invoice. Ask whether the advertised figure is inclusive, because 18% on a ₹2,000/month course is ₹360 a month you did not budget for. Learn With Smile's prices are GST-inclusive and there are no registration or material fees. Also ask about lock-in: a quarterly or annual payment that cannot be cancelled is a much larger commitment than a monthly fee.",
+      },
+      {
+        q: "How much does IELTS coaching cost in India?",
+        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. Learn With Smile charges ₹1,999/month for three months in a batch of maximum 6, including six full-length mocks with individual feedback. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching.",
+      },
+    ],
+  },
+
+  "/best-online-spoken-english-classes-india": {
+    path: "/best-online-spoken-english-classes-india",
+    title: "Best Online Spoken English Classes in India, Compared",
+    description:
+      "An honest comparison of the main online spoken English options in India — who each one actually suits, what they cost, and where we fit in among them.",
+    shortTitle: "Best Online Spoken English Classes, Compared",
+    keywords: [
+      "best online spoken english classes in india",
+      "best english speaking course online india",
+      "cambly vs engvarta",
+      "best english learning platform india",
+      "which online english class is best",
+      "english speaking app vs class",
+      "online english class comparison india",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.7,
+    changefreq: "monthly",
+    summary:
+      "Comparison guide. The main formats for learning spoken English online in India — 1:1 practice apps, native-speaker platforms, children's platforms, institutional courses, small and large live batches, AI apps — organised by which learner each suits rather than as a ranking. Written by one of the providers, and says so.",
+    faqs: [
+      {
+        q: "Which is the best online spoken English class in India?",
+        a: "There is no single best one, and any page that names one is usually published by that company. The right choice depends on your level and what you need: daily 1:1 speaking reps with no fixed syllabus suit a hesitant intermediate speaker; a structured live course suits a genuine beginner who does not know what to study next; a children's platform suits an under-14; an established institution suits anyone who needs a recognised certificate. Take three free trials in one week and count how many minutes you actually spoke in each.",
+      },
+      {
+        q: "Are English speaking apps as good as live classes?",
+        a: "For daily practice, an app is often better, because it is available at 6am and a class is not. For learning, apps are weaker in two specific ways: most have no fixed syllabus, so you practise what you can already say rather than what you cannot, and AI-based apps will not tell you that a sentence is technically correct but nobody speaks that way. The common pattern that works is an app for daily reps plus a live class for structure and correction.",
+      },
+      {
+        q: "Is it worth paying for a native English speaker as a tutor?",
+        a: "Usually not, for an Indian beginner. Native tutors cost several times more per hour and their advantage is accent and idiom, which are the last things a beginner needs and the first things marketing sells. An Indian teacher has a real advantage early on: they know exactly which errors a Bengali, Hindi or Tamil first language produces, and they can explain in your language when a concept is not landing. Consider a native tutor once you are already fluent and specifically want to sound different.",
+      },
+      {
+        q: "Do I need a certificate from an English course?",
+        a: "Only if someone is going to ask for it. Employers in India almost never ask to see a spoken English certificate — they judge your English in the interview. If you specifically need a recognised credential for a visa, a university application or an HR checklist, go to British Council or a similar established institution and expect to pay considerably more; that fee is buying the certificate, not better teaching. Learn With Smile does not issue a certificate and we would rather say so than imply otherwise.",
+      },
+      {
+        q: "Which online English class is best for a complete beginner?",
+        a: "A structured live course with a small batch, not an app and not a 1:1 conversation platform. A complete beginner cannot practise conversation yet, because there is nothing to practise with — they need grammar, vocabulary and pronunciation built in order, in a room where being wrong costs nothing. Conversation platforms suit people who can already speak but freeze. Choosing the wrong one of those two is the most common expensive mistake we see.",
+      },
+      {
+        q: "Which online English classes are best for children in India?",
+        a: "A dedicated children's platform, not us. Teaching a nine-year-old is a genuinely different skill involving gamified curricula, parent reporting and safeguarding, and the platforms built for it — PlanetSpark and similar — do it properly. Our classes are designed for learners from about 15 upwards, and putting a younger child into an adult batch would waste your money and their time.",
+      },
+    ],
+  },
 };
 
 /* --------------------------------------------------------------------------

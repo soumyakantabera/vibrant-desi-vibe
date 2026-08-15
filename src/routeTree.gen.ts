@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
+import { Route as SpokenEnglishClassesKolkataRouteImport } from './routes/spoken-english-classes-kolkata'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as CourseInterviewPrepRouteImport } from './routes/course-interview-prep'
@@ -20,6 +22,7 @@ import { Route as CourseIeltsRouteImport } from './routes/course-ielts'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
 import { Route as BookFreeDemoRouteImport } from './routes/book-free-demo'
+import { Route as BestOnlineSpokenEnglishClassesIndiaRouteImport } from './routes/best-online-spoken-english-classes-india'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -35,9 +38,20 @@ const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
   path: '/success-stories',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SpokenEnglishClassesKolkataRoute =
+  SpokenEnglishClassesKolkataRouteImport.update({
+    id: '/spoken-english-classes-kolkata',
+    path: '/spoken-english-classes-kolkata',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnglishClassFeesIndiaRoute = EnglishClassFeesIndiaRouteImport.update({
+  id: '/english-class-fees-india',
+  path: '/english-class-fees-india',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnglishCareerRoute = EnglishCareerRouteImport.update({
@@ -81,6 +95,12 @@ const BookFreeDemoRoute = BookFreeDemoRouteImport.update({
   path: '/book-free-demo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BestOnlineSpokenEnglishClassesIndiaRoute =
+  BestOnlineSpokenEnglishClassesIndiaRouteImport.update({
+    id: '/best-online-spoken-english-classes-india',
+    path: '/best-online-spoken-english-classes-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutUsRoute = AboutUsRouteImport.update({
   id: '/about-us',
   path: '/about-us',
@@ -105,6 +125,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/book-free-demo': typeof BookFreeDemoRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -113,7 +134,9 @@ export interface FileRoutesByFullPath {
   '/course-interview-prep': typeof CourseInterviewPrepRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
+  '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
   '/founder': typeof FounderRoute
+  '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -122,6 +145,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/book-free-demo': typeof BookFreeDemoRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -130,7 +154,9 @@ export interface FileRoutesByTo {
   '/course-interview-prep': typeof CourseInterviewPrepRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
+  '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
   '/founder': typeof FounderRoute
+  '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -140,6 +166,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/book-free-demo': typeof BookFreeDemoRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -148,7 +175,9 @@ export interface FileRoutesById {
   '/course-interview-prep': typeof CourseInterviewPrepRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
+  '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
   '/founder': typeof FounderRoute
+  '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -159,6 +188,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-us'
+    | '/best-online-spoken-english-classes-india'
     | '/book-free-demo'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -167,7 +197,9 @@ export interface FileRouteTypes {
     | '/course-interview-prep'
     | '/course-spoken-english'
     | '/english-career'
+    | '/english-class-fees-india'
     | '/founder'
+    | '/spoken-english-classes-kolkata'
     | '/success-stories'
     | '/why-us'
     | '/blog/$slug'
@@ -176,6 +208,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-us'
+    | '/best-online-spoken-english-classes-india'
     | '/book-free-demo'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -184,7 +217,9 @@ export interface FileRouteTypes {
     | '/course-interview-prep'
     | '/course-spoken-english'
     | '/english-career'
+    | '/english-class-fees-india'
     | '/founder'
+    | '/spoken-english-classes-kolkata'
     | '/success-stories'
     | '/why-us'
     | '/blog/$slug'
@@ -193,6 +228,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-us'
+    | '/best-online-spoken-english-classes-india'
     | '/book-free-demo'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -201,7 +237,9 @@ export interface FileRouteTypes {
     | '/course-interview-prep'
     | '/course-spoken-english'
     | '/english-career'
+    | '/english-class-fees-india'
     | '/founder'
+    | '/spoken-english-classes-kolkata'
     | '/success-stories'
     | '/why-us'
     | '/blog/$slug'
@@ -211,6 +249,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
+  BestOnlineSpokenEnglishClassesIndiaRoute: typeof BestOnlineSpokenEnglishClassesIndiaRoute
   BookFreeDemoRoute: typeof BookFreeDemoRoute
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
@@ -219,7 +258,9 @@ export interface RootRouteChildren {
   CourseInterviewPrepRoute: typeof CourseInterviewPrepRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
+  EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
   FounderRoute: typeof FounderRoute
+  SpokenEnglishClassesKolkataRoute: typeof SpokenEnglishClassesKolkataRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
   WhyUsRoute: typeof WhyUsRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -242,11 +283,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SuccessStoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/spoken-english-classes-kolkata': {
+      id: '/spoken-english-classes-kolkata'
+      path: '/spoken-english-classes-kolkata'
+      fullPath: '/spoken-english-classes-kolkata'
+      preLoaderRoute: typeof SpokenEnglishClassesKolkataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/founder': {
       id: '/founder'
       path: '/founder'
       fullPath: '/founder'
       preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english-class-fees-india': {
+      id: '/english-class-fees-india'
+      path: '/english-class-fees-india'
+      fullPath: '/english-class-fees-india'
+      preLoaderRoute: typeof EnglishClassFeesIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/english-career': {
@@ -305,6 +360,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookFreeDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/best-online-spoken-english-classes-india': {
+      id: '/best-online-spoken-english-classes-india'
+      path: '/best-online-spoken-english-classes-india'
+      fullPath: '/best-online-spoken-english-classes-india'
+      preLoaderRoute: typeof BestOnlineSpokenEnglishClassesIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about-us': {
       id: '/about-us'
       path: '/about-us'
@@ -339,6 +401,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
+  BestOnlineSpokenEnglishClassesIndiaRoute:
+    BestOnlineSpokenEnglishClassesIndiaRoute,
   BookFreeDemoRoute: BookFreeDemoRoute,
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
@@ -347,7 +411,9 @@ const rootRouteChildren: RootRouteChildren = {
   CourseInterviewPrepRoute: CourseInterviewPrepRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
   EnglishCareerRoute: EnglishCareerRoute,
+  EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,
   FounderRoute: FounderRoute,
+  SpokenEnglishClassesKolkataRoute: SpokenEnglishClassesKolkataRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
   WhyUsRoute: WhyUsRoute,
   BlogSlugRoute: BlogSlugRoute,
