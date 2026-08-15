@@ -6,6 +6,36 @@ import { getRouter } from "./router";
 import { recordPaintedImages } from "./lib/painted-images";
 import "./styles.css";
 
+/**
+ * Drop a trailing slash from the URL before the router ever reads it.
+ *
+ * `scripts/prerender.mjs` writes both `course-ielts.html` and
+ * `course-ielts/index.html` on purpose, so neither form 404s on GitHub Pages
+ * and neither costs a redirect hop. The side effect is that `/course-ielts/`
+ * answers 200 with the same page, so a crawler that finds both spends its
+ * budget twice on every page. The canonical tag already prevents duplicate
+ * *indexing*; this is about crawl budget and about the reader's address bar.
+ *
+ * Done here with `replaceState` rather than as a `beforeLoad` redirect on the
+ * root route, which is the obvious place for it and does not work: throwing
+ * `redirect()` from the root `beforeLoad` during the initial `router.load()`
+ * below leaves that promise unresolved, so the module never finishes, the page
+ * never fires DOMContentLoaded and `/course-ielts/` hangs on a blank screen.
+ * Rewriting the URL first means the router only ever sees canonical paths and
+ * no redirect is involved at all.
+ *
+ * GitHub Pages cannot issue a server redirect, so this is the available half of
+ * the fix: it corrects the URL for anyone running JavaScript, and a crawler
+ * that does not still reads a page carrying the right canonical.
+ */
+function stripTrailingSlash() {
+  const { pathname, search, hash } = window.location;
+  if (pathname === "/" || !pathname.endsWith("/")) return;
+  window.history.replaceState(null, "", pathname.replace(/\/+$/, "") + search + hash);
+}
+
+stripTrailingSlash();
+
 const router = getRouter();
 
 async function start() {

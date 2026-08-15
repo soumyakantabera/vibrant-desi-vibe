@@ -8,10 +8,12 @@ import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
-import { IMG } from "@/lib/images";
+import { IMG, imageSources } from "@/lib/images";
 import { withBasePath } from "@/lib/site-path";
 import { pageHead, PAGES } from "@/lib/seo";
 import { EXPERIMENTS, useVariant } from "@/lib/ab";
+
+const heroSources = imageSources(IMG.heroClass);
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -24,7 +26,24 @@ export const Route = createFileRoute("/")({
         // The hero photo is the largest thing in the first screen, so start it
         // downloading from the HTML rather than waiting for the bundle to
         // render the <img> that asks for it.
-        { rel: "preload", as: "image", href: IMG.heroClass, fetchPriority: "high" },
+        //
+        // Preloads the AVIF, with `type`, because that is what <picture> in
+        // SmartImage will actually choose — preloading the JPEG would fetch
+        // 141 kB the page then never displays. A browser without AVIF support
+        // ignores a preload whose `type` it cannot decode and loads the WebP or
+        // JPEG through the normal path, so the fallback is a missed
+        // optimisation rather than a double download.
+        ...(heroSources.avif
+          ? [
+              {
+                rel: "preload",
+                as: "image",
+                href: heroSources.avif,
+                type: "image/avif",
+                fetchPriority: "high",
+              },
+            ]
+          : [{ rel: "preload", as: "image", href: IMG.heroClass, fetchPriority: "high" }]),
       ],
     };
   },

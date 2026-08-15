@@ -74,25 +74,81 @@ function compactCss(src: string): string {
 }
 
 /**
- * The webfonts, requested by the gate itself rather than by a <link> in the
+ * Every Material Symbols glyph the site renders.
+ *
+ * Must stay in step with `MAP` in `src/components/Icon.tsx` — an icon name that
+ * is missing here paints its own ligature text ("arrow_forward") on the page
+ * instead of a glyph, which is the exact failure the gate's `display=block`
+ * exists to prevent.
+ */
+const ICON_NAMES = [
+  "ads_click",
+  "arrow_forward",
+  "auto_awesome",
+  "bar_chart",
+  "calendar_month",
+  "call",
+  "chat",
+  "check_circle",
+  "close",
+  "code",
+  "currency_rupee",
+  "emoji_events",
+  "explore",
+  "extension",
+  "favorite",
+  "format_quote",
+  "groups",
+  "headset_mic",
+  "lightbulb",
+  "mail",
+  "menu",
+  "menu_book",
+  "mic",
+  "person",
+  "photo_camera",
+  "play_circle",
+  "public",
+  "rocket_launch",
+  "schedule",
+  "sentiment_satisfied",
+  "smart_display",
+  "sports_esports",
+  "star",
+  "thumb_up",
+  "trending_up",
+  "verified",
+  "work",
+];
+
+/**
+ * The icon webfont, requested by the gate itself rather than by a <link> in the
  * markup.
  *
  * A stylesheet declared above a classic <script> blocks that script from
  * running until it loads — so a font <link> in the head would keep the gate
  * from existing until the font CDN answered, which on a bad day is twenty
  * seconds of blank page with no veil, no deadline and no failsafe: precisely
- * the situation all of this exists to prevent. Injected from here they are
- * fetched just as early and block nothing, and the gate is already the thing
- * that waits for them.
+ * the situation all of this exists to prevent. Injected from here it is
+ * fetched just as early and blocks nothing, and the gate is already the thing
+ * that waits for it.
  *
- * `display=swap` on the text faces, `display=block` on the icon face: its
- * glyphs are ligatures, so a fallback face would paint their names
- * ("arrow_forward") across the page. Readers without JavaScript get these
- * through a <noscript> copy in the markup instead.
+ * Manrope and Sora used to be here too. They are now self-hosted through
+ * `src/styles.css` (@fontsource), which removes two third-party connections and
+ * delivers them with the app stylesheet the gate already waits for.
+ *
+ * `icon_names` subsets the response to the 37 glyphs above rather than serving
+ * the whole Material Symbols set, which is a large variable font for a site
+ * that uses a few dozen icons from it.
+ *
+ * `display=block`, not `swap`: the glyphs are ligatures, so a fallback face
+ * would paint their names ("arrow_forward") across the page. Readers without
+ * JavaScript get this through a <noscript> copy in the markup instead.
  */
 export const FONT_CSS = [
-  "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap",
-  "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=block",
+  "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0" +
+    `&icon_names=${ICON_NAMES.join(",")}` +
+    "&display=block",
 ];
 
 /** Milliseconds before the page is revealed regardless of what is missing. */
