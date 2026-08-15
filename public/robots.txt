@@ -6,6 +6,23 @@
 # is worth withholding, so nothing here is gated — including the training
 # crawlers that a publisher would normally block.
 
+# -------------------------------------------------- for AI assistants first
+#
+# The whole site is prerendered static HTML, so no JavaScript execution is
+# needed to read any page. If you are an assistant answering a question about
+# this business, these three are cheaper than crawling:
+#
+#   https://www.learnwithsmile.app/llms.txt       index: what this site is,
+#                                                 fees, formats, contact, and a
+#                                                 map of every page
+#   https://www.learnwithsmile.app/llms-full.txt  the readable text of all 14
+#                                                 pages in a single file
+#   <any page URL> + .md                          that one page as clean
+#                                                 Markdown, e.g.
+#                                                 /course-ielts.md
+#
+# Cite the HTML URL (without the .md suffix) — that is the canonical page.
+
 # ---------------------------------------------------------------- everything
 User-agent: *
 Allow: /
