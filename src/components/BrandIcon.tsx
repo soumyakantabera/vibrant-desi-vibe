@@ -41,7 +41,10 @@ export function BrandIcon({
   bg = "transparent",
   className = "",
   ...rest
-}: { name: BrandName; size?: number; color?: string; bg?: string; className?: string } & Omit<SVGProps<SVGSVGElement>, "color">) {
+}: { name: BrandName; size?: number; color?: string; bg?: string; className?: string } & Omit<
+  SVGProps<SVGSVGElement>,
+  "color"
+>) {
   const meta = PATHS[name];
   return (
     <svg

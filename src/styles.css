@@ -1,4 +1,30 @@
 @import "tailwindcss" source(none);
+
+/* Self-hosted text faces — Manrope for body, Sora for display.
+ *
+ * These used to be fetched from fonts.googleapis.com by the boot gate. Serving
+ * them from our own origin removes two third-party connections (DNS + TLS +
+ * request, on a connection where that is often the slowest part of the load in
+ * India), removes a dependency on a CDN that can be slow or blocked, and lets
+ * the faces arrive with the app stylesheet the gate already waits for rather
+ * than as a separate request it has to poll for.
+ *
+ * Latin subsets only, and only the weights the design actually uses — the
+ * design tokens below declare 400/500/600/700/800 for Manrope and 500/600/700/800
+ * for Sora. Importing the packages' index.css instead would pull in Cyrillic,
+ * Greek and Vietnamese subsets nobody on this site renders.
+ *
+ * Material Symbols Rounded is still fetched from Google, subset to the ~40
+ * glyphs actually used — see FONT_CSS in src/lib/boot-script.ts. */
+@import "@fontsource/manrope/latin-400.css";
+@import "@fontsource/manrope/latin-500.css";
+@import "@fontsource/manrope/latin-600.css";
+@import "@fontsource/manrope/latin-700.css";
+@import "@fontsource/manrope/latin-800.css";
+@import "@fontsource/sora/latin-500.css";
+@import "@fontsource/sora/latin-600.css";
+@import "@fontsource/sora/latin-700.css";
+@import "@fontsource/sora/latin-800.css";
 @source "../src";
 @import "tw-animate-css";
 

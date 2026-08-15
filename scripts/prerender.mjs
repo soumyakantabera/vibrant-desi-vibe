@@ -41,9 +41,45 @@ const {
   markdownPathFor,
   metaFor,
   pageMarkdown,
+  BLOG_POSTS,
+  actualWordCounts,
 } = mod;
 
 const today = new Date().toISOString().slice(0, 10);
+
+/* ------------------------------------------------- blog metadata assertions */
+
+/**
+ * `wordCount` and `headline` in a BlogPosting are factual claims about the
+ * page. Both are declared in src/lib/blog.ts rather than derived at render time
+ * (see `actualWordCounts` for why), so both can drift the moment somebody edits
+ * a paragraph. Fail the build rather than ship markup that quietly lies.
+ */
+{
+  const actual = actualWordCounts();
+  for (const post of BLOG_POSTS) {
+    const real = actual[post.slug];
+    if (real === undefined) {
+      throw new Error(
+        `prerender: blog post "${post.slug}" has no body in src/content/blog/index.ts`,
+      );
+    }
+    // 5% tolerance: the declared figure is a claim about article length, not a
+    // checksum, and a one-word typo fix should not fail a build.
+    const drift = Math.abs(real - post.wordCount) / real;
+    if (drift > 0.05) {
+      throw new Error(
+        `prerender: ${post.slug} declares wordCount ${post.wordCount} but the body is ${real} words. ` +
+          "Update wordCount (and readingTime) in src/lib/blog.ts.",
+      );
+    }
+    if (post.headline?.length > 110 || post.title.length > 110) {
+      throw new Error(
+        `prerender: ${post.slug} headline is ${post.title.length} chars; Google truncates BlogPosting headline at 110.`,
+      );
+    }
+  }
+}
 
 /* ------------------------------------------------------------------ utils */
 
@@ -122,6 +158,13 @@ function dedupeSsrHead(ssrHead) {
       // that serve it directly; here it would be a second, later, redundant one.
       .replace(/<script data-boot="[^"]*">[\s\S]*?<\/script>/g, "")
       .replace(/<style data-boot="[^"]*">[\s\S]*?<\/style>/g, "")
+      // The GA4 tag, for the same reason: vite/analytics-plugin.ts already put
+      // it into index.html, which is this script's template, so every page has
+      // one. The SSR shell renders its own copy for the hosts that serve it
+      // directly; keeping both here would load gtag.js twice and double-count
+      // every pageview.
+      .replace(/<script data-analytics="[^"]*"[^>]*><\/script>/g, "")
+      .replace(/<script data-analytics="[^"]*"[^>]*>[\s\S]*?<\/script>/g, "")
       .replace(/ data-precedence="[^"]*"/g, "")
   );
 }
@@ -230,21 +273,32 @@ for (const pathname of ALL_PATHS) {
 
 /* ---------------------------------------------------------------- sitemap */
 
-function sitemapEntry(loc, priority, changefreq) {
+function sitemapEntry(loc, priority, changefreq, lastmod = today) {
   return [
     "  <url>",
     `    <loc>${loc}</loc>`,
-    `    <lastmod>${today}</lastmod>`,
+    `    <lastmod>${lastmod}</lastmod>`,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority.toFixed(1)}</priority>`,
     "  </url>",
   ].join("\n");
 }
 
+const postBySlug = new Map(BLOG_POSTS.map((post) => [post.slug, post]));
+
 const sitemapUrls = ALL_PATHS.map((p) => {
   const loc = p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}`;
   const page = PAGES[p];
   if (page) return sitemapEntry(loc, page.priority, page.changefreq);
+
+  // Articles carry their own last-modified date rather than today's. A build
+  // date on an article that has not changed in six months tells Google the page
+  // is being churned, which is the opposite of what a lastmod is for.
+  if (p.startsWith("/blog/")) {
+    const post = postBySlug.get(p.slice("/blog/".length));
+    return sitemapEntry(loc, 0.6, "yearly", post?.dateModified ?? today);
+  }
+
   return sitemapEntry(loc, 0.8, "monthly");
 });
 

@@ -16,6 +16,12 @@ import { siteHead } from "@/lib/seo";
 import { RouteProgress } from "@/components/RouteProgress";
 import { BOOT_SCRIPT, BOOT_CSS, FONT_CSS } from "@/lib/boot-script";
 import { markAppReady, prefetchWhenIdle } from "@/lib/boot";
+import {
+  ga4InlineScript,
+  ga4LoaderSrc,
+  hasAnalytics,
+  installWhatsAppClickTracking,
+} from "@/lib/analytics";
 
 /** Pages a reader is most likely to open next, fetched during idle time. */
 const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/book-free-demo"];
@@ -137,6 +143,26 @@ function RootShell({ children }: { children: React.ReactNode }) {
             __html: FONT_CSS.map((href) => `<link rel="stylesheet" href="${href}">`).join(""),
           }}
         />
+        {/* The GA4 tag for the server-rendered deploy. The static Pages build
+            gets the identical snippet stamped into index.html by
+            vite/analytics-plugin.ts — the two shells must not drift.
+
+            Rendered here rather than through <HeadContent/> on purpose: that
+            pipeline re-renders after hydration, which for a `<script async
+            src>` means fetching gtag.js a second time and double-counting
+            every pageview. Nothing is emitted at all until a measurement ID is
+            configured in src/lib/analytics.ts. */}
+        {hasAnalytics() && (
+          <>
+            {/* `data-analytics` marks these as the tag, exactly as `data-boot`
+                marks the gate above: scripts/prerender.mjs drops the copy the
+                SSR head carries, because the static template already has one
+                from index.html. Two copies would load gtag.js twice and count
+                every pageview twice. */}
+            <script data-analytics="" async src={ga4LoaderSrc()} />
+            <script data-analytics="" dangerouslySetInnerHTML={{ __html: ga4InlineScript() }} />
+          </>
+        )}
         <HeadContent />
       </head>
       <body>
@@ -157,6 +183,11 @@ function RootComponent() {
     markAppReady();
     prefetchWhenIdle((to) => router.preloadRoute({ to }), LIKELY_NEXT);
   }, [router]);
+
+  // Every CTA on this site opens WhatsApp, so that click is the only
+  // conversion there is. One delegated listener records all of them — see
+  // src/lib/analytics.ts for why it is not an onClick per button.
+  useEffect(installWhatsAppClickTracking, []);
 
   return (
     <QueryClientProvider client={queryClient}>

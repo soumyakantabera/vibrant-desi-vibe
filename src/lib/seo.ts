@@ -7,16 +7,29 @@
  *   2. `scripts/prerender.mjs` → static <head> baked into each dist/*.html
  *   3. `scripts/prerender.mjs` → sitemap.xml + llms.txt generation
  *
- * AEO note: "keywords" meta carries near-zero weight for Google, but AI answer
- * engines (ChatGPT/OAI-SearchBot, Perplexity, Claude) do read it as a topical
- * hint, and it costs nothing. The real AI-visibility lever is `faqs` below —
- * question-shaped headings with self-contained answers are what actually gets
- * retrieved and cited.
+ * Title/description budget: titles are kept to 58 characters and descriptions
+ * to 150–158, because Google truncates around there and a title cut mid-phrase
+ * reads as broken. The brand name is deliberately NOT appended — `og:site_name`
+ * and the Organization schema already carry it, and Google appends the site
+ * name to the SERP title itself. Every character spent on "| Learn With Smile"
+ * is a character not spent on a keyword.
+ *
+ * The `keywords` arrays below are internal targeting notes only. They are not
+ * emitted as a `<meta name="keywords">` tag: Google has ignored that tag since
+ * 2009, Bing treats it as a spam signal, and publishing the full target list
+ * hands competitors the keyword research for free. The real AI-visibility lever
+ * is `faqs` below — question-shaped headings with self-contained answers are
+ * what actually gets retrieved and cited.
  */
+
+import { verificationMeta } from "@/lib/analytics";
+import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
 export const SITE_LOCALE = "en_IN";
+/** Used by the Organization schema and by llms.txt, so "N years" is derived. */
+export const FOUNDING_YEAR = 2019;
 export const TWITTER_HANDLE = "@learnwithsmile";
 
 export const CONTACT = {
@@ -32,6 +45,33 @@ export const CONTACT = {
   latitude: 22.4924,
   longitude: 88.3125,
 } as const;
+
+/**
+ * The rating, stated once for the whole site.
+ *
+ * The homepage used to show 4.9★ in its stats band, 5.0★ (125 reviews) in the
+ * location card, and 4.9★ again on the sticker that `SnapshotCard` renders on
+ * the hero and on all six course pages — three places, two numbers, no source.
+ *
+ * That matters more here than on most sites: llms.txt and the `.md` twins make
+ * this site unusually easy for an assistant to quote verbatim, so an
+ * inconsistency propagates straight into AI answers about the business. This
+ * constant is the Google Business Profile figure and the only rating anything
+ * on this site is allowed to render.
+ *
+ * Deliberately NOT emitted as `aggregateRating` in JSON-LD. Google disregards
+ * self-serving review markup on LocalBusiness and Organization, and it carries
+ * a manual-action risk. It is displayed in HTML, where it belongs.
+ */
+export const RATING = {
+  value: "5.0",
+  count: 125,
+  /** Where the figure comes from. Shown to readers so the number has a source. */
+  source: "Google",
+} as const;
+
+/** "5.0★" — the display form used in stat tiles and stickers. */
+export const RATING_DISPLAY = `${RATING.value}★`;
 
 /** Absolute URL for a site-relative path. Canonicals must never be relative. */
 export function abs(path: string): string {
@@ -55,8 +95,18 @@ export type Faq = { q: string; a: string };
 
 export type PageSeo = {
   path: string;
+  /** ≤58 chars, no brand suffix — see the note at the top of this file. */
   title: string;
+  /** 150–158 chars. */
   description: string;
+  /**
+   * Short human name for breadcrumbs and the llms.txt page list. Needed because
+   * the titles are now keyword-shaped rather than name-shaped — "Student
+   * Results: IELTS 7.5, Salary Doubled, Jobs Won" is a good <title> and a
+   * terrible breadcrumb.
+   */
+  shortTitle: string;
+  /** Internal targeting notes. Never rendered into the page. */
   keywords: string[];
   ogImage: string;
   /** Sitemap hints. */
@@ -104,9 +154,10 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Live Online English & Career Classes in India from ₹999/month | Learn With Smile",
+    title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Live online Spoken English, IELTS, Business English, Interview Prep & Career Counselling for Indian learners. Max 6 students per batch or 1:1, from ₹999/month. 7 years teaching, 500+ learners. Free demo class on WhatsApp.",
+      "Live Spoken English, IELTS, Business English and Interview Prep for Indian learners. Max 6 per batch or 1:1, from ₹999/month. Free demo class on WhatsApp.",
+    shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
       ...BRAND_KEYWORDS,
@@ -153,9 +204,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "6 Live Online English & Career Courses from ₹999/month | Learn With Smile",
+    title: "6 Live Online English & Career Courses from ₹999/mo",
     description:
-      "Compare all 6 live online courses — Basic Spoken English, Business English, Interactive Speaking, IELTS, Interview Prep and Career Counselling. Fees, duration, batch size and syllabus for each. Max 6 students per batch. Free demo.",
+      "Compare all six live courses side by side — fees, duration, batch size and outcomes. Spoken English, IELTS, Business English, Interview Prep and Career.",
+    shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
       "english course fees comparison india",
@@ -189,9 +241,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Learn With Smile | Max 6 Per Batch, Live Teacher, Money-Back First Class",
+    title: "Why Learn With Smile | Max 6 Per Batch, Live Teacher",
     description:
-      "No recorded videos, no 50-student webinars, no bots. Live small-batch classes capped at 6 students, gamified learning, flexible IST slots and a full refund if your first paid class disappoints. Why 500+ Indian learners chose us.",
+      "No recorded videos, no 40-student webinars, no bots. Live small-batch classes capped at 6, gamified lessons, and a refund if your first class disappoints.",
+    shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
       "live english class vs recorded course",
@@ -224,9 +277,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/about-us": {
     path: "/about-us",
-    title: "About Learn With Smile | 7 Years, 500+ Indian Learners, 11 Teaching Principles",
+    title: "About Us | 7 Years, 500+ Learners, 11 Principles",
     description:
-      "Our story, mission and the 11 principles behind every class — interactive live teaching, gamified practice, small batches, student-first design. Built for Indian learners by teachers with 7 years of live online experience.",
+      "Our story and the 11 teaching principles behind every class — interactive, gamified, student-centred learning built for Indian learners live since 2019.",
+    shortTitle: "About Us",
     keywords: [
       "learn with smile about",
       "online english academy india",
@@ -243,9 +297,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/founder": {
     path: "/founder",
-    title: "Sunanda Dey, Founder of Learn With Smile | English & Career Mentor",
+    title: "Sunanda Dey — Founder & Lead Teacher, Learn With Smile",
     description:
-      "Meet Sunanda Dey — founder and lead teacher at Learn With Smile. 7 years teaching English and career skills to Indian learners online, live, in batches of six or 1:1.",
+      "Meet Sunanda Dey, founder and lead teacher at Learn With Smile. Seven years teaching English and career skills live online to 500+ learners across India.",
+    shortTitle: "Sunanda Dey — Founder",
     keywords: [
       "sunanda dey english teacher",
       "learn with smile founder",
@@ -262,9 +317,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/success-stories": {
     path: "/success-stories",
-    title: "Student Results | IELTS 7.5, Salary Doubled, Interviews Cleared | Learn With Smile",
+    title: "Student Results: IELTS 7.5, Salary Doubled, Jobs Won",
     description:
-      "Verified outcomes from Indian learners — IELTS 5.5 to 7.5, BPO to client-facing role with doubled salary, cleared interview rounds, led first client presentation. Real names, cities and courses.",
+      "Real outcomes from Indian learners — IELTS band jumps, BPO to client-facing moves, interviews cleared and confidence built in live small-batch classes.",
+    shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
       "online english class reviews india",
@@ -288,9 +344,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/blog": {
     path: "/blog",
-    title: "English & Career Blog for Indian Learners | Learn With Smile",
+    title: "English & Career Blog for Indian Learners",
     description:
-      "Practical, hype-free articles from our teachers — speaking habits that kill hesitation, the Band 7 IELTS writing template, professional email phrases, the 60-second interview answer, and BPO-to-client-facing career roadmaps.",
+      "Practical, hype-free articles from our teachers — speaking habits, IELTS Band 7 writing, professional email phrases and realistic career switch roadmaps.",
+    shortTitle: "Blog",
     keywords: [
       "english learning tips india",
       "ielts writing task 2 template band 7",
@@ -300,7 +357,7 @@ export const PAGES: Record<string, PageSeo> = {
       "how to improve english speaking daily",
     ],
     ogImage: "/og/blog.jpg",
-    priority: 0.6,
+    priority: 0.7,
     changefreq: "weekly",
     summary:
       "Blog: practical English and career articles written by Learn With Smile teachers for Indian learners.",
@@ -308,9 +365,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Book a Free Live Demo Class | No Card Needed | Learn With Smile",
+    title: "Book a Free Live Demo Class — No Card Needed",
     description:
-      "Book a genuinely free live demo class — four fields, confirmed on WhatsApp in minutes. Sit in a real class before you pay anything. Spoken English, IELTS, Business English, Interactive Speaking, Interview Prep or Career Counselling.",
+      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp in minutes. Sit in a real live class, meet your teacher, then decide afterwards.",
+    shortTitle: "Book a Free Demo",
     keywords: [
       "free english demo class online india",
       "free trial spoken english class",
@@ -334,6 +392,161 @@ export const PAGES: Record<string, PageSeo> = {
       },
     ],
   },
+
+  /* ---------------------------------------------------------------------
+   * Landing pages for searches the site had no page for at all.
+   *
+   * Each answers a query the business genuinely serves and previously had
+   * nowhere to rank for. They are not doorway pages: the Kolkata page carries
+   * content that is only true of Kolkata, and the two guides answer their
+   * question honestly enough to be worth citing even by someone who does not
+   * buy anything.
+   * ------------------------------------------------------------------- */
+
+  "/spoken-english-classes-kolkata": {
+    path: "/spoken-english-classes-kolkata",
+    title: "Spoken English Classes in Kolkata — Live Online, ₹999",
+    description:
+      "Live online Spoken English classes from a Kolkata-based teacher. Max 6 students, morning, evening and weekend IST batches, ₹999/month. Free demo class.",
+    shortTitle: "Spoken English Classes in Kolkata",
+    keywords: [
+      "spoken english classes kolkata",
+      "spoken english classes in kolkata online",
+      "english speaking course kolkata fees",
+      "best spoken english institute kolkata",
+      "english classes salt lake kolkata",
+      "spoken english class gariahat",
+      "english speaking classes kolkata bengali medium",
+      "online english classes kolkata working professionals",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Kolkata landing page. Live online Spoken English for Kolkata learners — why online beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, batch timings on IST, and the same ₹999/month fee as everywhere else.",
+    faqs: [
+      {
+        q: "Where in Kolkata are your spoken English classes held?",
+        a: "They are not held anywhere in Kolkata — every class is online and live. Our registered address at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008 is an office you can visit by appointment, not a teaching campus, and there is no walk-in coaching centre. The teacher is Kolkata-based, the batch timings are set for IST, and classmates are usually a mix of Kolkata learners and learners from elsewhere in India.",
+      },
+      {
+        q: "How much do spoken English classes cost in Kolkata?",
+        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch capped at 6, GST included, with no registration or material fee. The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
+      },
+      {
+        q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
+        a: "Yes. Instruction is in English and all practice stays in English, but when a concept is not landing the teacher will explain it in Bengali or Hindi and then go back to English. This matters: a strictly English-only classroom produces silence from genuine beginners, and silence is the one thing a speaking class cannot afford. As your level rises the first-language explanations naturally stop being needed.",
+      },
+      {
+        q: "What batch timings do you run for people working in Sector V or Salt Lake?",
+        a: "Morning batches before office hours, evening batches from about 7pm IST, and weekend batches. Sector V and New Town shifts often run late, so the weekend batch is the most common choice for IT and BPO staff. Every class is recorded, so a missed session because of a release or an escalation does not set you back a week.",
+      },
+      {
+        q: "Is an online class actually better than joining a coaching centre in Kolkata?",
+        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 6-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes of commuting three times a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
+      },
+      {
+        q: "Do you prepare Kolkata students for IELTS and job interviews too?",
+        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹1,999/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Business English at ₹1,199/month for the Sector V and Rajarhat IT and BPO cluster. All of them are live, capped at 6 students, and taught from Kolkata.",
+      },
+    ],
+  },
+
+  "/english-class-fees-india": {
+    path: "/english-class-fees-india",
+    title: "Online English Class Fees in India (2026 Guide)",
+    description:
+      "What online English classes actually cost in India in 2026 — group, 1:1 and app-based pricing compared honestly, with what changes at each price point.",
+    shortTitle: "Online English Class Fees in India",
+    keywords: [
+      "english class fees per month in india",
+      "online english classes fees india",
+      "spoken english course fees",
+      "how much do english classes cost india",
+      "cheapest online english class india",
+      "english speaking course price india",
+      "ielts coaching fees india",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Fees guide. What online English classes actually cost in India — ₹800–₹3,000/month for group classes, ₹100–₹2,000 per 1:1 session, ₹300–₹800/month for apps — what drives the price, the cost-per-speaking-minute calculation, and five hidden costs to check with any provider.",
+    faqs: [
+      {
+        q: "How much do online English classes cost in India per month?",
+        a: "Group online English classes in India generally run ₹800–₹3,000 per month. One-to-one tutoring runs ₹100–₹2,000 per session depending on where the tutor is based, and app-based conversation practice runs ₹300–₹800 per month. Learn With Smile sits at ₹999/month for Spoken English in a batch capped at 6, GST included. Anything under about ₹500 a month is almost always either recorded video or a batch large enough that you will not speak.",
+      },
+      {
+        q: "What is the cheapest way to learn English in India?",
+        a: "Free, and this is worth saying plainly: a language exchange partner, a daily podcast, and speaking to one person in English every day costs nothing and works, if you are disciplined. Paid classes buy you three things free options do not — a fixed syllabus so you are not guessing what to study next, someone who corrects the same mistake until it goes away, and a schedule you are accountable to. If you are already disciplined and just need practice, spend nothing.",
+      },
+      {
+        q: "Why do some online English classes cost ₹500 and others ₹5,000?",
+        a: "Batch size, overwhelmingly. A teacher earning a viable hourly rate has to divide it among the students in the room, so a ₹500/month class needs 30–40 learners in it and a ₹2,000/month class can run with 6. After that: live teaching costs more than recorded video, foreign-based tutors cost more than Indian ones, exam prep costs more than general conversation, and a recognised certificate adds a fee that has nothing to do with teaching quality.",
+      },
+      {
+        q: "Are expensive English classes better than cheap ones?",
+        a: "Not reliably. Price buys smaller batches and live teaching, which are real advantages, but it does not buy better teachers or faster results — plenty of ₹5,000/month institutes run 30-student batches, and plenty of ₹1,000/month classes are taught by someone with a decade of experience. The two things worth paying for are speaking time per class and individual correction. Ask any provider their batch size before you ask anything else.",
+      },
+      {
+        q: "Do online English class fees in India include GST?",
+        a: "Often not, and it is the most common surprise on the invoice. Ask whether the advertised figure is inclusive, because 18% on a ₹2,000/month course is ₹360 a month you did not budget for. Learn With Smile's prices are GST-inclusive and there are no registration or material fees. Also ask about lock-in: a quarterly or annual payment that cannot be cancelled is a much larger commitment than a monthly fee.",
+      },
+      {
+        q: "How much does IELTS coaching cost in India?",
+        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. Learn With Smile charges ₹1,999/month for three months in a batch of maximum 6, including six full-length mocks with individual feedback. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching.",
+      },
+    ],
+  },
+
+  "/best-online-spoken-english-classes-india": {
+    path: "/best-online-spoken-english-classes-india",
+    title: "Best Online Spoken English Classes in India, Compared",
+    description:
+      "An honest comparison of the main online spoken English options in India — who each one actually suits, what they cost, and where we fit in among them.",
+    shortTitle: "Best Online Spoken English Classes, Compared",
+    keywords: [
+      "best online spoken english classes in india",
+      "best english speaking course online india",
+      "cambly vs engvarta",
+      "best english learning platform india",
+      "which online english class is best",
+      "english speaking app vs class",
+      "online english class comparison india",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.7,
+    changefreq: "monthly",
+    summary:
+      "Comparison guide. The main formats for learning spoken English online in India — 1:1 practice apps, native-speaker platforms, children's platforms, institutional courses, small and large live batches, AI apps — organised by which learner each suits rather than as a ranking. Written by one of the providers, and says so.",
+    faqs: [
+      {
+        q: "Which is the best online spoken English class in India?",
+        a: "There is no single best one, and any page that names one is usually published by that company. The right choice depends on your level and what you need: daily 1:1 speaking reps with no fixed syllabus suit a hesitant intermediate speaker; a structured live course suits a genuine beginner who does not know what to study next; a children's platform suits an under-14; an established institution suits anyone who needs a recognised certificate. Take three free trials in one week and count how many minutes you actually spoke in each.",
+      },
+      {
+        q: "Are English speaking apps as good as live classes?",
+        a: "For daily practice, an app is often better, because it is available at 6am and a class is not. For learning, apps are weaker in two specific ways: most have no fixed syllabus, so you practise what you can already say rather than what you cannot, and AI-based apps will not tell you that a sentence is technically correct but nobody speaks that way. The common pattern that works is an app for daily reps plus a live class for structure and correction.",
+      },
+      {
+        q: "Is it worth paying for a native English speaker as a tutor?",
+        a: "Usually not, for an Indian beginner. Native tutors cost several times more per hour and their advantage is accent and idiom, which are the last things a beginner needs and the first things marketing sells. An Indian teacher has a real advantage early on: they know exactly which errors a Bengali, Hindi or Tamil first language produces, and they can explain in your language when a concept is not landing. Consider a native tutor once you are already fluent and specifically want to sound different.",
+      },
+      {
+        q: "Do I need a certificate from an English course?",
+        a: "Only if someone is going to ask for it. Employers in India almost never ask to see a spoken English certificate — they judge your English in the interview. If you specifically need a recognised credential for a visa, a university application or an HR checklist, go to British Council or a similar established institution and expect to pay considerably more; that fee is buying the certificate, not better teaching. Learn With Smile does not issue a certificate and we would rather say so than imply otherwise.",
+      },
+      {
+        q: "Which online English class is best for a complete beginner?",
+        a: "A structured live course with a small batch, not an app and not a 1:1 conversation platform. A complete beginner cannot practise conversation yet, because there is nothing to practise with — they need grammar, vocabulary and pronunciation built in order, in a room where being wrong costs nothing. Conversation platforms suit people who can already speak but freeze. Choosing the wrong one of those two is the most common expensive mistake we see.",
+      },
+      {
+        q: "Which online English classes are best for children in India?",
+        a: "A dedicated children's platform, not us. Teaching a nine-year-old is a genuinely different skill involving gamified curricula, parent reporting and safeguarding, and the platforms built for it — PlanetSpark and similar — do it properly. Our classes are designed for learners from about 15 upwards, and putting a younger child into an adult batch would waste your money and their time.",
+      },
+    ],
+  },
 };
 
 /* --------------------------------------------------------------------------
@@ -341,6 +554,17 @@ export const PAGES: Record<string, PageSeo> = {
  * ------------------------------------------------------------------------ */
 
 export type CourseSeoExtra = {
+  /**
+   * <title> and meta description for the course page, ≤58 and 150–158 chars.
+   *
+   * Written by hand rather than assembled from the course record: a generated
+   * `${title} Online — ${price}, Max 6 Per Batch | Learn With Smile` ran to
+   * 70–87 characters and truncated in the SERP on every one of the six.
+   */
+  title: string;
+  description: string;
+  /** Breadcrumb / llms.txt label. */
+  shortTitle: string;
   keywords: string[];
   ogImage: string;
   summary: string;
@@ -350,6 +574,10 @@ export type CourseSeoExtra = {
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
+    title: "Spoken English Course Online India | ₹999/mo, Max 6",
+    description:
+      "Six-month Basic Spoken English, three live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
+    shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
       "basic spoken english course for beginners",
@@ -379,6 +607,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
+    title: "Business English Course Online | ₹1,199/mo, Max 6",
+    description:
+      "Three-month Business English for working professionals — emails, meetings, presentations and negotiation. Live online batch of max 6 students, ₹1,199/mo.",
+    shortTitle: "Business English",
     keywords: [
       "business english course online india",
       "english for working professionals india",
@@ -403,6 +635,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "interactive-speaking": {
+    title: "Interactive English Speaking Class | ₹999/mo, Max 6",
+    description:
+      "Three months of pure speaking practice through games, debates, role-plays and storytelling. Live batch capped at 6 students, ₹999/month. Free demo class.",
+    shortTitle: "Interactive Speaking",
     keywords: [
       "english speaking practice online india",
       "daily english conversation practice class",
@@ -426,6 +662,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   ielts: {
+    title: "IELTS Coaching Online India | ₹1,999/mo, Max 6",
+    description:
+      "Three-month IELTS prep, Academic and General Training. Six full-length mock tests, live writing feedback, speaking labs. Max 6 per batch, ₹1,999/month.",
+    shortTitle: "IELTS Preparation",
     keywords: [
       "ielts coaching online india",
       "ielts online classes india fees",
@@ -459,6 +699,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "interview-prep": {
+    title: "Interview Preparation in English | ₹1,499/mo, Max 6",
+    description:
+      "Two-month intensive interview prep — HR rounds, STAR answers, three recorded mock interviews, plus resume and LinkedIn review. Max 6 batch, ₹1,499/mo.",
+    shortTitle: "Interview Preparation",
     keywords: [
       "interview preparation course english india",
       "hr interview questions and answers coaching",
@@ -483,6 +727,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "career-counselling": {
+    title: "1:1 Career Counselling Online India | ₹999 Total",
+    description:
+      "Three 60-minute 1:1 sessions for ₹999 total. Strengths mapping, three shortlisted career paths, a six-month action plan, plus resume and LinkedIn review.",
+    shortTitle: "Career Counselling",
     keywords: [
       "career counselling online india",
       "career guidance for students india",
@@ -533,7 +781,7 @@ export function organizationLd() {
       "Live online English and career classes for Indian learners — Spoken English, IELTS, Business English, Interactive Speaking, Interview Preparation and Career Counselling. Maximum 6 students per batch or 1:1, from ₹999 per month.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
-    foundingDate: "2019",
+    foundingDate: String(FOUNDING_YEAR),
     founder: { "@type": "Person", name: "Sunanda Dey" },
     address: {
       "@type": "PostalAddress",
@@ -659,14 +907,15 @@ export type HeadResult = {
 };
 
 /**
- * Builds the full head payload for a page: title, description, keywords,
- * robots directives, canonical, Open Graph, Twitter and JSON-LD.
+ * Builds the full head payload for a page: title, description, robots
+ * directives, canonical, Open Graph, Twitter and JSON-LD.
+ *
+ * No `<meta name="keywords">` — see the note at the top of this file.
  */
 export function buildHead(opts: {
   path: string;
   title: string;
   description: string;
-  keywords: string[];
   ogImage: string;
   ogType?: string;
   jsonLd?: unknown[];
@@ -678,7 +927,6 @@ export function buildHead(opts: {
     meta: [
       { title: opts.title },
       { name: "description", content: opts.description },
-      { name: "keywords", content: opts.keywords.join(", ") },
       // max-*-preview:-1 lets Google (and, in practice, AI summarisers) use the
       // whole page rather than a truncated snippet.
       {
@@ -738,6 +986,11 @@ export function buildHead(opts: {
 export function siteHead(): HeadResult {
   return {
     meta: [
+      // Search Console and Bing Webmaster ownership. Sitewide rather than
+      // homepage-only so verification survives whichever URL either tool is
+      // pointed at. Emits nothing until the codes are filled in —
+      // see src/lib/analytics.ts.
+      ...verificationMeta(),
       {
         name: "robots",
         content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -780,7 +1033,7 @@ export function pageHead(path: string): HeadResult {
     jsonLd.push(
       breadcrumbLd([
         { name: "Home", path: "/" },
-        ...(page.breadcrumb ?? [{ name: shortName(page), path: page.path }]),
+        ...(page.breadcrumb ?? [{ name: page.shortTitle, path: page.path }]),
       ]),
     );
   }
@@ -791,19 +1044,85 @@ export function pageHead(path: string): HeadResult {
     path: page.path,
     title: page.title,
     description: page.description,
-    keywords: page.keywords,
     ogImage: page.ogImage,
     jsonLd,
   });
 }
 
-/** Human-readable page name for breadcrumbs — the title before its first separator. */
-function shortName(page: PageSeo): string {
-  return page.title.split("|")[0].trim();
+/* --------------------------------------------------------------------------
+ * Blog articles
+ * ------------------------------------------------------------------------ */
+
+/** Site-relative path of an article. */
+export function blogPath(post: BlogPost): string {
+  return `/blog/${post.slug}`;
+}
+
+/**
+ * Head payload for one article: `BlogPosting` + `BreadcrumbList` on top of the
+ * usual page metadata.
+ *
+ * The `author` deliberately points at the Person entity already emitted on
+ * `/founder` rather than repeating a bare name string. That link — article to
+ * a real, described author with their own URL — is the strongest E-E-A-T
+ * signal available here, and half of it was already built.
+ */
+export function blogPostHead(post: BlogPost): HeadResult {
+  const path = blogPath(post);
+  const url = abs(path);
+  const image = abs(`/og/blog-${post.slug}.jpg`);
+
+  const head = buildHead({
+    path,
+    title: post.seoTitle,
+    description: post.description,
+    ogImage: `/og/blog-${post.slug}.jpg`,
+    ogType: "article",
+    jsonLd: [
+      webPageLd({ path, title: post.seoTitle, description: post.description }),
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${url}#post`,
+        // Google truncates headline at 110 characters; every title here is well
+        // inside that, and the check below keeps it that way.
+        headline: post.title,
+        description: post.description,
+        url,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        datePublished: post.datePublished,
+        dateModified: post.dateModified,
+        inLanguage: "en-IN",
+        wordCount: post.wordCount,
+        timeRequired: `PT${post.readingTime}M`,
+        articleSection: post.tag,
+        image: [image],
+        author: { "@type": "Person", name: post.author, url: abs("/founder") },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        isPartOf: { "@id": `${abs("/blog")}#blog` },
+      },
+      breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: post.title, path },
+      ]),
+    ],
+  });
+
+  head.meta.push(
+    { name: "author", content: post.author },
+    { property: "article:published_time", content: post.datePublished },
+    { property: "article:modified_time", content: post.dateModified },
+    { property: "article:author", content: post.author },
+    { property: "article:section", content: post.tag },
+  );
+
+  return head;
 }
 
 /** Every indexable path on the site, in sitemap order. */
 export const ALL_PATHS: string[] = [
   ...Object.keys(PAGES),
   ...Object.keys(COURSE_SEO).map((slug) => `/course-${slug}`),
+  ...BLOG_POSTS.map(blogPath),
 ];

@@ -41,41 +41,92 @@ export const Route = createFileRoute("/founder")({
   },
 });
 
-function FounderCard({ name, title, image, intro, credentials, teaches, promises, waMessage, reverse }: {
-  name: string; title: string; image: string; intro: string;
-  credentials: string[]; teaches: string[]; promises: string[]; waMessage: string; reverse?: boolean;
+function FounderCard({
+  name,
+  title,
+  image,
+  intro,
+  credentials,
+  teaches,
+  promises,
+  waMessage,
+  reverse,
+}: {
+  name: string;
+  title: string;
+  image: string;
+  intro: string;
+  credentials: string[];
+  teaches: string[];
+  promises: string[];
+  waMessage: string;
+  reverse?: boolean;
 }) {
   return (
-    <div className={`grid lg:grid-cols-[1fr_1.3fr] gap-10 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
-      <SmartImage src={image} alt={name} className="rounded-3xl shadow-xl h-[420px] w-full border-4 border-cream" sizes="(min-width: 1024px) 40vw, 100vw"/>
+    <div
+      className={`grid lg:grid-cols-[1fr_1.3fr] gap-10 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}
+    >
+      <SmartImage
+        src={image}
+        alt={name}
+        className="rounded-3xl shadow-xl h-[420px] w-full border-4 border-cream"
+        sizes="(min-width: 1024px) 40vw, 100vw"
+      />
       <div>
-        <span className="eyebrow eyebrow-indigo"><Icon name="spark" size={12}/> {title}</span>
+        <span className="eyebrow eyebrow-indigo">
+          <Icon name="spark" size={12} /> {title}
+        </span>
         <h2 className="mt-3 text-3xl md:text-5xl text-ink leading-[1.05]">{name}</h2>
         <p className="mt-4 text-ink/85 leading-relaxed">{intro}</p>
 
         <div className="mt-5 grid sm:grid-cols-2 gap-3">
           <div className="card-soft bg-brand-soft/30">
-            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2"><Icon name="trophy" size={16} className="text-brand"/> Credentials</h4>
+            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
+              <Icon name="trophy" size={16} className="text-brand" /> Credentials
+            </h4>
             <ul className="space-y-1.5 text-sm text-ink/85">
-              {credentials.map(c => <li key={c} className="flex gap-2"><Icon name="check" size={13} className="text-brand mt-1 shrink-0"/>{c}</li>)}
+              {credentials.map((c) => (
+                <li key={c} className="flex gap-2">
+                  <Icon name="check" size={13} className="text-brand mt-1 shrink-0" />
+                  {c}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="card-soft bg-sunshine/10">
-            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2"><Icon name="book" size={16} className="text-coral"/> Teaches</h4>
+            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
+              <Icon name="book" size={16} className="text-coral" /> Teaches
+            </h4>
             <ul className="space-y-1.5 text-sm text-ink/85">
-              {teaches.map(t => <li key={t} className="flex gap-2"><Icon name="check" size={13} className="text-coral mt-1 shrink-0"/>{t}</li>)}
+              {teaches.map((t) => (
+                <li key={t} className="flex gap-2">
+                  <Icon name="check" size={13} className="text-coral mt-1 shrink-0" />
+                  {t}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="mt-4 card-soft bg-gradient-to-br from-brand-soft to-cream">
-          <h4 className="font-display font-bold text-ink mb-2 flex items-center gap-2"><Icon name="heart" size={16} className="text-coral"/> What I promise every learner</h4>
+          <h4 className="font-display font-bold text-ink mb-2 flex items-center gap-2">
+            <Icon name="heart" size={16} className="text-coral" /> What I promise every learner
+          </h4>
           <ul className="space-y-2 text-sm text-ink/85">
-            {promises.map(p => <li key={p} className="flex gap-2"><Icon name="check" size={14} className="text-brand mt-0.5 shrink-0"/>{p}</li>)}
+            {promises.map((p) => (
+              <li key={p} className="flex gap-2">
+                <Icon name="check" size={14} className="text-brand mt-0.5 shrink-0" />
+                {p}
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="mt-5"><WaButton message={waMessage} size="md">Message on WhatsApp</WaButton></div>
+        <div className="mt-5">
+          <WaButton message={waMessage} size="md">
+            Message on WhatsApp
+          </WaButton>
+        </div>
       </div>
     </div>
   );
@@ -83,14 +134,34 @@ function FounderCard({ name, title, image, intro, credentials, teaches, promises
 
 function Page() {
   return (
-    <Layout waMessage="Hi, I'd like to speak to the Learn With Smile founders for a free demo." footerImage={IMG.teacherWoman}>
+    <Layout
+      waMessage="Hi, I'd like to speak to the Learn With Smile founders for a free demo."
+      footerImage={IMG.teacherWoman}
+    >
       {/* HERO */}
       <section className="relative">
-        <div className="absolute inset-0 z-0"><SmartImage src={IMG.teacherWoman} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55"/></div>
+        <div className="absolute inset-0 z-0">
+          <SmartImage
+            src={IMG.teacherWoman}
+            alt="Sunanda Dey, founder and lead teacher at Learn With Smile"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55" />
+        </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
-          <span className="eyebrow eyebrow-white"><Icon name="heart" size={14}/> Meet the Founder</span>
-          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">One mentor. One mission.</h1>
-          <p className="mt-4 text-lg text-white">100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or 1:1 · pan-India, based in Kolkata. Every learner gets two free 1:1 feedback sessions every month.</p>
+          <span className="eyebrow eyebrow-white">
+            <Icon name="heart" size={14} /> Meet the Founder
+          </span>
+          <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
+            One mentor. One mission.
+          </h1>
+          <p className="mt-4 text-lg text-white">
+            100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or
+            1:1 · pan-India, based in Kolkata. Every learner gets two free 1:1 feedback sessions
+            every month.
+          </p>
         </div>
       </section>
 
@@ -130,8 +201,18 @@ function Page() {
       <section className="section bg-brand text-cream">
         <div className="container-x text-center">
           <h2 className="text-cream text-3xl md:text-4xl">Talk to the founder directly.</h2>
-          <p className="mt-3 text-white max-w-xl mx-auto">Tell us your goal — we'll confirm a free live demo slot on WhatsApp.</p>
-          <div className="mt-6"><WaButton message="Hi founders, I want a free demo. Please guide me." variant="sun" size="lg">Book Free Demo on WhatsApp</WaButton></div>
+          <p className="mt-3 text-white max-w-xl mx-auto">
+            Tell us your goal — we'll confirm a free live demo slot on WhatsApp.
+          </p>
+          <div className="mt-6">
+            <WaButton
+              message="Hi founders, I want a free demo. Please guide me."
+              variant="sun"
+              size="lg"
+            >
+              Book Free Demo on WhatsApp
+            </WaButton>
+          </div>
         </div>
       </section>
     </Layout>
