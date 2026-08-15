@@ -35,7 +35,9 @@ import {
   ALL_PATHS,
   CONTACT,
   COURSE_SEO,
+  FOUNDING_YEAR,
   PAGES,
+  RATING,
   SITE_NAME,
   SITE_URL,
   abs,
@@ -46,15 +48,45 @@ import {
 /* ------------------------------------------------------------------- facts */
 
 /**
+ * Monthly fee range, read off the course records rather than written down.
+ *
+ * This is the fix that matters most for maintenance. These files make the site
+ * unusually easy for an assistant to quote verbatim, so a price change that
+ * left a hardcoded "₹999–₹1,999" behind here would have assistants confidently
+ * quoting a stale figure to prospective students — with a citation to us. The
+ * range now comes from the same `COURSES` table the course pages render from
+ * and cannot fall out of step with them.
+ */
+function monthlyFeeRange(): string {
+  const monthly = Object.values(COURSES)
+    .map((c) => ({ raw: c.price, n: Number(c.price.replace(/[^\d]/g, "")) }))
+    .filter((p) => /\/mo/i.test(p.raw) && Number.isFinite(p.n));
+  const low = Math.min(...monthly.map((p) => p.n));
+  const high = Math.max(...monthly.map((p) => p.n));
+  const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
+  return `${inr(low)}–${inr(high)}`;
+}
+
+/**
+ * Years teaching, from the founding year in the Organization schema, so this
+ * does not silently stop being true on 1 January.
+ */
+function yearsTeaching(): number {
+  return new Date().getUTCFullYear() - FOUNDING_YEAR;
+}
+
+/**
  * The answers assistants are actually asked for — price, batch size, format,
  * contact — stated once, in a shape that survives being quoted out of context.
  * Kept here rather than scraped from the pages so a fetch of llms.txt alone is
  * enough to answer the common questions correctly.
+ *
+ * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  "Founded 2019 · 7 years of live online teaching · 500+ learners taught across India",
+  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of live online teaching · 500+ learners taught across India`,
   "Batch size: maximum 6 students per batch, or 1:1 on most courses",
-  "Fees: ₹999–₹1,999 per month, GST included, no registration or material fee",
+  `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
   "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
   "Languages of instruction: English, with Hindi and Bengali support",
@@ -66,8 +98,8 @@ const KEY_FACTS = [
   // Stated once, here, and nowhere else in this file. The site used to carry
   // two different averages on the same page; this is the Google Business
   // Profile figure and the only one anything should quote.
-  "Rating: 5.0 out of 5 from 125 Google reviews",
-] as const;
+  `Rating: ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews`,
+];
 
 /**
  * Six answers in extractable form.

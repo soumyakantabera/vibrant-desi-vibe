@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { pageHead } from "@/lib/seo";
+import { RATING, RATING_DISPLAY, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
@@ -175,7 +175,7 @@ function Page() {
           <Stat num="7" label="Years Teaching" />
           <Stat num="500+" label="Learners" />
           <Stat num="95%" label="Completion" />
-          <Stat num="4.9★" label="Avg Rating" />
+          <Stat num={RATING_DISPLAY} label={`${RATING.source} Rating · ${RATING.count} Reviews`} />
         </div>
       </section>
 

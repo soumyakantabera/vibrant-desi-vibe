@@ -28,6 +28,8 @@ import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
 export const SITE_LOCALE = "en_IN";
+/** Used by the Organization schema and by llms.txt, so "N years" is derived. */
+export const FOUNDING_YEAR = 2019;
 export const TWITTER_HANDLE = "@learnwithsmile";
 
 export const CONTACT = {
@@ -43,6 +45,33 @@ export const CONTACT = {
   latitude: 22.4924,
   longitude: 88.3125,
 } as const;
+
+/**
+ * The rating, stated once for the whole site.
+ *
+ * The homepage used to show 4.9★ in its stats band, 5.0★ (125 reviews) in the
+ * location card, and 4.9★ again on the sticker that `SnapshotCard` renders on
+ * the hero and on all six course pages — three places, two numbers, no source.
+ *
+ * That matters more here than on most sites: llms.txt and the `.md` twins make
+ * this site unusually easy for an assistant to quote verbatim, so an
+ * inconsistency propagates straight into AI answers about the business. This
+ * constant is the Google Business Profile figure and the only rating anything
+ * on this site is allowed to render.
+ *
+ * Deliberately NOT emitted as `aggregateRating` in JSON-LD. Google disregards
+ * self-serving review markup on LocalBusiness and Organization, and it carries
+ * a manual-action risk. It is displayed in HTML, where it belongs.
+ */
+export const RATING = {
+  value: "5.0",
+  count: 125,
+  /** Where the figure comes from. Shown to readers so the number has a source. */
+  source: "Google",
+} as const;
+
+/** "5.0★" — the display form used in stat tiles and stickers. */
+export const RATING_DISPLAY = `${RATING.value}★`;
 
 /** Absolute URL for a site-relative path. Canonicals must never be relative. */
 export function abs(path: string): string {
@@ -752,7 +781,7 @@ export function organizationLd() {
       "Live online English and career classes for Indian learners — Spoken English, IELTS, Business English, Interactive Speaking, Interview Preparation and Career Counselling. Maximum 6 students per batch or 1:1, from ₹999 per month.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
-    foundingDate: "2019",
+    foundingDate: String(FOUNDING_YEAR),
     founder: { "@type": "Person", name: "Sunanda Dey" },
     address: {
       "@type": "PostalAddress",

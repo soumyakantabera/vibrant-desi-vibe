@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { RATING_DISPLAY } from "@/lib/seo";
 
 export type SnapshotTone = "brand" | "indigo" | "coral" | "sage";
 
@@ -34,7 +35,11 @@ export function SnapshotCard({
   subnote,
   rows,
   footer = "Free Demo · No Card Needed · WhatsApp in Minutes",
-  sticker = { top: "4.9★", bottom: "Rated" },
+  // One rating, one source, sitewide — see RATING in src/lib/seo.ts. This
+  // sticker renders on the homepage hero and on all six course pages, which
+  // is why a hardcoded figure here contradicted the rest of the site
+  // everywhere at once.
+  sticker = { top: RATING_DISPLAY, bottom: "Rated" },
   className = "",
 }: SnapshotCardProps) {
   return (

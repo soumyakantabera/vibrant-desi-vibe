@@ -10,7 +10,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { IMG, imageSources } from "@/lib/images";
 import { withBasePath } from "@/lib/site-path";
-import { pageHead, PAGES } from "@/lib/seo";
+import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import { EXPERIMENTS, useVariant } from "@/lib/ab";
 
 const heroSources = imageSources(IMG.heroClass);
@@ -463,7 +463,10 @@ function Home() {
               self-serving review markup on LocalBusiness is disregarded by
               Google and carries a manual-action risk. */}
           <div className="md:pl-4 pt-8 md:pt-0">
-            <Stat num="5.0★" label="Google Rating · 125 Reviews" />
+            <Stat
+              num={RATING_DISPLAY}
+              label={`${RATING.source} Rating · ${RATING.count} Reviews`}
+            />
           </div>
         </div>
       </section>
@@ -669,8 +672,10 @@ function Home() {
               <p className="text-ink/85 text-sm mt-1">
                 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008
                 <br />
-                <span className="text-sunshine font-bold">5.0★ (125 reviews)</span> · By appointment
-                only
+                <span className="text-sunshine font-bold">
+                  {RATING_DISPLAY} ({RATING.count} {RATING.source} reviews)
+                </span>{" "}
+                · By appointment only
               </p>
               <div className="flex flex-wrap gap-2 mt-3">
                 <a
