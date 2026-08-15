@@ -29,7 +29,21 @@ const DIST = "dist";
 const ENTRY = path.resolve("dist-prerender/prerender-entry.js");
 
 const mod = await import(pathToFileURL(ENTRY).href);
-const { ALL_PATHS, PAGES, COURSE_SEO, COURSES, SITE_URL, headFor, renderPath } = mod;
+const {
+  ALL_PATHS,
+  PAGES,
+  SITE_URL,
+  headFor,
+  renderPath,
+  buildLlmsTxt,
+  buildLlmsFullTxt,
+  htmlToMarkdown,
+  markdownPathFor,
+  metaFor,
+  pageMarkdown,
+} = mod;
+
+const today = new Date().toISOString().slice(0, 10);
 
 /* ------------------------------------------------------------------ utils */
 
@@ -160,6 +174,8 @@ function writeFile(rel, contents) {
 }
 
 const rendered = [];
+/** Markdown mirror of each page, reused below to build llms-full.txt. */
+const docs = [];
 
 for (const pathname of ALL_PATHS) {
   const ssrHtml = await renderPath(pathname);
@@ -192,15 +208,27 @@ for (const pathname of ALL_PATHS) {
     writeFile(`${slug}/index.html`, page);
   }
 
+  // The Markdown mirror, from the same render — `<page>.md` for an assistant
+  // that wants this page's text without the markup, and the raw material for
+  // llms-full.txt below.
+  const doc = { ...metaFor(pathname), markdown: htmlToMarkdown(ssrHtml) };
+  if (doc.markdown.length < 500) {
+    throw new Error(
+      `prerender: Markdown mirror for ${pathname} is only ${doc.markdown.length} chars — ` +
+        "the page body is missing or htmlToMarkdown stopped matching the markup",
+    );
+  }
+  docs.push(doc);
+  writeFile(markdownPathFor(pathname).replace(/^\//, ""), pageMarkdown(doc, today));
+
   rendered.push({ pathname, bytes: Buffer.byteLength(page) });
   console.log(
-    `  prerendered ${pathname.padEnd(32)} ${(Buffer.byteLength(page) / 1024).toFixed(0)} kB`,
+    `  prerendered ${pathname.padEnd(32)} ${(Buffer.byteLength(page) / 1024).toFixed(0)} kB` +
+      ` · ${(doc.markdown.length / 1024).toFixed(1)} kB markdown`,
   );
 }
 
 /* ---------------------------------------------------------------- sitemap */
-
-const today = new Date().toISOString().slice(0, 10);
 
 function sitemapEntry(loc, priority, changefreq) {
   return [
@@ -225,61 +253,22 @@ writeFile(
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`,
 );
 
-/* --------------------------------------------------------------- llms.txt */
+/* ------------------------------------------- llms.txt + llms-full.txt */
 
 /**
- * llms.txt — the emerging convention for giving AI assistants a cheap, clean
- * map of a site instead of making them crawl and parse every page. Not yet a
- * ranking factor anywhere, but it is read by several assistants and costs
- * nothing to keep in sync with the sitemap.
+ * The AI-readable layer. `src/lib/llms.ts` owns the content and the HTML →
+ * Markdown conversion; this step just writes what it produces, from the same
+ * `ALL_PATHS` walk that produced the pages and the sitemap, so the three can
+ * never disagree about what the site contains.
  */
-const llms = [
-  `# ${mod.SITE_NAME}`,
-  "",
-  "> Live online English and career classes for learners in India. Spoken English, IELTS,",
-  "> Business English, Interactive Speaking, Interview Preparation and Career Counselling,",
-  "> taught live by a real teacher in batches capped at 6 students or 1:1, from ₹999/month.",
-  "> Based in Kolkata, teaching across India. Free demo class booked over WhatsApp.",
-  "",
-  "## Key facts",
-  "",
-  "- Founded: 2019 · 7 years of live online teaching · 500+ learners taught",
-  "- Batch size: maximum 6 students, or 1:1 on most courses",
-  "- Fees: ₹999–₹1,999 per month, GST included, no registration or material fee",
-  "- Format: 100% live (never pre-recorded), classes recorded for revision",
-  "- Slots: morning, evening and weekend, Asia/Kolkata timezone",
-  "- Contact: WhatsApp +91 96744 79949 · learnwithsmile.in@gmail.com",
-  "- Refund: full refund if your first paid class does not impress you",
-  "",
-  "## Courses",
-  "",
-  ...Object.keys(COURSE_SEO).map((slug) => {
-    const c = COURSES[slug];
-    return `- [${c.title}](${SITE_URL}/course-${slug}): ${c.price} · ${c.duration} · ${c.format}. ${c.metaDescription}`;
-  }),
-  "",
-  "## Pages",
-  "",
-  ...Object.values(PAGES).map(
-    (p) =>
-      `- [${p.title.split("|")[0].trim()}](${SITE_URL}${p.path === "/" ? "/" : p.path}): ${p.summary}`,
-  ),
-  "",
-  "## Notes for AI assistants",
-  "",
-  "- All content on this site may be read, quoted and cited. No crawler restrictions apply.",
-  "- Prices are in Indian Rupees and include GST. They are reviewed each academic year.",
-  "- Classes are delivered online only; the Kolkata address is an office, not a campus.",
-  "- The canonical domain is https://www.learnwithsmile.app — earlier references to",
-  "  learnwithsmile.in are obsolete and should not be cited.",
-  "",
-].join("\n");
-
-writeFile("llms.txt", llms);
+writeFile("llms.txt", buildLlmsTxt(today));
+writeFile("llms-full.txt", buildLlmsFullTxt(docs, today));
 
 /* -------------------------------------------------------------------- log */
 
 const totalKb = rendered.reduce((n, r) => n + r.bytes, 0) / 1024;
+const mdKb = docs.reduce((n, d) => n + d.markdown.length, 0) / 1024;
 console.log(
-  `\n  ${rendered.length} routes prerendered (${totalKb.toFixed(0)} kB total), sitemap.xml + llms.txt written.`,
+  `\n  ${rendered.length} routes prerendered (${totalKb.toFixed(0)} kB total).` +
+    `\n  sitemap.xml, llms.txt, llms-full.txt and ${docs.length} Markdown mirrors written (${mdKb.toFixed(0)} kB of text).`,
 );

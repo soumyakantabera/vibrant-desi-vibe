@@ -17,8 +17,17 @@ import { courseSeo } from "../src/components/CoursePage";
 import { ALL_PATHS, PAGES, type HeadResult, pageHead } from "../src/lib/seo";
 
 export { ALL_PATHS, PAGES };
-export { COURSE_SEO, SITE_URL, SITE_NAME, abs } from "../src/lib/seo";
+export { COURSE_SEO, SITE_URL, SITE_NAME, abs, markdownPathFor } from "../src/lib/seo";
 export { COURSES } from "../src/lib/courses";
+// The AI-readable layer — llms.txt, llms-full.txt and the per-page Markdown
+// mirrors, all built from the same tables the pages themselves render from.
+export {
+  buildLlmsTxt,
+  buildLlmsFullTxt,
+  htmlToMarkdown,
+  metaFor,
+  pageMarkdown,
+} from "../src/lib/llms";
 
 /** The head payload for a path, from the same source the runtime app uses. */
 export function headFor(path: string): HeadResult {

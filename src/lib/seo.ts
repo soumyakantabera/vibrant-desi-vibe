@@ -39,6 +39,18 @@ export function abs(path: string): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+/**
+ * The clean-Markdown mirror of a page, written by `scripts/prerender.mjs`:
+ * `/` → `/index.md`, `/course-ielts` → `/course-ielts.md`.
+ *
+ * Linked from every page's head as `rel="alternate"` so an assistant that has
+ * already landed on the HTML can fetch the text without parsing ~60 kB of
+ * markup. See `src/lib/llms.ts` for the rest of the AI-readable layer.
+ */
+export function markdownPathFor(path: string): string {
+  return path === "/" ? "/index.md" : `${path.replace(/\/$/, "")}.md`;
+}
+
 export type Faq = { q: string; a: string };
 
 export type PageSeo = {
@@ -702,6 +714,10 @@ export function buildHead(opts: {
       { rel: "canonical", href: url },
       { rel: "alternate", hrefLang: "en-IN", href: url },
       { rel: "alternate", hrefLang: "x-default", href: url },
+      // The Markdown mirror of this page. `rel` stays first: the prerender step
+      // matches on `<link rel="(canonical|alternate)"` to mark the tags the
+      // client re-renders (scripts/prerender.mjs → tagPrerendered).
+      { rel: "alternate", type: "text/markdown", href: abs(markdownPathFor(opts.path)) },
     ],
     scripts: (opts.jsonLd ?? []).map((obj) => ({
       type: "application/ld+json",
@@ -739,7 +755,9 @@ export function siteHead(): HeadResult {
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: TWITTER_HANDLE },
     ],
-    links: [],
+    // Site-wide discovery for AI assistants: the llms.txt index is worth
+    // finding from any page, not just from robots.txt.
+    links: [{ rel: "alternate", type: "text/plain", title: "llms.txt", href: abs("/llms.txt") }],
     // Entity graph for the whole site — correct on every page, and what lets
     // Google and AI assistants resolve "Learn With Smile" to a real business.
     scripts: [organizationLd(), localBusinessLd(), webSiteLd()].map((obj) => ({

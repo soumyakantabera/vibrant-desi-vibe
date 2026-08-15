@@ -77,7 +77,22 @@ jobs:
           done
           test -s dist/sitemap.xml
           test -s dist/robots.txt
+
+          # The AI-readable layer (src/lib/llms.ts). The prerender step already
+          # fails if a page's Markdown mirror comes out empty; this checks the
+          # files reached dist/ and still carry the facts they exist to serve.
           test -s dist/llms.txt
+          test -s dist/llms-full.txt
+          for file in dist/llms.txt dist/llms-full.txt dist/index.md dist/course-ielts.md; do
+            if ! grep -q '₹' "$file"; then
+              echo "::error::$file is missing course fees"; exit 1
+            fi
+          done
+          urls=$(grep -c '<loc>' dist/sitemap.xml)
+          mirrors=$(ls -1 dist/*.md | wc -l)
+          if [ "$urls" -ne "$mirrors" ]; then
+            echo "::error::$urls URLs in the sitemap but $mirrors Markdown mirrors"; exit 1
+          fi
           echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."
 
       - uses: actions/configure-pages@v5
