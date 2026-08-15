@@ -82,15 +82,16 @@ function courseFor(path: string): CourseData | undefined {
 /**
  * Title, description and one-line summary for any path, from whichever table
  * owns it — `PAGES` for the static pages, `COURSES` + `COURSE_SEO` for the six
- * course pages. Titles are trimmed of the trailing "| Learn With Smile", which
- * is noise in a list where every entry is this site.
+ * course pages. Uses `shortTitle`, not the `<title>`: the page titles are
+ * keyword-shaped ("Student Results: IELTS 7.5, Salary Doubled, Jobs Won") and
+ * make a poor entry in a list where every row is already this site.
  */
 export function metaFor(path: string): PageMeta {
   const page = PAGES[path];
   if (page) {
     return {
       path,
-      title: page.title.split("|")[0].trim(),
+      title: page.shortTitle,
       description: page.description,
       summary: page.summary,
     };
@@ -99,11 +100,12 @@ export function metaFor(path: string): PageMeta {
   const course = courseFor(path);
   if (!course) throw new Error(`llms: no page or course for path "${path}"`);
 
+  const extra = COURSE_SEO[course.slug];
   return {
     path,
     title: course.title,
-    description: course.metaDescription,
-    summary: COURSE_SEO[course.slug]?.summary ?? course.metaDescription,
+    description: extra?.description ?? course.metaDescription,
+    summary: extra?.summary ?? course.metaDescription,
   };
 }
 

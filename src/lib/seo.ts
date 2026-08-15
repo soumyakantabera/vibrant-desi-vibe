@@ -7,11 +7,19 @@
  *   2. `scripts/prerender.mjs` → static <head> baked into each dist/*.html
  *   3. `scripts/prerender.mjs` → sitemap.xml + llms.txt generation
  *
- * AEO note: "keywords" meta carries near-zero weight for Google, but AI answer
- * engines (ChatGPT/OAI-SearchBot, Perplexity, Claude) do read it as a topical
- * hint, and it costs nothing. The real AI-visibility lever is `faqs` below —
- * question-shaped headings with self-contained answers are what actually gets
- * retrieved and cited.
+ * Title/description budget: titles are kept to 58 characters and descriptions
+ * to 150–158, because Google truncates around there and a title cut mid-phrase
+ * reads as broken. The brand name is deliberately NOT appended — `og:site_name`
+ * and the Organization schema already carry it, and Google appends the site
+ * name to the SERP title itself. Every character spent on "| Learn With Smile"
+ * is a character not spent on a keyword.
+ *
+ * The `keywords` arrays below are internal targeting notes only. They are not
+ * emitted as a `<meta name="keywords">` tag: Google has ignored that tag since
+ * 2009, Bing treats it as a spam signal, and publishing the full target list
+ * hands competitors the keyword research for free. The real AI-visibility lever
+ * is `faqs` below — question-shaped headings with self-contained answers are
+ * what actually gets retrieved and cited.
  */
 
 export const SITE_URL = "https://www.learnwithsmile.app";
@@ -55,8 +63,18 @@ export type Faq = { q: string; a: string };
 
 export type PageSeo = {
   path: string;
+  /** ≤58 chars, no brand suffix — see the note at the top of this file. */
   title: string;
+  /** 150–158 chars. */
   description: string;
+  /**
+   * Short human name for breadcrumbs and the llms.txt page list. Needed because
+   * the titles are now keyword-shaped rather than name-shaped — "Student
+   * Results: IELTS 7.5, Salary Doubled, Jobs Won" is a good <title> and a
+   * terrible breadcrumb.
+   */
+  shortTitle: string;
+  /** Internal targeting notes. Never rendered into the page. */
   keywords: string[];
   ogImage: string;
   /** Sitemap hints. */
@@ -104,9 +122,10 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Live Online English & Career Classes in India from ₹999/month | Learn With Smile",
+    title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Live online Spoken English, IELTS, Business English, Interview Prep & Career Counselling for Indian learners. Max 6 students per batch or 1:1, from ₹999/month. 7 years teaching, 500+ learners. Free demo class on WhatsApp.",
+      "Live Spoken English, IELTS, Business English and Interview Prep for Indian learners. Max 6 per batch or 1:1, from ₹999/month. Free demo class on WhatsApp.",
+    shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
       ...BRAND_KEYWORDS,
@@ -153,9 +172,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "6 Live Online English & Career Courses from ₹999/month | Learn With Smile",
+    title: "6 Live Online English & Career Courses from ₹999/mo",
     description:
-      "Compare all 6 live online courses — Basic Spoken English, Business English, Interactive Speaking, IELTS, Interview Prep and Career Counselling. Fees, duration, batch size and syllabus for each. Max 6 students per batch. Free demo.",
+      "Compare all six live courses side by side — fees, duration, batch size and outcomes. Spoken English, IELTS, Business English, Interview Prep and Career.",
+    shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
       "english course fees comparison india",
@@ -189,9 +209,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Learn With Smile | Max 6 Per Batch, Live Teacher, Money-Back First Class",
+    title: "Why Learn With Smile | Max 6 Per Batch, Live Teacher",
     description:
-      "No recorded videos, no 50-student webinars, no bots. Live small-batch classes capped at 6 students, gamified learning, flexible IST slots and a full refund if your first paid class disappoints. Why 500+ Indian learners chose us.",
+      "No recorded videos, no 40-student webinars, no bots. Live small-batch classes capped at 6, gamified lessons, and a refund if your first class disappoints.",
+    shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
       "live english class vs recorded course",
@@ -224,9 +245,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/about-us": {
     path: "/about-us",
-    title: "About Learn With Smile | 7 Years, 500+ Indian Learners, 11 Teaching Principles",
+    title: "About Us | 7 Years, 500+ Learners, 11 Principles",
     description:
-      "Our story, mission and the 11 principles behind every class — interactive live teaching, gamified practice, small batches, student-first design. Built for Indian learners by teachers with 7 years of live online experience.",
+      "Our story and the 11 teaching principles behind every class — interactive, gamified, student-centred learning built for Indian learners live since 2019.",
+    shortTitle: "About Us",
     keywords: [
       "learn with smile about",
       "online english academy india",
@@ -243,9 +265,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/founder": {
     path: "/founder",
-    title: "Sunanda Dey, Founder of Learn With Smile | English & Career Mentor",
+    title: "Sunanda Dey — Founder & Lead Teacher, Learn With Smile",
     description:
-      "Meet Sunanda Dey — founder and lead teacher at Learn With Smile. 7 years teaching English and career skills to Indian learners online, live, in batches of six or 1:1.",
+      "Meet Sunanda Dey, founder and lead teacher at Learn With Smile. Seven years teaching English and career skills live online to 500+ learners across India.",
+    shortTitle: "Sunanda Dey — Founder",
     keywords: [
       "sunanda dey english teacher",
       "learn with smile founder",
@@ -262,9 +285,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/success-stories": {
     path: "/success-stories",
-    title: "Student Results | IELTS 7.5, Salary Doubled, Interviews Cleared | Learn With Smile",
+    title: "Student Results: IELTS 7.5, Salary Doubled, Jobs Won",
     description:
-      "Verified outcomes from Indian learners — IELTS 5.5 to 7.5, BPO to client-facing role with doubled salary, cleared interview rounds, led first client presentation. Real names, cities and courses.",
+      "Real outcomes from Indian learners — IELTS band jumps, BPO to client-facing moves, interviews cleared and confidence built in live small-batch classes.",
+    shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
       "online english class reviews india",
@@ -288,9 +312,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/blog": {
     path: "/blog",
-    title: "English & Career Blog for Indian Learners | Learn With Smile",
+    title: "English & Career Blog for Indian Learners",
     description:
-      "Practical, hype-free articles from our teachers — speaking habits that kill hesitation, the Band 7 IELTS writing template, professional email phrases, the 60-second interview answer, and BPO-to-client-facing career roadmaps.",
+      "Practical, hype-free articles from our teachers — speaking habits, IELTS Band 7 writing, professional email phrases and realistic career switch roadmaps.",
+    shortTitle: "Blog",
     keywords: [
       "english learning tips india",
       "ielts writing task 2 template band 7",
@@ -308,9 +333,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Book a Free Live Demo Class | No Card Needed | Learn With Smile",
+    title: "Book a Free Live Demo Class — No Card Needed",
     description:
-      "Book a genuinely free live demo class — four fields, confirmed on WhatsApp in minutes. Sit in a real class before you pay anything. Spoken English, IELTS, Business English, Interactive Speaking, Interview Prep or Career Counselling.",
+      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp in minutes. Sit in a real live class, meet your teacher, then decide afterwards.",
+    shortTitle: "Book a Free Demo",
     keywords: [
       "free english demo class online india",
       "free trial spoken english class",
@@ -341,6 +367,17 @@ export const PAGES: Record<string, PageSeo> = {
  * ------------------------------------------------------------------------ */
 
 export type CourseSeoExtra = {
+  /**
+   * <title> and meta description for the course page, ≤58 and 150–158 chars.
+   *
+   * Written by hand rather than assembled from the course record: a generated
+   * `${title} Online — ${price}, Max 6 Per Batch | Learn With Smile` ran to
+   * 70–87 characters and truncated in the SERP on every one of the six.
+   */
+  title: string;
+  description: string;
+  /** Breadcrumb / llms.txt label. */
+  shortTitle: string;
   keywords: string[];
   ogImage: string;
   summary: string;
@@ -350,6 +387,10 @@ export type CourseSeoExtra = {
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
+    title: "Spoken English Course Online India | ₹999/mo, Max 6",
+    description:
+      "Six-month Basic Spoken English, three live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
+    shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
       "basic spoken english course for beginners",
@@ -379,6 +420,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
+    title: "Business English Course Online | ₹1,199/mo, Max 6",
+    description:
+      "Three-month Business English for working professionals — emails, meetings, presentations and negotiation. Live online batch of max 6 students, ₹1,199/mo.",
+    shortTitle: "Business English",
     keywords: [
       "business english course online india",
       "english for working professionals india",
@@ -403,6 +448,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "interactive-speaking": {
+    title: "Interactive English Speaking Class | ₹999/mo, Max 6",
+    description:
+      "Three months of pure speaking practice through games, debates, role-plays and storytelling. Live batch capped at 6 students, ₹999/month. Free demo class.",
+    shortTitle: "Interactive Speaking",
     keywords: [
       "english speaking practice online india",
       "daily english conversation practice class",
@@ -426,6 +475,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   ielts: {
+    title: "IELTS Coaching Online India | ₹1,999/mo, Max 6",
+    description:
+      "Three-month IELTS prep, Academic and General Training. Six full-length mock tests, live writing feedback, speaking labs. Max 6 per batch, ₹1,999/month.",
+    shortTitle: "IELTS Preparation",
     keywords: [
       "ielts coaching online india",
       "ielts online classes india fees",
@@ -459,6 +512,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "interview-prep": {
+    title: "Interview Preparation in English | ₹1,499/mo, Max 6",
+    description:
+      "Two-month intensive interview prep — HR rounds, STAR answers, three recorded mock interviews, plus resume and LinkedIn review. Max 6 batch, ₹1,499/mo.",
+    shortTitle: "Interview Preparation",
     keywords: [
       "interview preparation course english india",
       "hr interview questions and answers coaching",
@@ -483,6 +540,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "career-counselling": {
+    title: "1:1 Career Counselling Online India | ₹999 Total",
+    description:
+      "Three 60-minute 1:1 sessions for ₹999 total. Strengths mapping, three shortlisted career paths, a six-month action plan, plus resume and LinkedIn review.",
+    shortTitle: "Career Counselling",
     keywords: [
       "career counselling online india",
       "career guidance for students india",
@@ -659,14 +720,15 @@ export type HeadResult = {
 };
 
 /**
- * Builds the full head payload for a page: title, description, keywords,
- * robots directives, canonical, Open Graph, Twitter and JSON-LD.
+ * Builds the full head payload for a page: title, description, robots
+ * directives, canonical, Open Graph, Twitter and JSON-LD.
+ *
+ * No `<meta name="keywords">` — see the note at the top of this file.
  */
 export function buildHead(opts: {
   path: string;
   title: string;
   description: string;
-  keywords: string[];
   ogImage: string;
   ogType?: string;
   jsonLd?: unknown[];
@@ -678,7 +740,6 @@ export function buildHead(opts: {
     meta: [
       { title: opts.title },
       { name: "description", content: opts.description },
-      { name: "keywords", content: opts.keywords.join(", ") },
       // max-*-preview:-1 lets Google (and, in practice, AI summarisers) use the
       // whole page rather than a truncated snippet.
       {
@@ -780,7 +841,7 @@ export function pageHead(path: string): HeadResult {
     jsonLd.push(
       breadcrumbLd([
         { name: "Home", path: "/" },
-        ...(page.breadcrumb ?? [{ name: shortName(page), path: page.path }]),
+        ...(page.breadcrumb ?? [{ name: page.shortTitle, path: page.path }]),
       ]),
     );
   }
@@ -791,15 +852,9 @@ export function pageHead(path: string): HeadResult {
     path: page.path,
     title: page.title,
     description: page.description,
-    keywords: page.keywords,
     ogImage: page.ogImage,
     jsonLd,
   });
-}
-
-/** Human-readable page name for breadcrumbs — the title before its first separator. */
-function shortName(page: PageSeo): string {
-  return page.title.split("|")[0].trim();
 }
 
 /** Every indexable path on the site, in sitemap order. */

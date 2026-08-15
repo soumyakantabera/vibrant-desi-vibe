@@ -323,7 +323,7 @@ export function courseSeo(d: CourseData) {
     breadcrumbLd([
       { name: "Home", path: "/" },
       { name: "English & Career Courses", path: "/english-career" },
-      { name: d.title, path },
+      { name: extra?.shortTitle ?? d.title, path },
     ]),
   ];
 
@@ -331,14 +331,11 @@ export function courseSeo(d: CourseData) {
 
   return buildHead({
     path,
-    // The format claim is the strongest differentiator in the SERP, so it goes
-    // in the title \u2014 but Career Counselling is 1:1, not a batch course, and
-    // claiming "Max 6 Per Batch" there would be simply wrong.
-    title: `${d.title} Online \u2014 ${d.price}, ${
-      d.format.includes("1:1") ? "1:1 Personalised" : "Max 6 Per Batch"
-    } | ${SITE_NAME}`,
-    description: d.metaDescription,
-    keywords: extra?.keywords ?? [],
+    // Hand-written in COURSE_SEO rather than assembled here: the generated
+    // "<title> Online \u2014 <price>, Max 6 Per Batch | Learn With Smile" form ran
+    // to 70\u201387 characters and truncated in the SERP on all six courses.
+    title: extra?.title ?? d.title,
+    description: extra?.description ?? d.metaDescription,
     ogImage,
     jsonLd,
   });
