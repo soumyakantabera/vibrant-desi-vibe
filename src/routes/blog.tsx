@@ -52,7 +52,7 @@ function Page() {
   return (
     <Layout waMessage="Hi, I read the blog. I'd like to discuss my learning goal." footerImage={IMG.blogDesk}>
       <section className="relative">
-        <div className="absolute inset-0 z-0"><SmartImage src={IMG.blogDesk} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.blogDesk} alt="Student reading and taking notes for English practice" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="book" size={14}/> Blog</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">Tips & Stories for <span className="text-sunshine">Indian Learners</span></h1>

@@ -24,7 +24,7 @@ function Page() {
   return (
     <Layout waMessage="Hi, I'd like to book a free demo." footerImage={IMG.womanLaptop}>
       <section className="relative">
-        <div className="absolute inset-0 z-0"><SmartImage src={IMG.womanLaptop} alt="" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-sunshine/35"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.womanLaptop} alt="Student booking a free online demo class on a laptop" fill priority sizes="100vw"/><div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-sunshine/35"/></div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white"><Icon name="calendar" size={14}/> Book a Free Demo</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">A Real Live Class. <span className="text-sunshine">Free.</span></h1>

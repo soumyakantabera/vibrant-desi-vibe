@@ -66,7 +66,7 @@ function Page() {
       <MottoBand>"Your learning today, <em className="text-sunshine">matters the more</em>, and we build Future Together."</MottoBand>
 
       <section className="relative py-16">
-        <div className="absolute inset-0 z-0"><SmartImage src={IMG.graduation} alt="" fill sizes="100vw"/><div className="absolute inset-0 bg-brand-deep/90"/></div>
+        <div className="absolute inset-0 z-0"><SmartImage src={IMG.graduation} alt="Learn With Smile students in a live online session" fill sizes="100vw"/><div className="absolute inset-0 bg-brand-deep/90"/></div>
         <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
           <Stat num="7" label="Years Teaching"/><Stat num="500+" label="Learners"/><Stat num="95%" label="Completion"/><Stat num="4.9★" label="Avg Rating"/>
         </div>
