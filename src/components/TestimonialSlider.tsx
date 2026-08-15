@@ -15,26 +15,38 @@ export function TestimonialSlider({
   items: Testimonial[];
   ctaLabel?: string;
 }) {
+  // One copy of each testimonial in the DOM, laid out two ways by CSS.
+  //
+  // This used to render the list twice — a `hidden lg:grid` desktop grid and a
+  // `lg:hidden` mobile slider — so a reader saw each quote once but the
+  // prerendered HTML contained every testimonial twice. Because these pages are
+  // static HTML, that is exactly what crawlers read: Priya Sharma, Rohan Mehta
+  // and Siddharth Nair each appeared twice in the served markup, and duplicated
+  // passages are what make a retrieved chunk look untrustworthy to an AI
+  // assistant quoting the page.
+  //
+  // Marking the second copy `aria-hidden`/`data-nosnippet` would have hidden it
+  // from assistive tech at one breakpoint and from snippets at both. Rendering
+  // it once and switching layout with flex → grid removes the duplicate
+  // entirely, which is the actual fix.
   return (
     <>
-      {/* Desktop grid */}
-      <div className="hidden lg:grid grid-cols-3 gap-6">
-        {items.map((t, i) => (
-          <Card key={i} t={t} ctaLabel={ctaLabel} />
-        ))}
-      </div>
-      {/* Mobile/tablet slider */}
-      <div className="lg:hidden -mx-5">
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 pb-4">
+      <div className="-mx-5 lg:mx-0">
+        <div
+          className="
+            flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 pb-4
+            lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0
+          "
+        >
           {items.map((t, i) => (
-            <div key={i} className="snap-center shrink-0 w-[88%] sm:w-[60%]">
+            <div key={i} className="snap-center shrink-0 w-[88%] sm:w-[60%] lg:w-auto lg:shrink">
               <Card t={t} ctaLabel={ctaLabel} />
             </div>
           ))}
         </div>
-        <div className="text-center text-xs text-ink/75 font-semibold mt-2">
-          ← swipe to read more →
-        </div>
+      </div>
+      <div className="text-center text-xs text-ink/75 font-semibold mt-2 lg:hidden">
+        ← swipe to read more →
       </div>
     </>
   );

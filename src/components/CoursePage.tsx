@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSlider";
+import { courseSchedule, nextBatchStart } from "@/lib/courses";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
@@ -364,23 +365,37 @@ export function courseSeo(d: CourseData) {
   const faqs = courseFaqs(d);
   const ogImage = extra?.ogImage ?? "/og/default.jpg";
 
+  // Google requires a CourseInstance schedule to carry either `repeatCount` or
+  // `startDate` + `endDate`. It previously carried neither (and
+  // `repeatFrequency: "Weekly"`, which is not a valid ISO 8601 duration), so
+  // all six courses validated as generic schema and earned no Course rich
+  // result. `startDate` is generated at build time — see nextBatchStart.
+  const schedule = courseSchedule(d.slug);
   const courseInstance: Record<string, unknown> = {
     "@type": "CourseInstance",
     courseMode: "Online",
     inLanguage: "en-IN",
+    // Per-week effort. Distinct from `timeRequired` on the Course below, which
+    // is the total span — Google reads the two as different things.
+    courseWorkload: schedule.workload,
     courseSchedule: {
       "@type": "Schedule",
       scheduleTimezone: "Asia/Kolkata",
-      repeatFrequency: "Weekly",
+      repeatFrequency: "P1W",
+      repeatCount: schedule.repeatCount,
+      ...(schedule.byDay ? { byDay: schedule.byDay } : {}),
+      startDate: nextBatchStart(),
     },
     location: { "@type": "VirtualLocation", url },
     instructor: {
       "@type": "Person",
       name: "Sunanda Dey",
+      // Links to the Person entity described on /founder, rather than leaving a
+      // bare name string that resolves to nothing.
+      url: abs("/founder"),
       worksFor: { "@type": "Organization", name: SITE_NAME },
     },
   };
-  if (workload) courseInstance.courseWorkload = workload;
 
   const offers: Record<string, unknown> = {
     "@type": "Offer",
