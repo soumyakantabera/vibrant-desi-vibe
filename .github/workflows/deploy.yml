@@ -62,9 +62,13 @@ jobs:
           # Fails the deploy if the prerender silently regressed to a blank SPA
           # shell — the exact failure this pipeline exists to prevent.
           set -euo pipefail
-          for page in index course-ielts about-us; do
-            file="dist/${page}.html"
-            [ "$page" = "index" ] && file="dist/index.html"
+          # One page of each shape. The blog sample is picked dynamically rather
+          # than by slug so renaming an article cannot silently drop the check —
+          # articles are a dynamic route and so the most likely thing to
+          # regress to a client-rendered blank shell.
+          blog_sample=$(ls dist/blog/*.html | head -1)
+          for file in dist/index.html dist/course-ielts.html dist/about-us.html \
+                      dist/spoken-english-classes-kolkata.html "$blog_sample"; do
             if ! grep -q 'rel="canonical"' "$file"; then
               echo "::error::$file has no canonical tag"; exit 1
             fi
@@ -88,8 +92,12 @@ jobs:
               echo "::error::$file is missing course fees"; exit 1
             fi
           done
+          # Recursive: blog articles live at /blog/<slug>, so their mirrors are
+          # written to dist/blog/<slug>.md. A `dist/*.md` glob counts only the
+          # top level and would report 17 mirrors against 22 sitemap URLs even
+          # though all 22 exist.
           urls=$(grep -c '<loc>' dist/sitemap.xml)
-          mirrors=$(ls -1 dist/*.md | wc -l)
+          mirrors=$(find dist -name '*.md' | wc -l)
           if [ "$urls" -ne "$mirrors" ]; then
             echo "::error::$urls URLs in the sitemap but $mirrors Markdown mirrors"; exit 1
           fi

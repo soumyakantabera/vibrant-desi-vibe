@@ -1,11 +1,18 @@
 /**
  * Generates WebP and AVIF siblings for every JPEG in src/assets.
  *
- * Run manually (`node scripts/optimize-images.mjs`) after adding or replacing a
- * photo, and commit the output. Deliberately not part of the build: sharp is a
- * native dependency, the source photos change perhaps twice a year, and making
- * every CI build recompress sixteen images to produce identical bytes is a poor
- * trade.
+ * Usage — after adding or replacing a photo, then commit the output:
+ *
+ *     bun add -d sharp
+ *     node scripts/optimize-images.mjs
+ *     bun remove sharp
+ *
+ * `sharp` is deliberately NOT a declared devDependency. It is ~30 MB of
+ * platform-specific native binaries, the deploy workflow installs
+ * devDependencies on every push to main, and this script runs perhaps twice a
+ * year — the generated .webp/.avif files are committed, so CI never needs to
+ * produce them. Paying that install cost on every deploy to recompress sixteen
+ * images into identical bytes is a poor trade.
  *
  * The JPEGs stay. `<picture>` in src/components/SmartImage.tsx offers AVIF
  * first, then WebP, then falls back to the original — so a browser that
@@ -20,7 +27,21 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import sharp from "sharp";
+// Imported dynamically so a missing sharp produces the install instruction
+// rather than an ERR_MODULE_NOT_FOUND stack trace — see the note above for why
+// it is not a declared dependency.
+let sharp;
+try {
+  ({ default: sharp } = await import("sharp"));
+} catch {
+  console.error(
+    "optimize-images: sharp is not installed.\n" +
+      "  It is intentionally not a devDependency (see the comment at the top of\n" +
+      "  this file). Install it just for this run:\n\n" +
+      "    bun add -d sharp && node scripts/optimize-images.mjs && bun remove sharp\n",
+  );
+  process.exit(1);
+}
 
 const DIR = "src/assets";
 
