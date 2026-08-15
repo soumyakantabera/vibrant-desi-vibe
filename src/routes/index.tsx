@@ -133,7 +133,7 @@ function Home() {
             <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
               {headline.sub}
             </p>
-            <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3">
+            <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3" data-cta-location="hero">
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg" className="w-full sm:w-auto justify-center" goal="hero_primary_cta">{ctaLabel}</WaButton>
               <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="wa" size="lg" className="w-full sm:w-auto justify-center shadow-[0_0_0_4px_rgba(37,211,102,0.18)]" goal="hero_secondary_cta">Chat on WhatsApp</WaButton>
             </div>
@@ -273,7 +273,16 @@ function Home() {
           <div className="md:pr-4"><Stat num="7" label="Years Teaching"/></div>
           <div className="md:px-4"><Stat num="500+" label="Learners Helped"/></div>
           <div className="md:px-4 pt-8 md:pt-0"><Stat num="Max 6" label="Per Batch · 1:1 Option"/></div>
-          <div className="md:pl-4 pt-8 md:pt-0"><Stat num="4.9★" label="Average Rating"/></div>
+          {/* One rating, one source. This tile used to read 4.9★ while the
+              location card below read 5.0★ — the same page stating two numbers.
+              That matters more here than on most sites: llms.txt and the .md
+              twins make this site unusually easy for an assistant to quote
+              verbatim, so an inconsistency propagates straight into AI answers.
+              The Google Business Profile figure is the one that wins.
+              Deliberately NOT mirrored into JSON-LD as aggregateRating —
+              self-serving review markup on LocalBusiness is disregarded by
+              Google and carries a manual-action risk. */}
+          <div className="md:pl-4 pt-8 md:pt-0"><Stat num="5.0★" label="Google Rating · 125 Reviews"/></div>
         </div>
       </section>
 
@@ -290,7 +299,7 @@ function Home() {
       </section>
 
       {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
-      <section id="pricing" className="section bg-cream scroll-mt-20">
+      <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
 
         <div className="container-x">
           <SectionHeader eyebrow="Simple, India-Friendly Pricing" eyebrowTone="indigo" title="Transparent Fees · Monthly EMI · No Hidden Costs" subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."/>
@@ -403,7 +412,7 @@ function Home() {
       </section>
 
       {/* Mobile sticky WhatsApp CTA */}
-      <div className="sm:hidden fixed bottom-3 inset-x-3 z-40">
+      <div className="sm:hidden fixed bottom-3 inset-x-3 z-40" data-cta-location="sticky">
         <a
           href="https://wa.me/919674479949?text=Hi%2C%20I%20am%20interested%20in%20a%20free%20demo.%20Please%20guide%20me."
           target="_blank"

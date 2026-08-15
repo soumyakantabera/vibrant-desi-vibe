@@ -14,7 +14,9 @@
  *    experiment id, so adding an experiment never reshuffles existing ones.
  * 3. **No backend.** Events go to `dataLayer` (GTM) and `gtag` (GA4) if either
  *    is present, and are otherwise dropped. Nothing here blocks rendering or
- *    fails if analytics is absent.
+ *    fails if analytics is absent. Whether either global exists is decided by
+ *    `src/lib/analytics.ts` — until a GA4 measurement ID is configured there,
+ *    every event below is still dropped and these experiments still run blind.
  *
  * Reading the results: in GA4, `ab_exposure` and `ab_conversion` both carry
  * `experiment_id` and `variant_id`. Conversion rate per variant is
@@ -22,6 +24,8 @@
  */
 
 import { useEffect, useState } from "react";
+
+import { track } from "@/lib/analytics";
 
 const STORAGE_KEY = "lws_ab_v1";
 
@@ -85,18 +89,6 @@ function assign(experiment: Experiment): string {
   const picked = experiment.variants[Math.floor(Math.random() * experiment.variants.length)];
   writeAssignments({ ...stored, [experiment.id]: picked });
   return picked;
-}
-
-type AnalyticsWindow = Window & {
-  dataLayer?: unknown[];
-  gtag?: (...args: unknown[]) => void;
-};
-
-function track(event: string, params: Record<string, string>) {
-  if (typeof window === "undefined") return;
-  const w = window as AnalyticsWindow;
-  w.dataLayer?.push({ event, ...params });
-  w.gtag?.("event", event, params);
 }
 
 /** Exposures are logged once per page view, not once per render. */

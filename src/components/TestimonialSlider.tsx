@@ -33,7 +33,7 @@ export function TestimonialSlider({ items, ctaLabel = "I Want This Result" }: { 
 function Card({ t, ctaLabel }: { t: Testimonial; ctaLabel: string }) {
   const wa = `https://wa.me/919674479949?text=${encodeURIComponent(t.waMessage)}`;
   return (
-    <article className="card-soft h-full flex flex-col bg-gradient-to-br from-white to-brand-soft/40">
+    <article className="card-soft h-full flex flex-col bg-gradient-to-br from-white to-brand-soft/40" data-cta-location="testimonial">
       <div className="h-10 w-10 rounded-full bg-sunshine/20 text-sunshine flex items-center justify-center mb-3">
         <Icon name="quote" size={22}/>
       </div>

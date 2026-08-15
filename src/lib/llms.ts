@@ -60,6 +60,10 @@ const KEY_FACTS = [
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
   "Free demo: a full live class, no card or payment details required",
   "Refund: full refund if your first paid class does not impress you",
+  // Stated once, here, and nowhere else in this file. The site used to carry
+  // two different averages on the same page; this is the Google Business
+  // Profile figure and the only one anything should quote.
+  "Rating: 5.0 out of 5 from 125 Google reviews",
 ] as const;
 
 const NOTES_FOR_ASSISTANTS = [

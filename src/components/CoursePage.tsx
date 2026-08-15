@@ -85,7 +85,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20"><Icon name="users" size={14} className="text-sage"/>{data.format}</span>
             </div>
             <p className="mt-3 text-sm text-white/90">✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Customised curriculum · ✓ Pan-India · Based in Kolkata</p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={waPrimary} variant="sun" size="lg">Book a Free Demo</WaButton>
               <WaButton message={waSyllabus} variant="wa" size="lg">Get Full Syllabus</WaButton>
             </div>
@@ -147,7 +147,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               </article>
             ))}
           </Reveal>
-          <div className="mt-8 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-8 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4" data-cta-location="syllabus">
             <div>
               <strong className="text-cream block text-lg">Want a printable syllabus PDF?</strong>
               <p className="text-white text-sm mt-1">We'll send it on WhatsApp instantly with batch timings and pricing.</p>
@@ -213,7 +213,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {/* FINAL CTA */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
+      <section className="relative py-16 md:py-20 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral"/>
         <div className="container-x text-center text-cream">
           <h2 className="text-cream text-3xl md:text-4xl">Ready to start {data.title}?</h2>

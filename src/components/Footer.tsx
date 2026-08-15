@@ -32,7 +32,7 @@ const IMG = "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&
 export function Footer({ image }: { image?: string }) {
   const wa = waLink("Hi, I am interested in Learn With Smile. Please share the details.");
   return (
-    <footer className="bg-ink text-cream pt-16 pb-8 mt-10">
+    <footer className="bg-ink text-cream pt-16 pb-8 mt-10" data-cta-location="footer">
       <div className="container-x">
         <div className="grid lg:grid-cols-[1.2fr_1fr_1fr] gap-10 mb-12">
           <div>

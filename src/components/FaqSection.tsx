@@ -52,7 +52,7 @@ export function FaqSection({
             </details>
           ))}
         </div>
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center" data-cta-location="faq">
           <WaButton message={waMessage} size="lg">
             Ask Your Own Question on WhatsApp
           </WaButton>

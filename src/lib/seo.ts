@@ -22,6 +22,8 @@
  * what actually gets retrieved and cited.
  */
 
+import { verificationMeta } from "@/lib/analytics";
+
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
 export const SITE_LOCALE = "en_IN";
@@ -799,6 +801,11 @@ export function buildHead(opts: {
 export function siteHead(): HeadResult {
   return {
     meta: [
+      // Search Console and Bing Webmaster ownership. Sitewide rather than
+      // homepage-only so verification survives whichever URL either tool is
+      // pointed at. Emits nothing until the codes are filled in —
+      // see src/lib/analytics.ts.
+      ...verificationMeta(),
       {
         name: "robots",
         content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",

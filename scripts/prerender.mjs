@@ -122,6 +122,13 @@ function dedupeSsrHead(ssrHead) {
       // that serve it directly; here it would be a second, later, redundant one.
       .replace(/<script data-boot="[^"]*">[\s\S]*?<\/script>/g, "")
       .replace(/<style data-boot="[^"]*">[\s\S]*?<\/style>/g, "")
+      // The GA4 tag, for the same reason: vite/analytics-plugin.ts already put
+      // it into index.html, which is this script's template, so every page has
+      // one. The SSR shell renders its own copy for the hosts that serve it
+      // directly; keeping both here would load gtag.js twice and double-count
+      // every pageview.
+      .replace(/<script data-analytics="[^"]*"[^>]*><\/script>/g, "")
+      .replace(/<script data-analytics="[^"]*"[^>]*>[\s\S]*?<\/script>/g, "")
       .replace(/ data-precedence="[^"]*"/g, "")
   );
 }
