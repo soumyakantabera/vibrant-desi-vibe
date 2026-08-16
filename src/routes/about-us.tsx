@@ -63,8 +63,8 @@ const FEATURES: { icon: any; color: any; t: string; d: string }[] = [
   {
     icon: "shield",
     color: "sage",
-    t: "Money-Back Confidence",
-    d: "If your first class doesn't impress — full refund.",
+    t: "Free Demo First",
+    d: "Attend a full live class before you decide to enrol.",
   },
   {
     icon: "bulb",

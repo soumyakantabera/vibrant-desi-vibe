@@ -77,9 +77,9 @@ function Page() {
                   },
                   {
                     tone: "coral",
-                    icon: SnapIcons.shield,
-                    big: "Refund",
-                    small: "If first class doesn't impress",
+                    icon: SnapIcons.cap,
+                    big: "Certificate",
+                    small: "On completing your course",
                   },
                 ]}
                 footer="7 Years · Pan-India · WhatsApp 7 Days"

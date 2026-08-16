@@ -193,7 +193,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is the demo class really free, and do I need to pay anything upfront?",
-        a: "Yes, genuinely free — you attend a full live class, not a sales call, and no card or payment details are needed to book. You message us on WhatsApp at +91 96744 79949, we confirm a slot, and you sit in a real class. If you enrol and your first paid class does not impress you, we refund it in full.",
+        a: "Yes, genuinely free — you attend a full live class, not a sales call, and no card or payment details are needed to book. You message us on WhatsApp at +91 96744 79949, we confirm a slot, and you sit in a real class before deciding whether to enrol.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -243,7 +243,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/why-us",
     title: "Why Learn With Smile | Max 6 Per Batch, Live Teacher",
     description:
-      "No recorded videos, no 40-student webinars, no bots. Live small-batch classes capped at 6, gamified lessons, and a refund if your first class disappoints.",
+      "No recorded videos, no 40-student webinars, no bots. Live small-batch classes capped at 6, gamified lessons, and a free demo class before you decide.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -258,15 +258,15 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Differentiators: 100% live teaching, hard cap of 6 students per batch, gamified lessons, flexible morning/evening/weekend IST slots, first-class refund policy.",
+      "Differentiators: 100% live teaching, hard cap of 6 students per batch, gamified lessons, flexible morning/evening/weekend IST slots, free demo class before enrolling.",
     faqs: [
       {
         q: "Why is a maximum batch size of 6 students important for learning English?",
         a: "Speaking time is the whole point. In a 60-minute class with 6 students, each learner gets roughly 8–10 minutes of actual speaking and correction. In a 30-student batch that drops to under 2 minutes, and most learners spend the hour listening to someone else practise. Small batches also mean the teacher can remember your specific errors week to week and correct the same mistake until it disappears.",
       },
       {
-        q: "What is your refund policy?",
-        a: "If your first paid class does not impress you, we refund that month in full — no forms, no argument. The demo class before that is free anyway, so you have already seen a real class before paying anything.",
+        q: "Is there a refund if I don't like the course after enrolling?",
+        a: "We don't run a refund policy — instead, you attend a full free live demo class before you pay anything, so you already know exactly what the batch, teacher and teaching style are like before you enrol. That's why we'd rather you decide upfront than ask for money back afterwards.",
       },
       {
         q: "Are the classes live or pre-recorded?",
@@ -338,6 +338,26 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Do online English classes actually get people jobs in India?",
         a: "They get people interview-ready, which is the gate most candidates fail at. Our learners' documented outcomes include a BPO agent moving to a client-facing Customer Success role in Pune with roughly double the salary in 4 months, an IT engineer in Hyderabad clearing interview rounds she had previously failed, and a marketing executive in Kolkata going from freezing in meetings to leading client presentations within 6 months. English is a gate, not a guarantee — it opens roles that were previously closed to you.",
+      },
+      {
+        q: "How soon can I expect to see real improvement in my spoken English?",
+        a: "Most learners notice a genuine difference in confidence and sentence fluency within 6–8 weeks of regular live classes, roughly 20–25 sessions in. Full everyday conversational fluency for someone starting from zero typically takes the complete 6-month Basic Spoken English course, attended 3 times a week with some daily practice in between.",
+      },
+      {
+        q: "I studied in a Hindi or Bengali-medium school, not English-medium. Can I still get results like these?",
+        a: "Yes — most of our learners come from Hindi- or Bengali-medium schooling, including several in the stories above, from Howrah and Kolkata. Classes are taught bilingually in the early weeks where needed, so grammar and pronunciation are explained in a language you already understand before you're expected to think and respond in English.",
+      },
+      {
+        q: "Will an English course actually help me clear interviews, or is that too big a claim?",
+        a: "English removes one specific obstacle — communicating confidently once you're in the room — it doesn't replace domain skills or experience you don't have. Our Interview Preparation course pairs mock interviews with English coaching for that reason, and the outcomes above came from candidates who already had the underlying skills but needed the language and confidence fixed.",
+      },
+      {
+        q: "Are these success stories typical, or just the best few out of many students?",
+        a: "They're real, named, verifiable outcomes, not anonymous quotes, and results genuinely depend on effort — a learner who attends all 3 classes a week and speaks up in every session sees faster progress than one who joins occasionally. The one thing every story above has in common is consistent attendance for at least 3–6 months, not a shortcut.",
+      },
+      {
+        q: "Does Learn With Smile help with career guidance, or only English speaking?",
+        a: "Both, if you need it. Alongside the English courses we run standalone 1:1 Career Counselling (₹999 for three 60-minute sessions), which is what helped Aarav Pandey above choose the right B.Tech specialisation. Many learners combine an English course with a counselling session when the actual goal is a career or course change, not just language practice.",
       },
     ],
   },
