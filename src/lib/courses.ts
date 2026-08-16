@@ -12,11 +12,11 @@ import { IMG } from "@/lib/images";
  * because it is a fixed property of the course rather than of one batch.
  *
  * Derived from the duration and the classes-per-week already in the records
- * below: 6 months x 3/week = 72, 3 months x 3/week = 36, and so on. Career
+ * below: 6 months x 2/week = 48, 3 months x 3/week = 36, and so on. Career
  * Counselling is 3 one-to-one sessions rather than a recurring batch.
  */
 const SESSION_COUNT: Record<string, number> = {
-  "spoken-english": 72,
+  "spoken-english": 48,
   "business-english": 36,
   "interactive-speaking": 36,
   ielts: 36,
@@ -25,7 +25,13 @@ const SESSION_COUNT: Record<string, number> = {
 };
 
 /** Days a weekly batch meets. Career Counselling is scheduled 1:1, not weekly. */
-const BATCH_DAYS = ["Monday", "Wednesday", "Friday"];
+const BATCH_DAYS: Record<string, string[]> = {
+  "spoken-english": ["Monday", "Wednesday"],
+  "business-english": ["Monday", "Wednesday", "Friday"],
+  "interactive-speaking": ["Monday", "Wednesday", "Friday"],
+  ielts: ["Monday", "Wednesday", "Friday"],
+  "interview-prep": ["Monday", "Wednesday", "Friday"],
+};
 
 /**
  * Per-week effort, as ISO 8601, for `courseWorkload` on the instance.
@@ -35,7 +41,7 @@ const BATCH_DAYS = ["Monday", "Wednesday", "Friday"];
  * is missing the field a prospective student actually wants.
  */
 const WEEKLY_WORKLOAD: Record<string, string> = {
-  "spoken-english": "PT4H30M",
+  "spoken-english": "PT3H",
   "business-english": "PT4H30M",
   "interactive-speaking": "PT4H30M",
   ielts: "PT6H",
@@ -52,7 +58,7 @@ export type CourseSchedule = {
 export function courseSchedule(slug: string): CourseSchedule {
   return {
     repeatCount: SESSION_COUNT[slug] ?? 0,
-    byDay: slug === "career-counselling" ? undefined : BATCH_DAYS,
+    byDay: slug === "career-counselling" ? undefined : BATCH_DAYS[slug],
     workload: WEEKLY_WORKLOAD[slug],
   };
 }
@@ -85,7 +91,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.spokenEnglish,
     midImage: IMG.womanLaptop,
     footerImage: IMG.studentLaptop2,
-    duration: "6 months · 3 classes/week",
+    duration: "6 months · 2 classes/week",
     format: "Live batch · max 6 students",
     price: "₹999/mo",
     outcomes: [
@@ -192,7 +198,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · 3 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
+      "Live online Spoken English classes for Indian learners. 6 months · 2 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
   },
   "business-english": {
     slug: "business-english",

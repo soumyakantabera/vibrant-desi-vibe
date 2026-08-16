@@ -128,7 +128,7 @@ export const body: ArticleBody = [
       "Same fees for a learner in Kolkata as anywhere else in India. There is no local pricing.",
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months · 3 classes/week", "₹999/month"],
+      ["Basic Spoken English", "6 months · 2 classes/week", "₹999/month"],
       ["Interactive Speaking", "3 months · 3 classes/week", "₹999/month"],
       ["Business English", "3 months · 3 classes/week", "₹1,199/month"],
       ["Interview Preparation", "2 months · intensive", "₹1,499/month"],
