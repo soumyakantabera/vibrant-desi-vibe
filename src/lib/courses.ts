@@ -16,7 +16,7 @@ import { IMG } from "@/lib/images";
  * Counselling is 3 one-to-one sessions rather than a recurring batch.
  */
 const SESSION_COUNT: Record<string, number> = {
-  "spoken-english": 72,
+  "spoken-english": 48,
   "business-english": 36,
   "interactive-speaking": 36,
   ielts: 36,
@@ -85,7 +85,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.spokenEnglish,
     midImage: IMG.womanLaptop,
     footerImage: IMG.studentLaptop2,
-    duration: "6 months · 3 classes/week",
+    duration: "6 months · 2 classes/week",
     format: "Live batch · max 6 students",
     price: "₹999/mo",
     outcomes: [
@@ -192,7 +192,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · 3 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
+      "Live online Spoken English classes for Indian learners. 6 months · 2 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
   },
   "business-english": {
     slug: "business-english",
