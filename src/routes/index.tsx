@@ -495,7 +495,7 @@ function Home() {
             eyebrow="Simple, India-Friendly Pricing"
             eyebrowTone="indigo"
             title="Transparent Fees · Monthly EMI · No Hidden Costs"
-            subtitle="Pay per month, switch slots anytime, and get a full refund if your first class doesn't impress."
+            subtitle="Pay per month, switch slots anytime, and attend a full free demo class before you enrol."
           />
           <Reveal stagger className="grid md:grid-cols-3 gap-5">
             <article className="order-2 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
@@ -575,7 +575,7 @@ function Home() {
                 </li>
                 <li className="flex gap-2">
                   <CheckIcon className="text-brand mt-0.5 shrink-0" />
-                  Refund guarantee after enrolling
+                  No card or payment needed
                 </li>
               </ul>
             </article>

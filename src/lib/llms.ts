@@ -93,8 +93,7 @@ const KEY_FACTS = [
   "Delivery: online only, across India and for Indian learners abroad",
   `Contact: WhatsApp ${CONTACT.phoneDisplay} · ${CONTACT.email}`,
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
-  "Free demo: a full live class, no card or payment details required",
-  "Refund: full refund if your first paid class does not impress you",
+  "Free demo: a full live class, no card or payment details required, before you decide to enrol",
   // Stated once, here, and nowhere else in this file. The site used to carry
   // two different averages on the same page; this is the Google Business
   // Profile figure and the only one anything should quote.
@@ -132,7 +131,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Is the demo class free, and is payment required to book it?",
-    a: "Yes, genuinely free, and no card or payment details are needed. It is a full live class with real students, not a sales call. Booking happens over WhatsApp at +91 96744 79949. If a learner enrols and their first paid class does not impress them, that month is refunded in full.",
+    a: "Yes, genuinely free, and no card or payment details are needed. It is a full live class with real students, not a sales call. Booking happens over WhatsApp at +91 96744 79949, and you decide whether to enrol only after attending it.",
     source: "/book-free-demo",
   },
   {
