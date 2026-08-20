@@ -32,6 +32,7 @@ export type CourseData = {
   midImage: string;
   footerImage: string;
   duration: string;
+  durationQualifier?: string;
   format: string;
   price: string;
   outcomes: string[];
@@ -95,19 +96,29 @@ export function CoursePage({ data }: { data: CourseData }) {
               {data.title}
             </h1>
             <p className="mt-4 text-lg text-white max-w-2xl">{data.tagline}</p>
-            <div className="mt-6 flex flex-wrap gap-3 text-sm">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
-                <Icon name="rupee" size={14} />
-                {data.price}
-              </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
-                <Icon name="clock" size={14} className="text-sage" />
-                {data.duration}
-              </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
-                <Icon name="users" size={14} className="text-sage" />
-                {data.format}
-              </span>
+            <div className="mt-6 space-y-3 text-sm">
+              <div className="flex flex-wrap gap-3">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
+                  <Icon name="rupee" size={14} />
+                  {data.price}
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+                  <Icon name="clock" size={14} className="text-sage" />
+                  {data.duration}
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+                  <Icon name="users" size={14} className="text-sage" />
+                  {data.format}
+                </span>
+              </div>
+              {data.durationQualifier && (
+                <div className="flex flex-wrap">
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+                    <Icon name="compass" size={14} className="text-sage" />
+                    {data.durationQualifier}
+                  </span>
+                </div>
+              )}
             </div>
             <p className="mt-3 text-sm text-white/90">
               ✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Customised

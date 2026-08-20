@@ -131,7 +131,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "What a class adds is the two things a friend usually cannot: someone who corrects the same error every week until it disappears, and a group where speaking is compulsory rather than optional. That is why our batches are capped at six — in a batch of six everyone speaks in every class, which is the entire reason the cap exists. In a thirty-student batch you would speak once a week and listen for the rest, which is not very different from listening to a recording. If you want that structure, [Interactive Speaking](/course-interactive-speaking) is three months of nothing but this, and [Basic Spoken English](/course-spoken-english) builds the grammar underneath it at the same time.",
+    text: "What a class adds is the two things a friend usually cannot: someone who corrects the same error every week until it disappears, and a group where speaking is compulsory rather than optional. That is why our batches are capped at six — in a batch of six everyone speaks in every class, which is the entire reason the cap exists. In a thirty-student batch you would speak once a week and listen for the rest, which is not very different from listening to a recording. If you want that structure, [Interactive Speaking](/course-interactive-speaking) offers 3–6 months of nothing but this, depending on your entry level, and [Basic Spoken English](/course-spoken-english) builds the grammar underneath it at the same time.",
   },
   {
     t: "p",
