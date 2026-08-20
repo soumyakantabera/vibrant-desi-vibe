@@ -208,7 +208,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Business English is three months of exactly this — emails, meetings, presentations and negotiation — in a live batch capped at 6, with early-morning, evening and weekend IST slots built around a full-time job. ₹1,199/month, GST included, and every class is recorded in case a work escalation takes you out.",
+    text: "Business English offers 3–6 months of exactly this — emails, meetings, presentations and negotiation — in a live batch capped at 6, with the duration based on your entry level and early-morning, evening and weekend IST slots built around a full-time job. ₹1,199/month, GST included, and every class is recorded in case a work escalation takes you out.",
     course: "/course-business-english",
     label: "See the Business English course",
   },

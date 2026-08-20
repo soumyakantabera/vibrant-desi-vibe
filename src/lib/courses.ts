@@ -205,7 +205,8 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.businessEnglish,
     midImage: IMG.womanOffice,
     footerImage: IMG.presentation,
-    duration: "3 months",
+    duration: "3–6 months",
+    durationQualifier: "Entry-level dependent",
     format: "Live batch · max 6 students",
     price: "₹1,199/mo",
     outcomes: [
@@ -255,7 +256,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Business English live online classes for working professionals in India. 3 months · max 6 per batch · ₹1,199/mo. Free demo on WhatsApp.",
+      "Business English live online classes for working professionals in India. 3–6 months · max 6 per batch · ₹1,199/mo. Duration is entry-level dependent. Free demo on WhatsApp.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
@@ -268,9 +269,10 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.interactiveSpeaking,
     midImage: IMG.girlReading,
     footerImage: IMG.groupClass,
-    duration: "3 months",
+    duration: "3–6 months",
+    durationQualifier: "Entry-level dependent",
     format: "Live batch · max 6 students",
-    price: "₹999/mo",
+    price: "₹1,199/mo",
     outcomes: [
       "Speak for 2 minutes on any topic",
       "Lead group conversations",
@@ -313,7 +315,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Daily live practice with games, debates and stories. 3 months · max 6 per batch · ₹999/mo.",
+      "Interactive English speaking classes online. Daily live practice with games, debates and stories. 3–6 months · max 6 per batch · ₹1,199/mo. Duration is entry-level dependent.",
   },
   ielts: {
     slug: "ielts",
