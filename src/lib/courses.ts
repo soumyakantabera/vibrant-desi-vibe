@@ -206,7 +206,7 @@ export const COURSES: Record<string, CourseData> = {
     midImage: IMG.womanOffice,
     footerImage: IMG.presentation,
     duration: "3–6 months",
-    durationQualifier: "Entry-level dependent",
+    durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
     price: "₹1,199/mo",
     outcomes: [
@@ -270,7 +270,7 @@ export const COURSES: Record<string, CourseData> = {
     midImage: IMG.girlReading,
     footerImage: IMG.groupClass,
     duration: "3–6 months",
-    durationQualifier: "Entry-level dependent",
+    durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
     price: "₹1,199/mo",
     outcomes: [
