@@ -226,7 +226,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Business English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,199/month, 3–6 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3–6 months) if your grammar is fine but you freeze when speaking and just need daily live practice through games, debates and storytelling. The duration of either course depends on your entry level.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,199/month, 3 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and just need daily live practice through games, debates and storytelling.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
@@ -627,9 +627,9 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
-    title: "Business English Online | ₹1,199/mo, 3–6 Months",
+    title: "Business English Online | ₹1,199/mo, 3 Months",
     description:
-      "Business English for working professionals — emails, meetings, presentations and negotiation. Live online for 3–6 months based on entry level, max 6 students, ₹1,199/month.",
+      "Business English for working professionals — emails, meetings, presentations and negotiation. Live online for 3 months, max 6 students, ₹1,199/month.",
     shortTitle: "Business English",
     keywords: [
       "business english course online india",
@@ -642,7 +642,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/business-english.jpg",
     summary:
-      "Business English — ₹1,199/month · 3–6 months, entry-level dependent, in a live batch of max 6. Emails, meetings, presentations and negotiation.",
+      "Business English — ₹1,199/month · 3 months in a live batch of max 6. Emails, meetings, presentations and negotiation.",
     extraFaqs: [
       {
         q: "What is the difference between spoken English and business English?",
@@ -650,14 +650,14 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is there a Business English course that fits around a full-time job?",
-        a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The course is ₹1,199/month and takes 3–6 months depending on your entry level; every class is recorded so a missed session because of a work escalation does not set you back.",
+        a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The three-month course is ₹1,199/month; every class is recorded so a missed session because of a work escalation does not set you back.",
       },
     ],
   },
   "interactive-speaking": {
-    title: "Interactive Speaking | ₹1,199/mo, 3–6 Months",
+    title: "Interactive Speaking | ₹1,199/mo, 3 Months",
     description:
-      "3–6 months of pure speaking practice, based on entry level, through games, debates, role-plays and storytelling. Live batch capped at 6, ₹1,199/month.",
+      "3 months of pure speaking practice through games, debates, role-plays and storytelling. Live batch capped at 6, ₹1,199/month.",
     shortTitle: "Interactive Speaking",
     keywords: [
       "english speaking practice online india",
@@ -669,11 +669,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/interactive-speaking.jpg",
     summary:
-      "Interactive Speaking — ₹1,199/month · 3–6 months, entry-level dependent, in a live batch of max 6. Games, debates, role-plays and storytelling.",
+      "Interactive Speaking — ₹1,199/month · 3 months in a live batch of max 6. Games, debates, role-plays and storytelling.",
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",
-        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it only responds to repetition under mild pressure. That means speaking daily in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, three times a week for 3–6 months depending on your entry level, in a batch of six.",
+        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it only responds to repetition under mild pressure. That means speaking daily in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, three times a week for 3 months, in a batch of six.",
       },
       {
         q: "Is this course useful if my grammar is already good?",
