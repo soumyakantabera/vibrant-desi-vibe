@@ -26,13 +26,13 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-business-english",
     label: "Business English",
     icon: "headset",
-    desc: "3–6 months · ₹1,199/month",
+    desc: "3 months · ₹1,199/month",
   },
   {
     to: "/course-interactive-speaking",
     label: "Interactive Speaking",
     icon: "headset",
-    desc: "3–6 months · ₹1,199/month",
+    desc: "3 months · ₹1,199/month",
   },
   { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹1,999/mo" },
   {

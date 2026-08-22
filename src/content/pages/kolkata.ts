@@ -129,8 +129,8 @@ export const body: ArticleBody = [
     head: ["Course", "Duration", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months · 3 classes/week", "₹999/month"],
-      ["Interactive Speaking", "3–6 months · 3 classes/week", "₹1,199/month"],
-      ["Business English", "3–6 months · 3 classes/week", "₹1,199/month"],
+      ["Interactive Speaking", "3 months · 3 classes/week", "₹1,199/month"],
+      ["Business English", "3 months · 3 classes/week", "₹1,199/month"],
       ["Interview Preparation", "2 months · intensive", "₹1,499/month"],
       ["IELTS Preparation", "3 months · 3 classes/week", "₹1,999/month"],
       ["Career Counselling", "3 × 60-min 1:1 sessions", "₹999 total"],
