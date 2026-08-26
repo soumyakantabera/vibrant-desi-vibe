@@ -26,7 +26,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-business-english",
     label: "Business English",
     icon: "headset",
-    desc: "3 months · ₹1,199/month",
+    desc: "3 months · ₹1,499/month",
   },
   {
     to: "/course-interactive-speaking",

@@ -208,7 +208,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
-    price: "₹1,199/mo",
+    price: "₹1,499/mo",
     outcomes: [
       "Lead client meetings in English",
       "Write polished emails, proposals & reports",
@@ -256,7 +256,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Business English live online classes for working professionals in India. 3 months · max 6 per batch · ₹1,199/mo. Free demo on WhatsApp.",
+      "Business English live online classes for working professionals in India. 3 months · max 6 per batch · ₹1,499/mo. Free demo on WhatsApp.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",

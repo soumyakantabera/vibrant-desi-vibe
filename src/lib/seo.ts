@@ -177,7 +177,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with 3 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,199/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with 3 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -226,11 +226,11 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Business English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,199/month, 3 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and just need daily live practice through games, debates and storytelling.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,499/month, 3 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and just need daily live practice through games, debates and storytelling.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Business English and Interactive Speaking are ₹1,199 per month, and 1:1 Career Counselling is ₹999 for the complete 3-session package. All fees include GST.",
+        a: "Basic Spoken English is ₹999 per month, Business English is ₹1,499 per month, Interactive Speaking is ₹1,199 per month, and 1:1 Career Counselling is ₹999 for the complete 3-session package. All fees include GST.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -467,7 +467,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you prepare Kolkata students for IELTS and job interviews too?",
-        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹1,999/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Business English at ₹1,199/month for the Sector V and Rajarhat IT and BPO cluster. All of them are live, capped at 6 students, and taught from Kolkata.",
+        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹1,999/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Business English at ₹1,499/month for the Sector V and Rajarhat IT and BPO cluster. All of them are live, capped at 6 students, and taught from Kolkata.",
       },
     ],
   },
@@ -627,9 +627,9 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
-    title: "Business English Online | ₹1,199/mo, 3 Months",
+    title: "Business English Online | ₹1,499/mo, 3 Months",
     description:
-      "Business English for working professionals — emails, meetings, presentations and negotiation. Live online for 3 months, max 6 students, ₹1,199/month.",
+      "Business English for working professionals — emails, meetings, presentations and negotiation. Live online for 3 months, max 6 students, ₹1,499/month.",
     shortTitle: "Business English",
     keywords: [
       "business english course online india",
@@ -642,7 +642,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/business-english.jpg",
     summary:
-      "Business English — ₹1,199/month · 3 months in a live batch of max 6. Emails, meetings, presentations and negotiation.",
+      "Business English — ₹1,499/month · 3 months in a live batch of max 6. Emails, meetings, presentations and negotiation.",
     extraFaqs: [
       {
         q: "What is the difference between spoken English and business English?",
@@ -650,7 +650,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is there a Business English course that fits around a full-time job?",
-        a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The three-month course is ₹1,199/month; every class is recorded so a missed session because of a work escalation does not set you back.",
+        a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The three-month course is ₹1,499/month; every class is recorded so a missed session because of a work escalation does not set you back.",
       },
     ],
   },
