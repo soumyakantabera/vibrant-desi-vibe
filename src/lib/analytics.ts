@@ -216,13 +216,15 @@ export function installWhatsAppClickTracking(): () => void {
     try {
       const url = new URL(link.href);
       const message = url.searchParams.get("text") ?? "Hi, I am interested in Learn With Smile.";
-      if (!message.includes("Lead ref:")) {
-        url.searchParams.set(
-          "text",
-          `${message}\n\n${leadContext(leadId, getCampaignAttribution())}`,
-        );
-        link.href = url.toString();
-      }
+      // A link can be clicked twice without React re-rendering it. Strip the
+      // previous context before adding a fresh reference so the message and
+      // analytics event always carry the same unique lead ID.
+      const baseMessage = message.replace(/\n\nLead ref: LWS-[\s\S]*$/, "");
+      url.searchParams.set(
+        "text",
+        `${baseMessage}\n\n${leadContext(leadId, getCampaignAttribution())}`,
+      );
+      link.href = url.toString();
     } catch {
       // Never block the visitor from opening WhatsApp because attribution failed.
     }

@@ -136,7 +136,7 @@ function Page() {
                   required
                   minLength={10}
                   maxLength={20}
-                  aria-describedby="demo-form-error"
+                  aria-describedby={error ? "demo-form-error" : undefined}
                   className="input"
                 />
               </Field>
@@ -165,14 +165,11 @@ function Page() {
                   className="input min-h-[90px] py-3"
                 />
               </Field>
-              <p
-                id="demo-form-error"
-                className={`text-sm font-semibold text-coral ${error ? "block" : "sr-only"}`}
-                role="alert"
-                aria-live="polite"
-              >
-                {error || "The form is ready."}
-              </p>
+              {error && (
+                <p id="demo-form-error" className="text-sm font-semibold text-coral" role="alert">
+                  {error}
+                </p>
+              )}
               <button type="submit" className="btn btn-wa btn-lg w-full">
                 <Icon name="whatsapp" size={18} /> Send via WhatsApp & Confirm Slot
               </button>
