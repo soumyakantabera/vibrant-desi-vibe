@@ -192,7 +192,7 @@ function Page() {
               </h3>
               <ol className="space-y-2 text-sm text-ink/90 list-decimal pl-4">
                 <li>WhatsApp opens with your message pre-filled.</li>
-                <li>You hit send — our team replies during 7:00–22:00 IST.</li>
+                <li>You hit send — our team replies during 09:00–12:00 IST.</li>
                 <li>We confirm the next available live demo slot.</li>
                 <li>You attend the demo, no payment needed.</li>
                 <li>Like it? We help you join the batch. Don't? No pressure.</li>

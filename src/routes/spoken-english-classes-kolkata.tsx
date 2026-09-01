@@ -15,10 +15,16 @@ export const Route = createFileRoute("/spoken-english-classes-kolkata")({
   component: Page,
   head: () => {
     const head = pageHead(PATH);
-    // A Service entity tying the offering to a place. The sitewide
-    // LocalBusiness schema already establishes that the business is in Kolkata;
-    // this says which service is offered and where it is delivered, which is
-    // the part a local query needs.
+    // This is the one location-specific service page, so location metadata
+    // belongs here rather than on every page of a pan-India online site.
+    head.meta.push(
+      { name: "geo.region", content: "IN-WB" },
+      { name: "geo.placename", content: "Kolkata" },
+      { name: "geo.position", content: "22.4924;88.3125" },
+      { name: "ICBM", content: "22.4924, 88.3125" },
+    );
+    // A Service entity ties the online offering to the Kolkata audience without
+    // claiming that the registered office is a walk-in teaching campus.
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({

@@ -118,7 +118,7 @@ function Page() {
                     small: "Live polls · roleplays · debates",
                   },
                 ]}
-                footer="Free Demo on WhatsApp · Replies 7:00–22:00 IST"
+                footer="Free Demo on WhatsApp · Replies 09:00–12:00 IST"
               />
             </div>
           </div>
@@ -189,7 +189,7 @@ function Page() {
             <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">
               Tell us your goal — interview, abroad study, office promotion, daily confidence —
-              we'll recommend the right course during 7:00–22:00 IST on WhatsApp.
+              we'll recommend the right course during 09:00–12:00 IST on WhatsApp.
             </p>
             <div className="mt-5">
               <WaButton message={wa} variant="sun" size="lg">

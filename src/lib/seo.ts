@@ -257,7 +257,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Differentiators: 100% live teaching, hard cap of 6 students per batch, gamified lessons, flexible morning/evening/weekend IST slots, free demo class before enrolling.",
+      "Differentiators: 100% live teaching, hard cap of 6 students per batch, gamified lessons, same-week rescheduling subject to availability, direct teacher support and a free demo before enrolling.",
     faqs: [
       {
         q: "Why is a maximum batch size of 6 students important for learning English?",
@@ -270,6 +270,18 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Are the classes live or pre-recorded?",
         a: "100% live, every single session, with a real teacher who knows your name. Classes are recorded afterwards so you can revise or catch up on a missed session, but you are never asked to learn from a recording as your primary class.",
+      },
+      {
+        q: "Can I reschedule a missed class?",
+        a: "A reschedule can be requested only within the same week and depends on teacher and slot availability. Every class is also recorded and shared for revision.",
+      },
+      {
+        q: "Can I contact the teacher one to one outside class?",
+        a: "Yes. Direct 1:1 contact with the teacher outside class is assured when a learner genuinely needs help. This is personal support, not a scheduled monthly 1:1 feedback session.",
+      },
+      {
+        q: "Does Learn With Smile provide a course certificate?",
+        a: "Not currently. The courses focus on practical English use, clearer communication and real confidence rather than a completion credential. If a recognised certificate is required for a visa, university or HR process, choose an accredited provider.",
       },
     ],
   },
@@ -386,7 +398,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/book-free-demo",
     title: "Book a Free Live Demo Class — No Card Needed",
     description:
-      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp during 7:00–22:00 IST. Sit in a real live class online, then decide afterwards.",
+      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp during 09:00–12:00 IST. Sit in a real live class online, then decide afterwards.",
     shortTitle: "Book a Free Demo",
     keywords: [
       "free english demo class online india",
@@ -403,7 +415,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How do I book a free demo class at Learn With Smile?",
-        a: "Fill in four fields on the booking page — name, phone, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply during 7:00–22:00 IST and confirm a slot in the next available live batch. No card, no payment, no obligation.",
+        a: "Fill in four fields on the booking page — name, phone, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply during 09:00–12:00 IST and confirm a slot in the next available live batch. No card, no payment, no obligation.",
       },
       {
         q: "What happens in the demo class?",
@@ -554,7 +566,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do I need a certificate from an English course?",
-        a: "Only if someone is going to ask for it. Employers in India almost never ask to see a spoken English certificate — they judge your English in the interview. If you specifically need a recognised credential for a visa, a university application or an HR checklist, go to British Council or a similar established institution and expect to pay considerably more; that fee is buying the certificate, not better teaching. Learn With Smile does not issue a certificate and we would rather say so than imply otherwise.",
+        a: "Only if someone is going to ask for it. Employers in India almost never ask to see a spoken English certificate — they judge your English in the interview. If you specifically need a recognised credential for a visa, a university application or an HR checklist, go to British Council or a similar established institution and expect to pay considerably more; that fee is buying the certificate, not better teaching. Learn With Smile does not currently issue a certificate and we would rather say so than imply otherwise.",
       },
       {
         q: "Which online English class is best for a complete beginner?",
@@ -782,10 +794,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
 export function organizationLd() {
   return {
     "@context": "https://schema.org",
-    // One canonical business entity. A separate EducationalOrganization and
-    // LocalBusiness with different IDs made crawlers decide whether they were
-    // two businesses; this is the same organisation in both roles.
-    "@type": ["EducationalOrganization", "LocalBusiness"],
+    // Classes are delivered online. Keep one canonical entity and describe
+    // admissions availability on ContactPoint instead of presenting response
+    // hours as physical storefront opening hours.
+    "@type": ["EducationalOrganization", "OnlineBusiness"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     alternateName: ["LWS", "Learn With Smile English & Career"],
@@ -818,23 +830,8 @@ export function organizationLd() {
       postalCode: CONTACT.postalCode,
       addressCountry: CONTACT.country,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: CONTACT.latitude,
-      longitude: CONTACT.longitude,
-    },
     areaServed: { "@type": "Country", name: "India" },
     knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
-    hasMap:
-      "https://www.google.com/maps/dir/?api=1&destination=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008+India",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "07:00",
-        closes: "22:00",
-      },
-    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -843,6 +840,20 @@ export function organizationLd() {
         email: CONTACT.email,
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "09:00",
+          closes: "12:00",
+        },
       },
     ],
   };
@@ -942,11 +953,6 @@ export function buildHead(opts: {
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
       { name: "theme-color", content: "#0E7C5A" },
-      // Geo targeting — India.
-      { name: "geo.region", content: "IN-WB" },
-      { name: "geo.placename", content: "Kolkata" },
-      { name: "geo.position", content: `${CONTACT.latitude};${CONTACT.longitude}` },
-      { name: "ICBM", content: `${CONTACT.latitude}, ${CONTACT.longitude}` },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: opts.title },
       { property: "og:description", content: opts.description },
@@ -1003,10 +1009,6 @@ export function siteHead(): HeadResult {
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
       { name: "theme-color", content: "#0E7C5A" },
-      { name: "geo.region", content: "IN-WB" },
-      { name: "geo.placename", content: "Kolkata" },
-      { name: "geo.position", content: `${CONTACT.latitude};${CONTACT.longitude}` },
-      { name: "ICBM", content: `${CONTACT.latitude}, ${CONTACT.longitude}` },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: SITE_LOCALE },
       { name: "twitter:card", content: "summary_large_image" },

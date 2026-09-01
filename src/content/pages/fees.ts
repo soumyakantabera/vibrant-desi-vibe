@@ -132,7 +132,7 @@ export const body: ArticleBody = [
       [
         "What happens if I miss a class?",
         "Some providers charge for a make-up session, or simply do not offer one.",
-        "Every class is recorded, and you can rejoin the module with the next batch.",
+        "Every class is recorded. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
       ],
       [
         "What is the actual batch size, not the maximum?",
@@ -179,6 +179,10 @@ export const body: ArticleBody = [
       ["IELTS Preparation", "3 months", "Live batch, max 6", "₹1,999/month"],
       ["Career Counselling", "3 sessions", "1:1", "₹999 total"],
     ],
+  },
+  {
+    t: "p",
+    text: "If IELTS is your goal, test the teaching approach first with the free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template), then compare the live course only if you need individual correction and marked practice.",
   },
   {
     t: "p",

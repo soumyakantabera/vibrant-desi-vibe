@@ -3,7 +3,6 @@ import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSlider";
-import { courseSchedule, nextBatchStart } from "@/lib/courses";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
@@ -43,6 +42,59 @@ export type CourseData = {
   metaDescription: string;
 };
 
+const RELATED_GUIDES: Record<
+  string,
+  { href: string; title: string; description: string }[]
+> = {
+  "spoken-english": [
+    {
+      href: "/blog/5-speaking-habits-that-killed-my-hesitation",
+      title: "5 speaking habits that reduce hesitation",
+      description: "Practical exercises for building retrieval speed and speaking confidence.",
+    },
+  ],
+  "business-english": [
+    {
+      href: "/blog/5-email-phrases-that-sound-more-professional",
+      title: "5 email phrases that sound more professional",
+      description: "Clearer workplace English without inflated or outdated wording.",
+    },
+    {
+      href: "/blog/bpo-to-client-facing-role-roadmap",
+      title: "BPO to client-facing role roadmap",
+      description: "A practical communication and career progression plan.",
+    },
+  ],
+  "interactive-speaking": [
+    {
+      href: "/blog/5-speaking-habits-that-killed-my-hesitation",
+      title: "5 speaking habits that reduce hesitation",
+      description: "Low-stakes practice ideas you can use between live classes.",
+    },
+  ],
+  ielts: [
+    {
+      href: "/blog/band-7-writing-4-paragraph-template",
+      title: "IELTS Band 7 four-paragraph writing template",
+      description: "A reusable structure for clearer Task 2 essays.",
+    },
+  ],
+  "interview-prep": [
+    {
+      href: "/blog/tell-me-about-yourself-in-60-seconds",
+      title: "Answer ‘Tell me about yourself’ in 60 seconds",
+      description: "Build an interview introduction that is specific and easy to remember.",
+    },
+  ],
+  "career-counselling": [
+    {
+      href: "/blog/bpo-to-client-facing-role-roadmap",
+      title: "BPO to client-facing role roadmap",
+      description: "A concrete example of turning communication growth into a career plan.",
+    },
+  ],
+};
+
 export function CoursePage({ data }: { data: CourseData }) {
   const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
@@ -68,7 +120,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         },
         { tone: "coral", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
       ]}
-      footer="Free Demo · No Card Needed · Replies 7:00–22:00 IST"
+      footer="Free Demo · No Card Needed · Replies 09:00–12:00 IST"
     />
   );
   return (
@@ -87,14 +139,16 @@ export function CoursePage({ data }: { data: CourseData }) {
             >
               <Icon name="arrow-right" size={14} className="rotate-180" /> {data.category}
             </Link>
-            <h1 className="mt-3 text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
+            <div className="mt-3 flex items-start gap-2">
               <Icon
                 name={data.icon}
                 size={36}
-                className="inline-block mr-2 text-sunshine align-middle"
-              />{" "}
-              {data.title}
-            </h1>
+                className="mt-1 shrink-0 text-sunshine"
+              />
+              <h1 className="text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
+                {data.title}
+              </h1>
+            </div>
             <p className="mt-4 text-lg text-white max-w-2xl">{data.tagline}</p>
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
@@ -244,7 +298,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               eyebrow="Capstone Projects"
               eyebrowTone="sun"
               title="Two India-Context Projects in This Course"
-              subtitle="You don't just learn — you ship. Every learner builds these two portfolio-grade projects with 1:1 mentor reviews."
+              subtitle="You don't just learn — you ship. Every learner builds these two portfolio-grade projects with direct teacher feedback during class or outside class when genuinely needed."
             />
             <Reveal stagger className="grid md:grid-cols-2 gap-5">
               {data.projects.map((p, i) => (
@@ -282,6 +336,32 @@ export function CoursePage({ data }: { data: CourseData }) {
         </section>
       )}
 
+      {(RELATED_GUIDES[data.slug]?.length ?? 0) > 0 && (
+        <section className="section bg-brand-soft/30">
+          <div className="container-x">
+            <SectionHeader
+              eyebrow="Free Learning Guides"
+              eyebrowTone="indigo"
+              title={`Practise ${data.title} Between Classes`}
+              subtitle="Use these practical lessons before your demo or between live sessions."
+            />
+            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              {RELATED_GUIDES[data.slug].map((guide) => (
+                <a key={guide.href} href={guide.href} className="card-soft group">
+                  <h3 className="font-display font-bold text-ink group-hover:text-brand">
+                    {guide.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-ink/85">{guide.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-brand">
+                    Read the guide <Icon name="arrow-right" size={15} />
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {faqs.length > 0 && (
         <section className="section bg-cream" id="faq">
           <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-10">
@@ -290,7 +370,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 align="left"
                 eyebrow="FAQs"
                 title={`${data.title} — Questions & Answers`}
-                subtitle="Anything else? Ask us on WhatsApp — replies during 7:00–22:00 IST."
+                subtitle="Anything else? Ask us on WhatsApp — replies during 09:00–12:00 IST."
               />
               <SmartImage
                 src={data.footerImage}
@@ -376,26 +456,13 @@ export function courseSeo(d: CourseData) {
   const faqs = courseFaqs(d);
   const ogImage = extra?.ogImage ?? "/og/default.jpg";
 
-  // Google requires a CourseInstance schedule to carry either `repeatCount` or
-  // `startDate` + `endDate`. It previously carried neither (and
-  // `repeatFrequency: "Weekly"`, which is not a valid ISO 8601 duration), so
-  // all six courses validated as generic schema and earned no Course rich
-  // result. `startDate` is generated at build time — see nextBatchStart.
-  const schedule = courseSchedule(d.slug);
+  // Batch days and total sessions vary. Do not turn the visible maximum of two
+  // classes per week into an exact repeatCount or invent a future batch date.
+  // Course list markup does not require a made-up recurring schedule.
   const courseInstance: Record<string, unknown> = {
     "@type": "CourseInstance",
     courseMode: "Online",
     inLanguage: "en-IN",
-    // Per-week effort. Distinct from `timeRequired` on the Course below, which
-    // is the total span — Google reads the two as different things.
-    courseWorkload: schedule.workload,
-    courseSchedule: {
-      "@type": "Schedule",
-      scheduleTimezone: "Asia/Kolkata",
-      repeatFrequency: "P1W",
-      repeatCount: schedule.repeatCount,
-      startDate: nextBatchStart(),
-    },
     location: { "@type": "VirtualLocation", url },
     instructor: {
       "@type": "Person",
@@ -404,7 +471,11 @@ export function courseSeo(d: CourseData) {
       // Links to the Person entity described on /founder, rather than leaving a
       // bare name string that resolves to nothing.
       url: abs("/founder"),
-      worksFor: { "@type": "Organization", name: SITE_NAME },
+      worksFor: {
+        "@type": "EducationalOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+      },
     },
   };
 

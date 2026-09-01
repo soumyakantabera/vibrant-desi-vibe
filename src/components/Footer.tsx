@@ -98,7 +98,7 @@ export function Footer({ image }: { image?: string }) {
             </span>
             <span className="inline-flex items-center gap-2">
               <Icon name="clock" size={16} />
-              Calls & WhatsApp · 7:00–22:00 IST
+              Calls & WhatsApp · 09:00–12:00 IST
             </span>
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">
@@ -126,9 +126,9 @@ export function Footer({ image }: { image?: string }) {
 function FooterCol({ title, items }: { title: string; items: { to: string; label: string }[] }) {
   return (
     <div>
-      <h4 className="font-display font-bold text-cream text-sm uppercase tracking-wider mb-4">
+      <div className="font-display font-bold text-cream text-sm uppercase tracking-wider mb-4">
         {title}
-      </h4>
+      </div>
       <ul className="space-y-2.5">
         {items.map((i) => (
           <li key={i.to}>
