@@ -3,15 +3,13 @@ import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
-import { BrandIcon } from "@/components/BrandIcon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { IMG, imageSources } from "@/lib/images";
-import { withBasePath } from "@/lib/site-path";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
-import { EXPERIMENTS, useVariant } from "@/lib/ab";
+import { CALL_LINK } from "@/lib/whatsapp";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -49,68 +47,7 @@ export const Route = createFileRoute("/")({
   },
 });
 
-type HeroHeadline = {
-  lines: { text: string; tone: string }[];
-  sub: React.ReactNode;
-};
-
-const HERO_HEADLINES: Record<string, HeroHeadline> = {
-  control: {
-    lines: [
-      { text: "Speak Better English.", tone: "" },
-      { text: "Master In-Demand Skills.", tone: "text-sunshine" },
-      { text: "Build Future Together.", tone: "text-sage" },
-    ],
-    sub: (
-      <>
-        Real teachers. Small batches. Gamified, interactive live classes — designed for the demands
-        of today's market. From <strong className="text-sunshine">₹999/mo</strong>.
-      </>
-    ),
-  },
-  price_anchor: {
-    lines: [
-      { text: "Live English Classes", tone: "" },
-      { text: "From ₹999 a Month.", tone: "text-sunshine" },
-      { text: "Max 6 in a Batch.", tone: "text-sage" },
-    ],
-    sub: (
-      <>
-        A real teacher, three live classes a week, and never more than six students in the room. GST
-        included, no registration fee.{" "}
-        <strong className="text-sunshine">First demo class free.</strong>
-      </>
-    ),
-  },
-  outcome: {
-    lines: [
-      { text: "From Freezing Up", tone: "" },
-      { text: "To Speaking Up.", tone: "text-sunshine" },
-      { text: "In 6 Months.", tone: "text-sage" },
-    ],
-    sub: (
-      <>
-        500+ Indian learners have gone from hesitating mid-sentence to leading meetings, clearing
-        interviews and scoring IELTS Band 7+. Live classes from{" "}
-        <strong className="text-sunshine">₹999/mo</strong>.
-      </>
-    ),
-  },
-};
-
-const CTA_LABELS: Record<string, string> = {
-  control: "🎓 Enroll — Free Demo",
-  free_slot: "🎓 Book My Free Demo Slot",
-  no_card: "🎓 Try a Free Class — No Card Needed",
-};
-
 function Home() {
-  // A/B: both variants say the same thing about the same product — one leads on
-  // price, one on outcome. Crawlers and first paint always get `control`, so the
-  // prerendered HTML and the indexed copy never disagree with each other.
-  const headline = HERO_HEADLINES[useVariant(EXPERIMENTS.heroHeadline)] ?? HERO_HEADLINES.control;
-  const ctaLabel = CTA_LABELS[useVariant(EXPERIMENTS.primaryCta)] ?? CTA_LABELS.control;
-
   const TESTIMONIALS = [
     {
       quote:
@@ -163,46 +100,40 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              7 Years · Kolkata & Pan-India
+              Live Online · Kolkata & Pan-India
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              {headline.lines.map((line, i) => (
-                <span key={line.text} className={line.tone}>
-                  {line.text}
-                  {i < headline.lines.length - 1 && <br />}
-                </span>
-              ))}
+              Speak English Live.
+              <br />
+              <span className="text-sunshine">Never in a Batch Bigger Than 6.</span>
             </h1>
-            <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">{headline.sub}</p>
+            <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
+              Beginner-friendly online classes from <strong className="text-sunshine">₹999/month</strong>.
+              Get real speaking time, direct teacher feedback and a full <strong className="text-sunshine">₹0 live demo</strong> before you pay.
+            </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
               data-cta-location="hero"
             >
-              <WaButton
-                message="Hi, I am interested in a free demo. Please guide me."
-                variant="sun"
-                size="lg"
-                className="w-full sm:w-auto justify-center"
-                goal="hero_primary_cta"
+              <Link
+                to="/book-free-demo"
+                className="btn btn-sun btn-lg w-full sm:w-auto justify-center"
               >
-                {ctaLabel}
-              </WaButton>
-              <WaButton
-                message="Hi, I am interested in a free demo. Please guide me."
-                variant="wa"
-                size="lg"
-                className="w-full sm:w-auto justify-center shadow-[0_0_0_4px_rgba(37,211,102,0.18)]"
-                goal="hero_secondary_cta"
+                <Icon name="calendar" size={18} /> Book My ₹0 Live Demo
+              </Link>
+              <a
+                href={CALL_LINK}
+                className="btn btn-white btn-lg w-full sm:w-auto justify-center"
               >
-                Chat on WhatsApp
-              </WaButton>
+                <Icon name="phone" size={18} /> Call +91 96744 79949
+              </a>
             </div>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "100% Online · Live",
                 "Morning · Evening · Weekend",
                 "Max 6 or 1:1",
-                "EMI from ₹999/mo",
+                "Fees from ₹999/month",
                 "Reschedule Anytime",
               ].map((s) => (
                 <span
@@ -222,7 +153,7 @@ function Home() {
               <SnapshotCard
                 eyebrow="Course fees start at"
                 headline={{ big: "₹999", suffix: "/month" }}
-                subnote="EMI · GST included · UPI accepted"
+                subnote="Monthly billing · GST included · UPI accepted"
                 rows={[
                   {
                     tone: "brand",
@@ -246,6 +177,26 @@ function Home() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-sunshine text-ink border-y border-ink/10">
+        <div className="container-x py-5 grid sm:grid-cols-3 gap-3 sm:gap-6 text-sm">
+          {[
+            ["play", "Not a recorded course", "Every class is live with a teacher."],
+            ["users", "Not a crowded webinar", "A hard cap of 6 learners per batch."],
+            ["shield", "Not a payment trap", "Attend a full ₹0 class before enrolling."],
+          ].map(([icon, title, body]) => (
+            <div key={title} className="flex items-start gap-3">
+              <span className="h-9 w-9 rounded-full bg-ink text-sunshine grid place-items-center shrink-0">
+                <Icon name={icon as any} size={17} />
+              </span>
+              <p>
+                <strong className="font-display block">{title}</strong>
+                <span className="text-ink/80">{body}</span>
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -325,7 +276,7 @@ function Home() {
                 Not sure which course is right for you?
               </strong>
               <p className="text-white text-sm mt-1">
-                Tell us your goal — we recommend the perfect course in minutes on WhatsApp.
+                Tell us your goal — we recommend the best-fit course during calling hours.
               </p>
             </div>
             <WaButton
@@ -366,7 +317,7 @@ function Home() {
             {[
               { n: 1, lbl: "Choose Course", sub: "6 live programs", c: "sunshine" },
               { n: 2, lbl: "Pick Format", sub: "Batch or 1:1", c: "coral" },
-              { n: 3, lbl: "WhatsApp Us", sub: "Reply in minutes", c: "wa" },
+              { n: 3, lbl: "WhatsApp Us", sub: "7:00–22:00 IST", c: "wa" },
               { n: 4, lbl: "Join Live Class", sub: "First session starts", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
@@ -433,8 +384,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Your learning today, <em className="text-sunshine">matters the more</em>, and we build
-        Future Together."
+        "Speak today. <em className="text-sunshine">Lead tomorrow.</em> Build your future with us."
       </MottoBand>
 
       {/* NUMBERS */}
@@ -480,6 +430,10 @@ function Home() {
             title="Real Results from Real Learners"
           />
           <TestimonialSlider items={TESTIMONIALS} />
+          <p className="text-center text-sm text-ink/75 mt-5 max-w-2xl mx-auto">
+            These are selected individual learner outcomes. Progress depends on starting level,
+            attendance and practice; no score, job or salary result is guaranteed.
+          </p>
           <div className="text-center mt-10">
             <Link to="/success-stories" className="btn btn-outline">
               Read All Success Stories <Icon name="arrow-right" size={16} />
@@ -494,7 +448,7 @@ function Home() {
           <SectionHeader
             eyebrow="Simple, India-Friendly Pricing"
             eyebrowTone="indigo"
-            title="Transparent Fees · Monthly EMI · No Hidden Costs"
+            title="Transparent Fees · Monthly Billing · No Hidden Costs"
             subtitle="Pay per month, switch slots anytime, and attend a full free demo class before you enrol."
           />
           <Reveal stagger className="grid md:grid-cols-3 gap-5">
@@ -510,7 +464,7 @@ function Home() {
               <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">
                 ₹999<span className="text-base font-bold text-ink/90">/month</span>
               </p>
-              <p className="text-sm text-ink/90 mt-1">EMI · billed monthly</p>
+              <p className="text-sm text-ink/90 mt-1">GST included · billed monthly</p>
               <ul className="mt-4 space-y-2 text-sm text-ink/90">
                 <li className="flex gap-2">
                   <CheckIcon className="text-brand mt-0.5 shrink-0" />
@@ -539,7 +493,7 @@ function Home() {
               <p className="font-display font-extrabold text-2xl sm:text-3xl text-sunshine">
                 Custom<span className="text-base font-bold text-cream/95"> · per goal</span>
               </p>
-              <p className="text-sm text-cream/95 mt-1">Quote shared on WhatsApp in minutes</p>
+              <p className="text-sm text-cream/95 mt-1">Quote shared during 7:00–22:00 IST</p>
               <ul className="mt-4 space-y-2 text-sm text-cream">
                 <li className="flex gap-2">
                   <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
@@ -602,14 +556,14 @@ function Home() {
                 Chat on WhatsApp
               </h3>
               <p className="text-white/95 leading-relaxed mb-6">
-                The fastest route. Tell us which course — we guide you to the right slot in minutes.
-                No forms. No waiting. Just a real conversation.
+                Tell us which course and we will guide you to the right slot during calling hours.
+                No checkout and no obligation — just a real conversation.
               </p>
               <WaButton message="Hi, I am interested in a free demo. Please guide me." size="lg">
                 Open WhatsApp Now
               </WaButton>
               <p className="text-xs text-white/80 mt-4">
-                +91 96744 79949 · Replies in minutes · 7 days a week
+                +91 96744 79949 · Calls & WhatsApp · 7:00–22:00 IST
               </p>
             </div>
             <Link
@@ -630,7 +584,7 @@ function Home() {
                 </h3>
                 <p className="text-cream/95 mb-4">
                   Fill a 30-second form — name, number, course. We confirm your live demo via
-                  WhatsApp instantly.
+                  WhatsApp after you send the message.
                 </p>
                 <span className="btn btn-sun btn-sm">
                   Open Demo Form <Icon name="arrow-right" size={14} />
@@ -700,23 +654,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Mobile sticky WhatsApp CTA */}
-      <div className="sm:hidden fixed bottom-3 inset-x-3 z-40" data-cta-location="sticky">
-        <a
-          href="https://wa.me/919674479949?text=Hi%2C%20I%20am%20interested%20in%20a%20free%20demo.%20Please%20guide%20me."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-between gap-3 rounded-full bg-wa text-ink pl-5 pr-2 py-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] ring-1 ring-white/20"
-        >
-          <span className="flex items-center gap-2 font-display font-extrabold text-sm">
-            <BrandIcon name="whatsapp" size={18} color="#0B1F14" />
-            Free Demo on WhatsApp
-          </span>
-          <span className="bg-white text-brand-deep font-display font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-2">
-            Chat
-          </span>
-        </a>
-      </div>
     </Layout>
   );
 }

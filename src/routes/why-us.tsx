@@ -107,7 +107,7 @@ function Page() {
             Morning, evening, weekend batches — built around working Indians.
           </FeatureCard>
           <FeatureCard icon="rupee" color="brand" title="From ₹999/mo">
-            Genuinely affordable. No surprise add-ons. EMI on request.
+            Genuinely affordable. No surprise add-ons. Monthly payment available.
           </FeatureCard>
           <FeatureCard icon="shield" color="coral" title="Demo Before You Pay">
             Attend a full free live class before deciding.

@@ -16,7 +16,7 @@ import { IMG } from "@/lib/images";
  * Counselling is 3 one-to-one sessions rather than a recurring batch.
  */
 const SESSION_COUNT: Record<string, number> = {
-  "spoken-english": 48,
+  "spoken-english": 72,
   "business-english": 36,
   "interactive-speaking": 36,
   ielts: 36,
@@ -85,7 +85,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.spokenEnglish,
     midImage: IMG.womanLaptop,
     footerImage: IMG.studentLaptop2,
-    duration: "6 months · 2 classes/week",
+    duration: "6 months · 3 classes/week",
     format: "Live batch · max 6 students",
     price: "₹999/mo",
     outcomes: [
@@ -192,7 +192,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · 2 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
+      "Live online Spoken English classes for Indian learners. 6 months · 3 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
   },
   "business-english": {
     slug: "business-english",
@@ -205,7 +205,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.businessEnglish,
     midImage: IMG.womanOffice,
     footerImage: IMG.presentation,
-    duration: "3 months",
+    duration: "3 months · 3 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
     price: "₹1,499/mo",
@@ -256,20 +256,20 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Business English live online classes for working professionals in India. 3 months · max 6 per batch · ₹1,499/mo. Free demo on WhatsApp.",
+      "Business English live online classes for working professionals in India. 3 months · 3 classes/week · max 6 per batch · ₹1,499/mo. Free demo.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "Daily live speaking practice in a friendly online batch. Designed to build fluency through games, debates and storytelling.",
+      "Three live speaking sessions a week in a friendly online batch. Build fluency through games, debates and storytelling.",
     category: "English & Career",
     categoryColor: "brand",
     icon: "headset",
     heroImage: IMG.interactiveSpeaking,
     midImage: IMG.girlReading,
     footerImage: IMG.groupClass,
-    duration: "3 months",
+    duration: "3 months · 3 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
     price: "₹1,199/mo",
@@ -315,7 +315,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Daily live practice with games, debates and stories. 3 months · max 6 per batch · ₹1,199/mo.",
+      "Interactive English speaking classes online. 3 live sessions/week with games, debates and stories. 3 months · max 6 per batch · ₹1,199/mo.",
   },
   ielts: {
     slug: "ielts",
@@ -328,7 +328,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.ielts,
     midImage: IMG.manStudying,
     footerImage: IMG.graduation,
-    duration: "3 months",
+    duration: "3 months · 3 classes/week",
     format: "Live batch · max 6 students",
     price: "₹1,999/mo",
     outcomes: [
@@ -408,7 +408,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "IELTS Preparation live online — 3 months · max 6 per batch · ₹1,999/mo. 6+ full-length mocks, live writing feedback, speaking labs. Free demo.",
+      "IELTS Preparation live online — 3 months · 3 classes/week · max 6 per batch · ₹1,999/mo. 6+ mocks, live feedback and a free demo.",
   },
   "interview-prep": {
     slug: "interview-prep",
@@ -421,7 +421,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.interview,
     midImage: IMG.manOffice,
     footerImage: IMG.womanOffice,
-    duration: "2 months · intensive",
+    duration: "2 months · 3 classes/week",
     format: "Live batch · max 6 students",
     price: "₹1,499/mo",
     outcomes: [
@@ -480,7 +480,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interview Preparation in English live online — HR, behavioural, mock interviews. 2 months · max 6 per batch · ₹1,499/mo. Free demo on WhatsApp.",
+      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · 3 classes/week · max 6 · ₹1,499/mo.",
   },
   "career-counselling": {
     slug: "career-counselling",

@@ -95,7 +95,7 @@ function Page() {
                 badge="Live · English Track"
                 eyebrow="Whole track from"
                 headline={{ big: "₹999", suffix: "/month" }}
-                subnote="EMI · GST included · UPI accepted"
+                subnote="Monthly billing · GST included · UPI accepted"
                 rows={[
                   {
                     tone: "brand",
@@ -187,7 +187,7 @@ function Page() {
             <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">
               Tell us your goal — interview, abroad study, office promotion, daily confidence —
-              we'll recommend the right course in minutes on WhatsApp.
+              we'll recommend the right course during 7:00–22:00 IST on WhatsApp.
             </p>
             <div className="mt-5">
               <WaButton message={wa} variant="sun" size="lg">

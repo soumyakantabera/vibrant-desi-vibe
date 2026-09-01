@@ -157,8 +157,7 @@ function Page() {
       </section>
 
       <MottoBand>
-        "Your learning today, <em className="text-sunshine">matters the more</em>, and we build
-        Future Together."
+        "Speak today. <em className="text-sunshine">Lead tomorrow.</em> Build your future with us."
       </MottoBand>
 
       <section className="relative py-16">

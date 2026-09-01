@@ -36,6 +36,8 @@
  *                        strategy depends on being retrievable there.
  */
 
+import { createLeadId, getCampaignAttribution, leadContext } from "@/lib/whatsapp";
+
 /** GA4 measurement ID, e.g. "G-XXXXXXXXXX". Empty = no tag is loaded. */
 export const GA4_MEASUREMENT_ID = "";
 
@@ -150,9 +152,25 @@ export type CtaLocation =
  * from the funnel and therefore the only outcome worth counting; without it
  * the A/B experiments have exposures and no conversions.
  */
-export function trackWhatsAppClick(params: { ctaLocation: CtaLocation | string; course?: string }) {
+export function trackWhatsAppClick(params: {
+  ctaLocation: CtaLocation | string;
+  course?: string;
+  goal?: string;
+  leadId?: string;
+}) {
   if (typeof window === "undefined") return;
   track("whatsapp_click", {
+    source_page: window.location.pathname,
+    cta_location: params.ctaLocation,
+    ...(params.course ? { course: params.course } : {}),
+    ...(params.goal ? { cta_goal: params.goal } : {}),
+    ...(params.leadId ? { lead_id: params.leadId } : {}),
+  });
+}
+
+export function trackCallClick(params: { ctaLocation: CtaLocation | string; course?: string }) {
+  if (typeof window === "undefined") return;
+  track("phone_call_click", {
     source_page: window.location.pathname,
     cta_location: params.ctaLocation,
     ...(params.course ? { course: params.course } : {}),
@@ -190,7 +208,46 @@ export function installWhatsAppClickTracking(): () => void {
     if (!link) return;
 
     const located = link.closest<HTMLElement>("[data-cta-location]");
+    const leadId = createLeadId();
+
+    // Put first-party campaign details in the actual enquiry. This is useful
+    // even while GA4 is unconfigured: the admissions team can see which page
+    // and campaign produced every WhatsApp conversation.
+    try {
+      const url = new URL(link.href);
+      const message = url.searchParams.get("text") ?? "Hi, I am interested in Learn With Smile.";
+      if (!message.includes("Lead ref:")) {
+        url.searchParams.set("text", `${message}\n\n${leadContext(leadId, getCampaignAttribution())}`);
+        link.href = url.toString();
+      }
+    } catch {
+      // Never block the visitor from opening WhatsApp because attribution failed.
+    }
+
     trackWhatsAppClick({
+      ctaLocation: located?.dataset.ctaLocation ?? "unknown",
+      course: courseFromPath(window.location.pathname),
+      goal: link.dataset.ctaGoal,
+      leadId,
+    });
+  };
+
+  document.addEventListener("click", onClick, true);
+  return () => document.removeEventListener("click", onClick, true);
+}
+
+/** Delegated tracking for every click-to-call link, including future CTAs. */
+export function installCallClickTracking(): () => void {
+  if (typeof document === "undefined") return () => {};
+
+  const onClick = (event: Event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const link = target.closest<HTMLAnchorElement>('a[href^="tel:"]');
+    if (!link) return;
+
+    const located = link.closest<HTMLElement>("[data-cta-location]");
+    trackCallClick({
       ctaLocation: located?.dataset.ctaLocation ?? "unknown",
       course: courseFromPath(window.location.pathname),
     });

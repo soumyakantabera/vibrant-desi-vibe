@@ -7,7 +7,8 @@ import { body } from "@/content/pages/comparison";
 
 const PATH = "/best-online-spoken-english-classes-india";
 
-const UPDATED = new Date().toISOString().slice(0, 10);
+// Content revision date, deliberately not the deployment date.
+const UPDATED = "2026-09-01";
 
 // The literal, not PATH: @tanstack/router-plugin statically analyses this
 // call to generate the route tree and cannot follow a constant. With a
@@ -29,7 +30,12 @@ export const Route = createFileRoute("/best-online-spoken-english-classes-india"
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
         inLanguage: "en-IN",
         dateModified: UPDATED,
-        author: { "@type": "Person", name: "Sunanda Dey", url: abs("/founder") },
+        author: {
+          "@type": "Person",
+          "@id": `${abs("/founder")}#person`,
+          name: "Sunanda Dey",
+          url: abs("/founder"),
+        },
         publisher: { "@id": `${abs("/")}#organization` },
       }),
     });

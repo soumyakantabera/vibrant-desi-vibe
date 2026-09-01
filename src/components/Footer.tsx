@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { SmartImage } from "./SmartImage";
-import { WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -43,7 +43,7 @@ const IMG =
 export function Footer({ image }: { image?: string }) {
   const wa = waLink("Hi, I am interested in Learn With Smile. Please share the details.");
   return (
-    <footer className="bg-ink text-cream pt-16 pb-8 mt-10" data-cta-location="footer">
+    <footer className="bg-ink text-cream pt-16 pb-24 sm:pb-8 mt-10" data-cta-location="footer">
       <div className="container-x">
         <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 mb-12">
           <div>
@@ -82,7 +82,7 @@ export function Footer({ image }: { image?: string }) {
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
             <a
-              href={`tel:${WHATSAPP_DISPLAY}`}
+              href={CALL_LINK}
               className="inline-flex items-center gap-2 hover:text-sunshine"
             >
               <Icon name="phone" size={16} />
@@ -99,6 +99,10 @@ export function Footer({ image }: { image?: string }) {
               <Icon name="globe" size={16} />
               Kolkata · Online · Pan-India
             </span>
+            <span className="inline-flex items-center gap-2">
+              <Icon name="clock" size={16} />
+              Calls & WhatsApp · 7:00–22:00 IST
+            </span>
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">
             {COMPANY.map((c) => (
@@ -113,36 +117,9 @@ export function Footer({ image }: { image?: string }) {
             <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
             <p>This website is made and crafted by Soumyakanta Bera.</p>
           </div>
-          <div className="flex gap-3">
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="p-2 rounded-full bg-cream/10 hover:bg-sunshine hover:text-ink"
-            >
-              <Icon name="instagram" size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="p-2 rounded-full bg-cream/10 hover:bg-sunshine hover:text-ink"
-            >
-              <Icon name="facebook" size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="p-2 rounded-full bg-cream/10 hover:bg-sunshine hover:text-ink"
-            >
-              <Icon name="linkedin" size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="YouTube"
-              className="p-2 rounded-full bg-cream/10 hover:bg-sunshine hover:text-ink"
-            >
-              <Icon name="youtube" size={16} />
-            </a>
-          </div>
+          <p className="font-display font-semibold text-cream/90">
+            Real teacher · ₹0 live demo · No card required
+          </p>
         </div>
       </div>
     </footer>

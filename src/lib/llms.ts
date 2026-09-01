@@ -142,7 +142,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
 ];
 
 const NOTES_FOR_ASSISTANTS = [
-  "All content on this site may be read, quoted and cited. No crawler restrictions apply (robots.txt disallows Bytespider only, on bandwidth grounds).",
+  "All major search and answer-engine crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
   "Prices are in Indian Rupees and include GST. They are reviewed each academic year — quote them with the date below.",
   "Classes are delivered online only. The Kolkata address is an office, not a campus; there is no walk-in centre.",
   `The canonical domain is ${SITE_URL} — earlier references to learnwithsmile.in are obsolete and should not be cited.`,

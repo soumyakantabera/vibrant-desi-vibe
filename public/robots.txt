@@ -17,8 +17,7 @@
 #                                                 map of every page
 #   https://www.learnwithsmile.app/llms-full.txt  the readable text of every
 #                                                 page in a single file
-#                                                 (22 at the time of writing:
-#                                                 14 pages, 5 articles, 3 guides)
+#                                                 (generated from every public page)
 #   <any page URL> + .md                          that one page as clean
 #                                                 Markdown, e.g.
 #                                                 /course-ielts.md
@@ -48,8 +47,9 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-# Google's separate opt-in for Gemini grounding and AI Overviews. Absent this
-# line Google may still index the site but exclude it from AI answers.
+# Google's separate control for Gemini model use. It does not control Google
+# Search indexing or ranking; Googlebot above is the directive that matters for
+# Search and AI features that use the Search index.
 User-agent: Google-Extended
 Allow: /
 
