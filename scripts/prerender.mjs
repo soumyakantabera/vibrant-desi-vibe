@@ -273,11 +273,11 @@ for (const pathname of ALL_PATHS) {
 
 /* ---------------------------------------------------------------- sitemap */
 
-function sitemapEntry(loc, priority, changefreq, lastmod = today) {
+function sitemapEntry(loc, priority, changefreq, lastmod) {
   return [
     "  <url>",
     `    <loc>${loc}</loc>`,
-    `    <lastmod>${lastmod}</lastmod>`,
+    ...(lastmod ? [`    <lastmod>${lastmod}</lastmod>`] : []),
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority.toFixed(1)}</priority>`,
     "  </url>",
@@ -289,6 +289,8 @@ const postBySlug = new Map(BLOG_POSTS.map((post) => [post.slug, post]));
 const sitemapUrls = ALL_PATHS.map((p) => {
   const loc = p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}`;
   const page = PAGES[p];
+  // Omit lastmod when there is no content revision date. Using every deploy's
+  // date falsely tells search engines that every page changed on every build.
   if (page) return sitemapEntry(loc, page.priority, page.changefreq);
 
   // Articles carry their own last-modified date rather than today's. A build

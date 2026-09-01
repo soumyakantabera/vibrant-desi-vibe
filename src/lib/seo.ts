@@ -30,7 +30,6 @@ export const SITE_NAME = "Learn With Smile";
 export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
-export const TWITTER_HANDLE = "@learnwithsmile";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -177,7 +176,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with 3 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with up to 2 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -185,7 +184,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
-        a: "Yes, for everyday conversational fluency, if you attend live classes 3 times a week and practise between them. Our 6-month Basic Spoken English course takes learners from zero — people who cannot form a full sentence — to introducing themselves, handling daily conversations, and speaking for 2 minutes on a topic. Professional and academic fluency (IELTS Band 7+, client presentations) usually needs 9–12 months total. Anyone promising fluency in 30 days is selling you something.",
+        a: "Yes, for everyday conversational fluency, if you attend up to 2 live classes a week and practise between them. Our 6-month Basic Spoken English course takes learners from zero — people who cannot form a full sentence — to introducing themselves, handling daily conversations, and speaking for 2 minutes on a topic. Professional and academic fluency (IELTS Band 7+, client presentations) usually needs 9–12 months total. Anyone promising fluency in 30 days is selling you something.",
       },
       {
         q: "Are online English classes as effective as offline coaching centres?",
@@ -226,7 +225,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Business English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,499/month, 3 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and just need daily live practice through games, debates and storytelling.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,499/month, 3 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
@@ -319,7 +318,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/success-stories",
     title: "Student Results: IELTS 7.5, Salary Doubled, Jobs Won",
     description:
-      "Real outcomes from Indian learners — IELTS band jumps, BPO to client-facing moves, interviews cleared and confidence built in live small-batch classes.",
+      "Named outcomes reported by Indian learners — IELTS band jumps, career moves, interviews cleared and confidence built. Individual results vary by learner.",
     shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
@@ -333,7 +332,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.7,
     changefreq: "monthly",
     summary:
-      "Verified learner outcomes with names, cities and courses — IELTS band jumps, salary increases, interview wins, confidence gains.",
+      "Named learner outcomes with courses and cities — IELTS band jumps, salary increases, interview wins and confidence gains. Individual results vary.",
     faqs: [
       {
         q: "Do online English classes actually get people jobs in India?",
@@ -341,7 +340,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How soon can I expect to see real improvement in my spoken English?",
-        a: "Most learners notice a genuine difference in confidence and sentence fluency within 6–8 weeks of regular live classes, roughly 20–25 sessions in. Full everyday conversational fluency for someone starting from zero typically takes the complete 6-month Basic Spoken English course, attended 3 times a week with some daily practice in between.",
+        a: "Most learners notice a genuine difference in confidence and sentence fluency within 6–8 weeks of regular live classes, roughly 12–16 sessions in. Full everyday conversational fluency for someone starting from zero typically takes the complete 6-month Basic Spoken English course, attended up to twice a week with some daily practice in between.",
       },
       {
         q: "I studied in a Hindi or Bengali-medium school, not English-medium. Can I still get results like these?",
@@ -353,7 +352,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are these success stories typical, or just the best few out of many students?",
-        a: "They're real, named, verifiable outcomes, not anonymous quotes, and results genuinely depend on effort — a learner who attends all 3 classes a week and speaks up in every session sees faster progress than one who joins occasionally. The one thing every story above has in common is consistent attendance for at least 3–6 months, not a shortcut.",
+        a: "They are selected individual learner outcomes, not a guarantee of what every student will achieve. Progress depends on starting level, attendance, participation and practice between classes. Consistent attendance for at least 3–6 months is the common factor in these stories; there is no shortcut or promised job, score or salary increase.",
       },
       {
         q: "Does Learn With Smile help with career guidance, or only English speaking?",
@@ -387,7 +386,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/book-free-demo",
     title: "Book a Free Live Demo Class — No Card Needed",
     description:
-      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp in minutes. Sit in a real live class, meet your teacher, then decide afterwards.",
+      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp during 7:00–22:00 IST. Sit in a real live class online, then decide afterwards.",
     shortTitle: "Book a Free Demo",
     keywords: [
       "free english demo class online india",
@@ -404,7 +403,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How do I book a free demo class at Learn With Smile?",
-        a: "Fill in four fields on the booking page — name, phone, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply within minutes during IST hours and confirm a slot in the next available live batch. No card, no payment, no obligation.",
+        a: "Fill in four fields on the booking page — name, phone, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply during 7:00–22:00 IST and confirm a slot in the next available live batch. No card, no payment, no obligation.",
       },
       {
         q: "What happens in the demo class?",
@@ -463,7 +462,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is an online class actually better than joining a coaching centre in Kolkata?",
-        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 6-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes of commuting three times a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
+        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 6-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes each way of commuting up to twice a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
       },
       {
         q: "Do you prepare Kolkata students for IELTS and job interviews too?",
@@ -596,7 +595,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course Online India | ₹999/mo, Max 6",
     description:
-      "Six-month Basic Spoken English, three live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
+      "Six-month Basic Spoken English, up to two live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
     shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
@@ -610,15 +609,15 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/spoken-english.jpg",
     summary:
-      "Basic Spoken English — 6 months, 3 live classes a week, max 6 students, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
+      "Basic Spoken English — 6 months, up to 2 live classes a week, max 6 students, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
-        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, 3 live classes per week, maximum 6 students per batch, GST included. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
+        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, maximum 6 students per batch, GST included. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
       },
       {
         q: "How long does it take to learn spoken English from zero?",
-        a: "Around 6 months of consistent live practice to reach comfortable everyday conversation — introducing yourself, shopping, phone calls, travel, small talk and basic group discussion. That assumes about 3 classes a week plus 10–15 minutes of daily practice. Reaching professional or exam-level fluency typically takes another 3–6 months on top.",
+        a: "Around 6 months of consistent live practice to reach comfortable everyday conversation — introducing yourself, shopping, phone calls, travel, small talk and basic group discussion. That assumes up to 2 classes a week plus 10–15 minutes of daily practice. Reaching professional or exam-level fluency typically takes another 3–6 months on top.",
       },
       {
         q: "I feel embarrassed about my English. Will I be judged in class?",
@@ -673,7 +672,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",
-        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it only responds to repetition under mild pressure. That means speaking daily in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, three times a week for 3 months, in a batch of six.",
+        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it responds to repetition under mild pressure. That means speaking often in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, up to twice a week for 3 months, in a batch of six.",
       },
       {
         q: "Is this course useful if my grammar is already good?",
@@ -780,65 +779,37 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
  * JSON-LD builders
  * ------------------------------------------------------------------------ */
 
-const SAME_AS = [CONTACT.whatsapp];
-
 export function organizationLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    // One canonical business entity. A separate EducationalOrganization and
+    // LocalBusiness with different IDs made crawlers decide whether they were
+    // two businesses; this is the same organisation in both roles.
+    "@type": ["EducationalOrganization", "LocalBusiness"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
-    alternateName: "LWS",
+    alternateName: ["LWS", "Learn With Smile English & Career"],
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: abs("/favicon.png"),
-      width: 48,
-      height: 48,
+      url: abs("/apple-touch-icon.png"),
+      width: 180,
+      height: 180,
     },
     image: abs("/og/default.jpg"),
     description:
       "Live online English and career classes for Indian learners — Spoken English, IELTS, Business English, Interactive Speaking, Interview Preparation and Career Counselling. Maximum 6 students per batch or 1:1, from ₹999 per month.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
-    foundingDate: String(FOUNDING_YEAR),
-    founder: { "@type": "Person", name: "Sunanda Dey" },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: CONTACT.street,
-      addressLocality: CONTACT.locality,
-      addressRegion: CONTACT.region,
-      postalCode: CONTACT.postalCode,
-      addressCountry: CONTACT.country,
-    },
-    areaServed: { "@type": "Country", name: "India" },
-    knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
-    sameAs: SAME_AS,
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "admissions",
-        telephone: CONTACT.phone,
-        email: CONTACT.email,
-        areaServed: "IN",
-        availableLanguage: ["English", "Hindi", "Bengali"],
-      },
-    ],
-  };
-}
-
-export function localBusinessLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#localbusiness`,
-    name: SITE_NAME,
-    url: SITE_URL,
-    image: abs("/og/default.jpg"),
-    telephone: CONTACT.phone,
-    email: CONTACT.email,
-    priceRange: "₹₹",
+    priceRange: "₹999–₹1,999/month",
     currenciesAccepted: "INR",
+    foundingDate: String(FOUNDING_YEAR),
+    founder: {
+      "@type": "Person",
+      "@id": `${abs("/founder")}#person`,
+      name: "Sunanda Dey",
+      url: abs("/founder"),
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.street,
@@ -853,6 +824,9 @@ export function localBusinessLd() {
       longitude: CONTACT.longitude,
     },
     areaServed: { "@type": "Country", name: "India" },
+    knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
+    hasMap:
+      "https://www.google.com/maps/dir/?api=1&destination=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008+India",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -861,7 +835,16 @@ export function localBusinessLd() {
         closes: "22:00",
       },
     ],
-    sameAs: SAME_AS,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "admissions",
+        telephone: CONTACT.phone,
+        email: CONTACT.email,
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi", "Bengali"],
+      },
+    ],
   };
 }
 
@@ -903,9 +886,10 @@ export function faqLd(faqs: Faq[]) {
 }
 
 export function webPageLd(page: { path: string; title: string; description: string }) {
+  const isFounderProfile = page.path === "/founder";
   return {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": isFounderProfile ? "ProfilePage" : "WebPage",
     "@id": `${abs(page.path)}#webpage`,
     url: abs(page.path),
     name: page.title,
@@ -913,6 +897,7 @@ export function webPageLd(page: { path: string; title: string; description: stri
     inLanguage: "en-IN",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
+    ...(isFounderProfile ? { mainEntity: { "@id": `${abs("/founder")}#person` } } : {}),
   };
 }
 
@@ -973,7 +958,6 @@ export function buildHead(opts: {
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: opts.title },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: TWITTER_HANDLE },
       { name: "twitter:title", content: opts.title },
       { name: "twitter:description", content: opts.description },
       { name: "twitter:image", content: image },
@@ -1026,14 +1010,13 @@ export function siteHead(): HeadResult {
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: SITE_LOCALE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: TWITTER_HANDLE },
     ],
     // Site-wide discovery for AI assistants: the llms.txt index is worth
     // finding from any page, not just from robots.txt.
     links: [{ rel: "alternate", type: "text/plain", title: "llms.txt", href: abs("/llms.txt") }],
     // Entity graph for the whole site — correct on every page, and what lets
     // Google and AI assistants resolve "Learn With Smile" to a real business.
-    scripts: [organizationLd(), localBusinessLd(), webSiteLd()].map((obj) => ({
+    scripts: [organizationLd(), webSiteLd()].map((obj) => ({
       type: "application/ld+json",
       children: JSON.stringify(obj),
     })),
@@ -1117,7 +1100,12 @@ export function blogPostHead(post: BlogPost): HeadResult {
         timeRequired: `PT${post.readingTime}M`,
         articleSection: post.tag,
         image: [image],
-        author: { "@type": "Person", name: post.author, url: abs("/founder") },
+        author: {
+          "@type": "Person",
+          "@id": `${abs("/founder")}#person`,
+          name: post.author,
+          url: abs("/founder"),
+        },
         publisher: { "@id": `${SITE_URL}/#organization` },
         isPartOf: { "@id": `${abs("/blog")}#blog` },
       },

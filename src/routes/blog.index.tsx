@@ -38,7 +38,12 @@ export const Route = createFileRoute("/blog/")({
           dateModified: post.dateModified,
           articleSection: post.tag,
           inLanguage: "en-IN",
-          author: { "@type": "Person", name: post.author, url: abs("/founder") },
+          author: {
+            "@type": "Person",
+            "@id": `${abs("/founder")}#person`,
+            name: post.author,
+            url: abs("/founder"),
+          },
           publisher: { "@id": `${SITE_URL}/#organization` },
         })),
       }),

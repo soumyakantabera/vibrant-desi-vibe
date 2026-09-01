@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
-import { trackConversion } from "@/lib/ab";
 
 export function SectionHeader({
   eyebrow,
@@ -100,9 +99,7 @@ export function WaButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cls}
-      // Opening WhatsApp is the site's only conversion, so every one of these
-      // buttons is the goal event for whichever A/B variants are live.
-      onClick={() => trackConversion(goal, message.slice(0, 80))}
+      data-cta-goal={goal}
     >
       {variant === "wa" && (
         <BrandIcon name="whatsapp" size={size === "sm" ? 16 : 18} color="#053b1e" />

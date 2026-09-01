@@ -106,7 +106,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "This is our category, so weigh it accordingly. The argument for it is that it is the only format that gives you a syllabus *and* real speaking time *and* an Indian price at once. The argument against is that it is a fixed schedule — if you cannot commit to the same slot three times a week for three months, an on-demand app will serve you better than a course you stop attending.",
+    text: "This is our category, so weigh it accordingly. The argument for it is that it is the only format that gives you a syllabus *and* real speaking time *and* an Indian price at once. The argument against is that it is a fixed schedule — if you cannot commit to the same slot up to twice a week for three months, an on-demand app will serve you better than a course you stop attending.",
   },
 
   { t: "h3", text: "6. Large live batches" },

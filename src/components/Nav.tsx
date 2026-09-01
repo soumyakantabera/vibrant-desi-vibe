@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { waLink } from "@/lib/whatsapp";
+import { CALL_LINK, waLink } from "@/lib/whatsapp";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -166,6 +166,13 @@ export function Nav() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <a
+              href={CALL_LINK}
+              className="hidden xl:inline-flex btn btn-outline btn-sm"
+              data-cta-location="nav"
+            >
+              <Icon name="phone" size={15} /> Call Now
+            </a>
+            <a
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
@@ -208,16 +215,21 @@ export function Nav() {
                   <Icon name="close" />
                 </button>
               </div>
-              <a
-                href={wa}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-sun w-full justify-center shadow-lg"
-              >
-                <Icon name="rocket" size={18} /> Book a Free Demo
-              </a>
+              <div className="grid grid-cols-[0.8fr_1.2fr] gap-2" data-cta-location="nav">
+                <a href={CALL_LINK} className="btn btn-ghost-white justify-center px-3">
+                  <Icon name="phone" size={17} /> Call
+                </a>
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sun justify-center shadow-lg px-3"
+                >
+                  <Icon name="rocket" size={18} /> ₹0 Demo
+                </a>
+              </div>
               <p className="mt-2 text-center text-xs text-cream/85">
-                +91 96744 79949 · Replies in minutes
+                +91 96744 79949 · 7:00–22:00 IST
               </p>
             </div>
 

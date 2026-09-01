@@ -20,8 +20,10 @@ import {
   ga4InlineScript,
   ga4LoaderSrc,
   hasAnalytics,
+  installCallClickTracking,
   installWhatsAppClickTracking,
 } from "@/lib/analytics";
+import { captureCampaignAttribution } from "@/lib/whatsapp";
 
 /** Pages a reader is most likely to open next, fetched during idle time. */
 const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/book-free-demo"];
@@ -181,6 +183,7 @@ function RootComponent() {
   // else it waits for has arrived), then quietly warm the next likely pages.
   useEffect(() => {
     markAppReady();
+    captureCampaignAttribution();
     prefetchWhenIdle((to) => router.preloadRoute({ to }), LIKELY_NEXT);
   }, [router]);
 
@@ -188,6 +191,7 @@ function RootComponent() {
   // conversion there is. One delegated listener records all of them — see
   // src/lib/analytics.ts for why it is not an onClick per button.
   useEffect(installWhatsAppClickTracking, []);
+  useEffect(installCallClickTracking, []);
 
   return (
     <QueryClientProvider client={queryClient}>

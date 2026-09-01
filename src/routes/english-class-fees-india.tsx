@@ -9,10 +9,10 @@ const PATH = "/english-class-fees-india";
 
 /**
  * Prices go stale, and this page's whole value is that its numbers are real.
- * The visible "last updated" line and `dateModified` are set from the build
- * date so both always agree and neither can be forgotten.
+ * This is a content revision date, not the build date: rebuilding unchanged
+ * code must not claim that the research was reviewed again.
  */
-const UPDATED = new Date().toISOString().slice(0, 10);
+const UPDATED = "2026-09-01";
 
 // The literal, not PATH: @tanstack/router-plugin statically analyses this
 // call to generate the route tree and cannot follow a constant. With a
@@ -34,7 +34,12 @@ export const Route = createFileRoute("/english-class-fees-india")({
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
         inLanguage: "en-IN",
         dateModified: UPDATED,
-        author: { "@type": "Person", name: "Sunanda Dey", url: abs("/founder") },
+        author: {
+          "@type": "Person",
+          "@id": `${abs("/founder")}#person`,
+          name: "Sunanda Dey",
+          url: abs("/founder"),
+        },
         publisher: { "@id": `${abs("/")}#organization` },
       }),
     });

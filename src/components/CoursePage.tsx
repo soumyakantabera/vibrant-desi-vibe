@@ -227,7 +227,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             <div>
               <strong className="text-cream block text-lg">Want a printable syllabus PDF?</strong>
               <p className="text-white text-sm mt-1">
-                We'll send it on WhatsApp instantly with batch timings and pricing.
+                We'll reply on WhatsApp with current batch timings and pricing.
               </p>
             </div>
             <WaButton message={waSyllabus} variant="white">
@@ -290,7 +290,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 align="left"
                 eyebrow="FAQs"
                 title={`${data.title} — Questions & Answers`}
-                subtitle="Anything else? Ask us on WhatsApp — we reply in minutes."
+                subtitle="Anything else? Ask us on WhatsApp — replies during 7:00–22:00 IST."
               />
               <SmartImage
                 src={data.footerImage}
@@ -394,12 +394,12 @@ export function courseSeo(d: CourseData) {
       scheduleTimezone: "Asia/Kolkata",
       repeatFrequency: "P1W",
       repeatCount: schedule.repeatCount,
-      ...(schedule.byDay ? { byDay: schedule.byDay } : {}),
       startDate: nextBatchStart(),
     },
     location: { "@type": "VirtualLocation", url },
     instructor: {
       "@type": "Person",
+      "@id": `${abs("/founder")}#person`,
       name: "Sunanda Dey",
       // Links to the Person entity described on /founder, rather than leaving a
       // bare name string that resolves to nothing.

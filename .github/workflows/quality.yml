@@ -1,0 +1,56 @@
+name: PR Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+
+      - name: Install locked dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bunx tsc --noEmit
+
+      - name: Lint and formatting
+        run: bun run lint
+
+      - name: Build and prerender every public page
+        env:
+          BASE_PATH: /
+        run: bun run build:pages
+
+      - name: Verify search and AI outputs
+        run: |
+          set -euo pipefail
+          test -s dist/sitemap.xml
+          test -s dist/robots.txt
+          test -s dist/llms.txt
+          test -s dist/llms-full.txt
+          test -s dist/index.md
+          test -s dist/course-spoken-english.md
+          grep -q 'rel="canonical"' dist/index.html
+          grep -q 'application/ld+json' dist/index.html
+          grep -q 'Never in a Batch Bigger Than 6' dist/index.html
+          grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
+          grep -q '"repeatCount":48' dist/course-spoken-english.html
+          if grep -Eqi '3 classes/week|three classes a week|3 live sessions/week' dist/course-spoken-english.html; then
+            echo "::error::Spoken English still contains the obsolete three-day schedule"
+            exit 1
+          fi
+          if grep -q '<div id="root"></div>' dist/index.html; then
+            echo "::error::Homepage was not prerendered"
+            exit 1
+          fi
