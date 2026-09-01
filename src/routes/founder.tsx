@@ -160,8 +160,7 @@ function Page() {
           <p className="mt-4 text-lg text-white">
             100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or
             1:1 · pan-India, based in Kolkata. Outside class, direct 1:1 contact with the teacher is
-            assured when genuinely needed; it is personal support, not a scheduled feedback
-            session.
+            assured when genuinely needed; it is personal support, not a scheduled feedback session.
           </p>
         </div>
       </section>

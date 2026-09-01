@@ -42,10 +42,7 @@ export type CourseData = {
   metaDescription: string;
 };
 
-const RELATED_GUIDES: Record<
-  string,
-  { href: string; title: string; description: string }[]
-> = {
+const RELATED_GUIDES: Record<string, { href: string; title: string; description: string }[]> = {
   "spoken-english": [
     {
       href: "/blog/5-speaking-habits-that-killed-my-hesitation",
@@ -140,11 +137,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               <Icon name="arrow-right" size={14} className="rotate-180" /> {data.category}
             </Link>
             <div className="mt-3 flex items-start gap-2">
-              <Icon
-                name={data.icon}
-                size={36}
-                className="mt-1 shrink-0 text-sunshine"
-              />
+              <Icon name={data.icon} size={36} className="mt-1 shrink-0 text-sunshine" />
               <h1 className="text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
                 {data.title}
               </h1>

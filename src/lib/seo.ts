@@ -842,15 +842,7 @@ export function organizationLd() {
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
           opens: "09:00",
           closes: "12:00",
         },

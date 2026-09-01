@@ -101,8 +101,7 @@ function Page() {
             Flashcards, polls, quizzes, debates — learning that's actually fun.
           </FeatureCard>
           <FeatureCard icon="target" color="indigo" title="Outcome-First">
-            Practical English, clearer communication and confidence you can use in real
-            situations.
+            Practical English, clearer communication and confidence you can use in real situations.
           </FeatureCard>
           <FeatureCard icon="clock" color="sage" title="Flexible Timings">
             Morning, evening, weekend batches — built around working Indians.
