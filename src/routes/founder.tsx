@@ -81,9 +81,9 @@ function FounderCard({
 
         <div className="mt-5 grid sm:grid-cols-2 gap-3">
           <div className="card-soft bg-brand-soft/30">
-            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
+            <h3 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
               <Icon name="trophy" size={16} className="text-brand" /> Credentials
-            </h4>
+            </h3>
             <ul className="space-y-1.5 text-sm text-ink/85">
               {credentials.map((c) => (
                 <li key={c} className="flex gap-2">
@@ -94,9 +94,9 @@ function FounderCard({
             </ul>
           </div>
           <div className="card-soft bg-sunshine/10">
-            <h4 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
+            <h3 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
               <Icon name="book" size={16} className="text-coral" /> Teaches
-            </h4>
+            </h3>
             <ul className="space-y-1.5 text-sm text-ink/85">
               {teaches.map((t) => (
                 <li key={t} className="flex gap-2">
@@ -109,9 +109,9 @@ function FounderCard({
         </div>
 
         <div className="mt-4 card-soft bg-gradient-to-br from-brand-soft to-cream">
-          <h4 className="font-display font-bold text-ink mb-2 flex items-center gap-2">
+          <h3 className="font-display font-bold text-ink mb-2 flex items-center gap-2">
             <Icon name="heart" size={16} className="text-coral" /> What I promise every learner
-          </h4>
+          </h3>
           <ul className="space-y-2 text-sm text-ink/85">
             {promises.map((p) => (
               <li key={p} className="flex gap-2">
@@ -159,8 +159,8 @@ function Page() {
           </h1>
           <p className="mt-4 text-lg text-white">
             100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or
-            1:1 · pan-India, based in Kolkata. Every learner gets two free 1:1 feedback sessions
-            every month.
+            1:1 · pan-India, based in Kolkata. Outside class, direct 1:1 contact with the teacher is
+            assured when genuinely needed; it is personal support, not a scheduled feedback session.
           </p>
         </div>
       </section>

@@ -99,7 +99,7 @@ export function GuidePage({
         faqs={faqs}
         eyebrow="FAQs"
         title={faqTitle}
-        subtitle="Straight answers. Anything else — ask us on WhatsApp, 7:00–22:00 IST."
+        subtitle="Straight answers. Anything else — ask us on WhatsApp, 09:00–12:00 IST."
         waMessage={waMessage}
       />
 

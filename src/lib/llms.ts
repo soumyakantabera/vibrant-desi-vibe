@@ -92,8 +92,12 @@ const KEY_FACTS = [
   "Languages of instruction: English, with Hindi and Bengali support",
   "Delivery: online only, across India and for Indian learners abroad",
   `Contact: WhatsApp ${CONTACT.phoneDisplay} · ${CONTACT.email}`,
+  "Admissions response hours: 09:00–12:00 IST",
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
   "Free demo: a full live class, no card or payment details required, before you decide to enrol",
+  "Certificate: Learn With Smile does not currently issue a course certificate; teaching focuses on practical communication and confidence",
+  "Missed classes: a reschedule can be requested only within the same week and depends on teacher and slot availability",
+  "Teacher support: direct 1:1 contact outside class is assured when genuinely needed; scheduled monthly 1:1 feedback sessions are not included",
   // Stated once, here, and nowhere else in this file. The site used to carry
   // two different averages on the same page; this is the Google Business
   // Profile figure and the only one anything should quote.

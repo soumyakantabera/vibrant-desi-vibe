@@ -143,7 +143,7 @@ function Home() {
                 "Morning · Evening · Weekend",
                 "Max 6 or 1:1",
                 "Fees from ₹999/month",
-                "Reschedule Anytime",
+                "Same-Week Rescheduling",
               ].map((s) => (
                 <span
                   key={s}
@@ -322,7 +322,7 @@ function Home() {
             {[
               { n: 1, lbl: "Choose Course", sub: "6 live programs", c: "sunshine" },
               { n: 2, lbl: "Pick Format", sub: "Batch or 1:1", c: "coral" },
-              { n: 3, lbl: "WhatsApp Us", sub: "7:00–22:00 IST", c: "wa" },
+              { n: 3, lbl: "WhatsApp Us", sub: "09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join Live Class", sub: "First session starts", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
@@ -454,7 +454,7 @@ function Home() {
             eyebrow="Simple, India-Friendly Pricing"
             eyebrowTone="indigo"
             title="Transparent Fees · Monthly Billing · No Hidden Costs"
-            subtitle="Pay per month, switch slots anytime, and attend a full free demo class before you enrol."
+            subtitle="Pay per month, request a same-week reschedule subject to available slots, and attend a full free demo class before you enrol."
           />
           <Reveal stagger className="grid md:grid-cols-3 gap-5">
             <article className="order-2 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
@@ -498,7 +498,7 @@ function Home() {
               <p className="font-display font-extrabold text-2xl sm:text-3xl text-sunshine">
                 Custom<span className="text-base font-bold text-cream/95"> · per goal</span>
               </p>
-              <p className="text-sm text-cream/95 mt-1">Quote shared during 7:00–22:00 IST</p>
+              <p className="text-sm text-cream/95 mt-1">Quote shared during 09:00–12:00 IST</p>
               <ul className="mt-4 space-y-2 text-sm text-cream">
                 <li className="flex gap-2">
                   <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
@@ -568,7 +568,7 @@ function Home() {
                 Open WhatsApp Now
               </WaButton>
               <p className="text-xs text-white/80 mt-4">
-                +91 96744 79949 · Calls & WhatsApp · 7:00–22:00 IST
+                +91 96744 79949 · Calls & WhatsApp · 09:00–12:00 IST
               </p>
             </div>
             <Link

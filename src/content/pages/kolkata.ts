@@ -4,9 +4,9 @@ import type { ArticleBody } from "@/content/blog/blocks";
  * Body copy for /spoken-english-classes-kolkata.
  *
  * This page has the highest ranking probability on the site — there is a real
- * Kolkata address and LocalBusiness schema already live, and local intent is a
- * far easier surface than the national head terms, which are owned by companies
- * with eight-figure ad budgets.
+ * Kolkata base and location-specific evidence already live, and local intent is
+ * a more realistic surface than the national head terms, which are owned by
+ * companies with eight-figure ad budgets.
  *
  * It is deliberately not a template with a city name substituted in. Everything
  * below is specific to Kolkata: the commute to actual coaching neighbourhoods,
@@ -106,7 +106,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading, and it only moves if somebody marks your essays individually. [IELTS Preparation](/course-ielts) is ₹1,999/month with six full-length mocks; both Academic and General Training are covered in the same course.",
+    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading, and it only moves if somebody marks your essays individually. [IELTS Preparation](/course-ielts) is ₹1,999/month with six full-length mocks; both Academic and General Training are covered in the same course. Before enrolling, practise with the free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
   },
   {
     t: "h3",
@@ -152,7 +152,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Every class is recorded, so a missed session because of a release, an escalation or a shift change does not cost you a week. You can also switch slots between months if your shift rotates.",
+    text: "Every class is recorded, so a missed session because of a release, escalation or shift change does not mean losing the lesson. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
   },
 
   { t: "h2", text: "When a Kolkata coaching centre is the better choice" },
@@ -165,7 +165,7 @@ export const body: ArticleBody = [
     items: [
       "**You want people around you.** A physical classroom gives you peers you actually see, and for some learners that accountability is what keeps them turning up. We substitute live polls, debates and a WhatsApp batch group, and it is not the same thing.",
       "**Your internet is unreliable.** A speaking class where the audio drops is worse than no class. If your connection cannot hold a video call for an hour, fix that first or go offline.",
-      "**You need a recognised certificate.** We do not issue one. If a visa, a university or an HR checklist requires a credential, go to an established institution and expect to pay considerably more — that fee buys the certificate, not better teaching.",
+      "**You need a recognised certificate.** We do not currently issue one. If a visa, a university or an HR checklist requires a credential, go to an established institution and expect to pay considerably more — that fee buys the certificate, not better teaching.",
       "**The learner is a child.** Our classes are built for learners from about 15 upwards. Teaching a nine-year-old is a different profession.",
     ],
   },

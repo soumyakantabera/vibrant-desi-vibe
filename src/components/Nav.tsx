@@ -229,7 +229,7 @@ export function Nav() {
                 </a>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
-                +91 96744 79949 · 7:00–22:00 IST
+                +91 96744 79949 · 09:00–12:00 IST
               </p>
             </div>
 

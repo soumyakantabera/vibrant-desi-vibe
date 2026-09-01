@@ -1,74 +1,6 @@
 import type { CourseData } from "@/components/CoursePage";
 import { IMG } from "@/lib/images";
 
-/**
- * How many live sessions a course runs in total, for `repeatCount` on the
- * CourseInstance schedule.
- *
- * Google requires a `Schedule` to carry either `repeatCount` or a
- * `startDate`+`endDate` pair; without one of them the Course validates as
- * generic schema and earns no Course rich result at all — which is what was
- * happening on all six of these. `repeatCount` is the honest one to state,
- * because it is a fixed property of the course rather than of one batch.
- *
- * Derived from the maximum duration and frequency in the records below:
- * 6 months x 2/week = 48, 3 months x 2/week = 24, and so on. Career
- * Counselling is 3 one-to-one sessions rather than a recurring batch. Exact
- * weekdays vary by batch, so the schema must not invent fixed meeting days.
- */
-const SESSION_COUNT: Record<string, number> = {
-  "spoken-english": 48,
-  "business-english": 24,
-  "interactive-speaking": 24,
-  ielts: 24,
-  "interview-prep": 16,
-  "career-counselling": 3,
-};
-
-/**
- * Per-week effort, as ISO 8601, for `courseWorkload` on the instance.
- *
- * Distinct from `timeRequired` on the Course, which is the total span (P6M).
- * Google reads them as different things and a Course that states only the span
- * is missing the field a prospective student actually wants.
- */
-const WEEKLY_WORKLOAD: Record<string, string> = {
-  "spoken-english": "PT3H",
-  "business-english": "PT3H",
-  "interactive-speaking": "PT3H",
-  ielts: "PT4H",
-  "interview-prep": "PT4H",
-  "career-counselling": "PT1H",
-};
-
-export type CourseSchedule = {
-  repeatCount: number;
-  workload?: string;
-};
-
-export function courseSchedule(slug: string): CourseSchedule {
-  return {
-    repeatCount: SESSION_COUNT[slug] ?? 0,
-    workload: WEEKLY_WORKLOAD[slug],
-  };
-}
-
-/**
- * The next batch start date, generated at build time.
- *
- * Hardcoding a date means the markup starts lying the moment that batch begins
- * — and a `startDate` in the past is worse than none, because it tells Google
- * the course is over. Batches start on the 1st of each month, so this returns
- * the next 1st that is at least a week away, giving anyone who reads the SERP
- * time to actually enrol.
- */
-export function nextBatchStart(now = new Date()): string {
-  const start = new Date(
-    Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + (now.getUTCDate() > 24 ? 2 : 1), 1),
-  );
-  return start.toISOString().slice(0, 10);
-}
-
 export const COURSES: Record<string, CourseData> = {
   "spoken-english": {
     slug: "spoken-english",
@@ -163,7 +95,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "What if I miss a class?",
-        a: "Every class is recorded and shared. You can also rejoin the same module with the next batch.",
+        a: "Every class is recorded and shared. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
       },
     ],
     testimonials: [

@@ -72,17 +72,17 @@ function Page() {
                   {
                     tone: "indigo",
                     icon: SnapIcons.refresh,
-                    big: "Reschedule",
-                    small: "Any class · no questions asked",
+                    big: "Same-week move",
+                    small: "Subject to teacher & slot availability",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.cap,
-                    big: "Certificate",
-                    small: "On completing your course",
+                    big: "Practical change",
+                    small: "Communication · confidence · real use",
                   },
                 ]}
-                footer="7 Years · Pan-India · WhatsApp 7 Days"
+                footer="7 Years · Pan-India · WhatsApp 09:00–12:00 IST"
               />
             </div>
           </div>
@@ -101,7 +101,7 @@ function Page() {
             Flashcards, polls, quizzes, debates — learning that's actually fun.
           </FeatureCard>
           <FeatureCard icon="target" color="indigo" title="Outcome-First">
-            Every course ends with portfolio, mock interview or certification.
+            Practical English, clearer communication and confidence you can use in real situations.
           </FeatureCard>
           <FeatureCard icon="clock" color="sage" title="Flexible Timings">
             Morning, evening, weekend batches — built around working Indians.
@@ -112,8 +112,8 @@ function Page() {
           <FeatureCard icon="shield" color="coral" title="Demo Before You Pay">
             Attend a full free live class before deciding.
           </FeatureCard>
-          <FeatureCard icon="user" color="indigo" title="1:1 Available">
-            Private sessions for anyone who needs personal pace.
+          <FeatureCard icon="user" color="indigo" title="Direct Teacher Support">
+            Outside class, direct 1:1 contact with the teacher is assured when genuinely needed.
           </FeatureCard>
           <FeatureCard icon="globe" color="sunshine" title="Pan-India, In English & Hindi">
             Bilingual teaching available — comfort first.

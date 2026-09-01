@@ -45,7 +45,10 @@ export const body: ArticleBody = [
         "A working professional who needs workplace English",
         "A short business-focused live course, or 1:1 with a specific brief",
       ],
-      ["Preparing for IELTS, TOEFL or PTE", "Dedicated exam prep with individually marked writing"],
+      [
+        "Preparing for IELTS, TOEFL or PTE",
+        "Dedicated exam prep with individually marked writing; test the approach with the free [Band 7 writing template](/blog/band-7-writing-4-paragraph-template)",
+      ],
       [
         "A parent looking for a child under 14",
         "A children's platform. Genuinely a different profession.",
@@ -96,7 +99,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "**If you need a recognised certificate, go here, and we will not pretend otherwise — we do not issue one.** For a visa application, a university requirement or an HR checklist that specifies a credential, this is the category that satisfies it. Be clear about what the fee is buying, though: the awarding body's recognition, plus a well-structured curriculum. It is not buying a smaller batch, and these courses often run 15–25 students.",
+    text: "**If you need a recognised certificate, go here, and we will not pretend otherwise — we do not currently issue one.** For a visa application, a university requirement or an HR checklist that specifies a credential, this is the category that satisfies it. Be clear about what the fee is buying, though: the awarding body's recognition, plus a well-structured curriculum. It is not buying a smaller batch, and these courses often run 15–25 students.",
   },
 
   { t: "h3", text: "5. Small live batches" },
