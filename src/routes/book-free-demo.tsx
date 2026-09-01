@@ -173,10 +173,7 @@ function Page() {
               >
                 {error || "The form is ready."}
               </p>
-              <button
-                type="submit"
-                className="btn btn-wa btn-lg w-full"
-              >
+              <button type="submit" className="btn btn-wa btn-lg w-full">
                 <Icon name="whatsapp" size={18} /> Send via WhatsApp & Confirm Slot
               </button>
               <p className="text-xs text-ink/85 text-center">
@@ -245,7 +242,12 @@ function Field({
   return (
     <label htmlFor={htmlFor} className="block">
       <span className="font-display font-bold text-sm text-ink block mb-1.5">
-        {label} {required && <span className="text-coral" aria-hidden="true">*</span>}
+        {label}{" "}
+        {required && (
+          <span className="text-coral" aria-hidden="true">
+            *
+          </span>
+        )}
       </span>
       {children}
     </label>

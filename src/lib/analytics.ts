@@ -217,7 +217,10 @@ export function installWhatsAppClickTracking(): () => void {
       const url = new URL(link.href);
       const message = url.searchParams.get("text") ?? "Hi, I am interested in Learn With Smile.";
       if (!message.includes("Lead ref:")) {
-        url.searchParams.set("text", `${message}\n\n${leadContext(leadId, getCampaignAttribution())}`);
+        url.searchParams.set(
+          "text",
+          `${message}\n\n${leadContext(leadId, getCampaignAttribution())}`,
+        );
         link.href = url.toString();
       }
     } catch {

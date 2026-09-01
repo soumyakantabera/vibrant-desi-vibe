@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
-import { Icon } from "@/components/Icon";
+import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
@@ -12,6 +12,16 @@ import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import { CALL_LINK } from "@/lib/whatsapp";
 
 const heroSources = imageSources(IMG.heroClass);
+
+const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
+  { icon: "play", title: "Not a recorded course", body: "Every class is live with a teacher." },
+  { icon: "users", title: "Not a crowded webinar", body: "A hard cap of 6 learners per batch." },
+  {
+    icon: "shield",
+    title: "Not a payment trap",
+    body: "Attend a full ₹0 class before enrolling.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -108,8 +118,10 @@ function Home() {
               <span className="text-sunshine">Never in a Batch Bigger Than 6.</span>
             </h1>
             <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
-              Beginner-friendly online classes from <strong className="text-sunshine">₹999/month</strong>.
-              Get real speaking time, direct teacher feedback and a full <strong className="text-sunshine">₹0 live demo</strong> before you pay.
+              Beginner-friendly online classes from{" "}
+              <strong className="text-sunshine">₹999/month</strong>. Get real speaking time, direct
+              teacher feedback and a full <strong className="text-sunshine">₹0 live demo</strong>{" "}
+              before you pay.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -121,10 +133,7 @@ function Home() {
               >
                 <Icon name="calendar" size={18} /> Book My ₹0 Live Demo
               </Link>
-              <a
-                href={CALL_LINK}
-                className="btn btn-white btn-lg w-full sm:w-auto justify-center"
-              >
+              <a href={CALL_LINK} className="btn btn-white btn-lg w-full sm:w-auto justify-center">
                 <Icon name="phone" size={18} /> Call +91 96744 79949
               </a>
             </div>
@@ -182,14 +191,10 @@ function Home() {
 
       <section className="bg-sunshine text-ink border-y border-ink/10">
         <div className="container-x py-5 grid sm:grid-cols-3 gap-3 sm:gap-6 text-sm">
-          {[
-            ["play", "Not a recorded course", "Every class is live with a teacher."],
-            ["users", "Not a crowded webinar", "A hard cap of 6 learners per batch."],
-            ["shield", "Not a payment trap", "Attend a full ₹0 class before enrolling."],
-          ].map(([icon, title, body]) => (
+          {DIFFERENTIATORS.map(({ icon, title, body }) => (
             <div key={title} className="flex items-start gap-3">
               <span className="h-9 w-9 rounded-full bg-ink text-sunshine grid place-items-center shrink-0">
-                <Icon name={icon as any} size={17} />
+                <Icon name={icon} size={17} />
               </span>
               <p>
                 <strong className="font-display block">{title}</strong>
@@ -653,7 +658,6 @@ function Home() {
           </div>
         </div>
       </section>
-
     </Layout>
   );
 }
@@ -664,7 +668,7 @@ function StoryTile({
   tone,
   children,
 }: {
-  icon: any;
+  icon: IconName;
   title: string;
   tone: "sun" | "glass";
   children: React.ReactNode;
@@ -699,7 +703,7 @@ function TrackCard({
   img,
   accent,
 }: {
-  to: string;
+  to: "/english-career";
   tag: string;
   title: string;
   desc: string;
@@ -708,7 +712,7 @@ function TrackCard({
 }) {
   return (
     <Link
-      to={to as any}
+      to={to}
       className="group relative rounded-3xl overflow-hidden min-h-[360px] flex items-end"
     >
       <SmartImage
@@ -741,7 +745,7 @@ function GlassCard({
   pricing,
   children,
 }: {
-  icon: any;
+  icon: IconName;
   title: string;
   pricing: string;
   children: React.ReactNode;

@@ -28,7 +28,11 @@ export function WhatsAppFab({
         data-cta-location="sticky"
         aria-label="Contact Learn With Smile"
       >
-        <a href={CALL_LINK} className="btn btn-primary justify-center px-3" aria-label={`Call ${WHATSAPP_DISPLAY}`}>
+        <a
+          href={CALL_LINK}
+          className="btn btn-primary justify-center px-3"
+          aria-label={`Call ${WHATSAPP_DISPLAY}`}
+        >
           <Icon name="phone" size={17} /> Call Now
         </a>
         <a

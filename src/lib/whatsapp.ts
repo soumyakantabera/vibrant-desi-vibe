@@ -12,7 +12,10 @@ export type CampaignAttribution = {
 };
 
 function clean(value: string | null | undefined, fallback: string): string {
-  const normalised = value?.trim().replace(/[\r\n]+/g, " ").slice(0, 80);
+  const normalised = value
+    ?.trim()
+    .replace(/[\r\n]+/g, " ")
+    .slice(0, 80);
   return normalised || fallback;
 }
 

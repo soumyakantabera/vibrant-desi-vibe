@@ -81,10 +81,7 @@ export function Footer({ image }: { image?: string }) {
         </div>
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
-            <a
-              href={CALL_LINK}
-              className="inline-flex items-center gap-2 hover:text-sunshine"
-            >
+            <a href={CALL_LINK} className="inline-flex items-center gap-2 hover:text-sunshine">
               <Icon name="phone" size={16} />
               {WHATSAPP_DISPLAY}
             </a>

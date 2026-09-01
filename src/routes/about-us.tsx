@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { RATING, RATING_DISPLAY, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
-import { Icon } from "@/components/Icon";
+import { Icon, type IconName } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 
@@ -11,7 +11,9 @@ export const Route = createFileRoute("/about-us")({
   head: () => pageHead("/about-us"),
 });
 
-const FEATURES: { icon: any; color: any; t: string; d: string }[] = [
+type FeatureColor = "brand" | "sunshine" | "coral" | "indigo" | "sage";
+
+const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] = [
   {
     icon: "play",
     color: "brand",

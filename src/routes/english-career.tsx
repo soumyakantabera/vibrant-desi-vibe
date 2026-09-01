@@ -17,7 +17,9 @@ const SLUGS = [
   "ielts",
   "interview-prep",
   "career-counselling",
-];
+] as const;
+
+type CoursePath = `/course-${(typeof SLUGS)[number]}`;
 
 export const Route = createFileRoute("/english-career")({
   component: Page,
@@ -136,7 +138,7 @@ function Page() {
               return (
                 <Link
                   key={s}
-                  to={`/course-${s}` as any}
+                  to={`/course-${s}` as CoursePath}
                   className="group card-soft hover:-translate-y-1 transition flex flex-col"
                 >
                   <SmartImage
