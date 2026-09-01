@@ -45,7 +45,12 @@ jobs:
           grep -q 'application/ld+json' dist/index.html
           grep -q 'Never in a Batch Bigger Than 6' dist/index.html
           grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
-          grep -q '"repeatCount":48' dist/course-spoken-english.html
+          grep -q '09:00–12:00 IST' dist/course-spoken-english.html
+          grep -q 'does not currently issue a course certificate' dist/llms.txt
+          if grep -q '"repeatCount":' dist/course-*.html; then
+            echo "::error::Course schema turns the maximum weekly frequency into an exact session count"
+            exit 1
+          fi
           if grep -Eqi '3 classes/week|three classes a week|3 live sessions/week' dist/course-spoken-english.html; then
             echo "::error::Spoken English still contains the obsolete three-day schedule"
             exit 1
