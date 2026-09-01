@@ -50,6 +50,10 @@ jobs:
             echo "::error::Spoken English still contains the obsolete three-day schedule"
             exit 1
           fi
+          if grep -Eqi 'WhatsApp in Minutes|Reply in Minutes' dist/course-spoken-english.html dist/english-career.html; then
+            echo "::error::A response-time promise still contradicts the published service window"
+            exit 1
+          fi
           if grep -q '<div id="root"></div>' dist/index.html; then
             echo "::error::Homepage was not prerendered"
             exit 1

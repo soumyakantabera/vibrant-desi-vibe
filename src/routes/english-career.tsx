@@ -118,7 +118,7 @@ function Page() {
                     small: "Live polls · roleplays · debates",
                   },
                 ]}
-                footer="Free Demo on WhatsApp · Reply in Minutes"
+                footer="Free Demo on WhatsApp · Replies 7:00–22:00 IST"
               />
             </div>
           </div>
