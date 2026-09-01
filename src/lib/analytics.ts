@@ -36,7 +36,7 @@
  *                        strategy depends on being retrievable there.
  */
 
-import { createLeadId, getCampaignAttribution, leadContext } from "@/lib/whatsapp";
+import { createLeadId, getCampaignAttribution, leadContext } from "./whatsapp";
 
 /** GA4 measurement ID, e.g. "G-XXXXXXXXXX". Empty = no tag is loaded. */
 export const GA4_MEASUREMENT_ID = "";
