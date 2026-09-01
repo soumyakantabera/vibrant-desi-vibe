@@ -394,7 +394,6 @@ export function courseSeo(d: CourseData) {
       scheduleTimezone: "Asia/Kolkata",
       repeatFrequency: "P1W",
       repeatCount: schedule.repeatCount,
-      ...(schedule.byDay ? { byDay: schedule.byDay } : {}),
       startDate: nextBatchStart(),
     },
     location: { "@type": "VirtualLocation", url },

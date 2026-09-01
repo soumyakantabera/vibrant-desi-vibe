@@ -176,7 +176,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with 3 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with up to 2 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -184,7 +184,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
-        a: "Yes, for everyday conversational fluency, if you attend live classes 3 times a week and practise between them. Our 6-month Basic Spoken English course takes learners from zero — people who cannot form a full sentence — to introducing themselves, handling daily conversations, and speaking for 2 minutes on a topic. Professional and academic fluency (IELTS Band 7+, client presentations) usually needs 9–12 months total. Anyone promising fluency in 30 days is selling you something.",
+        a: "Yes, for everyday conversational fluency, if you attend up to 2 live classes a week and practise between them. Our 6-month Basic Spoken English course takes learners from zero — people who cannot form a full sentence — to introducing themselves, handling daily conversations, and speaking for 2 minutes on a topic. Professional and academic fluency (IELTS Band 7+, client presentations) usually needs 9–12 months total. Anyone promising fluency in 30 days is selling you something.",
       },
       {
         q: "Are online English classes as effective as offline coaching centres?",
@@ -340,7 +340,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How soon can I expect to see real improvement in my spoken English?",
-        a: "Most learners notice a genuine difference in confidence and sentence fluency within 6–8 weeks of regular live classes, roughly 20–25 sessions in. Full everyday conversational fluency for someone starting from zero typically takes the complete 6-month Basic Spoken English course, attended 3 times a week with some daily practice in between.",
+        a: "Most learners notice a genuine difference in confidence and sentence fluency within 6–8 weeks of regular live classes, roughly 12–16 sessions in. Full everyday conversational fluency for someone starting from zero typically takes the complete 6-month Basic Spoken English course, attended up to twice a week with some daily practice in between.",
       },
       {
         q: "I studied in a Hindi or Bengali-medium school, not English-medium. Can I still get results like these?",
@@ -462,7 +462,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is an online class actually better than joining a coaching centre in Kolkata?",
-        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 6-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes of commuting three times a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
+        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 6-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes each way of commuting up to twice a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
       },
       {
         q: "Do you prepare Kolkata students for IELTS and job interviews too?",
@@ -595,7 +595,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course Online India | ₹999/mo, Max 6",
     description:
-      "Six-month Basic Spoken English, three live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
+      "Six-month Basic Spoken English, up to two live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
     shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
@@ -609,15 +609,15 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/spoken-english.jpg",
     summary:
-      "Basic Spoken English — 6 months, 3 live classes a week, max 6 students, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
+      "Basic Spoken English — 6 months, up to 2 live classes a week, max 6 students, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
-        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, 3 live classes per week, maximum 6 students per batch, GST included. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
+        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, maximum 6 students per batch, GST included. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
       },
       {
         q: "How long does it take to learn spoken English from zero?",
-        a: "Around 6 months of consistent live practice to reach comfortable everyday conversation — introducing yourself, shopping, phone calls, travel, small talk and basic group discussion. That assumes about 3 classes a week plus 10–15 minutes of daily practice. Reaching professional or exam-level fluency typically takes another 3–6 months on top.",
+        a: "Around 6 months of consistent live practice to reach comfortable everyday conversation — introducing yourself, shopping, phone calls, travel, small talk and basic group discussion. That assumes up to 2 classes a week plus 10–15 minutes of daily practice. Reaching professional or exam-level fluency typically takes another 3–6 months on top.",
       },
       {
         q: "I feel embarrassed about my English. Will I be judged in class?",
@@ -672,7 +672,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",
-        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it responds to repetition under mild pressure. That means speaking often in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, three times a week for 3 months, in a batch of six.",
+        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it responds to repetition under mild pressure. That means speaking often in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, up to twice a week for 3 months, in a batch of six.",
       },
       {
         q: "Is this course useful if my grammar is already good?",

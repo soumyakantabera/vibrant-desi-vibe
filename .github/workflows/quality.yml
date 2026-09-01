@@ -44,7 +44,12 @@ jobs:
           grep -q 'rel="canonical"' dist/index.html
           grep -q 'application/ld+json' dist/index.html
           grep -q 'Never in a Batch Bigger Than 6' dist/index.html
-          grep -q '6 months · 3 classes/week' dist/course-spoken-english.html
+          grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
+          grep -q '"repeatCount":48' dist/course-spoken-english.html
+          if grep -Eqi '3 classes/week|three classes a week|3 live sessions/week' dist/course-spoken-english.html; then
+            echo "::error::Spoken English still contains the obsolete three-day schedule"
+            exit 1
+          fi
           if grep -q '<div id="root"></div>' dist/index.html; then
             echo "::error::Homepage was not prerendered"
             exit 1

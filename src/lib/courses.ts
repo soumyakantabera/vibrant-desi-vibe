@@ -11,21 +11,19 @@ import { IMG } from "@/lib/images";
  * happening on all six of these. `repeatCount` is the honest one to state,
  * because it is a fixed property of the course rather than of one batch.
  *
- * Derived from the duration and the classes-per-week already in the records
- * below: 6 months x 3/week = 72, 3 months x 3/week = 36, and so on. Career
- * Counselling is 3 one-to-one sessions rather than a recurring batch.
+ * Derived from the maximum duration and frequency in the records below:
+ * 6 months x 2/week = 48, 3 months x 2/week = 24, and so on. Career
+ * Counselling is 3 one-to-one sessions rather than a recurring batch. Exact
+ * weekdays vary by batch, so the schema must not invent fixed meeting days.
  */
 const SESSION_COUNT: Record<string, number> = {
-  "spoken-english": 72,
-  "business-english": 36,
-  "interactive-speaking": 36,
-  ielts: 36,
-  "interview-prep": 24,
+  "spoken-english": 48,
+  "business-english": 24,
+  "interactive-speaking": 24,
+  ielts: 24,
+  "interview-prep": 16,
   "career-counselling": 3,
 };
-
-/** Days a weekly batch meets. Career Counselling is scheduled 1:1, not weekly. */
-const BATCH_DAYS = ["Monday", "Wednesday", "Friday"];
 
 /**
  * Per-week effort, as ISO 8601, for `courseWorkload` on the instance.
@@ -35,24 +33,22 @@ const BATCH_DAYS = ["Monday", "Wednesday", "Friday"];
  * is missing the field a prospective student actually wants.
  */
 const WEEKLY_WORKLOAD: Record<string, string> = {
-  "spoken-english": "PT4H30M",
-  "business-english": "PT4H30M",
-  "interactive-speaking": "PT4H30M",
-  ielts: "PT6H",
-  "interview-prep": "PT6H",
+  "spoken-english": "PT3H",
+  "business-english": "PT3H",
+  "interactive-speaking": "PT3H",
+  ielts: "PT4H",
+  "interview-prep": "PT4H",
   "career-counselling": "PT1H",
 };
 
 export type CourseSchedule = {
   repeatCount: number;
-  byDay?: string[];
   workload?: string;
 };
 
 export function courseSchedule(slug: string): CourseSchedule {
   return {
     repeatCount: SESSION_COUNT[slug] ?? 0,
-    byDay: slug === "career-counselling" ? undefined : BATCH_DAYS,
     workload: WEEKLY_WORKLOAD[slug],
   };
 }
@@ -85,7 +81,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.spokenEnglish,
     midImage: IMG.womanLaptop,
     footerImage: IMG.studentLaptop2,
-    duration: "6 months · 3 classes/week",
+    duration: "6 months · up to 2 classes/week",
     format: "Live batch · max 6 students",
     price: "₹999/mo",
     outcomes: [
@@ -192,7 +188,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · 3 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
   },
   "business-english": {
     slug: "business-english",
@@ -205,7 +201,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.businessEnglish,
     midImage: IMG.womanOffice,
     footerImage: IMG.presentation,
-    duration: "3 months · 3 classes/week",
+    duration: "3 months · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
     price: "₹1,499/mo",
@@ -256,20 +252,20 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Business English live online classes for working professionals in India. 3 months · 3 classes/week · max 6 per batch · ₹1,499/mo. Free demo.",
+      "Business English live online classes for working professionals in India. 3 months · up to 2 classes/week · max 6 per batch · ₹1,499/mo. Free demo.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "Three live speaking sessions a week in a friendly online batch. Build fluency through games, debates and storytelling.",
+      "Up to two live speaking sessions a week in a friendly online batch. Build fluency through games, debates and storytelling.",
     category: "English & Career",
     categoryColor: "brand",
     icon: "headset",
     heroImage: IMG.interactiveSpeaking,
     midImage: IMG.girlReading,
     footerImage: IMG.groupClass,
-    duration: "3 months · 3 classes/week",
+    duration: "3 months · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 6 students",
     price: "₹1,199/mo",
@@ -315,7 +311,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. 3 live sessions/week with games, debates and stories. 3 months · max 6 per batch · ₹1,199/mo.",
+      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · max 6 per batch · ₹1,199/mo.",
   },
   ielts: {
     slug: "ielts",
@@ -328,7 +324,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.ielts,
     midImage: IMG.manStudying,
     footerImage: IMG.graduation,
-    duration: "3 months · 3 classes/week",
+    duration: "3 months · up to 2 classes/week",
     format: "Live batch · max 6 students",
     price: "₹1,999/mo",
     outcomes: [
@@ -408,7 +404,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "IELTS Preparation live online — 3 months · 3 classes/week · max 6 per batch · ₹1,999/mo. 6+ mocks, live feedback and a free demo.",
+      "IELTS Preparation live online — 3 months · up to 2 classes/week · max 6 per batch · ₹1,999/mo. 6+ mocks, live feedback and a free demo.",
   },
   "interview-prep": {
     slug: "interview-prep",
@@ -421,7 +417,7 @@ export const COURSES: Record<string, CourseData> = {
     heroImage: IMG.interview,
     midImage: IMG.manOffice,
     footerImage: IMG.womanOffice,
-    duration: "2 months · 3 classes/week",
+    duration: "2 months · up to 2 classes/week",
     format: "Live batch · max 6 students",
     price: "₹1,499/mo",
     outcomes: [
@@ -480,7 +476,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · 3 classes/week · max 6 · ₹1,499/mo.",
+      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · max 6 · ₹1,499/mo.",
   },
   "career-counselling": {
     slug: "career-counselling",

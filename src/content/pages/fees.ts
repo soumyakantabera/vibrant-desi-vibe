@@ -69,15 +69,15 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Take a ₹600/month class with 35 students, meeting three times a week for 50 minutes. The teacher talks for roughly 25 of those minutes, which leaves 25 minutes shared between 35 learners:",
+    text: "Take a ₹600/month class with 35 students, meeting twice a week for 50 minutes. The teacher talks for roughly 25 of those minutes, which leaves 25 minutes shared between 35 learners:",
   },
   {
     t: "example",
     label: "Large batch",
     lines: [
       "25 minutes ÷ 35 students ≈ **43 seconds** of speaking per class",
-      "× 12 classes a month ≈ **8.6 minutes** a month",
-      "₹600 ÷ 8.6 ≈ **₹70 per minute of your own speech**",
+      "× 8 classes a month ≈ **5.7 minutes** a month",
+      "₹600 ÷ 5.7 ≈ **₹105 per minute of your own speech**",
     ],
   },
   {
@@ -85,8 +85,8 @@ export const body: ArticleBody = [
     label: "Batch of six",
     lines: [
       "25 minutes ÷ 6 students ≈ **4–5 minutes** of speaking per class",
-      "× 12 classes a month ≈ **~55 minutes** a month",
-      "₹999 ÷ 55 ≈ **₹18 per minute of your own speech**",
+      "× 8 classes a month ≈ **~33 minutes** a month",
+      "₹999 ÷ 33 ≈ **₹30 per minute of your own speech**",
     ],
   },
   {

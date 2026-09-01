@@ -126,7 +126,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How long does it take to learn to speak English from zero?",
-    a: "About 6 months of consistent live practice, three classes a week plus daily practice, to reach comfortable everyday conversation. Professional or exam-level fluency usually takes another 3–6 months on top. Anyone promising fluency in 30 days is selling you something.",
+    a: "About 6 months of consistent live practice, up to two classes a week plus daily practice, to reach comfortable everyday conversation. Professional or exam-level fluency usually takes another 3–6 months on top. Anyone promising fluency in 30 days is selling you something.",
     source: "/course-spoken-english",
   },
   {

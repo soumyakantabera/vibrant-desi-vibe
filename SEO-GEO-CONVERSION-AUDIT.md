@@ -11,7 +11,7 @@ The site did not have a basic “SEO is missing” problem. It already had an un
 
 Its real problems were lower in the funnel and more damaging:
 
-1. The business contradicted itself about the flagship product: Spoken English was both **2 and 3 classes per week**, while its schedule schema encoded 48 sessions although the documented six-month, three-per-week offer requires 72.
+1. The business contradicted itself about the flagship product: Spoken English was both **2 and 3 classes per week**. The owner has now confirmed that every recurring course runs **no more than 2 days per week**; the site, AI answers and schedule schema are aligned to that rule.
 2. The homepage H1 changed in the browser through an unmeasured local A/B test. Crawlers and visitors could see different positioning, and no analytics property existed to identify a winner.
 3. The hero offered two versions of WhatsApp but no immediate phone path and no strong route to the actual demo form.
 4. The demo “form” was not a form. It accepted empty/invalid leads, had no semantic fields and carried no campaign or landing-page attribution.
@@ -51,8 +51,9 @@ Scores are heuristic implementation-quality scores, not traffic forecasts.
 
 ### Search and AI retrieval
 
-- Makes three classes per week the visible and machine-readable source of truth for scheduled batch courses.
-- Corrects Spoken English schema from 48 to 72 sessions.
+- Makes up to two classes per week the visible and machine-readable source of truth for scheduled batch courses.
+- Corrects maximum schedule counts to 48 sessions for the six-month course, 24 for three-month courses and 16 for the two-month course.
+- Removes invented Monday/Wednesday/Friday schema because exact weekday combinations vary by batch.
 - Consolidates Organization and LocalBusiness into one canonical `#organization` entity.
 - Connects the founder Person ID consistently across profile, course instructor, article author and Organization founder properties.
 - Uses the 180×180 brand asset instead of a 48×48 favicon as the Organization logo.
@@ -65,7 +66,7 @@ Scores are heuristic implementation-quality scores, not traffic forecasts.
 ### Trust and offer consistency
 
 - Standardises the currently encoded course price table: Business English ₹1,499/month, Interactive Speaking ₹1,199/month, Interview Preparation ₹1,499/month.
-- Replaces vague “daily live” course wording with the actual three-live-sessions-per-week schedule.
+- Replaces vague “daily live” and three-session wording with the confirmed maximum of two live class days per week.
 - Replaces “instant/minutes” service promises with the visible 07:00–22:00 IST response window.
 - Replaces “EMI” wording where the offer is simply monthly billing.
 - Adds an explicit individual-results disclaimer; no job, IELTS score or salary increase is guaranteed.
@@ -87,7 +88,7 @@ Scores are heuristic implementation-quality scores, not traffic forecasts.
 
 ### P0 — do immediately
 
-1. Confirm that **3 classes/week** and the listed prices are commercially correct. This PR aligns the site to the majority source and existing schedule model; if operations say otherwise, change the one course record before merging.
+1. **Schedule confirmed by the owner on 1 September 2026:** every recurring course runs no more than 2 days per week. Before merging, confirm that the listed prices are still commercially correct.
 2. In Google Search Console, verify `https://www.learnwithsmile.app`, submit `https://www.learnwithsmile.app/sitemap.xml`, then request inspection for:
    - `/`
    - `/course-spoken-english`
@@ -145,4 +146,3 @@ Use lowercase snake_case so reporting does not split one source into five names.
 ## Verification gates
 
 The repository’s GitHub Pages workflow is the source of truth because it uses Bun, performs the full Vite build, prerenders every public route and asserts canonical tags, JSON-LD, non-empty HTML, sitemap output, AI files and Markdown mirrors. Production deployment runs from `main`; this PR should not change production until reviewed and merged.
-

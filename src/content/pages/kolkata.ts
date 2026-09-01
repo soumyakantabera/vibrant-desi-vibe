@@ -31,7 +31,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "A spoken English course is three classes a week for three to six months. If you live in Behala or Dum Dum and the centre is in Gariahat or Sector V, you are spending 45 to 90 minutes each way. Three times a week, for six months, that is somewhere between 70 and 140 hours of your life sitting in traffic on the EM Bypass — considerably more time than you will spend in the classroom.",
+    text: "A spoken English course runs up to two classes a week for three to six months. If you live in Behala or Dum Dum and the centre is in Gariahat or Sector V, you are spending 45 to 90 minutes each way. Twice a week for six months, that is roughly 75 to 155 hours of your life sitting in traffic on the EM Bypass — considerably more time than you will spend in the classroom.",
   },
   {
     t: "p",
@@ -47,7 +47,7 @@ export const body: ArticleBody = [
     rows: [
       ["Students per batch", "25–40", "Maximum 6"],
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
-      ["Commute, three times a week", "45–90 min each way", "None"],
+      ["Commute, up to twice a week", "45–90 min each way", "None"],
       ["Class recordings", "Rarely", "Every class"],
       ["Fee", "₹1,500–₹6,000 for 3 months", "₹999/month, GST included"],
     ],
@@ -128,11 +128,11 @@ export const body: ArticleBody = [
       "Same fees for a learner in Kolkata as anywhere else in India. There is no local pricing.",
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months · 3 classes/week", "₹999/month"],
-      ["Interactive Speaking", "3 months · 3 classes/week", "₹1,199/month"],
-      ["Business English", "3 months · 3 classes/week", "₹1,499/month"],
-      ["Interview Preparation", "2 months · 3 classes/week", "₹1,499/month"],
-      ["IELTS Preparation", "3 months · 3 classes/week", "₹1,999/month"],
+      ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
+      ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,199/month"],
+      ["Business English", "3 months · up to 2 classes/week", "₹1,499/month"],
+      ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,499/month"],
+      ["IELTS Preparation", "3 months · up to 2 classes/week", "₹1,999/month"],
       ["Career Counselling", "3 × 60-min 1:1 sessions", "₹999 total"],
     ],
   },
