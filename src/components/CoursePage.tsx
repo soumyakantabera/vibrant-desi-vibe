@@ -68,7 +68,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         },
         { tone: "coral", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
       ]}
-      footer="Free Demo · No Card Needed · WhatsApp in Minutes"
+      footer="Free Demo · No Card Needed · Replies 7:00–22:00 IST"
     />
   );
   return (
