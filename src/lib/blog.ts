@@ -48,6 +48,58 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "how-to-choose-spoken-english-class-india",
+    title: "How to Choose a Spoken English Class in India: 7 Checks",
+    seoTitle: "Choose a Spoken English Class | 7 Checks",
+    description:
+      "Seven checks for any Indian English class: batch cap, speaking minutes, GST, named teacher, real demo, review patterns, certificate vs speaking. ₹999/mo.",
+    excerpt:
+      "Cap, minutes, GST, named teacher, real demo, review patterns, certificate. Run them on us too.",
+    tag: "Guides",
+    img: "speaking",
+    imgAlt: "Adult learner comparing online English class options on a laptop",
+    author: "Sunanda Dey",
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    readingTime: 7,
+    wordCount: 820,
+    relatedCourses: ["/course-spoken-english"],
+  },
+  {
+    slug: "spoken-english-or-ielts",
+    title: "Spoken English or IELTS? Which Course Fits in 2 Minutes",
+    seoTitle: "Spoken English or IELTS? Pick in 2 Minutes",
+    description:
+      "Spoken English ₹999/mo, 6 months. Workplace ₹1,499/mo. IELTS ₹1,999/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
+    excerpt: "Different clocks, different fees. Buy the course that matches the bottleneck.",
+    tag: "Spoken English",
+    img: "ielts",
+    imgAlt: "Learner choosing between spoken English practice and IELTS writing",
+    author: "Sunanda Dey",
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    readingTime: 6,
+    wordCount: 720,
+    relatedCourses: ["/course-spoken-english", "/course-ielts"],
+  },
+  {
+    slug: "speaking-minutes-in-a-60-minute-class",
+    title: "Speaking Minutes in a 60-Minute English Class",
+    seoTitle: "Speaking Minutes in a 60-Min English Class",
+    description:
+      "Your mic in 60 minutes: 6–8 min in a batch of 8, 1–2 min in a room of 30, 50 min in 1:1. Why months on a brochure are not speaking minutes. ₹999/mo, max 8.",
+    excerpt: "Fluency is minutes you spoke, not months on the brochure. Here is the arithmetic.",
+    tag: "Spoken English",
+    img: "groupClass",
+    imgAlt: "Small live English class where every learner gets a turn to speak",
+    author: "Sunanda Dey",
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    readingTime: 6,
+    wordCount: 780,
+    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+  },
+  {
     slug: "english-for-office-meetings",
     title: "English for Office Meetings: 12 Phrases You Can Actually Use",
     seoTitle: "English for Office Meetings: Practical Phrases",

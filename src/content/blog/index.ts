@@ -18,6 +18,9 @@ import { body as tellMeAboutYourself } from "./tell-me-about-yourself-in-60-seco
 import { body as bpoRoadmap } from "./bpo-to-client-facing-role-roadmap";
 import { body as officeMeetings } from "./english-for-office-meetings";
 import { body as bpoCustomerSupport } from "./english-for-bpo-customer-support";
+import { body as speakingMinutes } from "./speaking-minutes-in-a-60-minute-class";
+import { body as spokenOrIelts } from "./spoken-english-or-ielts";
+import { body as chooseClass } from "./how-to-choose-spoken-english-class-india";
 
 export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "5-speaking-habits-that-killed-my-hesitation": speakingHabits,
@@ -27,4 +30,7 @@ export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "bpo-to-client-facing-role-roadmap": bpoRoadmap,
   "english-for-office-meetings": officeMeetings,
   "english-for-bpo-customer-support": bpoCustomerSupport,
+  "speaking-minutes-in-a-60-minute-class": speakingMinutes,
+  "spoken-english-or-ielts": spokenOrIelts,
+  "how-to-choose-spoken-english-class-india": chooseClass,
 };

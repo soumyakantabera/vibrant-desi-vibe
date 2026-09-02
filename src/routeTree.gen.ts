@@ -21,7 +21,9 @@ import { Route as CourseInterviewPrepRouteImport } from './routes/course-intervi
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
+import { Route as EnglishInstituteComparisonIndiaRouteImport } from './routes/english-institute-comparison-india'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as HowLongToLearnSpokenEnglishRouteImport } from './routes/how-long-to-learn-spoken-english'
 import { Route as SpokenEnglishClassesKolkataRouteImport } from './routes/spoken-english-classes-kolkata'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as WhyUsRouteImport } from './routes/why-us'
@@ -91,11 +93,23 @@ const EnglishClassFeesIndiaRoute = EnglishClassFeesIndiaRouteImport.update({
   path: '/english-class-fees-india',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnglishInstituteComparisonIndiaRoute =
+  EnglishInstituteComparisonIndiaRouteImport.update({
+    id: '/english-institute-comparison-india',
+    path: '/english-institute-comparison-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowLongToLearnSpokenEnglishRoute =
+  HowLongToLearnSpokenEnglishRouteImport.update({
+    id: '/how-long-to-learn-spoken-english',
+    path: '/how-long-to-learn-spoken-english',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SpokenEnglishClassesKolkataRoute =
   SpokenEnglishClassesKolkataRouteImport.update({
     id: '/spoken-english-classes-kolkata',
@@ -142,7 +156,9 @@ export interface FileRoutesByFullPath {
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
+  '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/founder': typeof FounderRoute
+  '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
@@ -163,7 +179,9 @@ export interface FileRoutesByTo {
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
+  '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/founder': typeof FounderRoute
+  '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
@@ -185,7 +203,9 @@ export interface FileRoutesById {
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
+  '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/founder': typeof FounderRoute
+  '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/why-us': typeof WhyUsRoute
@@ -208,7 +228,9 @@ export interface FileRouteTypes {
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
+    | '/english-institute-comparison-india'
     | '/founder'
+    | '/how-long-to-learn-spoken-english'
     | '/spoken-english-classes-kolkata'
     | '/success-stories'
     | '/why-us'
@@ -229,7 +251,9 @@ export interface FileRouteTypes {
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
+    | '/english-institute-comparison-india'
     | '/founder'
+    | '/how-long-to-learn-spoken-english'
     | '/spoken-english-classes-kolkata'
     | '/success-stories'
     | '/why-us'
@@ -250,7 +274,9 @@ export interface FileRouteTypes {
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
+    | '/english-institute-comparison-india'
     | '/founder'
+    | '/how-long-to-learn-spoken-english'
     | '/spoken-english-classes-kolkata'
     | '/success-stories'
     | '/why-us'
@@ -272,7 +298,9 @@ export interface RootRouteChildren {
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
   EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
+  EnglishInstituteComparisonIndiaRoute: typeof EnglishInstituteComparisonIndiaRoute
   FounderRoute: typeof FounderRoute
+  HowLongToLearnSpokenEnglishRoute: typeof HowLongToLearnSpokenEnglishRoute
   SpokenEnglishClassesKolkataRoute: typeof SpokenEnglishClassesKolkataRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
   WhyUsRoute: typeof WhyUsRoute
@@ -367,11 +395,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnglishClassFeesIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/english-institute-comparison-india': {
+      id: '/english-institute-comparison-india'
+      path: '/english-institute-comparison-india'
+      fullPath: '/english-institute-comparison-india'
+      preLoaderRoute: typeof EnglishInstituteComparisonIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/founder': {
       id: '/founder'
       path: '/founder'
       fullPath: '/founder'
       preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-long-to-learn-spoken-english': {
+      id: '/how-long-to-learn-spoken-english'
+      path: '/how-long-to-learn-spoken-english'
+      fullPath: '/how-long-to-learn-spoken-english'
+      preLoaderRoute: typeof HowLongToLearnSpokenEnglishRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/spoken-english-classes-kolkata': {
@@ -433,7 +475,9 @@ const rootRouteChildren: RootRouteChildren = {
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
   EnglishCareerRoute: EnglishCareerRoute,
   EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,
+  EnglishInstituteComparisonIndiaRoute: EnglishInstituteComparisonIndiaRoute,
   FounderRoute: FounderRoute,
+  HowLongToLearnSpokenEnglishRoute: HowLongToLearnSpokenEnglishRoute,
   SpokenEnglishClassesKolkataRoute: SpokenEnglishClassesKolkataRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
   WhyUsRoute: WhyUsRoute,
