@@ -236,16 +236,16 @@ export function CoverageStrip({
     <section className={invert ? "bg-brand-deep py-8 md:py-10" : "bg-[#F7F4EE] py-8 md:py-10"}>
       <div className="container-x">
         <p className={`font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
-          Coverage
+          Live Spoken English Across India
         </p>
         <h2
           className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${heading}`}
         >
-          Same teacher from Kolkata to Kochi.
+          Spoken English classes from Kolkata to Kochi.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          The fee does not change with your pincode. Morning, evening and weekend IST — metros,
-          towns, and Indians abroad on the same live room.
+          Same live spoken English teacher. Same fee. Morning, evening and weekend IST — metros,
+          towns, and Indians abroad on the same live class.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           States

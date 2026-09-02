@@ -95,11 +95,12 @@ function Page() {
             <Icon name="smile" size={14} /> About Us
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            7 Years. 500+ Learners. <span className="text-sunshine">From ₹999/mo. 11 States.</span>
+            Live Spoken English Since 2019.{" "}
+            <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Live since 2019. English batches capped at 8. From ₹999/mo. 11 teaching principles —
-            simple, practical, enjoyable classes for Indian learners.
+            A Kolkata classroom that went online. Live spoken English classes for learners across
+            India — small rooms, a named teacher, from ₹999/mo. GST included. ₹0 demo.
           </p>
         </div>
       </section>
