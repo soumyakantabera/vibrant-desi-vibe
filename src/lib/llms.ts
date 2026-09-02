@@ -86,6 +86,7 @@ function yearsTeaching(): number {
 const KEY_FACTS = [
   `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of live online teaching · 500+ learners taught across India`,
   "Batch size: maximum 6 students in every English course batch; Career Counselling is a separate 1:1 service",
+  "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
   `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
   "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
@@ -477,7 +478,7 @@ export function buildLlmsTxt(updated: string): string {
   return [
     `# ${SITE_NAME}`,
     "",
-    "> Live online English and career classes for learners in India — Spoken English, IELTS,",
+    "> Live online English communication and career classes for learners in India — Spoken English, IELTS,",
     "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
     "> English classes are taught live in batches capped at 6 students, from ₹999/month.",
     "> Based in Kolkata, teaching across India. Free demo class booked over WhatsApp.",
