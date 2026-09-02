@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "Quality spoken English in 6 months — even from zero. Live batch of 6, up to 2 classes/week, ₹999/mo. Direct correction every session.",
+      "Quality spoken English in 6 months — even from zero. Live batch of 8, up to 2 classes/week, ₹999/mo. Direct correction every session.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -14,7 +14,7 @@ export const COURSES: Record<string, CourseData> = {
     midImage: IMG.womanLaptop,
     footerImage: IMG.studentLaptop2,
     duration: "6 months · up to 2 classes/week",
-    format: "Live batch · max 6 students",
+    format: "Live batch · max 8 students",
     price: "₹999/mo",
     outcomes: [
       "Introduce yourself fluently in any social or work setting",
@@ -87,7 +87,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "What's the batch size?",
-        a: "Maximum 6 students per batch so every learner gets real speaking time.",
+        a: "Maximum 8 students per batch so every learner gets real speaking time.",
       },
       {
         q: "Is the demo really free?",
@@ -120,13 +120,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · max 6 per batch. ₹999/mo. Free demo on WhatsApp.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · max 8 per batch. ₹999/mo. Free demo on WhatsApp.",
   },
   "business-english": {
     slug: "business-english",
     title: "Workplace English",
     tagline:
-      "Meetings, client calls, emails and presentations — 3 months, max 6, up to 2 live classes/week, ₹1,499/mo. For professionals, freshers and job seekers.",
+      "Meetings, client calls, emails and presentations — 3 months, max 8, up to 2 live classes/week, ₹1,499/mo. For professionals, freshers and job seekers.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "headset",
@@ -135,7 +135,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.presentation,
     duration: "3 months · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
-    format: "Live batch · max 6 students",
+    format: "Live batch · max 8 students",
     price: "₹1,499/mo",
     outcomes: [
       "Give clear status updates without memorising a script",
@@ -184,13 +184,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live max-6 batch, ₹1,499/month.",
+      "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live max-8 batch, ₹1,499/month.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays. Max 6, up to 2 classes/week, ₹1,199/mo. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays. Max 8, up to 2 classes/week, ₹1,199/mo. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -199,7 +199,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.groupClass,
     duration: "3 months · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
-    format: "Live batch · max 6 students",
+    format: "Live batch · max 8 students",
     price: "₹1,199/mo",
     outcomes: [
       "Speak for 2 minutes on any topic",
@@ -243,13 +243,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · max 6 per batch · ₹1,199/mo.",
+      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · max 8 per batch · ₹1,199/mo.",
   },
   ielts: {
     slug: "ielts",
     title: "IELTS Preparation",
     tagline:
-      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Max 6 per batch, ₹1,999/mo. Academic or General Training.",
+      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Max 8 per batch, ₹1,999/mo. Academic or General Training.",
     category: "IELTS Preparation",
     categoryColor: "brand",
     icon: "trophy",
@@ -257,7 +257,7 @@ export const COURSES: Record<string, CourseData> = {
     midImage: IMG.manStudying,
     footerImage: IMG.graduation,
     duration: "3 months · up to 2 classes/week",
-    format: "Live batch · max 6 students",
+    format: "Live batch · max 8 students",
     price: "₹1,999/mo",
     outcomes: [
       "Score Band 7+ across all four modules",
@@ -336,13 +336,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "IELTS Preparation live online — 3 months · up to 2 classes/week · max 6 per batch · ₹1,999/mo. 6+ mocks, live feedback and a free demo.",
+      "IELTS Preparation live online — 3 months · up to 2 classes/week · max 8 per batch · ₹1,999/mo. 6+ mocks, live feedback and a free demo.",
   },
   "interview-prep": {
     slug: "interview-prep",
     title: "Interview Preparation in English",
     tagline:
-      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Max 6, up to 2 classes/week, ₹1,499/mo. Walk in ready.",
+      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Max 8, up to 2 classes/week, ₹1,499/mo. Walk in ready.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "target",
@@ -350,7 +350,7 @@ export const COURSES: Record<string, CourseData> = {
     midImage: IMG.manOffice,
     footerImage: IMG.womanOffice,
     duration: "2 months · up to 2 classes/week",
-    format: "Live batch · max 6 students",
+    format: "Live batch · max 8 students",
     price: "₹1,499/mo",
     outcomes: [
       "Crack HR rounds confidently",
@@ -408,7 +408,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · max 6 · ₹1,499/mo.",
+      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · max 8 · ₹1,499/mo.",
   },
   "career-counselling": {
     slug: "career-counselling",

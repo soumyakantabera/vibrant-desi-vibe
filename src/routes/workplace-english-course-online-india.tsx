@@ -47,10 +47,10 @@ function Page() {
       h1={
         <>
           Workplace English in India — ₹1,499/mo,{" "}
-          <span className="text-sunshine">Max 6, 3 Months</span>
+          <span className="text-sunshine">Max 8, 3 Months</span>
         </>
       }
-      standfirst="Meetings, client calls, updates, emails, presentations. 3 months, max 6, up to 2 live classes/week, ₹1,499/mo GST included. Who should join — and who should self-study."
+      standfirst="Meetings, client calls, updates, emails, presentations. 3 months, max 8, up to 2 live classes/week, ₹1,499/mo GST included. Who should join — and who should self-study."
       heroImage={IMG.businessEnglish}
       heroAlt="Indian professional practising English for an online workplace meeting"
       lastUpdated={UPDATED}

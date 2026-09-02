@@ -13,9 +13,9 @@ export type CategoryTone = "brand" | "indigo" | "sun" | "coral";
 export const COURSE_CATEGORIES = [
   {
     id: "speak-confidently",
-    title: "Speak Confidently · Max 6",
+    title: "Speak Confidently · From ₹999/mo",
     description:
-      "From ₹999/mo. Live batches of 6. 6-month Spoken English or 3-month Interactive Speaking — up to 2 classes/week.",
+      "Quality live English from ₹999/mo. 6-month Spoken English or 3-month Interactive Speaking — up to 2 classes/week. Batches of 8.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -25,7 +25,7 @@ export const COURSE_CATEGORIES = [
     id: "work-and-career",
     title: "Work & Career · ₹1,499/mo",
     description:
-      "Workplace English and Interview Prep. 2–3 months, max 6 per batch, up to 2 live classes/week.",
+      "Workplace English and Interview Prep. 2–3 months, ₹1,499/mo. Live quality teaching, up to 2 classes/week. Batches of 8.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
@@ -35,7 +35,7 @@ export const COURSE_CATEGORIES = [
     id: "ielts-preparation",
     title: "IELTS Prep · ₹1,999/mo",
     description:
-      "Target Band 7+ in 3 months. Max 6 per batch. All 4 skills, 6+ live mocks, Academic or General Training.",
+      "Target Band 7+ in 3 months. ₹1,999/mo. All 4 skills, 6+ live mocks, Academic or General Training. Batches of 8.",
     icon: "trophy",
     tone: "sun",
     featuredSlug: "ielts",

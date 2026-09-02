@@ -10,6 +10,7 @@ type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 const MAIN: NavItem[] = [
   { to: "/", label: "Home" },
   { to: "/why-us", label: "Why Us" },
+  { to: "/best-online-spoken-english-classes-india", label: "Guides" },
   { to: "/success-stories", label: "Stories" },
   { to: "/founder", label: "Founders" },
   { to: "/blog", label: "Blog" },

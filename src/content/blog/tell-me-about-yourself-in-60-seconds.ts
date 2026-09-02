@@ -212,7 +212,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Interview Preparation is two months, intensive, in a batch capped at 6 — HR rounds, STAR behavioural answers, three recorded mock interviews you get to watch back, and a resume and LinkedIn review. ₹1,499/month. The demo class is free and it is a real class.",
+    text: "Interview Preparation is two months, intensive, in a batch capped at 8 — HR rounds, STAR behavioural answers, three recorded mock interviews you get to watch back, and a resume and LinkedIn review. ₹1,499/month. The demo class is free and it is a real class.",
     course: "/course-interview-prep",
     label: "See the Interview Prep course",
   },

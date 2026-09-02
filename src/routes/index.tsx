@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
+import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand, GuidesStrip } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
@@ -20,8 +20,8 @@ import { COURSES } from "@/lib/courses";
 const heroSources = imageSources(IMG.heroClass);
 
 const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
-  { icon: "play", title: "Not a recorded course", body: "Every class is live with a teacher." },
-  { icon: "users", title: "Not a crowded webinar", body: "A hard cap of 6 learners per batch." },
+  { icon: "play", title: "Not a recorded course", body: "Every class is live with a named teacher." },
+  { icon: "rupee", title: "Not a ₹8,000/mo app", body: "Quality live English from ₹999/month, GST in." },
   {
     icon: "shield",
     title: "Not a payment trap",
@@ -116,16 +116,16 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Quality Live English · Max 6 · From ₹999/mo
+              Quality Live English · From ₹999/mo · 7 Years
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Quality Spoken English. Live.
               <br />
-              <span className="text-sunshine">Max 6 Per Batch · From ₹999/mo.</span>
+              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners.</span>
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              7 years · 500+ learners · ₹0 live demo. Practical communication in batches of 6 — up
-              to 2 classes a week. GST included. Direct teacher feedback before you pay.
+              100% live teacher. ₹0 demo. GST included. Practical communication up to 2 classes a
+              week. Small batches of 8 so you still speak — useful, not the headline.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -151,11 +151,11 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "100% Live · Max 6",
                 "From ₹999/month",
                 "7 Years · 500+ Learners",
                 "₹0 Live Demo",
-                "Morning · Evening · Weekend",
+                "100% Live Teacher",
+                "Small Batch of 8",
               ].map((s) => (
                 <span
                   key={s}
@@ -191,7 +191,7 @@ function Home() {
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "Max 6",
+                    big: "Max 8",
                     small: "In every English course batch",
                   },
                 ]}
@@ -256,8 +256,8 @@ function Home() {
             <StoryTile icon="gamepad" tone="sun" title="Gamified Learning">
               Flashcards, matching games & live quizzes every session.
             </StoryTile>
-            <StoryTile icon="users" tone="glass" title="Small Batches">
-              Max 6 per batch. Better attention, better learning.
+            <StoryTile icon="users" tone="glass" title="Quality Attention">
+              Named teacher. Small batches of 8. You still speak.
             </StoryTile>
             <StoryTile icon="heart" tone="glass" title="Collaborative">
               Group discussions and community building every class.
@@ -275,7 +275,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="4 Tracks · 6 Live Programmes · From ₹999/mo"
-            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. English batches capped at 6. Up to 2 classes/week. ₹0 demo before you pay."
+            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. 7 years, 500+ learners, ₹0 demo. English batches of 8. Up to 2 classes/week."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -303,6 +303,8 @@ function Home() {
         </div>
       </section>
 
+      <GuidesStrip />
+
       {/* HOW IT WORKS */}
       <section className="relative section overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -313,18 +315,18 @@ function Home() {
           <SectionHeader
             eyebrowTone="white"
             eyebrow="The Process"
-            title={<span className="text-cream">How Live Classes Work — Max 6, 100% Live</span>}
+            title={<span className="text-cream">How Live Classes Work — Quality, 100% Live</span>}
             invert
             subtitle={
               <span className="text-white/90">
-                One teacher. Six learners. Up to 2 classes a week. Every session live — never a
-                recording as the class.
+                One named teacher. Up to 2 classes a week. Every session live — never a recording as
+                the class. Batches of 8 so you still get the mic.
               </span>
             }
           />
           <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
-            <GlassCard icon="users" title="Small Live Batches" pricing="Max 6 · From ₹999/mo">
-              Scheduled English cohorts capped at 6. You practise with classmates, speak in every
+            <GlassCard icon="users" title="Small Live Batches" pricing="Max 8 · From ₹999/mo">
+              Scheduled English cohorts capped at 8. You practise with classmates, speak in every
               class and receive corrections during the lesson.
             </GlassCard>
             <GlassCard icon="user" title="Direct Teacher Support" pricing="When Genuinely Needed">
@@ -337,7 +339,7 @@ function Home() {
               { n: 1, lbl: "Choose Course", sub: "6 programmes · from ₹999/mo", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
-              { n: 4, lbl: "Join Live Class", sub: "₹0 demo · max 6 batch", c: "sage" },
+              { n: 4, lbl: "Join Live Class", sub: "₹0 demo · max 8 batch", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
                 <div
@@ -371,8 +373,8 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Offer"
-            title="Quality That Holds — 1 Teacher, 6 Learners"
-            subtitle="100% live, max 6 per English batch, 7 years of teaching, 500+ learners. Practical, interactive classes — not 40-person webinars or recorded videos."
+            title="Quality That Holds — Live Teacher, Real Practice"
+            subtitle="100% live, 7 years of teaching, 500+ learners, from ₹999/mo. Practical classes — not 40-person webinars or recorded videos. Batches of 8 sit in the background."
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
@@ -403,7 +405,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Speak today. <em className="text-sunshine">Max 6. From ₹999/mo.</em> Lead tomorrow."
+        "Speak today. <em className="text-sunshine">Quality. From ₹999/mo.</em> Lead tomorrow."
       </MottoBand>
 
       {/* NUMBERS */}
@@ -420,7 +422,7 @@ function Home() {
             <Stat num="500+" label="Learners Helped" />
           </div>
           <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="Max 6" label="Per English Course Batch" />
+            <Stat num="Max 8" label="Per English Course Batch" />
           </div>
           {/* One rating, one source. This tile used to read 4.9★ while the
               location card below read 5.0★ — the same page stating two numbers.
@@ -468,8 +470,8 @@ function Home() {
           <SectionHeader
             eyebrow="Simple, India-Friendly Pricing"
             eyebrowTone="indigo"
-            title="From ₹999/mo · Max 6 · GST Included"
-            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Attend a ₹0 live demo before you enrol."
+            title="From ₹999/mo · GST Included · ₹0 Demo"
+            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Attend a ₹0 live demo before you enrol. Batches of 8."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
             <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
@@ -478,7 +480,7 @@ function Home() {
                   <BatchIcon />
                 </span>
                 <h3 className="font-display text-lg font-extrabold text-ink">
-                  Small Batch (Max 6)
+                  Small Batch (Max 8)
                 </h3>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
@@ -528,7 +530,7 @@ function Home() {
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Live batch capped at 6 learners
+                  Live batch capped at 8 learners
                 </li>
               </ul>
             </article>

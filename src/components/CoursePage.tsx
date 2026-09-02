@@ -134,7 +134,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         {
           tone: "coral",
           icon: SnapIcons.people,
-          big: isCareerCounselling ? "1:1" : "Max 6",
+          big: isCareerCounselling ? "1:1" : "Max 8",
           small: isCareerCounselling ? "Career guidance sessions" : "In this live course batch",
         },
       ]}
@@ -478,7 +478,7 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
+    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 8,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/founder")}#person`,
@@ -551,7 +551,7 @@ export function courseSeo(d: CourseData) {
   return buildHead({
     path,
     // Hand-written in COURSE_SEO rather than assembled here: the generated
-    // "<title> Online \u2014 <price>, Max 6 Per Batch | Learn With Smile" form ran
+    // "<title> Online \u2014 <price>, Max 8 Per Batch | Learn With Smile" form ran
     // to 70\u201387 characters and truncated in the SERP on all six courses.
     title: extra?.title ?? d.title,
     description: extra?.description ?? d.metaDescription,

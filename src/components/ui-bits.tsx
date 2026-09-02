@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
@@ -63,16 +64,139 @@ export function FeatureCard({
     indigo: "bg-[#E2E2FB] text-[#2E2E8A]",
     sage: "bg-[#E2F2E7] text-brand-deep",
   } as const;
+  const cardMap = {
+    brand: "border-brand/20 bg-[#F3F8F4]",
+    sunshine: "border-sunshine/40 bg-[#FFF8E6]",
+    coral: "border-coral/25 bg-[#FFF4F1]",
+    indigo: "border-indigo-pop/25 bg-[#F4F4FF]",
+    sage: "border-brand/15 bg-[#EEF6F1]",
+  } as const;
+  const titleMap = {
+    brand: "text-brand-deep",
+    sunshine: "text-[#6B4A00]",
+    coral: "text-[#8E2A1E]",
+    indigo: "text-[#2E2E8A]",
+    sage: "text-brand-deep",
+  } as const;
   return (
-    <div className="card-soft flex h-full flex-col transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
+    <div
+      className={`card-soft flex h-full flex-col ${cardMap[color]} transition hover:-translate-y-1 hover:shadow-lg`}
+    >
       <div
-        className={`inline-flex items-center justify-center h-10 w-10 rounded-xl ${ringMap[color]} mb-3`}
+        className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl ${ringMap[color]}`}
       >
         <Icon name={icon} size={20} />
       </div>
-      <h3 className="text-lg font-display font-bold text-ink mb-2">{title}</h3>
-      <p className="text-sm text-ink/85 leading-relaxed flex-1">{children}</p>
+      <h3 className={`mb-2 font-display text-lg font-bold ${titleMap[color]}`}>{title}</h3>
+      <p className="flex-1 text-sm leading-relaxed text-ink/85">{children}</p>
     </div>
+  );
+}
+
+export const SITE_GUIDES: {
+  to:
+    | "/best-online-spoken-english-classes-india"
+    | "/english-class-fees-india"
+    | "/spoken-english-classes-kolkata"
+    | "/workplace-english-course-online-india";
+  title: string;
+  sub: string;
+  icon: IconName;
+  color: "brand" | "sunshine" | "coral" | "indigo";
+}[] = [
+  {
+    to: "/best-online-spoken-english-classes-india",
+    title: "Compare Online Classes",
+    sub: "Cambly, British Council, local rooms — who each option actually fits.",
+    icon: "globe",
+    color: "brand",
+  },
+  {
+    to: "/english-class-fees-india",
+    title: "Fees in India",
+    sub: "From ₹999/mo GST included. What ₹800 vs ₹8,000/month actually buys.",
+    icon: "rupee",
+    color: "sunshine",
+  },
+  {
+    to: "/spoken-english-classes-kolkata",
+    title: "Kolkata & Pan-India",
+    sub: "Live from Kolkata vs 25–40 student classrooms. Morning, evening, weekend.",
+    icon: "users",
+    color: "coral",
+  },
+  {
+    to: "/workplace-english-course-online-india",
+    title: "Workplace English Guide",
+    sub: "Meetings, calls, emails, presentations — ₹1,499/mo, 3 months.",
+    icon: "headset",
+    color: "indigo",
+  },
+];
+
+export function GuidesStrip({
+  eyebrow = "Guides",
+  title = "Read Before You Pay Anyone",
+  subtitle = "Honest notes on fees, formats and Kolkata classrooms — written so you can use them even if you never join us.",
+}: {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+}) {
+  const tones = {
+    brand: {
+      card: "border-brand/20 bg-[#F3F8F4]",
+      icon: "bg-brand-soft text-brand-deep",
+      title: "text-brand-deep",
+    },
+    sunshine: {
+      card: "border-sunshine/40 bg-[#FFF8E6]",
+      icon: "bg-[#FFEFC1] text-[#6B4A00]",
+      title: "text-[#6B4A00]",
+    },
+    coral: {
+      card: "border-coral/25 bg-[#FFF4F1]",
+      icon: "bg-[#FFE0DC] text-[#8E2A1E]",
+      title: "text-[#8E2A1E]",
+    },
+    indigo: {
+      card: "border-indigo-pop/25 bg-[#F4F4FF]",
+      icon: "bg-[#E2E2FB] text-[#2E2E8A]",
+      title: "text-[#2E2E8A]",
+    },
+  } as const;
+
+  return (
+    <section className="section">
+      <div className="container-x">
+        <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {SITE_GUIDES.map((g) => {
+            const tone = tones[g.color];
+            return (
+              <Link
+                key={g.to}
+                to={g.to}
+                className={`group flex h-full min-w-0 flex-col rounded-2xl border p-4 transition hover:-translate-y-1 hover:shadow-lg ${tone.card}`}
+              >
+                <span
+                  className={`mb-3 grid h-10 w-10 place-items-center rounded-xl ${tone.icon}`}
+                >
+                  <Icon name={g.icon} size={18} />
+                </span>
+                <h3 className={`font-display text-base font-extrabold leading-tight ${tone.title}`}>
+                  {g.title}
+                </h3>
+                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/80">{g.sub}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-display font-bold text-brand-deep">
+                  Read guide <Icon name="arrow-right" size={14} />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
