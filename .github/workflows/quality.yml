@@ -55,6 +55,7 @@ jobs:
           grep -q 'Career Guidance' dist/index.html
           grep -q 'English communication' dist/index.html
           grep -q 'View all courses' src/components/Nav.tsx
+          grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
           grep -q 'View Career Counselling' dist/index.html
           grep -q 'Explore both programmes' dist/index.html
           grep -q 'id="speak-confidently"' dist/english-career.html
@@ -75,6 +76,10 @@ jobs:
           fi
           if grep -REqi '1:1 on most courses|1:1 private sessions on most courses' dist; then
             echo "::error::The site still promises recurring 1:1 English sessions"
+            exit 1
+          fi
+          if grep -q 'COURSE_CATEGORIES' src/components/Nav.tsx; then
+            echo "::error::The oversized category mega-menu returned"
             exit 1
           fi
           if grep -REqi 'Compare this category|Compare all 6' dist/index.html; then
