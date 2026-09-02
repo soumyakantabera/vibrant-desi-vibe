@@ -95,12 +95,11 @@ function Page() {
             <Icon name="smile" size={14} /> About Us
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            7 Years. 500+ Learners.{" "}
-            <span className="text-sunshine">From ₹999/mo.</span>
+            We Noticed a Gap. <span className="text-sunshine">We Built the Bridge.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            A Kolkata classroom that went online. Same teacher. Same correction. Learners across
-            India. From ₹999/mo. GST included. ₹0 demo.
+            Seven years of teaching, 500+ learners, and one belief: learning should be simple,
+            practical and enjoyable. From ₹999/mo. A Kolkata classroom, learners across India.
           </p>
         </div>
       </section>

@@ -120,17 +120,18 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              ₹0 Demo · 5.0★ Google · 100% Live
+              Live English Communication · Kolkata & Pan-India
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              Quality Spoken English. Live.
+              Speak English Live.
               <br />
               <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners</span>
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              We began as a Kolkata classroom. Then the room went online — same teacher, same
-              correction, learners from metros and towns. From ₹999/mo. Sit in a live class for ₹0
-              before you pay.
+              Build practical English communication and speaking confidence in live online classes
+              from <strong className="text-sunshine">₹999/month</strong>. Real speaking time, a
+              teacher who knows your name, learners across India. A full{" "}
+              <strong className="text-sunshine">₹0 live demo</strong> before you pay.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -281,8 +282,8 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Teach"
-            title="4 Tracks · 6 Live Programmes · From ₹999/mo"
-            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. Up to 2 classes a week. ₹0 demo before you pay."
+            title="Choose the Goal You Need Now"
+            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -380,8 +381,8 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Offer"
-            title="Quality That Holds"
-            subtitle="100% live. 7 years of teaching. 500+ learners. From ₹999/mo. Practical classes — not 40-person webinars or recordings."
+            title="Why Our Teaching Works"
+            subtitle="Practical, interactive, student-friendly classes — 7 years, 500+ learners, from ₹999/mo. Not 40-person webinars or recordings."
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
@@ -412,7 +413,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Speak today. <em className="text-sunshine">Quality Spoken English. Live.</em> Lead tomorrow."
+        "Speak today. <em className="text-sunshine">Lead tomorrow.</em> Build your future with us."
       </MottoBand>
 
       {/* NUMBERS */}
@@ -455,7 +456,7 @@ function Home() {
           <SectionHeader
             eyebrowTone="coral"
             eyebrow="Student Stories"
-            title="500+ Learners · IELTS 7.5 · Jobs Won"
+            title="Real Results from Real Learners"
             subtitle="Selected named outcomes. Progress depends on attendance and practice — no score, job or salary is guaranteed."
           />
           <TestimonialSlider items={TESTIMONIALS} />
@@ -588,7 +589,7 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Enroll Today"
-            title="Two Ways to Begin — ₹0 Demo, From ₹999/mo"
+            title="Two Ways to Begin"
           />
 
           <Reveal stagger className="grid md:grid-cols-2 gap-6">
