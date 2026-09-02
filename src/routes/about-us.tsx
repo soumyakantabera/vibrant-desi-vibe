@@ -95,7 +95,7 @@ function Page() {
             <Icon name="smile" size={14} /> About Us
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            7 Years. 500+ Learners. <span className="text-sunshine">One Quality Standard.</span>
+            7 Years. 500+ Learners. <span className="text-sunshine">From ₹999/mo. 11 States.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
             Live since 2019. English batches capped at 8. From ₹999/mo. 11 teaching principles —

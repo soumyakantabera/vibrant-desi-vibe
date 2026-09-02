@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
-import { COVERAGE_CITIES } from "@/lib/seo";
+import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
 
@@ -215,28 +215,45 @@ export function CoverageStrip({
 }: {
   invert?: boolean;
 }) {
+  const label = invert ? "text-sunshine" : "text-brand-deep";
+  const heading = invert ? "text-cream" : "text-ink";
+  const body = invert ? "text-white/90" : "text-ink/75";
   return (
     <section className={invert ? "bg-brand-deep py-8 md:py-10" : "bg-[#F7F4EE] py-8 md:py-10"}>
       <div className="container-x">
-        <p
-          className={`font-display text-[11px] font-bold uppercase tracking-wider ${invert ? "text-sunshine" : "text-brand-deep"}`}
-        >
-          Coverage
+        <p className={`font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
+          Coverage · 11 States · 15 Cities
         </p>
         <h2
-          className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${invert ? "text-cream" : "text-ink"}`}
+          className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${heading}`}
         >
-          Kolkata-based. Teaching pan-India, live.
+          500+ learners · 7 years · from ₹999/mo
         </h2>
-        <p className={`mt-2 max-w-2xl text-sm md:text-base ${invert ? "text-white/90" : "text-ink/75"}`}>
-          7 years of live classes. 500+ learners from metros, smaller towns and Indians abroad —
-          same teacher, same fee, IST morning · evening · weekend slots.
+        <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
+          Same live teacher. Same fee. IST morning · evening · weekend. West Bengal, Delhi,
+          Maharashtra, Gujarat and South India — metros and towns.
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
+          States
+        </p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {COVERAGE_STATES.map((state, i) => (
+            <span
+              key={state}
+              className={`inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[i % CITY_TONES.length]}`}
+            >
+              {state}
+            </span>
+          ))}
+        </div>
+        <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
+          Cities
+        </p>
+        <div className="mt-2 flex flex-wrap gap-2">
           {COVERAGE_CITIES.map((city, i) => (
             <span
               key={city}
-              className={`inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[i % CITY_TONES.length]}`}
+              className={`inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[(i + 1) % CITY_TONES.length]}`}
             >
               {city}
             </span>

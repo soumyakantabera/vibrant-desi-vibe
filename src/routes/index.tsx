@@ -20,16 +20,16 @@ import { COURSES } from "@/lib/courses";
 const heroSources = imageSources(IMG.heroClass);
 
 const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
-  { icon: "play", title: "Not a recorded course", body: "Every class is live with a named teacher." },
+  { icon: "play", title: "100% Live Teacher", body: "Named teacher. Every class. Never a recording." },
   {
     icon: "globe",
-    title: "Not only a Kolkata room",
-    body: "Kolkata-based. Learners join live from all over India.",
+    title: "500+ Learners · 11 States",
+    body: "West Bengal, Delhi, Maharashtra, Gujarat, South India.",
   },
   {
-    icon: "shield",
-    title: "Not a payment trap",
-    body: "Attend a full ₹0 class before enrolling.",
+    icon: "rupee",
+    title: "From ₹999/mo · ₹0 Demo",
+    body: "GST included. Sit in a full class before you pay.",
   },
 ];
 
@@ -120,16 +120,16 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Quality Live English · Kolkata · Pan-India
+              ₹0 Demo · 5.0★ Google · 100% Live
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              Quality Spoken English. Live.
+              ₹999/mo · 7 Years · 500+ Learners
               <br />
-              <span className="text-sunshine">Kolkata-Based · Teaching Pan-India.</span>
+              <span className="text-sunshine">West Bengal · Delhi · Maharashtra · South India</span>
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              7 years · 500+ learners from Kolkata, Delhi, Mumbai, Bengaluru, Hyderabad, Pune,
-              Chennai, Patna and towns across India. From ₹999/mo. ₹0 demo. GST included.
+              11 states. Same live teacher, same ₹999/mo. Kolkata, Mumbai, Pune, Ahmedabad, Surat,
+              Bengaluru, Hyderabad, Chennai, Kochi, Coimbatore, Visakhapatnam. ₹0 demo. GST included.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -155,11 +155,11 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "Kolkata · Pan-India",
-                "From ₹999/month",
+                "₹999/month",
                 "7 Years · 500+ Learners",
+                "11 States · IST",
                 "₹0 Live Demo",
-                "Small Batch of 8",
+                "Batch of 8",
               ].map((s) => (
                 <span
                   key={s}
@@ -184,19 +184,19 @@ function Home() {
                     tone: "brand",
                     icon: SnapIcons.cap,
                     big: "500+",
-                    small: "Learners from all over India",
+                    small: "Learners · 11 Indian states",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
                     big: "7 yrs",
-                    small: "Kolkata-based live teaching",
+                    small: "Live teaching since 2019",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "Pan-India",
-                    small: "Same teacher · same fee · IST slots",
+                    big: "11 States",
+                    small: "WB · Delhi · MH · South India",
                   },
                 ]}
               />
@@ -262,7 +262,7 @@ function Home() {
             <StoryTile icon="gamepad" tone="sun" title="Gamified Learning">
               Flashcards, matching games & live quizzes every session.
             </StoryTile>
-            <StoryTile icon="users" tone="glass" title="Quality Attention">
+            <StoryTile icon="users" tone="glass" title="Batch of 8">
               Named teacher. Small batches of 8. You still speak.
             </StoryTile>
             <StoryTile icon="heart" tone="glass" title="Collaborative">
@@ -281,7 +281,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="4 Tracks · 6 Live Programmes · From ₹999/mo"
-            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. Kolkata-based, learners join live from all over India. 7 years, 500+ learners, ₹0 demo."
+            subtitle="Spoken English, Workplace, IELTS, 1:1 Career. ₹999/mo · 7 years · 500+ learners in 11 states. ₹0 demo. Batches of 8."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -321,7 +321,7 @@ function Home() {
           <SectionHeader
             eyebrowTone="white"
             eyebrow="The Process"
-            title={<span className="text-cream">How Live Classes Work — Quality, 100% Live</span>}
+            title={<span className="text-cream">How Live Classes Work — 100% Live, Max 8</span>}
             invert
             subtitle={
               <span className="text-white/90">
@@ -379,7 +379,7 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Offer"
-            title="Quality That Holds — Live Teacher, Real Practice"
+            title="7 Years · 500+ Learners · ₹999/mo"
             subtitle="100% live, 7 years of teaching, 500+ learners, from ₹999/mo. Practical classes — not 40-person webinars or recorded videos. Batches of 8 sit in the background."
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -411,7 +411,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Speak today. <em className="text-sunshine">Quality. From ₹999/mo.</em> Lead tomorrow."
+        "Speak today. <em className="text-sunshine">₹999/mo · 7 years · 500+.</em> Lead tomorrow."
       </MottoBand>
 
       {/* NUMBERS */}
@@ -422,13 +422,13 @@ function Home() {
         </div>
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
           <div className="md:pr-4">
-            <Stat num="7" label="Years from Kolkata" />
+            <Stat num="7" label="Years Live Teaching" />
           </div>
           <div className="md:px-4">
-            <Stat num="500+" label="Learners Across India" />
+            <Stat num="500+" label="Learners · 11 States" />
           </div>
           <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="Pan-India" label="Live Online Coverage" />
+            <Stat num="11" label="States · Same ₹999/mo" />
           </div>
           {/* One rating, one source. This tile used to read 4.9★ while the
               location card below read 5.0★ — the same page stating two numbers.
@@ -663,7 +663,7 @@ function Home() {
             </div>
             <div className="p-5 md:p-6 flex flex-col justify-center">
               <span className="eyebrow eyebrow-indigo w-fit">
-                <Icon name="globe" size={12} /> Online Pan-India · Based in Kolkata
+                <Icon name="globe" size={12} /> 11 States · Office in Kolkata
               </span>
               <div className="font-display font-extrabold text-ink text-base mt-2 flex items-center gap-2">
                 LEARN WITH SMILE

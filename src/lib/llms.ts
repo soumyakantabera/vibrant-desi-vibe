@@ -84,14 +84,14 @@ function yearsTeaching(): number {
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of quality live online teaching from Kolkata · 500+ learners taught across India`,
-  "Quality standard: named live teacher, from ₹999/month GST included, ₹0 real-class demo; English batches capped at 8 so every learner speaks; Career Counselling is a separate 1:1 service",
+  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years live online teaching · 500+ learners across 11 Indian states · from ₹999/month`,
+  "Standard: named live teacher, from ₹999/month GST included, ₹0 real-class demo; English batches capped at 8 so every learner speaks; Career Counselling is a separate 1:1 service",
   "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
   `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
   "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
   "Languages of instruction: English, with Hindi and Bengali support",
-  "Delivery: online only, Kolkata-based, teaching pan-India and Indian learners abroad — same fee, IST slots",
+  "Delivery: online only. Learners in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar, Assam. Same ₹999/mo fee. IST slots. Indians abroad on IST",
   `Preferred admissions channel: WhatsApp ${CONTACT.phoneDisplay}; phone calls are a fallback only · ${CONTACT.email}`,
   "Admissions response hours: 09:00–12:00 IST",
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
@@ -146,7 +146,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Is Learn With Smile only for learners in Kolkata?",
-    a: "No. All classes are online and live. The teacher is Kolkata-based; learners join from Delhi, Mumbai, Bengaluru, Hyderabad, Pune, Chennai, Patna, Guwahati, smaller towns and abroad. Same fee everywhere. The Kolkata address is an office by appointment, not a teaching campus.",
+    a: "No. All classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — including Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna and Guwahati. Same ₹999/month fee. The Kolkata address is an office by appointment, not a campus.",
     source: "/spoken-english-classes-kolkata",
   },
 ];
@@ -481,7 +481,7 @@ export function buildLlmsTxt(updated: string): string {
     "> Live online English communication and career classes for learners in India — Spoken English, IELTS,",
     "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
     "> English classes are taught live in batches capped at 8 students, from ₹999/month.",
-    "> Kolkata-based, teaching pan-India. Free demo class booked over WhatsApp.",
+    "> ₹999/mo live English. 7 years. 500+ learners across 11 Indian states. Free demo on WhatsApp.",
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,
     "",
