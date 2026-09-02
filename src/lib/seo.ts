@@ -855,7 +855,11 @@ export function organizationLd() {
     "@type": ["EducationalOrganization", "OnlineBusiness"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
-    alternateName: ["LWS", "Learn With Smile English & Career", "Learn With Smile English Communication"],
+    alternateName: [
+      "LWS",
+      "Learn With Smile English & Career",
+      "Learn With Smile English Communication",
+    ],
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
