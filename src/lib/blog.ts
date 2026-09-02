@@ -61,8 +61,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-02",
-    readingTime: 7,
-    wordCount: 820,
+    readingTime: 4,
+    wordCount: 448,
     relatedCourses: ["/course-spoken-english"],
   },
   {
@@ -78,8 +78,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-02",
-    readingTime: 6,
-    wordCount: 720,
+    readingTime: 3,
+    wordCount: 411,
     relatedCourses: ["/course-spoken-english", "/course-ielts"],
   },
   {
@@ -95,8 +95,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-02",
-    readingTime: 6,
-    wordCount: 780,
+    readingTime: 4,
+    wordCount: 450,
     relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
   },
   {

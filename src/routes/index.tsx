@@ -1,7 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand, GuidesStrip, CoverageStrip } from "@/components/ui-bits";
+import {
+  SectionHeader,
+  FeatureCard,
+  WaButton,
+  Stat,
+  MottoBand,
+  GuidesStrip,
+  CoverageStrip,
+} from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
@@ -20,7 +28,11 @@ import { COURSES } from "@/lib/courses";
 const heroSources = imageSources(IMG.heroClass);
 
 const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
-  { icon: "play", title: "A teacher who stays", body: "Named, live, every hour — never a recording sold as class." },
+  {
+    icon: "play",
+    title: "A teacher who stays",
+    body: "Named, live, every hour — never a recording sold as class.",
+  },
   {
     icon: "globe",
     title: "Kolkata-born, heard across India",
@@ -587,10 +599,7 @@ function Home() {
       {/* START TODAY */}
       <section className="section bg-gradient-to-b from-cream to-brand-soft/40">
         <div className="container-x">
-          <SectionHeader
-            eyebrow="Enroll Today"
-            title="Two Ways to Begin"
-          />
+          <SectionHeader eyebrow="Enroll Today" title="Two Ways to Begin" />
 
           <Reveal stagger className="grid md:grid-cols-2 gap-6">
             <div className="rounded-3xl p-8 md:p-10 bg-brand-deep text-cream relative overflow-hidden">
@@ -799,9 +808,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
           </h3>
         </div>
 
-        <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink/80">
-          {category.description}
-        </p>
+        <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink/80">{category.description}</p>
 
         {onlyCourse ? (
           <div className="mt-3 flex min-w-0 flex-wrap gap-1.5 text-xs font-display font-bold">

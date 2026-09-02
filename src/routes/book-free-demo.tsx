@@ -78,8 +78,8 @@ function Page() {
             A Real Live Class. <span className="text-sunshine">Free.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Meet the teacher, see the batch and speak in a real class. One WhatsApp message.
-            Replies 09:00–12:00 IST. No card. Then decide: from ₹999/mo.
+            Meet the teacher, see the batch and speak in a real class. One WhatsApp message. Replies
+            09:00–12:00 IST. No card. Then decide: from ₹999/mo.
           </p>
         </div>
       </section>

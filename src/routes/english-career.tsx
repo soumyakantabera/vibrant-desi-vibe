@@ -145,7 +145,10 @@ function Page() {
                     <p className="mt-1 text-ink/80">{group.description}</p>
                   </div>
                 </div>
-                <Reveal stagger className="grid max-w-5xl items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3 md:gap-5">
+                <Reveal
+                  stagger
+                  className="grid max-w-5xl items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3 md:gap-5"
+                >
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
