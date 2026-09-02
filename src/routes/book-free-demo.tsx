@@ -7,12 +7,7 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
-import {
-  createLeadId,
-  getCampaignAttribution,
-  leadContext,
-  waLink,
-} from "@/lib/whatsapp";
+import { createLeadId, getCampaignAttribution, leadContext, waLink } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
 
 export const Route = createFileRoute("/book-free-demo")({
