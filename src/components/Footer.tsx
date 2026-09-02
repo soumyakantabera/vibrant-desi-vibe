@@ -32,6 +32,12 @@ const COMPANY = [
  * problem.
  */
 const GUIDES = [
+  { to: "/spoken-business-or-interactive-english", label: "Which Class You Need" },
+  { to: "/interactive-english-class-hesitation", label: "When You Freeze" },
+  { to: "/english-for-working-professionals-india", label: "Working Professionals" },
+  { to: "/english-for-client-calls-india", label: "Client-Call English" },
+  { to: "/english-for-presentations-india", label: "Presentations in 3 Minutes" },
+  { to: "/english-hindi-bengali-medium", label: "Hindi & Bengali Medium" },
   { to: "/workplace-english-course-online-india", label: "Workplace English Guide" },
   { to: "/spoken-english-classes-kolkata", label: "Classes in Kolkata" },
   { to: "/english-class-fees-india", label: "English Class Fees in India" },

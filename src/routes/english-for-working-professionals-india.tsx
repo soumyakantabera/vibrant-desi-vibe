@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
-import { body } from "@/content/pages/how-long";
+import { body } from "@/content/pages/working-professionals";
 
-const PATH = "/how-long-to-learn-spoken-english";
+const PATH = "/english-for-working-professionals-india";
 const UPDATED = "2026-09-02";
 
-export const Route = createFileRoute("/how-long-to-learn-spoken-english")({
+export const Route = createFileRoute("/english-for-working-professionals-india")({
   component: Page,
   head: () => {
     const head = pageHead(PATH);
@@ -43,24 +43,23 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Time to fluency · 6 / 9 / 12 months"
-      breadcrumb="How Long to Learn Spoken English"
+      eyebrow="Working professionals · IST"
+      breadcrumb="Working professionals"
       h1={
         <>
-          How Long to Learn Spoken English —{" "}
-          <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
+          Office by day. <span className="text-sunshine">Live English at night.</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, max 8, ₹0 demo."
-      heroImage={IMG.spokenEnglish}
-      heroAlt="Indian adult practising spoken English in a live online class"
+      standfirst="Morning, evening and weekend IST batches. Live class; recording is revision. From ₹999/mo. Message anytime. We reply 09:00–12:00 IST."
+      heroImage={IMG.studentLaptop}
+      heroAlt="Working professional in an evening live English class"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="How long does spoken English take — straight answers"
-      waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
-      ctaTitle="Count your minutes in a real class"
-      ctaBody="Sit in a live batch of 8. Hear how much you speak. Then decide on 6 months."
+      faqTitle="English while you work"
+      waMessage="Hi, I work full time. I want morning / evening / weekend English. Free demo please."
+      ctaTitle="Tell us your shift"
+      ctaBody="We suggest morning, evening or weekend — and Spoken, Interactive or Business."
     />
   );
 }

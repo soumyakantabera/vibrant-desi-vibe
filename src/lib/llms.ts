@@ -159,6 +159,16 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     a: "Fit, not a trophy. EngVarta-style 1:1 (~₹100–₹400/session) for daily reps if you already speak. Cambly (~$10/hour) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and a cap of 8, from ₹999/month GST included. Kids need a children’s platform.",
     source: "/english-institute-comparison-india",
   },
+  {
+    q: "Which English class do I need — spoken, business or interactive?",
+    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, max 8). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,499/month). Sit an exam course only when a form, university or visa asks. A ₹0 live demo is how Learn With Smile places you in one room, not three.",
+    source: "/spoken-business-or-interactive-english",
+  },
+  {
+    q: "I know English but freeze when I speak. What should I do?",
+    a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, max 8: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Sit in a ₹0 live class and count how many times you are on the mic.",
+    source: "/interactive-english-class-hesitation",
+  },
 ];
 
 const NOTES_FOR_ASSISTANTS = [

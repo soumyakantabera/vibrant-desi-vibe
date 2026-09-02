@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
-import { body } from "@/content/pages/how-long";
+import { body } from "@/content/pages/interactive-freeze";
 
-const PATH = "/how-long-to-learn-spoken-english";
+const PATH = "/interactive-english-class-hesitation";
 const UPDATED = "2026-09-02";
 
-export const Route = createFileRoute("/how-long-to-learn-spoken-english")({
+export const Route = createFileRoute("/interactive-english-class-hesitation")({
   component: Page,
   head: () => {
     const head = pageHead(PATH);
@@ -43,24 +43,24 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Time to fluency · 6 / 9 / 12 months"
-      breadcrumb="How Long to Learn Spoken English"
+      eyebrow="Interactive English · 3 months"
+      breadcrumb="Interactive English"
       h1={
         <>
-          How Long to Learn Spoken English —{" "}
-          <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
+          You freeze. That is a habit.{" "}
+          <span className="text-sunshine">Interactive English, live</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, max 8, ₹0 demo."
-      heroImage={IMG.spokenEnglish}
-      heroAlt="Indian adult practising spoken English in a live online class"
+      standfirst="Games, debates, 1-minute prompts. You talk every class. 3 months, ₹1,199/mo, max 8. ₹0 demo."
+      heroImage={IMG.interactiveSpeaking}
+      heroAlt="Small live interactive English class where every learner speaks"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="How long does spoken English take — straight answers"
-      waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
-      ctaTitle="Count your minutes in a real class"
-      ctaBody="Sit in a live batch of 8. Hear how much you speak. Then decide on 6 months."
+      faqTitle="Freeze and interactive class"
+      waMessage="Hi, I freeze when I speak English. I want Interactive Speaking demo."
+      ctaTitle="Count how many times you speak"
+      ctaBody="One Interactive hour. Then decide. ₹0. Max 8."
     />
   );
 }

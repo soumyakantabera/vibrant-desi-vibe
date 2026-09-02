@@ -9,7 +9,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice — up to 2 classes a week plus 10–15 minutes a day. Client meetings, interviews and IELTS Band 7+ usually take **9–12 months** total. Anyone selling fluency in 30 days is selling a course, not a result.",
+    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice — up to 2 classes a week plus 10–15 minutes a day. Workplace English — meetings, calls, updates — is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
   },
   {
     t: "p",

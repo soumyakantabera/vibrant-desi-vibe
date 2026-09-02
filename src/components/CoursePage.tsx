@@ -45,12 +45,37 @@ export type CourseData = {
 const RELATED_GUIDES: Record<string, { href: string; title: string; description: string }[]> = {
   "spoken-english": [
     {
+      href: "/spoken-business-or-interactive-english",
+      title: "Which English class do I need?",
+      description: "Spoken, Interactive or Business — pick the bottleneck, not all three.",
+    },
+    {
+      href: "/english-hindi-bengali-medium",
+      title: "Hindi- or Bengali-medium? You still belong here",
+      description: "Explain in your language when a concept stalls, then back to English.",
+    },
+    {
       href: "/blog/5-speaking-habits-that-killed-my-hesitation",
       title: "5 speaking habits that reduce hesitation",
       description: "Practical exercises for building retrieval speed and speaking confidence.",
     },
   ],
   "business-english": [
+    {
+      href: "/english-for-client-calls-india",
+      title: "English for client calls",
+      description: "Names, numbers, next step — clarity, not a fake accent.",
+    },
+    {
+      href: "/english-for-presentations-india",
+      title: "Explain your work in 3 minutes",
+      description: "One outcome, three beats, one ask. Standups and client decks.",
+    },
+    {
+      href: "/english-for-working-professionals-india",
+      title: "English while you work",
+      description: "Morning, evening and weekend IST. Live class; recording is revision.",
+    },
     {
       href: "/workplace-english-course-online-india",
       title: "Workplace English course guide",
@@ -78,6 +103,16 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     },
   ],
   "interactive-speaking": [
+    {
+      href: "/interactive-english-class-hesitation",
+      title: "Interactive English when you freeze",
+      description: "You know the words. You go silent. Talk every hour, on purpose.",
+    },
+    {
+      href: "/spoken-business-or-interactive-english",
+      title: "Which class — Spoken or Interactive?",
+      description: "Interactive assumes there is language to retrieve. Spoken first if not.",
+    },
     {
       href: "/blog/5-speaking-habits-that-killed-my-hesitation",
       title: "5 speaking habits that reduce hesitation",

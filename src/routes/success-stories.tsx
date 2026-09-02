@@ -15,36 +15,30 @@ export const Route = createFileRoute("/success-stories")({
 const STORIES = [
   {
     quote:
-      "Joined with zero English confidence. Six months later I was leading client presentations. The gamified exercises and live debates made it genuinely enjoyable — not just effective.",
+      "I used to freeze in client presentations. Six months later I was leading them. Live speaking, gamified — not a lecture.",
     name: "Priya Sharma",
     detail: "Spoken English · Marketing Executive, Kolkata",
     waMessage: "Hi, I saw Priya's story. Free demo for Spoken English please.",
   },
   {
-    quote: "Went from IELTS 5.5 to 7.5 overall. The writing feedback was a game changer.",
-    name: "Harshit Singh",
-    detail: "IELTS · Now in Toronto",
-    waMessage: "Hi, I saw Harshit's IELTS story. Free demo please.",
-  },
-  {
-    quote: "I couldn't speak two lines without freezing. Now I take Monday team standups.",
-    name: "Anjali Roy",
-    detail: "Spoken English · Teacher, Howrah",
-    waMessage: "Hi, I saw Anjali's story. Spoken English demo please.",
+    quote:
+      "I switched from BPO to a client-facing role. The salary moved. Mock calls did the work.",
+    name: "Siddharth Nair",
+    detail: "Workplace English · Customer Success, Pune",
+    waMessage: "Hi, I saw Siddharth's story. Free demo for Workplace English please.",
   },
   {
     quote:
-      "Cleared interview rounds I used to fail. The mock interviews showed me exactly what to change.",
+      "I cleared the interview round I used to fail. The mocks showed me exactly what to change.",
     name: "Sneha Das",
     detail: "Interview Prep · IT Engineer, Hyderabad",
     waMessage: "Hi, I saw Sneha's story. Interview Prep demo please.",
   },
   {
-    quote:
-      "Switched from a BPO to a client-facing role. Salary doubled in 4 months. The mock calls and role-plays made me genuinely confident.",
-    name: "Siddharth Nair",
-    detail: "Workplace English · Customer Success, Pune",
-    waMessage: "Hi, I saw Siddharth's story. Free demo for Workplace English please.",
+    quote: "I couldn't speak two lines without freezing. Now I run Monday team standups.",
+    name: "Anjali Roy",
+    detail: "Spoken English · Teacher, Howrah",
+    waMessage: "Hi, I saw Anjali's story. Spoken English demo please.",
   },
   {
     quote:
@@ -52,6 +46,12 @@ const STORIES = [
     name: "Aarav Pandey",
     detail: "Career Counselling · Student, Delhi",
     waMessage: "Hi, I want Aarav's career clarity. Book me a session please.",
+  },
+  {
+    quote: "I already spoke. Then the exam score moved — 5.5 to 7.5 overall.",
+    name: "Harshit Singh",
+    detail: "IELTS · Now in Toronto",
+    waMessage: "Hi, I saw Harshit's story. I want to talk about the right course first.",
   },
 ];
 
@@ -78,8 +78,8 @@ function Page() {
             Real Indian Learners. <span className="text-sunshine">Real Results.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Career switches, IELTS scores, BI Analyst jobs, salary jumps. Every story below is from
-            a verified Learn With Smile learner.
+            Career switches. Client meetings. BI Analyst jobs. Salary jumps. Named people. Named
+            cities. Every story below is a verified Learn With Smile learner.
           </p>
         </div>
       </section>
@@ -89,8 +89,8 @@ function Page() {
           <SectionHeader
             eyebrowTone="coral"
             eyebrow="Verified Stories"
-            title="9 Stories — Swipe or Scroll"
-            subtitle="On mobile, the cards are a slider. On desktop, see them in a 3-column grid."
+            title="6 Stories — Swipe or Scroll"
+            subtitle="Spoken, business, interviews, standups. Named learners. On mobile, swipe. On desktop, a grid."
           />
           <TestimonialSlider items={STORIES} />
         </div>

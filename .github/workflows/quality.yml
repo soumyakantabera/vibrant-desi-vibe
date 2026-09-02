@@ -109,6 +109,8 @@ jobs:
           grep -q 'Workplace English' dist/course-business-english.html
           grep -q 'Workplace English' dist/workplace-english-course-online-india.html
           grep -q 'workplace-english-course-online-india' dist/sitemap.xml
+          grep -q 'spoken-business-or-interactive-english' dist/sitemap.xml
+          grep -q 'interactive-english-class-hesitation' dist/sitemap.xml
           grep -q 'english-for-office-meetings' dist/sitemap.xml
           grep -q 'english-for-bpo-customer-support' dist/sitemap.xml
           grep -q 'does not currently issue a course certificate' dist/llms.txt
