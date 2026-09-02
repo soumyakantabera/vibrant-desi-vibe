@@ -57,16 +57,16 @@ function Page() {
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
-              <Icon name="mic" size={14} /> Spoken English & career courses
+              <Icon name="mic" size={14} /> English & Career
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              Live Spoken English & Career Courses
+              Quality English. Live.
               <br />
-              <span className="text-sunshine">From ₹999/mo · 6 Programmes · 7 Years</span>
+              <span className="text-sunshine">6 Programmes · From ₹999/mo · 7 Years</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Spoken English, Workplace English, IELTS coaching, Interview Prep, Interactive
-              Speaking, and 1:1 Career Guidance. Live classes from a Kolkata teacher. ₹0 demo.
+              Spoken English, Workplace, IELTS, Interview, Interactive Speaking, and 1:1 Career
+              Guidance. Pick the outcome, then the fee. The demo is a real class, not a pitch.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">

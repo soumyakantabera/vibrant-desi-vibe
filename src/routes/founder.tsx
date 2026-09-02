@@ -155,12 +155,12 @@ function Page() {
             <Icon name="heart" size={14} /> Meet the Founder
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Spoken English Teacher, Kolkata.{" "}
+            Sunanda Dey.{" "}
             <span className="text-sunshine">7 Years · 500+ Learners · From ₹999/mo.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey — founder and live spoken English teacher. Kolkata-based, teaching learners
-            across India. From ₹999/mo. ₹0 demo in a real class.
+            Founder and lead teacher. Kolkata-based, teaching learners across India. From ₹999/mo.
+            ₹0 demo in a real class.
           </p>
         </div>
       </section>
