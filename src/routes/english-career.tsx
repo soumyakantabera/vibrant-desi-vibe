@@ -57,16 +57,15 @@ function Page() {
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
-              <Icon name="mic" size={14} /> 6 Programmes · Max 6 · From ₹999/mo
+              <Icon name="mic" size={14} /> 6 Programmes · From ₹999/mo · 7 Years
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              Quality English. <span className="text-sunshine">Live Batches of 6.</span> From
-              ₹999/mo.
+              Quality English. Live.{" "}
+              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              6 live programmes in 4 tracks. English classes: max 6, up to 2 sessions/week. Career
-              Counselling is 3 × 60-min 1:1 for ₹999 total. Morning, evening and weekend IST slots.
-              ₹0 demo first.
+              6 live programmes in 4 tracks. Named teacher, up to 2 sessions/week. Career
+              Counselling is 3 × 60-min 1:1 for ₹999 total. Batches of 8. ₹0 demo first.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -101,7 +100,7 @@ function Page() {
                   {
                     tone: "indigo",
                     icon: SnapIcons.people,
-                    big: "Max 6",
+                    big: "Max 8",
                     small: "In every English course batch",
                   },
                   {
@@ -122,7 +121,7 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Four Clear Categories"
-            title="6 Programmes · Max 6 · From ₹999/mo"
+            title="6 Programmes · Max 8 · From ₹999/mo"
             subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance — pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">

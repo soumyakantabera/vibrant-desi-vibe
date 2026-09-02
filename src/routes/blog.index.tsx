@@ -89,7 +89,7 @@ function Page() {
             English & Career Notes. <span className="text-sunshine">Band 7, 60-sec Intros.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Practical articles from teachers who run live batches of 6 — from ₹999/mo classes.
+            Practical articles from teachers who run live batches of 8 — from ₹999/mo classes.
             Speaking habits, IELTS writing, emails, interviews.
           </p>
         </div>

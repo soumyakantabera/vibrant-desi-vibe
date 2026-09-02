@@ -171,7 +171,7 @@ function BlogPostPage() {
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">Want to practise this live?</h2>
           <p className="mt-3 text-white">
-            The demo class is free and it is a real class, not a sales call. Max 6 students, so you
+            The demo class is free and it is a real class, not a sales call. Max 8 students, so you
             speak in every session.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">

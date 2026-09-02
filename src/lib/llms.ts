@@ -85,7 +85,7 @@ function yearsTeaching(): number {
  */
 const KEY_FACTS = [
   `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of quality live online teaching · 500+ learners taught across India`,
-  "Quality standard: one live teacher, maximum 6 students in every English course batch; Career Counselling is a separate 1:1 service",
+  "Quality standard: named live teacher, from ₹999/month GST included, ₹0 real-class demo; English batches capped at 8 so every learner speaks; Career Counselling is a separate 1:1 service",
   "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
   `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
@@ -116,12 +116,12 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of maximum 6, GST included, with no registration or material fee.",
+    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of maximum 8, GST included, with no registration or material fee.",
     source: "/english-class-fees-india",
   },
   {
     q: "What is the batch size at Learn With Smile?",
-    a: "Every Learn With Smile English course batch is capped at 6 students. The English courses do not currently include scheduled 1:1 feedback sessions. Career Counselling is a separate 1:1 service. In a 6-student English class every learner can speak in every session; in a 30-student class most learners cannot.",
+    a: "Every Learn With Smile English course batch is capped at 8 students. The English courses do not currently include scheduled 1:1 feedback sessions. Career Counselling is a separate 1:1 service. In a 8-student English class every learner can speak in every session; in a 30-student class most learners cannot.",
     source: "/why-us",
   },
   {
@@ -480,7 +480,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     "> Live online English communication and career classes for learners in India — Spoken English, IELTS,",
     "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
-    "> English classes are taught live in batches capped at 6 students, from ₹999/month.",
+    "> English classes are taught live in batches capped at 8 students, from ₹999/month.",
     "> Based in Kolkata, teaching across India. Free demo class booked over WhatsApp.",
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,

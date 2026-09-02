@@ -58,7 +58,7 @@ export function Footer({ image }: { image?: string }) {
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              7 years teaching English & career skills online. Small batches (max 6). Gamified live
+              7 years teaching English & career skills online. Small batches (max 8). Gamified live
               classes. Real results — from ₹999/mo.
             </p>
             <SmartImage

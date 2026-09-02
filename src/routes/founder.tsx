@@ -155,10 +155,10 @@ function Page() {
             <Icon name="heart" size={14} /> Meet the Founder
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            7 Years. 500+ Learners. <span className="text-sunshine">Batches of 6.</span>
+            7 Years. 500+ Learners. <span className="text-sunshine">Batches of 8.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey — founder and lead teacher. 100% live online · from ₹999/mo · max 6 in every
+            Sunanda Dey — founder and lead teacher. 100% live online · from ₹999/mo · max 8 in every
             English batch · morning, evening, weekend IST. Based in Kolkata, teaching pan-India.
           </p>
         </div>

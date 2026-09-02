@@ -53,7 +53,7 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
   {
     icon: "users",
     color: "indigo",
-    t: "Small Batches (Max 6)",
+    t: "Small Batches (Max 8)",
     d: "More attention, more speaking, better results.",
   },
   {
@@ -98,7 +98,7 @@ function Page() {
             7 Years. 500+ Learners. <span className="text-sunshine">One Quality Standard.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Live since 2019. English batches capped at 6. From ₹999/mo. 11 teaching principles —
+            Live since 2019. English batches capped at 8. From ₹999/mo. 11 teaching principles —
             simple, practical, enjoyable classes for Indian learners.
           </p>
         </div>

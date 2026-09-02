@@ -79,7 +79,7 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white">
             500+ learners taught. Individual outcomes — band jumps, job switches, interviews
-            cleared. Not a guarantee. Progress takes 3–6 months of live classes (max 6 per batch).
+            cleared. Not a guarantee. Progress takes 3–6 months of live classes (max 8 per batch).
           </p>
         </div>
       </section>

@@ -75,10 +75,10 @@ function Page() {
             <Icon name="calendar" size={14} /> Book a Free Demo
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            ₹0 Live Demo. <span className="text-sunshine">Max 6. Real Class.</span>
+            ₹0 Live Demo. <span className="text-sunshine">Max 8. Real Class.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Sit in a live batch of 6 — not a sales call. One WhatsApp message. Replies 09:00–12:00
+            Sit in a live batch of 8 — not a sales call. One WhatsApp message. Replies 09:00–12:00
             IST. No card. Then decide: from ₹999/mo.
           </p>
         </div>
