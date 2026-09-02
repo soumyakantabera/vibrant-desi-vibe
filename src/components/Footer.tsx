@@ -36,6 +36,8 @@ const GUIDES = [
   { to: "/spoken-english-classes-kolkata", label: "Classes in Kolkata" },
   { to: "/english-class-fees-india", label: "English Class Fees in India" },
   { to: "/best-online-spoken-english-classes-india", label: "Compare Online Classes" },
+  { to: "/how-long-to-learn-spoken-english", label: "How Long Spoken English Takes" },
+  { to: "/english-institute-comparison-india", label: "Institutes Compared, 2026" },
 ];
 
 const IMG =

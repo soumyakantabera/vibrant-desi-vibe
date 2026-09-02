@@ -4,8 +4,6 @@ import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
-import { BrandIcon } from "./BrandIcon";
-import { waLink } from "@/lib/whatsapp";
 
 export function SectionHeader({
   eyebrow,
@@ -101,7 +99,9 @@ export const SITE_GUIDES: {
     | "/best-online-spoken-english-classes-india"
     | "/english-class-fees-india"
     | "/spoken-english-classes-kolkata"
-    | "/workplace-english-course-online-india";
+    | "/workplace-english-course-online-india"
+    | "/how-long-to-learn-spoken-english"
+    | "/english-institute-comparison-india";
   title: string;
   sub: string;
   icon: IconName;
@@ -115,6 +115,13 @@ export const SITE_GUIDES: {
     color: "brand",
   },
   {
+    to: "/english-institute-comparison-india",
+    title: "Institutes 2026",
+    sub: "EngVarta, Cambly, BC, Veta-style, EEC-style vs ₹999/mo max 8.",
+    icon: "chart",
+    color: "coral",
+  },
+  {
     to: "/english-class-fees-india",
     title: "Fees in India",
     sub: "From ₹999/mo GST included. What ₹800 vs ₹8,000/month actually buys.",
@@ -122,8 +129,15 @@ export const SITE_GUIDES: {
     color: "sunshine",
   },
   {
+    to: "/how-long-to-learn-spoken-english",
+    title: "How Long It Takes",
+    sub: "6 months from zero. 3 months workplace. 9–12 for Band 7+. Not 30 days.",
+    icon: "clock",
+    color: "indigo",
+  },
+  {
     to: "/spoken-english-classes-kolkata",
-    title: "Kolkata & Pan-India",
+    title: "Kolkata & 11 States",
     sub: "Live from Kolkata vs 25–40 student classrooms. Morning, evening, weekend.",
     icon: "users",
     color: "coral",
@@ -140,7 +154,7 @@ export const SITE_GUIDES: {
 export function GuidesStrip({
   eyebrow = "Guides",
   title = "Read Before You Pay Anyone",
-  subtitle = "Honest notes on fees, formats and Kolkata classrooms — written so you can use them even if you never join us.",
+  subtitle = "Fees, institutes, how long it takes, Kolkata rooms — written so you can use them even if you never join us.",
 }: {
   eyebrow?: string;
   title?: string;
@@ -173,7 +187,7 @@ export function GuidesStrip({
     <section className="section">
       <div className="container-x">
         <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {SITE_GUIDES.map((g) => {
             const tone = tones[g.color];
             return (

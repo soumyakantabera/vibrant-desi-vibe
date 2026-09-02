@@ -429,9 +429,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/blog": {
     path: "/blog",
-    title: "English Career Blog | Band 7, 60-sec, From ₹999",
+    title: "English Career Blog | 6 Mo, Minutes, 7 Checks",
     description:
-      "Teacher-written notes: Band 7 writing, 60-second intros, emails, BPO switches. From live classes starting at ₹999/month. Practical, hype-free. Batches of 8.",
+      "Teacher notes: how long spoken English takes, speaking minutes vs batch size, Spoken vs IELTS, 7 checks before you pay. Live classes from ₹999/month. Max 8.",
     shortTitle: "Blog",
     keywords: [
       "english learning tips india",
@@ -677,6 +677,74 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Will Workplace English guarantee a promotion or salary increase?",
         a: "No ethical course can guarantee that. Clearer communication can remove one barrier at work, but promotion and salary decisions also depend on role, technical performance, experience, company conditions and available opportunities. The course practises communication situations; it does not promise a job outcome.",
+      },
+    ],
+  },
+
+  "/how-long-to-learn-spoken-english": {
+    path: "/how-long-to-learn-spoken-english",
+    title: "How Long to Learn Spoken English | 6 Months",
+    description:
+      "Everyday English from zero: ~6 months live. Workplace 3 months. IELTS Band 7+ 9–12 months. 30-day fluency is marketing. ₹999/mo, max 8, ₹0 demo. GST in.",
+    shortTitle: "How Long to Learn Spoken English",
+    keywords: [
+      "how long to learn spoken english from zero",
+      "how many months to speak english fluently india",
+      "learn english in 6 months india",
+      "can i learn english in 30 days",
+      "spoken english course duration india",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Time-to-fluency guide. Everyday conversation ~6 months from zero with live classes; workplace ~3 months; IELTS Band 7+ 9–12 months. Speaking minutes matter more than calendar months. ₹999/mo, batch of 8.",
+    faqs: [
+      {
+        q: "How long does it take to learn spoken English from zero in India?",
+        a: "About 6 months of live practice — up to 2 classes a week plus 10–15 minutes a day — to reach everyday conversation: introducing yourself, shops, phone calls, two minutes on a topic. That assumes you actually speak in class. In a 25–40 student room the same calendar can deliver a tenth of the speaking minutes. Professional and exam English (meetings, IELTS Band 7+) usually needs 9–12 months from zero.",
+      },
+      {
+        q: "Can I become fluent in English in 30 days?",
+        a: "No, not from zero. In 30 days a hesitant intermediate can reduce freezing if they already have the language. A beginner still needs sounds, 1,000+ words and tense patterns. Anyone advertising fluency in 30 days is selling a course, not a result. Learn With Smile’s Spoken English is a 6-month syllabus at ₹999/month, GST included, batch of 8.",
+      },
+      {
+        q: "How long is the Learn With Smile Spoken English course?",
+        a: "6 months, up to 2 live classes per week, maximum 8 students, ₹999 per month GST included. Workplace English is 3 months at ₹1,499/month. IELTS is 3 months at ₹1,999/month with 6+ marked mocks. Interview Prep is 2 months at ₹1,499/month. ₹0 live demo before you pay.",
+      },
+    ],
+  },
+
+  "/english-institute-comparison-india": {
+    path: "/english-institute-comparison-india",
+    title: "English Institutes India 2026 | Fees & Fit",
+    description:
+      "Cambly, EngVarta, British Council, Veta-style rooms, EEC exam shops vs live batches of 8 from ₹999/mo. 2026 fee bands, speaking minutes, who each fits.",
+    shortTitle: "English Institutes in India, Compared",
+    keywords: [
+      "best spoken english institute in india 2026",
+      "cambly vs engvarta vs british council",
+      "veta spoken english fees",
+      "eec spoken english kolkata",
+      "best english class for working professionals india",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Named-institute comparison for 2026: EngVarta 1:1 (~₹100–₹400/session), Cambly native (~$10/hr), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months), EEC-style exam shops (~₹7,500 spoken), PlanetSpark for kids, Learn With Smile live max-8 from ₹999/month. Written by one of the providers.",
+    faqs: [
+      {
+        q: "Which spoken English institute is best in India in 2026?",
+        a: "There is no single best. EngVarta-style 1:1 (~₹100–₹400/session) fits hesitant people who already speak. Cambly (~$10/hour) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile fits adults 15+ who want a 6-month syllabus, a named teacher and a hard cap of 8, from ₹999/month GST included. Kids need a children’s platform, not an adult batch.",
+      },
+      {
+        q: "Is EngVarta better than a live English batch?",
+        a: "For daily speaking minutes, yes — a 25-minute 1:1 beats 6–8 minutes in a group. For a beginner who cannot form a sentence, no: 1:1 apps have no 6-month map, so you practise what you can already say. The combination that works for many intermediates is an app for daily reps plus a live batch of 8 for structure.",
+      },
+      {
+        q: "Is British Council worth it versus a ₹999/month class?",
+        a: "If you need the badge — visa, university, HR checklist — yes, and Learn With Smile does not issue a certificate. If you need speaking time at an Indian salary, a module at ₹8,800–₹16,000 in a group of 8–12 is a different product from ₹999/month with a cap of 8. Buy the certificate where you need the certificate.",
       },
     ],
   },

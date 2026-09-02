@@ -149,6 +149,16 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     a: "No. All classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — including Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna and Guwahati. Same ₹999/month fee. The Kolkata address is an office by appointment, not a campus.",
     source: "/spoken-english-classes-kolkata",
   },
+  {
+    q: "How long does it take to learn spoken English from zero?",
+    a: "About 6 months of live practice — up to two classes a week plus daily 10–15 minutes — for everyday conversation. Workplace English is typically 3 months if you already chat. IELTS Band 7+ is usually 9–12 months from zero because writing is the bottleneck. 30-day fluency from zero is marketing. Learn With Smile Spoken English is ₹999/month for 6 months, batch of 8.",
+    source: "/how-long-to-learn-spoken-english",
+  },
+  {
+    q: "Which spoken English institute is best in India?",
+    a: "Fit, not a trophy. EngVarta-style 1:1 (~₹100–₹400/session) for daily reps if you already speak. Cambly (~$10/hour) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and a cap of 8, from ₹999/month GST included. Kids need a children’s platform.",
+    source: "/english-institute-comparison-india",
+  },
 ];
 
 const NOTES_FOR_ASSISTANTS = [
