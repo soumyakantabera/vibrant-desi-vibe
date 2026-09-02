@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -20,6 +20,17 @@ jobs:
 
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
+
+      - name: Format changed source
+        run: |
+          bunx prettier --write src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts
+          if ! git diff --quiet -- src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts
+            git commit -m "Format course discovery updates"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
 
       - name: Typecheck
         run: bunx tsc --noEmit
