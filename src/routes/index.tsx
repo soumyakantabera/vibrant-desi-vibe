@@ -277,7 +277,7 @@ function Home() {
             title="4 Tracks · 6 Live Programmes · From ₹999/mo"
             subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. English batches capped at 6. Up to 2 classes/week. ₹0 demo before you pay."
           />
-          <Reveal stagger className="grid gap-4 md:grid-cols-2 lg:gap-5">
+          <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -763,13 +763,14 @@ function CategoryCard({ category }: { category: CourseCategory }) {
 
   return (
     <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
-      <div className="relative h-32 overflow-hidden md:h-24 lg:h-28">
+      <div className="relative aspect-[4/3] overflow-hidden">
         <SmartImage
           src={visual.heroImage}
           alt={`${category.title} online courses in India`}
           fill
+          position="center 22%"
           imgClassName="transition duration-700 group-hover:scale-105"
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
         <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur">
@@ -778,12 +779,12 @@ function CategoryCard({ category }: { category: CourseCategory }) {
       </div>
       <div className={`h-1 ${tone.bar}`} />
 
-      <div className="flex min-w-0 flex-col p-3.5 lg:p-4">
-        <div className="flex items-center gap-2.5">
-          <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
-            <Icon name={category.icon} size={18} />
+      <div className="flex min-w-0 flex-col p-3 sm:p-3.5">
+        <div className="flex items-center gap-2">
+          <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
+            <Icon name={category.icon} size={16} />
           </span>
-          <h3 className="font-display text-lg font-extrabold leading-tight text-ink md:text-xl">
+          <h3 className="font-display text-base font-extrabold leading-tight text-ink sm:text-lg">
             {category.title}
           </h3>
         </div>
@@ -825,7 +826,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         <Link
           to={destination}
           hash={onlySlug ? undefined : category.id}
-          className="mt-3.5 inline-flex min-h-10 w-fit max-w-full items-center gap-1.5 rounded-full bg-brand-deep px-4 py-2 text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
+          className="mt-3.5 inline-flex min-h-10 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-2 text-center text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
         >
           {onlyCourse ? `View ${onlyCourse.title}` : "Explore both programmes"}
           <Icon name="arrow-right" size={14} />

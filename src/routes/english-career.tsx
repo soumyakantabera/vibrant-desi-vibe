@@ -147,7 +147,7 @@ function Page() {
                     <p className="mt-1 text-ink/80">{group.description}</p>
                   </div>
                 </div>
-                <Reveal stagger className="grid items-stretch gap-4 md:grid-cols-2 md:gap-5">
+                <Reveal stagger className="grid max-w-5xl items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3 md:gap-5">
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
@@ -159,9 +159,11 @@ function Page() {
                         <SmartImage
                           src={c.heroImage}
                           alt={c.title}
-                          className="mb-3 h-32 rounded-xl md:h-36"
+                          className="mb-3 w-full rounded-xl"
+                          ratio="4/3"
                           imgClassName="group-hover:scale-105 transition duration-500"
-                          sizes="(min-width: 768px) 50vw, 100vw"
+                          position="center 22%"
+                          sizes="(min-width: 1280px) 30vw, (min-width: 640px) 45vw, 100vw"
                         />
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           <span className="h-9 w-9 rounded-xl bg-brand-soft text-brand-deep flex items-center justify-center">
