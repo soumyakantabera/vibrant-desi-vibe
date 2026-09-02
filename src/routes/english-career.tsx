@@ -52,7 +52,7 @@ function Page() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/75 to-coral/40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/85 to-[#8F332A]/80" />
         </div>
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
@@ -122,7 +122,7 @@ function Page() {
           <SectionHeader
             eyebrow="Four Clear Categories"
             title="Start With the Outcome You Need"
-            subtitle="The six existing programmes are grouped by learner goal, so similar options are easier to compare."
+            subtitle="The six programmes are grouped by learner goal, so the right next step is easier to choose."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (
@@ -132,28 +132,40 @@ function Page() {
                 aria-labelledby={`${group.id}-title`}
                 className="scroll-mt-28"
               >
-                <div className="mb-4">
-                  <h2
-                    id={`${group.id}-title`}
-                    className="text-2xl font-display font-extrabold text-ink"
-                  >
-                    {group.title}
-                  </h2>
-                  <p className="mt-1 text-ink/80">{group.description}</p>
+                <div className="mb-5 flex items-start gap-3">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-deep">
+                    <Icon name={group.icon} size={22} />
+                  </span>
+                  <div>
+                    <h2
+                      id={`${group.id}-title`}
+                      className="text-2xl font-display font-extrabold text-ink"
+                    >
+                      {group.title}
+                    </h2>
+                    <p className="mt-1 text-ink/80">{group.description}</p>
+                  </div>
                 </div>
-                <Reveal stagger className="grid md:grid-cols-2 gap-6">
+                <Reveal
+                  stagger
+                  className={
+                    group.slugs.length === 1
+                      ? "grid max-w-3xl gap-6"
+                      : "grid gap-6 lg:grid-cols-2"
+                  }
+                >
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
                       <Link
                         key={s}
                         to={`/course-${s}` as CoursePath}
-                        className="group card-soft hover:-translate-y-1 transition flex flex-col"
+                        className="group card-soft min-w-0 flex flex-col transition hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
                       >
                         <SmartImage
                           src={c.heroImage}
                           alt={c.title}
-                          className="rounded-xl mb-4 h-40"
+                          className="mb-5 h-44 rounded-2xl"
                           imgClassName="group-hover:scale-105 transition duration-500"
                           sizes="(min-width: 768px) 50vw, 100vw"
                         />
@@ -167,8 +179,8 @@ function Page() {
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
                         </div>
                         <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
-                        <p className="text-sm text-ink/85 mt-1 flex-1">{c.tagline}</p>
-                        <span className="mt-4 text-brand-deep font-display font-bold text-sm inline-flex items-center gap-1.5">
+                        <p className="mt-2 flex-1 text-base leading-relaxed text-ink/85">{c.tagline}</p>
+                        <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2.5 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white">
                           View Full Syllabus <Icon name="arrow-right" size={14} />
                         </span>
                       </Link>
