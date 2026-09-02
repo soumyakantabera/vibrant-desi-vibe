@@ -85,7 +85,7 @@ function yearsTeaching(): number {
  */
 const KEY_FACTS = [
   `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of live online teaching · 500+ learners taught across India`,
-  "Batch size: maximum 6 students per batch, or 1:1 on most courses",
+  "Batch size: maximum 6 students in every English course batch; Career Counselling is a separate 1:1 service",
   `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
   "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
@@ -120,7 +120,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is the batch size at Learn With Smile?",
-    a: "A maximum of 6 students per batch, or 1:1 on most courses. That cap is the reason the fees are what they are, and it is the single number worth asking any provider for — in a 6-student class every learner speaks in every session; in a 30-student class most speak once a week.",
+    a: "Every Learn With Smile English course batch is capped at 6 students. The English courses do not currently include scheduled 1:1 feedback sessions. Career Counselling is a separate 1:1 service. In a 6-student English class every learner can speak in every session; in a 30-student class most learners cannot.",
     source: "/why-us",
   },
   {
@@ -478,8 +478,8 @@ export function buildLlmsTxt(updated: string): string {
     `# ${SITE_NAME}`,
     "",
     "> Live online English and career classes for learners in India — Spoken English, IELTS,",
-    "> Business English, Interactive Speaking, Interview Preparation and Career Counselling.",
-    "> Taught live by a real teacher in batches capped at 6 students or 1:1, from ₹999/month.",
+    "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
+    "> English classes are taught live in batches capped at 6 students, from ₹999/month.",
     "> Based in Kolkata, teaching across India. Free demo class booked over WhatsApp.",
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,

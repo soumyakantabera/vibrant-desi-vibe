@@ -59,8 +59,8 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
   {
     icon: "user",
     color: "coral",
-    t: "1:1 Personalisation",
-    d: "Private sessions available on most courses.",
+    t: "Direct Teacher Support",
+    d: "Contact the teacher directly outside class when genuine help is needed.",
   },
   {
     icon: "shield",
@@ -78,7 +78,7 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
     icon: "rocket",
     color: "brand",
     t: "Career-First Outcomes",
-    d: "Every course ends with portfolio or job-readiness.",
+    d: "Practice is tied to daily, workplace, interview or exam situations.",
   },
 ];
 

@@ -28,7 +28,7 @@ export const Route = createFileRoute("/founder")({
         knowsAbout: [
           "Spoken English",
           "IELTS Preparation",
-          "Business English",
+          "Workplace English",
           "Interview Preparation",
           "Career Counselling",
         ],
@@ -158,9 +158,10 @@ function Page() {
             One mentor. One mission.
           </h1>
           <p className="mt-4 text-lg text-white">
-            100% online live classes · flexible morning/evening/weekend slots · max 6 per batch or
-            1:1 · pan-India, based in Kolkata. Outside class, direct 1:1 contact with the teacher is
-            assured when genuinely needed; it is personal support, not a scheduled feedback session.
+            100% online live classes · flexible morning/evening/weekend slots · max 6 in every
+            English batch · pan-India, based in Kolkata. Outside class, direct 1:1 contact with the
+            teacher is assured when genuinely needed; it is personal support, not a scheduled
+            feedback session.
           </p>
         </div>
       </section>
@@ -182,7 +183,7 @@ function Page() {
             teaches={[
               "Basic & Interactive Spoken English",
               "IELTS Coaching (Band 7+ focused)",
-              "Business English for professionals",
+              "Workplace English for professionals",
               "Interview Prep · HR · Behavioural",
               "1:1 Career Counselling",
             ]}

@@ -48,6 +48,42 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "english-for-office-meetings",
+    title: "English for Office Meetings: 12 Phrases You Can Actually Use",
+    seoTitle: "English for Office Meetings: Practical Phrases",
+    description:
+      "Practical English for entering meetings, giving updates, clarifying, disagreeing and closing with decisions — written for Indian working professionals.",
+    excerpt:
+      "Useful meeting English for updates, questions and disagreement — without corporate jargon.",
+    tag: "Workplace English",
+    img: "presentation",
+    imgAlt: "Indian professional speaking during an online office meeting",
+    author: "Sunanda Dey",
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    readingTime: 6,
+    wordCount: 950,
+    relatedCourses: ["/course-business-english"],
+  },
+  {
+    slug: "english-for-bpo-customer-support",
+    title: "English for BPO and Customer Support Calls: A Practical Guide",
+    seoTitle: "English for BPO & Customer Support Calls",
+    description:
+      "A practical guide to English for BPO and customer support calls: clarify problems, handle complaints, explain next steps and close without confusion.",
+    excerpt:
+      "Clear call handling, complaint language and recovery phrases — no fake accent promises.",
+    tag: "Workplace English",
+    img: "businessEnglish",
+    imgAlt: "Customer support professional speaking with a client online",
+    author: "Sunanda Dey",
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    readingTime: 6,
+    wordCount: 977,
+    relatedCourses: ["/course-business-english", "/course-interview-prep"],
+  },
+  {
     slug: "5-speaking-habits-that-killed-my-hesitation",
     title: "5 Speaking Habits That Killed My Hesitation in 30 Days",
     seoTitle: "5 Speaking Habits That Beat English Hesitation",
@@ -89,7 +125,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Five wording swaps that make workplace emails sound confident rather than apologetic, with before-and-after examples from real Indian office correspondence.",
     excerpt: "Small wording swaps that instantly upgrade your workplace emails.",
-    tag: "Business English",
+    tag: "Workplace English",
     img: "businessEnglish",
     imgAlt: "Professional writing a work email on a laptop in an office",
     author: "Sunanda Dey",

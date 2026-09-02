@@ -16,6 +16,8 @@ import { body as band7Writing } from "./band-7-writing-4-paragraph-template";
 import { body as emailPhrases } from "./5-email-phrases-that-sound-more-professional";
 import { body as tellMeAboutYourself } from "./tell-me-about-yourself-in-60-seconds";
 import { body as bpoRoadmap } from "./bpo-to-client-facing-role-roadmap";
+import { body as officeMeetings } from "./english-for-office-meetings";
+import { body as bpoCustomerSupport } from "./english-for-bpo-customer-support";
 
 export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "5-speaking-habits-that-killed-my-hesitation": speakingHabits,
@@ -23,4 +25,6 @@ export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "5-email-phrases-that-sound-more-professional": emailPhrases,
   "tell-me-about-yourself-in-60-seconds": tellMeAboutYourself,
   "bpo-to-client-facing-role-roadmap": bpoRoadmap,
+  "english-for-office-meetings": officeMeetings,
+  "english-for-bpo-customer-support": bpoCustomerSupport,
 };

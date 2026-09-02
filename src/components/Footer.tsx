@@ -10,7 +10,7 @@ const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 const ENGLISH = [
   { to: "/course-spoken-english", label: "Spoken English" },
   { to: "/course-ielts", label: "IELTS" },
-  { to: "/course-business-english", label: "Business English" },
+  { to: "/course-business-english", label: "Workplace English" },
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
   { to: "/course-interview-prep", label: "Interview Prep" },
   { to: "/course-career-counselling", label: "Career Counselling" },
@@ -32,6 +32,7 @@ const COMPANY = [
  * problem.
  */
 const GUIDES = [
+  { to: "/workplace-english-course-online-india", label: "Workplace English Guide" },
   { to: "/spoken-english-classes-kolkata", label: "Classes in Kolkata" },
   { to: "/english-class-fees-india", label: "English Class Fees in India" },
   { to: "/best-online-spoken-english-classes-india", label: "Compare Online Classes" },
@@ -98,7 +99,7 @@ export function Footer({ image }: { image?: string }) {
             </span>
             <span className="inline-flex items-center gap-2">
               <Icon name="clock" size={16} />
-              WhatsApp replies · 09:00–12:00 IST
+              Message anytime · replies 09:00–12:00 IST
             </span>
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">

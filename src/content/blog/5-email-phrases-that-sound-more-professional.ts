@@ -71,7 +71,7 @@ export const body: ArticleBody = [
   { t: "h2", text: '3. Stacked hedges → "I\'d suggest"' },
   {
     t: "p",
-    text: "Count the hedges in this sentence, which is close to one we see in almost every Business English batch:",
+    text: "Count the hedges in this sentence, which is close to one we see in almost every Workplace English batch:",
   },
   {
     t: "example",
@@ -152,7 +152,7 @@ export const body: ArticleBody = [
   { t: "h2", text: 'A note on "kindly", "sir" and "respected"' },
   {
     t: "p",
-    text: 'These three come up in every Business English batch, and they deserve a more careful answer than "stop using them", because the honest answer depends on who is reading.',
+    text: 'These three come up in every Workplace English batch, and they deserve a more careful answer than "stop using them", because the honest answer depends on who is reading.',
   },
   {
     t: "table",
@@ -208,8 +208,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Business English offers 3 months of exactly this — emails, meetings, presentations and negotiation — in a live batch capped at 6, with early-morning, evening and weekend IST slots built around a full-time job. ₹1,499/month, GST included, and every class is recorded in case a work escalation takes you out.",
+    text: "Workplace English offers 3 months of practical meetings, calls, updates, emails and presentation practice in a live batch capped at 6. It runs up to twice a week in morning, evening or weekend IST slots, costs ₹1,499/month including GST, and recorded classes are available for revision.",
     course: "/course-business-english",
-    label: "See the Business English course",
+    label: "See the Workplace English course",
   },
 ];

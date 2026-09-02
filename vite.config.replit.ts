@@ -6,13 +6,11 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import path from "node:path";
 
 import { bootScriptPlugin } from "./vite/boot-script-plugin";
-import { analyticsPlugin } from "./vite/analytics-plugin";
 
 export default defineConfig({
   base: "/",
   plugins: [
     bootScriptPlugin(),
-    analyticsPlugin(),
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,

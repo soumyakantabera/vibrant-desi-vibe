@@ -24,7 +24,7 @@ const ENGLISH_COURSES: NavItem[] = [
   },
   {
     to: "/course-business-english",
-    label: "Business English",
+    label: "Workplace English",
     icon: "headset",
     desc: "3 months · ₹1,499/month",
   },
@@ -145,7 +145,7 @@ export function Nav() {
                 >
                   <div className="rounded-2xl bg-white border border-border shadow-2xl overflow-hidden grid grid-cols-1">
                     <CourseColumn
-                      title="English & Career"
+                      title="Courses by Goal"
                       tone="brand"
                       categoryHref="/english-career"
                       items={ENGLISH_COURSES}
@@ -229,7 +229,7 @@ export function Nav() {
                 </Link>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
-                No sales call · WhatsApp replies 09:00–12:00 IST
+                Message anytime · WhatsApp replies 09:00–12:00 IST
               </p>
             </div>
 
@@ -249,8 +249,8 @@ export function Nav() {
                 ))}
               </div>
 
-              {/* English & Career */}
-              <SectionLabel>English & Career</SectionLabel>
+              {/* Courses by goal */}
+              <SectionLabel>Courses by Goal</SectionLabel>
               <Link
                 to="/english-career"
                 onClick={() => setOpen(false)}

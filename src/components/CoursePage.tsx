@@ -52,6 +52,21 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
   ],
   "business-english": [
     {
+      href: "/workplace-english-course-online-india",
+      title: "Workplace English course guide",
+      description: "Who needs workplace training, what to practise and when not to buy a course.",
+    },
+    {
+      href: "/blog/english-for-office-meetings",
+      title: "English for office meetings",
+      description: "Practical phrases for updates, clarification, disagreement and decisions.",
+    },
+    {
+      href: "/blog/english-for-bpo-customer-support",
+      title: "English for BPO and customer support",
+      description: "Call handling, complaint language, recovery phrases and clear next steps.",
+    },
+    {
       href: "/blog/5-email-phrases-that-sound-more-professional",
       title: "5 email phrases that sound more professional",
       description: "Clearer workplace English without inflated or outdated wording.",
@@ -93,6 +108,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
+  const isCareerCounselling = data.slug === "career-counselling";
   const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
@@ -115,9 +131,14 @@ export function CoursePage({ data }: { data: CourseData }) {
           big: "7 yrs",
           small: "Live teaching experience",
         },
-        { tone: "coral", icon: SnapIcons.people, big: "Max 6", small: "Per batch · or 1:1 option" },
+        {
+          tone: "coral",
+          icon: SnapIcons.people,
+          big: isCareerCounselling ? "1:1" : "Max 6",
+          small: isCareerCounselling ? "Career guidance sessions" : "In this live course batch",
+        },
       ]}
-      footer="Free Demo · No Card Needed · Replies 09:00–12:00 IST"
+      footer="Message Anytime · Replies 09:00–12:00 IST"
     />
   );
   return (
@@ -363,7 +384,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 align="left"
                 eyebrow="FAQs"
                 title={`${data.title} — Questions & Answers`}
-                subtitle="Anything else? Ask us on WhatsApp — replies during 09:00–12:00 IST."
+                subtitle="Anything else? Message anytime — WhatsApp replies during 09:00–12:00 IST."
               />
               <SmartImage
                 src={data.footerImage}
