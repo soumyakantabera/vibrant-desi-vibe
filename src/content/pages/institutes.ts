@@ -108,7 +108,10 @@ export const body: ArticleBody = [
     text: "If your problem is freezing, 1:1 apps win on minutes. If your problem is not knowing what to study next, a syllabus plus 6–8 minutes of correction wins. Full arithmetic: [speaking minutes](/blog/speaking-minutes-in-a-60-minute-class).",
   },
 
-  { t: "h2", text: "West Bengal, Maharashtra, Delhi, South India — same products, different rooms" },
+  {
+    t: "h2",
+    text: "West Bengal, Maharashtra, Delhi, South India — same products, different rooms",
+  },
   {
     t: "p",
     text: "Offline options cluster in Gariahat/Salt Lake (Kolkata), Deccan/FC Road (Pune), CP/Noida (Delhi), Koramangala/Whitefield (Bengaluru), T Nagar (Chennai). Fees for a 3-month spoken package commonly sit **₹1,500–₹7,500** plus commute. Live online (us, EngVarta, British Council Online) is the same fee in Kolkata, Mumbai, Ahmedabad, Hyderabad or Kochi. The commute is the hidden 3–6 hours/week.",

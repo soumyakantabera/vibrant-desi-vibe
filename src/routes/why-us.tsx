@@ -2,7 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PAGES, RATING, RATING_DISPLAY, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, FeatureCard, WaButton, GuidesStrip, CoverageStrip } from "@/components/ui-bits";
+import {
+  SectionHeader,
+  FeatureCard,
+  WaButton,
+  GuidesStrip,
+  CoverageStrip,
+} from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
@@ -227,7 +233,8 @@ function Page() {
             1:1 outside class when you genuinely need it — not a ticket bot.
           </FeatureCard>
           <FeatureCard icon="globe" color="sunshine" title="Kolkata-born. Heard across India.">
-            Same teacher. Same fee. Join from a metro or a town — the pincode does not change the room.
+            Same teacher. Same fee. Join from a metro or a town — the pincode does not change the
+            room.
           </FeatureCard>
         </div>
       </section>

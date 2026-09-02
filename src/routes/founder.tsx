@@ -158,8 +158,8 @@ function Page() {
             One mentor. <span className="text-sunshine">One mission.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey — founder and lead teacher. 100% live. From ₹999/mo. Kolkata-based,
-            teaching learners across India. ₹0 demo in a real class.
+            Sunanda Dey — founder and lead teacher. 100% live. From ₹999/mo. Kolkata-based, teaching
+            learners across India. ₹0 demo in a real class.
           </p>
         </div>
       </section>

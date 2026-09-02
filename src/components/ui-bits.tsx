@@ -31,9 +31,7 @@ export function SectionHeader({
             ? "eyebrow eyebrow-white"
             : "eyebrow";
   return (
-    <div
-      className={`${align === "center" ? "text-center mx-auto" : ""} max-w-3xl mb-6 md:mb-8`}
-    >
+    <div className={`${align === "center" ? "text-center mx-auto" : ""} max-w-3xl mb-6 md:mb-8`}>
       {eyebrow && <span className={ebClass}>{eyebrow}</span>}
       <h2 className={`mt-3 text-2xl md:text-[2rem] leading-[1.12] ${invert ? "text-cream" : ""}`}>
         {title}
@@ -196,9 +194,7 @@ export function GuidesStrip({
                 to={g.to}
                 className={`group flex h-full min-w-0 flex-col rounded-2xl border p-4 transition hover:-translate-y-1 hover:shadow-lg ${tone.card}`}
               >
-                <span
-                  className={`mb-3 grid h-10 w-10 place-items-center rounded-xl ${tone.icon}`}
-                >
+                <span className={`mb-3 grid h-10 w-10 place-items-center rounded-xl ${tone.icon}`}>
                   <Icon name={g.icon} size={18} />
                 </span>
                 <h3 className={`font-display text-base font-extrabold leading-tight ${tone.title}`}>
@@ -224,11 +220,7 @@ const CITY_TONES = [
   "border-indigo-pop/25 bg-[#F4F4FF] text-[#2E2E8A]",
 ] as const;
 
-export function CoverageStrip({
-  invert = false,
-}: {
-  invert?: boolean;
-}) {
+export function CoverageStrip({ invert = false }: { invert?: boolean }) {
   const label = invert ? "text-sunshine" : "text-brand-deep";
   const heading = invert ? "text-cream" : "text-ink";
   const body = invert ? "text-white/90" : "text-ink/75";

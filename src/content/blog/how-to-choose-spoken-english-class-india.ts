@@ -31,7 +31,10 @@ export const body: ArticleBody = [
       ["₹100–₹400 per 1:1, no syllabus", "EngVarta-style daily practice"],
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
       ["Parent app, games, under-14", "PlanetSpark-style. Do not put a child in an adult batch."],
-      ["₹999/mo, cap 8, ₹0 real class, GST in", "Us. 7 years, 500+ learners, 11 states. Still take the demo."],
+      [
+        "₹999/mo, cap 8, ₹0 real class, GST in",
+        "Us. 7 years, 500+ learners, 11 states. Still take the demo.",
+      ],
     ],
   },
 

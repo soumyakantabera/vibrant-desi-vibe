@@ -82,7 +82,7 @@ jobs:
           test -s dist/blog/english-for-bpo-customer-support.html
           grep -q 'rel="canonical"' dist/index.html
           grep -q 'application/ld+json' dist/index.html
-          grep -q 'Never in a Batch Bigger Than 6' dist/index.html
+          grep -q 'Speak English Live' dist/index.html
           grep -q 'Choose the Goal You Need Now' dist/index.html
           grep -q 'Speak Confidently' dist/index.html
           grep -q 'Work &amp; Career' dist/index.html
@@ -93,7 +93,7 @@ jobs:
           grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
           grep -q 'View Career Counselling' dist/index.html
           grep -q 'Explore both programmes' dist/index.html
-          grep -q 'rounded-\[1.75rem\].*bg-white' src/routes/index.tsx
+          grep -q 'rounded-2xl.*bg-white' src/routes/index.tsx
           grep -q 'Ask for Course Pricing' dist/index.html
           if grep -q 'bg-sunshine px-5 py-3' src/routes/index.tsx; then
             echo "::error::Oversized yellow course-card actions returned"
