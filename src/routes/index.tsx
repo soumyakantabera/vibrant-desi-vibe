@@ -466,95 +466,104 @@ function Home() {
             title="Transparent Fees · Monthly Billing · No Hidden Costs"
             subtitle="Pay per month, request a same-week reschedule subject to available slots, and attend a full free demo class before you enrol."
           />
-          <Reveal stagger className="grid md:grid-cols-3 gap-5">
-            <article className="order-2 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-11 w-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center">
+          <Reveal stagger className="grid gap-5 lg:grid-cols-3">
+            <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand-deep">
                   <BatchIcon />
                 </span>
-                <h3 className="text-ink font-display font-extrabold text-lg">
+                <h3 className="font-display text-lg font-extrabold text-ink">
                   Small Batch (Max 6)
                 </h3>
               </div>
-              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">
-                ₹999<span className="text-base font-bold text-ink/90">/month</span>
+              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
+                ₹999<span className="text-base font-bold text-ink/75">/month</span>
               </p>
-              <p className="text-sm text-ink/90 mt-1">GST included · billed monthly</p>
-              <ul className="mt-4 space-y-2 text-sm text-ink/90">
-                <li className="flex gap-2">
-                  <CheckIcon className="text-brand mt-0.5 shrink-0" />
+              <p className="mt-1 text-sm text-ink/75">GST included · billed monthly</p>
+              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
                   Live, interactive online classes
                 </li>
-                <li className="flex gap-2">
-                  <CheckIcon className="text-brand mt-0.5 shrink-0" />
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
                   Flexible morning · evening · weekend slots
                 </li>
-                <li className="flex gap-2">
-                  <CheckIcon className="text-brand mt-0.5 shrink-0" />
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
                   Recordings & worksheets included
                 </li>
               </ul>
             </article>
-            <article className="order-1 md:order-none rounded-2xl p-5 sm:p-6 bg-brand-deep text-cream relative overflow-hidden shadow-lg">
-              <span className="absolute top-4 right-4 pill bg-sunshine text-ink border-none">
-                Most Popular
-              </span>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-11 w-11 rounded-xl bg-sunshine/20 text-sunshine flex items-center justify-center">
-                  <WorkplaceIcon />
-                </span>
-                <h3 className="text-cream font-display font-extrabold text-lg">
-                  Workplace English
-                </h3>
+
+            <article className="order-1 flex h-full flex-col overflow-hidden rounded-3xl border-2 border-indigo-pop bg-gradient-to-b from-[#F5F5FF] to-white p-5 shadow-[0_18px_48px_-28px_rgba(91,91,214,.5)] transition hover:-translate-y-1 hover:shadow-[0_24px_54px_-26px_rgba(91,91,214,.55)] sm:p-6 lg:order-none">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#E7E7FF] text-indigo-pop">
+                    <WorkplaceIcon />
+                  </span>
+                  <h3 className="font-display text-lg font-extrabold text-ink">
+                    Workplace English
+                  </h3>
+                </div>
+                <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
-              <p className="font-display font-extrabold text-2xl sm:text-3xl text-sunshine">
-                ₹1,499<span className="text-base font-bold text-cream/95">/month</span>
+              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
+                ₹1,499<span className="text-base font-bold text-ink/75">/month</span>
               </p>
-              <p className="text-sm text-cream/95 mt-1">3 months · up to 2 classes/week</p>
-              <ul className="mt-4 space-y-2 text-sm text-cream">
-                <li className="flex gap-2">
-                  <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
+              <p className="mt-1 text-sm text-ink/75">3 months · up to 2 classes/week</p>
+              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
                   Meetings, client calls and status updates
                 </li>
-                <li className="flex gap-2">
-                  <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
                   Emails, workplace messages and presentations
                 </li>
-                <li className="flex gap-2">
-                  <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
                   Live batch capped at 6 learners
                 </li>
               </ul>
             </article>
-            <article className="order-3 md:order-none rounded-2xl p-5 sm:p-6 bg-white border border-border shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-11 w-11 rounded-xl bg-coral/10 text-coral flex items-center justify-center">
+
+            <article className="order-3 flex h-full flex-col overflow-hidden rounded-3xl border border-[#E8DFDC] border-t-4 border-t-[#C84D3F] bg-white p-5 shadow-[0_16px_40px_-30px_rgba(165,61,50,.4)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(165,61,50,.45)] sm:p-6 lg:order-none">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFF0ED] text-[#A53D32]">
                   <FreeDemoIcon />
                 </span>
-                <h3 className="text-ink font-display font-extrabold text-lg">Free Demo</h3>
+                <h3 className="font-display text-lg font-extrabold text-ink">Free Demo</h3>
               </div>
-              <p className="font-display font-extrabold text-2xl sm:text-3xl text-brand-deep">₹0</p>
-              <p className="text-sm text-ink/90 mt-1">First live class — zero commitment</p>
-              <ul className="mt-4 space-y-2 text-sm text-ink/90">
-                <li className="flex gap-2">
-                  <CheckIcon className="text-brand mt-0.5 shrink-0" />
+              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">₹0</p>
+              <p className="mt-1 text-sm text-ink/75">First live class — zero commitment</p>
+              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
                   Meet your teacher live
                 </li>
-                <li className="flex gap-2">
-                  <CheckIcon className="text-brand mt-0.5 shrink-0" />
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
                   Ask questions before deciding
                 </li>
-                <li className="flex gap-2">
-                  <CheckIcon className="text-brand mt-0.5 shrink-0" />
+                <li className="flex gap-2.5">
+                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
                   No card or payment needed
                 </li>
               </ul>
             </article>
           </Reveal>
-          <p className="text-center text-ink/90 text-sm mt-6">
-            All prices in INR. GST included where applicable. Need a quote for your course? Ping us
-            on WhatsApp ↓
-          </p>
+          <div className="mt-7 text-center">
+            <p className="text-sm text-ink/75">All prices are in INR. GST is included where applicable.</p>
+            <div className="mt-3">
+              <WaButton
+                message="Hi, please send me the exact pricing and next available demo slot for my course."
+                size="sm"
+              >
+                Ask for Course Pricing
+              </WaButton>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -708,11 +717,30 @@ function StoryTile({
   );
 }
 
-const CATEGORY_TONES: Record<CategoryTone, { overlay: string }> = {
-  brand: { overlay: "bg-brand-deep/35" },
-  indigo: { overlay: "bg-indigo-pop/30" },
-  sun: { overlay: "bg-[#6B4A00]/30" },
-  coral: { overlay: "bg-[#8B321F]/30" },
+const CATEGORY_TONES: Record<
+  CategoryTone,
+  { bar: string; icon: string; badge: string }
+> = {
+  brand: {
+    bar: "bg-brand",
+    icon: "bg-brand-soft text-brand-deep",
+    badge: "border-brand/25 bg-brand-soft text-brand-deep",
+  },
+  indigo: {
+    bar: "bg-indigo-pop",
+    icon: "bg-[#E7E7FF] text-indigo-pop",
+    badge: "border-indigo-pop/25 bg-[#F1F1FF] text-[#4141A8]",
+  },
+  sun: {
+    bar: "bg-[#D39A00]",
+    icon: "bg-[#FFF3C4] text-[#6B4A00]",
+    badge: "border-sunshine/45 bg-[#FFF8DE] text-[#6B4A00]",
+  },
+  coral: {
+    bar: "bg-[#C84D3F]",
+    icon: "bg-[#FFF0ED] text-[#A53D32]",
+    badge: "border-coral/35 bg-[#FFF4F1] text-[#8B321F]",
+  },
 };
 
 function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
@@ -727,46 +755,60 @@ function CategoryCard({ category }: { category: CourseCategory }) {
   const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
 
   return (
-    <article className="group relative isolate min-h-[380px] min-w-0 overflow-hidden rounded-3xl border border-ink/20 bg-ink shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
-      <SmartImage
-        src={visual.heroImage}
-        alt={`${category.title} online courses in India`}
-        fill
-        imgClassName="brightness-[.88] transition duration-700 group-hover:scale-105"
-        sizes="(min-width: 768px) 50vw, 100vw"
-      />
-      <div className={`absolute inset-0 ${tone.overlay}`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/75 to-ink/25 transition duration-300 group-hover:via-ink/80" />
-      <div className="relative flex min-h-[380px] min-w-0 flex-col justify-end p-5 text-cream sm:p-7">
-        <span className="pill w-fit border-white/40 bg-ink/65 text-cream shadow-sm backdrop-blur-md">
-          {onlySlug ? "1 focused programme" : `${category.slugs.length} programmes`}
+    <article className="group min-w-0 overflow-hidden rounded-[1.75rem] border border-[#DDE5DF] bg-white shadow-[0_18px_50px_-34px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_24px_60px_-32px_rgba(8,70,51,.55)]">
+      <div className="relative h-48 overflow-hidden sm:h-56">
+        <SmartImage
+          src={visual.heroImage}
+          alt={`${category.title} online courses in India`}
+          fill
+          imgClassName="transition duration-700 group-hover:scale-105"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
+        <span className="pill absolute left-5 top-5 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur sm:left-6 sm:top-6">
+          {onlySlug ? "1 programme" : `${category.slugs.length} programmes`}
         </span>
+      </div>
+      <div className={`h-1.5 ${tone.bar}`} />
 
-        <h3 className="mt-3 flex items-center gap-2 text-2xl font-display font-extrabold leading-tight text-cream drop-shadow-[0_2px_8px_rgba(0,0,0,.75)] sm:text-3xl">
-          <Icon name={category.icon} size={25} /> {category.title}
-        </h3>
-        <p className="mt-2 max-w-xl text-base font-medium leading-relaxed text-white drop-shadow-[0_1px_6px_rgba(0,0,0,.85)]">
+      <div className="flex min-w-0 flex-col p-5 sm:p-7">
+        <div className="flex items-center gap-3">
+          <span
+            className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${tone.icon}`}
+          >
+            <Icon name={category.icon} size={23} />
+          </span>
+          <h3 className="font-display text-2xl font-extrabold leading-tight text-ink sm:text-[1.7rem]">
+            {category.title}
+          </h3>
+        </div>
+
+        <p className="mt-3 max-w-xl text-base leading-relaxed text-ink/80">
           {category.description}
         </p>
 
         {onlyCourse ? (
-          <div className="mt-4 flex min-w-0 flex-wrap gap-2 text-xs font-display font-bold">
-            <span className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-white/40 bg-ink/65 px-3 py-1.5 leading-tight shadow-sm backdrop-blur-md">
+          <div className="mt-5 flex min-w-0 flex-wrap gap-2 text-xs font-display font-bold">
+            <span
+              className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-3 py-2 leading-tight ${tone.badge}`}
+            >
               <Icon name={onlyCourse.icon} size={14} /> {onlyCourse.title}
             </span>
-            <span className="max-w-full whitespace-normal rounded-full border border-white/40 bg-ink/65 px-3 py-1.5 leading-tight shadow-sm backdrop-blur-md">
+            <span
+              className={`max-w-full whitespace-normal rounded-full border px-3 py-2 leading-tight ${tone.badge}`}
+            >
               {onlyCourse.duration.split(" · ")[0]} · {onlyCourse.price}
             </span>
           </div>
         ) : (
-          <div className="mt-4 flex min-w-0 flex-wrap gap-2">
+          <div className="mt-5 flex min-w-0 flex-wrap gap-2">
             {category.slugs.map((slug) => {
               const course = COURSES[slug];
               return (
                 <Link
                   key={slug}
                   to={coursePath(slug)}
-                  className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-white/40 bg-ink/65 px-3 py-1.5 text-xs font-display font-bold leading-tight text-cream shadow-sm backdrop-blur-md transition hover:bg-ink/80"
+                  className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
                 >
                   <Icon name={course.icon} size={14} /> {course.title}
                 </Link>
@@ -778,7 +820,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         <Link
           to={destination}
           hash={onlySlug ? undefined : category.id}
-          className="mt-5 inline-flex max-w-full items-center gap-1.5 rounded-full bg-sunshine px-5 py-3 text-base font-display font-extrabold leading-tight text-ink shadow-lg shadow-ink/30 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
+          className="mt-6 inline-flex min-h-12 w-fit max-w-full items-center gap-2 rounded-full bg-brand-deep px-5 py-3 text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
         >
           {onlyCourse ? `View ${onlyCourse.title}` : "Explore both programmes"}
           <Icon name="arrow-right" size={15} />
