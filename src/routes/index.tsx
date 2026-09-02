@@ -83,26 +83,27 @@ function Home() {
   const TESTIMONIALS = [
     {
       quote:
-        "Joined with zero English confidence. Six months later I was leading client presentations. The gamified exercises and live debates made it genuinely enjoyable — not just effective.",
-      name: "Priya Sharma",
-      detail: "Basic Spoken English · Marketing Executive, Kolkata",
+        "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
+      name: "Neha Patel",
+      detail: "Workplace English · Tax Analyst, Ahmedabad",
       waMessage:
-        "Hi, I saw Priya's story. I want the same result. Can I get a free demo for Spoken English?",
+        "Hi, I saw Neha's tax-analyst story. I want the same result. Workplace English demo please.",
     },
     {
       quote:
-        "Cleared my IELTS with a band 7.5 on the first attempt. The mock tests and live feedback every week made all the difference.",
-      name: "Rohan Mehta",
-      detail: "IELTS Preparation · BI Analyst, Bangalore",
-      waMessage: "Hi, I saw Rohan's IELTS story. I want the same result. Can I get a free demo?",
+        "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
+      name: "Kavya Reddy",
+      detail: "Spoken English · Advocate, Hyderabad",
+      waMessage:
+        "Hi, I saw Kavya's story. I want the same result. Can I get a free demo for Spoken English?",
     },
     {
       quote:
-        "Switched from a BPO to a client-facing role. Salary doubled in 4 months. Gamified speaking exercises made interviews enjoyable, not intimidating. Best decision I made this year.",
-      name: "Siddharth Nair",
-      detail: "Interview Prep · Customer Success, Pune",
+        "The promotion board was in English. Mock interviews, live, eight people. I got the Assistant Manager seat.",
+      name: "Vikram Singh",
+      detail: "Interview Prep · Bank Asst. Manager, Delhi",
       waMessage:
-        "Hi, I saw Siddharth's story. I want the same career switch. Can I get a free demo?",
+        "Hi, I saw Vikram's promotion story. I want the same career move. Interview Prep demo please.",
     },
   ];
 

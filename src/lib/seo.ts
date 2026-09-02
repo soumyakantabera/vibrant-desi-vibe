@@ -384,7 +384,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/success-stories",
     title: "Real Indian Learners | Real Results",
     description:
-      "Career switches, client meetings, BI Analyst jobs, salary jumps — named Learn With Smile learners. Live spoken English from ₹999/month. ₹0 demo. GST in.",
+      "Tax desks, court briefs, bank promotions, BI Analyst jobs — named Learn With Smile learners. Spoken English from ₹999/mo. Kolkata & pan-India. ₹0 demo.",
     shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
@@ -393,16 +393,17 @@ export const PAGES: Record<string, PageSeo> = {
       "english class results testimonials india",
       "does online spoken english class work",
       "career switch after english course",
+      "english for tax analyst ca lawyer bank india",
     ],
     ogImage: "/og/success-stories.jpg",
     priority: 0.7,
     changefreq: "monthly",
     summary:
-      "Named learner outcomes with courses and cities — client meetings, career switches, interview wins, salary moves. Speaking first. Individual results vary.",
+      "Named learner outcomes — tax analyst, CA, advocate, data analyst, bank assistant manager, BI Analyst. Speaking first. Individual results vary.",
     faqs: [
       {
         q: "Do online English classes actually get people jobs in India?",
-        a: "They get people interview-ready, which is the gate most candidates fail at. Our learners' documented outcomes include a BPO agent moving to a client-facing Customer Success role in Pune with roughly double the salary in 4 months, an IT engineer in Hyderabad clearing interview rounds she had previously failed, and a marketing executive in Kolkata going from freezing in meetings to leading client presentations within 6 months. English is a gate, not a guarantee — it opens roles that were previously closed to you.",
+        a: "They get people interview-ready, which is the gate most candidates fail at. Named outcomes on this page include a tax analyst in Ahmedabad taking the Mumbai client call herself, a CA in Mumbai presenting working papers in English, an advocate in Hyderabad briefing Bengaluru clients, a data analyst in Bengaluru running Monday standups, a bank assistant manager in Delhi clearing a promotion board, and a Pune learner moving from back office to BI Analyst. English is a gate, not a guarantee — it opens rooms that were previously closed to you.",
       },
       {
         q: "How soon can I expect to see real improvement in my spoken English?",
@@ -410,7 +411,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "I studied in a Hindi or Bengali-medium school, not English-medium. Can I still get results like these?",
-        a: "Yes — most of our learners come from Hindi- or Bengali-medium schooling, including several in the stories above, from Howrah and Kolkata. Classes are taught bilingually in the early weeks where needed, so grammar and pronunciation are explained in a language you already understand before you're expected to think and respond in English.",
+        a: "Yes — most of our learners come from Hindi- or Bengali-medium schooling, including several in the stories above, from Kolkata, Hyderabad and Ahmedabad. Classes are taught bilingually in the early weeks where needed, so grammar and pronunciation are explained in a language you already understand before you're expected to think and respond in English.",
       },
       {
         q: "Will an English course actually help me clear interviews, or is that too big a claim?",
@@ -418,7 +419,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do I need IELTS for a job in India?",
-        a: "Most Indian interviews hear you speak. Start with spoken English, business English or interactive speaking. Sit IELTS if a form, a university or a country asks for the exam. Harshit’s story is the exam path — Priya, Siddharth, Sneha and Anjali are the speaking path most learners actually need.",
+        a: "Most Indian interviews hear you speak. Start with spoken English, business English or interactive speaking. Sit IELTS if a form, a university or a country asks for the exam. Neha, Kavya, Ananya and Vikram are the speaking path most learners actually need.",
       },
       {
         q: "Are these success stories typical, or just the best few out of many students?",
@@ -426,7 +427,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile help with career guidance, or only English speaking?",
-        a: "Both, if you need it. Alongside the English courses we run standalone 1:1 Career Counselling (₹999 for three 60-minute sessions), which is what helped Aarav Pandey above choose the right B.Tech specialisation. Many learners combine an English course with a counselling session when the actual goal is a career or course change, not just language practice.",
+        a: "Both, if you need it. Alongside the English courses we run standalone 1:1 Career Counselling (₹999 for three 60-minute sessions). Many learners combine an English course with a counselling session when the actual goal is a career or course change, not just language practice.",
       },
     ],
   },
@@ -808,7 +809,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "I know English but freeze when I speak. Which class should I take?",
-        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of 8, 3 months, ₹1,199/month GST included. Anjali’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
+        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of 8, 3 months, ₹1,199/month GST included. Ananya’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
       },
       {
         q: "Is an interactive English class just games, or will I actually speak?",
@@ -876,7 +877,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Can I learn English while working a full-time job in India?",
-        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Workplace English ₹1,499/month. Max 8. Siddharth did Workplace English while in a BPO. Sneha cleared interview rounds while working in Hyderabad IT.",
+        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Workplace English ₹1,499/month. Max 8. Aditya did Workplace English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
       },
       {
         q: "What if I miss a live English class because of a work shift?",
@@ -906,7 +907,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Client-call English is names, numbers and the next step — not a fake accent. Workplace English practises that live, 3 months, ₹1,499/month, max 8. Siddharth moved from BPO to a client-facing role in this lane.",
+      "Client-call English is names, numbers and the next step — not a fake accent. Workplace English practises that live, 3 months, ₹1,499/month, max 8. Neha now takes the Mumbai client call herself.",
     faqs: [
       {
         q: "How do I speak English on client calls without freezing?",
@@ -940,15 +941,15 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Explaining your work in English is three beats: one outcome, three points, one ask. Workplace English and Interactive Speaking both drill this live. Priya went from freezing to leading client presentations in Spoken English.",
+      "Explaining your work in English is three beats: one outcome, three points, one ask. Workplace English and Interactive Speaking both drill this live. Ananya now speaks the dashboard in Monday standups.",
     faqs: [
       {
         q: "How do I explain my work in English in 3 minutes?",
-        a: "Write five lines before you open the deck: one outcome, three beats, one ask. The slides are pictures of those lines. If you start with 18 slides, you will read them. Reading is not presenting. Priya went from freezing to leading client presentations in six months of Spoken English.",
+        a: "Write five lines before you open the deck: one outcome, three beats, one ask. The slides are pictures of those lines. If you start with 18 slides, you will read them. Reading is not presenting. Rohan now walks working papers in English with partners in Mumbai.",
       },
       {
         q: "Is standup English the same as a client presentation?",
-        a: "Same spine, shorter clock. A standup is 60–90 seconds: yesterday, today, stuck. A client deck is 3–5 minutes: outcome, three beats, ask. Anjali now runs standups. Priya’s lane is the client deck. Interview “tell me about a project” uses the same muscle.",
+        a: "Same spine, shorter clock. A standup is 60–90 seconds: yesterday, today, stuck. A client deck is 3–5 minutes: outcome, three beats, ask. Ananya now runs standups. Neha’s lane is the client call. Interview “tell me about a project” uses the same muscle.",
       },
       {
         q: "Which English course helps with presentations at work?",

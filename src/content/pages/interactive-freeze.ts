@@ -8,7 +8,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Anjali could not speak two lines. She now runs Monday standups. That is the job this class is built for. See [her story](/success-stories).",
+    text: "Ananya could not speak the dashboard in Monday standups. She does now. That is the job this class is built for. See [her story](/success-stories).",
   },
 
   { t: "h2", text: "What freeze actually is" },

@@ -8,7 +8,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Siddharth did Workplace English while in a BPO and moved to a client-facing role. Sneha cleared interview rounds while working in Hyderabad IT. The room is built for people who already have a calendar.",
+    text: "Aditya did Workplace English from a back-office calendar and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi while still in the job. The room is built for people who already have a calendar.",
   },
 
   { t: "h2", text: "The three slots" },

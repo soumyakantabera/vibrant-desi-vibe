@@ -96,7 +96,7 @@ function Page() {
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="e.g. Priya Sharma"
+                  placeholder="e.g. Neha Patel"
                   autoComplete="name"
                   required
                   minLength={2}
