@@ -86,11 +86,12 @@ function Page() {
             <Icon name="book" size={14} /> Blog
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            English & Career Notes. <span className="text-sunshine">Band 7, 60-sec Intros.</span>
+            Spoken English Blog.{" "}
+            <span className="text-sunshine">IELTS, Career, Fluency.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Practical articles from teachers who run live batches of 8 — from ₹999/mo classes.
-            Speaking habits, IELTS writing, emails, interviews.
+            Spoken English notes from teachers who run live classes from ₹999/mo — IELTS writing,
+            interview answers, workplace English, how long fluency takes.
           </p>
         </div>
       </section>
