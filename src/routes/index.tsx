@@ -20,16 +20,16 @@ import { COURSES } from "@/lib/courses";
 const heroSources = imageSources(IMG.heroClass);
 
 const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
-  { icon: "play", title: "100% Live Teacher", body: "Named teacher. Every class. Never a recording." },
+  { icon: "play", title: "A teacher who stays", body: "Named, live, every hour — never a recording sold as class." },
   {
     icon: "globe",
-    title: "500+ Learners · 11 States",
-    body: "West Bengal, Delhi, Maharashtra, Gujarat, South India.",
+    title: "Kolkata-born, heard across India",
+    body: "Same person, same fee, whether you join from Pune or Kochi.",
   },
   {
-    icon: "rupee",
-    title: "From ₹999/mo · ₹0 Demo",
-    body: "GST included. Sit in a full class before you pay.",
+    icon: "mic",
+    title: "You get the mic",
+    body: "A room of 8, so you speak — not a 40-person back row.",
   },
 ];
 
@@ -120,16 +120,17 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              ₹0 Demo · 5.0★ Google · 100% Live
+              Live from Kolkata · Across India
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              ₹999/mo · 7 Years · 500+ Learners
+              Quality Spoken English. Live.
               <br />
-              <span className="text-sunshine">West Bengal · Delhi · Maharashtra · South India</span>
+              <span className="text-sunshine">The room that hears you.</span>
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              11 states. Same live teacher, same ₹999/mo. Kolkata, Mumbai, Pune, Ahmedabad, Surat,
-              Bengaluru, Hyderabad, Chennai, Kochi, Coimbatore, Visakhapatnam. ₹0 demo. GST included.
+              We began as a Kolkata classroom. The room went online — same teacher, same correction,
+              learners from metros and towns. From ₹999/mo. Sit in a live class for ₹0 before you
+              pay.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -155,11 +156,11 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "₹999/month",
+                "Named live teacher",
+                "From ₹999/month",
                 "7 Years · 500+ Learners",
-                "11 States · IST",
-                "₹0 Live Demo",
-                "Batch of 8",
+                "₹0 real demo",
+                "You speak — batch of 8",
               ].map((s) => (
                 <span
                   key={s}
@@ -184,19 +185,19 @@ function Home() {
                     tone: "brand",
                     icon: SnapIcons.cap,
                     big: "500+",
-                    small: "Learners · 11 Indian states",
+                    small: "Learners who actually spoke",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
                     big: "7 yrs",
-                    small: "Live teaching since 2019",
+                    small: "Same teacher, still live",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "11 States",
-                    small: "WB · Delhi · MH · South India",
+                    big: "You speak",
+                    small: "A room of 8 — not the back row",
                   },
                 ]}
               />
@@ -280,8 +281,8 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Teach"
-            title="4 Tracks · 6 Live Programmes · From ₹999/mo"
-            subtitle="Spoken English, Workplace, IELTS, 1:1 Career. ₹999/mo · 7 years · 500+ learners in 11 states. ₹0 demo. Batches of 8."
+            title="Four tracks. One live teacher."
+            subtitle="Spoken English, Workplace, IELTS and Career Guidance — from a Kolkata classroom that now meets across India. From ₹999/mo. ₹0 demo."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -411,7 +412,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Speak today. <em className="text-sunshine">₹999/mo · 7 years · 500+.</em> Lead tomorrow."
+        "Speak today. <em className="text-sunshine">The room that hears you.</em> Lead tomorrow."
       </MottoBand>
 
       {/* NUMBERS */}
@@ -422,13 +423,13 @@ function Home() {
         </div>
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
           <div className="md:pr-4">
-            <Stat num="7" label="Years Live Teaching" />
+            <Stat num="7" label="Years, same teacher" />
           </div>
           <div className="md:px-4">
-            <Stat num="500+" label="Learners · 11 States" />
+            <Stat num="500+" label="People who spoke here" />
           </div>
           <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="11" label="States · Same ₹999/mo" />
+            <Stat num="8" label="In the room. You speak." />
           </div>
           {/* One rating, one source. This tile used to read 4.9★ while the
               location card below read 5.0★ — the same page stating two numbers.
