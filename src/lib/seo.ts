@@ -193,9 +193,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "₹999/mo Live English | 7 Yrs, 500+ India",
+    title: "Quality Spoken English | Live, From ₹999",
     description:
-      "Live English from ₹999/month. 7 years, 500+ learners in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala. ₹0 demo. GST in.",
+      "A Kolkata teacher and a live room small enough that you speak. 7 years, 500+ learners across India. From ₹999/month, GST included. ₹0 demo before you pay.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -218,7 +218,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 1.0,
     changefreq: "weekly",
     summary:
-      "Homepage. ₹999/mo live English, 7 years, 500+ learners across 11 Indian states — West Bengal, Delhi, Maharashtra, Gujarat and South India. ₹0 demo. Batches of 8.",
+      "Homepage. A Kolkata-born live English room for learners across India: named teacher, from ₹999/month, ₹0 demo, 7 years, 500+ learners. English batches of 8.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -286,9 +286,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Us | ₹999/mo, 7 Yrs, 500+ India",
+    title: "Why Us | The Live Room That Hears You",
     description:
-      "₹999/mo live English vs city rooms, Cambly and British Council. 7 years, 500+ learners in 11 states — WB, Delhi, Maharashtra, South India. ₹0 demo. GST in.",
+      "A named teacher, a room of 8, and a fee that does not jump with your city. 7 years live from Kolkata. From ₹999/month. ₹0 demo in a real class. GST in.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -303,7 +303,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Why us: ₹999/month, 7 years, 500+ learners across 11 states, 5.0 Google, ₹0 demo. Comparison with city classrooms, native apps and brand groups. Batches of 8.",
+      "Why us: a named teacher, a room of 8, and a fee that does not jump with your city. 7 years live from Kolkata. From ₹999/month. ₹0 real-class demo.",
     faqs: [
       {
         q: "How is Learn With Smile different from Cambly or British Council English Online?",
@@ -987,8 +987,8 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live English and career programmes: Spoken, Workplace, IELTS, Interview, Career Counselling. ₹999–₹1,999/month. 7 years, 500+ learners across 11 Indian states. ₹0 demo.",
-    slogan: "₹999/mo Live English. 7 Years. 500+ Learners. 11 States.",
+      "A Kolkata teacher, a live room, and programmes for speaking, work, IELTS and careers. From ₹999/month. 7 years, 500+ learners. ₹0 demo before you pay.",
+    slogan: "Quality Spoken English. Live. The room that hears you.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",
@@ -1044,7 +1044,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "₹999/mo live spoken English across India. 7 years, 500+ learners in 11 states — West Bengal, Delhi, Maharashtra, South India. ₹0 demo. GST included.",
+      "A Kolkata teacher and a live room small enough that you speak. From ₹999/month. 7 years, 500+ learners across India. ₹0 demo. GST included.",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }

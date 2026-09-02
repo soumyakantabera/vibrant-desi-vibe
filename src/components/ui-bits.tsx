@@ -236,16 +236,16 @@ export function CoverageStrip({
     <section className={invert ? "bg-brand-deep py-8 md:py-10" : "bg-[#F7F4EE] py-8 md:py-10"}>
       <div className="container-x">
         <p className={`font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
-          Coverage · 11 States · 15 Cities
+          Coverage
         </p>
         <h2
           className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${heading}`}
         >
-          500+ learners · 7 years · from ₹999/mo
+          Same teacher from Kolkata to Kochi.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          Same live teacher. Same fee. IST morning · evening · weekend. West Bengal, Delhi,
-          Maharashtra, Gujarat and South India — metros and towns.
+          The fee does not change with your pincode. Morning, evening and weekend IST — metros,
+          towns, and Indians abroad on the same live room.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           States

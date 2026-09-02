@@ -106,17 +106,17 @@ function Page() {
         <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div className="min-w-0 w-full text-cream">
             <span className="eyebrow eyebrow-white">
-              <Icon name="shield" size={14} /> Why Us · ₹999/mo · 7 Years · 500+
+              <Icon name="shield" size={14} /> Why us · the live room
             </span>
             <h1 className="mt-4 text-3xl leading-[1.05] text-cream md:text-6xl">
-              ₹999/mo · 7 Years · 500+ Learners
+              Quality Teaching. Live.
               <br />
-              <span className="text-sunshine">West Bengal · Delhi · Maharashtra · South India</span>
+              <span className="text-sunshine">The room that hears you.</span>
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              11 states. Same live teacher, same ₹999/mo. Kolkata, Mumbai, Pune, Ahmedabad,
-              Bengaluru, Hyderabad, Chennai, Kochi, Coimbatore, Visakhapatnam. ₹0 demo. GST
-              included. Batches of 8.
+              A named teacher, a batch small enough to correct you by name, and a fee that does not
+              jump with your pincode. From ₹999/mo. GST included. ₹0 demo in a real class — not a
+              sales call.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton
@@ -139,7 +139,7 @@ function Page() {
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
                 headline={{ big: "₹999", suffix: "/mo" }}
-                subnote="GST included · 11 states · 500+ learners"
+                subnote="GST included · Kolkata-born · heard across India"
                 rows={[
                   {
                     tone: "brand",
@@ -156,8 +156,8 @@ function Page() {
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "11 States",
-                    small: "WB · Delhi · MH · South India",
+                    big: "You speak",
+                    small: "A room of 8 — not the back row",
                   },
                 ]}
                 footer={`${RATING_DISPLAY} ${RATING.source} · 11 states · 09:00–12:00 IST`}
@@ -228,9 +228,8 @@ function Page() {
           <FeatureCard icon="user" color="indigo" title="Direct teacher support">
             1:1 outside class when you genuinely need it — not a ticket bot.
           </FeatureCard>
-          <FeatureCard icon="globe" color="sunshine" title="11 States · Same ₹999/mo">
-            West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala and
-            more. Same teacher. IST slots.
+          <FeatureCard icon="globe" color="sunshine" title="Kolkata-born. Heard across India.">
+            Same teacher. Same fee. Join from a metro or a town — the pincode does not change the room.
           </FeatureCard>
         </div>
       </section>

@@ -57,16 +57,16 @@ function Page() {
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
-              <Icon name="mic" size={14} /> 6 Programmes · ₹999/mo · 7 Years · 500+
+              <Icon name="mic" size={14} /> Six live programmes · one teacher
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              6 Live Programmes · From ₹999/mo
+              Quality English. Live.
               <br />
-              <span className="text-sunshine">7 Years · 500+ Learners · 11 States</span>
+              <span className="text-sunshine">Six programmes. One teacher who stays.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              4 tracks. Named teacher. Up to 2 sessions/week. Career Counselling 3 × 60-min 1:1 for
-              ₹999 total. West Bengal, Delhi, Maharashtra, South India. ₹0 demo.
+              Spoken, Workplace, IELTS, Interview, Interactive Speaking — and 1:1 Career Guidance.
+              Up to two live sessions a week. From ₹999/mo. The demo is a real class, not a pitch.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
