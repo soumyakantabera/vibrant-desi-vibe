@@ -115,7 +115,7 @@ export function Nav() {
               {coursesOpen && (
                 <div
                   onMouseLeave={() => setCoursesOpen(false)}
-                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[760px] max-w-[92vw]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[680px] max-w-[92vw]"
                 >
                   <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
                     <div className="flex items-center justify-between gap-4 bg-gradient-to-r from-brand-deep to-brand px-5 py-4 text-cream">
@@ -130,7 +130,7 @@ export function Nav() {
                         onClick={() => setCoursesOpen(false)}
                         className="shrink-0 rounded-full bg-white/15 px-3 py-2 text-xs font-display font-bold text-cream transition hover:bg-white/25"
                       >
-                        Compare all 6 →
+                        View all courses →
                       </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-2 p-2">
@@ -247,7 +247,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="block mb-2 px-4 py-2.5 rounded-xl bg-brand-soft text-brand-deep font-display font-semibold text-sm hover:bg-brand-soft/80"
               >
-                View all 6 courses →
+                View all courses →
               </Link>
               <div className="grid gap-3 pb-6">
                 {COURSE_CATEGORIES.map((category) => (
@@ -344,13 +344,16 @@ function CourseCategoryGroup({
   onPick: () => void;
 }) {
   const tone = NAV_CATEGORY_TONES[category.tone];
+  const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
+  const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
+
   return (
     <section className={`rounded-2xl border p-3 ${tone.panel}`}>
       <Link
-        to="/english-career"
-        hash={category.id}
+        to={onlySlug ? coursePath(onlySlug) : "/english-career"}
+        hash={onlySlug ? undefined : category.id}
         onClick={onPick}
-        className="flex items-start gap-2 rounded-xl px-2 py-1.5"
+        className={`flex items-start gap-2 rounded-xl px-2 py-1.5 transition ${tone.hover}`}
       >
         <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
           <Icon name={category.icon} size={18} />
@@ -360,36 +363,42 @@ function CourseCategoryGroup({
             {category.title}
           </span>
           <span className="mt-0.5 block text-[11px] leading-snug text-ink/70">
-            {category.description}
+            {onlyCourse
+              ? `${onlyCourse.duration.split(" · ")[0]} · ${onlyCourse.price}`
+              : category.description}
           </span>
         </span>
+        <Icon name="arrow-right" size={13} className="mt-1 opacity-35" />
       </Link>
-      <div className="mt-2 grid gap-1">
-        {category.slugs.map((slug) => {
-          const course = COURSES[slug];
-          return (
-            <Link
-              key={slug}
-              to={coursePath(slug)}
-              onClick={onPick}
-              className={`flex items-center gap-2 rounded-xl px-2.5 py-2 transition ${tone.hover}`}
-            >
-              <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${tone.icon}`}>
-                <Icon name={course.icon} size={14} />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block truncate text-xs font-display font-bold text-ink">
-                  {course.title}
+
+      {!onlySlug && (
+        <div className="mt-2 grid gap-1">
+          {category.slugs.map((slug) => {
+            const course = COURSES[slug];
+            return (
+              <Link
+                key={slug}
+                to={coursePath(slug)}
+                onClick={onPick}
+                className={`flex items-center gap-2 rounded-xl px-2.5 py-2 transition ${tone.hover}`}
+              >
+                <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${tone.icon}`}>
+                  <Icon name={course.icon} size={14} />
                 </span>
-                <span className="block text-[10px] text-ink/65">
-                  {course.duration.split(" · ")[0]} · {course.price}
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-xs font-display font-bold text-ink">
+                    {course.title}
+                  </span>
+                  <span className="block text-[10px] text-ink/65">
+                    {course.duration.split(" · ")[0]} · {course.price}
+                  </span>
                 </span>
-              </span>
-              <Icon name="arrow-right" size={13} className="opacity-35" />
-            </Link>
-          );
-        })}
-      </div>
+                <Icon name="arrow-right" size={13} className="opacity-35" />
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 }
@@ -437,13 +446,19 @@ function MobileCategoryGroup({
   onPick: () => void;
 }) {
   const tone = NAV_CATEGORY_TONES[category.tone];
+  const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
+  const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
+  const onlyPath = onlySlug ? coursePath(onlySlug) : undefined;
+
   return (
     <section className={`rounded-2xl border p-2 ${tone.panel}`}>
       <Link
-        to="/english-career"
-        hash={category.id}
+        to={onlyPath ?? "/english-career"}
+        hash={onlySlug ? undefined : category.id}
         onClick={onPick}
-        className="flex items-center gap-3 rounded-xl px-2 py-2"
+        className={`flex items-center gap-3 rounded-xl px-2 py-2 transition ${
+          onlyPath && currentPath === onlyPath ? "bg-white shadow-sm" : tone.hover
+        }`}
       >
         <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
           <Icon name={category.icon} size={17} />
@@ -453,32 +468,39 @@ function MobileCategoryGroup({
             {category.title}
           </span>
           <span className="block text-[10px] text-ink/65">
-            {category.slugs.length} {category.slugs.length === 1 ? "programme" : "programmes"}
+            {onlyCourse
+              ? `${onlyCourse.duration.split(" · ")[0]} · ${onlyCourse.price}`
+              : `${category.slugs.length} programmes`}
           </span>
         </span>
         <Icon name="arrow-right" size={14} className="opacity-35" />
       </Link>
-      <div className="grid gap-1">
-        {category.slugs.map((slug) => {
-          const course = COURSES[slug];
-          const to = coursePath(slug);
-          const active = currentPath === to;
-          return (
-            <Link
-              key={slug}
-              to={to}
-              onClick={onPick}
-              className={`flex items-center gap-2 rounded-xl px-2.5 py-2 ${active ? "bg-white shadow-sm" : tone.hover}`}
-            >
-              <Icon name={course.icon} size={15} className={tone.heading} />
-              <span className="min-w-0 flex-1 truncate text-xs font-display font-bold text-ink">
-                {course.title}
-              </span>
-              <span className="text-[10px] font-semibold text-ink/60">{course.price}</span>
-            </Link>
-          );
-        })}
-      </div>
+
+      {!onlySlug && (
+        <div className="grid gap-1">
+          {category.slugs.map((slug) => {
+            const course = COURSES[slug];
+            const to = coursePath(slug);
+            const active = currentPath === to;
+            return (
+              <Link
+                key={slug}
+                to={to}
+                onClick={onPick}
+                className={`flex items-center gap-2 rounded-xl px-2.5 py-2 ${
+                  active ? "bg-white shadow-sm" : tone.hover
+                }`}
+              >
+                <Icon name={course.icon} size={15} className={tone.heading} />
+                <span className="min-w-0 flex-1 truncate text-xs font-display font-bold text-ink">
+                  {course.title}
+                </span>
+                <span className="text-[10px] font-semibold text-ink/60">{course.price}</span>
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 }
