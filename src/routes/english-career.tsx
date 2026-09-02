@@ -146,19 +146,14 @@ function Page() {
                     <p className="mt-1 text-ink/80">{group.description}</p>
                   </div>
                 </div>
-                <Reveal
-                  stagger
-                  className={
-                    group.slugs.length === 1 ? "grid max-w-3xl gap-6" : "grid gap-6 lg:grid-cols-2"
-                  }
-                >
+                <Reveal stagger className="grid items-stretch gap-6 lg:grid-cols-2">
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
                       <Link
                         key={s}
                         to={`/course-${s}` as CoursePath}
-                        className="group card-soft min-w-0 flex flex-col transition hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
+                        className="group card-soft flex h-full min-w-0 flex-col transition hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
                       >
                         <SmartImage
                           src={c.heroImage}
