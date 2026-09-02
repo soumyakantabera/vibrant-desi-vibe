@@ -220,7 +220,7 @@ function Home() {
       </section>
 
       {/* STORY BAND */}
-      <section className="bg-brand-deep py-12 md:py-24">
+      <section className="bg-brand-deep py-10 md:py-14">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider">
@@ -279,12 +279,12 @@ function Home() {
             title="Choose the Goal You Need Now"
             subtitle="Four clear categories for spoken English, workplace communication, IELTS and career guidance. Start with the result you need—not a confusing course name."
           />
-          <Reveal stagger className="grid gap-5 lg:grid-cols-2 lg:gap-6">
+          <Reveal stagger className="grid gap-4 md:grid-cols-2 lg:gap-5">
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
           </Reveal>
-          <div className="mt-6 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
             <div>
               <strong className="text-cream block text-lg">
                 Not sure which course is right for you?
@@ -754,60 +754,60 @@ function CategoryCard({ category }: { category: CourseCategory }) {
   const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
 
   return (
-    <article className="group min-w-0 overflow-hidden rounded-[1.75rem] border border-[#DDE5DF] bg-white shadow-[0_18px_50px_-34px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_24px_60px_-32px_rgba(8,70,51,.55)]">
-      <div className="relative h-48 overflow-hidden sm:h-56">
+    <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
+      <div className="relative h-32 overflow-hidden md:h-24 lg:h-28">
         <SmartImage
           src={visual.heroImage}
           alt={`${category.title} online courses in India`}
           fill
           imgClassName="transition duration-700 group-hover:scale-105"
-          sizes="(min-width: 1024px) 50vw, 100vw"
+          sizes="(min-width: 768px) 50vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
-        <span className="pill absolute left-5 top-5 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur sm:left-6 sm:top-6">
+        <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur">
           {onlySlug ? "1 programme" : `${category.slugs.length} programmes`}
         </span>
       </div>
-      <div className={`h-1.5 ${tone.bar}`} />
+      <div className={`h-1 ${tone.bar}`} />
 
-      <div className="flex min-w-0 flex-col p-5 sm:p-7">
-        <div className="flex items-center gap-3">
-          <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${tone.icon}`}>
-            <Icon name={category.icon} size={23} />
+      <div className="flex min-w-0 flex-col p-3.5 lg:p-4">
+        <div className="flex items-center gap-2.5">
+          <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
+            <Icon name={category.icon} size={18} />
           </span>
-          <h3 className="font-display text-2xl font-extrabold leading-tight text-ink sm:text-[1.7rem]">
+          <h3 className="font-display text-lg font-extrabold leading-tight text-ink md:text-xl">
             {category.title}
           </h3>
         </div>
 
-        <p className="mt-3 max-w-xl text-base leading-relaxed text-ink/80">
+        <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink/80">
           {category.description}
         </p>
 
         {onlyCourse ? (
-          <div className="mt-5 flex min-w-0 flex-wrap gap-2 text-xs font-display font-bold">
+          <div className="mt-3 flex min-w-0 flex-wrap gap-1.5 text-xs font-display font-bold">
             <span
-              className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-3 py-2 leading-tight ${tone.badge}`}
+              className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 leading-tight ${tone.badge}`}
             >
-              <Icon name={onlyCourse.icon} size={14} /> {onlyCourse.title}
+              <Icon name={onlyCourse.icon} size={13} /> {onlyCourse.title}
             </span>
             <span
-              className={`max-w-full whitespace-normal rounded-full border px-3 py-2 leading-tight ${tone.badge}`}
+              className={`max-w-full whitespace-normal rounded-full border px-2.5 py-1.5 leading-tight ${tone.badge}`}
             >
               {onlyCourse.duration.split(" · ")[0]} · {onlyCourse.price}
             </span>
           </div>
         ) : (
-          <div className="mt-5 flex min-w-0 flex-wrap gap-2">
+          <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
             {category.slugs.map((slug) => {
               const course = COURSES[slug];
               return (
                 <Link
                   key={slug}
                   to={coursePath(slug)}
-                  className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
+                  className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
                 >
-                  <Icon name={course.icon} size={14} /> {course.title}
+                  <Icon name={course.icon} size={13} /> {course.title}
                 </Link>
               );
             })}
@@ -817,10 +817,10 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         <Link
           to={destination}
           hash={onlySlug ? undefined : category.id}
-          className="mt-6 inline-flex min-h-12 w-fit max-w-full items-center gap-2 rounded-full bg-brand-deep px-5 py-3 text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
+          className="mt-3.5 inline-flex min-h-10 w-fit max-w-full items-center gap-1.5 rounded-full bg-brand-deep px-4 py-2 text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
         >
           {onlyCourse ? `View ${onlyCourse.title}` : "Explore both programmes"}
-          <Icon name="arrow-right" size={15} />
+          <Icon name="arrow-right" size={14} />
         </Link>
       </div>
     </article>

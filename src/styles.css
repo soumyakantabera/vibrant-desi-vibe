@@ -304,7 +304,7 @@ section > .container-x { position: relative; z-index: 10; }
 /* Reusable utilities */
 @layer components {
   .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-7 lg:px-10; }
-  .section { @apply py-16 md:py-24; }
+  .section { @apply py-12 md:py-14 lg:py-16; }
   .eyebrow {
     display: inline-flex; align-items: center; gap: .4rem;
     background: var(--brand-soft); color: var(--brand-deep);
@@ -376,9 +376,12 @@ section > .container-x { position: relative; z-index: 10; }
   .btn-sun, .btn-coral { color: var(--ink) !important; }
 
   .card-soft {
-    background: #fff; border-radius: 1.25rem; padding: 1.5rem;
+    background: #fff; border-radius: 1.1rem; padding: 1.1rem;
     border: 1px solid #D4DED7;
     box-shadow: 0 2px 4px rgba(14,36,22,.05), 0 14px 34px -22px rgba(8,70,51,.35);
+  }
+  @media (min-width: 768px) {
+    .card-soft { padding: 1rem 1.1rem; }
   }
   .pill {
     display:inline-flex; align-items:center; gap:.4rem;

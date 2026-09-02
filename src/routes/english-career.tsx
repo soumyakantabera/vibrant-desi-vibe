@@ -146,7 +146,7 @@ function Page() {
                     <p className="mt-1 text-ink/80">{group.description}</p>
                   </div>
                 </div>
-                <Reveal stagger className="grid items-stretch gap-6 lg:grid-cols-2">
+                <Reveal stagger className="grid items-stretch gap-4 md:grid-cols-2 md:gap-5">
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
@@ -158,7 +158,7 @@ function Page() {
                         <SmartImage
                           src={c.heroImage}
                           alt={c.title}
-                          className="mb-5 h-44 rounded-2xl"
+                          className="mb-3 h-32 rounded-xl md:h-36"
                           imgClassName="group-hover:scale-105 transition duration-500"
                           sizes="(min-width: 768px) 50vw, 100vw"
                         />
@@ -172,10 +172,10 @@ function Page() {
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
                         </div>
                         <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
-                        <p className="mt-2 flex-1 text-base leading-relaxed text-ink/85">
+                        <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/85">
                           {c.tagline}
                         </p>
-                        <span className="syllabus-cta mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2.5 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white group-focus-within:bg-brand group-focus-within:text-white">
+                        <span className="syllabus-cta mt-4 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white group-focus-within:bg-brand group-focus-within:text-white">
                           View Full Syllabus <Icon name="arrow-right" size={14} />
                         </span>
                       </Link>
