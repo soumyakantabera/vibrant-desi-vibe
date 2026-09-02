@@ -19,6 +19,29 @@ const SLUGS = [
   "career-counselling",
 ] as const;
 
+const COURSE_GROUPS = [
+  {
+    title: "Speak Confidently",
+    description: "Build the foundation or get repeated live speaking practice.",
+    slugs: ["spoken-english", "interactive-speaking"],
+  },
+  {
+    title: "Work & Career",
+    description: "Use clearer English at work and perform better in interviews.",
+    slugs: ["business-english", "interview-prep"],
+  },
+  {
+    title: "IELTS Preparation",
+    description: "Prepare for the Academic or General Training test.",
+    slugs: ["ielts"],
+  },
+  {
+    title: "Career Guidance",
+    description: "Choose a realistic education or career direction.",
+    slugs: ["career-counselling"],
+  },
+] as const;
+
 type CoursePath = `/course-${(typeof SLUGS)[number]}`;
 
 export const Route = createFileRoute("/english-career")({
@@ -71,9 +94,9 @@ function Page() {
               Speak English. <span className="text-sunshine">Win Interviews.</span> Build a Career.
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Six 100% online live courses — max 6 per batch (1:1 for Career Counselling). Flexible
-              morning, evening & weekend slots. From{" "}
-              <strong className="text-sunshine">₹999/mo</strong>.
+              Six practical programmes in four clear categories. English classes run in live batches
+              capped at 6; Career Counselling is a separate 1:1 service. Flexible morning, evening
+              and weekend slots. From <strong className="text-sunshine">₹999/mo</strong>.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -103,13 +126,13 @@ function Page() {
                     tone: "brand",
                     icon: SnapIcons.book,
                     big: "6 courses",
-                    small: "Spoken · IELTS · Business · Interview",
+                    small: "Speaking · Workplace · IELTS · Career",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.people,
                     big: "Max 6",
-                    small: "Per batch · or 1:1 option",
+                    small: "In every English course batch",
                   },
                   {
                     tone: "coral",
@@ -118,7 +141,7 @@ function Page() {
                     small: "Live polls · roleplays · debates",
                   },
                 ]}
-                footer="Free Demo on WhatsApp · Replies 09:00–12:00 IST"
+                footer="Message Anytime · Replies 09:00–12:00 IST"
               />
             </div>
           </div>
@@ -128,44 +151,62 @@ function Page() {
       <section className="section">
         <div className="container-x">
           <SectionHeader
-            eyebrow="Explore All 6 Courses"
-            title="Pick Your Goal — Start Today"
-            subtitle="Click any course for the full live curriculum, outcomes, FAQs and pricing."
+            eyebrow="Four Clear Categories"
+            title="Start With the Outcome You Need"
+            subtitle="The six existing programmes are grouped by learner goal, so similar options are easier to compare."
           />
-          <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SLUGS.map((s) => {
-              const c = COURSES[s];
-              return (
-                <Link
-                  key={s}
-                  to={`/course-${s}` as CoursePath}
-                  className="group card-soft hover:-translate-y-1 transition flex flex-col"
-                >
-                  <SmartImage
-                    src={c.heroImage}
-                    alt={c.title}
-                    className="rounded-xl mb-4 h-40"
-                    imgClassName="group-hover:scale-105 transition duration-500"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  />
-                  <div className="flex items-center gap-2 mb-2 flex-wrap">
-                    <span className="h-9 w-9 rounded-xl bg-brand-soft text-brand-deep flex items-center justify-center">
-                      <Icon name={c.icon} size={20} />
-                    </span>
-                    <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
-                      {c.price}
-                    </span>
-                    <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
-                  </div>
-                  <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
-                  <p className="text-sm text-ink/85 mt-1 flex-1">{c.tagline}</p>
-                  <span className="mt-4 text-brand-deep font-display font-bold text-sm inline-flex items-center gap-1.5">
-                    View Full Syllabus <Icon name="arrow-right" size={14} />
-                  </span>
-                </Link>
-              );
-            })}
-          </Reveal>
+          <div className="space-y-10">
+            {COURSE_GROUPS.map((group) => (
+              <section
+                key={group.title}
+                aria-labelledby={`group-${group.title.replaceAll(" ", "-")}`}
+              >
+                <div className="mb-4">
+                  <h2
+                    id={`group-${group.title.replaceAll(" ", "-")}`}
+                    className="text-2xl font-display font-extrabold text-ink"
+                  >
+                    {group.title}
+                  </h2>
+                  <p className="mt-1 text-ink/80">{group.description}</p>
+                </div>
+                <Reveal stagger className="grid md:grid-cols-2 gap-6">
+                  {group.slugs.map((s) => {
+                    const c = COURSES[s];
+                    return (
+                      <Link
+                        key={s}
+                        to={`/course-${s}` as CoursePath}
+                        className="group card-soft hover:-translate-y-1 transition flex flex-col"
+                      >
+                        <SmartImage
+                          src={c.heroImage}
+                          alt={c.title}
+                          className="rounded-xl mb-4 h-40"
+                          imgClassName="group-hover:scale-105 transition duration-500"
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                        />
+                        <div className="flex items-center gap-2 mb-2 flex-wrap">
+                          <span className="h-9 w-9 rounded-xl bg-brand-soft text-brand-deep flex items-center justify-center">
+                            <Icon name={c.icon} size={20} />
+                          </span>
+                          <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
+                            {c.price}
+                          </span>
+                          <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
+                        </div>
+                        <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
+                        <p className="text-sm text-ink/85 mt-1 flex-1">{c.tagline}</p>
+                        <span className="mt-4 text-brand-deep font-display font-bold text-sm inline-flex items-center gap-1.5">
+                          View Full Syllabus <Icon name="arrow-right" size={14} />
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </Reveal>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -142,13 +142,13 @@ function Home() {
               </Link>
             </div>
             <p className="mt-3 text-sm font-semibold text-white/95">
-              One message. No surprise sales call. Replies 09:00–12:00 IST.
+              Message anytime. No surprise sales call. Replies 09:00–12:00 IST.
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "100% Online · Live",
                 "Morning · Evening · Weekend",
-                "Max 6 or 1:1",
+                "Max 6 per English batch",
                 "Fees from ₹999/month",
                 "Same-Week Rescheduling",
               ].map((s) => (
@@ -187,7 +187,7 @@ function Home() {
                     tone: "coral",
                     icon: SnapIcons.people,
                     big: "Max 6",
-                    small: "Per batch · or 1:1 option",
+                    small: "In every English course batch",
                   },
                 ]}
               />
@@ -277,7 +277,7 @@ function Home() {
               to="/english-career"
               tag="6 Courses · From ₹999/mo"
               title="English & Career"
-              desc="Spoken English · Business English · Interactive Speaking · IELTS · Interview Prep · Career Counselling"
+              desc="Speak Confidently · Work & Career · IELTS Preparation · Career Guidance"
               img={IMG.speaking}
               accent="brand"
             />
@@ -288,8 +288,8 @@ function Home() {
                 Not sure which course is right for you?
               </strong>
               <p className="text-white text-sm mt-1">
-                Tell us your goal in one WhatsApp message — we recommend the best-fit course during
-                09:00–12:00 IST.
+                Message your goal anytime — we recommend the best-fit course when admissions replies
+                during 09:00–12:00 IST.
               </p>
             </div>
             <WaButton
@@ -317,20 +317,20 @@ function Home() {
             invert
           />
           <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
-            <GlassCard icon="users" title="Batch Classes" pricing="From ₹999/mo">
-              Scheduled cohorts (max 6). Live teacher feedback, gamified activities, collaborative
-              exercises. Best for structure and accountability.
+            <GlassCard icon="users" title="Small Live Batches" pricing="From ₹999/mo">
+              Scheduled English cohorts capped at 6. You practise with classmates, speak in every
+              class and receive corrections during the lesson.
             </GlassCard>
-            <GlassCard icon="user" title="1:1 Private Sessions" pricing="Flexible Pricing">
-              Just you and the teacher, at your pace. Fully personalised curriculum, schedule, and
-              feedback. Available on most courses.
+            <GlassCard icon="user" title="Direct Teacher Support" pricing="When Genuinely Needed">
+              Questions are answered during class. Outside class, a learner can contact the teacher
+              directly when genuine help is needed; this is not a scheduled 1:1 feedback session.
             </GlassCard>
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { n: 1, lbl: "Choose Course", sub: "6 live programs", c: "sunshine" },
-              { n: 2, lbl: "Pick Format", sub: "Batch or 1:1", c: "coral" },
-              { n: 3, lbl: "WhatsApp Us", sub: "09:00–12:00 IST", c: "wa" },
+              { n: 2, lbl: "Share Your Goal", sub: "We suggest the right course", c: "coral" },
+              { n: 3, lbl: "WhatsApp Us", sub: "Message anytime", c: "wa" },
               { n: 4, lbl: "Join Live Class", sub: "First session starts", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
@@ -414,7 +414,7 @@ function Home() {
             <Stat num="500+" label="Learners Helped" />
           </div>
           <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="Max 6" label="Per Batch · 1:1 Option" />
+            <Stat num="Max 6" label="Per English Course Batch" />
           </div>
           {/* One rating, one source. This tile used to read 4.9★ while the
               location card below read 5.0★ — the same page stating two numbers.
@@ -499,26 +499,28 @@ function Home() {
               </span>
               <div className="flex items-center gap-3 mb-3">
                 <span className="h-11 w-11 rounded-xl bg-sunshine/20 text-sunshine flex items-center justify-center">
-                  <OneOnOneIcon />
+                  <WorkplaceIcon />
                 </span>
-                <h3 className="text-cream font-display font-extrabold text-lg">1:1 Personalised</h3>
+                <h3 className="text-cream font-display font-extrabold text-lg">
+                  Workplace English
+                </h3>
               </div>
               <p className="font-display font-extrabold text-2xl sm:text-3xl text-sunshine">
-                Custom<span className="text-base font-bold text-cream/95"> · per goal</span>
+                ₹1,499<span className="text-base font-bold text-cream/95">/month</span>
               </p>
-              <p className="text-sm text-cream/95 mt-1">Quote shared during 09:00–12:00 IST</p>
+              <p className="text-sm text-cream/95 mt-1">3 months · up to 2 classes/week</p>
               <ul className="mt-4 space-y-2 text-sm text-cream">
                 <li className="flex gap-2">
                   <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
-                  Curriculum built around your goal
+                  Meetings, client calls and status updates
                 </li>
                 <li className="flex gap-2">
                   <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
-                  Pick your own day & time
+                  Emails, workplace messages and presentations
                 </li>
                 <li className="flex gap-2">
                   <CheckIcon className="text-sunshine mt-0.5 shrink-0" />
-                  Pan-India · UPI / Cards / Net-banking
+                  Live batch capped at 6 learners
                 </li>
               </ul>
             </article>
@@ -538,7 +540,7 @@ function Home() {
                 </li>
                 <li className="flex gap-2">
                   <CheckIcon className="text-brand mt-0.5 shrink-0" />
-                  Get a custom learning plan
+                  Ask questions before deciding
                 </li>
                 <li className="flex gap-2">
                   <CheckIcon className="text-brand mt-0.5 shrink-0" />
@@ -569,14 +571,15 @@ function Home() {
                 Chat on WhatsApp
               </h3>
               <p className="text-white/95 leading-relaxed mb-6">
-                Tell us your goal in one message. We will guide you to the right course and demo
-                slot during 09:00–12:00 IST. No checkout, no obligation and no surprise sales call.
+                Tell us your goal in one message at any time. We will guide you to the right course
+                and demo slot when admissions replies during 09:00–12:00 IST. No checkout, no
+                obligation and no surprise sales call.
               </p>
               <WaButton message="Hi, I am interested in a free demo. Please guide me." size="lg">
                 Open WhatsApp Now
               </WaButton>
               <p className="text-xs text-white/80 mt-4">
-                WhatsApp preferred · Replies 09:00–12:00 IST · Phone is a fallback
+                Message anytime · Replies 09:00–12:00 IST · Phone is a fallback
               </p>
             </div>
             <Link
@@ -806,8 +809,8 @@ function BatchIcon() {
   );
 }
 
-// 1:1 Personalised — one student with spotlight rays
-function OneOnOneIcon() {
+// Workplace English — one speaker presenting an idea clearly
+function WorkplaceIcon() {
   return (
     <IconFrame>
       <circle cx="12" cy="8.5" r="2.8" />

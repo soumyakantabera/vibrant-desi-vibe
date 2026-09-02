@@ -43,8 +43,8 @@ const STORIES = [
     quote:
       "Switched from a BPO to a client-facing role. Salary doubled in 4 months. The mock calls and role-plays made me genuinely confident.",
     name: "Siddharth Nair",
-    detail: "Business English · Customer Success, Pune",
-    waMessage: "Hi, I saw Siddharth's story. Free demo for Business English please.",
+    detail: "Workplace English · Customer Success, Pune",
+    waMessage: "Hi, I saw Siddharth's story. Free demo for Workplace English please.",
   },
   {
     quote:

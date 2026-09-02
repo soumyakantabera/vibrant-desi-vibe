@@ -155,7 +155,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/",
     title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Live Spoken English, IELTS, Business English and Interview Prep for Indian learners. Max 6 per batch or 1:1, from ₹999/month. Free demo class on WhatsApp.",
+      "Live Spoken English, Workplace English, IELTS and Interview Prep for Indian learners. Max 6 per English batch, from ₹999/month. Free demo on WhatsApp.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -164,6 +164,7 @@ export const PAGES: Record<string, PageSeo> = {
       "english class fees per month in india",
       "ielts coaching online india",
       "business english course india",
+      "workplace english course india",
       "interview preparation in english",
       "career counselling online india",
       "live english class with real teacher",
@@ -176,7 +177,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with up to 2 classes per week. IELTS Preparation is ₹1,999/month, Business English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 6 students, with up to 2 classes per week. IELTS Preparation is ₹1,999/month, Workplace English ₹1,499/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹999 for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -203,9 +204,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "6 Live Online English & Career Courses from ₹999/mo",
+    title: "6 Live English & Career Programmes from ₹999/mo",
     description:
-      "Compare all six live courses side by side — fees, duration, batch size and outcomes. Spoken English, IELTS, Business English, Interview Prep and Career.",
+      "Compare six programmes in four goal-based categories: speaking confidence, workplace and interviews, IELTS preparation, and career guidance.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -224,16 +225,16 @@ export const PAGES: Record<string, PageSeo> = {
       "Course hub. Side-by-side comparison of all six live courses with fees (₹999–₹1,999/month), duration, format and outcomes.",
     faqs: [
       {
-        q: "Which English course should I choose — Spoken English, Business English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Business English (₹1,499/month, 3 months) if you already speak but need workplace skills — emails, meetings, presentations, negotiation. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling.",
+        q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Workplace English (₹1,499/month, 3 months) if you already speak but need meetings, client calls, status updates, emails and presentations. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Business English is ₹1,499 per month, Interactive Speaking is ₹1,199 per month, and 1:1 Career Counselling is ₹999 for the complete 3-session package. All fees include GST.",
+        a: "Basic Spoken English is ₹999 per month, Workplace English is ₹1,499 per month, Interactive Speaking is ₹1,199 per month, and 1:1 Career Counselling is ₹999 for the complete 3-session package. All fees include GST.",
       },
       {
         q: "Can I take two courses at the same time?",
-        a: "Yes, and the most common pairing is Interactive Speaking alongside Interview Preparation, or Business English alongside Career Counselling. Message us on WhatsApp and we will schedule the two batches so they do not clash and quote a combined fee.",
+        a: "Yes, and the most relevant pairings are Interactive Speaking with Interview Preparation, or Workplace English with Career Counselling. Message us on WhatsApp so we can check whether the available schedules can work together.",
       },
     ],
   },
@@ -482,7 +483,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you prepare Kolkata students for IELTS and job interviews too?",
-        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹1,999/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Business English at ₹1,499/month for the Sector V and Rajarhat IT and BPO cluster. All of them are live, capped at 6 students, and taught from Kolkata.",
+        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹1,999/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Workplace English at ₹1,499/month for professionals in IT, BPO, customer support and other client-facing roles. All English courses are live and capped at 6 students.",
       },
     ],
   },
@@ -582,6 +583,50 @@ export const PAGES: Record<string, PageSeo> = {
       },
     ],
   },
+
+  "/workplace-english-course-online-india": {
+    path: "/workplace-english-course-online-india",
+    title: "Workplace English Course Online India: Honest Guide",
+    description:
+      "A practical guide to English for meetings, client calls, updates, emails and presentations — plus who needs a course and who should practise independently.",
+    shortTitle: "Workplace English Course Guide",
+    keywords: [
+      "workplace english course online india",
+      "english communication for working professionals",
+      "professional english speaking course online india",
+      "business english course online india",
+      "english for office meetings and client calls",
+      "english for bpo and customer support",
+      "office english speaking course india",
+    ],
+    ogImage: "/og/business-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "A practical buyer and self-study guide to workplace English in India: meetings, client calls, status updates, emails and presentations; who needs live training; and how the Learn With Smile max-6 course works.",
+    faqs: [
+      {
+        q: "What is Workplace English?",
+        a: "Workplace English is the spoken and written English used to complete real work: giving updates, joining meetings, asking for clarification, speaking with clients, writing concise messages and presenting an idea. It is sometimes marketed as Business English, but it is useful well beyond managers and corporate offices — including freshers, IT and BPO employees, customer support teams, sales staff and freelancers.",
+      },
+      {
+        q: "Who should join a Workplace English course?",
+        a: "Join if you can already hold a basic English conversation but become unclear or silent in meetings, calls, updates or professional writing. If you cannot yet form everyday sentences, start with Basic Spoken English. If you speak comfortably at work and only need vocabulary, use free reading and practice resources instead of buying a course.",
+      },
+      {
+        q: "How much does Learn With Smile Workplace English cost?",
+        a: "The course costs ₹1,499 per month including GST. It runs for three months with up to two live class days per week in a batch capped at 6 learners. There is no registration or material fee and no course certificate. A real live demo class is available before payment.",
+      },
+      {
+        q: "Does the course include scheduled 1:1 feedback?",
+        a: "No. Feedback and correction happen during the live classes. Outside class, direct contact with the teacher is assured when a learner genuinely needs help, but there is currently no scheduled recurring 1:1 feedback session.",
+      },
+      {
+        q: "Will Workplace English guarantee a promotion or salary increase?",
+        a: "No ethical course can guarantee that. Clearer communication can remove one barrier at work, but promotion and salary decisions also depend on role, technical performance, experience, company conditions and available opportunities. The course practises communication situations; it does not promise a job outcome.",
+      },
+    ],
+  },
 };
 
 /* --------------------------------------------------------------------------
@@ -642,10 +687,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
-    title: "Business English Online | ₹1,499/mo, 3 Months",
+    title: "Workplace English Course Online | ₹1,499/month",
     description:
-      "Business English for working professionals — emails, meetings, presentations and negotiation. Live online for 3 months, max 6 students, ₹1,499/month.",
-    shortTitle: "Business English",
+      "Workplace English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live max-6 batch, ₹1,499/month.",
+    shortTitle: "Workplace English",
     keywords: [
       "business english course online india",
       "english for working professionals india",
@@ -653,18 +698,21 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "professional email writing course english",
       "english for client meetings and presentations",
       "workplace english course india fees",
+      "professional english speaking course online india",
+      "english communication for working professionals",
+      "english for bpo and customer support",
       "business english classes evening batch india",
     ],
     ogImage: "/og/business-english.jpg",
     summary:
-      "Business English — ₹1,499/month · 3 months in a live batch of max 6. Emails, meetings, presentations and negotiation.",
+      "Workplace English — ₹1,499/month · 3 months in a live batch of max 6. Meetings, calls, updates, emails and presentations.",
     extraFaqs: [
       {
-        q: "What is the difference between spoken English and business English?",
-        a: "Spoken English builds the underlying ability to hold a conversation — grammar, vocabulary, pronunciation, confidence. Business English assumes you already have that and trains the workplace layer on top: writing emails that get replies, opening and closing meetings, disagreeing politely with a senior, pitching an idea in 60 seconds, handling Q&A, and negotiating without burning the relationship. If you cannot yet hold a 5-minute conversation, start with Spoken English first.",
+        q: "What is the difference between Spoken English and Workplace English?",
+        a: "Spoken English builds the underlying ability to hold a conversation — grammar, vocabulary, pronunciation and confidence. Workplace English assumes you can already manage a basic conversation and practises the situations that affect your job: status updates, meetings, client calls, clarification, emails and presentations. If you cannot yet hold a five-minute conversation, start with Basic Spoken English first.",
       },
       {
-        q: "Is there a Business English course that fits around a full-time job?",
+        q: "Is there a Workplace English course that fits around a full-time job?",
         a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The three-month course is ₹1,499/month; every class is recorded so a missed session because of a work escalation does not set you back.",
       },
     ],
@@ -729,7 +777,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is online IELTS coaching as good as classroom coaching?",
-        a: "For IELTS specifically, online is usually better, because the exam is now computer-delivered in most Indian centres and online practice mirrors the real test interface. The two things that move your band are individually corrected writing and one-to-one speaking mocks, and both are easier to deliver in a 6-person online batch than a 30-person classroom.",
+        a: "For IELTS specifically, online practice mirrors the computer-delivered test format used in India. Corrected writing and realistic speaking mocks matter more than the room itself; a 6-person live batch gives each learner more practice and correction time than a crowded classroom.",
       },
     ],
   },
@@ -814,7 +862,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English and career classes for Indian learners — Spoken English, IELTS, Business English, Interactive Speaking, Interview Preparation and Career Counselling. Maximum 6 students per batch or 1:1, from ₹999 per month.",
+      "Live online English and career programmes for Indian learners — Spoken English, Workplace English, Interactive Speaking, IELTS, Interview Preparation and Career Counselling. English batches are capped at 6 and start at ₹999 per month.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",

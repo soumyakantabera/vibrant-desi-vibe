@@ -7,8 +7,7 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
-import { createLeadId, getCampaignAttribution, leadContext, waLink } from "@/lib/whatsapp";
-import { track } from "@/lib/analytics";
+import { waLink } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/book-free-demo")({
   component: Page,
@@ -18,7 +17,7 @@ export const Route = createFileRoute("/book-free-demo")({
 const COURSES = [
   "Spoken English",
   "IELTS",
-  "Business English",
+  "Workplace English",
   "Interactive Speaking",
   "Interview Prep",
   "Career Counselling",
@@ -43,8 +42,6 @@ function Page() {
     }
 
     setError("");
-    const attribution = getCampaignAttribution();
-    const leadId = createLeadId();
     const message = [
       "Hi, I'd like to book a ₹0 LIVE demo.",
       "",
@@ -52,17 +49,7 @@ function Page() {
       `Phone: ${form.phone.trim()}`,
       `Course: ${form.course}`,
       `Goal: ${form.goal.trim() || "Please help me choose"}`,
-      "",
-      leadContext(leadId, attribution),
     ].join("\n");
-
-    track("demo_form_submit", {
-      lead_id: leadId,
-      course: form.course,
-      source: attribution.source,
-      medium: attribution.medium,
-      campaign: attribution.campaign,
-    });
 
     const destination = waLink(message);
     const popup = window.open(destination, "_blank");
@@ -190,7 +177,7 @@ function Page() {
               </h3>
               <ol className="space-y-2 text-sm text-ink/90 list-decimal pl-4">
                 <li>WhatsApp opens with your message pre-filled.</li>
-                <li>You hit send — our team replies during 09:00–12:00 IST.</li>
+                <li>You can send it anytime; our team replies during 09:00–12:00 IST.</li>
                 <li>We confirm the next available live demo slot.</li>
                 <li>You attend the demo, no payment needed.</li>
                 <li>Like it? We help you join the batch. Don't? No pressure.</li>

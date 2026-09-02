@@ -34,7 +34,7 @@ export function SnapshotCard({
   headline,
   subnote,
   rows,
-  footer = "Free Demo · No Card Needed · Replies 09:00–12:00 IST",
+  footer = "Message Anytime · Replies 09:00–12:00 IST",
   // One rating, one source, sitewide — see RATING in src/lib/seo.ts. This
   // sticker renders on the homepage hero and on all six course pages, which
   // is why a hardcoded figure here contradicted the rest of the site
