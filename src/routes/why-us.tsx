@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PAGES, RATING, RATING_DISPLAY, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, FeatureCard, WaButton, GuidesStrip } from "@/components/ui-bits";
+import { SectionHeader, FeatureCard, WaButton, GuidesStrip, CoverageStrip } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 4,
-                name: "English batches capped at 8 so every learner speaks",
+                name: "Kolkata-based live teaching for learners across India",
               },
             ],
           }),
@@ -106,16 +106,16 @@ function Page() {
         <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div className="min-w-0 w-full text-cream">
             <span className="eyebrow eyebrow-white">
-              <Icon name="shield" size={14} /> Why Us · Quality + Proof
+              <Icon name="shield" size={14} /> Why Us · Kolkata · Pan-India
             </span>
             <h1 className="mt-4 text-3xl leading-[1.05] text-cream md:text-6xl">
               Quality Teaching. Live.{" "}
-              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners.</span>
+              <span className="text-sunshine">Kolkata-Based · Teaching Pan-India.</span>
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              100% live teacher. GST included. ₹0 demo before you pay. No bots, no recorded-as-class
-              videos, no 40-student webinars. Small batches of 8 so everyone speaks — useful, not
-              the headline.
+              7 years · 500+ learners from Kolkata, Delhi, Mumbai, Bengaluru, Hyderabad, Pune,
+              Chennai, Patna and towns across India. From ₹999/mo. ₹0 demo. GST included. Small
+              batches of 8 so everyone speaks.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton
@@ -138,7 +138,7 @@ function Page() {
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
                 headline={{ big: "₹999", suffix: "/mo" }}
-                subnote="GST included · 7 years live · 500+ learners"
+                subnote="GST included · Kolkata-based · 500+ pan-India"
                 rows={[
                   {
                     tone: "brand",
@@ -155,16 +155,18 @@ function Page() {
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "Max 8",
-                    small: "Secondary cap so you still speak",
+                    big: "Pan-India",
+                    small: "Same teacher. Same fee. IST slots.",
                   },
                 ]}
-                footer={`${RATING_DISPLAY} ${RATING.source} · Pan-India · WhatsApp 09:00–12:00 IST`}
+                footer={`${RATING_DISPLAY} ${RATING.source} · Kolkata · Pan-India · 09:00–12:00 IST`}
               />
             </div>
           </div>
         </div>
       </section>
+
+      <CoverageStrip />
 
       <section className="section bg-cream">
         <div className="container-x">
@@ -225,8 +227,8 @@ function Page() {
           <FeatureCard icon="user" color="indigo" title="Direct teacher support">
             1:1 outside class when you genuinely need it — not a ticket bot.
           </FeatureCard>
-          <FeatureCard icon="globe" color="sunshine" title="Hindi & Bengali backup">
-            Comfort first. Then English. Kolkata-based, teaching pan-India.
+          <FeatureCard icon="globe" color="sunshine" title="Kolkata-Based, Pan-India">
+            Learners join live from metros, smaller towns and abroad. Same teacher. Same fee. IST.
           </FeatureCard>
         </div>
       </section>
