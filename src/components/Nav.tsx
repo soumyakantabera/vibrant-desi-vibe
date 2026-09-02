@@ -354,7 +354,7 @@ function CourseColumn({
               <span className="block font-display font-semibold text-sm text-ink truncate group-hover:text-brand-deep">
                 {c.label}
               </span>
-              {c.desc && <span className="block text-[11px] text-ink/75">{c.desc}</span>}
+              {c.desc && <span className="block text-xs text-ink/75">{c.desc}</span>}
             </span>
           </Link>
         ))}
@@ -422,7 +422,7 @@ function MobileCourseLink({
         <span className="block font-display font-semibold text-sm text-ink truncate">
           {item.label}
         </span>
-        {item.desc && <span className="block text-[11px] text-ink/75">{item.desc}</span>}
+        {item.desc && <span className="block text-xs text-ink/75">{item.desc}</span>}
       </span>
       <Icon name="arrow-right" size={14} className="opacity-30" />
     </Link>
