@@ -83,7 +83,7 @@ export function Footer({ image }: { image?: string }) {
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
             <a href={CALL_LINK} className="inline-flex items-center gap-2 hover:text-sunshine">
               <Icon name="phone" size={16} />
-              {WHATSAPP_DISPLAY}
+              Call fallback: {WHATSAPP_DISPLAY}
             </a>
             <a
               href="mailto:learnwithsmile.in@gmail.com"
@@ -98,7 +98,7 @@ export function Footer({ image }: { image?: string }) {
             </span>
             <span className="inline-flex items-center gap-2">
               <Icon name="clock" size={16} />
-              Calls & WhatsApp · 09:00–12:00 IST
+              WhatsApp replies · 09:00–12:00 IST
             </span>
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">

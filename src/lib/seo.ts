@@ -396,9 +396,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Book a Free Live Demo Class — No Card Needed",
+    title: "Book a ₹0 English Demo on WhatsApp — No Sales Call",
     description:
-      "Book a genuinely free live demo class. Four fields, confirmed on WhatsApp during 09:00–12:00 IST. Sit in a real live class online, then decide afterwards.",
+      "Request a real live English demo in one WhatsApp message. No card or surprise sales call. We reply during 09:00–12:00 IST; you decide after class.",
     shortTitle: "Book a Free Demo",
     keywords: [
       "free english demo class online india",
@@ -415,11 +415,15 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How do I book a free demo class at Learn With Smile?",
-        a: "Fill in four fields on the booking page — name, phone, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply during 09:00–12:00 IST and confirm a slot in the next available live batch. No card, no payment, no obligation.",
+        a: "Fill in four fields on the booking page — name, WhatsApp number, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply during 09:00–12:00 IST and confirm a slot in the next available live batch. No card, no payment, no obligation and no surprise sales call.",
       },
       {
         q: "What happens in the demo class?",
         a: "You join a real live class with actual students, not a one-to-one sales pitch. You see the teaching style, the gamified activities and the batch size for yourself, and you get to speak. Afterwards we send fees, batch timings and the full syllabus on WhatsApp and you decide.",
+      },
+      {
+        q: "Will you call me after I send my WhatsApp number?",
+        a: "Not unless you ask. WhatsApp is the default admissions channel because it keeps the course, fee and batch details in one written conversation. Phone is available only as a fallback. The team replies on WhatsApp during 09:00–12:00 IST.",
       },
     ],
   },
@@ -835,9 +839,11 @@ export function organizationLd() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        contactType: "admissions",
+        contactType: "admissions support via WhatsApp",
         telephone: CONTACT.phone,
         email: CONTACT.email,
+        url: CONTACT.whatsapp,
+        description: "WhatsApp is the preferred admissions channel; phone calls are a fallback.",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {

@@ -9,7 +9,6 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
-import { CALL_LINK } from "@/lib/whatsapp";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -127,16 +126,24 @@ function Home() {
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
               data-cta-location="hero"
             >
+              <WaButton
+                message="Hi, I want to improve my English. Please help me choose the right live course and ₹0 demo slot."
+                size="lg"
+                className="w-full sm:w-auto justify-center"
+                goal="whatsapp_chat"
+              >
+                Chat on WhatsApp
+              </WaButton>
               <Link
                 to="/book-free-demo"
-                className="btn btn-sun btn-lg w-full sm:w-auto justify-center"
+                className="btn btn-white btn-lg w-full sm:w-auto justify-center"
               >
-                <Icon name="calendar" size={18} /> Book My ₹0 Live Demo
+                <Icon name="calendar" size={18} /> Book ₹0 Live Demo
               </Link>
-              <a href={CALL_LINK} className="btn btn-white btn-lg w-full sm:w-auto justify-center">
-                <Icon name="phone" size={18} /> Call +91 96744 79949
-              </a>
             </div>
+            <p className="mt-3 text-sm font-semibold text-white/95">
+              One message. No surprise sales call. Replies 09:00–12:00 IST.
+            </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "100% Online · Live",
@@ -281,7 +288,8 @@ function Home() {
                 Not sure which course is right for you?
               </strong>
               <p className="text-white text-sm mt-1">
-                Tell us your goal — we recommend the best-fit course during calling hours.
+                Tell us your goal in one WhatsApp message — we recommend the best-fit course during
+                09:00–12:00 IST.
               </p>
             </div>
             <WaButton
@@ -561,14 +569,14 @@ function Home() {
                 Chat on WhatsApp
               </h3>
               <p className="text-white/95 leading-relaxed mb-6">
-                Tell us which course and we will guide you to the right slot during calling hours.
-                No checkout and no obligation — just a real conversation.
+                Tell us your goal in one message. We will guide you to the right course and demo
+                slot during 09:00–12:00 IST. No checkout, no obligation and no surprise sales call.
               </p>
               <WaButton message="Hi, I am interested in a free demo. Please guide me." size="lg">
                 Open WhatsApp Now
               </WaButton>
               <p className="text-xs text-white/80 mt-4">
-                +91 96744 79949 · Calls & WhatsApp · 09:00–12:00 IST
+                WhatsApp preferred · Replies 09:00–12:00 IST · Phone is a fallback
               </p>
             </div>
             <Link

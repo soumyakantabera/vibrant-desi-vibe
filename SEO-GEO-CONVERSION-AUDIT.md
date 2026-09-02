@@ -1,5 +1,8 @@
 # Learn With Smile — SEO, GEO & Conversion Audit
 
+> Superseded for the current WhatsApp-first strategy by
+> [`WHATSAPP-SEO-GPT-GROWTH-AUDIT.md`](./WHATSAPP-SEO-GPT-GROWTH-AUDIT.md). This earlier report records the previous implementation phase, when call CTAs were still treated as a primary conversion path.
+
 Audit date: 1 September 2026  
 Scope: Google, Bing, ChatGPT, Microsoft Copilot, Gemini and Claude  
 Goal: more qualified reach, phone calls, WhatsApp conversations and free-demo bookings  
