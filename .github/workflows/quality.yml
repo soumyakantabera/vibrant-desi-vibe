@@ -53,6 +53,10 @@ jobs:
           grep -q 'Work &amp; Career' dist/index.html
           grep -q 'IELTS Preparation' dist/index.html
           grep -q 'Career Guidance' dist/index.html
+          grep -q 'English communication' dist/index.html
+          grep -q 'View all courses' src/components/Nav.tsx
+          grep -q 'View Career Counselling' dist/index.html
+          grep -q 'Explore both programmes' dist/index.html
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
           grep -q 'id="ielts-preparation"' dist/english-career.html
@@ -71,6 +75,10 @@ jobs:
           fi
           if grep -REqi '1:1 on most courses|1:1 private sessions on most courses' dist; then
             echo "::error::The site still promises recurring 1:1 English sessions"
+            exit 1
+          fi
+          if grep -REqi 'Compare this category|Compare all 6' dist/index.html; then
+            echo "::error::Redundant comparison copy returned to course discovery"
             exit 1
           fi
           if grep -q 'Our Learning Track' dist/index.html; then

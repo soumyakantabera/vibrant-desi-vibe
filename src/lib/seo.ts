@@ -139,6 +139,9 @@ const CORE_KEYWORDS = [
   "spoken english classes online india",
   "online english speaking course india",
   "live english classes india",
+  "english communication classes online india",
+  "online english communication course for adults india",
+  "english communication skills classes india",
   "small batch english classes online",
   "english speaking course for beginners india",
   "affordable spoken english classes india",
@@ -153,9 +156,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Live Online English Classes in India from ₹999/month",
+    title: "Online English Communication Classes India | From ₹999",
     description:
-      "Live Spoken English, Workplace English, IELTS and Interview Prep for Indian learners. Max 6 per English batch, from ₹999/month. Free demo on WhatsApp.",
+      "Live online English communication, Spoken English, Workplace English, IELTS and Interview Prep. Max 6 per English batch, from ₹999/month. ₹0 demo on WhatsApp.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -173,7 +176,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 1.0,
     changefreq: "weekly",
     summary:
-      "Homepage. Live online English and career courses for Indian learners, from ₹999/month, max 6 students per batch, taught by a real teacher over 7 years to 500+ learners.",
+      "Homepage. Live online English communication and career courses for Indian learners, from ₹999/month, max 6 students per batch, taught by a real teacher over 7 years to 500+ learners.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -204,9 +207,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "6 Live English & Career Programmes from ₹999/mo",
+    title: "English Communication & Career Courses | From ₹999",
     description:
-      "Compare six programmes in four goal-based categories: speaking confidence, workplace and interviews, IELTS preparation, and career guidance.",
+      "Explore six live programmes for English communication, workplace and interview skills, IELTS and career guidance, with clear fees, duration and outcomes.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -222,7 +225,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.9,
     changefreq: "weekly",
     summary:
-      "Course hub. Side-by-side comparison of all six live courses with fees (₹999–₹1,999/month), duration, format and outcomes.",
+      "Course hub. Six live English communication and career courses with clear fees (₹999–₹1,999/month), duration, format and outcomes.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
@@ -654,9 +657,9 @@ export type CourseSeoExtra = {
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
-    title: "Spoken English Course Online India | ₹999/mo, Max 6",
+    title: "Spoken English & Communication Course | ₹999/mo",
     description:
-      "Six-month Basic Spoken English, up to two live classes a week, max 6 students, ₹999/month. Built for absolute beginners who cannot yet form a full sentence.",
+      "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, max 6 students, ₹999/month, with a ₹0 demo.",
     shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
@@ -852,7 +855,11 @@ export function organizationLd() {
     "@type": ["EducationalOrganization", "OnlineBusiness"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
-    alternateName: ["LWS", "Learn With Smile English & Career"],
+    alternateName: [
+      "LWS",
+      "Learn With Smile English & Career",
+      "Learn With Smile English Communication",
+    ],
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
@@ -862,7 +869,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English and career programmes for Indian learners — Spoken English, Workplace English, Interactive Speaking, IELTS, Interview Preparation and Career Counselling. English batches are capped at 6 and start at ₹999 per month.",
+      "Live online English communication and career programmes for Indian learners — Spoken English, Workplace English, Interactive Speaking, IELTS, Interview Preparation and Career Counselling. English batches are capped at 6 and start at ₹999 per month.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",

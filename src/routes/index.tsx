@@ -116,7 +116,7 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Live Online · Kolkata & Pan-India
+              Live English Communication · Kolkata & Pan-India
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak English Live.
@@ -124,10 +124,10 @@ function Home() {
               <span className="text-sunshine">Never in a Batch Bigger Than 6.</span>
             </h1>
             <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
-              Beginner-friendly online classes from{" "}
-              <strong className="text-sunshine">₹999/month</strong>. Get real speaking time, direct
-              teacher feedback and a full <strong className="text-sunshine">₹0 live demo</strong>{" "}
-              before you pay.
+              Build practical English communication and speaking confidence in live online classes
+              from <strong className="text-sunshine">₹999/month</strong>. Get real speaking time,
+              direct teacher feedback and a full{" "}
+              <strong className="text-sunshine">₹0 live demo</strong> before you pay.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -277,7 +277,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Four clear categories, six practical programmes. Start with the result you need—not a confusing course name."
+            subtitle="Four clear categories for spoken English, workplace communication, IELTS and career guidance. Start with the result you need—not a confusing course name."
           />
           <Reveal stagger className="grid md:grid-cols-2 gap-5 lg:gap-6">
             {COURSE_CATEGORIES.map((category) => (
@@ -745,48 +745,67 @@ function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
 function CategoryCard({ category }: { category: CourseCategory }) {
   const visual = COURSES[category.featuredSlug];
   const tone = CATEGORY_TONES[category.tone];
+  const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
+  const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
+  const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
+
   return (
-    <article className="group overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative h-44 sm:h-52 overflow-hidden">
-        <SmartImage
-          src={visual.heroImage}
-          alt={`${category.title} online courses in India`}
-          fill
-          imgClassName="transition duration-500 group-hover:scale-105"
-          sizes="(min-width: 768px) 50vw, 100vw"
-        />
-        <div className={`absolute inset-0 bg-gradient-to-t ${tone.wash} to-transparent`} />
-        <div className="absolute inset-x-0 bottom-0 p-5 text-cream">
-          <span className="pill border-cream/25 bg-cream/15 text-cream">
-            {category.slugs.length} {category.slugs.length === 1 ? "programme" : "programmes"}
-          </span>
-          <h3 className="mt-3 flex items-center gap-2 text-2xl font-display font-extrabold text-cream">
-            <Icon name={category.icon} size={24} /> {category.title}
-          </h3>
-        </div>
-      </div>
-      <div className="p-5">
-        <p className="min-h-12 text-sm leading-relaxed text-ink/80">{category.description}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {category.slugs.map((slug) => {
-            const course = COURSES[slug];
-            return (
-              <Link
-                key={slug}
-                to={coursePath(slug)}
-                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-display font-bold transition hover:-translate-y-0.5 ${tone.badge}`}
-              >
-                <Icon name={course.icon} size={14} /> {course.title}
-              </Link>
-            );
-          })}
-        </div>
+    <article className="group relative min-h-[350px] overflow-hidden rounded-3xl border border-ink/10 bg-ink shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <SmartImage
+        src={visual.heroImage}
+        alt={`${category.title} online courses in India`}
+        fill
+        imgClassName="transition duration-700 group-hover:scale-105"
+        sizes="(min-width: 768px) 50vw, 100vw"
+      />
+      <div
+        className={`absolute inset-0 bg-gradient-to-t ${tone.wash} via-ink/45 to-ink/10 transition duration-300 group-hover:via-ink/50`}
+      />
+      <div className="relative flex min-h-[350px] flex-col justify-end p-5 text-cream sm:p-6">
+        <span className="pill w-fit border-cream/25 bg-ink/25 text-cream backdrop-blur-sm">
+          {onlySlug ? "1 focused programme" : `${category.slugs.length} programmes`}
+        </span>
+
+        <h3 className="mt-3 flex items-center gap-2 text-2xl font-display font-extrabold text-cream sm:text-3xl">
+          <Icon name={category.icon} size={25} /> {category.title}
+        </h3>
+        <p className="mt-2 max-w-xl text-sm leading-relaxed text-white sm:text-[15px]">
+          {category.description}
+        </p>
+
+        {onlyCourse ? (
+          <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-cream/25 bg-cream/15 px-3 py-1.5 backdrop-blur-sm">
+              <Icon name={onlyCourse.icon} size={14} /> {onlyCourse.title}
+            </span>
+            <span className="rounded-full border border-cream/25 bg-cream/15 px-3 py-1.5 backdrop-blur-sm">
+              {onlyCourse.duration.split(" · ")[0]} · {onlyCourse.price}
+            </span>
+          </div>
+        ) : (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {category.slugs.map((slug) => {
+              const course = COURSES[slug];
+              return (
+                <Link
+                  key={slug}
+                  to={coursePath(slug)}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-cream/25 bg-cream/15 px-3 py-1.5 text-xs font-display font-bold text-cream backdrop-blur-sm transition hover:bg-cream/25"
+                >
+                  <Icon name={course.icon} size={14} /> {course.title}
+                </Link>
+              );
+            })}
+          </div>
+        )}
+
         <Link
-          to="/english-career"
-          hash={category.id}
-          className={`mt-5 inline-flex items-center gap-1.5 text-sm font-display font-extrabold ${tone.link}`}
+          to={destination}
+          hash={onlySlug ? undefined : category.id}
+          className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-sunshine px-4 py-2.5 text-sm font-display font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-cream"
         >
-          Compare this category <Icon name="arrow-right" size={15} />
+          {onlyCourse ? `View ${onlyCourse.title}` : "Explore both programmes"}
+          <Icon name="arrow-right" size={15} />
         </Link>
       </div>
     </article>
