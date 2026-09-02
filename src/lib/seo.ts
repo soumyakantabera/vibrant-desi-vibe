@@ -193,9 +193,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Quality Spoken English Online India | ₹999",
+    title: "Quality Spoken English | Live, From ₹999",
     description:
-      "Live spoken English classes from a Kolkata teacher — small rooms so you speak. 7 years, 500+ learners across India. From ₹999/month. ₹0 demo. GST included.",
+      "A Kolkata classroom that went online. Quality live teaching, 7 years, 500+ learners across India. From ₹999/month. ₹0 demo in a real class. GST included.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -249,9 +249,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "Spoken English & Career Courses | From ₹999",
+    title: "English & Career | 6 Live Programmes, ₹999",
     description:
-      "Live spoken English, Workplace English, IELTS coaching and Career Guidance. Six programmes from ₹999/month. Small live batches. ₹0 demo. GST included.",
+      "Six live programmes — Spoken English, Workplace, IELTS, Interview, Speaking, Career Guidance. From ₹999/month. ₹0 demo in a real class. GST included. Live.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -286,9 +286,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Us | Live Spoken English Classes, ₹999",
+    title: "Why Us | Quality Teaching. Live.",
     description:
-      "Why learners pick our live spoken English classes: a named teacher, a room of 8, 7 years from Kolkata. From ₹999/month. ₹0 demo in a real class. GST included.",
+      "Why this room: a named teacher, a batch of 8, 7 years from Kolkata. From ₹999/month. Sit in a ₹0 live demo before you pay. GST included. Quality first.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -342,9 +342,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/about-us": {
     path: "/about-us",
-    title: "About Us | Live Spoken English Since 2019",
+    title: "About Us | 7 Years, 500+ Learners",
     description:
-      "Learn With Smile: 7 years of live spoken English classes, 500+ learners, from ₹999/month. Kolkata-born, teaching across India. GST included. ₹0 demo. Live.",
+      "7 years of live teaching, 500+ learners, from ₹999/month. A Kolkata classroom that went online — same teacher, learners across India. ₹0 demo. GST included.",
     shortTitle: "About Us",
     keywords: [
       "learn with smile about",
@@ -362,9 +362,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/founder": {
     path: "/founder",
-    title: "Sunanda Dey | Spoken English Teacher, Kolkata",
+    title: "Sunanda Dey | Founder & Lead Teacher",
     description:
-      "Meet Sunanda Dey — founder and live spoken English teacher. 7 years, 500+ learners, from ₹999/month. Kolkata-based classes for learners across India. ₹0 demo.",
+      "Meet Sunanda Dey — founder and lead teacher. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India. ₹0 demo in a real class.",
     shortTitle: "Sunanda Dey — Founder",
     keywords: [
       "sunanda dey english teacher",
@@ -382,7 +382,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/success-stories": {
     path: "/success-stories",
-    title: "Spoken English Success Stories | IELTS 7.5",
+    title: "Student Results | IELTS 7.5, Jobs Won",
     description:
       "Named outcomes: IELTS 7.5, salary doubled, jobs won. 500+ learners in live batches of 8 from ₹999/month. Individual results, not a guaranteed outcome.",
     shortTitle: "Success Stories",
@@ -429,9 +429,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/blog": {
     path: "/blog",
-    title: "Spoken English Blog | IELTS, Career, Fluency",
+    title: "English & Career Blog | Notes From Class",
     description:
-      "Spoken English notes from a live teacher: IELTS Band 7, interview answers, workplace English, how long fluency takes. Classes from ₹999/month. GST included.",
+      "Notes from teachers who run live classes: IELTS Band 7, interview answers, workplace English, how long fluency takes. From ₹999/month. ₹0 demo. GST included.",
     shortTitle: "Blog",
     keywords: [
       "english learning tips india",
@@ -450,9 +450,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Free Spoken English Demo Class | ₹0 Live",
+    title: "Book a Free Live Demo | ₹0 Real Class",
     description:
-      "Book a free live spoken English demo — a real class, not a sales call. From ₹999/month after. WhatsApp replies 09:00–12:00 IST. No card. GST included.",
+      "Sit in a live class for ₹0 — not a sales call. One WhatsApp message. Replies 09:00–12:00 IST. No card. Then decide: from ₹999/month. GST included. Live.",
     shortTitle: "Book a Free Demo",
     keywords: [
       "free english demo class online india",
@@ -775,7 +775,7 @@ export type CourseSeoExtra = {
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
-    title: "Spoken English Course Online | ₹999/mo",
+    title: "Quality Spoken English | ₹999/mo, 6 Months",
     description:
       "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, max 8 students, ₹999/month, with a ₹0 demo.",
     shortTitle: "Basic Spoken English",
@@ -808,7 +808,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
-    title: "Workplace English Course Online | ₹1,499",
+    title: "Workplace English Course | ₹1,499/mo",
     description:
       "Workplace English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live max-8 batch, ₹1,499/month, GST included.",
     shortTitle: "Workplace English",
@@ -839,7 +839,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "interactive-speaking": {
-    title: "English Speaking Practice Online | ₹1,199",
+    title: "Interactive Speaking | ₹1,199/mo, 3 Months",
     description:
       "3 months of live speaking — games, debates, role-plays and stories. Batch of 8, ₹1,199/month, up to 2 classes/week. Fluency practice, not grammar lectures.",
     shortTitle: "Interactive Speaking",
@@ -866,7 +866,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   ielts: {
-    title: "IELTS Coaching Online India | ₹1,999/mo",
+    title: "IELTS Coaching Online | ₹1,999/mo, 3 Months",
     description:
       "Three-month IELTS prep, Academic and General Training. Six full-length mock tests, live writing feedback, speaking labs. Max 8 per batch, ₹1,999/month.",
     shortTitle: "IELTS Preparation",
@@ -987,7 +987,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live spoken English classes from a Kolkata teacher. From ₹999/month. 7 years, 500+ learners across India. IELTS, Workplace English, Career Guidance. ₹0 demo.",
+      "Quality live teaching from a Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. Spoken, IELTS, Workplace. ₹0 demo.",
     slogan: "Quality Spoken English. Live. From ₹999/mo · 7 Years · 500+ Learners.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
@@ -1044,7 +1044,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Live spoken English classes from a Kolkata teacher. Small rooms so you speak. From ₹999/month. 7 years, 500+ learners across India. ₹0 demo. GST included.",
+      "Quality Spoken English. Live. A Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. ₹0 demo. GST included. Live.",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }

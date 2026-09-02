@@ -106,16 +106,17 @@ function Page() {
         <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div className="min-w-0 w-full text-cream">
             <span className="eyebrow eyebrow-white">
-              <Icon name="shield" size={14} /> Why our spoken English classes
+              <Icon name="shield" size={14} /> Why Us · Quality + Proof
             </span>
             <h1 className="mt-4 text-3xl leading-[1.05] text-cream md:text-6xl">
-              Quality Spoken English. Live.
+              Quality Teaching. Live.
               <br />
               <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners</span>
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              Live spoken English with a named teacher and a room small enough to correct you by
-              name. From ₹999/mo. GST included. ₹0 demo in a real class — not a sales call.
+              A named teacher, a room small enough to correct you by name, and a fee that working
+              India can stay with. From ₹999/mo. GST included. ₹0 demo in a real class — not a
+              sales call.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton

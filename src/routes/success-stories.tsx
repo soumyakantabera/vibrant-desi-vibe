@@ -75,12 +75,11 @@ function Page() {
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">★ Real Outcomes</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Spoken English Success Stories.{" "}
-            <span className="text-sunshine">IELTS 7.5 · Jobs Won.</span>
+            IELTS 7.5 · Jobs Won. <span className="text-sunshine">Named Results.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Named spoken English results from live classes: band jumps, job switches, interviews
-            cleared. From ₹999/mo. Individual outcomes — not a guarantee.
+            Named results from live classes: band jumps, job switches, interviews cleared. From
+            ₹999/mo. Individual outcomes — not a guarantee.
           </p>
         </div>
       </section>
