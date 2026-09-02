@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pull-requests: write
 
 jobs:
   validate:
@@ -21,15 +22,22 @@ jobs:
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
 
-      - name: Format changed source
+      - name: Publish exact formatter diff
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           bunx prettier --write src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts
-          if ! git diff --quiet -- src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts
-            git commit -m "Format course discovery updates"
-            git push origin HEAD:${{ github.head_ref }}
+          git diff -- src/routes/index.tsx src/components/Nav.tsx src/lib/seo.ts src/lib/llms.ts src/lib/course-categories.ts > /tmp/format.diff
+          if test -s /tmp/format.diff; then
+            {
+              echo 'Exact formatter diff:'
+              echo
+              echo '```diff'
+              cat /tmp/format.diff
+              echo '```'
+            } > /tmp/comment.md
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file /tmp/comment.md
+            exit 1
           fi
 
       - name: Typecheck
