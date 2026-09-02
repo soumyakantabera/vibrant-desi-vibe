@@ -193,9 +193,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Speak English Live | From ₹999/mo",
+    title: "Speak Better English | From ₹999/mo",
     description:
-      "Speak English live from ₹999/month. A Kolkata classroom that went online — 7 years, 500+ learners across India. Real speaking time. ₹0 demo before you pay.",
+      "Speak better English with real teachers, small batches and gamified live classes. 7 years, Kolkata & pan-India. From ₹999/month. ₹0 demo. 500+ learners.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -249,9 +249,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "English & Career | Speak. Interview. Career.",
+    title: "English & Career | Master In-Demand Skills",
     description:
-      "Six live programmes — Spoken English, Workplace, IELTS, Interview, Speaking, Career Guidance. From ₹999/month. ₹0 demo in a real class. GST included. Live.",
+      "Speak better English. Master interviews, IELTS and workplace English. Six live programmes from ₹999/month. Small batches. ₹0 demo. 7 years, pan-India.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -286,9 +286,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Learn With Smile | Built for Indian Learners",
+    title: "Why Us | Built for Indian Learners",
     description:
-      "Why this room: a named teacher, a batch of 8, 7 years from Kolkata. From ₹999/month. Sit in a ₹0 live demo before you pay. GST included. Quality first.",
+      "Built for Indian learners. Run by real teachers. No bots, no recordings, no mega-batches. Live small-batch English from ₹999/month. ₹0 demo on WhatsApp.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -342,7 +342,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/about-us": {
     path: "/about-us",
-    title: "About Us | We Built the Bridge",
+    title: "About Us | 7 Years, Kolkata & Pan-India",
     description:
       "7 years of live teaching, 500+ learners, from ₹999/month. A Kolkata classroom that went online — same teacher, learners across India. ₹0 demo. GST included.",
     shortTitle: "About Us",
@@ -382,9 +382,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/success-stories": {
     path: "/success-stories",
-    title: "Student Results | Real Indian Learners",
+    title: "Real Indian Learners | Real Results",
     description:
-      "Named outcomes: IELTS 7.5, salary doubled, jobs won. 500+ learners in live batches of 8 from ₹999/month. Individual results, not a guaranteed outcome.",
+      "Career switches, IELTS scores, BI Analyst jobs, salary jumps. Verified Learn With Smile learners. From ₹999/month. Individual results, not a guarantee.",
     shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
@@ -987,8 +987,8 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Speak English live from a Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. Spoken, IELTS, Workplace. ₹0 demo.",
-    slogan: "Speak English Live. From ₹999/mo · 7 Years · 500+ Learners.",
+      "Speak better English with real teachers and small batches. From ₹999/month. 7 years, Kolkata & pan-India. Spoken, IELTS, Workplace. ₹0 demo. GST in. Live.",
+    slogan: "Speak Better English. Master In-Demand Skills. Build Future Together.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",
@@ -1044,7 +1044,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Speak English Live. A Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. ₹0 demo. GST included. Real speaking time.",
+      "Speak Better English. Master In-Demand Skills. Build Future Together. Real teachers, small batches, from ₹999/month. 7 years, Kolkata & pan-India. ₹0 demo.",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }

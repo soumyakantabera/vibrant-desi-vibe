@@ -30,18 +30,18 @@ const heroSources = imageSources(IMG.heroClass);
 const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "play",
-    title: "A teacher who stays",
+    title: "Real teachers",
     body: "Named, live, every hour — never a recording sold as class.",
   },
   {
-    icon: "globe",
-    title: "Kolkata-born, heard across India",
-    body: "Same person, same fee, whether you join from Pune or Kochi.",
+    icon: "users",
+    title: "Small batches",
+    body: "Max 8, so you speak — not a 40-person back row. From ₹999/mo.",
   },
   {
-    icon: "mic",
-    title: "You get the mic",
-    body: "A room of 8, so you speak — not a 40-person back row.",
+    icon: "gamepad",
+    title: "Gamified live classes",
+    body: "Polls, debates, games — designed for the demands of today's market.",
   },
 ];
 
@@ -132,17 +132,19 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Live English Communication · Kolkata & Pan-India
+              7 Years · Kolkata & Pan-India
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              Speak English Live.
+              Speak Better English.
               <br />
-              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners</span>
+              <span className="text-sunshine">Master In-Demand Skills.</span>
+              <br />
+              Build Future Together.
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Build practical English communication and speaking confidence in live online classes
-              from <strong className="text-sunshine">₹999/month</strong>. Real speaking time, a
-              teacher who knows your name, learners across India. A full{" "}
+              Real teachers. Small batches. Gamified, interactive live English classes — designed
+              for the demands of today's market. From{" "}
+              <strong className="text-sunshine">₹999/mo</strong>. A full{" "}
               <strong className="text-sunshine">₹0 live demo</strong> before you pay.
             </p>
             <div
@@ -169,11 +171,11 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "Named live teacher",
+                "7 Years · Kolkata & Pan-India",
                 "From ₹999/month",
-                "7 Years · 500+ Learners",
+                "500+ Learners",
                 "₹0 real demo",
-                "You speak — batch of 8",
+                "Small batches — max 8",
               ].map((s) => (
                 <span
                   key={s}
@@ -425,7 +427,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Speak today. <em className="text-sunshine">Lead tomorrow.</em> Build your future with us."
+        "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
       </MottoBand>
 
       {/* NUMBERS */}
