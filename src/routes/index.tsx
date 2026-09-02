@@ -124,10 +124,10 @@ function Home() {
               <span className="text-sunshine">Never in a Batch Bigger Than 6.</span>
             </h1>
             <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
-              Build practical English communication and speaking confidence in live online classes from{" "}
-              <strong className="text-sunshine">₹999/month</strong>. Get real speaking time, direct
-              teacher feedback and a full <strong className="text-sunshine">₹0 live demo</strong>{" "}
-              before you pay.
+              Build practical English communication and speaking confidence in live online classes
+              from <strong className="text-sunshine">₹999/month</strong>. Get real speaking time,
+              direct teacher feedback and a full{" "}
+              <strong className="text-sunshine">₹0 live demo</strong> before you pay.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
