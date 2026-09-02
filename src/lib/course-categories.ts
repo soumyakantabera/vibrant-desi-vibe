@@ -14,7 +14,8 @@ export const COURSE_CATEGORIES = [
   {
     id: "speak-confidently",
     title: "Speak Confidently",
-    description: "Build practical English communication from the basics or improve fluency through repeated live conversation.",
+    description:
+      "Build practical English communication from the basics or improve fluency through repeated live conversation.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -23,7 +24,8 @@ export const COURSE_CATEGORIES = [
   {
     id: "work-and-career",
     title: "Work & Career",
-    description: "Build clear workplace communication and prepare for interviews with practical English.",
+    description:
+      "Build clear workplace communication and prepare for interviews with practical English.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
