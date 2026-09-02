@@ -101,10 +101,10 @@ export const COURSES: Record<string, CourseData> = {
     testimonials: [
       {
         quote:
-          "I couldn't speak two lines without freezing. Six months later I gave a 5-min self-intro in front of 30 colleagues.",
-        name: "Anjali Roy",
-        detail: "Spoken English · Teacher, Howrah",
-        waMessage: "Hi, I want the same Spoken English result as Anjali. Can I get a free demo?",
+          "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
+        name: "Kavya Reddy",
+        detail: "Spoken English · Advocate, Hyderabad",
+        waMessage: "Hi, I want the same Spoken English result as Kavya. Can I get a free demo?",
       },
       {
         quote: "The gamified flashcard sessions are addictive. I look forward to every class now.",
@@ -183,6 +183,29 @@ export const COURSES: Record<string, CourseData> = {
         ],
       },
     ],
+    testimonials: [
+      {
+        quote:
+          "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
+        name: "Neha Patel",
+        detail: "Workplace English · Tax Analyst, Ahmedabad",
+        waMessage: "Hi, I want Neha's client-call result. Workplace English demo please.",
+      },
+      {
+        quote:
+          "Partners asked me to walk the working papers in English. A batch of eight meant I rehearsed every week. I present now.",
+        name: "Rohan Deshpande",
+        detail: "Workplace English · Chartered Accountant, Mumbai",
+        waMessage: "Hi, I saw Rohan's CA story. Workplace English demo please.",
+      },
+      {
+        quote:
+          "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
+        name: "Aditya Nair",
+        detail: "Workplace English · BI Analyst, Pune",
+        waMessage: "Hi, I saw Aditya's career switch. Workplace English demo please.",
+      },
+    ],
     metaDescription:
       "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live max-8 batch, ₹1,499/month.",
   },
@@ -240,6 +263,15 @@ export const COURSES: Record<string, CourseData> = {
       {
         title: "Role-Plays",
         items: ["Travel & hotel", "Customer service", "Doctor & patient", "Job networking events"],
+      },
+    ],
+    testimonials: [
+      {
+        quote:
+          "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
+        name: "Ananya Iyer",
+        detail: "Interactive Speaking · Data Analyst, Bengaluru",
+        waMessage: "Hi, I saw Ananya's standup story. Interactive Speaking demo please.",
       },
     ],
     metaDescription:
@@ -324,14 +356,14 @@ export const COURSES: Record<string, CourseData> = {
     testimonials: [
       {
         quote: "Went from 5.5 to 7.5 overall. Writing feedback was a game changer.",
-        name: "Harshit Singh",
-        detail: "IELTS · Now in Toronto",
-        waMessage: "Hi, I saw Harshit's IELTS story. Free demo please.",
+        name: "Devika Nair",
+        detail: "IELTS · Kochi",
+        waMessage: "Hi, I saw Devika's IELTS story. Free demo please.",
       },
       {
         quote: "Speaking Part 2 used to scare me. The mock interviews killed that fear.",
-        name: "Sneha Das",
-        detail: "IELTS · Now in Sydney",
+        name: "Arjun Menon",
+        detail: "IELTS · Chennai",
         waMessage: "Hi, want to join IELTS. Demo please.",
       },
     ],
@@ -405,6 +437,15 @@ export const COURSES: Record<string, CourseData> = {
           "Improvement action plan",
           "Confidence drills",
         ],
+      },
+    ],
+    testimonials: [
+      {
+        quote:
+          "The promotion board was in English. Mock interviews, live, eight people. I got the Assistant Manager seat.",
+        name: "Vikram Singh",
+        detail: "Interview Prep · Bank Asst. Manager, Delhi",
+        waMessage: "Hi, I saw Vikram's promotion story. Interview Prep demo please.",
       },
     ],
     metaDescription:

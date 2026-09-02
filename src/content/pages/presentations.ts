@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Explaining your work in English is three beats: **one outcome, three points, one ask.** You do not need a TED talk. You need 3 minutes that a manager can repeat. [Workplace English](/course-business-english) and [Interactive Speaking](/course-interactive-speaking) both drill this live. Priya went from freezing to leading client presentations in six months of Spoken English — [her story](/success-stories).",
+    text: "**Short answer.** Explaining your work in English is three beats: **one outcome, three points, one ask.** You do not need a TED talk. You need 3 minutes that a manager can repeat. [Workplace English](/course-business-english) and [Interactive Speaking](/course-interactive-speaking) both drill this live. Rohan now walks working papers with partners in Mumbai — [his story](/success-stories).",
   },
 
   { t: "h2", text: "The 3-minute spine" },
@@ -41,8 +41,8 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**Standup (60–90 seconds):** yesterday, today, stuck. Same spine, shorter. Anjali now runs these.",
-      "**Client deck (3–5 minutes):** outcome, three beats, ask. Priya’s lane.",
+      "**Standup (60–90 seconds):** yesterday, today, stuck. Same spine, shorter. Ananya now runs these.",
+      "**Client deck (3–5 minutes):** outcome, three beats, ask. Neha’s lane.",
       "**Interview “tell me about a project”:** [60-second Tell Me About Yourself](/blog/tell-me-about-yourself-in-60-seconds) uses the same muscle. Sneha’s mocks sit here.",
     ],
   },

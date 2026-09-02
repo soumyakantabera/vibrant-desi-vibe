@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Workplace English](/course-business-english) practises that live — 3 months, ₹1,499/mo, max 8. Siddharth moved from BPO to client-facing work in this lane. [His story](/success-stories).",
+    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Workplace English](/course-business-english) practises that live — 3 months, ₹1,499/mo, max 8. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
   },
   {
     t: "p",

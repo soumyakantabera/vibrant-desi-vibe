@@ -14,7 +14,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "What “medium” actually decided — and what it did not" },
   {
     t: "p",
-    text: "School medium decided how much English you **heard** between 6 and 16. It did not decide whether you can run a standup at 28. Priya (Kolkata, marketing) and Anjali (teacher) both had to build speaking in a live room. Their stories are on [real results](/success-stories).",
+    text: "School medium decided how much English you **heard** between 6 and 16. It did not decide whether you can run a standup at 28. Kavya (Hyderabad, advocate) and Ananya (Bengaluru, data analyst) both had to build speaking in a live room. Their stories are on [real results](/success-stories).",
   },
   {
     t: "ul",

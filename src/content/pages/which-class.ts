@@ -51,19 +51,19 @@ export const body: ArticleBody = [
   { t: "h2", text: "Spoken English — when daily life is the gap" },
   {
     t: "p",
-    text: "Spoken English is the 6-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of 8. See [how long it takes](/how-long-to-learn-spoken-english) and Priya’s story on [real results](/success-stories).",
+    text: "Spoken English is the 6-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of 8. See [how long it takes](/how-long-to-learn-spoken-english) and Kavya’s story on [real results](/success-stories).",
   },
 
   { t: "h2", text: "Interactive English — when freeze is the gap" },
   {
     t: "p",
-    text: "Interactive is not a grammar lecture. It is games, debates, storytelling and 1-minute prompts so the checking step between thinking and speaking gets shorter. If you can write a decent message but go silent on a call, this is the room. Anjali’s standup story is this problem, even though she joined Spoken English — many learners mix both. Read the full freeze guide: [Interactive English when you freeze](/interactive-english-class-hesitation).",
+    text: "Interactive is not a grammar lecture. It is games, debates, storytelling and 1-minute prompts so the checking step between thinking and speaking gets shorter. If you can write a decent message but go silent on a call, this is the room. Ananya’s standup story is this problem. Read the full freeze guide: [Interactive English when you freeze](/interactive-english-class-hesitation).",
   },
 
   { t: "h2", text: "Business English — when work is the gap" },
   {
     t: "p",
-    text: "Workplace English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Siddharth’s BPO-to-client-facing move is this room. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
+    text: "Workplace English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Neha’s tax-desk calls and Aditya’s BI Analyst switch are this room. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
   },
 
   { t: "h2", text: "What not to buy first" },

@@ -15,43 +15,45 @@ export const Route = createFileRoute("/success-stories")({
 const STORIES = [
   {
     quote:
-      "I used to freeze in client presentations. Six months later I was leading them. Live speaking, gamified — not a lecture.",
-    name: "Priya Sharma",
-    detail: "Spoken English · Marketing Executive, Kolkata",
-    waMessage: "Hi, I saw Priya's story. Free demo for Spoken English please.",
+      "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
+    name: "Neha Patel",
+    detail: "Workplace English · Tax Analyst, Ahmedabad",
+    waMessage: "Hi, I saw Neha's tax-analyst story. Workplace English demo please.",
   },
   {
     quote:
-      "I switched from BPO to a client-facing role. The salary moved. Mock calls did the work.",
-    name: "Siddharth Nair",
-    detail: "Workplace English · Customer Success, Pune",
-    waMessage: "Hi, I saw Siddharth's story. Free demo for Workplace English please.",
+      "Partners asked me to walk the working papers in English. A batch of eight meant I rehearsed every week. I present now.",
+    name: "Rohan Deshpande",
+    detail: "Workplace English · Chartered Accountant, Mumbai",
+    waMessage: "Hi, I saw Rohan's CA story. Workplace English demo please.",
   },
   {
     quote:
-      "I cleared the interview round I used to fail. The mocks showed me exactly what to change.",
-    name: "Sneha Das",
-    detail: "Interview Prep · IT Engineer, Hyderabad",
-    waMessage: "Hi, I saw Sneha's story. Interview Prep demo please.",
-  },
-  {
-    quote: "I couldn't speak two lines without freezing. Now I run Monday team standups.",
-    name: "Anjali Roy",
-    detail: "Spoken English · Teacher, Howrah",
-    waMessage: "Hi, I saw Anjali's story. Spoken English demo please.",
+      "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
+    name: "Kavya Reddy",
+    detail: "Spoken English · Advocate, Hyderabad",
+    waMessage: "Hi, I saw Kavya's story. Spoken English demo please.",
   },
   {
     quote:
-      "Career counselling helped me drop a wrong course and pick a B.Tech specialisation I actually love.",
-    name: "Aarav Pandey",
-    detail: "Career Counselling · Student, Delhi",
-    waMessage: "Hi, I want Aarav's career clarity. Book me a session please.",
+      "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
+    name: "Ananya Iyer",
+    detail: "Interactive Speaking · Data Analyst, Bengaluru",
+    waMessage: "Hi, I saw Ananya's standup story. Interactive Speaking demo please.",
   },
   {
-    quote: "I already spoke. Then the exam score moved — 5.5 to 7.5 overall.",
-    name: "Harshit Singh",
-    detail: "IELTS · Now in Toronto",
-    waMessage: "Hi, I saw Harshit's story. I want to talk about the right course first.",
+    quote:
+      "The promotion board was in English. Mock interviews, live, eight people. I got the Assistant Manager seat.",
+    name: "Vikram Singh",
+    detail: "Interview Prep · Bank Asst. Manager, Delhi",
+    waMessage: "Hi, I saw Vikram's promotion story. Interview Prep demo please.",
+  },
+  {
+    quote:
+      "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
+    name: "Aditya Nair",
+    detail: "Workplace English · BI Analyst, Pune",
+    waMessage: "Hi, I saw Aditya's career switch. Workplace English demo please.",
   },
 ];
 
@@ -78,8 +80,8 @@ function Page() {
             Real Indian Learners. <span className="text-sunshine">Real Results.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Career switches. Client meetings. BI Analyst jobs. Salary jumps. Named people. Named
-            cities. Every story below is a verified Learn With Smile learner.
+            Career switches. Client meetings. Tax desks. Court briefs. Bank promotions. Named
+            people. Named cities. Every story below is a verified Learn With Smile learner.
           </p>
         </div>
       </section>

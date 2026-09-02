@@ -20,8 +20,8 @@ export function TestimonialSlider({
   // This used to render the list twice — a `hidden lg:grid` desktop grid and a
   // `lg:hidden` mobile slider — so a reader saw each quote once but the
   // prerendered HTML contained every testimonial twice. Because these pages are
-  // static HTML, that is exactly what crawlers read: Priya Sharma, Rohan Mehta
-  // and Siddharth Nair each appeared twice in the served markup, and duplicated
+  // static HTML, that is exactly what crawlers read: each named learner
+  // appeared twice in the served markup, and duplicated
   // passages are what make a retrieved chunk look untrustworthy to an AI
   // assistant quoting the page.
   //
