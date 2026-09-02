@@ -78,8 +78,8 @@ function Page() {
             Real Indian Learners. <span className="text-sunshine">Real Results.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Career switches, IELTS scores, new roles and confidence — reported by named learners.
-            From ₹999/mo. Individual outcomes, not a guarantee.
+            Career switches, IELTS scores, BI Analyst jobs, salary jumps. Every story below is from
+            a verified Learn With Smile learner.
           </p>
         </div>
       </section>

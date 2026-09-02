@@ -82,13 +82,13 @@ jobs:
           test -s dist/blog/english-for-bpo-customer-support.html
           grep -q 'rel="canonical"' dist/index.html
           grep -q 'application/ld+json' dist/index.html
-          grep -q 'Speak English Live' dist/index.html
+          grep -q 'Speak Better English' dist/index.html
           grep -q 'Choose the Goal You Need Now' dist/index.html
           grep -q 'Speak Confidently' dist/index.html
           grep -q 'Work &amp; Career' dist/index.html
           grep -q 'IELTS Preparation' dist/index.html
           grep -q 'Career Guidance' dist/index.html
-          grep -q 'English communication' dist/index.html
+          grep -q 'Real teachers. Small batches' dist/index.html
           grep -q 'View all courses' src/components/Nav.tsx
           grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
           grep -q 'View Career Counselling' dist/index.html
