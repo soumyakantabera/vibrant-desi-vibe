@@ -3,6 +3,9 @@ import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
+import { COVERAGE_CITIES } from "@/lib/seo";
+import { BrandIcon } from "./BrandIcon";
+import { waLink } from "@/lib/whatsapp";
 
 export function SectionHeader({
   eyebrow,
@@ -194,6 +197,50 @@ export function GuidesStrip({
               </Link>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const CITY_TONES = [
+  "border-brand/25 bg-[#F3F8F4] text-brand-deep",
+  "border-sunshine/40 bg-[#FFF8E6] text-[#6B4A00]",
+  "border-coral/25 bg-[#FFF4F1] text-[#8E2A1E]",
+  "border-indigo-pop/25 bg-[#F4F4FF] text-[#2E2E8A]",
+] as const;
+
+export function CoverageStrip({
+  invert = false,
+}: {
+  invert?: boolean;
+}) {
+  return (
+    <section className={invert ? "bg-brand-deep py-8 md:py-10" : "bg-[#F7F4EE] py-8 md:py-10"}>
+      <div className="container-x">
+        <p
+          className={`font-display text-[11px] font-bold uppercase tracking-wider ${invert ? "text-sunshine" : "text-brand-deep"}`}
+        >
+          Coverage
+        </p>
+        <h2
+          className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${invert ? "text-cream" : "text-ink"}`}
+        >
+          Kolkata-based. Teaching pan-India, live.
+        </h2>
+        <p className={`mt-2 max-w-2xl text-sm md:text-base ${invert ? "text-white/90" : "text-ink/75"}`}>
+          7 years of live classes. 500+ learners from metros, smaller towns and Indians abroad —
+          same teacher, same fee, IST morning · evening · weekend slots.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {COVERAGE_CITIES.map((city, i) => (
+            <span
+              key={city}
+              className={`inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[i % CITY_TONES.length]}`}
+            >
+              {city}
+            </span>
+          ))}
         </div>
       </div>
     </section>

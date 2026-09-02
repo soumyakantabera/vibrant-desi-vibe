@@ -57,11 +57,11 @@ function Page() {
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
-              <Icon name="mic" size={14} /> 6 Programmes · From ₹999/mo · 7 Years
+              <Icon name="mic" size={14} /> 6 Programmes · Kolkata · Pan-India
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
               Quality English. Live.{" "}
-              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners.</span>
+              <span className="text-sunshine">Kolkata-Based · Teaching Pan-India.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
               6 live programmes in 4 tracks. Named teacher, up to 2 sessions/week. Career

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand, GuidesStrip } from "@/components/ui-bits";
+import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand, GuidesStrip, CoverageStrip } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
@@ -21,7 +21,11 @@ const heroSources = imageSources(IMG.heroClass);
 
 const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   { icon: "play", title: "Not a recorded course", body: "Every class is live with a named teacher." },
-  { icon: "rupee", title: "Not a ₹8,000/mo app", body: "Quality live English from ₹999/month, GST in." },
+  {
+    icon: "globe",
+    title: "Not only a Kolkata room",
+    body: "Kolkata-based. Learners join live from all over India.",
+  },
   {
     icon: "shield",
     title: "Not a payment trap",
@@ -116,16 +120,16 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Quality Live English · From ₹999/mo · 7 Years
+              Quality Live English · Kolkata · Pan-India
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Quality Spoken English. Live.
               <br />
-              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners.</span>
+              <span className="text-sunshine">Kolkata-Based · Teaching Pan-India.</span>
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              100% live teacher. ₹0 demo. GST included. Practical communication up to 2 classes a
-              week. Small batches of 8 so you still speak — useful, not the headline.
+              7 years · 500+ learners from Kolkata, Delhi, Mumbai, Bengaluru, Hyderabad, Pune,
+              Chennai, Patna and towns across India. From ₹999/mo. ₹0 demo. GST included.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -151,10 +155,10 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
+                "Kolkata · Pan-India",
                 "From ₹999/month",
                 "7 Years · 500+ Learners",
                 "₹0 Live Demo",
-                "100% Live Teacher",
                 "Small Batch of 8",
               ].map((s) => (
                 <span
@@ -180,19 +184,19 @@ function Home() {
                     tone: "brand",
                     icon: SnapIcons.cap,
                     big: "500+",
-                    small: "Learners taught across India",
+                    small: "Learners from all over India",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
                     big: "7 yrs",
-                    small: "Live online teaching experience",
+                    small: "Kolkata-based live teaching",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "Max 8",
-                    small: "In every English course batch",
+                    big: "Pan-India",
+                    small: "Same teacher · same fee · IST slots",
                   },
                 ]}
               />
@@ -216,6 +220,8 @@ function Home() {
           ))}
         </div>
       </section>
+
+      <CoverageStrip />
 
       {/* STORY BAND */}
       <section className="bg-brand-deep py-10 md:py-14">
@@ -275,7 +281,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="4 Tracks · 6 Live Programmes · From ₹999/mo"
-            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. 7 years, 500+ learners, ₹0 demo. English batches of 8. Up to 2 classes/week."
+            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. Kolkata-based, learners join live from all over India. 7 years, 500+ learners, ₹0 demo."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -416,13 +422,13 @@ function Home() {
         </div>
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
           <div className="md:pr-4">
-            <Stat num="7" label="Years Teaching" />
+            <Stat num="7" label="Years from Kolkata" />
           </div>
           <div className="md:px-4">
-            <Stat num="500+" label="Learners Helped" />
+            <Stat num="500+" label="Learners Across India" />
           </div>
           <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="Max 8" label="Per English Course Batch" />
+            <Stat num="Pan-India" label="Live Online Coverage" />
           </div>
           {/* One rating, one source. This tile used to read 4.9★ while the
               location card below read 5.0★ — the same page stating two numbers.
