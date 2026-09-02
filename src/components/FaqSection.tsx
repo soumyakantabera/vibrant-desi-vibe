@@ -39,7 +39,11 @@ export function FaqSection({
             // The answer stays in the DOM whether open or shut, so crawlers read
             // all of it either way; opening the first two just makes the page
             // read as an answer page to a human landing from a search result.
-            <details key={f.q} className="card-soft group transition hover:border-brand/30 hover:shadow-lg" open={i < 2}>
+            <details
+              key={f.q}
+              className="card-soft group transition hover:border-brand/30 hover:shadow-lg"
+              open={i < 2}
+            >
               <summary className="flex cursor-pointer list-none items-start justify-between gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25">
                 <h3 className="font-display font-bold text-ink text-base leading-snug">{f.q}</h3>
                 <Icon
