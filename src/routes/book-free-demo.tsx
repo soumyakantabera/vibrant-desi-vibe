@@ -8,7 +8,6 @@ import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import {
-  CALL_LINK,
   createLeadId,
   getCampaignAttribution,
   leadContext,
@@ -97,8 +96,8 @@ function Page() {
             A Real Live Class. <span className="text-sunshine">Free.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Meet the teacher, see the batch and speak in a real class. No card, no payment and no
-            sales presentation disguised as a lesson.
+            Meet the teacher, see the batch and speak in a real class. Request it in one WhatsApp
+            message — no card, no payment and no surprise sales call.
           </p>
         </div>
       </section>
@@ -123,7 +122,11 @@ function Page() {
                   className="input"
                 />
               </Field>
-              <Field htmlFor="demo-phone" label="WhatsApp Number" required>
+              <Field
+                htmlFor="demo-phone"
+                label="WhatsApp Number (we won't call without asking)"
+                required
+              >
                 <input
                   id="demo-phone"
                   name="phone"
@@ -171,11 +174,11 @@ function Page() {
                 </p>
               )}
               <button type="submit" className="btn btn-wa btn-lg w-full">
-                <Icon name="whatsapp" size={18} /> Send via WhatsApp & Confirm Slot
+                <Icon name="whatsapp" size={18} /> Send My ₹0 Demo Request
               </button>
               <p className="text-xs text-ink/85 text-center">
-                Your details go only into the WhatsApp message you send. No hidden signup and no
-                third-party form tool.
+                Your details go only into the WhatsApp message you send. WhatsApp stays the default;
+                no hidden signup, sales call or third-party form tool.
               </p>
             </form>
           </div>
@@ -198,16 +201,14 @@ function Page() {
                 <li>Like it? We help you join the batch. Don't? No pressure.</li>
               </ol>
             </div>
-            <div className="grid sm:grid-cols-2 gap-3" data-cta-location="final_cta">
-              <a href={CALL_LINK} className="btn btn-primary justify-center">
-                <Icon name="phone" size={17} /> Call Now
-              </a>
+            <div data-cta-location="final_cta">
               <WaButton
                 message="Hi, I'd like to talk before filling the form. Please guide me."
                 variant="wa"
-                className="justify-center"
+                className="justify-center w-full"
+                goal="whatsapp_question"
               >
-                Ask on WhatsApp
+                Ask a Question on WhatsApp
               </WaButton>
             </div>
           </div>

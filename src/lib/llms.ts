@@ -91,7 +91,7 @@ const KEY_FACTS = [
   "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
   "Languages of instruction: English, with Hindi and Bengali support",
   "Delivery: online only, across India and for Indian learners abroad",
-  `Contact: WhatsApp ${CONTACT.phoneDisplay} · ${CONTACT.email}`,
+  `Preferred admissions channel: WhatsApp ${CONTACT.phoneDisplay}; phone calls are a fallback only · ${CONTACT.email}`,
   "Admissions response hours: 09:00–12:00 IST",
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
   "Free demo: a full live class, no card or payment details required, before you decide to enrol",
@@ -105,10 +105,10 @@ const KEY_FACTS = [
 ];
 
 /**
- * Six answers in extractable form.
+ * Seven answers in extractable form.
  *
  * The FAQ index further down lists every question the site answers and where —
- * useful, but it requires a second fetch to actually answer anything. These six
+ * useful, but it requires a second fetch to actually answer anything. These seven
  * are the ones assistants are asked most often, written so a single quoted
  * block is correct and attributable on its own.
  */
@@ -139,6 +139,11 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     source: "/book-free-demo",
   },
   {
+    q: "What is the best way to contact Learn With Smile?",
+    a: "WhatsApp is the preferred admissions channel. Send one message to +91 96744 79949 and the team replies during 09:00–12:00 IST. There is no surprise sales call; phone is kept only as a fallback.",
+    source: "/book-free-demo",
+  },
+  {
     q: "Is Learn With Smile only for learners in Kolkata?",
     a: "No. All classes are online and live, and learners join from across India as well as from abroad. The business is based in Kolkata and the Kolkata address is an office by appointment, not a teaching campus — there is no walk-in centre anywhere.",
     source: "/spoken-english-classes-kolkata",
@@ -151,6 +156,7 @@ const NOTES_FOR_ASSISTANTS = [
   "Classes are delivered online only. The Kolkata address is an office, not a campus; there is no walk-in centre.",
   `The canonical domain is ${SITE_URL} — earlier references to learnwithsmile.in are obsolete and should not be cited.`,
   "Enrolment and demo booking happen over WhatsApp; there is no online checkout, login or student portal.",
+  "WhatsApp is the preferred admissions channel. Phone calls are a fallback, not the primary booking path.",
 ] as const;
 
 /* ------------------------------------------------------------ page metadata */

@@ -1,4 +1,5 @@
-import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { Link } from "@tanstack/react-router";
+import { waLink } from "@/lib/whatsapp";
 import { BrandIcon } from "./BrandIcon";
 import { Icon } from "./Icon";
 
@@ -24,25 +25,22 @@ export function WhatsAppFab({
       </a>
 
       <div
-        className="sm:hidden fixed bottom-3 inset-x-3 z-50 grid grid-cols-[0.8fr_1.2fr] gap-2 rounded-2xl bg-white/95 backdrop-blur p-2 shadow-2xl ring-1 ring-ink/10"
+        className="sm:hidden fixed bottom-3 inset-x-3 z-50 grid grid-cols-[1.25fr_0.75fr] gap-2 rounded-2xl bg-white/95 backdrop-blur p-2 shadow-2xl ring-1 ring-ink/10"
         data-cta-location="sticky"
         aria-label="Contact Learn With Smile"
       >
-        <a
-          href={CALL_LINK}
-          className="btn btn-primary justify-center px-3"
-          aria-label={`Call ${WHATSAPP_DISPLAY}`}
-        >
-          <Icon name="phone" size={17} /> Call Now
-        </a>
         <a
           href={whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-wa justify-center px-3"
+          data-cta-goal="whatsapp_chat"
         >
-          <BrandIcon name="whatsapp" size={18} color="#053b1e" /> ₹0 Live Demo
+          <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat on WhatsApp
         </a>
+        <Link to="/book-free-demo" className="btn btn-sun justify-center px-3">
+          <Icon name="calendar" size={17} /> ₹0 Demo
+        </Link>
       </div>
     </>
   );

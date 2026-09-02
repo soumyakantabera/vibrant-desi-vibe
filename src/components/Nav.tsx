@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { CALL_LINK, waLink } from "@/lib/whatsapp";
+import { waLink } from "@/lib/whatsapp";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -166,20 +166,15 @@ export function Nav() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <a
-              href={CALL_LINK}
-              className="hidden xl:inline-flex btn btn-outline btn-sm"
-              data-cta-location="nav"
-            >
-              <Icon name="phone" size={15} /> Call Now
-            </a>
-            <a
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex btn btn-primary btn-sm shadow-md hover:shadow-lg"
+              className="hidden sm:inline-flex btn btn-wa btn-sm shadow-md hover:shadow-lg"
+              data-cta-goal="free_demo"
             >
-              <Icon name="rocket" size={16} /> <span className="hidden md:inline">Free Demo</span>
-              <span className="md:hidden">Demo</span>
+              <BrandIcon name="whatsapp" size={17} color="#053b1e" />
+              <span className="hidden md:inline">₹0 Demo on WhatsApp</span>
+              <span className="md:hidden">WhatsApp</span>
             </a>
             <button
               onClick={() => setOpen(true)}
@@ -215,21 +210,26 @@ export function Nav() {
                   <Icon name="close" />
                 </button>
               </div>
-              <div className="grid grid-cols-[0.8fr_1.2fr] gap-2" data-cta-location="nav">
-                <a href={CALL_LINK} className="btn btn-ghost-white justify-center px-3">
-                  <Icon name="phone" size={17} /> Call
-                </a>
+              <div className="grid grid-cols-[1.2fr_0.8fr] gap-2" data-cta-location="nav">
                 <a
                   href={wa}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-sun justify-center shadow-lg px-3"
+                  className="btn btn-wa justify-center shadow-lg px-3"
+                  data-cta-goal="whatsapp_chat"
                 >
-                  <Icon name="rocket" size={18} /> ₹0 Demo
+                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat Now
                 </a>
+                <Link
+                  to="/book-free-demo"
+                  onClick={() => setOpen(false)}
+                  className="btn btn-sun justify-center px-3"
+                >
+                  <Icon name="calendar" size={17} /> ₹0 Demo
+                </Link>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
-                +91 96744 79949 · 09:00–12:00 IST
+                No sales call · WhatsApp replies 09:00–12:00 IST
               </p>
             </div>
 
