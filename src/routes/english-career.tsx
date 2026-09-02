@@ -180,7 +180,7 @@ function Page() {
                         <p className="mt-2 flex-1 text-base leading-relaxed text-ink/85">
                           {c.tagline}
                         </p>
-                        <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2.5 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white">
+                        <span className="syllabus-cta mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2.5 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white group-focus-within:bg-brand group-focus-within:text-white">
                           View Full Syllabus <Icon name="arrow-right" size={14} />
                         </span>
                       </Link>
