@@ -109,14 +109,12 @@ function Page() {
               <Icon name="shield" size={14} /> Why Us · Quality + Proof
             </span>
             <h1 className="mt-4 text-3xl leading-[1.05] text-cream md:text-6xl">
-              Quality Teaching. Live.
-              <br />
-              <span className="text-sunshine">From ₹999/mo · 7 Years · 500+ Learners</span>
+              Built for <span className="text-sunshine">Indian Learners</span>. Run by Real
+              Teachers.
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              A named teacher, a room small enough to correct you by name, and a fee that working
-              India can stay with. From ₹999/mo. GST included. ₹0 demo in a real class — not a
-              sales call.
+              No bots. No pre-recorded videos. No mega-batches where you are invisible. Just live
+              teaching with a teacher who knows your name. From ₹999/mo. ₹0 demo in a real class.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton

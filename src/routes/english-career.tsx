@@ -60,13 +60,11 @@ function Page() {
               <Icon name="mic" size={14} /> English & Career
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              Quality English. Live.
-              <br />
-              <span className="text-sunshine">6 Programmes · From ₹999/mo · 7 Years</span>
+              Speak English. <span className="text-sunshine">Win Interviews.</span> Build a Career.
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Spoken English, Workplace, IELTS, Interview, Interactive Speaking, and 1:1 Career
-              Guidance. Pick the outcome, then the fee. The demo is a real class, not a pitch.
+              Six practical programmes. Spoken English, Workplace, IELTS, Interview, Interactive
+              Speaking, and 1:1 Career Guidance. Pick the outcome, then the fee. ₹0 demo.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">

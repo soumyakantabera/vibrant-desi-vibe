@@ -155,12 +155,11 @@ function Page() {
             <Icon name="heart" size={14} /> Meet the Founder
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Sunanda Dey.{" "}
-            <span className="text-sunshine">7 Years · 500+ Learners · From ₹999/mo.</span>
+            One mentor. <span className="text-sunshine">One mission.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Founder and lead teacher. Kolkata-based, teaching learners across India. From ₹999/mo.
-            ₹0 demo in a real class.
+            Sunanda Dey — founder and lead teacher. 100% live. From ₹999/mo. Kolkata-based,
+            teaching learners across India. ₹0 demo in a real class.
           </p>
         </div>
       </section>

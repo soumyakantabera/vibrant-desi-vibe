@@ -193,9 +193,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Quality Spoken English | Live, From ₹999",
+    title: "Speak English Live | From ₹999/mo",
     description:
-      "A Kolkata classroom that went online. Quality live teaching, 7 years, 500+ learners across India. From ₹999/month. ₹0 demo in a real class. GST included.",
+      "Speak English live from ₹999/month. A Kolkata classroom that went online — 7 years, 500+ learners across India. Real speaking time. ₹0 demo before you pay.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -249,7 +249,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-career": {
     path: "/english-career",
-    title: "English & Career | 6 Live Programmes, ₹999",
+    title: "English & Career | Speak. Interview. Career.",
     description:
       "Six live programmes — Spoken English, Workplace, IELTS, Interview, Speaking, Career Guidance. From ₹999/month. ₹0 demo in a real class. GST included. Live.",
     shortTitle: "English & Career Courses",
@@ -286,7 +286,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Us | Quality Teaching. Live.",
+    title: "Why Learn With Smile | Built for Indian Learners",
     description:
       "Why this room: a named teacher, a batch of 8, 7 years from Kolkata. From ₹999/month. Sit in a ₹0 live demo before you pay. GST included. Quality first.",
     shortTitle: "Why Learn With Smile",
@@ -342,7 +342,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/about-us": {
     path: "/about-us",
-    title: "About Us | 7 Years, 500+ Learners",
+    title: "About Us | We Built the Bridge",
     description:
       "7 years of live teaching, 500+ learners, from ₹999/month. A Kolkata classroom that went online — same teacher, learners across India. ₹0 demo. GST included.",
     shortTitle: "About Us",
@@ -362,7 +362,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/founder": {
     path: "/founder",
-    title: "Sunanda Dey | Founder & Lead Teacher",
+    title: "Sunanda Dey | One Mentor. One Mission.",
     description:
       "Meet Sunanda Dey — founder and lead teacher. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India. ₹0 demo in a real class.",
     shortTitle: "Sunanda Dey — Founder",
@@ -382,7 +382,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/success-stories": {
     path: "/success-stories",
-    title: "Student Results | IELTS 7.5, Jobs Won",
+    title: "Student Results | Real Indian Learners",
     description:
       "Named outcomes: IELTS 7.5, salary doubled, jobs won. 500+ learners in live batches of 8 from ₹999/month. Individual results, not a guaranteed outcome.",
     shortTitle: "Success Stories",
@@ -429,7 +429,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/blog": {
     path: "/blog",
-    title: "English & Career Blog | Notes From Class",
+    title: "English & Career Blog | Tips for Indian Learners",
     description:
       "Notes from teachers who run live classes: IELTS Band 7, interview answers, workplace English, how long fluency takes. From ₹999/month. ₹0 demo. GST included.",
     shortTitle: "Blog",
@@ -450,7 +450,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Book a Free Live Demo | ₹0 Real Class",
+    title: "Book a Free Live Demo | A Real Class. Free.",
     description:
       "Sit in a live class for ₹0 — not a sales call. One WhatsApp message. Replies 09:00–12:00 IST. No card. Then decide: from ₹999/month. GST included. Live.",
     shortTitle: "Book a Free Demo",
@@ -775,7 +775,7 @@ export type CourseSeoExtra = {
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
-    title: "Quality Spoken English | ₹999/mo, 6 Months",
+    title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
       "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, max 8 students, ₹999/month, with a ₹0 demo.",
     shortTitle: "Basic Spoken English",
@@ -987,8 +987,8 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Quality live teaching from a Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. Spoken, IELTS, Workplace. ₹0 demo.",
-    slogan: "Quality Spoken English. Live. From ₹999/mo · 7 Years · 500+ Learners.",
+      "Speak English live from a Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. Spoken, IELTS, Workplace. ₹0 demo.",
+    slogan: "Speak English Live. From ₹999/mo · 7 Years · 500+ Learners.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",
@@ -1044,7 +1044,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Quality Spoken English. Live. A Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. ₹0 demo. GST included. Live.",
+      "Speak English Live. A Kolkata classroom that went online. From ₹999/month. 7 years, 500+ learners across India. ₹0 demo. GST included. Real speaking time.",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }
