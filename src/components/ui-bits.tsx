@@ -64,7 +64,7 @@ export function FeatureCard({
     sage: "bg-[#E2F2E7] text-brand-deep",
   } as const;
   return (
-    <div className="card-soft h-full flex flex-col">
+    <div className="card-soft flex h-full flex-col transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
       <div
         className={`inline-flex items-center justify-center h-12 w-12 rounded-2xl ${ringMap[color]} mb-4`}
       >
@@ -124,7 +124,7 @@ export function Stat({ num, label }: { num: string; label: string }) {
 
 export function MottoBand({ children }: { children: ReactNode }) {
   return (
-    <div className="bg-gradient-to-r from-brand via-indigo-pop to-coral py-10 md:py-14">
+    <div className="bg-gradient-to-r from-brand-deep via-indigo-pop to-[#A53D32] py-10 md:py-14">
       <div className="container-x">
         <blockquote className="font-display text-2xl md:text-4xl font-extrabold text-white text-center leading-tight">
           {children}

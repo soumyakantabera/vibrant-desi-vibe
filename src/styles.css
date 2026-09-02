@@ -96,6 +96,7 @@
   --brand-soft: #D6F2E2;
   --sunshine: #F5B700;
   --coral: #FF6B5B;
+  --coral-deep: #A53D32;
   --indigo-pop: #5B5BD6;
   --sage: #A8D5BA;
   --cream: #FFFFFF;
@@ -286,16 +287,31 @@ section > .container-x { position: relative; z-index: 10; }
     white-space: normal; text-align: center; text-decoration: none;
     box-shadow: 0 1px 0 rgba(0,0,0,.04);
   }
-  .btn:hover { transform: translateY(-1px); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+  .btn:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--brand-deep), 0 8px 24px -10px rgba(8,70,51,.55);
+  }
   .btn-lg { padding: 1rem 1.5rem; font-size: 1.02rem; min-height: 54px; }
   .btn-sm { padding: .6rem .95rem; font-size: .85rem; min-height: 40px; }
   /* Primary CTA: deepened green lifts white-text contrast to ~6.3:1 (was 5.2:1)
      while staying in the brand-green family. */
-  .btn-primary { background: #0B6E4F; color: #fff; }
+  .btn-primary {
+    background: #0B6E4F; color: #fff;
+    box-shadow: 0 8px 22px -12px rgba(8,70,51,.75);
+  }
   .btn-primary:hover { background: var(--brand-deep); }
-  .btn-wa { background: var(--wa); color: #053b1e; }
-  .btn-wa:hover { background: var(--wa-deep); color: #fff; }
-  .btn-sun { background: var(--sunshine); color: var(--ink); }
+  .btn-wa {
+    background: var(--wa); color: #053b1e;
+    box-shadow: 0 8px 22px -12px rgba(5,59,30,.65);
+  }
+  .btn-wa:hover { background: #1EBE5B; color: #053b1e; }
+  .btn-sun {
+    background: var(--sunshine); color: var(--ink);
+    box-shadow: 0 8px 22px -12px rgba(107,74,0,.65);
+  }
   .btn-sun:hover { background: #E0A800; }
   .btn-coral { background: var(--coral); color: var(--ink); }
   .btn-coral:hover { background: #F0584A; }
@@ -311,8 +327,8 @@ section > .container-x { position: relative; z-index: 10; }
 
   .card-soft {
     background: #fff; border-radius: 1.25rem; padding: 1.5rem;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(14,36,22,.04), 0 8px 24px -16px rgba(14,36,22,.18);
+    border: 1px solid #D4DED7;
+    box-shadow: 0 2px 4px rgba(14,36,22,.05), 0 14px 34px -22px rgba(8,70,51,.35);
   }
   .pill {
     display:inline-flex; align-items:center; gap:.4rem;
@@ -534,5 +550,6 @@ html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; 
   html.js [data-reveal="in"], html.js [data-reveal-stagger="in"] > * { animation: none; opacity: 1; }
   html.js [data-reveal="out"], html.js [data-reveal-stagger="out"] > * { opacity: 1; }
   .img-el { transition: opacity .2s ease; }
+  .btn, .btn:hover, .btn:active { transform: none; transition: none; }
   .route-progress-bar { transition: none; }
 }

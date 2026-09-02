@@ -123,7 +123,7 @@ function Home() {
               <br />
               <span className="text-sunshine">Never in a Batch Bigger Than 6.</span>
             </h1>
-            <p className="mt-3 text-[15px] md:text-lg text-white max-w-xl">
+            <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Build practical English communication and speaking confidence in live online classes
               from <strong className="text-sunshine">₹999/month</strong>. Get real speaking time,
               direct teacher feedback and a full{" "}
@@ -279,7 +279,7 @@ function Home() {
             title="Choose the Goal You Need Now"
             subtitle="Four clear categories for spoken English, workplace communication, IELTS and career guidance. Start with the result you need—not a confusing course name."
           />
-          <Reveal stagger className="grid md:grid-cols-2 gap-5 lg:gap-6">
+          <Reveal stagger className="grid gap-5 lg:grid-cols-2 lg:gap-6">
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -708,34 +708,11 @@ function StoryTile({
   );
 }
 
-const CATEGORY_TONES: Record<
-  CategoryTone,
-  { icon: string; badge: string; link: string; wash: string }
-> = {
-  brand: {
-    icon: "bg-brand-soft text-brand-deep",
-    badge: "bg-brand-soft text-brand-deep border-brand/20",
-    link: "text-brand-deep",
-    wash: "from-brand-deep/95 via-brand-deep/45",
-  },
-  indigo: {
-    icon: "bg-[#E2E2FB] text-indigo-pop",
-    badge: "bg-[#E2E2FB] text-indigo-pop border-indigo-pop/20",
-    link: "text-indigo-pop",
-    wash: "from-indigo-pop/95 via-indigo-pop/45",
-  },
-  sun: {
-    icon: "bg-sunshine/25 text-[#6B4A00]",
-    badge: "bg-sunshine/20 text-[#6B4A00] border-sunshine/40",
-    link: "text-[#765200]",
-    wash: "from-[#5B4300]/95 via-[#5B4300]/45",
-  },
-  coral: {
-    icon: "bg-coral/15 text-[#8B321F]",
-    badge: "bg-coral/15 text-[#8B321F] border-coral/30",
-    link: "text-[#8B321F]",
-    wash: "from-[#713323]/95 via-[#713323]/45",
-  },
+const CATEGORY_TONES: Record<CategoryTone, { overlay: string }> = {
+  brand: { overlay: "bg-brand-deep/35" },
+  indigo: { overlay: "bg-indigo-pop/30" },
+  sun: { overlay: "bg-[#6B4A00]/30" },
+  coral: { overlay: "bg-[#8B321F]/30" },
 };
 
 function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
@@ -750,47 +727,46 @@ function CategoryCard({ category }: { category: CourseCategory }) {
   const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
 
   return (
-    <article className="group relative min-h-[350px] overflow-hidden rounded-3xl border border-ink/10 bg-ink shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <article className="group relative isolate min-h-[380px] min-w-0 overflow-hidden rounded-3xl border border-ink/20 bg-ink shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <SmartImage
         src={visual.heroImage}
         alt={`${category.title} online courses in India`}
         fill
-        imgClassName="transition duration-700 group-hover:scale-105"
+        imgClassName="brightness-[.88] transition duration-700 group-hover:scale-105"
         sizes="(min-width: 768px) 50vw, 100vw"
       />
-      <div
-        className={`absolute inset-0 bg-gradient-to-t ${tone.wash} via-ink/45 to-ink/10 transition duration-300 group-hover:via-ink/50`}
-      />
-      <div className="relative flex min-h-[350px] flex-col justify-end p-5 text-cream sm:p-6">
-        <span className="pill w-fit border-cream/25 bg-ink/25 text-cream backdrop-blur-sm">
+      <div className={`absolute inset-0 ${tone.overlay}`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/75 to-ink/25 transition duration-300 group-hover:via-ink/80" />
+      <div className="relative flex min-h-[380px] min-w-0 flex-col justify-end p-5 text-cream sm:p-7">
+        <span className="pill w-fit border-white/40 bg-ink/65 text-cream shadow-sm backdrop-blur-md">
           {onlySlug ? "1 focused programme" : `${category.slugs.length} programmes`}
         </span>
 
-        <h3 className="mt-3 flex items-center gap-2 text-2xl font-display font-extrabold text-cream sm:text-3xl">
+        <h3 className="mt-3 flex items-center gap-2 text-2xl font-display font-extrabold leading-tight text-cream drop-shadow-[0_2px_8px_rgba(0,0,0,.75)] sm:text-3xl">
           <Icon name={category.icon} size={25} /> {category.title}
         </h3>
-        <p className="mt-2 max-w-xl text-sm leading-relaxed text-white sm:text-[15px]">
+        <p className="mt-2 max-w-xl text-base font-medium leading-relaxed text-white drop-shadow-[0_1px_6px_rgba(0,0,0,.85)]">
           {category.description}
         </p>
 
         {onlyCourse ? (
-          <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-cream/25 bg-cream/15 px-3 py-1.5 backdrop-blur-sm">
+          <div className="mt-4 flex min-w-0 flex-wrap gap-2 text-xs font-display font-bold">
+            <span className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-white/40 bg-ink/65 px-3 py-1.5 leading-tight shadow-sm backdrop-blur-md">
               <Icon name={onlyCourse.icon} size={14} /> {onlyCourse.title}
             </span>
-            <span className="rounded-full border border-cream/25 bg-cream/15 px-3 py-1.5 backdrop-blur-sm">
+            <span className="max-w-full whitespace-normal rounded-full border border-white/40 bg-ink/65 px-3 py-1.5 leading-tight shadow-sm backdrop-blur-md">
               {onlyCourse.duration.split(" · ")[0]} · {onlyCourse.price}
             </span>
           </div>
         ) : (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex min-w-0 flex-wrap gap-2">
             {category.slugs.map((slug) => {
               const course = COURSES[slug];
               return (
                 <Link
                   key={slug}
                   to={coursePath(slug)}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-cream/25 bg-cream/15 px-3 py-1.5 text-xs font-display font-bold text-cream backdrop-blur-sm transition hover:bg-cream/25"
+                  className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-white/40 bg-ink/65 px-3 py-1.5 text-xs font-display font-bold leading-tight text-cream shadow-sm backdrop-blur-md transition hover:bg-ink/80"
                 >
                   <Icon name={course.icon} size={14} /> {course.title}
                 </Link>
@@ -802,7 +778,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         <Link
           to={destination}
           hash={onlySlug ? undefined : category.id}
-          className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-sunshine px-4 py-2.5 text-sm font-display font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-cream"
+          className="mt-5 inline-flex max-w-full items-center gap-1.5 rounded-full bg-sunshine px-5 py-3 text-base font-display font-extrabold leading-tight text-ink shadow-lg shadow-ink/30 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
         >
           {onlyCourse ? `View ${onlyCourse.title}` : "Explore both programmes"}
           <Icon name="arrow-right" size={15} />
