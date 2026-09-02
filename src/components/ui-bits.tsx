@@ -30,14 +30,14 @@ export function SectionHeader({
             : "eyebrow";
   return (
     <div
-      className={`${align === "center" ? "text-center mx-auto" : ""} max-w-3xl ${align === "center" ? "" : ""} mb-10 md:mb-14`}
+      className={`${align === "center" ? "text-center mx-auto" : ""} max-w-3xl mb-6 md:mb-8`}
     >
       {eyebrow && <span className={ebClass}>{eyebrow}</span>}
-      <h2 className={`mt-4 text-3xl md:text-[2.6rem] leading-[1.1] ${invert ? "text-cream" : ""}`}>
+      <h2 className={`mt-3 text-2xl md:text-[2rem] leading-[1.12] ${invert ? "text-cream" : ""}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-base md:text-lg ${invert ? "text-white/95" : "text-ink/85"}`}>
+        <p className={`mt-3 text-sm md:text-base ${invert ? "text-white/95" : "text-ink/85"}`}>
           {subtitle}
         </p>
       )}
@@ -66,9 +66,9 @@ export function FeatureCard({
   return (
     <div className="card-soft flex h-full flex-col transition hover:-translate-y-1 hover:border-brand/30 hover:shadow-lg">
       <div
-        className={`inline-flex items-center justify-center h-12 w-12 rounded-2xl ${ringMap[color]} mb-4`}
+        className={`inline-flex items-center justify-center h-10 w-10 rounded-xl ${ringMap[color]} mb-3`}
       >
-        <Icon name={icon} size={24} />
+        <Icon name={icon} size={20} />
       </div>
       <h3 className="text-lg font-display font-bold text-ink mb-2">{title}</h3>
       <p className="text-sm text-ink/85 leading-relaxed flex-1">{children}</p>
@@ -124,9 +124,9 @@ export function Stat({ num, label }: { num: string; label: string }) {
 
 export function MottoBand({ children }: { children: ReactNode }) {
   return (
-    <div className="bg-gradient-to-r from-brand-deep via-indigo-pop to-[#A53D32] py-10 md:py-14">
+    <div className="bg-gradient-to-r from-brand-deep via-indigo-pop to-[#A53D32] py-8 md:py-10">
       <div className="container-x">
-        <blockquote className="font-display text-2xl md:text-4xl font-extrabold text-white text-center leading-tight">
+        <blockquote className="font-display text-xl md:text-3xl font-extrabold text-white text-center leading-tight">
           {children}
         </blockquote>
       </div>

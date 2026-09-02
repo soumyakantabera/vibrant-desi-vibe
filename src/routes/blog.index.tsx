@@ -97,7 +97,7 @@ function Page() {
       <section className="section">
         <div className="container-x">
           <SectionHeader eyebrow="Latest Posts" title="Read · Apply · Discuss on WhatsApp" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {posts.map((p) => (
               <article key={p.slug} className="card-soft flex flex-col">
                 {/* The whole card links to the article. This is the bug the blog
@@ -111,7 +111,7 @@ function Page() {
                   <SmartImage
                     src={IMG[p.img as keyof typeof IMG] ?? IMG.blogDesk}
                     alt={p.imgAlt}
-                    className="rounded-xl h-44 mb-4"
+                    className="mb-3 h-32 rounded-xl md:h-36"
                     imgClassName="group-hover:scale-105 transition duration-500"
                     sizes="(min-width: 768px) 33vw, 100vw"
                   />
