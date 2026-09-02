@@ -54,12 +54,12 @@ export function Footer({ image }: { image?: string }) {
                 <div className="font-display font-extrabold text-xl">
                   Learn With <span className="text-sunshine">Smile</span>
                 </div>
-                <div className="text-xs text-white/85">Live Online · Kolkata & Pan-India</div>
+                <div className="text-xs text-white/85">₹999/mo · 7 Years · 11 States</div>
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              7 years teaching English & career skills online from Kolkata. Learners join live from
-              all over India. Gamified classes. Real results — from ₹999/mo.
+              7 years of live English from ₹999/mo. 500+ learners in West Bengal, Delhi,
+              Maharashtra, Gujarat and South India. Same teacher. Same fee. IST slots.
             </p>
             <SmartImage
               src={image || IMG}

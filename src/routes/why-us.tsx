@@ -26,7 +26,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Quality live teaching from ₹999/month, GST included",
+                name: "₹999/month live teaching, GST included",
               },
               {
                 "@type": "ListItem",
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 4,
-                name: "Kolkata-based live teaching for learners across India",
+                name: "500+ learners across 11 Indian states from ₹999/month",
               },
             ],
           }),
@@ -80,7 +80,7 @@ const MARKET = [
     color: "brand" as const,
     icon: "smile" as const,
     tag: "Learn With Smile",
-    title: "Quality live. From ₹999/mo.",
+    title: "₹999/mo. 7 years. 500+.",
     body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. GST included. ₹0 demo in a real class. Batches of 8 so you actually speak — secondary to the teaching, not a slogan we hide behind.`,
     stat: "From ₹999/mo · GST in",
   },
@@ -106,16 +106,17 @@ function Page() {
         <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div className="min-w-0 w-full text-cream">
             <span className="eyebrow eyebrow-white">
-              <Icon name="shield" size={14} /> Why Us · Kolkata · Pan-India
+              <Icon name="shield" size={14} /> Why Us · ₹999/mo · 7 Years · 500+
             </span>
             <h1 className="mt-4 text-3xl leading-[1.05] text-cream md:text-6xl">
-              Quality Teaching. Live.{" "}
-              <span className="text-sunshine">Kolkata-Based · Teaching Pan-India.</span>
+              ₹999/mo · 7 Years · 500+ Learners
+              <br />
+              <span className="text-sunshine">West Bengal · Delhi · Maharashtra · South India</span>
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              7 years · 500+ learners from Kolkata, Delhi, Mumbai, Bengaluru, Hyderabad, Pune,
-              Chennai, Patna and towns across India. From ₹999/mo. ₹0 demo. GST included. Small
-              batches of 8 so everyone speaks.
+              11 states. Same live teacher, same ₹999/mo. Kolkata, Mumbai, Pune, Ahmedabad,
+              Bengaluru, Hyderabad, Chennai, Kochi, Coimbatore, Visakhapatnam. ₹0 demo. GST
+              included. Batches of 8.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton
@@ -138,7 +139,7 @@ function Page() {
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
                 headline={{ big: "₹999", suffix: "/mo" }}
-                subnote="GST included · Kolkata-based · 500+ pan-India"
+                subnote="GST included · 11 states · 500+ learners"
                 rows={[
                   {
                     tone: "brand",
@@ -155,11 +156,11 @@ function Page() {
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "Pan-India",
-                    small: "Same teacher. Same fee. IST slots.",
+                    big: "11 States",
+                    small: "WB · Delhi · MH · South India",
                   },
                 ]}
-                footer={`${RATING_DISPLAY} ${RATING.source} · Kolkata · Pan-India · 09:00–12:00 IST`}
+                footer={`${RATING_DISPLAY} ${RATING.source} · 11 states · 09:00–12:00 IST`}
               />
             </div>
           </div>
@@ -227,8 +228,9 @@ function Page() {
           <FeatureCard icon="user" color="indigo" title="Direct teacher support">
             1:1 outside class when you genuinely need it — not a ticket bot.
           </FeatureCard>
-          <FeatureCard icon="globe" color="sunshine" title="Kolkata-Based, Pan-India">
-            Learners join live from metros, smaller towns and abroad. Same teacher. Same fee. IST.
+          <FeatureCard icon="globe" color="sunshine" title="11 States · Same ₹999/mo">
+            West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala and
+            more. Same teacher. IST slots.
           </FeatureCard>
         </div>
       </section>
@@ -243,7 +245,7 @@ function Page() {
         faqs={PAGES["/why-us"].faqs ?? []}
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
-        subtitle="Quality, fees, live vs recorded, batch of 8, and what happens if it is not for you."
+        subtitle="₹999/mo, 7 years, 500+ learners, live vs recorded, batch of 8, and the ₹0 demo."
         waMessage="Hi, I want to understand how your classes work."
       />
 

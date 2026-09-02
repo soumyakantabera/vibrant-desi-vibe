@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "Quality spoken English in 6 months — even from zero. Live batch of 8, up to 2 classes/week, ₹999/mo. Direct correction every session.",
+      "6 months, ₹999/mo, max 8. Speak from zero — 2,000+ words, live correction, up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",

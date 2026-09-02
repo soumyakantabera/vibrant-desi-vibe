@@ -57,15 +57,16 @@ function Page() {
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
-              <Icon name="mic" size={14} /> 6 Programmes · Kolkata · Pan-India
+              <Icon name="mic" size={14} /> 6 Programmes · ₹999/mo · 7 Years · 500+
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              Quality English. Live.{" "}
-              <span className="text-sunshine">Kolkata-Based · Teaching Pan-India.</span>
+              6 Live Programmes · From ₹999/mo
+              <br />
+              <span className="text-sunshine">7 Years · 500+ Learners · 11 States</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              6 live programmes in 4 tracks. Named teacher, up to 2 sessions/week. Career
-              Counselling is 3 × 60-min 1:1 for ₹999 total. Batches of 8. ₹0 demo first.
+              4 tracks. Named teacher. Up to 2 sessions/week. Career Counselling 3 × 60-min 1:1 for
+              ₹999 total. West Bengal, Delhi, Maharashtra, South India. ₹0 demo.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">

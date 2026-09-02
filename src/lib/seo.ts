@@ -46,22 +46,40 @@ export const CONTACT = {
 } as const;
 
 /**
- * Places we already teach from — coverage UI, FAQs and Organization.areaServed.
- * Do not add a city that has not appeared in a named story, FAQ or admissions note.
+ * Service area for coverage UI, FAQs and Organization.areaServed.
+ * States first (what search and assistants fetch), then cities.
+ * Howrah is not listed — Kolkata covers the West Bengal metro.
  */
+export const COVERAGE_STATES = [
+  "West Bengal",
+  "Delhi",
+  "Maharashtra",
+  "Gujarat",
+  "Karnataka",
+  "Tamil Nadu",
+  "Telangana",
+  "Kerala",
+  "Andhra Pradesh",
+  "Bihar",
+  "Assam",
+] as const;
+
 export const COVERAGE_CITIES = [
   "Kolkata",
-  "Howrah",
-  "Delhi NCR",
+  "Delhi",
   "Mumbai",
   "Pune",
+  "Nagpur",
+  "Ahmedabad",
+  "Surat",
   "Bengaluru",
   "Hyderabad",
   "Chennai",
+  "Coimbatore",
+  "Kochi",
+  "Visakhapatnam",
   "Patna",
   "Guwahati",
-  "Towns across India",
-  "Indians abroad",
 ] as const;
 
 /**
@@ -175,9 +193,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Quality Spoken English | Kolkata & Pan-India",
+    title: "₹999/mo Live English | 7 Yrs, 500+ India",
     description:
-      "Kolkata-based live English for learners across India — Spoken, Workplace, IELTS. 7 years, 500+ students nationwide. From ₹999/month. ₹0 demo. GST included.",
+      "Live English from ₹999/month. 7 years, 500+ learners in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala. ₹0 demo. GST in.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -189,15 +207,18 @@ export const PAGES: Record<string, PageSeo> = {
       "workplace english course india",
       "interview preparation in english",
       "career counselling online india",
-      "spoken english classes pan india online",
-      "kolkata based online english classes",
+      "spoken english classes west bengal",
+      "spoken english classes maharashtra online",
+      "spoken english classes karnataka tamil nadu kerala",
+      "spoken english classes delhi ncr online",
+      "spoken english classes gujarat telangana",
       "live english class with real teacher",
     ],
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
     summary:
-      "Homepage. Kolkata-based quality live English for learners across India: 7 years, 500+ students nationwide, from ₹999/month, ₹0 demo. English batches of 8.",
+      "Homepage. ₹999/mo live English, 7 years, 500+ learners across 11 Indian states — West Bengal, Delhi, Maharashtra, Gujarat and South India. ₹0 demo. Batches of 8.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -221,7 +242,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
-        a: "Yes. All classes are 100% online and live, so we teach learners across India — Delhi, Mumbai, Bangalore, Hyderabad, Pune, Chennai, Patna and smaller towns — as well as Indian learners abroad. We are based in Kolkata, and we run morning, evening and weekend batches so IST working hours are not a blocker.",
+        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Indian learners abroad join on IST too.",
       },
     ],
   },
@@ -265,9 +286,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/why-us": {
     path: "/why-us",
-    title: "Why Us | Kolkata-Based, Teaching Pan-India",
+    title: "Why Us | ₹999/mo, 7 Yrs, 500+ India",
     description:
-      "Kolkata-based live English vs city classrooms, Cambly and British Council. 7 years, 500+ learners nationwide, from ₹999/month. ₹0 demo. Pan-India IST slots.",
+      "₹999/mo live English vs city rooms, Cambly and British Council. 7 years, 500+ learners in 11 states — WB, Delhi, Maharashtra, South India. ₹0 demo. GST in.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -282,7 +303,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Why us: quality live teaching from ₹999/month, 7 years, 500+ learners, 5.0 Google, ₹0 demo. Honest comparison with Kolkata classrooms, native-speaker apps and brand groups. English batches of 8.",
+      "Why us: ₹999/month, 7 years, 500+ learners across 11 states, 5.0 Google, ₹0 demo. Comparison with city classrooms, native apps and brand groups. Batches of 8.",
     faqs: [
       {
         q: "How is Learn With Smile different from Cambly or British Council English Online?",
@@ -686,7 +707,7 @@ export type CourseSeoExtra = {
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
-    title: "Quality Spoken English | ₹999/mo, 7 Years",
+    title: "Spoken English | ₹999/mo, 6 Mo, 500+",
     description:
       "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, max 8 students, ₹999/month, with a ₹0 demo.",
     shortTitle: "Basic Spoken English",
@@ -898,8 +919,8 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Kolkata-based live English and career programmes for learners across India — Spoken, Workplace, IELTS, Interview, Career Counselling. 7 years, 500+ learners nationwide, from ₹999/month, ₹0 demo.",
-    slogan: "Quality Spoken English. Live. Kolkata-Based. Teaching Pan-India.",
+      "Live English and career programmes: Spoken, Workplace, IELTS, Interview, Career Counselling. ₹999–₹1,999/month. 7 years, 500+ learners across 11 Indian states. ₹0 demo.",
+    slogan: "₹999/mo Live English. 7 Years. 500+ Learners. 11 States.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",
@@ -921,9 +942,8 @@ export function organizationLd() {
     },
     areaServed: [
       { "@type": "Country", name: "India" },
-      ...COVERAGE_CITIES.filter((c) => c !== "Towns across India" && c !== "Indians abroad").map(
-        (name) => ({ "@type": "City", name }),
-      ),
+      ...COVERAGE_STATES.map((name) => ({ "@type": "AdministrativeArea", name })),
+      ...COVERAGE_CITIES.map((name) => ({ "@type": "City", name })),
     ],
     knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
     contactPoint: [
@@ -956,7 +976,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Kolkata-based live spoken English for learners across India. From ₹999/month, 7 years, 500+ students nationwide, ₹0 demo. GST included. Pan-India IST.",
+      "₹999/mo live spoken English across India. 7 years, 500+ learners in 11 states — West Bengal, Delhi, Maharashtra, South India. ₹0 demo. GST included.",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }
