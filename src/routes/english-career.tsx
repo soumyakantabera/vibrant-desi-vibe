@@ -8,7 +8,7 @@ import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
-import { PAGES, abs, pageHead } from "@/lib/seo";
+import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, COURSE_SLUGS, type CourseSlug } from "@/lib/course-categories";
 
 type CoursePath = `/course-${CourseSlug}`;
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/english-career")({
             "@type": "ListItem",
             position: i + 1,
             url: abs(`/course-${slug}`),
-            name: c.title,
+            name: COURSE_SEO[slug]?.title ?? c.title,
             description: c.metaDescription,
           };
         }),
@@ -57,15 +57,16 @@ function Page() {
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
-              <Icon name="mic" size={14} /> English & Career Track
+              <Icon name="mic" size={14} /> 6 Programmes · Max 6 · From ₹999/mo
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              Speak English. <span className="text-sunshine">Win Interviews.</span> Build a Career.
+              Quality English. <span className="text-sunshine">Live Batches of 6.</span> From
+              ₹999/mo.
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Six practical programmes in four clear categories. English classes run in live batches
-              capped at 6; Career Counselling is a separate 1:1 service. Flexible morning, evening
-              and weekend slots. From <strong className="text-sunshine">₹999/mo</strong>.
+              6 live programmes in 4 tracks. English classes: max 6, up to 2 sessions/week. Career
+              Counselling is 3 × 60-min 1:1 for ₹999 total. Morning, evening and weekend IST slots.
+              ₹0 demo first.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -121,8 +122,8 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Four Clear Categories"
-            title="Start With the Outcome You Need"
-            subtitle="The six programmes are grouped by learner goal, so the right next step is easier to choose."
+            title="6 Programmes · Max 6 · From ₹999/mo"
+            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance — pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (

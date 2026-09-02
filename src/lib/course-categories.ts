@@ -13,9 +13,9 @@ export type CategoryTone = "brand" | "indigo" | "sun" | "coral";
 export const COURSE_CATEGORIES = [
   {
     id: "speak-confidently",
-    title: "Speak Confidently",
+    title: "Speak Confidently · Max 6",
     description:
-      "Build practical English communication from the basics or improve fluency through repeated live conversation.",
+      "From ₹999/mo. Live batches of 6. 6-month Spoken English or 3-month Interactive Speaking — up to 2 classes/week.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -23,9 +23,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "work-and-career",
-    title: "Work & Career",
+    title: "Work & Career · ₹1,499/mo",
     description:
-      "Build clear workplace communication and prepare for interviews with practical English.",
+      "Workplace English and Interview Prep. 2–3 months, max 6 per batch, up to 2 live classes/week.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
@@ -33,8 +33,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "ielts-preparation",
-    title: "IELTS Preparation",
-    description: "Prepare all four skills for Academic or General Training in a live small batch.",
+    title: "IELTS Prep · ₹1,999/mo",
+    description:
+      "Target Band 7+ in 3 months. Max 6 per batch. All 4 skills, 6+ live mocks, Academic or General Training.",
     icon: "trophy",
     tone: "sun",
     featuredSlug: "ielts",
@@ -42,8 +43,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "career-guidance",
-    title: "Career Guidance",
-    description: "Choose a realistic education or career direction in a separate 1:1 service.",
+    title: "Career Guidance · ₹999 Total",
+    description:
+      "1:1 counselling. 3 sessions × 60 minutes. Three shortlisted paths and a 6-month action plan.",
     icon: "compass",
     tone: "coral",
     featuredSlug: "career-counselling",

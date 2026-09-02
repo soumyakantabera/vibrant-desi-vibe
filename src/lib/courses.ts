@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "Speak English with confidence in 6 months — even if you've never spoken a full sentence. Live online, small batches built around gamified practice.",
+      "Quality spoken English in 6 months — even from zero. Live batch of 6, up to 2 classes/week, ₹999/mo. Direct correction every session.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -126,7 +126,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "business-english",
     title: "Workplace English",
     tagline:
-      "Practise the English you need at work: meetings, client calls, status updates, emails and presentations. Live online for professionals, freshers and job seekers.",
+      "Meetings, client calls, emails and presentations — 3 months, max 6, up to 2 live classes/week, ₹1,499/mo. For professionals, freshers and job seekers.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "headset",
@@ -190,7 +190,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "Up to two live speaking sessions a week in a friendly online batch. Build fluency through games, debates and storytelling.",
+      "3 months of live speaking — games, debates, role-plays. Max 6, up to 2 classes/week, ₹1,199/mo. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -249,7 +249,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "ielts",
     title: "IELTS Preparation",
     tagline:
-      "Target Band 7+ with full-length mocks, speaking labs and live writing feedback — 100% online live, small batches.",
+      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Max 6 per batch, ₹1,999/mo. Academic or General Training.",
     category: "IELTS Preparation",
     categoryColor: "brand",
     icon: "trophy",
@@ -342,7 +342,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "interview-prep",
     title: "Interview Preparation in English",
     tagline:
-      "Walk into your next interview with answers ready, body language sharp, and confidence high. HR + behavioural + communication — all covered live online.",
+      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Max 6, up to 2 classes/week, ₹1,499/mo. Walk in ready.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "target",
@@ -414,7 +414,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "career-counselling",
     title: "Career Counselling",
     tagline:
-      "1:1 online sessions to map your strengths, interests and the right next step — college, course or career switch.",
+      "1:1 quality guidance — 3 × 60-min sessions for ₹999 total. Strengths map, 3 career paths, 6-month action plan, resume and LinkedIn review.",
     category: "Career Guidance",
     categoryColor: "brand",
     icon: "compass",

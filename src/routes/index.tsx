@@ -116,18 +116,16 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Live English Communication · Kolkata & Pan-India
+              Quality Live English · Max 6 · From ₹999/mo
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
-              Speak English Live.
+              Quality Spoken English. Live.
               <br />
-              <span className="text-sunshine">Never in a Batch Bigger Than 6.</span>
+              <span className="text-sunshine">Max 6 Per Batch · From ₹999/mo.</span>
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Build practical English communication and speaking confidence in live online classes
-              from <strong className="text-sunshine">₹999/month</strong>. Get real speaking time,
-              direct teacher feedback and a full{" "}
-              <strong className="text-sunshine">₹0 live demo</strong> before you pay.
+              7 years · 500+ learners · ₹0 live demo. Practical communication in batches of 6 — up
+              to 2 classes a week. GST included. Direct teacher feedback before you pay.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -153,11 +151,11 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "100% Online · Live",
+                "100% Live · Max 6",
+                "From ₹999/month",
+                "7 Years · 500+ Learners",
+                "₹0 Live Demo",
                 "Morning · Evening · Weekend",
-                "Max 6 per English batch",
-                "Fees from ₹999/month",
-                "Same-Week Rescheduling",
               ].map((s) => (
                 <span
                   key={s}
@@ -276,8 +274,8 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Teach"
-            title="Choose the Goal You Need Now"
-            subtitle="Four clear categories for spoken English, workplace communication, IELTS and career guidance. Start with the result you need—not a confusing course name."
+            title="4 Tracks · 6 Live Programmes · From ₹999/mo"
+            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. English batches capped at 6. Up to 2 classes/week. ₹0 demo before you pay."
           />
           <Reveal stagger className="grid gap-4 md:grid-cols-2 lg:gap-5">
             {COURSE_CATEGORIES.map((category) => (
@@ -315,11 +313,17 @@ function Home() {
           <SectionHeader
             eyebrowTone="white"
             eyebrow="The Process"
-            title={<span className="text-cream">How Our Live Classes Work</span>}
+            title={<span className="text-cream">How Live Classes Work — Max 6, 100% Live</span>}
             invert
+            subtitle={
+              <span className="text-white/90">
+                One teacher. Six learners. Up to 2 classes a week. Every session live — never a
+                recording as the class.
+              </span>
+            }
           />
           <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
-            <GlassCard icon="users" title="Small Live Batches" pricing="From ₹999/mo">
+            <GlassCard icon="users" title="Small Live Batches" pricing="Max 6 · From ₹999/mo">
               Scheduled English cohorts capped at 6. You practise with classmates, speak in every
               class and receive corrections during the lesson.
             </GlassCard>
@@ -330,10 +334,10 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "6 live programs", c: "sunshine" },
-              { n: 2, lbl: "Share Your Goal", sub: "We suggest the right course", c: "coral" },
-              { n: 3, lbl: "WhatsApp Us", sub: "Message anytime", c: "wa" },
-              { n: 4, lbl: "Join Live Class", sub: "First session starts", c: "sage" },
+              { n: 1, lbl: "Choose Course", sub: "6 programmes · from ₹999/mo", c: "sunshine" },
+              { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
+              { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
+              { n: 4, lbl: "Join Live Class", sub: "₹0 demo · max 6 batch", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
                 <div
@@ -367,8 +371,8 @@ function Home() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Offer"
-            title="Why Our Teaching Works"
-            subtitle="Our online teaching focuses on practical, interactive, and student-friendly learning — not complex theory."
+            title="Quality That Holds — 1 Teacher, 6 Learners"
+            subtitle="100% live, max 6 per English batch, 7 years of teaching, 500+ learners. Practical, interactive classes — not 40-person webinars or recorded videos."
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
@@ -399,7 +403,7 @@ function Home() {
       </section>
 
       <MottoBand>
-        "Speak today. <em className="text-sunshine">Lead tomorrow.</em> Build your future with us."
+        "Speak today. <em className="text-sunshine">Max 6. From ₹999/mo.</em> Lead tomorrow."
       </MottoBand>
 
       {/* NUMBERS */}
@@ -442,7 +446,8 @@ function Home() {
           <SectionHeader
             eyebrowTone="coral"
             eyebrow="Student Stories"
-            title="Real Results from Real Learners"
+            title="500+ Learners · IELTS 7.5 · Jobs Won"
+            subtitle="Selected named outcomes. Progress depends on attendance and practice — no score, job or salary is guaranteed."
           />
           <TestimonialSlider items={TESTIMONIALS} />
           <p className="text-center text-sm text-ink/75 mt-5 max-w-2xl mx-auto">
@@ -463,8 +468,8 @@ function Home() {
           <SectionHeader
             eyebrow="Simple, India-Friendly Pricing"
             eyebrowTone="indigo"
-            title="Transparent Fees · Monthly Billing · No Hidden Costs"
-            subtitle="Pay per month, request a same-week reschedule subject to available slots, and attend a full free demo class before you enrol."
+            title="From ₹999/mo · Max 6 · GST Included"
+            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Attend a ₹0 live demo before you enrol."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
             <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
@@ -572,7 +577,10 @@ function Home() {
       {/* START TODAY */}
       <section className="section bg-gradient-to-b from-cream to-brand-soft/40">
         <div className="container-x">
-          <SectionHeader eyebrow="Enroll Today" title="Two Ways to Begin" />
+          <SectionHeader
+            eyebrow="Enroll Today"
+            title="Two Ways to Begin — ₹0 Demo, From ₹999/mo"
+          />
 
           <Reveal stagger className="grid md:grid-cols-2 gap-6">
             <div className="rounded-3xl p-8 md:p-10 bg-brand-deep text-cream relative overflow-hidden">

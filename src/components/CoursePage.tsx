@@ -478,6 +478,7 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
+    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/founder")}#person`,
@@ -504,13 +505,18 @@ export function courseSeo(d: CourseData) {
   if (price !== null) offers.price = price;
 
   const jsonLd: unknown[] = [
-    webPageLd({ path, title: d.title, description: d.metaDescription }),
+    webPageLd({
+      path,
+      title: extra?.title ?? d.title,
+      description: extra?.description ?? d.metaDescription,
+    }),
     {
       "@context": "https://schema.org",
       "@type": "Course",
       "@id": `${url}#course`,
       name: d.title,
-      description: d.metaDescription,
+      alternateName: extra?.title,
+      description: extra?.description ?? d.metaDescription,
       url,
       image: [abs(ogImage)],
       inLanguage: "en-IN",

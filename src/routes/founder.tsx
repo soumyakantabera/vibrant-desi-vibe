@@ -155,13 +155,11 @@ function Page() {
             <Icon name="heart" size={14} /> Meet the Founder
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            One mentor. One mission.
+            7 Years. 500+ Learners. <span className="text-sunshine">Batches of 6.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            100% online live classes · flexible morning/evening/weekend slots · max 6 in every
-            English batch · pan-India, based in Kolkata. Outside class, direct 1:1 contact with the
-            teacher is assured when genuinely needed; it is personal support, not a scheduled
-            feedback session.
+            Sunanda Dey — founder and lead teacher. 100% live online · from ₹999/mo · max 6 in every
+            English batch · morning, evening, weekend IST. Based in Kolkata, teaching pan-India.
           </p>
         </div>
       </section>

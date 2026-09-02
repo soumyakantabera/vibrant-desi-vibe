@@ -86,10 +86,11 @@ function Page() {
             <Icon name="book" size={14} /> Blog
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Tips &amp; Stories for <span className="text-sunshine">Indian Learners</span>
+            English & Career Notes. <span className="text-sunshine">Band 7, 60-sec Intros.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Practical, hype-free articles on English and career building — written by our teachers.
+            Practical articles from teachers who run live batches of 6 — from ₹999/mo classes.
+            Speaking habits, IELTS writing, emails, interviews.
           </p>
         </div>
       </section>

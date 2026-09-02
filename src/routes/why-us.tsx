@@ -36,12 +36,11 @@ function Page() {
               <Icon name="shield" size={14} /> Why Us
             </span>
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
-              Built for <span className="text-sunshine">Indian Learners</span>. Run by Real
-              Teachers.
+              Quality Teaching. <span className="text-sunshine">Max 6 Per Batch.</span> 100% Live.
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              No bots. No pre-recorded videos. No mega-batches where you're invisible. Just live,
-              small-batch teaching with a teacher who knows your name.
+              7 years · 500+ learners · from ₹999/mo. No bots, no recorded-as-class videos, no
+              40-student webinars. One teacher, six learners, a ₹0 live demo before you pay.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton

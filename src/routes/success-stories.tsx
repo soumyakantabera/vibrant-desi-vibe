@@ -75,11 +75,11 @@ function Page() {
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">★ Real Outcomes</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Real Indian Learners. <span className="text-sunshine">Real Results.</span>
+            IELTS 7.5 · Salary Doubled. <span className="text-sunshine">9 Named Results.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Career switches, IELTS scores, new roles and confidence gains reported by named Learn
-            With Smile learners. These are individual outcomes, not guaranteed results.
+            500+ learners taught. Individual outcomes — band jumps, job switches, interviews
+            cleared. Not a guarantee. Progress takes 3–6 months of live classes (max 6 per batch).
           </p>
         </div>
       </section>

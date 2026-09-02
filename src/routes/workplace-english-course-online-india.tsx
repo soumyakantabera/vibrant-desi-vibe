@@ -18,7 +18,7 @@ export const Route = createFileRoute("/workplace-english-course-online-india")({
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": `${abs(PATH)}#article`,
-        headline: "Workplace English Course Online India: An Honest Guide",
+        headline: PAGES[PATH].title,
         description: PAGES[PATH].description,
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
@@ -46,10 +46,11 @@ function Page() {
       breadcrumb="Workplace English Course Online India"
       h1={
         <>
-          Workplace English for India — <span className="text-sunshine">Without the Hype</span>
+          Workplace English in India — ₹1,499/mo,{" "}
+          <span className="text-sunshine">Max 6, 3 Months</span>
         </>
       }
-      standfirst="A practical guide for working professionals, freshers and job seekers who need clearer English in meetings, client calls, updates, emails and presentations."
+      standfirst="Meetings, client calls, updates, emails, presentations. 3 months, max 6, up to 2 live classes/week, ₹1,499/mo GST included. Who should join — and who should self-study."
       heroImage={IMG.businessEnglish}
       heroAlt="Indian professional practising English for an online workplace meeting"
       lastUpdated={UPDATED}
