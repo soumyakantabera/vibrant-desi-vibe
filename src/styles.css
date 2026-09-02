@@ -109,8 +109,9 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: rgba(14, 124, 90, 0.18); }
   a { color: inherit; }
+  a:link, a:visited, a:hover, a:active, a:focus { color: inherit; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -129,7 +130,18 @@
   /* Kill italics globally per brand rule */
   em, i, .italic { font-style: normal; font-weight: 700; color: #FFD96B; }
   p { text-wrap: pretty; color: var(--foreground); font-weight: 450; }
-  ::selection { background: var(--sunshine); color: var(--ink); }
+  /* White label on brand-deep — mouse-drag on PC and long-press on touch.
+     The previous sunshine/ink pairing turned the filled-green CTA label dark
+     the moment a learner selected it. */
+  ::selection {
+    background: var(--brand-deep);
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+  }
+  ::-moz-selection {
+    background: var(--brand-deep);
+    color: #ffffff;
+  }
 }
 
 /* Ensure hero/bg-image sections layer correctly: bg div sits behind content */
@@ -259,7 +271,35 @@ section > .container-x { position: relative; z-index: 10; }
   border-color: rgba(255,255,255,.28);
 }
 
-
+/* Course-card "View Full Syllabus" pill — UNLAYERED so it beats the contrast
+   safety-net (.bg-brand-soft { color: #0B1F14 }). Rest = mint + deep-green
+   label. Hover / active / focus / tap fill brand green with a WHITE label,
+   including text-selection on PC and long-press on touch. */
+.syllabus-cta {
+  -webkit-tap-highlight-color: transparent;
+}
+.group:is(:hover, :active, :focus, :focus-within, :focus-visible) .syllabus-cta,
+.syllabus-cta:is(:hover, :active, :focus, :focus-visible) {
+  background: #0E7C5A !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.group:is(:hover, :active, :focus, :focus-within, :focus-visible) .syllabus-cta *,
+.syllabus-cta:is(:hover, :active, :focus, :focus-visible) * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.syllabus-cta::selection,
+.syllabus-cta *::selection {
+  background: #084633 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.syllabus-cta::-moz-selection,
+.syllabus-cta *::-moz-selection {
+  background: #084633 !important;
+  color: #ffffff !important;
+}
 
 /* Reusable utilities */
 @layer components {
@@ -303,6 +343,16 @@ section > .container-x { position: relative; z-index: 10; }
     box-shadow: 0 8px 22px -12px rgba(8,70,51,.75);
   }
   .btn-primary:hover { background: var(--brand-deep); }
+  .btn-primary,
+  .btn-primary:link,
+  .btn-primary:visited,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:focus,
+  .btn-primary:focus-visible {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
   .btn-wa {
     background: var(--wa); color: #053b1e;
     box-shadow: 0 8px 22px -12px rgba(5,59,30,.65);
