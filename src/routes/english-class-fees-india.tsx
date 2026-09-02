@@ -28,7 +28,7 @@ export const Route = createFileRoute("/english-class-fees-india")({
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": `${abs(PATH)}#article`,
-        headline: "Online English Class Fees in India (2026 Guide)",
+        headline: PAGES[PATH].title,
         description: PAGES[PATH].description,
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
@@ -56,11 +56,11 @@ function Page() {
       breadcrumb="Online English Class Fees in India"
       h1={
         <>
-          Online English Class Fees in India — What It{" "}
-          <span className="text-sunshine">Actually</span> Costs
+          Online English Class Fees in India 2026 — From{" "}
+          <span className="text-sunshine">₹999/mo, Max 6</span>
         </>
       }
-      standfirst="Group classes, one-to-one tutoring and apps, priced honestly — including the arithmetic that shows what a monthly fee really buys you."
+      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, max 6, GST included."
       heroImage={IMG.studentLaptop}
       heroAlt="Indian learner comparing online English class fees on a laptop"
       lastUpdated={UPDATED}

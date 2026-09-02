@@ -24,7 +24,7 @@ export const Route = createFileRoute("/best-online-spoken-english-classes-india"
         "@context": "https://schema.org",
         "@type": "Article",
         "@id": `${abs(PATH)}#article`,
-        headline: "Best Online Spoken English Classes in India, Compared",
+        headline: PAGES[PATH].title,
         description: PAGES[PATH].description,
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
@@ -52,11 +52,11 @@ function Page() {
       breadcrumb="Best Online Spoken English Classes, Compared"
       h1={
         <>
-          Best Online Spoken English Classes in India —{" "}
-          <span className="text-sunshine">Honestly</span> Compared
+          Best Online Spoken English in India — Live,{" "}
+          <span className="text-sunshine">Max 6, From ₹999</span>
         </>
       }
-      standfirst="Written by one of the providers being compared, and organised by which learner each option suits rather than as a ranking. Several sections recommend somebody else."
+      standfirst="Written by one of the providers. Organised by who each option suits — not a ranking. Learn With Smile: live teacher, max 6, 6-month syllabus, ₹999/mo, ₹0 demo."
       heroImage={IMG.speaking}
       heroAlt="Indian learners comparing online English class options"
       lastUpdated={UPDATED}

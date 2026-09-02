@@ -95,11 +95,11 @@ function Page() {
             <Icon name="smile" size={14} /> About Us
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            We Noticed a Gap. <span className="text-sunshine">We Built the Bridge.</span>
+            7 Years. 500+ Learners. <span className="text-sunshine">One Quality Standard.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Seven years of teaching, 500+ learners, and one belief: learning should be simple,
-            practical and enjoyable — for every Indian student.
+            Live since 2019. English batches capped at 6. From ₹999/mo. 11 teaching principles —
+            simple, practical, enjoyable classes for Indian learners.
           </p>
         </div>
       </section>

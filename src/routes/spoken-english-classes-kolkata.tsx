@@ -32,7 +32,7 @@ export const Route = createFileRoute("/spoken-english-classes-kolkata")({
         "@type": "Service",
         "@id": `${abs(PATH)}#service`,
         serviceType: "Spoken English Classes",
-        name: "Live Online Spoken English Classes for Kolkata Learners",
+        name: "Live Spoken English for Kolkata — Max 6, ₹999/mo",
         url: abs(PATH),
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: [

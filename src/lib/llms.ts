@@ -84,8 +84,8 @@ function yearsTeaching(): number {
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of live online teaching · 500+ learners taught across India`,
-  "Batch size: maximum 6 students in every English course batch; Career Counselling is a separate 1:1 service",
+  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years of quality live online teaching · 500+ learners taught across India`,
+  "Quality standard: one live teacher, maximum 6 students in every English course batch; Career Counselling is a separate 1:1 service",
   "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
   `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
