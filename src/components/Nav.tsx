@@ -4,16 +4,8 @@ import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
-import { COURSES } from "@/lib/courses";
-import {
-  COURSE_CATEGORIES,
-  type CategoryTone,
-  type CourseCategory,
-  type CourseSlug,
-} from "@/lib/course-categories";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
-type CoursePath = `/course-${CourseSlug}`;
 
 const MAIN: NavItem[] = [
   { to: "/", label: "Home" },
@@ -21,6 +13,40 @@ const MAIN: NavItem[] = [
   { to: "/success-stories", label: "Stories" },
   { to: "/founder", label: "Founders" },
   { to: "/blog", label: "Blog" },
+];
+
+const ENGLISH_COURSES: NavItem[] = [
+  {
+    to: "/course-spoken-english",
+    label: "Basic Spoken English",
+    icon: "mic",
+    desc: "6 months · ₹999/mo",
+  },
+  {
+    to: "/course-business-english",
+    label: "Workplace English",
+    icon: "headset",
+    desc: "3 months · ₹1,499/month",
+  },
+  {
+    to: "/course-interactive-speaking",
+    label: "Interactive Speaking",
+    icon: "headset",
+    desc: "3 months · ₹1,199/month",
+  },
+  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹1,999/mo" },
+  {
+    to: "/course-interview-prep",
+    label: "Interview Prep",
+    icon: "target",
+    desc: "2 months · ₹1,499/mo",
+  },
+  {
+    to: "/course-career-counselling",
+    label: "Career Counselling",
+    icon: "compass",
+    desc: "3 × 60 min · ₹999 total",
+  },
 ];
 
 export function Nav() {
@@ -115,33 +141,16 @@ export function Nav() {
               {coursesOpen && (
                 <div
                   onMouseLeave={() => setCoursesOpen(false)}
-                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[680px] max-w-[92vw]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[390px] max-w-[92vw]"
                 >
-                  <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-2xl">
-                    <div className="flex items-center justify-between gap-4 bg-gradient-to-r from-brand-deep to-brand px-5 py-4 text-cream">
-                      <div>
-                        <div className="font-display text-base font-extrabold">Courses by Goal</div>
-                        <p className="mt-0.5 text-xs text-white/85">
-                          Four clear categories · six practical programmes
-                        </p>
-                      </div>
-                      <Link
-                        to="/english-career"
-                        onClick={() => setCoursesOpen(false)}
-                        className="shrink-0 rounded-full bg-white/15 px-3 py-2 text-xs font-display font-bold text-cream transition hover:bg-white/25"
-                      >
-                        View all courses →
-                      </Link>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 p-2">
-                      {COURSE_CATEGORIES.map((category) => (
-                        <CourseCategoryGroup
-                          key={category.id}
-                          category={category}
-                          onPick={() => setCoursesOpen(false)}
-                        />
-                      ))}
-                    </div>
+                  <div className="rounded-2xl bg-white border border-border shadow-2xl overflow-hidden grid grid-cols-1">
+                    <CourseColumn
+                      title="Courses by Goal"
+                      tone="brand"
+                      categoryHref="/english-career"
+                      items={ENGLISH_COURSES}
+                      onPick={() => setCoursesOpen(false)}
+                    />
                   </div>
                 </div>
               )}
@@ -241,7 +250,7 @@ export function Nav() {
               </div>
 
               {/* Courses by goal */}
-              <SectionLabel>Courses by Goal</SectionLabel>
+              <SectionLabel>All Courses</SectionLabel>
               <Link
                 to="/english-career"
                 onClick={() => setOpen(false)}
@@ -249,13 +258,14 @@ export function Nav() {
               >
                 View all courses →
               </Link>
-              <div className="grid gap-3 pb-6">
-                {COURSE_CATEGORIES.map((category) => (
-                  <MobileCategoryGroup
-                    key={category.id}
-                    category={category}
-                    currentPath={location.pathname}
-                    onPick={() => setOpen(false)}
+              <div className="grid gap-1 pb-6">
+                {ENGLISH_COURSES.map((c) => (
+                  <MobileCourseLink
+                    key={c.to}
+                    item={c}
+                    active={isActive(c.to)}
+                    tone="brand"
+                    onClick={() => setOpen(false)}
                   />
                 ))}
               </div>
@@ -302,106 +312,54 @@ function NavLinkPill({
   );
 }
 
-const NAV_CATEGORY_TONES: Record<
-  CategoryTone,
-  { panel: string; icon: string; hover: string; heading: string }
-> = {
-  brand: {
-    panel: "bg-brand-soft/35 border-brand/15",
-    icon: "bg-brand-soft text-brand-deep",
-    hover: "hover:bg-brand-soft/70",
-    heading: "text-brand-deep",
-  },
-  indigo: {
-    panel: "bg-[#F3F1FF] border-indigo-pop/15",
-    icon: "bg-[#E2E2FB] text-indigo-pop",
-    hover: "hover:bg-[#E2E2FB]/70",
-    heading: "text-indigo-pop",
-  },
-  sun: {
-    panel: "bg-sunshine/10 border-sunshine/30",
-    icon: "bg-sunshine/25 text-[#6B4A00]",
-    hover: "hover:bg-sunshine/20",
-    heading: "text-[#6B4A00]",
-  },
-  coral: {
-    panel: "bg-coral/10 border-coral/20",
-    icon: "bg-coral/15 text-[#8B321F]",
-    hover: "hover:bg-coral/15",
-    heading: "text-[#8B321F]",
-  },
-};
-
-function coursePath(slug: CourseSlug): CoursePath {
-  return `/course-${slug}`;
-}
-
-function CourseCategoryGroup({
-  category,
+function CourseColumn({
+  title,
+  tone,
+  categoryHref,
+  items,
   onPick,
 }: {
-  category: CourseCategory;
+  title: string;
+  tone: "brand" | "indigo";
+  categoryHref: string;
+  items: NavItem[];
   onPick: () => void;
 }) {
-  const tone = NAV_CATEGORY_TONES[category.tone];
-  const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
-  const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
-
+  const headBg =
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+  const iconBg =
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
   return (
-    <section className={`rounded-2xl border p-3 ${tone.panel}`}>
+    <div className="p-3">
       <Link
-        to={onlySlug ? coursePath(onlySlug) : "/english-career"}
-        hash={onlySlug ? undefined : category.id}
+        to={categoryHref}
         onClick={onPick}
-        className={`flex items-start gap-2 rounded-xl px-2 py-1.5 transition ${tone.hover}`}
+        className={`flex items-center justify-between px-3 py-2 rounded-xl ${headBg} font-display font-bold text-xs uppercase tracking-wide`}
       >
-        <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
-          <Icon name={category.icon} size={18} />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className={`block text-sm font-display font-extrabold ${tone.heading}`}>
-            {category.title}
-          </span>
-          <span className="mt-0.5 block text-[11px] leading-snug text-ink/70">
-            {onlyCourse
-              ? `${onlyCourse.duration.split(" · ")[0]} · ${onlyCourse.price}`
-              : category.description}
-          </span>
-        </span>
-        <Icon name="arrow-right" size={13} className="mt-1 opacity-35" />
+        <span>{title}</span>
+        <span className="text-[10px] font-bold opacity-80">View all →</span>
       </Link>
-
-      {!onlySlug && (
-        <div className="mt-2 grid gap-1">
-          {category.slugs.map((slug) => {
-            const course = COURSES[slug];
-            return (
-              <Link
-                key={slug}
-                to={coursePath(slug)}
-                onClick={onPick}
-                className={`flex items-center gap-2 rounded-xl px-2.5 py-2 transition ${tone.hover}`}
-              >
-                <span
-                  className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${tone.icon}`}
-                >
-                  <Icon name={course.icon} size={14} />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-xs font-display font-bold text-ink">
-                    {course.title}
-                  </span>
-                  <span className="block text-[10px] text-ink/65">
-                    {course.duration.split(" · ")[0]} · {course.price}
-                  </span>
-                </span>
-                <Icon name="arrow-right" size={13} className="opacity-35" />
-              </Link>
-            );
-          })}
-        </div>
-      )}
-    </section>
+      <div className="mt-2 grid gap-1">
+        {items.map((c) => (
+          <Link
+            key={c.to}
+            to={c.to}
+            onClick={onPick}
+            className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-brand-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30"
+          >
+            <span className={`h-8 w-8 shrink-0 rounded-lg ${iconBg} grid place-items-center`}>
+              {c.icon && <Icon name={c.icon} size={16} />}
+            </span>
+            <span className="min-w-0">
+              <span className="block font-display font-semibold text-sm text-ink truncate group-hover:text-brand-deep">
+                {c.label}
+              </span>
+              {c.desc && <span className="block text-[11px] text-ink/75">{c.desc}</span>}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -438,71 +396,35 @@ function MobileLink({
   );
 }
 
-function MobileCategoryGroup({
-  category,
-  currentPath,
-  onPick,
+function MobileCourseLink({
+  item,
+  active,
+  tone,
+  onClick,
 }: {
-  category: CourseCategory;
-  currentPath: string;
-  onPick: () => void;
+  item: NavItem;
+  active: boolean;
+  tone: "brand" | "indigo";
+  onClick: () => void;
 }) {
-  const tone = NAV_CATEGORY_TONES[category.tone];
-  const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
-  const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
-  const onlyPath = onlySlug ? coursePath(onlySlug) : undefined;
-
+  const iconBg =
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
   return (
-    <section className={`rounded-2xl border p-2 ${tone.panel}`}>
-      <Link
-        to={onlyPath ?? "/english-career"}
-        hash={onlySlug ? undefined : category.id}
-        onClick={onPick}
-        className={`flex items-center gap-3 rounded-xl px-2 py-2 transition ${
-          onlyPath && currentPath === onlyPath ? "bg-white shadow-sm" : tone.hover
-        }`}
-      >
-        <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
-          <Icon name={category.icon} size={17} />
+    <Link
+      to={item.to}
+      onClick={onClick}
+      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30 ${active ? "bg-brand-soft/70" : "hover:bg-white"}`}
+    >
+      <span className={`h-9 w-9 shrink-0 rounded-lg ${iconBg} grid place-items-center`}>
+        {item.icon && <Icon name={item.icon} size={16} />}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-display font-semibold text-sm text-ink truncate">
+          {item.label}
         </span>
-        <span className="min-w-0 flex-1">
-          <span className={`block text-sm font-display font-extrabold ${tone.heading}`}>
-            {category.title}
-          </span>
-          <span className="block text-[10px] text-ink/65">
-            {onlyCourse
-              ? `${onlyCourse.duration.split(" · ")[0]} · ${onlyCourse.price}`
-              : `${category.slugs.length} programmes`}
-          </span>
-        </span>
-        <Icon name="arrow-right" size={14} className="opacity-35" />
-      </Link>
-
-      {!onlySlug && (
-        <div className="grid gap-1">
-          {category.slugs.map((slug) => {
-            const course = COURSES[slug];
-            const to = coursePath(slug);
-            const active = currentPath === to;
-            return (
-              <Link
-                key={slug}
-                to={to}
-                onClick={onPick}
-                className={`flex items-center gap-2 rounded-xl px-2.5 py-2 ${
-                  active ? "bg-white shadow-sm" : tone.hover
-                }`}
-              >
-                <Icon name={course.icon} size={15} className={tone.heading} />
-                <span className="min-w-0 flex-1 truncate text-xs font-display font-bold text-ink">
-                  {course.title}
-                </span>
-                <span className="text-[10px] font-semibold text-ink/60">{course.price}</span>
-              </Link>
-            );
-          })}
-        </div>
-      )}
-    </section>
+        {item.desc && <span className="block text-[11px] text-ink/75">{item.desc}</span>}
+      </span>
+      <Icon name="arrow-right" size={14} className="opacity-30" />
+    </Link>
   );
 }
