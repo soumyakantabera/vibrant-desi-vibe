@@ -382,7 +382,9 @@ function CourseCategoryGroup({
                 onClick={onPick}
                 className={`flex items-center gap-2 rounded-xl px-2.5 py-2 transition ${tone.hover}`}
               >
-                <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${tone.icon}`}>
+                <span
+                  className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${tone.icon}`}
+                >
                   <Icon name={course.icon} size={14} />
                 </span>
                 <span className="min-w-0 flex-1">
