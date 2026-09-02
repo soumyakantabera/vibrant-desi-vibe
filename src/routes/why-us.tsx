@@ -119,8 +119,8 @@ function Page() {
               Teachers.
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              No bots. No pre-recorded videos. No mega-batches where you're invisible. Just live,
-              small-batch teaching with a teacher who knows your name. From ₹999/mo.
+              Real teachers. Small batches. A teacher who knows your name. You speak every class.
+              From ₹999/mo.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton

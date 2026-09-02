@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
-import { body } from "@/content/pages/how-long";
+import { body } from "@/content/pages/which-class";
 
-const PATH = "/how-long-to-learn-spoken-english";
+const PATH = "/spoken-business-or-interactive-english";
 const UPDATED = "2026-09-02";
 
-export const Route = createFileRoute("/how-long-to-learn-spoken-english")({
+export const Route = createFileRoute("/spoken-business-or-interactive-english")({
   component: Page,
   head: () => {
     const head = pageHead(PATH);
@@ -43,24 +43,24 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Time to fluency · 6 / 9 / 12 months"
-      breadcrumb="How Long to Learn Spoken English"
+      eyebrow="Spoken · Business · Interactive"
+      breadcrumb="Which English class"
       h1={
         <>
-          How Long to Learn Spoken English —{" "}
-          <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
+          Which English class do I need?{" "}
+          <span className="text-sunshine">Spoken, Business or Interactive</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, max 8, ₹0 demo."
+      standfirst="Conversation → Spoken. Freeze → Interactive. Meetings and calls → Business. An exam course only if a form asks. From ₹999/mo. ₹0 demo."
       heroImage={IMG.spokenEnglish}
-      heroAlt="Indian adult practising spoken English in a live online class"
+      heroAlt="Indian adult choosing a live English class on a laptop"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="How long does spoken English take — straight answers"
-      waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
-      ctaTitle="Count your minutes in a real class"
-      ctaBody="Sit in a live batch of 8. Hear how much you speak. Then decide on 6 months."
+      faqTitle="Which class — straight answers"
+      waMessage="Hi, I am not sure if I need Spoken, Interactive or Business English. Please help me choose."
+      ctaTitle="Sit in a live room. Then pick."
+      ctaBody="₹0 demo. We place you in Spoken, Interactive or Business — not all three."
     />
   );
 }

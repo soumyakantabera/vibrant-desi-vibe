@@ -288,7 +288,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/why-us",
     title: "Why Us | Built for Indian Learners",
     description:
-      "Built for Indian learners. Run by real teachers. No bots, no recordings, no mega-batches. Live small-batch English from ₹999/month. ₹0 demo on WhatsApp.",
+      "Built for Indian learners. Real teachers. Small batches. A teacher who knows your name. You speak every class. From ₹999/month. Kolkata & pan-India. ₹0 demo.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -335,7 +335,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile provide a course certificate?",
-        a: "Not currently. The courses focus on practical English use, clearer communication and real confidence rather than a completion credential. If a recognised certificate is required for a visa, university or HR process, choose an accredited provider.",
+        a: "This room trains the voice people hear. Most Indian employers mark your English in the interview, not on a certificate. If a visa, university or HR form needs a recognised exam, that is a separate paper — we will say so clearly. Until then, join for speaking.",
       },
     ],
   },
@@ -384,7 +384,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/success-stories",
     title: "Real Indian Learners | Real Results",
     description:
-      "Career switches, IELTS scores, BI Analyst jobs, salary jumps. Verified Learn With Smile learners. From ₹999/month. Individual results, not a guarantee.",
+      "Career switches, client meetings, BI Analyst jobs, salary jumps — named Learn With Smile learners. Live spoken English from ₹999/month. ₹0 demo. GST in.",
     shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
@@ -398,7 +398,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.7,
     changefreq: "monthly",
     summary:
-      "Named learner outcomes with courses and cities — IELTS band jumps, salary increases, interview wins and confidence gains. Individual results vary.",
+      "Named learner outcomes with courses and cities — client meetings, career switches, interview wins, salary moves. Speaking first. Individual results vary.",
     faqs: [
       {
         q: "Do online English classes actually get people jobs in India?",
@@ -417,8 +417,12 @@ export const PAGES: Record<string, PageSeo> = {
         a: "English removes one specific obstacle — communicating confidently once you're in the room — it doesn't replace domain skills or experience you don't have. Our Interview Preparation course pairs mock interviews with English coaching for that reason, and the outcomes above came from candidates who already had the underlying skills but needed the language and confidence fixed.",
       },
       {
+        q: "Do I need IELTS for a job in India?",
+        a: "Most Indian interviews hear you speak. Start with spoken English, business English or interactive speaking. Sit IELTS if a form, a university or a country asks for the exam. Harshit’s story is the exam path — Priya, Siddharth, Sneha and Anjali are the speaking path most learners actually need.",
+      },
+      {
         q: "Are these success stories typical, or just the best few out of many students?",
-        a: "They are selected individual learner outcomes, not a guarantee of what every student will achieve. Progress depends on starting level, attendance, participation and practice between classes. Consistent attendance for at least 3–6 months is the common factor in these stories; there is no shortcut or promised job, score or salary increase.",
+        a: "These are named people and named outcomes — a career switch, a client presentation, an interview cleared, a standup that now happens. Your result follows where you start, how often you speak, and the months you stay. We do not sell a promised job, band or raise. Sit in a ₹0 class and hear the room.",
       },
       {
         q: "Does Learn With Smile help with career guidance, or only English speaking?",
@@ -624,7 +628,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do I need a certificate from an English course?",
-        a: "Only if someone is going to ask for it. Employers in India almost never ask to see a spoken English certificate — they judge your English in the interview. If you specifically need a recognised credential for a visa, a university application or an HR checklist, go to British Council or a similar established institution and expect to pay considerably more; that fee is buying the certificate, not better teaching. Learn With Smile does not currently issue a certificate and we would rather say so than imply otherwise.",
+        a: "This room trains speaking and communication — meetings, interviews, everyday English. Most Indian workplaces hear you talk; they do not ask for a spoken-English certificate. If a visa, university or HR form needs a recognised exam, that is a separate paper — we will tell you clearly when you need it. Until then, this class is for the voice.",
       },
       {
         q: "Which online English class is best for a complete beginner?",
@@ -744,7 +748,211 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is British Council worth it versus a ₹999/month class?",
-        a: "If you need the badge — visa, university, HR checklist — yes, and Learn With Smile does not issue a certificate. If you need speaking time at an Indian salary, a module at ₹8,800–₹16,000 in a group of 8–12 is a different product from ₹999/month with a cap of 8. Buy the certificate where you need the certificate.",
+        a: "If a visa, university or HR form needs a recognised badge, that exam is a separate paper — the fee is buying the badge. If you need speaking time at an Indian salary, a live batch of 8 from ₹999/month is a different product. Speak here. Sit the exam if a form asks.",
+      },
+    ],
+  },
+
+  "/spoken-business-or-interactive-english": {
+    path: "/spoken-business-or-interactive-english",
+    title: "Spoken, Business or Interactive English",
+    description:
+      "Conversation → Spoken. Freeze → Interactive. Meetings → Business. Exam only if a form asks. Live from ₹999/mo, max 8. Kolkata & pan-India. ₹0 demo. GST in.",
+    shortTitle: "Which English class",
+    keywords: [
+      "spoken vs business vs interactive english",
+      "which english class do i need india",
+      "spoken english or business english course",
+      "interactive speaking vs spoken english",
+      "english course picker india",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.85,
+    changefreq: "monthly",
+    summary:
+      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you know the words and freeze (3 months, ₹1,199/mo). Workplace English if meetings and calls are the gap (3 months, ₹1,499/mo). Exam course only if a form asks.",
+    faqs: [
+      {
+        q: "Which English class do I need — spoken, business or interactive?",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, max 8. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,199/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,499/month. Sit an exam course only when a form, university or visa asks for the exam.",
+      },
+      {
+        q: "Should I take IELTS first to get a better job in India?",
+        a: "Most Indian interviews hear you speak. Start with spoken, interactive or business English. Sit IELTS when a form, a university or a country asks for the band. The exam is a paper. The job conversation is a room.",
+      },
+      {
+        q: "Can I take Spoken English and Workplace English together?",
+        a: "Usually no — they train different bottlenecks. Finish the room you need first. A ₹0 live demo is how we place you in one class, not three. Message anytime; we reply 09:00–12:00 IST.",
+      },
+    ],
+  },
+
+  "/interactive-english-class-hesitation": {
+    path: "/interactive-english-class-hesitation",
+    title: "Stop Freezing | Interactive English Class",
+    description:
+      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, max 8. Kolkata & pan-India. ₹0 demo. Live.",
+    shortTitle: "Interactive English when you freeze",
+    keywords: [
+      "how to stop hesitating while speaking english",
+      "english speaking practice online india",
+      "interactive english class for hesitation",
+      "english fluency practice group online",
+      "english speaking club online india",
+    ],
+    ogImage: "/og/interactive-speaking.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Freeze is a habit, not a vocabulary hole. Interactive Speaking is 3 months, ₹1,199/month, max 8: games, debates, 1-minute prompts so you talk every hour. Spoken English first if you still cannot form a sentence.",
+    faqs: [
+      {
+        q: "I know English but freeze when I speak. Which class should I take?",
+        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of 8, 3 months, ₹1,199/month GST included. Anjali’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
+      },
+      {
+        q: "Is an interactive English class just games, or will I actually speak?",
+        a: "You speak every block. Warm-up, a timed prompt, a story or role-play, a debate, then one sentence to reuse tomorrow. The games exist so the mouth moves before the inspection starts. Sit in a ₹0 live hour and count how many times you are on the mic.",
+      },
+      {
+        q: "Should a complete beginner take Interactive Speaking?",
+        a: "No. Interactive assumes there is language to retrieve. A beginner still needs sounds, sentences and 1,000+ words — that is Spoken English, 6 months, ₹999/month. Interactive is the next room after the words exist.",
+      },
+    ],
+  },
+
+  "/english-hindi-bengali-medium": {
+    path: "/english-hindi-bengali-medium",
+    title: "Hindi & Bengali Medium English Classes",
+    description:
+      "Hindi-medium or Bengali-medium is not a wall. Live batch of 8. Explain in your language, then English. 6 months from ₹999/mo. Kolkata & pan-India. ₹0 demo.",
+    shortTitle: "Hindi & Bengali medium",
+    keywords: [
+      "spoken english for hindi medium students",
+      "spoken english for bengali medium students",
+      "english class with hindi support india",
+      "learn spoken english from hindi medium",
+      "kolkata bengali medium spoken english",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Hindi-medium and Bengali-medium schooling is not a wall. Spoken English is 6 months from ₹999/month in a live batch of 8. When a concept stalls, the teacher explains in Hindi or Bengali, then you go back to English.",
+    faqs: [
+      {
+        q: "Can Hindi-medium or Bengali-medium students learn spoken English?",
+        a: "Yes. School medium decided how much English you heard between 6 and 16. It did not decide whether you can run a standup at 28. Most Learn With Smile learners started in Hindi or Bengali medium. Spoken English is 6 months, ₹999/month, max 8. Everyday conversation — introduce yourself, a phone call, two minutes on a topic — is the 6-month finish line from zero.",
+      },
+      {
+        q: "Do you teach in Hindi and Bengali, or only in English?",
+        a: "The class is English. When a concept does not land, the teacher explains in Hindi or Bengali, then you go back to English. An English-only room for a genuine beginner produces silence. Silence is the one thing a speaking class cannot afford.",
+      },
+      {
+        q: "How long does spoken English take if I studied in Hindi or Bengali medium?",
+        a: "About 6 months live from zero, up to 2 classes a week plus 10–15 minutes a day. Workplace English is typically a further 3 months if meetings are the next job. 30-day fluency from zero is marketing.",
+      },
+    ],
+  },
+
+  "/english-for-working-professionals-india": {
+    path: "/english-for-working-professionals-india",
+    title: "English for Working Professionals India",
+    description:
+      "Keep the job. Speak better English. Morning, evening, weekend IST. Live class; recording is revision. From ₹999/mo, max 8. Kolkata & pan-India. ₹0 demo.",
+    shortTitle: "Working professionals",
+    keywords: [
+      "english classes for working professionals india",
+      "evening spoken english classes india",
+      "weekend english class for job holders",
+      "english course around full time job",
+      "morning english class ist",
+    ],
+    ogImage: "/og/business-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,499. Max 8. Replies 09:00–12:00 IST.",
+    faqs: [
+      {
+        q: "Can I learn English while working a full-time job in India?",
+        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Workplace English ₹1,499/month. Max 8. Siddharth did Workplace English while in a BPO. Sneha cleared interview rounds while working in Hyderabad IT.",
+      },
+      {
+        q: "What if I miss a live English class because of a work shift?",
+        a: "Every class is recorded so a missed session does not wipe the week. A reschedule can be requested only within the same week, and only if the teacher and a seat exist. That is the honest limit.",
+      },
+      {
+        q: "When do you reply on WhatsApp if I message after office?",
+        a: "Message anytime. We reply 09:00–12:00 IST. There is no surprise sales call. Phone is a fallback.",
+      },
+    ],
+  },
+
+  "/english-for-client-calls-india": {
+    path: "/english-for-client-calls-india",
+    title: "Client-Call English | Names & Next Step",
+    description:
+      "Client-call English is clarity, not accent: names, numbers, next step. Workplace English, 3 months, ₹1,499/mo, max 8. Kolkata & pan-India. ₹0 demo. GST in.",
+    shortTitle: "Client-call English",
+    keywords: [
+      "english for client calls india",
+      "english for bpo customer support",
+      "how to speak on client calls in english",
+      "workplace english for client meetings",
+      "english for customer support india",
+    ],
+    ogImage: "/og/business-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Client-call English is names, numbers and the next step — not a fake accent. Workplace English practises that live, 3 months, ₹1,499/month, max 8. Siddharth moved from BPO to a client-facing role in this lane.",
+    faqs: [
+      {
+        q: "How do I speak English on client calls without freezing?",
+        a: "Use a four-line update: where we are, what changed, what you will do next, what you need from them. If you do not have the answer, give a time: “I’ll confirm by 4pm IST and message you.” Workplace English drills this live — 3 months, ₹1,499/month, max 8. If you freeze before the call starts, add Interactive Speaking.",
+      },
+      {
+        q: "Do I need a native accent for Indian client calls?",
+        a: "No. The customer wants to feel understood, to understand the next step, and to trust you will not vanish. Structure beats accent. Say numbers twice (“fifteen, one-five”). Ask a name once, repeat it once, write it.",
+      },
+      {
+        q: "Is Spoken English enough for client-facing work?",
+        a: "If you cannot yet hold a simple conversation, start with Spoken English for 6 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. If chat is already fine, Workplace English is the room.",
+      },
+    ],
+  },
+
+  "/english-for-presentations-india": {
+    path: "/english-for-presentations-india",
+    title: "English for Presentations | 3 Minutes",
+    description:
+      "Explain your work in 3 minutes: one outcome, three beats, one ask. Live practice. Workplace or Interactive. From ₹1,199/mo, max 8. ₹0 demo. GST included.",
+    shortTitle: "Presentation English",
+    keywords: [
+      "english for presentations india",
+      "how to explain your work in english",
+      "english for standups and status updates",
+      "presentation skills in english for professionals",
+      "tell me about a project in english",
+    ],
+    ogImage: "/og/business-english.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    summary:
+      "Explaining your work in English is three beats: one outcome, three points, one ask. Workplace English and Interactive Speaking both drill this live. Priya went from freezing to leading client presentations in Spoken English.",
+    faqs: [
+      {
+        q: "How do I explain my work in English in 3 minutes?",
+        a: "Write five lines before you open the deck: one outcome, three beats, one ask. The slides are pictures of those lines. If you start with 18 slides, you will read them. Reading is not presenting. Priya went from freezing to leading client presentations in six months of Spoken English.",
+      },
+      {
+        q: "Is standup English the same as a client presentation?",
+        a: "Same spine, shorter clock. A standup is 60–90 seconds: yesterday, today, stuck. A client deck is 3–5 minutes: outcome, three beats, ask. Anjali now runs standups. Priya’s lane is the client deck. Interview “tell me about a project” uses the same muscle.",
+      },
+      {
+        q: "Which English course helps with presentations at work?",
+        a: "If you can already chat and the deck is the problem — Workplace English, 3 months, ₹1,499/month. If you freeze before slide one — Interactive, 3 months, ₹1,199/month. If daily English is still the gap — Spoken, 6 months, ₹999/month, then come back to decks.",
       },
     ],
   },

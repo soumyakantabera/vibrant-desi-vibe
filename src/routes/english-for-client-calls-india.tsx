@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
-import { body } from "@/content/pages/how-long";
+import { body } from "@/content/pages/client-calls";
 
-const PATH = "/how-long-to-learn-spoken-english";
+const PATH = "/english-for-client-calls-india";
 const UPDATED = "2026-09-02";
 
-export const Route = createFileRoute("/how-long-to-learn-spoken-english")({
+export const Route = createFileRoute("/english-for-client-calls-india")({
   component: Page,
   head: () => {
     const head = pageHead(PATH);
@@ -43,24 +43,23 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Time to fluency · 6 / 9 / 12 months"
-      breadcrumb="How Long to Learn Spoken English"
+      eyebrow="Business communication · client calls"
+      breadcrumb="Client-call English"
       h1={
         <>
-          How Long to Learn Spoken English —{" "}
-          <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
+          Client-call English. <span className="text-sunshine">Clarity, not accent.</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, max 8, ₹0 demo."
-      heroImage={IMG.spokenEnglish}
-      heroAlt="Indian adult practising spoken English in a live online class"
+      standfirst="Names, numbers, next step. Four-line updates. 3 months Workplace English, ₹1,499/mo, max 8. ₹0 demo."
+      heroImage={IMG.businessEnglish}
+      heroAlt="Indian professional on a live client call in English"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="How long does spoken English take — straight answers"
-      waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
-      ctaTitle="Count your minutes in a real class"
-      ctaBody="Sit in a live batch of 8. Hear how much you speak. Then decide on 6 months."
+      faqTitle="Client calls — clear answers"
+      waMessage="Hi, I need English for client calls. Workplace English demo please."
+      ctaTitle="Bring a real call from this week"
+      ctaBody="We will practise it in a live batch of 8. ₹0 demo."
     />
   );
 }

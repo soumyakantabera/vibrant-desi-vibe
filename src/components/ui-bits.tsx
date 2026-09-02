@@ -94,6 +94,9 @@ export function FeatureCard({
 
 export const SITE_GUIDES: {
   to:
+    | "/spoken-business-or-interactive-english"
+    | "/interactive-english-class-hesitation"
+    | "/english-for-working-professionals-india"
     | "/best-online-spoken-english-classes-india"
     | "/english-class-fees-india"
     | "/spoken-english-classes-kolkata"
@@ -105,6 +108,27 @@ export const SITE_GUIDES: {
   icon: IconName;
   color: "brand" | "sunshine" | "coral" | "indigo";
 }[] = [
+  {
+    to: "/spoken-business-or-interactive-english",
+    title: "Which class you need",
+    sub: "Spoken, Interactive or Business. Exam course only if a form asks.",
+    icon: "compass",
+    color: "brand",
+  },
+  {
+    to: "/interactive-english-class-hesitation",
+    title: "When you freeze",
+    sub: "You know the words. You go silent. Interactive: talk every hour.",
+    icon: "mic",
+    color: "coral",
+  },
+  {
+    to: "/english-for-working-professionals-india",
+    title: "While you work",
+    sub: "Morning, evening, weekend IST. Live class. Recording is revision.",
+    icon: "clock",
+    color: "indigo",
+  },
   {
     to: "/best-online-spoken-english-classes-india",
     title: "Compare Online Classes",
@@ -151,8 +175,8 @@ export const SITE_GUIDES: {
 
 export function GuidesStrip({
   eyebrow = "Guides",
-  title = "Read Before You Pay Anyone",
-  subtitle = "Fees, institutes, how long it takes, Kolkata rooms — written so you can use them even if you never join us.",
+  title = "Numbers in the open",
+  subtitle = "Fees, batches, how long it takes, which class you need — then join if the room fits.",
 }: {
   eyebrow?: string;
   title?: string;

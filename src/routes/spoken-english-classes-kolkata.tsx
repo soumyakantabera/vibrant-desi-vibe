@@ -63,7 +63,7 @@ function Page() {
           Max 8 Per Batch
         </>
       }
-      standfirst="Taught live from Kolkata, attended from home. ₹999/month, a hard cap of six students, and morning, evening and weekend batches on IST."
+      standfirst="Taught live from Kolkata, attended from home. ₹999/month, a hard cap of 8 students, and morning, evening and weekend batches on IST."
       heroImage={IMG.groupClass}
       heroAlt="Kolkata learners in a live online English class"
       body={body}

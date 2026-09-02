@@ -36,7 +36,7 @@ const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "users",
     title: "Small batches",
-    body: "Max 8, so you speak — not a 40-person back row. From ₹999/mo.",
+    body: "Every learner gets the mic. Max 8. From ₹999/mo.",
   },
   {
     icon: "gamepad",
@@ -167,7 +167,7 @@ function Home() {
               </Link>
             </div>
             <p className="mt-3 text-sm font-semibold text-white/95">
-              Message anytime. No surprise sales call. Replies 09:00–12:00 IST.
+              Message anytime. We reply 09:00–12:00 IST.
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
@@ -396,7 +396,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Offer"
             title="Why Our Teaching Works"
-            subtitle="Practical, interactive, student-friendly classes — 7 years, 500+ learners, from ₹999/mo. Not 40-person webinars or recordings."
+            subtitle="Spoken, business and interactive English — live, practical, from ₹999/mo. 7 years, 500+ learners."
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">

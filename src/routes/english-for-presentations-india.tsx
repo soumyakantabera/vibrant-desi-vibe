@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
-import { body } from "@/content/pages/how-long";
+import { body } from "@/content/pages/presentations";
 
-const PATH = "/how-long-to-learn-spoken-english";
+const PATH = "/english-for-presentations-india";
 const UPDATED = "2026-09-02";
 
-export const Route = createFileRoute("/how-long-to-learn-spoken-english")({
+export const Route = createFileRoute("/english-for-presentations-india")({
   component: Page,
   head: () => {
     const head = pageHead(PATH);
@@ -43,24 +43,23 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Time to fluency · 6 / 9 / 12 months"
-      breadcrumb="How Long to Learn Spoken English"
+      eyebrow="Explain your work · 3 minutes"
+      breadcrumb="Presentation English"
       h1={
         <>
-          How Long to Learn Spoken English —{" "}
-          <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
+          Explain your work <span className="text-sunshine">in 3 minutes.</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, max 8, ₹0 demo."
-      heroImage={IMG.spokenEnglish}
-      heroAlt="Indian adult practising spoken English in a live online class"
+      standfirst="One outcome, three beats, one ask. Standups, reviews, client decks. Live practice. From ₹1,199/mo. ₹0 demo."
+      heroImage={IMG.presentation}
+      heroAlt="Indian professional presenting work in a live English class"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="How long does spoken English take — straight answers"
-      waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
-      ctaTitle="Count your minutes in a real class"
-      ctaBody="Sit in a live batch of 8. Hear how much you speak. Then decide on 6 months."
+      faqTitle="Presentations and standups"
+      waMessage="Hi, I want to explain my work in English. Demo please."
+      ctaTitle="Bring one real update"
+      ctaBody="We will run it in a live room of 8. ₹0 demo."
     />
   );
 }
