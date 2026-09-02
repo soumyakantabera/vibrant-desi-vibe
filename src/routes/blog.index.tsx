@@ -112,9 +112,11 @@ function Page() {
                   <SmartImage
                     src={IMG[p.img as keyof typeof IMG] ?? IMG.blogDesk}
                     alt={p.imgAlt}
-                    className="mb-3 h-32 rounded-xl md:h-36"
+                    className="mb-3 w-full rounded-xl"
+                    ratio="4/3"
                     imgClassName="group-hover:scale-105 transition duration-500"
-                    sizes="(min-width: 768px) 33vw, 100vw"
+                    position="center 22%"
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
                   />
                   <span className="pill bg-brand-soft text-brand-deep border-brand/20 mb-2 w-fit">
                     {p.tag}
