@@ -93,7 +93,12 @@ jobs:
           grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
           grep -q 'View Career Counselling' dist/index.html
           grep -q 'Explore both programmes' dist/index.html
-          grep -q 'from-ink/95 via-ink/75 to-ink/25' src/routes/index.tsx
+          grep -q 'rounded-\[1.75rem\].*bg-white' src/routes/index.tsx
+          grep -q 'Ask for Course Pricing' dist/index.html
+          if grep -q 'bg-sunshine px-5 py-3' src/routes/index.tsx; then
+            echo "::error::Oversized yellow course-card actions returned"
+            exit 1
+          fi
           grep -q 'group.slugs.length === 1' src/routes/english-career.tsx
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
