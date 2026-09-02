@@ -554,7 +554,9 @@ function Home() {
             </article>
           </Reveal>
           <div className="mt-7 text-center">
-            <p className="text-sm text-ink/75">All prices are in INR. GST is included where applicable.</p>
+            <p className="text-sm text-ink/75">
+              All prices are in INR. GST is included where applicable.
+            </p>
             <div className="mt-3">
               <WaButton
                 message="Hi, please send me the exact pricing and next available demo slot for my course."
@@ -717,10 +719,7 @@ function StoryTile({
   );
 }
 
-const CATEGORY_TONES: Record<
-  CategoryTone,
-  { bar: string; icon: string; badge: string }
-> = {
+const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: string }> = {
   brand: {
     bar: "bg-brand",
     icon: "bg-brand-soft text-brand-deep",
@@ -773,9 +772,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
 
       <div className="flex min-w-0 flex-col p-5 sm:p-7">
         <div className="flex items-center gap-3">
-          <span
-            className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${tone.icon}`}
-          >
+          <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${tone.icon}`}>
             <Icon name={category.icon} size={23} />
           </span>
           <h3 className="font-display text-2xl font-extrabold leading-tight text-ink sm:text-[1.7rem]">
