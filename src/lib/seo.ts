@@ -209,7 +209,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English Communication & Career Courses | From ₹999",
     description:
-      "Explore six live programmes for English communication, workplace and interview skills, IELTS preparation, and practical career guidance.",
+      "Explore six live programmes for English communication, workplace and interview skills, IELTS and career guidance, with clear fees, duration and outcomes.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -659,7 +659,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English & Communication Course | ₹999/mo",
     description:
-      "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes a week, max 6 students, ₹999/month.",
+      "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, max 6 students, ₹999/month, with a ₹0 demo.",
     shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
