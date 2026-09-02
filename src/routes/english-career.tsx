@@ -149,9 +149,7 @@ function Page() {
                 <Reveal
                   stagger
                   className={
-                    group.slugs.length === 1
-                      ? "grid max-w-3xl gap-6"
-                      : "grid gap-6 lg:grid-cols-2"
+                    group.slugs.length === 1 ? "grid max-w-3xl gap-6" : "grid gap-6 lg:grid-cols-2"
                   }
                 >
                   {group.slugs.map((s) => {
@@ -179,7 +177,9 @@ function Page() {
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
                         </div>
                         <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
-                        <p className="mt-2 flex-1 text-base leading-relaxed text-ink/85">{c.tagline}</p>
+                        <p className="mt-2 flex-1 text-base leading-relaxed text-ink/85">
+                          {c.tagline}
+                        </p>
                         <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2.5 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white">
                           View Full Syllabus <Icon name="arrow-right" size={14} />
                         </span>
