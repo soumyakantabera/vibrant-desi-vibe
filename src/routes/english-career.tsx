@@ -9,40 +9,9 @@ import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PAGES, abs, pageHead } from "@/lib/seo";
+import { COURSE_CATEGORIES, COURSE_SLUGS, type CourseSlug } from "@/lib/course-categories";
 
-const SLUGS = [
-  "spoken-english",
-  "business-english",
-  "interactive-speaking",
-  "ielts",
-  "interview-prep",
-  "career-counselling",
-] as const;
-
-const COURSE_GROUPS = [
-  {
-    title: "Speak Confidently",
-    description: "Build the foundation or get repeated live speaking practice.",
-    slugs: ["spoken-english", "interactive-speaking"],
-  },
-  {
-    title: "Work & Career",
-    description: "Use clearer English at work and perform better in interviews.",
-    slugs: ["business-english", "interview-prep"],
-  },
-  {
-    title: "IELTS Preparation",
-    description: "Prepare for the Academic or General Training test.",
-    slugs: ["ielts"],
-  },
-  {
-    title: "Career Guidance",
-    description: "Choose a realistic education or career direction.",
-    slugs: ["career-counselling"],
-  },
-] as const;
-
-type CoursePath = `/course-${(typeof SLUGS)[number]}`;
+type CoursePath = `/course-${CourseSlug}`;
 
 export const Route = createFileRoute("/english-career")({
   component: Page,
@@ -58,8 +27,8 @@ export const Route = createFileRoute("/english-career")({
         "@type": "ItemList",
         name: page.title,
         description: page.description,
-        numberOfItems: SLUGS.length,
-        itemListElement: SLUGS.map((slug, i) => {
+        numberOfItems: COURSE_SLUGS.length,
+        itemListElement: COURSE_SLUGS.map((slug, i) => {
           const c = COURSES[slug];
           return {
             "@type": "ListItem",
@@ -156,14 +125,16 @@ function Page() {
             subtitle="The six existing programmes are grouped by learner goal, so similar options are easier to compare."
           />
           <div className="space-y-10">
-            {COURSE_GROUPS.map((group) => (
+            {COURSE_CATEGORIES.map((group) => (
               <section
                 key={group.title}
-                aria-labelledby={`group-${group.title.replaceAll(" ", "-")}`}
+                id={group.id}
+                aria-labelledby={`${group.id}-title`}
+                className="scroll-mt-28"
               >
                 <div className="mb-4">
                   <h2
-                    id={`group-${group.title.replaceAll(" ", "-")}`}
+                    id={`${group.id}-title`}
                     className="text-2xl font-display font-extrabold text-ink"
                   >
                     {group.title}

@@ -48,6 +48,15 @@ jobs:
           grep -q 'rel="canonical"' dist/index.html
           grep -q 'application/ld+json' dist/index.html
           grep -q 'Never in a Batch Bigger Than 6' dist/index.html
+          grep -q 'Choose the Goal You Need Now' dist/index.html
+          grep -q 'Speak Confidently' dist/index.html
+          grep -q 'Work &amp; Career' dist/index.html
+          grep -q 'IELTS Preparation' dist/index.html
+          grep -q 'Career Guidance' dist/index.html
+          grep -q 'id="speak-confidently"' dist/english-career.html
+          grep -q 'id="work-and-career"' dist/english-career.html
+          grep -q 'id="ielts-preparation"' dist/english-career.html
+          grep -q 'id="career-guidance"' dist/english-career.html
           grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
           grep -q '09:00–12:00 IST' dist/course-spoken-english.html
           grep -q 'Workplace English' dist/course-business-english.html
@@ -62,6 +71,10 @@ jobs:
           fi
           if grep -REqi '1:1 on most courses|1:1 private sessions on most courses' dist; then
             echo "::error::The site still promises recurring 1:1 English sessions"
+            exit 1
+          fi
+          if grep -q 'Our Learning Track' dist/index.html; then
+            echo "::error::The old single-track homepage card returned"
             exit 1
           fi
           if grep -q '"repeatCount":' dist/course-*.html; then

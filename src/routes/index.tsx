@@ -9,6 +9,13 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
+import {
+  COURSE_CATEGORIES,
+  type CategoryTone,
+  type CourseCategory,
+  type CourseSlug,
+} from "@/lib/course-categories";
+import { COURSES } from "@/lib/courses";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -264,23 +271,18 @@ function Home() {
         </div>
       </section>
 
-      {/* TRACKS */}
+      {/* COURSE CATEGORIES */}
       <section className="section">
         <div className="container-x">
           <SectionHeader
             eyebrow="What We Teach"
-            title="Our Learning Track"
-            subtitle="Click the track to explore all courses, full curriculums and module breakdowns."
+            title="Choose the Goal You Need Now"
+            subtitle="Four clear categories, six practical programmes. Start with the result you need—not a confusing course name."
           />
-          <Reveal stagger className="grid md:grid-cols-1 gap-6">
-            <TrackCard
-              to="/english-career"
-              tag="6 Courses · From ₹999/mo"
-              title="English & Career"
-              desc="Speak Confidently · Work & Career · IELTS Preparation · Career Guidance"
-              img={IMG.speaking}
-              accent="brand"
-            />
+          <Reveal stagger className="grid md:grid-cols-2 gap-5 lg:gap-6">
+            {COURSE_CATEGORIES.map((category) => (
+              <CategoryCard key={category.id} category={category} />
+            ))}
           </Reveal>
           <div className="mt-6 bg-brand rounded-2xl p-6 md:p-7 flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -706,47 +708,88 @@ function StoryTile({
   );
 }
 
-function TrackCard({
-  to,
-  tag,
-  title,
-  desc,
-  img,
-  accent,
-}: {
-  to: "/english-career";
-  tag: string;
-  title: string;
-  desc: string;
-  img: string;
-  accent: "brand" | "indigo";
-}) {
+const CATEGORY_TONES: Record<
+  CategoryTone,
+  { icon: string; badge: string; link: string; wash: string }
+> = {
+  brand: {
+    icon: "bg-brand-soft text-brand-deep",
+    badge: "bg-brand-soft text-brand-deep border-brand/20",
+    link: "text-brand-deep",
+    wash: "from-brand-deep/95 via-brand-deep/45",
+  },
+  indigo: {
+    icon: "bg-[#E2E2FB] text-indigo-pop",
+    badge: "bg-[#E2E2FB] text-indigo-pop border-indigo-pop/20",
+    link: "text-indigo-pop",
+    wash: "from-indigo-pop/95 via-indigo-pop/45",
+  },
+  sun: {
+    icon: "bg-sunshine/25 text-[#6B4A00]",
+    badge: "bg-sunshine/20 text-[#6B4A00] border-sunshine/40",
+    link: "text-[#765200]",
+    wash: "from-[#5B4300]/95 via-[#5B4300]/45",
+  },
+  coral: {
+    icon: "bg-coral/15 text-[#8B321F]",
+    badge: "bg-coral/15 text-[#8B321F] border-coral/30",
+    link: "text-[#8B321F]",
+    wash: "from-[#713323]/95 via-[#713323]/45",
+  },
+};
+
+function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
+  return `/course-${slug}`;
+}
+
+function CategoryCard({ category }: { category: CourseCategory }) {
+  const visual = COURSES[category.featuredSlug];
+  const tone = CATEGORY_TONES[category.tone];
   return (
-    <Link
-      to={to}
-      className="group relative rounded-3xl overflow-hidden min-h-[360px] flex items-end"
-    >
-      <SmartImage
-        src={img}
-        alt={title}
-        fill
-        imgClassName="transition duration-500 group-hover:scale-105"
-        sizes="100vw"
-      />
-      <div
-        className={`absolute inset-0 ${accent === "brand" ? "bg-gradient-to-t from-brand-deep via-brand-deep/60 to-transparent" : "bg-gradient-to-t from-indigo-pop/95 via-indigo-pop/50 to-transparent"}`}
-      />
-      <div className="relative p-7 text-cream">
-        <span className="pill bg-cream/20 text-cream border-cream/30">{tag}</span>
-        <h3 className="text-cream text-2xl md:text-3xl font-display font-extrabold mt-3 flex items-center gap-2">
-          <Icon name={accent === "brand" ? "mic" : "chart"} size={26} /> {title}
-        </h3>
-        <p className="text-white mt-2">{desc}</p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-sunshine font-display font-bold text-sm">
-          Explore Full Curriculum <Icon name="arrow-right" size={16} />
-        </span>
+    <article className="group overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+      <div className="relative h-44 sm:h-52 overflow-hidden">
+        <SmartImage
+          src={visual.heroImage}
+          alt={`${category.title} online courses in India`}
+          fill
+          imgClassName="transition duration-500 group-hover:scale-105"
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-t ${tone.wash} to-transparent`} />
+        <div className="absolute inset-x-0 bottom-0 p-5 text-cream">
+          <span className="pill border-cream/25 bg-cream/15 text-cream">
+            {category.slugs.length} {category.slugs.length === 1 ? "programme" : "programmes"}
+          </span>
+          <h3 className="mt-3 flex items-center gap-2 text-2xl font-display font-extrabold text-cream">
+            <Icon name={category.icon} size={24} /> {category.title}
+          </h3>
+        </div>
       </div>
-    </Link>
+      <div className="p-5">
+        <p className="min-h-12 text-sm leading-relaxed text-ink/80">{category.description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {category.slugs.map((slug) => {
+            const course = COURSES[slug];
+            return (
+              <Link
+                key={slug}
+                to={coursePath(slug)}
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-display font-bold transition hover:-translate-y-0.5 ${tone.badge}`}
+              >
+                <Icon name={course.icon} size={14} /> {course.title}
+              </Link>
+            );
+          })}
+        </div>
+        <Link
+          to="/english-career"
+          hash={category.id}
+          className={`mt-5 inline-flex items-center gap-1.5 text-sm font-display font-extrabold ${tone.link}`}
+        >
+          Compare this category <Icon name="arrow-right" size={15} />
+        </Link>
+      </div>
+    </article>
   );
 }
 
