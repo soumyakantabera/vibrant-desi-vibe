@@ -51,14 +51,14 @@ function Page() {
           <span className="text-sunshine">₹999/mo vs ₹8,000 Modules</span>
         </>
       }
-      standfirst="Cambly, EngVarta, British Council, Veta-style rooms, EEC exam shops, kids platforms — who each fits. We sell one row. 7 years, 500+ learners, max 8."
+      standfirst="Cambly, EngVarta, British Council, Veta-style rooms, EEC exam shops, kids platforms — who each fits. We sell one row. 7 years, 500+ learners, approximately 6 per batch."
       heroImage={IMG.speaking}
       heroAlt="Indian professionals comparing live English class options"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Institutes — questions people actually ask"
-      waMessage="Hi, I'm comparing English institutes. Can you tell me if a live batch of 8 fits me?"
+      waMessage="Hi, I'm comparing English institutes. Can you tell me if a live batch of around 6 fits me?"
       ctaTitle="Use us as one of three trials this week"
       ctaBody="₹0 live class. Count your speaking minutes. Then compare GST and the cap."
     />
