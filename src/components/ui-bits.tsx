@@ -167,7 +167,7 @@ export const SITE_GUIDES: {
   {
     to: "/workplace-english-course-online-india",
     title: "Workplace English Guide",
-    sub: "Meetings, calls, emails, presentations — ₹1,499/mo, 3 months.",
+    sub: "Meetings, calls, emails, presentations — ₹1,999/mo, 3 months.",
     icon: "headset",
     color: "indigo",
   },

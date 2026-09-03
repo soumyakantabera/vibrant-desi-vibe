@@ -173,7 +173,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch capped at 8. The fee is ₹1,499/month including GST. Attend a real class before deciding.",
+    text: "Workplace English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch capped at 8. The fee is ₹1,999/month including GST. Attend a real class before deciding.",
     course: "/course-business-english",
     label: "See the Workplace English syllabus",
   },

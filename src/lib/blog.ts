@@ -70,7 +70,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Spoken English or IELTS? Which Course Fits in 2 Minutes",
     seoTitle: "Spoken English or IELTS? Pick in 2 Minutes",
     description:
-      "Spoken English ₹999/mo, 6 months. Workplace ₹1,499/mo. IELTS ₹1,999/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
+      "Spoken English ₹999/mo, 6 months. Workplace ₹1,999/mo. IELTS ₹2,499/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
     excerpt: "Different clocks, different fees. Buy the course that matches the bottleneck.",
     tag: "Spoken English",
     img: "ielts",

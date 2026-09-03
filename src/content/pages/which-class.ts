@@ -7,7 +7,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,199/mo). If the problem is meetings, calls and emails, take [Workplace English](/course-business-english) (3 months, ₹1,499/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,199/mo). If the problem is meetings, calls and emails, take [Workplace English](/course-business-english) (3 months, ₹1,999/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
@@ -36,13 +36,13 @@ export const body: ArticleBody = [
       [
         "Chat is fine. Meetings are not.",
         "Workplace / Business English",
-        "3 months · ₹1,499/mo",
+        "3 months · ₹1,999/mo",
         "Updates, client calls, emails, a 5-minute explanation of your work",
       ],
       [
         "A form, visa or university asks for a band",
         "IELTS — only then",
-        "3 months · ₹1,999/mo",
+        "3 months · ₹2,499/mo",
         "Marked mocks. Writing is usually the bottleneck",
       ],
     ],

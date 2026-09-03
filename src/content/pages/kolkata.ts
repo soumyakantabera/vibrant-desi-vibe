@@ -106,7 +106,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading, and it only moves if somebody marks your essays individually. [IELTS Preparation](/course-ielts) is ₹1,999/month with six full-length mocks; both Academic and General Training are covered in the same course. Before enrolling, practise with the free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
+    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading, and it only moves if somebody marks your essays individually. [IELTS Preparation](/course-ielts) is ₹2,499/month with six full-length mocks; both Academic and General Training are covered in the same course. Before enrolling, practise with the free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
   },
   {
     t: "h3",
@@ -130,10 +130,10 @@ export const body: ArticleBody = [
     rows: [
       ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,199/month"],
-      ["Workplace English", "3 months · up to 2 classes/week", "₹1,499/month"],
+      ["Workplace English", "3 months · up to 2 classes/week", "₹1,999/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,499/month"],
-      ["IELTS Preparation", "3 months · up to 2 classes/week", "₹1,999/month"],
-      ["Career Counselling", "3 × 60-min 1:1 sessions", "₹999 total"],
+      ["IELTS Preparation", "3 months · up to 2 classes/week", "₹2,499/month"],
+      ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999/mo"],
     ],
   },
   {

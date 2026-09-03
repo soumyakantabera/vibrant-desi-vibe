@@ -109,7 +109,7 @@ export const body: ArticleBody = [
       ["Frequency", "Up to 2 class days per week"],
       ["Format", "100% live online batch"],
       ["Batch size", "Maximum 8 learners"],
-      ["Fee", "₹1,499/month, GST included"],
+      ["Fee", "₹1,999/month, GST included"],
       ["Demo", "₹0 real live class before payment"],
       ["Certificate", "Not currently issued"],
       ["Rescheduling", "Request within the same week, subject to teacher and slot availability"],

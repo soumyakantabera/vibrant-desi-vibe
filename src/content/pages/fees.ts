@@ -174,10 +174,10 @@ export const body: ArticleBody = [
     rows: [
       ["Basic Spoken English", "6 months", "Live batch, max 8", "₹999/month"],
       ["Interactive Speaking", "3 months", "Live batch, max 8", "₹1,199/month"],
-      ["Workplace English", "3 months", "Live batch, max 8", "₹1,499/month"],
+      ["Workplace English", "3 months", "Live batch, max 8", "₹1,999/month"],
       ["Interview Preparation", "2 months", "Live batch, max 8", "₹1,499/month"],
-      ["IELTS Preparation", "3 months", "Live batch, max 8", "₹1,999/month"],
-      ["Career Counselling", "3 sessions", "1:1", "₹999 total"],
+      ["IELTS Preparation", "3 months", "Live batch, max 8", "₹2,499/month"],
+      ["Career Counselling", "3 sessions", "1:1", "₹1,999/mo"],
     ],
   },
   {

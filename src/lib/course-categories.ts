@@ -23,9 +23,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "work-and-career",
-    title: "Work & Career · ₹1,499/mo",
+    title: "Work & Career · from ₹1,499/mo",
     description:
-      "Workplace English and Interview Prep. 2–3 months, ₹1,499/mo. Live quality teaching, up to 2 classes/week. Batches of 8.",
+      "Workplace English ₹1,999/mo and Interview Prep ₹1,499/mo. Live quality teaching, up to 2 classes/week. Batches of 8.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
@@ -33,9 +33,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "ielts-preparation",
-    title: "IELTS Prep · ₹1,999/mo",
+    title: "IELTS Prep · ₹2,499/mo",
     description:
-      "Target Band 7+ in 3 months. ₹1,999/mo. All 4 skills, 6+ live mocks, Academic or General Training. Batches of 8.",
+      "Target Band 7+ in 3 months. ₹2,499/mo. All 4 skills, 6+ live mocks, Academic or General Training. Batches of 8.",
     icon: "trophy",
     tone: "sun",
     featuredSlug: "ielts",
@@ -43,7 +43,7 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "career-guidance",
-    title: "Career Guidance · ₹999 Total",
+    title: "Career Guidance · ₹1,999/mo",
     description:
       "1:1 counselling. 3 sessions × 60 minutes. Three shortlisted paths and a 6-month action plan.",
     icon: "compass",

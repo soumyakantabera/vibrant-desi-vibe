@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Which class" },
   {
     t: "p",
-    text: "If you can already chat and the deck is the problem → Workplace English, 3 months, ₹1,499/mo. If you freeze before slide one → Interactive, 3 months, ₹1,199/mo. If daily English is still the gap → Spoken, 6 months, ₹999/mo, then come back to decks. [Which class do I need?](/spoken-business-or-interactive-english).",
+    text: "If you can already chat and the deck is the problem → Workplace English, 3 months, ₹1,999/mo. If you freeze before slide one → Interactive, 3 months, ₹1,199/mo. If daily English is still the gap → Spoken, 6 months, ₹999/mo, then come back to decks. [Which class do I need?](/spoken-business-or-interactive-english).",
   },
   {
     t: "p",

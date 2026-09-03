@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Workplace English ₹1,499/mo, Interactive ₹1,199/mo. Max 8. Message anytime; we reply **09:00–12:00 IST**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Workplace English ₹1,999/mo, Interactive ₹1,199/mo. Max 8. Message anytime; we reply **09:00–12:00 IST**.",
   },
   {
     t: "p",
@@ -39,7 +39,7 @@ export const body: ArticleBody = [
     items: [
       "Daily talk still shaky → [Spoken English](/course-spoken-english), 6 months, ₹999/mo.",
       "You freeze on calls you could write → [Interactive](/course-interactive-speaking), 3 months.",
-      "Meetings, clients, emails, updates → [Workplace English](/course-business-english), 3 months, ₹1,499/mo. Then [client calls](/english-for-client-calls-india) and [presentations](/english-for-presentations-india).",
+      "Meetings, clients, emails, updates → [Workplace English](/course-business-english), 3 months, ₹1,999/mo. Then [client calls](/english-for-client-calls-india) and [presentations](/english-for-presentations-india).",
       "Hindi- or Bengali-medium start → [that guide](/english-hindi-bengali-medium).",
     ],
   },

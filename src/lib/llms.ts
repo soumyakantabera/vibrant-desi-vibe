@@ -52,7 +52,7 @@ import {
  *
  * This is the fix that matters most for maintenance. These files make the site
  * unusually easy for an assistant to quote verbatim, so a price change that
- * left a hardcoded "₹999–₹1,999" behind here would have assistants confidently
+ * left a hardcoded "₹999–₹2,499" behind here would have assistants confidently
  * quoting a stale figure to prospective students — with a citation to us. The
  * range now comes from the same `COURSES` table the course pages render from
  * and cannot fall out of step with them.
@@ -161,7 +161,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, max 8). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,499/month). Sit an exam course only when a form, university or visa asks. A ₹0 live demo is how Learn With Smile places you in one room, not three.",
+    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, max 8). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,999/month). Sit an exam course only when a form, university or visa asks. A ₹0 live demo is how Learn With Smile places you in one room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {

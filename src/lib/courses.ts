@@ -126,7 +126,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "business-english",
     title: "Workplace English",
     tagline:
-      "Meetings, client calls, emails and presentations — 3 months, max 8, up to 2 live classes/week, ₹1,499/mo. For professionals, freshers and job seekers.",
+      "Meetings, client calls, emails and presentations — 3 months, max 8, up to 2 live classes/week, ₹1,999/mo. For professionals, freshers and job seekers.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "headset",
@@ -136,7 +136,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · max 8 students",
-    price: "₹1,499/mo",
+    price: "₹1,999/mo",
     outcomes: [
       "Give clear status updates without memorising a script",
       "Speak more confidently in team and client meetings",
@@ -207,7 +207,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live max-8 batch, ₹1,499/month.",
+      "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live max-8 batch, ₹1,999/month.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
@@ -281,7 +281,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "ielts",
     title: "IELTS Preparation",
     tagline:
-      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Max 8 per batch, ₹1,999/mo. Academic or General Training.",
+      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Max 8 per batch, ₹2,499/mo. Academic or General Training.",
     category: "IELTS Preparation",
     categoryColor: "brand",
     icon: "trophy",
@@ -290,7 +290,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.graduation,
     duration: "3 months · up to 2 classes/week",
     format: "Live batch · max 8 students",
-    price: "₹1,999/mo",
+    price: "₹2,499/mo",
     outcomes: [
       "Score Band 7+ across all four modules",
       "Master Task 1 & Task 2 writing templates",
@@ -368,7 +368,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "IELTS Preparation live online — 3 months · up to 2 classes/week · max 8 per batch · ₹1,999/mo. 6+ mocks, live feedback and a free demo.",
+      "IELTS Preparation live online — 3 months · up to 2 classes/week · max 8 per batch · ₹2,499/mo. 6+ mocks, live feedback and a free demo.",
   },
   "interview-prep": {
     slug: "interview-prep",
@@ -455,7 +455,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "career-counselling",
     title: "Career Counselling",
     tagline:
-      "1:1 quality guidance — 3 × 60-min sessions for ₹999 total. Strengths map, 3 career paths, 6-month action plan, resume and LinkedIn review.",
+      "1:1 quality guidance — 3 × 60-min sessions for ₹1,999/mo. Strengths map, 3 career paths, 6-month action plan, resume and LinkedIn review.",
     category: "Career Guidance",
     categoryColor: "brand",
     icon: "compass",
@@ -464,7 +464,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.studentLaptop,
     duration: "3 sessions × 60 min",
     format: "1:1 personalised",
-    price: "₹999 total",
+    price: "₹1,999/mo",
     outcomes: [
       "Discover your strengths & interests",
       "Shortlist 3 right-fit career paths",
@@ -503,6 +503,6 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "1:1 Career Counselling online — 3 × 60-min sessions · ₹999 total. Discover, map and act. Free 15-min intro on WhatsApp.",
+      "1:1 Career Counselling online — 3 × 60-min sessions · ₹1,999/mo. Discover, map and act. Free 15-min intro on WhatsApp.",
   },
 };
