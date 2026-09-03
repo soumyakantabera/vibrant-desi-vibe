@@ -99,7 +99,7 @@ function Page() {
                   {
                     tone: "indigo",
                     icon: SnapIcons.people,
-                    big: "Max 8",
+                    big: "Approx. 6 learners",
                     small: "In every English course batch",
                   },
                   {
@@ -120,7 +120,7 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Four Clear Categories"
-            title="6 Programmes · Max 8 · From ₹999/mo"
+            title="6 Programmes · Approx. 6 per Batch · From ₹999/mo"
             subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance — pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
