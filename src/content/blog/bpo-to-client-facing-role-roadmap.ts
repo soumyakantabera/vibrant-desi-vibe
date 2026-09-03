@@ -239,7 +239,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If you want help choosing which of the five roles is actually right for you, Career Counselling is three 60-minute 1:1 sessions for ₹1,999/mo — strengths mapping, three shortlisted paths compared on salary and growth, a six-month action plan, and a resume and LinkedIn review. If you already know the target and need the interview reps, Interview Prep is the other one.",
+    text: "If you want help choosing which of the five roles is actually right for you, Career Counselling is three 60-minute 1:1 sessions for ₹1,999 total — strengths mapping, three shortlisted paths compared on salary and growth, a six-month action plan, and a resume and LinkedIn review. If you already know the target and need the interview reps, Interview Prep is the other one.",
     course: "/course-career-counselling",
     label: "See Career Counselling",
   },
