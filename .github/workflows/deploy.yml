@@ -109,6 +109,9 @@ jobs:
         with:
           path: dist
 
+      - name: Wait for Pages artifact consistency
+        run: sleep 20
+
       - id: deploy
         uses: actions/deploy-pages@v4
 
