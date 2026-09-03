@@ -13,7 +13,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Those figures assume you actually speak in class. In a 25–40 student room you often wait a week for the mic. In a batch of 8 you speak every hour. Time-to-fluency is speaking minutes, not calendar months. See the arithmetic in [Speaking minutes in a 60-minute class](/blog/speaking-minutes-in-a-60-minute-class).",
+    text: "Those figures assume you actually speak in class. In a 25–40 student room you often wait a week for the mic. In a batch of around 6 you speak every hour. Time-to-fluency is speaking minutes, not calendar months. See the arithmetic in [Speaking minutes in a 60-minute class](/blog/speaking-minutes-in-a-60-minute-class).",
   },
 
   { t: "h2", text: "The three clocks, in numbers" },
@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,999/month for 3 months**, IELTS **₹2,499/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. GST included. Batch of 8. ₹0 live demo before you pay.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,999/month for 3 months**, IELTS **₹2,499/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. GST included. batch of around 6. ₹0 live demo before you pay.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },
@@ -72,7 +72,7 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "**Speaking minutes per week.** A 60-minute class with 8 learners ≈ 6–8 minutes each. With 30 learners ≈ under 2 minutes. Six months of the second is not six months of the first.",
+      "**Speaking minutes per week.** A 60-minute class with around 6 learners can provide roughly 8–10 minutes each. With 30 learners that falls below 2 minutes. Six months of the second is not six months of the first.",
       "**First language.** Bengali and Hindi speakers make a predictable set of English errors (v/w, articles, “I am having”). A teacher who grew up with the same first language shortens the clock. A native-only tutor often lengthens it for beginners.",
       "**Attendance.** Missing every other class doubles the calendar. Recordings help revision; they do not replace the mic.",
       "**Daily 10 minutes.** Not an app streak. One voice note, one paragraph spoken aloud, one correction applied the next day.",
@@ -100,7 +100,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Sit in a real 8-student class before you buy 6 months. Count how many minutes you spoke.",
+    text: "Sit in a real class of around 6 learners before you buy 6 months. Count how many minutes you spoke.",
     course: "/book-free-demo",
     label: "Book a ₹0 live demo",
   },

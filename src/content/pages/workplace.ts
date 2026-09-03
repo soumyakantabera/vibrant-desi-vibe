@@ -108,7 +108,7 @@ export const body: ArticleBody = [
       ["Duration", "3 months"],
       ["Frequency", "Up to 2 class days per week"],
       ["Format", "100% live online batch"],
-      ["Batch size", "Maximum 8 learners"],
+      ["Batch size", "approximately 6 learners"],
       ["Fee", "₹1,999/month, GST included"],
       ["Demo", "₹0 real live class before payment"],
       ["Certificate", "Not currently issued"],
@@ -142,7 +142,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The demo is ₹0, the batch is capped at 8, and booking starts with a plain WhatsApp message.",
+    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The demo is ₹0, the batch usually has around 6 learners, and booking starts with a plain WhatsApp message.",
     course: "/course-business-english",
     label: "See Workplace English course details",
   },

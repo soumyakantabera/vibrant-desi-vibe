@@ -46,7 +46,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-career-counselling",
     label: "Career Counselling",
     icon: "compass",
-    desc: "3 × 60 min · ₹1,999/mo",
+    desc: "3 × 60 min · ₹1,999 total",
   },
 ];
 

@@ -85,7 +85,7 @@ function yearsTeaching(): number {
  */
 const KEY_FACTS = [
   `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years live online teaching · 500+ learners across 11 Indian states · from ₹999/month`,
-  "Standard: named live teacher, from ₹999/month GST included, ₹0 real-class demo; English batches capped at 8 so every learner speaks; Career Counselling is a separate 1:1 service",
+  "Standard: named live teacher, from ₹999/month GST included, ₹0 real-class demo; English batches of approximately 6 learners so every learner speaks; Career Counselling is a separate 1:1 service",
   "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
   `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
@@ -116,12 +116,12 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of maximum 8, GST included, with no registration or material fee.",
+    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of approximately 6, GST included, with no registration or material fee.",
     source: "/english-class-fees-india",
   },
   {
     q: "What is the batch size at Learn With Smile?",
-    a: "Every Learn With Smile English course batch is capped at 8 students. The English courses do not currently include scheduled 1:1 feedback sessions. Career Counselling is a separate 1:1 service. In a 8-student English class every learner can speak in every session; in a 30-student class most learners cannot.",
+    a: "Every Learn With Smile English course batch usually has around 6 learners. The English courses do not currently include scheduled 1:1 feedback sessions. Career Counselling is a separate 1:1 service. In a small English class every learner can speak in every session; in a 30-student class most learners cannot.",
     source: "/why-us",
   },
   {
@@ -151,22 +151,22 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How long does it take to learn spoken English from zero?",
-    a: "About 6 months of live practice — up to two classes a week plus daily 10–15 minutes — for everyday conversation. Workplace English is typically 3 months if you already chat. IELTS Band 7+ is usually 9–12 months from zero because writing is the bottleneck. 30-day fluency from zero is marketing. Learn With Smile Spoken English is ₹999/month for 6 months, batch of 8.",
+    a: "About 6 months of live practice — up to two classes a week plus daily 10–15 minutes — for everyday conversation. Workplace English is typically 3 months if you already chat. IELTS Band 7+ is usually 9–12 months from zero because writing is the bottleneck. 30-day fluency from zero is marketing. Learn With Smile Spoken English is ₹999/month for 6 months, batch of around 6.",
     source: "/how-long-to-learn-spoken-english",
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta-style 1:1 (~₹100–₹400/session) for daily reps if you already speak. Cambly (~$10/hour) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and a cap of 8, from ₹999/month GST included. Kids need a children’s platform.",
+    a: "Fit, not a trophy. EngVarta-style 1:1 (~₹100–₹400/session) for daily reps if you already speak. Cambly (~$10/hour) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform.",
     source: "/english-institute-comparison-india",
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, max 8). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,999/month). Sit an exam course only when a form, university or visa asks. A ₹0 live demo is how Learn With Smile places you in one room, not three.",
+    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,999/month). Sit an exam course only when a form, university or visa asks. A ₹0 live demo is how Learn With Smile places you in one room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
-    a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, max 8: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Sit in a ₹0 live class and count how many times you are on the mic.",
+    a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Sit in a ₹0 live class and count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
 ];
@@ -500,7 +500,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     "> Live online English communication and career classes for learners in India — Spoken English, IELTS,",
     "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
-    "> English classes are taught live in batches capped at 8 students, from ₹999/month.",
+    "> English classes are taught live in batches of approximately 6 learners, from ₹999/month.",
     "> ₹999/mo live English. 7 years. 500+ learners across 11 Indian states. Free demo on WhatsApp.",
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,

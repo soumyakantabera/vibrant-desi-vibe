@@ -36,7 +36,7 @@ const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "users",
     title: "Small batches",
-    body: "Every learner gets the mic. Max 8. From ₹999/mo.",
+    body: "Every learner gets the mic. Approx. 6 learners. From ₹999/mo.",
   },
   {
     icon: "gamepad",
@@ -99,7 +99,7 @@ function Home() {
     },
     {
       quote:
-        "The promotion board was in English. Mock interviews, live, eight people. I got the Assistant Manager seat.",
+        "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
       name: "Vikram Singh",
       detail: "Interview Prep · Bank Asst. Manager, Delhi",
       waMessage:
@@ -176,7 +176,7 @@ function Home() {
                 "From ₹999/month",
                 "500+ Learners",
                 "₹0 real demo",
-                "Small batches — max 8",
+                "Small batches — approx. 6 learners",
               ].map((s) => (
                 <span
                   key={s}
@@ -213,7 +213,7 @@ function Home() {
                     tone: "coral",
                     icon: SnapIcons.people,
                     big: "You speak",
-                    small: "A room of 8 — not the back row",
+                    small: "A group of around 6 — not the back row",
                   },
                 ]}
               />
@@ -279,8 +279,8 @@ function Home() {
             <StoryTile icon="gamepad" tone="sun" title="Gamified Learning">
               Flashcards, matching games & live quizzes every session.
             </StoryTile>
-            <StoryTile icon="users" tone="glass" title="Batch of 8">
-              Named teacher. Small batches of 8. You still speak.
+            <StoryTile icon="users" tone="glass" title="Batch of Around 6">
+              Named teacher. Small batches of approximately 6 learners. You still speak.
             </StoryTile>
             <StoryTile icon="heart" tone="glass" title="Collaborative">
               Group discussions and community building every class.
@@ -343,14 +343,18 @@ function Home() {
             subtitle={
               <span className="text-white/90">
                 One named teacher. Up to 2 classes a week. Every session live — never a recording as
-                the class. Batches of 8 so you still get the mic.
+                the class. Batches of approximately 6 learners mean you still get the mic.
               </span>
             }
           />
           <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
-            <GlassCard icon="users" title="Small Live Batches" pricing="Max 8 · From ₹999/mo">
-              Scheduled English cohorts capped at 8. You practise with classmates, speak in every
-              class and receive corrections during the lesson.
+            <GlassCard
+              icon="users"
+              title="Small Live Batches"
+              pricing="Approx. 6 learners · From ₹999/mo"
+            >
+              Scheduled English cohorts usually have around 6 learners. You practise with
+              classmates, speak in every class and receive corrections during the lesson.
             </GlassCard>
             <GlassCard icon="user" title="Direct Teacher Support" pricing="When Genuinely Needed">
               Questions are answered during class. Outside class, a learner can contact the teacher
@@ -362,7 +366,7 @@ function Home() {
               { n: 1, lbl: "Choose Course", sub: "6 programmes · from ₹999/mo", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
-              { n: 4, lbl: "Join Live Class", sub: "₹0 demo · max 8 batch", c: "sage" },
+              { n: 4, lbl: "Join Live Class", sub: "₹0 demo · approx. 6 per batch", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
                 <div
@@ -494,7 +498,7 @@ function Home() {
             eyebrow="Simple, India-Friendly Pricing"
             eyebrowTone="indigo"
             title="From ₹999/mo · GST Included · ₹0 Demo"
-            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Attend a ₹0 live demo before you enrol. Batches of 8."
+            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Attend a ₹0 live demo before you enrol. Batches have approximately 6 learners."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
             <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
@@ -503,7 +507,7 @@ function Home() {
                   <BatchIcon />
                 </span>
                 <h3 className="font-display text-lg font-extrabold text-ink">
-                  Small Batch (Max 8)
+                  Small Batch (Approx. 6 learners)
                 </h3>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
@@ -553,7 +557,7 @@ function Home() {
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Live batch capped at 8 learners
+                  Live batch of approximately 6 learners
                 </li>
               </ul>
             </article>

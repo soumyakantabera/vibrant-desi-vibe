@@ -51,7 +51,7 @@ function Page() {
           <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, max 8, ₹0 demo."
+      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, approx. 6 learners, ₹0 demo."
       heroImage={IMG.spokenEnglish}
       heroAlt="Indian adult practising spoken English in a live online class"
       lastUpdated={UPDATED}
@@ -60,7 +60,7 @@ function Page() {
       faqTitle="How long does spoken English take — straight answers"
       waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
       ctaTitle="Count your minutes in a real class"
-      ctaBody="Sit in a live batch of 8. Hear how much you speak. Then decide on 6 months."
+      ctaBody="Sit in a live batch of around 6. Hear how much you speak. Then decide on 6 months."
     />
   );
 }

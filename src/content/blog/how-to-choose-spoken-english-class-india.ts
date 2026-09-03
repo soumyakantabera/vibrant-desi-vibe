@@ -10,7 +10,7 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "**Cap, not “small batch”.** Ask for the maximum number in the room. 8 and 35 are both called small. If they will not print the cap, assume 25+.",
+      "**Headcount, not “small batch”.** Ask how many learners usually join. Six and 35 can both be called small. If a provider will not give a number, assume the room is crowded.",
       "**Speaking minutes.** In a 60-minute class, your mic ≈ (40 minutes) ÷ (headcount). See [the math](/blog/speaking-minutes-in-a-60-minute-class).",
       "**GST and lock-in.** Advertised ₹2,000 + 18% + materials is not ₹2,000. Monthly UPI beats a 12-month cheque.",
       "**Named teacher.** Apps rotate. Franchise rooms rotate. A teacher who remembers your article errors is a different product.",
@@ -32,7 +32,7 @@ export const body: ArticleBody = [
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
       ["Parent app, games, under-14", "PlanetSpark-style. Do not put a child in an adult batch."],
       [
-        "₹999/mo, cap 8, ₹0 real class, GST in",
+        "₹999/mo, approximately 6 learners, ₹0 real class, GST in",
         "Us. 7 years, 500+ learners, 11 states. Still take the demo.",
       ],
     ],
@@ -56,7 +56,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Make us trial one of three. Real class. Max 8. From ₹999/mo.",
+    text: "Make us trial one of three. Real class. Approx. 6 learners. From ₹999/mo.",
     course: "/book-free-demo",
     label: "Book the ₹0 live demo",
   },

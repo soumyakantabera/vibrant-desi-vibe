@@ -161,7 +161,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace English practises calls, clarification, status updates, professional messages and presentations in a live batch capped at 8. Bring one real support or client scenario to the ₹0 demo and judge the correction for yourself.",
+    text: "Workplace English practises calls, clarification, status updates, professional messages and presentations in a live batch of approximately 6 learners. Bring one real support or client scenario to the ₹0 demo and judge the correction for yourself.",
     course: "/course-business-english",
     label: "Explore Workplace English",
   },

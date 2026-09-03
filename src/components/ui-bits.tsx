@@ -139,7 +139,7 @@ export const SITE_GUIDES: {
   {
     to: "/english-institute-comparison-india",
     title: "Institutes 2026",
-    sub: "EngVarta, Cambly, BC, Veta-style, EEC-style vs ₹999/mo max 8.",
+    sub: "EngVarta, Cambly, BC, Veta-style, EEC-style vs ₹999/mo · approx. 6 learners.",
     icon: "chart",
     color: "coral",
   },

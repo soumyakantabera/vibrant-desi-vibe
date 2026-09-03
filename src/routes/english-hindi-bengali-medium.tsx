@@ -50,7 +50,7 @@ function Page() {
           Hindi- or Bengali-medium. <span className="text-sunshine">You can still speak.</span>
         </>
       }
-      standfirst="Live batch of 8. Explain in Hindi or Bengali when a concept stalls, then back to English. 6 months from ₹999/mo. ₹0 demo."
+      standfirst="Live batch of around 6. Explain in Hindi or Bengali when a concept stalls, then back to English. 6 months from ₹999/mo. ₹0 demo."
       heroImage={IMG.speaking}
       heroAlt="Indian adult learner speaking English in a live online class"
       lastUpdated={UPDATED}

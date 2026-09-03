@@ -22,7 +22,7 @@ const STORIES = [
   },
   {
     quote:
-      "Partners asked me to walk the working papers in English. A batch of eight meant I rehearsed every week. I present now.",
+      "Partners asked me to walk the working papers in English. A batch of around six meant I rehearsed every week. I present now.",
     name: "Rohan Deshpande",
     detail: "Workplace English · Chartered Accountant, Mumbai",
     waMessage: "Hi, I saw Rohan's CA story. Workplace English demo please.",
@@ -43,7 +43,7 @@ const STORIES = [
   },
   {
     quote:
-      "The promotion board was in English. Mock interviews, live, eight people. I got the Assistant Manager seat.",
+      "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
     name: "Vikram Singh",
     detail: "Interview Prep · Bank Asst. Manager, Delhi",
     waMessage: "Hi, I saw Vikram's promotion story. Interview Prep demo please.",

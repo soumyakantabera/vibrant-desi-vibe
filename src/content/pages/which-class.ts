@@ -18,7 +18,7 @@ export const body: ArticleBody = [
   {
     t: "table",
     caption:
-      "Pick the bottleneck, then the course. Fees include GST. Max 8 in every English batch.",
+      "Pick the bottleneck, then the course. Fees include GST. Approx. 6 learners in every English batch.",
     head: ["If this is you", "Take this", "Time & fee", "Done looks like"],
     rows: [
       [
@@ -51,7 +51,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Spoken English — when daily life is the gap" },
   {
     t: "p",
-    text: "Spoken English is the 6-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of 8. See [how long it takes](/how-long-to-learn-spoken-english) and Kavya’s story on [real results](/success-stories).",
+    text: "Spoken English is the 6-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of around 6. See [how long it takes](/how-long-to-learn-spoken-english) and Kavya’s story on [real results](/success-stories).",
   },
 
   { t: "h2", text: "Interactive English — when freeze is the gap" },

@@ -51,7 +51,7 @@ function Page() {
           <span className="text-sunshine">Interactive English, live</span>
         </>
       }
-      standfirst="Games, debates, 1-minute prompts. You talk every class. 3 months, ₹1,199/mo, max 8. ₹0 demo."
+      standfirst="Games, debates, 1-minute prompts. You talk every class. 3 months, ₹1,199/mo, approx. 6 learners. ₹0 demo."
       heroImage={IMG.interactiveSpeaking}
       heroAlt="Small live interactive English class where every learner speaks"
       lastUpdated={UPDATED}
@@ -60,7 +60,7 @@ function Page() {
       faqTitle="Freeze and interactive class"
       waMessage="Hi, I freeze when I speak English. I want Interactive Speaking demo."
       ctaTitle="Count how many times you speak"
-      ctaBody="One Interactive hour. Then decide. ₹0. Max 8."
+      ctaBody="One Interactive hour. Then decide. ₹0. Approx. 6 learners."
     />
   );
 }

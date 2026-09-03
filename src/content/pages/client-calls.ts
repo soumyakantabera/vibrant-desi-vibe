@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Workplace English](/course-business-english) practises that live — 3 months, ₹1,999/mo, max 8. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
+    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Workplace English](/course-business-english) practises that live — 3 months, ₹1,999/mo, approx. 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
   },
   {
     t: "p",
@@ -61,7 +61,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Bring a real call you have this week. We will practise it in a live batch of 8.",
+    text: "Bring a real call you have this week. We will practise it in a live batch of around 6.",
     course: "/course-business-english",
     label: "See Workplace English",
   },

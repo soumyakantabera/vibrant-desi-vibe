@@ -26,7 +26,7 @@ export const body: ArticleBody = [
       [
         "Learn With Smile (us)",
         "₹999–₹2,499/mo GST in",
-        "Live group, max 8, named teacher, IST",
+        "Live group, approx. 6 learners, named teacher, IST",
         "Adults 15+ who need a syllabus and the mic",
         "Kids; people who need a certificate; daily 1:1 junkies",
       ],
@@ -99,7 +99,7 @@ export const body: ArticleBody = [
     rows: [
       ["Typical offline franchise / city classroom", "25–40", "1–2 minutes"],
       ["British Council-style group", "8–12", "4–6 minutes"],
-      ["Learn With Smile English batch", "8 cap", "6–8 minutes"],
+      ["Learn With Smile English batch", "Approximately 6 learners", "About 8–10 minutes"],
       ["EngVarta / Cambly 1:1", "1", "25–50 minutes, no syllabus"],
     ],
   },
@@ -123,13 +123,13 @@ export const body: ArticleBody = [
     items: [
       "You need a **British Council / Cambridge certificate** — go there. We do not issue one.",
       "You want **daily 1:1** and already speak — EngVarta is cheaper per talking minute.",
-      "The student is a **child** — PlanetSpark-style, not an adult batch of 8.",
+      "The student is a **child** — PlanetSpark-style, not an adult batch of around 6.",
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our Kolkata address is an office, not a campus.",
     ],
   },
   {
     t: "cta",
-    text: "Compare us in a real class, not a sales call. ₹0. Max 8. From ₹999/mo.",
+    text: "Compare us in a real class, not a sales call. ₹0. Approx. 6 learners. From ₹999/mo.",
     course: "/book-free-demo",
     label: "Book the ₹0 demo",
   },

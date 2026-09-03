@@ -59,7 +59,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Bring one real update from this week. We will run it in a live room of 8.",
+    text: "Bring one real update from this week. We will run it in a live group of around 6.",
     course: "/course-business-english",
     label: "See Workplace English",
   },
