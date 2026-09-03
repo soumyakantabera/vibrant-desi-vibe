@@ -119,8 +119,8 @@ function Page() {
               Teachers.
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              Real teachers. Small batches. A teacher who knows your name. You speak every class.
-              From ₹999/mo.
+              A teacher who knows your name. 500+ learners, 7 years. You speak every class. From
+              ₹999/mo.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton

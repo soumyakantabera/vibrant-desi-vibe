@@ -66,8 +66,8 @@ export function Footer({ image }: { image?: string }) {
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              Real teachers. Small batches. Gamified live English — designed for today's market.
-              From ₹999/mo. Kolkata-based, teaching pan-India.
+              500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from
+              ₹999/mo. Kolkata-based, teaching pan-India.
             </p>
             <SmartImage
               src={image || IMG}

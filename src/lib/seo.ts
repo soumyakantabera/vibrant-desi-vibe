@@ -195,7 +195,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/",
     title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Speak better English — live online classes in India from ₹999/month. Real teachers, small batches. 7 years, Kolkata & pan-India. GST included. ₹0 WhatsApp demo.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month. Kolkata & pan-India. ₹0 live demo on WhatsApp.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -288,7 +288,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/why-us",
     title: "Why Us | Built for Indian Learners",
     description:
-      "Built for Indian learners. Real teachers. Small batches. A teacher who knows your name. You speak every class. From ₹999/month. Kolkata & pan-India. ₹0 demo.",
+      "500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from ₹999/month. Kolkata & pan-India. GST included. ₹0 WhatsApp demo.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -1196,7 +1196,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Speak better English with real teachers and small batches. From ₹999/month. 7 years, Kolkata & pan-India. Spoken, IELTS, Workplace. ₹0 demo. GST in. Live.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month. Kolkata & pan-India. Spoken, Workplace, IELTS. ₹0 demo. GST included.",
     slogan: "Speak Better English. Master In-Demand Skills. Build Future Together.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
@@ -1253,7 +1253,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Speak Better English. Master In-Demand Skills. Build Future Together. Real teachers, small batches, from ₹999/month. 7 years, Kolkata & pan-India. ₹0 demo.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month. Kolkata & pan-India. ₹0 demo.",
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }
