@@ -164,7 +164,7 @@ export type PageSeo = {
  * with 8-figure ad budgets; we are not going to outrank them and should not try.
  * The winnable surface is:
  *   a) price-qualified long tail  — "spoken english class fees per month india"
- *   b) format long tail           — "small batch live english class max 8 students"
+ *   b) format long tail           — "small batch live english class approximately 6 learners"
  *   c) audience long tail         — "english speaking course for working professionals"
  *   d) geo long tail              — "spoken english classes kolkata online"
  *   e) question long tail (AEO)   — what AI assistants are actually asked
@@ -218,15 +218,15 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 1.0,
     changefreq: "weekly",
     summary:
-      "Homepage. Live spoken English classes from a Kolkata teacher, for learners across India. From ₹999/month, ₹0 demo, 7 years, 500+ learners. English batches of 8.",
+      "Homepage. Live spoken English classes from a Kolkata teacher, for learners across India. From ₹999/month, ₹0 demo, 7 years, 500+ learners. English batches of approximately 6 learners.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of maximum 8 students, with up to 2 classes per week. IELTS Preparation is ₹2,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹1,999/mo for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. IELTS Preparation is ₹2,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices include GST and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
-        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For children, PlanetSpark. For a structured syllabus with a certificate, British Council. Learn With Smile fits a specific gap: a live human teacher, a fixed 6-month syllabus, and a hard cap of 8 students per batch, from ₹999/month — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar.",
+        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For children, PlanetSpark. For a structured syllabus with a certificate, British Council. Learn With Smile fits a specific gap: a live human teacher, a fixed 6-month syllabus, and approximately 6 learners per batch, from ₹999/month — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar.",
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
@@ -234,7 +234,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are online English classes as effective as offline coaching centres?",
-        a: "For speaking practice, online small-batch classes are usually better. In a 8-student online batch every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join morning, evening or weekend slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
+        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join morning, evening or weekend slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
       },
       {
         q: "Is the demo class really free, and do I need to pay anything upfront?",
@@ -275,7 +275,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Workplace English is ₹1,999 per month, Interactive Speaking is ₹1,199 per month, and 1:1 Career Counselling is ₹1,999/mo for the complete 3-session package. All fees include GST.",
+        a: "Basic Spoken English is ₹999 per month, Workplace English is ₹1,999 per month, Interactive Speaking is ₹1,199 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees include GST.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -294,7 +294,7 @@ export const PAGES: Record<string, PageSeo> = {
       "small batch english classes online india",
       "live english class vs recorded course",
       "english class with money back guarantee india",
-      "max 8 students english batch",
+      "approximately 6 learners english batch",
       "one to one english classes online india",
       "english classes flexible timing working professionals",
       "is online english coaching worth it",
@@ -303,19 +303,19 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Why us: a named teacher, a room of 8, and a fee that does not jump with your city. 7 years live from Kolkata. From ₹999/month. ₹0 real-class demo.",
+      "Why us: a named teacher, a group of around 6, and a fee that does not jump with your city. 7 years live from Kolkata. From ₹999/month. ₹0 real-class demo.",
     faqs: [
       {
         q: "How is Learn With Smile different from Cambly or British Council English Online?",
-        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. British Council English Online is a CEFR syllabus with published 4.5★ class ratings; group rooms of 8–12 still leave limited speaking time and modules often cost ₹8,800–₹16,000. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month GST included, a ₹0 real-class demo, and a hard cap of 8 so every adult learner still speaks. We do not issue a British Council certificate — if you need that badge, go there.",
+        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. British Council English Online is a CEFR syllabus with published 4.5★ class ratings; group rooms of 8–12 still leave limited speaking time and modules often cost ₹8,800–₹16,000. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month GST included, a ₹0 real-class demo, and approximately 6 learners per batch so every adult learner still speaks. We do not issue a British Council certificate — if you need that badge, go there.",
       },
       {
         q: "Are Kolkata offline spoken English classes better than online?",
         a: "For speaking time, usually no. Typical Kolkata classrooms run 25–40 students, so most learners speak once a week. Public 3-month packages often sit at ₹1,500–₹6,000 plus commute. Online small-batch classes remove the commute, keep morning/evening/weekend IST slots, and give every learner the mic in every hour. Peer energy is the one thing a packed room still does well — we replace that with live polls, debates and a WhatsApp batch group.",
       },
       {
-        q: "Why is a maximum batch size of 8 students important for learning English?",
-        a: "Speaking time is the whole point. In a 60-minute class with 8 students, each learner gets roughly 6–7 minutes of actual speaking and correction. In a 30-student batch that drops to under 2 minutes, and most learners spend the hour listening to someone else practise. Small batches also mean the teacher can remember your specific errors week to week and correct the same mistake until it disappears.",
+        q: "Why is a typical batch size of approximately 6 learners important for learning English?",
+        a: "Speaking time is the whole point. In a 60-minute class with around 6 learners, each learner can get roughly 8–10 minutes of actual speaking and correction. In a 30-student batch that drops to under 2 minutes, and most learners spend the hour listening to someone else practise. Small batches also mean the teacher can remember your specific errors week to week and correct the same mistake until it disappears.",
       },
       {
         q: "Is there a refund if I don't like the course after enrolling?",
@@ -427,7 +427,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile help with career guidance, or only English speaking?",
-        a: "Both, if you need it. Alongside the English courses we run standalone 1:1 Career Counselling (₹1,999/mo for three 60-minute sessions). Many learners combine an English course with a counselling session when the actual goal is a career or course change, not just language practice.",
+        a: "Both, if you need it. Alongside the English courses we run standalone 1:1 Career Counselling (₹1,999 total for three 60-minute sessions). Many learners combine an English course with a counselling session when the actual goal is a career or course change, not just language practice.",
       },
     ],
   },
@@ -525,7 +525,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much do spoken English classes cost in Kolkata?",
-        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch capped at 8, GST included, with no registration or material fee. The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
+        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, GST included, with no registration or material fee. The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
       },
       {
         q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
@@ -537,11 +537,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is an online class actually better than joining a coaching centre in Kolkata?",
-        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. A 8-student online batch gives each learner roughly 8–10 minutes. You also save the 45–90 minutes each way of commuting up to twice a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
+        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. An online batch of around 6 gives each learner roughly 8–10 minutes. You also save the 45–90 minutes each way of commuting up to twice a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
       },
       {
         q: "Do you prepare Kolkata students for IELTS and job interviews too?",
-        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹2,499/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Workplace English at ₹1,999/month for professionals in IT, BPO, customer support and other client-facing roles. All English courses are live and capped at 8 students.",
+        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹2,499/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Workplace English at ₹1,999/month for professionals in IT, BPO, customer support and other client-facing roles. All English courses are live with approximately 6 learners per batch.",
       },
     ],
   },
@@ -569,7 +569,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online English classes cost in India per month?",
-        a: "Group online English classes in India generally run ₹800–₹3,000 per month. One-to-one tutoring runs ₹100–₹2,000 per session depending on where the tutor is based, and app-based conversation practice runs ₹300–₹800 per month. Learn With Smile sits at ₹999/month for Spoken English in a batch capped at 8, GST included. Anything under about ₹500 a month is almost always either recorded video or a batch large enough that you will not speak.",
+        a: "Group online English classes in India generally run ₹800–₹3,000 per month. One-to-one tutoring runs ₹100–₹2,000 per session depending on where the tutor is based, and app-based conversation practice runs ₹300–₹800 per month. Learn With Smile sits at ₹999/month for Spoken English in a batch of approximately 6 learners, GST included. Anything under about ₹500 a month is almost always either recorded video or a batch large enough that you will not speak.",
       },
       {
         q: "What is the cheapest way to learn English in India?",
@@ -589,7 +589,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much does IELTS coaching cost in India?",
-        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. Learn With Smile charges ₹2,499/month for three months in a batch of maximum 8, including six full-length mocks with individual feedback. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching.",
+        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. Learn With Smile charges ₹2,499/month for three months in a batch of approximately 6, including six full-length mocks with individual feedback. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching.",
       },
     ],
   },
@@ -661,7 +661,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "A practical buyer and self-study guide to workplace English in India: meetings, client calls, status updates, emails and presentations; who needs live training; and how the Learn With Smile max-8 course works.",
+      "A practical buyer and self-study guide to workplace English in India: meetings, client calls, status updates, emails and presentations; who needs live training; and how the Learn With Smile course with approximately 6 learners per batch works.",
     faqs: [
       {
         q: "What is Workplace English?",
@@ -673,7 +673,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much does Learn With Smile Workplace English cost?",
-        a: "The course costs ₹1,999 per month including GST. It runs for three months with up to two live class days per week in a batch capped at 8 learners. There is no registration or material fee and no course certificate. A real live demo class is available before payment.",
+        a: "The course costs ₹1,999 per month including GST. It runs for three months with up to two live class days per week in a batch of approximately 6 learners. There is no registration or material fee and no course certificate. A real live demo class is available before payment.",
       },
       {
         q: "Does the course include scheduled 1:1 feedback?",
@@ -690,7 +690,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/how-long-to-learn-spoken-english",
     title: "How Long to Learn Spoken English | 6 Months",
     description:
-      "Everyday English from zero: ~6 months live. Workplace 3 months. IELTS Band 7+ 9–12 months. 30-day fluency is marketing. ₹999/mo, max 8, ₹0 demo. GST in.",
+      "Everyday English from zero: ~6 months live. Workplace 3 months. IELTS Band 7+ 9–12 months. 30-day fluency is marketing. ₹999/mo, approx. 6 learners, ₹0 demo. GST in.",
     shortTitle: "How Long to Learn Spoken English",
     keywords: [
       "how long to learn spoken english from zero",
@@ -703,7 +703,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Time-to-fluency guide. Everyday conversation ~6 months from zero with live classes; workplace ~3 months; IELTS Band 7+ 9–12 months. Speaking minutes matter more than calendar months. ₹999/mo, batch of 8.",
+      "Time-to-fluency guide. Everyday conversation ~6 months from zero with live classes; workplace ~3 months; IELTS Band 7+ 9–12 months. Speaking minutes matter more than calendar months. ₹999/mo, batch of around 6.",
     faqs: [
       {
         q: "How long does it take to learn spoken English from zero in India?",
@@ -711,11 +711,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I become fluent in English in 30 days?",
-        a: "No, not from zero. In 30 days a hesitant intermediate can reduce freezing if they already have the language. A beginner still needs sounds, 1,000+ words and tense patterns. Anyone advertising fluency in 30 days is selling a course, not a result. Learn With Smile’s Spoken English is a 6-month syllabus at ₹999/month, GST included, batch of 8.",
+        a: "No, not from zero. In 30 days a hesitant intermediate can reduce freezing if they already have the language. A beginner still needs sounds, 1,000+ words and tense patterns. Anyone advertising fluency in 30 days is selling a course, not a result. Learn With Smile’s Spoken English is a 6-month syllabus at ₹999/month, GST included, batch of around 6.",
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, maximum 8 students, ₹999 per month GST included. Workplace English is 3 months at ₹1,999/month. IELTS is 3 months at ₹2,499/month with 6+ marked mocks. Interview Prep is 2 months at ₹1,499/month. ₹0 live demo before you pay.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month GST included. Workplace English is 3 months at ₹1,999/month. IELTS is 3 months at ₹2,499/month with 6+ marked mocks. Interview Prep is 2 months at ₹1,499/month. ₹0 live demo before you pay.",
       },
     ],
   },
@@ -724,7 +724,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-institute-comparison-india",
     title: "English Institutes India 2026 | Fees & Fit",
     description:
-      "Cambly, EngVarta, British Council, Veta-style rooms, EEC exam shops vs live batches of 8 from ₹999/mo. 2026 fee bands, speaking minutes, who each fits.",
+      "Cambly, EngVarta, British Council, Veta-style rooms, EEC exam shops vs live batches of approximately 6 learners from ₹999/mo. 2026 fee bands, speaking minutes, who each fits.",
     shortTitle: "English Institutes in India, Compared",
     keywords: [
       "best spoken english institute in india 2026",
@@ -737,19 +737,19 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Named-institute comparison for 2026: EngVarta 1:1 (~₹100–₹400/session), Cambly native (~$10/hr), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months), EEC-style exam shops (~₹7,500 spoken), PlanetSpark for kids, Learn With Smile live max-8 from ₹999/month. Written by one of the providers.",
+      "Named-institute comparison for 2026: EngVarta 1:1 (~₹100–₹400/session), Cambly native (~$10/hr), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months), EEC-style exam shops (~₹7,500 spoken), PlanetSpark for kids, Learn With Smile live classes with approximately 6 learners from ₹999/month. Written by one of the providers.",
     faqs: [
       {
         q: "Which spoken English institute is best in India in 2026?",
-        a: "There is no single best. EngVarta-style 1:1 (~₹100–₹400/session) fits hesitant people who already speak. Cambly (~$10/hour) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile fits adults 15+ who want a 6-month syllabus, a named teacher and a hard cap of 8, from ₹999/month GST included. Kids need a children’s platform, not an adult batch.",
+        a: "There is no single best. EngVarta-style 1:1 (~₹100–₹400/session) fits hesitant people who already speak. Cambly (~$10/hour) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile fits adults 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform, not an adult batch.",
       },
       {
         q: "Is EngVarta better than a live English batch?",
-        a: "For daily speaking minutes, yes — a 25-minute 1:1 beats 6–8 minutes in a group. For a beginner who cannot form a sentence, no: 1:1 apps have no 6-month map, so you practise what you can already say. The combination that works for many intermediates is an app for daily reps plus a live batch of 8 for structure.",
+        a: "For daily speaking minutes, yes — a 25-minute 1:1 beats 6–8 minutes in a group. For a beginner who cannot form a sentence, no: 1:1 apps have no 6-month map, so you practise what you can already say. The combination that works for many intermediates is an app for daily reps plus a live batch of around 6 for structure.",
       },
       {
         q: "Is British Council worth it versus a ₹999/month class?",
-        a: "If a visa, university or HR form needs a recognised badge, that exam is a separate paper — the fee is buying the badge. If you need speaking time at an Indian salary, a live batch of 8 from ₹999/month is a different product. Speak here. Sit the exam if a form asks.",
+        a: "If a visa, university or HR form needs a recognised badge, that exam is a separate paper — the fee is buying the badge. If you need speaking time at an Indian salary, a live batch of around 6 from ₹999/month is a different product. Speak here. Sit the exam if a form asks.",
       },
     ],
   },
@@ -758,7 +758,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/spoken-business-or-interactive-english",
     title: "Spoken, Business or Interactive English",
     description:
-      "Conversation → Spoken. Freeze → Interactive. Meetings → Business. Exam only if a form asks. Live from ₹999/mo, max 8. Kolkata & pan-India. ₹0 demo. GST in.",
+      "Conversation → Spoken. Freeze → Interactive. Meetings → Business. Exam only if a form asks. Live from ₹999/mo, approx. 6 learners. Kolkata & pan-India. ₹0 demo. GST in.",
     shortTitle: "Which English class",
     keywords: [
       "spoken vs business vs interactive english",
@@ -775,7 +775,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English class do I need — spoken, business or interactive?",
-        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, max 8. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,199/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam.",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,199/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam.",
       },
       {
         q: "Should I take IELTS first to get a better job in India?",
@@ -792,7 +792,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/interactive-english-class-hesitation",
     title: "Stop Freezing | Interactive English Class",
     description:
-      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, max 8. Kolkata & pan-India. ₹0 demo. Live.",
+      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, approx. 6 learners. Kolkata & pan-India. ₹0 demo. Live.",
     shortTitle: "Interactive English when you freeze",
     keywords: [
       "how to stop hesitating while speaking english",
@@ -805,11 +805,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Freeze is a habit, not a vocabulary hole. Interactive Speaking is 3 months, ₹1,199/month, max 8: games, debates, 1-minute prompts so you talk every hour. Spoken English first if you still cannot form a sentence.",
+      "Freeze is a habit, not a vocabulary hole. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts so you talk every hour. Spoken English first if you still cannot form a sentence.",
     faqs: [
       {
         q: "I know English but freeze when I speak. Which class should I take?",
-        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of 8, 3 months, ₹1,199/month GST included. Ananya’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
+        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of around 6, 3 months, ₹1,199/month GST included. Ananya’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
       },
       {
         q: "Is an interactive English class just games, or will I actually speak?",
@@ -826,7 +826,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-hindi-bengali-medium",
     title: "Hindi & Bengali Medium English Classes",
     description:
-      "Hindi-medium or Bengali-medium is not a wall. Live batch of 8. Explain in your language, then English. 6 months from ₹999/mo. Kolkata & pan-India. ₹0 demo.",
+      "Hindi-medium or Bengali-medium is not a wall. Live batch of around 6. Explain in your language, then English. 6 months from ₹999/mo. Kolkata & pan-India. ₹0 demo.",
     shortTitle: "Hindi & Bengali medium",
     keywords: [
       "spoken english for hindi medium students",
@@ -839,11 +839,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Hindi-medium and Bengali-medium schooling is not a wall. Spoken English is 6 months from ₹999/month in a live batch of 8. When a concept stalls, the teacher explains in Hindi or Bengali, then you go back to English.",
+      "Hindi-medium and Bengali-medium schooling is not a wall. Spoken English is 6 months from ₹999/month in a live batch of around 6. When a concept stalls, the teacher explains in Hindi or Bengali, then you go back to English.",
     faqs: [
       {
         q: "Can Hindi-medium or Bengali-medium students learn spoken English?",
-        a: "Yes. School medium decided how much English you heard between 6 and 16. It did not decide whether you can run a standup at 28. Most Learn With Smile learners started in Hindi or Bengali medium. Spoken English is 6 months, ₹999/month, max 8. Everyday conversation — introduce yourself, a phone call, two minutes on a topic — is the 6-month finish line from zero.",
+        a: "Yes. School medium decided how much English you heard between 6 and 16. It did not decide whether you can run a standup at 28. Most Learn With Smile learners started in Hindi or Bengali medium. Spoken English is 6 months, ₹999/month, approx. 6 learners. Everyday conversation — introduce yourself, a phone call, two minutes on a topic — is the 6-month finish line from zero.",
       },
       {
         q: "Do you teach in Hindi and Bengali, or only in English?",
@@ -860,7 +860,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-working-professionals-india",
     title: "English for Working Professionals India",
     description:
-      "Keep the job. Speak better English. Morning, evening, weekend IST. Live class; recording is revision. From ₹999/mo, max 8. Kolkata & pan-India. ₹0 demo.",
+      "Keep the job. Speak better English. Morning, evening, weekend IST. Live class; recording is revision. From ₹999/mo, approx. 6 learners. Kolkata & pan-India. ₹0 demo.",
     shortTitle: "Working professionals",
     keywords: [
       "english classes for working professionals india",
@@ -873,11 +873,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,999. Max 8. Replies 09:00–12:00 IST.",
+      "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,999. Approx. 6 learners. Replies 09:00–12:00 IST.",
     faqs: [
       {
         q: "Can I learn English while working a full-time job in India?",
-        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Workplace English ₹1,999/month. Max 8. Aditya did Workplace English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
+        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Workplace English ₹1,999/month. Approx. 6 learners. Aditya did Workplace English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
       },
       {
         q: "What if I miss a live English class because of a work shift?",
@@ -894,7 +894,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-client-calls-india",
     title: "Client-Call English | Names & Next Step",
     description:
-      "Client-call English is clarity, not accent: names, numbers, next step. Workplace English, 3 months, ₹1,999/mo, max 8. Kolkata & pan-India. ₹0 demo. GST in.",
+      "Client-call English is clarity, not accent: names, numbers, next step. Workplace English, 3 months, ₹1,999/mo, approx. 6 learners. Kolkata & pan-India. ₹0 demo. GST in.",
     shortTitle: "Client-call English",
     keywords: [
       "english for client calls india",
@@ -907,11 +907,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Client-call English is names, numbers and the next step — not a fake accent. Workplace English practises that live, 3 months, ₹1,999/month, max 8. Neha now takes the Mumbai client call herself.",
+      "Client-call English is names, numbers and the next step — not a fake accent. Workplace English practises that live, 3 months, ₹1,999/month, approx. 6 learners. Neha now takes the Mumbai client call herself.",
     faqs: [
       {
         q: "How do I speak English on client calls without freezing?",
-        a: "Use a four-line update: where we are, what changed, what you will do next, what you need from them. If you do not have the answer, give a time: “I’ll confirm by 4pm IST and message you.” Workplace English drills this live — 3 months, ₹1,999/month, max 8. If you freeze before the call starts, add Interactive Speaking.",
+        a: "Use a four-line update: where we are, what changed, what you will do next, what you need from them. If you do not have the answer, give a time: “I’ll confirm by 4pm IST and message you.” Workplace English drills this live — 3 months, ₹1,999/month, approx. 6 learners. If you freeze before the call starts, add Interactive Speaking.",
       },
       {
         q: "Do I need a native accent for Indian client calls?",
@@ -928,7 +928,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-presentations-india",
     title: "English for Presentations | 3 Minutes",
     description:
-      "Explain your work in 3 minutes: one outcome, three beats, one ask. Live practice. Workplace or Interactive. From ₹1,199/mo, max 8. ₹0 demo. GST included.",
+      "Explain your work in 3 minutes: one outcome, three beats, one ask. Live practice. Workplace or Interactive. From ₹1,199/mo, approx. 6 learners. ₹0 demo. GST included.",
     shortTitle: "Presentation English",
     keywords: [
       "english for presentations india",
@@ -968,7 +968,7 @@ export type CourseSeoExtra = {
    * <title> and meta description for the course page, ≤58 and 150–158 chars.
    *
    * Written by hand rather than assembled from the course record: a generated
-   * `${title} Online — ${price}, Max 8 Per Batch | Learn With Smile` ran to
+   * `${title} Online — ${price}, Approx. 6 learners Per Batch | Learn With Smile` ran to
    * 70–87 characters and truncated in the SERP on every one of the six.
    */
   title: string;
@@ -986,7 +986,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
-      "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, max 8 students, ₹999/month, with a ₹0 demo.",
+      "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, approximately 6 learners, ₹999/month, with a ₹0 demo.",
     shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
@@ -1000,11 +1000,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/spoken-english.jpg",
     summary:
-      "Basic Spoken English — 6 months, up to 2 live classes a week, max 8 students, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
+      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
-        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, maximum 8 students per batch, GST included. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
+        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, GST included. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
       },
       {
         q: "How long does it take to learn spoken English from zero?",
@@ -1012,14 +1012,14 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "I feel embarrassed about my English. Will I be judged in class?",
-        a: "The batch is capped at 8 and every person in it is at the same starting point — that is the entire design. There is no ranking, no public scoring and no one is put on the spot cold. Errors are corrected as they happen because that is how correction works, but it is done to the group as a pattern rather than aimed at a person.",
+        a: "The batch usually has around 6 learners and every person in it is at the same starting point — that is the entire design. There is no ranking, no public scoring and no one is put on the spot cold. Errors are corrected as they happen because that is how correction works, but it is done to the group as a pattern rather than aimed at a person.",
       },
     ],
   },
   "business-english": {
     title: "Workplace English Course | ₹1,999/mo",
     description:
-      "Workplace English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live max-8 batch, ₹1,999/month, GST included.",
+      "Workplace English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, GST included.",
     shortTitle: "Workplace English",
     keywords: [
       "business english course online india",
@@ -1035,7 +1035,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/business-english.jpg",
     summary:
-      "Workplace English — ₹1,999/month · 3 months in a live batch of max 8. Meetings, calls, updates, emails and presentations.",
+      "Workplace English — ₹1,999/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations.",
     extraFaqs: [
       {
         q: "What is the difference between Spoken English and Workplace English?",
@@ -1050,7 +1050,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interactive-speaking": {
     title: "Interactive Speaking | ₹1,199/mo, 3 Months",
     description:
-      "3 months of live speaking — games, debates, role-plays and stories. Batch of 8, ₹1,199/month, up to 2 classes/week. Fluency practice, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays and stories. Batch of around 6, ₹1,199/month, up to 2 classes/week. Fluency practice, not grammar lectures.",
     shortTitle: "Interactive Speaking",
     keywords: [
       "english speaking practice online india",
@@ -1062,11 +1062,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/interactive-speaking.jpg",
     summary:
-      "Interactive Speaking — ₹1,199/month · 3 months in a live batch of max 8. Games, debates, role-plays and storytelling.",
+      "Interactive Speaking — ₹1,199/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",
-        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it responds to repetition under mild pressure. That means speaking often in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, up to twice a week for 3 months, in a batch of eight.",
+        a: "Hesitation is almost never a grammar problem — it is a retrieval-speed and confidence problem, and it responds to repetition under mild pressure. That means speaking often in a low-stakes group where being wrong costs nothing. Our Interactive Speaking course is built entirely around that: one-minute impromptu topics, word-association warm-ups, structured debates, role-plays and storytelling, up to twice a week for 3 months, in a batch of around six.",
       },
       {
         q: "Is this course useful if my grammar is already good?",
@@ -1077,7 +1077,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   ielts: {
     title: "IELTS Coaching Online | ₹2,499/mo, 3 Months",
     description:
-      "Three-month IELTS prep, Academic and General Training. Six full-length mock tests, live writing feedback, speaking labs. Max 8 per batch, ₹2,499/month.",
+      "Three-month IELTS prep, Academic and General Training. Six full-length mock tests, live writing feedback, speaking labs. Approximately 6 learners per batch, ₹2,499/month.",
     shortTitle: "IELTS Preparation",
     keywords: [
       "ielts coaching online india",
@@ -1091,11 +1091,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/ielts.jpg",
     summary:
-      "IELTS Preparation — 3 months, live batch of max 8, ₹2,499/month. Academic and General Training, 6+ full-length mocks, live writing feedback, speaking labs.",
+      "IELTS Preparation — 3 months, live batch of approximately 6 learners, ₹2,499/month. Academic and General Training, 6+ full-length mocks, live writing feedback, speaking labs.",
     extraFaqs: [
       {
         q: "How much does IELTS coaching cost in India?",
-        a: "Learn With Smile charges ₹2,499 per month for 3 months of live IELTS Preparation in a batch of maximum 8, including 6+ full-length mock tests with individual feedback. Indian IELTS coaching generally ranges from about ₹8,000 to ₹35,000 for a full course; large-institute classroom batches sit at the higher end and often run 20–40 students per batch. Note the IELTS exam fee itself is separate and paid to IDP or British Council.",
+        a: "Learn With Smile charges ₹2,499 per month for 3 months of live IELTS Preparation in a batch of approximately 6, including 6+ full-length mock tests with individual feedback. Indian IELTS coaching generally ranges from about ₹8,000 to ₹35,000 for a full course; large-institute classroom batches sit at the higher end and often run 20–40 students per batch. Note the IELTS exam fee itself is separate and paid to IDP or British Council.",
       },
       {
         q: "How many months does it take to prepare for IELTS Band 7?",
@@ -1107,14 +1107,14 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is online IELTS coaching as good as classroom coaching?",
-        a: "For IELTS specifically, online practice mirrors the computer-delivered test format used in India. Corrected writing and realistic speaking mocks matter more than the room itself; an 8-person live batch gives each learner more practice and correction time than a crowded classroom.",
+        a: "For IELTS specifically, online practice mirrors the computer-delivered test format used in India. Corrected writing and realistic speaking mocks matter more than the room itself; a live batch of around 6 gives each learner more practice and correction time than a crowded classroom.",
       },
     ],
   },
   "interview-prep": {
     title: "Interview Prep in English | ₹1,499/mo, 7 Yrs",
     description:
-      "Two-month intensive interview prep — HR rounds, STAR answers, three recorded mock interviews, plus resume and LinkedIn review. Max 8 batch, ₹1,499/mo.",
+      "Two-month intensive interview prep — HR rounds, STAR answers, three recorded mock interviews, plus resume and LinkedIn review. Approximately 6 learners per batch, ₹1,499/mo.",
     shortTitle: "Interview Preparation",
     keywords: [
       "interview preparation course english india",
@@ -1127,7 +1127,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/interview-prep.jpg",
     summary:
-      "Interview Preparation in English — 2 months intensive, live batch of max 8, ₹1,499/month. HR rounds, STAR behavioural answers, 3 recorded mock interviews, resume and LinkedIn review.",
+      "Interview Preparation in English — 2 months intensive, live batch of approximately 6 learners, ₹1,499/month. HR rounds, STAR behavioural answers, 3 recorded mock interviews, resume and LinkedIn review.",
     extraFaqs: [
       {
         q: "How should I answer 'tell me about yourself' in an interview?",
@@ -1140,9 +1140,9 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "career-counselling": {
-    title: "1:1 Career Counselling | ₹1,999/mo, 3×60 min",
+    title: "1:1 Career Counselling | ₹1,999 Total, 3×60 min",
     description:
-      "Three 60-minute 1:1 sessions for ₹1,999/mo. Strengths mapping, three shortlisted career paths, a six-month action plan, plus resume and LinkedIn review.",
+      "Three 60-minute 1:1 sessions for ₹1,999 total. Strengths mapping, three shortlisted career paths, a six-month action plan, plus resume and LinkedIn review.",
     shortTitle: "Career Counselling",
     keywords: [
       "career counselling online india",
@@ -1155,11 +1155,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/career-counselling.jpg",
     summary:
-      "Career Counselling — 3 × 60-minute 1:1 online sessions, ₹1,999/mo. Strengths mapping, three shortlisted career paths, a 6-month action plan, resume and LinkedIn review.",
+      "Career Counselling — 3 × 60-minute 1:1 online sessions, ₹1,999 total. Strengths mapping, three shortlisted career paths, a 6-month action plan, resume and LinkedIn review.",
     extraFaqs: [
       {
         q: "How much does career counselling cost in India?",
-        a: "Learn With Smile charges ₹1,999/mo for three 60-minute 1:1 online sessions plus a written 6-month action plan and a resume and LinkedIn review. Independent career counsellors in India typically charge ₹1,500–₹5,000 per session, and psychometric-test-led packages from larger firms run ₹5,000–₹15,000.",
+        a: "Learn With Smile charges ₹1,999 total for three 60-minute 1:1 online sessions plus a written 6-month action plan and a resume and LinkedIn review. Independent career counsellors in India typically charge ₹1,500–₹5,000 per session, and psychometric-test-led packages from larger firms run ₹5,000–₹15,000.",
       },
       {
         q: "Is career counselling only for school students?",
