@@ -143,12 +143,10 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
 };
 
 const TEACHER_NOTE: Record<string, string> = {
-  "spoken-english":
-    "Same teacher every class. They hear you speak — and they remember your words.",
+  "spoken-english": "Same teacher every class. They hear you speak — and they remember your words.",
   "business-english":
     "The same teacher on every workplace hour. They learn how you sound on a client call.",
-  "interactive-speaking":
-    "You talk every hour. Your teacher tracks hesitation week by week.",
+  "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
   "interview-prep": "Mocks with a teacher who already knows your story before the board does.",
   ielts: "Speaking labs with a teacher who marks your actual mistakes.",
   "career-counselling": "Three 1:1 sessions after they have read your background.",
@@ -182,7 +180,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         {
           tone: "coral",
           icon: SnapIcons.people,
-          big: isCareerCounselling ? "1:1" : "Max 8",
+          big: isCareerCounselling ? "1:1" : "Approx. 6 learners",
           small: isCareerCounselling ? "Career guidance sessions" : "In this live course batch",
         },
       ]}
@@ -527,7 +525,7 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 8,
+    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/founder")}#person`,
@@ -600,7 +598,7 @@ export function courseSeo(d: CourseData) {
   return buildHead({
     path,
     // Hand-written in COURSE_SEO rather than assembled here: the generated
-    // "<title> Online \u2014 <price>, Max 8 Per Batch | Learn With Smile" form ran
+    // "<title> Online \u2014 <price>, Approx. 6 Learners per Batch | Learn With Smile" form ran
     // to 70\u201387 characters and truncated in the SERP on all six courses.
     title: extra?.title ?? d.title,
     description: extra?.description ?? d.metaDescription,
