@@ -137,7 +137,7 @@ export const body: ArticleBody = [
       [
         "What is the actual batch size, not the maximum?",
         '"Small batches" is not a number. A cap of 20 is not a small batch.',
-        "Maximum 8, and that is a hard cap rather than a target.",
+        "Usually around 6 learners. Check the live class before enrolling.",
       ],
     ],
   },
@@ -172,12 +172,12 @@ export const body: ArticleBody = [
     caption: "All figures include GST. No registration fee, no material fee, billed monthly.",
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months", "Live batch, max 8", "₹999/month"],
-      ["Interactive Speaking", "3 months", "Live batch, max 8", "₹1,199/month"],
-      ["Workplace English", "3 months", "Live batch, max 8", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "Live batch, max 8", "₹1,499/month"],
-      ["IELTS Preparation", "3 months", "Live batch, max 8", "₹2,499/month"],
-      ["Career Counselling", "3 sessions", "1:1", "₹1,999/mo"],
+      ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
+      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,199/month"],
+      ["Workplace English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
+      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,499/month"],
+      ["IELTS Preparation", "3 months", "Live batch, approx. 6 learners", "₹2,499/month"],
+      ["Career Counselling", "3 sessions", "1:1", "₹1,999 total"],
     ],
   },
   {
