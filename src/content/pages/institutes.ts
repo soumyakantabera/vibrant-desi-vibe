@@ -64,7 +64,8 @@ export const body: ArticleBody = [
   { t: "h2", text: "Our fees, so the row is not a slogan" },
   {
     t: "table",
-    caption: "GST included. No registration fee. Billed monthly. English batches of approximately 6 learners.",
+    caption:
+      "GST included. No registration fee. Billed monthly. English batches of approximately 6 learners.",
     head: ["Course", "Duration", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "₹999/month"],

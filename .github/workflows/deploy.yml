@@ -81,6 +81,7 @@ jobs:
           done
           test -s dist/sitemap.xml
           test -s dist/robots.txt
+          test -s dist/learnwithsmile-indexnow-2026.txt
 
           # The AI-readable layer (src/lib/llms.ts). The prerender step already
           # fails if a page's Markdown mirror comes out empty; this checks the
@@ -119,17 +120,28 @@ jobs:
 
       - name: Notify Bing and IndexNow of updated URLs
         if: success()
+        continue-on-error: true
         run: |
           set -euo pipefail
           key="learnwithsmile-indexnow-2026"
-          urls=$(grep -oE '<loc>[^<]+' dist/sitemap.xml | sed 's#<loc>##' | jq -R . | jq -s .)
+          sitemap_urls=$(grep -oE '<loc>[^<]+' dist/sitemap.xml | sed 's#<loc>##')
+          extra=$(printf '%s\n' \
+            "https://www.learnwithsmile.app/llms.txt" \
+            "https://www.learnwithsmile.app/llms-full.txt" \
+            "https://www.learnwithsmile.app/robots.txt")
+          urls=$(printf '%s\n%s\n' "$sitemap_urls" "$extra" | awk 'NF && !seen[$0]++' | jq -R . | jq -s .)
           payload=$(jq -n \
             --arg host "www.learnwithsmile.app" \
             --arg key "$key" \
             --arg keyLocation "https://www.learnwithsmile.app/$key.txt" \
             --argjson urlList "$urls" \
             '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
-          curl --fail-with-body --retry 2 \
-            -H 'Content-Type: application/json; charset=utf-8' \
-            -d "$payload" \
-            https://api.indexnow.org/indexnow
+          echo "Submitting $(echo "$urls" | jq 'length') URLs to IndexNow"
+          for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow; do
+            echo "POST $endpoint"
+            curl --fail-with-body --retry 2 -sS \
+              -H 'Content-Type: application/json; charset=utf-8' \
+              -d "$payload" \
+              "$endpoint"
+            echo
+          done

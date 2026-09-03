@@ -113,8 +113,12 @@ jobs:
           grep -q 'interactive-english-class-hesitation' dist/sitemap.xml
           grep -q 'english-for-office-meetings' dist/sitemap.xml
           grep -q 'english-for-bpo-customer-support' dist/sitemap.xml
-          grep -q 'does not currently issue a course certificate' dist/llms.txt
+          grep -q 'does not issue a school certificate' dist/llms.txt
           grep -q 'approximately 6 learners' dist/llms.txt
+          grep -q '## Brand' dist/llms.txt
+          grep -q 'learnwithsmile-indexnow-2026' dist/robots.txt
+          test -s dist/learnwithsmile-indexnow-2026.txt
+          grep -q 'english-institute-comparison-india' dist/sitemap.xml
           grep -q '"maximumAttendeeCapacity":6' dist/course-spoken-english.html
           grep -q '₹1,999 total' dist/course-career-counselling.html
           if grep -REqi 'max(imum)?[- ]*8|hard cap of 8|capped at 8|batch(es)? of (8|eight)|room of 8|8-student' dist; then
