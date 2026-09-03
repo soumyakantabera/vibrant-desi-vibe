@@ -14,19 +14,19 @@ export const body: ArticleBody = [
       [
         "You cannot finish a sentence / freeze in shops and calls",
         "Basic Spoken English",
-        "₹999/mo, 6 months, max 8",
+        "₹999/mo, 6 months, approx. 6 learners",
         "Everyday chat in ~6 months",
       ],
       [
         "You can chat, but meetings, emails, clients go silent",
         "Workplace English",
-        "₹1,999/mo, 3 months, max 8",
+        "₹1,999/mo, 3 months, approx. 6 learners",
         "Work talk in ~3 months",
       ],
       [
         "You freeze only when speaking, grammar is fine",
         "Interactive Speaking",
-        "₹1,199/mo, 3 months, max 8",
+        "₹1,199/mo, 3 months, approx. 6 learners",
         "Hesitation, not knowledge",
       ],
       [
@@ -70,7 +70,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Not sure? Sit in a live batch of 8. We will tell you if IELTS is the wrong buy.",
+    text: "Not sure? Sit in a live batch of around 6. We will tell you if IELTS is the wrong buy.",
     course: "/book-free-demo",
     label: "₹0 demo — we’ll say if you’re on the wrong course",
   },
