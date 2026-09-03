@@ -195,7 +195,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/",
     title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Speak better English with real teachers, small batches and gamified live classes. 7 years, Kolkata & pan-India. From ₹999/month. ₹0 demo. 500+ learners.",
+      "Speak better English — live online classes in India from ₹999/month. Real teachers, small batches. 7 years, Kolkata & pan-India. GST included. ₹0 WhatsApp demo.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
