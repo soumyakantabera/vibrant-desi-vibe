@@ -470,11 +470,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.9,
     changefreq: "monthly",
     summary:
-      "Booking page. Free live demo class request form; confirmation happens over WhatsApp at +91 96744 79949, no payment details required.",
+      "Free live demo: one WhatsApp message to +91 96744 79949. No form, no card. We reply 09:00–12:00 IST and confirm a slot in a real class.",
     faqs: [
       {
         q: "How do I book a free demo class at Learn With Smile?",
-        a: "Fill in four fields on the booking page — name, WhatsApp number, course and your goal — and it opens WhatsApp with the message pre-filled, or message +91 96744 79949 directly. We reply during 09:00–12:00 IST and confirm a slot in the next available live batch. No card, no payment, no obligation and no surprise sales call.",
+        a: "Tap any ₹0 Demo or WhatsApp button on the site — it opens WhatsApp with a message ready to send. Or message +91 96744 79949 yourself. We reply during 09:00–12:00 IST and confirm a slot in the next available live batch. No form, no card, no payment, no obligation and no surprise sales call.",
       },
       {
         q: "What happens in the demo class?",
