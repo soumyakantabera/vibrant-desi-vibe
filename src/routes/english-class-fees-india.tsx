@@ -57,10 +57,10 @@ function Page() {
       h1={
         <>
           Online English Class Fees in India 2026 — From{" "}
-          <span className="text-sunshine">₹999/mo, Max 8</span>
+          <span className="text-sunshine">₹999/mo, Approx. 6 learners</span>
         </>
       }
-      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, max 8, GST included."
+      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, approx. 6 learners, GST included."
       heroImage={IMG.studentLaptop}
       heroAlt="Indian learner comparing online English class fees on a laptop"
       lastUpdated={UPDATED}
