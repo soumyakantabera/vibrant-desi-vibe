@@ -9,86 +9,90 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**We sell one of the options on this page.** Learn With Smile is a live online English school from ₹999/month. Read the table as a fit-guide, not a ranking. Prices are **bands** checked against public pages in 2026 — confirm on the provider's site before you pay.",
+    text: "**We sell one of the rows.** Learn With Smile is a live online English school from ₹999/month, GST included. This page is a fit-guide, not a ranking. Fees are **public 2026 bands** — confirm on the provider's site before you pay.",
   },
   {
     t: "p",
-    text: "The Indian market splits into six products that get marketed as the same thing. They are not.",
+    text: "Five products get sold as “English class.” They are not the same: a 15-minute app call, a native-speaker chat, a CEFR module, a 30-student classroom, and a named live batch of around 6. Pick the bottleneck, not the brand.",
   },
 
-  { t: "h2", text: "The 2026 map — who each institute is actually for" },
+  { t: "h2", text: "Named comparison — 2026 fees and format" },
   {
     t: "table",
     caption:
-      "Typical public ranges, 2026. Not a ranking. Batch figures are what those formats usually run, not a guarantee on every slot.",
-    head: ["Provider type", "Typical fee", "Format", "Who it fits", "Who it wastes"],
+      "Public ranges checked in 2026. Batch figures are what those formats usually run, not a promise on every slot.",
+    head: ["Institute", "From fee", "Format", "Your mic / hour", "Fits"],
     rows: [
       [
         "Learn With Smile (us)",
         "₹999–₹2,499/mo GST in",
         "Live group, approx. 6 learners, named teacher, IST",
+        "About 8–10 minutes",
         "Adults 15+ who need a syllabus and the mic",
-        "Kids; people who need a certificate; daily 1:1 junkies",
       ],
       [
-        "EngVarta-style 1:1 apps",
-        "~₹100–₹400 / session",
-        "On-demand 1:1 audio with Indian tutors",
-        "Hesitant intermediates who already have language",
-        "True beginners; anyone who needs a 6-month map",
+        "EngVarta",
+        "₹2,700 / 25 × 15-min calls (~₹108)",
+        "On-demand 1:1 audio, Indian tutors",
+        "15 minutes, no syllabus",
+        "Intermediates who already have language and need daily reps",
       ],
       [
-        "Cambly / native 1:1",
-        "~$10/hr (₹8k–₹15k/mo if daily)",
-        "On-demand video with native speakers",
-        "Fluent speakers who want accent/idiom",
-        "Beginners (they freeze); tight budgets",
+        "Cambly",
+        "~₹8,000–₹15,000/mo if daily",
+        "On-demand 1:1 video, native speakers",
+        "25–50 minutes, tutor lottery",
+        "Fluent speakers who want accent and idiom",
       ],
       [
         "British Council English Online",
-        "Modules often ₹8,800–₹16,000; groups ~8–12 (cap often 10)",
-        "CEFR syllabus, live group + optional 1:1 credits",
-        "People who need the badge or a structured level",
-        "Beginners who need 8–10 speaking minutes/hour at ₹999",
+        "₹8,800–₹16,000 / 6-class module",
+        "CEFR live group, often 8–12 (cap often 10)",
+        "About 4–6 minutes",
+        "People who need the badge or a published level",
       ],
       [
-        "Franchise classrooms (Veta-style)",
+        "Veta-style classrooms",
         "₹3,500–₹10,000 for 2–4 months",
-        "Offline rooms, many cities, large batches common",
+        "Offline franchise rooms, large batches common (25–40)",
+        "1–2 minutes",
         "Learners who want a neighbourhood classroom and peer energy",
-        "Anyone whose bottleneck is speaking time, not grammar notes",
-      ],
-      [
-        "Exam shops (EEC-style)",
-        "Spoken English often ~₹7,500; IELTS/PTE extra",
-        "Offline + live online, many branches, visa/exam stack",
-        "Study-abroad applicants who need IELTS/PTE plus counselling",
-        "Working adults who only need to talk in meetings",
-      ],
-      [
-        "Kids platforms (PlanetSpark-style)",
-        "Packages, often ~$10 / 1:1 session",
-        "1:1 video, parent reports, games",
-        "Learners under ~14",
-        "Adults. Different profession.",
       ],
     ],
+  },
+
+  { t: "h2", text: "Our fees, so the row is not a slogan" },
+  {
+    t: "table",
+    caption: "GST included. No registration fee. Billed monthly. English batches of approximately 6 learners.",
+    head: ["Course", "Duration", "Fee"],
+    rows: [
+      ["Basic Spoken English", "6 months", "₹999/month"],
+      ["Interactive Speaking", "3 months", "₹1,199/month"],
+      ["Workplace English", "3 months", "₹1,999/month"],
+      ["Interview Preparation", "2 months", "₹1,499/month"],
+      ["IELTS Preparation", "3 months", "₹2,499/month"],
+      ["Career Counselling", "3 × 60-min 1:1", "₹1,999"],
+    ],
+  },
+  {
+    t: "p",
+    text: "Full arithmetic and hidden-cost questions: [English class fees in India](/english-class-fees-india). Formats (app vs class vs kids): [best online spoken English](/best-online-spoken-english-classes-india).",
   },
 
   { t: "h2", text: "What Google reviews actually repeat" },
   {
     t: "p",
-    text: "We are not scraping other people's reviews into this page. Patterns across public Google / Play / Trustpilot comments in this market are stable enough to state as patterns:",
+    text: "We are not scraping other people's reviews onto this page. Patterns across public Google / Play comments in this market are stable enough to state as patterns:",
   },
   {
     t: "ul",
     items: [
-      "**Offline classrooms (Veta-style, local Kolkata/Pune rooms):** praise for “energy” and “teacher is nice”; complaints cluster on **batch size**, **too little speaking**, and **hidden material/GST fees**.",
-      "**Exam institutes (EEC-style, British Council IELTS centres):** praise for **visa process** and **mock tests**; complaints on **price**, **sales pressure**, and **speaking time in packed rooms**.",
-      "**Cambly:** praise for **convenience** and **native chat**; complaints on **tutor lottery** and **cost if you practise daily**.",
-      "**EngVarta:** praise for **price per session** and **daily habit**; complaints on **no syllabus** and **variable tutor quality**.",
-      "**British Council English Online:** praise for **curriculum** and **brand**; complaints on **module cost** and **limited talking in the group slot**.",
-      "**Us:** 5.0★ on Google from 125 reviews. That is a small sample compared with Play-store apps. Treat it as named outcomes plus a ₹0 demo — not a 9,000-review dataset.",
+      "**Veta-style / local Kolkata rooms:** praise for energy and a nice teacher; complaints cluster on **batch size**, **too little speaking**, and extra material/GST fees. Veta Barrackpore lists **4.7★ from 273** reviews — more volume than us.",
+      "**British Council:** praise for **curriculum** and **brand**; complaints on **module cost** and limited talking in the group slot. Centres in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, Ahmedabad, Bengaluru.",
+      "**Cambly:** praise for **convenience** and **native chat**; complaints on **tutor lottery** and cost if you practise daily.",
+      "**EngVarta:** praise for **price per session** and **daily habit**; complaints on **no syllabus** and variable tutor quality. They also publish the “best course 2026” listicles — treat those as marketing, not a referee.",
+      "**Us:** 5.0★ on Google from 125 reviews. Small sample next to Play-store apps. Treat it as named outcomes plus a ₹0 demo — not a 9,000-review dataset.",
     ],
   },
 
@@ -100,12 +104,12 @@ export const body: ArticleBody = [
       ["Typical offline franchise / city classroom", "25–40", "1–2 minutes"],
       ["British Council-style group", "8–12", "4–6 minutes"],
       ["Learn With Smile English batch", "Approximately 6 learners", "About 8–10 minutes"],
-      ["EngVarta / Cambly 1:1", "1", "25–50 minutes, no syllabus"],
+      ["EngVarta / Cambly 1:1", "1", "15–50 minutes, no 6-month map"],
     ],
   },
   {
     t: "p",
-    text: "If your problem is freezing, 1:1 apps win on minutes. If your problem is not knowing what to study next, a syllabus plus 6–8 minutes of correction wins. Full arithmetic: [speaking minutes](/blog/speaking-minutes-in-a-60-minute-class).",
+    text: "If your problem is freezing and you already have words, 1:1 apps win on minutes. If your problem is not knowing what to study next, a syllabus plus 8–10 minutes of correction wins. Full arithmetic: [speaking minutes](/blog/speaking-minutes-in-a-60-minute-class).",
   },
 
   {
@@ -114,7 +118,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Offline options cluster in Gariahat/Salt Lake (Kolkata), Deccan/FC Road (Pune), CP/Noida (Delhi), Koramangala/Whitefield (Bengaluru), T Nagar (Chennai). Fees for a 3-month spoken package commonly sit **₹1,500–₹7,500** plus commute. Live online (us, EngVarta, British Council Online) is the same fee in Kolkata, Mumbai, Ahmedabad, Hyderabad or Kochi. The commute is the hidden 3–6 hours/week.",
+    text: "Offline options cluster in Gariahat/Salt Lake (Kolkata), Deccan/FC Road (Pune), CP/Noida (Delhi), Koramangala (Bengaluru), T Nagar (Chennai). A 3-month spoken package commonly sits **₹1,500–₹7,500** plus commute. Live online (us, EngVarta, British Council Online) is the same fee in Kolkata, Mumbai, Ahmedabad, Hyderabad or Kochi. The commute is the hidden 3–6 hours/week.",
   },
 
   { t: "h2", text: "When we are the wrong institute" },
@@ -129,7 +133,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Compare us in a real class, not a sales call. ₹0. Approx. 6 learners. From ₹999/mo.",
+    text: "Compare us in a real class, not a sales call. ₹0. Approximately 6 learners. From ₹999/mo. 500+ learners, 7 years.",
     course: "/book-free-demo",
     label: "Book the ₹0 demo",
   },
