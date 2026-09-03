@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Freeze is usually a habit, not a vocabulary hole. If you know the words and still go silent, you need a room where you talk every hour — games, debates, 1-minute prompts — not another grammar PDF. [Interactive Speaking](/course-interactive-speaking) is 3 months, ₹1,199/mo, max 8, up to 2 live classes a week.",
+    text: "**Short answer.** Freeze is usually a habit, not a vocabulary hole. If you know the words and still go silent, you need a room where you talk every hour — games, debates, 1-minute prompts — not another grammar PDF. [Interactive Speaking](/course-interactive-speaking) is 3 months, ₹1,199/mo, approx. 6 learners, up to 2 live classes a week.",
   },
   {
     t: "p",
@@ -54,7 +54,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Numbers, clearly" },
   {
     t: "p",
-    text: "3 months. ₹1,199/month GST included. Max 8. Up to 2 live classes a week. Recording is for revision if you miss a slot — the class itself is live. ₹0 demo in a real batch. Habits that help between classes: [5 speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation).",
+    text: "3 months. ₹1,199/month GST included. Approx. 6 learners. Up to 2 live classes a week. Recording is for revision if you miss a slot — the class itself is live. ₹0 demo in a real batch. Habits that help between classes: [5 speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation).",
   },
   {
     t: "p",
