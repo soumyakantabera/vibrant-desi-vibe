@@ -142,8 +142,21 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
   ],
 };
 
+const TEACHER_NOTE: Record<string, string> = {
+  "spoken-english":
+    "Same teacher every class. They hear you speak — and they remember your words.",
+  "business-english":
+    "The same teacher on every workplace hour. They learn how you sound on a client call.",
+  "interactive-speaking":
+    "You talk every hour. Your teacher tracks hesitation week by week.",
+  "interview-prep": "Mocks with a teacher who already knows your story before the board does.",
+  ielts: "Speaking labs with a teacher who marks your actual mistakes.",
+  "career-counselling": "Three 1:1 sessions after they have read your background.",
+};
+
 export function CoursePage({ data }: { data: CourseData }) {
   const isCareerCounselling = data.slug === "career-counselling";
+  const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
@@ -199,11 +212,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               </h1>
             </div>
             <p className="mt-4 text-lg text-white max-w-2xl">{data.tagline}</p>
-            <p className="mt-2 text-base text-white/90">
-              {isCareerCounselling
-                ? "1:1 with a teacher who knows your name."
-                : "Live class. A teacher who knows your name."}
-            </p>
+            {teacherNote && <p className="mt-2 text-base text-white/90">{teacherNote}</p>}
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
