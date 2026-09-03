@@ -14,8 +14,9 @@
  * for Sora. Importing the packages' index.css instead would pull in Cyrillic,
  * Greek and Vietnamese subsets nobody on this site renders.
  *
- * Material Symbols Rounded is still fetched from Google, subset to the ~40
- * glyphs actually used — see FONT_CSS in src/lib/boot-script.ts. */
+ * Material Symbols Rounded is self-hosted as an 8 KB subset of the 37 glyphs
+ * the site actually uses (src/assets/fonts/material-symbols-rounded.woff2).
+ * Same origin as the stylesheet — no fonts.googleapis.com request. */
 @import "@fontsource/manrope/latin-400.css";
 @import "@fontsource/manrope/latin-500.css";
 @import "@fontsource/manrope/latin-600.css";
@@ -25,6 +26,13 @@
 @import "@fontsource/sora/latin-600.css";
 @import "@fontsource/sora/latin-700.css";
 @import "@fontsource/sora/latin-800.css";
+@font-face {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("./assets/fonts/material-symbols-rounded.woff2") format("woff2");
+}
 @source "../src";
 @import "tw-animate-css";
 

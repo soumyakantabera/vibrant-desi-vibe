@@ -21,12 +21,9 @@ function gate(): BootGate | undefined {
 }
 
 /**
- * Tell the gate the page is built. Called after mount, one frame *after* the
- * browser has had a chance to paint the mounted tree, so "ready" means the
- * pixels exist rather than that React returned from render.
- *
- * Idempotent — StrictMode's double effects and the two entry points
- * (src/main.tsx for the static build, the root route for SSR) may all call it.
+ * Tell the gate the page is built. Hydration no longer holds the first paint;
+ * this is kept so the inline script can still tick after mount (hero `complete`
+ * checks, late font class). Idempotent.
  */
 export function markAppReady(): void {
   const boot = gate();
