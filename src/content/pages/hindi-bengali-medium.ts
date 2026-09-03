@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Hindi-medium or Bengali-medium schooling is not a wall. Most Learn With Smile learners started there. You join a live batch of 8. When a concept does not land, the teacher explains in Hindi or Bengali, then you go back to English. Everyday conversation is about **6 months** live, from ₹999/mo. [Spoken English](/course-spoken-english).",
+    text: "**Short answer.** Hindi-medium or Bengali-medium schooling is not a wall. Most Learn With Smile learners started there. You join a live batch of around 6. When a concept does not land, the teacher explains in Hindi or Bengali, then you go back to English. Everyday conversation is about **6 months** live, from ₹999/mo. [Spoken English](/course-spoken-english).",
   },
   {
     t: "p",
