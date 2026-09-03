@@ -221,13 +221,15 @@ export function Nav() {
                 >
                   <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat Now
                 </a>
-                <Link
-                  to="/book-free-demo"
-                  onClick={() => setOpen(false)}
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-sun justify-center px-3"
+                  data-cta-goal="free_demo"
                 >
                   <Icon name="calendar" size={17} /> ₹0 Demo
-                </Link>
+                </a>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
                 Message anytime · WhatsApp replies 09:00–12:00 IST

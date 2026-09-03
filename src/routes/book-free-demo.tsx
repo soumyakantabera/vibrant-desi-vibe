@@ -1,64 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PAGES, pageHead } from "@/lib/seo";
-import { useState, type FormEvent } from "react";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, WaButton } from "@/components/ui-bits";
+import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
-import { waLink } from "@/lib/whatsapp";
+
+const DEMO_MSG = "Hi, I'd like a ₹0 live demo. Please share the next slot.";
 
 export const Route = createFileRoute("/book-free-demo")({
   component: Page,
   head: () => pageHead("/book-free-demo"),
 });
 
-const COURSES = [
-  "Spoken English",
-  "IELTS",
-  "Workplace English",
-  "Interactive Speaking",
-  "Interview Prep",
-  "Career Counselling",
-];
-
 function Page() {
-  const [form, setForm] = useState({ name: "", phone: "", course: COURSES[0], goal: "" });
-  const [error, setError] = useState("");
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const name = form.name.trim();
-    const phone = form.phone.replace(/\D/g, "");
-
-    if (name.length < 2) {
-      setError("Please enter your name so we know who to ask for.");
-      return;
-    }
-    if (phone.length < 10 || phone.length > 15) {
-      setError("Enter a valid WhatsApp number with at least 10 digits.");
-      return;
-    }
-
-    setError("");
-    const message = [
-      "Hi, I'd like to book a ₹0 LIVE demo.",
-      "",
-      `Name: ${name}`,
-      `Phone: ${form.phone.trim()}`,
-      `Course: ${form.course}`,
-      `Goal: ${form.goal.trim() || "Please help me choose"}`,
-    ].join("\n");
-
-    const destination = waLink(message);
-    const popup = window.open(destination, "_blank");
-    if (popup) popup.opener = null;
-    else window.location.assign(destination);
-  }
-
   return (
-    <Layout waMessage="Hi, I'd like to book a free demo." footerImage={IMG.womanLaptop}>
+    <Layout waMessage={DEMO_MSG} footerImage={IMG.womanLaptop}>
       <section className="relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
@@ -79,121 +37,39 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white">
             Meet the teacher, see the batch and speak in a real class. One WhatsApp message. Replies
-            09:00–12:00 IST. No card. Then decide: from ₹999/mo.
+            09:00–12:00 IST. No form. No card. Then decide: from ₹999/mo.
           </p>
+          <div className="mt-8" data-cta-location="hero">
+            <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_demo">
+              Book ₹0 Demo on WhatsApp
+            </WaButton>
+          </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container-x grid lg:grid-cols-[1fr_1fr] gap-10 items-start">
+        <div className="container-x grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
           <div className="card-soft">
-            <h2 className="text-2xl mb-4">Tell us a little about you</h2>
-            <form className="space-y-4" onSubmit={handleSubmit} noValidate>
-              <Field htmlFor="demo-name" label="Your Name" required>
-                <input
-                  id="demo-name"
-                  name="name"
-                  type="text"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="e.g. Neha Patel"
-                  autoComplete="name"
-                  required
-                  minLength={2}
-                  maxLength={80}
-                  className="input"
-                />
-              </Field>
-              <Field
-                htmlFor="demo-phone"
-                label="WhatsApp Number (we won't call without asking)"
-                required
-              >
-                <input
-                  id="demo-phone"
-                  name="phone"
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="e.g. +91 98765 43210"
-                  inputMode="tel"
-                  autoComplete="tel"
-                  required
-                  minLength={10}
-                  maxLength={20}
-                  aria-describedby={error ? "demo-form-error" : undefined}
-                  className="input"
-                />
-              </Field>
-              <Field htmlFor="demo-course" label="Which Course?" required>
-                <select
-                  id="demo-course"
-                  name="course"
-                  value={form.course}
-                  onChange={(e) => setForm({ ...form, course: e.target.value })}
-                  required
-                  className="input"
-                >
-                  {COURSES.map((c) => (
-                    <option key={c}>{c}</option>
-                  ))}
-                </select>
-              </Field>
-              <Field htmlFor="demo-goal" label="Your Goal (optional)">
-                <textarea
-                  id="demo-goal"
-                  name="goal"
-                  value={form.goal}
-                  onChange={(e) => setForm({ ...form, goal: e.target.value })}
-                  placeholder="e.g. Want to speak confidently in office meetings."
-                  maxLength={500}
-                  className="input min-h-[90px] py-3"
-                />
-              </Field>
-              {error && (
-                <p id="demo-form-error" className="text-sm font-semibold text-coral" role="alert">
-                  {error}
-                </p>
-              )}
-              <button type="submit" className="btn btn-wa btn-lg w-full">
-                <Icon name="whatsapp" size={18} /> Send My ₹0 Demo Request
-              </button>
-              <p className="text-xs text-ink/85 text-center">
-                Your details go only into the WhatsApp message you send. WhatsApp stays the default;
-                no hidden signup, sales call or third-party form tool.
-              </p>
-            </form>
-          </div>
-          <div className="space-y-5">
-            <SmartImage
-              src={IMG.studentLaptop}
-              alt="Indian learner"
-              className="rounded-3xl shadow-lg h-[280px] w-full"
-              sizes="(min-width: 1024px) 45vw, 100vw"
-            />
-            <div className="card-soft bg-gradient-to-br from-brand-soft to-cream">
-              <h3 className="font-display text-xl text-ink mb-2">
-                What happens after you click send?
-              </h3>
-              <ol className="space-y-2 text-sm text-ink/90 list-decimal pl-4">
-                <li>WhatsApp opens with your message pre-filled.</li>
-                <li>You can send it anytime; our team replies during 09:00–12:00 IST.</li>
-                <li>We confirm the next available live demo slot.</li>
-                <li>You attend the demo, no payment needed.</li>
-                <li>Like it? We help you join the batch. Don't? No pressure.</li>
-              </ol>
-            </div>
-            <div data-cta-location="final_cta">
-              <WaButton
-                message="Hi, I'd like to talk before filling the form. Please guide me."
-                variant="wa"
-                className="justify-center w-full"
-                goal="whatsapp_question"
-              >
-                Ask a Question on WhatsApp
+            <h2 className="text-2xl mb-4">What happens when you tap WhatsApp</h2>
+            <ol className="space-y-3 text-ink/90 list-decimal pl-5">
+              <li>WhatsApp opens with a demo request already written.</li>
+              <li>Send it anytime. We reply 09:00–12:00 IST.</li>
+              <li>We confirm the next live demo slot.</li>
+              <li>You attend. No payment.</li>
+              <li>Like it? Join a batch. Don’t? No pressure.</li>
+            </ol>
+            <div className="mt-6" data-cta-location="mid">
+              <WaButton message={DEMO_MSG} size="lg" className="w-full justify-center" goal="free_demo">
+                Open WhatsApp now
               </WaButton>
             </div>
           </div>
+          <SmartImage
+            src={IMG.studentLaptop}
+            alt="Indian learner in a live English class"
+            className="rounded-3xl shadow-lg h-[280px] w-full md:h-[360px]"
+            sizes="(min-width: 1024px) 45vw, 100vw"
+          />
         </div>
       </section>
 
@@ -201,35 +77,9 @@ function Page() {
         faqs={PAGES["/book-free-demo"].faqs ?? []}
         eyebrow="Before You Book"
         title="What a Free Demo Actually Involves"
-        subtitle="No card, no sales call, no obligation."
+        subtitle="No form, no card, no sales call, no obligation."
         waMessage="Hi, I have a question about the free demo."
       />
     </Layout>
-  );
-}
-
-function Field({
-  htmlFor,
-  label,
-  required,
-  children,
-}: {
-  htmlFor: string;
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label htmlFor={htmlFor} className="block">
-      <span className="font-display font-bold text-sm text-ink block mb-1.5">
-        {label}{" "}
-        {required && (
-          <span className="text-coral" aria-hidden="true">
-            *
-          </span>
-        )}
-      </span>
-      {children}
-    </label>
   );
 }

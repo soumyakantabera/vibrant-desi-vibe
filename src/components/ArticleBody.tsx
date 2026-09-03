@@ -177,9 +177,20 @@ function BlockView({ block }: { block: Block }) {
         >
           <p className="text-white/95 leading-relaxed">{inline(block.text)}</p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link to={block.course} className="btn btn-sun btn-sm">
-              {block.label} <Icon name="arrow-right" size={14} />
-            </Link>
+            {block.course === "/book-free-demo" ? (
+              <WaButton
+                message="Hi, I'd like a ₹0 live demo. Please share the next slot."
+                variant="sun"
+                size="sm"
+                goal="free_demo"
+              >
+                {block.label}
+              </WaButton>
+            ) : (
+              <Link to={block.course} className="btn btn-sun btn-sm">
+                {block.label} <Icon name="arrow-right" size={14} />
+              </Link>
+            )}
             <WaButton
               message={`Hi, I read your article and I'd like a free demo class. Please guide me.`}
               variant="wa"

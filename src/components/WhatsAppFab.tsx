@@ -1,7 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/whatsapp";
 import { BrandIcon } from "./BrandIcon";
 import { Icon } from "./Icon";
+
+const DEMO_MSG = "Hi, I'd like a ₹0 live demo. Please share the next slot.";
 
 export function WhatsAppFab({
   message = "Hi! I want to know more about Learn With Smile courses.",
@@ -9,6 +10,7 @@ export function WhatsAppFab({
   message?: string;
 }) {
   const whatsapp = waLink(message);
+  const demo = waLink(DEMO_MSG);
   return (
     <>
       <a
@@ -38,9 +40,15 @@ export function WhatsAppFab({
         >
           <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat on WhatsApp
         </a>
-        <Link to="/book-free-demo" className="btn btn-sun justify-center px-3">
+        <a
+          href={demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-sun justify-center px-3"
+          data-cta-goal="free_demo"
+        >
           <Icon name="calendar" size={17} /> ₹0 Demo
-        </Link>
+        </a>
       </div>
     </>
   );

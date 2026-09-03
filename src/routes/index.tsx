@@ -24,6 +24,7 @@ import {
   type CourseSlug,
 } from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
+import { waLink } from "@/lib/whatsapp";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -160,12 +161,15 @@ function Home() {
               >
                 Chat on WhatsApp
               </WaButton>
-              <Link
-                to="/book-free-demo"
-                className="btn btn-white btn-lg w-full sm:w-auto justify-center"
+              <WaButton
+                message="Hi, I'd like a ₹0 live demo. Please share the next slot."
+                variant="white"
+                size="lg"
+                className="w-full sm:w-auto justify-center"
+                goal="free_demo"
               >
-                <Icon name="calendar" size={18} /> Book ₹0 Live Demo
-              </Link>
+                Book ₹0 Live Demo
+              </WaButton>
             </div>
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 09:00–12:00 IST.
@@ -629,9 +633,12 @@ function Home() {
                 Message anytime · Replies 09:00–12:00 IST · Phone is a fallback
               </p>
             </div>
-            <Link
-              to="/book-free-demo"
+            <a
+              href={waLink("Hi, I'd like a ₹0 live demo. Please share the next slot.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
+              data-cta-goal="free_demo"
             >
               <SmartImage
                 src={IMG.womanLaptop}
@@ -646,14 +653,13 @@ function Home() {
                   <Icon name="calendar" size={22} /> Book a Free Demo Class
                 </h3>
                 <p className="text-cream/95 mb-4">
-                  Fill a 30-second form — name, number, course. We confirm your live demo via
-                  WhatsApp after you send the message.
+                  One WhatsApp message. A real live class. No form, no card, no sales call.
                 </p>
                 <span className="btn btn-sun btn-sm">
-                  Open Demo Form <Icon name="arrow-right" size={14} />
+                  Open WhatsApp <Icon name="arrow-right" size={14} />
                 </span>
               </div>
-            </Link>
+            </a>
           </Reveal>
         </div>
       </section>
