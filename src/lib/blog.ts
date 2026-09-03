@@ -87,7 +87,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Speaking Minutes in a 60-Minute English Class",
     seoTitle: "Speaking Minutes in a 60-Min English Class",
     description:
-      "Your mic in 60 minutes: 6–8 min in a batch of 8, 1–2 min in a room of 30, 50 min in 1:1. Why months on a brochure are not speaking minutes. ₹999/mo, max 8.",
+      "Your mic in 60 minutes: about 8–10 min in a batch of around 6, 1–2 min in a room of 30, 50 min in 1:1. Why months on a brochure are not speaking minutes. ₹999/mo, approximately 6 learners.",
     excerpt: "Fluency is minutes you spoke, not months on the brochure. Here is the arithmetic.",
     tag: "Spoken English",
     img: "groupClass",
