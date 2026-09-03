@@ -109,7 +109,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Need a **certificate** for a visa or university — British Council or a similar body, not us. We do not issue one.",
+      "Need a **recognised exam score** for a visa or university — that is IELTS (or similar). We run a 3-month live IELTS room at ₹2,499/month; the test board issues the score. Sit it when the form asks.",
       "Need **daily 1:1 reps** and already speak — EngVarta-style sessions, not a twice-a-week batch.",
       "The learner is **under 14** — PlanetSpark or similar. Adult batches waste a child's time.",
       "Need **Band 7 writing** more than speaking — [IELTS Preparation](/course-ielts) with marked mocks, not Spoken English.",

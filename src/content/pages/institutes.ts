@@ -49,7 +49,7 @@ export const body: ArticleBody = [
         "₹8,800–₹16,000 / 6-class module",
         "CEFR live group, often 8–12 (cap often 10)",
         "About 4–6 minutes",
-        "People who need the badge or a published level",
+        "People who want a published CEFR classroom",
       ],
       [
         "Veta-style classrooms",
@@ -121,13 +121,14 @@ export const body: ArticleBody = [
     text: "Offline options cluster in Gariahat/Salt Lake (Kolkata), Deccan/FC Road (Pune), CP/Noida (Delhi), Koramangala (Bengaluru), T Nagar (Chennai). A 3-month spoken package commonly sits **₹1,500–₹7,500** plus commute. Live online (us, EngVarta, British Council Online) is the same fee in Kolkata, Mumbai, Ahmedabad, Hyderabad or Kochi. The commute is the hidden 3–6 hours/week.",
   },
 
-  { t: "h2", text: "When we are the wrong institute" },
+  { t: "h2", text: "Exams, certificates, and when another room fits" },
   {
     t: "ul",
     items: [
-      "You need a **British Council / Cambridge certificate** — go there. We do not issue one.",
-      "You want **daily 1:1** and already speak — EngVarta is cheaper per talking minute.",
-      "The student is a **child** — PlanetSpark-style, not an adult batch of around 6.",
+      "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We run a 3-month live IELTS room — ₹2,499/month, six mocks, speaking labs. Sit the paper when the form asks.",
+      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, and the IELTS paper when you actually need the score.",
+      "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
+      "The student is a **child** — a kids platform, not an adult batch of around 6.",
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our Kolkata address is an office, not a campus.",
     ],
   },

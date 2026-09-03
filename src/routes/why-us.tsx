@@ -79,7 +79,7 @@ const MARKET = [
     icon: "trophy" as const,
     tag: "Brand-name groups",
     title: "Curriculum. Limited talking.",
-    body: "British Council English Online rates ~4.5★ and teaches a real CEFR syllabus. Group rooms of 8–12 still leave a few minutes of speaking each. Modules often land ₹8,800–₹16,000. Excellent if you need the badge. Heavy if you need reps.",
+    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹999/mo — and a 3-month IELTS room when a visa or university form actually asks.",
     stat: "₹8,800–₹16,000 / module",
   },
   {
