@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,499/month for 3 months**, IELTS **₹1,999/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. GST included. Batch of 8. ₹0 live demo before you pay.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,999/month for 3 months**, IELTS **₹2,499/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. GST included. Batch of 8. ₹0 live demo before you pay.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },

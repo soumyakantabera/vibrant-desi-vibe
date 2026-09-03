@@ -27,7 +27,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-business-english",
     label: "Workplace English",
     icon: "headset",
-    desc: "3 months · ₹1,499/month",
+    desc: "3 months · ₹1,999/month",
   },
   {
     to: "/course-interactive-speaking",
@@ -35,7 +35,7 @@ const ENGLISH_COURSES: NavItem[] = [
     icon: "headset",
     desc: "3 months · ₹1,199/month",
   },
-  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹1,999/mo" },
+  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹2,499/mo" },
   {
     to: "/course-interview-prep",
     label: "Interview Prep",
@@ -46,7 +46,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-career-counselling",
     label: "Career Counselling",
     icon: "compass",
-    desc: "3 × 60 min · ₹999 total",
+    desc: "3 × 60 min · ₹1,999/mo",
   },
 ];
 

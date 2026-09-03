@@ -20,7 +20,7 @@ export const body: ArticleBody = [
       [
         "You can chat, but meetings, emails, clients go silent",
         "Workplace English",
-        "₹1,499/mo, 3 months, max 8",
+        "₹1,999/mo, 3 months, max 8",
         "Work talk in ~3 months",
       ],
       [
@@ -32,7 +32,7 @@ export const body: ArticleBody = [
       [
         "You need a visa / university / Band 7",
         "IELTS Preparation",
-        "₹1,999/mo, 3 months, 6+ mocks",
+        "₹2,499/mo, 3 months, 6+ mocks",
         "Writing is the usual bottleneck",
       ],
       [

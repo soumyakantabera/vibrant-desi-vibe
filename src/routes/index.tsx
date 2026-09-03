@@ -539,7 +539,7 @@ function Home() {
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                ₹1,499<span className="text-base font-bold text-ink/75">/month</span>
+                ₹1,999<span className="text-base font-bold text-ink/75">/month</span>
               </p>
               <p className="mt-1 text-sm text-ink/75">3 months · up to 2 classes/week</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">

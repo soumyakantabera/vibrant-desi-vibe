@@ -25,7 +25,7 @@ export const body: ArticleBody = [
     rows: [
       [
         "Learn With Smile (us)",
-        "₹999–₹1,999/mo GST in",
+        "₹999–₹2,499/mo GST in",
         "Live group, max 8, named teacher, IST",
         "Adults 15+ who need a syllabus and the mic",
         "Kids; people who need a certificate; daily 1:1 junkies",

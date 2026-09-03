@@ -50,7 +50,7 @@ function Page() {
           Client-call English. <span className="text-sunshine">Clarity, not accent.</span>
         </>
       }
-      standfirst="Names, numbers, next step. Four-line updates. 3 months Workplace English, ₹1,499/mo, max 8. ₹0 demo."
+      standfirst="Names, numbers, next step. Four-line updates. 3 months Workplace English, ₹1,999/mo, max 8. ₹0 demo."
       heroImage={IMG.businessEnglish}
       heroAlt="Indian professional on a live client call in English"
       lastUpdated={UPDATED}

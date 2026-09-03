@@ -208,7 +208,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace English offers 3 months of practical meetings, calls, updates, emails and presentation practice in a live batch capped at 8. It runs up to twice a week in morning, evening or weekend IST slots, costs ₹1,499/month including GST, and recorded classes are available for revision.",
+    text: "Workplace English offers 3 months of practical meetings, calls, updates, emails and presentation practice in a live batch capped at 8. It runs up to twice a week in morning, evening or weekend IST slots, costs ₹1,999/month including GST, and recorded classes are available for revision.",
     course: "/course-business-english",
     label: "See the Workplace English course",
   },
