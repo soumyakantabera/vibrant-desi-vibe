@@ -53,7 +53,7 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
   {
     icon: "users",
     color: "indigo",
-    t: "Small Batches (Max 8)",
+    t: "Small Batches (Approx. 6 learners)",
     d: "More attention, more speaking, better results.",
   },
   {
