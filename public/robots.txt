@@ -124,4 +124,16 @@ Allow: /
 User-agent: Bytespider
 Disallow: /
 
+User-agent: BingPreview
+Allow: /
+
+User-agent: Copilot
+Allow: /
+
 Sitemap: https://www.learnwithsmile.app/sitemap.xml
+
+# IndexNow (Bing, Yandex, Seznam, Naver). Key file at the site root:
+# https://www.learnwithsmile.app/learnwithsmile-indexnow-2026.txt
+# Every production deploy POSTs the sitemap URL list to api.indexnow.org
+# and www.bing.com/indexnow. Paste the same key in Bing Webmaster → IndexNow
+# so the dashboard recommendation can clear.
