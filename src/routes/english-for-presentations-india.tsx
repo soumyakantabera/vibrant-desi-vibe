@@ -59,7 +59,7 @@ function Page() {
       faqTitle="Presentations and standups"
       waMessage="Hi, I want to explain my work in English. Demo please."
       ctaTitle="Bring one real update"
-      ctaBody="We will run it in a live room of 8. ₹0 demo."
+      ctaBody="We will run it in a live group of around 6. ₹0 demo."
     />
   );
 }
