@@ -87,7 +87,7 @@ const MARKET = [
     icon: "smile" as const,
     tag: "Learn With Smile",
     title: "₹999/mo. 7 years. 500+.",
-    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. GST included. ₹0 demo in a real class. Batches of 8 so you actually speak — secondary to the teaching, not a slogan we hide behind.`,
+    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. GST included. ₹0 demo in a real class. Batches have approximately 6 learners so you actually speak — secondary to the teaching, not a slogan we hide behind.`,
     stat: "From ₹999/mo · GST in",
   },
 ];
@@ -161,7 +161,7 @@ function Page() {
                     tone: "coral",
                     icon: SnapIcons.people,
                     big: "You speak",
-                    small: "A room of 8 — not the back row",
+                    small: "A group of around 6 — not the back row",
                   },
                 ]}
                 footer={`${RATING_DISPLAY} ${RATING.source} · 11 states · 09:00–12:00 IST`}
@@ -223,7 +223,7 @@ function Page() {
           <FeatureCard icon="gamepad" color="sage" title="Gamified every class">
             Flashcards, polls, quizzes, debates — so you speak, not spectate.
           </FeatureCard>
-          <FeatureCard icon="users" color="brand" title="Batches of 8, on purpose">
+          <FeatureCard icon="users" color="brand" title="Approximately 6 learners per batch">
             Secondary to quality: enough peers to practise with, few enough that you still talk.
           </FeatureCard>
           <FeatureCard icon="shield" color="coral" title="Demo before you pay">
@@ -249,7 +249,7 @@ function Page() {
         faqs={PAGES["/why-us"].faqs ?? []}
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
-        subtitle="₹999/mo, 7 years, 500+ learners, live vs recorded, batch of 8, and the ₹0 demo."
+        subtitle="₹999/mo, 7 years, 500+ learners, live vs recorded, batch of around 6, and the ₹0 demo."
         waMessage="Hi, I want to understand how your classes work."
       />
 
