@@ -156,7 +156,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta-style 1:1 (~₹100–₹400/session) for daily reps if you already speak. Cambly (~$10/hour) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 for 25 × 15-minute 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform.",
     source: "/english-institute-comparison-india",
   },
   {

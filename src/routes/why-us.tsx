@@ -130,7 +130,7 @@ function Page() {
               >
                 Free Demo on WhatsApp
               </WaButton>
-              <Link to="/best-online-spoken-english-classes-india" className="btn btn-white btn-lg">
+              <Link to="/english-institute-comparison-india" className="btn btn-white btn-lg">
                 Compare the market
               </Link>
             </div>

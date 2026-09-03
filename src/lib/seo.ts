@@ -722,9 +722,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/english-institute-comparison-india": {
     path: "/english-institute-comparison-india",
-    title: "English Institutes India 2026 | Fees & Fit",
+    title: "Compare English Classes India | ₹999 vs EngVarta & BC",
     description:
-      "Cambly, EngVarta, British Council, Veta-style rooms, EEC exam shops vs live batches of approximately 6 learners from ₹999/mo. 2026 fee bands, speaking minutes, who each fits.",
+      "From ₹999/mo vs EngVarta 1:1, British Council modules and Veta rooms. Named teacher, ~6 learners, 500+, 7 years. 2026 fees and speaking minutes. ₹0 demo.",
     shortTitle: "English Institutes in India, Compared",
     keywords: [
       "best spoken english institute in india 2026",
@@ -737,19 +737,27 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Named-institute comparison for 2026: EngVarta 1:1 (~₹100–₹400/session), Cambly native (~$10/hr), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months), EEC-style exam shops (~₹7,500 spoken), PlanetSpark for kids, Learn With Smile live classes with approximately 6 learners from ₹999/month. Written by one of the providers.",
+      "Named 2026 comparison: Learn With Smile from ₹999/month (approx. 6 learners, 500+, 7 years) vs EngVarta (₹2,700 / 25 calls), Cambly (₹8k–₹15k/mo if daily), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months). Written by one of the providers.",
     faqs: [
       {
         q: "Which spoken English institute is best in India in 2026?",
-        a: "There is no single best. EngVarta-style 1:1 (~₹100–₹400/session) fits hesitant people who already speak. Cambly (~$10/hour) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile fits adults 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform, not an adult batch.",
+        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (~₹8,000–₹15,000/month if daily) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile fits adults 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform, not an adult batch.",
       },
       {
-        q: "Is EngVarta better than a live English batch?",
-        a: "For daily speaking minutes, yes — a 25-minute 1:1 beats 6–8 minutes in a group. For a beginner who cannot form a sentence, no: 1:1 apps have no 6-month map, so you practise what you can already say. The combination that works for many intermediates is an app for daily reps plus a live batch of around 6 for structure.",
+        q: "How does Learn With Smile compare to EngVarta?",
+        a: "EngVarta wins on talking minutes per day — 15-minute 1:1 calls, about ₹108 each in the 25-call pack. Learn With Smile wins on a 6-month map and a teacher who sees you every week in a batch of around 6, from ₹999/month. If you already speak and freeze, the app is the daily habit. If you cannot yet form a sentence, 1:1 has nothing to practise with — start with Spoken English.",
       },
       {
         q: "Is British Council worth it versus a ₹999/month class?",
-        a: "If a visa, university or HR form needs a recognised badge, that exam is a separate paper — the fee is buying the badge. If you need speaking time at an Indian salary, a live batch of around 6 from ₹999/month is a different product. Speak here. Sit the exam if a form asks.",
+        a: "If a visa, university or HR form needs a recognised badge, that exam is a separate paper — the module fee is buying the badge. If you need speaking time at an Indian salary, a live batch of around 6 from ₹999/month is a different product. Speak here. Sit the exam if a form asks.",
+      },
+      {
+        q: "Is Veta or a Kolkata classroom better than an online batch of 6?",
+        a: "A neighbourhood room wins if you need peer energy and a walk-in campus. Google reviews on those rooms often praise the teacher and then complain that 25–40 people means you speak once a week. Learn With Smile is live online, approximately 6 learners, same ₹999/month in Kolkata, Mumbai or Kochi. Our Kolkata address is an office, not a campus.",
+      },
+      {
+        q: "Is EngVarta better than a live English batch?",
+        a: "For daily speaking minutes, yes — a 15-minute 1:1 beats 8–10 minutes in a group. For a beginner who cannot form a sentence, no: 1:1 apps have no 6-month map, so you practise what you can already say. The combination that works for many intermediates is an app for daily reps plus a live batch of around 6 for structure.",
       },
     ],
   },
