@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "English classes are sold in **months**. Fluency is built in **minutes you spoke**. A 60-minute class with 8 people and a 60-minute class with 35 people are not the same product. Here is the arithmetic we use in every demo, and the bands we see across India in 2026.",
+    text: "English classes are sold in **months**. Fluency is built in **minutes you spoke**. A 60-minute class with around 6 learners and a 60-minute class with 35 people are not the same product. Here is the arithmetic we use in every demo, and the bands we see across India in 2026.",
   },
 
   { t: "h2", text: "The formula" },
@@ -17,7 +17,11 @@ export const body: ArticleBody = [
     head: ["Batch", "Speaking pool", "Your minutes"],
     rows: [
       ["1:1 (Cambly, EngVarta)", "50–55 min", "50–55 min — no classmates, no syllabus required"],
-      ["Max 8 (Learn With Smile)", "40–45 min", "6–8 min of you, plus hearing 7 peers"],
+      [
+        "Approx. 6 learners (Learn With Smile)",
+        "40–45 min",
+        "About 8–10 min of you, plus hearing classmates",
+      ],
       ["8–12 (British Council-style group)", "40–45 min", "4–6 min"],
       ["25–40 (typical city classroom)", "40–45 min", "1–2 min, often a round-robin once a week"],
     ],
@@ -29,7 +33,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Max 8 → about **5–6 hours of you speaking** in 6 months.",
+      "Approx. 6 learners → about **7–8 hours of you speaking** in 6 months.",
       "30-student room → about **1–1.5 hours of you speaking** in 6 months.",
       "Daily 1:1 at 25 min → you can hit 5 hours in **two weeks**. Different product.",
     ],
@@ -38,7 +42,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "What the institutes are actually selling" },
   {
     t: "p",
-    text: "Franchise classrooms in Kolkata, Pune, Chennai (Veta-style 2–4 months, ₹3,500–₹10,000) sell **presence**. Exam shops (EEC-style spoken English around ₹7,500) sell **a visa stack**. Native apps sell **minutes**. We sell **minutes + a 6-month map** at ₹999/month, GST included, cap 8.",
+    text: "Franchise classrooms in Kolkata, Pune, Chennai (Veta-style 2–4 months, ₹3,500–₹10,000) sell **presence**. Exam shops (EEC-style spoken English around ₹7,500) sell **a visa stack**. Native apps sell **minutes**. We sell **minutes + a 6-month map** at ₹999/month, GST included, with approximately 6 learners per batch.",
   },
   {
     t: "p",
@@ -57,7 +61,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Sit in our batch of 8 and count your own minutes. ₹0. No card.",
+    text: "Sit in our batch of around 6 and count your own minutes. ₹0. No card.",
     course: "/book-free-demo",
     label: "Book the ₹0 demo",
   },
