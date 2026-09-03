@@ -45,7 +45,7 @@ export const body: ArticleBody = [
       "Typical figures. Ask any provider — online or in Kolkata — for their actual cap before you ask anything else.",
     head: ["", "Typical Kolkata coaching centre", "Learn With Smile"],
     rows: [
-      ["Students per batch", "25–40", "Maximum 8"],
+      ["Students per batch", "25–40", "Approximately 6"],
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
       ["Commute, up to twice a week", "45–90 min each way", "None"],
       ["Class recordings", "Rarely", "Every class"],
@@ -54,7 +54,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "The arithmetic is simple and it is not really a marketing claim. A teacher with 35 students in the room cannot give each of them ten minutes of speaking in an hour, no matter how good they are. In a batch of eight they can. That is the entire reason the cap exists, and it is why the fee is what it is rather than ₹400.",
+    text: "The arithmetic is simple and it is not really a marketing claim. A teacher with 35 students in the room cannot give each of them ten minutes of speaking in an hour, no matter how good they are. In a batch of around six they can. That is why we keep the room small, and why the fee is what it is rather than ₹400.",
   },
   {
     t: "p",
@@ -133,7 +133,7 @@ export const body: ArticleBody = [
       ["Workplace English", "3 months · up to 2 classes/week", "₹1,999/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,499/month"],
       ["IELTS Preparation", "3 months · up to 2 classes/week", "₹2,499/month"],
-      ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999/mo"],
+      ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999 total"],
     ],
   },
   {
@@ -171,7 +171,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If none of those apply and you want to see what a batch of eight actually feels like, the demo is free and takes a WhatsApp message to arrange. Sit in a real class, meet the teacher, then decide.",
+    text: "If none of those apply and you want to see what a batch of around six actually feels like, the demo is free and takes a WhatsApp message to arrange. Sit in a real class, meet the teacher, then decide.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },
