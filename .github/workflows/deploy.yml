@@ -105,7 +105,9 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      # Start a fresh workflow after a Pages API/OIDC failure; rerunning only this job\n      # can leave duplicate github-pages artifacts in the same run.\n      - uses: actions/upload-pages-artifact@v4
+      # Start a fresh workflow after a Pages API/OIDC failure; rerunning only this job
+      # can leave duplicate github-pages artifacts in the same run.
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
