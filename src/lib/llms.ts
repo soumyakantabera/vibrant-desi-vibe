@@ -96,7 +96,7 @@ const KEY_FACTS = [
   "Admissions response hours: 09:00–12:00 IST",
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
   "Free demo: a full live class, no card or payment details required, before you decide to enrol",
-  "Certificate: Learn With Smile does not currently issue a course certificate; teaching focuses on practical communication and confidence",
+  "Certificate: Learn With Smile does not issue a school certificate. Most Indian employers hear you speak. When a form needs IELTS, we run a 3-month live exam room at ₹2,499/month; the test board issues the score.",
   "Missed classes: a reschedule can be requested only within the same week and depends on teacher and slot availability",
   "Teacher support: direct 1:1 contact outside class is assured when genuinely needed; scheduled monthly 1:1 feedback sessions are not included",
   // Stated once, here, and nowhere else in this file. The site used to carry
@@ -156,7 +156,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta (~₹2,700 for 25 × 15-minute 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. British Council modules (often ₹8,800–₹16,000) when you need the badge. Veta-style classrooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood room. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included. Kids need a children’s platform.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 for 25 × 15-minute 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) when you want that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood campus. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included — plus a 3-month IELTS room at ₹2,499/month when a visa or university form asks. Kids need a children’s platform.",
     source: "/english-institute-comparison-india",
   },
   {

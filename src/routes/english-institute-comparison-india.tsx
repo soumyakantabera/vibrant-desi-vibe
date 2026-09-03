@@ -41,10 +41,10 @@ const ROWS = [
   {
     color: "sunshine" as const,
     icon: "trophy" as const,
-    tag: "Badge",
+    tag: "Exam & CEFR",
     title: "British Council",
     fee: "₹8,800–₹16,000 / module",
-    body: "CEFR syllabus, groups often 8–12. Buy this when a form needs the badge. Limited talking time per rupee.",
+    body: "CEFR groups, often 8–12. Strong classroom if you want that syllabus. When a form needs IELTS, we train the paper — ₹2,499/mo. The test board issues the score.",
   },
   {
     color: "sage" as const,
@@ -203,7 +203,7 @@ function Page() {
         <div className="container-x max-w-2xl text-center text-cream">
           <h2 className="text-2xl text-cream md:text-3xl">Sit the room. Count your minutes.</h2>
           <p className="mt-3 text-white">
-            ₹0 live class. Approximately 6 learners. From ₹999/mo. Then compare GST and the badge.
+            ₹0 live class. Approximately 6 learners. From ₹999/mo. IELTS when a form asks.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <WaButton message={waMessage} variant="sun" size="lg">

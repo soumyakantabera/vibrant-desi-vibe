@@ -306,8 +306,8 @@ export const PAGES: Record<string, PageSeo> = {
       "Why us: a named teacher, a group of around 6, and a fee that does not jump with your city. 7 years live from Kolkata. From ₹999/month. ₹0 real-class demo.",
     faqs: [
       {
-        q: "How is Learn With Smile different from Cambly or British Council English Online?",
-        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. British Council English Online is a CEFR syllabus with published 4.5★ class ratings; group rooms of 8–12 still leave limited speaking time and modules often cost ₹8,800–₹16,000. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month GST included, a ₹0 real-class demo, and approximately 6 learners per batch so every adult learner still speaks. We do not issue a British Council certificate — if you need that badge, go there.",
+        q: "How is Learn With Smile different from 1:1 apps and brand-name English groups?",
+        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules at ₹8,800–₹16,000 and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month GST included, a ₹0 real-class demo, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, we run that paper live — ₹2,499/month, six mocks, speaking labs. The test board issues the score. We train it.",
       },
       {
         q: "Are Kolkata offline spoken English classes better than online?",
@@ -335,7 +335,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile provide a course certificate?",
-        a: "This room trains the voice people hear. Most Indian employers mark your English in the interview, not on a certificate. If a visa, university or HR form needs a recognised exam, that is a separate paper — we will say so clearly. Until then, join for speaking.",
+        a: "This room trains the voice people hear. Most Indian employers mark your English in the interview, not on a school certificate. When a visa, university or HR form needs a recognised exam, that is IELTS (or similar) — a separate paper the test board scores. We run a 3-month live IELTS room at ₹2,499/month: six mocks, speaking labs, writing feedback. Sit it when the form asks. Until then, join for speaking.",
       },
     ],
   },
@@ -629,7 +629,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do I need a certificate from an English course?",
-        a: "This room trains speaking and communication — meetings, interviews, everyday English. Most Indian workplaces hear you talk; they do not ask for a spoken-English certificate. If a visa, university or HR form needs a recognised exam, that is a separate paper — we will tell you clearly when you need it. Until then, this class is for the voice.",
+        a: "This room trains speaking and communication — meetings, interviews, everyday English. Most Indian workplaces hear you talk; they do not ask for a spoken-English certificate. When a visa, university or HR form needs a recognised exam, that is IELTS or similar — we run a 3-month live IELTS room (₹2,499/month) for that paper. The test board issues the score. Until then, this class is for the voice.",
       },
       {
         q: "Which online English class is best for a complete beginner?",
@@ -749,7 +749,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is British Council worth it versus a ₹999/month class?",
-        a: "If a visa, university or HR form needs a recognised badge, that exam is a separate paper — the module fee is buying the badge. If you need speaking time at an Indian salary, a live batch of around 6 from ₹999/month is a different product. Speak here. Sit the exam if a form asks.",
+        a: "A brand-name CEFR module buys that classroom and syllabus — often ₹8,800–₹16,000 for six classes. IELTS is a different paper: visas and universities read that score. We prepare IELTS live (₹2,499/month, six mocks, speaking labs). The test board issues the score. Speaking for work and interviews starts at ₹999/month. Sit the exam when a form asks — not as a default.",
       },
       {
         q: "Is Veta or a Kolkata classroom better than an online batch of 6?",
