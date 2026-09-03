@@ -199,6 +199,11 @@ export function CoursePage({ data }: { data: CourseData }) {
               </h1>
             </div>
             <p className="mt-4 text-lg text-white max-w-2xl">{data.tagline}</p>
+            <p className="mt-2 text-base text-white/90">
+              {isCareerCounselling
+                ? "1:1 with a teacher who knows your name."
+                : "Live class. A teacher who knows your name."}
+            </p>
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">

@@ -31,7 +31,7 @@ const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "play",
     title: "Real teachers",
-    body: "Named, live, every hour — never a recording sold as class.",
+    body: "A teacher who knows your name. Live, every hour.",
   },
   {
     icon: "users",
