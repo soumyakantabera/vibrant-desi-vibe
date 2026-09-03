@@ -193,7 +193,7 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Speak Better English | From ₹999/mo",
+    title: "Live Online English Classes in India from ₹999/month",
     description:
       "Speak better English with real teachers, small batches and gamified live classes. 7 years, Kolkata & pan-India. From ₹999/month. ₹0 demo. 500+ learners.",
     shortTitle: "Home",
