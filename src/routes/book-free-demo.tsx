@@ -59,7 +59,12 @@ function Page() {
               <li>Like it? Join a batch. Don’t? No pressure.</li>
             </ol>
             <div className="mt-6" data-cta-location="mid">
-              <WaButton message={DEMO_MSG} size="lg" className="w-full justify-center" goal="free_demo">
+              <WaButton
+                message={DEMO_MSG}
+                size="lg"
+                className="w-full justify-center"
+                goal="free_demo"
+              >
                 Open WhatsApp now
               </WaButton>
             </div>
