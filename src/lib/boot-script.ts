@@ -14,12 +14,14 @@
  * -----------------
  *   css    the app stylesheet has applied (detected through the `--app-css`
  *          sentinel it defines, so this is a fact rather than a guess)
- *   fonts  Manrope, Sora and Material Symbols Rounded are all loaded — the
- *          two text faces because they set the page's shape, the icon face
- *          because its glyphs are ligatures
- *   app    React has mounted and painted (signalled from src/lib/boot.ts)
- *   media  every image marked `data-boot-hold` — the hero of the current
- *          page — has finished decoding
+ *   fonts  Manrope and Sora — they set the page's shape. Material Symbols
+ *          is self-hosted in the same stylesheet (~8 KB); icons un-hide
+ *          when that face lands, but the veil does not wait on it.
+ *   media  every image marked `data-boot-hold` — the hero already in the
+ *          prerendered HTML — has finished decoding
+ *
+ * It does **not** wait for React. The prerendered markup is the page.
+ * Hydration can finish after the first paint.
  *
  * What it will not do
  * -------------------
@@ -76,12 +78,14 @@ function compactCss(src: string): string {
 /**
  * Every Material Symbols glyph the site renders.
  *
- * Must stay in step with `MAP` in `src/components/Icon.tsx` — an icon name that
- * is missing here paints its own ligature text ("arrow_forward") on the page
- * instead of a glyph, which is the exact failure the gate's `display=block`
- * exists to prevent.
+ * Must stay in step with `MAP` in `src/components/Icon.tsx` and with the
+ * self-hosted file `src/assets/fonts/material-symbols-rounded.woff2`.
+ * Regenerating that subset: Google Fonts CSS2 with these `icon_names`.
+ * An icon missing from the subset paints its ligature text ("arrow_forward")
+ * instead of a glyph — the CSS clip on `.material-symbols-rounded` still
+ * holds the box, so the page does not shove sideways.
  */
-const ICON_NAMES = [
+export const ICON_NAMES = [
   "ads_click",
   "arrow_forward",
   "auto_awesome",
@@ -122,34 +126,11 @@ const ICON_NAMES = [
 ];
 
 /**
- * The icon webfont, requested by the gate itself rather than by a <link> in the
- * markup.
- *
- * A stylesheet declared above a classic <script> blocks that script from
- * running until it loads — so a font <link> in the head would keep the gate
- * from existing until the font CDN answered, which on a bad day is twenty
- * seconds of blank page with no veil, no deadline and no failsafe: precisely
- * the situation all of this exists to prevent. Injected from here it is
- * fetched just as early and blocks nothing, and the gate is already the thing
- * that waits for it.
- *
- * Manrope and Sora used to be here too. They are now self-hosted through
- * `src/styles.css` (@fontsource), which removes two third-party connections and
- * delivers them with the app stylesheet the gate already waits for.
- *
- * `icon_names` subsets the response to the 37 glyphs above rather than serving
- * the whole Material Symbols set, which is a large variable font for a site
- * that uses a few dozen icons from it.
- *
- * `display=block`, not `swap`: the glyphs are ligatures, so a fallback face
- * would paint their names ("arrow_forward") across the page. Readers without
- * JavaScript get this through a <noscript> copy in the markup instead.
+ * Icon CSS used to be fetched from fonts.googleapis.com. The subset is now
+ * self-hosted and declared in `src/styles.css`, so the gate injects nothing.
+ * Kept as an empty list so the noscript slot in `__root.tsx` stays valid.
  */
-export const FONT_CSS = [
-  "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0" +
-    `&icon_names=${ICON_NAMES.join(",")}` +
-    "&display=block",
-];
+export const FONT_CSS: string[] = [];
 
 /** Milliseconds before the page is revealed regardless of what is missing. */
 const MAX_HOLD = 3000;
@@ -184,7 +165,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
   }
 
   var t0 = Date.now(), done = false;
-  var need = { css: false, fonts: false, app: false, media: false };
+  var need = { css: false, fonts: false, media: false };
 
   // ---- reveal ------------------------------------------------------------
   var reveal = function () {
@@ -202,9 +183,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
   } catch (e) {}
   setTimeout(reveal, slow ? ${MAX_HOLD_SLOW} : ${MAX_HOLD});
 
-  // Request the webfonts, now that the page is guaranteed to appear with or
-  // without them. See FONT_CSS in src/lib/boot-script.ts for why they are
-  // asked for here rather than through a <link> in the markup.
+  // Icon face is self-hosted in the app stylesheet. No third-party inject.
   try {
     var hrefs = ${JSON.stringify(FONT_CSS)};
     for (var n = 0; n < hrefs.length; n++) {
@@ -218,7 +197,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
 
   var mark = function (k) {
     need[k] = true;
-    if (need.css && need.fonts && need.app && need.media) reveal();
+    if (need.css && need.fonts && need.media) reveal();
   };
 
   // ---- stylesheet --------------------------------------------------------
@@ -258,11 +237,10 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     // the icons through rather than hiding them forever.
     if (!d.fonts || !d.fonts.forEach || !d.fonts.load) { raise("fonts-ready"); return true; }
     try {
-      // Icons are ligatures, so until Material Symbols is in place the browser
-      // has nothing to draw but the glyph names. This flag holds them back;
-      // it is also what un-hides them if the face lands after the deadline.
+      // Icons stay visibility:hidden until this class (see styles.css).
+      // The page veil does not wait on them.
       if (face("Material Symbols")) raise("fonts-ready");
-      if (face("Manrope") && face("Sora") && face("Material Symbols")) return true;
+      if (face("Manrope") && face("Sora")) return true;
       ask();
       return false;
     } catch (e) { return true; }
@@ -272,24 +250,21 @@ const BOOT_SCRIPT_SOURCE = `(function () {
   // Only the hero of the page being opened, marked by <SmartImage priority>.
   // Everything below the fold stays lazy and is none of the gate's business.
   var mediaReady = function () {
-    if (!need.app) return false; // React has not built the real markup yet
     var imgs = d.querySelectorAll("img[data-boot-hold]");
+    if (!imgs.length) return true;
     for (var i = 0; i < imgs.length; i++) if (!imgs[i].complete) return false;
     return true;
   };
 
   // ---- the tick ----------------------------------------------------------
-  // One cheap poll drives all four signals. Font loading, stylesheet
-  // application and image decoding each have their own events with their own
-  // gaps and browser quirks; polling for a couple of seconds is a few
-  // microseconds of work and cannot miss one.
+  // One cheap poll drives css, text fonts and the hero.
   var tick = function () {
     if (!need.css && cssReady()) mark("css");
     if (!need.fonts && fontsReady()) mark("fonts");
     if (!need.media && mediaReady()) mark("media");
-    // Keep watching the fonts after the deadline has revealed the page: a face
-    // that lands late still has icons to un-hide. Give that up after 10s.
-    if (done && (need.fonts || Date.now() - t0 > 10000)) clearInterval(timer);
+    // Keep watching after reveal so a late Material Symbols face can un-hide
+    // icons. Stop at 10s.
+    if (done && Date.now() - t0 > 10000) clearInterval(timer);
   };
   var timer = setInterval(tick, 80);
   try {
@@ -310,7 +285,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
 
   // ---- the app's way in --------------------------------------------------
   w.__lwsBoot = {
-    ready: function () { mark("app"); tick(); },
+    ready: function () { tick(); },
     reveal: reveal,
     signals: need
   };

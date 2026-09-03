@@ -11,15 +11,9 @@
     -->
     <!--
       The boot gate — holds the page back behind a plain veil until the
-      stylesheet, the fonts, the app and the hero image are all in place, then
-      fades it in finished. Both blocks below are filled in from
-      src/lib/boot-script.ts by vite/boot-script-plugin.ts; edit them there,
-      not here.
-
-      This goes first, above every stylesheet link, and that position matters:
-      a classic <script> does not execute until the stylesheets declared before
-      it have loaded, so moving it below the fonts would hand the first paint
-      to whatever the font CDN feels like doing today.
+      stylesheet, Manrope/Sora and the hero image are in place, then fades
+      it in finished. React hydrates after first paint. Both blocks below
+      are filled in from src/lib/boot-script.ts by vite/boot-script-plugin.ts.
     -->
     <script data-boot-script></script>
     <style data-boot-style></style>
@@ -31,27 +25,6 @@
       name="description"
       content="Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month. Kolkata & pan-India. ₹0 live demo on WhatsApp."
     />
-    <!--
-      Open the connections to the font CDN now; the gate asks it for the
-      stylesheets a moment later (see FONT_CSS in src/lib/boot-script.ts). A
-      preconnect is a hint and blocks nothing, unlike the stylesheet links it
-      replaces.
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!--
-      Only the icon face is fetched from Google now — Manrope and Sora are
-      self-hosted through src/styles.css, so they arrive with the app
-      stylesheet and need no third-party request at all. Keep this list equal
-      to FONT_CSS in src/lib/boot-script.ts, which is what readers WITH
-      JavaScript get.
-    -->
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&icon_names=ads_click,arrow_forward,auto_awesome,bar_chart,calendar_month,call,chat,check_circle,close,code,currency_rupee,emoji_events,explore,extension,favorite,format_quote,groups,headset_mic,lightbulb,mail,menu,menu_book,mic,person,photo_camera,play_circle,public,rocket_launch,schedule,sentiment_satisfied,smart_display,sports_esports,star,thumb_up,trending_up,verified,work&display=block"
-      />
-    </noscript>
   </head>
   <body>
     <div id="root"></div>

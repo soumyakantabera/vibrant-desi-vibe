@@ -94,11 +94,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "icon", type: "image/svg+xml", href: withBasePath("/favicon.svg") },
         { rel: "icon", type: "image/png", sizes: "48x48", href: withBasePath("/favicon.png") },
         { rel: "apple-touch-icon", sizes: "180x180", href: withBasePath("/apple-touch-icon.png") },
-        // Only the connections. The font stylesheets themselves are requested
-        // by the boot gate — see FONT_CSS in src/lib/boot-script.ts for why a
-        // <link> here would be worse than useless.
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
         ...site.links,
       ],
       scripts: site.scripts,

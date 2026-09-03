@@ -1,9 +1,9 @@
 import type { CSSProperties } from "react";
 
 /**
- * Icon system — Material Symbols Rounded (loaded via Google Fonts in __root.tsx).
- * Map our semantic icon names to Material Symbols glyph names so all existing
- * <Icon name="..."/> call sites keep working.
+ * Icon system — Material Symbols Rounded, self-hosted subset
+ * (`src/assets/fonts/material-symbols-rounded.woff2`). Map semantic names to
+ * glyph ligatures so existing <Icon name="..."/> call sites keep working.
  */
 const MAP: Record<string, string> = {
   spark: "auto_awesome",
