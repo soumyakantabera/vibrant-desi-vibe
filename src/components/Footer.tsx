@@ -4,6 +4,7 @@ import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { SmartImage } from "./SmartImage";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { withBasePath } from "@/lib/site-path";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -48,6 +49,14 @@ const GUIDES = [
 
 const IMG =
   "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&auto=format&fit=crop&q=80";
+
+/** Official marks fetched from Razorpay, NPCI, Visa and Mastercard brand sources. */
+const PAY_METHODS: { src: string; alt: string; height: string }[] = [
+  { src: "/payments/upi.svg", alt: "UPI", height: "h-7" },
+  { src: "/payments/visa.svg", alt: "Visa", height: "h-5" },
+  { src: "/payments/mastercard.svg", alt: "Mastercard", height: "h-8" },
+  { src: "/payments/rupay.svg", alt: "RuPay", height: "h-6" },
+];
 
 export function Footer({ image }: { image?: string }) {
   const wa = waLink("Hi, I am interested in Learn With Smile. Please share the details.");
@@ -115,6 +124,43 @@ export function Footer({ image }: { image?: string }) {
               <Link key={c.to} to={c.to} className="text-sm text-white/90 hover:text-sunshine">
                 {c.label}
               </Link>
+            ))}
+          </div>
+        </div>
+        <div className="mt-8 pt-6 border-t border-cream/15">
+          <p className="text-[11px] uppercase tracking-[0.16em] font-display font-bold text-white/70 mb-3">
+            Secured payments
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://razorpay.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Secured by Razorpay"
+              className="shrink-0"
+            >
+              <img
+                src={withBasePath("/payments/razorpay-secured.png")}
+                alt="Razorpay"
+                width={113}
+                height={45}
+                className="h-[45px] w-[113px]"
+                decoding="async"
+              />
+            </a>
+            <span className="hidden sm:block h-8 w-px bg-cream/20" aria-hidden />
+            {PAY_METHODS.map((m) => (
+              <span
+                key={m.alt}
+                className="inline-flex h-10 items-center rounded-md bg-white px-2.5"
+              >
+                <img
+                  src={withBasePath(m.src)}
+                  alt={m.alt}
+                  className={`${m.height} w-auto max-w-[7.5rem] object-contain`}
+                  decoding="async"
+                />
+              </span>
             ))}
           </div>
         </div>
