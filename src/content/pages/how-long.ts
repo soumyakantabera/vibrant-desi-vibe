@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,999/month for 3 months**, IELTS **₹2,499/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. GST included. batch of around 6. ₹0 live demo before you pay.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,999/month for 3 months**, IELTS **₹2,499/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. Inclusive of taxes. Batch of around 6.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },
@@ -100,9 +100,9 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Sit in a real class of around 6 learners before you buy 6 months. Count how many minutes you spoke.",
+    text: "Join a live batch of around 6 learners. Count how many minutes you spoke.",
     course: "/book-free-demo",
-    label: "Book a ₹0 live demo",
+    label: "Book a Free Demo",
   },
 
   { t: "h2", text: "When a different product is faster" },

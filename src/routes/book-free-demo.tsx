@@ -6,8 +6,7 @@ import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
-
-const DEMO_MSG = "Hi, I'd like a ₹0 live demo. Please share the next slot.";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/book-free-demo")({
   component: Page,
@@ -30,18 +29,20 @@ function Page() {
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
-            <Icon name="calendar" size={14} /> Book a Free Demo
+            <Icon name="spark" size={14} /> {DEMO_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            A Real Live Class. <span className="text-sunshine">Free.</span>
+            Book a Free Demo. <span className="text-sunshine">On WhatsApp.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Meet the teacher, see the batch and speak in a real class. One WhatsApp message. Replies
-            09:00–12:00 IST. No form. No card. Then decide: from ₹999/mo.
+            Message us anytime. We reply 09:00–12:00 IST and confirm a slot.
           </p>
-          <div className="mt-8" data-cta-location="hero">
+          <div className="mt-8 flex flex-wrap gap-3" data-cta-location="hero">
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
+            </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_demo">
-              Book ₹0 Demo on WhatsApp
+              <Icon name="spark" size={18} /> {DEMO_CTA}
             </WaButton>
           </div>
         </div>
@@ -52,20 +53,20 @@ function Page() {
           <div className="card-soft">
             <h2 className="text-2xl mb-4">What happens when you tap WhatsApp</h2>
             <ol className="space-y-3 text-ink/90 list-decimal pl-5">
-              <li>WhatsApp opens with a demo request already written.</li>
+              <li>WhatsApp opens with a message ready to send.</li>
               <li>Send it anytime. We reply 09:00–12:00 IST.</li>
-              <li>We confirm the next live demo slot.</li>
-              <li>You attend. No payment.</li>
-              <li>Like it? Join a batch. Don’t? No pressure.</li>
+              <li>We confirm a slot.</li>
+              <li>You join the class.</li>
             </ol>
             <div className="mt-6" data-cta-location="mid">
               <WaButton
                 message={DEMO_MSG}
+                variant="sun"
                 size="lg"
                 className="w-full justify-center"
                 goal="free_demo"
               >
-                Open WhatsApp now
+                <Icon name="spark" size={18} /> {DEMO_CTA}
               </WaButton>
             </div>
           </div>
@@ -81,8 +82,8 @@ function Page() {
       <FaqSection
         faqs={PAGES["/book-free-demo"].faqs ?? []}
         eyebrow="Before You Book"
-        title="What a Free Demo Actually Involves"
-        subtitle="No form, no card, no sales call, no obligation."
+        title="Questions about the demo"
+        subtitle="Message anytime. We reply 09:00–12:00 IST."
         waMessage="Hi, I have a question about the free demo."
       />
     </Layout>

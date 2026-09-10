@@ -9,6 +9,7 @@ import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import type { ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
+import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 
 /**
  * Shared shell for the long-form landing pages (`/spoken-english-classes-kolkata`,
@@ -109,8 +110,11 @@ export function GuidePage({
           <h2 className="text-cream text-2xl md:text-3xl">{ctaTitle}</h2>
           <p className="mt-3 text-white">{ctaBody}</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
+            </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">
-              Book a Free Demo
+              {DEMO_CTA}
             </WaButton>
             <Link to="/english-career" className="btn btn-white btn-lg">
               See all 6 courses

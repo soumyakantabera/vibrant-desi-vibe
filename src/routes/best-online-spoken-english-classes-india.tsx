@@ -53,10 +53,10 @@ function Page() {
       h1={
         <>
           Best Online Spoken English in India — Live,{" "}
-          <span className="text-sunshine">Approx. 6 learners, From ₹999</span>
+          <span className="text-sunshine">Approx. 6 learners, From ₹999, inclusive of taxes</span>
         </>
       }
-      standfirst="Written by one of the providers. Organised by who each option suits — not a ranking. Learn With Smile: live teacher, approx. 6 learners, 6-month syllabus, ₹999/mo, ₹0 demo."
+      standfirst="Written by one of the providers. Organised by who each option suits — not a ranking. Learn With Smile: live teacher, approx. 6 learners, 6-month syllabus, ₹999/mo, inclusive of taxes."
       heroImage={IMG.speaking}
       heroAlt="Indian learners comparing online English class options"
       lastUpdated={UPDATED}
@@ -65,7 +65,7 @@ function Page() {
       faqTitle="Choosing an Online English Class — Questions & Answers"
       waMessage="Hi, I'm comparing options. Can you help me work out whether your course fits what I need?"
       ctaTitle="Take three trials in one week"
-      ctaBody="Ours is one of them: a real live class, no card, and you can count your own speaking minutes."
+      ctaBody="Ours is one of them. Chat on WhatsApp and we'll share the next slot."
     />
   );
 }

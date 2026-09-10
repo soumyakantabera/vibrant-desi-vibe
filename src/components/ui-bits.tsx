@@ -146,7 +146,7 @@ export const SITE_GUIDES: {
   {
     to: "/english-class-fees-india",
     title: "Fees in India",
-    sub: "From ₹999/mo GST included. What ₹800 vs ₹8,000/month actually buys.",
+    sub: "From ₹999/mo inclusive of taxes. What ₹800 vs ₹8,000/month actually buys.",
     icon: "rupee",
     color: "sunshine",
   },

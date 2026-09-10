@@ -210,7 +210,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Our IELTS batches usually have around 6 learners so every essay gets individually corrected, and you sit six full-length timed mocks before the real thing. Academic and General Training, three months, ₹2,499/month. The demo class is free and it is a real class.",
+    text: "Our IELTS batches usually have around 6 learners so every essay gets individually corrected, and you sit six full-length timed mocks before the real thing. Academic and General Training, three months, ₹2,499/month.",
     course: "/course-ielts",
     label: "See the IELTS course",
   },

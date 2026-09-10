@@ -110,22 +110,22 @@ function Page() {
         <div className="container-x text-center">
           <h2 className="text-3xl md:text-4xl">Want to be the next story?</h2>
           <p className="mt-3 text-ink/85 max-w-xl mx-auto">
-            Tell us your goal — we'll match you to the right course and a free demo slot, same day.
+            Tell us your goal — we'll match you to the right course.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton
               message="Hi, I want to be the next success story. Free demo please."
-              variant="primary"
+              variant="sun"
               size="lg"
             >
-              🎓 Book Free Demo
+              Book a Free Demo
             </WaButton>
             <WaButton
               message="Hi, please recommend a course based on my goal."
               variant="wa"
               size="lg"
             >
-              Get a Recommendation
+              Chat on WhatsApp
             </WaButton>
           </div>
         </div>

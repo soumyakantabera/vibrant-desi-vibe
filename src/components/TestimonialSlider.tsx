@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
+import { BrandIcon } from "./BrandIcon";
 
 export type Testimonial = {
   quote: string;
@@ -74,7 +75,7 @@ function Card({ t, ctaLabel }: { t: Testimonial; ctaLabel: string }) {
           rel="noopener noreferrer"
           className="btn btn-wa btn-sm mt-3 w-full"
         >
-          <Icon name="whatsapp" size={16} />
+          <BrandIcon name="whatsapp" size={16} color="#053b1e" />
           {ctaLabel}
         </a>
       </div>

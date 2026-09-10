@@ -65,8 +65,8 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
   {
     icon: "shield",
     color: "sage",
-    t: "Free Demo First",
-    d: "Attend a full live class before you decide to enrol.",
+    t: "Chat on WhatsApp",
+    d: "Message us. We’ll help you pick a course.",
   },
   {
     icon: "bulb",
@@ -99,7 +99,8 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white">
             Seven years of teaching, 500+ learners, and one belief: learning should be simple,
-            practical and enjoyable. From ₹999/mo. A Kolkata classroom, learners across India.
+            practical and enjoyable. From ₹999/mo, inclusive of taxes. A Kolkata classroom, learners
+            across India.
           </p>
         </div>
       </section>
@@ -183,19 +184,17 @@ function Page() {
       <section className="section">
         <div className="container-x text-center">
           <h2 className="text-3xl md:text-4xl">Ready to learn the smile way?</h2>
-          <p className="mt-3 text-ink/85 max-w-xl mx-auto">
-            Book a free demo on WhatsApp — see a real live class before you decide.
-          </p>
+          <p className="mt-3 text-ink/85 max-w-xl mx-auto">Chat on WhatsApp.</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton
               message="Hi, I read About Us. Book me a free demo please."
-              variant="primary"
+              variant="sun"
               size="lg"
             >
-              🎓 Book Free Demo
+              Book a Free Demo
             </WaButton>
             <WaButton message="Hi, I'd like a course recommendation." variant="wa" size="lg">
-              Chat with Us
+              Chat on WhatsApp
             </WaButton>
           </div>
         </div>

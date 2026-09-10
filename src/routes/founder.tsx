@@ -5,6 +5,7 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/founder")({
   component: Page,
@@ -123,8 +124,8 @@ function FounderCard({
         </div>
 
         <div className="mt-5">
-          <WaButton message={waMessage} size="md">
-            Message on WhatsApp
+          <WaButton message={waMessage} variant="wa" size="md">
+            {CHAT_CTA}
           </WaButton>
         </div>
       </div>
@@ -158,8 +159,8 @@ function Page() {
             One mentor. <span className="text-sunshine">One mission.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey — founder and lead teacher. 100% live. From ₹999/mo. Kolkata-based, teaching
-            learners across India. ₹0 demo in a real class.
+            Sunanda Dey — founder and lead teacher. 100% live. From ₹999/mo, inclusive of taxes.
+            Kolkata-based, teaching learners across India.
           </p>
         </div>
       </section>
@@ -201,15 +202,14 @@ function Page() {
         <div className="container-x text-center">
           <h2 className="text-cream text-3xl md:text-4xl">Talk to the founder directly.</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
-            Tell us your goal — we'll confirm a free live demo slot on WhatsApp.
+            Tell us your goal — we’ll reply on WhatsApp.
           </p>
-          <div className="mt-6">
-            <WaButton
-              message="Hi founders, I want a free demo. Please guide me."
-              variant="sun"
-              size="lg"
-            >
-              Book Free Demo on WhatsApp
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
+            </WaButton>
+            <WaButton message={DEMO_MSG} variant="sun" size="lg">
+              <Icon name="spark" size={18} /> {DEMO_CTA}
             </WaButton>
           </div>
         </div>

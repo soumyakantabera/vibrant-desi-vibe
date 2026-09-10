@@ -49,7 +49,7 @@ export const body: ArticleBody = [
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
       ["Commute, up to twice a week", "45–90 min each way", "None"],
       ["Class recordings", "Rarely", "Every class"],
-      ["Fee", "₹1,500–₹6,000 for 3 months", "₹999/month, GST included"],
+      ["Fee", "₹1,500–₹6,000 for 3 months", "₹999/month, inclusive of taxes"],
     ],
   },
   {
@@ -138,7 +138,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "All figures include GST. There is no registration fee and no material fee. The demo class is free, and it is a real live class with actual students rather than a sales call.",
+    text: "All figures are inclusive of taxes. There is no registration fee and no material fee. The demo is free. Chat on WhatsApp to book one.",
   },
 
   { t: "h2", text: "Batch timings, on IST" },
@@ -171,7 +171,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If none of those apply and you want to see what a batch of around six actually feels like, the demo is free and takes a WhatsApp message to arrange. Sit in a real class, meet the teacher, then decide.",
+    text: "If none of those apply and you want to see what a batch of around six actually feels like, chat on WhatsApp. Meet the teacher, then pick a course.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

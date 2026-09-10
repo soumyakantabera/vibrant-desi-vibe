@@ -6,6 +6,7 @@ import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSli
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
   COURSE_SEO,
   SITE_NAME,
@@ -168,7 +169,7 @@ export function CoursePage({ data }: { data: CourseData }) {
           ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
           : { big: data.price }
       }
-      subnote={`${data.duration} · GST included`}
+      subnote={`${data.duration} · inclusive of taxes`}
       rows={[
         { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
         {
@@ -240,11 +241,11 @@ export function CoursePage({ data }: { data: CourseData }) {
               curriculum · ✓ Pan-India · Based in Kolkata
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
-              <WaButton message={waPrimary} variant="sun" size="lg">
-                Book a Free Demo
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+                {CHAT_CTA}
               </WaButton>
-              <WaButton message={waSyllabus} variant="wa" size="lg">
-                Get Full Syllabus
+              <WaButton message={waPrimary} variant="sun" size="lg">
+                {DEMO_CTA}
               </WaButton>
             </div>
           </div>
@@ -298,8 +299,8 @@ export function CoursePage({ data }: { data: CourseData }) {
               ))}
             </ul>
             <div className="mt-6">
-              <WaButton message={waPrimary} size="lg">
-                Reserve My Free Demo Slot
+              <WaButton message={waPrimary} variant="sun" size="lg">
+                {DEMO_CTA}
               </WaButton>
             </div>
           </div>
@@ -345,7 +346,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 We'll reply on WhatsApp with current batch timings and pricing.
               </p>
             </div>
-            <WaButton message={waSyllabus} variant="white">
+            <WaButton message={waSyllabus} variant="wa">
               Send Me the Syllabus
             </WaButton>
           </div>
@@ -471,10 +472,10 @@ export function CoursePage({ data }: { data: CourseData }) {
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waPrimary} variant="sun" size="lg">
-              🎓 Book Free Demo
+              {DEMO_CTA}
             </WaButton>
-            <WaButton message={waSyllabus} variant="white" size="lg">
-              Get Pricing on WhatsApp
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
             </WaButton>
           </div>
         </div>

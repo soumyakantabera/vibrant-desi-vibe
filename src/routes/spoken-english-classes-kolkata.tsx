@@ -32,7 +32,7 @@ export const Route = createFileRoute("/spoken-english-classes-kolkata")({
         "@type": "Service",
         "@id": `${abs(PATH)}#service`,
         serviceType: "Spoken English Classes",
-        name: "Live Spoken English for Kolkata — Approx. 6 learners, ₹999/mo",
+        name: "Live Spoken English for Kolkata — Approx. 6 learners, ₹999/mo, inclusive of taxes",
         url: abs(PATH),
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: [
@@ -63,7 +63,7 @@ function Page() {
           Approx. 6 Learners per Batch
         </>
       }
-      standfirst="Taught live from Kolkata, attended from home. ₹999/month, approximately 6 learners per batch, and morning, evening and weekend batches on IST."
+      standfirst="Taught live from Kolkata, attended from home. ₹999/month, inclusive of taxes, approximately 6 learners per batch, and morning, evening and weekend batches on IST."
       heroImage={IMG.groupClass}
       heroAlt="Kolkata learners in a live online English class"
       body={body}
@@ -71,7 +71,7 @@ function Page() {
       faqTitle="Spoken English in Kolkata — Questions & Answers"
       waMessage="Hi, I'm in Kolkata and I'd like a free demo for Spoken English. Please share batch timings."
       ctaTitle="See a batch of around six for yourself"
-      ctaBody="The demo is a real live class, not a sales call. Message us and we'll put you in the next available slot."
+      ctaBody="Message us on WhatsApp and we'll put you in the next available slot."
     />
   );
 }

@@ -14,7 +14,7 @@ export const body: ArticleBody = [
       "**Speaking minutes.** In a 60-minute class, your mic ≈ (40 minutes) ÷ (headcount). See [the math](/blog/speaking-minutes-in-a-60-minute-class).",
       "**GST and lock-in.** Advertised ₹2,000 + 18% + materials is not ₹2,000. Monthly UPI beats a 12-month cheque.",
       "**Named teacher.** Apps rotate. Franchise rooms rotate. A teacher who remembers your article errors is a different product.",
-      "**Demo is a class, not a counselling desk.** If the “demo” is a sales call, leave.",
+      "**Ask to sit in a class.** If they only pitch, leave.",
       "**Google reviews as patterns, not stars.** Read the 3-star comments. They name batch size, fees, and “I never spoke”. 5-star walls with no specifics are ads.",
       "**Certificate vs speaking.** Visa/university → British Council or similar. Job interview in India → they will judge you in 60 seconds, not your PDF. We do not issue a certificate; we say so.",
     ],
@@ -32,8 +32,8 @@ export const body: ArticleBody = [
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
       ["Parent app, games, under-14", "PlanetSpark-style. Do not put a child in an adult batch."],
       [
-        "₹999/mo, approximately 6 learners, ₹0 real class, GST in",
-        "Us. 7 years, 500+ learners, 11 states. Still take the demo.",
+        "₹999/mo, approximately 6 learners, inclusive of taxes",
+        "Us. 7 years, 500+ learners, 11 states.",
       ],
     ],
   },
@@ -56,8 +56,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Make us trial one of three. Real class. Approx. 6 learners. From ₹999/mo.",
+    text: "Make us trial one of three. Approx. 6 learners. From ₹999/mo.",
     course: "/book-free-demo",
-    label: "Book the ₹0 live demo",
+    label: "Book a Free Demo",
   },
 ];

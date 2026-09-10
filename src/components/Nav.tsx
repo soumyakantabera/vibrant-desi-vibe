@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { waLink } from "@/lib/whatsapp";
+import { DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -21,32 +21,37 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-spoken-english",
     label: "Basic Spoken English",
     icon: "mic",
-    desc: "6 months · ₹999/mo",
+    desc: "6 months · ₹999/mo, inclusive of taxes",
   },
   {
     to: "/course-business-english",
     label: "Workplace English",
     icon: "headset",
-    desc: "3 months · ₹1,999/month",
+    desc: "3 months · ₹1,999/month, inclusive of taxes",
   },
   {
     to: "/course-interactive-speaking",
     label: "Interactive Speaking",
     icon: "headset",
-    desc: "3 months · ₹1,199/month",
+    desc: "3 months · ₹1,199/month, inclusive of taxes",
   },
-  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹2,499/mo" },
+  {
+    to: "/course-ielts",
+    label: "IELTS Preparation",
+    icon: "trophy",
+    desc: "3 months · ₹2,499/mo, inclusive of taxes",
+  },
   {
     to: "/course-interview-prep",
     label: "Interview Prep",
     icon: "target",
-    desc: "2 months · ₹1,499/mo",
+    desc: "2 months · ₹1,499/mo, inclusive of taxes",
   },
   {
     to: "/course-career-counselling",
     label: "Career Counselling",
     icon: "compass",
-    desc: "3 × 60 min · ₹1,999 total",
+    desc: "3 × 60 min · ₹1,999 total, inclusive of taxes",
   },
 ];
 
@@ -54,7 +59,8 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const { location } = useRouterState();
-  const wa = waLink("Hi, I am interested in a free demo. Please guide me.");
+  const wa = waLink(DEMO_MSG);
+  const chat = waLink(CHAT_MSG);
   const dropRef = useRef<HTMLDivElement>(null);
 
   // close on route change & body lock
@@ -170,11 +176,21 @@ export function Nav() {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex btn btn-wa btn-sm shadow-md hover:shadow-lg"
+              className="hidden lg:inline-flex btn btn-sun btn-sm shadow-md hover:shadow-lg"
               data-cta-goal="free_demo"
             >
+              <Icon name="spark" size={16} />
+              {DEMO_CTA}
+            </a>
+            <a
+              href={chat}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex btn btn-wa btn-sm shadow-md hover:shadow-lg"
+              data-cta-goal="whatsapp_chat"
+            >
               <BrandIcon name="whatsapp" size={17} color="#053b1e" />
-              <span className="hidden md:inline">₹0 Demo on WhatsApp</span>
+              <span className="hidden md:inline">{CHAT_CTA}</span>
               <span className="md:hidden">WhatsApp</span>
             </a>
             <button
@@ -211,15 +227,15 @@ export function Nav() {
                   <Icon name="close" />
                 </button>
               </div>
-              <div className="grid grid-cols-[1.2fr_0.8fr] gap-2" data-cta-location="nav">
+              <div className="grid gap-2" data-cta-location="nav">
                 <a
-                  href={wa}
+                  href={chat}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-wa justify-center shadow-lg px-3"
+                  className="btn btn-wa justify-center px-3"
                   data-cta-goal="whatsapp_chat"
                 >
-                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat Now
+                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> {CHAT_CTA}
                 </a>
                 <a
                   href={wa}
@@ -228,7 +244,7 @@ export function Nav() {
                   className="btn btn-sun justify-center px-3"
                   data-cta-goal="free_demo"
                 >
-                  <Icon name="calendar" size={17} /> ₹0 Demo
+                  <Icon name="spark" size={17} /> {DEMO_CTA}
                 </a>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
@@ -277,12 +293,13 @@ export function Nav() {
             {/* Footer */}
             <div className="mt-auto p-4 border-t border-border bg-white sticky bottom-0">
               <a
-                href={wa}
+                href={chat}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-wa w-full justify-center"
+                data-cta-goal="whatsapp_chat"
               >
-                <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat on WhatsApp
+                <BrandIcon name="whatsapp" size={18} color="#053b1e" /> {CHAT_CTA}
               </a>
             </div>
           </aside>

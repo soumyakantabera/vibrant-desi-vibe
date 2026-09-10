@@ -179,7 +179,7 @@ function BlockView({ block }: { block: Block }) {
           <div className="mt-4 flex flex-wrap gap-3">
             {block.course === "/book-free-demo" ? (
               <WaButton
-                message="Hi, I'd like a ₹0 live demo. Please share the next slot."
+                message="Hi, I'd like a free demo. Please share the next slot."
                 variant="sun"
                 size="sm"
                 goal="free_demo"
@@ -196,7 +196,7 @@ function BlockView({ block }: { block: Block }) {
               variant="wa"
               size="sm"
             >
-              Ask on WhatsApp
+              Chat on WhatsApp
             </WaButton>
           </div>
         </div>

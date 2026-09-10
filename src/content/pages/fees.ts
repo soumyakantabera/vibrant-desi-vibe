@@ -115,9 +115,9 @@ export const body: ArticleBody = [
     head: ["Ask", "Why it matters", "Our answer"],
     rows: [
       [
-        "Is GST included or added?",
+        "Is the fee inclusive of taxes, or added on top?",
         "18% on ₹2,000/month is ₹360 a month you did not budget for.",
-        "Included. The advertised figure is what you pay.",
+        "Inclusive of taxes. The advertised figure is what you pay.",
       ],
       [
         "Is there a registration or material fee?",
@@ -169,7 +169,8 @@ export const body: ArticleBody = [
   { t: "h2", text: "Our fees, in full" },
   {
     t: "table",
-    caption: "All figures include GST. No registration fee, no material fee, billed monthly.",
+    caption:
+      "All figures are inclusive of taxes. No registration fee, no material fee, billed monthly.",
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
@@ -190,7 +191,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "The demo class is free, needs no card, and is a real live class rather than a sales call — which also means it is the cheapest way to check the batch size claim for yourself before paying anything.",
+    text: "Chat on WhatsApp. We'll share the next Spoken English slot.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

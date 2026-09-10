@@ -361,11 +361,25 @@ section > .container-x { position: relative; z-index: 10; }
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
-  .btn-wa {
-    background: var(--wa); color: #053b1e;
-    box-shadow: 0 8px 22px -12px rgba(5,59,30,.65);
+  /* WhatsApp brand: bright green fill + deep-green type.
+     Hover stays in the WhatsApp family. No extra outline. */
+  .btn-wa,
+  .btn-wa:link,
+  .btn-wa:visited,
+  .btn-wa:focus {
+    background: #25D366;
+    color: #053b1e !important;
+    -webkit-text-fill-color: #053b1e !important;
+    box-shadow: 0 8px 22px -12px rgba(5, 59, 30, .65);
+    border: 0;
   }
-  .btn-wa:hover { background: #1EBE5B; color: #053b1e; }
+  .btn-wa:hover,
+  .btn-wa:active {
+    background: #1EBE5B;
+    color: #053b1e !important;
+    -webkit-text-fill-color: #053b1e !important;
+    border: 0;
+  }
   .btn-sun {
     background: var(--sunshine); color: var(--ink);
     box-shadow: 0 8px 22px -12px rgba(107,74,0,.65);
@@ -402,6 +416,43 @@ section > .container-x { position: relative; z-index: 10; }
     background: linear-gradient(90deg, var(--brand) 0%, var(--indigo-pop) 50%, var(--coral) 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
+}
+
+/* Unlayered lock: contrast safety-net lives outside @layer and would otherwise
+   bleach Chat on WhatsApp on dark heroes. Bright WhatsApp green + deep type. */
+a.btn.btn-wa,
+a.btn.btn-wa:link,
+a.btn.btn-wa:visited,
+a.btn.btn-wa:focus,
+button.btn.btn-wa {
+  background: #25D366 !important;
+  color: #053b1e !important;
+  -webkit-text-fill-color: #053b1e !important;
+  box-shadow: 0 8px 22px -12px rgba(5, 59, 30, .65);
+  border: 0 !important;
+}
+a.btn.btn-wa:hover,
+a.btn.btn-wa:active,
+button.btn.btn-wa:hover,
+button.btn.btn-wa:active {
+  background: #1EBE5B !important;
+  color: #053b1e !important;
+  -webkit-text-fill-color: #053b1e !important;
+  border: 0 !important;
+}
+a.btn.btn-wa span,
+a.btn.btn-wa strong,
+a.btn.btn-wa svg,
+button.btn.btn-wa span,
+button.btn.btn-wa svg {
+  color: #053b1e !important;
+  -webkit-text-fill-color: #053b1e !important;
+  fill: #053b1e;
+}
+
+/* Floating WhatsApp mark: official simple-icons glyph on a white disc. */
+[data-cta-location="fab"] svg {
+  fill: #25D366;
 }
 
 /* Custom animations */

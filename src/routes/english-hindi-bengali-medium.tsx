@@ -50,7 +50,7 @@ function Page() {
           Hindi- or Bengali-medium. <span className="text-sunshine">You can still speak.</span>
         </>
       }
-      standfirst="Live batch of around 6. Explain in Hindi or Bengali when a concept stalls, then back to English. 6 months from ₹999/mo. ₹0 demo."
+      standfirst="Live batch of around 6. Explain in Hindi or Bengali when a concept stalls, then back to English. 6 months from ₹999/mo, inclusive of taxes."
       heroImage={IMG.speaking}
       heroAlt="Indian adult learner speaking English in a live online class"
       lastUpdated={UPDATED}
@@ -59,7 +59,7 @@ function Page() {
       faqTitle="Medium of school, medium of career"
       waMessage="Hi, I studied in Hindi / Bengali medium. I want Spoken English demo."
       ctaTitle="Message in Hindi, Bengali or English"
-      ctaBody="We will place you in a live Spoken batch. ₹0 demo. From ₹999/mo."
+      ctaBody="We will place you in a live Spoken batch. From ₹999/mo, inclusive of taxes."
     />
   );
 }

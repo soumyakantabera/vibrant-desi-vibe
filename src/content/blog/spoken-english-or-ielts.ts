@@ -45,7 +45,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "GST included. ₹0 live demo. Same teacher in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala.",
+    text: "Fees are inclusive of taxes. Same teacher in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala.",
   },
 
   { t: "h2", text: "Spoken English is not IELTS with the exam removed" },
@@ -72,6 +72,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Not sure? Sit in a live batch of around 6. We will tell you if IELTS is the wrong buy.",
     course: "/book-free-demo",
-    label: "₹0 demo — we’ll say if you’re on the wrong course",
+    label: "Book a Free Demo",
   },
 ];

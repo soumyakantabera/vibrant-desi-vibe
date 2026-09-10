@@ -7,24 +7,24 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,199/mo). If the problem is meetings, calls and emails, take [Workplace English](/course-business-english) (3 months, ₹1,999/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,199/mo). If the problem is meetings, calls and emails, take [Workplace English](/course-business-english) (3 months, ₹1,999/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
-    text: "Most people buy the wrong class because the internet sells “English” as one product. It is three rooms. This page is the picker. A ₹0 live demo is how you confirm it.",
+    text: "Most people buy the wrong class because the internet sells “English” as one product. It is three rooms. This page is the picker.",
   },
 
   { t: "h2", text: "The three rooms, in one table" },
   {
     t: "table",
     caption:
-      "Pick the bottleneck, then the course. Fees include GST. Approx. 6 learners in every English batch.",
+      "Pick the bottleneck, then the course. Fees are inclusive of taxes. Approx. 6 learners in every English batch.",
     head: ["If this is you", "Take this", "Time & fee", "Done looks like"],
     rows: [
       [
         "Cannot form a full sentence",
         "Spoken English",
-        "6 months · ₹999/mo",
+        "6 months · ₹999/mo, inclusive of taxes",
         "Introduce yourself, shops, phone, 2 minutes on a topic",
       ],
       [
@@ -84,8 +84,8 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Unsure? Sit in a live class for ₹0. We will place you in Spoken, Interactive or Business — not all three.",
+    text: "Unsure? Unsure? Chat on WhatsApp. We’ll place you in Spoken, Interactive or Business — not all three.",
     course: "/book-free-demo",
-    label: "Book a ₹0 live demo",
+    label: "Book a Free Demo",
   },
 ];

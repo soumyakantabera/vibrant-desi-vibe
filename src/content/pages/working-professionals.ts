@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Workplace English ₹1,999/mo, Interactive ₹1,199/mo. Approx. 6 learners. Message anytime; we reply **09:00–12:00 IST**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Workplace English ₹1,999/mo, Interactive ₹1,199/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **09:00–12:00 IST**.",
   },
   {
     t: "p",
@@ -51,13 +51,13 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "We reply to WhatsApp 09:00–12:00 IST. You can message at midnight. The human answer arrives in that morning window. No surprise sales call.",
+    text: "We reply to WhatsApp 09:00–12:00 IST. You can message at midnight. The human answer arrives in that morning window. No extra steps.",
   },
 
   {
     t: "cta",
     text: "Tell us your shift. We will suggest morning, evening or weekend — and Spoken, Interactive or Business.",
     course: "/book-free-demo",
-    label: "Book a ₹0 live demo",
+    label: "Book a Free Demo",
   },
 ];

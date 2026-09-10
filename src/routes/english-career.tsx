@@ -10,6 +10,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, COURSE_SLUGS, type CourseSlug } from "@/lib/course-categories";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
 type CoursePath = `/course-${CourseSlug}`;
 
@@ -64,19 +65,15 @@ function Page() {
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
               Six live English programmes — Spoken, Workplace, IELTS, Interview, Interactive
-              Speaking, and 1:1 Career Guidance. From ₹999/mo. ₹0 demo.
+              Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <WaButton message={wa} variant="sun" size="lg">
-                Free Demo on WhatsApp
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+                {CHAT_CTA}
               </WaButton>
-              <WaButton
-                message="Hi, please send me pricing for all English & Career courses."
-                variant="wa"
-                size="lg"
-              >
-                Get All Pricing
+              <WaButton message={wa} variant="sun" size="lg">
+                {DEMO_CTA}
               </WaButton>
             </div>
           </div>
@@ -88,7 +85,7 @@ function Page() {
                 badge="Live · English Track"
                 eyebrow="Whole track from"
                 headline={{ big: "₹999", suffix: "/month" }}
-                subnote="Monthly billing · GST included · UPI accepted"
+                subnote="Monthly billing · inclusive of taxes · UPI accepted"
                 rows={[
                   {
                     tone: "brand",
@@ -120,7 +117,7 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Four Clear Categories"
-            title="6 Programmes · Approx. 6 per Batch · From ₹999/mo"
+            title="6 Programmes · Approx. 6 per Batch · From ₹999/mo, inclusive of taxes"
             subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance — pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
@@ -214,9 +211,12 @@ function Page() {
               Tell us your goal — interview, abroad study, office promotion, daily confidence —
               we'll recommend the right course during 09:00–12:00 IST on WhatsApp.
             </p>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap gap-3">
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+                {CHAT_CTA}
+              </WaButton>
               <WaButton message={wa} variant="sun" size="lg">
-                Get My Recommendation
+                {DEMO_CTA}
               </WaButton>
             </div>
           </div>

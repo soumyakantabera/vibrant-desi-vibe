@@ -46,11 +46,11 @@ function Page() {
       breadcrumb="Workplace English Course Online India"
       h1={
         <>
-          Workplace English in India — ₹1,999/mo,{" "}
+          Workplace English in India — ₹1,999/mo, inclusive of taxes,{" "}
           <span className="text-sunshine">Approx. 6 learners, 3 Months</span>
         </>
       }
-      standfirst="Meetings, client calls, updates, emails, presentations. 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/mo GST included. Who should join — and who should self-study."
+      standfirst="Meetings, client calls, updates, emails, presentations. 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/mo inclusive of taxes. Who should join — and who should self-study."
       heroImage={IMG.businessEnglish}
       heroAlt="Indian professional practising English for an online workplace meeting"
       lastUpdated={UPDATED}

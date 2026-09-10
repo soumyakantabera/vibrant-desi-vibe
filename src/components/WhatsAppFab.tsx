@@ -1,8 +1,6 @@
-import { waLink } from "@/lib/whatsapp";
+import { CHAT_CTA, DEMO_CTA, DEMO_MSG, waLink } from "@/lib/whatsapp";
 import { BrandIcon } from "./BrandIcon";
 import { Icon } from "./Icon";
-
-const DEMO_MSG = "Hi, I'd like a ₹0 live demo. Please share the next slot.";
 
 export function WhatsAppFab({
   message = "Hi! I want to know more about Learn With Smile courses.",
@@ -17,17 +15,19 @@ export function WhatsAppFab({
         href={whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
+        aria-label={CHAT_CTA}
         className="fixed bottom-5 right-5 z-50 hidden sm:block"
         data-cta-location="fab"
       >
-        <span className="relative flex items-center justify-center rounded-full bg-white shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-4 ring-[#25D366]/30">
-          <BrandIcon name="whatsapp" size={42} />
+        {/* Official WhatsApp mark: green glyph on white so the bubble
+            cut-out punches through to white (app-icon look). */}
+        <span className="relative flex items-center justify-center overflow-hidden rounded-full bg-white shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-4 ring-[#25D366]/30">
+          <BrandIcon name="whatsapp" size={58} className="md:!h-[62px] md:!w-[62px]" />
         </span>
       </a>
 
       <div
-        className="sm:hidden fixed bottom-3 inset-x-3 z-50 grid grid-cols-[1.25fr_0.75fr] gap-2 rounded-2xl bg-white/95 backdrop-blur p-2 shadow-2xl ring-1 ring-ink/10"
+        className="sm:hidden fixed bottom-3 inset-x-3 z-50 grid grid-cols-2 gap-2 rounded-2xl bg-white/95 backdrop-blur p-2 shadow-2xl ring-1 ring-ink/10"
         data-cta-location="sticky"
         aria-label="Contact Learn With Smile"
       >
@@ -35,19 +35,19 @@ export function WhatsAppFab({
           href={whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-wa justify-center px-3"
+          className="btn btn-wa btn-sm justify-center px-2"
           data-cta-goal="whatsapp_chat"
         >
-          <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat on WhatsApp
+          <BrandIcon name="whatsapp" size={16} color="#053b1e" /> {CHAT_CTA}
         </a>
         <a
           href={demo}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-sun justify-center px-3"
+          className="btn btn-sun btn-sm justify-center px-2"
           data-cta-goal="free_demo"
         >
-          <Icon name="calendar" size={17} /> ₹0 Demo
+          <Icon name="spark" size={16} /> {DEMO_CTA}
         </a>
       </div>
     </>

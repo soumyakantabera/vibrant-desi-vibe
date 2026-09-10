@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "6 months, ₹999/mo, approx. 6 learners. Speak from zero — 2,000+ words, live correction, up to 2 classes/week.",
+      "6 months, ₹999/mo, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -90,8 +90,8 @@ export const COURSES: Record<string, CourseData> = {
         a: "Approximately 6 learners join each batch, so everyone gets real speaking time.",
       },
       {
-        q: "Is the demo really free?",
-        a: "Yes, 100% free. Attend a full live class before deciding.",
+        q: "How do I start?",
+        a: "Chat on WhatsApp. We’ll help you pick a course.",
       },
       {
         q: "What if I miss a class?",
@@ -120,13 +120,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/mo. Free demo on WhatsApp.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/mo, inclusive of taxes.",
   },
   "business-english": {
     slug: "business-english",
     title: "Workplace English",
     tagline:
-      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/mo. For professionals, freshers and job seekers.",
+      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/mo, inclusive of taxes. For professionals, freshers and job seekers.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "headset",
@@ -207,13 +207,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month.",
+      "Workplace English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, inclusive of taxes.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays. Approx. 6 learners, up to 2 classes/week, ₹1,199/mo. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays. Approx. 6 learners, up to 2 classes/week, ₹1,199/mo, inclusive of taxes. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -275,13 +275,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · approximately 6 learners per batch · ₹1,199/mo.",
+      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · approximately 6 learners per batch · ₹1,199/mo, inclusive of taxes.",
   },
   ielts: {
     slug: "ielts",
     title: "IELTS Preparation",
     tagline:
-      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Approximately 6 learners per batch, ₹2,499/mo. Academic or General Training.",
+      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Approximately 6 learners per batch, ₹2,499/mo, inclusive of taxes. Academic or General Training.",
     category: "IELTS Preparation",
     categoryColor: "brand",
     icon: "trophy",
@@ -368,13 +368,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "IELTS Preparation live online — 3 months · up to 2 classes/week · approximately 6 learners per batch · ₹2,499/mo. 6+ mocks, live feedback and a free demo.",
+      "IELTS Preparation live online — 3 months · up to 2 classes/week · approximately 6 learners per batch · ₹2,499/mo, inclusive of taxes. 6+ mocks and live feedback.",
   },
   "interview-prep": {
     slug: "interview-prep",
     title: "Interview Preparation in English",
     tagline:
-      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Approx. 6 learners, up to 2 classes/week, ₹1,499/mo. Walk in ready.",
+      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Approx. 6 learners, up to 2 classes/week, ₹1,499/mo, inclusive of taxes. Walk in ready.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "target",
@@ -449,13 +449,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · approx. 6 learners · ₹1,499/mo.",
+      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · approx. 6 learners · ₹1,499/mo, inclusive of taxes.",
   },
   "career-counselling": {
     slug: "career-counselling",
     title: "Career Counselling",
     tagline:
-      "1:1 quality guidance — 3 × 60-min sessions for ₹1,999 total. Strengths map, 3 career paths, 6-month action plan, resume and LinkedIn review.",
+      "1:1 quality guidance — 3 × 60-min sessions for ₹1,999 total, inclusive of taxes. Strengths map, 3 career paths, 6-month action plan, resume and LinkedIn review.",
     category: "Career Guidance",
     categoryColor: "brand",
     icon: "compass",

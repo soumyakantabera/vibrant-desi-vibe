@@ -198,7 +198,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If you want the fourth habit built in — a real batch of approximately 6 learners, where you speak in every class and someone corrects the same mistake until it goes away — the demo class is free and it is a real class, not a sales call. Message us on WhatsApp and we'll put you in the next available batch.",
+    text: "If you want the fourth habit built in — a real batch of approximately 6 learners, where you speak in every class and someone corrects the same mistake until it goes away — the demo is free. Message us on WhatsApp and we'll put you in the next available batch.",
     course: "/course-interactive-speaking",
     label: "See the Interactive Speaking course",
   },

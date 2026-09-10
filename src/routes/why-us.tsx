@@ -13,6 +13,7 @@ import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/why-us")({
   component: Page,
@@ -32,7 +33,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "₹999/month live teaching, GST included",
+                name: "₹999/month live teaching, inclusive of taxes",
               },
               {
                 "@type": "ListItem",
@@ -42,7 +43,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "₹0 live demo in a real class — no sales call, no card",
+                name: "Chat on WhatsApp",
               },
               {
                 "@type": "ListItem",
@@ -79,7 +80,7 @@ const MARKET = [
     icon: "trophy" as const,
     tag: "Brand-name groups",
     title: "Curriculum. Limited talking.",
-    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹999/mo — and a 3-month IELTS room when a visa or university form actually asks.",
+    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹999/mo, inclusive of taxes — and a 3-month IELTS room when a visa or university form actually asks.",
     stat: "₹8,800–₹16,000 / module",
   },
   {
@@ -87,8 +88,8 @@ const MARKET = [
     icon: "smile" as const,
     tag: "Learn With Smile",
     title: "₹999/mo. 7 years. 500+.",
-    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. GST included. ₹0 demo in a real class. Batches have approximately 6 learners so you actually speak — secondary to the teaching, not a slogan we hide behind.`,
-    stat: "From ₹999/mo · GST in",
+    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. Inclusive of taxes. Batches have approximately 6 learners so you actually speak.`,
+    stat: "From ₹999/mo · inclusive of taxes",
   },
 ];
 
@@ -120,15 +121,14 @@ function Page() {
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
               A teacher who knows your name. 500+ learners, 7 years. You speak every class. From
-              ₹999/mo.
+              ₹999/mo, inclusive of taxes.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <WaButton
-                message="Hi, I want a free demo to see Learn With Smile in action."
-                variant="sun"
-                size="lg"
-              >
-                Free Demo on WhatsApp
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+                {CHAT_CTA}
+              </WaButton>
+              <WaButton message={DEMO_MSG} variant="sun" size="lg">
+                <Icon name="spark" size={18} /> {DEMO_CTA}
               </WaButton>
               <Link to="/english-institute-comparison-india" className="btn btn-white btn-lg">
                 Compare the market
@@ -143,7 +143,7 @@ function Page() {
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
                 headline={{ big: "₹999", suffix: "/mo" }}
-                subnote="GST included · Kolkata-born · heard across India"
+                subnote="inclusive of taxes · Kolkata-born · heard across India"
                 rows={[
                   {
                     tone: "brand",
@@ -154,8 +154,8 @@ function Page() {
                   {
                     tone: "indigo",
                     icon: SnapIcons.refresh,
-                    big: "₹0",
-                    small: "Full demo class. No sales call.",
+                    big: "Free",
+                    small: "Demo on WhatsApp",
                   },
                   {
                     tone: "coral",
@@ -211,8 +211,8 @@ function Page() {
           <FeatureCard icon="play" color="brand" title="100% Live, Always">
             Real teacher, real time, real Q&A. No passive video sold as a class.
           </FeatureCard>
-          <FeatureCard icon="rupee" color="sunshine" title="From ₹999/mo">
-            GST included. No registration fee. No material fee. Monthly UPI.
+          <FeatureCard icon="rupee" color="sunshine" title="From ₹999/mo, inclusive of taxes">
+            No registration fee. No material fee. Monthly UPI.
           </FeatureCard>
           <FeatureCard icon="star" color="coral" title={`${RATING_DISPLAY} ${RATING.source}`}>
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.
@@ -226,8 +226,8 @@ function Page() {
           <FeatureCard icon="users" color="brand" title="Approximately 6 learners per batch">
             Secondary to quality: enough peers to practise with, few enough that you still talk.
           </FeatureCard>
-          <FeatureCard icon="shield" color="coral" title="Demo before you pay">
-            Sit in a full live class. If it is not for you, you do not pay a rupee.
+          <FeatureCard icon="shield" color="coral" title="Chat on WhatsApp">
+            Message us. We'll help you pick a course.
           </FeatureCard>
           <FeatureCard icon="user" color="indigo" title="Direct teacher support">
             1:1 outside class when you genuinely need it — not a ticket bot.
@@ -249,7 +249,7 @@ function Page() {
         faqs={PAGES["/why-us"].faqs ?? []}
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
-        subtitle="₹999/mo, 7 years, 500+ learners, live vs recorded, batch of around 6, and the ₹0 demo."
+        subtitle="₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6."
         waMessage="Hi, I want to understand how your classes work."
       />
 
@@ -263,18 +263,16 @@ function Page() {
             position="center 22%"
           />
           <div className="text-cream">
-            <h2 className="text-3xl text-cream md:text-4xl">The First Class Is Free. Always.</h2>
+            <h2 className="text-3xl text-cream md:text-4xl">Ready to start?</h2>
             <p className="mt-3 text-white/95">
-              Walk into a real live class — same teacher, same energy. 7 years, 500+ learners, from
-              ₹999/mo. If it is not for you, you do not pay a rupee.
+              Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <WaButton
-                message="Hi, I want a free demo to see Learn With Smile in action."
-                variant="sun"
-                size="lg"
-              >
-                Book My Free Demo
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+                {CHAT_CTA}
+              </WaButton>
+              <WaButton message={DEMO_MSG} variant="sun" size="lg">
+                <Icon name="spark" size={18} /> {DEMO_CTA}
               </WaButton>
               <Link to="/english-class-fees-india" className="btn btn-ghost-white">
                 See fees in India

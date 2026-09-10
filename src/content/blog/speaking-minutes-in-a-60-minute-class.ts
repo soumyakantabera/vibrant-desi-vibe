@@ -42,7 +42,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "What the institutes are actually selling" },
   {
     t: "p",
-    text: "Franchise classrooms in Kolkata, Pune, Chennai (Veta-style 2–4 months, ₹3,500–₹10,000) sell **presence**. Exam shops (EEC-style spoken English around ₹7,500) sell **a visa stack**. Native apps sell **minutes**. We sell **minutes + a 6-month map** at ₹999/month, GST included, with approximately 6 learners per batch.",
+    text: "Franchise classrooms in Kolkata, Pune, Chennai (Veta-style 2–4 months, ₹3,500–₹10,000) sell **presence**. Exam shops (EEC-style spoken English around ₹7,500) sell **a visa stack**. Native apps sell **minutes**. We sell **minutes + a 6-month map** at ₹999/month, inclusive of taxes, with approximately 6 learners per batch.",
   },
   {
     t: "p",
@@ -61,9 +61,9 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Sit in our batch of around 6 and count your own minutes. ₹0. No card.",
+    text: "Sit in our batch of around 6 and count your own minutes.",
     course: "/book-free-demo",
-    label: "Book the ₹0 demo",
+    label: "Book a Free Demo",
   },
 
   { t: "h2", text: "When fewer minutes are still the right buy" },

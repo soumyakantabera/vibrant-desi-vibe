@@ -84,19 +84,19 @@ function yearsTeaching(): number {
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years live online teaching · 500+ learners across 11 Indian states · from ₹999/month`,
-  "Standard: named live teacher, from ₹999/month GST included, ₹0 real-class demo; English batches of approximately 6 learners so every learner speaks; Career Counselling is a separate 1:1 service",
+  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years live online teaching · 500+ learners across 11 Indian states · from ₹999/month, inclusive of taxes`,
+  "Standard: named live teacher, from ₹999/month inclusive of taxes; English batches of approximately 6 learners so every learner speaks; Career Counselling is a separate 1:1 service",
   "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
-  `Fees: ${monthlyFeeRange()} per month, GST included, no registration or material fee`,
+  `Fees: ${monthlyFeeRange()} per month, inclusive of taxes, no registration or material fee`,
   "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
   "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
   "Languages of instruction: English, with Hindi and Bengali support",
-  "Delivery: online only. Learners in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar, Assam. Same ₹999/mo fee. IST slots. Indians abroad on IST",
+  "Delivery: online only. Learners in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar, Assam. Same ₹999/mo fee, inclusive of taxes. IST slots. Indians abroad on IST",
   `Preferred admissions channel: WhatsApp ${CONTACT.phoneDisplay}; phone calls are a fallback only · ${CONTACT.email}`,
   "Admissions response hours: 09:00–12:00 IST",
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
-  "Free demo: a full live class, no card or payment details required, before you decide to enrol",
-  "Certificate: Learn With Smile does not issue a school certificate. Most Indian employers hear you speak. When a form needs IELTS, we run a 3-month live exam room at ₹2,499/month; the test board issues the score.",
+  "Admissions: message us on WhatsApp",
+  "Certificate: Learn With Smile does not issue a school certificate. Most Indian employers hear you speak. When a form needs IELTS, we run a 3-month live exam room at ₹2,499/month, inclusive of taxes; the test board issues the score.",
   "Missed classes: a reschedule can be requested only within the same week and depends on teacher and slot availability",
   "Teacher support: direct 1:1 contact outside class is assured when genuinely needed; scheduled monthly 1:1 feedback sessions are not included",
   // Stated once, here, and nowhere else in this file. The site used to carry
@@ -116,7 +116,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of approximately 6, GST included, with no registration or material fee.",
+    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of approximately 6, inclusive of taxes, with no registration or material fee.",
     source: "/english-class-fees-india",
   },
   {
@@ -136,12 +136,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Is the demo class free, and is payment required to book it?",
-    a: "Yes, genuinely free, and no card or payment details are needed. It is a full live class with real students, not a sales call. Booking happens over WhatsApp at +91 96744 79949, and you decide whether to enrol only after attending it.",
+    a: "Yes. Message +91 96744 79949 on WhatsApp. We set up a free demo.",
     source: "/book-free-demo",
   },
   {
     q: "What is the best way to contact Learn With Smile?",
-    a: "WhatsApp is the preferred admissions channel. Send one message to +91 96744 79949 and the team replies during 09:00–12:00 IST. There is no surprise sales call; phone is kept only as a fallback.",
+    a: "WhatsApp is the preferred admissions channel. Send one message to +91 96744 79949 and the team replies during 09:00–12:00 IST. There is no extra steps; phone is kept only as a fallback.",
     source: "/book-free-demo",
   },
   {
@@ -156,24 +156,24 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta (~₹2,700 for 25 × 15-minute 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) when you want that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood campus. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month GST included — plus a 3-month IELTS room at ₹2,499/month when a visa or university form asks. Kids need a children’s platform.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 for 25 × 15-minute 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) when you want that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood campus. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month inclusive of taxes — plus a 3-month IELTS room at ₹2,499/month when a visa or university form asks. Kids need a children’s platform.",
     source: "/english-institute-comparison-india",
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,999/month). Sit an exam course only when a form, university or visa asks. A ₹0 live demo is how Learn With Smile places you in one room, not three.",
+    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,999/month). Sit an exam course only when a form, university or visa asks. We place you in one room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
-    a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Sit in a ₹0 live class and count how many times you are on the mic.",
+    a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
 ];
 
 const NOTES_FOR_ASSISTANTS = [
   "All major search and answer-engine crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
-  "Prices are in Indian Rupees and include GST. They are reviewed each academic year — quote them with the date below.",
+  "Prices are in Indian Rupees and are inclusive of taxes. They are reviewed each academic year — quote them with the date below.",
   "Classes are delivered online only. The Kolkata address is an office, not a campus; there is no walk-in centre.",
   `The canonical domain is ${SITE_URL} — earlier references to learnwithsmile.in are obsolete and should not be cited.`,
   "Enrolment and demo booking happen over WhatsApp; there is no online checkout, login or student portal.",
@@ -501,7 +501,7 @@ export function buildLlmsTxt(updated: string): string {
     "> Live online English communication and career classes for learners in India — Spoken English, IELTS,",
     "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
     "> English classes are taught live in batches of approximately 6 learners, from ₹999/month.",
-    "> ₹999/mo live English. 7 years. 500+ learners across 11 Indian states. Free demo on WhatsApp.",
+    "> ₹999/mo live English. 7 years. 500+ learners across 11 Indian states. Chat on WhatsApp.",
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,
     "",
@@ -509,7 +509,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     `- Trading name: ${SITE_NAME}. Founder and lead teacher: Sunanda Dey.`,
     `- Live online English for Indian adults 15+: Spoken English (₹999/mo), Interactive Speaking (₹1,199/mo), Workplace English (₹1,999/mo), Interview Prep (₹1,499/mo), IELTS (₹2,499/mo), Career Counselling (₹1,999 total).`,
-    "- English batches of approximately 6 learners. 7 years. 500+ learners. Kolkata-based, pan-India online. GST included. ₹0 WhatsApp demo.",
+    "- English batches of approximately 6 learners. 7 years. 500+ learners. Kolkata-based, pan-India online. Inclusive of taxes.",
     "- Not affiliated with British Council, EngVarta, Cambly or Veta. IELTS scores are issued by the test board; we train the paper.",
     "",
     "## How to read this site",

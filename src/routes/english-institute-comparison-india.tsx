@@ -9,6 +9,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/institutes";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
 const PATH = "/english-institute-comparison-india";
 const UPDATED = "2026-09-03";
@@ -19,8 +20,8 @@ const ROWS = [
     icon: "smile" as const,
     tag: "Us",
     title: "Learn With Smile",
-    fee: "From ₹999/mo GST in",
-    body: "Named live teacher. Approximately 6 learners. 6-month map. 500+ learners, 7 years, Kolkata & pan-India. ₹0 real-class demo.",
+    fee: "From ₹999/mo inclusive of taxes",
+    body: "Named live teacher. Approximately 6 learners. 6-month map. 500+ learners, 7 years, Kolkata & pan-India.",
   },
   {
     color: "indigo" as const,
@@ -149,14 +150,17 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white/95">
             Learn With Smile vs EngVarta, Cambly, British Council and Veta-style rooms. We sell one
-            row. 500+ learners, 7 years, approximately 6 per batch. ₹0 demo.
+            row. 500+ learners, 7 years, approximately 6 per batch.
           </p>
           <p className="mt-4 text-sm text-white/80">
             Last updated <time dateTime={UPDATED}>{UPDATED}</time>
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
+            </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">
-              Free Demo on WhatsApp
+              {DEMO_CTA}
             </WaButton>
             <Link to="/english-class-fees-india" className="btn btn-white btn-lg">
               See the fee table
@@ -201,13 +205,16 @@ function Page() {
       <section className="relative overflow-hidden py-14 md:py-16" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x max-w-2xl text-center text-cream">
-          <h2 className="text-2xl text-cream md:text-3xl">Sit the room. Count your minutes.</h2>
+          <h2 className="text-2xl text-cream md:text-3xl">Compare in a class.</h2>
           <p className="mt-3 text-white">
-            ₹0 live class. Approximately 6 learners. From ₹999/mo. IELTS when a form asks.
+            Approximately 6 learners. From ₹999/mo, inclusive of taxes. IELTS when a form asks.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
+            </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">
-              Book a Free Demo
+              {DEMO_CTA}
             </WaButton>
             <Link to="/english-career" className="btn btn-white btn-lg">
               See all 6 courses

@@ -10,6 +10,7 @@ import { COURSES } from "@/lib/courses";
 import { getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { ARTICLE_BODIES } from "@/content/blog";
 import { blogPostHead } from "@/lib/seo";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -171,12 +172,15 @@ function BlogPostPage() {
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">Want to practise this live?</h2>
           <p className="mt-3 text-white">
-            The demo class is free and it is a real class, not a sales call. With approximately 6
-            learners, you speak in every session.
+            The demo is free. Chat on WhatsApp to book one. With approximately 6 learners, you speak
+            in every session.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              {CHAT_CTA}
+            </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">
-              Book a Free Demo
+              {DEMO_CTA}
             </WaButton>
             <Link to="/english-career" className="btn btn-white btn-lg">
               See all 6 courses

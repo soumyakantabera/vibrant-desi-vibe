@@ -97,7 +97,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Free demo classes are common across the market. Do not judge a provider because the demo is free. During the demo, count your own speaking minutes, notice whether the teacher corrects useful patterns, and ask what the **actual** batch size is. Those answers are harder to fake than a polished sales page.",
+    text: "Trial classes are common across the market. Do not judge a provider because the first class is free. Count your own speaking minutes, notice whether the teacher corrects useful patterns, and ask what the **actual** batch size is. Those answers are harder to fake than a polished sales page.",
   },
 
   { t: "h2", text: "How Learn With Smile delivers Workplace English" },
@@ -109,8 +109,8 @@ export const body: ArticleBody = [
       ["Frequency", "Up to 2 class days per week"],
       ["Format", "100% live online batch"],
       ["Batch size", "approximately 6 learners"],
-      ["Fee", "₹1,999/month, GST included"],
-      ["Demo", "₹0 real live class before payment"],
+      ["Fee", "₹1,999/month, inclusive of taxes"],
+      ["Demo", "Chat on WhatsApp"],
       ["Certificate", "Not currently issued"],
       ["Rescheduling", "Request within the same week, subject to teacher and slot availability"],
       [
@@ -142,7 +142,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The demo is ₹0, the batch usually has around 6 learners, and booking starts with a plain WhatsApp message.",
+    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The demo is free. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
     course: "/course-business-english",
     label: "See Workplace English course details",
   },

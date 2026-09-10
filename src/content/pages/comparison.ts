@@ -152,7 +152,7 @@ export const body: ArticleBody = [
     items: [
       "**A fixed syllabus** — you want somebody to decide what you study next, in what order.",
       "**Real speaking time** — approximately 6 learners per batch, so you speak in every class and get corrected by name.",
-      "**An Indian budget** — ₹999–₹2,499 a month, GST included, billed monthly with no lock-in.",
+      "**An Indian budget** — ₹999–₹2,499 a month, inclusive of taxes, billed monthly with no lock-in.",
     ],
   },
   {
@@ -177,11 +177,11 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "That week costs nothing and will tell you more than any amount of reading. If one of the three is us, our demo is a real live class with actual students rather than a one-to-one sales call — which is precisely so you can run that minutes count honestly.",
+    text: "That week costs nothing and will tell you more than any amount of reading. If one of the three is us, you can count your own speaking minutes.",
   },
   {
     t: "cta",
-    text: "If a small live batch is the category that fits, the demo is free, needs no card, and takes a WhatsApp message to arrange. Come and count your own speaking minutes.",
+    text: "If a small live batch is the category that fits, chat on WhatsApp.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

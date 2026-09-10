@@ -22,7 +22,7 @@ const COMPANY = [
   { to: "/founder", label: "Founder" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/blog", label: "Blog" },
-  { to: "/book-free-demo", label: "Book Free Demo" },
+  { to: "/book-free-demo", label: "Book a Free Demo" },
 ];
 
 /**
@@ -67,7 +67,7 @@ export function Footer({ image }: { image?: string }) {
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
               500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from
-              ₹999/mo. Kolkata-based, teaching pan-India.
+              ₹999/mo, inclusive of taxes. Kolkata-based, teaching pan-India.
             </p>
             <SmartImage
               src={image || IMG}
@@ -81,7 +81,7 @@ export function Footer({ image }: { image?: string }) {
               rel="noopener noreferrer"
               className="btn btn-wa btn-sm w-full"
             >
-              <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat with us on WhatsApp
+              <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Chat on WhatsApp
             </a>
           </div>
           <FooterCol title="Tracks" items={[...TRACKS, ...COMPANY.slice(0, 2)]} />
@@ -124,7 +124,7 @@ export function Footer({ image }: { image?: string }) {
             <p>This website is made and crafted by Soumyakanta Bera.</p>
           </div>
           <p className="font-display font-semibold text-cream/90">
-            Real teacher · ₹0 live demo · No card required
+            Real teacher · Chat on WhatsApp
           </p>
         </div>
       </div>

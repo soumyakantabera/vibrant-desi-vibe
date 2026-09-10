@@ -51,7 +51,7 @@ function Page() {
           <span className="text-sunshine">Spoken, Business or Interactive</span>
         </>
       }
-      standfirst="Conversation → Spoken. Freeze → Interactive. Meetings and calls → Business. An exam course only if a form asks. From ₹999/mo. ₹0 demo."
+      standfirst="Conversation → Spoken. Freeze → Interactive. Meetings and calls → Business. An exam course only if a form asks. From ₹999/mo, inclusive of taxes."
       heroImage={IMG.spokenEnglish}
       heroAlt="Indian adult choosing a live English class on a laptop"
       lastUpdated={UPDATED}
@@ -59,8 +59,8 @@ function Page() {
       faqs={page.faqs ?? []}
       faqTitle="Which class — straight answers"
       waMessage="Hi, I am not sure if I need Spoken, Interactive or Business English. Please help me choose."
-      ctaTitle="Sit in a live room. Then pick."
-      ctaBody="₹0 demo. We place you in Spoken, Interactive or Business — not all three."
+      ctaTitle="We'll place you in one course"
+      ctaBody="Spoken, Interactive or Business — not all three."
     />
   );
 }
