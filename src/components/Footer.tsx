@@ -50,7 +50,7 @@ const GUIDES = [
 const IMG =
   "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&auto=format&fit=crop&q=80";
 
-/** Official marks fetched from Razorpay, NPCI, Visa and Mastercard brand sources. */
+/** Official marks fetched from Razorpay, NPCI, Visa, Mastercard, Let's Encrypt and PCI SSC. */
 const PAY_METHODS: { src: string; alt: string; height: string }[] = [
   { src: "/payments/upi.svg", alt: "UPI", height: "h-7" },
   { src: "/payments/visa.svg", alt: "Visa", height: "h-5" },
@@ -162,6 +162,31 @@ export function Footer({ image }: { image?: string }) {
                 />
               </span>
             ))}
+            <span className="hidden sm:block h-8 w-px bg-cream/20" aria-hidden />
+            <span className="inline-flex h-10 items-center rounded-md bg-white px-2.5">
+              <img
+                src={withBasePath("/payments/ssl-secured.svg")}
+                alt="SSL Secured"
+                className="h-8 w-auto"
+                decoding="async"
+              />
+            </span>
+            <a
+              href="https://razorpay.com/docs/security"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 items-center rounded-md bg-white px-2.5"
+              aria-label="PCI DSS — card payments via Razorpay"
+            >
+              <img
+                src={withBasePath("/payments/pci-dss.png")}
+                alt="PCI DSS"
+                width={160}
+                height={42}
+                className="h-8 w-auto max-w-[9.5rem] object-contain"
+                decoding="async"
+              />
+            </a>
           </div>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
