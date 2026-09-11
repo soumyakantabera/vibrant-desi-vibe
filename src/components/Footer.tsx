@@ -52,13 +52,13 @@ const IMG =
 
 /** Official marks: Razorpay, NPCI UPI/RuPay, Visa, Mastercard, Google Pay, PhonePe, Paytm. */
 const PAY_METHODS: { src: string; alt: string; height: string }[] = [
-  { src: "/payments/upi.svg", alt: "UPI", height: "h-7" },
-  { src: "/payments/google-pay.svg", alt: "Google Pay", height: "h-6" },
-  { src: "/payments/phonepe.svg", alt: "PhonePe", height: "h-7" },
-  { src: "/payments/paytm.svg", alt: "Paytm", height: "h-6" },
-  { src: "/payments/visa.svg", alt: "Visa", height: "h-5" },
-  { src: "/payments/mastercard.svg", alt: "Mastercard", height: "h-8" },
-  { src: "/payments/rupay.svg", alt: "RuPay", height: "h-6" },
+  { src: "/payments/upi.svg", alt: "UPI", height: "h-4" },
+  { src: "/payments/google-pay.svg", alt: "Google Pay", height: "h-3.5" },
+  { src: "/payments/phonepe.svg", alt: "PhonePe", height: "h-4" },
+  { src: "/payments/paytm.svg", alt: "Paytm", height: "h-3.5" },
+  { src: "/payments/visa.svg", alt: "Visa", height: "h-3" },
+  { src: "/payments/mastercard.svg", alt: "Mastercard", height: "h-5" },
+  { src: "/payments/rupay.svg", alt: "RuPay", height: "h-3.5" },
 ];
 
 export function Footer({ image }: { image?: string }) {
@@ -134,7 +134,7 @@ export function Footer({ image }: { image?: string }) {
           <p className="text-[11px] uppercase tracking-[0.16em] font-display font-bold text-white/70 mb-3">
             Secured payments
           </p>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-1.5">
             <a
               href="https://razorpay.com/"
               target="_blank"
@@ -145,42 +145,34 @@ export function Footer({ image }: { image?: string }) {
               <img
                 src={withBasePath("/payments/razorpay-secured.png")}
                 alt="Razorpay"
-                width={113}
-                height={45}
-                className="h-[45px] w-[113px]"
+                width={80}
+                height={32}
+                className="h-8 w-auto"
                 decoding="async"
               />
             </a>
-            <span className="hidden sm:block h-8 w-px bg-cream/20" aria-hidden />
             {PAY_METHODS.map((m) => (
               <span
                 key={m.alt}
-                className="inline-flex h-10 items-center rounded-md bg-white px-2.5"
+                className="inline-flex h-7 items-center rounded bg-white px-1.5"
               >
                 <img
                   src={withBasePath(m.src)}
                   alt={m.alt}
-                  className={`${m.height} w-auto max-w-[7.5rem] object-contain`}
+                  className={`${m.height} w-auto max-w-[4.75rem] object-contain`}
                   decoding="async"
                 />
               </span>
             ))}
-            <span className="hidden sm:block h-8 w-px bg-cream/20" aria-hidden />
-            <span className="inline-flex h-10 items-center gap-1.5 rounded-md bg-white px-2.5">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden className="shrink-0">
-                <path
-                  fill="#0B7A45"
-                  d="M17 8h-1V6A4 4 0 0 0 8 6v2H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 6a3 3 0 0 1 6 0v2H9V6Zm3 12.25A1.75 1.75 0 1 1 12 14.5a1.75 1.75 0 0 1 0 3.75Z"
-                />
-              </svg>
-              <span className="leading-[1.05]" aria-label="SSL Secured">
-                <span className="block text-[11px] font-extrabold tracking-wide text-[#12352A]">
-                  SSL
-                </span>
-                <span className="block text-[8px] font-bold tracking-[0.18em] text-[#0B7A45]">
-                  SECURED
-                </span>
-              </span>
+            <span className="inline-flex h-7 items-center rounded bg-white px-1.5">
+              <img
+                src={withBasePath("/payments/ssl-secured.svg")}
+                alt="SSL Secured"
+                width={108}
+                height={28}
+                className="h-5 w-auto"
+                decoding="async"
+              />
             </span>
           </div>
         </div>
