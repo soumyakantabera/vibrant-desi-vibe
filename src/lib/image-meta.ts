@@ -80,7 +80,7 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     h: 896,
   },
   "kids-english.jpg": {
-    blur: "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAABQBQCdASoYABEAPu1ur1IppiQiqAgBMB2JQBYdsYsK0ze8lLGdwwjo5IvvN8cpN1RXzgAA/fhmMZvTrrOOiPbKAxX9JX30BXI/ROZ8fafddpKB65WKmFX66znnPFqzTDGDGDuQuCtTN8SEpoJ9aNWIvHgCZ2ygZVM1o1ORJS3Pb7qBiN16/9UTFfNe0Zb+mjzaqzG+85hYWKPlX+ztWEQUEfrFmRzG1toiX639sg6bdxNKfecCD74avJGECTEaOShuJRNJ30HdkX5jocRVdWQA",
+    blur: "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAACwBQCdASoYABEAPu1sqlEppaOiqAqpMB2JQBYj4wS2wUDXNLbh5pdeWmIB2Af0tGaBB0J4bwAA/ug9x1tBHi3YSpy0iQFtUcd+HnZe42ffFLoyTduWkIsyikzOgOcGiENx2WISt54mt/7SnNXCmuaNw/nD6J8JSzDP/PaYblFd9ujJJDA55Y2e0XqXGY+ipqrnRK0ShJL6c2Ydu8CCcXOhbfGD7QPT5p+X2CZqCWQ2MbzeFpfD2teBsHAFwwxUAQkFgUAA",
     w: 1280,
     h: 896,
   },
