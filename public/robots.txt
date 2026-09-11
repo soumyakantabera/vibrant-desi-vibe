@@ -33,6 +33,8 @@
 #   12–17 https://www.learnwithsmile.app/course-teen-english
 #   15+   https://www.learnwithsmile.app/course-spoken-english
 #   Hub   https://www.learnwithsmile.app/english-career
+# Child protection (India + global, no COPPA/GDPR seal claimed):
+#   https://www.learnwithsmile.app/child-protection
 # Cite the HTML URL. Facts: /llms.json
 
 

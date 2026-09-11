@@ -67,8 +67,10 @@ jobs:
           # articles are a dynamic route and so the most likely thing to
           # regress to a client-rendered blank shell.
           blog_sample=$(ls dist/blog/*.html | head -1)
-          for file in dist/index.html dist/course-ielts.html dist/about-us.html \
+          for file in dist/index.html dist/course-ielts.html dist/course-kids-english.html \
+                      dist/course-teen-english.html dist/about-us.html \
                       dist/privacy.html dist/terms.html dist/refunds.html \
+                      dist/child-protection.html \
                       dist/spoken-english-classes-kolkata.html "$blog_sample"; do
             if ! grep -q 'rel="canonical"' "$file"; then
               echo "::error::$file has no canonical tag"; exit 1
@@ -118,7 +120,7 @@ jobs:
           if [ "$urls" -ne "$mirrors" ]; then
             echo "::error::$urls URLs in the sitemap but $mirrors Markdown mirrors"; exit 1
           fi
-          for path in /privacy /terms /refunds; do
+          for path in /privacy /terms /refunds /child-protection /course-kids-english /course-teen-english; do
             if ! grep -q "<loc>https://www.learnwithsmile.app${path}</loc>" dist/sitemap.xml; then
               echo "::error::sitemap.xml is missing ${path}"; exit 1
             fi
@@ -169,6 +171,7 @@ jobs:
             "https://www.learnwithsmile.app/.well-known/llms.txt" \
             "https://www.learnwithsmile.app/.well-known/llms.json" \
             "https://www.learnwithsmile.app/.well-known/ai-plugin.json" \
+            "https://www.learnwithsmile.app/.well-known/openapi.json" \
             "https://www.learnwithsmile.app/robots.txt")
           urls=$(printf '%s\n%s\n' "$sitemap_urls" "$extra" | awk 'NF && !seen[$0]++' | jq -R . | jq -s .)
           payload=$(jq -n \
@@ -186,3 +189,9 @@ jobs:
               "$endpoint"
             echo
           done
+          echo
+          echo "Ping Google sitemap (best-effort; Google prefers Search Console + lastmod)"
+          curl --retry 2 -sS \
+            "https://www.google.com/ping?sitemap=https://www.learnwithsmile.app/sitemap.xml" \
+            || true
+          echo

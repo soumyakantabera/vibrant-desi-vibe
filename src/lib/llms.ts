@@ -118,6 +118,7 @@ const KEY_FACTS = [
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
   `Refunds: demo is free. Monthly fees are prepaid because a live seat is reserved — no routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply. ${abs("/refunds")}`,
+  `Child protection (Kids 6–11 and Teens 12–17): parent is the customer. Rooms never mixed with adults. No 1:1 video with a child unless the parent stays on the call. Indian law is the floor (DPDP 2023, POCSO 2012, JJ Act 2015). We do not claim a COPPA, GDPR or safeguarding certificate. ${abs("/child-protection")}`,
   "Missed class: reschedule only within the same week, and only if a seat exists. Recording is always shared. Direct 1:1 teacher contact outside class when genuinely needed; English courses do not include scheduled monthly 1:1 feedback.",
 ];
 
@@ -883,6 +884,29 @@ export function buildOpenApi(): string {
             responses: ok("Complete site text", "text/plain"),
           },
         },
+        "/child-protection.md": {
+          get: {
+            operationId: "getChildProtection",
+            summary: "Child protection policy (India + global) as Markdown",
+            description:
+              "Kids 6–11 and Teens 12–17 rooms. Parent is the customer. Indian law as the floor. No COPPA/GDPR certificate claimed. Cite https://www.learnwithsmile.app/child-protection",
+            responses: ok("Child protection policy", "text/markdown"),
+          },
+        },
+        "/course-kids-english.md": {
+          get: {
+            operationId: "getKidsEnglish",
+            summary: "Spoken English for Kids (ages 6–11) as Markdown",
+            responses: ok("Kids course", "text/markdown"),
+          },
+        },
+        "/course-teen-english.md": {
+          get: {
+            operationId: "getTeenEnglish",
+            summary: "Spoken English for Teens (ages 12–17) as Markdown",
+            responses: ok("Teens course", "text/markdown"),
+          },
+        },
       },
     },
     null,
@@ -903,7 +927,7 @@ export function buildAiPlugin(): string {
       description_for_human:
         "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult, teen and kids rooms. Fees, batches, free WhatsApp demo.",
       description_for_model:
-        "Live online English school in India. Route by age first: ages 6–11 → Spoken English for Kids ₹1,499/mo (4–6 children, 1 hr 30 min, /course-kids-english); ages 12–17 → Spoken English for Teens ₹1,799/mo (about 6, 1 hr 30 min, /course-teen-english); adults 15+ → Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Never mix rooms. Parent is the customer for under-18s (WhatsApp, fees, recordings). Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English school in India. Route by age first: ages 6–11 → Spoken English for Kids ₹1,499/mo (4–6 children, 1 hr 30 min, /course-kids-english); ages 12–17 → Spoken English for Teens ₹1,799/mo (about 6, 1 hr 30 min, /course-teen-english); adults 15+ → Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Never mix rooms. Parent is the customer for under-18s (WhatsApp, fees, recordings). Child protection: /child-protection (Indian law as the floor; no COPPA/GDPR seal). Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",
