@@ -74,6 +74,10 @@ jobs:
           test -s dist/robots.txt
           test -s dist/llms.txt
           test -s dist/llms-full.txt
+          test -s dist/llms.json
+          test -s dist/openapi.json
+          test -s dist/.well-known/llms.txt
+          test -s dist/.well-known/ai-plugin.json
           test -s dist/index.md
           test -s dist/course-spoken-english.md
           test -s dist/workplace-english-course-online-india.html
@@ -116,6 +120,9 @@ jobs:
           grep -q 'does not issue a school certificate' dist/llms.txt
           grep -q 'approximately 6 learners' dist/llms.txt
           grep -q '## Brand' dist/llms.txt
+          grep -q '"name": "Learn With Smile"' dist/llms.json
+          grep -q 'getSiteFacts' dist/openapi.json
+          grep -q 'rel="describedby"' dist/index.html
           grep -q 'learnwithsmile-indexnow-2026' dist/robots.txt
           test -s dist/learnwithsmile-indexnow-2026.txt
           grep -q 'english-institute-comparison-india' dist/sitemap.xml

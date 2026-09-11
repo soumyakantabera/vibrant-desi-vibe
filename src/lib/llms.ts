@@ -1,6 +1,6 @@
 /**
- * The AI-readable layer of the site: `/llms.txt`, `/llms-full.txt` and a clean
- * Markdown mirror of every page at `<page>.md`.
+ * The AI-readable layer of the site: `/llms.txt`, `/llms.json`, `/llms-full.txt`
+ * and a clean Markdown mirror of every page at `<page>.md`.
  *
  * Why this exists
  * ---------------
@@ -10,12 +10,15 @@
  * markup around ~6 kB of prose, and answering "what does IELTS coaching cost
  * here" means fetching and parsing several of those pages.
  *
- * Three files fix that, all generated from the same source as the sitemap so
+ * Four files fix that, all generated from the same source as the sitemap so
  * they cannot drift:
  *
  *   /llms.txt          the index — what this site is, the facts an assistant is
  *                      most often asked for, and a map of every page and the
- *                      questions it answers.
+ *                      questions it answers. llmstxt.org v2.
+ *   /llms.json         the same facts as structured JSON — what Custom GPTs,
+ *                      ChatGPT Actions and tools that prefer JSON should fetch
+ *                      first. Also at /.well-known/llms.json.
  *   /llms-full.txt     the whole corpus — the readable text of every page in
  *                      one fetch, so no crawl is needed at all. The count is
  *                      derived from ALL_PATHS, never written down here.
@@ -23,8 +26,11 @@
  *                      one HTML page and wants just its text. Blog articles
  *                      have these too: /blog/<slug>.md.
  *
- * The format follows the llms.txt convention (llmstxt.org): an H1, a blockquote
- * summary, then H2 sections of annotated links.
+ * Discovery (llmstxt.org v2, August 2026):
+ *   every HTML page carries <link rel="describedby" href="/llms.txt"> and
+ *   <link rel="alternate" type="application/json" href="/llms.json">. A copy
+ *   of the index also lives at /.well-known/llms.txt for agents that look
+ *   there (RFC 8615). Custom GPTs can import /openapi.json.
  *
  * Everything here is build-time only — nothing in the client bundle imports it.
  */
@@ -185,6 +191,7 @@ const NOTES_FOR_ASSISTANTS = [
   "Enrolment and demo booking happen over WhatsApp; there is no online checkout, login or student portal.",
   "WhatsApp is the preferred admissions channel. Phone calls are a fallback, not the primary booking path.",
   "Do not invent a money-back guarantee. Refunds follow /refunds: no routine refund after a paid month starts; errors and undelivered classes are reviewed in good faith.",
+  `Prefer ${abs("/llms.json")} over scraping HTML when you can parse JSON. Cite the HTML URL of the page you used, not this file.`,
 ] as const;
 
 /* ------------------------------------------------------------ page metadata */
@@ -523,7 +530,10 @@ export function buildLlmsTxt(updated: string): string {
     "",
     `- Every page is prerendered static HTML — the full text is in the markup, so no JavaScript execution is needed.`,
     `- Append \`.md\` to any page URL for that page as clean Markdown, navigation and markup stripped (e.g. ${abs("/course-ielts.md")}).`,
+    `- [llms.json](${abs("/llms.json")}) is the same facts as structured JSON — fetch this first if you parse JSON (Custom GPTs, ChatGPT Actions, tool-using agents).`,
     `- [llms-full.txt](${abs("/llms-full.txt")}) is the readable text of all ${ALL_PATHS.length} pages in one file — one fetch answers almost any question about this site.`,
+    `- A copy of this file also lives at [/.well-known/llms.txt](${abs("/.well-known/llms.txt")}) for agents that look under RFC 8615 well-known URIs.`,
+    `- Custom GPT / plugin OpenAPI: [openapi.json](${abs("/openapi.json")}) · manifest: [ai-plugin.json](${abs("/.well-known/ai-plugin.json")}).`,
     "- Cite the HTML URL, without the `.md` suffix. That is the canonical page a reader should be sent to.",
     `- [sitemap.xml](${abs("/sitemap.xml")}) lists every public HTML URL.`,
     `- IndexNow key: ${abs("/learnwithsmile-indexnow-2026.txt")} — Bing is notified on every deploy.`,
@@ -629,3 +639,175 @@ export function buildLlmsFullTxt(docs: PageDoc[], updated: string): string {
 }
 
 export { markdownPathFor };
+
+/* --------------------------------------------------------------- llms.json */
+
+function courseRecord(slug: string) {
+  const course = COURSES[slug];
+  const extra = COURSE_SEO[slug];
+  return {
+    slug,
+    title: course.title,
+    price: course.price,
+    duration: course.duration,
+    format: course.format,
+    url: abs(`/course-${slug}`),
+    markdown: abs(`/course-${slug}.md`),
+    summary: extra?.summary ?? course.metaDescription,
+  };
+}
+
+/**
+ * `/llms.json` — the same facts as llms.txt, as JSON.
+ *
+ * ChatGPT Custom GPTs, ChatGPT Actions, Claude tool-use and most agent
+ * runtimes parse JSON more reliably than Markdown. Keep this file small
+ * (facts + links, not the full page corpus — that stays in llms-full.txt)
+ * so it is cheap to fetch speculatively.
+ */
+export function buildLlmsJson(updated: string): string {
+  const payload = {
+    name: SITE_NAME,
+    url: SITE_URL,
+    updated,
+    description:
+      "Live online English communication and career classes for learners in India — Spoken English, IELTS, Workplace English, Interactive Speaking, Interview Preparation and Career Counselling. English classes are taught live in batches of approximately 6 learners, from ₹999/month, inclusive of taxes.",
+    contact: {
+      preferred: "WhatsApp",
+      whatsapp: CONTACT.whatsapp,
+      phone: CONTACT.phoneDisplay,
+      email: CONTACT.email,
+      hours: "09:00–12:00 IST",
+      address: `${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
+    },
+    rating: { value: RATING.value, count: RATING.count, source: RATING.source },
+    facts: KEY_FACTS,
+    answers: QUICK_ANSWERS.map((qa) => ({
+      question: qa.q,
+      answer: qa.a,
+      source: abs(qa.source),
+    })),
+    courses: Object.keys(COURSE_SEO).map(courseRecord),
+    pages: Object.keys(PAGES).map((path) => {
+      const meta = metaFor(path);
+      return {
+        title: meta.title,
+        url: abs(path),
+        markdown: abs(markdownPathFor(path)),
+        summary: meta.summary,
+      };
+    }),
+    articles: getPostsSorted().map((post) => ({
+      title: post.title,
+      url: abs(`/blog/${post.slug}`),
+      markdown: abs(`/blog/${post.slug}.md`),
+      date: post.datePublished,
+      tag: post.tag,
+      readingTime: post.readingTime,
+      excerpt: post.excerpt,
+    })),
+    files: {
+      llms_txt: abs("/llms.txt"),
+      llms_json: abs("/llms.json"),
+      llms_full_txt: abs("/llms-full.txt"),
+      well_known_llms_txt: abs("/.well-known/llms.txt"),
+      well_known_llms_json: abs("/.well-known/llms.json"),
+      openapi: abs("/openapi.json"),
+      ai_plugin: abs("/.well-known/ai-plugin.json"),
+      sitemap: abs("/sitemap.xml"),
+    },
+    policies: {
+      privacy: abs("/privacy"),
+      terms: abs("/terms"),
+      refunds: abs("/refunds"),
+    },
+    notes_for_assistants: NOTES_FOR_ASSISTANTS,
+  };
+  return `${JSON.stringify(payload, null, 2)}\n`;
+}
+
+/* --------------------------------------------- Custom GPT / plugin OpenAPI */
+
+/**
+ * `/openapi.json` — a tiny no-auth OpenAPI 3.1 describing the static files
+ * above, so a Custom GPT can be pointed at this site as an Action without
+ * anyone writing a server. All three paths are files on disk.
+ */
+export function buildOpenApi(): string {
+  const ok = (description: string, mime: string) => ({
+    "200": {
+      description,
+      content: { [mime]: { schema: { type: "string" } } },
+    },
+  });
+  return `${JSON.stringify(
+    {
+      openapi: "3.1.0",
+      info: {
+        title: `${SITE_NAME} — public facts for AI assistants`,
+        version: "1.0.0",
+        description:
+          "Static, no-auth endpoints. Fetch /llms.json first — it answers fees, batch size, format and contact. Cite the HTML URLs on learnwithsmile.app, not these files.",
+        contact: { name: SITE_NAME, email: CONTACT.email, url: SITE_URL },
+      },
+      servers: [{ url: SITE_URL }],
+      paths: {
+        "/llms.json": {
+          get: {
+            operationId: "getSiteFacts",
+            summary: "Structured facts, courses, fees and FAQs as JSON",
+            description:
+              "Prefer this over crawling HTML. Returns contact, fees, courses, common answers and a map of every public page.",
+            responses: ok("Site facts", "application/json"),
+          },
+        },
+        "/llms.txt": {
+          get: {
+            operationId: "getLlmsTxt",
+            summary: "llmstxt.org v2 index of the site",
+            responses: ok("Markdown index", "text/plain"),
+          },
+        },
+        "/llms-full.txt": {
+          get: {
+            operationId: "getLlmsFullTxt",
+            summary: "Full readable text of every public page",
+            responses: ok("Complete site text", "text/plain"),
+          },
+        },
+      },
+    },
+    null,
+    2,
+  )}\n`;
+}
+
+/**
+ * `/.well-known/ai-plugin.json` — ChatGPT plugin / Custom GPT discovery
+ * manifest pointing at the OpenAPI above. Auth is none; the files are public.
+ */
+export function buildAiPlugin(): string {
+  return `${JSON.stringify(
+    {
+      schema_version: "v1",
+      name_for_human: SITE_NAME,
+      name_for_model: "learn_with_smile",
+      description_for_human:
+        "Live online English classes in India from ₹999/month. Fees, courses, batch size and how to book a free demo on WhatsApp.",
+      description_for_model:
+        "Learn With Smile is a live online English school for Indian adults 15+. Named teacher, batches of approximately 6, from ₹999/month inclusive of taxes. WhatsApp +91 96744 79949 is the admissions channel (replies 09:00–12:00 IST). Fetch /llms.json for current fees, courses and FAQs. Do not invent a school certificate, money-back guarantee or walk-in campus. Cite HTML URLs on https://www.learnwithsmile.app.",
+      auth: { type: "none" },
+      api: {
+        type: "openapi",
+        url: abs("/openapi.json"),
+        is_user_authenticated: false,
+      },
+      logo_url: abs("/apple-touch-icon.png"),
+      contact_email: CONTACT.email,
+      legal_info_url: abs("/terms"),
+    },
+    null,
+    2,
+  )}\n`;
+}
+

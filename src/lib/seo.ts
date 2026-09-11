@@ -1530,9 +1530,20 @@ export function siteHead(): HeadResult {
       { name: "publisher", content: SITE_NAME },
       { name: "theme-color", content: "#0E7C5A" },
     ],
-    // Site-wide discovery for AI assistants: the llms.txt index is worth
-    // finding from any page, not just from robots.txt.
-    links: [{ rel: "alternate", type: "text/plain", title: "llms.txt", href: abs("/llms.txt") }],
+    // Site-wide discovery for AI assistants (llmstxt.org v2):
+    //   describedby → the llms.txt that covers this page
+    //   alternate   → structured JSON for Custom GPTs / tool-using agents
+    // `rel` stays first so scripts/prerender.mjs can mark these tags as
+    // already-prerendered (`tagPrerendered` matches on rel=).
+    links: [
+      { rel: "describedby", type: "text/plain", title: "llms.txt", href: abs("/llms.txt") },
+      {
+        rel: "alternate",
+        type: "application/json",
+        title: "llms.json",
+        href: abs("/llms.json"),
+      },
+    ],
     // Entity graph for the whole site — correct on every page, and what lets
     // Google and AI assistants resolve "Learn With Smile" to a real business.
     scripts: [organizationLd(), webSiteLd()].map((obj) => ({

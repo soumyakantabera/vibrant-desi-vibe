@@ -89,11 +89,25 @@ jobs:
           # files reached dist/ and still carry the facts they exist to serve.
           test -s dist/llms.txt
           test -s dist/llms-full.txt
-          for file in dist/llms.txt dist/llms-full.txt dist/index.md dist/course-ielts.md; do
+          test -s dist/llms.json
+          test -s dist/openapi.json
+          test -s dist/.well-known/llms.txt
+          test -s dist/.well-known/llms.json
+          test -s dist/.well-known/ai-plugin.json
+          for file in dist/llms.txt dist/llms-full.txt dist/llms.json dist/index.md dist/course-ielts.md; do
             if ! grep -q '₹' "$file"; then
               echo "::error::$file is missing course fees"; exit 1
             fi
           done
+          if ! grep -q 'rel="describedby"' dist/index.html; then
+            echo "::error::index.html is missing rel=describedby for llms.txt"; exit 1
+          fi
+          if ! grep -q '"name": "Learn With Smile"' dist/llms.json; then
+            echo "::error::llms.json is missing the site name"; exit 1
+          fi
+          if ! grep -q 'getSiteFacts' dist/openapi.json; then
+            echo "::error::openapi.json is missing the getSiteFacts operation"; exit 1
+          fi
           # Recursive: blog articles live at /blog/<slug>, so their mirrors are
           # written to dist/blog/<slug>.md. A `dist/*.md` glob counts only the
           # top level and would report 17 mirrors against 22 sitemap URLs even
@@ -139,7 +153,11 @@ jobs:
           sitemap_urls=$(grep -oE '<loc>[^<]+' dist/sitemap.xml | sed 's#<loc>##')
           extra=$(printf '%s\n' \
             "https://www.learnwithsmile.app/llms.txt" \
+            "https://www.learnwithsmile.app/llms.json" \
             "https://www.learnwithsmile.app/llms-full.txt" \
+            "https://www.learnwithsmile.app/openapi.json" \
+            "https://www.learnwithsmile.app/.well-known/llms.txt" \
+            "https://www.learnwithsmile.app/.well-known/ai-plugin.json" \
             "https://www.learnwithsmile.app/robots.txt")
           urls=$(printf '%s\n%s\n' "$sitemap_urls" "$extra" | awk 'NF && !seen[$0]++' | jq -R . | jq -s .)
           payload=$(jq -n \

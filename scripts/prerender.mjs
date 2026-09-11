@@ -35,6 +35,9 @@ const {
   renderPath,
   buildLlmsTxt,
   buildLlmsFullTxt,
+  buildLlmsJson,
+  buildOpenApi,
+  buildAiPlugin,
   htmlToMarkdown,
   markdownPathFor,
   metaFor,
@@ -178,7 +181,7 @@ function tagPrerendered(head) {
   return head
     .replace(/<title>/g, '<title data-prerender="1">')
     .replace(/<meta /g, '<meta data-prerender="1" ')
-    .replace(/<link rel="(canonical|alternate)"/g, '<link data-prerender="1" rel="$1"')
+    .replace(/<link rel="(canonical|alternate|describedby)"/g, '<link data-prerender="1" rel="$1"')
     .replace(
       /<script type="application\/ld\+json">/g,
       '<script data-prerender="1" type="application/ld+json">',
@@ -307,16 +310,28 @@ writeFile(
     `${sitemapBody}\n</urlset>\n`,
 );
 
-/* ------------------------------------------- llms.txt + llms-full.txt */
+/* ------------------------------------------- llms.txt + JSON + OpenAPI */
 
 /**
  * The AI-readable layer. `src/lib/llms.ts` owns the content and the HTML →
  * Markdown conversion; this step just writes what it produces, from the same
- * `ALL_PATHS` walk that produced the pages and the sitemap, so the three can
+ * `ALL_PATHS` walk that produced the pages and the sitemap, so they can
  * never disagree about what the site contains.
+ *
+ * Copies under `.well-known/` exist because some agents look there (RFC 8615)
+ * rather than at the site root. Same bytes, same source.
  */
-writeFile("llms.txt", buildLlmsTxt(today));
+const llmsTxt = buildLlmsTxt(today);
+const llmsJson = buildLlmsJson(today);
+const openapi = buildOpenApi();
+writeFile("llms.txt", llmsTxt);
 writeFile("llms-full.txt", buildLlmsFullTxt(docs, today));
+writeFile("llms.json", llmsJson);
+writeFile("openapi.json", openapi);
+writeFile(".well-known/llms.txt", llmsTxt);
+writeFile(".well-known/llms.json", llmsJson);
+writeFile(".well-known/openapi.json", openapi);
+writeFile(".well-known/ai-plugin.json", buildAiPlugin());
 
 /* -------------------------------------------------------------------- log */
 
@@ -324,5 +339,5 @@ const totalKb = rendered.reduce((n, r) => n + r.bytes, 0) / 1024;
 const mdKb = docs.reduce((n, d) => n + d.markdown.length, 0) / 1024;
 console.log(
   `\n  ${rendered.length} routes prerendered (${totalKb.toFixed(0)} kB total).` +
-    `\n  sitemap.xml, llms.txt, llms-full.txt and ${docs.length} Markdown mirrors written (${mdKb.toFixed(0)} kB of text).`,
+    `\n  sitemap.xml, llms.txt, llms.json, llms-full.txt, openapi.json and ${docs.length} Markdown mirrors written (${mdKb.toFixed(0)} kB of text).`,
 );

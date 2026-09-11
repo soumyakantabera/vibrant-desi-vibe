@@ -15,9 +15,15 @@
 #   https://www.learnwithsmile.app/llms.txt       index: what this site is,
 #                                                 fees, formats, contact, and a
 #                                                 map of every page
+#   https://www.learnwithsmile.app/llms.json      the same facts as JSON — fetch
+#                                                 this first if you parse JSON
+#                                                 (Custom GPTs, ChatGPT Actions)
 #   https://www.learnwithsmile.app/llms-full.txt  the readable text of every
 #                                                 page in a single file
 #                                                 (generated from every public page)
+#   https://www.learnwithsmile.app/.well-known/llms.txt
+#                                                 RFC 8615 copy of the index
+#   https://www.learnwithsmile.app/openapi.json   Custom GPT / plugin OpenAPI
 #   <any page URL> + .md                          that one page as clean
 #                                                 Markdown, e.g.
 #                                                 /course-ielts.md

@@ -23,11 +23,14 @@ export { ALL_PATHS, PAGES };
 export { COURSE_SEO, SITE_URL, SITE_NAME, abs, markdownPathFor, sitemapUrls } from "../src/lib/seo";
 export { COURSES } from "../src/lib/courses";
 export { BLOG_POSTS, getPostsSorted } from "../src/lib/blog";
-// The AI-readable layer — llms.txt, llms-full.txt and the per-page Markdown
-// mirrors, all built from the same tables the pages themselves render from.
+// The AI-readable layer — llms.txt, llms.json, llms-full.txt and the per-page
+// Markdown mirrors, all built from the same tables the pages themselves render from.
 export {
   buildLlmsTxt,
   buildLlmsFullTxt,
+  buildLlmsJson,
+  buildOpenApi,
+  buildAiPlugin,
   htmlToMarkdown,
   metaFor,
   pageMarkdown,
