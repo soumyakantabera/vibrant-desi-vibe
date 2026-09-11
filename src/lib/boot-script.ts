@@ -14,9 +14,8 @@
  * -----------------
  *   css    the app stylesheet has applied (detected through the `--app-css`
  *          sentinel it defines, so this is a fact rather than a guess)
- *   fonts  Manrope and Sora — they set the page's shape. Material Symbols
- *          is self-hosted in the same stylesheet (~8 KB); icons un-hide
- *          when that face lands, but the veil does not wait on it.
+ *   fonts  Manrope, Sora, and Material Symbols. Icons used to un-hide after
+ *          the page was already on screen, which is why they popped in late.
  *   media  every image marked `data-boot-hold` — the hero already in the
  *          prerendered HTML — has finished decoding
  *
@@ -171,6 +170,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
   var reveal = function () {
     if (done) return;
     done = true;
+    raise("fonts-ready");          // never leave icons hidden if we timed out
     raise("app-ready");            // fades the veil out, fades the page in
     setTimeout(function () { drop("booting"); }, ${FADE_MS});
   };
@@ -229,7 +229,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     try {
       d.fonts.load("600 1rem Manrope");
       d.fonts.load("700 1rem Sora");
-      d.fonts.load("24px 'Material Symbols Rounded'");
+      d.fonts.load("500 24px 'Material Symbols Rounded'");
     } catch (e) {}
   };
   var fontsReady = function () {
@@ -237,12 +237,11 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     // the icons through rather than hiding them forever.
     if (!d.fonts || !d.fonts.forEach || !d.fonts.load) { raise("fonts-ready"); return true; }
     try {
-      // Icons stay visibility:hidden until this class (see styles.css).
-      // The page veil does not wait on them.
-      if (face("Material Symbols")) raise("fonts-ready");
-      if (face("Manrope") && face("Sora")) return true;
       ask();
-      return false;
+      var icons = face("Material Symbols");
+      var text = face("Manrope") && face("Sora");
+      if (icons) raise("fonts-ready");
+      return !!(text && icons);
     } catch (e) { return true; }
   };
 

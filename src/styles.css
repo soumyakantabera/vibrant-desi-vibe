@@ -29,7 +29,7 @@
 @font-face {
   font-family: "Material Symbols Rounded";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 100 700;
   font-display: block;
   src: url("./assets/fonts/material-symbols-rounded.woff2") format("woff2");
 }
@@ -521,7 +521,7 @@ button.btn.btn-wa svg {
    gibberish shoving the layout sideways. */
 .material-symbols-rounded {
   font-family: "Material Symbols Rounded", sans-serif;
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
   line-height: 1;
   letter-spacing: normal;
@@ -533,8 +533,8 @@ button.btn.btn-wa svg {
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
-/* Hold the icons back until the font is decoded (or 2.5s has passed — see the
-   head script), so no frame ever paints the ligature text itself. */
+/* Hold icons until the face is decoded. The boot veil now waits on this
+   font too, so icons arrive with the first paint instead of popping in late. */
 html.js:not(.fonts-ready) .material-symbols-rounded { visibility: hidden; }
 
 /* ------------------------------------------------------------- skeletons ---
