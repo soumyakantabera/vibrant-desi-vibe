@@ -618,8 +618,8 @@ function Home() {
           <Reveal stagger className="grid md:grid-cols-2 gap-6">
             <div className="rounded-3xl p-8 md:p-10 bg-brand-deep text-cream relative overflow-hidden">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-wa/20 rounded-full blur-3xl" />
-              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-white mb-4 shadow-md">
-                <BrandIcon name="whatsapp" size={40} />
+              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-white mb-4 shadow-md overflow-hidden">
+                <BrandIcon name="whatsapp" size={36} />
               </div>
               <h3 className="text-cream text-2xl font-display font-extrabold mb-3">
                 Chat on WhatsApp

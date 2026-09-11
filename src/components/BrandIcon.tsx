@@ -57,7 +57,7 @@ export function BrandIcon({
       style={{ background: bg }}
       {...rest}
     >
-      <path d={meta.d} />
+      <path d={meta.d} fillRule={name === "whatsapp" ? "evenodd" : undefined} />
     </svg>
   );
 }

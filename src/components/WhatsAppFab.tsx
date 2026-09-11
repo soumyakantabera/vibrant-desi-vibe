@@ -19,10 +19,11 @@ export function WhatsAppFab({
         className="fixed bottom-5 right-5 z-50 hidden sm:block"
         data-cta-location="fab"
       >
-        {/* Official WhatsApp mark: green glyph on white so the bubble
-            cut-out punches through to white (app-icon look). */}
-        <span className="relative flex items-center justify-center overflow-hidden rounded-full bg-white shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-4 ring-[#25D366]/30">
-          <BrandIcon name="whatsapp" size={58} className="md:!h-[62px] md:!w-[62px]" />
+        {/* Speech-bubble tail sits at the corner of the 24×24 mark, so the
+            glyph has to sit inside the inscribed square or the tail clips
+            the round. ~70% of the disc keeps the whole logo in the circle. */}
+        <span className="relative flex items-center justify-center overflow-hidden rounded-full bg-white shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-[3px] ring-[#25D366]/35">
+          <BrandIcon name="whatsapp" size={42} className="md:!h-[46px] md:!w-[46px]" />
         </span>
       </a>
 
