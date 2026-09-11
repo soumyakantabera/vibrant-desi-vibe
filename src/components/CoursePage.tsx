@@ -36,6 +36,7 @@ export type CourseData = {
   footerImage: string;
   duration: string;
   durationQualifier?: string;
+  continueNote?: string;
   format: string;
   price: string;
   liveNote?: string;
@@ -267,12 +268,20 @@ export function CoursePage({ data }: { data: CourseData }) {
                   {data.format}
                 </span>
               </div>
-              {data.durationQualifier && (
-                <div className="flex flex-wrap">
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
-                    <Icon name="compass" size={14} className="text-sage" />
-                    {data.durationQualifier}
-                  </span>
+              {(data.durationQualifier || data.continueNote) && (
+                <div className="flex flex-wrap gap-3">
+                  {data.durationQualifier && (
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+                      <Icon name="compass" size={14} className="text-sage" />
+                      {data.durationQualifier}
+                    </span>
+                  )}
+                  {data.continueNote && (
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
+                      <Icon name="refresh" size={14} className="text-sage" />
+                      {data.continueNote}
+                    </span>
+                  )}
                 </div>
               )}
             </div>

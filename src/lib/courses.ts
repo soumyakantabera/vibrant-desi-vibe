@@ -518,6 +518,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.kidsEnglishFooter,
     duration: "6 months · 2 × 1 hr 30 min/week",
     durationQualifier: "After school on IST, plus Saturday mornings.",
+    continueNote: "Continuous learning after 6 months — next level",
     format: "Live batch · 4–6 children",
     price: "₹1,499/mo",
     liveNote:
@@ -628,6 +629,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.teenEnglishFooter,
     duration: "6 months · 2 × 1 hr 30 min/week",
     durationQualifier: "Evening and Saturday IST, after school hours.",
+    continueNote: "Continuous learning after 6 months — next level",
     format: "Live batch · approximately 6 teens",
     price: "₹1,799/mo",
     liveNote:

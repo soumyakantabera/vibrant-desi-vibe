@@ -28,6 +28,21 @@ const ITEMS: { icon: IconName; tone: string; title: string; body: string }[] = [
   },
 ];
 
+const LEGAL: { icon: IconName; tone: string; title: string; body: string }[] = [
+  {
+    icon: "book",
+    tone: "bg-brand-soft text-brand-deep",
+    title: "India — DPDP Act, 2023",
+    body: "For anyone under 18, a parent or guardian is the person we contract with and message. Enrolment needs that parent’s consent. Child data is not used for ads. See Privacy.",
+  },
+  {
+    icon: "globe",
+    tone: "bg-[#E7E7FF] text-indigo-pop",
+    title: "Global learners, same rules",
+    body: "Indians abroad join the same IST rooms. We do not claim a COPPA, GDPR or children’s-privacy certificate. The parent remains the account holder. Indian law and the pages below govern the contract.",
+  },
+];
+
 export function ParentTrustPanel({ className = "mt-6" }: { className?: string }) {
   return (
     <aside
@@ -62,23 +77,48 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
           </div>
         ))}
       </div>
-      <p className="mt-4 text-xs leading-relaxed text-ink/70">
-        Enrolment follows our Privacy, Terms and Refunds pages as written, including parental
-        consent for anyone under 18. We do not claim a safeguarding certificate or a government
-        seal. The parent remains the account holder.{" "}
-        <Link to="/privacy" className="font-bold text-brand-deep underline-offset-2 hover:underline">
-          Privacy
-        </Link>
-        {" · "}
-        <Link to="/terms" className="font-bold text-brand-deep underline-offset-2 hover:underline">
-          Terms
-        </Link>
-        {" · "}
-        <Link to="/refunds" className="font-bold text-brand-deep underline-offset-2 hover:underline">
-          Refunds
-        </Link>
-        .
-      </p>
+
+      <div className="mt-5 rounded-2xl border border-brand/15 bg-white/90 p-4 md:p-5">
+        <p className="text-[11px] uppercase tracking-[0.14em] font-display font-bold text-ink/55">
+          Legal & compliance
+        </p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {LEGAL.map((item) => (
+            <div key={item.title} className="flex gap-3">
+              <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${item.tone}`}>
+                <Icon name={item.icon} size={20} />
+              </span>
+              <div>
+                <h4 className="font-display text-sm font-extrabold text-ink">{item.title}</h4>
+                <p className="mt-1 text-sm leading-relaxed text-ink/80">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-xs leading-relaxed text-ink/70">
+          Enrolment follows our Privacy, Terms and Refunds pages as written. We do not claim a
+          safeguarding certificate, a government seal, or a foreign children’s-privacy badge. The
+          parent remains the account holder.{" "}
+          <Link
+            to="/privacy"
+            className="font-bold text-brand-deep underline-offset-2 hover:underline"
+          >
+            Privacy
+          </Link>
+          {" · "}
+          <Link to="/terms" className="font-bold text-brand-deep underline-offset-2 hover:underline">
+            Terms
+          </Link>
+          {" · "}
+          <Link
+            to="/refunds"
+            className="font-bold text-brand-deep underline-offset-2 hover:underline"
+          >
+            Refunds
+          </Link>
+          .
+        </p>
+      </div>
     </aside>
   );
 }

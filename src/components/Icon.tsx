@@ -31,6 +31,7 @@ const MAP: Record<string, string> = {
   shield: "verified",
   trend: "trending_up",
   compass: "explore",
+  refresh: "autorenew",
   whatsapp: "chat", // for non-brand contexts; use BrandIcon for the real logo
   menu: "menu",
   close: "close",

@@ -9,7 +9,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-11";
+export const LEGAL_UPDATED = "2026-09-12";
 
 export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
   "/privacy": {
@@ -108,7 +108,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Children and young people",
         paragraphs: [
-          "Our classes are designed for Indian learners aged 15 and above. If you are under 18, a parent or guardian should complete enrolment and payment. If we learn that we have collected information from a child without appropriate consent, we will delete it where we reasonably can.",
+          "Adult rooms are for learners aged 15 and above. Spoken English for Kids is for ages 6–11. Spoken English for Teens is for ages 12–17. Those rooms are never mixed with each other or with adult batches.",
+          "If the learner is under 18, a parent or guardian must complete enrolment and payment and is the person we message on WhatsApp. Under the Digital Personal Data Protection Act, 2023, we treat that parent or guardian as the person who consents to our use of the child’s information for running the class. We do not use children’s data to show ads. We do not publish children’s photos or class recordings.",
+          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Learners outside India join the same IST rooms; Indian law and this policy still apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can.",
         ],
       },
       {
@@ -143,14 +145,15 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile offers live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
+          "Learn With Smile offers live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation, Spoken English for Kids (ages 6–11), Spoken English for Teens (ages 12–17) and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre. Kids, teens and adult rooms are never mixed.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We train for the paper; we do not award the score.",
         ],
       },
       {
         heading: "Eligibility",
         paragraphs: [
-          "You should be at least 15 years old. If you are under 18, a parent or guardian must agree to these terms and complete payment. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time.",
+          "Adult English rooms are for learners aged 15 and above. Kids rooms are ages 6–11. Teen rooms are ages 12–17. Rooms are never mixed.",
+          "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time. For ages 6–11, a parent should stay within earshot of the room.",
         ],
       },
       {
