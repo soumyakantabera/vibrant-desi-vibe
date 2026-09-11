@@ -31,8 +31,6 @@ const ENTRY = path.resolve("dist-prerender/prerender-entry.js");
 const mod = await import(pathToFileURL(ENTRY).href);
 const {
   ALL_PATHS,
-  PAGES,
-  SITE_URL,
   headFor,
   renderPath,
   buildLlmsTxt,
@@ -43,6 +41,7 @@ const {
   pageMarkdown,
   BLOG_POSTS,
   actualWordCounts,
+  sitemapUrls,
 } = mod;
 
 const today = new Date().toISOString().slice(0, 10);
@@ -266,40 +265,46 @@ for (const pathname of ALL_PATHS) {
 
 /* ---------------------------------------------------------------- sitemap */
 
-function sitemapEntry(loc, priority, changefreq, lastmod) {
+function xml(value) {
+  return String(value)
+    .replace(/&/g, "\u0026amp;")
+    .replace(/</g, "\u0026lt;")
+    .replace(/>/g, "\u0026gt;")
+    .replace(/"/g, "\u0026quot;");
+}
+
+function sitemapEntry({ loc, lastmod, changefreq, priority, image }) {
   return [
     "  <url>",
-    `    <loc>${loc}</loc>`,
+    `    <loc>${xml(loc)}</loc>`,
     ...(lastmod ? [`    <lastmod>${lastmod}</lastmod>`] : []),
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority.toFixed(1)}</priority>`,
+    `    <xhtml:link rel="alternate" hreflang="en-IN" href="${xml(loc)}"/>`,
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${xml(loc)}"/>`,
+    "    <image:image>",
+    `      <image:loc>${xml(image.loc)}</image:loc>`,
+    `      <image:title>${xml(image.title)}</image:title>`,
+    "    </image:image>",
     "  </url>",
   ].join("\n");
 }
 
-const postBySlug = new Map(BLOG_POSTS.map((post) => [post.slug, post]));
-
-const sitemapUrls = ALL_PATHS.map((p) => {
-  const loc = p === "/" ? `${SITE_URL}/` : `${SITE_URL}${p}`;
-  const page = PAGES[p];
-  // Omit lastmod when there is no content revision date. Using every deploy's
-  // date falsely tells search engines that every page changed on every build.
-  if (page) return sitemapEntry(loc, page.priority, page.changefreq);
-
-  // Articles carry their own last-modified date rather than today's. A build
-  // date on an article that has not changed in six months tells Google the page
-  // is being churned, which is the opposite of what a lastmod is for.
-  if (p.startsWith("/blog/")) {
-    const post = postBySlug.get(p.slice("/blog/".length));
-    return sitemapEntry(loc, 0.6, "yearly", post?.dateModified ?? today);
+for (const required of ["/privacy", "/terms", "/refunds"]) {
+  if (!ALL_PATHS.includes(required)) {
+    throw new Error(`prerender: missing required path ${required} from ALL_PATHS`);
   }
+}
 
-  return sitemapEntry(loc, 0.8, "monthly");
-});
+const sitemapBody = sitemapUrls().map(sitemapEntry).join("\n");
 
 writeFile(
   "sitemap.xml",
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`,
+  `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n` +
+    `        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n` +
+    `        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
+    `${sitemapBody}\n</urlset>\n`,
 );
 
 /* ------------------------------------------- llms.txt + llms-full.txt */

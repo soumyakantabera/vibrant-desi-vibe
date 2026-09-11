@@ -20,7 +20,7 @@ import { countWords } from "../src/content/blog/blocks";
 import { ALL_PATHS, PAGES, type HeadResult, blogPostHead, pageHead } from "../src/lib/seo";
 
 export { ALL_PATHS, PAGES };
-export { COURSE_SEO, SITE_URL, SITE_NAME, abs, markdownPathFor } from "../src/lib/seo";
+export { COURSE_SEO, SITE_URL, SITE_NAME, abs, markdownPathFor, sitemapUrls } from "../src/lib/seo";
 export { COURSES } from "../src/lib/courses";
 export { BLOG_POSTS, getPostsSorted } from "../src/lib/blog";
 // The AI-readable layer — llms.txt, llms-full.txt and the per-page Markdown

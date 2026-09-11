@@ -154,6 +154,8 @@ export type PageSeo = {
   faqs?: Faq[];
   /** Extra breadcrumb trail segment (defaults to Home → page title). */
   breadcrumb?: { name: string; path: string }[];
+  /** ISO date `YYYY-MM-DD` when the page copy was last revised. Used in JSON-LD and the sitemap. */
+  dateModified?: string;
 };
 
 /* --------------------------------------------------------------------------
@@ -302,6 +304,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.8,
     changefreq: "monthly",
+    dateModified: "2026-09-11",
     summary:
       "Why us: a named teacher, a group of around 6, and a fee that does not jump with your city. 7 years live from Kolkata. From ₹999/month.",
     faqs: [
@@ -319,7 +322,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is there a refund if I don't like the course after enrolling?",
-        a: "We don't run a refund policy — chat on WhatsApp first, then enrol if it fits.",
+        a: "The demo is free. Monthly fees are prepaid because a live seat is reserved, so we do not run a routine refund after a paid period has started. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Full policy: https://www.learnwithsmile.app/refunds — message WhatsApp before you enrol.",
       },
       {
         q: "Are the classes live or pre-recorded?",
@@ -481,6 +484,89 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Will you call me after I send my WhatsApp number?",
         a: "Not unless you ask. WhatsApp is the default admissions channel because it keeps the course, fee and batch details in one written conversation. Phone is available only as a fallback. The team replies on WhatsApp during 09:00–12:00 IST.",
+      },
+    ],
+  },
+
+  "/privacy": {
+    path: "/privacy",
+    title: "Privacy Policy | How We Handle Your Data",
+    description:
+      "How Learn With Smile collects and uses your data. WhatsApp admissions, Razorpay payments, class recordings. We do not sell personal information at all.",
+    shortTitle: "Privacy Policy",
+    keywords: ["learn with smile privacy policy", "english class data protection india"],
+    ogImage: "/og/default.jpg",
+    priority: 0.3,
+    changefreq: "yearly",
+    dateModified: "2026-09-11",
+    summary:
+      "Privacy Policy: what we collect (name, WhatsApp, email, course notes, Razorpay payment status, class recordings), why, who we share it with, and how to ask for correction or deletion.",
+    faqs: [
+      {
+        q: "Does Learn With Smile sell my personal information?",
+        a: "No. We use your details to reply, enrol you, run live classes and process fees through Razorpay. We do not sell personal information or send it to advertising networks.",
+      },
+      {
+        q: "Who processes my card or UPI payment?",
+        a: "Razorpay. We receive payment status, not your full card number. WhatsApp messages are also processed by Meta under WhatsApp’s own policy.",
+      },
+      {
+        q: "How do I ask you to delete my data?",
+        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. We will delete what we no longer need. We may keep invoices and similar records that tax or accounting rules require.",
+      },
+    ],
+  },
+
+  "/terms": {
+    path: "/terms",
+    title: "Terms of Use | Live English Classes",
+    description:
+      "Rules for Learn With Smile: live online classes, fees inclusive of taxes, no school certificate, WhatsApp enrolment, and Indian law. Kolkata courts apply.",
+    shortTitle: "Terms of Use",
+    keywords: ["learn with smile terms of use", "online english class terms india"],
+    ogImage: "/og/default.jpg",
+    priority: 0.3,
+    changefreq: "yearly",
+    dateModified: "2026-09-11",
+    summary:
+      "Terms of Use: live online teaching only, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
+    faqs: [
+      {
+        q: "Does Learn With Smile issue a course certificate?",
+        a: "No. We do not issue a school certificate. IELTS and similar scores are issued only by the test board. We train the paper; we do not award the score.",
+      },
+      {
+        q: "Do you guarantee fluency, a job or an IELTS band?",
+        a: "No. Results depend on your starting level, attendance and practice. We do not guarantee fluency in a set number of days, a job, a visa or a particular exam score.",
+      },
+    ],
+  },
+
+  "/refunds": {
+    path: "/refunds",
+    title: "Refunds and Cancellation Policy",
+    description:
+      "How refunds and cancellations work at Learn With Smile. Free demos, prepaid monthly fees, and good-faith review of duplicate charges or undelivered classes.",
+    shortTitle: "Refunds and Cancellation",
+    keywords: ["learn with smile refund policy", "english class cancellation india"],
+    ogImage: "/og/default.jpg",
+    priority: 0.3,
+    changefreq: "yearly",
+    dateModified: "2026-09-11",
+    summary:
+      "Refunds: demo is free. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
+    faqs: [
+      {
+        q: "Can I get a refund after I pay for a month?",
+        a: "Not as a routine. A live seat is reserved when you pay. Duplicate payments, charges in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp with the payment date and reason.",
+      },
+      {
+        q: "How do I cancel a later month?",
+        a: "Message +91 96744 79949 on WhatsApp before that month is billed. This website does not run an automatic card subscription.",
+      },
+      {
+        q: "Is the demo refundable?",
+        a: "The demo is free, so there is nothing to refund. Join it before you enrol.",
       },
     ],
   },
@@ -1215,6 +1301,10 @@ export function organizationLd() {
       name: "Sunanda Dey",
       url: abs("/founder"),
     },
+    publishingPrinciples: abs("/terms"),
+    ethicsPolicy: abs("/privacy"),
+    privacyPolicy: abs("/privacy"),
+    termsOfService: abs("/terms"),
     address: {
       "@type": "PostalAddress",
       streetAddress: CONTACT.street,
@@ -1261,6 +1351,16 @@ export function webSiteLd() {
     description:
       "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India.",
     publisher: { "@id": `${SITE_URL}/#organization` },
+    hasPart: [
+      { "@type": "WebPage", "@id": `${abs("/privacy")}#webpage`, url: abs("/privacy"), name: "Privacy Policy" },
+      { "@type": "WebPage", "@id": `${abs("/terms")}#webpage`, url: abs("/terms"), name: "Terms of Use" },
+      {
+        "@type": "WebPage",
+        "@id": `${abs("/refunds")}#webpage`,
+        url: abs("/refunds"),
+        name: "Refunds and Cancellation",
+      },
+    ],
   };
 }
 
@@ -1289,8 +1389,15 @@ export function faqLd(faqs: Faq[]) {
   };
 }
 
-export function webPageLd(page: { path: string; title: string; description: string }) {
+export function webPageLd(page: {
+  path: string;
+  title: string;
+  description: string;
+  dateModified?: string;
+  ogImage?: string;
+}) {
   const isFounderProfile = page.path === "/founder";
+  const isLegal = page.path === "/privacy" || page.path === "/terms" || page.path === "/refunds";
   return {
     "@context": "https://schema.org",
     "@type": isFounderProfile ? "ProfilePage" : "WebPage",
@@ -1301,6 +1408,26 @@ export function webPageLd(page: { path: string; title: string; description: stri
     inLanguage: "en-IN",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
+    ...(page.ogImage
+      ? {
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: abs(page.ogImage),
+            width: 1200,
+            height: 630,
+          },
+        }
+      : {}),
+    ...(page.dateModified
+      ? { dateModified: page.dateModified, datePublished: page.dateModified }
+      : {}),
+    ...(isLegal
+      ? {
+          relatedLink: ["/privacy", "/terms", "/refunds"]
+            .filter((p) => p !== page.path)
+            .map((p) => abs(p)),
+        }
+      : {}),
     ...(isFounderProfile ? { mainEntity: { "@id": `${abs("/founder")}#person` } } : {}),
   };
 }
@@ -1435,13 +1562,20 @@ export function pageHead(path: string): HeadResult {
 
   if (page.faqs?.length) jsonLd.push(faqLd(page.faqs));
 
-  return buildHead({
+  const head = buildHead({
     path: page.path,
     title: page.title,
     description: page.description,
     ogImage: page.ogImage,
     jsonLd,
   });
+  if (page.dateModified) {
+    head.meta.push(
+      { name: "revised", content: page.dateModified },
+      { property: "og:updated_time", content: page.dateModified },
+    );
+  }
+  return head;
 }
 
 /* --------------------------------------------------------------------------
@@ -1474,7 +1608,13 @@ export function blogPostHead(post: BlogPost): HeadResult {
     ogImage: `/og/blog-${post.slug}.jpg`,
     ogType: "article",
     jsonLd: [
-      webPageLd({ path, title: post.seoTitle, description: post.description }),
+      webPageLd({
+        path,
+        title: post.seoTitle,
+        description: post.description,
+        dateModified: post.dateModified,
+        ogImage: "/og/blog.jpg",
+      }),
       {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -1526,3 +1666,55 @@ export const ALL_PATHS: string[] = [
   ...Object.keys(COURSE_SEO).map((slug) => `/course-${slug}`),
   ...BLOG_POSTS.map(blogPath),
 ];
+
+export type SitemapUrl = {
+  loc: string;
+  lastmod?: string;
+  changefreq: PageSeo["changefreq"];
+  priority: number;
+  image: { loc: string; title: string };
+};
+
+/**
+ * One sitemap row per public URL. `lastmod` is only set when we have a real
+ * content revision date — never the build date — so Google is not told that
+ * every page changed on every deploy.
+ *
+ * Image URLs are files that actually exist under `public/og/`. Blog articles
+ * share `/og/blog.jpg`; per-slug OG files are not generated.
+ */
+export function sitemapUrls(): SitemapUrl[] {
+  return ALL_PATHS.map((path) => {
+    const loc = path === "/" ? `${SITE_URL}/` : abs(path);
+    const page = PAGES[path];
+    if (page) {
+      return {
+        loc,
+        lastmod: page.dateModified,
+        changefreq: page.changefreq,
+        priority: page.priority,
+        image: { loc: abs(page.ogImage), title: page.shortTitle },
+      };
+    }
+    if (path.startsWith("/blog/")) {
+      const post = BLOG_POSTS.find((p) => p.slug === path.slice("/blog/".length));
+      return {
+        loc,
+        lastmod: post?.dateModified,
+        changefreq: "yearly" as const,
+        priority: 0.6,
+        image: { loc: abs("/og/blog.jpg"), title: post?.title ?? "Blog" },
+      };
+    }
+    const extra = COURSE_SEO[path.replace(/^\/course-/, "")];
+    return {
+      loc,
+      changefreq: "monthly" as const,
+      priority: 0.8,
+      image: {
+        loc: abs(extra?.ogImage ?? "/og/default.jpg"),
+        title: extra?.shortTitle ?? "Course",
+      },
+    };
+  });
+}

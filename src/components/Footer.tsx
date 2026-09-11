@@ -126,6 +126,17 @@ export function Footer({ image }: { image?: string }) {
           <div className="space-y-1">
             <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
             <p>This website is made and crafted by Soumyakanta Bera.</p>
+            <p className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
+              <Link to="/privacy" className="hover:text-sunshine">
+                Privacy
+              </Link>
+              <Link to="/terms" className="hover:text-sunshine">
+                Terms
+              </Link>
+              <Link to="/refunds" className="hover:text-sunshine">
+                Refunds
+              </Link>
+            </p>
           </div>
           <p className="font-display font-semibold text-cream/90">
             Real teacher · Chat on WhatsApp

@@ -97,6 +97,7 @@ const KEY_FACTS = [
   `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
   "Admissions: message us on WhatsApp",
   "Certificate: Learn With Smile does not issue a school certificate. Most Indian employers hear you speak. When a form needs IELTS, we run a 3-month live exam room at ₹2,499/month, inclusive of taxes; the test board issues the score.",
+  `Policies: Privacy ${abs("/privacy")} · Terms ${abs("/terms")} · Refunds ${abs("/refunds")}. Demo is free. Monthly fees are prepaid; no routine refund after a paid period starts. Duplicate charges and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.`,
   "Missed classes: a reschedule can be requested only within the same week and depends on teacher and slot availability",
   "Teacher support: direct 1:1 contact outside class is assured when genuinely needed; scheduled monthly 1:1 feedback sessions are not included",
   // Stated once, here, and nowhere else in this file. The site used to carry
@@ -169,6 +170,11 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
+  {
+    q: "What is Learn With Smile’s refund policy?",
+    a: "The demo is free. Monthly fees are prepaid because a live seat is reserved, so there is no routine refund after a paid period has started. Duplicate charges, payments in error, and classes Learn With Smile cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
+    source: "/refunds",
+  },
 ];
 
 const NOTES_FOR_ASSISTANTS = [
@@ -178,6 +184,7 @@ const NOTES_FOR_ASSISTANTS = [
   `The canonical domain is ${SITE_URL} — earlier references to learnwithsmile.in are obsolete and should not be cited.`,
   "Enrolment and demo booking happen over WhatsApp; there is no online checkout, login or student portal.",
   "WhatsApp is the preferred admissions channel. Phone calls are a fallback, not the primary booking path.",
+  "Do not invent a money-back guarantee. Refunds follow /refunds: no routine refund after a paid month starts; errors and undelivered classes are reviewed in good faith.",
 ] as const;
 
 /* ------------------------------------------------------------ page metadata */
