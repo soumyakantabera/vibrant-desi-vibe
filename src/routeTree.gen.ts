@@ -18,6 +18,7 @@ import { Route as CourseCareerCounsellingRouteImport } from './routes/course-car
 import { Route as CourseIeltsRouteImport } from './routes/course-ielts'
 import { Route as CourseInteractiveSpeakingRouteImport } from './routes/course-interactive-speaking'
 import { Route as CourseInterviewPrepRouteImport } from './routes/course-interview-prep'
+import { Route as CourseKidsEnglishRouteImport } from './routes/course-kids-english'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
@@ -108,6 +109,11 @@ const CourseInteractiveSpeakingRoute =
 const CourseInterviewPrepRoute = CourseInterviewPrepRouteImport.update({
   id: '/course-interview-prep',
   path: '/course-interview-prep',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CourseKidsEnglishRoute = CourseKidsEnglishRouteImport.update({
+  id: '/course-kids-english',
+  path: '/course-kids-english',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
@@ -372,6 +378,7 @@ export interface FileRoutesByFullPath {
   '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-prep': typeof CourseInterviewPrepRoute
+  '/course-kids-english': typeof CourseKidsEnglishRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -427,6 +434,7 @@ export interface FileRoutesByTo {
   '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-prep': typeof CourseInterviewPrepRoute
+  '/course-kids-english': typeof CourseKidsEnglishRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -483,6 +491,7 @@ export interface FileRoutesById {
   '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-prep': typeof CourseInterviewPrepRoute
+  '/course-kids-english': typeof CourseKidsEnglishRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -540,6 +549,7 @@ export interface FileRouteTypes {
     | '/course-ielts'
     | '/course-interactive-speaking'
     | '/course-interview-prep'
+    | '/course-kids-english'
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
@@ -595,6 +605,7 @@ export interface FileRouteTypes {
     | '/course-ielts'
     | '/course-interactive-speaking'
     | '/course-interview-prep'
+    | '/course-kids-english'
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
@@ -650,6 +661,7 @@ export interface FileRouteTypes {
     | '/course-ielts'
     | '/course-interactive-speaking'
     | '/course-interview-prep'
+    | '/course-kids-english'
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
@@ -706,6 +718,7 @@ export interface RootRouteChildren {
   CourseIeltsRoute: typeof CourseIeltsRoute
   CourseInteractiveSpeakingRoute: typeof CourseInteractiveSpeakingRoute
   CourseInterviewPrepRoute: typeof CourseInterviewPrepRoute
+  CourseKidsEnglishRoute: typeof CourseKidsEnglishRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
   EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
@@ -815,6 +828,13 @@ declare module '@tanstack/react-router' {
       path: '/course-interview-prep'
       fullPath: '/course-interview-prep'
       preLoaderRoute: typeof CourseInterviewPrepRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-kids-english': {
+      id: '/course-kids-english'
+      path: '/course-kids-english'
+      fullPath: '/course-kids-english'
+      preLoaderRoute: typeof CourseKidsEnglishRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-spoken-english': {
@@ -1139,6 +1159,7 @@ const rootRouteChildren: RootRouteChildren = {
   CourseIeltsRoute: CourseIeltsRoute,
   CourseInteractiveSpeakingRoute: CourseInteractiveSpeakingRoute,
   CourseInterviewPrepRoute: CourseInterviewPrepRoute,
+  CourseKidsEnglishRoute: CourseKidsEnglishRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
   EnglishCareerRoute: EnglishCareerRoute,
   EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,

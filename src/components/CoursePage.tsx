@@ -37,6 +37,10 @@ export type CourseData = {
   durationQualifier?: string;
   format: string;
   price: string;
+  liveNote?: string;
+  snapshotBatchBig?: string;
+  snapshotBatchSmall?: string;
+  waDemo?: string;
   outcomes: string[];
   modules: Module[];
   projects?: Project[];
@@ -178,12 +182,16 @@ const TEACHER_NOTE: Record<string, string> = {
   "interview-prep": "Mocks with a teacher who already knows your story before the board does.",
   ielts: "Speaking labs with a teacher who marks your actual mistakes.",
   "career-counselling": "Three 1:1 sessions after they have read your background.",
+  "kids-english":
+    "Same teacher every class. The parent stays on WhatsApp — you hear what your child actually said.",
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
   const isCareerCounselling = data.slug === "career-counselling";
   const teacherNote = TEACHER_NOTE[data.slug];
-  const waPrimary = `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
+  const waPrimary =
+    data.waDemo ??
+    `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
   const faqs = courseFaqs(data);
@@ -208,8 +216,10 @@ export function CoursePage({ data }: { data: CourseData }) {
         {
           tone: "coral",
           icon: SnapIcons.people,
-          big: isCareerCounselling ? "1:1" : "Approx. 6 learners",
-          small: isCareerCounselling ? "Career guidance sessions" : "In this live course batch",
+          big: data.snapshotBatchBig ?? (isCareerCounselling ? "1:1" : "Approx. 6 learners"),
+          small:
+            data.snapshotBatchSmall ??
+            (isCareerCounselling ? "Career guidance sessions" : "In this live course batch"),
         },
       ]}
       footer="Message Anytime · Replies 09:00–12:00 IST"
@@ -264,8 +274,8 @@ export function CoursePage({ data }: { data: CourseData }) {
               )}
             </div>
             <p className="mt-3 text-sm text-white/90">
-              ✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live
-              syllabus · ✓ Pan-India · Based in Kolkata
+              {data.liveNote ??
+                "✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live syllabus · ✓ Pan-India · Based in Kolkata"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={CHAT_MSG} variant="wa" size="lg">
@@ -555,7 +565,8 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
+    maximumAttendeeCapacity:
+      d.slug === "career-counselling" ? 1 : d.slug === "kids-english" ? 6 : 6,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/founder")}#person`,
@@ -609,7 +620,17 @@ export function courseSeo(d: CourseData) {
       url,
       image: [abs(ogImage)],
       inLanguage: "en-IN",
-      educationalLevel: d.slug === "spoken-english" ? "Beginner" : "Intermediate",
+      educationalLevel: d.slug === "spoken-english" || d.slug === "kids-english" ? "Beginner" : "Intermediate",
+      typicalAgeRange: d.slug === "kids-english" ? "6-11" : undefined,
+      isFamilyFriendly: d.slug === "kids-english" ? true : undefined,
+      audience:
+        d.slug === "kids-english"
+          ? {
+              "@type": "EducationalAudience",
+              educationalRole: "student",
+              audienceType: "Children aged 6-11",
+            }
+          : undefined,
       teaches: d.outcomes,
       timeRequired: workload,
       isAccessibleForFree: false,

@@ -505,4 +505,114 @@ export const COURSES: Record<string, CourseData> = {
     metaDescription:
       "1:1 Career Counselling online — 3 × 60-min sessions · ₹1,999 total. Discover, map and act. Free 15-min intro on WhatsApp.",
   },
+  "kids-english": {
+    slug: "kids-english",
+    title: "Spoken English for Kids",
+    tagline:
+      "Ages 6–11. After-school live batches of 4–6 children, 40-minute classes, twice a week. 6 months, ₹1,499/mo, inclusive of taxes. Parent on WhatsApp — you hear what happened in class.",
+    category: "Ages 6–11",
+    categoryColor: "brand",
+    icon: "spark",
+    heroImage: IMG.kidsEnglish,
+    midImage: IMG.kidsEnglishMid,
+    footerImage: IMG.kidsEnglishFooter,
+    duration: "6 months · 2 × 40 min/week",
+    durationQualifier: "After school on IST, plus Saturday mornings.",
+    format: "Live batch · 4–6 children",
+    price: "₹1,499/mo",
+    liveNote:
+      "✓ Parent is the customer · ✓ After-school and Saturday IST · ✓ Never mixed with teens or adults · ✓ Pan-India · Based in Kolkata",
+    snapshotBatchBig: "4–6",
+    snapshotBatchSmall: "Children in this live batch",
+    waDemo:
+      "Hi, I’m a parent. My child is __ years old. Please share the Spoken English for Kids (ages 6–11) demo slot. I will join the demo.",
+    outcomes: [
+      "Greet and introduce themselves in 4–5 full sentences",
+      "Ask for help when they do not understand",
+      "Speak 8–10 sentences about their day",
+      "Tell a short story with a beginning and an end",
+      "Take a turn in a group of 4–6 without freezing",
+      "Use please, thank you and sorry without prompting",
+    ],
+    modules: [
+      {
+        title: "Settling in and sounds",
+        items: [
+          "Hello, my name, my family — full sentences",
+          "Sounds Indian children often mix: v/w, s/sh, th",
+          "Turn-taking: I speak, then I listen",
+          "Short answers that are still complete sentences",
+        ],
+      },
+      {
+        title: "My world",
+        items: [
+          "School, home, food and play vocabulary",
+          "Asking for help: can you say that again?",
+          "Picture talk: 4–6 sentences from one image",
+          "Days, weather and daily routines",
+        ],
+      },
+      {
+        title: "Stories and sequences",
+        items: [
+          "Beginning, middle and end of a short story",
+          "Then / after that / finally",
+          "Retell a one-minute story in their own words",
+          "Reading a short passage aloud — not a literature course",
+        ],
+      },
+      {
+        title: "Show and tell",
+        items: [
+          "My favourite… talks of 8–10 sentences",
+          "Describing a toy, a festival, a holiday",
+          "Answering questions from classmates",
+          "Voice: not shouting, not whispering",
+        ],
+      },
+      {
+        title: "Small-group talk",
+        items: [
+          "Pair work: shop, doctor, birthday",
+          "Please, thank you, sorry in the right place",
+          "Disagreeing without fighting: I think…",
+          "Eight to ten sentences on my day",
+        ],
+      },
+      {
+        title: "Class confidence",
+        items: [
+          "A 60-second assembly-style talk",
+          "Listening to and repeating instructions",
+          "Last-class mini showcase — parent invited",
+          "What to keep practising at home, 10 minutes a day",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is this the same room as the adult Spoken English class?",
+        a: "No. Ages 6–11 are a separate after-school batch of 4–6 children. They are never mixed with teens or with the adult rooms (15+).",
+      },
+      {
+        q: "Who do you message — the child or the parent?",
+        a: "The parent. Enrolment, fees, recordings and WhatsApp all sit on the parent’s number. The child does not need a phone. You join the free demo on camera.",
+      },
+      {
+        q: "How long is a class, and when do they run?",
+        a: "Forty minutes, twice a week, after school on IST, with Saturday morning slots. Six months. Every class is recorded and shared with the parent.",
+      },
+      {
+        q: "Will my child get a certificate or higher school marks?",
+        a: "No. This is live speaking practice, not a school subject and not a certificate course. We do not promise marks, fluency in 30 days, or a native accent.",
+      },
+      {
+        q: "What if we miss a class?",
+        a: "The recording is always shared with the parent. A reschedule can be requested only within the same week and only if a seat exists.",
+      },
+    ],
+    metaDescription:
+      "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 40-min classes twice a week. ₹1,499/mo inclusive of taxes. Parent on WhatsApp for the demo.",
+  },
 };

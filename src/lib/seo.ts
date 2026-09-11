@@ -1267,6 +1267,40 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
+  "kids-english": {
+    title: "Spoken English for Kids | Ages 6–11, ₹1,499/mo",
+    description:
+      "Live spoken English for children aged 6–11. After-school batches of 4–6, 40-minute classes, twice a week. ₹1,499/mo, inclusive of taxes. Parent on WhatsApp.",
+    shortTitle: "Spoken English for Kids",
+    keywords: [
+      "spoken english for kids india",
+      "english speaking classes for children 6 to 11",
+      "online spoken english for kids after school",
+      "small batch english class for kids india",
+      "spoken english for class 1 2 3 4 5 6",
+      "kids english speaking course fees india",
+      "live english class for children kolkata online",
+      "parent demo spoken english for kids",
+    ],
+    ogImage: "/og/kids-english.jpg",
+    dateModified: "2026-09-12",
+    summary:
+      "Spoken English for Kids — ages 6–11, after-school live batches of 4–6 children, 40-minute classes twice a week, 6 months, ₹1,499/month, inclusive of taxes. Parent is the customer. Never mixed with adult rooms.",
+    extraFaqs: [
+      {
+        q: "How much do spoken English classes for kids cost in India?",
+        a: "Learn With Smile charges ₹1,499 per month, inclusive of taxes, for Spoken English for Kids (ages 6–11): live after-school batches of 4–6 children, 40-minute classes twice a week, for 6 months. 1:1 kids platforms in India often run ₹4,000–₹10,000 per month; British Council children’s terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
+      },
+      {
+        q: "Can a 7-year-old join the ₹999 adult Spoken English batch?",
+        a: "No. The ₹999 Spoken English room is for learners 15+. Children aged 6–11 join Spoken English for Kids at ₹1,499/month. The rooms are never mixed. The parent books the demo and stays on WhatsApp.",
+      },
+      {
+        q: "Do I sit in the class with my child?",
+        a: "You join the free demo on camera. For weekly classes, stay within earshot — especially for 6–8 year olds — but the child speaks. Recordings and teacher notes come to your WhatsApp, not the child’s.",
+      },
+    ],
+  },
 };
 
 /* --------------------------------------------------------------------------

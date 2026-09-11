@@ -110,9 +110,9 @@ function groupFeeLine(): string {
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `${SITE_NAME}: live online English for Indian adults 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
+  `${SITE_NAME}: live online English. Adult rooms: Indian learners 15+. Spoken English for Kids: ages 6–11, parent is the customer, batches of 4–6 children, never mixed with adults. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
   groupFeeLine(),
-  "Format: 100% live with a named teacher — never pre-recorded as the class. English batches of approximately 6 learners, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1. Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
+  "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, up to 2 classes/week. Kids English (6–11): 4–6 children, 40-minute classes, twice a week, after school. Every class is recorded for revision. Career Counselling is 1:1. Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
   `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state and for Indians abroad on IST.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
@@ -532,7 +532,7 @@ export function buildLlmsTxt(updated: string): string {
     "## Brand",
     "",
     `- Trading name: ${SITE_NAME}. Founder and lead teacher: Sunanda Dey. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
-    `- Audience: Indian adults 15+. Hindi- and Bengali-medium backgrounds welcome. Not a children's platform. Not affiliated with British Council, EngVarta, Cambly or Veta.`,
+    `- Audience: Adult rooms 15+. Spoken English for Kids: ages 6–11; the parent is the customer and sits on WhatsApp. Hindi- and Bengali-medium backgrounds welcome. Rooms are never mixed. Not affiliated with British Council, EngVarta, Cambly, PlanetSpark or Veta.`,
     `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${Object.keys(COURSE_SEO)
       .filter((slug) => isMonthly(COURSES[slug].price))
       .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)

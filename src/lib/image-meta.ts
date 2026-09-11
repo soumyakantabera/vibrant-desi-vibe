@@ -69,6 +69,21 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     w: 1024,
     h: 1024,
   },
+  "kids-english-footer.jpg": {
+    blur: "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAAAwBQCdASoYABEAPu1qsFAppaSiqAqpMB2JYgCdMwGWAAJpsvukxnMMbtTSYlHrSLvVEAD+6PXbYIKYKvy+gJ2Dh7YfgZ6Coi0idJY3CeTnC+vT0lxOAvTpp7V+XLwcVEALymkVODo/x6v4JTGj56X2P5oTrLBB39W6URezom1VW8GhGeKA1wmCN+vI/Zc0RusHsW1tGJQJhR9gUm/+O6WPyE8NAABLojz2AA==",
+    w: 1280,
+    h: 896,
+  },
+  "kids-english-mid.jpg": {
+    blur: "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADQBACdASoYABEAPu1wsFIppiSiqAgBMB2JQAB8nBhMWxu/7M8VC6756I836n79AAD+uCoCcnV7C2CTiPH2uSsIx6CICJs6+8mpfnkDEiTmXWYrh6mKZn6Uusdq2uaTIUpepcIVrw+2baeo+OvXGf9KVo7ZF7ZO9HUaKi3Puiu5cOCKoOqZ1nb23Yl2yP4YEzWY8ONQ8jrDDS1WYT9GACOlSJcz0NLnwwAAAAAA",
+    w: 1280,
+    h: 896,
+  },
+  "kids-english.jpg": {
+    blur: "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAABQBQCdASoYABEAPu1ur1IppiQiqAgBMB2JQBYdsYsK0ze8lLGdwwjo5IvvN8cpN1RXzgAA/fhmMZvTrrOOiPbKAxX9JX30BXI/ROZ8fafddpKB65WKmFX66znnPFqzTDGDGDuQuCtTN8SEpoJ9aNWIvHgCZ2ygZVM1o1ORJS3Pb7qBiN16/9UTFfNe0Zb+mjzaqzG+85hYWKPlX+ztWEQUEfrFmRzG1toiX639sg6bdxNKfecCD74avJGECTEaOShuJRNJ30HdkX5jocRVdWQA",
+    w: 1280,
+    h: 896,
+  },
   "presentation.jpg": {
     blur: "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBQCdASoYABgAPuVepU2pJSOiMAwBIByJZgCdMoMulDUTvIcr8dCSxFN73C93L1XNAEcZ3wAA/miZeuUBlxdcMSrBU9/RC69LS17SgVr79oxO6zdrYHxbSGWixX2ST2xIHQ+RXEyPLpbZ3/aPBCNVrWr9LclB6CG99bzGjVHL2Vx6AzYm0YyaUl5iLpZpr/p0ISfj9BPIFQZWDJMaJnyttyVBrlZ1hu3hmRQAAAA=",
     w: 1024,
