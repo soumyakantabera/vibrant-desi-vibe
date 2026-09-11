@@ -54,6 +54,20 @@ export const body: ArticleBody = [
     t: "p",
     text: "Book us, one 1:1 app, and one classroom or brand group. Count minutes. Compare GST. Then pay. Time-to-fluency is in [how long spoken English takes](/how-long-to-learn-spoken-english). Fit-by-institute is in [the comparison](/english-institute-comparison-india).",
   },
+  { t: "h2", text: "Questions we get on WhatsApp" },
+  {
+    t: "ul",
+    items: [
+      "**“Is ₹999 too cheap to be real?”** Inclusive of taxes, no registration, batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
+      "**“Can I start next week?”** Usually yes. Message for the next IST slot. Demo is free.",
+      "**“Do you issue a certificate?”** No. Indian interviews hear you. Visas read an exam-board score — we prep [IELTS](/ielts-coaching-fees-india) live; the board issues the band.",
+    ],
+  },
+  { t: "h2", text: "What we fail, on purpose" },
+  {
+    t: "p",
+    text: "We are the wrong buy for children under 14, for anyone who needs a walk-in campus, and for anyone who only wants daily 1:1 minutes with no syllabus. Beginners who still cannot form a sentence should not buy a conversation app first — start with [Spoken English for beginners](/spoken-english-for-beginners-india).",
+  },
   {
     t: "cta",
     text: "Make us trial one of three. Approx. 6 learners. From ₹999/mo.",

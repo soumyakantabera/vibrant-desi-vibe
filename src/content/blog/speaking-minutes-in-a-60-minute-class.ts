@@ -59,6 +59,16 @@ export const body: ArticleBody = [
       "Ask GST, registration, lock-in. 18% on a “₹2,000” course is not a rounding error.",
     ],
   },
+  { t: "h2", text: "Cost per speaking minute, roughly" },
+  {
+    t: "p",
+    text: "A ₹999/month batch of around 6, two hours a week, is about 8–10 minutes of you per hour — call it 70 minutes of you a month. That is roughly ₹14 a speaking minute, inclusive of taxes, plus hearing five classmates. A 30-student ₹2,000/month room can be more expensive per minute you actually spoke. 1:1 at ₹108/15 min is ~₹7 a minute and has no 6-month map. Pick the unit you are buying.",
+  },
+  { t: "h2", text: "Online vs a city classroom" },
+  {
+    t: "p",
+    text: "Add commute. [Online vs offline](/online-vs-offline-spoken-english-classes) and the city pages — [Mumbai](/spoken-english-classes-mumbai), [Delhi](/spoken-english-classes-delhi), [Bengaluru](/spoken-english-classes-bengaluru) — do that math in local terms. A 90-minute local each way for 2 minutes on the mic is the expensive class, whatever the brochure says.",
+  },
   {
     t: "cta",
     text: "Sit in our batch of around 6 and count your own minutes.",

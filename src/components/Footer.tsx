@@ -7,6 +7,7 @@ import { PaymentTrust } from "./PaymentTrust";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { IMG } from "@/lib/images";
 import { CONTACT } from "@/lib/seo";
+import { FOOTER_GUIDES } from "@/lib/guides";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -34,20 +35,7 @@ const COMPANY = [
  * no internal link equity, which for three brand-new URLs is most of the
  * problem.
  */
-const GUIDES = [
-  { to: "/spoken-business-or-interactive-english", label: "Which Class You Need" },
-  { to: "/interactive-english-class-hesitation", label: "When You Freeze" },
-  { to: "/english-for-working-professionals-india", label: "Working Professionals" },
-  { to: "/english-for-client-calls-india", label: "Client-Call English" },
-  { to: "/english-for-presentations-india", label: "Presentations in 3 Minutes" },
-  { to: "/english-hindi-bengali-medium", label: "Hindi & Bengali Medium" },
-  { to: "/workplace-english-course-online-india", label: "Workplace English Guide" },
-  { to: "/spoken-english-classes-kolkata", label: "Classes in Kolkata" },
-  { to: "/english-class-fees-india", label: "English Class Fees in India" },
-  { to: "/best-online-spoken-english-classes-india", label: "Compare Online Classes" },
-  { to: "/how-long-to-learn-spoken-english", label: "How Long Spoken English Takes" },
-  { to: "/english-institute-comparison-india", label: "Institutes Compared, 2026" },
-];
+const GUIDES = FOOTER_GUIDES;
 
 const IMG_DEFAULT = IMG.groupClass;
 

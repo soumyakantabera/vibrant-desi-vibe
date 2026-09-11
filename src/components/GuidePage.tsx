@@ -2,12 +2,13 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
-import { ArticleBody } from "@/components/ArticleBody";
+import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
+import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
-import type { ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
+import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 
@@ -28,6 +29,7 @@ export function GuidePage({
   eyebrow,
   h1,
   standfirst,
+  shortAnswer,
   heroImage,
   heroAlt,
   breadcrumb,
@@ -43,6 +45,7 @@ export function GuidePage({
   eyebrow: string;
   h1: ReactNode;
   standfirst: string;
+  shortAnswer?: string;
   heroImage: string;
   heroAlt: string;
   breadcrumb: string;
@@ -56,6 +59,7 @@ export function GuidePage({
   lastUpdated?: string;
   children?: ReactNode;
 }) {
+  const toc = articleToc(body);
   return (
     <Layout waMessage={waMessage} footerImage={heroImage}>
       <section className="relative">
@@ -69,6 +73,12 @@ export function GuidePage({
               <li>
                 <Link to="/" className="hover:underline">
                   Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link to="/guides" className="hover:underline">
+                  Guides
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
@@ -90,7 +100,16 @@ export function GuidePage({
 
       <article className="section">
         <div className="container-x max-w-3xl">
-          <ArticleBody body={body} />
+          {shortAnswer && (
+            <div className="mb-8 rounded-2xl border border-sunshine/40 bg-sunshine/15 p-5">
+              <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
+                Short answer
+              </p>
+              <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
+            </div>
+          )}
+          <ArticleToc items={toc} />
+          <ArticleBody body={body} waMessage={waMessage} />
         </div>
       </article>
 
@@ -120,6 +139,7 @@ export function GuidePage({
               See all 6 courses
             </Link>
           </div>
+          <PaymentTrust tone="dark" align="center" className="mt-8" />
         </div>
       </section>
     </Layout>

@@ -4,6 +4,8 @@ import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
+import { FEATURED_GUIDES } from "@/lib/guides";
+import { CITY_PATHS } from "@/lib/cities";
 
 export function SectionHeader({
   eyebrow,
@@ -92,86 +94,7 @@ export function FeatureCard({
   );
 }
 
-export const SITE_GUIDES: {
-  to:
-    | "/spoken-business-or-interactive-english"
-    | "/interactive-english-class-hesitation"
-    | "/english-for-working-professionals-india"
-    | "/best-online-spoken-english-classes-india"
-    | "/english-class-fees-india"
-    | "/spoken-english-classes-kolkata"
-    | "/workplace-english-course-online-india"
-    | "/how-long-to-learn-spoken-english"
-    | "/english-institute-comparison-india";
-  title: string;
-  sub: string;
-  icon: IconName;
-  color: "brand" | "sunshine" | "coral" | "indigo";
-}[] = [
-  {
-    to: "/spoken-business-or-interactive-english",
-    title: "Which class you need",
-    sub: "Spoken, Interactive or Business. Exam course only if a form asks.",
-    icon: "compass",
-    color: "brand",
-  },
-  {
-    to: "/interactive-english-class-hesitation",
-    title: "When you freeze",
-    sub: "You know the words. You go silent. Interactive: talk every hour.",
-    icon: "mic",
-    color: "coral",
-  },
-  {
-    to: "/english-for-working-professionals-india",
-    title: "While you work",
-    sub: "Morning, evening, weekend IST. Live class. Recording is revision.",
-    icon: "clock",
-    color: "indigo",
-  },
-  {
-    to: "/best-online-spoken-english-classes-india",
-    title: "Compare Online Classes",
-    sub: "Cambly, British Council, local rooms — who each option actually fits.",
-    icon: "globe",
-    color: "brand",
-  },
-  {
-    to: "/english-institute-comparison-india",
-    title: "Compare Institutes",
-    sub: "₹999 live vs EngVarta, British Council and Veta. 2026 fees, speaking minutes.",
-    icon: "chart",
-    color: "coral",
-  },
-  {
-    to: "/english-class-fees-india",
-    title: "Fees in India",
-    sub: "From ₹999/mo inclusive of taxes. What ₹800 vs ₹8,000/month actually buys.",
-    icon: "rupee",
-    color: "sunshine",
-  },
-  {
-    to: "/how-long-to-learn-spoken-english",
-    title: "How Long It Takes",
-    sub: "6 months from zero. 3 months workplace. 9–12 for Band 7+. Not 30 days.",
-    icon: "clock",
-    color: "indigo",
-  },
-  {
-    to: "/spoken-english-classes-kolkata",
-    title: "Kolkata & 11 States",
-    sub: "Live from Kolkata vs 25–40 student classrooms. Morning, evening, weekend.",
-    icon: "users",
-    color: "coral",
-  },
-  {
-    to: "/workplace-english-course-online-india",
-    title: "Workplace English Guide",
-    sub: "Meetings, calls, emails, presentations — ₹1,999/mo, 3 months.",
-    icon: "headset",
-    color: "indigo",
-  },
-];
+export const SITE_GUIDES = FEATURED_GUIDES;
 
 export function GuidesStrip({
   eyebrow = "Guides",
@@ -232,6 +155,11 @@ export function GuidesStrip({
             );
           })}
         </div>
+        <div className="mt-8 text-center">
+          <Link to="/guides" className="btn btn-outline btn-sm">
+            All English class guides <Icon name="arrow-right" size={14} />
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -280,14 +208,19 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
           Cities
         </p>
         <div className="mt-2 flex flex-wrap gap-2">
-          {COVERAGE_CITIES.map((city, i) => (
-            <span
-              key={city}
-              className={`inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[(i + 1) % CITY_TONES.length]}`}
-            >
-              {city}
-            </span>
-          ))}
+          {COVERAGE_CITIES.map((city, i) => {
+            const href = CITY_PATHS[city];
+            const cls = `inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[(i + 1) % CITY_TONES.length]}`;
+            return href ? (
+              <Link key={city} to={href} className={`${cls} hover:underline`}>
+                {city}
+              </Link>
+            ) : (
+              <span key={city} className={cls}>
+                {city}
+              </span>
+            );
+          })}
         </div>
       </div>
     </section>

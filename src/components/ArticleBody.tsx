@@ -2,8 +2,10 @@ import { Fragment, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 
 import type { ArticleBody as ArticleBodyBlocks, Block } from "@/content/blog/blocks";
+import { headingId } from "@/content/blog/blocks";
 import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
 /**
  * Renders an article body (see src/content/blog/blocks.ts).
@@ -65,18 +67,47 @@ function bold(text: string, nextKey: () => number): ReactNode[] {
   return out;
 }
 
+export function WaStrip({ message }: { message: string }) {
+  return (
+    <aside
+      className="mt-8 rounded-2xl border border-brand/20 bg-brand-soft/60 p-5 md:p-6"
+      data-cta-location="mid_article"
+    >
+      <p className="font-display font-extrabold text-ink">Want to try this live?</p>
+      <p className="mt-1 text-sm text-ink/80 leading-relaxed">
+        Free demo. One WhatsApp message. No payment to book. Batches of around 6,
+        from ₹999/mo, inclusive of taxes.
+      </p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <WaButton message={message} variant="sun" size="sm">
+          {DEMO_CTA}
+        </WaButton>
+        <WaButton message={CHAT_MSG} variant="wa" size="sm">
+          {CHAT_CTA}
+        </WaButton>
+      </div>
+    </aside>
+  );
+}
+
 function BlockView({ block }: { block: Block }) {
   switch (block.t) {
     case "h2":
       return (
-        <h2 className="mt-12 mb-4 text-2xl md:text-3xl font-display font-extrabold text-ink leading-tight">
+        <h2
+          id={headingId(block.text)}
+          className="mt-12 mb-4 text-2xl md:text-3xl font-display font-extrabold text-ink leading-tight scroll-mt-24"
+        >
           {block.text}
         </h2>
       );
 
     case "h3":
       return (
-        <h3 className="mt-8 mb-3 text-lg md:text-xl font-display font-bold text-ink">
+        <h3
+          id={headingId(block.text)}
+          className="mt-8 mb-3 text-lg md:text-xl font-display font-bold text-ink scroll-mt-24"
+        >
           {block.text}
         </h3>
       );
@@ -110,8 +141,6 @@ function BlockView({ block }: { block: Block }) {
     case "table":
       return (
         <figure className="mt-6">
-          {/* Wide tables scroll inside their own box rather than making the
-              whole page scroll sideways on a phone. */}
           <div className="overflow-x-auto rounded-2xl border border-border bg-white">
             <table className="w-full text-sm text-left border-collapse">
               <thead>
@@ -204,14 +233,51 @@ function BlockView({ block }: { block: Block }) {
   }
 }
 
-export function ArticleBody({ body }: { body: ArticleBodyBlocks }) {
+export function ArticleBody({
+  body,
+  waMessage,
+}: {
+  body: ArticleBodyBlocks;
+  waMessage?: string;
+}) {
+  const secondH2 = body.findIndex((b, i) => i > 0 && b.t === "h2" && body.slice(0, i).some((x) => x.t === "h2"));
+  const insertAt = secondH2 > 0 ? secondH2 : -1;
+
   return (
     <div className="max-w-none">
       {body.map((block, i) => (
         <Fragment key={i}>
+          {waMessage && insertAt === i ? <WaStrip message={waMessage} /> : null}
           <BlockView block={block} />
         </Fragment>
       ))}
     </div>
+  );
+}
+
+export function ArticleToc({
+  items,
+}: {
+  items: { id: string; text: string }[];
+}) {
+  if (items.length < 3) return null;
+  return (
+    <nav aria-label="On this page" className="mb-10 rounded-2xl border border-border bg-white p-5">
+      <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
+        On this page
+      </p>
+      <ol className="mt-3 space-y-1.5">
+        {items.map((item, i) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className="text-sm text-brand-deep font-display font-semibold hover:underline"
+            >
+              {i + 1}. {item.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
   );
 }

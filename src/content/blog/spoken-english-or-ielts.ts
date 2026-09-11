@@ -68,6 +68,16 @@ export const body: ArticleBody = [
       "**EngVarta / Cambly:** no course picker. You talk. Useful after you can talk.",
     ],
   },
+  { t: "h2", text: "The cost of getting this wrong" },
+  {
+    t: "p",
+    text: "IELTS first when you cannot hold a call: three months of cue cards, still silent in a shop, exam fee on top. Spoken English first when a university form asked for Band 7: six months of chat, Writing Task 2 still at 6.0. The picker above is cheaper than either detour. Fees: [IELTS coaching fees](/ielts-coaching-fees-india) and [class fees](/english-class-fees-india).",
+  },
+  { t: "h2", text: "HR asked for IELTS for a job in India" },
+  {
+    t: "p",
+    text: "Rare, and worth asking whether they mean an English test or an English conversation. Most Indian interviews hear a [60-second intro](/blog/tell-me-about-yourself-in-60-seconds). Sit the exam when a form, a university or a country asks. Until then, [Interview Prep](/course-interview-prep) or [Spoken English](/spoken-english-for-beginners-india) is the room.",
+  },
   {
     t: "cta",
     text: "Not sure? Sit in a live batch of around 6. We will tell you if IELTS is the wrong buy.",

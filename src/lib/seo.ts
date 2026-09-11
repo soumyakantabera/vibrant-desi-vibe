@@ -24,6 +24,7 @@
 
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
+import { EXTRA_PAGES } from "@/lib/guide-pages";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
@@ -853,7 +854,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/spoken-business-or-interactive-english": {
     path: "/spoken-business-or-interactive-english",
-    title: "Spoken, Business or Interactive English",
+    title: "Which English Class | Spoken vs Business",
     description:
       "Conversation → Spoken. Freeze → Interactive. Meetings → Business. Exam only if a form asks. Live from ₹999/mo, approx. 6 learners. Kolkata & pan-India. Inclusive of taxes.",
     shortTitle: "Which English class",
@@ -1054,6 +1055,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
     ],
   },
+  ...EXTRA_PAGES,
 };
 
 /* --------------------------------------------------------------------------
@@ -1402,6 +1404,28 @@ export function faqLd(faqs: Faq[]) {
   };
 }
 
+export function howToLd(howTo: {
+  name: string;
+  description: string;
+  steps: string[];
+  totalTime?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: howTo.name,
+    description: howTo.description,
+    inLanguage: "en-IN",
+    ...(howTo.totalTime ? { totalTime: howTo.totalTime } : {}),
+    step: howTo.steps.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: `Step ${i + 1}`,
+      text,
+    })),
+  };
+}
+
 export function webPageLd(page: {
   path: string;
   title: string;
@@ -1625,52 +1649,54 @@ export function blogPostHead(post: BlogPost): HeadResult {
   const url = abs(path);
   const image = abs("/og/blog.jpg");
 
+  const jsonLd: unknown[] = [
+    webPageLd({
+      path,
+      title: post.seoTitle,
+      description: post.description,
+      dateModified: post.dateModified,
+      ogImage: "/og/blog.jpg",
+    }),
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": `${url}#post`,
+      headline: post.title,
+      description: post.description,
+      url,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      datePublished: post.datePublished,
+      dateModified: post.dateModified,
+      inLanguage: "en-IN",
+      wordCount: post.wordCount,
+      timeRequired: `PT${post.readingTime}M`,
+      articleSection: post.tag,
+      image: [image],
+      author: {
+        "@type": "Person",
+        "@id": `${abs("/founder")}#person`,
+        name: post.author,
+        url: abs("/founder"),
+      },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      isPartOf: { "@id": `${abs("/blog")}#blog` },
+    },
+    breadcrumbLd([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.title, path },
+    ]),
+  ];
+  if (post.faqs?.length) jsonLd.push(faqLd(post.faqs));
+  if (post.howTo) jsonLd.push(howToLd(post.howTo));
+
   const head = buildHead({
     path,
     title: post.seoTitle,
     description: post.description,
     ogImage: "/og/blog.jpg",
     ogType: "article",
-    jsonLd: [
-      webPageLd({
-        path,
-        title: post.seoTitle,
-        description: post.description,
-        dateModified: post.dateModified,
-        ogImage: "/og/blog.jpg",
-      }),
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": `${url}#post`,
-        // Google truncates headline at 110 characters; every title here is well
-        // inside that, and the check below keeps it that way.
-        headline: post.title,
-        description: post.description,
-        url,
-        mainEntityOfPage: { "@type": "WebPage", "@id": url },
-        datePublished: post.datePublished,
-        dateModified: post.dateModified,
-        inLanguage: "en-IN",
-        wordCount: post.wordCount,
-        timeRequired: `PT${post.readingTime}M`,
-        articleSection: post.tag,
-        image: [image],
-        author: {
-          "@type": "Person",
-          "@id": `${abs("/founder")}#person`,
-          name: post.author,
-          url: abs("/founder"),
-        },
-        publisher: { "@id": `${SITE_URL}/#organization` },
-        isPartOf: { "@id": `${abs("/blog")}#blog` },
-      },
-      breadcrumbLd([
-        { name: "Home", path: "/" },
-        { name: "Blog", path: "/blog" },
-        { name: post.title, path },
-      ]),
-    ],
+    jsonLd,
   });
 
   head.meta.push(

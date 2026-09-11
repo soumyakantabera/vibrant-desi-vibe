@@ -34,6 +34,22 @@ export type Block =
 
 export type ArticleBody = Block[];
 
+export function headingId(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[''""]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 70);
+}
+
+export function articleToc(body: ArticleBody): { id: string; text: string }[] {
+  return body
+    .filter((b): b is { t: "h2"; text: string } => b.t === "h2")
+    .map((b) => ({ id: headingId(b.text), text: b.text }));
+}
+
 /** Words in the rendered body text, for `wordCount` in the BlogPosting. */
 export function countWords(body: ArticleBody): number {
   const strings: string[] = [];

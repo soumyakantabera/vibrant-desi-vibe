@@ -1,14 +1,17 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
-import { ArticleBody } from "@/components/ArticleBody";
+import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
+import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
+import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { COURSES } from "@/lib/courses";
 import { getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { ARTICLE_BODIES } from "@/content/blog";
+import { articleToc } from "@/content/blog/blocks";
 import { blogPostHead } from "@/lib/seo";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
@@ -38,17 +41,16 @@ function BlogPostPage() {
   const related = getRelatedPosts(post.slug, 2);
   const heroImage = IMG[post.img as keyof typeof IMG] ?? IMG.blogDesk;
   const waMessage = `Hi, I read "${post.title}" on your blog and I'd like to know more.`;
+  const toc = articleToc(body);
 
   return (
     <Layout waMessage={waMessage} footerImage={heroImage}>
-      {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={heroImage} alt={post.imgAlt} fill priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-indigo-pop/70 to-brand-deep/70" />
         </div>
         <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
-          {/* Visible breadcrumb, matching the BreadcrumbList in the head. */}
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -74,8 +76,6 @@ function BlogPostPage() {
           <p className="mt-4 text-lg text-white/95">{post.description}</p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/90">
-            {/* Byline links to the Person entity the BlogPosting author points
-                at, so the on-page signal and the structured data agree. */}
             <span>
               By{" "}
               <Link to="/founder" className="text-sunshine font-semibold hover:underline">
@@ -90,10 +90,18 @@ function BlogPostPage() {
         </div>
       </section>
 
-      {/* ARTICLE */}
       <article className="section">
         <div className="container-x max-w-3xl">
-          <ArticleBody body={body} />
+          {post.shortAnswer && (
+            <div className="mb-8 rounded-2xl border border-sunshine/40 bg-sunshine/15 p-5">
+              <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
+                Short answer
+              </p>
+              <p className="mt-2 text-ink leading-relaxed font-medium">{post.shortAnswer}</p>
+            </div>
+          )}
+          <ArticleToc items={toc} />
+          <ArticleBody body={body} waMessage={waMessage} />
 
           {post.dateModified !== post.datePublished && (
             <p className="mt-10 text-xs text-ink/70">
@@ -103,7 +111,6 @@ function BlogPostPage() {
         </div>
       </article>
 
-      {/* RELATED COURSES */}
       {post.relatedCourses.length > 0 && (
         <section className="section bg-brand-soft/40 pt-0">
           <div className="container-x max-w-3xl">
@@ -136,7 +143,6 @@ function BlogPostPage() {
         </section>
       )}
 
-      {/* RELATED READING */}
       {related.length > 0 && (
         <section className="section">
           <div className="container-x max-w-3xl">
@@ -166,14 +172,19 @@ function BlogPostPage() {
         </section>
       )}
 
-      {/* CTA */}
+      <FaqSection
+        faqs={post.faqs ?? []}
+        title="Questions this article answers"
+        waMessage={waMessage}
+      />
+
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">Want to practise this live?</h2>
           <p className="mt-3 text-white">
-            The demo is free. Chat on WhatsApp to book one. With approximately 6 learners, you speak
-            in every session.
+            The demo is free. Chat on WhatsApp to book one. With approximately 6
+            learners, you speak in every session.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">
@@ -186,6 +197,7 @@ function BlogPostPage() {
               See all 6 courses
             </Link>
           </div>
+          <PaymentTrust tone="dark" align="center" className="mt-8" />
         </div>
       </section>
     </Layout>

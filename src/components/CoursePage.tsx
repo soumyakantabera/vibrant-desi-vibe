@@ -48,6 +48,16 @@ export type CourseData = {
 const RELATED_GUIDES: Record<string, { href: string; title: string; description: string }[]> = {
   "spoken-english": [
     {
+      href: "/spoken-english-for-beginners-india",
+      title: "Spoken English for beginners",
+      description: "Zero to a 2-minute turn. 6 months, ₹999/mo, around 6 learners.",
+    },
+    {
+      href: "/how-to-speak-english-fluently",
+      title: "How to speak English fluently",
+      description: "Minutes, not 30-day ads. Free drills plus when a paid seat helps.",
+    },
+    {
       href: "/spoken-business-or-interactive-english",
       title: "Which English class do I need?",
       description: "Spoken, Interactive or Business — pick the bottleneck, not all three.",
@@ -124,12 +134,27 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
   ],
   ielts: [
     {
+      href: "/ielts-coaching-fees-india",
+      title: "IELTS coaching fees in India",
+      description: "₹8,000–₹35,000 typical. Ours: ₹2,499/mo, 6 mocks, around 6 learners.",
+    },
+    {
       href: "/blog/band-7-writing-4-paragraph-template",
       title: "IELTS Band 7 four-paragraph writing template",
       description: "A reusable structure for clearer Task 2 essays.",
     },
+    {
+      href: "/blog/spoken-english-or-ielts",
+      title: "Spoken English or IELTS?",
+      description: "Do not buy Band 7 coaching when you still cannot hold a call.",
+    },
   ],
   "interview-prep": [
+    {
+      href: "/spoken-english-for-freshers-india",
+      title: "Spoken English for freshers",
+      description: "Campus intro, HR screen, 60-second chair. No placement promise.",
+    },
     {
       href: "/blog/tell-me-about-yourself-in-60-seconds",
       title: "Answer ‘Tell me about yourself’ in 60 seconds",

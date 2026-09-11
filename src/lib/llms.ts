@@ -132,6 +132,21 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     source: "/english-class-fees-india",
   },
   {
+    q: "How can I speak English fluently?",
+    a: "Speak every day in short turns, get the same errors corrected, and follow a map. From zero, everyday conversation usually takes about 6 months of live practice — not 30 days. Learn With Smile Spoken English is ₹999/month inclusive of taxes, approximately 6 learners. Free drills: /how-to-speak-english-fluently.",
+    source: "/how-to-speak-english-fluently",
+  },
+  {
+    q: "How much does IELTS coaching cost in India?",
+    a: "Typical coaching ₹8,000–₹35,000 plus the official exam fee to IDP or British Council. Learn With Smile IELTS is ₹2,499/month for 3 months, six marked mocks, approximately 6 learners, inclusive of taxes. No band guarantee. If you cannot hold a conversation yet, start with Spoken English.",
+    source: "/ielts-coaching-fees-india",
+  },
+  {
+    q: "Do you teach spoken English in Mumbai, Delhi or Bengaluru?",
+    a: "Yes — live online, same ₹999/month fee as Kolkata, approximately 6 learners, IST batches. There is no walk-in campus in those cities. The registered office is in Kolkata, by appointment. City pages: /spoken-english-classes-mumbai, /spoken-english-classes-delhi, /spoken-english-classes-bengaluru.",
+    source: "/guides",
+  },
+  {
     q: "What is the batch size at Learn With Smile?",
     a: "English courses: approximately 6 learners, so each person speaks every hour (roughly 8–10 minutes in a 60-minute class). No scheduled monthly 1:1 feedback in those rooms. Career Counselling is a separate 1:1 service (3 × 60 min).",
     source: "/why-us",

@@ -44,6 +44,12 @@ export type BlogPost = {
   wordCount: number;
   /** In-body and footer links to the courses the article is actually about. */
   relatedCourses: string[];
+  /** One-line snippet box under the H1. */
+  shortAnswer?: string;
+  /** Visible + FAQPage JSON-LD. */
+  faqs?: { q: string; a: string }[];
+  /** HowTo JSON-LD for phrase / template posts. */
+  howTo?: { name: string; description: string; steps: string[]; totalTime?: string };
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -60,10 +66,36 @@ export const BLOG_POSTS: BlogPost[] = [
     imgAlt: "Adult learner comparing online English class options on a laptop",
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
-    dateModified: "2026-09-02",
-    readingTime: 4,
-    wordCount: 448,
+    dateModified: "2026-09-11",
+    readingTime: 8,
+    wordCount: 980,
     relatedCourses: ["/course-spoken-english"],
+    shortAnswer:
+      "Ask seven things: batch cap, speaking minutes, GST, named teacher, a real demo, review patterns, and whether you need a certificate or a voice. Run them on us too.",
+    faqs: [
+      {
+        q: "How do I choose a spoken English class in India?",
+        a: "Ignore star ratings until you have a batch number. Ask how many learners usually join, how many minutes you will speak in 60 minutes, whether GST is included, who the teacher is, and whether you can sit in a class before you pay. Certificate vs speaking is a different buy: visas need an exam score; Indian interviews hear you talk.",
+      },
+      {
+        q: "What batch size is small enough to actually speak?",
+        a: "Around 6 learners in a 60-minute class gives you roughly 8–10 minutes on the mic. A room of 25–40 often gives 1–2 minutes, sometimes once a week. If a provider will not print a cap, assume the room is crowded.",
+      },
+    ],
+    howTo: {
+      name: "How to choose a spoken English class in India",
+      description: "Seven public checks you can run on any Indian English class in one week, including Learn With Smile.",
+      totalTime: "P7D",
+      steps: [
+        "Ask for the usual headcount, not the phrase small batch.",
+        "Divide about 40 speaking minutes by that headcount.",
+        "Ask whether the fee is inclusive of GST and whether there is lock-in.",
+        "Ask for the named teacher who will remember your errors next week.",
+        "Sit in a real class. If they only pitch, leave.",
+        "Read 3-star Google reviews for batch size, fees and I never spoke.",
+        "Decide if you need a recognised exam score or a voice for interviews.",
+      ],
+    },
   },
   {
     slug: "spoken-english-or-ielts",
@@ -77,10 +109,22 @@ export const BLOG_POSTS: BlogPost[] = [
     imgAlt: "Learner choosing between spoken English practice and IELTS writing",
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
-    dateModified: "2026-09-02",
-    readingTime: 3,
-    wordCount: 411,
+    dateModified: "2026-09-11",
+    readingTime: 6,
+    wordCount: 820,
     relatedCourses: ["/course-spoken-english", "/course-ielts"],
+    shortAnswer:
+      "Cannot hold a call → Spoken English. Freeze with the words you already have → Interactive. Meetings and clients → Workplace. Visa or university form → IELTS. Do not buy Band 7 coaching when you still cannot finish a sentence.",
+    faqs: [
+      {
+        q: "Should I take Spoken English or IELTS first?",
+        a: "If you cannot finish a sentence on a phone call, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If a university, visa or HR form asks for a band, take IELTS (₹2,499/month, six mocks). Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
+      },
+      {
+        q: "Is IELTS useful for a job in India?",
+        a: "Only if the form asks. Indian interviews judge a 60-second intro, not a Writing Task 2. Workplace English or Interview Prep is usually the cheaper, faster room.",
+      },
+    ],
   },
   {
     slug: "speaking-minutes-in-a-60-minute-class",
@@ -94,10 +138,22 @@ export const BLOG_POSTS: BlogPost[] = [
     imgAlt: "Small live English class where every learner gets a turn to speak",
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
-    dateModified: "2026-09-02",
-    readingTime: 4,
-    wordCount: 450,
+    dateModified: "2026-09-11",
+    readingTime: 7,
+    wordCount: 920,
     relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+    shortAnswer:
+      "Your mic in 60 minutes is roughly (40 minutes) ÷ headcount. Around 6 learners → 8–10 minutes. A room of 30 → 1–2 minutes. Months on a brochure are not speaking minutes.",
+    faqs: [
+      {
+        q: "How many minutes will I speak in a 60-minute English class?",
+        a: "After teacher talk, about 40–45 minutes are left. Divide by the people who get a turn. Learn With Smile batches of around 6 give roughly 8–10 minutes. A 25–40 student classroom often gives 1–2 minutes.",
+      },
+      {
+        q: "Are 1:1 apps better for speaking minutes?",
+        a: "Yes, on minutes per day — EngVarta-style 15-minute calls win that unit. They do not replace a 6-month map if you cannot yet form a sentence. Minutes plus a syllabus is a different product from minutes alone.",
+      },
+    ],
   },
   {
     slug: "english-for-office-meetings",
@@ -116,6 +172,21 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 6,
     wordCount: 950,
     relatedCourses: ["/course-business-english"],
+    shortAnswer:
+      "Enter, update, clarify, disagree, close. Twelve ordinary sentences beat corporate vocabulary you cannot retrieve when three people are waiting.",
+    howTo: {
+      name: "Speak in an office meeting in English",
+      description:
+        "Five moves and twelve phrases Indian professionals can actually retrieve in a live meeting.",
+      totalTime: "PT20M",
+      steps: [
+        "Write one outcome you need from the meeting before you join.",
+        "Use a short entry sentence and make one point.",
+        "Ask a clarification that shows what you already understood.",
+        "Disagree on the idea, not the person, and offer a next step.",
+        "Close with owner, deadline and what happens if it slips.",
+      ],
+    },
   },
   {
     slug: "english-for-bpo-customer-support",
@@ -169,6 +240,20 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 7,
     wordCount: 1381,
     relatedCourses: ["/course-ielts"],
+    shortAnswer:
+      "Four paragraphs, 260–280 words, 40 minutes. Task Response and Coherence are half the marks and they are organisation, not vocabulary.",
+    howTo: {
+      name: "Write an IELTS Task 2 Band 7 essay",
+      description: "A four-paragraph template with sentence jobs, timings and word counts.",
+      totalTime: "PT40M",
+      steps: [
+        "Spend 5 minutes on a one-line position and two reasons.",
+        "Write a two-sentence introduction that paraphrases the question and states your view.",
+        "Write body 1: topic sentence, explanation, example, mini-close (~110 words).",
+        "Write body 2 the same way for the second reason (~110 words).",
+        "Close in two sentences: restated view plus the consequence. Leave 3 minutes to check.",
+      ],
+    },
   },
   {
     slug: "5-email-phrases-that-sound-more-professional",
@@ -186,6 +271,20 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 7,
     wordCount: 1476,
     relatedCourses: ["/course-business-english"],
+    shortAnswer:
+      "Swap sorry-for-the-delay, do-the-needful, revert, stacked hedges and kindly-find-attached for a verb, an owner and a deadline.",
+    howTo: {
+      name: "Rewrite a workplace email in clearer English",
+      description: "Five wording swaps used in Indian office mail.",
+      totalTime: "PT10M",
+      steps: [
+        "Replace Sorry for the delay with Thanks for your patience plus the status.",
+        "Replace do the needful / revert / at the earliest with a named verb and a date.",
+        "Cut stacked hedges down to I would suggest or Please.",
+        "Replace Kindly find attached herewith with Attached is X, needed by Y.",
+        "Send only if a stranger could act without asking what you meant.",
+      ],
+    },
   },
   {
     slug: "tell-me-about-yourself-in-60-seconds",
@@ -203,6 +302,25 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 8,
     wordCount: 1584,
     relatedCourses: ["/course-interview-prep"],
+    shortAnswer:
+      "Sixty seconds, three beats: present job, one or two past results, why this role next. The question means why you are in this chair — not your life story.",
+    howTo: {
+      name: "Answer tell me about yourself in 60 seconds",
+      description: "Present–Past–Future formula with timings for Indian interviews.",
+      totalTime: "PT1M",
+      steps: [
+        "Present (~20s): what you do now and one line of scope.",
+        "Past (~20s): one or two results that argue for this role.",
+        "Future (~20s): what you want next, named to this company.",
+        "Record it once, cut anything that does not argue for this chair.",
+      ],
+    },
+    faqs: [
+      {
+        q: "How long should a tell me about yourself answer be?",
+        a: "Sixty to ninety seconds. Longer and the interviewer has stopped listening. Shorter and you have not given them a reason to continue.",
+      },
+    ],
   },
   {
     slug: "bpo-to-client-facing-role-roadmap",
