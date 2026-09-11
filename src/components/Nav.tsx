@@ -99,6 +99,16 @@ export function Nav() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+        <Link
+          to="/english-career"
+          hash="kids-and-teens"
+          className="block bg-sunshine text-ink text-center text-[12px] sm:text-sm font-display font-bold tracking-tight py-1.5 px-3 hover:bg-[#F5C518] transition"
+        >
+          <span className="sm:hidden">🎉 New: Kids 👶 & Teens 👧 spoken English</span>
+          <span className="hidden sm:inline">
+            🎉 We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17)
+          </span>
+        </Link>
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
           {/* Brand */}
           <Link
