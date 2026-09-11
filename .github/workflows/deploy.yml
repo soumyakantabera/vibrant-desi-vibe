@@ -135,11 +135,11 @@ jobs:
 
       # Start a fresh workflow after a Pages API/OIDC failure; rerunning only this job
       # can leave duplicate github-pages artifacts in the same run.
-      - uses: actions/upload-pages-artifact@v4
+      # v4 always stripped dot-directories (no include-hidden-files input), so
+      # /.well-known/llms.txt 404'd. v5 publishes them when the flag is set.
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
-          # .well-known/llms.txt and ai-plugin.json are hidden paths; without
-          # this flag the artifact strips them and ChatGPT/plugin discovery 404s.
           include-hidden-files: true
 
       - name: Wait for Pages artifact consistency
