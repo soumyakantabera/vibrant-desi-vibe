@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { waLink } from "@/lib/whatsapp";
-import { COVERAGE_CITIES, COVERAGE_STATES, SITE_TAGLINE } from "@/lib/seo";
+import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
 import { CITY_PATHS } from "@/lib/cities";
 
@@ -282,26 +282,5 @@ export function MottoBand({ children }: { children: ReactNode }) {
         </blockquote>
       </div>
     </div>
-  );
-}
-
-/** School tagline. `highlightPrice` is for dark heroes. */
-export function SiteTagline({
-  className = "",
-  highlightPrice = false,
-}: {
-  className?: string;
-  highlightPrice?: boolean;
-}) {
-  if (!highlightPrice) {
-    return <p className={className}>{SITE_TAGLINE}</p>;
-  }
-  const [before, after] = SITE_TAGLINE.split("₹999/mo");
-  return (
-    <p className={className}>
-      {before}
-      <strong className="text-sunshine">₹999/mo</strong>
-      {after}
-    </p>
   );
 }

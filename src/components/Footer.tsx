@@ -6,7 +6,7 @@ import { SmartImage } from "./SmartImage";
 import { PaymentTrust } from "./PaymentTrust";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { IMG } from "@/lib/images";
-import { CONTACT, SITE_TAGLINE } from "@/lib/seo";
+import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
 import { FOOTER_CITIES } from "@/lib/cities";
 
@@ -56,7 +56,10 @@ export function Footer({ image }: { image?: string }) {
                 <div className="text-xs text-white/85">7 Years · Kolkata & Pan-India</div>
               </div>
             </div>
-            <p className="text-white/90 text-sm leading-relaxed mb-5">{SITE_TAGLINE}</p>
+            <p className="text-white/90 text-sm leading-relaxed mb-5">
+              500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from
+              ₹999/mo, inclusive of taxes. Kolkata-based, teaching pan-India.
+            </p>
             <SmartImage
               src={image || IMG_DEFAULT}
               alt="Indian students learning online"

@@ -5,7 +5,7 @@ import { Layout } from "@/components/Layout";
 import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
-import { WaButton, SiteTagline } from "@/components/ui-bits";
+import { WaButton } from "@/components/ui-bits";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
@@ -90,7 +90,6 @@ export function GuidePage({
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl text-cream leading-[1.1]">{h1}</h1>
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
-          <SiteTagline className="mt-3 text-sm text-white/85" />
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
               Last updated <time dateTime={lastUpdated}>{lastUpdated}</time>
