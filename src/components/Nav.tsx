@@ -102,7 +102,7 @@ export function Nav() {
         <Link
           to="/english-career"
           hash="kids-and-teens"
-          className="block bg-sunshine text-ink text-center text-[12px] sm:text-sm font-display font-bold tracking-tight py-1.5 px-3 hover:bg-[#F5C518] transition"
+          className="block bg-coral text-cream text-center text-[12px] sm:text-sm font-display font-bold tracking-tight py-1.5 px-3 hover:bg-[#E85A4A] transition"
         >
           <span className="sm:hidden">🎉 New: Kids 👶 & Teens 👧 spoken English</span>
           <span className="hidden sm:inline">
