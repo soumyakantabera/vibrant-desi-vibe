@@ -76,6 +76,7 @@ jobs:
           test -s dist/llms-full.txt
           test -s dist/llms.json
           test -s dist/openapi.json
+          test -s dist/ai-plugin.json
           test -s dist/.well-known/llms.txt
           test -s dist/.well-known/ai-plugin.json
           test -s dist/index.md

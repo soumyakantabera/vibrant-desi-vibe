@@ -713,7 +713,8 @@ export function buildLlmsJson(updated: string): string {
       well_known_llms_txt: abs("/.well-known/llms.txt"),
       well_known_llms_json: abs("/.well-known/llms.json"),
       openapi: abs("/openapi.json"),
-      ai_plugin: abs("/.well-known/ai-plugin.json"),
+      ai_plugin: abs("/ai-plugin.json"),
+      well_known_ai_plugin: abs("/.well-known/ai-plugin.json"),
       sitemap: abs("/sitemap.xml"),
     },
     policies: {

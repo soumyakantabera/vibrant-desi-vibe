@@ -328,6 +328,7 @@ writeFile("llms.txt", llmsTxt);
 writeFile("llms-full.txt", buildLlmsFullTxt(docs, today));
 writeFile("llms.json", llmsJson);
 writeFile("openapi.json", openapi);
+writeFile("ai-plugin.json", buildAiPlugin());
 writeFile(".well-known/llms.txt", llmsTxt);
 writeFile(".well-known/llms.json", llmsJson);
 writeFile(".well-known/openapi.json", openapi);

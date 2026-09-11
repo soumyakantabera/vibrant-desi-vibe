@@ -91,6 +91,7 @@ jobs:
           test -s dist/llms-full.txt
           test -s dist/llms.json
           test -s dist/openapi.json
+          test -s dist/ai-plugin.json
           test -s dist/.well-known/llms.txt
           test -s dist/.well-known/llms.json
           test -s dist/.well-known/ai-plugin.json
@@ -137,6 +138,9 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+          # .well-known/llms.txt and ai-plugin.json are hidden paths; without
+          # this flag the artifact strips them and ChatGPT/plugin discovery 404s.
+          include-hidden-files: true
 
       - name: Wait for Pages artifact consistency
         run: sleep 20
@@ -156,6 +160,7 @@ jobs:
             "https://www.learnwithsmile.app/llms.json" \
             "https://www.learnwithsmile.app/llms-full.txt" \
             "https://www.learnwithsmile.app/openapi.json" \
+            "https://www.learnwithsmile.app/ai-plugin.json" \
             "https://www.learnwithsmile.app/.well-known/llms.txt" \
             "https://www.learnwithsmile.app/.well-known/ai-plugin.json" \
             "https://www.learnwithsmile.app/robots.txt")
