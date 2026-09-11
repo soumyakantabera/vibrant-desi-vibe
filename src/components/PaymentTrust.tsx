@@ -65,22 +65,6 @@ export function PaymentTrust({
             />
           </span>
         ))}
-        <a
-          href="https://razorpay.com/docs/security"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={chip}
-          aria-label="PCI DSS — card payments processed by Razorpay"
-        >
-          <img
-            src={withBasePath("/payments/pci-dss.png")}
-            alt="PCI DSS"
-            width={500}
-            height={500}
-            className="h-7 w-7 object-contain"
-            decoding="async"
-          />
-        </a>
       </div>
     </div>
   );
