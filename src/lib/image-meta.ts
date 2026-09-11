@@ -120,7 +120,7 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     h: 896,
   },
   "teen-english.jpg": {
-    blur: "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoYABEAPu1qr1AppaQiqAqpMB2JZQDLLYxYORxZxI8r1ewli1OQAPaCwt1uJVxnVUcOk4mb4hZaW3vhCEAC4EgtJ3IshB3/H3QjADkmzH2bo6rd3BC/2Jo07Lne3TqWzbcnMH4t2GlCfQcfHt00KfRjn/IG4R7yN9wZSWbPxcNKtBOasC+AAAAA",
+    blur: "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAwBQCdASoYABEAPu1sq1EppaOiqAqpMB2JYgCsMxgBSJwCzBiisnI9cKIScKrdt+aekAD89JWUV7F/sU6wX9lQJdNoyju0izxgVeqU4pVgWFN15bhTLU54APdvhLF9WQ+hjPOQ6mA+k91Gl0Pi6vpKPQfpi4dkxKAo+ngr2lhFtLu0h9OAK6TdIF8XhbGD3g0wLwxZ/xYu8L/LJLst2JZjsPtv/NmatNrHQczyomO172cLccU/h6ksREL4xHQjQEkBGQAA",
     w: 1280,
     h: 896,
   },
