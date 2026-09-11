@@ -143,7 +143,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Do you teach spoken English in Mumbai, Delhi or Bengaluru?",
-    a: "Yes — live online, same ₹999/month fee as Kolkata, approximately 6 learners, IST batches. There is no walk-in campus in those cities. The registered office is in Kolkata, by appointment. City pages: /spoken-english-classes-mumbai, /spoken-english-classes-delhi, /spoken-english-classes-bengaluru.",
+    a: "Yes — live online, same ₹999/month fee as Kolkata, approximately 6 learners, IST batches. No walk-in campus. City pages: Kolkata, Mumbai, Delhi NCR, Bengaluru, Pune, Hyderabad, Chennai, Ahmedabad, Nagpur, Surat, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati. Office in Kolkata, by appointment.",
     source: "/guides",
   },
   {

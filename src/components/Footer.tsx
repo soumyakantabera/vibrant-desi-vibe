@@ -8,6 +8,7 @@ import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { IMG } from "@/lib/images";
 import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
+import { FOOTER_CITIES } from "@/lib/cities";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -77,6 +78,35 @@ export function Footer({ image }: { image?: string }) {
           <FooterCol title="Tracks" items={[...TRACKS, ...COMPANY.slice(0, 2)]} />
           <FooterCol title="English & Career" items={ENGLISH} />
           <FooterCol title="Guides" items={GUIDES} />
+        </div>
+        <div className="mb-12 rounded-3xl border border-cream/15 bg-white/[0.04] px-5 py-6 md:px-8 md:py-7">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-sm shrink-0">
+              <div className="font-display font-bold text-cream text-sm uppercase tracking-wider">
+                Cities
+              </div>
+              <p className="mt-2 font-display text-lg font-extrabold leading-tight text-sunshine md:text-xl">
+                Live spoken English from these cities
+              </p>
+              <p className="mt-2 text-sm text-white/85">
+                Same teacher. Same ₹999/mo, inclusive of taxes. IST morning, evening and weekend
+                batches — no walk-in campus.
+              </p>
+            </div>
+            <ul className="flex flex-wrap gap-2 lg:max-w-3xl lg:justify-end">
+              {FOOTER_CITIES.map((c) => (
+                <li key={c.to}>
+                  <Link
+                    to={c.to}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-cream/20 bg-white/5 px-3 py-1.5 text-sm font-display font-semibold text-cream transition hover:border-sunshine hover:bg-sunshine/15 hover:text-sunshine"
+                  >
+                    <Icon name="globe" size={14} />
+                    {c.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">

@@ -43,6 +43,7 @@ const MAP: Record<string, string> = {
   quote: "format_quote",
   smile: "sentiment_satisfied",
   gamepad: "sports_esports",
+  location_on: "location_on",
 };
 
 export type IconName = keyof typeof MAP | string;
