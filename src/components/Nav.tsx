@@ -104,12 +104,12 @@ export function Nav() {
           hash="kids-and-teens"
           className="block bg-gradient-to-r from-[#F5B700] via-[#FF9A62] to-[#FF6B5B] text-center text-[12px] sm:text-sm font-display font-extrabold tracking-tight py-2 px-4 leading-snug hover:brightness-[1.04] transition"
         >
-          <span className="inline-flex items-center justify-center gap-1.5 text-balance">
-            <Icon name="spark" size={16} className="shrink-0 text-[#04291f]" />
-            <span className="bg-gradient-to-r from-[#04291f] via-[#5B1578] to-[#8B1230] bg-clip-text text-transparent">
+          <span className="inline-flex items-center justify-center gap-1.5 text-balance text-[#FFF8F0] drop-shadow-[0_1px_1px_rgba(0,0,0,0.28)]">
+            <Icon name="spark" size={16} className="shrink-0" />
+            <span>
               We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17)
             </span>
-            <Icon name="smile" size={16} className="shrink-0 text-[#8B1230]" />
+            <Icon name="smile" size={16} className="shrink-0" />
           </span>
         </Link>
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
