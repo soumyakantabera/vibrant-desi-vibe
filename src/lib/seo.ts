@@ -1301,6 +1301,40 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
+  "teen-english": {
+    title: "Spoken English for Teens | Ages 12–17, ₹1,799/mo",
+    description:
+      "Live spoken English for teenagers aged 12–17. Evening batches of about 6, 50-minute classes twice a week. ₹1,799/mo, inclusive of taxes. Parent on WhatsApp.",
+    shortTitle: "Spoken English for Teens",
+    keywords: [
+      "spoken english for teenagers india",
+      "english speaking classes for class 8 9 10 11 12",
+      "online spoken english for teens after school",
+      "english speaking course for teenagers fees",
+      "public speaking for school students india",
+      "college interview english practice india",
+      "spoken english for class 9 10 online",
+      "teen english speaking class small batch",
+    ],
+    ogImage: "/og/teen-english.jpg",
+    dateModified: "2026-09-12",
+    summary:
+      "Spoken English for Teens — ages 12–17, evening live batches of about 6, 50-minute classes twice a week, 6 months, ₹1,799/month, inclusive of taxes. Parent is the customer. Never mixed with kids 6–11.",
+    extraFaqs: [
+      {
+        q: "How much do spoken English classes for teenagers cost in India?",
+        a: "Learn With Smile charges ₹1,799 per month, inclusive of taxes, for Spoken English for Teens (ages 12–17): live evening batches of about 6, 50-minute classes twice a week, for 6 months. 1:1 teen platforms often cost more per hour; British Council secondary terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
+      },
+      {
+        q: "Should a 16-year-old join the teen room or the adult Spoken English class?",
+        a: "If the goal is school presentations, orals and a college interview chair, use Spoken English for Teens at ₹1,799/month. If they already speak and want workplace English with adults, the parent can ask for the 15+ Spoken English room instead. We do not put a 12–14-year-old in an adult batch.",
+      },
+      {
+        q: "Does the teenager have to join the demo?",
+        a: "Yes. The parent books it; the teen should be on camera. A seat only works if they will actually speak. The parent stays on WhatsApp for fees and recordings.",
+      },
+    ],
+  },
 };
 
 /* --------------------------------------------------------------------------

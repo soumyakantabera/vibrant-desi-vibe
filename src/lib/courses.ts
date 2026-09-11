@@ -615,4 +615,114 @@ export const COURSES: Record<string, CourseData> = {
     metaDescription:
       "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 40-min classes twice a week. ₹1,499/mo inclusive of taxes. Parent on WhatsApp for the demo.",
   },
+  "teen-english": {
+    slug: "teen-english",
+    title: "Spoken English for Teens",
+    tagline:
+      "Ages 12–17. Evening live batches of about 6, 50-minute classes, twice a week. 6 months, ₹1,799/mo, inclusive of taxes. Parent pays — the teen has to want the seat.",
+    category: "Ages 12–17",
+    categoryColor: "brand",
+    icon: "mic",
+    heroImage: IMG.teenEnglish,
+    midImage: IMG.teenEnglishMid,
+    footerImage: IMG.teenEnglishFooter,
+    duration: "6 months · 2 × 50 min/week",
+    durationQualifier: "Evening and Saturday IST, after school hours.",
+    format: "Live batch · approximately 6 teens",
+    price: "₹1,799/mo",
+    liveNote:
+      "✓ Parent on WhatsApp · ✓ Teen joins the demo · ✓ Never mixed with kids 6–11 or adult work rooms · ✓ Pan-India · Based in Kolkata",
+    snapshotBatchBig: "~6",
+    snapshotBatchSmall: "Teens in this live batch",
+    waDemo:
+      "Hi, I’m a parent. My teenager is __ years old (class __). Please share the Spoken English for Teens (ages 12–17) demo. We will both join.",
+    outcomes: [
+      "A 60-second introduction that is specific, not cringe",
+      "A class presentation with a beginning, middle and one ask",
+      "Disagree politely — I think… because…",
+      "Sit a school or college interview chair without freezing",
+      "Small talk with teachers and peers that does not stall",
+      "A two-minute talk without reading the slide",
+    ],
+    modules: [
+      {
+        title: "Finding a voice",
+        items: [
+          "60-second intro: who I am, what I do, one fact",
+          "School small talk that is not a memorised script",
+          "Filler words — catch them, then drop them",
+          "Recording the first talk so they hear themselves",
+        ],
+      },
+      {
+        title: "Class English",
+        items: [
+          "Asking a question in class without going silent",
+          "Oral answers in full sentences, not one word",
+          "Explaining a chapter in three beats",
+          "Handling “I don’t know” without panic",
+        ],
+      },
+      {
+        title: "Opinions without a fight",
+        items: [
+          "I agree / I disagree / I am not sure yet",
+          "One reason, one example, stop",
+          "Listening before answering",
+          "Short debates: school phones, sports, exams",
+        ],
+      },
+      {
+        title: "Stories that land",
+        items: [
+          "A personal anecdote with a beginning and a point",
+          "Pace, pause and volume — not shouting",
+          "Describing a festival, a trip, a match",
+          "Two-minute talks with peer questions",
+        ],
+      },
+      {
+        title: "Interviews and chairs",
+        items: [
+          "School and college interview questions — not job IELTS",
+          "Tell me about yourself, why this stream, a weakness",
+          "Sitting still, looking at the camera, finishing a thought",
+          "No placement promise. Practice for the chair in front of them.",
+        ],
+      },
+      {
+        title: "Showcase",
+        items: [
+          "A two-minute talk on a topic they chose",
+          "Questions from the batch",
+          "Last class: parent invited to listen",
+          "What to keep practising — 10 minutes, four days a week",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is this the adult Spoken English room at ₹999?",
+        a: "No. Ages 12–17 sit in this teen batch. Kids 6–11 have their own room. Adult Spoken English is 15+ and work-oriented. A 15–17-year-old can take this teen room (school and college English) or the adult room if the parent and teen both want work English — they are never mixed in one batch.",
+      },
+      {
+        q: "Who do you message?",
+        a: "The parent. Fees, recordings and WhatsApp sit on the parent’s number. The teen joins the live class and the free demo; they do not need their own WhatsApp for enrolment.",
+      },
+      {
+        q: "Will this raise board marks or give a certificate?",
+        a: "No. This is live speaking practice for class, interviews and everyday talk. We do not issue a school certificate, we do not promise marks, and we do not sell 30-day fluency.",
+      },
+      {
+        q: "What if they are shy and say nothing for two weeks?",
+        a: "That is who the batch is for. Turns are short and named. Nobody is put on a stage cold. If after the demo the teen clearly does not want the seat, say so — a silent teenager in a live room is a wasted fee.",
+      },
+      {
+        q: "What if we miss a class?",
+        a: "The recording is shared with the parent. A reschedule can be requested only within the same week and only if a seat exists.",
+      },
+    ],
+    metaDescription:
+      "Teen spoken English online, ages 12–17. Live teacher, about 6 learners, 50-min classes twice a week. ₹1,799/mo, inclusive of taxes. Parent books the demo.",
+  },
 };

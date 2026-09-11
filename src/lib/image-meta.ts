@@ -109,4 +109,19 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     w: 1024,
     h: 1024,
   },
+  "teen-english-footer.jpg": {
+    blur: "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBQCdASoYABEAPu1srFEppaQiqAqpMB2JYwCxH0LBsrTYb+4JpoG3GmsromerGX7UMckAAP7pkj9jUQiakOUGcMRhbWMioyjUWDucL2unlB3kuHaayD/DibmbV8OPgNjD3qiHvzUubCnjjZx3isGQlDGosmWVJ3Ja+Uod3xuYnkkg2/mwwnRQWkqhKOwU7gdn9L1iaJvCYZqDNx8yo8CpbMR4hhSy1Mun2Im44AYxyGhjr7gq7RgAAAA=",
+    w: 1280,
+    h: 896,
+  },
+  "teen-english-mid.jpg": {
+    blur: "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASoYABEAPu1ur1IppiQiqAgBMB2JQBUk7JRAASlblURxD3CHFMWABbApEZ4QAAD+w//XM+t4ihyWq48J0Dhgl7oPRrl9vRAlOeo0/LrkveURntz5S6K3+5Sukp13xwMkfs44bQnL2innbfljXCKrD/bOz6/rlf+sbPY7hwqWt0Px2kNi/j6uWmCFn/XfztCBB9tx/ftTgHPyQyRtoIumGAwPzQbGOE5iqoGl73AAAAA=",
+    w: 1280,
+    h: 896,
+  },
+  "teen-english.jpg": {
+    blur: "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoYABEAPu1qr1AppaQiqAqpMB2JZQDLLYxYORxZxI8r1ewli1OQAPaCwt1uJVxnVUcOk4mb4hZaW3vhCEAC4EgtJ3IshB3/H3QjADkmzH2bo6rd3BC/2Jo07Lne3TqWzbcnMH4t2GlCfQcfHt00KfRjn/IG4R7yN9wZSWbPxcNKtBOasC+AAAAA",
+    w: 1280,
+    h: 896,
+  },
 };

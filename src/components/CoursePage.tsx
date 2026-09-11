@@ -184,6 +184,8 @@ const TEACHER_NOTE: Record<string, string> = {
   "career-counselling": "Three 1:1 sessions after they have read your background.",
   "kids-english":
     "Same teacher every class. The parent stays on WhatsApp — you hear what your child actually said.",
+  "teen-english":
+    "Same teacher every class. The parent stays on WhatsApp; the teen has to take the turn.",
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
@@ -620,9 +622,14 @@ export function courseSeo(d: CourseData) {
       url,
       image: [abs(ogImage)],
       inLanguage: "en-IN",
-      educationalLevel: d.slug === "spoken-english" || d.slug === "kids-english" ? "Beginner" : "Intermediate",
-      typicalAgeRange: d.slug === "kids-english" ? "6-11" : undefined,
-      isFamilyFriendly: d.slug === "kids-english" ? true : undefined,
+      educationalLevel:
+        d.slug === "spoken-english" || d.slug === "kids-english"
+          ? "Beginner"
+          : "Intermediate",
+      typicalAgeRange:
+        d.slug === "kids-english" ? "6-11" : d.slug === "teen-english" ? "12-17" : undefined,
+      isFamilyFriendly:
+        d.slug === "kids-english" || d.slug === "teen-english" ? true : undefined,
       audience:
         d.slug === "kids-english"
           ? {
@@ -630,7 +637,13 @@ export function courseSeo(d: CourseData) {
               educationalRole: "student",
               audienceType: "Children aged 6-11",
             }
-          : undefined,
+          : d.slug === "teen-english"
+            ? {
+                "@type": "EducationalAudience",
+                educationalRole: "student",
+                audienceType: "Teenagers aged 12-17",
+              }
+            : undefined,
       teaches: d.outcomes,
       timeRequired: workload,
       isAccessibleForFree: false,
