@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
+import { CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -54,7 +54,6 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const { location } = useRouterState();
-  const wa = waLink(DEMO_MSG);
   const chat = waLink(CHAT_MSG);
   const dropRef = useRef<HTMLDivElement>(null);
 
@@ -168,16 +167,6 @@ export function Nav() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <a
-              href={wa}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex btn btn-sun btn-sm shadow-md hover:shadow-lg"
-              data-cta-goal="free_demo"
-            >
-              <Icon name="spark" size={16} />
-              {DEMO_CTA}
-            </a>
-            <a
               href={chat}
               target="_blank"
               rel="noopener noreferrer"
@@ -234,15 +223,6 @@ export function Nav() {
                   data-cta-goal="whatsapp_chat"
                 >
                   <BrandIcon name="whatsapp" size={18} color="#053b1e" /> {CHAT_CTA}
-                </a>
-                <a
-                  href={wa}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-sun justify-center px-3"
-                  data-cta-goal="free_demo"
-                >
-                  <Icon name="spark" size={17} /> {DEMO_CTA}
                 </a>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
