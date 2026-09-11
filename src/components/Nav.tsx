@@ -52,13 +52,13 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-kids-english",
     label: "Spoken English for Kids",
     icon: "smile",
-    desc: "Ages 6–11 · ₹1,499/mo, inclusive of taxes",
+    desc: "Ages 6–11 · ₹999/mo, inclusive of taxes",
   },
   {
     to: "/course-teen-english",
     label: "Spoken English for Teens",
     icon: "mic",
-    desc: "Ages 12–17 · ₹1,799/mo, inclusive of taxes",
+    desc: "Ages 12–17 · ₹999/mo, inclusive of taxes",
   },
 ];
 

@@ -25,9 +25,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "kids-and-teens",
-    title: "Kids & Teens · from ₹1,499/mo, inclusive of taxes",
+    title: "Kids & Teens · from ₹999/mo, inclusive of taxes",
     description:
-      "Kids 6–11 at ₹1,499/mo and Teens 12–17 at ₹1,799/mo, inclusive of taxes. 1 hr 30 min live classes. Parent on WhatsApp. Rooms never mixed with adults.",
+      "Kids 6–11 and Teens 12–17 at ₹999/mo, inclusive of taxes. 1 hr 30 min live classes. Parent on WhatsApp. Rooms never mixed with adults.",
     icon: "smile",
     tone: "play",
     featuredSlug: "kids-english",

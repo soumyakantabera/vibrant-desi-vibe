@@ -509,7 +509,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "kids-english",
     title: "Spoken English for Kids",
     tagline:
-      "Ages 6–11. After-school live batches of 4–6 children, 1 hr 30 min classes, twice a week. 6 months, ₹1,499/mo, inclusive of taxes. Parent on WhatsApp — you hear what happened in class.",
+      "Ages 6–11. After-school live batches of 4–6 children, 1 hr 30 min classes, twice a week. 6 months, ₹999/mo, inclusive of taxes. Parent on WhatsApp — you hear what happened in class.",
     category: "Ages 6–11",
     categoryColor: "brand",
     icon: "spark",
@@ -520,7 +520,7 @@ export const COURSES: Record<string, CourseData> = {
     durationQualifier: "After school on IST, plus Saturday mornings.",
     continueNote: "Continuous learning after 6 months — next level",
     format: "Live batch · 4–6 children",
-    price: "₹1,499/mo",
+    price: "₹999/mo",
     liveNote:
       "✓ Parent is the customer · ✓ After-school and Saturday IST · ✓ Never mixed with teens or adults · ✓ Pan-India · Based in Kolkata",
     snapshotBatchBig: "4–6",
@@ -614,13 +614,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 40-min classes twice a week. ₹1,499/mo inclusive of taxes. Parent on WhatsApp for the demo.",
+      "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 1 hr 30 min classes twice a week. ₹999/mo inclusive of taxes. Parent on WhatsApp for the demo.",
   },
   "teen-english": {
     slug: "teen-english",
     title: "Spoken English for Teens",
     tagline:
-      "Ages 12–17. Evening live batches of about 6, 1 hr 30 min classes, twice a week. 6 months, ₹1,799/mo, inclusive of taxes. Parent pays — the teen has to want the seat.",
+      "Ages 12–17. Evening live batches of about 6, 1 hr 30 min classes, twice a week. 6 months, ₹999/mo, inclusive of taxes. Parent pays — the teen has to want the seat.",
     category: "Ages 12–17",
     categoryColor: "brand",
     icon: "mic",
@@ -631,7 +631,7 @@ export const COURSES: Record<string, CourseData> = {
     durationQualifier: "Evening and Saturday IST, after school hours.",
     continueNote: "Continuous learning after 6 months — next level",
     format: "Live batch · approximately 6 teens",
-    price: "₹1,799/mo",
+    price: "₹999/mo",
     liveNote:
       "✓ Parent on WhatsApp · ✓ Teen joins the demo · ✓ Never mixed with kids 6–11 or adult work rooms · ✓ Pan-India · Based in Kolkata",
     snapshotBatchBig: "~6",
@@ -725,6 +725,6 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Teen spoken English online, ages 12–17. Live teacher, about 6 learners, 50-min classes twice a week. ₹1,799/mo, inclusive of taxes. Parent books the demo.",
+      "Teen spoken English online, ages 12–17. Live teacher, about 6 learners, 1 hr 30 min classes twice a week. ₹999/mo, inclusive of taxes. Parent books the demo.",
   },
 };
