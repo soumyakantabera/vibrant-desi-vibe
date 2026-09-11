@@ -66,18 +66,18 @@ export function PaymentTrust({
           </span>
         ))}
         <a
-          href="https://letsencrypt.org/"
+          href="https://razorpay.com/docs/security"
           target="_blank"
           rel="noopener noreferrer"
           className={chip}
-          aria-label="Secured with Let's Encrypt SSL"
+          aria-label="PCI DSS — card payments processed by Razorpay"
         >
           <img
-            src={withBasePath("/payments/letsencrypt.svg")}
-            alt="Let's Encrypt"
-            width={339}
-            height={81}
-            className="h-5 w-auto"
+            src={withBasePath("/payments/pci-dss.png")}
+            alt="PCI DSS"
+            width={500}
+            height={500}
+            className="h-7 w-7 object-contain"
             decoding="async"
           />
         </a>
