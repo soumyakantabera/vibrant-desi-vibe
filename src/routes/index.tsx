@@ -149,7 +149,7 @@ function Home() {
               Real teachers. Small batches. Gamified, interactive live English classes — designed
               for the demands of today's market. From{" "}
               <strong className="text-sunshine">₹999/mo</strong>, inclusive of taxes. For everyone:
-              adults, teens and kids.
+              adults, professionals, graduates, teens and kids.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
