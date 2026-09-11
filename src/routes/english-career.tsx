@@ -71,9 +71,9 @@ function Page() {
               registration fee.
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
-              Adult rooms: about 6 learners, up to 2 classes/week. Kids: 4–6 children, 40 minutes.
-              Teens: about 6, 50 minutes. Parent on WhatsApp for anyone under 18 — fees and
-              recordings go to the parent. Rooms are never mixed.
+              Adult rooms: about 6 learners, 1 hr 30 min, up to 2 classes/week. Kids: 4–6 children,
+              1 hr 30 min. Teens: about 6, 1 hr 30 min. Parent on WhatsApp for anyone under 18 — fees
+              and recordings go to the parent. Rooms are never mixed.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
               {COURSE_SLUGS.map((slug) => {

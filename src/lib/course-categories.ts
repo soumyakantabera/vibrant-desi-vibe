@@ -17,7 +17,7 @@ export const COURSE_CATEGORIES = [
     id: "speak-confidently",
     title: "Speak Confidently · From ₹999/mo, inclusive of taxes",
     description:
-      "Quality live English from ₹999/mo, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — up to 2 classes/week. Batches of approximately 6 learners.",
+      "Quality live English from ₹999/mo, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -27,7 +27,7 @@ export const COURSE_CATEGORIES = [
     id: "kids-and-teens",
     title: "Kids & Teens · from ₹1,499/mo, inclusive of taxes",
     description:
-      "Kids 6–11 at ₹1,499/mo and Teens 12–17 at ₹1,799/mo, inclusive of taxes. Parent on WhatsApp. Rooms never mixed with adults.",
+      "Kids 6–11 at ₹1,499/mo and Teens 12–17 at ₹1,799/mo, inclusive of taxes. 1 hr 30 min live classes. Parent on WhatsApp. Rooms never mixed with adults.",
     icon: "smile",
     tone: "play",
     featuredSlug: "kids-english",
@@ -40,7 +40,7 @@ export const COURSE_CATEGORIES = [
     id: "work-and-career",
     title: "Work & Career · from ₹1,499/mo, inclusive of taxes",
     description:
-      "Workplace English ₹1,999/mo and Interview Prep ₹1,499/mo, inclusive of taxes. Live quality teaching, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Workplace English ₹1,999/mo and Interview Prep ₹1,499/mo, inclusive of taxes. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",

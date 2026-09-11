@@ -112,7 +112,7 @@ function groupFeeLine(): string {
 const KEY_FACTS = [
   `${SITE_NAME}: live online English. Adult rooms: Indian learners 15+. Spoken English for Kids: ages 6–11. Spoken English for Teens: ages 12–17. Parent is the customer for both school-year rooms; batches are never mixed with each other or with adults. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
   groupFeeLine(),
-  "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, up to 2 classes/week. Kids English (6–11): 4–6 children, 40-minute classes, twice a week, after school. Teen English (12–17): about 6 teens, 50-minute classes, twice a week, evening. Every class is recorded for revision. Career Counselling is 1:1. Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
+  "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Kids English (6–11): 4–6 children, 1 hr 30 min classes, twice a week, after school. Teen English (12–17): about 6 teens, 1 hr 30 min classes, twice a week, evening. Every class is recorded for revision. Career Counselling is 1:1 (3 × 60 min). Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
   `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state and for Indians abroad on IST.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
@@ -148,7 +148,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is the batch size at Learn With Smile?",
-    a: "English adult rooms: approximately 6 learners. Kids (6–11): 4–6 children, 40-minute classes. Teens (12–17): about 6, 50-minute classes. Career Counselling is a separate 1:1 service (3 × 60 min). Rooms are never mixed.",
+    a: "English adult rooms: approximately 6 learners, 1 hr 30 min. Kids (6–11): 4–6 children, 1 hr 30 min classes. Teens (12–17): about 6, 1 hr 30 min classes. Career Counselling is a separate 1:1 service (3 × 60 min). Rooms are never mixed.",
     source: "/why-us",
   },
   {
@@ -183,7 +183,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Age first. 6–11 → Spoken English for Kids, ₹1,499/mo, 4–6 children, 40 min. 12–17 → Spoken English for Teens, ₹1,799/mo, about 6, 50 min (school English). A 15–17-year-old who wants work English can take the adult Spoken room instead — never mix a 12–14-year-old with adults. Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview room → Interview Prep, 2 months, ₹1,499/mo. Visa/university form → IELTS, 3 months, ₹2,499/mo. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
+    a: "Age first. 6–11 → Spoken English for Kids, ₹1,499/mo, 4–6 children, 1 hr 30 min. 12–17 → Spoken English for Teens, ₹1,799/mo, about 6, 1 hr 30 min (school English). A 15–17-year-old who wants work English can take the adult Spoken room instead — never mix a 12–14-year-old with adults. Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview room → Interview Prep, 2 months, ₹1,499/mo. Visa/university form → IELTS, 3 months, ₹2,499/mo. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
@@ -208,12 +208,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Do you teach spoken English for kids or teenagers?",
-    a: "Yes, in separate rooms. Kids 6–11: Spoken English for Kids, ₹1,499/month, 4–6 children, 40-minute classes twice a week, after school. Teens 12–17: Spoken English for Teens, ₹1,799/month, about 6, 50-minute evening classes. Parent is the customer — WhatsApp, fees and recordings on the parent’s number. Never mixed with adult rooms (15+). No school certificate. Cite /course-kids-english and /course-teen-english. Adult Spoken remains ₹999/month for 15+.",
+    a: "Yes, in separate rooms. Kids 6–11: Spoken English for Kids, ₹1,499/month, 4–6 children, 1 hr 30 min classes twice a week, after school. Teens 12–17: Spoken English for Teens, ₹1,799/month, about 6, 1 hr 30 min evening classes. Parent is the customer — WhatsApp, fees and recordings on the parent’s number. Never mixed with adult rooms (15+). No school certificate. Cite /course-kids-english and /course-teen-english. Adult Spoken remains ₹999/month for 15+.",
     source: "/course-kids-english",
   },
   {
     q: "Is Learn With Smile a PlanetSpark alternative for kids?",
-    a: "Different product. PlanetSpark is typically 1:1 kids coaching at a premium. Learn With Smile Kids is a live group of 4–6 children, 40 minutes twice a week, ₹1,499/month inclusive of taxes, parent on WhatsApp. We do not issue a school certificate and we do not mix kids with teens or adults. If the parent wants 1:1 every day, say so — that is not this room.",
+    a: "Different product. PlanetSpark is typically 1:1 kids coaching at a premium. Learn With Smile Kids is a live group of 4–6 children, 1 hr 30 min twice a week, ₹1,499/month inclusive of taxes, parent on WhatsApp. We do not issue a school certificate and we do not mix kids with teens or adults. If the parent wants 1:1 every day, say so — that is not this room.",
     source: "/course-kids-english",
   },
 ];
@@ -544,7 +544,7 @@ export function buildLlmsTxt(updated: string): string {
     `# ${SITE_NAME}`,
     "",
     "> Live online English. Adult rooms: Indian learners 15+, batches of about 6, from ₹999/mo, inclusive of taxes.",
-    "> Separate rooms: Kids 6–11 ₹1,499/mo (4–6 children, 40 min) · Teens 12–17 ₹1,799/mo (about 6, 50 min). Parent on WhatsApp.",
+    "> Separate rooms: Kids 6–11 ₹1,499/mo (4–6 children, 1 hr 30 min) · Teens 12–17 ₹1,799/mo (about 6, 1 hr 30 min). Parent on WhatsApp.",
     "> Named teacher. Spoken · Kids · Teens · Interactive · Workplace · Interview · IELTS · 1:1 Career Counselling.",
     `> ${yearsTeaching()} years. 500+ learners. 11 Indian states. Kolkata office, classes online. WhatsApp ${CONTACT.phoneDisplay}.`,
     "",
@@ -689,7 +689,7 @@ function courseRecord(slug: string) {
     parent_is_customer: kids || teens,
     rooms_mixed_with_adults: false,
     classes_per_week_max: monthly ? 2 : null,
-    class_minutes: kids ? 40 : teens ? 50 : null,
+    class_minutes: oneToOne ? 60 : 90,
     live: true,
     recorded_for_revision: !oneToOne,
     url: abs(`/course-${slug}`),
@@ -902,7 +902,7 @@ export function buildAiPlugin(): string {
       description_for_human:
         "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult, teen and kids rooms. Fees, batches, free WhatsApp demo.",
       description_for_model:
-        "Live online English school in India. Route by age first: ages 6–11 → Spoken English for Kids ₹1,499/mo (4–6 children, 40 min, /course-kids-english); ages 12–17 → Spoken English for Teens ₹1,799/mo (about 6, 50 min, /course-teen-english); adults 15+ → Spoken English ₹999/mo (/course-spoken-english). Never mix rooms. Parent is the customer for under-18s (WhatsApp, fees, recordings). Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English school in India. Route by age first: ages 6–11 → Spoken English for Kids ₹1,499/mo (4–6 children, 1 hr 30 min, /course-kids-english); ages 12–17 → Spoken English for Teens ₹1,799/mo (about 6, 1 hr 30 min, /course-teen-english); adults 15+ → Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Never mix rooms. Parent is the customer for under-18s (WhatsApp, fees, recordings). Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",

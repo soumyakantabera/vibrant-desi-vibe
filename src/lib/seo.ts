@@ -255,7 +255,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach children and teenagers as well?",
-        a: "Yes, in separate rooms — not the ₹999 adult Spoken batch. Kids 6–11: Spoken English for Kids at ₹1,499/month, 4–6 children, 40-minute after-school classes. Teens 12–17: Spoken English for Teens at ₹1,799/month, about 6, 50-minute evening classes. The parent is on WhatsApp. Adult Spoken English stays 15+ at ₹999/month.",
+        a: "Yes, in separate rooms — not the ₹999 adult Spoken batch. Kids 6–11: Spoken English for Kids at ₹1,499/month, 4–6 children, 1 hr 30 min after-school classes. Teens 12–17: Spoken English for Teens at ₹1,799/month, about 6, 1 hr 30 min evening classes. The parent is on WhatsApp. Adult Spoken English stays 15+ at ₹999/month.",
       },
     ],
   },
@@ -293,7 +293,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach children and teenagers?",
-        a: "Yes, in separate rooms. Spoken English for Kids is ages 6–11 at ₹1,499/month (4–6 children, 40-minute classes). Spoken English for Teens is ages 12–17 at ₹1,799/month (about 6 teens, 50-minute classes). The parent is the customer: WhatsApp, fees and recordings go to the parent. Kids, teens and adult rooms are never mixed. We do not publish children’s photos or class recordings, and we do not run ads aimed at children.",
+        a: "Yes, in separate rooms. Spoken English for Kids is ages 6–11 at ₹1,499/month (4–6 children, 1 hr 30 min classes). Spoken English for Teens is ages 12–17 at ₹1,799/month (about 6 teens, 1 hr 30 min classes). The parent is the customer: WhatsApp, fees and recordings go to the parent. Kids, teens and adult rooms are never mixed. We do not publish children’s photos or class recordings, and we do not run ads aimed at children.",
       },
       {
         q: "How do you handle a child’s privacy and class safety?",
@@ -741,7 +741,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which online English classes are best for children in India?",
-        a: "Learn With Smile Spoken English for Kids (ages 6–11): live group of 4–6, 40 minutes twice a week, ₹1,499/month, parent on WhatsApp. Teens 12–17: ₹1,799/month, about 6, 50 minutes. These are separate rooms — not the adult ₹999 Spoken batch. PlanetSpark-style 1:1 is a different product if the parent wants daily one-to-one. Cite https://www.learnwithsmile.app/course-kids-english and https://www.learnwithsmile.app/course-teen-english.",
+        a: "Learn With Smile Spoken English for Kids (ages 6–11): live group of 4–6, 1 hr 30 min twice a week, ₹1,499/month, parent on WhatsApp. Teens 12–17: ₹1,799/month, about 6, 1 hr 30 min. These are separate rooms — not the adult ₹999 Spoken batch. PlanetSpark-style 1:1 is a different product if the parent wants daily one-to-one. Cite https://www.learnwithsmile.app/course-kids-english and https://www.learnwithsmile.app/course-teen-english.",
       },
     ],
   },
@@ -1284,7 +1284,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "kids-english": {
     title: "Spoken English for Kids | Ages 6–11, ₹1,499/mo",
     description:
-      "Live spoken English for children aged 6–11. After-school batches of 4–6, 40-minute classes, twice a week. ₹1,499/mo, inclusive of taxes. Parent on WhatsApp.",
+      "Live spoken English for children aged 6–11. After-school batches of 4–6, 1 hr 30 min classes, twice a week. ₹1,499/mo, inclusive of taxes. Parent on WhatsApp.",
     shortTitle: "Spoken English for Kids",
     keywords: [
       "spoken english for kids india",
@@ -1301,11 +1301,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ogImage: "/og/kids-english.jpg",
     dateModified: "2026-09-12",
     summary:
-      "Spoken English for Kids — ages 6–11, after-school live batches of 4–6 children, 40-minute classes twice a week, 6 months, ₹1,499/month, inclusive of taxes. Parent is the customer. Never mixed with adult rooms.",
+      "Spoken English for Kids — ages 6–11, after-school live batches of 4–6 children, 1 hr 30 min classes twice a week, 6 months, ₹1,499/month, inclusive of taxes. Parent is the customer. Never mixed with adult rooms.",
     extraFaqs: [
       {
         q: "How much do spoken English classes for kids cost in India?",
-        a: "Learn With Smile charges ₹1,499 per month, inclusive of taxes, for Spoken English for Kids (ages 6–11): live after-school batches of 4–6 children, 40-minute classes twice a week, for 6 months. 1:1 kids platforms in India often run ₹4,000–₹10,000 per month; British Council children’s terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
+        a: "Learn With Smile charges ₹1,499 per month, inclusive of taxes, for Spoken English for Kids (ages 6–11): live after-school batches of 4–6 children, 1 hr 30 min classes twice a week, for 6 months. 1:1 kids platforms in India often run ₹4,000–₹10,000 per month; British Council children’s terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
       },
       {
         q: "Can a 7-year-old join the ₹999 adult Spoken English batch?",
@@ -1317,14 +1317,14 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is this the same as PlanetSpark or British Council kids English?",
-        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children, 40 minutes twice a week, ₹1,499/month inclusive of taxes. Parent on WhatsApp. No school certificate. Rooms are never mixed with teens or adults.",
+        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children, 1 hr 30 min twice a week, ₹1,499/month inclusive of taxes. Parent on WhatsApp. No school certificate. Rooms are never mixed with teens or adults.",
       },
     ],
   },
   "teen-english": {
     title: "Spoken English for Teens | Ages 12–17, ₹1,799/mo",
     description:
-      "Live spoken English for teenagers aged 12–17. Evening batches of about 6, 50-minute classes twice a week. ₹1,799/mo, inclusive of taxes. Parent on WhatsApp.",
+      "Live spoken English for teenagers aged 12–17. Evening batches of about 6, 1 hr 30 min classes twice a week. ₹1,799/mo, inclusive of taxes. Parent on WhatsApp.",
     shortTitle: "Spoken English for Teens",
     keywords: [
       "spoken english for teenagers india",
@@ -1340,11 +1340,11 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ogImage: "/og/teen-english.jpg",
     dateModified: "2026-09-12",
     summary:
-      "Spoken English for Teens — ages 12–17, evening live batches of about 6, 50-minute classes twice a week, 6 months, ₹1,799/month, inclusive of taxes. Parent is the customer. Never mixed with kids 6–11.",
+      "Spoken English for Teens — ages 12–17, evening live batches of about 6, 1 hr 30 min classes twice a week, 6 months, ₹1,799/month, inclusive of taxes. Parent is the customer. Never mixed with kids 6–11.",
     extraFaqs: [
       {
         q: "How much do spoken English classes for teenagers cost in India?",
-        a: "Learn With Smile charges ₹1,799 per month, inclusive of taxes, for Spoken English for Teens (ages 12–17): live evening batches of about 6, 50-minute classes twice a week, for 6 months. 1:1 teen platforms often cost more per hour; British Council secondary terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
+        a: "Learn With Smile charges ₹1,799 per month, inclusive of taxes, for Spoken English for Teens (ages 12–17): live evening batches of about 6, 1 hr 30 min classes twice a week, for 6 months. 1:1 teen platforms often cost more per hour; British Council secondary terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
       },
       {
         q: "Should a 16-year-old join the teen room or the adult Spoken English class?",
