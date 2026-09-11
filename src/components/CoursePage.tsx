@@ -9,6 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
+  CONTENT_REVISED,
   COURSE_SEO,
   SITE_NAME,
   SITE_URL,
@@ -238,8 +239,8 @@ export function CoursePage({ data }: { data: CourseData }) {
               )}
             </div>
             <p className="mt-3 text-sm text-white/90">
-              ✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Customised
-              curriculum · ✓ Pan-India · Based in Kolkata
+              ✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live
+              syllabus · ✓ Pan-India · Based in Kolkata
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={CHAT_MSG} variant="wa" size="lg">
@@ -552,14 +553,26 @@ export function courseSeo(d: CourseData) {
     category: d.format.includes("1:1") ? "Online 1:1 course" : "Online batch course",
     url,
     validFrom: "2026-01-01",
+    valueAddedTaxIncluded: true,
   };
-  if (price !== null) offers.price = price;
+  if (price !== null) {
+    offers.price = price;
+    offers.priceSpecification = {
+      "@type": "UnitPriceSpecification",
+      price,
+      priceCurrency: "INR",
+      valueAddedTaxIncluded: true,
+      unitText: /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
+    };
+  }
 
   const jsonLd: unknown[] = [
     webPageLd({
       path,
       title: extra?.title ?? d.title,
       description: extra?.description ?? d.metaDescription,
+      dateModified: extra?.dateModified ?? CONTENT_REVISED,
+      ogImage,
     }),
     {
       "@context": "https://schema.org",
@@ -599,7 +612,8 @@ export function courseSeo(d: CourseData) {
 
   if (faqs.length) jsonLd.push(faqLd(faqs));
 
-  return buildHead({
+  const revised = extra?.dateModified ?? CONTENT_REVISED;
+  const head = buildHead({
     path,
     // Hand-written in COURSE_SEO rather than assembled here: the generated
     // "<title> Online \u2014 <price>, Approx. 6 Learners per Batch | Learn With Smile" form ran
@@ -609,4 +623,9 @@ export function courseSeo(d: CourseData) {
     ogImage,
     jsonLd,
   });
+  head.meta.push(
+    { name: "revised", content: revised },
+    { property: "og:updated_time", content: revised },
+  );
+  return head;
 }

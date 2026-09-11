@@ -35,7 +35,7 @@ export const COURSE_CATEGORIES = [
     id: "ielts-preparation",
     title: "IELTS Prep · ₹2,499/mo, inclusive of taxes",
     description:
-      "Target Band 7+ in 3 months. ₹2,499/mo, inclusive of taxes. All 4 skills, 6+ live mocks, Academic or General Training. Batches of approximately 6 learners.",
+      "3 months live toward Band 7. ₹2,499/mo, inclusive of taxes. All 4 skills, 6+ live mocks, Academic or General Training. Typical start Band 5.5–6. Batches of approximately 6 learners.",
     icon: "trophy",
     tone: "sun",
     featuredSlug: "ielts",
@@ -43,7 +43,7 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "career-guidance",
-    title: "Career Guidance · ₹1,999 total",
+    title: "Career Guidance · ₹1,999 total, inclusive of taxes",
     description:
       "1:1 counselling. 3 sessions × 60 minutes. Three shortlisted paths and a 6-month action plan.",
     icon: "compass",

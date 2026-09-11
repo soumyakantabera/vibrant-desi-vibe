@@ -12,7 +12,7 @@ const MAIN: NavItem[] = [
   { to: "/why-us", label: "Why Us" },
   { to: "/best-online-spoken-english-classes-india", label: "Guides" },
   { to: "/success-stories", label: "Stories" },
-  { to: "/founder", label: "Founders" },
+  { to: "/founder", label: "Founder" },
   { to: "/blog", label: "Blog" },
 ];
 
@@ -35,12 +35,7 @@ const ENGLISH_COURSES: NavItem[] = [
     icon: "headset",
     desc: "3 months · ₹1,199/month, inclusive of taxes",
   },
-  {
-    to: "/course-ielts",
-    label: "IELTS Preparation",
-    icon: "trophy",
-    desc: "3 months · ₹2,499/mo, inclusive of taxes",
-  },
+  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹2,499/mo, inclusive of taxes" },
   {
     to: "/course-interview-prep",
     label: "Interview Prep",
@@ -194,9 +189,12 @@ export function Nav() {
               <span className="md:hidden">WhatsApp</span>
             </a>
             <button
+              type="button"
               onClick={() => setOpen(true)}
               className="lg:hidden h-10 w-10 grid place-items-center rounded-full bg-white border border-border text-ink hover:bg-brand-soft active:scale-95 transition"
               aria-label="Open menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
             >
               <Icon name="menu" />
             </button>
@@ -206,18 +204,18 @@ export function Nav() {
 
       {/* MOBILE SHEET */}
       {open && (
-        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
           <div
             className="absolute inset-0 bg-ink/60 backdrop-blur-sm animate-in fade-in"
             onClick={() => setOpen(false)}
           />
-          <aside className="absolute right-0 top-0 h-full w-[92%] max-w-sm bg-cream shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right">
+          <aside id="mobile-menu" className="absolute right-0 top-0 h-full w-[92%] max-w-sm bg-cream shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right">
             {/* Header */}
             <div className="sticky top-0 z-10 bg-gradient-to-br from-brand-deep to-brand text-cream px-5 pt-5 pb-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Logo size={34} />
-                  <span className="font-display font-extrabold text-lg">Menu</span>
+                  <span id="mobile-menu-title" className="font-display font-extrabold text-lg">Menu</span>
                 </div>
                 <button
                   onClick={() => setOpen(false)}

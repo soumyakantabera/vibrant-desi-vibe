@@ -679,7 +679,7 @@ function Home() {
           <div className="rounded-2xl overflow-hidden border border-border shadow-md bg-white grid md:grid-cols-[1fr_1.1fr]">
             <div className="relative h-56 md:h-auto min-h-[220px] bg-brand-soft">
               <iframe
-                title="Learn With Smile — Kolkata Center map"
+                title="Learn With Smile — Kolkata office (by appointment)"
                 src="https://www.google.com/maps?q=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008&output=embed"
                 className="absolute inset-0 w-full h-full"
                 loading="lazy"

@@ -95,6 +95,15 @@ function officeLine(): string {
   return `${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`;
 }
 
+function groupFeeLine(): string {
+  const monthly = Object.keys(COURSE_SEO)
+    .filter((slug) => isMonthly(COURSES[slug].price))
+    .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
+    .join(" · ");
+  const pack = COURSES["career-counselling"];
+  return `Group English fees (INR, inclusive of taxes, no registration or material fee): ${monthly}. Range ${monthlyFeeRange()}/mo. ${pack.title} is 1:1, ${pack.price} for ${pack.duration}.`;
+}
+
 /**
  * The answers assistants are actually asked for — price, batch size, format,
  * contact — stated once, in a shape that survives being quoted out of context.
@@ -102,7 +111,7 @@ function officeLine(): string {
  */
 const KEY_FACTS = [
   `${SITE_NAME}: live online English for Indian adults 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
-  `Group English fees (INR, inclusive of taxes, no registration or material fee): Spoken ₹999/mo · Interactive Speaking ₹1,199/mo · Interview Prep ₹1,499/mo · Workplace English ₹1,999/mo · IELTS ₹2,499/mo. Range ${monthlyFeeRange()}/mo. Career Counselling is 1:1, ₹1,999 total for 3 × 60-min sessions.`,
+  groupFeeLine(),
   "Format: 100% live with a named teacher — never pre-recorded as the class. English batches of approximately 6 learners, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1. Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
   `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state and for Indians abroad on IST.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,

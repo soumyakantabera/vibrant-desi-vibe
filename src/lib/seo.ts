@@ -30,6 +30,8 @@ export const SITE_NAME = "Learn With Smile";
 export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
+/** Last content revision used when a page has no page-specific date. */
+export const CONTENT_REVISED = "2026-09-11";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -44,6 +46,9 @@ export const CONTACT = {
   latitude: 22.4924,
   longitude: 88.3125,
 } as const;
+
+/** Public profiles for Organization.sameAs — Google Business, not the review form. */
+export const SAME_AS = ["https://g.page/r/CY5ptQJYQVPVEBM"] as const;
 
 /**
  * Service area for coverage UI, FAQs and Organization.areaServed.
@@ -224,11 +229,11 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. IELTS Preparation is ₹2,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,199/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
-        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For children, PlanetSpark. For a structured syllabus with a certificate, British Council. Learn With Smile fits a specific gap: a live human teacher, a fixed 6-month syllabus, and approximately 6 learners per batch, from ₹999/month — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar.",
+        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For children, PlanetSpark. For a structured syllabus with a certificate, British Council. Learn With Smile fits a specific gap: a live human teacher, a fixed 6-month syllabus, and approximately 6 learners per batch, from ₹999/month inclusive of taxes — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar.",
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
@@ -253,7 +258,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Speak better English. Master interviews, IELTS and workplace English. Six live programmes from ₹999/month. Small batches. 7 years, pan-India.",
+      "Speak better English. Interviews, IELTS and workplace English. Six live programmes from ₹999/month, inclusive of taxes. Small batches. 7 years, pan-India.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -277,11 +282,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Workplace English is ₹1,999 per month, Interactive Speaking is ₹1,199 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,199 per month, Interview Preparation ₹1,499 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
       },
       {
         q: "Can I take two courses at the same time?",
-        a: "Yes, and the most relevant pairings are Interactive Speaking with Interview Preparation, or Workplace English with Career Counselling. Message us on WhatsApp so we can check whether the available schedules can work together.",
+        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit — typically Interactive Speaking with Interview Preparation, or Workplace English with Career Counselling. Message us on WhatsApp so we can check the available schedules.",
       },
     ],
   },
@@ -439,7 +444,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/blog",
     title: "English & Career Blog | Tips for Indian Learners",
     description:
-      "Notes from teachers who run live classes: IELTS Band 7, interview answers, workplace English, how long fluency takes. From ₹999/month.",
+      "Notes from teachers who run live classes: IELTS Band 7, interview answers, workplace English, how long fluency takes. From ₹999/month, inclusive of taxes.",
     shortTitle: "Blog",
     keywords: [
       "english learning tips india",
@@ -1070,6 +1075,7 @@ export type CourseSeoExtra = {
   keywords: string[];
   ogImage: string;
   summary: string;
+  dateModified?: string;
   /** Appended to the course's own FAQs, targeted at AI-assistant question phrasing. */
   extraFaqs: Faq[];
 };
@@ -1078,7 +1084,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
-      "Practical English communication and Basic Spoken English for beginners: 6 months, up to 2 live classes weekly, approximately 6 learners, ₹999/month.",
+      "Practical Spoken English for beginners: 6 months, up to 2 live classes weekly, ~6 learners. ₹999/month, inclusive of taxes. Kolkata teacher, pan-India.",
     shortTitle: "Basic Spoken English",
     keywords: [
       "spoken english classes online india",
@@ -1092,7 +1098,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
     ogImage: "/og/spoken-english.jpg",
     summary:
-      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month. Designed for absolute beginners who cannot yet form a full sentence.",
+      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month, inclusive of taxes. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
@@ -1142,7 +1148,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interactive-speaking": {
     title: "Interactive Speaking | ₹1,199/mo, 3 Months",
     description:
-      "3 months of live speaking — games, debates, role-plays and stories. Batch of around 6, ₹1,199/month, up to 2 classes/week. Fluency practice, not grammar lectures.",
+      "Live speaking — games, debates, role-plays. 3 months, up to 2 classes/week, ~6 learners. ₹1,199/month, inclusive of taxes. Fluency, not grammar lectures.",
     shortTitle: "Interactive Speaking",
     keywords: [
       "english speaking practice online india",
@@ -1169,7 +1175,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   ielts: {
     title: "IELTS Coaching Online | ₹2,499/mo, 3 Months",
     description:
-      "Three-month IELTS prep, Academic and General Training. Six full-length mock tests, live writing feedback, speaking labs. Approximately 6 learners per batch, ₹2,499/month.",
+      "IELTS Academic and General Training. 3 months, 6+ mocks, live writing feedback, ~6 learners. ₹2,499/month, inclusive of taxes. Typical start Band 5.5–6.",
     shortTitle: "IELTS Preparation",
     keywords: [
       "ielts coaching online india",
@@ -1206,7 +1212,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interview-prep": {
     title: "Interview Prep in English | ₹1,499/mo, 7 Yrs",
     description:
-      "Two-month intensive interview prep — HR rounds, STAR answers, three recorded mock interviews, plus resume and LinkedIn review. Approximately 6 learners per batch, ₹1,499/mo.",
+      "HR rounds, STAR answers, 3 recorded mocks, resume and LinkedIn. 2-month live batch of ~6 learners. ₹1,499/mo, inclusive of taxes. Practise before you sit it.",
     shortTitle: "Interview Preparation",
     keywords: [
       "interview preparation course english india",
@@ -1234,7 +1240,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "career-counselling": {
     title: "1:1 Career Counselling | ₹1,999 Total, 3×60 min",
     description:
-      "Three 60-minute 1:1 sessions for ₹1,999 total. Strengths mapping, three shortlisted career paths, a six-month action plan, plus resume and LinkedIn review.",
+      "Three 60-min 1:1 sessions, ₹1,999 total, inclusive of taxes. Strengths map, 3 career paths, 6-month plan, plus resume and LinkedIn review. 1:1 online.",
     shortTitle: "Career Counselling",
     keywords: [
       "career counselling online india",
@@ -1337,6 +1343,13 @@ export function organizationLd() {
         },
       },
     ],
+    sameAs: [...SAME_AS],
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "IN",
+      returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+      merchantReturnLink: abs("/refunds"),
+    },
   };
 }
 
@@ -1560,7 +1573,7 @@ export function pageHead(path: string): HeadResult {
     throw new Error(`No SEO entry for path "${path}" — add it to PAGES in src/lib/seo.ts`);
   }
 
-  const jsonLd: unknown[] = [webPageLd(page)];
+  const jsonLd: unknown[] = [webPageLd({ ...page, dateModified: page.dateModified ?? CONTENT_REVISED })];
 
   if (path !== "/") {
     jsonLd.push(
@@ -1580,10 +1593,10 @@ export function pageHead(path: string): HeadResult {
     ogImage: page.ogImage,
     jsonLd,
   });
-  if (page.dateModified) {
+  if (page.dateModified ?? CONTENT_REVISED) {
     head.meta.push(
-      { name: "revised", content: page.dateModified },
-      { property: "og:updated_time", content: page.dateModified },
+      { name: "revised", content: page.dateModified ?? CONTENT_REVISED },
+      { property: "og:updated_time", content: page.dateModified ?? CONTENT_REVISED },
     );
   }
   return head;
@@ -1610,13 +1623,13 @@ export function blogPath(post: BlogPost): string {
 export function blogPostHead(post: BlogPost): HeadResult {
   const path = blogPath(post);
   const url = abs(path);
-  const image = abs(`/og/blog-${post.slug}.jpg`);
+  const image = abs("/og/blog.jpg");
 
   const head = buildHead({
     path,
     title: post.seoTitle,
     description: post.description,
-    ogImage: `/og/blog-${post.slug}.jpg`,
+    ogImage: "/og/blog.jpg",
     ogType: "article",
     jsonLd: [
       webPageLd({
@@ -1701,7 +1714,7 @@ export function sitemapUrls(): SitemapUrl[] {
     if (page) {
       return {
         loc,
-        lastmod: page.dateModified,
+        lastmod: page.dateModified ?? CONTENT_REVISED,
         changefreq: page.changefreq,
         priority: page.priority,
         image: { loc: abs(page.ogImage), title: page.shortTitle },
@@ -1720,6 +1733,7 @@ export function sitemapUrls(): SitemapUrl[] {
     const extra = COURSE_SEO[path.replace(/^\/course-/, "")];
     return {
       loc,
+      lastmod: extra?.dateModified ?? CONTENT_REVISED,
       changefreq: "monthly" as const,
       priority: 0.8,
       image: {

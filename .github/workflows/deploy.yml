@@ -126,8 +126,13 @@ jobs:
           if ! grep -q 'xmlns:image=' dist/sitemap.xml; then
             echo "::error::sitemap.xml is missing the image namespace"; exit 1
           fi
-          if ! grep -q '<lastmod>2026-09-11</lastmod>' dist/sitemap.xml; then
-            echo "::error::sitemap.xml is missing lastmod on policy pages"; exit 1
+          if ! grep -q '<lastmod>' dist/sitemap.xml; then
+            echo "::error::sitemap.xml is missing lastmod"; exit 1
+          fi
+          urls=$(grep -c '<url>' dist/sitemap.xml)
+          mods=$(grep -c '<lastmod>' dist/sitemap.xml)
+          if [ "$urls" -ne "$mods" ]; then
+            echo "::error::sitemap lastmod missing on some URLs ($mods of $urls)"; exit 1
           fi
           echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."
 
@@ -162,6 +167,7 @@ jobs:
             "https://www.learnwithsmile.app/openapi.json" \
             "https://www.learnwithsmile.app/ai-plugin.json" \
             "https://www.learnwithsmile.app/.well-known/llms.txt" \
+            "https://www.learnwithsmile.app/.well-known/llms.json" \
             "https://www.learnwithsmile.app/.well-known/ai-plugin.json" \
             "https://www.learnwithsmile.app/robots.txt")
           urls=$(printf '%s\n%s\n' "$sitemap_urls" "$extra" | awk 'NF && !seen[$0]++' | jq -R . | jq -s .)

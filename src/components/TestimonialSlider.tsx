@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
+import { waLink } from "@/lib/whatsapp";
 
 export type Testimonial = {
   quote: string;
@@ -54,7 +55,7 @@ export function TestimonialSlider({
 }
 
 function Card({ t, ctaLabel }: { t: Testimonial; ctaLabel: string }) {
-  const wa = `https://wa.me/919674479949?text=${encodeURIComponent(t.waMessage)}`;
+  const wa = waLink(t.waMessage);
   return (
     <article
       className="card-soft h-full flex flex-col bg-gradient-to-br from-white to-brand-soft/40"

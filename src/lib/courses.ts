@@ -22,7 +22,7 @@ export const COURSES: Record<string, CourseData> = {
       "Build a 2,000+ word everyday vocabulary",
       "Speak with correct grammar, tense and pronunciation",
       "Confidently take part in group discussions",
-      "Lose hesitation and stage fear forever",
+      "Lose hesitation and stage fear with live speaking reps",
     ],
     modules: [
       {
@@ -281,7 +281,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "ielts",
     title: "IELTS Preparation",
     tagline:
-      "Target Band 7+ in 3 months. 6+ full-length mocks, speaking labs, live writing feedback. Approximately 6 learners per batch, ₹2,499/mo, inclusive of taxes. Academic or General Training.",
+      "3 months live toward Band 7. 6+ full-length mocks, speaking labs, live writing feedback. Approximately 6 learners per batch, ₹2,499/mo, inclusive of taxes. Academic or General Training. Typical start around Band 5.5–6; writing is the usual bottleneck.",
     category: "IELTS Preparation",
     categoryColor: "brand",
     icon: "trophy",
@@ -292,7 +292,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹2,499/mo",
     outcomes: [
-      "Score Band 7+ across all four modules",
+      "Train all four modules toward Band 7 — writing is the usual bottleneck",
       "Master Task 1 & Task 2 writing templates",
       "Confidently handle Speaking Part 1, 2 & 3",
       "Crack tricky Listening question types",
@@ -374,7 +374,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "interview-prep",
     title: "Interview Preparation in English",
     tagline:
-      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Approx. 6 learners, up to 2 classes/week, ₹1,499/mo, inclusive of taxes. Walk in ready.",
+      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Approx. 6 learners, up to 2 classes/week, ₹1,499/mo, inclusive of taxes. Practise the round before you sit it.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "target",
@@ -385,7 +385,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,499/mo",
     outcomes: [
-      "Crack HR rounds confidently",
+      "Practise HR rounds until the answers come out clean",
       "Answer 'tell me about yourself' in 90 sec",
       "Handle behavioural questions (STAR)",
       "Negotiate salary calmly",

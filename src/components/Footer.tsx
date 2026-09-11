@@ -5,6 +5,7 @@ import { BrandIcon } from "./BrandIcon";
 import { SmartImage } from "./SmartImage";
 import { PaymentTrust } from "./PaymentTrust";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { IMG } from "@/lib/images";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -47,8 +48,7 @@ const GUIDES = [
   { to: "/english-institute-comparison-india", label: "Institutes Compared, 2026" },
 ];
 
-const IMG =
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&auto=format&fit=crop&q=80";
+const IMG_DEFAULT = IMG.groupClass;
 
 export function Footer({ image }: { image?: string }) {
   const wa = waLink("Hi, I am interested in Learn With Smile. Please share the details.");
@@ -71,7 +71,7 @@ export function Footer({ image }: { image?: string }) {
               ₹999/mo, inclusive of taxes. Kolkata-based, teaching pan-India.
             </p>
             <SmartImage
-              src={image || IMG}
+              src={image || IMG_DEFAULT}
               alt="Indian students learning online"
               className="rounded-2xl border border-cream/15 mb-5 w-full h-40"
               sizes="(min-width: 1024px) 30vw, 100vw"
