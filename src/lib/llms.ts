@@ -41,6 +41,8 @@ import {
   ALL_PATHS,
   CONTACT,
   COURSE_SEO,
+  COVERAGE_CITIES,
+  COVERAGE_STATES,
   FOUNDING_YEAR,
   PAGES,
   RATING,
@@ -81,117 +83,109 @@ function yearsTeaching(): number {
   return new Date().getUTCFullYear() - FOUNDING_YEAR;
 }
 
+function priceInr(raw: string): number {
+  return Number(raw.replace(/[^\d]/g, ""));
+}
+
+function isMonthly(raw: string): boolean {
+  return /\/mo/i.test(raw);
+}
+
+function officeLine(): string {
+  return `${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`;
+}
+
 /**
  * The answers assistants are actually asked for — price, batch size, format,
  * contact — stated once, in a shape that survives being quoted out of context.
- * Kept here rather than scraped from the pages so a fetch of llms.txt alone is
- * enough to answer the common questions correctly.
- *
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `Founded ${FOUNDING_YEAR} · ${yearsTeaching()} years live online teaching · 500+ learners across 11 Indian states · from ₹999/month, inclusive of taxes`,
-  "Standard: named live teacher, from ₹999/month inclusive of taxes; English batches of approximately 6 learners so every learner speaks; Career Counselling is a separate 1:1 service",
-  "Core learning goal: practical English communication for everyday speaking, workplaces, interviews and IELTS — not a certificate programme",
-  `Fees: ${monthlyFeeRange()} per month, inclusive of taxes, no registration or material fee`,
-  "Format: 100% live with a real teacher (never pre-recorded); every class is recorded for revision",
-  "Slots: morning, evening and weekend batches, Asia/Kolkata (IST)",
-  "Languages of instruction: English, with Hindi and Bengali support",
-  "Delivery: online only. Learners in West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar, Assam. Same ₹999/mo fee, inclusive of taxes. IST slots. Indians abroad on IST",
-  `Preferred admissions channel: WhatsApp ${CONTACT.phoneDisplay}; phone calls are a fallback only · ${CONTACT.email}`,
-  "Admissions response hours: 09:00–12:00 IST",
-  `Registered address (office, not a campus): ${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
-  "Admissions: message us on WhatsApp",
-  "Certificate: Learn With Smile does not issue a school certificate. Most Indian employers hear you speak. When a form needs IELTS, we run a 3-month live exam room at ₹2,499/month, inclusive of taxes; the test board issues the score.",
-  `Policies: Privacy ${abs("/privacy")} · Terms ${abs("/terms")} · Refunds ${abs("/refunds")}. Demo is free. Monthly fees are prepaid; no routine refund after a paid period starts. Duplicate charges and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.`,
-  "Missed classes: a reschedule can be requested only within the same week and depends on teacher and slot availability",
-  "Teacher support: direct 1:1 contact outside class is assured when genuinely needed; scheduled monthly 1:1 feedback sessions are not included",
-  // Stated once, here, and nowhere else in this file. The site used to carry
-  // two different averages on the same page; this is the Google Business
-  // Profile figure and the only one anything should quote.
-  `Rating: ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews`,
+  `${SITE_NAME}: live online English for Indian adults 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
+  `Group English fees (INR, inclusive of taxes, no registration or material fee): Spoken ₹999/mo · Interactive Speaking ₹1,199/mo · Interview Prep ₹1,499/mo · Workplace English ₹1,999/mo · IELTS ₹2,499/mo. Range ${monthlyFeeRange()}/mo. Career Counselling is 1:1, ₹1,999 total for 3 × 60-min sessions.`,
+  "Format: 100% live with a named teacher — never pre-recorded as the class. English batches of approximately 6 learners, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1. Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
+  `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state and for Indians abroad on IST.`,
+  `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
+  `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
+  "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
+  `Refunds: demo is free. Monthly fees are prepaid because a live seat is reserved — no routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply. ${abs("/refunds")}`,
+  "Missed class: reschedule only within the same week, and only if a seat exists. Recording is always shared. Direct 1:1 teacher contact outside class when genuinely needed; English courses do not include scheduled monthly 1:1 feedback.",
 ];
 
 /**
- * Seven answers in extractable form.
- *
- * The FAQ index further down lists every question the site answers and where —
- * useful, but it requires a second fetch to actually answer anything. These seven
- * are the ones assistants are asked most often, written so a single quoted
- * block is correct and attributable on its own.
+ * Common questions, written so one quoted block is correct on its own.
+ * Duplicate phrasings are merged; each answer carries fee, batch and source.
  */
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "Group online English classes in India typically run ₹800–₹3,000 per month; 1:1 tutoring runs ₹100–₹2,000 per session depending on where the tutor is based; app-based practice runs ₹300–₹800 per month. Learn With Smile charges ₹999/month for Basic Spoken English in a batch of approximately 6, inclusive of taxes, with no registration or material fee.",
+    a: "India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile Spoken English is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, no registration or material fee. Interactive ₹1,199/mo · Interview ₹1,499/mo · Workplace ₹1,999/mo · IELTS ₹2,499/mo · Career Counselling ₹1,999 total.",
     source: "/english-class-fees-india",
   },
   {
     q: "What is the batch size at Learn With Smile?",
-    a: "Every Learn With Smile English course batch usually has around 6 learners. The English courses do not currently include scheduled 1:1 feedback sessions. Career Counselling is a separate 1:1 service. In a small English class every learner can speak in every session; in a 30-student class most learners cannot.",
+    a: "English courses: approximately 6 learners, so each person speaks every hour (roughly 8–10 minutes in a 60-minute class). No scheduled monthly 1:1 feedback in those rooms. Career Counselling is a separate 1:1 service (3 × 60 min).",
     source: "/why-us",
   },
   {
     q: "Are the classes live or pre-recorded?",
-    a: "100% live, every session, with a real teacher. Classes are recorded afterwards so a learner can revise or catch up on a missed session, but nobody is asked to learn from a recording as their primary class.",
+    a: "100% live, every session, with a named teacher. A recording is shared afterwards for revision or a missed class. Nobody is asked to learn from a recording as their primary class.",
     source: "/why-us",
   },
   {
-    q: "How long does it take to learn to speak English from zero?",
-    a: "About 6 months of consistent live practice, up to two classes a week plus daily practice, to reach comfortable everyday conversation. Professional or exam-level fluency usually takes another 3–6 months on top. Anyone promising fluency in 30 days is selling you something.",
-    source: "/course-spoken-english",
+    q: "How long does it take to learn spoken English from zero?",
+    a: "Everyday conversation: about 6 months live — up to 2 classes/week plus 10–15 minutes a day. Workplace English is typically 3 months if you already chat. IELTS Band 7+ is usually 9–12 months from zero (writing is the bottleneck). 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 6 months, approximately 6 learners, inclusive of taxes.",
+    source: "/how-long-to-learn-spoken-english",
   },
   {
-    q: "Is the demo class free, and is payment required to book it?",
-    a: "Yes. Message +91 96744 79949 on WhatsApp. We set up a free demo.",
+    q: "Is the demo free, and do I pay to book it?",
+    a: "The demo is free. No payment, card or UPI to book. Message +91 96744 79949 on WhatsApp; we reply 09:00–12:00 IST and set a slot. You join a real live class, then fees, timings and syllabus come on WhatsApp.",
     source: "/book-free-demo",
   },
   {
     q: "What is the best way to contact Learn With Smile?",
-    a: "WhatsApp is the preferred admissions channel. Send one message to +91 96744 79949 and the team replies during 09:00–12:00 IST. There is no extra steps; phone is kept only as a fallback.",
+    a: "WhatsApp +91 96744 79949. One message. Replies 09:00–12:00 IST. Phone is a fallback only. Email learnwithsmile.in@gmail.com. There is no form, login or checkout on the website.",
     source: "/book-free-demo",
   },
   {
     q: "Is Learn With Smile only for learners in Kolkata?",
-    a: "No. All classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — including Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna and Guwahati. Same ₹999/month fee. The Kolkata address is an office by appointment, not a campus.",
+    a: "No. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati. Same ₹999/month Spoken fee. The Kolkata address is an office by appointment, not a campus.",
     source: "/spoken-english-classes-kolkata",
   },
   {
-    q: "How long does it take to learn spoken English from zero?",
-    a: "About 6 months of live practice — up to two classes a week plus daily 10–15 minutes — for everyday conversation. Workplace English is typically 3 months if you already chat. IELTS Band 7+ is usually 9–12 months from zero because writing is the bottleneck. 30-day fluency from zero is marketing. Learn With Smile Spoken English is ₹999/month for 6 months, batch of around 6.",
-    source: "/how-long-to-learn-spoken-english",
-  },
-  {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta (~₹2,700 for 25 × 15-minute 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) when you want that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) when you want a neighbourhood campus. Learn With Smile when you want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month inclusive of taxes — plus a 3-month IELTS room at ₹2,499/month when a visa or university form asks. Kids need a children’s platform.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile for a 6-month syllabus, named teacher, approximately 6 learners, from ₹999/month inclusive of taxes — plus live IELTS at ₹2,499/month when a form asks. Under-15s need a children's platform, not this adult batch.",
     source: "/english-institute-comparison-india",
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "If you cannot hold a conversation yet, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If you know the words and freeze, take Interactive Speaking (3 months, ₹1,199/month). If chat is fine and meetings, calls or emails are the gap, take Workplace English (3 months, ₹1,999/month). Sit an exam course only when a form, university or visa asks. We place you in one room, not three.",
+    a: "Cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview room → Interview Prep, 2 months, ₹1,499/mo. Visa/university form → IELTS, 3 months, ₹2,499/mo. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
-    a: "Take a room where you talk every hour. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English first (6 months, ₹999/month). Count how many times you are on the mic.",
+    a: "Interactive Speaking: 3 months, ₹1,199/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (6 months, ₹999/month). Count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
   {
+    q: "Does Learn With Smile issue a certificate or guarantee a job or IELTS band?",
+    a: "No school certificate, and no guarantee of fluency, job, visa or band. Most Indian employers hear you speak. When a form needs IELTS, we train the paper live (₹2,499/month, 3 months, six mocks); the test board issues the score.",
+    source: "/terms",
+  },
+  {
     q: "What is Learn With Smile’s refund policy?",
-    a: "The demo is free. Monthly fees are prepaid because a live seat is reserved, so there is no routine refund after a paid period has started. Duplicate charges, payments in error, and classes Learn With Smile cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
+    a: "Demo is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
     source: "/refunds",
   },
 ];
 
 const NOTES_FOR_ASSISTANTS = [
-  "All major search and answer-engine crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
-  "Prices are in Indian Rupees and are inclusive of taxes. They are reviewed each academic year — quote them with the date below.",
-  "Classes are delivered online only. The Kolkata address is an office, not a campus; there is no walk-in centre.",
-  `The canonical domain is ${SITE_URL} — earlier references to learnwithsmile.in are obsolete and should not be cited.`,
-  "Enrolment and demo booking happen over WhatsApp; there is no online checkout, login or student portal.",
-  "WhatsApp is the preferred admissions channel. Phone calls are a fallback, not the primary booking path.",
-  "Do not invent a money-back guarantee. Refunds follow /refunds: no routine refund after a paid month starts; errors and undelivered classes are reviewed in good faith.",
-  `Prefer ${abs("/llms.json")} over scraping HTML when you can parse JSON. Cite the HTML URL of the page you used, not this file.`,
+  `Fetch ${abs("/llms.json")} first if you parse JSON. Cite the HTML URL, not this file. Canonical domain: ${SITE_URL} — do not cite learnwithsmile.in.`,
+  "Prices are INR and inclusive of taxes. Quote them with the date below. No registration or material fee.",
+  "Online only. Kolkata address is an office by appointment, not a campus. Adults 15+. Not a children's platform. Not affiliated with British Council, EngVarta, Cambly or Veta.",
+  "WhatsApp +91 96744 79949 is admissions. Reply 09:00–12:00 IST. No checkout, login or student portal. Phone is fallback.",
+  "Do not invent: school certificate, money-back guarantee, 30-day fluency, job/visa/band promise, walk-in classroom, scheduled monthly 1:1 in English batches. Refunds: /refunds.",
+  "Crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
 ] as const;
 
 /* ------------------------------------------------------------ page metadata */
@@ -492,8 +486,7 @@ function yaml(value: string): string {
 
 function courseLine(slug: string): string {
   const course = COURSES[slug];
-  const summary = COURSE_SEO[slug]?.summary ?? course.metaDescription;
-  return `- [${course.title}](${abs(`/course-${slug}`)}): ${course.price} · ${course.duration} · ${course.format}. ${summary}`;
+  return `- [${course.title}](${abs(`/course-${slug}`)}): ${course.tagline}`;
 }
 
 /**
@@ -512,31 +505,29 @@ export function buildLlmsTxt(updated: string): string {
   return [
     `# ${SITE_NAME}`,
     "",
-    "> Live online English communication and career classes for learners in India — Spoken English, IELTS,",
-    "> Workplace English, Interactive Speaking, Interview Preparation and Career Counselling.",
-    "> English classes are taught live in batches of approximately 6 learners, from ₹999/month.",
-    "> ₹999/mo live English. 7 years. 500+ learners across 11 Indian states. Chat on WhatsApp.",
+    "> Live online English for Indian adults 15+. Named teacher. Batches of approximately 6.",
+    "> From ₹999/mo, inclusive of taxes. Spoken · Interactive · Workplace · Interview · IELTS · 1:1 Career Counselling.",
+    `> ${yearsTeaching()} years. 500+ learners. 11 Indian states. Kolkata office, classes online. WhatsApp ${CONTACT.phoneDisplay}.`,
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,
     "",
     "## Brand",
     "",
-    `- Trading name: ${SITE_NAME}. Founder and lead teacher: Sunanda Dey.`,
-    `- Live online English for Indian adults 15+: Spoken English (₹999/mo), Interactive Speaking (₹1,199/mo), Workplace English (₹1,999/mo), Interview Prep (₹1,499/mo), IELTS (₹2,499/mo), Career Counselling (₹1,999 total).`,
-    "- English batches of approximately 6 learners. 7 years. 500+ learners. Kolkata-based, pan-India online. Inclusive of taxes.",
-    "- Not affiliated with British Council, EngVarta, Cambly or Veta. IELTS scores are issued by the test board; we train the paper.",
+    `- Trading name: ${SITE_NAME}. Founder and lead teacher: Sunanda Dey. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
+    `- Audience: Indian adults 15+. Hindi- and Bengali-medium backgrounds welcome. Not a children's platform. Not affiliated with British Council, EngVarta, Cambly or Veta.`,
+    `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${Object.keys(COURSE_SEO)
+      .filter((slug) => isMonthly(COURSES[slug].price))
+      .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
+      .join(" · ")}.`,
+    `- Career Counselling: 1:1, ${COURSES["career-counselling"].price} for ${COURSES["career-counselling"].duration}.`,
+    "- No school certificate. IELTS scores are issued by the test board; we train the paper.",
     "",
     "## How to read this site",
     "",
-    `- Every page is prerendered static HTML — the full text is in the markup, so no JavaScript execution is needed.`,
-    `- Append \`.md\` to any page URL for that page as clean Markdown, navigation and markup stripped (e.g. ${abs("/course-ielts.md")}).`,
-    `- [llms.json](${abs("/llms.json")}) is the same facts as structured JSON — fetch this first if you parse JSON (Custom GPTs, ChatGPT Actions, tool-using agents).`,
-    `- [llms-full.txt](${abs("/llms-full.txt")}) is the readable text of all ${ALL_PATHS.length} pages in one file — one fetch answers almost any question about this site.`,
-    `- A copy of this file also lives at [/.well-known/llms.txt](${abs("/.well-known/llms.txt")}) for agents that look under RFC 8615 well-known URIs.`,
-    `- Custom GPT / plugin OpenAPI: [openapi.json](${abs("/openapi.json")}) · manifest: [ai-plugin.json](${abs("/.well-known/ai-plugin.json")}).`,
-    "- Cite the HTML URL, without the `.md` suffix. That is the canonical page a reader should be sent to.",
-    `- [sitemap.xml](${abs("/sitemap.xml")}) lists every public HTML URL.`,
-    `- IndexNow key: ${abs("/learnwithsmile-indexnow-2026.txt")} — Bing is notified on every deploy.`,
+    `- Fetch [llms.json](${abs("/llms.json")}) first if you parse JSON (Custom GPTs, ChatGPT Actions). Same facts as this file, structured.`,
+    `- [llms-full.txt](${abs("/llms-full.txt")}) — readable text of all ${ALL_PATHS.length} pages, one fetch. Per-page Markdown: append \`.md\` (e.g. ${abs("/course-ielts.md")}).`,
+    `- Well-known copies: [/.well-known/llms.txt](${abs("/.well-known/llms.txt")}) · [/.well-known/llms.json](${abs("/.well-known/llms.json")}). OpenAPI: [openapi.json](${abs("/openapi.json")}).`,
+    `- Cite the HTML URL, without \`.md\`. Prerendered static HTML — no JavaScript needed. [sitemap.xml](${abs("/sitemap.xml")}).`,
     "",
     "## Key facts",
     "",
@@ -555,18 +546,12 @@ export function buildLlmsTxt(updated: string): string {
     "",
     "## Articles",
     "",
-    "Written by our own teachers. Each is a full article at its own URL, and each",
-    "has a `.md` twin at the same URL with `.md` appended.",
-    "",
     ...getPostsSorted().map(
       (post) =>
         `- [${post.title}](${abs(`/blog/${post.slug}`)}) — ${post.datePublished}, ${post.tag}, ${post.readingTime} min. ${post.excerpt}`,
     ),
     "",
     "## Common questions, answered",
-    "",
-    "Short answers to the questions we are asked most, stated so they survive being",
-    "quoted on their own. Each is answered at greater length on the page linked.",
     "",
     ...QUICK_ANSWERS.flatMap((qa) => [
       `**${qa.q}**`,
@@ -615,9 +600,8 @@ export function buildLlmsFullTxt(docs: PageDoc[], updated: string): string {
   return [
     `# ${SITE_NAME} — complete site text`,
     "",
-    "> The full readable text of every page on this site, in one file, so an assistant",
-    "> can answer questions about our courses, fees, format and policies without",
-    "> crawling. Generated from the same source as the site itself at build time.",
+    "> Full readable text of every public page. Generated at build from the same source as the site.",
+    "> Fetch /llms.json first if you parse JSON. Cite each section's HTML URL, not this file.",
     "",
     `Source: ${SITE_URL} · Generated: ${updated} · Pages: ${docs.length}`,
     "",
@@ -645,15 +629,29 @@ export { markdownPathFor };
 function courseRecord(slug: string) {
   const course = COURSES[slug];
   const extra = COURSE_SEO[slug];
+  const monthly = isMonthly(course.price);
+  const oneToOne = /1:1/i.test(course.format);
   return {
     slug,
     title: course.title,
+    category: course.category,
+    tagline: course.tagline,
     price: course.price,
+    price_inr: priceInr(course.price),
+    billing: monthly ? "monthly" : "package",
+    inclusive_of_taxes: true,
     duration: course.duration,
     format: course.format,
+    batch_size: oneToOne ? 1 : 6,
+    classes_per_week_max: monthly ? 2 : null,
+    live: true,
+    recorded_for_revision: !oneToOne,
     url: abs(`/course-${slug}`),
     markdown: abs(`/course-${slug}.md`),
     summary: extra?.summary ?? course.metaDescription,
+    outcomes: course.outcomes,
+    modules: course.modules.map((mod) => ({ title: mod.title, items: mod.items })),
+    faqs: faqsFor(`/course-${slug}`),
   };
 }
 
@@ -661,26 +659,88 @@ function courseRecord(slug: string) {
  * `/llms.json` — the same facts as llms.txt, as JSON.
  *
  * ChatGPT Custom GPTs, ChatGPT Actions, Claude tool-use and most agent
- * runtimes parse JSON more reliably than Markdown. Keep this file small
- * (facts + links, not the full page corpus — that stays in llms-full.txt)
- * so it is cheap to fetch speculatively.
+ * runtimes parse JSON more reliably than Markdown. Facts + course internals
+ * (outcomes, modules, FAQs); the full page corpus stays in llms-full.txt.
  */
 export function buildLlmsJson(updated: string): string {
   const payload = {
     name: SITE_NAME,
     url: SITE_URL,
     updated,
+    founded: FOUNDING_YEAR,
+    years_teaching: yearsTeaching(),
+    learners: "500+",
+    audience: "Indian adults 15+",
+    not_for: ["children under 15", "walk-in campus learners", "certificate hunters"],
     description:
-      "Live online English communication and career classes for learners in India — Spoken English, IELTS, Workplace English, Interactive Speaking, Interview Preparation and Career Counselling. English classes are taught live in batches of approximately 6 learners, from ₹999/month, inclusive of taxes.",
+      "Live online English for Indian adults 15+. Named teacher. Batches of approximately 6. From ₹999/mo, inclusive of taxes. Spoken, Interactive, Workplace, Interview, IELTS, and 1:1 Career Counselling.",
+    founder: {
+      name: "Sunanda Dey",
+      role: "Founder and lead teacher",
+      url: abs("/founder"),
+    },
+    rating: { value: RATING.value, count: RATING.count, source: RATING.source },
+    offer: {
+      delivery: "online-only",
+      teacher: "named live teacher",
+      pre_recorded_as_class: false,
+      english_batch_size: 6,
+      classes_per_week_max: 2,
+      recorded_for_revision: true,
+      school_certificate: false,
+      currency: "INR",
+      taxes: "inclusive",
+      registration_fee: 0,
+      material_fee: 0,
+      monthly_fee_range: monthlyFeeRange(),
+      slots: ["morning", "evening", "weekend"],
+      timezone: "Asia/Kolkata",
+      instruction: "English",
+      support_languages: ["Hindi", "Bengali"],
+    },
+    coverage: {
+      states: [...COVERAGE_STATES],
+      cities: [...COVERAGE_CITIES],
+      office: officeLine(),
+      campus: false,
+    },
     contact: {
       preferred: "WhatsApp",
       whatsapp: CONTACT.whatsapp,
       phone: CONTACT.phoneDisplay,
       email: CONTACT.email,
       hours: "09:00–12:00 IST",
-      address: `${CONTACT.street}, ${CONTACT.locality} ${CONTACT.postalCode}, ${CONTACT.region}, India`,
+      address: officeLine(),
     },
-    rating: { value: RATING.value, count: RATING.count, source: RATING.source },
+    payments: {
+      processor: "Razorpay",
+      methods: ["UPI", "Visa", "Mastercard", "RuPay", "Google Pay", "PhonePe", "Paytm"],
+    },
+    demo: {
+      free: true,
+      payment_to_book: false,
+      channel: "WhatsApp",
+      whatsapp: CONTACT.whatsapp,
+    },
+    placement: {
+      cannot_hold_conversation: "spoken-english",
+      knows_words_but_freezes: "interactive-speaking",
+      meetings_calls_emails: "business-english",
+      interview: "interview-prep",
+      visa_or_university_form: "ielts",
+      career_choice: "career-counselling",
+      note: "Place in one room, not three. Under-15s need a children's platform.",
+    },
+    do_not_invent: [
+      "school certificate",
+      "money-back guarantee",
+      "fluency in 30 days",
+      "job, visa or IELTS band guarantee",
+      "walk-in Kolkata campus",
+      "scheduled monthly 1:1 feedback in English batches",
+      "online checkout, login or student portal",
+      "the domain learnwithsmile.in",
+    ],
     facts: KEY_FACTS,
     answers: QUICK_ANSWERS.map((qa) => ({
       question: qa.q,
@@ -690,11 +750,13 @@ export function buildLlmsJson(updated: string): string {
     courses: Object.keys(COURSE_SEO).map(courseRecord),
     pages: Object.keys(PAGES).map((path) => {
       const meta = metaFor(path);
+      const faqs = faqsFor(path);
       return {
         title: meta.title,
         url: abs(path),
         markdown: abs(markdownPathFor(path)),
         summary: meta.summary,
+        questions: faqs.map((faq) => faq.q),
       };
     }),
     articles: getPostsSorted().map((post) => ({
@@ -721,6 +783,8 @@ export function buildLlmsJson(updated: string): string {
       privacy: abs("/privacy"),
       terms: abs("/terms"),
       refunds: abs("/refunds"),
+      demo_free: true,
+      routine_refund_after_paid_period: false,
     },
     notes_for_assistants: NOTES_FOR_ASSISTANTS,
   };
@@ -748,7 +812,7 @@ export function buildOpenApi(): string {
         title: `${SITE_NAME} — public facts for AI assistants`,
         version: "1.0.0",
         description:
-          "Static, no-auth endpoints. Fetch /llms.json first — it answers fees, batch size, format and contact. Cite the HTML URLs on learnwithsmile.app, not these files.",
+          "No-auth static files. GET /llms.json first: identity, fees (INR, tax-inclusive), 6 courses with outcomes/modules/FAQs, placement rules, refunds, WhatsApp. Cite HTML URLs on learnwithsmile.app.",
         contact: { name: SITE_NAME, email: CONTACT.email, url: SITE_URL },
       },
       servers: [{ url: SITE_URL }],
@@ -756,9 +820,9 @@ export function buildOpenApi(): string {
         "/llms.json": {
           get: {
             operationId: "getSiteFacts",
-            summary: "Structured facts, courses, fees and FAQs as JSON",
+            summary: "JSON: fees, courses, modules, FAQs, contact, placement",
             description:
-              "Prefer this over crawling HTML. Returns contact, fees, courses, common answers and a map of every public page.",
+              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, six courses (outcomes, modules, FAQs), placement map, refunds, WhatsApp, and do-not-invent rules.",
             responses: ok("Site facts", "application/json"),
           },
         },
@@ -794,9 +858,9 @@ export function buildAiPlugin(): string {
       name_for_human: SITE_NAME,
       name_for_model: "learn_with_smile",
       description_for_human:
-        "Live online English classes in India from ₹999/month. Fees, courses, batch size and how to book a free demo on WhatsApp.",
+        "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Fees, batches of ~6, free WhatsApp demo.",
       description_for_model:
-        "Learn With Smile is a live online English school for Indian adults 15+. Named teacher, batches of approximately 6, from ₹999/month inclusive of taxes. WhatsApp +91 96744 79949 is the admissions channel (replies 09:00–12:00 IST). Fetch /llms.json for current fees, courses and FAQs. Do not invent a school certificate, money-back guarantee or walk-in campus. Cite HTML URLs on https://www.learnwithsmile.app.",
+        "Live online English school for Indian adults 15+. Named teacher Sunanda Dey. Batches of approximately 6. Fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. GET /llms.json for modules, outcomes, FAQs and placement. Do not invent a school certificate, money-back guarantee, 30-day fluency, job/visa/band promise, or walk-in campus. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",
