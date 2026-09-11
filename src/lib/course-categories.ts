@@ -34,7 +34,7 @@ export const COURSE_CATEGORIES = [
     slugs: ["kids-english", "teen-english"],
     theme: "kids",
     badge: "For parents",
-    cta: "See both classes",
+    cta: "Explore both programmes",
   },
   {
     id: "work-and-career",
