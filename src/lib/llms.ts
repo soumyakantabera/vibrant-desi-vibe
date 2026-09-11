@@ -153,7 +153,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is the best way to contact Learn With Smile?",
-    a: "WhatsApp +91 96744 79949. One message. Replies 09:00–12:00 IST. Phone is a fallback only. Email learnwithsmile.in@gmail.com. There is no form, login or checkout on the website.",
+    a: `WhatsApp +91 96744 79949. One message. Replies 09:00–12:00 IST. Phone is a fallback only. Email ${CONTACT.email}. There is no form, login or checkout on the website.`,
     source: "/book-free-demo",
   },
   {

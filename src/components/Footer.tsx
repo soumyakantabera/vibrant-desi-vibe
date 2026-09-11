@@ -6,6 +6,7 @@ import { SmartImage } from "./SmartImage";
 import { PaymentTrust } from "./PaymentTrust";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { IMG } from "@/lib/images";
+import { CONTACT } from "@/lib/seo";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -96,11 +97,11 @@ export function Footer({ image }: { image?: string }) {
               Call fallback: {WHATSAPP_DISPLAY}
             </a>
             <a
-              href="mailto:learnwithsmile.in@gmail.com"
+              href={`mailto:${CONTACT.email}`}
               className="inline-flex items-center gap-2 hover:text-sunshine"
             >
               <Icon name="mail" size={16} />
-              learnwithsmile.in@gmail.com
+              {CONTACT.email}
             </a>
             <span className="inline-flex items-center gap-2">
               <Icon name="globe" size={16} />

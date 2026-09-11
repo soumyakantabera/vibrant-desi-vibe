@@ -24,7 +24,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Who we are",
         paragraphs: [
           "Learn With Smile provides live online English communication and career classes. We are based in Kolkata, West Bengal, India, and teach learners across India over the internet.",
-          "For privacy questions, message us on WhatsApp at +91 96744 79949 or email learnwithsmile.in@gmail.com. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
+          "For privacy questions, message us on WhatsApp at +91 96744 79949 or email info@learnwithsmile.app. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
         ],
       },
       {
@@ -272,7 +272,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to ask",
         paragraphs: [
-          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email learnwithsmile.in@gmail.com. We reply during 09:00–12:00 IST. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
+          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 09:00–12:00 IST. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
         ],
       },
       {
