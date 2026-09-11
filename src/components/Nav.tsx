@@ -48,6 +48,18 @@ const ENGLISH_COURSES: NavItem[] = [
     icon: "compass",
     desc: "3 × 60 min · ₹1,999 total, inclusive of taxes",
   },
+  {
+    to: "/course-kids-english",
+    label: "Spoken English for Kids",
+    icon: "smile",
+    desc: "Ages 6–11 · ₹1,499/mo, inclusive of taxes",
+  },
+  {
+    to: "/course-teen-english",
+    label: "Spoken English for Teens",
+    icon: "mic",
+    desc: "Ages 12–17 · ₹1,799/mo, inclusive of taxes",
+  },
 ];
 
 export function Nav() {

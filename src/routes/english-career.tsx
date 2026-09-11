@@ -19,8 +19,8 @@ export const Route = createFileRoute("/english-career")({
   head: () => {
     const page = PAGES["/english-career"];
     const head = pageHead("/english-career");
-    // Course hub: an ItemList of the six courses gives Google (and AI answer
-    // engines) the whole catalogue with prices from a single fetch.
+    // Course hub: an ItemList of every live programme gives Google (and AI
+    // answer engines) the whole catalogue with prices from a single fetch.
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -64,8 +64,8 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Six live English programmes — Spoken, Workplace, IELTS, Interview, Interactive
-              Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes.
+              Eight live English programmes — Spoken, Kids, Teens, Workplace, IELTS, Interview,
+              Interactive Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -90,8 +90,8 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "6 courses",
-                    small: "Speaking · Workplace · IELTS · Career",
+                    big: "8 courses",
+                    small: "Speaking · Kids · Teens · Work · IELTS",
                   },
                   {
                     tone: "indigo",
@@ -116,9 +116,9 @@ function Page() {
       <section className="section">
         <div className="container-x">
           <SectionHeader
-            eyebrow="Four Clear Categories"
-            title="6 Programmes · Approx. 6 per Batch · From ₹999/mo, inclusive of taxes"
-            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance — pick the outcome, then the fee and duration."
+            eyebrow="Five Clear Categories"
+            title="8 Programmes · Small live rooms · From ₹999/mo, inclusive of taxes"
+            subtitle="Adult rooms, plus Kids (6–11) and Teens (12–17). Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (
@@ -129,7 +129,13 @@ function Page() {
                 className="scroll-mt-28"
               >
                 <div className="mb-5 flex items-start gap-3">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-deep">
+                  <span
+                    className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${
+                      "theme" in group && group.theme === "kids"
+                        ? "bg-sunshine text-ink"
+                        : "bg-brand-soft text-brand-deep"
+                    }`}
+                  >
                     <Icon name={group.icon} size={22} />
                   </span>
                   <div>
@@ -148,11 +154,16 @@ function Page() {
                 >
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
+                    const kidsTheme = "theme" in group && group.theme === "kids";
                     return (
                       <Link
                         key={s}
                         to={`/course-${s}` as CoursePath}
-                        className="group card-soft flex h-full min-w-0 flex-col transition hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
+                        className={`group card-soft flex h-full min-w-0 flex-col transition hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25 ${
+                          kidsTheme
+                            ? "border-sunshine/50 hover:border-coral/40"
+                            : "hover:border-brand/40"
+                        }`}
                       >
                         <SmartImage
                           src={c.heroImage}
@@ -164,25 +175,46 @@ function Page() {
                           sizes="(min-width: 1280px) 30vw, (min-width: 640px) 45vw, 100vw"
                         />
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
-                          <span className="h-9 w-9 rounded-xl bg-brand-soft text-brand-deep flex items-center justify-center">
+                          <span
+                            className={`h-9 w-9 rounded-xl flex items-center justify-center ${
+                              kidsTheme
+                                ? "bg-[#FFF3C4] text-[#6B4A00]"
+                                : "bg-brand-soft text-brand-deep"
+                            }`}
+                          >
                             <Icon name={c.icon} size={20} />
                           </span>
                           <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
                             {c.price}
                           </span>
-                          <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
+                          <span
+                            className={`pill ${
+                              kidsTheme
+                                ? "bg-[#FFF4F1] text-[#8B321F] border-coral/30"
+                                : "bg-brand-soft text-brand-deep"
+                            }`}
+                          >
+                            {c.duration}
+                          </span>
                         </div>
                         <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
                         <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/85">
                           {c.tagline}
                         </p>
-                        <span className="syllabus-cta mt-4 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-soft px-4 py-2 text-sm font-display font-bold text-brand-deep transition group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white group-focus-within:bg-brand group-focus-within:text-white">
+                        <span
+                          className={`syllabus-cta mt-4 inline-flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-sm font-display font-bold transition ${
+                            kidsTheme
+                              ? "bg-sunshine text-ink group-hover:bg-[#F6C453]"
+                              : "bg-brand-soft text-brand-deep group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white group-focus-within:bg-brand group-focus-within:text-white"
+                          }`}
+                        >
                           View Full Syllabus <Icon name="arrow-right" size={14} />
                         </span>
                       </Link>
                     );
                   })}
                 </Reveal>
+                {"theme" in group && group.theme === "kids" && <KidsParentTrust />}
               </section>
             ))}
           </div>
@@ -192,8 +224,8 @@ function Page() {
       <FaqSection
         faqs={PAGES["/english-career"].faqs ?? []}
         eyebrow="Course FAQs"
-        title="Choosing Between Our Six Courses"
-        subtitle="Not sure which one fits? Start here."
+        title="Choosing Between Our Courses"
+        subtitle="Adult, teen or kids room? Start here."
         waMessage="Hi, I am not sure which course fits me. Can you help me choose?"
       />
 
@@ -208,8 +240,9 @@ function Page() {
           <div className="text-cream">
             <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">
-              Tell us your goal — interview, abroad study, office promotion, daily confidence —
-              we'll recommend the right course during 09:00–12:00 IST on WhatsApp.
+              Tell us the goal — interview, school speaking, office promotion, daily confidence —
+              we'll recommend the right course during 09:00–12:00 IST on WhatsApp. For under-18s,
+              the parent sends the message.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <WaButton message={CHAT_MSG} variant="wa" size="lg">
@@ -223,5 +256,85 @@ function Page() {
         </div>
       </section>
     </Layout>
+  );
+}
+
+function KidsParentTrust() {
+  const items = [
+    {
+      icon: "users" as const,
+      tone: "bg-[#FFF3C4] text-[#6B4A00]",
+      title: "Parent is the customer",
+      body: "Fees, WhatsApp and class recordings sit on the parent’s number. The child does not need a phone. You join the free demo on camera.",
+    },
+    {
+      icon: "shield" as const,
+      tone: "bg-brand-soft text-brand-deep",
+      title: "Privacy, as written",
+      body: "We do not publish children’s photos or class recordings. We do not run ads aimed at children. Under 18, a parent or guardian must enrol. See Privacy and Terms.",
+    },
+    {
+      icon: "users" as const,
+      tone: "bg-[#E7E7FF] text-indigo-pop",
+      title: "Rooms never mixed",
+      body: "Kids 6–11, teens 12–17 and adult rooms (15+) are separate batches. A 12-year-old is never placed with working adults.",
+    },
+    {
+      icon: "heart" as const,
+      tone: "bg-[#FFF0ED] text-[#A53D32]",
+      title: "How class is kept safe",
+      body: "6–11: parent within earshot of the room. 12–17: parent informed of the slot. No 1:1 video with a child unless the parent stays on the call.",
+    },
+  ];
+  return (
+    <aside className="mt-6 overflow-hidden rounded-3xl border border-sunshine/40 bg-gradient-to-br from-[#FFF8DE] via-white to-[#FFF4F1] p-5 md:p-6">
+      <div className="mb-4 flex items-start gap-3">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-sunshine text-ink">
+          <Icon name="smile" size={22} />
+        </span>
+        <div>
+          <h3 className="font-display text-lg font-extrabold text-ink md:text-xl">
+            For parents — safety, privacy, who we message
+          </h3>
+          <p className="mt-1 text-sm leading-relaxed text-ink/80">
+            Clear rules, not a certificate stamp. This is how the kids and teen rooms actually run.
+          </p>
+        </div>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {items.map((item) => (
+          <div
+            key={item.title}
+            className="flex gap-3 rounded-2xl border border-black/5 bg-white/80 p-4"
+          >
+            <span
+              className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${item.tone}`}
+            >
+              <Icon name={item.icon} size={20} />
+            </span>
+            <div>
+              <h4 className="font-display text-sm font-extrabold text-ink">{item.title}</h4>
+              <p className="mt-1 text-sm leading-relaxed text-ink/80">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="mt-4 text-xs leading-relaxed text-ink/70">
+        We do not claim a safeguarding certificate or a government seal. The parent remains the
+        account holder.{" "}
+        <Link to="/privacy" className="font-bold text-brand-deep underline-offset-2 hover:underline">
+          Privacy
+        </Link>
+        {" · "}
+        <Link to="/terms" className="font-bold text-brand-deep underline-offset-2 hover:underline">
+          Terms
+        </Link>
+        {" · "}
+        <Link to="/refunds" className="font-bold text-brand-deep underline-offset-2 hover:underline">
+          Refunds
+        </Link>
+        .
+      </p>
+    </aside>
   );
 }

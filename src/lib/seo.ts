@@ -259,7 +259,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Speak better English. Interviews, IELTS and workplace English. Six live programmes from ₹999/month, inclusive of taxes. Small batches. 7 years, pan-India.",
+      "Eight live English programmes for adults, teens and kids. From ₹999/month, inclusive of taxes. Small live batches. Parent on WhatsApp for under-18 rooms.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -275,7 +275,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.9,
     changefreq: "weekly",
     summary:
-      "Course hub. Six live English communication and career courses with clear fees (₹999–₹2,499/month), duration, format and outcomes.",
+      "Course hub. Eight live English programmes for adults, teens (12–17) and kids (6–11), with clear fees (₹999–₹2,499/month), duration, format and outcomes. Parent is the customer for under-18 rooms.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
@@ -283,7 +283,15 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,199 per month, Interview Preparation ₹1,499 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,199 per month, Kids English ₹1,499 per month, Interview Preparation ₹1,499 per month, Teen English ₹1,799 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
+      },
+      {
+        q: "Do you teach children and teenagers?",
+        a: "Yes, in separate rooms. Spoken English for Kids is ages 6–11 at ₹1,499/month (4–6 children, 40-minute classes). Spoken English for Teens is ages 12–17 at ₹1,799/month (about 6 teens, 50-minute classes). The parent is the customer: WhatsApp, fees and recordings go to the parent. Kids, teens and adult rooms are never mixed. We do not publish children’s photos or class recordings, and we do not run ads aimed at children.",
+      },
+      {
+        q: "How do you handle a child’s privacy and class safety?",
+        a: "A parent or guardian must enrol anyone under 18. The parent joins the demo on camera. For ages 6–11 the parent stays within earshot of weekly class; for 12–17 the parent is told the slot. We do not 1:1 video a child unless the parent stays on the call. Recordings are shared with the parent, not posted. This is how the room is run — it is not a government seal or a safeguarding certificate. Privacy and Terms pages apply.",
       },
       {
         q: "Can I take two courses at the same time?",

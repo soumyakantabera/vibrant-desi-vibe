@@ -303,9 +303,9 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Workplace, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
+            subtitle="Spoken English, Kids & Teens, Workplace, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
-          <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-4">
+          <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -368,7 +368,7 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "6 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
+              { n: 1, lbl: "Choose Course", sub: "8 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
@@ -781,6 +781,11 @@ const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: s
     icon: "bg-[#FFF0ED] text-[#A53D32]",
     badge: "border-coral/35 bg-[#FFF4F1] text-[#8B321F]",
   },
+  play: {
+    bar: "bg-gradient-to-r from-sunshine via-[#F6C453] to-coral",
+    icon: "bg-[#FFF3C4] text-[#6B4A00]",
+    badge: "border-sunshine/50 bg-[#FFF8DE] text-[#6B4A00]",
+  },
 };
 
 function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
@@ -793,9 +798,28 @@ function CategoryCard({ category }: { category: CourseCategory }) {
   const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
   const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
   const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
+  const isKids = "theme" in category && category.theme === "kids";
+  const cta =
+    "cta" in category && category.cta
+      ? category.cta
+      : onlyCourse
+        ? `View ${onlyCourse.title}`
+        : "Explore both programmes";
+  const pill =
+    "badge" in category && category.badge
+      ? category.badge
+      : onlySlug
+        ? "1 programme"
+        : `${category.slugs.length} programmes`;
 
   return (
-    <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
+    <article
+      className={`group min-w-0 overflow-hidden rounded-2xl border bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)] ${
+        isKids
+          ? "border-sunshine/55 hover:border-coral/40"
+          : "border-[#DDE5DF] hover:border-brand/30"
+      }`}
+    >
       <div className="relative aspect-[4/3] overflow-hidden">
         <SmartImage
           src={visual.heroImage}
@@ -807,7 +831,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
         <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur">
-          {onlySlug ? "1 programme" : `${category.slugs.length} programmes`}
+          {pill}
         </span>
       </div>
       <div className={`h-1 ${tone.bar}`} />
@@ -823,6 +847,12 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         </div>
 
         <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink/80">{category.description}</p>
+
+        {isKids && (
+          <p className="mt-2 flex items-center gap-1.5 text-xs font-display font-bold text-brand-deep">
+            <Icon name="shield" size={14} /> Parent on WhatsApp · rooms never mixed
+          </p>
+        )}
 
         {onlyCourse ? (
           <div className="mt-3 flex min-w-0 flex-wrap gap-1.5 text-xs font-display font-bold">
@@ -857,9 +887,13 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         <Link
           to={destination}
           hash={onlySlug ? undefined : category.id}
-          className="mt-3.5 inline-flex min-h-10 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-2 text-center text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
+          className={`mt-3.5 inline-flex min-h-10 w-full max-w-full items-center justify-center gap-1.5 rounded-full px-3 py-2 text-center text-sm font-display font-extrabold leading-tight shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25 ${
+            isKids
+              ? "bg-sunshine text-ink hover:bg-[#F6C453]"
+              : "bg-brand-deep text-white hover:bg-brand"
+          }`}
         >
-          {onlyCourse ? `View ${onlyCourse.title}` : "Explore both programmes"}
+          {cta}
           <Icon name="arrow-right" size={14} />
         </Link>
       </div>

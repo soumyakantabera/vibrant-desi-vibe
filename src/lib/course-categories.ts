@@ -5,10 +5,12 @@ export const COURSE_SLUGS = [
   "ielts",
   "interview-prep",
   "career-counselling",
+  "kids-english",
+  "teen-english",
 ] as const;
 
 export type CourseSlug = (typeof COURSE_SLUGS)[number];
-export type CategoryTone = "brand" | "indigo" | "sun" | "coral";
+export type CategoryTone = "brand" | "indigo" | "sun" | "coral" | "play";
 
 export const COURSE_CATEGORIES = [
   {
@@ -20,6 +22,19 @@ export const COURSE_CATEGORIES = [
     tone: "brand",
     featuredSlug: "spoken-english",
     slugs: ["spoken-english", "interactive-speaking"],
+  },
+  {
+    id: "kids-and-teens",
+    title: "Kids & Teens · from ₹1,499/mo, inclusive of taxes",
+    description:
+      "Kids 6–11 at ₹1,499/mo and Teens 12–17 at ₹1,799/mo, inclusive of taxes. Parent on WhatsApp. Rooms never mixed with adults.",
+    icon: "smile",
+    tone: "play",
+    featuredSlug: "kids-english",
+    slugs: ["kids-english", "teen-english"],
+    theme: "kids",
+    badge: "For parents",
+    cta: "See both classes",
   },
   {
     id: "work-and-career",
@@ -59,6 +74,9 @@ export const COURSE_CATEGORIES = [
   tone: CategoryTone;
   featuredSlug: CourseSlug;
   slugs: readonly CourseSlug[];
+  theme?: "kids";
+  badge?: string;
+  cta?: string;
 }>;
 
 export type CourseCategory = (typeof COURSE_CATEGORIES)[number];
