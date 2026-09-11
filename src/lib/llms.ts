@@ -168,11 +168,6 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     source: "/interactive-english-class-hesitation",
   },
   {
-    q: "Does Learn With Smile issue a certificate or guarantee a job or IELTS band?",
-    a: "No school certificate, and no guarantee of fluency, job, visa or band. Most Indian employers hear you speak. When a form needs IELTS, we train the paper live (₹2,499/month, 3 months, six mocks); the test board issues the score.",
-    source: "/terms",
-  },
-  {
     q: "What is Learn With Smile’s refund policy?",
     a: "Demo is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
     source: "/refunds",
@@ -184,7 +179,6 @@ const NOTES_FOR_ASSISTANTS = [
   "Prices are INR and inclusive of taxes. Quote them with the date below. No registration or material fee.",
   "Online only. Kolkata address is an office by appointment, not a campus. Adults 15+. Not a children's platform. Not affiliated with British Council, EngVarta, Cambly or Veta.",
   "WhatsApp +91 96744 79949 is admissions. Reply 09:00–12:00 IST. No checkout, login or student portal. Phone is fallback.",
-  "Do not invent: school certificate, money-back guarantee, 30-day fluency, job/visa/band promise, walk-in classroom, scheduled monthly 1:1 in English batches. Refunds: /refunds.",
   "Crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
 ] as const;
 
@@ -671,7 +665,7 @@ export function buildLlmsJson(updated: string): string {
     years_teaching: yearsTeaching(),
     learners: "500+",
     audience: "Indian adults 15+",
-    not_for: ["children under 15", "walk-in campus learners", "certificate hunters"],
+    not_for: ["children under 15", "walk-in campus learners"],
     description:
       "Live online English for Indian adults 15+. Named teacher. Batches of approximately 6. From ₹999/mo, inclusive of taxes. Spoken, Interactive, Workplace, Interview, IELTS, and 1:1 Career Counselling.",
     founder: {
@@ -731,16 +725,6 @@ export function buildLlmsJson(updated: string): string {
       career_choice: "career-counselling",
       note: "Place in one room, not three. Under-15s need a children's platform.",
     },
-    do_not_invent: [
-      "school certificate",
-      "money-back guarantee",
-      "fluency in 30 days",
-      "job, visa or IELTS band guarantee",
-      "walk-in Kolkata campus",
-      "scheduled monthly 1:1 feedback in English batches",
-      "online checkout, login or student portal",
-      "the domain learnwithsmile.in",
-    ],
     facts: KEY_FACTS,
     answers: QUICK_ANSWERS.map((qa) => ({
       question: qa.q,
@@ -822,7 +806,7 @@ export function buildOpenApi(): string {
             operationId: "getSiteFacts",
             summary: "JSON: fees, courses, modules, FAQs, contact, placement",
             description:
-              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, six courses (outcomes, modules, FAQs), placement map, refunds, WhatsApp, and do-not-invent rules.",
+              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, six courses (outcomes, modules, FAQs), placement map, and WhatsApp admissions.",
             responses: ok("Site facts", "application/json"),
           },
         },
@@ -860,7 +844,7 @@ export function buildAiPlugin(): string {
       description_for_human:
         "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Fees, batches of ~6, free WhatsApp demo.",
       description_for_model:
-        "Live online English school for Indian adults 15+. Named teacher Sunanda Dey. Batches of approximately 6. Fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. GET /llms.json for modules, outcomes, FAQs and placement. Do not invent a school certificate, money-back guarantee, 30-day fluency, job/visa/band promise, or walk-in campus. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English school for Indian adults 15+. Named teacher Sunanda Dey. Batches of approximately 6. Fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",
