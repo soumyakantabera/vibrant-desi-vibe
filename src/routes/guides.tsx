@@ -73,7 +73,10 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white/95">
             Honest pages for the questions people actually ask before they message WhatsApp.
-            From ₹999/mo, inclusive of taxes. Batches of around 6.
+            Fees, which class you need, beginners, IT, freshers, homemakers, IELTS costs,
+            online vs a city classroom, and live batches in Mumbai, Delhi, Bengaluru, Pune,
+            Hyderabad, Chennai, Ahmedabad and Kolkata. From ₹999/mo, inclusive of taxes.
+            Batches of around 6.
           </p>
         </div>
       </section>

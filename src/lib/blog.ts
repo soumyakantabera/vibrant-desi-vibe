@@ -67,8 +67,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-11",
-    readingTime: 8,
-    wordCount: 980,
+    readingTime: 6,
+    wordCount: 579,
     relatedCourses: ["/course-spoken-english"],
     shortAnswer:
       "Ask seven things: batch cap, speaking minutes, GST, named teacher, a real demo, review patterns, and whether you need a certificate or a voice. Run them on us too.",
@@ -110,8 +110,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-11",
-    readingTime: 6,
-    wordCount: 820,
+    readingTime: 5,
+    wordCount: 524,
     relatedCourses: ["/course-spoken-english", "/course-ielts"],
     shortAnswer:
       "Cannot hold a call → Spoken English. Freeze with the words you already have → Interactive. Meetings and clients → Workplace. Visa or university form → IELTS. Do not buy Band 7 coaching when you still cannot finish a sentence.",
@@ -139,8 +139,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-11",
-    readingTime: 7,
-    wordCount: 920,
+    readingTime: 6,
+    wordCount: 578,
     relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
     shortAnswer:
       "Your mic in 60 minutes is roughly (40 minutes) ÷ headcount. Around 6 learners → 8–10 minutes. A room of 30 → 1–2 minutes. Months on a brochure are not speaking minutes.",
