@@ -1,21 +1,13 @@
 /**
- * Search-engine ownership tags only. Learn With Smile intentionally loads no
- * analytics, tracking pixel, click listener or campaign-attribution script.
+ * Search-engine ownership is already proven via DNS TXT records on
+ * learnwithsmile.app (Google Search Console + Bing Webmaster). No HTML
+ * `google-site-verification` / `msvalidate.01` tags are emitted — those
+ * would only duplicate DNS, and this site loads no analytics pixel either.
+ *
+ * IndexNow still notifies Bing of URL changes on every deploy
+ * (`public/learnwithsmile-indexnow-2026.txt`).
  */
 
-/** `content` value of the google-site-verification meta tag. */
-export const GOOGLE_SITE_VERIFICATION = "";
-
-/** `content` value of the msvalidate.01 meta tag. */
-export const BING_SITE_VERIFICATION = "";
-
 export function verificationMeta(): Array<Record<string, string>> {
-  const meta: Array<Record<string, string>> = [];
-  if (GOOGLE_SITE_VERIFICATION) {
-    meta.push({ name: "google-site-verification", content: GOOGLE_SITE_VERIFICATION });
-  }
-  if (BING_SITE_VERIFICATION) {
-    meta.push({ name: "msvalidate.01", content: BING_SITE_VERIFICATION });
-  }
-  return meta;
+  return [];
 }
