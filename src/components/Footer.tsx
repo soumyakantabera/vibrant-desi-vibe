@@ -164,16 +164,22 @@ export function Footer({ image }: { image?: string }) {
                 />
               </span>
             ))}
-            <span className="inline-flex h-7 items-center rounded bg-white px-1.5">
+            <a
+              href="https://letsencrypt.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-7 items-center rounded bg-white px-1.5"
+              aria-label="Secured with Let's Encrypt SSL"
+            >
               <img
-                src={withBasePath("/payments/ssl-secured.svg")}
-                alt="SSL Secured"
-                width={108}
-                height={28}
+                src={withBasePath("/payments/letsencrypt.svg")}
+                alt="Let's Encrypt"
+                width={339}
+                height={81}
                 className="h-5 w-auto"
                 decoding="async"
               />
-            </span>
+            </a>
           </div>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
