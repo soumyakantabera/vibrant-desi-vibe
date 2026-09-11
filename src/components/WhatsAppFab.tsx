@@ -19,9 +19,10 @@ export function WhatsAppFab({
         className="fixed bottom-5 right-5 z-50 hidden sm:block"
         data-cta-location="fab"
       >
-        {/* Official WhatsApp app icon: green bubble, white phone, mint ring. */}
-        <span className="relative flex items-center justify-center overflow-hidden rounded-full bg-[#25D366] shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-[3px] ring-[#DCF8C6]">
-          <BrandIcon name="whatsapp" size={64} className="md:!h-[68px] md:!w-[68px]" />
+        {/* Official WhatsApp mark: green glyph on white so the bubble
+            cut-out punches through to white (app-icon look). */}
+        <span className="relative flex items-center justify-center overflow-hidden rounded-full bg-white shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-4 ring-[#25D366]/30">
+          <BrandIcon name="whatsapp" size={58} className="md:!h-[62px] md:!w-[62px]" />
         </span>
       </a>
 

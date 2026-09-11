@@ -120,8 +120,6 @@
   html { scroll-behavior: smooth; -webkit-tap-highlight-color: rgba(14, 124, 90, 0.18); }
   a { color: inherit; }
   a:link, a:visited, a:hover, a:active, a:focus { color: inherit; }
-  button:not(:disabled),
-  [role="button"]:not(:disabled) { cursor: pointer; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -363,9 +361,8 @@ section > .container-x { position: relative; z-index: 10; }
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
-  /* WhatsApp brand: bright green fill + deep-green type, like the original
-     site. Hover stays in the WhatsApp family (#1EBE5B) with the same deep
-     type — never white, never forest-brand green. */
+  /* WhatsApp brand: bright green fill + deep-green type.
+     Hover stays in the WhatsApp family. No extra outline. */
   .btn-wa,
   .btn-wa:link,
   .btn-wa:visited,
@@ -422,8 +419,7 @@ section > .container-x { position: relative; z-index: 10; }
 }
 
 /* Unlayered lock: contrast safety-net lives outside @layer and would otherwise
-   bleach Chat on WhatsApp to white-on-forest on dark heroes. Keep the original
-   pair — bright WhatsApp green fill + deep green type — on every surface. */
+   bleach Chat on WhatsApp on dark heroes. Bright WhatsApp green + deep type. */
 a.btn.btn-wa,
 a.btn.btn-wa:link,
 a.btn.btn-wa:visited,
@@ -446,37 +442,17 @@ button.btn.btn-wa:active {
 }
 a.btn.btn-wa span,
 a.btn.btn-wa strong,
-button.btn.btn-wa span {
+a.btn.btn-wa svg,
+button.btn.btn-wa span,
+button.btn.btn-wa svg {
   color: #053b1e !important;
   -webkit-text-fill-color: #053b1e !important;
+  fill: #053b1e;
 }
 
-/* Official WhatsApp mark is two-color. Never flatten it to the button's
-   deep-green type color — that painted a solid blob over the white phone. */
-a.btn.btn-wa svg[data-brand="whatsapp"],
-button.btn.btn-wa svg[data-brand="whatsapp"] {
-  fill: none !important;
-  color: unset !important;
-  -webkit-text-fill-color: unset !important;
-}
-a.btn.btn-wa svg[data-brand="whatsapp"] .wa-bubble,
-button.btn.btn-wa svg[data-brand="whatsapp"] .wa-bubble {
-  fill: #25D366 !important;
-}
-a.btn.btn-wa svg[data-brand="whatsapp"] .wa-phone,
-button.btn.btn-wa svg[data-brand="whatsapp"] .wa-phone {
-  fill: #ffffff !important;
-}
-
-/* Floating mark: official green bubble + white phone, mint ring. */
-[data-cta-location="fab"] svg[data-brand="whatsapp"] {
-  fill: none !important;
-}
-[data-cta-location="fab"] svg[data-brand="whatsapp"] .wa-bubble {
-  fill: #25D366 !important;
-}
-[data-cta-location="fab"] svg[data-brand="whatsapp"] .wa-phone {
-  fill: #ffffff !important;
+/* Floating WhatsApp mark: official simple-icons glyph on a white disc. */
+[data-cta-location="fab"] svg {
+  fill: #25D366;
 }
 
 /* Custom animations */
