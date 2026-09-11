@@ -365,7 +365,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     },
     {
       t: "p",
-      text: `Children under 14 need a children's platform, not an adult batch of 6. We will say so on WhatsApp.`,
+      text: `Ages 6–11 and 12–17 have separate live rooms — [Kids English](/course-kids-english) and [Teens](/course-teen-english). This ${city.name} page is the adult Spoken room (15+), from ₹999/mo.`,
     },
     { t: "h2", text: "What we do not claim" },
     {

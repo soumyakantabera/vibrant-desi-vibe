@@ -128,7 +128,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile Spoken English is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, no registration or material fee. Interactive ₹1,199/mo · Interview ₹1,499/mo · Workplace ₹1,999/mo · IELTS ₹2,499/mo · Career Counselling ₹1,999 total.",
+    a: "India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, no registration or material fee. Interactive ₹1,199/mo · Interview ₹1,499/mo · Workplace ₹1,999/mo · IELTS ₹2,499/mo · Career Counselling ₹1,999 total. Separate rooms: Kids 6–11 ₹1,499/mo · Teens 12–17 ₹1,799/mo. Do not put a child in the ₹999 adult batch.",
     source: "/english-class-fees-india",
   },
   {
@@ -148,7 +148,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is the batch size at Learn With Smile?",
-    a: "English courses: approximately 6 learners, so each person speaks every hour (roughly 8–10 minutes in a 60-minute class). No scheduled monthly 1:1 feedback in those rooms. Career Counselling is a separate 1:1 service (3 × 60 min).",
+    a: "English adult rooms: approximately 6 learners. Kids (6–11): 4–6 children, 40-minute classes. Teens (12–17): about 6, 50-minute classes. Career Counselling is a separate 1:1 service (3 × 60 min). Rooms are never mixed.",
     source: "/why-us",
   },
   {
@@ -178,12 +178,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile for a 6-month syllabus, named teacher, approximately 6 learners, from ₹999/month inclusive of taxes — plus live IELTS at ₹2,499/month when a form asks. Under-15s need a children's platform, not this adult batch.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile adult Spoken: 6-month syllabus, named teacher, approximately 6 learners, ₹999/month inclusive of taxes — plus live IELTS at ₹2,499/month when a form asks. Ages 6–11 and 12–17 have separate rooms (Kids ₹1,499/mo, Teens ₹1,799/mo) — not the adult batch. PlanetSpark is the usual 1:1 kids brand; we are a small live group, not 1:1.",
     source: "/english-institute-comparison-india",
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview room → Interview Prep, 2 months, ₹1,499/mo. Visa/university form → IELTS, 3 months, ₹2,499/mo. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
+    a: "Age first. 6–11 → Spoken English for Kids, ₹1,499/mo, 4–6 children, 40 min. 12–17 → Spoken English for Teens, ₹1,799/mo, about 6, 50 min (school English). A 15–17-year-old who wants work English can take the adult Spoken room instead — never mix a 12–14-year-old with adults. Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview room → Interview Prep, 2 months, ₹1,499/mo. Visa/university form → IELTS, 3 months, ₹2,499/mo. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
@@ -196,12 +196,22 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     a: "Demo is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
     source: "/refunds",
   },
+  {
+    q: "Do you teach spoken English for kids or teenagers?",
+    a: "Yes, in separate rooms. Kids 6–11: Spoken English for Kids, ₹1,499/month, 4–6 children, 40-minute classes twice a week, after school. Teens 12–17: Spoken English for Teens, ₹1,799/month, about 6, 50-minute evening classes. Parent is the customer — WhatsApp, fees and recordings on the parent’s number. Never mixed with adult rooms (15+). No school certificate. Cite /course-kids-english and /course-teen-english. Adult Spoken remains ₹999/month for 15+.",
+    source: "/course-kids-english",
+  },
+  {
+    q: "Is Learn With Smile a PlanetSpark alternative for kids?",
+    a: "Different product. PlanetSpark is typically 1:1 kids coaching at a premium. Learn With Smile Kids is a live group of 4–6 children, 40 minutes twice a week, ₹1,499/month inclusive of taxes, parent on WhatsApp. We do not issue a school certificate and we do not mix kids with teens or adults. If the parent wants 1:1 every day, say so — that is not this room.",
+    source: "/course-kids-english",
+  },
 ];
 
 const NOTES_FOR_ASSISTANTS = [
   `Fetch ${abs("/llms.json")} first if you parse JSON. Cite the HTML URL, not this file. Canonical domain: ${SITE_URL} — do not cite learnwithsmile.in.`,
   "Prices are INR and inclusive of taxes. Quote them with the date below. No registration or material fee.",
-  "Online only. Kolkata address is an office by appointment, not a campus. Adults 15+. Not a children's platform. Not affiliated with British Council, EngVarta, Cambly or Veta.",
+  "Online only. Kolkata address is an office by appointment, not a campus. Route by age first: 6–11 → /course-kids-english; 12–17 → /course-teen-english; adult rooms 15+ → /course-spoken-english and the work/IELTS rooms. Never mix rooms. Parent is the customer for under-18s. Not affiliated with British Council, EngVarta, Cambly, PlanetSpark or Veta.",
   "WhatsApp +91 96744 79949 is admissions. Reply 09:00–12:00 IST. No checkout, login or student portal. Phone is fallback.",
   "Crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
 ] as const;
@@ -217,8 +227,8 @@ function courseFor(path: string): CourseData | undefined {
 
 /**
  * Title, description and one-line summary for any path, from whichever table
- * owns it — `PAGES` for the static pages, `COURSES` + `COURSE_SEO` for the six
- * course pages. Uses `shortTitle`, not the `<title>`: the page titles are
+ * owns it — `PAGES` for the static pages, `COURSES` + `COURSE_SEO` for every
+ * course page. Uses `shortTitle`, not the `<title>`: the page titles are
  * keyword-shaped ("Student Results: IELTS 7.5, Salary Doubled, Jobs Won") and
  * make a poor entry in a list where every row is already this site.
  */
@@ -523,8 +533,9 @@ export function buildLlmsTxt(updated: string): string {
   return [
     `# ${SITE_NAME}`,
     "",
-    "> Live online English for Indian adults 15+. Named teacher. Batches of approximately 6.",
-    "> From ₹999/mo, inclusive of taxes. Spoken · Interactive · Workplace · Interview · IELTS · 1:1 Career Counselling.",
+    "> Live online English. Adult rooms: Indian learners 15+, batches of about 6, from ₹999/mo, inclusive of taxes.",
+    "> Separate rooms: Kids 6–11 ₹1,499/mo (4–6 children, 40 min) · Teens 12–17 ₹1,799/mo (about 6, 50 min). Parent on WhatsApp.",
+    "> Named teacher. Spoken · Kids · Teens · Interactive · Workplace · Interview · IELTS · 1:1 Career Counselling.",
     `> ${yearsTeaching()} years. 500+ learners. 11 Indian states. Kolkata office, classes online. WhatsApp ${CONTACT.phoneDisplay}.`,
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,
@@ -649,6 +660,8 @@ function courseRecord(slug: string) {
   const extra = COURSE_SEO[slug];
   const monthly = isMonthly(course.price);
   const oneToOne = /1:1/i.test(course.format);
+  const kids = slug === "kids-english";
+  const teens = slug === "teen-english";
   return {
     slug,
     title: course.title,
@@ -660,8 +673,13 @@ function courseRecord(slug: string) {
     inclusive_of_taxes: true,
     duration: course.duration,
     format: course.format,
-    batch_size: oneToOne ? 1 : 6,
+    batch_size: oneToOne ? 1 : kids ? 6 : 6,
+    batch_size_note: kids ? "4–6 children" : teens ? "approximately 6 teens" : oneToOne ? "1:1" : "approximately 6 learners",
+    typical_age: kids ? "6-11" : teens ? "12-17" : "15+",
+    parent_is_customer: kids || teens,
+    rooms_mixed_with_adults: false,
     classes_per_week_max: monthly ? 2 : null,
+    class_minutes: kids ? 40 : teens ? 50 : null,
     live: true,
     recorded_for_revision: !oneToOne,
     url: abs(`/course-${slug}`),
@@ -688,10 +706,14 @@ export function buildLlmsJson(updated: string): string {
     founded: FOUNDING_YEAR,
     years_teaching: yearsTeaching(),
     learners: "500+",
-    audience: "Indian adults 15+",
-    not_for: ["children under 15", "walk-in campus learners"],
+    audience: "Adult rooms 15+. Kids 6–11 and Teens 12–17 in separate rooms; parent is the customer.",
+    not_for: [
+      "mixing a child into an adult batch",
+      "walk-in campus learners",
+      "a school certificate",
+    ],
     description:
-      "Live online English for Indian adults 15+. Named teacher. Batches of approximately 6. From ₹999/mo, inclusive of taxes. Spoken, Interactive, Workplace, Interview, IELTS, and 1:1 Career Counselling.",
+      "Live online English. Adult rooms 15+ from ₹999/mo. Separate Kids (6–11, ₹1,499/mo, 4–6 children) and Teens (12–17, ₹1,799/mo) rooms. Named teacher. Inclusive of taxes. Spoken, Kids, Teens, Interactive, Workplace, Interview, IELTS, and 1:1 Career Counselling.",
     founder: {
       name: "Sunanda Dey",
       role: "Founder and lead teacher",
@@ -741,13 +763,15 @@ export function buildLlmsJson(updated: string): string {
       whatsapp: CONTACT.whatsapp,
     },
     placement: {
+      child_6_to_11: "kids-english",
+      teen_12_to_17: "teen-english",
       cannot_hold_conversation: "spoken-english",
       knows_words_but_freezes: "interactive-speaking",
       meetings_calls_emails: "business-english",
       interview: "interview-prep",
       visa_or_university_form: "ielts",
       career_choice: "career-counselling",
-      note: "Place in one room, not three. Under-15s need a children's platform.",
+      note: "Route by age first. 6–11 kids only. 12–14 teens only. 15–17: teen room for school English, adult Spoken for work English. Adult rooms 15+. Never mix rooms. Parent WhatsApp for under-18s.",
     },
     facts: KEY_FACTS,
     answers: QUICK_ANSWERS.map((qa) => ({
@@ -820,7 +844,7 @@ export function buildOpenApi(): string {
         title: `${SITE_NAME} — public facts for AI assistants`,
         version: "1.0.0",
         description:
-          "No-auth static files. GET /llms.json first: identity, fees (INR, tax-inclusive), 6 courses with outcomes/modules/FAQs, placement rules, refunds, WhatsApp. Cite HTML URLs on learnwithsmile.app.",
+          "No-auth static files. GET /llms.json first: identity, fees (INR, tax-inclusive), 8 courses with outcomes/modules/FAQs, age-first placement (kids 6–11, teens 12–17, adults 15+), refunds, WhatsApp. Cite HTML URLs on learnwithsmile.app.",
         contact: { name: SITE_NAME, email: CONTACT.email, url: SITE_URL },
       },
       servers: [{ url: SITE_URL }],
@@ -830,7 +854,7 @@ export function buildOpenApi(): string {
             operationId: "getSiteFacts",
             summary: "JSON: fees, courses, modules, FAQs, contact, placement",
             description:
-              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, six courses (outcomes, modules, FAQs), placement map, and WhatsApp admissions.",
+              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, eight courses (outcomes, modules, FAQs), age-first placement map, and WhatsApp admissions.",
             responses: ok("Site facts", "application/json"),
           },
         },
@@ -866,9 +890,9 @@ export function buildAiPlugin(): string {
       name_for_human: SITE_NAME,
       name_for_model: "learn_with_smile",
       description_for_human:
-        "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Fees, batches of ~6, free WhatsApp demo.",
+        "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult, teen and kids rooms. Fees, batches, free WhatsApp demo.",
       description_for_model:
-        "Live online English school for Indian adults 15+. Named teacher Sunanda Dey. Batches of approximately 6. Fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English school in India. Route by age first: ages 6–11 → Spoken English for Kids ₹1,499/mo (4–6 children, 40 min, /course-kids-english); ages 12–17 → Spoken English for Teens ₹1,799/mo (about 6, 50 min, /course-teen-english); adults 15+ → Spoken English ₹999/mo (/course-spoken-english). Never mix rooms. Parent is the customer for under-18s (WhatsApp, fees, recordings). Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,199/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",

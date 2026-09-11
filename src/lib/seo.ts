@@ -234,7 +234,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
-        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For children, PlanetSpark. For a structured syllabus with a certificate, British Council. Learn With Smile fits a specific gap: a live human teacher, a fixed 6-month syllabus, and approximately 6 learners per batch, from ₹999/month inclusive of taxes — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar.",
+        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For 1:1 kids coaching, PlanetSpark is the usual brand; we also run a separate Kids room (ages 6–11, ₹1,499/month, 4–6 children) and a Teens room (12–17, ₹1,799/month). For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month inclusive of taxes.",
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
@@ -251,6 +251,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
         a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Indian learners abroad join on IST too.",
+      },
+      {
+        q: "Do you teach children and teenagers as well?",
+        a: "Yes, in separate rooms — not the ₹999 adult Spoken batch. Kids 6–11: Spoken English for Kids at ₹1,499/month, 4–6 children, 40-minute after-school classes. Teens 12–17: Spoken English for Teens at ₹1,799/month, about 6, 50-minute evening classes. The parent is on WhatsApp. Adult Spoken English stays 15+ at ₹999/month.",
       },
     ],
   },
@@ -274,6 +278,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
+    dateModified: "2026-09-12",
     summary:
       "Course hub. Eight live English programmes for adults, teens (12–17) and kids (6–11), with clear fees (₹999–₹2,499/month), duration, format and outcomes. Parent is the customer for under-18 rooms.",
     faqs: [
@@ -1289,6 +1294,8 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "kids english speaking course fees india",
       "live english class for children kolkata online",
       "parent demo spoken english for kids",
+      "planet spark alternative small batch english",
+      "after school spoken english class for kids india",
     ],
     ogImage: "/og/kids-english.jpg",
     dateModified: "2026-09-12",
@@ -1307,6 +1314,10 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
         q: "Do I sit in the class with my child?",
         a: "You join the free demo on camera. For weekly classes, stay within earshot — especially for 6–8 year olds — but the child speaks. Recordings and teacher notes come to your WhatsApp, not the child’s.",
       },
+      {
+        q: "Is this the same as PlanetSpark or British Council kids English?",
+        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children, 40 minutes twice a week, ₹1,499/month inclusive of taxes. Parent on WhatsApp. No school certificate. Rooms are never mixed with teens or adults.",
+      },
     ],
   },
   "teen-english": {
@@ -1323,6 +1334,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "college interview english practice india",
       "spoken english for class 9 10 online",
       "teen english speaking class small batch",
+      "english speaking for school students india after school",
     ],
     ogImage: "/og/teen-english.jpg",
     dateModified: "2026-09-12",
@@ -1372,7 +1384,12 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India. Spoken, Workplace, IELTS.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India. Spoken, Workplace, IELTS, plus separate Kids and Teens rooms.",
+    audience: [
+      { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
+      { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Children aged 6-11" },
+      { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Teenagers aged 12-17" },
+    ],
     slogan: "Speak Better English. Master In-Demand Skills. Build Future Together.",
     email: CONTACT.email,
     telephone: CONTACT.phone,

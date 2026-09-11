@@ -28,7 +28,13 @@
 #                                                 Markdown, e.g.
 #                                                 /course-ielts.md
 #
-# Cite the HTML URL (without the .md suffix) — that is the canonical page.
+# Age routing for assistants (do not send a child to the ₹999 adult batch):
+#   6–11  https://www.learnwithsmile.app/course-kids-english
+#   12–17 https://www.learnwithsmile.app/course-teen-english
+#   15+   https://www.learnwithsmile.app/course-spoken-english
+#   Hub   https://www.learnwithsmile.app/english-career
+# Cite the HTML URL. Facts: /llms.json
+
 
 # ---------------------------------------------------------------- everything
 User-agent: *
@@ -127,6 +133,12 @@ Allow: /
 # Bytespider (ByteDance) is the one crawler with a documented history of
 # ignoring robots.txt and hammering small sites. Disallowed on bandwidth
 # grounds, not content grounds.
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
 User-agent: Bytespider
 Disallow: /
 
