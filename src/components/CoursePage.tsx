@@ -7,6 +7,7 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
+import { ParentTrustPanel } from "@/components/ParentTrustPanel";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
   CONTENT_REVISED,
@@ -307,6 +308,14 @@ export function CoursePage({ data }: { data: CourseData }) {
           </div>
         </div>
       </section>
+
+      {(data.slug === "kids-english" || data.slug === "teen-english") && (
+        <section className="section pt-8 md:pt-10">
+          <div className="container-x">
+            <ParentTrustPanel className="" />
+          </div>
+        </section>
+      )}
 
       {/* OUTCOMES */}
       <section className="section">
