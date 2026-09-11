@@ -50,8 +50,8 @@ export const body: ArticleBody = [
         "Dedicated exam prep with individually marked writing; test the approach with the free [Band 7 writing template](/blog/band-7-writing-4-paragraph-template)",
       ],
       [
-        "A parent looking for a child under 14",
-        "A children's platform. Genuinely a different profession.",
+        "A parent looking for a child 6–11 or a teen 12–17",
+        "Our Kids or Teens room (small live group), or a 1:1 kids brand. Not the adult ₹999 batch.",
       ],
       [
         "Someone who needs a certificate for a visa or HR",

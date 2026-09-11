@@ -30,7 +30,7 @@ export const body: ArticleBody = [
       ["₹8k–₹16k per module, CEFR levels", "British Council English Online — buy for the badge"],
       ["₹100–₹400 per 1:1, no syllabus", "EngVarta-style daily practice"],
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
-      ["Parent app, games, under-14", "PlanetSpark-style. Do not put a child in an adult batch."],
+      ["Parent app, games, under-14", "PlanetSpark-style 1:1 — or our Kids/Teens rooms. Never the adult batch."],
       [
         "₹999/mo, approximately 6 learners, inclusive of taxes",
         "Us. 7 years, 500+ learners, 11 states.",

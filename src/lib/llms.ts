@@ -192,6 +192,16 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     source: "/interactive-english-class-hesitation",
   },
   {
+    q: "Do you have workplace or business English classes?",
+    a: "Yes. Workplace English: 3 months, ₹1,999/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. Interview Prep is a separate 2-month room at ₹1,499/month. Kids and teens have their own rooms.",
+    source: "/course-business-english",
+  },
+  {
+    q: "Do you have interview preparation in English?",
+    a: "Yes. Interview Preparation: 2 months, ₹1,499/month, approximately 6 learners, adults 15+. HR screens, tell-me-about-yourself, and the chair. Cite /course-interview-prep. Not the Kids or Teens room.",
+    source: "/course-interview-prep",
+  },
+  {
     q: "What is Learn With Smile’s refund policy?",
     a: "Demo is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
     source: "/refunds",

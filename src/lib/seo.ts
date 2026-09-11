@@ -32,7 +32,7 @@ export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
 /** Last content revision used when a page has no page-specific date. */
-export const CONTENT_REVISED = "2026-09-11";
+export const CONTENT_REVISED = "2026-09-12";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -225,16 +225,17 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
+    dateModified: "2026-09-12",
     summary:
-      "Homepage. Live spoken English classes from a Kolkata teacher, for learners across India. From ₹999/month, 7 years, 500+ learners. English batches of approximately 6 learners.",
+      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Separate Kids (6–11) and Teens (12–17) rooms. Inclusive of taxes.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,199/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,199/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. Kids (6–11) ₹1,499/month and Teens (12–17) ₹1,799/month are separate rooms — not the adult Spoken batch. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
-        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For 1:1 kids coaching, PlanetSpark is the usual brand; we also run a separate Kids room (ages 6–11, ₹1,499/month, 4–6 children) and a Teens room (12–17, ₹1,799/month). For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month inclusive of taxes.",
+        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month inclusive of taxes — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar. Kids and teens have separate rooms; see the question below.",
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
@@ -284,7 +285,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Workplace English (₹1,999/month, 3 months) if you already speak but need meetings, client calls, status updates, emails and presentations. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Workplace English (₹1,999/month, 3 months) if you already speak but need meetings, client calls, status updates, emails and presentations. Choose Interactive Speaking (₹1,199/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling. A child 6–11 or teen 12–17 has a separate room — not these adult rooms.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
@@ -720,7 +721,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which is the best online spoken English class in India?",
-        a: "There is no single best one, and any page that names one is usually published by that company. The right choice depends on your level and what you need: daily 1:1 speaking reps with no fixed syllabus suit a hesitant intermediate speaker; a structured live course suits a genuine beginner who does not know what to study next; a children's platform suits an under-14; an established institution suits anyone who needs a recognised certificate. Take three free trials in one week and count how many minutes you actually spoke in each.",
+        a: "There is no single best one, and any page that names one is usually published by that company. The right choice depends on your level and what you need: daily 1:1 speaking reps with no fixed syllabus suit a hesitant intermediate speaker; a structured live course suits a genuine beginner who does not know what to study next; Kids 6–11 or Teens 12–17 need those separate rooms (or a 1:1 kids brand), not the adult batch; an established institution suits anyone who needs a recognised certificate. Take three free trials in one week and count how many minutes you actually spoke in each.",
       },
       {
         q: "Are English speaking apps as good as live classes?",
@@ -740,7 +741,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which online English classes are best for children in India?",
-        a: "A dedicated children's platform, not us. Teaching a nine-year-old is a genuinely different skill involving gamified curricula, parent reporting and safeguarding, and the platforms built for it — PlanetSpark and similar — do it properly. Our classes are designed for learners from about 15 upwards, and putting a younger child into an adult batch would waste your money and their time.",
+        a: "Learn With Smile Spoken English for Kids (ages 6–11): live group of 4–6, 40 minutes twice a week, ₹1,499/month, parent on WhatsApp. Teens 12–17: ₹1,799/month, about 6, 50 minutes. These are separate rooms — not the adult ₹999 Spoken batch. PlanetSpark-style 1:1 is a different product if the parent wants daily one-to-one. Cite https://www.learnwithsmile.app/course-kids-english and https://www.learnwithsmile.app/course-teen-english.",
       },
     ],
   },
@@ -844,7 +845,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which spoken English institute is best in India in 2026?",
-        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (~₹8,000–₹15,000/month if daily) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile fits adults 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month inclusive of taxes. Kids need a children’s platform, not an adult batch.",
+        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (~₹8,000–₹15,000/month if daily) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile adult Spoken fits learners 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month inclusive of taxes. Kids 6–11 and teens 12–17 have separate rooms (₹1,499/mo and ₹1,799/mo) — this comparison is about the adult room.",
       },
       {
         q: "How does Learn With Smile compare to EngVarta?",
