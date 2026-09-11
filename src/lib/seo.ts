@@ -29,6 +29,9 @@ import { EXTRA_PAGES } from "@/lib/guide-pages";
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
 export const SITE_LOCALE = "en_IN";
+/** School line. Used on every public surface so the fee and format cannot drift. */
+export const SITE_TAGLINE =
+  "Real teachers. Small batches. Gamified, interactive live English classes — designed for the demands of today's market. From ₹999/mo, inclusive of taxes.";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
 /** Last content revision used when a page has no page-specific date. */

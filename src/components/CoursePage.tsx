@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
-import { SectionHeader, WaButton } from "@/components/ui-bits";
+import { SectionHeader, WaButton, SiteTagline } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
@@ -250,6 +250,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               </h1>
             </div>
             <p className="mt-4 text-lg text-white max-w-2xl">{data.tagline}</p>
+            <SiteTagline className="mt-2 text-base text-white/90 max-w-2xl" />
             {teacherNote && <p className="mt-2 text-base text-white/90">{teacherNote}</p>}
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">

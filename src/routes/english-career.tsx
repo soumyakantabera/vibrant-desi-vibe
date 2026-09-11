@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
-import { SectionHeader, WaButton } from "@/components/ui-bits";
+import { SectionHeader, WaButton, SiteTagline } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { COURSES } from "@/lib/courses";
@@ -64,7 +64,8 @@ function Page() {
             <h1 className="mt-4 text-3xl md:text-6xl text-cream leading-[1.05]">
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
-            <p className="mt-5 text-base md:text-lg text-white">
+            <SiteTagline highlightPrice className="mt-5 text-base md:text-lg text-white" />
+            <p className="mt-3 text-base md:text-lg text-white">
               Eight live rooms. Spoken, Kids (6–11), Teens (12–17), Workplace, IELTS, Interview,
               Interactive Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes. No
               registration fee.

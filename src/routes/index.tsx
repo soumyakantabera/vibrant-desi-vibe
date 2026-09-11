@@ -9,6 +9,7 @@ import {
   MottoBand,
   GuidesStrip,
   CoverageStrip,
+  SiteTagline,
 } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
@@ -145,11 +146,10 @@ function Home() {
               <br />
               Build Future Together.
             </h1>
-            <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Real teachers. Small batches. Gamified, interactive live English classes — designed
-              for the demands of today's market. From{" "}
-              <strong className="text-sunshine">₹999/mo</strong>, inclusive of taxes.
-            </p>
+            <SiteTagline
+              highlightPrice
+              className="mt-3 max-w-xl text-base text-white md:text-lg"
+            />
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
               data-cta-location="hero"
