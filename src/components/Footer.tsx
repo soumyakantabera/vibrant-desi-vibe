@@ -3,8 +3,8 @@ import { Logo } from "./Logo";
 import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { SmartImage } from "./SmartImage";
+import { PaymentTrust } from "./PaymentTrust";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
-import { withBasePath } from "@/lib/site-path";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -49,17 +49,6 @@ const GUIDES = [
 
 const IMG =
   "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=900&auto=format&fit=crop&q=80";
-
-/** Official marks: Razorpay, NPCI UPI/RuPay, Visa, Mastercard, Google Pay, PhonePe, Paytm. */
-const PAY_METHODS: { src: string; alt: string; height: string }[] = [
-  { src: "/payments/upi.svg", alt: "UPI", height: "h-4" },
-  { src: "/payments/google-pay.svg", alt: "Google Pay", height: "h-3.5" },
-  { src: "/payments/phonepe.svg", alt: "PhonePe", height: "h-4" },
-  { src: "/payments/paytm.svg", alt: "Paytm", height: "h-3.5" },
-  { src: "/payments/visa.svg", alt: "Visa", height: "h-3" },
-  { src: "/payments/mastercard.svg", alt: "Mastercard", height: "h-5" },
-  { src: "/payments/rupay.svg", alt: "RuPay", height: "h-3.5" },
-];
 
 export function Footer({ image }: { image?: string }) {
   const wa = waLink("Hi, I am interested in Learn With Smile. Please share the details.");
@@ -131,56 +120,7 @@ export function Footer({ image }: { image?: string }) {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-cream/15">
-          <p className="text-[11px] uppercase tracking-[0.16em] font-display font-bold text-white/70 mb-3">
-            Secured payments
-          </p>
-          <div className="flex flex-wrap items-center gap-1.5">
-            <a
-              href="https://razorpay.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Secured by Razorpay"
-              className="shrink-0"
-            >
-              <img
-                src={withBasePath("/payments/razorpay-secured.png")}
-                alt="Razorpay"
-                width={80}
-                height={32}
-                className="h-8 w-auto"
-                decoding="async"
-              />
-            </a>
-            {PAY_METHODS.map((m) => (
-              <span
-                key={m.alt}
-                className="inline-flex h-7 items-center rounded bg-white px-1.5"
-              >
-                <img
-                  src={withBasePath(m.src)}
-                  alt={m.alt}
-                  className={`${m.height} w-auto max-w-[4.75rem] object-contain`}
-                  decoding="async"
-                />
-              </span>
-            ))}
-            <a
-              href="https://letsencrypt.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-7 items-center rounded bg-white px-1.5"
-              aria-label="Secured with Let's Encrypt SSL"
-            >
-              <img
-                src={withBasePath("/payments/letsencrypt.svg")}
-                alt="Let's Encrypt"
-                width={339}
-                height={81}
-                className="h-5 w-auto"
-                decoding="async"
-              />
-            </a>
-          </div>
+          <PaymentTrust tone="dark" />
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
           <div className="space-y-1">

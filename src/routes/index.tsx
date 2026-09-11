@@ -16,6 +16,7 @@ import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { PaymentTrust } from "@/components/PaymentTrust";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import {
@@ -171,6 +172,7 @@ function Home() {
                 <Icon name="spark" size={18} /> {DEMO_CTA}
               </WaButton>
             </div>
+            <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 09:00–12:00 IST.
             </p>
@@ -366,12 +368,7 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              {
-                n: 1,
-                lbl: "Choose Course",
-                sub: "6 programmes · from ₹999/mo, inclusive of taxes",
-                c: "sunshine",
-              },
+              { n: 1, lbl: "Choose Course", sub: "6 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
@@ -396,11 +393,7 @@ function Home() {
             ))}
           </Reveal>
           <div className="text-center mt-10">
-            <WaButton
-              message="Hi, I am interested in a free demo. Please guide me."
-              variant="sun"
-              size="lg"
-            >
+            <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg">
               {DEMO_CTA}
             </WaButton>
           </div>
@@ -557,9 +550,7 @@ function Home() {
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
                 ₹1,999<span className="text-base font-bold text-ink/75">/month</span>
               </p>
-              <p className="mt-1 text-sm text-ink/75">
-                Inclusive of taxes · 3 months · up to 2 classes/week
-              </p>
+              <p className="mt-1 text-sm text-ink/75">Inclusive of taxes · 3 months · up to 2 classes/week</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
@@ -602,7 +593,9 @@ function Home() {
             </article>
           </Reveal>
           <div className="mt-7 text-center">
-            <p className="text-sm text-ink/75">All prices are in INR and inclusive of taxes.</p>
+            <p className="text-sm text-ink/75">
+              All prices are in INR and inclusive of taxes.
+            </p>
             <div className="mt-3">
               <WaButton
                 message="Hi, please send me the exact pricing and next available demo slot for my course."
@@ -612,6 +605,7 @@ function Home() {
                 {CHAT_CTA}
               </WaButton>
             </div>
+            <PaymentTrust tone="light" align="center" className="mt-5" />
           </div>
         </div>
       </section>
@@ -660,15 +654,14 @@ function Home() {
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
                   <Icon name="spark" size={22} /> {DEMO_CTA}
                 </h3>
-                <p className="text-cream/95 mb-4">
-                  One WhatsApp message. We’ll share the next slot.
-                </p>
+                <p className="text-cream/95 mb-4">One WhatsApp message. We’ll share the next slot.</p>
                 <span className="btn btn-sun btn-sm">
                   {DEMO_CTA} <Icon name="arrow-right" size={14} />
                 </span>
               </div>
             </a>
           </Reveal>
+          <PaymentTrust tone="light" align="center" className="mt-8" />
         </div>
       </section>
 

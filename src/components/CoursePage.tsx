@@ -6,6 +6,7 @@ import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSli
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { PaymentTrust } from "@/components/PaymentTrust";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
   COURSE_SEO,
@@ -248,6 +249,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 {DEMO_CTA}
               </WaButton>
             </div>
+            <PaymentTrust tone="dark" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">
             <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
@@ -478,6 +480,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               {CHAT_CTA}
             </WaButton>
           </div>
+          <PaymentTrust tone="dark" align="center" className="mt-5" />
         </div>
       </section>
     </Layout>
