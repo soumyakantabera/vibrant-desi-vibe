@@ -155,6 +155,9 @@ export function Footer({ image }: { image?: string }) {
               <Link to="/refunds" className="hover:text-sunshine">
                 Refunds
               </Link>
+              <Link to="/child-protection" className="hover:text-sunshine">
+                Child protection
+              </Link>
             </p>
           </div>
           <p className="font-display font-semibold text-cream/90">

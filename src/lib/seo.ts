@@ -591,6 +591,39 @@ export const PAGES: Record<string, PageSeo> = {
     ],
   },
 
+  "/child-protection": {
+    path: "/child-protection",
+    title: "Child Protection Policy | Kids & Teens",
+    description:
+      "How Learn With Smile runs Kids (6–11) and Teens (12–17) rooms. Indian law as the floor. No COPPA or GDPR seal claimed. Parent is the account holder.",
+    shortTitle: "Child Protection Policy",
+    keywords: [
+      "child protection policy online english class india",
+      "kids english class safety india",
+      "DPDP parental consent english class",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.4,
+    changefreq: "yearly",
+    dateModified: "2026-09-12",
+    summary:
+      "Child Protection Policy for Kids 6–11 and Teens 12–17: parent is the customer, rooms never mixed, no 1:1 video without the parent, no child ads or public photos. Indian law (DPDP, POCSO, JJ Act) is the floor. No COPPA/GDPR certificate claimed.",
+    faqs: [
+      {
+        q: "Do you have a child protection policy?",
+        a: "Yes. It is at https://www.learnwithsmile.app/child-protection. Parent or guardian is the customer. Kids 6–11, teens 12–17 and adult rooms are never mixed. No 1:1 video with a child unless the parent stays on the call. We do not claim a COPPA, GDPR or safeguarding certificate.",
+      },
+      {
+        q: "Which Indian laws apply to your kids and teen classes?",
+        a: "We treat the Digital Personal Data Protection Act, 2023, the POCSO Act, 2012, the Juvenile Justice Act, 2015 and the IT Act, 2000 as the floor. We are not NCPCR, the police or a childcare institution. A parent may still approach those bodies.",
+      },
+      {
+        q: "Are you COPPA or GDPR certified for children?",
+        a: "No. We do not claim a COPPA, GDPR or children’s-privacy certificate. Learners outside India join the same IST rooms. Indian law and this policy still apply, without waiving any non-waivable foreign right.",
+      },
+    ],
+  },
+
   /* ---------------------------------------------------------------------
    * Landing pages for searches the site had no page for at all.
    *
@@ -1469,6 +1502,12 @@ export function webSiteLd() {
         url: abs("/refunds"),
         name: "Refunds and Cancellation",
       },
+      {
+        "@type": "WebPage",
+        "@id": `${abs("/child-protection")}#webpage`,
+        url: abs("/child-protection"),
+        name: "Child Protection Policy",
+      },
     ],
   };
 }
@@ -1528,7 +1567,11 @@ export function webPageLd(page: {
   ogImage?: string;
 }) {
   const isFounderProfile = page.path === "/founder";
-  const isLegal = page.path === "/privacy" || page.path === "/terms" || page.path === "/refunds";
+  const isLegal =
+    page.path === "/privacy" ||
+    page.path === "/terms" ||
+    page.path === "/refunds" ||
+    page.path === "/child-protection";
   return {
     "@context": "https://schema.org",
     "@type": isFounderProfile ? "ProfilePage" : "WebPage",
@@ -1554,7 +1597,7 @@ export function webPageLd(page: {
       : {}),
     ...(isLegal
       ? {
-          relatedLink: ["/privacy", "/terms", "/refunds"]
+          relatedLink: ["/privacy", "/terms", "/refunds", "/child-protection"]
             .filter((p) => p !== page.path)
             .map((p) => abs(p)),
         }

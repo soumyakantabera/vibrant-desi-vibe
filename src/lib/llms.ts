@@ -825,6 +825,7 @@ export function buildLlmsJson(updated: string): string {
       privacy: abs("/privacy"),
       terms: abs("/terms"),
       refunds: abs("/refunds"),
+      child_protection: abs("/child-protection"),
       demo_free: true,
       routine_refund_after_paid_period: false,
     },

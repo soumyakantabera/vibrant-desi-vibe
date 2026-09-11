@@ -96,9 +96,9 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
           ))}
         </div>
         <p className="mt-4 text-xs leading-relaxed text-ink/70">
-          Enrolment follows our Privacy, Terms and Refunds pages as written. We do not claim a
-          safeguarding certificate, a government seal, or a foreign children’s-privacy badge. The
-          parent remains the account holder.{" "}
+          Enrolment follows our Privacy, Terms, Refunds and Child Protection pages as written. We do
+        not claim a safeguarding certificate, a government seal, or a foreign children’s-privacy
+        badge. The parent remains the account holder.{" "}
           <Link
             to="/privacy"
             className="font-bold text-brand-deep underline-offset-2 hover:underline"
@@ -115,6 +115,13 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
             className="font-bold text-brand-deep underline-offset-2 hover:underline"
           >
             Refunds
+          </Link>
+          {" · "}
+          <Link
+            to="/child-protection"
+            className="font-bold text-brand-deep underline-offset-2 hover:underline"
+          >
+            Child protection
           </Link>
           .
         </p>

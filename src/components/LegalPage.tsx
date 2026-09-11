@@ -8,6 +8,7 @@ const SIBLINGS: { to: LegalDoc["path"]; label: string }[] = [
   { to: "/privacy", label: "Privacy Policy" },
   { to: "/terms", label: "Terms of Use" },
   { to: "/refunds", label: "Refunds and Cancellation" },
+  { to: "/child-protection", label: "Child Protection" },
 ];
 
 export function LegalPage({ path }: { path: LegalDoc["path"] }) {
@@ -104,7 +105,7 @@ export function LegalPage({ path }: { path: LegalDoc["path"] }) {
           eyebrow="Questions"
           title="Short answers"
           subtitle="The same points, in the way people usually ask."
-          waMessage="Hi, I have a question about your privacy, terms or refunds policy."
+          waMessage="Hi, I have a question about your privacy, terms, refunds or child-protection policy."
         />
       ) : null}
     </Layout>
