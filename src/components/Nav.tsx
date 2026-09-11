@@ -102,11 +102,11 @@ export function Nav() {
         <Link
           to="/english-career"
           hash="kids-and-teens"
-          className="block bg-coral text-cream text-center text-[12px] sm:text-sm font-display font-bold tracking-tight py-1.5 px-3 hover:bg-[#E85A4A] transition"
+          className="block bg-gradient-to-r from-[#F5B700] via-[#FF9A62] to-[#FF6B5B] text-ink text-center text-[12px] sm:text-sm font-display font-semibold tracking-tight py-2 px-3 hover:brightness-[1.03] transition"
         >
-          <span className="sm:hidden">🎉 New: Kids 👶 & Teens 👧 spoken English</span>
+          <span className="sm:hidden">🎉 New: Kids 👶 & Teens 👧 spoken English →</span>
           <span className="hidden sm:inline">
-            🎉 We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17)
+            🎉 We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17) →
           </span>
         </Link>
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
