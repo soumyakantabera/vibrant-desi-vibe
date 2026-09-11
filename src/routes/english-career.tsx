@@ -8,6 +8,7 @@ import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { PaymentTrust } from "@/components/PaymentTrust";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, COURSE_SLUGS, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
@@ -64,11 +65,30 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Eight live English programmes — Spoken, Kids, Teens, Workplace, IELTS, Interview,
-              Interactive Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes.
+              Eight live rooms. Spoken, Kids (6–11), Teens (12–17), Workplace, IELTS, Interview,
+              Interactive Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes. No
+              registration fee.
             </p>
+            <p className="mt-3 text-sm text-white/90 max-w-2xl">
+              Adult rooms: about 6 learners, up to 2 classes/week. Kids: 4–6 children, 40 minutes.
+              Teens: about 6, 50 minutes. Parent on WhatsApp for anyone under 18 — fees and
+              recordings go to the parent. Rooms are never mixed.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
+              {COURSE_SLUGS.map((slug) => {
+                const c = COURSES[slug];
+                return (
+                  <span
+                    key={slug}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-cream/10 border border-cream/20 px-2.5 py-1 text-white"
+                  >
+                    {c.title} · {c.price}
+                  </span>
+                );
+              })}
+            </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={CHAT_MSG} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
@@ -76,6 +96,10 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
+            <PaymentTrust tone="dark" className="mt-4" />
+            <p className="mt-3 text-sm font-semibold text-white/95">
+              Message anytime. We reply 09:00–12:00 IST.
+            </p>
           </div>
           <div className="w-full min-w-0 flex justify-center lg:block">
             <div className="relative w-full max-w-[320px] lg:max-w-none">
@@ -85,25 +109,25 @@ function Page() {
                 badge="Live · English Track"
                 eyebrow="Whole track from"
                 headline={{ big: "₹999", suffix: "/month" }}
-                subnote="Monthly billing · inclusive of taxes · UPI accepted"
+                subnote="₹999–₹2,499/mo · inclusive of taxes · Razorpay"
                 rows={[
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
                     big: "8 courses",
-                    small: "Speaking · Kids · Teens · Work · IELTS",
+                    small: "Adults · Teens 12–17 · Kids 6–11",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.people,
-                    big: "Approx. 6 learners",
-                    small: "In every English course batch",
+                    big: "Small rooms",
+                    small: "Kids 4–6 · Teens & adults ~6",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.spark,
-                    big: "Gamified",
-                    small: "Live polls · roleplays · debates",
+                    big: "Parent WhatsApp",
+                    small: "Under-18 fees and recordings",
                   },
                 ]}
                 footer="Message Anytime · Replies 09:00–12:00 IST"
@@ -252,6 +276,7 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
+            <PaymentTrust tone="dark" className="mt-5" />
           </div>
         </div>
       </section>
