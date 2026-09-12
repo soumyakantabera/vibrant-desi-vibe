@@ -102,9 +102,14 @@ export function Nav() {
         <Link
           to="/english-career"
           hash="kids-and-teens"
-          className="block bg-gradient-to-r from-[#FFB347] via-[#FF7A3D] to-[#FF6B5B] text-center text-[12px] sm:text-sm font-display font-extrabold tracking-tight py-2 px-4 leading-snug text-ink hover:brightness-[1.04] transition"
+          className="relative block overflow-hidden text-center text-[12px] sm:text-sm font-display font-extrabold tracking-tight py-2 px-4 leading-snug"
         >
-          <span className="inline-flex items-center justify-center gap-1.5 text-balance">
+          <span
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-r from-[#FFB347] via-[#FF6B5B] to-[#FF3B6B]"
+          />
+          <span aria-hidden className="absolute inset-0 bg-[#0B1F14]/50" />
+          <span className="relative z-[1] inline-flex items-center justify-center gap-1.5 text-balance text-[#FFF8F0]">
             <Icon name="spark" size={16} className="shrink-0" />
             <span>
               We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17)
