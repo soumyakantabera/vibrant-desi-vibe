@@ -611,7 +611,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Do you have a child protection policy?",
-        a: "Yes. It is at https://www.learnwithsmile.app/child-protection. Parent or guardian is the customer. Kids 6–11, teens 12–17 and adult rooms are never mixed. No 1:1 video with a child unless the parent stays on the call. We do not claim a COPPA, GDPR or safeguarding certificate.",
+        a: "Yes. It is at https://www.learnwithsmile.app/child-protection. Parent or guardian is the customer. Kids 6–11, teens 12–17 and adult rooms are never mixed. No 1:1 video with a child unless the parent stays on the call. We follow Indian child-protection and privacy law in every room.",
       },
       {
         q: "Which Indian laws apply to your kids and teen classes?",
@@ -619,7 +619,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
-        a: "No. We do not claim a COPPA, GDPR or children’s-privacy certificate. Learners outside India join the same IST rooms. Indian law and this policy still apply, without waiving any non-waivable foreign right.",
+        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act) in every room, including for Indians abroad on IST. The parent is the account holder. We are an Indian school — not a COPPA- or GDPR-certified programme — and we do not waive any extra right a foreign law still gives you.",
       },
     ],
   },

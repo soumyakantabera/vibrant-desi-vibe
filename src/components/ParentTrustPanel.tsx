@@ -39,7 +39,7 @@ const LEGAL: { icon: IconName; tone: string; title: string; body: string }[] = [
     icon: "globe",
     tone: "bg-[#E7E7FF] text-indigo-pop",
     title: "Global learners, same rules",
-    body: "Indians abroad join the same IST rooms. We do not claim a COPPA, GDPR or children’s-privacy certificate. The parent remains the account holder. Indian law and the pages below govern the contract.",
+    body: "Indians abroad join the same IST rooms. We follow Indian child-protection and privacy law in every room. The parent remains the account holder. The pages below are the rules we run by.",
   },
 ];
 
@@ -96,9 +96,8 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
           ))}
         </div>
         <p className="mt-4 text-xs leading-relaxed text-ink/70">
-          Enrolment follows our Privacy, Terms, Refunds and Child Protection pages as written. We do
-        not claim a safeguarding certificate, a government seal, or a foreign children’s-privacy
-        badge. The parent remains the account holder.{" "}
+          Enrolment follows our Privacy, Terms, Refunds and Child Protection pages as written. We
+          follow those rules in every room. The parent remains the account holder.{" "}
           <Link
             to="/privacy"
             className="font-bold text-brand-deep underline-offset-2 hover:underline"
