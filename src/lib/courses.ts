@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "6 months, ₹999/mo, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, up to 2 classes/week.",
+      "6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -15,7 +15,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.studentLaptop2,
     duration: "6 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
-    price: "₹999/mo",
+    price: "₹999/month",
     outcomes: [
       "Introduce yourself fluently in any social or work setting",
       "Handle daily conversations — shops, travel, phone calls",
@@ -120,13 +120,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/mo, inclusive of taxes.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes.",
   },
   "business-english": {
     slug: "business-english",
     title: "Workplace English",
     tagline:
-      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/mo, inclusive of taxes. For professionals, freshers and job seekers.",
+      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/month, inclusive of taxes. For professionals, freshers and job seekers.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "headset",
@@ -136,7 +136,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,999/mo",
+    price: "₹1,999/month",
     outcomes: [
       "Give clear status updates without memorising a script",
       "Speak more confidently in team and client meetings",
@@ -213,7 +213,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays. Approx. 6 learners, up to 2 classes/week, ₹1,199/mo, inclusive of taxes. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays. Approx. 6 learners, up to 2 classes/week, ₹1,199/month, inclusive of taxes. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -223,7 +223,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,199/mo",
+    price: "₹1,199/month",
     outcomes: [
       "Speak for 2 minutes on any topic",
       "Lead group conversations",
@@ -275,13 +275,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · approximately 6 learners per batch · ₹1,199/mo, inclusive of taxes.",
+      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · approximately 6 learners per batch · ₹1,199/month, inclusive of taxes.",
   },
   ielts: {
     slug: "ielts",
     title: "IELTS Preparation",
     tagline:
-      "3 months live toward Band 7. 6+ full-length mocks, speaking labs, live writing feedback. Approximately 6 learners per batch, ₹2,499/mo, inclusive of taxes. Academic or General Training. Typical start around Band 5.5–6; writing is the usual bottleneck.",
+      "3 months live toward Band 7. 6+ full-length mocks, speaking labs, live writing feedback. Approximately 6 learners per batch, ₹2,499/month, inclusive of taxes. Academic or General Training. Typical start around Band 5.5–6; writing is the usual bottleneck.",
     category: "IELTS Preparation",
     categoryColor: "brand",
     icon: "trophy",
@@ -290,7 +290,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.graduation,
     duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
-    price: "₹2,499/mo",
+    price: "₹2,499/month",
     outcomes: [
       "Train all four modules toward Band 7 — writing is the usual bottleneck",
       "Master Task 1 & Task 2 writing templates",
@@ -368,13 +368,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "IELTS Preparation live online — 3 months · up to 2 classes/week · approximately 6 learners per batch · ₹2,499/mo, inclusive of taxes. 6+ mocks and live feedback.",
+      "IELTS Preparation live online — 3 months · up to 2 classes/week · approximately 6 learners per batch · ₹2,499/month, inclusive of taxes. 6+ mocks and live feedback.",
   },
   "interview-prep": {
     slug: "interview-prep",
     title: "Interview Preparation in English",
     tagline:
-      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Approx. 6 learners, up to 2 classes/week, ₹1,499/mo, inclusive of taxes. Practise the round before you sit it.",
+      "2-month intensive: HR, STAR, 3 recorded mocks, resume and LinkedIn. Approx. 6 learners, up to 2 classes/week, ₹1,499/month, inclusive of taxes. Practise the round before you sit it.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "target",
@@ -383,7 +383,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.womanOffice,
     duration: "2 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,499/mo",
+    price: "₹1,499/month",
     outcomes: [
       "Practise HR rounds until the answers come out clean",
       "Answer 'tell me about yourself' in 90 sec",
@@ -449,7 +449,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · approx. 6 learners · ₹1,499/mo, inclusive of taxes.",
+      "Interview Preparation in English live online — HR, behavioural and mock interviews. 2 months · up to 2 classes/week · approx. 6 learners · ₹1,499/month, inclusive of taxes.",
   },
   "career-counselling": {
     slug: "career-counselling",
@@ -509,7 +509,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "kids-english",
     title: "Spoken English for Kids",
     tagline:
-      "Ages 6–11. After-school live batches of 4–6 children, 1 hr 30 min classes, twice a week. 6 months, ₹999/mo, inclusive of taxes. Parent on WhatsApp — you hear what happened in class.",
+      "Ages 6–11. After-school live batches of 4–6 children, 1 hr 30 min classes, twice a week. 6 months, ₹999/month, inclusive of taxes. Parent on WhatsApp — you hear what happened in class.",
     category: "Ages 6–11",
     categoryColor: "brand",
     icon: "spark",
@@ -520,7 +520,7 @@ export const COURSES: Record<string, CourseData> = {
     durationQualifier: "After school on IST, plus Saturday mornings.",
     continueNote: "Continuous learning after 6 months — next level",
     format: "Live batch · 4–6 children",
-    price: "₹999/mo",
+    price: "₹999/month",
     liveNote:
       "✓ Parent is the customer · ✓ After-school and Saturday IST · ✓ Never mixed with teens or adults · ✓ Pan-India · Based in Kolkata",
     snapshotBatchBig: "4–6",
@@ -614,13 +614,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 1 hr 30 min classes twice a week. ₹999/mo inclusive of taxes. Parent on WhatsApp for the demo.",
+      "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 1 hr 30 min classes twice a week. ₹999/month inclusive of taxes. Parent on WhatsApp for the demo.",
   },
   "teen-english": {
     slug: "teen-english",
     title: "Spoken English for Teens",
     tagline:
-      "Ages 12–17. Evening live batches of about 6, 1 hr 30 min classes, twice a week. 6 months, ₹999/mo, inclusive of taxes. Parent pays — the teen has to want the seat.",
+      "Ages 12–17. Evening live batches of about 6, 1 hr 30 min classes, twice a week. 6 months, ₹999/month, inclusive of taxes. Parent pays — the teen has to want the seat.",
     category: "Ages 12–17",
     categoryColor: "brand",
     icon: "mic",
@@ -631,7 +631,7 @@ export const COURSES: Record<string, CourseData> = {
     durationQualifier: "Evening and Saturday IST, after school hours.",
     continueNote: "Continuous learning after 6 months — next level",
     format: "Live batch · approximately 6 teens",
-    price: "₹999/mo",
+    price: "₹999/month",
     liveNote:
       "✓ Parent on WhatsApp · ✓ Teen joins the demo · ✓ Never mixed with kids 6–11 or adult work rooms · ✓ Pan-India · Based in Kolkata",
     snapshotBatchBig: "~6",
@@ -725,6 +725,6 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Teen spoken English online, ages 12–17. Live teacher, about 6 learners, 1 hr 30 min classes twice a week. ₹999/mo, inclusive of taxes. Parent books the demo.",
+      "Teen spoken English online, ages 12–17. Live teacher, about 6 learners, 1 hr 30 min classes twice a week. ₹999/month, inclusive of taxes. Parent books the demo.",
   },
 };

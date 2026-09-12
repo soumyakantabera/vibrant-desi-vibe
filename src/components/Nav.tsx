@@ -21,7 +21,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-spoken-english",
     label: "Basic Spoken English",
     icon: "mic",
-    desc: "6 months · ₹999/mo, inclusive of taxes",
+    desc: "6 months · ₹999/month, inclusive of taxes",
   },
   {
     to: "/course-interactive-speaking",
@@ -33,13 +33,13 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-kids-english",
     label: "Spoken English for Kids",
     icon: "smile",
-    desc: "Ages 6–11 · ₹999/mo, inclusive of taxes",
+    desc: "Ages 6–11 · ₹999/month, inclusive of taxes",
   },
   {
     to: "/course-teen-english",
     label: "Spoken English for Teens",
     icon: "mic",
-    desc: "Ages 12–17 · ₹999/mo, inclusive of taxes",
+    desc: "Ages 12–17 · ₹999/month, inclusive of taxes",
   },
   {
     to: "/course-business-english",
@@ -47,12 +47,12 @@ const ENGLISH_COURSES: NavItem[] = [
     icon: "headset",
     desc: "3 months · ₹1,999/month, inclusive of taxes",
   },
-  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹2,499/mo, inclusive of taxes" },
+  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹2,499/month, inclusive of taxes" },
   {
     to: "/course-interview-prep",
     label: "Interview Prep",
     icon: "target",
-    desc: "2 months · ₹1,499/mo, inclusive of taxes",
+    desc: "2 months · ₹1,499/month, inclusive of taxes",
   },
   {
     to: "/course-career-counselling",

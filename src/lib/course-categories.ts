@@ -15,9 +15,9 @@ export type CategoryTone = "brand" | "indigo" | "sun" | "coral" | "play";
 export const COURSE_CATEGORIES = [
   {
     id: "speak-confidently",
-    title: "Speak Confidently · From ₹999/mo, inclusive of taxes",
+    title: "Speak Confidently · From ₹999/month, inclusive of taxes",
     description:
-      "Quality live English from ₹999/mo, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Quality live English from ₹999/month, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -25,9 +25,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "kids-and-teens",
-    title: "Kids & Teens · from ₹999/mo, inclusive of taxes",
+    title: "Kids & Teens · from ₹999/month, inclusive of taxes",
     description:
-      "Kids 6–11 and Teens 12–17 at ₹999/mo, inclusive of taxes. 1 hr 30 min live classes. Parent on WhatsApp. Rooms never mixed with adults.",
+      "Kids 6–11 and Teens 12–17 at ₹999/month, inclusive of taxes. 1 hr 30 min live classes. Parent on WhatsApp. Rooms never mixed with adults.",
     icon: "smile",
     tone: "play",
     featuredSlug: "kids-english",
@@ -38,9 +38,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "work-and-career",
-    title: "Work & Career · from ₹1,499/mo, inclusive of taxes",
+    title: "Work & Career · from ₹1,499/month, inclusive of taxes",
     description:
-      "Workplace English ₹1,999/mo and Interview Prep ₹1,499/mo, inclusive of taxes. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Workplace English ₹1,999/month and Interview Prep ₹1,499/month, inclusive of taxes. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
@@ -48,9 +48,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "ielts-preparation",
-    title: "IELTS Prep · ₹2,499/mo, inclusive of taxes",
+    title: "IELTS Prep · ₹2,499/month, inclusive of taxes",
     description:
-      "3 months live toward Band 7. ₹2,499/mo, inclusive of taxes. All 4 skills, 6+ live mocks, Academic or General Training. Typical start Band 5.5–6. Batches of approximately 6 learners.",
+      "3 months live toward Band 7. ₹2,499/month, inclusive of taxes. All 4 skills, 6+ live mocks, Academic or General Training. Typical start Band 5.5–6. Batches of approximately 6 learners.",
     icon: "trophy",
     tone: "sun",
     featuredSlug: "ielts",
