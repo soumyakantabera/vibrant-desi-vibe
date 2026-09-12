@@ -106,7 +106,7 @@ export function Nav() {
         >
           <span
             aria-hidden
-            className="absolute inset-0 bg-gradient-to-r from-[#FFB347] via-[#FF6B5B] to-[#FF3B6B]"
+            className="absolute inset-0 bg-gradient-to-r from-[#FFC48A] via-[#FF7A4A] to-[#D32F2F]"
           />
           <span aria-hidden className="absolute inset-0 bg-[#0B1F14]/50" />
           <span className="relative z-[1] inline-flex items-center justify-center gap-1.5 text-balance text-[#FFF8F0]">
