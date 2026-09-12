@@ -111,6 +111,21 @@ jobs:
           if ! grep -q 'getSiteFacts' dist/openapi.json; then
             echo "::error::openapi.json is missing the getSiteFacts operation"; exit 1
           fi
+          if ! grep -q 'getKidsEnglish' dist/openapi.json; then
+            echo "::error::openapi.json is missing getKidsEnglish"; exit 1
+          fi
+          if ! grep -q 'child-protection' dist/llms.json; then
+            echo "::error::llms.json is missing child-protection"; exit 1
+          fi
+          if ! grep -q 'g.page' dist/index.html; then
+            echo "::error::index.html is missing Google Business sameAs"; exit 1
+          fi
+          if ! grep -q '₹999' dist/course-kids-english.html dist/course-teen-english.html; then
+            echo "::error::kids/teens pages missing ₹999"; exit 1
+          fi
+          if grep -q '₹1,799' dist/course-kids-english.html dist/course-teen-english.html dist/llms.json; then
+            echo "::error::stale ₹1,799 teen fee still in output"; exit 1
+          fi
           # Recursive: blog articles live at /blog/<slug>, so their mirrors are
           # written to dist/blog/<slug>.md. A `dist/*.md` glob counts only the
           # top level and would report 17 mirrors against 22 sitemap URLs even

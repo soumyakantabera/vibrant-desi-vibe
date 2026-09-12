@@ -52,6 +52,7 @@ import {
   markdownPathFor,
   type Faq,
 } from "@/lib/seo";
+import { COURSE_SLUGS } from "@/lib/course-categories";
 
 /* ------------------------------------------------------------------- facts */
 
@@ -96,7 +97,7 @@ function officeLine(): string {
 }
 
 function groupFeeLine(): string {
-  const monthly = Object.keys(COURSE_SEO)
+  const monthly = COURSE_SLUGS
     .filter((slug) => isMonthly(COURSES[slug].price))
     .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
     .join(" · ");
@@ -555,7 +556,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     `- Trading name: ${SITE_NAME}. Founder and lead teacher: Sunanda Dey. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
     `- Audience: Adult rooms 15+. Spoken English for Kids: ages 6–11. Spoken English for Teens: ages 12–17. Parent is the customer for school-year rooms and sits on WhatsApp. Hindi- and Bengali-medium backgrounds welcome. Rooms are never mixed. Not affiliated with British Council, EngVarta, Cambly, PlanetSpark or Veta.`,
-    `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${Object.keys(COURSE_SEO)
+    `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${COURSE_SLUGS
       .filter((slug) => isMonthly(COURSES[slug].price))
       .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
       .join(" · ")}.`,
@@ -575,7 +576,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     "## Courses",
     "",
-    ...Object.keys(COURSE_SEO).map(courseLine),
+    ...COURSE_SLUGS.map(courseLine),
     "",
     "## Pages",
     "",
@@ -790,7 +791,7 @@ export function buildLlmsJson(updated: string): string {
       answer: qa.a,
       source: abs(qa.source),
     })),
-    courses: Object.keys(COURSE_SEO).map(courseRecord),
+    courses: COURSE_SLUGS.map(courseRecord),
     pages: Object.keys(PAGES).map((path) => {
       const meta = metaFor(path);
       const faqs = faqsFor(path);
