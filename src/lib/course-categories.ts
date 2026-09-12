@@ -1,12 +1,12 @@
 export const COURSE_SLUGS = [
   "spoken-english",
-  "business-english",
   "interactive-speaking",
+  "kids-english",
+  "teen-english",
+  "business-english",
   "ielts",
   "interview-prep",
   "career-counselling",
-  "kids-english",
-  "teen-english",
 ] as const;
 
 export type CourseSlug = (typeof COURSE_SLUGS)[number];
