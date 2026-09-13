@@ -46,6 +46,8 @@ export const CONTACT = {
   country: "IN",
   latitude: 22.4924,
   longitude: 88.3125,
+  legalName: "LEARN WITH SMILE SOLE PROPRIETORSHIP",
+  gstin: "19CFGPD7931C1ZL",
 } as const;
 
 /** Public profiles for Organization.sameAs — Google Business, not the review form. */
@@ -251,7 +253,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
-        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Indian learners abroad join on IST too.",
+        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Enrolment is for learners in India only. We do not enrol students outside India. Fees on this site are India pricing.",
       },
       {
         q: "Do you teach children and teenagers as well?",
@@ -619,7 +621,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
-        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act) in every room, including for Indians abroad on IST. The parent is the account holder. We are an Indian school — not a COPPA- or GDPR-certified programme — and we do not waive any extra right a foreign law still gives you.",
+        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act) in every room. Enrolment is for learners in India only. The parent is the account holder. We are an Indian school — not a COPPA- or GDPR-certified programme.",
       },
     ],
   },
@@ -1404,6 +1406,9 @@ export function organizationLd() {
     "@type": ["EducationalOrganization", "OnlineBusiness"],
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
+    legalName: CONTACT.legalName,
+    taxID: CONTACT.gstin,
+    vatID: CONTACT.gstin,
     alternateName: [
       "LWS",
       "Learn With Smile English & Career",

@@ -39,7 +39,7 @@ const LEGAL: { icon: IconName; tone: string; title: string; body: string }[] = [
     icon: "globe",
     tone: "bg-[#E7E7FF] text-indigo-pop",
     title: "Global learners, same rules",
-    body: "Indians abroad join the same IST rooms. We follow Indian child-protection and privacy law in every room. The parent remains the account holder. The pages below are the rules we run by.",
+    body: "Enrolment is for learners in India only. We follow Indian child-protection and privacy law in every room. The parent remains the account holder. The pages below are the rules we run by.",
   },
 ];
 

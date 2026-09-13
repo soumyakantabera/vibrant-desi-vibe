@@ -110,7 +110,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         paragraphs: [
           "Adult rooms are for learners aged 15 and above. Spoken English for Kids is for ages 6–11. Spoken English for Teens is for ages 12–17. Those rooms are never mixed with each other or with adult batches.",
           "If the learner is under 18, a parent or guardian must complete enrolment and payment and is the person we message on WhatsApp. Under the Digital Personal Data Protection Act, 2023, we treat that parent or guardian as the person who consents to our use of the child’s information for running the class. We do not use children’s data to show ads. We do not publish children’s photos or class recordings.",
-          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Learners outside India join the same IST rooms; Indian law and this policy still apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. How the kids and teen rooms are run, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
+          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Enrolment is for learners in India only. We do not enrol students outside India. Indian law and this policy apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. How the kids and teen rooms are run, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
         ],
       },
       {
@@ -145,7 +145,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile offers live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation, Spoken English for Kids (ages 6–11), Spoken English for Teens (ages 12–17) and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre. Kids, teens and adult rooms are never mixed.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation, Spoken English for Kids (ages 6–11), Spoken English for Teens (ages 12–17) and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre. Kids, teens and adult rooms are never mixed.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We train for the paper; we do not award the score.",
         ],
       },
@@ -153,6 +153,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Eligibility",
         paragraphs: [
           "Adult English rooms are for learners aged 15 and above. Kids rooms are ages 6–11. Teen rooms are ages 12–17. Rooms are never mixed.",
+          "Enrolment is for learners who are in India. We do not take enrolment from outside India. Fees on this site are India pricing, in Indian Rupees, inclusive of taxes.",
           "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time. For ages 6–11, a parent should stay within earshot of the room.",
         ],
       },
@@ -321,11 +322,11 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
-        heading: "Global learners — same rooms, no extra seal",
+        heading: "India only — no enrolment outside India",
         paragraphs: [
-          "Indians abroad, and any other learner who joins from outside India, sit in the same IST rooms as learners in India. We do not run a separate “international” child-protection programme.",
+          "We enrol learners who are in India. We do not take enrolment from outside India. The prices published on this site are for India only, in Indian Rupees, inclusive of taxes.",
           "India is a party to the UN Convention on the Rights of the Child. We take the idea of the child’s best interests as a working attitude: parent on the account, rooms not mixed, no 1:1 video with a child unless the parent stays on the call. That is practice, not a UN accreditation.",
-          "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. If a foreign law gives you extra rights that we must honour, those rights still apply; this page does not waive them. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law.",
+          "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law.",
         ],
       },
       {

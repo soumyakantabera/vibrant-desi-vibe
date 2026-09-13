@@ -188,8 +188,8 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
           Kolkata-based. Teaching pan-India.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          Same teacher. Same fee. Morning, evening and weekend IST — metros, towns, and Indians
-          abroad on the same live class.
+          Same teacher. Same fee. Morning, evening and weekend IST — metros and towns across India
+          on the same live class. Enrolment is for learners in India only.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           States

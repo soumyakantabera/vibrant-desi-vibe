@@ -143,6 +143,26 @@ export function Footer({ image }: { image?: string }) {
         <div className="mt-8 pt-6 border-t border-cream/15">
           <PaymentTrust tone="dark" />
         </div>
+        <div className="mt-8 pt-6 border-t border-cream/15 text-xs leading-relaxed text-white/80 space-y-3">
+          <p className="text-cream/95 font-semibold">
+            Enrolment is for learners in India only. We do not take enrolment from outside India.
+            Fees on this site are India pricing, inclusive of taxes.
+          </p>
+          <address className="not-italic space-y-0.5">
+            <p className="uppercase tracking-wide text-cream/90 font-display font-bold">
+              {CONTACT.legalName}
+            </p>
+            <p>GSTIN {CONTACT.gstin}</p>
+            <p>
+              {CONTACT.street}, {CONTACT.locality} — {CONTACT.postalCode}
+            </p>
+            <p>
+              <a href={`mailto:${CONTACT.email}`} className="hover:text-sunshine">
+                {CONTACT.email}
+              </a>
+            </p>
+          </address>
+        </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
           <div className="space-y-1">
             <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>

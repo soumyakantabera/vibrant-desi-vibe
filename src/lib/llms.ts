@@ -114,7 +114,7 @@ const KEY_FACTS = [
   `${SITE_NAME}: live online English. Adult rooms: Indian learners 15+. Spoken English for Kids: ages 6–11. Spoken English for Teens: ages 12–17. Parent is the customer for both school-year rooms; batches are never mixed with each other or with adults. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
   groupFeeLine(),
   "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Kids English (6–11): 4–6 children, 1 hr 30 min classes, twice a week, after school. Teen English (12–17): about 6 teens, 1 hr 30 min classes, twice a week, evening. Every class is recorded for revision. Career Counselling is 1:1 (3 × 60 min). Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
-  `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state and for Indians abroad on IST.`,
+  `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state. Enrolment is for learners in India only; we do not enrol students outside India. Fees on this site are India pricing.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
@@ -755,6 +755,9 @@ export function buildLlmsJson(updated: string): string {
       cities: [...COVERAGE_CITIES],
       office: officeLine(),
       campus: false,
+      enrolment: "India only",
+      enrol_outside_india: false,
+      pricing: "India only, INR, tax-inclusive",
     },
     contact: {
       preferred: "WhatsApp",
@@ -763,6 +766,8 @@ export function buildLlmsJson(updated: string): string {
       email: CONTACT.email,
       hours: "09:00–12:00 IST",
       address: officeLine(),
+      legal_name: CONTACT.legalName,
+      gstin: CONTACT.gstin,
     },
     payments: {
       processor: "Razorpay",
