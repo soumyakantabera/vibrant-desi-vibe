@@ -154,7 +154,12 @@ export function Footer({ image }: { image?: string }) {
             </p>
             <p>GSTIN {CONTACT.gstin}</p>
             <p>
-              {CONTACT.street}, {CONTACT.locality} — {CONTACT.postalCode}
+              Reg. Address: {CONTACT.street}, {CONTACT.locality} — {CONTACT.postalCode}
+            </p>
+            <p>
+              <a href={CALL_LINK} className="hover:text-sunshine">
+                +91 9674479949
+              </a>
             </p>
             <p>
               <a href={`mailto:${CONTACT.email}`} className="hover:text-sunshine">
