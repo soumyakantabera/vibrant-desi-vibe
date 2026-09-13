@@ -9,7 +9,6 @@ import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { ParentTrustPanel } from "@/components/ParentTrustPanel";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, COURSE_SLUGS, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
@@ -239,7 +238,6 @@ function Page() {
                     );
                   })}
                 </Reveal>
-                {"theme" in group && group.theme === "kids" && <ParentTrustPanel />}
               </section>
             ))}
           </div>

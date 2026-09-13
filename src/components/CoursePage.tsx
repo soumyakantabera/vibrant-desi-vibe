@@ -319,7 +319,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
-      {(data.slug === "kids-english" || data.slug === "teen-english") && (
+      {data.slug === "kids-english" && (
         <section className="section pt-8 md:pt-10">
           <div className="container-x">
             <ParentTrustPanel className="" />

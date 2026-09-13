@@ -12,19 +12,19 @@ const ITEMS: { icon: IconName; tone: string; title: string; body: string }[] = [
     icon: "shield",
     tone: "bg-brand-soft text-brand-deep",
     title: "Privacy, as written",
-    body: "We do not publish children’s photos or class recordings. We do not run ads aimed at children. Under 18, a parent or guardian must enrol.",
+    body: "We do not publish children’s photos or class recordings. We do not run ads aimed at children. For the Kids room (ages 6–11), a parent or guardian must enrol.",
   },
   {
     icon: "users",
     tone: "bg-[#E7E7FF] text-indigo-pop",
     title: "Rooms never mixed",
-    body: "Kids 6–11, teens 12–17 and adult rooms (15+) are separate batches. A 12-year-old is never placed with working adults.",
+    body: "Kids 6–11 are in their own room. They are never placed with teens or with adult rooms (15+).",
   },
   {
     icon: "heart",
     tone: "bg-[#FFF0ED] text-[#A53D32]",
     title: "How class is kept safe",
-    body: "6–11: parent within earshot of the room. 12–17: parent informed of the slot. No 1:1 video with a child unless the parent stays on the call.",
+    body: "Parent stays within earshot of the room. No 1:1 video with a child unless the parent stays on the call.",
   },
 ];
 
@@ -33,13 +33,13 @@ const LEGAL: { icon: IconName; tone: string; title: string; body: string }[] = [
     icon: "book",
     tone: "bg-brand-soft text-brand-deep",
     title: "India — DPDP Act, 2023",
-    body: "For anyone under 18, a parent or guardian is the person we contract with and message. Enrolment needs that parent’s consent. Child data is not used for ads. See Privacy.",
+    body: "For the Kids room (ages 6–11), a parent or guardian is the person we contract with and message. Enrolment needs that parent’s consent. Child data is not used for ads. See Privacy.",
   },
   {
     icon: "globe",
     tone: "bg-[#E7E7FF] text-indigo-pop",
-    title: "Global learners, same rules",
-    body: "Enrolment is for learners in India only. We follow Indian child-protection and privacy law in every room. The parent remains the account holder. The pages below are the rules we run by.",
+    title: "India only",
+    body: "Enrolment is for learners in India only. We follow Indian child-protection and privacy law in the Kids room. The parent remains the account holder. The pages below are the rules we run by.",
   },
 ];
 
@@ -54,10 +54,10 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
         </span>
         <div>
           <h3 className="font-display text-lg font-extrabold text-ink md:text-xl">
-            For parents — safety, privacy, who we message
+            For parents — Kids room (ages 6–11)
           </h3>
           <p className="mt-1 text-sm leading-relaxed text-ink/80">
-            Clear rules, not a certificate stamp. This is how the kids and teen rooms actually run.
+            Clear rules, not a certificate stamp. This panel is for Spoken English for Kids only.
           </p>
         </div>
       </div>
@@ -97,7 +97,7 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
         </div>
         <p className="mt-4 text-xs leading-relaxed text-ink/70">
           Enrolment follows our Privacy, Terms, Refunds and Child Protection pages as written. We
-          follow those rules in every room. The parent remains the account holder.{" "}
+          follow those rules in the Kids room. The parent remains the account holder.{" "}
           <Link
             to="/privacy"
             className="font-bold text-brand-deep underline-offset-2 hover:underline"
