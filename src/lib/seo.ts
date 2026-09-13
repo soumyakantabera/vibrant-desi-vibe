@@ -1398,6 +1398,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
  * ------------------------------------------------------------------------ */
 
 export function organizationLd() {
+  const india = { "@type": "Country", name: "India", identifier: "IN" };
   return {
     "@context": "https://schema.org",
     // Classes are delivered online. Keep one canonical entity and describe
@@ -1409,6 +1410,13 @@ export function organizationLd() {
     legalName: CONTACT.legalName,
     taxID: CONTACT.gstin,
     vatID: CONTACT.gstin,
+    identifier: {
+      "@type": "PropertyValue",
+      name: "GSTIN",
+      propertyID: "GSTIN",
+      value: CONTACT.gstin,
+      description: "Goods and Services Tax Identification Number, India",
+    },
     alternateName: [
       "LWS",
       "Learn With Smile English & Career",
@@ -1423,7 +1431,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India. Spoken, Workplace, IELTS, plus separate Kids and Teens rooms.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Workplace, IELTS, plus separate Kids and Teens rooms.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Children aged 6-11" },
@@ -1434,6 +1442,7 @@ export function organizationLd() {
     telephone: CONTACT.phone,
     priceRange: "₹999–₹2,499/month",
     currenciesAccepted: "INR",
+    paymentAccepted: "UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm",
     foundingDate: String(FOUNDING_YEAR),
     founder: {
       "@type": "Person",
@@ -1453,8 +1462,13 @@ export function organizationLd() {
       postalCode: CONTACT.postalCode,
       addressCountry: CONTACT.country,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: CONTACT.latitude,
+      longitude: CONTACT.longitude,
+    },
     areaServed: [
-      { "@type": "Country", name: "India" },
+      india,
       ...COVERAGE_STATES.map((name) => ({ "@type": "AdministrativeArea", name })),
       ...COVERAGE_CITIES.map((name) => ({ "@type": "City", name })),
     ],
@@ -1466,7 +1480,8 @@ export function organizationLd() {
         telephone: CONTACT.phone,
         email: CONTACT.email,
         url: CONTACT.whatsapp,
-        description: "WhatsApp is the preferred admissions channel; phone calls are a fallback.",
+        description:
+          "WhatsApp is the preferred admissions channel; phone calls are a fallback. Enrolment is for learners in India only.",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {
@@ -1477,6 +1492,24 @@ export function organizationLd() {
         },
       },
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Live online English courses in India",
+      description: "Enrolment and fees are for learners in India only. Prices in INR, inclusive of taxes.",
+      itemListElement: Object.keys(COURSE_SEO).map((slug) => ({
+        "@type": "Offer",
+        url: abs(`/course-${slug}`),
+        itemOffered: {
+          "@type": "Course",
+          name: COURSE_SEO[slug].shortTitle,
+          url: abs(`/course-${slug}`),
+        },
+        priceCurrency: "INR",
+        valueAddedTaxIncluded: true,
+        eligibleRegion: india,
+        areaServed: india,
+      })),
+    },
     sameAs: [...SAME_AS],
     hasMerchantReturnPolicy: {
       "@type": "MerchantReturnPolicy",

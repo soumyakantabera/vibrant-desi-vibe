@@ -10,6 +10,7 @@ import { PaymentTrust } from "@/components/PaymentTrust";
 import { ParentTrustPanel } from "@/components/ParentTrustPanel";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
+  CONTACT,
   CONTENT_REVISED,
   COURSE_SEO,
   SITE_NAME,
@@ -610,6 +611,9 @@ export function courseSeo(d: CourseData) {
     url,
     validFrom: "2026-01-01",
     valueAddedTaxIncluded: true,
+    eligibleRegion: { "@type": "Country", name: "India", identifier: "IN" },
+    areaServed: { "@type": "Country", name: "India", identifier: "IN" },
+    seller: { "@id": `${SITE_URL}/#organization` },
   };
   if (price !== null) {
     offers.price = price;
@@ -669,6 +673,8 @@ export function courseSeo(d: CourseData) {
         "@type": "EducationalOrganization",
         "@id": `${SITE_URL}/#organization`,
         name: SITE_NAME,
+        legalName: CONTACT.legalName,
+        taxID: CONTACT.gstin,
         url: SITE_URL,
       },
       offers,
