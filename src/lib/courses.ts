@@ -602,7 +602,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "How long is a class, and when do they run?",
-        a: "Forty minutes, twice a week, after school on IST, with Saturday morning slots. Six months. Every class is recorded and shared with the parent.",
+        a: "1 hour 30 minutes, twice a week, after school on IST, with Saturday morning slots. Six months. Every class is recorded and shared with the parent.",
       },
       {
         q: "Will my child get a certificate or higher school marks?",

@@ -5,26 +5,26 @@ const ITEMS: { icon: IconName; tone: string; title: string; body: string }[] = [
   {
     icon: "users",
     tone: "bg-[#FFF3C4] text-[#6B4A00]",
-    title: "Parent is the customer",
-    body: "Fees, WhatsApp and class recordings sit on the parent’s number. The child does not need a phone. You join the free demo on camera.",
+    title: "You stay on WhatsApp",
+    body: "Fees, recordings and messages come to your number. Your child does not need a phone. You join the free demo on camera.",
   },
   {
     icon: "shield",
     tone: "bg-brand-soft text-brand-deep",
-    title: "Privacy, as written",
-    body: "We do not publish children’s photos or class recordings. We do not run ads aimed at children. For the Kids room (ages 6–11), a parent or guardian must enrol.",
+    title: "No photos, no child ads",
+    body: "We do not post your child’s photo or class recording. We do not run ads at children. You enrol them — they do not enrol themselves.",
   },
   {
     icon: "users",
     tone: "bg-[#E7E7FF] text-indigo-pop",
-    title: "Rooms never mixed",
-    body: "Kids 6–11 are in their own room. They are never placed with teens or with adult rooms (15+).",
+    title: "Their own small room",
+    body: "Four to six children, ages 6–11. Never mixed with teens or with adult rooms.",
   },
   {
     icon: "heart",
     tone: "bg-[#FFF0ED] text-[#A53D32]",
-    title: "How class is kept safe",
-    body: "Parent stays within earshot of the room. No 1:1 video with a child unless the parent stays on the call.",
+    title: "You can hear the class",
+    body: "Stay within earshot. We will not do 1:1 video with your child unless you stay on the call.",
   },
 ];
 
@@ -32,14 +32,14 @@ const LEGAL: { icon: IconName; tone: string; title: string; body: string }[] = [
   {
     icon: "book",
     tone: "bg-brand-soft text-brand-deep",
-    title: "India — DPDP Act, 2023",
-    body: "For the Kids room (ages 6–11), a parent or guardian is the person we contract with and message. Enrolment needs that parent’s consent. Child data is not used for ads. See Privacy.",
+    title: "Indian privacy law",
+    body: "For ages 6–11, you are the person we contract with and message. We need your consent. We do not use your child’s data for ads.",
   },
   {
     icon: "globe",
     tone: "bg-[#E7E7FF] text-indigo-pop",
-    title: "India only",
-    body: "Enrolment is for learners in India only. We follow Indian child-protection and privacy law in the Kids room. The parent remains the account holder. The pages below are the rules we run by.",
+    title: "India enrolment",
+    body: "We only enrol families in India. Fees on this page are India prices, inclusive of taxes. You remain the account holder.",
   },
 ];
 
@@ -54,10 +54,10 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
         </span>
         <div>
           <h3 className="font-display text-lg font-extrabold text-ink md:text-xl">
-            For parents — Kids room (ages 6–11)
+            For parents of children aged 6–11
           </h3>
           <p className="mt-1 text-sm leading-relaxed text-ink/80">
-            Clear rules, not a certificate stamp. This panel is for Spoken English for Kids only.
+            You stay on WhatsApp. Your child speaks. This is how the Kids room runs.
           </p>
         </div>
       </div>
@@ -96,8 +96,8 @@ export function ParentTrustPanel({ className = "mt-6" }: { className?: string })
           ))}
         </div>
         <p className="mt-4 text-xs leading-relaxed text-ink/70">
-          Enrolment follows our Privacy, Terms, Refunds and Child Protection pages as written. We
-          follow those rules in the Kids room. The parent remains the account holder.{" "}
+          These rules are written in Privacy, Terms, Refunds and Child Protection. We follow them
+          in this Kids room. You remain the account holder.{" "}
           <Link
             to="/privacy"
             className="font-bold text-brand-deep underline-offset-2 hover:underline"
