@@ -18,7 +18,7 @@ const ITEMS: { icon: IconName; tone: string; title: string; body: string }[] = [
     icon: "users",
     tone: "bg-[#E7E7FF] text-indigo-pop",
     title: "Their own small room",
-    body: "Four to six children, ages 6–11. Never mixed with teens or with adult rooms.",
+    body: "Four to six children, ages 6–11. This room is only for that age. Not mixed with older classes.",
   },
   {
     icon: "heart",

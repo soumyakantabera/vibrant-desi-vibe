@@ -522,7 +522,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · 4–6 children",
     price: "₹999/month",
     liveNote:
-      "✓ Parent is the customer · ✓ After-school and Saturday IST · ✓ Never mixed with teens or adults · ✓ Pan-India · Based in Kolkata",
+      "✓ Parent is the customer · ✓ After-school and Saturday IST · ✓ Ages 6–11 only · ✓ Pan-India · Based in Kolkata",
     snapshotBatchBig: "4–6",
     snapshotBatchSmall: "Children in this live batch",
     waDemo:
@@ -594,7 +594,7 @@ export const COURSES: Record<string, CourseData> = {
     faqs: [
       {
         q: "Is this the same room as the adult Spoken English class?",
-        a: "No. Ages 6–11 are a separate after-school batch of 4–6 children. They are never mixed with teens or with the adult rooms (15+).",
+        a: "No. This is an after-school batch of 4–6 children aged 6–11. Adult Spoken English is a different room for learners 15+.",
       },
       {
         q: "Who do you message — the child or the parent?",

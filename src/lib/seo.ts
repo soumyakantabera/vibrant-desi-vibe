@@ -1352,7 +1352,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is this the same as PlanetSpark or British Council kids English?",
-        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children, 1 hr 30 min twice a week, ₹999/month inclusive of taxes. Parent on WhatsApp. No school certificate. Rooms are never mixed with teens or adults.",
+        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children aged 6–11, 1 hr 30 min twice a week, ₹999/month inclusive of taxes. Parent on WhatsApp. No school certificate.",
       },
     ],
   },
