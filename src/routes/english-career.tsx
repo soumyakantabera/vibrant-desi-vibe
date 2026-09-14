@@ -10,7 +10,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
-import { COURSE_CATEGORIES, COURSE_SLUGS, type CourseSlug } from "@/lib/course-categories";
+import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
 type CoursePath = `/course-${CourseSlug}`;
@@ -22,6 +22,7 @@ export const Route = createFileRoute("/english-career")({
     const head = pageHead("/english-career");
     // Course hub: an ItemList of every live programme gives Google (and AI
     // answer engines) the whole catalogue with prices from a single fetch.
+    const hubSlugs = COURSE_CATEGORIES.flatMap((g) => [...g.slugs]);
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -29,8 +30,8 @@ export const Route = createFileRoute("/english-career")({
         "@type": "ItemList",
         name: page.title,
         description: page.description,
-        numberOfItems: COURSE_SLUGS.length,
-        itemListElement: COURSE_SLUGS.map((slug, i) => {
+        numberOfItems: hubSlugs.length,
+        itemListElement: hubSlugs.map((slug, i) => {
           const c = COURSES[slug];
           return {
             "@type": "ListItem",
@@ -65,9 +66,9 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Eight live rooms. Spoken, Kids (6–11), Teens (12–17), Workplace, IELTS, Interview,
-              Interactive Speaking, and 1:1 Career Guidance. From ₹999/mo, inclusive of taxes. No
-              registration fee.
+              Five live rooms. Spoken, Interactive Speaking, Kids (6–11), Teens (12–17) and
+              Workplace. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken
+              and Interactive. From ₹999/month, inclusive of taxes. No registration fee.
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms: about 6 learners, 1 hr 30 min, up to 2 classes/week. Kids: 4–6 children,
@@ -75,7 +76,7 @@ function Page() {
               and recordings go to the parent. Rooms are never mixed.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
-              {COURSE_SLUGS.map((slug) => {
+              {COURSE_CATEGORIES.flatMap((g) => [...g.slugs]).map((slug) => {
                 const c = COURSES[slug];
                 return (
                   <span
@@ -109,12 +110,12 @@ function Page() {
                 badge="Live · English Track"
                 eyebrow="Whole track from"
                 headline={{ big: "₹999", suffix: "/month" }}
-                subnote="₹999–₹2,499/mo · inclusive of taxes · Razorpay"
+                subnote="₹999–₹1,999/month · inclusive of taxes · Razorpay"
                 rows={[
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "8 courses",
+                    big: "5 courses",
                     small: "Adults · Teens 12–17 · Kids 6–11",
                   },
                   {
@@ -140,9 +141,9 @@ function Page() {
       <section className="section">
         <div className="container-x">
           <SectionHeader
-            eyebrow="Five Clear Categories"
-            title="8 Programmes · Small live rooms · From ₹999/mo, inclusive of taxes"
-            subtitle="Adult rooms, plus Kids (6–11) and Teens (12–17). Pick the outcome, then the fee and duration."
+            eyebrow="Three Clear Categories"
+            title="5 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
+            subtitle="Adult rooms, plus Kids (6–11) and Teens (12–17). Interview English sits inside Spoken and Interactive. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (

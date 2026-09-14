@@ -17,7 +17,7 @@ export const COURSE_CATEGORIES = [
     id: "speak-confidently",
     title: "Speak Confidently · From ₹999/month, inclusive of taxes",
     description:
-      "Quality live English from ₹999/month, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Quality live English from ₹999/month, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English (HR, tell-me-about-yourself, STAR) is practised in these rooms. Batches of approximately 6 learners.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -38,33 +38,13 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "work-and-career",
-    title: "Work & Career · from ₹1,499/month, inclusive of taxes",
+    title: "Work & Career · from ₹1,999/month, inclusive of taxes",
     description:
-      "Workplace English ₹1,999/month and Interview Prep ₹1,499/month, inclusive of taxes. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Workplace English ₹1,999/month, inclusive of taxes. Meetings, calls, emails, presentations. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
-    slugs: ["business-english", "interview-prep"],
-  },
-  {
-    id: "ielts-preparation",
-    title: "IELTS Prep · ₹2,499/month, inclusive of taxes",
-    description:
-      "3 months live toward Band 7. ₹2,499/month, inclusive of taxes. All 4 skills, 6+ live mocks, Academic or General Training. Typical start Band 5.5–6. Batches of approximately 6 learners.",
-    icon: "trophy",
-    tone: "sun",
-    featuredSlug: "ielts",
-    slugs: ["ielts"],
-  },
-  {
-    id: "career-guidance",
-    title: "Career Guidance · ₹1,999 total, inclusive of taxes",
-    description:
-      "1:1 counselling. 3 sessions × 60 minutes. Three shortlisted paths and a 6-month action plan.",
-    icon: "compass",
-    tone: "coral",
-    featuredSlug: "career-counselling",
-    slugs: ["career-counselling"],
+    slugs: ["business-english"],
   },
 ] as const satisfies ReadonlyArray<{
   id: string;

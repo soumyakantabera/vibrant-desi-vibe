@@ -266,7 +266,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Eight live English programmes for adults, teens and kids. From ₹999/month, inclusive of taxes. Small live batches. Parent on WhatsApp for under-18 rooms.",
+      "Live English programmes for adults, teens and kids. From ₹999/month, inclusive of taxes. Small live batches. Interview English in Spoken and Interactive. Parent on WhatsApp for under-18 rooms.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -283,7 +283,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-12",
     summary:
-      "Course hub. Eight live English programmes for adults, teens (12–17) and kids (6–11), with clear fees (₹999–₹2,499/month), duration, format and outcomes. Parent is the customer for under-18 rooms.",
+      "Course hub. Spoken, Interactive, Kids (6–11), Teens (12–17) and Workplace. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes. Parent is the customer for under-18 rooms.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",

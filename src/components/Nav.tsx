@@ -47,19 +47,6 @@ const ENGLISH_COURSES: NavItem[] = [
     icon: "headset",
     desc: "3 months · ₹1,999/month, inclusive of taxes",
   },
-  { to: "/course-ielts", label: "IELTS Preparation", icon: "trophy", desc: "3 months · ₹2,499/month, inclusive of taxes" },
-  {
-    to: "/course-interview-prep",
-    label: "Interview Prep",
-    icon: "target",
-    desc: "2 months · ₹1,499/month, inclusive of taxes",
-  },
-  {
-    to: "/course-career-counselling",
-    label: "Career Counselling",
-    icon: "compass",
-    desc: "3 × 60 min · ₹1,999 total, inclusive of taxes",
-  },
 ];
 
 export function Nav() {

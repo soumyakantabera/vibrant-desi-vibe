@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, up to 2 classes/week.",
+      "6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, interview English (HR, tell-me-about-yourself), up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -16,13 +16,15 @@ export const COURSES: Record<string, CourseData> = {
     duration: "6 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
     price: "₹999/month",
+    liveNote:
+      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible morning · evening · weekend slots · ✓ Pan-India · Based in Kolkata",
     outcomes: [
       "Introduce yourself fluently in any social or work setting",
       "Handle daily conversations — shops, travel, phone calls",
       "Build a 2,000+ word everyday vocabulary",
       "Speak with correct grammar, tense and pronunciation",
-      "Confidently take part in group discussions",
-      "Lose hesitation and stage fear with live speaking reps",
+      "Answer 'tell me about yourself' in 90 seconds",
+      "Practise HR-style questions live in the batch",
     ],
     modules: [
       {
@@ -79,8 +81,21 @@ export const COURSES: Record<string, CourseData> = {
           "Final live presentation with feedback",
         ],
       },
+      {
+        title: "Interview English",
+        items: [
+          "The 90-second 'tell me about yourself'",
+          "HR questions: why you, strengths, weaknesses",
+          "STAR — situation, task, action, result",
+          "Notice period and salary, said calmly",
+        ],
+      },
     ],
     faqs: [
+      {
+        q: "Do you cover job interviews?",
+        a: "Yes. In this Spoken English room you practise the 90-second introduction, HR-style questions and STAR answers live in the batch of about 6. It is interview English inside the 6-month course — not a separate interview fee.",
+      },
       {
         q: "I can barely speak. Will this work for me?",
         a: "Yes — this is exactly who the course is for. We start from absolute basics and build up step by step in a judgment-free batch.",
@@ -120,7 +135,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
   },
   "business-english": {
     slug: "business-english",
@@ -213,7 +228,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays. Approx. 6 learners, up to 2 classes/week, ₹1,199/month, inclusive of taxes. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays, interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,199/month, inclusive of taxes. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -224,13 +239,15 @@ export const COURSES: Record<string, CourseData> = {
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · approximately 6 learners",
     price: "₹1,199/month",
+    liveNote:
+      "✓ 100% online live · ✓ Interview rounds in this room · ✓ Flexible morning · evening · weekend slots · ✓ Pan-India · Based in Kolkata",
     outcomes: [
       "Speak for 2 minutes on any topic",
       "Lead group conversations",
       "Tell stories that hold attention",
-      "Use idioms naturally",
+      "Answer 'tell me about yourself' without freezing",
+      "Practise HR and STAR answers out loud",
       "Think in English, not translate",
-      "Win debates with calm logic",
     ],
     modules: [
       {
@@ -264,6 +281,15 @@ export const COURSES: Record<string, CourseData> = {
         title: "Role-Plays",
         items: ["Travel & hotel", "Customer service", "Doctor & patient", "Job networking events"],
       },
+      {
+        title: "Interview rounds",
+        items: [
+          "90-second pitch, live, on the mic",
+          "HR: why this company, why you",
+          "STAR stories for conflict, failure, leadership",
+          "Read the interviewer — then answer",
+        ],
+      },
     ],
     testimonials: [
       {
@@ -274,8 +300,14 @@ export const COURSES: Record<string, CourseData> = {
         waMessage: "Hi, I saw Ananya's standup story. Interactive Speaking demo please.",
       },
     ],
+    faqs: [
+      {
+        q: "Do you cover job interviews?",
+        a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. You talk every hour — including the questions that freeze people in interviews.",
+      },
+    ],
     metaDescription:
-      "Interactive English speaking classes online. Up to 2 live sessions/week with games, debates and stories. 3 months · approximately 6 learners per batch · ₹1,199/month, inclusive of taxes.",
+      "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,199/month, inclusive of taxes.",
   },
   ielts: {
     slug: "ielts",

@@ -18,9 +18,6 @@ const ENGLISH = [
   { to: "/course-kids-english", label: "Spoken English for Kids" },
   { to: "/course-teen-english", label: "Spoken English for Teens" },
   { to: "/course-business-english", label: "Workplace English" },
-  { to: "/course-ielts", label: "IELTS" },
-  { to: "/course-interview-prep", label: "Interview Prep" },
-  { to: "/course-career-counselling", label: "Career Counselling" },
 ];
 
 const COMPANY = [
