@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { WhatsAppFab } from "./WhatsAppFab";
+import { CookieBar } from "./CookieBar";
 
 export function Layout({
   children,
@@ -25,6 +26,7 @@ export function Layout({
         {children}
       </main>
       <Footer image={footerImage} />
+      <CookieBar />
       <WhatsAppFab message={waMessage} />
     </div>
   );

@@ -141,9 +141,6 @@ export function Footer({ image }: { image?: string }) {
         <div className="mt-8 pt-6 border-t border-cream/15">
           <PaymentTrust tone="dark" />
         </div>
-        <div className="mt-6">
-          <CountrySelect />
-        </div>
         <div className="mt-8 pt-6 border-t border-cream/15 text-xs leading-relaxed text-white/80 space-y-3">
           <p className="text-cream/95 font-semibold">
             Enrolment is for learners in India only. We do not take enrolment from outside India.
@@ -188,9 +185,12 @@ export function Footer({ image }: { image?: string }) {
               </Link>
             </p>
           </div>
-          <p className="font-display font-semibold text-cream/90">
-            Real teacher · Chat on WhatsApp
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <CountrySelect />
+            <p className="font-display font-semibold text-cream/90">
+              Real teacher · Chat on WhatsApp
+            </p>
+          </div>
         </div>
       </div>
     </footer>
