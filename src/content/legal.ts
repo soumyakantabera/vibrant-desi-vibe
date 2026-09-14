@@ -76,7 +76,10 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Cookies and analytics",
         paragraphs: [
-          "This website is a static brochure. We do not load Google Analytics, advertising pixels or campaign tracking on WhatsApp links. The host may set cookies or logs that are strictly necessary to deliver the pages and keep the site available.",
+          "This website uses cookies and similar technologies in two groups.",
+          "Strictly necessary storage is used to deliver the pages, keep the site available and secure, and remember this notice and similar choices on your device. This group runs whether you choose Accept or Reject.",
+          "Analytics storage, including Google Analytics or a comparable measurement tool, is used only if you choose Accept. It helps us understand how the site is used (for example, which pages are opened) so we can improve it. It is not used to show you advertisements, and we do not sell this information. Google may process measurement data on servers outside India under Google’s terms. WhatsApp links on this site are not tagged with advertising pixels.",
+          "You may Reject optional analytics. Necessary functions still work. You can change your mind later by clearing this site’s data in your browser.",
           "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That is for later fee and tax display. We do not use it to enrol you outside India, and we do not send that lookup to an advertising network.",
         ],
       },
@@ -90,6 +93,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Razorpay, for fee collection.",
           "WhatsApp / Meta, when you choose to message us there.",
           "Our website host, currently GitHub Pages, which stores the public site files.",
+          "Google, if you Accept analytics, for site measurement (Google Analytics or a similar tool).",
           "Professional advisers or authorities when the law requires it, or to protect learners, staff or the public.",
         ],
       },

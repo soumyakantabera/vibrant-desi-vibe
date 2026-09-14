@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-const KEY = "lws.consent.v3";
+const KEY = "lws.consent.v4";
 
 export function CookieBar() {
   const [open, setOpen] = useState(false);
@@ -16,7 +16,7 @@ export function CookieBar() {
 
   const accept = () => {
     try {
-      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 3, ok: true }));
+      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 4, ok: true }));
     } catch {
       /* private mode */
     }
@@ -25,7 +25,7 @@ export function CookieBar() {
 
   const reject = () => {
     try {
-      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 3, ok: false }));
+      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 4, ok: false }));
     } catch {
       /* private mode */
     }
@@ -46,18 +46,19 @@ export function CookieBar() {
           We use cookies
         </p>
         <p id="cookie-copy" className="mt-1.5 text-[11px] leading-relaxed text-cream/88">
-          We use cookies and similar technologies that are strictly necessary to operate this
-          website, keep it secure, and remember the choices you make on this device. We do not
-          place advertising cookies and we do not load Google Analytics or other marketing
-          pixels. You can read how we handle information in our{" "}
+          We use cookies and similar technologies that are necessary to operate this website,
+          keep it secure, and remember the choices you make on this device. If you Accept, we
+          may also use Google Analytics (or a similar measurement tool) to understand how the
+          site is used, so we can improve it. We do not use this to show you advertisements.
+          Read our{" "}
           <Link to="/privacy" className="font-semibold text-sunshine underline-offset-2 hover:underline">
             Privacy Policy
           </Link>{" "}
-          and the contract in our{" "}
+          and{" "}
           <Link to="/terms" className="font-semibold text-sunshine underline-offset-2 hover:underline">
             Terms of Use
           </Link>
-          . Accept to agree. Reject optional storage — necessary functions still work.
+          . Accept: necessary and analytics. Reject: necessary only.
         </p>
         <div className="mt-3 flex flex-wrap items-center justify-end gap-2">
           <button
