@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-const KEY = "lws.consent.v1";
+const KEY = "lws.consent.v2";
 
 export function CookieBar() {
   const [open, setOpen] = useState(false);
@@ -16,7 +16,16 @@ export function CookieBar() {
 
   const accept = () => {
     try {
-      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 1 }));
+      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 1, ok: true }));
+    } catch {
+      /* private mode */
+    }
+    setOpen(false);
+  };
+
+  const reject = () => {
+    try {
+      window.localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), v: 1, ok: false }));
     } catch {
       /* private mode */
     }
@@ -33,24 +42,31 @@ export function CookieBar() {
     >
       <div className="pointer-events-auto mr-auto flex max-w-lg items-center gap-3 rounded-xl border border-cream/40 bg-ink/95 px-3 py-2 shadow-xl backdrop-blur-md">
         <p className="min-w-0 flex-1 text-[11px] leading-snug text-cream/90">
-          We use only what the site needs. Country stays on this device. By continuing you
-          accept our{" "}
+          We use only what this site needs to run.{" "}
           <Link to="/privacy" className="font-semibold text-sunshine underline-offset-2 hover:underline">
             Privacy
-          </Link>{" "}
-          and{" "}
+          </Link>
+          {" · "}
           <Link to="/terms" className="font-semibold text-sunshine underline-offset-2 hover:underline">
             Terms
           </Link>
-          .
         </p>
-        <button
-          type="button"
-          onClick={accept}
-          className="relative z-10 shrink-0 rounded-full bg-sunshine px-3.5 py-1.5 text-[11px] font-display font-extrabold text-ink hover:bg-[#F6C453]"
-        >
-          Accept
-        </button>
+        <div className="flex shrink-0 items-center gap-1.5">
+          <button
+            type="button"
+            onClick={reject}
+            className="relative z-10 rounded-full border border-cream/35 px-3 py-1.5 text-[11px] font-display font-bold text-cream/90 hover:bg-white/10"
+          >
+            Reject
+          </button>
+          <button
+            type="button"
+            onClick={accept}
+            className="relative z-10 rounded-full bg-sunshine px-3.5 py-1.5 text-[11px] font-display font-extrabold text-ink hover:bg-[#F6C453]"
+          >
+            Accept
+          </button>
+        </div>
       </div>
     </div>
   );
