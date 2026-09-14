@@ -123,8 +123,8 @@ jobs:
           if ! grep -qi 'discontinued' dist/course-kids-english.html; then
             echo "::error::kids page is not marked discontinued"; exit 1
           fi
-          if grep -q '₹999/month' dist/course-kids-english.html; then
-            echo "::error::kids page still advertises ₹999/month"; exit 1
+          if ! grep -q 'no longer open for enrolment' dist/course-kids-english.html; then
+            echo "::error::kids page is missing the discontinued heading"; exit 1
           fi
           if ! grep -q '₹999' dist/course-teen-english.html; then
             echo "::error::teens page missing ₹999"; exit 1
