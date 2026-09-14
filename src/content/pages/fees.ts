@@ -169,12 +169,11 @@ export const body: ArticleBody = [
   { t: "h2", text: "Our fees, in full" },
   {
     t: "table",
-    caption:
-      "All figures are inclusive of taxes. No registration fee, no material fee, billed monthly.",
+    caption: "All figures are inclusive of taxes. No registration fee, no material fee, billed monthly.",
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
-      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,199/month"],
+      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,499/month"],
       ["Workplace English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
       ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,499/month"],
       ["IELTS Preparation", "3 months", "Live batch, approx. 6 learners", "₹2,499/month"],

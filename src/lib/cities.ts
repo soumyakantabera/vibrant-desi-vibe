@@ -341,7 +341,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       head: ["Course", "Duration", "Fee"],
       rows: [
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
-        ["Interactive Speaking", "3 months", "₹1,199/month"],
+        ["Interactive Speaking", "3 months", "₹1,499/month"],
         ["Interview Preparation", "2 months", "₹1,499/month"],
         ["Workplace English", "3 months", "₹1,999/month"],
         ["IELTS Preparation", "3 months, 6 mocks", "₹2,499/month"],

@@ -27,7 +27,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-interactive-speaking",
     label: "Interactive Speaking",
     icon: "headset",
-    desc: "3 months · ₹1,199/month, inclusive of taxes",
+    desc: "3 months · ₹1,499/month, inclusive of taxes",
   },
   {
     to: "/course-kids-english",
