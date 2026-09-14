@@ -351,7 +351,7 @@ function dropHiddenElements(html: string): string {
   for (let m = OPEN_TAG.exec(out); m; m = OPEN_TAG.exec(out)) {
     const [tag, name, attrs] = m;
     const classes = /class="([^"]*)"/i.exec(attrs)?.[1];
-    if (!classes || !classes.split(/\\s+/).includes("hidden")) continue;
+    if (!classes || !classes.split(/\s+/).includes("hidden")) continue;
 
     const start = m.index;
     const end = VOID_TAGS.has(name.toLowerCase())
@@ -376,7 +376,7 @@ const NAMED_ENTITIES: Record<string, string> = {
 };
 
 function decodeEntities(s: string): string {
-  return s.replace(/&(#x[0-9a-f]+|#\\d+|[a-z]+);/gi, (match, body: string) => {
+  return s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, body: string) => {
     if (body[0] === "#") {
       const code =
         body[1]?.toLowerCase() === "x" ? parseInt(body.slice(2), 16) : parseInt(body.slice(1), 10);
@@ -388,7 +388,7 @@ function decodeEntities(s: string): string {
 
 /** Tag-free, single-line text — used for anchor and heading contents. */
 function inline(html: string): string {
-  return decodeEntities(html.replace(RE.tag, " ")).replace(/\\s+/g, " ").trim();
+  return decodeEntities(html.replace(RE.tag, " ")).replace(/\s+/g, " ").trim();
 }
 
 /**
@@ -450,12 +450,12 @@ export function htmlToMarkdown(html: string): string {
   s = s.replace(
     RE.heading,
     (_match, level: string, inner: string) =>
-      `\\n\\n${"#".repeat(Number(level))} ${inline(inner)}\\n\\n`,
+      `\n\n${"#".repeat(Number(level))} ${inline(inner)}\n\n`,
   );
 
-  s = s.replace(RE.lineBreak, "\\n");
-  s = s.replace(RE.listItem, "\\n- ").replace(RE.listItemEnd, "\\n");
-  s = s.replace(RE.blockEnd, "\\n\\n");
+  s = s.replace(RE.lineBreak, "\n");
+  s = s.replace(RE.listItem, "\n- ").replace(RE.listItemEnd, "\n");
+  s = s.replace(RE.blockEnd, "\n\n");
   s = s.replace(RE.tag, " ");
   s = decodeEntities(s);
 
@@ -463,16 +463,16 @@ export function htmlToMarkdown(html: string): string {
     s
       // Collapse horizontal whitespace (including the non-breaking spaces the
       // markup uses for prices) without touching the line structure above.
-      .replace(/[^\\S\\n]+/g, " ")
+      .replace(/[^\S\n]+/g, " ")
       // Every tag became a space, so `<strong>₹999/mo</strong>.` would end its
       // sentence with " ." — close those gaps back up.
-      .replace(/ +([.,;:!?…%)\\]])/g, "$1")
+      .replace(/ +([.,;:!?…%)\]])/g, "$1")
       .replace(/([([]) +/g, "$1")
-      .split("\\n")
+      .split("\n")
       .map((line) => line.trim())
       .filter((line, i, lines) => line !== "-" && !(line === "" && lines[i - 1] === ""))
       .join("\n")
-      .replace(/\\n{3,}/g, "\\n\\n")
+      .replace(/\n{3,}/g, "\n\n")
       .trim()
   );
 }
@@ -502,7 +502,7 @@ export function pageMarkdown(doc: PageDoc, updated: string): string {
 
 /** Quotes a YAML scalar. Titles and descriptions here contain `:`, `—` and `₹`. */
 function yaml(value: string): string {
-  return `"${value.replace(/\\\\/g, "\\\\\\\\").replace(/"/g, '\\\\"')}"`;
+  return `"${value.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 }
 
 /* ---------------------------------------------------------------- llms.txt */
