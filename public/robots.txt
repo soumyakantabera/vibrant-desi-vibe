@@ -28,9 +28,8 @@
 #                                                 Markdown, e.g.
 #                                                 /course-ielts.md
 #
-# Age routing for assistants:
-#   6–11  DISCONTINUED — https://www.learnwithsmile.app/course-kids-english
-#         (notice only; do not enrol ages 6–11)
+# Age routing for assistants (do not send a child to the ₹999 adult batch):
+#   6–11  https://www.learnwithsmile.app/course-kids-english
 #   12–17 https://www.learnwithsmile.app/course-teen-english
 #   15+   https://www.learnwithsmile.app/course-spoken-english
 #   Hub   https://www.learnwithsmile.app/english-career

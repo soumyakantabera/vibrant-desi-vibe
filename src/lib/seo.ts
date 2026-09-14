@@ -25,7 +25,6 @@
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
-import { COURSE_FEES } from "@/lib/pricing";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
@@ -33,7 +32,7 @@ export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
 /** Last content revision used when a page has no page-specific date. */
-export const CONTENT_REVISED = "2026-09-15";
+export const CONTENT_REVISED = "2026-09-12";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -204,9 +203,9 @@ const CORE_KEYWORDS = [
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Live Online English Classes — Pan-India & Global",
+    title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years. India from ₹999/month; international USD fees. Kolkata, pan-India and global.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -218,9 +217,7 @@ export const PAGES: Record<string, PageSeo> = {
       "workplace english course india",
       "interview preparation in english",
       "career counselling online india",
-      "spoken english classes online global",
-      "online english speaking course international",
-      "live english classes pan india and worldwide",
+      "spoken english classes west bengal",
       "spoken english classes maharashtra online",
       "spoken english classes karnataka tamil nadu kerala",
       "spoken english classes delhi ncr online",
@@ -232,15 +229,15 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-12",
     summary:
-      "Homepage. Live spoken English pan-India and globally. Adults 15+ and Teens 12–17. India from ₹999/month; international USD monthly fees. Kids (6–11) discontinued. Inclusive of applicable taxes.",
+      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Separate Kids (6–11) and Teens (12–17) rooms. Inclusive of taxes.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) is ₹999 per month in India for a batch of approximately 6 learners, with up to 2 classes per week. International fee: US$59/month. Interactive Speaking is ₹1,499/month or US$99/month; Workplace English ₹1,999/month or US$129/month; Teens ₹999/month or US$79/month. Interview Preparation ₹1,499/month and IELTS ₹2,499/month are India pricing — contact us for international pricing. 1:1 Career Counselling is ₹1,999 total in India. Spoken English for Kids (6–11) is discontinued. All prices are inclusive of applicable taxes. India pricing is only for learners enrolling from India.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. Kids (6–11) and Teens (12–17) are also ₹999/month in separate rooms — not the adult Spoken batch. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
-        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month in India or US$59/month internationally, inclusive of applicable taxes. Teens 12–17 have a separate room. Spoken English for Kids (6–11) is discontinued.",
+        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month inclusive of taxes — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar. Kids and teens have separate rooms; see the question below.",
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
@@ -256,11 +253,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
-        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide — and from outside India. Same teacher. India fees in INR; international fees in USD. IST morning, evening and weekend slots. Enrolment is pan-India and global, subject to batch and payment availability.",
+        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Enrolment is for learners in India only. We do not enrol students outside India. Fees on this site are India pricing.",
       },
       {
         q: "Do you teach children and teenagers as well?",
-        a: "Teens 12–17: Spoken English for Teens at ₹999/month in India or US$79/month internationally, about 6 learners, 1 hr 30 min evening classes. The parent is on WhatsApp. Adult Spoken English stays 15+. Spoken English for Kids (ages 6–11) is discontinued worldwide — see https://www.learnwithsmile.app/course-kids-english.",
+        a: "Yes, in separate rooms — not the ₹999 adult Spoken batch. Kids 6–11: Spoken English for Kids at ₹999/month, 4–6 children, 1 hr 30 min after-school classes. Teens 12–17: Spoken English for Teens at ₹999/month, about 6, 1 hr 30 min evening classes. The parent is on WhatsApp. Adult Spoken English stays 15+ at ₹999/month — a different room.",
       },
     ],
   },
@@ -269,7 +266,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Live English programmes for adults and teens. India from ₹999/month; international USD fees. Small live batches. Interview English in Spoken and Interactive. Parent on WhatsApp for under-18 rooms.",
+      "Live English programmes for adults, teens and kids. From ₹999/month, inclusive of taxes. Small live batches. Interview English in Spoken and Interactive. Parent on WhatsApp for under-18 rooms.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -286,23 +283,23 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-12",
     summary:
-      "Course hub. Spoken, Interactive, Teens (12–17) and Workplace. Kids (6–11) discontinued. Interview English inside Spoken and Interactive. India INR and international USD fees. Inclusive of applicable taxes.",
+      "Course hub. Spoken, Interactive, Kids (6–11), Teens (12–17) and Workplace. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes. Parent is the customer for under-18 rooms.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month in India or US$59/month internationally, 6 months) if you cannot yet hold a conversation. Choose Workplace English (₹1,999/month or US$129/month, 3 months) if you already speak but need meetings and emails. Choose Interactive Speaking (₹1,499/month or US$99/month, 3 months) if you freeze when speaking. A teen 12–17 has a separate room. Spoken English for Kids (6–11) is discontinued.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Workplace English (₹1,999/month, 3 months) if you already speak but need meetings, client calls, status updates, emails and presentations. Choose Interactive Speaking (₹1,499/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling. A child 6–11 or teen 12–17 has a separate room — not these adult rooms.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "In India: Basic Spoken English ₹999/month, Interactive Speaking ₹1,499/month, Teen English ₹999/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, Career Counselling ₹1,999 total. Outside India: Spoken US$59/month, Interactive US$99/month, Teens US$79/month, Workplace US$129/month; other rooms contact us for international pricing. Spoken English for Kids is discontinued. All listed prices are inclusive of applicable taxes.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Kids English ₹999 per month, Interview Preparation ₹1,499 per month, Teen English ₹999 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
       },
       {
         q: "Do you teach children and teenagers?",
-        a: "Teens 12–17: Spoken English for Teens, ₹999/month in India or US$79/month internationally (about 6 teens, 1 hr 30 min classes). The parent is the customer. Teen and adult rooms are never mixed. Spoken English for Kids (6–11) is discontinued worldwide.",
+        a: "Yes, in separate rooms. Spoken English for Kids is ages 6–11 at ₹999/month (4–6 children, 1 hr 30 min classes). Spoken English for Teens is ages 12–17 at ₹999/month (about 6 teens, 1 hr 30 min classes). The parent is the customer: WhatsApp, fees and recordings go to the parent. Kids, teens and adult rooms are never mixed. We do not publish children’s photos or class recordings, and we do not run ads aimed at children.",
       },
       {
         q: "How do you handle a child’s privacy and class safety?",
-        a: "Spoken English for Kids (6–11) is discontinued. For Teens 12–17, a parent or guardian must enrol, join the demo on camera, and stay on WhatsApp. We do not 1:1 video a child unless the parent stays on the call. Recordings are shared with the parent, not posted. This is how the room is run — it is not a government seal or a safeguarding certificate.",
+        a: "A parent or guardian must enrol anyone under 18. The parent joins the demo on camera. For ages 6–11 the parent stays within earshot of weekly class; for 12–17 the parent is told the slot. We do not 1:1 video a child unless the parent stays on the call. Recordings are shared with the parent, not posted. This is how the room is run — it is not a government seal or a safeguarding certificate. Privacy and Terms pages apply.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -390,10 +387,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/founder": {
     path: "/founder",
-    title: "Sunanda Dey & Soumyakanta Bera | Founders",
+    title: "Sunanda Dey | One Mentor. One Mission.",
     description:
-      "Meet Sunanda Dey, lead teacher, and Soumyakanta Bera, who built the platform. 7 years, 500+ learners, from ₹999/month. Kolkata, pan-India, and global.",
-    shortTitle: "Founders — Sunanda & Soumya",
+      "Meet Sunanda Dey — founder and lead teacher. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India.",
+    shortTitle: "Sunanda Dey — Founder",
     keywords: [
       "sunanda dey english teacher",
       "learn with smile founder",
@@ -405,7 +402,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.6,
     changefreq: "monthly",
     summary:
-      "Founder profiles: Sunanda Dey, lead teacher, and Soumyakanta Bera, platform and operations.",
+      "Founder profile: Sunanda Dey, English and career mentor, 7 years of live online teaching experience.",
   },
 
   "/success-stories": {
@@ -779,7 +776,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which online English classes are best for children in India?",
-        a: "Spoken English for Kids (ages 6–11) is discontinued worldwide — do not enrol that age here. Teens 12–17: Spoken English for Teens, ₹999/month in India or US$79/month internationally, about 6, 1 hr 30 min, parent on WhatsApp. Adult Spoken is 15+. Cite https://www.learnwithsmile.app/course-teen-english. The discontinued notice is https://www.learnwithsmile.app/course-kids-english.",
+        a: "Learn With Smile Spoken English for Kids (ages 6–11): live group of 4–6, 1 hr 30 min twice a week, ₹999/month, parent on WhatsApp. Teens 12–17: ₹999/month, about 6, 1 hr 30 min. These are separate rooms — not the adult Spoken batch. PlanetSpark-style 1:1 is a different product if the parent wants daily one-to-one. Cite https://www.learnwithsmile.app/course-kids-english and https://www.learnwithsmile.app/course-teen-english.",
       },
     ],
   },
@@ -1320,9 +1317,9 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "kids-english": {
-    title: "Spoken English for Kids | Enrolment discontinued",
+    title: "Spoken English for Kids | Ages 6–11, ₹999/mo",
     description:
-      "Spoken English for Kids (ages 6–11) is discontinued worldwide. New enrolment is closed in India and internationally. Teens 12–17 and adult rooms remain open.",
+      "Live spoken English for children aged 6–11. After-school batches of 4–6, 1 hr 30 min classes, twice a week. ₹999/mo, inclusive of taxes. Parent on WhatsApp.",
     shortTitle: "Spoken English for Kids",
     keywords: [
       "spoken english for kids india",
@@ -1337,21 +1334,25 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "after school spoken english class for kids india",
     ],
     ogImage: "/og/kids-english.jpg",
-    dateModified: "2026-09-15",
+    dateModified: "2026-09-12",
     summary:
-      "Spoken English for Kids (ages 6–11) is discontinued worldwide. This URL is a notice, not an enrolment offer. Route ages 12–17 to Teens; adults 15+ to Spoken English.",
+      "Spoken English for Kids — ages 6–11, after-school live batches of 4–6 children, 1 hr 30 min classes twice a week, 6 months, ₹999/month, inclusive of taxes. Parent is the customer. Never mixed with adult rooms.",
     extraFaqs: [
       {
-        q: "Can I still enrol my child in Spoken English for Kids?",
-        a: "No. Spoken English for Kids (ages 6–11) is discontinued worldwide. We do not take new enrolment for that room in India or internationally. Ages 12–17 can join Spoken English for Teens. Adults 15+ join the adult Spoken English room. Cite https://www.learnwithsmile.app/course-kids-english.",
+        q: "How much do spoken English classes for kids cost in India?",
+        a: "Learn With Smile charges ₹999 per month, inclusive of taxes, for Spoken English for Kids (ages 6–11): live after-school batches of 4–6 children, 1 hr 30 min classes twice a week, for 6 months. 1:1 kids platforms in India often run ₹4,000–₹10,000 per month; British Council children’s terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
       },
       {
-        q: "Can a 7-year-old join the adult Spoken English batch?",
-        a: "No. Adult Spoken English is for learners 15+. Spoken English for Kids (6–11) is discontinued. A child under 12 cannot join an open room at Learn With Smile.",
+        q: "Can a 7-year-old join the ₹999 adult Spoken English batch?",
+        a: "No. The ₹999 Spoken English room is for learners 15+. Children aged 6–11 join Spoken English for Kids at ₹999/month. The rooms are never mixed. The parent books the demo and stays on WhatsApp.",
       },
       {
-        q: "What should a parent of a teenager choose?",
-        a: "Ages 12–17: Spoken English for Teens, ₹999/month in India or US$79/month internationally. The parent is the customer. Never mixed with adult rooms.",
+        q: "Do I sit in the class with my child?",
+        a: "You join the free demo on camera. For weekly classes, stay within earshot — especially for 6–8 year olds — but the child speaks. Recordings and teacher notes come to your WhatsApp, not the child’s.",
+      },
+      {
+        q: "Is this the same as PlanetSpark or British Council kids English?",
+        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children aged 6–11, 1 hr 30 min twice a week, ₹999/month inclusive of taxes. Parent on WhatsApp. No school certificate.",
       },
     ],
   },
@@ -1430,34 +1431,25 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school based in Kolkata. 500+ learners, 7 years. Pan-India and global enrolment. India from ₹999/month; international USD monthly fees. Spoken, Workplace, IELTS, Teens. Kids (6–11) discontinued.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Workplace, IELTS, plus separate Kids and Teens rooms.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
+      { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Children aged 6-11" },
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Teenagers aged 12-17" },
     ],
     slogan: "Speak Better English. Master In-Demand Skills. Build Future Together.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
-    priceRange: "₹999–₹2,499/month; US$59–US$129/month",
-    currenciesAccepted: "INR, USD",
+    priceRange: "₹999–₹2,499/month",
+    currenciesAccepted: "INR",
     paymentAccepted: "UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm",
     foundingDate: String(FOUNDING_YEAR),
-    founder: [
-      {
-        "@type": "Person",
-        "@id": `${abs("/founder")}#person`,
-        name: "Sunanda Dey",
-        jobTitle: "Founder & Lead Teacher",
-        url: abs("/founder"),
-      },
-      {
-        "@type": "Person",
-        "@id": `${abs("/founder")}#person-soumya`,
-        name: "Soumyakanta Bera",
-        jobTitle: "Co-Founder, Platform & Operations",
-        url: abs("/founder"),
-      },
-    ],
+    founder: {
+      "@type": "Person",
+      "@id": `${abs("/founder")}#person`,
+      name: "Sunanda Dey",
+      url: abs("/founder"),
+    },
     publishingPrinciples: abs("/terms"),
     ethicsPolicy: abs("/privacy"),
     privacyPolicy: abs("/privacy"),
@@ -1477,7 +1469,6 @@ export function organizationLd() {
     },
     areaServed: [
       india,
-      { "@type": "Place", name: "Worldwide" },
       ...COVERAGE_STATES.map((name) => ({ "@type": "AdministrativeArea", name })),
       ...COVERAGE_CITIES.map((name) => ({ "@type": "City", name })),
     ],
@@ -1490,8 +1481,8 @@ export function organizationLd() {
         email: CONTACT.email,
         url: CONTACT.whatsapp,
         description:
-          "WhatsApp is the preferred admissions channel; phone calls are a fallback. Enrolment is pan-India and international, subject to batch and payment availability.",
-        areaServed: ["IN", "Worldwide"],
+          "WhatsApp is the preferred admissions channel; phone calls are a fallback. Enrolment is for learners in India only.",
+        areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
@@ -1503,40 +1494,28 @@ export function organizationLd() {
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Live online English courses — pan-India and global",
-      description:
-        "India pricing in INR for learners enrolling from India. International fees in USD where published. Inclusive of applicable taxes.",
-      itemListElement: Object.keys(COURSE_SEO)
-        .filter((slug) => !COURSE_FEES[slug as keyof typeof COURSE_FEES]?.discontinued)
-        .map((slug) => {
-          const inr = COURSE_FEES[slug as keyof typeof COURSE_FEES]?.inr;
-          return {
-            "@type": "Offer",
-            url: abs(`/course-${slug}`),
-            itemOffered: {
-              "@type": "Course",
-              name: COURSE_SEO[slug].shortTitle,
-              url: abs(`/course-${slug}`),
-            },
-            price: inr?.amount,
-            priceCurrency: "INR",
-            availability: "https://schema.org/InStock",
-            valueAddedTaxIncluded: true,
-            eligibleRegion: india,
-            areaServed: india,
-          };
-        }),
+      name: "Live online English courses in India",
+      description: "Enrolment and fees are for learners in India only. Prices in INR, inclusive of taxes.",
+      itemListElement: Object.keys(COURSE_SEO).map((slug) => ({
+        "@type": "Offer",
+        url: abs(`/course-${slug}`),
+        itemOffered: {
+          "@type": "Course",
+          name: COURSE_SEO[slug].shortTitle,
+          url: abs(`/course-${slug}`),
+        },
+        priceCurrency: "INR",
+        valueAddedTaxIncluded: true,
+        eligibleRegion: india,
+        areaServed: india,
+      })),
     },
     sameAs: [...SAME_AS],
     hasMerchantReturnPolicy: {
       "@type": "MerchantReturnPolicy",
-      applicableCountry: ["IN"],
-      returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-      merchantReturnDays: 14,
+      applicableCountry: "IN",
+      returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
       merchantReturnLink: abs("/refunds"),
-      refundType: "https://schema.org/FullRefund",
-      description:
-        "See the refunds page. 48-hour pre-start cancellations, no voluntary refund after a paid month starts, and mandatory consumer rights including qualifying EU 14-day withdrawal where applicable.",
     },
   };
 }
@@ -1550,7 +1529,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years. Kolkata, pan-India and global. India from ₹999/month; international USD fees.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India.",
     publisher: { "@id": `${SITE_URL}/#organization` },
     hasPart: [
       { "@type": "WebPage", "@id": `${abs("/privacy")}#webpage`, url: abs("/privacy"), name: "Privacy Policy" },

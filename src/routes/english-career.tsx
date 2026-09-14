@@ -11,11 +11,7 @@ import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
-import { CHAT_CTA, DEMO_CTA } from "@/lib/whatsapp";
-import { useCountry } from "@/lib/country-context";
-import { formatFee, startingFee, type CourseSlug as FeeSlug } from "@/lib/pricing";
-import { chatWaMessage } from "@/lib/enrolment-wa";
-import { PriceNotice } from "@/components/PriceNotice";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
 
 type CoursePath = `/course-${CourseSlug}`;
 
@@ -52,9 +48,8 @@ export const Route = createFileRoute("/english-career")({
 });
 
 function Page() {
-  const { choice, displayMarket } = useCountry();
-  const start = startingFee(displayMarket);
-  const wa = chatWaMessage(choice);
+  const wa =
+    "Hi, I am interested in the English & Career track. Please help me choose the right course.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
       <section className="relative overflow-hidden">
@@ -71,15 +66,14 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Four live rooms. Spoken, Interactive Speaking, Teens (12–17) and Workplace.
-              Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and
-              Interactive. From {start.label}, inclusive of applicable taxes. No registration fee.
-              Pan-India and global.
+              Five live rooms. Spoken, Interactive Speaking, Kids (6–11), Teens (12–17) and
+              Workplace. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken
+              and Interactive. From ₹999/month, inclusive of taxes. No registration fee.
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
-              Adult rooms: about 6 learners, 1 hr 30 min, up to 2 classes/week. Teens: about 6, 1 hr
-              30 min. Parent on WhatsApp for anyone under 18 — fees and recordings go to the parent.
-              Rooms are never mixed. Spoken English for Kids (6–11) is discontinued.
+              Adult rooms: about 6 learners, 1 hr 30 min, up to 2 classes/week. Kids: 4–6 children,
+              1 hr 30 min. Teens: about 6, 1 hr 30 min. Parent on WhatsApp for anyone under 18 — fees
+              and recordings go to the parent. Rooms are never mixed.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
               {COURSE_CATEGORIES.flatMap((g) => [...g.slugs]).map((slug) => {
@@ -89,14 +83,14 @@ function Page() {
                     key={slug}
                     className="inline-flex items-center gap-1.5 rounded-full bg-cream/10 border border-cream/20 px-2.5 py-1 text-white"
                   >
-                    {c.title} · {formatFee(slug as FeeSlug, displayMarket).label}
+                    {c.title} · {c.price}
                   </span>
                 );
               })}
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3" data-cta-location="hero">
-              <WaButton message={wa} variant="wa" size="lg">
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={wa} variant="sun" size="lg">
@@ -104,9 +98,6 @@ function Page() {
               </WaButton>
             </div>
             <PaymentTrust tone="dark" className="mt-4" />
-            <div className="mt-4 max-w-xl">
-              <PriceNotice tone="dark" />
-            </div>
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 09:00–12:00 IST.
             </p>
@@ -118,20 +109,20 @@ function Page() {
               <SnapshotCard
                 badge="Live · English Track"
                 eyebrow="Whole track from"
-                headline={{ big: start.big, suffix: start.suffix }}
-                subnote="India INR · International USD · inclusive of applicable taxes"
+                headline={{ big: "₹999", suffix: "/month" }}
+                subnote="₹999–₹1,999/month · inclusive of taxes · Razorpay"
                 rows={[
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "4 rooms",
-                    small: "Adults · Teens 12–17 · pan-India and global",
+                    big: "5 courses",
+                    small: "Adults · Teens 12–17 · Kids 6–11",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.people,
                     big: "Small rooms",
-                    small: "Teens & adults ~6",
+                    small: "Kids 4–6 · Teens & adults ~6",
                   },
                   {
                     tone: "coral",
@@ -151,8 +142,8 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Three Clear Categories"
-            title={`Live programmes · From ${start.label}, inclusive of applicable taxes`}
-            subtitle="Adult rooms plus Teens (12–17). Spoken English for Kids is discontinued. Interview English sits inside Spoken and Interactive. Pick the outcome, then the fee and duration."
+            title="5 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
+            subtitle="Adult rooms, plus Kids (6–11) and Teens (12–17). Interview English sits inside Spoken and Interactive. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (
@@ -278,7 +269,7 @@ function Page() {
               the parent sends the message.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <WaButton message={wa} variant="wa" size="lg">
+              <WaButton message={CHAT_MSG} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={wa} variant="sun" size="lg">

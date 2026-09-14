@@ -1,61 +1,84 @@
+import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
-import { COUNTRY_OPTIONS, type CountryCode } from "@/lib/country";
-import { useCountry } from "@/lib/country-context";
+import {
+  COUNTRY_EVENT,
+  COUNTRY_OPTIONS,
+  DEFAULT_COUNTRY,
+  countryName,
+  detectCountry,
+  readStoredCountry,
+  writeStoredCountry,
+  type CountryChoice,
+  type CountryCode,
+} from "@/lib/country";
 
-type Tone = "footer" | "light" | "dark";
+const FALLBACK: CountryChoice = {
+  iso2: DEFAULT_COUNTRY,
+  name: countryName(DEFAULT_COUNTRY),
+  source: "timezone",
+};
 
-export function CountrySelect({
-  tone = "footer",
-  id,
-}: {
-  tone?: Tone;
-  id?: string;
-}) {
-  const { choice, setManual, ready } = useCountry();
-  const selectId = id ?? "country-region";
-  const value = choice.iso2 ?? "";
+export function CountrySelect() {
+  const [choice, setChoice] = useState<CountryChoice>(FALLBACK);
 
-  const onPick = (iso2: string) => {
-    if (!iso2) return;
-    setManual(iso2 as CountryCode);
+  useEffect(() => {
+    let cancelled = false;
+    const stored = readStoredCountry();
+    if (stored?.source === "manual") {
+      setChoice(stored);
+      return;
+    }
+    if (stored) setChoice(stored);
+    void detectCountry().then((detected) => {
+      if (cancelled) return;
+      const latest = readStoredCountry();
+      if (latest?.source === "manual") {
+        setChoice(latest);
+        return;
+      }
+      writeStoredCountry(detected);
+      setChoice(detected);
+    });
+    const onChange = (ev: Event) => {
+      const next = (ev as CustomEvent<CountryChoice>).detail;
+      if (next?.iso2) setChoice(next);
+    };
+    window.addEventListener(COUNTRY_EVENT, onChange);
+    return () => {
+      cancelled = true;
+      window.removeEventListener(COUNTRY_EVENT, onChange);
+    };
+  }, []);
+
+  const onPick = (iso2: CountryCode) => {
+    const next: CountryChoice = { iso2, name: countryName(iso2), source: "manual" };
+    writeStoredCountry(next);
+    setChoice(next);
   };
 
-  const labelClass =
-    tone === "footer"
-      ? "text-[12px] font-semibold text-cream"
-      : tone === "dark"
-        ? "text-[12px] font-semibold text-cream"
-        : "text-[12px] font-semibold text-ink";
-  const selectClass =
-    tone === "footer" || tone === "dark"
-      ? "min-h-11 min-w-[11rem] max-w-full cursor-pointer rounded-lg border border-cream/30 bg-white/10 px-3 py-2 text-sm font-medium text-cream focus:outline-none focus:ring-2 focus:ring-sunshine"
-      : "min-h-11 min-w-[11rem] max-w-full cursor-pointer rounded-lg border border-border bg-white px-3 py-2 text-sm font-medium text-ink focus:outline-none focus:ring-2 focus:ring-brand";
-
   return (
-    <div className="inline-flex flex-col gap-1">
-      <label htmlFor={selectId} className={`inline-flex items-center gap-1.5 ${labelClass}`}>
-        <Icon name="globe" size={14} />
-        Country/Region
-      </label>
+    <label className="inline-flex items-center gap-1 text-[11px] text-white/80">
+      <Icon name="globe" size={13} />
+      <span className="sr-only">Country</span>
       <select
-        id={selectId}
-        className={selectClass}
-        value={value}
-        onChange={(e) => onPick(e.target.value)}
-        aria-label="Country/Region"
-        title="Country/Region — stored on this device. Admissions still confirms your enrolment country before payment."
+        className="max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-0.5 pr-4 text-[11px] font-medium text-cream underline decoration-cream/35 underline-offset-2 focus:outline-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%23F6EFE4' d='M0 0l5 6 5-6z'/></svg>\")",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right 0 center",
+        }}
+        value={choice.iso2}
+        onChange={(e) => onPick(e.target.value as CountryCode)}
+        aria-label="Country"
+        title="Country — stored on this device for later fees and tax"
       >
-        {!choice.iso2 && (
-          <option value="" className="text-ink">
-            {ready ? "Choose your country/region" : "Detecting…"}
-          </option>
-        )}
         {COUNTRY_OPTIONS.map((row) => (
           <option key={row.iso2} value={row.iso2} className="text-ink">
             {row.name}
           </option>
         ))}
       </select>
-    </div>
+    </label>
   );
 }

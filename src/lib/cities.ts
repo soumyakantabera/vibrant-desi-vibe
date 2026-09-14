@@ -365,7 +365,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     },
     {
       t: "p",
-      text: `Spoken English for Kids (ages 6–11) is discontinued worldwide. Ages 12–17 have a separate live room — [Teens](/course-teen-english). This ${city.name} page is the adult Spoken room (15+), from ₹999/mo in India.`,
+      text: `Ages 6–11 and 12–17 have separate live rooms — [Kids English](/course-kids-english) and [Teens](/course-teen-english). This ${city.name} page is the adult Spoken room (15+), from ₹999/mo.`,
     },
     { t: "h2", text: "What we do not claim" },
     {
