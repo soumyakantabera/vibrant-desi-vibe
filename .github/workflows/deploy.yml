@@ -120,8 +120,20 @@ jobs:
           if ! grep -q 'g.page' dist/index.html; then
             echo "::error::index.html is missing Google Business sameAs"; exit 1
           fi
-          if ! grep -q '₹999' dist/course-kids-english.html dist/course-teen-english.html; then
-            echo "::error::kids/teens pages missing ₹999"; exit 1
+          if ! grep -qi 'discontinued' dist/course-kids-english.html; then
+            echo "::error::kids page is not marked discontinued"; exit 1
+          fi
+          if grep -q '₹999/month' dist/course-kids-english.html; then
+            echo "::error::kids page still advertises ₹999/month"; exit 1
+          fi
+          if ! grep -q '₹999' dist/course-teen-english.html; then
+            echo "::error::teens page missing ₹999"; exit 1
+          fi
+          if ! grep -q 'US$59' dist/llms.json dist/llms.txt; then
+            echo "::error::international USD fees missing from AI layer"; exit 1
+          fi
+          if ! grep -q 'US$79' dist/llms.json; then
+            echo "::error::teens USD fee missing from llms.json"; exit 1
           fi
           if grep -q '₹1,799' dist/course-kids-english.html dist/course-teen-english.html dist/llms.json; then
             echo "::error::stale ₹1,799 teen fee still in output"; exit 1

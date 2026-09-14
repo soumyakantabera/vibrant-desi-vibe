@@ -3,7 +3,11 @@ import { useEffect, useState, useRef } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
+import { CountrySelect } from "./CountrySelect";
+import { CHAT_CTA, waLink } from "@/lib/whatsapp";
+import { chatWaMessage } from "@/lib/enrolment-wa";
+import { useCountry } from "@/lib/country-context";
+import { formatFee, type CourseSlug } from "@/lib/pricing";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -16,47 +20,27 @@ const MAIN: NavItem[] = [
   { to: "/blog", label: "Blog" },
 ];
 
-const ENGLISH_COURSES: NavItem[] = [
-  {
-    to: "/course-spoken-english",
-    label: "Basic Spoken English",
-    icon: "mic",
-    desc: "6 months · ₹999/month, inclusive of taxes",
-  },
-  {
-    to: "/course-interactive-speaking",
-    label: "Interactive Speaking",
-    icon: "headset",
-    desc: "3 months · ₹1,499/month, inclusive of taxes",
-  },
-  {
-    to: "/course-kids-english",
-    label: "Spoken English for Kids",
-    icon: "smile",
-    desc: "Ages 6–11 · ₹999/month, inclusive of taxes",
-  },
-  {
-    to: "/course-teen-english",
-    label: "Spoken English for Teens",
-    icon: "mic",
-    desc: "Ages 12–17 · ₹999/month, inclusive of taxes",
-  },
-  {
-    to: "/course-business-english",
-    label: "Workplace English",
-    icon: "headset",
-    desc: "3 months · ₹1,999/month, inclusive of taxes",
-  },
+const NAV_COURSES: { slug: CourseSlug; to: string; icon: IconName }[] = [
+  { slug: "spoken-english", to: "/course-spoken-english", icon: "mic" },
+  { slug: "interactive-speaking", to: "/course-interactive-speaking", icon: "headset" },
+  { slug: "teen-english", to: "/course-teen-english", icon: "mic" },
+  { slug: "business-english", to: "/course-business-english", icon: "headset" },
 ];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const { location } = useRouterState();
-  const chat = waLink(CHAT_MSG);
+  const { choice, displayMarket } = useCountry();
+  const chat = waLink(chatWaMessage(choice));
   const dropRef = useRef<HTMLDivElement>(null);
+  const englishCourses: NavItem[] = NAV_COURSES.map((c) => ({
+    to: c.to,
+    label: formatFee(c.slug, displayMarket).title,
+    icon: c.icon,
+    desc: formatFee(c.slug, displayMarket).label,
+  }));
 
-  // close on route change & body lock
   useEffect(() => {
     setOpen(false);
     setCoursesOpen(false);
@@ -69,7 +53,6 @@ export function Nav() {
     };
   }, [open]);
 
-  // close dropdown on outside click
   useEffect(() => {
     if (!coursesOpen) return;
     const onClick = (e: MouseEvent) => {
@@ -88,19 +71,15 @@ export function Nav() {
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         <Link
           to="/english-career"
-          hash="kids-and-teens"
-          className="block bg-gradient-to-r from-[#0E7C5A] to-[#DC2626] text-center text-[12px] sm:text-sm font-display font-extrabold tracking-tight py-2 px-4 leading-snug hover:brightness-110 transition"
+          className="block bg-gradient-to-r from-[#0E7C5A] to-[#0B3D2E] text-center text-[12px] sm:text-sm font-display font-extrabold tracking-tight py-2 px-4 leading-snug hover:brightness-110 transition"
         >
           <span className="inline-flex items-center justify-center gap-1.5 text-balance text-[#FFF8F0]">
-            <span aria-hidden>🎉</span>
             <span>
-              We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17)
+              Now enrolling pan-India and globally — India fees in INR, other countries in USD
             </span>
-            <span aria-hidden>😊</span>
           </span>
         </Link>
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
-          {/* Brand */}
           <Link
             to="/"
             className="flex items-center gap-2.5 shrink-0 group"
@@ -114,13 +93,11 @@ export function Nav() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             <NavLinkPill to="/" active={isActive("/")}>
               Home
             </NavLinkPill>
 
-            {/* Courses dropdown */}
             <div ref={dropRef} className="relative">
               <button
                 onClick={() => setCoursesOpen((v) => !v)}
@@ -161,7 +138,7 @@ export function Nav() {
                       title="Courses by Goal"
                       tone="brand"
                       categoryHref="/english-career"
-                      items={ENGLISH_COURSES}
+                      items={englishCourses}
                       onPick={() => setCoursesOpen(false)}
                     />
                   </div>
@@ -176,8 +153,10 @@ export function Nav() {
             ))}
           </nav>
 
-          {/* Right side */}
           <div className="flex items-center gap-2">
+            <div className="hidden xl:block">
+              <CountrySelect tone="light" id="country-region-nav" />
+            </div>
             <a
               href={chat}
               target="_blank"
@@ -192,7 +171,7 @@ export function Nav() {
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="lg:hidden h-10 w-10 grid place-items-center rounded-full bg-white border border-border text-ink hover:bg-brand-soft active:scale-95 transition"
+              className="lg:hidden h-11 w-11 grid place-items-center rounded-full bg-white border border-border text-ink hover:bg-brand-soft active:scale-95 transition"
               aria-label="Open menu"
               aria-expanded={open}
               aria-controls="mobile-menu"
@@ -203,7 +182,6 @@ export function Nav() {
         </div>
       </header>
 
-      {/* MOBILE SHEET */}
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
           <div
@@ -211,7 +189,6 @@ export function Nav() {
             onClick={() => setOpen(false)}
           />
           <aside id="mobile-menu" className="absolute right-0 top-0 h-full w-[92%] max-w-sm bg-cream shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right">
-            {/* Header */}
             <div className="sticky top-0 z-10 bg-gradient-to-br from-brand-deep to-brand text-cream px-5 pt-5 pb-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
@@ -221,7 +198,7 @@ export function Nav() {
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="h-10 w-10 grid place-items-center rounded-full bg-white/15 text-cream hover:bg-white/25 transition"
+                  className="h-11 w-11 grid place-items-center rounded-full bg-white/15 text-cream hover:bg-white/25 transition"
                 >
                   <Icon name="close" />
                 </button>
@@ -242,7 +219,6 @@ export function Nav() {
               </p>
             </div>
 
-            {/* Main links */}
             <div className="px-4 py-4">
               <SectionLabel>Browse</SectionLabel>
               <div className="grid gap-1">
@@ -258,7 +234,6 @@ export function Nav() {
                 ))}
               </div>
 
-              {/* Courses by goal */}
               <SectionLabel>All Courses</SectionLabel>
               <Link
                 to="/english-career"
@@ -267,8 +242,8 @@ export function Nav() {
               >
                 View all courses →
               </Link>
-              <div className="grid gap-1 pb-6">
-                {ENGLISH_COURSES.map((c) => (
+              <div className="grid gap-1 pb-4">
+                {englishCourses.map((c) => (
                   <MobileCourseLink
                     key={c.to}
                     item={c}
@@ -278,9 +253,11 @@ export function Nav() {
                   />
                 ))}
               </div>
+              <div className="pb-6">
+                <CountrySelect tone="light" id="country-region-mobile" />
+              </div>
             </div>
 
-            {/* Footer */}
             <div className="mt-auto p-4 border-t border-border bg-white sticky bottom-0">
               <a
                 href={chat}
@@ -347,35 +324,36 @@ function CourseColumn({
         className={`flex items-center justify-between px-3 py-2 rounded-xl ${headBg} font-display font-bold text-xs uppercase tracking-wide`}
       >
         <span>{title}</span>
-        <span className="text-[10px] font-bold opacity-80">View all →</span>
+        <span>View all →</span>
       </Link>
-      <div className="mt-2 grid gap-1">
-        {items.map((c) => (
-          <Link
-            key={c.to}
-            to={c.to}
-            onClick={onPick}
-            className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition hover:bg-brand-soft/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30"
-          >
-            <span className={`h-8 w-8 shrink-0 rounded-lg ${iconBg} grid place-items-center`}>
-              {c.icon && <Icon name={c.icon} size={16} />}
-            </span>
-            <span className="min-w-0">
-              <span className="block font-display font-semibold text-sm text-ink truncate group-hover:text-brand-deep">
-                {c.label}
+      <ul className="mt-1">
+        {items.map((item) => (
+          <li key={item.to}>
+            <Link
+              to={item.to}
+              onClick={onPick}
+              className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft/60"
+            >
+              {item.icon && (
+                <span className={`mt-0.5 grid h-8 w-8 place-items-center rounded-lg ${iconBg}`}>
+                  <Icon name={item.icon} size={16} />
+                </span>
+              )}
+              <span>
+                <span className="block font-display font-bold text-sm text-ink">{item.label}</span>
+                {item.desc && <span className="block text-xs text-ink/70">{item.desc}</span>}
               </span>
-              {c.desc && <span className="block text-xs text-ink/75">{c.desc}</span>}
-            </span>
-          </Link>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-5 mb-2 px-2 text-[11px] font-display font-bold uppercase tracking-[0.12em] text-ink/75">
+    <div className="mt-4 mb-2 px-1 text-[11px] font-display font-bold uppercase tracking-wider text-ink/50">
       {children}
     </div>
   );
@@ -396,12 +374,11 @@ function MobileLink({
     <Link
       to={to}
       onClick={onClick}
-      className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-display font-semibold transition ${
-        active ? "bg-brand-soft text-brand-deep" : "text-ink hover:bg-brand-soft/60"
+      className={`block px-4 py-3 rounded-xl font-display font-semibold ${
+        active ? "bg-brand-soft text-brand-deep" : "text-ink hover:bg-white"
       }`}
     >
-      <span>{children}</span>
-      <Icon name="arrow-right" size={14} className="opacity-40" />
+      {children}
     </Link>
   );
 }
@@ -414,27 +391,26 @@ function MobileCourseLink({
 }: {
   item: NavItem;
   active: boolean;
-  tone: "brand" | "indigo";
+  tone: "brand";
   onClick: () => void;
 }) {
-  const iconBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
   return (
     <Link
       to={item.to}
       onClick={onClick}
-      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30 ${active ? "bg-brand-soft/70" : "hover:bg-white"}`}
+      className={`flex items-start gap-3 px-3 py-3 rounded-xl ${
+        active ? "bg-brand-soft" : "hover:bg-white"
+      }`}
     >
-      <span className={`h-9 w-9 shrink-0 rounded-lg ${iconBg} grid place-items-center`}>
-        {item.icon && <Icon name={item.icon} size={16} />}
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className="block font-display font-semibold text-sm text-ink truncate">
-          {item.label}
+      {item.icon && (
+        <span className="mt-0.5 grid h-8 w-8 place-items-center rounded-lg bg-brand-soft text-brand-deep">
+          <Icon name={item.icon} size={16} />
         </span>
-        {item.desc && <span className="block text-xs text-ink/75">{item.desc}</span>}
+      )}
+      <span>
+        <span className="block font-display font-bold text-sm text-ink">{item.label}</span>
+        {item.desc && <span className="block text-xs text-ink/70">{item.desc}</span>}
       </span>
-      <Icon name="arrow-right" size={14} className="opacity-30" />
     </Link>
   );
 }

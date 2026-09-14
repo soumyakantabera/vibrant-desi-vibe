@@ -17,7 +17,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹999/month",
     liveNote:
-      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible morning · evening · weekend slots · ✓ Pan-India · Based in Kolkata",
+      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible morning · evening · weekend slots · ✓ Pan-India and global · Based in Kolkata",
     outcomes: [
       "Introduce yourself fluently in any social or work setting",
       "Handle daily conversations — shops, travel, phone calls",
@@ -541,112 +541,57 @@ export const COURSES: Record<string, CourseData> = {
     slug: "kids-english",
     title: "Spoken English for Kids",
     tagline:
-      "Ages 6–11. After-school live batches of 4–6 children, 1 hr 30 min classes, twice a week. 6 months, ₹999/month, inclusive of taxes. Parent on WhatsApp — you hear what happened in class.",
-    category: "Ages 6–11",
+      "Enrolment discontinued worldwide. We no longer take new learners aged 6–11 in India or internationally. Ages 12–17 can join Spoken English for Teens; adults 15+ join the adult rooms.",
+    category: "Ages 6–11 — discontinued",
     categoryColor: "brand",
     icon: "spark",
     heroImage: IMG.kidsEnglish,
     midImage: IMG.kidsEnglishMid,
     footerImage: IMG.kidsEnglishFooter,
-    duration: "6 months · 2 × 1 hr 30 min/week",
-    durationQualifier: "After school on IST, plus Saturday mornings.",
-    continueNote: "Continuous learning after 6 months — next level",
-    format: "Live batch · 4–6 children",
-    price: "₹999/month",
+    duration: "Enrolment discontinued",
+    format: "Not open for new enrolment",
+    price: "Enrolment discontinued",
     liveNote:
-      "✓ Parent is the customer · ✓ After-school and Saturday IST · ✓ Ages 6–11 only · ✓ Pan-India · Based in Kolkata",
-    snapshotBatchBig: "4–6",
-    snapshotBatchSmall: "Children in this live batch",
+      "✓ Enrolment discontinued worldwide · ✓ Existing paid commitments honoured · ✓ Teens 12–17 still open · ✓ Pan-India and global adult rooms remain",
+    snapshotBatchBig: "Closed",
+    snapshotBatchSmall: "No new Kids enrolment",
     waDemo:
-      "Hi, I’m a parent. My child is __ years old. Please share the Spoken English for Kids (ages 6–11) demo slot. I will join the demo.",
+      "Hi, I opened Spoken English for Kids. I understand enrolment is discontinued worldwide. Please help me choose an available course (Teens 12–17 or adult Spoken English 15+).",
     outcomes: [
-      "Greet and introduce themselves in 4–5 full sentences",
-      "Ask for help when they do not understand",
-      "Speak 8–10 sentences about their day",
-      "Tell a short story with a beginning and an end",
-      "Take a turn in a group of 4–6 without freezing",
-      "Use please, thank you and sorry without prompting",
+      "This room is no longer open for new enrolment",
+      "Ages 12–17: Spoken English for Teens",
+      "Adults 15+: Basic Spoken English or Interactive Speaking",
+      "Parent remains the customer for any under-18 enrolment",
+      "Teen and adult rooms are never mixed",
+      "Existing paid Kids commitments already accepted are honoured",
     ],
     modules: [
       {
-        title: "Settling in and sounds",
+        title: "What this notice means",
         items: [
-          "Hello, my name, my family — full sentences",
-          "Sounds Indian children often mix: v/w, s/sh, th",
-          "Turn-taking: I speak, then I listen",
-          "Short answers that are still complete sentences",
-        ],
-      },
-      {
-        title: "My world",
-        items: [
-          "School, home, food and play vocabulary",
-          "Asking for help: can you say that again?",
-          "Picture talk: 4–6 sentences from one image",
-          "Days, weather and daily routines",
-        ],
-      },
-      {
-        title: "Stories and sequences",
-        items: [
-          "Beginning, middle and end of a short story",
-          "Then / after that / finally",
-          "Retell a one-minute story in their own words",
-          "Reading a short passage aloud — not a literature course",
-        ],
-      },
-      {
-        title: "Show and tell",
-        items: [
-          "My favourite… talks of 8–10 sentences",
-          "Describing a toy, a festival, a holiday",
-          "Answering questions from classmates",
-          "Voice: not shouting, not whispering",
-        ],
-      },
-      {
-        title: "Small-group talk",
-        items: [
-          "Pair work: shop, doctor, birthday",
-          "Please, thank you, sorry in the right place",
-          "Disagreeing without fighting: I think…",
-          "Eight to ten sentences on my day",
-        ],
-      },
-      {
-        title: "Class confidence",
-        items: [
-          "A 60-second assembly-style talk",
-          "Listening to and repeating instructions",
-          "Last-class mini showcase — parent invited",
-          "What to keep practising at home, 10 minutes a day",
+          "New enrolment for ages 6–11 is closed in India and internationally",
+          "The old URL is kept so search results and saved links do not 404",
+          "This page is not an enrolment offer and has no published fee",
+          "Message WhatsApp if you need help choosing an open room",
         ],
       },
     ],
     faqs: [
       {
-        q: "Is this the same room as the adult Spoken English class?",
-        a: "No. This is an after-school batch of 4–6 children aged 6–11. Adult Spoken English is a different room for learners 15+.",
+        q: "Can I still enrol my child aged 6–11?",
+        a: "No. Spoken English for Kids is discontinued worldwide. We do not take new enrolment for ages 6–11 in India or internationally.",
       },
       {
-        q: "Who do you message — the child or the parent?",
-        a: "The parent. Enrolment, fees, recordings and WhatsApp all sit on the parent’s number. The child does not need a phone. You join the free demo on camera.",
+        q: "What should a parent choose instead?",
+        a: "Ages 12–17: Spoken English for Teens. Adults 15+: Basic Spoken English. A 15–17-year-old who wants work English can take an adult room with the parent on WhatsApp. Rooms are never mixed.",
       },
       {
-        q: "How long is a class, and when do they run?",
-        a: "1 hour 30 minutes, twice a week, after school on IST, with Saturday morning slots. Six months. Every class is recorded and shared with the parent.",
-      },
-      {
-        q: "Will my child get a certificate or higher school marks?",
-        a: "No. This is live speaking practice, not a school subject and not a certificate course. We do not promise marks, fluency in 30 days, or a native accent.",
-      },
-      {
-        q: "What if we miss a class?",
-        a: "The recording is always shared with the parent. A reschedule can be requested only within the same week and only if a seat exists.",
+        q: "Are existing Kids students affected?",
+        a: "Existing paid commitments already accepted for this room are honoured. This notice is for new enrolment only.",
       },
     ],
     metaDescription:
-      "Kids spoken English online, ages 6–11. Live teacher, 4–6 children, 1 hr 30 min classes twice a week. ₹999/month inclusive of taxes. Parent on WhatsApp for the demo.",
+      "Spoken English for Kids (ages 6–11) is discontinued worldwide. New enrolment is closed in India and internationally. Teens 12–17 and adult rooms remain open.",
   },
   "teen-english": {
     slug: "teen-english",
@@ -665,7 +610,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 teens",
     price: "₹999/month",
     liveNote:
-      "✓ Parent on WhatsApp · ✓ Teen joins the demo · ✓ Never mixed with kids 6–11 or adult work rooms · ✓ Pan-India · Based in Kolkata",
+      "✓ Parent on WhatsApp · ✓ Teen joins the demo · ✓ Never mixed with adult work rooms · ✓ Pan-India and global · Based in Kolkata",
     snapshotBatchBig: "~6",
     snapshotBatchSmall: "Teens in this live batch",
     waDemo:

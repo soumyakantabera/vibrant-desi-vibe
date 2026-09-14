@@ -21,6 +21,10 @@ import {
   faqLd,
   webPageLd,
 } from "@/lib/seo";
+import { useCountry } from "@/lib/country-context";
+import { COURSE_FEES, formatFee, type CourseSlug } from "@/lib/pricing";
+import { enrolmentWaMessage, pricingWaMessage } from "@/lib/enrolment-wa";
+import { PriceNotice, RefundSummary } from "@/components/PriceNotice";
 
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
@@ -194,24 +198,19 @@ const TEACHER_NOTE: Record<string, string> = {
 export function CoursePage({ data }: { data: CourseData }) {
   const isCareerCounselling = data.slug === "career-counselling";
   const teacherNote = TEACHER_NOTE[data.slug];
-  const waPrimary =
-    data.waDemo ??
-    `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
-  const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
-  const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
+  const { choice, displayMarket, feeConfirmed } = useCountry();
+  const fee = formatFee(data.slug as CourseSlug, displayMarket, { confirmed: feeConfirmed });
+  const waPrimary = enrolmentWaMessage(data.slug as CourseSlug, choice);
+  const waSyllabus = pricingWaMessage(data.slug as CourseSlug, choice);
   const faqs = courseFaqs(data);
   const snapshot = (
     <SnapshotCard
       badge={`Live · ${data.format}`}
-      eyebrow="Course fee starts at"
-      headline={
-        priceMatch
-          ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
-          : { big: data.price }
-      }
-      subnote={`${data.duration} · inclusive of taxes`}
+      eyebrow={feeConfirmed ? "Course fee" : "Indicative fee — confirm country"}
+      headline={{ big: fee.big, suffix: fee.suffix || undefined }}
+      subnote={`${data.duration} · inclusive of applicable taxes`}
       rows={[
-        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught pan-India and globally" },
         {
           tone: "indigo",
           icon: SnapIcons.calendar,
@@ -257,8 +256,8 @@ export function CoursePage({ data }: { data: CourseData }) {
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
-                  <Icon name="rupee" size={14} />
-                  {data.price}
+                  <Icon name="payments" size={14} />
+                  {fee.label}
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
                   <Icon name="clock" size={14} className="text-sage" />
@@ -288,7 +287,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             </div>
             <p className="mt-3 text-sm text-white/90">
               {data.liveNote ??
-                "✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live syllabus · ✓ Pan-India · Based in Kolkata"}
+                "✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live syllabus · ✓ Pan-India and global · Based in Kolkata"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={CHAT_MSG} variant="wa" size="lg">
@@ -299,6 +298,12 @@ export function CoursePage({ data }: { data: CourseData }) {
               </WaButton>
             </div>
             <PaymentTrust tone="dark" className="mt-4" />
+            <div className="mt-4 max-w-xl">
+              <PriceNotice tone="dark" />
+            </div>
+            <div className="mt-3 max-w-xl">
+              <RefundSummary tone="dark" />
+            </div>
           </div>
           <div className="hidden lg:block relative">
             <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
@@ -319,7 +324,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
-      {data.slug === "kids-english" && (
+      {data.slug === "teen-english" && (
         <section className="section pt-8 md:pt-10">
           <div className="container-x">
             <ParentTrustPanel className="" />
@@ -544,11 +549,6 @@ export function CoursePage({ data }: { data: CourseData }) {
   );
 }
 
-function parsePrice(p: string): number | null {
-  const m = p.replace(/[, ]/g, "").match(/\u20b9(\d+)/);
-  return m ? Number(m[1]) : null;
-}
-
 function workloadISO(d: string): string | undefined {
   // Rough mapping to Google's courseWorkload (ISO 8601 duration).
   const months = d.match(/(\d+)\s*month/i);
@@ -573,7 +573,6 @@ export function courseSeo(d: CourseData) {
   const path = `/course-${d.slug}`;
   const url = abs(path);
   const extra = COURSE_SEO[d.slug];
-  const price = parsePrice(d.price);
   const workload = workloadISO(d.duration);
   const faqs = courseFaqs(d);
   const ogImage = extra?.ogImage ?? "/og/default.jpg";
@@ -586,8 +585,7 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity:
-      d.slug === "career-counselling" ? 1 : d.slug === "kids-english" ? 6 : 6,
+    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/founder")}#person`,
@@ -603,28 +601,51 @@ export function courseSeo(d: CourseData) {
     },
   };
 
-  const offers: Record<string, unknown> = {
+  const discontinued = Boolean(COURSE_FEES[d.slug as CourseSlug]?.discontinued);
+  const india = { "@type": "Country", name: "India", identifier: "IN" };
+  const feeRow = COURSE_FEES[d.slug as CourseSlug];
+  const indiaOffer: Record<string, unknown> = {
     "@type": "Offer",
     priceCurrency: "INR",
-    availability: "https://schema.org/InStock",
+    availability: discontinued
+      ? "https://schema.org/Discontinued"
+      : "https://schema.org/InStock",
     category: d.format.includes("1:1") ? "Online 1:1 course" : "Online batch course",
     url,
     validFrom: "2026-01-01",
     valueAddedTaxIncluded: true,
-    eligibleRegion: { "@type": "Country", name: "India", identifier: "IN" },
-    areaServed: { "@type": "Country", name: "India", identifier: "IN" },
+    eligibleRegion: india,
+    areaServed: india,
     seller: { "@id": `${SITE_URL}/#organization` },
   };
-  if (price !== null) {
-    offers.price = price;
-    offers.priceSpecification = {
+  if (!discontinued && feeRow?.inr) {
+    indiaOffer.price = feeRow.inr.amount;
+    indiaOffer.priceSpecification = {
       "@type": "UnitPriceSpecification",
-      price,
+      price: feeRow.inr.amount,
       priceCurrency: "INR",
       valueAddedTaxIncluded: true,
-      unitText: /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
+      unitText: feeRow.inr.period === "month" ? "MONTH" : "PACKAGE",
     };
   }
+  const usdAmount = feeRow?.usd?.amount;
+  const offers =
+    !discontinued && usdAmount != null
+      ? [
+          indiaOffer,
+          {
+            "@type": "Offer",
+            price: usdAmount,
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            url,
+            validFrom: "2026-01-01",
+            valueAddedTaxIncluded: true,
+            description: "International monthly fee for learners enrolling from outside India.",
+            seller: { "@id": `${SITE_URL}/#organization` },
+          },
+        ]
+      : indiaOffer;
 
   const jsonLd: unknown[] = [
     webPageLd({
@@ -645,21 +666,15 @@ export function courseSeo(d: CourseData) {
       image: [abs(ogImage)],
       inLanguage: "en-IN",
       educationalLevel:
-        d.slug === "spoken-english" || d.slug === "kids-english"
+        d.slug === "spoken-english"
           ? "Beginner"
           : "Intermediate",
       typicalAgeRange:
-        d.slug === "kids-english" ? "6-11" : d.slug === "teen-english" ? "12-17" : undefined,
+        d.slug === "teen-english" ? "12-17" : undefined,
       isFamilyFriendly:
-        d.slug === "kids-english" || d.slug === "teen-english" ? true : undefined,
+        d.slug === "teen-english" ? true : undefined,
       audience:
-        d.slug === "kids-english"
-          ? {
-              "@type": "EducationalAudience",
-              educationalRole: "student",
-              audienceType: "Children aged 6-11",
-            }
-          : d.slug === "teen-english"
+        d.slug === "teen-english"
             ? {
                 "@type": "EducationalAudience",
                 educationalRole: "student",

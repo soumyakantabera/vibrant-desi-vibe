@@ -26,7 +26,11 @@ import {
   type CourseSlug,
 } from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
-import { waLink, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import { waLink, DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
+import { useCountry } from "@/lib/country-context";
+import { formatFee, startingFee, type CourseSlug as FeeSlug } from "@/lib/pricing";
+import { chatWaMessage, demoWaMessage } from "@/lib/enrolment-wa";
+import { PriceNotice } from "@/components/PriceNotice";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -39,7 +43,7 @@ const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "users",
     title: "Small batches",
-    body: "Every learner gets the mic. Approx. 6 learners. From ₹999/mo, inclusive of taxes.",
+    body: "Every learner gets the mic. Approx. 6 learners. Live monthly fees, inclusive of applicable taxes.",
   },
   {
     icon: "gamepad",
@@ -83,6 +87,10 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const { choice, displayMarket } = useCountry();
+  const start = startingFee(displayMarket);
+  const chatMsg = chatWaMessage(choice);
+  const demoMsg = demoWaMessage(choice);
   const TESTIMONIALS = [
     {
       quote:
@@ -112,7 +120,7 @@ function Home() {
 
   return (
     <Layout
-      waMessage="Hi, I am interested in a free demo. Please guide me."
+      waMessage={demoMsg}
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -136,7 +144,7 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              7 Years · Kolkata & Pan-India
+              7 Years · Kolkata · Pan-India · Global
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.
@@ -148,15 +156,16 @@ function Home() {
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Real teachers. Small batches. Gamified, interactive live English classes — designed
               for the demands of today's market. From{" "}
-              <strong className="text-sunshine">₹999/mo</strong>, inclusive of taxes. For everyone:
-              adults, professionals, graduates, teens and kids.
+              <strong className="text-sunshine">{start.label}</strong>, inclusive of applicable
+              taxes. For adults, professionals, graduates and teens. Pan-India and global
+              enrolment.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
               data-cta-location="hero"
             >
               <WaButton
-                message={CHAT_MSG}
+                message={chatMsg}
                 size="lg"
                 className="w-full sm:w-auto justify-center"
                 goal="whatsapp_chat"
@@ -164,7 +173,7 @@ function Home() {
                 {CHAT_CTA}
               </WaButton>
               <WaButton
-                message={DEMO_MSG}
+                message={demoMsg}
                 variant="sun"
                 size="lg"
                 className="w-full sm:w-auto justify-center"
@@ -174,13 +183,16 @@ function Home() {
               </WaButton>
             </div>
             <PaymentTrust tone="dark" className="mt-4" />
+            <div className="mt-4 max-w-xl">
+              <PriceNotice tone="dark" />
+            </div>
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 09:00–12:00 IST.
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "7 Years · Kolkata & Pan-India",
-                "From ₹999/month, inclusive of taxes",
+                "7 Years · Kolkata · Pan-India · Global",
+                `From ${start.label}, inclusive of applicable taxes`,
                 "500+ Learners",
                 "Small batches — approx. 6 learners",
               ].map((s) => (
@@ -200,8 +212,8 @@ function Home() {
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
               <SnapshotCard
                 eyebrow="Course fees start at"
-                headline={{ big: "₹999", suffix: "/month" }}
-                subnote="Monthly billing · inclusive of taxes · UPI accepted"
+                headline={{ big: start.big, suffix: start.suffix }}
+                subnote="Monthly billing · inclusive of applicable taxes"
                 rows={[
                   {
                     tone: "brand",
@@ -304,7 +316,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Kids & Teens, Workplace, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
+            subtitle="Spoken English, Teens, Workplace, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -357,7 +369,7 @@ function Home() {
             <GlassCard
               icon="users"
               title="Small Live Batches"
-              pricing="Approx. 6 learners · From ₹999/mo, inclusive of taxes"
+              pricing={`Approx. 6 learners · From ${start.label}, inclusive of applicable taxes`}
             >
               Scheduled English cohorts usually have around 6 learners. You practise with
               classmates, speak in every class and receive corrections during the lesson.
@@ -369,7 +381,7 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "8 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
+              { n: 1, lbl: "Choose Course", sub: `Live programmes · from ${start.label}`, c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
@@ -407,7 +419,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Offer"
             title="Why Our Teaching Works"
-            subtitle="Spoken, business and interactive English — live, practical, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
+            subtitle="Spoken, business and interactive English — live, practical, pan-India and global. Inclusive of applicable taxes. 7 years, 500+ learners."
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
@@ -501,10 +513,10 @@ function Home() {
       <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
         <div className="container-x">
           <SectionHeader
-            eyebrow="Simple, India-Friendly Pricing"
+            eyebrow="Simple monthly pricing"
             eyebrowTone="indigo"
-            title="From ₹999/mo · inclusive of taxes"
-            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
+            title={`From ${start.label} · inclusive of applicable taxes`}
+            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners. India pricing in INR; international fees in USD."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
             <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
@@ -517,9 +529,9 @@ function Home() {
                 </h3>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                ₹999<span className="text-base font-bold text-ink/75">/month</span>
+                {start.big}<span className="text-base font-bold text-ink/75">{start.suffix}</span>
               </p>
-              <p className="mt-1 text-sm text-ink/75">Inclusive of taxes · billed monthly</p>
+              <p className="mt-1 text-sm text-ink/75">Inclusive of applicable taxes · billed monthly</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-brand" />
@@ -549,9 +561,12 @@ function Home() {
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                ₹1,999<span className="text-base font-bold text-ink/75">/month</span>
+                {formatFee("business-english", displayMarket).big}
+                <span className="text-base font-bold text-ink/75">
+                  {formatFee("business-english", displayMarket).suffix}
+                </span>
               </p>
-              <p className="mt-1 text-sm text-ink/75">Inclusive of taxes · 3 months · up to 2 classes/week</p>
+              <p className="mt-1 text-sm text-ink/75">Inclusive of applicable taxes · 3 months · up to 2 classes/week</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
@@ -593,13 +608,15 @@ function Home() {
               </ul>
             </article>
           </Reveal>
-          <div className="mt-7 text-center">
-            <p className="text-sm text-ink/75">
-              All prices are in INR and inclusive of taxes.
+          <div className="mt-7 max-w-2xl mx-auto">
+            <PriceNotice />
+            <p className="text-sm text-ink/75 mt-4 text-center">
+              All displayed prices are inclusive of applicable taxes. We confirm country, currency
+              and fee on WhatsApp before payment.
             </p>
-            <div className="mt-3">
+            <div className="mt-3 text-center">
               <WaButton
-                message="Hi, please send me the exact pricing and next available demo slot for my course."
+                message={chatMsg}
                 variant="wa"
                 size="sm"
               >
@@ -629,7 +646,7 @@ function Home() {
                 Tell us your goal in one message. We reply 09:00–12:00 IST and help you pick a
                 course.
               </p>
-              <WaButton message={CHAT_MSG} size="lg">
+              <WaButton message={chatMsg} size="lg">
                 {CHAT_CTA}
               </WaButton>
               <p className="text-xs text-white/80 mt-4">
@@ -637,7 +654,7 @@ function Home() {
               </p>
             </div>
             <a
-              href={waLink(DEMO_MSG)}
+              href={waLink(demoMsg)}
               target="_blank"
               rel="noopener noreferrer"
               className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
@@ -794,12 +811,14 @@ function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
 }
 
 function CategoryCard({ category }: { category: CourseCategory }) {
+  const { displayMarket } = useCountry();
   const visual = COURSES[category.featuredSlug];
   const tone = CATEGORY_TONES[category.tone];
   const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
   const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
   const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
-  const isKids = "theme" in category && category.theme === "kids";
+  const isKids = false;
+  const onlyFee = onlySlug ? formatFee(onlySlug as FeeSlug, displayMarket) : null;
   const cta =
     "cta" in category && category.cta
       ? category.cta
@@ -865,7 +884,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
             <span
               className={`max-w-full whitespace-normal rounded-full border px-2.5 py-1.5 leading-tight ${tone.badge}`}
             >
-              {onlyCourse.duration.split(" · ")[0]} · {onlyCourse.price}
+              {onlyCourse.duration.split(" · ")[0]} · {onlyFee?.label ?? onlyCourse.price}
             </span>
           </div>
         ) : (

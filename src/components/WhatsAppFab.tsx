@@ -1,14 +1,18 @@
-import { CHAT_CTA, DEMO_CTA, DEMO_MSG, waLink } from "@/lib/whatsapp";
+import { CHAT_CTA, DEMO_CTA, waLink } from "@/lib/whatsapp";
+import { chatWaMessage, demoWaMessage } from "@/lib/enrolment-wa";
+import { useCountry } from "@/lib/country-context";
 import { BrandIcon } from "./BrandIcon";
 import { Icon } from "./Icon";
 
 export function WhatsAppFab({
-  message = "Hi! I want to know more about Learn With Smile courses.",
+  message,
 }: {
   message?: string;
 }) {
-  const whatsapp = waLink(message);
-  const demo = waLink(DEMO_MSG);
+  const { choice } = useCountry();
+  const chatMessage = message && message.trim() ? message : chatWaMessage(choice);
+  const whatsapp = waLink(chatMessage);
+  const demo = waLink(demoWaMessage(choice));
   return (
     <>
       <a
@@ -19,9 +23,6 @@ export function WhatsAppFab({
         className="fixed bottom-5 right-5 z-50 hidden sm:block"
         data-cta-location="fab"
       >
-        {/* Speech-bubble tail sits at the corner of the 24×24 mark, so the
-            glyph has to sit inside the inscribed square or the tail clips
-            the round. ~70% of the disc keeps the whole logo in the circle. */}
         <span className="relative flex items-center justify-center overflow-hidden rounded-full bg-white shadow-2xl animate-wa-bob h-16 w-16 md:h-[68px] md:w-[68px] ring-[3px] ring-[#25D366]/35">
           <BrandIcon name="whatsapp" size={42} className="md:!h-[46px] md:!w-[46px]" />
         </span>

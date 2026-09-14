@@ -9,7 +9,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-12";
+export const LEGAL_UPDATED = "2026-09-15";
 
 export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
   "/privacy": {
@@ -23,7 +23,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are",
         paragraphs: [
-          "Learn With Smile provides live online English communication and career classes. We are based in Kolkata, West Bengal, India, and teach learners across India over the internet.",
+          "Learn With Smile provides live online English communication and career classes. We are based in Kolkata, West Bengal, India, and teach learners pan-India and internationally over the internet.",
           "For privacy questions, message us on WhatsApp at +91 96744 79949 or email info@learnwithsmile.app. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
         ],
       },
@@ -63,7 +63,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "WhatsApp, email and payments",
         paragraphs: [
           "WhatsApp is our preferred admissions channel. When you message us, WhatsApp (Meta) also processes that conversation under its own terms and privacy policy.",
-          "Fees are collected through Razorpay. Razorpay’s privacy policy and security practices apply to data you enter on Razorpay’s checkout. We receive confirmation that a payment succeeded or failed, not your full card number.",
+          "Fees are collected through Razorpay or another method we specify on WhatsApp. Razorpay’s privacy policy and security practices apply to data you enter on Razorpay’s checkout. International cards and wallets may be processed by Razorpay and its banking partners, which can include processing outside India. We receive confirmation that a payment succeeded or failed, not your full card number. Your bank or card network may apply its own conversion charge if it converts a currency; that charge is not set by Learn With Smile.",
         ],
       },
       {
@@ -80,7 +80,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Strictly necessary storage is used to deliver the pages, keep the site available and secure, and remember this notice and similar choices on your device. This group runs whether you choose Accept or Reject.",
           "Analytics storage, including Google Analytics or a comparable measurement tool, is used only if you choose Accept. It helps us understand how the site is used (for example, which pages are opened) so we can improve it. It is not used to show you advertisements, and we do not sell this information. Google may process measurement data on servers outside India under Google’s terms. WhatsApp links on this site are not tagged with advertising pixels.",
           "You may Reject optional analytics. Necessary functions still work. You can change your mind later by clearing this site’s data in your browser.",
-          "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That is for later fee and tax display. We do not use it to enrol you outside India, and we do not send that lookup to an advertising network.",
+          "The country/region selector on this website looks up a coarse country from your IP address using ipwho.is, geojs.io, ipapi.co and Cloudflare’s cdn-cgi/trace, and may use your device timezone as a supporting signal. Your choice is stored only on this device (browser local storage key lws.country.v2) so that India visitors see INR fees and other countries see the published USD fees. Automatic detection never overwrites a country you picked yourself. A browser toggle is not enrolment eligibility — we confirm the learner’s country, currency and applicable fee during admissions. We do not send that lookup to an advertising network.",
         ],
       },
       {
@@ -113,9 +113,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Children and young people",
         paragraphs: [
-          "Adult rooms are for learners aged 15 and above. Spoken English for Kids is for ages 6–11. Spoken English for Teens is for ages 12–17. Those rooms are never mixed with each other or with adult batches.",
+          "Adult rooms are for learners aged 15 and above. Spoken English for Teens is for ages 12–17. Those rooms are never mixed. Spoken English for Kids (ages 6–11) is discontinued worldwide; we do not take new enrolment for that room.",
           "If the learner is under 18, a parent or guardian must complete enrolment and payment and is the person we message on WhatsApp. Under the Digital Personal Data Protection Act, 2023, we treat that parent or guardian as the person who consents to our use of the child’s information for running the class. We do not use children’s data to show ads. We do not publish children’s photos or class recordings.",
-          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Enrolment is for learners in India only. We do not enrol students outside India. Indian law and this policy apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. How the kids and teen rooms are run, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
+          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Enrolment is open pan-India and internationally, subject to course, batch and payment availability. Indian law applies to our contract, together with any mandatory consumer or child-protection rights that cannot be waived in the learner’s country. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. How the teen room is run, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
         ],
       },
       {
@@ -150,16 +150,16 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation, Spoken English for Kids (ages 6–11), Spoken English for Teens (ages 12–17) and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre. Kids, teens and adult rooms are never mixed.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation, Spoken English for Teens (ages 12–17) and 1:1 Career Counselling. Spoken English for Kids (ages 6–11) is discontinued and is not offered for new enrolment. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre. Teen and adult rooms are never mixed.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We train for the paper; we do not award the score.",
         ],
       },
       {
         heading: "Eligibility",
         paragraphs: [
-          "Adult English rooms are for learners aged 15 and above. Kids rooms are ages 6–11. Teen rooms are ages 12–17. Rooms are never mixed.",
-          "Enrolment is for learners who are in India. We do not take enrolment from outside India. Fees on this site are India pricing, in Indian Rupees, inclusive of taxes.",
-          "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time. For ages 6–11, a parent should stay within earshot of the room.",
+          "Adult English rooms are for learners aged 15 and above. Teen rooms are ages 12–17. Rooms are never mixed. Spoken English for Kids (ages 6–11) is discontinued worldwide.",
+          "Enrolment is open to learners pan-India and internationally, subject to course, batch and payment availability. India pricing in INR applies only to learners enrolling from India. Learners enrolling from outside India are charged the published international fees in USD, or must contact us where no USD fee is listed. Pricing is based on the learner’s location at enrolment, not nationality. A Country/Region choice in the browser is not proof of eligibility for India pricing — we confirm country, currency and fee during admissions before payment.",
+          "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time.",
         ],
       },
       {
@@ -173,8 +173,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Demo, enrolment and fees",
         paragraphs: [
           "A demo is free and does not require payment. Messaging us does not create an obligation to enrol.",
-          "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. There is no separate registration fee or material fee for the standard English batches described on this site.",
-          "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart.",
+          "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Before payment we confirm on WhatsApp the course, slot, billing dates, country/region, currency, fee and refund policy, and we keep a record of that acknowledgement. Fees are listed in Indian Rupees for learners enrolling from India, and in US dollars for learners enrolling from outside India where a USD fee is published. All listed prices are inclusive of applicable taxes unless a page clearly says otherwise. Your bank may add a separate conversion charge. There is no separate registration fee or material fee for the standard English batches described on this site.",
+          "English course fees are billed monthly in advance from an agreed start date. You may stop before the next billing period. Career Counselling is a prepaid 1:1 package as described on its course page.",
+          "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart. New commercial terms apply to enrolments made after the date at the top of this page. Existing paid commitments already accepted are honoured on the terms in force when they were paid.",
         ],
       },
       {
@@ -220,7 +221,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Governing law",
         paragraphs: [
-          "These terms are governed by the laws of India. Subject to any non-waivable consumer rights, courts in Kolkata, West Bengal, India have jurisdiction over disputes arising from the website or the classes.",
+          "These terms are governed by the laws of India. Subject to any non-waivable consumer rights — including mandatory rights that apply to overseas learners — courts in Kolkata, West Bengal, India have jurisdiction over disputes arising from the website or the classes.",
         ],
       },
     ],
@@ -230,58 +231,56 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Refunds",
     h1: "Refunds and Cancellation",
     standfirst:
-      "Please read this before you pay. A free demo is available so you can see the class. Statutory rights under Indian law still apply.",
+      "Please read this before you pay. A free demo is available so you can see the class. We confirm the course, slot, billing dates and this policy before payment. Statutory rights still apply.",
     updated: LEGAL_UPDATED,
     sections: [
       {
         heading: "Please try a demo first",
         paragraphs: [
-          "The demo is free. There is nothing to refund on a demo. We ask you to join a live session, ask questions, and confirm the fee, slot and syllabus on WhatsApp before you pay. Enrol only if the format fits.",
+          "The demo is free. There is nothing to refund on a demo. Join a live session, ask questions, and confirm the course, slot, country/region, currency, fee and this refund policy on WhatsApp before you pay. We keep a record of that acknowledgement. Enrol only if the format fits.",
         ],
       },
       {
         heading: "How fees work",
         paragraphs: [
-          "English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp. Career Counselling is a prepaid 1:1 package as described on its course page.",
-          "A live seat is reserved when you pay. That is why we do not run a routine, no-questions-asked refund after a paid period has started.",
+          "English course fees are charged monthly in advance from an agreed start date, in INR for learners enrolling from India and in USD for learners enrolling from outside India where a USD fee is published. Prices are inclusive of applicable taxes. Your bank may add a separate conversion charge. Career Counselling is a prepaid 1:1 package as described on its course page.",
+          "A live seat is reserved when you pay. You may stop before the next billing period. We refund to the original payment method and currency where the provider supports it.",
         ],
       },
       {
-        heading: "What we do not refund as a matter of course",
+        heading: "The rules",
         paragraphs: [
-          "Once a paid billing period has started, we do not ordinarily refund that period because you changed your mind, missed classes, found the work difficult, or did not obtain a particular job, visa, band score or other result.",
-          "We also do not ordinarily refund because of your internet, electricity or device problems, or because you cannot attend the IST slot you confirmed.",
-        ],
-      },
-      {
-        heading: "What we will review in good faith",
-        paragraphs: [
-          "Message us on WhatsApp as soon as you notice a problem. We will review, and where appropriate reverse or refund, cases such as:",
+          "These are the rules we apply. They are not a ‘no refunds under any circumstances’ clause. Where applicable law requires a different remedy, that law wins.",
         ],
         bullets: [
-          "A duplicate or accidental payment for the same period.",
-          "A payment taken in error, or a successful charge where we cannot place you in any suitable batch.",
-          "A class we cancel and cannot reasonably replace in the same week.",
-          "A situation where we are unable to deliver the live teaching you paid for.",
+          "Learner cancels before the agreed start: refund if you request at least 48 hours beforehand. Later voluntary cancellations are non-refundable, subject to applicable law.",
+          "Paid month has started: no voluntary refund for withdrawal or unused classes.",
+          "Missed classes, schedule conflicts, or the learner’s internet or device problems: no refund. Same-week make-up only when a seat is available.",
+          "Dissatisfaction with progress or expected results: no outcome-based refund. We describe the service we actually provide; we do not sell a job, visa, band score or fluency date.",
+          "Duplicate or erroneous charge: we refund the excess or the error.",
+          "No batch can be provided: full refund for the undelivered enrolment.",
+          "School cancels a class: we offer a replacement class; if we cannot deliver it, a proportional refund for that class.",
+          "School ends the course early: refund of prepaid, undelivered teaching.",
+          "Future months: you may stop before the next billing period. Unused time in a month that has already started is not a cash refund except under the rules above.",
         ],
       },
       {
-        heading: "Cancelling future months",
+        heading: "Mandatory consumer rights, including overseas learners",
         paragraphs: [
-          "To stop a later month, message us on WhatsApp before that month is billed. We do not run an automatic card subscription on this website. If you have arranged a repeat payment with us, we will confirm how to stop it in writing on WhatsApp.",
-          "Unused time in a month that has already started is not carried forward as a cash refund, unless we agree otherwise in writing for one of the good-faith cases above.",
+          "If applicable consumer law gives you a longer cancellation period, that right still applies. For example, qualifying EU distance contracts for online services generally have a 14-day withdrawal period. If you ask us to start teaching during a withdrawal period, you may be charged for teaching already delivered. We will not refuse a remedy that the law requires.",
         ],
       },
       {
         heading: "Career Counselling packages",
         paragraphs: [
-          "Career Counselling is prepaid for a set number of 1:1 sessions. If we have not delivered a session, we will try to reschedule. If we cannot deliver a remaining session, we will discuss a fair adjustment for the unused session. Sessions you skip without notice may be treated as delivered.",
+          "Career Counselling is prepaid for a set number of 1:1 sessions. If we have not delivered a session, we will try to reschedule. If we cannot deliver a remaining session, we refund that unused session. Sessions you skip without notice may be treated as delivered.",
         ],
       },
       {
-        heading: "How to ask",
+        heading: "How to ask, and how we pay you back",
         paragraphs: [
-          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 09:00–12:00 IST. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
+          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 09:00–12:00 IST.",
+          "Approved refunds go back to the original payment method and the original currency where the provider allows it. Our processing target is 7 business days after we approve the refund, or sooner if a shorter legal deadline applies. We keep payment, attendance and service-delivery records to address disputes.",
         ],
       },
       {
@@ -293,7 +292,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Your legal rights",
         paragraphs: [
-          "This policy explains our usual practice. It does not take away rights you have under applicable Indian consumer law that cannot be waived. If those rights require a remedy in a particular case, that remedy still applies.",
+          "This policy explains our practice. It does not take away rights you have under applicable consumer law that cannot be waived, including rights relevant to overseas learners. If those rights require a remedy in a particular case, that remedy still applies.",
         ],
       },
     ],
@@ -303,7 +302,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Child protection",
     h1: "Child Protection Policy",
     standfirst:
-      "How Learn With Smile runs Spoken English for Kids (6–11) and Teens (12–17). These are operating rules, not a government seal or a foreign children’s-privacy certificate.",
+      "How Learn With Smile runs Spoken English for Teens (12–17) and any other under-18 enrolment. Spoken English for Kids (6–11) is discontinued. These are operating rules, not a government seal or a foreign children’s-privacy certificate.",
     updated: LEGAL_UPDATED,
     sections: [
       {
@@ -327,17 +326,17 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
-        heading: "India only — no enrolment outside India",
+        heading: "Pan-India and international enrolment",
         paragraphs: [
-          "We enrol learners who are in India. We do not take enrolment from outside India. The prices published on this site are for India only, in Indian Rupees, inclusive of taxes.",
+          "Enrolment is open pan-India and internationally, subject to course, batch and payment availability. India pricing is for learners enrolling from India. International learners pay the published USD fees where listed.",
           "India is a party to the UN Convention on the Rights of the Child. We take the idea of the child’s best interests as a working attitude: parent on the account, rooms not mixed, no 1:1 video with a child unless the parent stays on the call. That is practice, not a UN accreditation.",
-          "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law.",
+          "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law in the learner’s country.",
         ],
       },
       {
         heading: "Who is in which room",
         paragraphs: [
-          "Spoken English for Kids: ages 6–11, batches of 4–6, 1 hr 30 min, twice a week. Spoken English for Teens: ages 12–17, about 6, 1 hr 30 min, twice a week. Adult English rooms: 15+. Those three are never mixed. A 12-year-old is not placed with working adults. A 9-year-old is not placed with 16-year-olds.",
+          "Spoken English for Kids (ages 6–11) is discontinued worldwide. We do not take new enrolment for that room. Spoken English for Teens: ages 12–17, about 6, 1 hr 30 min, twice a week. Adult English rooms: 15+. Teen and adult rooms are never mixed. A 12-year-old is not placed with working adults.",
           "If a parent wants a 15–17-year-old in an adult Spoken room for work English, we will only do that with the parent on WhatsApp and a clear written confirmation. We will not mix 12–14-year-olds into adult rooms.",
         ],
       },
@@ -351,7 +350,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How class is kept safe",
         paragraphs: [
-          "Ages 6–11: a parent or another responsible adult should stay within earshot of the room for the 1 hr 30 min class. Ages 12–17: the parent is informed of the slot and may sit in.",
+          "Ages 12–17: the parent is informed of the slot and may sit in. Spoken English for Kids (6–11) is discontinued, so we no longer run after-school rooms for that age.",
           "No 1:1 video with a child unless the parent stays on the call. Group classes are the default. Career Counselling 1:1 is an adult service and is not sold as a children’s session.",
           "Teachers do not ask a child to turn off the camera so they are alone, to share passwords, or to move to a different app the parent has not agreed to.",
         ],

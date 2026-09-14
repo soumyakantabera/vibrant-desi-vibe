@@ -1,12 +1,29 @@
 /**
- * Country for later fee / tax routing. Detection is client-side (IP, then
- * timezone). The choice is stored in this browser only. Enrolment and the
- * prices on the site stay India-only until a tax table is wired on purpose.
+ * Country / region for fee display.
+ *
+ * Detection is client-side only (this site ships as static HTML on GitHub
+ * Pages). A stored *manual* choice is never overwritten by auto-detection.
+ * Auto results are kept for 7 days so a flaky IP lookup cannot flip India
+ * visitors to USD, or overseas visitors to INR, on the next page load.
+ *
+ * Failed detection does **not** silently default to India for a confirmed
+ * fee. Visitors are asked to choose Country/Region before a fee is treated
+ * as confirmed. Admissions still reconfirms country, currency and fee on
+ * WhatsApp — a browser toggle is not enrolment eligibility.
+ *
+ * IP providers actually used (in this file, in the browser):
+ *   - ipwho.is
+ *   - get.geojs.io
+ *   - ipapi.co
+ *   - Cloudflare `cdn-cgi/trace` (loc=)
+ * plus the device timezone as a supporting signal, never as a silent India
+ * default.
  */
 
-export const COUNTRY_STORAGE_KEY = "lws.country.v1";
+export const COUNTRY_STORAGE_KEY = "lws.country.v2";
+const LEGACY_STORAGE_KEY = "lws.country.v1";
 export const COUNTRY_EVENT = "lws:country";
-export const DEFAULT_COUNTRY = "IN";
+export const AUTO_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 /** ISO 3166-1 alpha-2. Names come from Intl.DisplayNames. */
 export const COUNTRY_CODES = [
@@ -30,12 +47,19 @@ export const COUNTRY_CODES = [
 
 export type CountryCode = (typeof COUNTRY_CODES)[number];
 
-export type CountrySource = "ip" | "timezone" | "manual";
+export type CountrySource = "ip" | "timezone" | "manual" | "unknown";
+export type CountryConfidence = "high" | "medium" | "low";
+export type Market = "IN" | "INTL" | "UNKNOWN";
 
 export type CountryChoice = {
-  iso2: CountryCode;
+  iso2: CountryCode | null;
   name: string;
   source: CountrySource;
+  confidence: CountryConfidence;
+  market: Market;
+  needsConfirm: boolean;
+  detectedAt: number;
+  reason: string;
 };
 
 const names = (() => {
@@ -46,7 +70,8 @@ const names = (() => {
   }
 })();
 
-export function countryName(code: string): string {
+export function countryName(code: string | null | undefined): string {
+  if (!code) return "Not set";
   const upper = code.toUpperCase();
   return names?.of(upper) ?? upper;
 }
@@ -55,12 +80,9 @@ export function isCountryCode(value: string): value is CountryCode {
   return (COUNTRY_CODES as readonly string[]).includes(value.toUpperCase());
 }
 
-export function asCountry(code: string | undefined | null): CountryCode {
-  if (code && isCountryCode(code)) return code.toUpperCase() as CountryCode;
-  return DEFAULT_COUNTRY;
-}
+export const INDIA_TIMEZONES = new Set(["Asia/Kolkata", "Asia/Calcutta"]);
 
-const TZ_TO_COUNTRY: Record<string, CountryCode> = {
+export const TZ_TO_COUNTRY: Record<string, CountryCode> = {
   "Asia/Kolkata": "IN",
   "Asia/Calcutta": "IN",
   "Asia/Colombo": "LK",
@@ -110,24 +132,210 @@ const TZ_TO_COUNTRY: Record<string, CountryCode> = {
   "America/Mexico_City": "MX",
 };
 
-function choice(iso2: CountryCode, source: CountrySource): CountryChoice {
-  return { iso2, name: countryName(iso2), source };
+export function timezoneCountry(tz: string | undefined | null): CountryCode | null {
+  if (!tz) return null;
+  if (INDIA_TIMEZONES.has(tz)) return "IN";
+  return TZ_TO_COUNTRY[tz] ?? null;
 }
 
-export function readStoredCountry(): CountryChoice | null {
+function majority(codes: CountryCode[]): { code: CountryCode; votes: number; total: number } | null {
+  if (!codes.length) return null;
+  const tally = new Map<CountryCode, number>();
+  for (const c of codes) tally.set(c, (tally.get(c) ?? 0) + 1);
+  let best: CountryCode | null = null;
+  let bestN = 0;
+  let second = 0;
+  for (const [code, n] of tally) {
+    if (n > bestN) {
+      second = bestN;
+      bestN = n;
+      best = code;
+    } else if (n === bestN) {
+      second = n;
+    } else if (n > second) {
+      second = n;
+    }
+  }
+  if (!best) return null;
+  if (bestN === second) return null; // tie
+  return { code: best, votes: bestN, total: codes.length };
+}
+
+export type DetectSignals = {
+  ipCodes: CountryCode[];
+  timezone?: string | null;
+};
+
+/**
+ * Pure decision. Used by tests and by the live detector.
+ *
+ * India-protection: if the timezone is India and IP says otherwise, we do
+ * **not** auto-apply USD. Indian visitors on a VPN would bounce at US$59.
+ * Overseas-protection: we never silently stamp India when every signal is
+ * missing — that would underprice an international enrolment.
+ */
+export function decideFromSignals(signals: DetectSignals): CountryChoice {
+  const now = Date.now();
+  const tz = timezoneCountry(signals.timezone);
+  const ip = majority(signals.ipCodes);
+  const ipIsIn = ip?.code === "IN";
+  const tzIsIn = tz === "IN";
+
+  const make = (
+    iso2: CountryCode | null,
+    source: CountrySource,
+    confidence: CountryConfidence,
+    market: Market,
+    needsConfirm: boolean,
+    reason: string,
+  ): CountryChoice => ({
+    iso2,
+    name: countryName(iso2),
+    source,
+    confidence,
+    market,
+    needsConfirm,
+    detectedAt: now,
+    reason,
+  });
+
+  if (ip && ipIsIn) {
+    return make("IN", "ip", ip.votes >= 2 ? "high" : "medium", "IN", false, "IP lookup placed the visitor in India.");
+  }
+
+  if (ip && !ipIsIn && tzIsIn) {
+    // Conflict: do not flip an India-timezone visitor to USD.
+    return make(
+      "IN",
+      "timezone",
+      "low",
+      "IN",
+      true,
+      "IP and timezone disagree. India fees are shown until you confirm Country/Region.",
+    );
+  }
+
+  if (ip && !ipIsIn) {
+    return make(
+      ip.code,
+      "ip",
+      ip.votes >= 2 ? "high" : "medium",
+      "INTL",
+      false,
+      `IP lookup placed the visitor in ${countryName(ip.code)}.`,
+    );
+  }
+
+  if (tzIsIn) {
+    return make("IN", "timezone", "medium", "IN", false, "Device timezone is India (Asia/Kolkata).");
+  }
+
+  if (tz) {
+    return make(
+      tz,
+      "timezone",
+      "medium",
+      "INTL",
+      false,
+      `Device timezone mapped to ${countryName(tz)}.`,
+    );
+  }
+
+  return make(
+    null,
+    "unknown",
+    "low",
+    "UNKNOWN",
+    true,
+    "Country could not be detected. Choose Country/Region before confirming a fee.",
+  );
+}
+
+function parseChoice(raw: unknown): CountryChoice | null {
+  if (!raw || typeof raw !== "object") return null;
+  const parsed = raw as Partial<CountryChoice> & { iso2?: string };
+  const source = parsed.source;
+  if (source !== "manual" && source !== "ip" && source !== "timezone" && source !== "unknown") {
+    return null;
+  }
+  const iso2 =
+    parsed.iso2 && isCountryCode(parsed.iso2) ? (parsed.iso2.toUpperCase() as CountryCode) : null;
+  if (source !== "unknown" && source !== "manual" && !iso2) return null;
+  if (source === "manual" && !iso2) return null;
+  const market: Market =
+    parsed.market === "IN" || parsed.market === "INTL" || parsed.market === "UNKNOWN"
+      ? parsed.market
+      : iso2 === "IN"
+        ? "IN"
+        : iso2
+          ? "INTL"
+          : "UNKNOWN";
+  const confidence: CountryConfidence =
+    parsed.confidence === "high" || parsed.confidence === "medium" || parsed.confidence === "low"
+      ? parsed.confidence
+      : source === "manual"
+        ? "high"
+        : "medium";
+  return {
+    iso2,
+    name: countryName(iso2),
+    source,
+    confidence,
+    market: source === "manual" ? (iso2 === "IN" ? "IN" : "INTL") : market,
+    needsConfirm: source === "manual" ? false : Boolean(parsed.needsConfirm),
+    detectedAt: typeof parsed.detectedAt === "number" ? parsed.detectedAt : 0,
+    reason: typeof parsed.reason === "string" ? parsed.reason : "",
+  };
+}
+
+function readKey(key: string): CountryChoice | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw = window.localStorage.getItem(COUNTRY_STORAGE_KEY);
+    const raw = window.localStorage.getItem(key);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as Partial<CountryChoice>;
-    if (!parsed.iso2 || !isCountryCode(parsed.iso2)) return null;
-    const source: CountrySource = parsed.source === "manual" || parsed.source === "ip" || parsed.source === "timezone"
-      ? parsed.source
-      : "manual";
-    return choice(parsed.iso2, source);
+    return parseChoice(JSON.parse(raw));
   } catch {
     return null;
   }
+}
+
+/**
+ * v1 of the selector stored a silent India default as source "timezone" when
+ * lookup failed. Migrating that would lock overseas visitors to INR. Keep
+ * only a v1 *manual* choice, or a v1 IP hit.
+ */
+function migrateLegacy(): CountryChoice | null {
+  const legacy = readKey(LEGACY_STORAGE_KEY);
+  if (!legacy) return null;
+  if (legacy.source === "manual" && legacy.iso2) {
+    const next: CountryChoice = {
+      ...legacy,
+      market: legacy.iso2 === "IN" ? "IN" : "INTL",
+      confidence: "high",
+      needsConfirm: false,
+      detectedAt: Date.now(),
+      reason: "Restored your previous Country/Region choice.",
+    };
+    writeStoredCountry(next);
+    return next;
+  }
+  if (legacy.source === "ip" && legacy.iso2) {
+    const next: CountryChoice = {
+      ...legacy,
+      market: legacy.iso2 === "IN" ? "IN" : "INTL",
+      confidence: "medium",
+      needsConfirm: false,
+      detectedAt: Date.now(),
+      reason: "Restored a previous IP lookup.",
+    };
+    writeStoredCountry(next);
+    return next;
+  }
+  return null;
+}
+
+export function readStoredCountry(): CountryChoice | null {
+  return readKey(COUNTRY_STORAGE_KEY) ?? migrateLegacy();
 }
 
 export function writeStoredCountry(next: CountryChoice) {
@@ -140,16 +348,42 @@ export function writeStoredCountry(next: CountryChoice) {
   }
 }
 
-async function fetchJson(url: string, timeoutMs = 2500): Promise<unknown> {
+export function manualChoice(iso2: CountryCode): CountryChoice {
+  return {
+    iso2,
+    name: countryName(iso2),
+    source: "manual",
+    confidence: "high",
+    market: iso2 === "IN" ? "IN" : "INTL",
+    needsConfirm: false,
+    detectedAt: Date.now(),
+    reason: "Chosen with the Country/Region selector.",
+  };
+}
+
+function autoStillFresh(stored: CountryChoice | null): stored is CountryChoice {
+  if (!stored) return false;
+  if (stored.source === "manual") return true;
+  if (stored.source === "unknown") return false;
+  if (!stored.detectedAt) return false;
+  return Date.now() - stored.detectedAt < AUTO_TTL_MS;
+}
+
+async function fetchText(url: string, timeoutMs = 2500): Promise<string> {
   const ctrl = new AbortController();
   const t = window.setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     const res = await fetch(url, { signal: ctrl.signal, credentials: "omit" });
     if (!res.ok) throw new Error(String(res.status));
-    return await res.json();
+    return await res.text();
   } finally {
     window.clearTimeout(t);
   }
+}
+
+async function fetchJson(url: string, timeoutMs = 2500): Promise<unknown> {
+  const text = await fetchText(url, timeoutMs);
+  return JSON.parse(text);
 }
 
 function codeFromUnknown(value: unknown): CountryCode | null {
@@ -158,37 +392,86 @@ function codeFromUnknown(value: unknown): CountryCode | null {
   return isCountryCode(c) ? c : null;
 }
 
-/** IP lookup, then timezone of the device network. Never throws. */
+async function lookupIpwho(): Promise<CountryCode | null> {
+  const data = (await fetchJson("https://ipwho.is/?fields=success,country_code")) as {
+    success?: boolean;
+    country_code?: string;
+  };
+  if (data?.success === false) return null;
+  return codeFromUnknown(data?.country_code);
+}
+
+async function lookupGeojs(): Promise<CountryCode | null> {
+  const data = (await fetchJson("https://get.geojs.io/v1/ip/country.json")) as {
+    country?: string;
+  };
+  return codeFromUnknown(data?.country);
+}
+
+async function lookupIpapi(): Promise<CountryCode | null> {
+  const data = (await fetchJson("https://ipapi.co/json/")) as {
+    country?: string;
+    country_code?: string;
+    error?: boolean;
+  };
+  if (data?.error) return null;
+  return codeFromUnknown(data?.country_code) ?? codeFromUnknown(data?.country);
+}
+
+async function lookupCloudflare(): Promise<CountryCode | null> {
+  const text = await fetchText("https://www.cloudflare.com/cdn-cgi/trace");
+  const loc = text.split("\n").find((line) => line.startsWith("loc="));
+  if (!loc) return null;
+  return codeFromUnknown(loc.slice(4));
+}
+
+export async function collectIpCodes(): Promise<CountryCode[]> {
+  const settled = await Promise.allSettled([
+    lookupIpwho(),
+    lookupGeojs(),
+    lookupIpapi(),
+    lookupCloudflare(),
+  ]);
+  const codes: CountryCode[] = [];
+  for (const row of settled) {
+    if (row.status === "fulfilled" && row.value) codes.push(row.value);
+  }
+  return codes;
+}
+
+export function deviceTimezone(): string | null {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/** IP lookup in parallel, then timezone. Never throws. Never silent-defaults to India. */
 export async function detectCountry(): Promise<CountryChoice> {
+  let ipCodes: CountryCode[] = [];
   try {
-    const data = (await fetchJson("https://ipwho.is/?fields=success,country_code")) as {
-      success?: boolean;
-      country_code?: string;
-    };
-    if (data?.success !== false) {
-      const iso = codeFromUnknown(data?.country_code);
-      if (iso) return choice(iso, "ip");
-    }
+    ipCodes = await collectIpCodes();
   } catch {
-    /* next */
+    ipCodes = [];
   }
-  try {
-    const data = (await fetchJson("https://get.geojs.io/v1/ip/country.json")) as {
-      country?: string;
-    };
-    const iso = codeFromUnknown(data?.country);
-    if (iso) return choice(iso, "ip");
-  } catch {
-    /* next */
-  }
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const iso = tz ? TZ_TO_COUNTRY[tz] : undefined;
-    if (iso) return choice(iso, "timezone");
-  } catch {
-    /* default */
-  }
-  return choice(DEFAULT_COUNTRY, "timezone");
+  return decideFromSignals({ ipCodes, timezone: deviceTimezone() });
+}
+
+/**
+ * Resolve what to show this visit.
+ * Manual storage always wins. Fresh auto storage is reused so a later failed
+ * lookup cannot override a good India (or overseas) result.
+ */
+export async function resolveCountry(): Promise<CountryChoice> {
+  const stored = readStoredCountry();
+  if (stored?.source === "manual") return stored;
+  if (autoStillFresh(stored) && stored.source !== "unknown") return stored;
+  const detected = await detectCountry();
+  const latest = readStoredCountry();
+  if (latest?.source === "manual") return latest;
+  writeStoredCountry(detected);
+  return detected;
 }
 
 export const COUNTRY_OPTIONS: { iso2: CountryCode; name: string }[] = (() => {
@@ -197,3 +480,10 @@ export const COUNTRY_OPTIONS: { iso2: CountryCode; name: string }[] = (() => {
   const rest = rows.filter((r) => r.iso2 !== "IN").sort((a, b) => a.name.localeCompare(b.name));
   return inRow ? [inRow, ...rest] : rest;
 })();
+
+export const IP_PROVIDERS_USED = [
+  { name: "ipwho.is", url: "https://ipwho.is/" },
+  { name: "geojs.io", url: "https://get.geojs.io/v1/ip/country.json" },
+  { name: "ipapi.co", url: "https://ipapi.co/json/" },
+  { name: "Cloudflare trace", url: "https://www.cloudflare.com/cdn-cgi/trace" },
+] as const;
