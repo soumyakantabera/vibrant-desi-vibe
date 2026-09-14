@@ -165,6 +165,9 @@ export function Footer({ image }: { image?: string }) {
               </a>
             </p>
           </address>
+          <div className="pt-2">
+            <CountrySelect />
+          </div>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
           <div className="space-y-1">
@@ -185,12 +188,9 @@ export function Footer({ image }: { image?: string }) {
               </Link>
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <CountrySelect />
-            <p className="font-display font-semibold text-cream/90">
-              Real teacher · Chat on WhatsApp
-            </p>
-          </div>
+          <p className="font-display font-semibold text-cream/90">
+            Real teacher · Chat on WhatsApp
+          </p>
         </div>
       </div>
     </footer>
