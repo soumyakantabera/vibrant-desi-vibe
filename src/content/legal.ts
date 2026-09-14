@@ -77,6 +77,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Cookies and analytics",
         paragraphs: [
           "This website is a static brochure. We do not load Google Analytics, advertising pixels or campaign tracking on WhatsApp links. The host may set cookies or logs that are strictly necessary to deliver the pages and keep the site available.",
+          "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That is for later fee and tax display. We do not use it to enrol you outside India, and we do not send that lookup to an advertising network.",
         ],
       },
       {

@@ -4,6 +4,7 @@ import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { SmartImage } from "./SmartImage";
 import { PaymentTrust } from "./PaymentTrust";
+import { CountrySelect } from "./CountrySelect";
 import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { IMG } from "@/lib/images";
 import { CONTACT } from "@/lib/seo";
@@ -139,6 +140,9 @@ export function Footer({ image }: { image?: string }) {
         </div>
         <div className="mt-8 pt-6 border-t border-cream/15">
           <PaymentTrust tone="dark" />
+        </div>
+        <div className="mt-6">
+          <CountrySelect />
         </div>
         <div className="mt-8 pt-6 border-t border-cream/15 text-xs leading-relaxed text-white/80 space-y-3">
           <p className="text-cream/95 font-semibold">
