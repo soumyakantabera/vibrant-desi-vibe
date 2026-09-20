@@ -175,18 +175,16 @@ export const body: ArticleBody = [
       ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
       ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,499/month"],
       ["Workplace English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,499/month"],
-      ["IELTS Preparation", "3 months", "Live batch, approx. 6 learners", "₹2,499/month"],
       ["Career Counselling", "3 sessions", "1:1", "₹1,999 total"],
     ],
   },
   {
     t: "p",
-    text: "If IELTS is your goal, test the teaching approach first with the free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template), then compare the live course only if you need individual correction and marked practice.",
+    text: "If an exam form asks for IELTS, sit that paper with IDP or British Council — we do not sell IELTS as a course. The free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template) is still useful as structure. If you cannot yet hold a conversation, start with Spoken English.",
   },
   {
     t: "p",
-    text: "For the full syllabus and outcomes of each, see [all six courses](/english-career).",
+    text: "For the full syllabus and outcomes of each, see [all four programmes](/english-career).",
   },
   {
     t: "cta",

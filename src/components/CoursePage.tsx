@@ -138,35 +138,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "Low-stakes practice ideas you can use between live classes.",
     },
   ],
-  ielts: [
-    {
-      href: "/ielts-coaching-fees-india",
-      title: "IELTS coaching fees in India",
-      description: "₹8,000–₹35,000 typical. Ours: ₹2,499/mo, 6 mocks, around 6 learners.",
-    },
-    {
-      href: "/blog/band-7-writing-4-paragraph-template",
-      title: "IELTS Band 7 four-paragraph writing template",
-      description: "A reusable structure for clearer Task 2 essays.",
-    },
-    {
-      href: "/blog/spoken-english-or-ielts",
-      title: "Spoken English or IELTS?",
-      description: "Do not buy Band 7 coaching when you still cannot hold a call.",
-    },
-  ],
-  "interview-prep": [
-    {
-      href: "/spoken-english-for-freshers-india",
-      title: "Spoken English for freshers",
-      description: "Campus intro, HR screen, 60-second chair. No placement promise.",
-    },
-    {
-      href: "/blog/tell-me-about-yourself-in-60-seconds",
-      title: "Answer ‘Tell me about yourself’ in 60 seconds",
-      description: "Build an interview introduction that is specific and easy to remember.",
-    },
-  ],
   "career-counselling": [
     {
       href: "/blog/bpo-to-client-facing-role-roadmap",
@@ -181,8 +152,6 @@ const TEACHER_NOTE: Record<string, string> = {
   "business-english":
     "The same teacher on every workplace hour. They learn how you sound on a client call.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
-  "interview-prep": "Mocks with a teacher who already knows your story before the board does.",
-  ielts: "Speaking labs with a teacher who marks your actual mistakes.",
   "career-counselling": "Three 1:1 sessions after they have read your background.",
 };
 
@@ -666,7 +635,7 @@ export function courseSeo(d: CourseData) {
     path,
     // Hand-written in COURSE_SEO rather than assembled here: the generated
     // "<title> Online \u2014 <price>, Approx. 6 Learners per Batch | Learn With Smile" form ran
-    // to 70\u201387 characters and truncated in the SERP on all six courses.
+    // to 70\u201387 characters and truncated in the SERP on all four courses.
     title: extra?.title ?? d.title,
     description: extra?.description ?? d.metaDescription,
     ogImage,

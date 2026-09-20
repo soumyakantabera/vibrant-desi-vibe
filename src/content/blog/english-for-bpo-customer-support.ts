@@ -153,7 +153,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Do you need a dedicated BPO course?" },
   {
     t: "p",
-    text: "Not automatically. If you are a beginner, build everyday spoken English first. If you already work in support and need call handling, client communication, updates and professional writing, a broader Workplace English course can cover the relevant skills without inventing another course name. If your immediate goal is clearing the recruitment round, Interview Preparation may be the faster route.",
+    text: "Not automatically. If you are a beginner, build everyday spoken English first. If you already work in support and need call handling, client communication, updates and professional writing, a broader Workplace English course can cover the relevant skills without inventing another course name. If your immediate goal is clearing the recruitment round, practise interview English in Spoken or Interactive rather than Workplace English.",
   },
   {
     t: "p",

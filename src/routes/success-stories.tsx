@@ -45,8 +45,8 @@ const STORIES = [
     quote:
       "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
     name: "Vikram Singh",
-    detail: "Interview Prep · Bank Asst. Manager, Delhi",
-    waMessage: "Hi, I saw Vikram's promotion story. Interview Prep demo please.",
+    detail: "Spoken English · Bank Asst. Manager, Delhi",
+    waMessage: "Hi, I saw Vikram's promotion story. Spoken English demo please.",
   },
   {
     quote:
@@ -92,7 +92,7 @@ function Page() {
             eyebrowTone="coral"
             eyebrow="Verified Stories"
             title="6 Stories — Swipe or Scroll"
-            subtitle="Spoken, business, interviews, standups. Named learners. On mobile, swipe. On desktop, a grid."
+            subtitle="Spoken, workplace, standups and interviews in the live rooms. Named learners. On mobile, swipe. On desktop, a grid."
           />
           <TestimonialSlider items={STORIES} />
         </div>

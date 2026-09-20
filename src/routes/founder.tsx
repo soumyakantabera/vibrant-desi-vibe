@@ -28,9 +28,8 @@ export const Route = createFileRoute("/founder")({
         url: abs("/founder"),
         knowsAbout: [
           "Spoken English",
-          "IELTS Preparation",
+          "Interactive Speaking",
           "Workplace English",
-          "Interview Preparation",
           "Career Counselling",
         ],
         knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
@@ -181,9 +180,8 @@ function Page() {
             ]}
             teaches={[
               "Basic & Interactive Spoken English",
-              "IELTS Coaching (Band 7+ focused)",
+              "Interview English inside Spoken and Interactive rooms",
               "Workplace English for professionals",
-              "Interview Prep · HR · Behavioural",
               "1:1 Career Counselling",
             ]}
             promises={[

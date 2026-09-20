@@ -25,7 +25,7 @@ export const body: ArticleBody = [
     rows: [
       [
         "Learn With Smile (us)",
-        "₹999–₹2,499/mo inclusive of taxes",
+        "₹999–₹1,999/mo inclusive of taxes",
         "Live group, approx. 6 learners, named teacher, IST",
         "About 8–10 minutes",
         "Adults 15+ who need a syllabus and the mic",
@@ -71,8 +71,6 @@ export const body: ArticleBody = [
       ["Basic Spoken English", "6 months", "₹999/month"],
       ["Interactive Speaking", "3 months", "₹1,499/month"],
       ["Workplace English", "3 months", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "₹1,499/month"],
-      ["IELTS Preparation", "3 months", "₹2,499/month"],
       ["Career Counselling", "3 × 60-min 1:1", "₹1,999"],
     ],
   },
@@ -126,8 +124,8 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We run a 3-month live IELTS room — ₹2,499/month, six mocks, speaking labs. Sit the paper when the form asks.",
-      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, inclusive of taxes, and the IELTS paper when you actually need the score.",
+      "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We do not sell IELTS as a course. Sit the paper when the form asks.",
+      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, inclusive of taxes.",
       "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
       "The student is a **child** — a kids platform, not an adult batch of around 6.",
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our Kolkata address is an office, not a campus.",

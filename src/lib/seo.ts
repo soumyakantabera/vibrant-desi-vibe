@@ -95,7 +95,7 @@ export const COVERAGE_CITIES = [
  *
  * The homepage used to show 4.9★ in its stats band, 5.0★ (125 reviews) in the
  * location card, and 4.9★ again on the sticker that `SnapshotCard` renders on
- * the hero and on all six course pages — three places, two numbers, no source.
+ * the hero and on all four course pages — three places, two numbers, no source.
  *
  * That matters more here than on most sites: llms.txt and the `.md` twins make
  * this site unusually easy for an assistant to quote verbatim, so an
@@ -125,7 +125,7 @@ export function abs(path: string): string {
 
 /**
  * The clean-Markdown mirror of a page, written by `scripts/prerender.mjs`:
- * `/` → `/index.md`, `/course-ielts` → `/course-ielts.md`.
+ * `/` → `/index.md`, `/course-spoken-english` → `/course-spoken-english.md`.
  *
  * Linked from every page's head as `rel="alternate"` so an assistant that has
  * already landed on the HTML can fetch the text without parsing ~60 kB of
@@ -212,10 +212,9 @@ export const PAGES: Record<string, PageSeo> = {
       ...BRAND_KEYWORDS,
       "best online spoken english classes in india",
       "english class fees per month in india",
-      "ielts coaching online india",
       "business english course india",
       "workplace english course india",
-      "interview preparation in english",
+      "interview english practice india",
       "career counselling online india",
       "spoken english classes west bengal",
       "spoken english classes maharashtra online",
@@ -233,7 +232,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Workplace English ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. Interview English is practised inside Spoken and Interactive rooms. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -283,7 +282,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-12",
     summary:
-      "Course hub. Spoken, Interactive, Workplace, Interview, IELTS and 1:1 Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes.",
+      "Course hub. Spoken, Interactive, Workplace and 1:1 Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
@@ -291,7 +290,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Interview Preparation ₹1,499 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Workplace English ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. Interview English is practised in Spoken and Interactive rooms. We do not sell a separate IELTS or Interview Preparation course.",
       },
       {
         q: "Who can join?",
@@ -299,7 +298,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I take two courses at the same time?",
-        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit — typically Interactive Speaking with Interview Preparation, or Workplace English with Career Counselling. Message us on WhatsApp so we can check the available schedules.",
+        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit — typically Workplace English with Career Counselling. Message us on WhatsApp so we can check the available schedules.",
       },
     ],
   },
@@ -328,7 +327,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How is Learn With Smile different from 1:1 apps and brand-name English groups?",
-        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules at ₹8,800–₹16,000 and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month inclusive of taxes, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, we run that paper live — ₹2,499/month, six mocks, speaking labs. The test board issues the score. We train it.",
+        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules at ₹8,800–₹16,000 and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month inclusive of taxes, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, sit that paper with IDP or British Council — we do not sell IELTS as a course.",
       },
       {
         q: "Are Kolkata offline spoken English classes better than online?",
@@ -356,7 +355,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile provide a course certificate?",
-        a: "This room trains the voice people hear. Most Indian employers mark your English in the interview, not on a school certificate. When a visa, university or HR form needs a recognised exam, that is IELTS (or similar) — a separate paper the test board scores. We run a 3-month live IELTS room at ₹2,499/month: six mocks, speaking labs, writing feedback. Sit it when the form asks. Until then, join for speaking.",
+        a: "This room trains the voice people hear. Most Indian employers mark your English in the interview, not on a school certificate. When a visa, university or HR form needs a recognised exam, that is IELTS (or similar) — a separate paper the test board scores. We do not sell IELTS coaching. Sit the exam when the form asks. Until then, join for speaking.",
       },
     ],
   },
@@ -436,7 +435,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Will an English course actually help me clear interviews, or is that too big a claim?",
-        a: "English removes one specific obstacle — communicating confidently once you're in the room — it doesn't replace domain skills or experience you don't have. Our Interview Preparation course pairs mock interviews with English coaching for that reason, and the outcomes above came from candidates who already had the underlying skills but needed the language and confidence fixed.",
+        a: "English removes one specific obstacle — communicating confidently once you're in the room — it doesn't replace domain skills or experience you don't have. Interview English (HR, tell-me-about-yourself, STAR) is practised inside Spoken and Interactive rooms, and the outcomes above came from candidates who already had the underlying skills but needed the language and confidence fixed.",
       },
       {
         q: "Do I need IELTS for a job in India?",
@@ -551,7 +550,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Does Learn With Smile issue a course certificate?",
-        a: "No. We do not issue a school certificate. IELTS and similar scores are issued only by the test board. We train the paper; we do not award the score.",
+        a: "No. We do not issue a school certificate. IELTS and similar scores are issued only by the test board. We do not sell IELTS as a course.",
       },
       {
         q: "Do you guarantee fluency, a job or an IELTS band?",
@@ -613,7 +612,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you run kids or teen English classes?",
-        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Workplace, Interview Prep, IELTS and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
+        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Workplace English and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
@@ -675,8 +674,8 @@ export const PAGES: Record<string, PageSeo> = {
         a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. An online batch of around 6 gives each learner roughly 8–10 minutes. You also save the 45–90 minutes each way of commuting up to twice a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
       },
       {
-        q: "Do you prepare Kolkata students for IELTS and job interviews too?",
-        a: "Yes. Alongside Spoken English we run IELTS Preparation at ₹2,499/month for learners applying to study abroad, Interview Preparation at ₹1,499/month for campus placements and job switches, and Workplace English at ₹1,999/month for professionals in IT, BPO, customer support and other client-facing roles. All English courses are live with approximately 6 learners per batch.",
+        q: "Do you prepare Kolkata students for job interviews too?",
+        a: "Yes. Interview English — HR screens, tell-me-about-yourself, STAR — is practised inside Spoken English and Interactive Speaking. Workplace English at ₹1,999/month covers professionals in IT, BPO, customer support and other client-facing roles. We do not sell a separate IELTS or Interview Preparation course. All English rooms are live with approximately 6 learners per batch.",
       },
     ],
   },
@@ -724,7 +723,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much does IELTS coaching cost in India?",
-        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. Learn With Smile charges ₹2,499/month for three months in a batch of approximately 6, including six full-length mocks with individual feedback. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching.",
+        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
       },
     ],
   },
@@ -764,7 +763,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do I need a certificate from an English course?",
-        a: "This room trains speaking and communication — meetings, interviews, everyday English. Most Indian workplaces hear you talk; they do not ask for a spoken-English certificate. When a visa, university or HR form needs a recognised exam, that is IELTS or similar — we run a 3-month live IELTS room (₹2,499/month) for that paper. The test board issues the score. Until then, this class is for the voice.",
+        a: "This room trains speaking and communication — meetings, interviews, everyday English. Most Indian workplaces hear you talk; they do not ask for a spoken-English certificate. When a visa, university or HR form needs a recognised exam, that is IELTS or similar — sit it with the test board. We do not sell IELTS coaching. Until then, this class is for the voice.",
       },
       {
         q: "Which online English class is best for a complete beginner?",
@@ -825,7 +824,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/how-long-to-learn-spoken-english",
     title: "How Long to Learn Spoken English | 6 Months",
     description:
-      "Everyday English from zero: ~6 months live. Workplace 3 months. IELTS Band 7+ 9–12 months. 30-day fluency is marketing. ₹999/mo, approx. 6 learners. Inclusive of taxes.",
+      "Everyday English from zero: ~6 months live. Workplace 3 months. Exam English 9–12 months if a form asks. 30-day fluency is marketing. ₹999/mo, approx. 6 learners. Inclusive of taxes.",
     shortTitle: "How Long to Learn Spoken English",
     keywords: [
       "how long to learn spoken english from zero",
@@ -838,7 +837,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Time-to-fluency guide. Everyday conversation ~6 months from zero with live classes; workplace ~3 months; IELTS Band 7+ 9–12 months. Speaking minutes matter more than calendar months. ₹999/mo, batch of around 6.",
+      "Time-to-fluency guide. Everyday conversation ~6 months from zero with live classes; workplace ~3 months. Speaking minutes matter more than calendar months. ₹999/mo, batch of around 6.",
     faqs: [
       {
         q: "How long does it take to learn spoken English from zero in India?",
@@ -850,7 +849,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Workplace English is 3 months at ₹1,999/month. IELTS is 3 months at ₹2,499/month with 6+ marked mocks. Interview Prep is 2 months at ₹1,499/month.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,499/month. Workplace English is 3 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
       },
     ],
   },
@@ -884,7 +883,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is British Council worth it versus a ₹999/month class?",
-        a: "A brand-name CEFR module buys that classroom and syllabus — often ₹8,800–₹16,000 for six classes. IELTS is a different paper: visas and universities read that score. We prepare IELTS live (₹2,499/month, six mocks, speaking labs). The test board issues the score. Speaking for work and interviews starts at ₹999/month. Sit the exam when a form asks — not as a default.",
+        a: "A brand-name CEFR module buys that classroom and syllabus — often ₹8,800–₹16,000 for six classes. IELTS is a different paper: visas and universities read that score. We do not sell IELTS coaching. Speaking for work and interviews starts at ₹999/month. Sit the exam with the test board when a form asks — not as a default.",
       },
       {
         q: "Is Veta or a Kolkata classroom better than an online batch of 6?",
@@ -1219,71 +1218,6 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
-  ielts: {
-    title: "IELTS Coaching Online | ₹2,499/mo, 3 Months",
-    description:
-      "IELTS Academic and General Training. 3 months, 6+ mocks, live writing feedback, ~6 learners. ₹2,499/month, inclusive of taxes. Typical start Band 5.5–6.",
-    shortTitle: "IELTS Preparation",
-    keywords: [
-      "ielts coaching online india",
-      "ielts online classes india fees",
-      "ielts band 7 preparation course",
-      "ielts academic and general training coaching",
-      "ielts mock test with feedback online",
-      "ielts speaking practice online india",
-      "best ielts online coaching small batch",
-      "how many months to prepare for ielts",
-    ],
-    ogImage: "/og/ielts.jpg",
-    summary:
-      "IELTS Preparation — 3 months, live batch of approximately 6 learners, ₹2,499/month. Academic and General Training, 6+ full-length mocks, live writing feedback, speaking labs.",
-    extraFaqs: [
-      {
-        q: "How much does IELTS coaching cost in India?",
-        a: "Learn With Smile charges ₹2,499 per month for 3 months of live IELTS Preparation in a batch of approximately 6, including 6+ full-length mock tests with individual feedback. Indian IELTS coaching generally ranges from about ₹8,000 to ₹35,000 for a full course; large-institute classroom batches sit at the higher end and often run 20–40 students per batch. Note the IELTS exam fee itself is separate and paid to IDP or British Council.",
-      },
-      {
-        q: "How many months does it take to prepare for IELTS Band 7?",
-        a: "About 3 months of structured preparation if your current level is around Band 5.5–6, which is the typical starting point for Indian graduates. Writing is almost always the bottleneck, not Listening or Reading, so the deciding factor is how many essays you write and get individually corrected — we target at least one reviewed piece of writing per week plus 6 full-length timed mocks.",
-      },
-      {
-        q: "Do you teach both IELTS Academic and General Training?",
-        a: "Yes, both, in the same course. Listening and Speaking are identical across the two versions; Reading and Writing Task 1 differ, so your trainer customises those drills to whichever version you are sitting — Academic for university admission, General Training for PR and migration.",
-      },
-      {
-        q: "Is online IELTS coaching as good as classroom coaching?",
-        a: "For IELTS specifically, online practice mirrors the computer-delivered test format used in India. Corrected writing and realistic speaking mocks matter more than the room itself; a live batch of around 6 gives each learner more practice and correction time than a crowded classroom.",
-      },
-    ],
-  },
-  "interview-prep": {
-    title: "Interview Prep in English | ₹1,499/mo, 7 Yrs",
-    description:
-      "HR rounds, STAR answers, 3 recorded mocks, resume and LinkedIn. 2-month live batch of ~6 learners. ₹1,499/mo, inclusive of taxes. Practise before you sit it.",
-    shortTitle: "Interview Preparation",
-    keywords: [
-      "interview preparation course english india",
-      "hr interview questions and answers coaching",
-      "mock interview practice online india",
-      "tell me about yourself answer coaching",
-      "star method behavioural interview training",
-      "resume and linkedin review india",
-      "how to clear hr round interview",
-    ],
-    ogImage: "/og/interview-prep.jpg",
-    summary:
-      "Interview Preparation in English — 2 months intensive, live batch of approximately 6 learners, ₹1,499/month. HR rounds, STAR behavioural answers, 3 recorded mock interviews, resume and LinkedIn review.",
-    extraFaqs: [
-      {
-        q: "How should I answer 'tell me about yourself' in an interview?",
-        a: "Keep it to 90 seconds in three parts: where you are now (current role and one line of scope), what you have done that is relevant (one or two concrete achievements with a number attached), and why you are in this room (what draws you to this specific role). Do not recite your resume chronologically and do not start with your birthplace or schooling. We drill this answer until it is automatic, then record it back to you so you hear your own filler words and pacing.",
-      },
-      {
-        q: "What is the STAR method and do Indian interviewers use it?",
-        a: "STAR is Situation, Task, Action, Result — a four-part structure for answering behavioural questions such as 'tell me about a conflict with a teammate'. It is standard at Indian IT services firms, GCCs, product companies and most MNC HR rounds, and interviewers there are explicitly trained to score against it. The most common mistake is spending 80% of the answer on Situation and never stating a measurable Result.",
-      },
-    ],
-  },
   "career-counselling": {
     title: "1:1 Career Counselling | ₹1,999 Total, 3×60 min",
     description:
@@ -1352,14 +1286,14 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Workplace, Interview, IELTS and 1:1 Career Counselling for adults 15+.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Interactive, Workplace and 1:1 Career Counselling for adults 15+.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],
     slogan: "Speak Better English. Master In-Demand Skills. Build Future Together.",
     email: CONTACT.email,
     telephone: CONTACT.phone,
-    priceRange: "₹999–₹2,499/month",
+    priceRange: "₹999–₹1,999/month",
     currenciesAccepted: "INR",
     paymentAccepted: "UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm",
     foundingDate: String(FOUNDING_YEAR),
@@ -1640,7 +1574,7 @@ export function buildHead(opts: {
  *
  * Deliberately carries NO title, description, canonical, og:url or page-level
  * JSON-LD. The root route renders on every page, so anything page-specific put
- * here leaks everywhere: a homepage canonical on /course-ielts makes Google
+ * here leaks everywhere: a homepage canonical on /course-spoken-english makes Google
  * drop the page, and a homepage FAQPage there is a structured-data violation
  * because the answers are not on the rendered page.
  */

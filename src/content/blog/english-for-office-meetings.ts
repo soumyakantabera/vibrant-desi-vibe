@@ -168,7 +168,7 @@ export const body: ArticleBody = [
       "If you cannot yet hold a basic conversation, start with Basic Spoken English.",
       "If you only need an English certificate, choose an institution that issues one. We currently do not.",
       "If you already speak comfortably in meetings and only need a phrase list, keep this article and practise independently.",
-      "If the real problem is interview performance, choose Interview Preparation rather than workplace communication.",
+      "If the real problem is interview performance, practise interview English in Spoken or Interactive rather than workplace communication.",
     ],
   },
   {

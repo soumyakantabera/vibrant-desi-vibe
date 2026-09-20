@@ -210,8 +210,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Our IELTS batches usually have around 6 learners so every essay gets individually corrected, and you sit six full-length timed mocks before the real thing. Academic and General Training, three months, ₹2,499/month.",
-    course: "/course-ielts",
-    label: "See the IELTS course",
+    text: "We do not sell IELTS as a course. If speaking is the actual gap, Spoken English is the room — approximately 6 learners, ₹999/month, inclusive of taxes. Use this template with a dedicated exam marker if a form asked for the band.",
+    course: "/course-spoken-english",
+    label: "See Spoken English",
   },
 ];

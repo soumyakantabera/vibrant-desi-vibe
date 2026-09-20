@@ -2,8 +2,6 @@ export const COURSE_SLUGS = [
   "spoken-english",
   "interactive-speaking",
   "business-english",
-  "ielts",
-  "interview-prep",
   "career-counselling",
 ] as const;
 
@@ -23,23 +21,13 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "work-and-career",
-    title: "Work & Career · from ₹1,499/month, inclusive of taxes",
+    title: "Work & Career · from ₹1,999/month, inclusive of taxes",
     description:
-      "Workplace English ₹1,999/month and Interview Prep ₹1,499/month, inclusive of taxes. Meetings, calls, emails, presentations and the interview chair. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Workplace English ₹1,999/month, inclusive of taxes, and 1:1 Career Counselling ₹1,999 total for three 60-minute sessions. Meetings, calls, emails, presentations and a named counsellor. Live quality teaching. Batches of approximately 6 learners; counselling is 1:1.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
-    slugs: ["business-english", "interview-prep"],
-  },
-  {
-    id: "tests-and-guidance",
-    title: "Tests & Guidance · IELTS and 1:1 counselling",
-    description:
-      "Live IELTS preparation ₹2,499/month, inclusive of taxes. 1:1 Career Counselling ₹1,999 total for three 60-minute sessions. Named teacher. No band or job guarantee.",
-    icon: "award",
-    tone: "sun",
-    featuredSlug: "ielts",
-    slugs: ["ielts", "career-counselling"],
+    slugs: ["business-english", "career-counselling"],
   },
 ] as const satisfies ReadonlyArray<{
   id: string;

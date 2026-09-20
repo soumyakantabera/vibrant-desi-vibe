@@ -47,11 +47,11 @@ export const body: ArticleBody = [
       ],
       [
         "Preparing for IELTS, TOEFL or PTE",
-        "Dedicated exam prep with individually marked writing; test the approach with the free [Band 7 writing template](/blog/band-7-writing-4-paragraph-template)",
+        "Dedicated exam prep with a specialist; test the approach with the free [Band 7 writing template](/blog/band-7-writing-4-paragraph-template). We do not sell IELTS.",
       ],
       [
         "A parent looking for a child 6–11 or a teen 12–17",
-        "Our Kids or Teens room (small live group), or a 1:1 kids brand. Not the adult ₹999 batch.",
+        "A dedicated kids platform, or a 1:1 kids brand. Not the adult ₹999 batch.",
       ],
       [
         "Someone who needs a certificate for a visa or HR",
@@ -152,7 +152,7 @@ export const body: ArticleBody = [
     items: [
       "**A fixed syllabus** — you want somebody to decide what you study next, in what order.",
       "**Real speaking time** — approximately 6 learners per batch, so you speak in every class and get corrected by name.",
-      "**An Indian budget** — ₹999–₹2,499 a month, inclusive of taxes, billed monthly with no lock-in.",
+      "**An Indian budget** — ₹999–₹1,999 a month, inclusive of taxes, billed monthly with no lock-in.",
     ],
   },
   {

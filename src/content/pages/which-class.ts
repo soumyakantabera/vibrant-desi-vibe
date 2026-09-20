@@ -40,10 +40,10 @@ export const body: ArticleBody = [
         "Updates, client calls, emails, a 5-minute explanation of your work",
       ],
       [
-        "A form, visa or university asks for a band",
-        "IELTS — only then",
-        "3 months · ₹2,499/mo",
-        "Marked mocks. Writing is usually the bottleneck",
+        "HR screens, tell-me-about-yourself, STAR",
+        "Spoken or Interactive",
+        "Practised in those rooms",
+        "60-second intro and live mocks in the batch",
       ],
     ],
   },
@@ -70,10 +70,10 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Do not buy IELTS because a cousin went abroad. Buy it when a **form** asks.",
+      "Do not buy IELTS because a cousin went abroad. Sit it with the test board when a **form** asks — we do not sell that paper.",
       "Do not buy 1:1 chat apps if you cannot form a sentence yet — there is nothing to practise.",
       "Do not buy a 30-day fluency pack. Everyday talk is about 6 months live.",
-      "Interview prep is for people who already speak and now need the job conversation. Sneha’s story is that lane.",
+      "Interview English is for people who already speak and now need the job conversation — practised in Spoken and Interactive, not sold as a separate room. Sneha’s story is that lane.",
     ],
   },
 

@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need interview answers rather than day-to-day office communication",
-        "Choose Interview Preparation instead.",
+        "Practise interview English in Spoken or Interactive — we do not sell a separate Interview Prep room.",
       ],
     ],
   },

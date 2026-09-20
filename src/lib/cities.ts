@@ -342,9 +342,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       rows: [
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
         ["Interactive Speaking", "3 months", "₹1,499/month"],
-        ["Interview Preparation", "2 months", "₹1,499/month"],
         ["Workplace English", "3 months", "₹1,999/month"],
-        ["IELTS Preparation", "3 months, 6 mocks", "₹2,499/month"],
         ["Career Counselling", "3 × 60 min, 1:1", "₹1,999 total"],
       ],
     },
@@ -372,7 +370,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "ul",
       items: [
         "No walk-in campus in " + city.name + ".",
-        "No certificate. Indian interviews hear you. Visas read an exam board score — we prep IELTS live; the board issues the band.",
+        "No certificate. Indian interviews hear you. Visas read an exam board score — sit IELTS with the test board when a form asks; we do not sell that paper.",
         "No 30-day fluency from zero. Everyday conversation is about 6 months of live practice. [How long it takes](/how-long-to-learn-spoken-english).",
       ],
     },

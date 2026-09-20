@@ -104,9 +104,9 @@ function Home() {
       quote:
         "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
       name: "Vikram Singh",
-      detail: "Interview Prep · Bank Asst. Manager, Delhi",
+      detail: "Spoken English · Bank Asst. Manager, Delhi",
       waMessage:
-        "Hi, I saw Vikram's promotion story. I want the same career move. Interview Prep demo please.",
+        "Hi, I saw Vikram's promotion story. I want the same career move. Spoken English demo please.",
     },
   ];
 
@@ -304,7 +304,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Workplace, Interview, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
+            subtitle="Spoken English, Interactive Speaking, Workplace English and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (

@@ -238,8 +238,8 @@ for (const pathname of ALL_PATHS) {
     writeFile("index.html", page);
   } else {
     const slug = pathname.replace(/^\//, "");
-    // Both forms: GitHub Pages resolves `/course-ielts` from `course-ielts.html`
-    // without a redirect, and `/course-ielts/` from the directory index. Writing
+    // Both forms: GitHub Pages resolves `/course-spoken-english` from `course-spoken-english.html`
+    // without a redirect, and `/course-spoken-english/` from the directory index. Writing
     // both means neither form 404s and neither costs a redirect hop, while the
     // canonical tag keeps the no-slash URL as the single indexed version.
     writeFile(`${slug}.html`, page);

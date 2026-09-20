@@ -17,8 +17,6 @@ const ENGLISH = [
   { to: "/course-spoken-english", label: "Spoken English" },
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
   { to: "/course-business-english", label: "Workplace English" },
-  { to: "/course-interview-prep", label: "Interview Preparation" },
-  { to: "/course-ielts", label: "IELTS Preparation" },
   { to: "/course-career-counselling", label: "Career Counselling" },
 ];
 

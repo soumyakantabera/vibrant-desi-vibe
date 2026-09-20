@@ -45,7 +45,7 @@ const ROWS = [
     tag: "Exam & CEFR",
     title: "British Council",
     fee: "₹8,800–₹16,000 / module",
-    body: "CEFR groups, often 8–12. Strong classroom if you want that syllabus. When a form needs IELTS, we train the paper — ₹2,499/mo. The test board issues the score.",
+    body: "CEFR groups, often 8–12. Strong classroom if you want that syllabus. When a form needs IELTS, sit it with IDP or British Council. We train the speaking you need for work and interviews.",
   },
   {
     color: "sage" as const,
@@ -207,7 +207,7 @@ function Page() {
         <div className="container-x max-w-2xl text-center text-cream">
           <h2 className="text-2xl text-cream md:text-3xl">Compare in a class.</h2>
           <p className="mt-3 text-white">
-            Approximately 6 learners. From ₹999/mo, inclusive of taxes. IELTS when a form asks.
+            Approximately 6 learners. From ₹999/mo, inclusive of taxes. Spoken, Interactive, Workplace, Career Counselling.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">

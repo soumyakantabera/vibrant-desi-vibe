@@ -102,7 +102,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Spoken English or IELTS? Which Course Fits in 2 Minutes",
     seoTitle: "Spoken English or IELTS? Pick in 2 Minutes",
     description:
-      "Spoken English ₹999/mo, 6 months. Workplace ₹1,999/mo. IELTS ₹2,499/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
+      "Spoken English ₹999/mo, 6 months. Workplace ₹1,999/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
     excerpt: "Different clocks, different fees. Buy the course that matches the bottleneck.",
     tag: "Spoken English",
     img: "ielts",
@@ -112,17 +112,17 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-09-11",
     readingTime: 5,
     wordCount: 524,
-    relatedCourses: ["/course-spoken-english", "/course-ielts"],
+    relatedCourses: ["/course-spoken-english", "/course-business-english"],
     shortAnswer:
       "Cannot hold a call → Spoken English. Freeze with the words you already have → Interactive. Meetings and clients → Workplace. Visa or university form → IELTS. Do not buy Band 7 coaching when you still cannot finish a sentence.",
     faqs: [
       {
         q: "Should I take Spoken English or IELTS first?",
-        a: "If you cannot finish a sentence on a phone call, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If a university, visa or HR form asks for a band, take IELTS (₹2,499/month, six mocks). Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
+        a: "If you cannot finish a sentence on a phone call, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If a university, visa or HR form asks for a band, sit IELTS with the test board — we do not sell that paper. Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
       },
       {
         q: "Is IELTS useful for a job in India?",
-        a: "Only if the form asks. Indian interviews judge a 60-second intro, not a Writing Task 2. Workplace English or Interview Prep is usually the cheaper, faster room.",
+        a: "Only if the form asks. Indian interviews judge a 60-second intro, not a Writing Task 2. Workplace English, or interview English inside Spoken and Interactive, is usually the cheaper, faster room.",
       },
     ],
   },
@@ -204,7 +204,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-09-02",
     readingTime: 6,
     wordCount: 977,
-    relatedCourses: ["/course-business-english", "/course-interview-prep"],
+    relatedCourses: ["/course-business-english", "/course-spoken-english"],
   },
   {
     slug: "5-speaking-habits-that-killed-my-hesitation",
@@ -239,7 +239,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readingTime: 7,
     wordCount: 1381,
-    relatedCourses: ["/course-ielts"],
+    relatedCourses: ["/course-spoken-english"],
     shortAnswer:
       "Four paragraphs, 260–280 words, 40 minutes. Task Response and Coherence are half the marks and they are organisation, not vocabulary.",
     howTo: {
@@ -293,7 +293,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A three-part structure for the most common interview opener, with full example answers for freshers, career switchers and experienced professionals in India.",
     excerpt: "A simple structure our students use to nail the most common interview opener.",
-    tag: "Interview Prep",
+    tag: "Interview English",
     img: "presentation",
     imgAlt: "Candidate answering questions in an online job interview",
     author: "Sunanda Dey",
@@ -301,7 +301,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-25",
     readingTime: 8,
     wordCount: 1584,
-    relatedCourses: ["/course-interview-prep"],
+    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
     shortAnswer:
       "Sixty seconds, three beats: present job, one or two past results, why this role next. The question means why you are in this chair — not your life story.",
     howTo: {
@@ -337,7 +337,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-27",
     readingTime: 9,
     wordCount: 1874,
-    relatedCourses: ["/course-career-counselling", "/course-interview-prep"],
+    relatedCourses: ["/course-career-counselling", "/course-spoken-english"],
   },
 ];
 

@@ -36,18 +36,6 @@ const ENGLISH_COURSES: NavItem[] = [
     desc: "3 months · ₹1,999/month, inclusive of taxes",
   },
   {
-    to: "/course-interview-prep",
-    label: "Interview Preparation",
-    icon: "mic",
-    desc: "2 months · ₹1,499/month, inclusive of taxes",
-  },
-  {
-    to: "/course-ielts",
-    label: "IELTS Preparation",
-    icon: "award",
-    desc: "3 months · ₹2,499/month, inclusive of taxes",
-  },
-  {
     to: "/course-career-counselling",
     label: "Career Counselling",
     icon: "target",

@@ -9,9 +9,9 @@ import "./styles.css";
 /**
  * Drop a trailing slash from the URL before the router ever reads it.
  *
- * `scripts/prerender.mjs` writes both `course-ielts.html` and
- * `course-ielts/index.html` on purpose, so neither form 404s on GitHub Pages
- * and neither costs a redirect hop. The side effect is that `/course-ielts/`
+ * `scripts/prerender.mjs` writes both `course-spoken-english.html` and
+ * `course-spoken-english/index.html` on purpose, so neither form 404s on GitHub Pages
+ * and neither costs a redirect hop. The side effect is that `/course-spoken-english/`
  * answers 200 with the same page, so a crawler that finds both spends its
  * budget twice on every page. The canonical tag already prevents duplicate
  * *indexing*; this is about crawl budget and about the reader's address bar.
@@ -20,7 +20,7 @@ import "./styles.css";
  * root route, which is the obvious place for it and does not work: throwing
  * `redirect()` from the root `beforeLoad` during the initial `router.load()`
  * below leaves that promise unresolved, so the module never finishes, the page
- * never fires DOMContentLoaded and `/course-ielts/` hangs on a blank screen.
+ * never fires DOMContentLoaded and `/course-spoken-english/` hangs on a blank screen.
  * Rewriting the URL first means the router only ever sees canonical paths and
  * no redirect is involved at all.
  *

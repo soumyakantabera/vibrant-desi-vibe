@@ -212,8 +212,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Interview Preparation is two months, intensive, in a batch of approximately 6 learners — HR rounds, STAR behavioural answers, three recorded mock interviews you get to watch back, and a resume and LinkedIn review. ₹1,499/month.",
-    course: "/course-interview-prep",
-    label: "See the Interview Prep course",
+    text: "Interview English is practised live in Spoken English and Interactive Speaking — HR rounds, STAR behavioural answers, and a 60-second intro you can actually retrieve in the chair. Batches of approximately 6 learners.",
+    course: "/course-spoken-english",
+    label: "See Spoken English",
   },
 ];

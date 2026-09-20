@@ -35,22 +35,16 @@ export const body: ArticleBody = [
         "Updates, client calls, emails, a 5-minute presentation",
       ],
       [
-        "IELTS Band 7+",
-        "Comfortable conversation",
-        "3 months of marked mocks; 9–12 months from zero",
-        "Writing is usually the bottleneck, not Speaking",
-      ],
-      [
         "Interview English",
-        "Can chat, bomb interviews",
-        "2 months of live drills",
+        "Can chat, still freeze in HR",
+        "Practised inside Spoken and Interactive rooms",
         "60-second intro, STAR answers, salary talk without freezing",
       ],
     ],
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Workplace **₹1,999/month for 3 months**, IELTS **₹2,499/month for 3 months**, Interview Prep **₹1,499/month for 2 months**. Inclusive of taxes. Batch of around 6.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Interactive **₹1,499/month for 3 months**, Workplace **₹1,999/month for 3 months**. Inclusive of taxes. Batch of around 6. Interview English is practised in Spoken and Interactive — not sold as a separate room.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },
@@ -109,10 +103,10 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Need a **recognised exam score** for a visa or university — that is IELTS (or similar). We run a 3-month live IELTS room at ₹2,499/month; the test board issues the score. Sit it when the form asks.",
+      "Need a **recognised exam score** for a visa or university — that is IELTS (or similar). Sit it with IDP or British Council when the form asks. We do not sell IELTS as a course.",
       "Need **daily 1:1 reps** and already speak — EngVarta-style sessions, not a twice-a-week batch.",
       "The learner is **under 14** — PlanetSpark or similar. Adult batches waste a child's time.",
-      "Need **Band 7 writing** more than speaking — [IELTS Preparation](/course-ielts) with marked mocks, not Spoken English.",
+      "Need **Band 7 writing** more than speaking — use a dedicated exam coach or the free [four-paragraph template](/blog/band-7-writing-4-paragraph-template), not Spoken English.",
     ],
   },
 ];

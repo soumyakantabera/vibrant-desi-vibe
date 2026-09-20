@@ -33,12 +33,12 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     alt: "Beginner adult practising spoken English in a small live online class",
     waMessage: "Hi, I am a beginner and I would like a free Spoken English demo. Please share batch timings.",
     ctaTitle: "Sit in a batch of around six",
-    ctaBody: "We will tell you if you are a beginner — including when Interactive or IELTS would be the wrong buy.",
+    ctaBody: "We will tell you if you are a beginner — including when Interactive would be the wrong buy.",
     faqTitle: "Beginner Spoken English — questions",
     body: [
       {
         t: "p",
-        text: "A beginner is someone who **cannot yet finish a sentence out loud**. You may read English. You may write WhatsApp messages with help. You freeze in a shop, a phone call, or a two-minute turn. That is this course. If you already have the words and freeze anyway, go to [Interactive](/interactive-english-class-hesitation). If a form asks for a band, go to [IELTS](/ielts-coaching-fees-india).",
+        text: "A beginner is someone who **cannot yet finish a sentence out loud**. You may read English. You may write WhatsApp messages with help. You freeze in a shop, a phone call, or a two-minute turn. That is this course. If you already have the words and freeze anyway, go to [Interactive](/interactive-english-class-hesitation). If a form asks for a band, sit IELTS with the test board — we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
       },
       { t: "h2", text: "What 6 months actually covers" },
       {
@@ -151,9 +151,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for freshers in India",
     h1Accent: "The 60-second chair",
     standfirst:
-      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet. Interview Prep ₹1,499/month if you can. Inclusive of taxes. No placement promise.",
+      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet. Interactive Speaking ₹1,499/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
     shortAnswer:
-      "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still bomb HR, take Interview Prep. IELTS is for forms, not most Indian campus drives.",
+      "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still bomb HR, take Interactive Speaking — interview English is practised there. IELTS is for forms, not most Indian campus drives, and we do not sell it.",
     image: IMG.interview,
     alt: "Fresher practising a job interview in English on a video call",
     waMessage: "Hi, I am a fresher and I need help with interview English. Please share the right course.",
@@ -171,15 +171,14 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         head: ["If this is true", "Take", "Fee"],
         rows: [
           ["You cannot finish a sentence on a phone call", "Basic Spoken English, 6 months, ~6 learners", "₹999/month"],
-          ["You can chat, HR screens still collapse", "Interview Prep, 2 months", "₹1,499/month"],
-          ["A university or visa form asks for a band", "IELTS, 3 months, 6 mocks", "₹2,499/month"],
+          ["You can chat, HR screens still collapse", "Interactive Speaking, 3 months", "₹1,499/month"],
         ],
       },
       {
         t: "p",
         text: "Fees inclusive of taxes. Buying IELTS because “it will help in placements” is the expensive wrong room. [Spoken or IELTS](/blog/spoken-english-or-ielts).",
       },
-      { t: "h2", text: "What Interview Prep actually drills" },
+      { t: "h2", text: "What interview English actually drills" },
       {
         t: "ul",
         items: [
@@ -199,7 +198,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Freshers sit in Spoken or Interview Prep — one room, not both. Message us.",
+        text: "Freshers sit in Spoken or Interactive — one room, not both. Message us.",
         course: "/book-free-demo",
         label: "Book a Free Demo",
       },
@@ -376,16 +375,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     eyebrow: "IELTS fees",
     breadcrumb: "IELTS coaching fees in India",
     h1: "IELTS coaching fees in India, 2026",
-    h1Accent: "₹2,499/mo, 6 mocks, ~6 learners",
+    h1Accent: "Market fees, not our product",
     standfirst:
-      "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room. Learn With Smile: ₹2,499/month for 3 months, six full-length mocks, approximately 6 learners, inclusive of taxes. Exam fee extra.",
+      "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room, plus the official exam fee to IDP or British Council. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English.",
     shortAnswer:
-      "Budget ₹8,000–₹35,000 for coaching plus the official exam fee to IDP or British Council. Our live room is ₹2,499/month for three months with six marked mocks. No band guarantee. If you cannot hold a conversation yet, do not buy IELTS first.",
+      "Budget ₹8,000–₹35,000 for coaching plus the official exam fee to IDP or British Council. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first — start with Spoken English at ₹999/month.",
     image: IMG.ielts,
     alt: "IELTS candidate preparing Writing Task 2 with a teacher",
     waMessage: "Hi, I want to understand IELTS coaching fees and whether I should start with Spoken English instead.",
-    ctaTitle: "Check if IELTS is the right buy",
-    ctaBody: "If Spoken English is the gap, we will say so before you pay for mocks.",
+    ctaTitle: "Check if Spoken English is the right buy first",
+    ctaBody: "If speaking is the gap, we will say so before you pay an exam shop for mocks.",
     faqTitle: "IELTS fees — questions",
     body: [
       {
@@ -395,39 +394,39 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "What coaching costs in India in 2026" },
       {
         t: "table",
-        caption: "Public bands. Confirm on the provider's site. We sell one of the rows.",
+        caption: "Public bands. Confirm on the provider's site. Learn With Smile does not sell an IELTS row.",
         head: ["Format", "Typical fee", "Room"],
         rows: [
           ["Large institute classroom", "₹15,000–₹35,000 package", "20–40 learners"],
           ["British Council-style module", "Often ₹8,800–₹16,000", "Brand syllabus / certificate"],
           ["1:1 online tutor", "₹500–₹2,000 / session", "Minutes, variable marking"],
-          ["Learn With Smile IELTS", "₹2,499/month × 3 months, inclusive of taxes", "~6 learners, 6 mocks"],
+          ["Learn With Smile", "Does not sell IELTS — Spoken English from ₹999/month", "~6 learners, live speaking"],
         ],
       },
       {
         t: "p",
-        text: "Spoken English, Workplace and Interview fees sit on the [India fees guide](/english-class-fees-india). Do not buy this room to “get a better job in India” if no form asked for a band.",
+        text: "Spoken English, Interactive, Workplace and Career Counselling fees sit on the [India fees guide](/english-class-fees-india). Do not buy IELTS coaching to “get a better job in India” if no form asked for a band.",
       },
-      { t: "h2", text: "What ₹2,499/month includes — and does not" },
+      { t: "h2", text: "What is not included anywhere honest" },
       {
         t: "ul",
         items: [
-          "Three months, up to 2 live classes a week, approximately 6 learners.",
-          "Six full-length mocks with individual feedback. Writing is usually the bottleneck — we mark it.",
-          "Academic and General Training in the same course.",
-          "**Not included:** exam fee, a guaranteed band, a school certificate. The test board issues the score.",
+          "The official exam fee, paid to IDP or British Council — confirm on their sites.",
+          "A guaranteed band. No ethical coach can promise Band 7.",
+          "A school certificate from Learn With Smile. We do not issue one, and we do not sell IELTS.",
+          "Speaking ability. If you cannot hold a conversation, cue-card drills will not build the sentence.",
         ],
       },
       { t: "h2", text: "Start with Spoken English if this is you" },
       {
         t: "p",
-        text: "Band 5.5 because you cannot talk is a speaking problem. Cue-card drills will not build the sentence. Take [beginner Spoken English](/spoken-english-for-beginners-india) first, then IELTS. The picker: [Spoken or IELTS](/blog/spoken-english-or-ielts). Free structure to test our teaching: [Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
+        text: "Band 5.5 because you cannot talk is a speaking problem. Cue-card drills will not build the sentence. Take [beginner Spoken English](/spoken-english-for-beginners-india) first. The picker: [Spoken or IELTS](/blog/spoken-english-or-ielts). Free structure: [Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
       },
       {
         t: "cta",
-        text: "IELTS only if a form asks. ₹2,499/mo, 6 mocks, approx. 6 learners. Inclusive of taxes.",
-        course: "/course-ielts",
-        label: "See IELTS syllabus",
+        text: "If speaking is the gap, start here. ₹999/mo, approx. 6 learners. Inclusive of taxes.",
+        course: "/course-spoken-english",
+        label: "See Spoken English",
       },
     ],
   },

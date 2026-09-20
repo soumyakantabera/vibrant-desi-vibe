@@ -80,7 +80,7 @@ const MARKET = [
     icon: "trophy" as const,
     tag: "Brand-name groups",
     title: "Curriculum. Limited talking.",
-    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹999/mo, inclusive of taxes — and a 3-month IELTS room when a visa or university form actually asks.",
+    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹999/mo, inclusive of taxes. Sit IELTS with the test board when a visa or university form actually asks — we do not sell that paper.",
     stat: "₹8,800–₹16,000 / module",
   },
   {

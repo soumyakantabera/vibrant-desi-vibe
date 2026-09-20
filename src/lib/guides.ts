@@ -63,7 +63,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/ielts-coaching-fees-india",
     title: "IELTS coaching fees",
-    sub: "₹8,000–₹35,000 in the market. Ours: ₹2,499/mo, 6 mocks, ~6 learners.",
+    sub: "₹8,000–₹35,000 in the market. We do not sell IELTS. Spoken from ₹999/mo.",
     icon: "trophy",
     color: "brand",
     group: "money",
@@ -151,7 +151,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-for-freshers-india",
     title: "Spoken English for freshers",
-    sub: "Campus intro, HR screen, 60-second chair. Interview Prep ₹1,499/mo.",
+    sub: "Campus intro, HR screen, 60-second chair. Interview English in Spoken and Interactive.",
     icon: "school",
     color: "brand",
     group: "audience",

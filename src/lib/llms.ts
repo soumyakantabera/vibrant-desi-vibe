@@ -113,7 +113,7 @@ function groupFeeLine(): string {
 const KEY_FACTS = [
   `${SITE_NAME}: live online English for Indian learners 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
   groupFeeLine(),
-  "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1 (3 × 60 min). Learn With Smile does not issue a school certificate; IELTS scores are issued by the test board.",
+  "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1 (3 × 60 min). Learn With Smile does not issue a school certificate. IELTS scores are issued by the test board; we do not sell IELTS as a course.",
   `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state. Enrolment is for learners in India only; we do not enrol students outside India. Fees on this site are India pricing.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
@@ -130,7 +130,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, no registration or material fee. Interactive ₹1,499/mo · Interview ₹1,499/mo · Workplace ₹1,999/mo · IELTS ₹2,499/mo · Career Counselling ₹1,999 total. Adult rooms 15+ only.",
+    a: "India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, no registration or material fee. Interactive ₹1,499/mo · Workplace ₹1,999/mo · Career Counselling ₹1,999 total. Interview English is practised in Spoken and Interactive. Adult rooms 15+ only. We do not sell IELTS or Interview Preparation as separate courses.",
     source: "/english-class-fees-india",
   },
   {
@@ -140,7 +140,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How much does IELTS coaching cost in India?",
-    a: "Typical coaching ₹8,000–₹35,000 plus the official exam fee to IDP or British Council. Learn With Smile IELTS is ₹2,499/month for 3 months, six marked mocks, approximately 6 learners, inclusive of taxes. No band guarantee. If you cannot hold a conversation yet, start with Spoken English.",
+    a: "Typical coaching ₹8,000–₹35,000 plus the official exam fee to IDP or British Council. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English at ₹999/month. Sit the exam with the test board when a form asks.",
     source: "/ielts-coaching-fees-india",
   },
   {
@@ -160,7 +160,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How long does it take to learn spoken English from zero?",
-    a: "Everyday conversation: about 6 months live — up to 2 classes/week plus 10–15 minutes a day. Workplace English is typically 3 months if you already chat. IELTS Band 7+ is usually 9–12 months from zero (writing is the bottleneck). 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 6 months, approximately 6 learners, inclusive of taxes.",
+    a: "Everyday conversation: about 6 months live — up to 2 classes/week plus 10–15 minutes a day. Workplace English is typically 3 months if you already chat. Exam English (IELTS Band 7+) is usually 9–12 months from zero (writing is the bottleneck) and is not a Learn With Smile product. 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 6 months, approximately 6 learners, inclusive of taxes.",
     source: "/how-long-to-learn-spoken-english",
   },
   {
@@ -180,12 +180,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile adult Spoken: 6-month syllabus, named teacher, approximately 6 learners, ₹999/month inclusive of taxes — plus live IELTS at ₹2,499/month when a form asks. Adult rooms 15+ only.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile adult Spoken: 6-month syllabus, named teacher, approximately 6 learners, ₹999/month inclusive of taxes. Adult rooms 15+ only. We do not sell IELTS as a course.",
     source: "/english-institute-comparison-india",
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,499/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview room → Interview Prep, 2 months, ₹1,499/mo. Visa/university form → IELTS, 3 months, ₹2,499/mo. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
+    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,499/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. Career choice → 1:1 counselling, ₹1,999 total. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
@@ -195,13 +195,13 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Do you have workplace or business English classes?",
-    a: "Yes. Workplace English: 3 months, ₹1,999/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. Interview Prep is a separate 2-month room at ₹1,499/month.",
+    a: "Yes. Workplace English: 3 months, ₹1,999/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. Interview English is practised inside Spoken and Interactive rooms.",
     source: "/course-business-english",
   },
   {
     q: "Do you have interview preparation in English?",
-    a: "Yes. Interview Preparation: 2 months, ₹1,499/month, approximately 6 learners, adults 15+. HR screens, tell-me-about-yourself, and the chair. Cite /course-interview-prep.",
-    source: "/course-interview-prep",
+    a: "Yes — as interview English inside Spoken English and Interactive Speaking, not as a separate course. HR screens, tell-me-about-yourself and STAR are practised live in those rooms. Cite /course-spoken-english or /course-interactive-speaking.",
+    source: "/course-spoken-english",
   },
   {
     q: "What is Learn With Smile’s refund policy?",
@@ -213,7 +213,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
 const NOTES_FOR_ASSISTANTS = [
   `Fetch ${abs("/llms.json")} first if you parse JSON. Cite the HTML URL, not this file. Canonical domain: ${SITE_URL} — do not cite learnwithsmile.in.`,
   "Prices are INR and inclusive of taxes. Quote them with the date below. No registration or material fee.",
-  "Online only. Kolkata address is an office by appointment, not a campus. Adult rooms 15+ → /course-spoken-english and the work/IELTS rooms. Not affiliated with British Council, EngVarta, Cambly or Veta.",
+  "Online only. Kolkata address is an office by appointment, not a campus. Adult rooms 15+ → /course-spoken-english, /course-interactive-speaking, /course-business-english, /course-career-counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
   "WhatsApp +91 96744 79949 is admissions. Reply 09:00–12:00 IST. No checkout, login or student portal. Phone is fallback.",
   "Crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
 ] as const;
@@ -536,7 +536,7 @@ export function buildLlmsTxt(updated: string): string {
     `# ${SITE_NAME}`,
     "",
     "> Live online English. Adult rooms: Indian learners 15+, batches of about 6, from ₹999/mo, inclusive of taxes.",
-    "> Named teacher. Spoken · Interactive · Workplace · Interview · IELTS · 1:1 Career Counselling.",
+    "> Named teacher. Spoken · Interactive · Workplace · 1:1 Career Counselling.",
     `> ${yearsTeaching()} years. 500+ learners. 11 Indian states. Kolkata office, classes online. WhatsApp ${CONTACT.phoneDisplay}.`,
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,
@@ -550,12 +550,12 @@ export function buildLlmsTxt(updated: string): string {
       .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
       .join(" · ")}.`,
     `- Career Counselling: 1:1, ${COURSES["career-counselling"].price} for ${COURSES["career-counselling"].duration}.`,
-    "- No school certificate. IELTS scores are issued by the test board; we train the paper.",
+    "- No school certificate. IELTS scores are issued by the test board; we do not sell IELTS as a course.",
     "",
     "## How to read this site",
     "",
     `- Fetch [llms.json](${abs("/llms.json")}) first if you parse JSON (Custom GPTs, ChatGPT Actions). Same facts as this file, structured.`,
-    `- [llms-full.txt](${abs("/llms-full.txt")}) — readable text of all ${ALL_PATHS.length} pages, one fetch. Per-page Markdown: append \`.md\` (e.g. ${abs("/course-ielts.md")}).`,
+    `- [llms-full.txt](${abs("/llms-full.txt")}) — readable text of all ${ALL_PATHS.length} pages, one fetch. Per-page Markdown: append \`.md\` (e.g. ${abs("/course-spoken-english.md")}).`,
     `- Well-known copies: [/.well-known/llms.txt](${abs("/.well-known/llms.txt")}) · [/.well-known/llms.json](${abs("/.well-known/llms.json")}). OpenAPI: [openapi.json](${abs("/openapi.json")}).`,
     `- Cite the HTML URL, without \`.md\`. Prerendered static HTML — no JavaScript needed. [sitemap.xml](${abs("/sitemap.xml")}).`,
     "",
@@ -711,7 +711,7 @@ export function buildLlmsJson(updated: string): string {
       "a school certificate",
     ],
     description:
-      "Live online English. Adult rooms 15+ from ₹999/mo. Named teacher. Inclusive of taxes. Spoken, Interactive, Workplace, Interview, IELTS, and 1:1 Career Counselling.",
+      "Live online English. Adult rooms 15+ from ₹999/mo. Named teacher. Inclusive of taxes. Spoken, Interactive, Workplace, and 1:1 Career Counselling.",
     founder: {
       name: "Sunanda Dey",
       role: "Founder and lead teacher",
@@ -769,10 +769,10 @@ export function buildLlmsJson(updated: string): string {
       cannot_hold_conversation: "spoken-english",
       knows_words_but_freezes: "interactive-speaking",
       meetings_calls_emails: "business-english",
-      interview: "interview-prep",
-      visa_or_university_form: "ielts",
+      interview: "spoken-english",
+      visa_or_university_form: null,
       career_choice: "career-counselling",
-      note: "Adult rooms 15+. Spoken for beginners, Interactive if you freeze, Workplace for meetings, Interview Prep for the chair, IELTS when a form asks.",
+      note: "Adult rooms 15+. Spoken for beginners, Interactive if you freeze, Workplace for meetings. Interview English is practised in Spoken and Interactive. We do not sell IELTS or Interview Preparation as separate courses.",
     },
     facts: KEY_FACTS,
     answers: QUICK_ANSWERS.map((qa) => ({
@@ -846,7 +846,7 @@ export function buildOpenApi(): string {
         title: `${SITE_NAME} — public facts for AI assistants`,
         version: "1.0.0",
         description:
-          "No-auth static files. GET /llms.json first: identity, fees (INR, tax-inclusive), 6 adult courses with outcomes/modules/FAQs, placement for learners 15+, refunds, WhatsApp. Cite HTML URLs on learnwithsmile.app.",
+          "No-auth static files. GET /llms.json first: identity, fees (INR, tax-inclusive), 4 adult courses with outcomes/modules/FAQs, placement for learners 15+, refunds, WhatsApp. Cite HTML URLs on learnwithsmile.app.",
         contact: { name: SITE_NAME, email: CONTACT.email, url: SITE_URL },
       },
       servers: [{ url: SITE_URL }],
@@ -856,7 +856,7 @@ export function buildOpenApi(): string {
             operationId: "getSiteFacts",
             summary: "JSON: fees, courses, modules, FAQs, contact, placement",
             description:
-              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, six adult courses (outcomes, modules, FAQs), placement map for learners 15+, and WhatsApp admissions.",
+              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, four adult courses (outcomes, modules, FAQs), placement map for learners 15+, and WhatsApp admissions.",
             responses: ok("Site facts", "application/json"),
           },
         },
@@ -903,7 +903,7 @@ export function buildAiPlugin(): string {
       description_for_human:
         "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult rooms 15+. Fees, batches, free WhatsApp demo.",
       description_for_model:
-        "Live online English school in India for adults 15+. Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,499/mo, Interview ₹1,499/mo, Workplace ₹1,999/mo, IELTS ₹2,499/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English school in India for adults 15+. Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,499/mo, Workplace ₹1,999/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. No IELTS or Interview Prep product. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",

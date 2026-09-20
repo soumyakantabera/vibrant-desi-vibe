@@ -8,7 +8,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/guides",
     title: "English Class Guides | Fees, Fit, Cities",
     description:
-      "Fees, which class, beginners, IT, freshers, IELTS costs and city pages — honest live-English guides from ₹999/mo, inclusive of taxes. Kolkata & pan-India.",
+      "Fees, which class, beginners, IT, freshers, exam-fee context and city pages — honest live-English guides from ₹999/mo, inclusive of taxes. Kolkata & pan-India.",
     shortTitle: "Guides",
     keywords: [
       "spoken english class guides india",
@@ -60,7 +60,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "What will I be able to do after 6 months?",
-        a: "Everyday conversation from zero: introduce yourself, shops, a phone call, two minutes on a topic. Workplace meetings and IELTS Band 7+ are later rooms, not this one. Results vary with how often you actually speak.",
+        a: "Everyday conversation from zero: introduce yourself, shops, a phone call, two minutes on a topic. Workplace meetings are a later room, not this one. Exam bands are a different paper. Results vary with how often you actually speak.",
       },
     ],
   },
@@ -100,7 +100,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/spoken-english-for-freshers-india",
     title: "Spoken English for Freshers | Interview Ready",
     description:
-      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interview Prep ₹1,499/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
+      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interactive ₹1,499/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
     shortTitle: "Freshers",
     keywords: [
       "spoken english for freshers",
@@ -116,11 +116,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Freshers", path: "/spoken-english-for-freshers-india" },
     ],
     summary:
-      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interview Prep. No placement guarantee.",
+      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interactive Speaking — interview English is practised there. No placement guarantee.",
     faqs: [
       {
         q: "Which English course should a fresher take in India?",
-        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹1,499/month). Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
+        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interactive Speaking (3 months, ₹1,499/month) — interview English is practised in those rooms. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
       },
       {
         q: "Do I need IELTS for campus placements in India?",
@@ -218,9 +218,9 @@ const NEW_GUIDES: Record<string, PageSeo> = {
   },
   "/ielts-coaching-fees-india": {
     path: "/ielts-coaching-fees-india",
-    title: "IELTS Coaching Fees India 2026 | From ₹2,499",
+    title: "IELTS Coaching Fees India 2026 | Market Guide",
     description:
-      "IELTS coaching in India: ₹8,000–₹35,000 typical. Learn With Smile ₹2,499/mo, 3 months, 6 mocks, around 6 learners, inclusive of taxes. Exam fee extra.",
+      "IELTS coaching in India: ₹8,000–₹35,000 typical plus the exam fee. Learn With Smile does not sell IELTS. Spoken English from ₹999/mo if speaking is the gap.",
     shortTitle: "IELTS fees",
     keywords: [
       "ielts coaching fees in india",
@@ -236,15 +236,15 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "IELTS fees", path: "/ielts-coaching-fees-india" },
     ],
     summary:
-      "IELTS coaching fees in India in 2026, what the exam fee is not, and where a ₹2,499/month live room of around 6 sits. No band guarantee.",
+      "IELTS coaching fees in India in 2026, what the exam fee is not, and why Learn With Smile does not sell that paper. No band guarantee.",
     faqs: [
       {
         q: "How much does IELTS coaching cost in India in 2026?",
-        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. Learn With Smile charges ₹2,499/month for three months in a batch of approximately 6, including six full-length mocks. The IELTS exam fee is separate and paid to IDP or British Council.",
+        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate and paid to IDP or British Council. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
       },
       {
         q: "Does IELTS coaching guarantee Band 7?",
-        a: "No ethical course can. Writing is usually the bottleneck. We mark mocks individually; the test board issues the score. If you cannot yet hold a conversation, start with Spoken English, not IELTS.",
+        a: "No ethical course can. Writing is usually the bottleneck. The test board issues the score. Learn With Smile does not sell IELTS. If you cannot yet hold a conversation, start with Spoken English, not an exam shop.",
       },
     ],
   },

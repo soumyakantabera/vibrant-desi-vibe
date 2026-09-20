@@ -16,9 +16,7 @@ import { Route as BookFreeDemoRouteImport } from './routes/book-free-demo'
 import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
-import { Route as CourseIeltsRouteImport } from './routes/course-ielts'
 import { Route as CourseInteractiveSpeakingRouteImport } from './routes/course-interactive-speaking'
-import { Route as CourseInterviewPrepRouteImport } from './routes/course-interview-prep'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
@@ -100,22 +98,12 @@ const CourseCareerCounsellingRoute = CourseCareerCounsellingRouteImport.update({
   path: '/course-career-counselling',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CourseIeltsRoute = CourseIeltsRouteImport.update({
-  id: '/course-ielts',
-  path: '/course-ielts',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CourseInteractiveSpeakingRoute =
   CourseInteractiveSpeakingRouteImport.update({
     id: '/course-interactive-speaking',
     path: '/course-interactive-speaking',
     getParentRoute: () => rootRouteImport,
   } as any)
-const CourseInterviewPrepRoute = CourseInterviewPrepRouteImport.update({
-  id: '/course-interview-prep',
-  path: '/course-interview-prep',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
   id: '/course-spoken-english',
   path: '/course-spoken-english',
@@ -376,9 +364,7 @@ export interface FileRoutesByFullPath {
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
-  '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
-  '/course-interview-prep': typeof CourseInterviewPrepRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -432,9 +418,7 @@ export interface FileRoutesByTo {
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
-  '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
-  '/course-interview-prep': typeof CourseInterviewPrepRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -489,9 +473,7 @@ export interface FileRoutesById {
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
-  '/course-ielts': typeof CourseIeltsRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
-  '/course-interview-prep': typeof CourseInterviewPrepRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -547,9 +529,7 @@ export interface FileRouteTypes {
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
-    | '/course-ielts'
     | '/course-interactive-speaking'
-    | '/course-interview-prep'
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
@@ -603,9 +583,7 @@ export interface FileRouteTypes {
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
-    | '/course-ielts'
     | '/course-interactive-speaking'
-    | '/course-interview-prep'
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
@@ -659,9 +637,7 @@ export interface FileRouteTypes {
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
-    | '/course-ielts'
     | '/course-interactive-speaking'
-    | '/course-interview-prep'
     | '/course-spoken-english'
     | '/english-career'
     | '/english-class-fees-india'
@@ -716,9 +692,7 @@ export interface RootRouteChildren {
   ChildProtectionRoute: typeof ChildProtectionRoute
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
-  CourseIeltsRoute: typeof CourseIeltsRoute
   CourseInteractiveSpeakingRoute: typeof CourseInteractiveSpeakingRoute
-  CourseInterviewPrepRoute: typeof CourseInterviewPrepRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
   EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
@@ -816,25 +790,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CourseCareerCounsellingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/course-ielts': {
-      id: '/course-ielts'
-      path: '/course-ielts'
-      fullPath: '/course-ielts'
-      preLoaderRoute: typeof CourseIeltsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/course-interactive-speaking': {
       id: '/course-interactive-speaking'
       path: '/course-interactive-speaking'
       fullPath: '/course-interactive-speaking'
       preLoaderRoute: typeof CourseInteractiveSpeakingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/course-interview-prep': {
-      id: '/course-interview-prep'
-      path: '/course-interview-prep'
-      fullPath: '/course-interview-prep'
-      preLoaderRoute: typeof CourseInterviewPrepRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-spoken-english': {
@@ -1157,9 +1117,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChildProtectionRoute: ChildProtectionRoute,
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
-  CourseIeltsRoute: CourseIeltsRoute,
   CourseInteractiveSpeakingRoute: CourseInteractiveSpeakingRoute,
-  CourseInterviewPrepRoute: CourseInterviewPrepRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
   EnglishCareerRoute: EnglishCareerRoute,
   EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,

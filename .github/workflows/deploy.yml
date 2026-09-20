@@ -67,7 +67,7 @@ jobs:
           # articles are a dynamic route and so the most likely thing to
           # regress to a client-rendered blank shell.
           blog_sample=$(ls dist/blog/*.html | head -1)
-          for file in dist/index.html dist/course-ielts.html dist/course-spoken-english.html \
+          for file in dist/index.html dist/course-career-counselling.html dist/course-spoken-english.html \
                       dist/about-us.html dist/privacy.html dist/terms.html dist/refunds.html \
                       dist/child-protection.html \
                       dist/spoken-english-classes-kolkata.html "$blog_sample"; do
@@ -96,7 +96,7 @@ jobs:
           test -s dist/.well-known/llms.txt
           test -s dist/.well-known/llms.json
           test -s dist/.well-known/ai-plugin.json
-          for file in dist/llms.txt dist/llms-full.txt dist/llms.json dist/index.md dist/course-ielts.md; do
+          for file in dist/llms.txt dist/llms-full.txt dist/llms.json dist/index.md dist/course-spoken-english.md; do
             if ! grep -q '₹' "$file"; then
               echo "::error::$file is missing course fees"; exit 1
             fi
@@ -121,6 +121,9 @@ jobs:
           fi
           if grep -Eqi 'course-kids-english|course-teen-english' dist/index.html dist/english-career.html dist/llms.json; then
             echo "::error::kids/teen course URLs still in the public build"; exit 1
+          fi
+          if grep -Eqi 'course-ielts|course-interview-prep' dist/index.html dist/english-career.html dist/llms.json dist/sitemap.xml; then
+            echo "::error::IELTS or Interview Prep course URLs still in the public build"; exit 1
           fi
           # Recursive: blog articles live at /blog/<slug>, so their mirrors are
           # written to dist/blog/<slug>.md. A `dist/*.md` glob counts only the

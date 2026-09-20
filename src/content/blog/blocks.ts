@@ -5,8 +5,8 @@
  * ---------------------------------------------------
  * `scripts/prerender.mjs` already writes a `.md` twin of every page by running
  * the rendered HTML through `htmlToMarkdown` — that is the site's existing
- * convention and it is what keeps `/course-ielts.md` exactly equal to
- * `/course-ielts`. Authoring articles as separate Markdown files would create a
+ * convention and it is what keeps `/course-spoken-english.md` exactly equal to
+ * `/course-spoken-english`. Authoring articles as separate Markdown files would create a
  * second source for the same words: the HTML page and the `.md` twin could then
  * disagree, which is precisely the drift the AI-readable layer exists to
  * prevent. One source, rendered to HTML, converted to Markdown at build time.

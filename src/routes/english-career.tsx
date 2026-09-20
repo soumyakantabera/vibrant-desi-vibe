@@ -66,7 +66,7 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Six live rooms. Spoken, Interactive Speaking, Workplace, Interview Prep, IELTS and 1:1
+              Four live programmes. Spoken, Interactive Speaking, Workplace English and 1:1
               Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is practised
               in Spoken and Interactive. From ₹999/month, inclusive of taxes. No registration fee.
             </p>
@@ -114,7 +114,7 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "6 programmes",
+                    big: "4 programmes",
                     small: "Adults 15+ · live rooms",
                   },
                   {
@@ -141,8 +141,8 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Clear Categories"
-            title="6 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
-            subtitle="Spoken, Interactive, Workplace, Interview, IELTS and 1:1 Career Counselling. Pick the outcome, then the fee and duration."
+            title="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
+            subtitle="Spoken, Interactive, Workplace and 1:1 Career Counselling. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (
@@ -221,7 +221,7 @@ function Page() {
         faqs={PAGES["/english-career"].faqs ?? []}
         eyebrow="Course FAQs"
         title="Choosing Between Our Courses"
-        subtitle="Spoken, workplace, interview or IELTS? Start here."
+        subtitle="Spoken, Interactive, Workplace or Career Counselling? Start here."
         waMessage="Hi, I am not sure which course fits me. Can you help me choose?"
       />
 

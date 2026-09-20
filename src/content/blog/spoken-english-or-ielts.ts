@@ -31,15 +31,15 @@ export const body: ArticleBody = [
       ],
       [
         "You need a visa / university / Band 7",
-        "IELTS Preparation",
-        "₹2,499/mo, 3 months, 6+ mocks",
-        "Writing is the usual bottleneck",
+        "Sit IELTS with IDP / British Council",
+        "Market coaching ₹8,000–₹35,000 + exam fee",
+        "We do not sell that paper",
       ],
       [
         "You fail interviews you are qualified for",
-        "Interview Prep",
-        "₹1,499/mo, 2 months",
-        "60-sec intro + STAR",
+        "Spoken or Interactive",
+        "Interview English in those rooms",
+        "60-sec intro + STAR in the batch",
       ],
     ],
   },
@@ -55,7 +55,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "If you are Band 5.5 because you cannot talk, start with Spoken English, then IELTS. If you are Band 6 in Speaking and 5.5 in Writing, skip Spoken English and go to [IELTS](/course-ielts) with a 4-paragraph template — we published ours: [Band 7 writing](/blog/band-7-writing-4-paragraph-template).",
+    text: "If you are Band 5.5 because you cannot talk, start with Spoken English. If you are Band 6 in Speaking and 5.5 in Writing, skip Spoken English and sit IELTS with a dedicated exam coach — we published a free [Band 7 writing](/blog/band-7-writing-4-paragraph-template) template. We do not sell IELTS as a course.",
   },
 
   { t: "h2", text: "What other institutes mix together" },
@@ -76,7 +76,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "HR asked for IELTS for a job in India" },
   {
     t: "p",
-    text: "Rare, and worth asking whether they mean an English test or an English conversation. Most Indian interviews hear a [60-second intro](/blog/tell-me-about-yourself-in-60-seconds). Sit the exam when a form, a university or a country asks. Until then, [Interview Prep](/course-interview-prep) or [Spoken English](/spoken-english-for-beginners-india) is the room.",
+    text: "Rare, and worth asking whether they mean an English test or an English conversation. Most Indian interviews hear a [60-second intro](/blog/tell-me-about-yourself-in-60-seconds). Sit the exam when a form, a university or a country asks. Until then, [Spoken English](/spoken-english-for-beginners-india) or [Interactive Speaking](/course-interactive-speaking) is the room.",
   },
   {
     t: "cta",

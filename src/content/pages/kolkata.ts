@@ -102,11 +102,11 @@ export const body: ArticleBody = [
   },
   {
     t: "h3",
-    text: "IELTS for study abroad",
+    text: "Study-abroad exams",
   },
   {
     t: "p",
-    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading, and it only moves if somebody marks your essays individually. [IELTS Preparation](/course-ielts) is ₹2,499/month with six full-length mocks; both Academic and General Training are covered in the same course. Before enrolling, practise with the free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
+    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading. We do not sell IELTS as a course. Sit that paper with IDP or British Council when a form asks. Until then, practise speaking in [Spoken English](/course-spoken-english). The free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template) is still useful as structure.",
   },
   {
     t: "h3",
@@ -114,7 +114,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Group discussion and HR rounds fail more candidates than aptitude tests do, and both are speaking problems. [Interview Preparation](/course-interview-prep) runs two months and includes three recorded mock interviews.",
+    text: "Group discussion and HR rounds fail more candidates than aptitude tests do, and both are speaking problems. Interview English — 60-second intro, STAR, salary talk — is practised inside [Spoken English](/course-spoken-english) and [Interactive Speaking](/course-interactive-speaking).",
   },
   {
     t: "p",
@@ -131,8 +131,6 @@ export const body: ArticleBody = [
       ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,499/month"],
       ["Workplace English", "3 months · up to 2 classes/week", "₹1,999/month"],
-      ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,499/month"],
-      ["IELTS Preparation", "3 months · up to 2 classes/week", "₹2,499/month"],
       ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999 total"],
     ],
   },
