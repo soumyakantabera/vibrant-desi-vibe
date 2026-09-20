@@ -266,6 +266,15 @@ for (const pathname of ALL_PATHS) {
   );
 }
 
+// Keep /founder live so old links do not 404 on GitHub Pages. The copied
+// HTML still canonicalises to /educator; the client route then sends people there.
+for (const [from, to] of [["founder", "educator"]]) {
+  fs.copyFileSync(path.join(DIST, `${to}.html`), path.join(DIST, `${from}.html`));
+  fs.mkdirSync(path.join(DIST, from), { recursive: true });
+  fs.copyFileSync(path.join(DIST, `${to}.html`), path.join(DIST, from, "index.html"));
+  console.log(`  aliased   /${from} → /${to}`);
+}
+
 /* ---------------------------------------------------------------- sitemap */
 
 function xml(value) {
