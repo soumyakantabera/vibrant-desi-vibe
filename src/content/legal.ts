@@ -113,9 +113,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Children and young people",
         paragraphs: [
-          "Adult rooms are for learners aged 15 and above. Spoken English for Kids is for ages 6–11. Spoken English for Teens is for ages 12–17. Those rooms are never mixed with each other or with adult batches.",
+          "Adult rooms are for learners aged 15 and above.",
           "If the learner is under 18, a parent or guardian must complete enrolment and payment and is the person we message on WhatsApp. Under the Digital Personal Data Protection Act, 2023, we treat that parent or guardian as the person who consents to our use of the child’s information for running the class. We do not use children’s data to show ads. We do not publish children’s photos or class recordings.",
-          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Enrolment is for learners in India only. We do not enrol students outside India. Indian law and this policy apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. How the kids and teen rooms are run, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
+          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Enrolment is for learners in India only. We do not enrol students outside India. Indian law and this policy apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. We currently run adult rooms only (15+). How we handle under-18 learners in those rooms, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
         ],
       },
       {
@@ -150,14 +150,14 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation, Spoken English for Kids (ages 6–11), Spoken English for Teens (ages 12–17) and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre. Kids, teens and adult rooms are never mixed.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes, including Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS preparation and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We train for the paper; we do not award the score.",
         ],
       },
       {
         heading: "Eligibility",
         paragraphs: [
-          "Adult English rooms are for learners aged 15 and above. Kids rooms are ages 6–11. Teen rooms are ages 12–17. Rooms are never mixed.",
+          "Adult English rooms are for learners aged 15 and above.",
           "Enrolment is for learners who are in India. We do not take enrolment from outside India. Fees on this site are India pricing, in Indian Rupees, inclusive of taxes.",
           "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time. For ages 6–11, a parent should stay within earshot of the room.",
         ],
@@ -303,7 +303,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Child protection",
     h1: "Child Protection Policy",
     standfirst:
-      "How Learn With Smile runs Spoken English for Kids (6–11) and Teens (12–17). These are operating rules, not a government seal or a foreign children’s-privacy certificate.",
+      "Learn With Smile currently runs adult English rooms for learners aged 15 and above. We do not offer Kids (6–11) or Teens (12–17) courses. These are operating rules for anyone under 18 in an adult room — not a government seal or a foreign children’s-privacy certificate.",
     updated: LEGAL_UPDATED,
     sections: [
       {
@@ -314,9 +314,16 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
+        heading: "Adult rooms only",
+        paragraphs: [
+          "The live catalogue is Spoken English, Interactive Speaking, Workplace English, Interview Preparation, IELTS and 1:1 Career Counselling. All of those rooms are for learners 15+.",
+          "We do not currently run Spoken English for Kids or Spoken English for Teens. A child under 15 is not placed in an adult batch. For children, look at a dedicated kids platform.",
+        ],
+      },
+      {
         heading: "India — the laws we treat as the floor",
         paragraphs: [
-          "We are based in Kolkata, West Bengal, India. Classes are online. The contract is governed by Indian law. For under-18 rooms we treat the following as the minimum, not a marketing list:",
+          "We are based in Kolkata, West Bengal, India. Classes are online. The contract is governed by Indian law. For under-18 learners we treat the following as the minimum, not a marketing list:",
         ],
         bullets: [
           "The Digital Personal Data Protection Act, 2023: a parent or guardian consents to our use of a child’s information to run the class. We do not use that information to show ads.",
@@ -330,49 +337,48 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "India only — no enrolment outside India",
         paragraphs: [
           "We enrol learners who are in India. We do not take enrolment from outside India. The prices published on this site are for India only, in Indian Rupees, inclusive of taxes.",
-          "India is a party to the UN Convention on the Rights of the Child. We take the idea of the child’s best interests as a working attitude: parent on the account, rooms not mixed, no 1:1 video with a child unless the parent stays on the call. That is practice, not a UN accreditation.",
           "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law.",
         ],
       },
       {
         heading: "Who is in which room",
         paragraphs: [
-          "Spoken English for Kids: ages 6–11, batches of 4–6, 1 hr 30 min, twice a week. Spoken English for Teens: ages 12–17, about 6, 1 hr 30 min, twice a week. Adult English rooms: 15+. Those three are never mixed. A 12-year-old is not placed with working adults. A 9-year-old is not placed with 16-year-olds.",
-          "If a parent wants a 15–17-year-old in an adult Spoken room for work English, we will only do that with the parent on WhatsApp and a clear written confirmation. We will not mix 12–14-year-olds into adult rooms.",
+          "Adult English rooms: 15+, batches of about 6, 1 hr 30 min, up to 2 classes/week. Career Counselling is 1:1 and is an adult service.",
+          "A 15–17-year-old may join an adult Spoken room only with the parent on WhatsApp and a clear written confirmation. We will not mix under-15s into adult rooms.",
         ],
       },
       {
-        heading: "The parent is the customer",
+        heading: "The parent is the customer when the learner is under 18",
         paragraphs: [
-          "Fees, WhatsApp, timetable and class recordings sit on the parent’s or guardian’s number. The child does not need a phone. The parent joins the free demo on camera. Under 18, a parent or guardian must enrol and pay.",
-          "We do not open a private chat with a child on a number the parent does not control. If a teenager messages us from their own phone, we still copy the parent on enrolment, fees and recordings.",
+          "Fees, WhatsApp, timetable and class recordings sit on the parent’s or guardian’s number. The learner does not need a phone. The parent joins the free demo on camera. Under 18, a parent or guardian must enrol and pay.",
+          "We do not open a private chat with a learner under 18 on a number the parent does not control. If a teenager messages us from their own phone, we still copy the parent on enrolment, fees and recordings.",
         ],
       },
       {
         heading: "How class is kept safe",
         paragraphs: [
-          "Ages 6–11: a parent or another responsible adult should stay within earshot of the room for the 1 hr 30 min class. Ages 12–17: the parent is informed of the slot and may sit in.",
-          "No 1:1 video with a child unless the parent stays on the call. Group classes are the default. Career Counselling 1:1 is an adult service and is not sold as a children’s session.",
-          "Teachers do not ask a child to turn off the camera so they are alone, to share passwords, or to move to a different app the parent has not agreed to.",
+          "For a 15–17-year-old in an adult room, the parent is informed of the slot and may sit in.",
+          "No 1:1 video with a learner under 18 unless the parent stays on the call. Group classes are the default. Career Counselling 1:1 is an adult service and is not sold as a children’s session.",
+          "Teachers do not ask a learner under 18 to turn off the camera so they are alone, to share passwords, or to move to a different app the parent has not agreed to.",
         ],
       },
       {
         heading: "Photos, recordings and marketing",
         paragraphs: [
-          "We do not publish children’s photos or class recordings on this website, on ads, or on social media as a default. A live class is recorded so that batch can revise. Recordings are for that batch and that parent, not for the public.",
+          "We do not publish under-18 photos or class recordings on this website, on ads, or on social media as a default. A live class is recorded so that batch can revise. Recordings are for that batch and that parent, not for the public.",
           "We do not run ads aimed at children. We do not sell a child’s information. We do not use a child’s name, face or voice in marketing unless a parent gives a separate, specific written yes for that use — and even then we prefer not to.",
         ],
       },
       {
         heading: "What teachers and staff must do",
         paragraphs: [
-          "Treat every under-18 learner with ordinary professional care. Keep rooms age-split. Keep WhatsApp on the parent’s number. Do not arrange private 1:1 video without the parent. Do not share recordings outside the batch. Raise a concern instead of hoping it goes away.",
+          "Treat every under-18 learner with ordinary professional care. Keep WhatsApp on the parent’s number. Do not arrange private 1:1 video without the parent. Do not share recordings outside the batch. Raise a concern instead of hoping it goes away.",
         ],
       },
       {
         heading: "How to raise a concern",
         paragraphs: [
-          "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. Name the child only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST.",
+          "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. Name the learner only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST.",
           "If we reasonably believe a child is at immediate risk of harm, we may contact the parent and, where Indian law requires it, the police or a child-welfare authority, even if you asked us not to. We will not promise secrecy that the law does not allow.",
           "A parent may also approach the National Commission for Protection of Child Rights (NCPCR), a State Commission, or the police. This school is not those bodies.",
         ],
@@ -386,7 +392,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Changes",
         paragraphs: [
-          "We may update this policy when our rooms or the law change. The date at the top is the latest version. Material changes to an ongoing kids or teen batch will be messaged to the parent on WhatsApp.",
+          "We may update this policy when our rooms or the law change. The date at the top is the latest version. Material changes that affect an under-18 learner will be messaged to the parent on WhatsApp.",
         ],
       },
     ],

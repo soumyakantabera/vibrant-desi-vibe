@@ -7,7 +7,6 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { ParentTrustPanel } from "@/components/ParentTrustPanel";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
   CONTACT,
@@ -185,10 +184,6 @@ const TEACHER_NOTE: Record<string, string> = {
   "interview-prep": "Mocks with a teacher who already knows your story before the board does.",
   ielts: "Speaking labs with a teacher who marks your actual mistakes.",
   "career-counselling": "Three 1:1 sessions after they have read your background.",
-  "kids-english":
-    "Same teacher every class. The parent stays on WhatsApp — you hear what your child actually said.",
-  "teen-english":
-    "Same teacher every class. The parent stays on WhatsApp; the teen has to take the turn.",
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
@@ -318,14 +313,6 @@ export function CoursePage({ data }: { data: CourseData }) {
           </div>
         </div>
       </section>
-
-      {data.slug === "kids-english" && (
-        <section className="section pt-8 md:pt-10">
-          <div className="container-x">
-            <ParentTrustPanel className="" />
-          </div>
-        </section>
-      )}
 
       {/* OUTCOMES */}
       <section className="section">
@@ -586,8 +573,7 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity:
-      d.slug === "career-counselling" ? 1 : d.slug === "kids-english" ? 6 : 6,
+    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/founder")}#person`,
@@ -644,28 +630,8 @@ export function courseSeo(d: CourseData) {
       url,
       image: [abs(ogImage)],
       inLanguage: "en-IN",
-      educationalLevel:
-        d.slug === "spoken-english" || d.slug === "kids-english"
-          ? "Beginner"
-          : "Intermediate",
-      typicalAgeRange:
-        d.slug === "kids-english" ? "6-11" : d.slug === "teen-english" ? "12-17" : undefined,
-      isFamilyFriendly:
-        d.slug === "kids-english" || d.slug === "teen-english" ? true : undefined,
-      audience:
-        d.slug === "kids-english"
-          ? {
-              "@type": "EducationalAudience",
-              educationalRole: "student",
-              audienceType: "Children aged 6-11",
-            }
-          : d.slug === "teen-english"
-            ? {
-                "@type": "EducationalAudience",
-                educationalRole: "student",
-                audienceType: "Teenagers aged 12-17",
-              }
-            : undefined,
+      educationalLevel: d.slug === "spoken-english" ? "Beginner" : "Intermediate",
+      typicalAgeRange: "15+",
       teaches: d.outcomes,
       timeRequired: workload,
       isAccessibleForFree: false,

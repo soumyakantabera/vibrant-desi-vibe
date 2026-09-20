@@ -69,21 +69,6 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     w: 1024,
     h: 1024,
   },
-  "kids-english-footer.jpg": {
-    blur: "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAAAwBQCdASoYABEAPu1qsFAppaSiqAqpMB2JYgCdMwGWAAJpsvukxnMMbtTSYlHrSLvVEAD+6PXbYIKYKvy+gJ2Dh7YfgZ6Coi0idJY3CeTnC+vT0lxOAvTpp7V+XLwcVEALymkVODo/x6v4JTGj56X2P5oTrLBB39W6URezom1VW8GhGeKA1wmCN+vI/Zc0RusHsW1tGJQJhR9gUm/+O6WPyE8NAABLojz2AA==",
-    w: 1280,
-    h: 896,
-  },
-  "kids-english-mid.jpg": {
-    blur: "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADQBACdASoYABEAPu1wsFIppiSiqAgBMB2JQAB8nBhMWxu/7M8VC6756I836n79AAD+uCoCcnV7C2CTiPH2uSsIx6CICJs6+8mpfnkDEiTmXWYrh6mKZn6Uusdq2uaTIUpepcIVrw+2baeo+OvXGf9KVo7ZF7ZO9HUaKi3Puiu5cOCKoOqZ1nb23Yl2yP4YEzWY8ONQ8jrDDS1WYT9GACOlSJcz0NLnwwAAAAAA",
-    w: 1280,
-    h: 896,
-  },
-  "kids-english.jpg": {
-    blur: "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAACwBQCdASoYABEAPu1sqlEppaOiqAqpMB2JQBYj4wS2wUDXNLbh5pdeWmIB2Af0tGaBB0J4bwAA/ug9x1tBHi3YSpy0iQFtUcd+HnZe42ffFLoyTduWkIsyikzOgOcGiENx2WISt54mt/7SnNXCmuaNw/nD6J8JSzDP/PaYblFd9ujJJDA55Y2e0XqXGY+ipqrnRK0ShJL6c2Ydu8CCcXOhbfGD7QPT5p+X2CZqCWQ2MbzeFpfD2teBsHAFwwxUAQkFgUAA",
-    w: 1280,
-    h: 896,
-  },
   "presentation.jpg": {
     blur: "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACwBQCdASoYABgAPuVepU2pJSOiMAwBIByJZgCdMoMulDUTvIcr8dCSxFN73C93L1XNAEcZ3wAA/miZeuUBlxdcMSrBU9/RC69LS17SgVr79oxO6zdrYHxbSGWixX2ST2xIHQ+RXEyPLpbZ3/aPBCNVrWr9LclB6CG99bzGjVHL2Vx6AzYm0YyaUl5iLpZpr/p0ISfj9BPIFQZWDJMaJnyttyVBrlZ1hu3hmRQAAAA=",
     w: 1024,
@@ -108,20 +93,5 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     blur: "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBACdASoYABgAPu1qrlEppaQiqAqpMB2JYgCsAAk42KSHdD2211bYNP0ZuJfgQADrzQecnoe+0f4W7ELcr1zHw2JOa+PyIBFxhKRoWlMHzTAHzonIQBEfDAmc+Wds2u8PWrIZUwq8u5VaLVJ/Y1f1HJ+OWY42njIvBaZhPfXY2aWkhYOcAe56g1AQtgQZGaK3JkYgBmzkAAAA",
     w: 1024,
     h: 1024,
-  },
-  "teen-english-footer.jpg": {
-    blur: "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBQCdASoYABEAPu1srFEppaQiqAqpMB2JYwCxH0LBsrTYb+4JpoG3GmsromerGX7UMckAAP7pkj9jUQiakOUGcMRhbWMioyjUWDucL2unlB3kuHaayD/DibmbV8OPgNjD3qiHvzUubCnjjZx3isGQlDGosmWVJ3Ja+Uod3xuYnkkg2/mwwnRQWkqhKOwU7gdn9L1iaJvCYZqDNx8yo8CpbMR4hhSy1Mun2Im44AYxyGhjr7gq7RgAAAA=",
-    w: 1280,
-    h: 896,
-  },
-  "teen-english-mid.jpg": {
-    blur: "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASoYABEAPu1ur1IppiQiqAgBMB2JQBUk7JRAASlblURxD3CHFMWABbApEZ4QAAD+w//XM+t4ihyWq48J0Dhgl7oPRrl9vRAlOeo0/LrkveURntz5S6K3+5Sukp13xwMkfs44bQnL2innbfljXCKrD/bOz6/rlf+sbPY7hwqWt0Px2kNi/j6uWmCFn/XfztCBB9tx/ftTgHPyQyRtoIumGAwPzQbGOE5iqoGl73AAAAA=",
-    w: 1280,
-    h: 896,
-  },
-  "teen-english.jpg": {
-    blur: "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAwBQCdASoYABEAPu1sq1EppaOiqAqpMB2JYgCsMxgBSJwCzBiisnI9cKIScKrdt+aekAD89JWUV7F/sU6wX9lQJdNoyju0izxgVeqU4pVgWFN15bhTLU54APdvhLF9WQ+hjPOQ6mA+k91Gl0Pi6vpKPQfpi4dkxKAo+ngr2lhFtLu0h9OAK6TdIF8XhbGD3g0wLwxZ/xYu8L/LJLst2JZjsPtv/NmatNrHQczyomO172cLccU/h6ksREL4xHQjQEkBGQAA",
-    w: 1280,
-    h: 896,
   },
 };

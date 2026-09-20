@@ -1,8 +1,6 @@
 export const COURSE_SLUGS = [
   "spoken-english",
   "interactive-speaking",
-  "kids-english",
-  "teen-english",
   "business-english",
   "ielts",
   "interview-prep",
@@ -24,27 +22,24 @@ export const COURSE_CATEGORIES = [
     slugs: ["spoken-english", "interactive-speaking"],
   },
   {
-    id: "kids-and-teens",
-    title: "Kids & Teens · from ₹999/month, inclusive of taxes",
-    description:
-      "Kids 6–11 and Teens 12–17 at ₹999/month, inclusive of taxes. 1 hr 30 min live classes. Parent on WhatsApp. Rooms never mixed with adults.",
-    icon: "smile",
-    tone: "play",
-    featuredSlug: "kids-english",
-    slugs: ["kids-english", "teen-english"],
-    theme: "kids",
-    badge: "For parents",
-    cta: "Explore both programmes",
-  },
-  {
     id: "work-and-career",
-    title: "Work & Career · from ₹1,999/month, inclusive of taxes",
+    title: "Work & Career · from ₹1,499/month, inclusive of taxes",
     description:
-      "Workplace English ₹1,999/month, inclusive of taxes. Meetings, calls, emails, presentations. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
+      "Workplace English ₹1,999/month and Interview Prep ₹1,499/month, inclusive of taxes. Meetings, calls, emails, presentations and the interview chair. Live quality teaching, 1 hr 30 min, up to 2 classes/week. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
-    slugs: ["business-english"],
+    slugs: ["business-english", "interview-prep"],
+  },
+  {
+    id: "tests-and-guidance",
+    title: "Tests & Guidance · IELTS and 1:1 counselling",
+    description:
+      "Live IELTS preparation ₹2,499/month, inclusive of taxes. 1:1 Career Counselling ₹1,999 total for three 60-minute sessions. Named teacher. No band or job guarantee.",
+    icon: "award",
+    tone: "sun",
+    featuredSlug: "ielts",
+    slugs: ["ielts", "career-counselling"],
   },
 ] as const satisfies ReadonlyArray<{
   id: string;
@@ -54,7 +49,6 @@ export const COURSE_CATEGORIES = [
   tone: CategoryTone;
   featuredSlug: CourseSlug;
   slugs: readonly CourseSlug[];
-  theme?: "kids";
   badge?: string;
   cta?: string;
 }>;

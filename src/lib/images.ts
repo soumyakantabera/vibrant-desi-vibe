@@ -15,12 +15,6 @@ import spokenEnglish from "@/assets/spoken-english.jpg";
 import businessEnglish from "@/assets/business-english.jpg";
 import interactiveSpeaking from "@/assets/interactive-speaking.jpg";
 import careerCounselling from "@/assets/career-counselling.jpg";
-import kidsEnglish from "@/assets/kids-english.jpg";
-import kidsEnglishMid from "@/assets/kids-english-mid.jpg";
-import kidsEnglishFooter from "@/assets/kids-english-footer.jpg";
-import teenEnglish from "@/assets/teen-english.jpg";
-import teenEnglishMid from "@/assets/teen-english-mid.jpg";
-import teenEnglishFooter from "@/assets/teen-english-footer.jpg";
 
 export const IMG = {
   // Heroes / banners
@@ -54,12 +48,6 @@ export const IMG = {
   interview,
   career: careerCounselling,
   careerCounselling,
-  kidsEnglish,
-  kidsEnglishMid,
-  kidsEnglishFooter,
-  teenEnglish,
-  teenEnglishMid,
-  teenEnglishFooter,
   team: group,
 
   // Editorial
@@ -91,12 +79,6 @@ const META_BY_URL: Record<string, ImageMeta> = {
   [businessEnglish]: IMAGE_META["business-english.jpg"],
   [interactiveSpeaking]: IMAGE_META["interactive-speaking.jpg"],
   [careerCounselling]: IMAGE_META["career-counselling.jpg"],
-  [kidsEnglish]: IMAGE_META["kids-english.jpg"],
-  [kidsEnglishMid]: IMAGE_META["kids-english-mid.jpg"],
-  [kidsEnglishFooter]: IMAGE_META["kids-english-footer.jpg"],
-  [teenEnglish]: IMAGE_META["teen-english.jpg"],
-  [teenEnglishMid]: IMAGE_META["teen-english-mid.jpg"],
-  [teenEnglishFooter]: IMAGE_META["teen-english-footer.jpg"],
 };
 
 /* ------------------------------------------------------- modern formats */
@@ -145,12 +127,6 @@ const STEM_BY_URL: Record<string, string> = {
   [businessEnglish]: "business-english",
   [interactiveSpeaking]: "interactive-speaking",
   [careerCounselling]: "career-counselling",
-  [kidsEnglish]: "kids-english",
-  [kidsEnglishMid]: "kids-english-mid",
-  [kidsEnglishFooter]: "kids-english-footer",
-  [teenEnglish]: "teen-english",
-  [teenEnglishMid]: "teen-english-mid",
-  [teenEnglishFooter]: "teen-english-footer",
 };
 
 /**

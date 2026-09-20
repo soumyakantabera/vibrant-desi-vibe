@@ -149,7 +149,7 @@ function Home() {
               Real teachers. Small batches. Gamified, interactive live English classes — designed
               for the demands of today's market. From{" "}
               <strong className="text-sunshine">₹999/mo</strong>, inclusive of taxes. For everyone:
-              adults, professionals, graduates, teens and kids.
+              adults, professionals and graduates.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -304,7 +304,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Kids & Teens, Workplace, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
+            subtitle="Spoken English, Workplace, Interview, IELTS and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
           <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-4">
             {COURSE_CATEGORIES.map((category) => (
@@ -796,31 +796,12 @@ function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
 function CategoryCard({ category }: { category: CourseCategory }) {
   const visual = COURSES[category.featuredSlug];
   const tone = CATEGORY_TONES[category.tone];
-  const onlySlug = category.slugs.length === 1 ? category.slugs[0] : undefined;
-  const onlyCourse = onlySlug ? COURSES[onlySlug] : undefined;
-  const destination = onlySlug ? coursePath(onlySlug) : "/english-career";
-  const isKids = "theme" in category && category.theme === "kids";
-  const cta =
-    "cta" in category && category.cta
-      ? category.cta
-      : onlyCourse
-        ? `View ${onlyCourse.title}`
-        : "Explore both programmes";
-  const pill =
-    "badge" in category && category.badge
-      ? category.badge
-      : onlySlug
-        ? "1 programme"
-        : `${category.slugs.length} programmes`;
+  const destination = "/english-career" as const;
+  const cta = "Explore both programmes";
+  const pill = `${category.slugs.length} programmes`;
 
   return (
-    <article
-      className={`group min-w-0 overflow-hidden rounded-2xl border bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)] ${
-        isKids
-          ? "border-sunshine/55 hover:border-coral/40"
-          : "border-[#DDE5DF] hover:border-brand/30"
-      }`}
-    >
+    <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
       <div className="relative aspect-[4/3] overflow-hidden">
         <SmartImage
           src={visual.heroImage}
@@ -840,7 +821,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
       <div className="flex min-w-0 flex-col p-3 sm:p-3.5">
         <div className="flex items-center gap-2">
           <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
-            <Icon name={category.icon} size={16} />
+            <Icon name={category.icon as IconName} size={16} />
           </span>
           <h3 className="font-display text-base font-extrabold leading-tight text-ink sm:text-lg">
             {category.title}
@@ -849,50 +830,25 @@ function CategoryCard({ category }: { category: CourseCategory }) {
 
         <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink/80">{category.description}</p>
 
-        {isKids && (
-          <p className="mt-2 flex items-center gap-1.5 text-xs font-display font-bold text-brand-deep">
-            <Icon name="shield" size={14} /> Parent on WhatsApp · rooms never mixed
-          </p>
-        )}
-
-        {onlyCourse ? (
-          <div className="mt-3 flex min-w-0 flex-wrap gap-1.5 text-xs font-display font-bold">
-            <span
-              className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 leading-tight ${tone.badge}`}
-            >
-              <Icon name={onlyCourse.icon} size={13} /> {onlyCourse.title}
-            </span>
-            <span
-              className={`max-w-full whitespace-normal rounded-full border px-2.5 py-1.5 leading-tight ${tone.badge}`}
-            >
-              {onlyCourse.duration.split(" · ")[0]} · {onlyCourse.price}
-            </span>
-          </div>
-        ) : (
-          <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
-            {category.slugs.map((slug) => {
-              const course = COURSES[slug];
-              return (
-                <Link
-                  key={slug}
-                  to={coursePath(slug)}
-                  className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
-                >
-                  <Icon name={course.icon} size={13} /> {course.title}
-                </Link>
-              );
-            })}
-          </div>
-        )}
+        <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
+          {category.slugs.map((slug) => {
+            const course = COURSES[slug];
+            return (
+              <Link
+                key={slug}
+                to={coursePath(slug)}
+                className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
+              >
+                <Icon name={course.icon} size={13} /> {course.title}
+              </Link>
+            );
+          })}
+        </div>
 
         <Link
           to={destination}
-          hash={onlySlug ? undefined : category.id}
-          className={`mt-3.5 inline-flex min-h-10 w-full max-w-full items-center justify-center gap-1.5 rounded-full px-3 py-2 text-center text-sm font-display font-extrabold leading-tight shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25 ${
-            isKids
-              ? "bg-sunshine text-ink hover:bg-[#F6C453]"
-              : "bg-brand-deep text-white hover:bg-brand"
-          }`}
+          hash={category.id}
+          className="mt-3.5 inline-flex min-h-10 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-2 text-center text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
         >
           {cta}
           <Icon name="arrow-right" size={14} />

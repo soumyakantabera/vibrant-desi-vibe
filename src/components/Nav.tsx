@@ -30,22 +30,28 @@ const ENGLISH_COURSES: NavItem[] = [
     desc: "3 months · ₹1,499/month, inclusive of taxes",
   },
   {
-    to: "/course-kids-english",
-    label: "Spoken English for Kids",
-    icon: "smile",
-    desc: "Ages 6–11 · ₹999/month, inclusive of taxes",
-  },
-  {
-    to: "/course-teen-english",
-    label: "Spoken English for Teens",
-    icon: "mic",
-    desc: "Ages 12–17 · ₹999/month, inclusive of taxes",
-  },
-  {
     to: "/course-business-english",
     label: "Workplace English",
     icon: "headset",
     desc: "3 months · ₹1,999/month, inclusive of taxes",
+  },
+  {
+    to: "/course-interview-prep",
+    label: "Interview Preparation",
+    icon: "mic",
+    desc: "2 months · ₹1,499/month, inclusive of taxes",
+  },
+  {
+    to: "/course-ielts",
+    label: "IELTS Preparation",
+    icon: "award",
+    desc: "3 months · ₹2,499/month, inclusive of taxes",
+  },
+  {
+    to: "/course-career-counselling",
+    label: "Career Counselling",
+    icon: "target",
+    desc: "3 × 60 min · ₹1,999 total",
   },
 ];
 
@@ -86,19 +92,6 @@ export function Nav() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
-        <Link
-          to="/english-career"
-          hash="kids-and-teens"
-          className="block bg-gradient-to-r from-[#0E7C5A] to-[#DC2626] text-center text-[12px] sm:text-sm font-display font-extrabold tracking-tight py-2 px-4 leading-snug hover:brightness-110 transition"
-        >
-          <span className="inline-flex items-center justify-center gap-1.5 text-balance text-[#FFF8F0]">
-            <span aria-hidden>🎉</span>
-            <span>
-              We’ve launched new courses — Spoken English for Kids 👶 (6–11) & Teens 👧 (12–17)
-            </span>
-            <span aria-hidden>😊</span>
-          </span>
-        </Link>
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
           {/* Brand */}
           <Link
@@ -154,7 +147,7 @@ export function Nav() {
               {coursesOpen && (
                 <div
                   onMouseLeave={() => setCoursesOpen(false)}
-                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[390px] max-w-[92vw]"
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[420px] max-w-[92vw]"
                 >
                   <div className="rounded-2xl bg-white border border-border shadow-2xl overflow-hidden grid grid-cols-1">
                     <CourseColumn

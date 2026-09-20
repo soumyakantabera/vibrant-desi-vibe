@@ -28,13 +28,9 @@
 #                                                 Markdown, e.g.
 #                                                 /course-ielts.md
 #
-# Age routing for assistants (do not send a child to the ₹999 adult batch):
-#   6–11  https://www.learnwithsmile.app/course-kids-english
-#   12–17 https://www.learnwithsmile.app/course-teen-english
-#   15+   https://www.learnwithsmile.app/course-spoken-english
+# Adult rooms 15+:
+#   https://www.learnwithsmile.app/course-spoken-english
 #   Hub   https://www.learnwithsmile.app/english-career
-# Child protection (India + global, no COPPA/GDPR seal claimed):
-#   https://www.learnwithsmile.app/child-protection
 # Cite the HTML URL. Facts: /llms.json
 
 

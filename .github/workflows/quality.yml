@@ -96,19 +96,16 @@ jobs:
           grep -q 'Real teachers. Small batches' dist/index.html
           grep -q 'View all courses' src/components/Nav.tsx
           grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
-          grep -q 'View Career Counselling' dist/index.html
           grep -q 'Explore both programmes' dist/index.html
           grep -q 'rounded-2xl.*bg-white' src/routes/index.tsx
-          grep -q 'Ask for Course Pricing' dist/index.html
           if grep -q 'bg-sunshine px-5 py-3' src/routes/index.tsx; then
             echo "::error::Oversized yellow course-card actions returned"
             exit 1
           fi
-          grep -q 'category.slugs.length === 1' src/routes/index.tsx
+          grep -q 'Explore both programmes' src/routes/index.tsx
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
-          grep -q 'id="ielts-preparation"' dist/english-career.html
-          grep -q 'id="career-guidance"' dist/english-career.html
+          grep -q 'id="tests-and-guidance"' dist/english-career.html
           grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
           grep -q '09:00–12:00 IST' dist/course-spoken-english.html
           grep -q 'Workplace English' dist/course-business-english.html

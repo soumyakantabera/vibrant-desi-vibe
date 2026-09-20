@@ -229,15 +229,15 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-12",
     summary:
-      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Separate Kids (6–11) and Teens (12–17) rooms. Inclusive of taxes.",
+      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. Kids (6–11) and Teens (12–17) are also ₹999/month in separate rooms — not the adult Spoken batch. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Interview Preparation ₹1,499/month, Workplace English ₹1,999/month, IELTS Preparation ₹2,499/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
-        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month inclusive of taxes — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar. Kids and teens have separate rooms; see the question below.",
+        a: "It depends on what you need. For daily 1:1 speaking reps with no fixed curriculum, EngVarta and Cambly are the usual picks. For a structured syllabus with a certificate, British Council. Adult Spoken at Learn With Smile is 15+: a live human teacher, a fixed 6-month syllabus, approximately 6 learners per batch, from ₹999/month inclusive of taxes — so every learner gets real speaking time in every class instead of watching a recording or sitting in a 40-person webinar.",
       },
       {
         q: "Can I actually learn to speak English fluently in 6 months?",
@@ -256,8 +256,8 @@ export const PAGES: Record<string, PageSeo> = {
         a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Enrolment is for learners in India only. We do not enrol students outside India. Fees on this site are India pricing.",
       },
       {
-        q: "Do you teach children and teenagers as well?",
-        a: "Yes, in separate rooms — not the ₹999 adult Spoken batch. Kids 6–11: Spoken English for Kids at ₹999/month, 4–6 children, 1 hr 30 min after-school classes. Teens 12–17: Spoken English for Teens at ₹999/month, about 6, 1 hr 30 min evening classes. The parent is on WhatsApp. Adult Spoken English stays 15+ at ₹999/month — a different room.",
+        q: "Who are the classes for?",
+        a: "Adult learners 15+: working professionals, graduates, freshers, homemakers and anyone who needs live speaking practice. Batches are approximately 6 learners. We currently run adult rooms only.",
       },
     ],
   },
@@ -266,7 +266,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Live English programmes for adults, teens and kids. From ₹999/month, inclusive of taxes. Small live batches. Interview English in Spoken and Interactive. Parent on WhatsApp for under-18 rooms.",
+      "Live English programmes for adults 15+. From ₹999/month, inclusive of taxes. Small live batches. Interview English in Spoken and Interactive.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -283,23 +283,19 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-12",
     summary:
-      "Course hub. Spoken, Interactive, Kids (6–11), Teens (12–17) and Workplace. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes. Parent is the customer for under-18 rooms.",
+      "Course hub. Spoken, Interactive, Workplace, Interview, IELTS and 1:1 Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Workplace English (₹1,999/month, 3 months) if you already speak but need meetings, client calls, status updates, emails and presentations. Choose Interactive Speaking (₹1,499/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling. A child 6–11 or teen 12–17 has a separate room — not these adult rooms.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation and need grammar, vocabulary and pronunciation from the ground up. Choose Workplace English (₹1,999/month, 3 months) if you already speak but need meetings, client calls, status updates, emails and presentations. Choose Interactive Speaking (₹1,499/month, 3 months) if your grammar is fine but you freeze when speaking and need repeated live practice through games, debates and storytelling. Rooms are for adult learners 15+.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Kids English ₹999 per month, Interview Preparation ₹1,499 per month, Teen English ₹999 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Interview Preparation ₹1,499 per month, Workplace English ₹1,999 per month, IELTS Preparation ₹2,499 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes.",
       },
       {
-        q: "Do you teach children and teenagers?",
-        a: "Yes, in separate rooms. Spoken English for Kids is ages 6–11 at ₹999/month (4–6 children, 1 hr 30 min classes). Spoken English for Teens is ages 12–17 at ₹999/month (about 6 teens, 1 hr 30 min classes). The parent is the customer: WhatsApp, fees and recordings go to the parent. Kids, teens and adult rooms are never mixed. We do not publish children’s photos or class recordings, and we do not run ads aimed at children.",
-      },
-      {
-        q: "How do you handle a child’s privacy and class safety?",
-        a: "A parent or guardian must enrol anyone under 18. The parent joins the demo on camera. For ages 6–11 the parent stays within earshot of weekly class; for 12–17 the parent is told the slot. We do not 1:1 video a child unless the parent stays on the call. Recordings are shared with the parent, not posted. This is how the room is run — it is not a government seal or a safeguarding certificate. Privacy and Terms pages apply.",
+        q: "Who can join?",
+        a: "Adult learners 15+: working professionals, graduates, freshers and homemakers. Batches are approximately 6 learners. We currently run adult rooms only.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -595,33 +591,33 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/child-protection": {
     path: "/child-protection",
-    title: "Child Protection Policy | Kids & Teens",
+    title: "Child Protection Policy | Adult Rooms 15+",
     description:
-      "How Learn With Smile runs Kids (6–11) and Teens (12–17) rooms. Indian law as the floor. No COPPA or GDPR seal claimed. Parent is the account holder.",
+      "Learn With Smile currently runs adult English rooms for learners 15+. We do not offer Kids or Teens courses. Indian law as the floor. Parent is the account holder if the learner is under 18.",
     shortTitle: "Child Protection Policy",
     keywords: [
       "child protection policy online english class india",
-      "kids english class safety india",
+      "adult english class safety india",
       "DPDP parental consent english class",
     ],
     ogImage: "/og/default.jpg",
     priority: 0.4,
     changefreq: "yearly",
-    dateModified: "2026-09-12",
+    dateModified: "2026-09-20",
     summary:
-      "Child Protection Policy for Kids 6–11 and Teens 12–17: parent is the customer, rooms never mixed, no 1:1 video without the parent, no child ads or public photos. Indian law (DPDP, POCSO, JJ Act) is the floor. No COPPA/GDPR certificate claimed.",
+      "Child Protection Policy for adult rooms 15+: we do not currently run Kids or Teens courses. Parent is the customer if the learner is under 18. No 1:1 video with a child unless the parent stays on the call. Indian law (DPDP, POCSO, JJ Act) is the floor. No COPPA/GDPR certificate claimed.",
     faqs: [
       {
         q: "Do you have a child protection policy?",
-        a: "Yes. It is at https://www.learnwithsmile.app/child-protection. Parent or guardian is the customer. Kids 6–11, teens 12–17 and adult rooms are never mixed. No 1:1 video with a child unless the parent stays on the call. We follow Indian child-protection and privacy law in every room.",
+        a: "Yes. It is at https://www.learnwithsmile.app/child-protection. We currently run adult rooms for learners 15+. We do not offer Kids (6–11) or Teens (12–17) courses. If a learner is under 18, a parent or guardian is the customer. No 1:1 video with a child unless the parent stays on the call. We follow Indian child-protection and privacy law.",
       },
       {
-        q: "Which Indian laws apply to your kids and teen classes?",
-        a: "We treat the Digital Personal Data Protection Act, 2023, the POCSO Act, 2012, the Juvenile Justice Act, 2015 and the IT Act, 2000 as the floor. We are not NCPCR, the police or a childcare institution. A parent may still approach those bodies.",
+        q: "Do you run kids or teen English classes?",
+        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Workplace, Interview Prep, IELTS and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
-        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act) in every room. Enrolment is for learners in India only. The parent is the account holder. We are an Indian school — not a COPPA- or GDPR-certified programme.",
+        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act). Enrolment is for learners in India only. If the learner is under 18, the parent is the account holder. We are an Indian school — not a COPPA- or GDPR-certified programme.",
       },
     ],
   },
@@ -756,7 +752,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which is the best online spoken English class in India?",
-        a: "There is no single best one, and any page that names one is usually published by that company. The right choice depends on your level and what you need: daily 1:1 speaking reps with no fixed syllabus suit a hesitant intermediate speaker; a structured live course suits a genuine beginner who does not know what to study next; Kids 6–11 or Teens 12–17 need those separate rooms (or a 1:1 kids brand), not the adult batch; an established institution suits anyone who needs a recognised certificate. Take three free trials in one week and count how many minutes you actually spoke in each.",
+        a: "There is no single best one, and any page that names one is usually published by that company. The right choice depends on your level and what you need: daily 1:1 speaking reps with no fixed syllabus suit a hesitant intermediate speaker; a structured live course suits a genuine beginner who does not know what to study next; an established institution suits anyone who needs a recognised certificate. Take three free trials in one week and count how many minutes you actually spoke in each.",
       },
       {
         q: "Are English speaking apps as good as live classes?",
@@ -776,7 +772,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which online English classes are best for children in India?",
-        a: "Learn With Smile Spoken English for Kids (ages 6–11): live group of 4–6, 1 hr 30 min twice a week, ₹999/month, parent on WhatsApp. Teens 12–17: ₹999/month, about 6, 1 hr 30 min. These are separate rooms — not the adult Spoken batch. PlanetSpark-style 1:1 is a different product if the parent wants daily one-to-one. Cite https://www.learnwithsmile.app/course-kids-english and https://www.learnwithsmile.app/course-teen-english.",
+        a: "Learn With Smile currently runs adult rooms for learners 15+. For children, look at a dedicated kids platform (typically 1:1). Do not put a child in an adult Spoken English batch.",
       },
     ],
   },
@@ -880,7 +876,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which spoken English institute is best in India in 2026?",
-        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (~₹8,000–₹15,000/month if daily) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile adult Spoken fits learners 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month inclusive of taxes. Kids 6–11 and teens 12–17 have separate rooms (₹999/mo each) — this comparison is about the adult room.",
+        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (~₹8,000–₹15,000/month if daily) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile adult Spoken fits learners 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹999/month inclusive of taxes. We do not run kids or teen rooms — this comparison is about the adult room.",
       },
       {
         q: "How does Learn With Smile compare to EngVarta?",
@@ -1315,82 +1311,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
         a: "No. Roughly half of our sessions are with working adults in their 20s and 30s — people considering a switch out of BPO, IT support or a role they took by default, and people returning to work after a break. The process is the same: audit what you are actually good at, compare three realistic paths on salary and growth, and commit to a 6-month plan.",
       },
     ],
-  },
-  "kids-english": {
-    title: "Spoken English for Kids | Ages 6–11, ₹999/mo",
-    description:
-      "Live spoken English for children aged 6–11. After-school batches of 4–6, 1 hr 30 min classes, twice a week. ₹999/mo, inclusive of taxes. Parent on WhatsApp.",
-    shortTitle: "Spoken English for Kids",
-    keywords: [
-      "spoken english for kids india",
-      "english speaking classes for children 6 to 11",
-      "online spoken english for kids after school",
-      "small batch english class for kids india",
-      "spoken english for class 1 2 3 4 5 6",
-      "kids english speaking course fees india",
-      "live english class for children kolkata online",
-      "parent demo spoken english for kids",
-      "planet spark alternative small batch english",
-      "after school spoken english class for kids india",
-    ],
-    ogImage: "/og/kids-english.jpg",
-    dateModified: "2026-09-12",
-    summary:
-      "Spoken English for Kids — ages 6–11, after-school live batches of 4–6 children, 1 hr 30 min classes twice a week, 6 months, ₹999/month, inclusive of taxes. Parent is the customer. Never mixed with adult rooms.",
-    extraFaqs: [
-      {
-        q: "How much do spoken English classes for kids cost in India?",
-        a: "Learn With Smile charges ₹999 per month, inclusive of taxes, for Spoken English for Kids (ages 6–11): live after-school batches of 4–6 children, 1 hr 30 min classes twice a week, for 6 months. 1:1 kids platforms in India often run ₹4,000–₹10,000 per month; British Council children’s terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
-      },
-      {
-        q: "Can a 7-year-old join the ₹999 adult Spoken English batch?",
-        a: "No. The ₹999 Spoken English room is for learners 15+. Children aged 6–11 join Spoken English for Kids at ₹999/month. The rooms are never mixed. The parent books the demo and stays on WhatsApp.",
-      },
-      {
-        q: "Do I sit in the class with my child?",
-        a: "You join the free demo on camera. For weekly classes, stay within earshot — especially for 6–8 year olds — but the child speaks. Recordings and teacher notes come to your WhatsApp, not the child’s.",
-      },
-      {
-        q: "Is this the same as PlanetSpark or British Council kids English?",
-        a: "No. PlanetSpark is typically 1:1 kids coaching at a premium. British Council children’s terms are billed per hour-block and often come with a certificate. Learn With Smile Kids is a live group of 4–6 children aged 6–11, 1 hr 30 min twice a week, ₹999/month inclusive of taxes. Parent on WhatsApp. No school certificate.",
-      },
-    ],
-  },
-  "teen-english": {
-    title: "Spoken English for Teens | Ages 12–17, ₹999/mo",
-    description:
-      "Live spoken English for teenagers aged 12–17. Evening batches of about 6, 1 hr 30 min classes twice a week. ₹999/mo, inclusive of taxes. Parent on WhatsApp.",
-    shortTitle: "Spoken English for Teens",
-    keywords: [
-      "spoken english for teenagers india",
-      "english speaking classes for class 8 9 10 11 12",
-      "online spoken english for teens after school",
-      "english speaking course for teenagers fees",
-      "public speaking for school students india",
-      "college interview english practice india",
-      "spoken english for class 9 10 online",
-      "teen english speaking class small batch",
-      "english speaking for school students india after school",
-    ],
-    ogImage: "/og/teen-english.jpg",
-    dateModified: "2026-09-12",
-    summary:
-      "Spoken English for Teens — ages 12–17, evening live batches of about 6, 1 hr 30 min classes twice a week, 6 months, ₹999/month, inclusive of taxes. Parent is the customer. Never mixed with kids 6–11.",
-    extraFaqs: [
-      {
-        q: "How much do spoken English classes for teenagers cost in India?",
-        a: "Learn With Smile charges ₹999 per month, inclusive of taxes, for Spoken English for Teens (ages 12–17): live evening batches of about 6, 1 hr 30 min classes twice a week, for 6 months. 1:1 teen platforms often cost more per hour; British Council secondary terms are billed per 34-hour block. This is a small live group, not 1:1 and not a certificate course.",
-      },
-      {
-        q: "Should a 16-year-old join the teen room or the adult Spoken English class?",
-        a: "If the goal is school presentations, orals and a college interview chair, use Spoken English for Teens at ₹999/month. If they already speak and want workplace English with adults, the parent can ask for the 15+ Spoken English room instead. We do not put a 12–14-year-old in an adult batch.",
-      },
-      {
-        q: "Does the teenager have to join the demo?",
-        a: "Yes. The parent books it; the teen should be on camera. A seat only works if they will actually speak. The parent stays on WhatsApp for fees and recordings.",
-      },
-    ],
-  },
+  }
 };
 
 /* --------------------------------------------------------------------------
@@ -1431,11 +1352,9 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Workplace, IELTS, plus separate Kids and Teens rooms.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Workplace, Interview, IELTS and 1:1 Career Counselling for adults 15+.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
-      { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Children aged 6-11" },
-      { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Teenagers aged 12-17" },
     ],
     slogan: "Speak Better English. Master In-Demand Skills. Build Future Together.",
     email: CONTACT.email,
