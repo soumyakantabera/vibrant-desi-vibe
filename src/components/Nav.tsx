@@ -12,7 +12,7 @@ const MAIN: NavItem[] = [
   { to: "/why-us", label: "Why Us" },
   { to: "/guides", label: "Guides" },
   { to: "/success-stories", label: "Stories" },
-  { to: "/founder", label: "Founder" },
+  { to: "/educator", label: "Educator" },
   { to: "/blog", label: "Blog" },
 ];
 

@@ -111,7 +111,7 @@ function groupFeeLine(): string {
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `${SITE_NAME}: live online English for Indian learners 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Founder and lead teacher: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
+  `${SITE_NAME}: live online English for Indian learners 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Educator: Sunanda Dey. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
   groupFeeLine(),
   "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1 (3 × 60 min). Learn With Smile does not issue a school certificate. IELTS scores are issued by the test board; we do not sell IELTS as a course.",
   `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state. Enrolment is for learners in India only; we do not enrol students outside India. Fees on this site are India pricing.`,
@@ -543,7 +543,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     "## Brand",
     "",
-    `- Trading name: ${SITE_NAME}. Founder and lead teacher: Sunanda Dey. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
+    `- Trading name: ${SITE_NAME}. Educator: Sunanda Dey. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
     `- Audience: Adult rooms 15+. Hindi- and Bengali-medium backgrounds welcome. Not affiliated with British Council, EngVarta, Cambly or Veta.`,
     `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${COURSE_SLUGS
       .filter((slug) => isMonthly(COURSES[slug].price))
@@ -712,10 +712,10 @@ export function buildLlmsJson(updated: string): string {
     ],
     description:
       "Live online English. Adult rooms 15+ from ₹999/mo. Named teacher. Inclusive of taxes. Spoken, Interactive, Workplace, and 1:1 Career Counselling.",
-    founder: {
+    educator: {
       name: "Sunanda Dey",
-      role: "Founder and lead teacher",
-      url: abs("/founder"),
+      role: "Educator",
+      url: abs("/educator"),
     },
     rating: { value: RATING.value, count: RATING.count, source: RATING.source },
     offer: {
@@ -856,7 +856,7 @@ export function buildOpenApi(): string {
             operationId: "getSiteFacts",
             summary: "JSON: fees, courses, modules, FAQs, contact, placement",
             description:
-              "Prefer this over HTML. Returns founder, coverage, tax-inclusive fees, four adult courses (outcomes, modules, FAQs), placement map for learners 15+, and WhatsApp admissions.",
+              "Prefer this over HTML. Returns educator, coverage, tax-inclusive fees, four adult courses (outcomes, modules, FAQs), placement map for learners 15+, and WhatsApp admissions.",
             responses: ok("Site facts", "application/json"),
           },
         },

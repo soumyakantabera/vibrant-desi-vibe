@@ -40,9 +40,9 @@ export const Route = createFileRoute("/blog/")({
           inLanguage: "en-IN",
           author: {
             "@type": "Person",
-            "@id": `${abs("/founder")}#person`,
+            "@id": `${abs("/educator")}#person`,
             name: post.author,
-            url: abs("/founder"),
+            url: abs("/educator"),
           },
           publisher: { "@id": `${SITE_URL}/#organization` },
         })),

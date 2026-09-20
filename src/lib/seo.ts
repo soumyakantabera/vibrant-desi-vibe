@@ -380,15 +380,15 @@ export const PAGES: Record<string, PageSeo> = {
       "Company background: 7 years of live online teaching, 500+ learners taught, and the 11 learning principles the curriculum is built on.",
   },
 
-  "/founder": {
-    path: "/founder",
+  "/educator": {
+    path: "/educator",
     title: "Sunanda Dey | One Mentor. One Mission.",
     description:
-      "Meet Sunanda Dey — founder and lead teacher. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India.",
-    shortTitle: "Sunanda Dey — Founder",
+      "Meet Sunanda Dey — educator at Learn With Smile. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India.",
+    shortTitle: "Sunanda Dey — Educator",
     keywords: [
       "sunanda dey english teacher",
-      "learn with smile founder",
+      "learn with smile educator",
       "online english teacher india",
       "english trainer kolkata",
       "career mentor india online",
@@ -397,7 +397,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.6,
     changefreq: "monthly",
     summary:
-      "Founder profile: Sunanda Dey, English and career mentor, 7 years of live online teaching experience.",
+      "Educator profile: Sunanda Dey, English and career mentor, 7 years of live online teaching experience.",
   },
 
   "/success-stories": {
@@ -1297,11 +1297,12 @@ export function organizationLd() {
     currenciesAccepted: "INR",
     paymentAccepted: "UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm",
     foundingDate: String(FOUNDING_YEAR),
-    founder: {
+    employee: {
       "@type": "Person",
-      "@id": `${abs("/founder")}#person`,
+      "@id": `${abs("/educator")}#person`,
       name: "Sunanda Dey",
-      url: abs("/founder"),
+      jobTitle: "Educator",
+      url: abs("/educator"),
     },
     publishingPrinciples: abs("/terms"),
     ethicsPolicy: abs("/privacy"),
@@ -1457,7 +1458,7 @@ export function webPageLd(page: {
   dateModified?: string;
   ogImage?: string;
 }) {
-  const isFounderProfile = page.path === "/founder";
+  const isEducatorProfile = page.path === "/educator";
   const isLegal =
     page.path === "/privacy" ||
     page.path === "/terms" ||
@@ -1465,7 +1466,7 @@ export function webPageLd(page: {
     page.path === "/child-protection";
   return {
     "@context": "https://schema.org",
-    "@type": isFounderProfile ? "ProfilePage" : "WebPage",
+    "@type": isEducatorProfile ? "ProfilePage" : "WebPage",
     "@id": `${abs(page.path)}#webpage`,
     url: abs(page.path),
     name: page.title,
@@ -1493,7 +1494,7 @@ export function webPageLd(page: {
             .map((p) => abs(p)),
         }
       : {}),
-    ...(isFounderProfile ? { mainEntity: { "@id": `${abs("/founder")}#person` } } : {}),
+    ...(isEducatorProfile ? { mainEntity: { "@id": `${abs("/educator")}#person` } } : {}),
   };
 }
 
@@ -1668,7 +1669,7 @@ export function blogPath(post: BlogPost): string {
  * usual page metadata.
  *
  * The `author` deliberately points at the Person entity already emitted on
- * `/founder` rather than repeating a bare name string. That link — article to
+ * `/educator` rather than repeating a bare name string. That link — article to
  * a real, described author with their own URL — is the strongest E-E-A-T
  * signal available here, and half of it was already built.
  */
@@ -1702,9 +1703,9 @@ export function blogPostHead(post: BlogPost): HeadResult {
       image: [image],
       author: {
         "@type": "Person",
-        "@id": `${abs("/founder")}#person`,
+        "@id": `${abs("/educator")}#person`,
         name: post.author,
-        url: abs("/founder"),
+        url: abs("/educator"),
       },
       publisher: { "@id": `${SITE_URL}/#organization` },
       isPartOf: { "@id": `${abs("/blog")}#blog` },

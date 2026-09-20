@@ -23,9 +23,9 @@ export function guideHead(path: string) {
       dateModified: page.dateModified ?? "2026-09-11",
       author: {
         "@type": "Person",
-        "@id": `${abs("/founder")}#person`,
+        "@id": `${abs("/educator")}#person`,
         name: "Sunanda Dey",
-        url: abs("/founder"),
+        url: abs("/educator"),
       },
       publisher: { "@id": `${abs("/")}#organization` },
     }),

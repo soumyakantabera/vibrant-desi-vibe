@@ -27,9 +27,9 @@ export const Route = createFileRoute("/english-for-presentations-india")({
         dateModified: UPDATED,
         author: {
           "@type": "Person",
-          "@id": `${abs("/founder")}#person`,
+          "@id": `${abs("/educator")}#person`,
           name: "Sunanda Dey",
-          url: abs("/founder"),
+          url: abs("/educator"),
         },
         publisher: { "@id": `${abs("/")}#organization` },
       }),

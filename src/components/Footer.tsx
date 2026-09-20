@@ -23,7 +23,7 @@ const ENGLISH = [
 const COMPANY = [
   { to: "/about-us", label: "About Us" },
   { to: "/why-us", label: "Why Us" },
-  { to: "/founder", label: "Founder" },
+  { to: "/educator", label: "Educator" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/blog", label: "Blog" },
   { to: "/book-free-demo", label: "Book a Free Demo" },

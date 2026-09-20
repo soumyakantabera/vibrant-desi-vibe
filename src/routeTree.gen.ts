@@ -26,6 +26,7 @@ import { Route as EnglishForPresentationsIndiaRouteImport } from './routes/engli
 import { Route as EnglishForWorkingProfessionalsIndiaRouteImport } from './routes/english-for-working-professionals-india'
 import { Route as EnglishHindiBengaliMediumRouteImport } from './routes/english-hindi-bengali-medium'
 import { Route as EnglishInstituteComparisonIndiaRouteImport } from './routes/english-institute-comparison-india'
+import { Route as EducatorRouteImport } from './routes/educator'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as FreeEnglishSpeakingPracticeVsPaidClassRouteImport } from './routes/free-english-speaking-practice-vs-paid-class'
 import { Route as GuidesRouteImport } from './routes/guides'
@@ -155,6 +156,11 @@ const EnglishInstituteComparisonIndiaRoute =
     path: '/english-institute-comparison-india',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EducatorRoute = EducatorRouteImport.update({
+  id: '/educator',
+  path: '/educator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
@@ -374,6 +380,7 @@ export interface FileRoutesByFullPath {
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
+  '/educator': typeof EducatorRoute
   '/founder': typeof FounderRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
@@ -428,6 +435,7 @@ export interface FileRoutesByTo {
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
+  '/educator': typeof EducatorRoute
   '/founder': typeof FounderRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
@@ -483,6 +491,7 @@ export interface FileRoutesById {
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
+  '/educator': typeof EducatorRoute
   '/founder': typeof FounderRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
@@ -539,6 +548,7 @@ export interface FileRouteTypes {
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
+    | '/educator'
     | '/founder'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
@@ -593,6 +603,7 @@ export interface FileRouteTypes {
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
+    | '/educator'
     | '/founder'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
@@ -647,6 +658,7 @@ export interface FileRouteTypes {
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
+    | '/educator'
     | '/founder'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
@@ -702,6 +714,7 @@ export interface RootRouteChildren {
   EnglishForWorkingProfessionalsIndiaRoute: typeof EnglishForWorkingProfessionalsIndiaRoute
   EnglishHindiBengaliMediumRoute: typeof EnglishHindiBengaliMediumRoute
   EnglishInstituteComparisonIndiaRoute: typeof EnglishInstituteComparisonIndiaRoute
+  EducatorRoute: typeof EducatorRoute
   FounderRoute: typeof FounderRoute
   FreeEnglishSpeakingPracticeVsPaidClassRoute: typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   GuidesRoute: typeof GuidesRoute
@@ -858,6 +871,13 @@ declare module '@tanstack/react-router' {
       path: '/english-institute-comparison-india'
       fullPath: '/english-institute-comparison-india'
       preLoaderRoute: typeof EnglishInstituteComparisonIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/educator': {
+      id: '/educator'
+      path: '/educator'
+      fullPath: '/educator'
+      preLoaderRoute: typeof EducatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/founder': {
@@ -1128,6 +1148,7 @@ const rootRouteChildren: RootRouteChildren = {
     EnglishForWorkingProfessionalsIndiaRoute,
   EnglishHindiBengaliMediumRoute: EnglishHindiBengaliMediumRoute,
   EnglishInstituteComparisonIndiaRoute: EnglishInstituteComparisonIndiaRoute,
+  EducatorRoute: EducatorRoute,
   FounderRoute: FounderRoute,
   FreeEnglishSpeakingPracticeVsPaidClassRoute:
     FreeEnglishSpeakingPracticeVsPaidClassRoute,

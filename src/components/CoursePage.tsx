@@ -545,11 +545,11 @@ export function courseSeo(d: CourseData) {
     maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
     instructor: {
       "@type": "Person",
-      "@id": `${abs("/founder")}#person`,
+      "@id": `${abs("/educator")}#person`,
       name: "Sunanda Dey",
-      // Links to the Person entity described on /founder, rather than leaving a
+      // Links to the Person entity described on /educator, rather than leaving a
       // bare name string that resolves to nothing.
-      url: abs("/founder"),
+      url: abs("/educator"),
       worksFor: {
         "@type": "EducationalOrganization",
         "@id": `${SITE_URL}/#organization`,

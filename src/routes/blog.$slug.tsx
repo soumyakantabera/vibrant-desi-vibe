@@ -78,7 +78,7 @@ function BlogPostPage() {
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/90">
             <span>
               By{" "}
-              <Link to="/founder" className="text-sunshine font-semibold hover:underline">
+              <Link to="/educator" className="text-sunshine font-semibold hover:underline">
                 {post.author}
               </Link>
             </span>
