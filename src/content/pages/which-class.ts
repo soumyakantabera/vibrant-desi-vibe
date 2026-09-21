@@ -114,7 +114,7 @@ export const body: ArticleBody = [
       [
         "Veta-style classroom",
         "Walk-in, sit in 25–40, or a pitch that will not print the cap",
-        "Cap is ≈6, printed. Consultation is 1:1 counselling, not a packed room you sample.",
+        "Cap is ≈6, printed. Consultation is a small batch with personalised advice, not a packed room you sample.",
       ],
       [
         "Exam shop (EEC-style)",

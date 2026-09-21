@@ -6,8 +6,9 @@ export const CALL_LINK = `tel:+${WHATSAPP_PHONE}`;
  * Primary conversion labels.
  *
  * Visible site copy never says "demo" or "free demo class" — people hear
- * "full class for free". The offer is a one-to-one counselling session:
- * courses, curriculum, and each learner's requirements, one by one.
+ * "full class for free". The offer is a small-batch counselling session with
+ * personalised advice: courses, curriculum, and each learner's requirements,
+ * one by one.
  *
  * Constant names stay DEMO_* so existing imports do not churn. The strings
  * they hold are the public CTA.
@@ -17,7 +18,7 @@ export const DEMO_CTA = "Get Free Consultation";
 export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
 export const DEMO_MSG =
-  "Hi, I'd like a free personalised 1:1 consultation. Please share a slot so we can go through my requirements one by one, diagnose my bottleneck and choose one course.";
+  "Hi, I'd like a free small-batch consultation with personalised advice. Please share a slot so we can go through my requirements one by one, diagnose my bottleneck and choose one course.";
 export const CHAT_MSG = "Hi, I want to improve my English. Please help me choose the right course.";
 
 /**

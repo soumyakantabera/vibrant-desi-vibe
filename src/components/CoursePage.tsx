@@ -505,7 +505,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         <div className="container-x text-center text-cream">
           <h2 className="text-cream text-3xl md:text-4xl">Ready to start {data.title}?</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
-            Tell us your goal — 100% free, personalised 1:1 consultation. We discuss courses,
+            Tell us your goal — 100% free, small-batch consultation with personalised advice. We discuss courses,
             curriculum and your requirements one by one. It is not a full class.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">

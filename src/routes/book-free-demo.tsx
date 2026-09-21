@@ -43,7 +43,7 @@ function Page() {
             <Icon name="compass" size={14} /> {DEMO_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Free. Personalised. <span className="text-sunshine">1:1 on WhatsApp.</span>
+            Free. Small batch. <span className="text-sunshine">Personalised advice.</span>
           </h1>
           <p className="mt-5 text-lg text-white">{CONSULTATION.what}</p>
           <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
@@ -73,7 +73,7 @@ function Page() {
           <SectionHeader
             eyebrow="What you walk away with"
             title="Exactly what you get — and what you do not"
-            subtitle="100% free. Personalised 1:1 — just you. Other institutes sell a free session as a class, a pitch, or 15 minutes of talk. This one is counselling. You leave with a diagnosis, one recommendation, and answers — in writing."
+            subtitle="100% free. Small batch. Personalised advice — each person's requirements, one by one. Other institutes sell a free session as a class, a pitch, or 15 minutes of talk. This one is counselling. You leave with a diagnosis, one recommendation, and answers — in writing."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {CONSULTATION_WALK_AWAY.map((item) => (
@@ -90,7 +90,7 @@ function Page() {
           <div>
             <h2 className="text-2xl md:text-3xl mb-2">How the session works</h2>
             <p className="text-ink/80 mb-6">
-              No payment to book. 100% free. Personalised 1:1. Replies {CONSULTATION.hours}.
+              No payment to book. 100% free. Small batch. Personalised advice. Replies {CONSULTATION.hours}.
             </p>
             <ol className="space-y-4">
               {CONSULTATION_STEPS.map((step) => (
@@ -304,7 +304,7 @@ function Page() {
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">Bring the problem. Leave with one room.</h2>
           <p className="mt-3 text-white">
-            Get Free Consultation — 100% free, personalised 1:1. We diagnose the bottleneck, answer
+            Get Free Consultation — 100% free, small batch, personalised advice. We diagnose the bottleneck, answer
             your queries, and place you in Spoken, Interactive, Workplace, Interview Preparation or
             counselling — or tell you to stay free.
           </p>

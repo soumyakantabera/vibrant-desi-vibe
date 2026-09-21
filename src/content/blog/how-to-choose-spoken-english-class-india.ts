@@ -14,7 +14,7 @@ export const body: ArticleBody = [
       "**Speaking minutes.** In a 60-minute class, your mic ≈ (40 minutes) ÷ (headcount). See [the math](/blog/speaking-minutes-in-a-60-minute-class).",
       "**GST and lock-in.** Advertised ₹2,000 + 18% + materials is not ₹2,000. Monthly UPI beats a 12-month cheque.",
       "**Named teacher.** Apps rotate. Franchise rooms rotate. A teacher who remembers your article errors is a different product.",
-      "**What the free session actually is.** A class you speak in, a counsellor pitch, or 1:1 counselling that names your bottleneck. If they only pitch, leave. Ours is counselling — [what you get](/book-free-demo).",
+      "**What the free session actually is.** A class you speak in, a counsellor pitch, or counselling that names your bottleneck. If they only pitch, leave. Ours is a small-batch consultation with personalised advice — [what you get](/book-free-demo).",
       "**Google reviews as patterns, not stars.** Read the 3-star comments. They name batch size, fees, and “I never spoke”. 5-star walls with no specifics are ads.",
       "**Certificate vs speaking.** Visa/university → British Council or similar. Job interview in India → they will judge you in 60 seconds, not your PDF. We do not issue a certificate; we say so.",
     ],
@@ -56,7 +56,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Ours is 1:1 counselling on WhatsApp. You leave with four things in writing: the bottleneck named, one course (or “not us”), fee / duration / IST slot, and answers to every question you brought. You will not get 8–10 minutes on a mic. That is the paid batch of around 6. Full walk-through: [Get Free Consultation](/book-free-demo).",
+    text: "Ours is a small-batch consultation with personalised advice. You leave with four things in writing: the bottleneck named, one course (or “not us”), fee / duration / IST slot, and answers to every question you brought. You will not get 8–10 minutes on a mic. That is the paid batch of around 6. Full walk-through: [Get Free Consultation](/book-free-demo).",
   },
   {
     t: "table",
@@ -68,7 +68,7 @@ export const body: ArticleBody = [
       ["Walk-in, 25–40 in the room", "Veta-style / city classroom"],
       ["Visa stack, IELTS add-on", "Exam shop. Fine if the form asked."],
       [
-        "1:1 counselling, bottleneck named, cap printed ≈6, ₹999/mo inclusive of taxes",
+        "Small-batch consultation, personalised advice, bottleneck named, cap printed ≈6, ₹999/mo inclusive of taxes",
         "Us. 7 years, 500+ learners, 11 states.",
       ],
     ],

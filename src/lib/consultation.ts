@@ -19,11 +19,11 @@ export const CONSULTATION = {
   channel: "WhatsApp",
   hours: "09:00–12:00 IST",
   phoneDisplay: WHATSAPP_DISPLAY,
-  /** Magnet line under every consultation button — free + personal, never “demo”. */
-  hook: "100% free · Personalised 1:1 · Your requirements, one by one",
-  pills: ["100% free", "Personalised 1:1", "No payment to book", "Just you — not a batch pitch"],
+  /** Magnet line under every consultation button — free + small batch + advice, never “demo”. */
+  hook: "100% free · Small batch · Personalised advice",
+  pills: ["100% free", "Small batch", "Personalised advice", "Requirements, one by one"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "100% free. Personalised 1:1 counselling on WhatsApp — not a group pitch and not a class. We hear your requirements one by one, name the bottleneck, and recommend one course. Or tell you to stay free.",
+  what: "100% free. A small-batch consultation — not a packed pitch and not a class. Personalised advice: we hear each person's requirements one by one, name the bottleneck, and recommend one course. Or tell you to stay free.",
 } as const;
 
 export const CONSULTATION_WALK_AWAY: {
@@ -54,7 +54,7 @@ export const CONSULTATION_WALK_AWAY: {
     icon: "shield",
     color: "coral",
     title: "Permission to walk away",
-    body: "100% free. Personalised 1:1. No payment to book. No obligation to enrol. If a podcast and a speaking partner are enough, we will say that.",
+    body: "100% free. Small batch. Personalised advice. No payment to book. No obligation to enrol. If a podcast and a speaking partner are enough, we will say that.",
   },
 ];
 
@@ -62,17 +62,17 @@ export const CONSULTATION_STEPS: { icon: IconName; title: string; body: string }
   {
     icon: "whatsapp",
     title: "Message WhatsApp",
-    body: "Tap Get Free Consultation. WhatsApp opens with a message ready to send. 100% free. Personalised — just you.",
+    body: "Tap Get Free Consultation. WhatsApp opens with a message ready to send. 100% free. Small batch. Personalised advice.",
   },
   {
     icon: "clock",
     title: "We reply 09:00–12:00 IST",
-    body: "We confirm a one-to-one counselling slot. Phone is a fallback only if you ask.",
+    body: "We confirm a small-batch counselling slot. Phone is a fallback only if you ask.",
   },
   {
     icon: "mic",
-    title: "You describe the problem — personalised",
-    body: "Shop, freeze, standup, HR screen, career change, visa form — whatever you actually need English for. We ask, one by one. This is 1:1, not a batch pitch.",
+    title: "Personalised advice for your problem",
+    body: "Shop, freeze, standup, HR screen, career change, visa form — whatever you actually need English for. We ask each person, one by one. Small batch, not a packed pitch.",
   },
   {
     icon: "compass",
@@ -212,7 +212,7 @@ export const CONSULTATION_VS_MARKET: {
     icon: "users",
     them: "Veta-style / city classrooms",
     theirSession: "Walk-in. Sit in 25–40, or a pitch that still will not print the cap. Commute on top.",
-    weDoInstead: "Cap is approximately 6, printed. Consultation is 1:1 counselling, not a packed room you sample.",
+    weDoInstead: "Cap is approximately 6, printed. Consultation is a small batch with personalised advice, not a packed room you sample.",
   },
   {
     icon: "trophy",
@@ -225,15 +225,15 @@ export const CONSULTATION_VS_MARKET: {
 export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   {
     q: "What do I actually get in the free consultation?",
-    a: "It is 100% free and personalised 1:1 — just you, not a batch pitch. Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck — cannot hold a conversation, freeze, workplace English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought — fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
+    a: "It is 100% free, in a small batch, with personalised advice — we hear each person's requirements one by one. Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck — cannot hold a conversation, freeze, workplace English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought — fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
   },
   {
     q: "How is your free consultation different from other institutes’ free sessions?",
-    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling entirely — you just talk. Brand-name groups pitch a CEFR module. Exam shops pitch IELTS. Learn With Smile is 1:1 counselling: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
+    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling entirely — you just talk. Brand-name groups pitch a CEFR module. Exam shops pitch IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
   },
   {
     q: "How do I get a free consultation at Learn With Smile?",
-    a: `Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. 100% free. Personalised 1:1. We reply 09:00–12:00 IST. No payment, card or UPI to book.`,
+    a: `Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. 100% free. Small batch. Personalised advice. We reply 09:00–12:00 IST. No payment, card or UPI to book.`,
   },
   {
     q: "Will every question I have be answered in the consultation?",
@@ -245,7 +245,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Is the free consultation a full English class?",
-    a: "No. People sometimes expect a full class for free. The consultation is 100% free, personalised 1:1 counselling: we diagnose the bottleneck, discuss courses and curriculum, and understand your requirements one by one. You enrol only if the format fits. Speaking minutes happen in the paid batch.",
+    a: "No. People sometimes expect a full class for free. The consultation is 100% free, in a small batch, with personalised advice: we diagnose the bottleneck, discuss courses and curriculum, and understand each person's requirements one by one. You enrol only if the format fits. Speaking minutes happen in the paid batch.",
   },
   {
     q: "Will you call me after I send my WhatsApp number?",
@@ -256,7 +256,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
 export const CONSULTATION_HOWTO = {
   name: "How to get a free English consultation",
   description:
-    "Book a free one-to-one counselling session on WhatsApp. Learn With Smile diagnoses your English bottleneck, answers your questions, and recommends one course. It is not a class.",
+    "Book a free small-batch counselling session. Learn With Smile gives personalised advice: diagnoses your English bottleneck, answers your questions, and recommends one course. It is not a class.",
   totalTime: "PT20M",
   steps: CONSULTATION_STEPS.map((s) => `${s.title}. ${s.body}`),
 } as const;

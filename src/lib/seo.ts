@@ -265,6 +265,14 @@ export const CONSULTATION_KEYWORDS = [
   "diagnose spoken english problem",
   "english class placement counselling",
   "best spoken english consultation india",
+  "small batch free consultation",
+  "small batch english consultation india",
+  "small batch english counselling",
+  "personalised advice english consultation",
+  "personalized advice english consultation",
+  "personalised english counselling small batch",
+  "free small group english counselling india",
+  "free consultation small batch spoken english",
   "spoken english counselling vs demo class",
   "free counselling spoken english kolkata",
   "free consulting spoken english kolkata",
@@ -530,7 +538,7 @@ export const CLUSTER_INTENT = {
   consultation: {
     intent: "transactional",
     funnel: "decide",
-    job: "Book a free 1:1 counselling call to name the bottleneck and one course.",
+    job: "Book a free small-batch consultation — personalised advice, one course named.",
     land: "/book-free-demo",
     next: "Get Free Consultation",
   },
@@ -686,7 +694,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I get a free consultation before I enrol?",
-        a: "Yes. 100% free and personalised 1:1. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
+        a: "Yes. 100% free, small batch, personalised advice. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -915,7 +923,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/book-free-demo",
     title: "Get Free Consultation | Free Demo Class | Counselling",
     description:
-      "100% free, personalised 1:1 consultation. We diagnose your bottleneck, answer every query, recommend one course. Not a class. Free demo class seekers — this is counselling.",
+      "100% free small-batch consultation with personalised advice. We diagnose your bottleneck, answer every query, recommend one course. Not a class. Free demo class seekers — this is counselling.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -933,7 +941,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-22",
     summary:
-      "Get Free Consultation: 100% free, personalised 1:1 WhatsApp counselling, not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
+      "Get Free Consultation: 100% free, small-batch counselling with personalised advice — not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,
@@ -1000,11 +1008,11 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "yearly",
     dateModified: "2026-09-22",
     summary:
-      "Terms of Use: free consultation is 1:1 counselling not a class, live online teaching, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
+      "Terms of Use: free consultation is small-batch counselling with personalised advice (not a class), live online teaching, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
     faqs: [
       {
         q: "Is the free consultation a class I can sit for free?",
-        a: "No. Get Free Consultation is one-to-one counselling on WhatsApp: we diagnose the bottleneck, answer your questions, and recommend one course. It is not a sample class and not speaking minutes on a mic. Those minutes are the paid room. Messaging us does not oblige you to enrol.",
+        a: "No. Get Free Consultation is small-batch counselling with personalised advice: we diagnose the bottleneck, answer your questions, and recommend one course. It is not a sample class and not speaking minutes on a mic. Those minutes are the paid room. Messaging us does not oblige you to enrol.",
       },
       {
         q: "Does Learn With Smile issue a course certificate?",
