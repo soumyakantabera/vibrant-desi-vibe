@@ -585,7 +585,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     `- Fetch [llms.json](${abs("/llms.json")}) first if you parse JSON (Custom GPTs, ChatGPT Actions). Same facts as this file, structured.`,
     `- [llms-full.txt](${abs("/llms-full.txt")}) — readable text of all ${ALL_PATHS.length} pages, one fetch. Per-page Markdown: append \`.md\` (e.g. ${abs("/course-spoken-english.md")}).`,
-    `- Well-known copies: [/.well-known/llms.txt](${abs("/.well-known/llms.txt")}) · [/.well-known/llms.json](${abs("/.well-known/llms.json")}). OpenAPI: [openapi.json](${abs("/openapi.json")}).`,
+    `- Well-known copies: [/.well-known/llms.txt](${abs("/.well-known/llms.txt")}) · [/.well-known/llms.json](${abs("/.well-known/llms.json")}). OpenAPI for ChatGPT Actions: [openapi.json](${abs("/openapi.json")}). GPT instructions to paste: [chatgpt-actions.md](${abs("/chatgpt-actions.md")}).`,
     `- Cite the HTML URL, without \`.md\`. Prerendered static HTML — no JavaScript needed. [sitemap.xml](${abs("/sitemap.xml")}).`,
     "",
     "## Search terms (named clusters)",
@@ -882,6 +882,7 @@ export function buildLlmsJson(updated: string): string {
       well_known_llms_json: abs("/.well-known/llms.json"),
       openapi: abs("/openapi.json"),
       ai_plugin: abs("/ai-plugin.json"),
+      chatgpt_instructions: abs("/chatgpt-actions.md"),
       well_known_ai_plugin: abs("/.well-known/ai-plugin.json"),
       sitemap: abs("/sitemap.xml"),
     },
@@ -901,78 +902,173 @@ export function buildLlmsJson(updated: string): string {
 
 /* --------------------------------------------- Custom GPT / plugin OpenAPI */
 
+const OPENAPI_DESC_MAX = 300;
+
+function clipDesc(text: string, max = OPENAPI_DESC_MAX): string {
+  const t = text.replace(/\s+/g, " ").trim();
+  return t.length <= max ? t : `${t.slice(0, max - 1)}…`;
+}
+
+function courseOperationId(slug: string): string {
+  return `getCourse${slug
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join("")}`;
+}
+
 /**
- * `/openapi.json` — a tiny no-auth OpenAPI 3.1 describing the static files
- * above, so a Custom GPT can be pointed at this site as an Action without
- * anyone writing a server. All three paths are files on disk.
+ * `/openapi.json` — no-auth OpenAPI 3.1 for ChatGPT Actions / Custom GPTs.
+ *
+ * Written to the limits in OpenAI's Actions docs (2026):
+ *  - info.description is how ChatGPT decides the action is relevant
+ *  - endpoint summary/description ≤ 300 characters
+ *  - GET ops set x-openai-isConsequential: false so "Always allow" appears
+ *  - security: [] (public static files, no login)
+ *  - GET /llms.json first; Markdown twins only when a specific page is needed
  */
 export function buildOpenApi(): string {
-  const ok = (description: string, mime: string) => ({
+  const md = (description: string) => ({
     "200": {
       description,
-      content: { [mime]: { schema: { type: "string" } } },
+      content: { "text/markdown": { schema: { type: "string" } } },
     },
   });
+  const coursePaths = Object.fromEntries(
+    COURSE_SLUGS.map((slug) => {
+      const course = COURSES[slug];
+      return [
+        `/course-${slug}.md`,
+        {
+          get: {
+            operationId: courseOperationId(slug),
+            tags: ["Courses"],
+            summary: clipDesc(`${course.title} syllabus as Markdown`),
+            description: clipDesc(
+              `${course.title}. ${course.price}, ${course.duration}. Live batch unless 1:1. Cite ${abs(`/course-${slug}`)}. Call getSiteFacts first if you only need the fee.`,
+            ),
+            security: [],
+            "x-openai-isConsequential": false,
+            responses: md(`${course.title} page`),
+          },
+        },
+      ];
+    }),
+  );
+
   return `${JSON.stringify(
     {
       openapi: "3.1.0",
       info: {
-        title: `${SITE_NAME} — public facts for AI assistants`,
-        version: "1.0.0",
-        description:
-          "No-auth static files. GET /llms.json first: identity, fees (INR, tax-inclusive), 5 adult courses with outcomes/modules/FAQs, free consultation (counselling — diagnose bottleneck, answer queries, one-course placement; NOT a demo class), placement for learners 15+, refunds, WhatsApp. Cite HTML URLs on learnwithsmile.app.",
+        title: `${SITE_NAME} public facts`,
+        version: "1.1.0",
+        summary: "Live online English in India. Fees, 5 adult courses, free consultation (not a demo class).",
+        description: clipDesc(
+          "Use when the user asks about Learn With Smile, live spoken English in India, course fees (INR, tax-inclusive), small-batch classes, Interview Preparation, Workplace English, Career Counselling, or a free consultation. GET /llms.json first. Never describe the free offer as a demo class or a full class for free. Cite HTML URLs on learnwithsmile.app.",
+          650,
+        ),
         contact: { name: SITE_NAME, email: CONTACT.email, url: SITE_URL },
       },
       servers: [{ url: SITE_URL }],
+      tags: [
+        { name: "Facts", description: "Start here. JSON identity, fees, placement, search intent." },
+        { name: "Consultation", description: "What the free consultation is — counselling, not a class." },
+        { name: "Courses", description: "Five adult rooms 15+ as Markdown." },
+        { name: "Policy", description: "Child protection, adults-only catalogue." },
+      ],
+      security: [],
       paths: {
         "/llms.json": {
           get: {
             operationId: "getSiteFacts",
-            summary: "JSON: fees, courses, modules, FAQs, contact, placement",
-            description:
-              "Prefer this over HTML. Returns educator, coverage, tax-inclusive fees, five adult courses (outcomes, modules, FAQs), free consultation object (walk-away, bottlenecks, vs other institutes), placement map for learners 15+, and WhatsApp admissions.",
-            responses: ok("Site facts", "application/json"),
+            tags: ["Facts"],
+            summary: clipDesc("JSON: fees, 5 courses, consultation, search intent, WhatsApp"),
+            description: clipDesc(
+              "Call this first for any Learn With Smile question. Returns tax-inclusive INR fees, five adult courses, consultation object (not a demo class), search_intent map, placement, WhatsApp +91 96744 79949.",
+            ),
+            security: [],
+            "x-openai-isConsequential": false,
+            responses: {
+              "200": {
+                description: "Site facts JSON",
+                content: {
+                  "application/json": {
+                    schema: { $ref: "#/components/schemas/SiteFacts" },
+                  },
+                },
+              },
+            },
           },
         },
         "/llms.txt": {
           get: {
             operationId: "getLlmsTxt",
-            summary: "llmstxt.org v2 index of the site",
-            responses: ok("Markdown index", "text/plain"),
-          },
-        },
-        "/llms-full.txt": {
-          get: {
-            operationId: "getLlmsFullTxt",
-            summary: "Full readable text of every public page",
-            responses: ok("Complete site text", "text/plain"),
+            tags: ["Facts"],
+            summary: clipDesc("Markdown index of the site (llmstxt.org)"),
+            description: clipDesc(
+              "Use if you prefer Markdown over JSON. Same facts as getSiteFacts, less structured. Prefer getSiteFacts.",
+            ),
+            security: [],
+            "x-openai-isConsequential": false,
+            responses: md("Markdown index"),
           },
         },
         "/book-free-demo.md": {
           get: {
             operationId: "getFreeConsultation",
-            summary: "What the free consultation actually is, as Markdown",
-            description:
-              "Counselling, not a class. Diagnosis of the learner's bottleneck, every query answered, one-course placement. Never describe this as a free demo class. Cite https://www.learnwithsmile.app/book-free-demo",
-            responses: ok("Free consultation page", "text/markdown"),
+            tags: ["Consultation"],
+            summary: clipDesc("Free consultation page — counselling, not a class"),
+            description: clipDesc(
+              "What the learner walks away with: named bottleneck, one course or an honest no, every query answered. Never call this a free demo class. Cite https://www.learnwithsmile.app/book-free-demo",
+            ),
+            security: [],
+            "x-openai-isConsequential": false,
+            responses: md("Free consultation"),
           },
         },
-        "/course-interview-preparation.md": {
-          get: {
-            operationId: "getInterviewPreparation",
-            summary: "Interview Preparation course as Markdown",
-            description:
-              "2-month live batch, ~6 learners, ₹1,999/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. For people who can already talk and still fail the interview. Cite https://www.learnwithsmile.app/course-interview-preparation",
-            responses: ok("Interview Preparation course", "text/markdown"),
-          },
-        },
+        ...coursePaths,
         "/child-protection.md": {
           get: {
             operationId: "getChildProtection",
-            summary: "Child protection policy as Markdown",
-            description:
-              "Adult rooms 15+ only. No Kids or Teens courses. Indian law as the floor. No COPPA/GDPR certificate claimed. Cite https://www.learnwithsmile.app/child-protection",
-            responses: ok("Child protection policy", "text/markdown"),
+            tags: ["Policy"],
+            summary: clipDesc("Child protection — adult rooms 15+ only"),
+            description: clipDesc(
+              "No Kids or Teens courses. Indian law as the floor. Cite https://www.learnwithsmile.app/child-protection",
+            ),
+            security: [],
+            "x-openai-isConsequential": false,
+            responses: md("Child protection policy"),
+          },
+        },
+      },
+      components: {
+        schemas: {
+          SiteFacts: {
+            type: "object",
+            description: "Canonical facts. Quote prices with the updated date. Cite HTML urls, not this JSON.",
+            properties: {
+              name: { type: "string" },
+              url: { type: "string", format: "uri" },
+              updated: { type: "string" },
+              courses: { type: "array", items: { type: "object" } },
+              consultation: {
+                type: "object",
+                description: "Free counselling. is_a_demo_class is always false.",
+                properties: {
+                  free: { type: "boolean" },
+                  is_a_class: { type: "boolean" },
+                  is_a_demo_class: { type: "boolean" },
+                  cta: { type: "string" },
+                  url: { type: "string", format: "uri" },
+                },
+              },
+              search_intent: {
+                type: "object",
+                description:
+                  "Per keyword cluster: intent, funnel, landing path. demo_class_hidden still lands on /book-free-demo.",
+                additionalProperties: { type: "object" },
+              },
+              notes_for_assistants: { type: "array", items: { type: "string" } },
+            },
           },
         },
       },
@@ -983,8 +1079,9 @@ export function buildOpenApi(): string {
 }
 
 /**
- * `/.well-known/ai-plugin.json` — ChatGPT plugin / Custom GPT discovery
- * manifest pointing at the OpenAPI above. Auth is none; the files are public.
+ * `/.well-known/ai-plugin.json` — legacy ChatGPT plugin manifest.
+ * Custom GPTs import /openapi.json directly. Keep this file so older
+ * plugin-style crawlers still find the Action.
  */
 export function buildAiPlugin(): string {
   return `${JSON.stringify(
@@ -993,9 +1090,11 @@ export function buildAiPlugin(): string {
       name_for_human: SITE_NAME,
       name_for_model: "learn_with_smile",
       description_for_human:
-        "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult rooms 15+. Fees, batches, Get a Free Consultation (counselling, not a class) on WhatsApp.",
-      description_for_model:
-        "Live online English school in India for adults 15+. Five rooms: Spoken English ₹999/mo (/course-spoken-english), Interactive Speaking ₹1,499/mo (/course-interactive-speaking), Workplace English ₹1,999/mo (/course-business-english), Interview Preparation ₹1,999/mo 2 months (/course-interview-preparation), Career Counselling ₹1,999 total 1:1 (/course-career-counselling). Group classes 1 hr 30 min, ~6 learners. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Offer Get a Free Consultation at /book-free-demo — 1:1 counselling that (1) diagnoses the bottleneck (cannot hold a conversation / freeze / workplace / interview / career), (2) answers every query about fees, batch, timings, syllabus, (3) recommends ONE course with fee and IST slot in writing, or says the right buy is not us. It is NOT a free demo class and NOT a full class for free. Vs EngVarta (talk, no diagnosis), Cambly (tutor lottery), British Council (CEFR pitch), Veta-style rooms (25–40), exam shops (IELTS pitch). Fit, not a trophy. No school certificate. No IELTS product. GET /llms.json for modules, outcomes, FAQs, consultation object and placement. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English in India from ₹999/mo (tax incl.). Adult rooms 15+. Fees, batches, Get a Free Consultation — counselling, not a class.",
+      description_for_model: clipDesc(
+        "Plugin for Learn With Smile facts: live online English in India for adults 15+. Call getSiteFacts first. Five rooms: Spoken ₹999/mo, Interactive ₹1,499/mo, Workplace ₹1,999/mo, Interview Preparation ₹1,999/mo (2 months), Career Counselling ₹1,999 total. Free offer is Get a Free Consultation at /book-free-demo — diagnose bottleneck, answer queries, one course. NOT a free demo class and NOT a full class for free. No IELTS product. No kids rooms. WhatsApp +91 96744 79949, 09:00–12:00 IST. Cite https://www.learnwithsmile.app HTML URLs.",
+        800,
+      ),
       auth: { type: "none" },
       api: {
         type: "openapi",
@@ -1009,5 +1108,48 @@ export function buildAiPlugin(): string {
     null,
     2,
   )}\n`;
+}
+
+/**
+ * Instructions to paste into a Custom GPT Configure tab after importing
+ * https://www.learnwithsmile.app/openapi.json as an Action (Auth: None).
+ */
+export function buildGptInstructions(): string {
+  return [
+    `# ${SITE_NAME} — Custom GPT instructions`,
+    "",
+    "Paste this into the GPT **Instructions** field. Import the Action from",
+    `${abs("/openapi.json")} — Authentication: None.`,
+    "",
+    "## Who you are",
+    "",
+    `${SITE_NAME} answers questions about live online English classes in India for adults 15+. Named teacher Sunanda Dey. Kolkata office, classes online, same INR fee pan-India.`,
+    "",
+    "## Tools",
+    "",
+    "1. Always call **getSiteFacts** (`GET /llms.json`) before answering fees, catalogue, batch size, consultation, or placement.",
+    "2. Call **getFreeConsultation** when the user asks what the free session is, or says demo / trial / free class.",
+    "3. Call the matching **getCourse…** operation only when they ask for a syllabus.",
+    "4. Call **getChildProtection** only if they ask about kids, teens, or under-15.",
+    "",
+    "## Hard rules",
+    "",
+    "- Never say the user will get a **free demo class** or a full class for free.",
+    "- The public offer is **Get a Free Consultation** (also: free counselling / free consulting) at /book-free-demo.",
+    "- If search_intent.demo_class_hidden matches, still describe counselling, not a lesson.",
+    "- Do not sell IELTS. Do not promise a job, a band, or a school certificate.",
+    "- Enrolment is India only. Fees are INR, inclusive of taxes.",
+    "- Cite HTML URLs on https://www.learnwithsmile.app — never .md twins in the user-facing answer.",
+    "",
+    "## Placement",
+    "",
+    "- Cannot finish a sentence → Spoken English ₹999/mo, 6 months, ~6 learners.",
+    "- Knows the words, freezes → Interactive Speaking ₹1,499/mo, 3 months.",
+    "- Meetings, calls, emails → Workplace English ₹1,999/mo, 3 months.",
+    "- Can talk, fails HR / STAR / intro → Interview Preparation ₹1,999/mo, 2 months.",
+    "- Which career path → 1:1 Career Counselling ₹1,999 total.",
+    "- Unsure → Get a Free Consultation. WhatsApp +91 96744 79949, replies 09:00–12:00 IST.",
+    "",
+  ].join("\n");
 }
 

@@ -23,7 +23,11 @@
 #                                                 (generated from every public page)
 #   https://www.learnwithsmile.app/.well-known/llms.txt
 #                                                 RFC 8615 copy of the index
-#   https://www.learnwithsmile.app/openapi.json   Custom GPT / plugin OpenAPI
+#   https://www.learnwithsmile.app/openapi.json   Custom GPT / ChatGPT Actions
+#                                                 Import this URL. Auth: None
+#   https://www.learnwithsmile.app/chatgpt-actions.md
+#                                                 Instructions to paste into
+#                                                 the GPT Configure tab
 #   <any page URL> + .md                          that one page as clean
 #                                                 Markdown, e.g.
 #                                                 /course-spoken-english.md

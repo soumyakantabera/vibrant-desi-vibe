@@ -31,6 +31,7 @@ export {
   buildLlmsJson,
   buildOpenApi,
   buildAiPlugin,
+  buildGptInstructions,
   htmlToMarkdown,
   metaFor,
   pageMarkdown,

@@ -38,6 +38,7 @@ const {
   buildLlmsJson,
   buildOpenApi,
   buildAiPlugin,
+  buildGptInstructions,
   htmlToMarkdown,
   markdownPathFor,
   metaFor,
@@ -338,10 +339,12 @@ writeFile("llms-full.txt", buildLlmsFullTxt(docs, today));
 writeFile("llms.json", llmsJson);
 writeFile("openapi.json", openapi);
 writeFile("ai-plugin.json", buildAiPlugin());
+writeFile("chatgpt-actions.md", buildGptInstructions());
 writeFile(".well-known/llms.txt", llmsTxt);
 writeFile(".well-known/llms.json", llmsJson);
 writeFile(".well-known/openapi.json", openapi);
 writeFile(".well-known/ai-plugin.json", buildAiPlugin());
+writeFile(".well-known/chatgpt-actions.md", buildGptInstructions());
 
 /* -------------------------------------------------------------------- log */
 
