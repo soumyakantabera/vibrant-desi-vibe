@@ -75,8 +75,8 @@ export function WaStrip({ message }: { message: string }) {
     >
       <p className="font-display font-extrabold text-ink">Want a free consultation?</p>
       <p className="mt-1 text-sm text-ink/80 leading-relaxed">
-        Get Free Consultation. We discuss courses, curriculum and your
-        requirements one by one — not a full class. One WhatsApp message. No
+        Get Free Consultation. We name your bottleneck, answer your questions, and
+        place you in one course — not a full class. One WhatsApp message. No
         payment to book.
       </p>
       <div className="mt-4 flex flex-wrap gap-2">

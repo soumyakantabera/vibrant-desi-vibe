@@ -99,7 +99,7 @@ export const SITE_GUIDES = FEATURED_GUIDES;
 export function GuidesStrip({
   eyebrow = "Guides",
   title = "Numbers in the open",
-  subtitle = "Fees, batches, how long it takes, which class you need — then join if the room fits.",
+  subtitle = "What the free consultation is, which class you need, fees, how long it takes — then join if the room fits.",
 }: {
   eyebrow?: string;
   title?: string;

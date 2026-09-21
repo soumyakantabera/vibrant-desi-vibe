@@ -131,9 +131,16 @@ export const body: ArticleBody = [
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our Kolkata address is an office, not a campus.",
     ],
   },
+
+  { t: "h2", text: "Their free session vs ours" },
+  {
+    t: "p",
+    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling — you pick a 15-minute call. Cambly is a tutor lottery. British Council is a counsellor pitching a CEFR module. A city classroom sits you in 25–40, or pitches. Exam shops pitch IELTS. [Our consultation](/book-free-demo) is 1:1 counselling: we name the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
+  },
+
   {
     t: "cta",
-    text: "Compare us in a class. Approximately 6 learners. From ₹999/mo, inclusive of taxes. 500+ learners, 7 years.",
+    text: "Compare us in a consultation, not a packed room. We name the bottleneck, print the cap (≈6), and put the fee in writing. From ₹999/mo, inclusive of taxes. 500+ learners, 7 years.",
     course: "/book-free-demo",
     label: "Get Free Consultation",
   },

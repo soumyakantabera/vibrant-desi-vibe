@@ -32,8 +32,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     image: IMG.spokenEnglish,
     alt: "Beginner adult practising spoken English in a small live online class",
     waMessage: "Hi, I am a beginner and I would like a free consultation for Spoken English to understand my requirements. Please share a slot.",
-    ctaTitle: "Sit in a batch of around six",
-    ctaBody: "We will tell you if you are a beginner — including when Interactive would be the wrong buy.",
+    ctaTitle: "Get a free consultation first",
+    ctaBody: "We will tell you if you are a beginner — including when Interactive would be the wrong buy. Counselling, not a class.",
     faqTitle: "Beginner Spoken English — questions",
     body: [
       {
@@ -270,8 +270,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     image: IMG.studentLaptop,
     alt: "Learner comparing an online English class with a local coaching centre",
     waMessage: "Hi, I am comparing online and offline spoken English classes. Please help me decide.",
-    ctaTitle: "See the online batch yourself",
-    ctaBody: "Count your own minutes in a consultation. If a neighbourhood room fits you better, we will say so.",
+    ctaTitle: "Count minutes in their room. Diagnose yours with us.",
+    ctaBody: "Our consultation is counselling, not a class. If a neighbourhood room fits you better, we will say so.",
     faqTitle: "Online vs offline — questions",
     body: [
       {

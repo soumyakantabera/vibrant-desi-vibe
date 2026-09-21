@@ -6,7 +6,7 @@ import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/which-class";
 
 const PATH = "/spoken-business-or-interactive-english";
-const UPDATED = "2026-09-02";
+const UPDATED = "2026-09-21";
 
 export const Route = createFileRoute("/spoken-business-or-interactive-english")({
   component: Page,

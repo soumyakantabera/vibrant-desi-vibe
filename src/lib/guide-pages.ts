@@ -8,23 +8,30 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/guides",
     title: "English Class Guides | Fees, Fit, Cities",
     description:
-      "Fees, which class, beginners, IT, freshers, exam-fee context and city pages — honest live-English guides from ₹999/mo, inclusive of taxes. Kolkata & pan-India.",
+      "Which class, what the free consultation is, fees, beginners, IT, cities — honest live-English guides from ₹999/mo, inclusive of taxes. Kolkata & pan-India.",
     shortTitle: "Guides",
     keywords: [
       "spoken english class guides india",
       "english class fees india",
       "which english course should i take",
+      "free english consultation vs demo class",
+      "what happens in free english consultation",
+      "help choose spoken english course india",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
     dateModified: UPDATED,
     summary:
-      "Hub for every long-form English class guide: fees, fit, time, audience, cities. From ₹999/month inclusive of taxes, batches of around 6.",
+      "Hub for every long-form English class guide: fees, fit, time, audience, cities, and what the free consultation actually delivers. From ₹999/month inclusive of taxes, batches of around 6.",
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,499/month). If meetings and calls are the gap, take Workplace English (₹1,999/month). Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 09:00–12:00 IST.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,499/month). If meetings and calls are the gap, take Workplace English (₹1,999/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 09:00–12:00 IST.",
+      },
+      {
+        q: "What do I get in the free consultation?",
+        a: "A named diagnosis of your problem, one course recommendation with fee and IST slot in writing, and answers to every question you bring. It is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/book-free-demo",
       },
     ],
   },

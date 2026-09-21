@@ -14,7 +14,7 @@ export const body: ArticleBody = [
       "**Speaking minutes.** In a 60-minute class, your mic ≈ (40 minutes) ÷ (headcount). See [the math](/blog/speaking-minutes-in-a-60-minute-class).",
       "**GST and lock-in.** Advertised ₹2,000 + 18% + materials is not ₹2,000. Monthly UPI beats a 12-month cheque.",
       "**Named teacher.** Apps rotate. Franchise rooms rotate. A teacher who remembers your article errors is a different product.",
-      "**Ask to sit in a class.** If they only pitch, leave.",
+      "**What the free session actually is.** A class you speak in, a counsellor pitch, or 1:1 counselling that names your bottleneck. If they only pitch, leave. Ours is counselling — [what you get](/book-free-demo).",
       "**Google reviews as patterns, not stars.** Read the 3-star comments. They name batch size, fees, and “I never spoke”. 5-star walls with no specifics are ads.",
       "**Certificate vs speaking.** Visa/university → British Council or similar. Job interview in India → they will judge you in 60 seconds, not your PDF. We do not issue a certificate; we say so.",
     ],
@@ -49,17 +49,42 @@ export const body: ArticleBody = [
     ],
   },
 
-  { t: "h2", text: "One week, three trials" },
+  { t: "h2", text: "What our consultation actually delivers" },
   {
     t: "p",
-    text: "Book us, one 1:1 app, and one classroom or brand group. Count minutes. Compare GST. Then pay. Time-to-fluency is in [how long spoken English takes](/how-long-to-learn-spoken-english). Fit-by-institute is in [the comparison](/english-institute-comparison-india).",
+    text: "Check 5 is where institutes cheat. A free session in India is usually 20 minutes of pitch, or a seat in a 30-person room you will never speak in again. EngVarta skips the step — you just talk. British Council uses it to place you on a CEFR module. Exam shops use it to sell IELTS.",
+  },
+  {
+    t: "p",
+    text: "Ours is 1:1 counselling on WhatsApp. You leave with four things in writing: the bottleneck named, one course (or “not us”), fee / duration / IST slot, and answers to every question you brought. You will not get 8–10 minutes on a mic. That is the paid batch of around 6. Full walk-through: [Get Free Consultation](/book-free-demo).",
+  },
+  {
+    t: "table",
+    head: ["If their free session is…", "You are usually looking at"],
+    rows: [
+      ["15 minutes of talk, no diagnosis", "EngVarta-style 1:1. Fine after you can already speak."],
+      ["Native video, tutor lottery", "Cambly. Accent, not a 6-month map."],
+      ["Counsellor + CEFR levels, ₹8k–₹16k", "British Council English Online — buy for the badge"],
+      ["Walk-in, 25–40 in the room", "Veta-style / city classroom"],
+      ["Visa stack, IELTS add-on", "Exam shop. Fine if the form asked."],
+      [
+        "1:1 counselling, bottleneck named, cap printed ≈6, ₹999/mo inclusive of taxes",
+        "Us. 7 years, 500+ learners, 11 states.",
+      ],
+    ],
+  },
+
+  { t: "h2", text: "One week, three options — count the right unit" },
+  {
+    t: "p",
+    text: "Book us, one 1:1 app, and one classroom or brand group. With the app and the classroom, count **minutes you spoke**. With us, do not expect a class — count whether we named your bottleneck, printed the cap, and put the fee in writing. Then pay. Time-to-fluency is in [how long spoken English takes](/how-long-to-learn-spoken-english). Fit-by-institute is in [the comparison](/english-institute-comparison-india).",
   },
   { t: "h2", text: "Questions we get on WhatsApp" },
   {
     t: "ul",
     items: [
       "**“Is ₹999 too cheap to be real?”** Inclusive of taxes, no registration, batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
-      "**“Can I start next week?”** Usually yes. Message for the next IST slot. The consultation is free.",
+      "**“Can I start next week?”** Usually yes. Message for the next IST slot. Get a free consultation first — we diagnose the room before we seat you.",
       "**“Do you issue a certificate?”** No. Indian interviews hear you. Visas read an exam-board score — sit IELTS with the test board; we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
     ],
   },
@@ -70,7 +95,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Make us trial one of three. Approx. 6 learners. From ₹999/mo.",
+    text: "Get a free consultation. We name the bottleneck, answer your queries, and place you in one room — or tell you to stay free. Approx. 6 learners. From ₹999/mo.",
     course: "/book-free-demo",
     label: "Get Free Consultation",
   },

@@ -25,6 +25,7 @@
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
+import { CONSULTATION_FAQS, CONSULTATION_HOWTO } from "@/lib/consultation";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
@@ -164,6 +165,8 @@ export type PageSeo = {
   breadcrumb?: { name: string; path: string }[];
   /** ISO date `YYYY-MM-DD` when the page copy was last revised. Used in JSON-LD and the sitemap. */
   dateModified?: string;
+  /** HowTo JSON-LD — visible steps on the page must match. */
+  howTo?: { name: string; description: string; steps: string[]; totalTime?: string };
 };
 
 /* --------------------------------------------------------------------------
@@ -212,6 +215,19 @@ export const CONSULTATION_KEYWORDS = [
   "get free counselling",
   "free counselling to understand requirements",
   "english class free counselling india",
+  "free english consultation india",
+  "spoken english counselling whatsapp",
+  "what happens in free english consultation",
+  "what do you get in free english consultation",
+  "english course counselling session india",
+  "which english course consultation",
+  "help choose spoken english course india",
+  "diagnose spoken english problem",
+  "english class placement counselling",
+  "best spoken english consultation india",
+  "spoken english counselling vs demo class",
+  "free counselling spoken english kolkata",
+  "english course recommendation after counselling",
   "demo class",
   "free demo class",
   "free demo class online",
@@ -293,7 +309,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I get a free consultation before I enrol?",
-        a: "Yes. Tap Get Free Consultation — it opens WhatsApp. We discuss our courses and curriculum and understand your requirements one by one. It is not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
+        a: "Yes. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -522,7 +538,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/book-free-demo",
     title: "Get Free Consultation | Free Demo Class | Counselling",
     description:
-      "Get a free consultation to understand your requirements. Free counselling on courses and curriculum — not a full class. WhatsApp. Free demo class.",
+      "Free consultation: we diagnose your bottleneck, answer every query, recommend one course. Not a class. Free demo class seekers — this is counselling.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -531,31 +547,23 @@ export const PAGES: Record<string, PageSeo> = {
       "free consultation spoken english whatsapp",
       "book free demo class online india",
       "free demo class spoken english whatsapp",
+      "best free english consultation vs demo class",
+      "engvarta vs learn with smile consultation",
+      "british council counsellor vs free consultation",
     ],
     ogImage: "/og/default.jpg",
     priority: 0.9,
-    changefreq: "monthly",
+    changefreq: "weekly",
     dateModified: "2026-09-21",
     summary:
-      "Get Free Consultation: one WhatsApp message to +91 96744 79949. We discuss courses, curriculum and your requirements one by one. Not a full class. We reply 09:00–12:00 IST.",
-    faqs: [
-      {
-        q: "How do I get a free consultation at Learn With Smile?",
-        a: "Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message +91 96744 79949. We reply 09:00–12:00 IST.",
-      },
-      {
-        q: "What happens in the free consultation?",
-        a: "It is not a full class. We discuss our courses and curriculum, and understand your requirements one by one. Then we recommend the right batch. Fees, timings and syllabus follow on WhatsApp.",
-      },
-      {
-        q: "Is the free consultation a full English class?",
-        a: "No. People sometimes expect a full class for free. The consultation is one-to-one counselling: courses, curriculum, and your goal. You enrol only if the format fits.",
-      },
-      {
-        q: "Will you call me after I send my WhatsApp number?",
-        a: "Not unless you ask. WhatsApp is the default admissions channel because it keeps the course, fee and batch details in one written conversation. Phone is available only as a fallback. The team replies on WhatsApp during 09:00–12:00 IST.",
-      },
-    ],
+      "Get Free Consultation: WhatsApp counselling, not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
+    faqs: CONSULTATION_FAQS,
+    howTo: {
+      name: CONSULTATION_HOWTO.name,
+      description: CONSULTATION_HOWTO.description,
+      totalTime: CONSULTATION_HOWTO.totalTime,
+      steps: [...CONSULTATION_HOWTO.steps],
+    },
   },
 
   "/privacy": {
@@ -911,7 +919,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-institute-comparison-india",
     title: "Compare English Classes India | ₹999 vs EngVarta & BC",
     description:
-      "From ₹999/mo vs EngVarta 1:1, British Council modules and Veta rooms. Named teacher, ~6 learners, 500+, 7 years. 2026 fees and speaking minutes.",
+      "From ₹999/mo vs EngVarta 1:1, British Council modules and Veta rooms. Named teacher, ~6 learners, 500+, 7 years. Free consultation diagnoses the gap.",
     shortTitle: "English Institutes in India, Compared",
     keywords: [
       "best spoken english institute in india 2026",
@@ -919,6 +927,8 @@ export const PAGES: Record<string, PageSeo> = {
       "veta spoken english fees",
       "eec spoken english kolkata",
       "best english class for working professionals india",
+      "free english consultation vs demo class",
+      "learn with smile vs engvarta vs british council",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
@@ -953,7 +963,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/spoken-business-or-interactive-english",
     title: "Which English Class | Spoken vs Business",
     description:
-      "Conversation → Spoken. Freeze → Interactive. Meetings → Business. Exam only if a form asks. Live from ₹999/mo, approx. 6 learners. Kolkata & pan-India. Inclusive of taxes.",
+      "Conversation → Spoken. Freeze → Interactive. Meetings → Business. We diagnose the gap in a free consultation. From ₹999/mo, ≈6 learners.",
     shortTitle: "Which English class",
     keywords: [
       "spoken vs business vs interactive english",
@@ -961,16 +971,20 @@ export const PAGES: Record<string, PageSeo> = {
       "spoken english or business english course",
       "interactive speaking vs spoken english",
       "english course picker india",
+      "which english course consultation",
+      "help choose spoken english course india",
+      "spoken english counselling vs demo class",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.85,
     changefreq: "monthly",
     summary:
-      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you know the words and freeze (3 months, ₹1,499/mo). Workplace English if meetings and calls are the gap (3 months, ₹1,999/mo). Exam course only if a form asks.",
+      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you know the words and freeze (3 months, ₹1,499/mo). Workplace English if meetings and calls are the gap (3 months, ₹1,999/mo). Free consultation diagnoses the bottleneck live. Exam course only if a form asks.",
+    dateModified: "2026-09-21",
     faqs: [
       {
         q: "Which English class do I need — spoken, business or interactive?",
-        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam.",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
       },
       {
         q: "Should I take IELTS first to get a better job in India?",
@@ -979,6 +993,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Can I take Spoken English and Workplace English together?",
         a: "Usually no — they train different bottlenecks. Finish the room you need first. We place you in one class, not three. Message anytime; we reply 09:00–12:00 IST.",
+      },
+      {
+        q: "Can you choose the course for me in the free consultation?",
+        a: "Yes. That is the session. You describe the problem — shop, freeze, standup, HR, career, visa form. We name the bottleneck and recommend one course with fee, duration and IST slot in writing, or we tell you the right buy is not us. It is counselling, not a class. Apps like EngVarta skip this step; exam shops use it to sell IELTS.",
       },
     ],
   },
@@ -1403,19 +1421,52 @@ export function organizationLd() {
       "@type": "OfferCatalog",
       name: "Live online English courses in India",
       description: "Enrolment and fees are for learners in India only. Prices in INR, inclusive of taxes.",
-      itemListElement: Object.keys(COURSE_SEO).map((slug) => ({
-        "@type": "Offer",
-        url: abs(`/course-${slug}`),
-        itemOffered: {
-          "@type": "Course",
-          name: COURSE_SEO[slug].shortTitle,
-          url: abs(`/course-${slug}`),
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Get Free Consultation",
+          url: abs("/book-free-demo"),
+          price: 0,
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock",
+          category: "Consultation",
+          description:
+            "Free one-to-one counselling on WhatsApp. We diagnose your English bottleneck, answer every query, and recommend one course. Not a class.",
+          itemOffered: {
+            "@type": "Service",
+            name: "Free English class consultation",
+            url: abs("/book-free-demo"),
+            serviceType: "Educational counselling",
+          },
         },
-        priceCurrency: "INR",
-        valueAddedTaxIncluded: true,
-        eligibleRegion: india,
-        areaServed: india,
-      })),
+        ...Object.keys(COURSE_SEO).map((slug) => ({
+          "@type": "Offer",
+          url: abs(`/course-${slug}`),
+          itemOffered: {
+            "@type": "Course",
+            name: COURSE_SEO[slug].shortTitle,
+            url: abs(`/course-${slug}`),
+          },
+          priceCurrency: "INR",
+          valueAddedTaxIncluded: true,
+          eligibleRegion: india,
+          areaServed: india,
+        })),
+      ],
+    },
+    potentialAction: {
+      "@type": "CommunicateAction",
+      name: "Get Free Consultation",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: CONTACT.whatsapp,
+        actionPlatform: [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform",
+        ],
+      },
+      description:
+        "WhatsApp counselling: diagnose the bottleneck, answer queries, recommend one course. Not a class.",
     },
     sameAs: [...SAME_AS],
     hasMerchantReturnPolicy: {
@@ -1438,6 +1489,11 @@ export function webSiteLd() {
     description:
       "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India.",
     publisher: { "@id": `${SITE_URL}/#organization` },
+    potentialAction: {
+      "@type": "CommunicateAction",
+      name: "Get Free Consultation",
+      target: CONTACT.whatsapp,
+    },
     hasPart: [
       { "@type": "WebPage", "@id": `${abs("/privacy")}#webpage`, url: abs("/privacy"), name: "Privacy Policy" },
       { "@type": "WebPage", "@id": `${abs("/terms")}#webpage`, url: abs("/terms"), name: "Terms of Use" },
@@ -1696,6 +1752,7 @@ export function pageHead(path: string): HeadResult {
   }
 
   if (page.faqs?.length) jsonLd.push(faqLd(page.faqs));
+  if (page.howTo) jsonLd.push(howToLd(page.howTo));
 
   const head = buildHead({
     path: page.path,
@@ -1785,7 +1842,7 @@ export function blogPostHead(post: BlogPost): HeadResult {
     ogImage: "/og/blog.jpg",
     ogType: "article",
     jsonLd,
-    keywords: CONSULTATION_KEYWORDS,
+    keywords: post.keywords,
   });
 
   head.meta.push(

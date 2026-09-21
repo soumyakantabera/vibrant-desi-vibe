@@ -172,7 +172,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Consultation, enrolment and fees",
         paragraphs: [
-          "A the consultation is free and does not require payment. Messaging us does not create an obligation to enrol.",
+          "The consultation is free and does not require payment. Messaging us does not create an obligation to enrol.",
           "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. There is no separate registration fee or material fee for the standard English batches described on this site.",
           "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart.",
         ],

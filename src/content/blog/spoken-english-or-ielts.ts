@@ -71,7 +71,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "The cost of getting this wrong" },
   {
     t: "p",
-    text: "IELTS first when you cannot hold a call: three months of cue cards, still silent in a shop, exam fee on top. Spoken English first when a university form asked for Band 7: six months of chat, Writing Task 2 still at 6.0. The picker above is cheaper than either detour. Fees: [IELTS coaching fees](/ielts-coaching-fees-india) and [class fees](/english-class-fees-india).",
+    text: "IELTS first when you cannot hold a call: three months of cue cards, still silent in a shop, exam fee on top. Spoken English first when a university form asked for Band 7: six months of chat, Writing Task 2 still at 6.0. The picker above is cheaper than either detour. If you cannot tell which row is you, [the free consultation](/book-free-demo) diagnoses it live — bottleneck named, one room, fee in writing. Not a class. Fees: [IELTS coaching fees](/ielts-coaching-fees-india) and [class fees](/english-class-fees-india).",
   },
   { t: "h2", text: "HR asked for IELTS for a job in India" },
   {
@@ -80,7 +80,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Not sure? Sit in a live batch of around 6. We will tell you if IELTS is the wrong buy.",
+    text: "Not sure? Get a free consultation. We will tell you if IELTS is the wrong buy — and which of Spoken, Interactive or Workplace is the actual gap.",
     course: "/book-free-demo",
     label: "Get Free Consultation",
   },

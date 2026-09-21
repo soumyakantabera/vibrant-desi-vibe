@@ -21,6 +21,14 @@ export const GUIDE_GROUPS: { id: GuideGroup; title: string; blurb: string }[] = 
 
 export const GUIDE_CARDS: GuideCard[] = [
   {
+    to: "/book-free-demo",
+    title: "What the free consultation is",
+    sub: "We diagnose your bottleneck, answer every query, and place you in one course. Not a class.",
+    icon: "spark",
+    color: "brand",
+    group: "choose",
+  },
+  {
     to: "/spoken-business-or-interactive-english",
     title: "Which class you need",
     sub: "Spoken, Interactive or Business. Exam course only if a form asks.",
@@ -296,6 +304,7 @@ export const GUIDE_CARDS: GuideCard[] = [
 
 /** Homepage strip — the converting nine, not the whole catalogue. */
 export const FEATURED_GUIDE_PATHS = [
+  "/book-free-demo",
   "/spoken-business-or-interactive-english",
   "/english-class-fees-india",
   "/how-long-to-learn-spoken-english",
@@ -303,8 +312,7 @@ export const FEATURED_GUIDE_PATHS = [
   "/interactive-english-class-hesitation",
   "/english-for-working-professionals-india",
   "/best-online-spoken-english-classes-india",
-  "/ielts-coaching-fees-india",
-  "/spoken-english-classes-kolkata",
+  "/english-institute-comparison-india",
 ] as const;
 
 export const FEATURED_GUIDES = FEATURED_GUIDE_PATHS.map(
@@ -313,11 +321,11 @@ export const FEATURED_GUIDES = FEATURED_GUIDE_PATHS.map(
 
 export const FOOTER_GUIDES = [
   { to: "/guides", label: "All English class guides" },
+  { to: "/book-free-demo", label: "What the free consultation is" },
   { to: "/spoken-business-or-interactive-english", label: "Which class you need" },
   { to: "/english-class-fees-india", label: "English class fees in India" },
   { to: "/how-long-to-learn-spoken-english", label: "How long spoken English takes" },
   { to: "/spoken-english-for-beginners-india", label: "Beginners" },
   { to: "/spoken-english-for-freshers-india", label: "Freshers" },
-  { to: "/english-for-it-professionals-india", label: "IT professionals" },
-  { to: "/ielts-coaching-fees-india", label: "IELTS coaching fees" },
+  { to: "/english-institute-comparison-india", label: "Compare institutes, 2026" },
 ];

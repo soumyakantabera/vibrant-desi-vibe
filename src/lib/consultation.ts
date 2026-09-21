@@ -1,0 +1,211 @@
+/**
+ * What the free consultation actually is — one source, used by the booking
+ * page, FAQs, JSON-LD, llms.txt / llms.json, and the OpenAPI for ChatGPT Actions.
+ *
+ * Visible copy never calls this a class. People who search "free demo class"
+ * still match via meta keywords; the page they land on tells them the truth.
+ */
+import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
+
+export const CONSULTATION_PATH = "/book-free-demo";
+
+export const CONSULTATION = {
+  cta: "Get Free Consultation",
+  free: true,
+  paymentToBook: false,
+  isAClass: false,
+  isADemoClass: false,
+  channel: "WhatsApp",
+  hours: "09:00–12:00 IST",
+  phoneDisplay: WHATSAPP_DISPLAY,
+  /** One line for heroes, JSON-LD and assistants. */
+  what: "One-to-one counselling on WhatsApp. We diagnose your English bottleneck, answer every question you bring, and recommend one course — or tell you to stay free. Not a class.",
+} as const;
+
+export const CONSULTATION_WALK_AWAY: {
+  icon: "compass" | "check" | "book" | "shield";
+  color: "brand" | "sunshine" | "coral" | "indigo";
+  title: string;
+  body: string;
+}[] = [
+  {
+    icon: "compass",
+    color: "brand",
+    title: "Your bottleneck, named",
+    body: "Cannot form a sentence, freeze on words you already have, workplace English, interview English, or a career choice. We say which one is actually in the way — in one sentence.",
+  },
+  {
+    icon: "check",
+    color: "sunshine",
+    title: "One course, not three",
+    body: "Spoken, Interactive, Workplace, or 1:1 Career Counselling — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
+  },
+  {
+    icon: "book",
+    color: "indigo",
+    title: "Every query, answered",
+    body: "Fees, GST, recordings, refunds, Hindi or Bengali support, certificate, IELTS, kids, timings. If we cannot answer it in the session, we say so and follow up in writing.",
+  },
+  {
+    icon: "shield",
+    color: "coral",
+    title: "Permission to walk away",
+    body: "No payment to book. No obligation to enrol. If a podcast and a speaking partner are enough, we will say that. The consultation is free either way.",
+  },
+];
+
+export const CONSULTATION_STEPS: { title: string; body: string }[] = [
+  {
+    title: "Message WhatsApp",
+    body: "Tap Get Free Consultation. WhatsApp opens with a message ready to send. Send it any time.",
+  },
+  {
+    title: "We reply 09:00–12:00 IST",
+    body: "We confirm a one-to-one counselling slot. Phone is a fallback only if you ask.",
+  },
+  {
+    title: "You describe the problem",
+    body: "Shop, freeze, standup, HR screen, career change, visa form — whatever you actually need English for. We ask, one by one.",
+  },
+  {
+    title: "We name the bottleneck and the room",
+    body: "One recommendation. Fee, duration and IST slot in writing. You decide. You do not sit a full class for free.",
+  },
+];
+
+export const CONSULTATION_BOTTLENECKS: {
+  ifThis: string;
+  weName: string;
+  weRecommend: string;
+  href: string;
+}[] = [
+  {
+    ifThis: "Cannot finish a sentence in a shop or on a phone call",
+    weName: "Spoken English is the gap",
+    weRecommend: "Spoken English — 6 months, ₹999/mo, ≈6 learners",
+    href: "/course-spoken-english",
+  },
+  {
+    ifThis: "You know the words. You freeze when you speak.",
+    weName: "Freeze is the gap, not grammar",
+    weRecommend: "Interactive Speaking — 3 months, ₹1,499/mo",
+    href: "/course-interactive-speaking",
+  },
+  {
+    ifThis: "Chat is fine. Meetings, calls or emails are not.",
+    weName: "Workplace English is the gap",
+    weRecommend: "Workplace English — 3 months, ₹1,999/mo",
+    href: "/course-business-english",
+  },
+  {
+    ifThis: "Interviews fail on the 60-second intro, not the CV",
+    weName: "Interview English, inside an existing room",
+    weRecommend: "Spoken or Interactive — not a separate product",
+    href: "/spoken-business-or-interactive-english",
+  },
+  {
+    ifThis: "The question is which career, not which tense",
+    weName: "Career choice is the gap",
+    weRecommend: "1:1 Career Counselling — ₹1,999 total, 3 × 60 min",
+    href: "/course-career-counselling",
+  },
+  {
+    ifThis: "A visa, university or HR form asks for a band",
+    weName: "That is an exam paper, not our room",
+    weRecommend: "Sit IELTS with IDP or British Council. We do not sell it.",
+    href: "/ielts-coaching-fees-india",
+  },
+];
+
+export const CONSULTATION_QUERIES: string[] = [
+  "Which course do I actually need — Spoken, Interactive, Workplace, or counselling?",
+  "What is the fee, and is GST included?",
+  "How many learners are in the room, and how many minutes will I speak?",
+  "What IST batch can I join around a job or a home day?",
+  "Can the teacher explain in Hindi or Bengali when a concept stalls?",
+  "Do you issue a certificate? Do I need IELTS for a job in India?",
+  "Is this for children? (Adult rooms are 15+. We will say no if it is a child.)",
+  "What happens if I miss a class, and what is the refund rule after I pay?",
+];
+
+export const CONSULTATION_NOT_THIS: string[] = [
+  "Not a sample of the paid hour. You will not get 8–10 minutes on a mic. That is the paid room.",
+  "Not a placement test with a score. The diagnosis is a sentence: which bottleneck, which room.",
+  "Not a counsellor pitch that hides the fee. Fee, duration and slot come in writing on WhatsApp.",
+  "Not a promise of fluency, a job, a band, or a certificate.",
+];
+
+/**
+ * The specialty versus what other institutes sell as a "free session".
+ * Named, specific, and honest about when they win.
+ */
+export const CONSULTATION_VS_MARKET: {
+  them: string;
+  theirSession: string;
+  weDoInstead: string;
+}[] = [
+  {
+    them: "EngVarta-style 1:1 apps",
+    theirSession: "No counselling. You pick a 15-minute call and talk. Useful after you can already speak.",
+    weDoInstead: "We name the bottleneck first. Beginners who cannot form a sentence should not buy 1:1 minutes yet.",
+  },
+  {
+    them: "Cambly / native-speaker apps",
+    theirSession: "Tutor lottery. Accent and idiom. ₹8,000–₹15,000/month if daily. No 6-month map.",
+    weDoInstead: "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
+  },
+  {
+    them: "British Council English Online",
+    theirSession: "Counsellor pitch for a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
+    weDoInstead: "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
+  },
+  {
+    them: "Veta-style / city classrooms",
+    theirSession: "Walk-in. Sit in 25–40, or a pitch that still will not print the cap. Commute on top.",
+    weDoInstead: "Cap is approximately 6, printed. Consultation is 1:1 counselling, not a packed room you sample.",
+  },
+  {
+    them: "Exam shops (EEC-style visa stack)",
+    theirSession: "The free session sells IELTS/PTE. Spoken is an add-on. Fine if the visa is the goal.",
+    weDoInstead: "If no form asked for a band, we will tell you IELTS is the wrong buy. We do not sell that paper.",
+  },
+];
+
+export const CONSULTATION_FAQS: { q: string; a: string }[] = [
+  {
+    q: "What do I actually get in the free consultation?",
+    a: "Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck — cannot hold a conversation, freeze, workplace English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought — fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
+  },
+  {
+    q: "How is your free consultation different from other institutes’ free sessions?",
+    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling entirely — you just talk. Brand-name groups pitch a CEFR module. Exam shops pitch IELTS. Learn With Smile is 1:1 counselling: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
+  },
+  {
+    q: "How do I get a free consultation at Learn With Smile?",
+    a: `Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. We reply 09:00–12:00 IST. No payment, card or UPI to book.`,
+  },
+  {
+    q: "Will every question I have be answered in the consultation?",
+    a: "Every question about our courses, fees, batch, timings, syllabus, who the room is for, and whether you belong here. That is the point of the session. If a question needs a timetable we do not have in front of us, we say so and send it on WhatsApp after. We will not invent a batch that does not exist.",
+  },
+  {
+    q: "How do you decide which course I should take?",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,499/month). Chat is fine, meetings and calls are not → Workplace English (3 months, ₹1,999/month). Interview English is practised inside Spoken and Interactive. Career choice → 1:1 counselling (₹1,999 total). Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+  },
+  {
+    q: "Is the free consultation a full English class?",
+    a: "No. People sometimes expect a full class for free. The consultation is one-to-one counselling: we diagnose the bottleneck, discuss courses and curriculum, and understand your requirements one by one. You enrol only if the format fits. Speaking minutes happen in the paid batch.",
+  },
+  {
+    q: "Will you call me after I send my WhatsApp number?",
+    a: "Not unless you ask. WhatsApp is the default admissions channel because it keeps the diagnosis, course, fee and batch details in one written conversation. Phone is available only as a fallback. The team replies on WhatsApp during 09:00–12:00 IST.",
+  },
+];
+
+export const CONSULTATION_HOWTO = {
+  name: "How to get a free English class consultation",
+  description:
+    "Book a free one-to-one counselling session on WhatsApp. Learn With Smile diagnoses your English bottleneck, answers your questions, and recommends one course. It is not a class.",
+  totalTime: "PT20M",
+  steps: CONSULTATION_STEPS.map((s) => `${s.title}. ${s.body}`),
+} as const;

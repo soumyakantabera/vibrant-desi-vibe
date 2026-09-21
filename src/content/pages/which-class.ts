@@ -82,9 +82,55 @@ export const body: ArticleBody = [
     text: "Working nights or weekends? IST morning, evening and weekend batches — [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here — [that guide](/english-hindi-bengali-medium).",
   },
 
+  { t: "h2", text: "How the free consultation places you — vs a pitch" },
+  {
+    t: "p",
+    text: "This page is the picker you can run yourself. The [free consultation](/book-free-demo) is the same picker, live, on your actual goal — not a generic table, and not a counsellor pitch for a course you did not ask for.",
+  },
+  {
+    t: "ul",
+    items: [
+      "**You describe the problem.** Shop, freeze, standup, HR screen, career change, visa form.",
+      "**We name the bottleneck.** One sentence. Not three rooms.",
+      "**You leave with one recommendation** — Spoken, Interactive, Workplace, Career Counselling, sit IELTS with the test board, or stay free — plus fee, duration and IST slot in writing.",
+      "**Every question you brought gets an answer.** Fees, GST, recordings, certificate, kids, refunds. If we cannot answer it, we say so.",
+    ],
+  },
+  {
+    t: "table",
+    caption: "What other formats sell as a free session, and what we do instead.",
+    head: ["Their free session", "What you actually get", "Us"],
+    rows: [
+      [
+        "EngVarta / Cambly",
+        "You talk. No diagnosis. No syllabus.",
+        "We name the room first. Beginners should not buy 1:1 minutes yet.",
+      ],
+      [
+        "British Council counsellor",
+        "A CEFR module pitch, often ₹8,800–₹16,000",
+        "We say if you need that badge. Speaking for work in India is a smaller, cheaper room.",
+      ],
+      [
+        "Veta-style classroom",
+        "Walk-in, sit in 25–40, or a pitch that will not print the cap",
+        "Cap is ≈6, printed. Consultation is 1:1 counselling, not a packed room you sample.",
+      ],
+      [
+        "Exam shop (EEC-style)",
+        "The free session sells IELTS/PTE",
+        "If no form asked for a band, we tell you IELTS is the wrong buy.",
+      ],
+    ],
+  },
+  {
+    t: "p",
+    text: "It is counselling, not a class. You will not speak for 8 minutes on a mic. That is the paid room. Named 2026 fees: [compare institutes](/english-institute-comparison-india).",
+  },
+
   {
     t: "cta",
-    text: "Unsure? Unsure? Chat on WhatsApp. We’ll place you in Spoken, Interactive or Business — not all three.",
+    text: "Unsure? Get a free consultation. We diagnose the bottleneck and place you in Spoken, Interactive or Business — not all three.",
     course: "/book-free-demo",
     label: "Get Free Consultation",
   },

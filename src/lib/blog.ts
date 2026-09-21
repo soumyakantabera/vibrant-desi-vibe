@@ -44,6 +44,8 @@ export type BlogPost = {
   wordCount: number;
   /** In-body and footer links to the courses the article is actually about. */
   relatedCourses: string[];
+  /** Article-specific meta keywords. CONSULTATION_KEYWORDS are merged in `blogPostHead`. */
+  keywords?: string[];
   /** One-line snippet box under the H1. */
   shortAnswer?: string;
   /** Visible + FAQPage JSON-LD. */
@@ -58,28 +60,40 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How to Choose a Spoken English Class in India: 7 Checks",
     seoTitle: "Choose a Spoken English Class | 7 Checks",
     description:
-      "Seven checks for any Indian English class: batch cap, speaking minutes, GST, named teacher, live class you can evaluate, review patterns, certificate vs speaking. ₹999/mo.",
+      "Seven checks for any Indian English class: batch cap, speaking minutes, GST, named teacher, what the free session actually is, review patterns, certificate vs speaking. ₹999/mo.",
     excerpt:
-      "Cap, minutes, GST, named teacher, live class you can evaluate, review patterns, certificate. Run them on us too.",
+      "Cap, minutes, GST, named teacher, what their free session is, review patterns, certificate. Run them on us too.",
     tag: "Guides",
     img: "speaking",
     imgAlt: "Adult learner comparing online English class options on a laptop",
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
-    dateModified: "2026-09-11",
-    readingTime: 6,
-    wordCount: 579,
+    dateModified: "2026-09-21",
+    readingTime: 7,
+    wordCount: 780,
     relatedCourses: ["/course-spoken-english"],
+    keywords: [
+      "how to choose spoken english class india",
+      "best spoken english institute checks",
+      "spoken english batch size india",
+      "free english consultation vs demo class",
+      "engvarta vs british council vs small batch",
+      "which english course consultation",
+    ],
     shortAnswer:
-      "Ask seven things: batch cap, speaking minutes, GST, named teacher, a live class you can evaluate, review patterns, and whether you need a certificate or a voice. Run them on us too.",
+      "Ask seven things: batch cap, speaking minutes, GST, named teacher, what the free session actually is (class, pitch, or counselling), review patterns, and certificate vs speaking. Run them on us too.",
     faqs: [
       {
         q: "How do I choose a spoken English class in India?",
-        a: "Ignore star ratings until you have a batch number. Ask how many learners usually join, how many minutes you will speak in 60 minutes, whether GST is included, who the teacher is, and whether you can sit in a class before you pay. Certificate vs speaking is a different buy: visas need an exam score; Indian interviews hear you talk.",
+        a: "Ignore star ratings until you have a batch number. Ask how many learners usually join, how many minutes you will speak in 60 minutes, whether GST is included, who the teacher is, and what the free session actually is — a class, a counsellor pitch, or counselling that diagnoses your bottleneck. Certificate vs speaking is a different buy: visas need an exam score; Indian interviews hear you talk.",
       },
       {
         q: "What batch size is small enough to actually speak?",
         a: "Around 6 learners in a 60-minute class gives you roughly 8–10 minutes on the mic. A room of 25–40 often gives 1–2 minutes, sometimes once a week. If a provider will not print a cap, assume the room is crowded.",
+      },
+      {
+        q: "What should a free English consultation actually give me?",
+        a: "A named diagnosis of your bottleneck, one course recommendation with fee and slot in writing, and answers to your questions. Learn With Smile’s session is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/book-free-demo",
       },
     ],
     howTo: {
@@ -91,7 +105,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "Divide about 40 speaking minutes by that headcount.",
         "Ask whether the fee is inclusive of GST and whether there is lock-in.",
         "Ask for the named teacher who will remember your errors next week.",
-        "Sit in a real class. If they only pitch, leave.",
+        "Ask what the free session actually is — a class, a pitch, or counselling that diagnoses your bottleneck.",
         "Read 3-star Google reviews for batch size, fees and I never spoke.",
         "Decide if you need a recognised exam score or a voice for interviews.",
       ],
@@ -113,6 +127,12 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 5,
     wordCount: 524,
     relatedCourses: ["/course-spoken-english", "/course-business-english"],
+    keywords: [
+      "spoken english or ielts",
+      "ielts vs spoken english course india",
+      "which english course should i take",
+      "free consultation choose english course",
+    ],
     shortAnswer:
       "Cannot hold a call → Spoken English. Freeze with the words you already have → Interactive. Meetings and clients → Workplace. Visa or university form → IELTS. Do not buy Band 7 coaching when you still cannot finish a sentence.",
     faqs: [
@@ -142,6 +162,11 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 6,
     wordCount: 578,
     relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+    keywords: [
+      "speaking minutes in english class",
+      "small batch vs 30 student english class",
+      "learn with smile vs crowded classroom",
+    ],
     shortAnswer:
       "Your mic in 60 minutes is roughly (40 minutes) ÷ headcount. Around 6 learners → 8–10 minutes. A room of 30 → 1–2 minutes. Months on a brochure are not speaking minutes.",
     faqs: [
@@ -172,6 +197,10 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 6,
     wordCount: 950,
     relatedCourses: ["/course-business-english"],
+    keywords: [
+      "english for office meetings india",
+      "meeting phrases for indian professionals",
+    ],
     shortAnswer:
       "Enter, update, clarify, disagree, close. Twelve ordinary sentences beat corporate vocabulary you cannot retrieve when three people are waiting.",
     howTo: {
@@ -302,6 +331,11 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 8,
     wordCount: 1584,
     relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+    keywords: [
+      "tell me about yourself in 60 seconds",
+      "interview english india",
+      "fresher interview intro english",
+    ],
     shortAnswer:
       "Sixty seconds, three beats: present job, one or two past results, why this role next. The question means why you are in this chair — not your life story.",
     howTo: {
@@ -338,6 +372,11 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 9,
     wordCount: 1874,
     relatedCourses: ["/course-career-counselling", "/course-spoken-english"],
+    keywords: [
+      "bpo to client facing role",
+      "career counselling english india",
+      "back office to client facing english",
+    ],
   },
 ];
 

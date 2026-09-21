@@ -169,7 +169,7 @@ export const body: ArticleBody = [
     t: "ol",
     items: [
       "Pick three options from different categories above — say one app, one small batch, one large batch.",
-      "Take the free trial or consultation of each in the same week, while your impressions are comparable.",
+      "Take the free trial or consultation of each in the same week, while your impressions are comparable. Ask what the free session **is** — a class you speak in, a pitch, or counselling. Ours is counselling: we name the bottleneck and put the fee in writing. You will not get 8 minutes on a mic with us until you enrol.",
       "In each one, count how many minutes **you** spoke. Not the teacher, not the class. You.",
       "Ask each provider one question: what is the actual batch size, not the maximum?",
       "Then pick, and give it three months before judging it. Nothing in language learning shows results in three weeks.",
@@ -177,7 +177,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "That week costs nothing and will tell you more than any amount of reading. If one of the three is us, you can count your own speaking minutes.",
+    text: "That week costs nothing and will tell you more than any amount of reading. If one of the three is us, judge the diagnosis and the printed cap — not speaking minutes you will not get in counselling.",
   },
   {
     t: "cta",
