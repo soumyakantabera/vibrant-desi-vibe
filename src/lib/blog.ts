@@ -69,8 +69,8 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
     dateModified: "2026-09-21",
-    readingTime: 7,
-    wordCount: 780,
+    readingTime: 8,
+    wordCount: 872,
     relatedCourses: ["/course-spoken-english"],
     keywords: [
       "how to choose spoken english class india",
