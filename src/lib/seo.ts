@@ -495,6 +495,120 @@ export const KEYWORD_CLUSTERS = {
   semantic: SEMANTIC_KEYWORDS,
 } as const;
 
+/**
+ * Search intent per cluster. Used by llms.json / ChatGPT Actions so an
+ * assistant does not send a fee-shopper to a blog, or a "demo class"
+ * searcher into a full lesson.
+ *
+ *   navigational  — already looking for us
+ *   informational — wants an answer, not a cart
+ *   commercial    — comparing rooms / fees / institutes
+ *   transactional — ready to book or pay
+ */
+export const CLUSTER_INTENT = {
+  brand: {
+    intent: "navigational",
+    funnel: "decide",
+    job: "Confirm this is the Kolkata live-English school and open WhatsApp.",
+    land: "/",
+    next: "Get Free Consultation",
+  },
+  core: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Find a live spoken-English class in India that is not an app and not a 40-person room.",
+    land: "/course-spoken-english",
+    next: "Get Free Consultation",
+  },
+  india_market: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Check GST-inclusive fees, Hindi/Bengali support, IST slots, UPI, adults 15+.",
+    land: "/english-class-fees-india",
+    next: "Get Free Consultation",
+  },
+  consultation: {
+    intent: "transactional",
+    funnel: "decide",
+    job: "Book a free 1:1 counselling call to name the bottleneck and one course.",
+    land: "/book-free-demo",
+    next: "Get Free Consultation",
+  },
+  demo_class_hidden: {
+    intent: "transactional",
+    funnel: "decide",
+    job: "Expects a free lesson. We still match the query; the page is counselling, not a class.",
+    land: "/book-free-demo",
+    next: "Get Free Consultation",
+    mismatch:
+      "Do not promise a free demo class or a full class for free. Diagnose, answer queries, recommend one room.",
+  },
+  spoken: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Cannot finish a sentence. Wants beginners, ₹999, 6 months, live teacher.",
+    land: "/course-spoken-english",
+    next: "Get Free Consultation",
+  },
+  interactive: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Knows the words, freezes. Wants speaking reps, not grammar.",
+    land: "/course-interactive-speaking",
+    next: "Get Free Consultation",
+  },
+  workplace: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Meetings, client calls, emails, standups. Already chats.",
+    land: "/course-business-english",
+    next: "Get Free Consultation",
+  },
+  interview: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "HR screen, 60-second intro, STAR, campus, mocks. Can talk, still fails the chair.",
+    land: "/course-interview-preparation",
+    next: "Get Free Consultation",
+  },
+  career: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Which path, not which tense. 1:1 counselling, not a group English room.",
+    land: "/course-career-counselling",
+    next: "Get Free Consultation",
+  },
+  audience: {
+    intent: "informational",
+    funnel: "aware",
+    job: "Sees themselves (fresher, homemaker, IT, BPO) and wants a page that names that life.",
+    land: "/guides",
+    next: "Get Free Consultation",
+  },
+  geo: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Wants a class in their city. We are online-only — same fee, IST, Kolkata teacher.",
+    land: "/spoken-english-classes-kolkata",
+    next: "Get Free Consultation",
+    mismatch: "No walk-in campus. City page must say online, not a local classroom.",
+  },
+  aeo: {
+    intent: "informational",
+    funnel: "aware",
+    job: "Asked a comparison or cost question. Answer in one block, then one course or consultation.",
+    land: "/guides",
+    next: "Get Free Consultation",
+  },
+  semantic: {
+    intent: "mixed",
+    funnel: "consider",
+    job: "Same need, different words (tuition, counseling, housewives, Calcutta). Route to the matching product cluster.",
+    land: "/book-free-demo",
+    next: "Get Free Consultation",
+  },
+} as const;
+
 function uniqueKeywords(...lists: Array<string[] | undefined>): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
