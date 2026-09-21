@@ -11,7 +11,8 @@ import {
 import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
-import iconFont from "../assets/fonts/material-symbols-rounded.woff2?url";
+import { AuthProvider } from "@/lib/auth/provider";
+import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { withBasePath } from "@/lib/site-path";
 import { siteHead } from "@/lib/seo";
 import { RouteProgress } from "@/components/RouteProgress";
@@ -43,7 +44,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
 
@@ -91,13 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         ...site.meta,
       ],
       links: [
-        {
-          rel: "preload",
-          href: iconFont,
-          as: "font",
-          type: "font/woff2",
-          crossOrigin: "anonymous",
-        },
         { rel: "stylesheet", href: appCss },
         { rel: "icon", type: "image/svg+xml", href: withBasePath("/favicon.svg") },
         { rel: "icon", type: "image/png", sizes: "48x48", href: withBasePath("/favicon.png") },
@@ -144,6 +138,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <PreviewHostBridge />
         {children}
         <Scripts />
       </body>
@@ -164,8 +159,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RouteProgress />
-      <Outlet />
+      <AuthProvider>
+        <RouteProgress />
+        <Outlet />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

@@ -14,8 +14,7 @@
  * -----------------
  *   css    the app stylesheet has applied (detected through the `--app-css`
  *          sentinel it defines, so this is a fact rather than a guess)
- *   fonts  Manrope, Sora, and Material Symbols. Icons used to un-hide after
- *          the page was already on screen, which is why they popped in late.
+ *   fonts  Manrope and Sora. Icons are SVG (lucide), not a symbol font.
  *   media  every image marked `data-boot-hold` — the hero already in the
  *          prerendered HTML — has finished decoding
  *
@@ -75,54 +74,11 @@ function compactCss(src: string): string {
 }
 
 /**
- * Every Material Symbols glyph the site renders.
- *
- * Must stay in step with `MAP` in `src/components/Icon.tsx` and with the
- * self-hosted file `src/assets/fonts/material-symbols-rounded.woff2`.
- * Regenerating that subset: Google Fonts CSS2 with these `icon_names`.
- * An icon missing from the subset paints its ligature text ("arrow_forward")
- * instead of a glyph — the CSS clip on `.material-symbols-rounded` still
- * holds the box, so the page does not shove sideways.
+ * Icon glyphs used to live in Material Symbols Rounded. They are lucide SVGs
+ * now (`src/components/Icon.tsx`), so this list is unused — kept only so a
+ * grep for old ligature names still finds the migration note.
  */
-export const ICON_NAMES = [
-  "ads_click",
-  "arrow_forward",
-  "auto_awesome",
-  "bar_chart",
-  "calendar_month",
-  "call",
-  "chat",
-  "check_circle",
-  "close",
-  "code",
-  "currency_rupee",
-  "emoji_events",
-  "explore",
-  "extension",
-  "favorite",
-  "format_quote",
-  "groups",
-  "headset_mic",
-  "lightbulb",
-  "mail",
-  "menu",
-  "menu_book",
-  "mic",
-  "person",
-  "photo_camera",
-  "play_circle",
-  "public",
-  "rocket_launch",
-  "schedule",
-  "sentiment_satisfied",
-  "smart_display",
-  "sports_esports",
-  "star",
-  "thumb_up",
-  "trending_up",
-  "verified",
-  "work",
-];
+export const ICON_NAMES: string[] = [];
 
 /**
  * Icon CSS used to be fetched from fonts.googleapis.com. The subset is now
@@ -229,7 +185,6 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     try {
       d.fonts.load("600 1rem Manrope");
       d.fonts.load("700 1rem Sora");
-      d.fonts.load("500 24px 'Material Symbols Rounded'");
     } catch (e) {}
   };
   var fontsReady = function () {
@@ -238,10 +193,9 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     if (!d.fonts || !d.fonts.forEach || !d.fonts.load) { raise("fonts-ready"); return true; }
     try {
       ask();
-      var icons = face("Material Symbols");
       var text = face("Manrope") && face("Sora");
-      if (icons) raise("fonts-ready");
-      return !!(text && icons);
+      if (text) raise("fonts-ready");
+      return !!text;
     } catch (e) { return true; }
   };
 
@@ -261,8 +215,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     if (!need.css && cssReady()) mark("css");
     if (!need.fonts && fontsReady()) mark("fonts");
     if (!need.media && mediaReady()) mark("media");
-    // Keep watching after reveal so a late Material Symbols face can un-hide
-    // icons. Stop at 10s.
+    // Keep watching after reveal so a late text face can settle. Stop at 10s.
     if (done && Date.now() - t0 > 10000) clearInterval(timer);
   };
   var timer = setInterval(tick, 80);

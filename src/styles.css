@@ -14,9 +14,9 @@
  * for Sora. Importing the packages' index.css instead would pull in Cyrillic,
  * Greek and Vietnamese subsets nobody on this site renders.
  *
- * Material Symbols Rounded is self-hosted as an 8 KB subset of the 37 glyphs
- * the site actually uses (src/assets/fonts/material-symbols-rounded.woff2).
- * Same origin as the stylesheet — no fonts.googleapis.com request. */
+ * Icons are lucide SVG paths (src/components/Icon.tsx). The old Material
+ * Symbols font is not loaded — a late or missing icon font used to flash
+ * ligature names ("arrow_forward") or hide the whole glyph.
 @import "@fontsource/manrope/latin-400.css";
 @import "@fontsource/manrope/latin-500.css";
 @import "@fontsource/manrope/latin-600.css";
@@ -26,13 +26,6 @@
 @import "@fontsource/sora/latin-600.css";
 @import "@fontsource/sora/latin-700.css";
 @import "@fontsource/sora/latin-800.css";
-@font-face {
-  font-family: "Material Symbols Rounded";
-  font-style: normal;
-  font-weight: 100 700;
-  font-display: block;
-  src: url("./assets/fonts/material-symbols-rounded.woff2") format("woff2");
-}
 @source "../src";
 @import "tw-animate-css";
 
@@ -473,16 +466,26 @@ button.btn.btn-wa:active {
 }
 a.btn.btn-wa span,
 a.btn.btn-wa strong,
-a.btn.btn-wa svg,
 button.btn.btn-wa span,
-button.btn.btn-wa svg {
+button.btn.btn-wa strong {
   color: #053b1e !important;
   -webkit-text-fill-color: #053b1e !important;
+}
+a.btn.btn-wa svg:not(.lucide):not(.lws-icon),
+button.btn.btn-wa svg:not(.lucide):not(.lws-icon) {
   fill: #053b1e;
+}
+a.btn.btn-wa svg.lucide,
+a.btn.btn-wa svg.lws-icon,
+button.btn.btn-wa svg.lucide,
+button.btn.btn-wa svg.lws-icon {
+  fill: none !important;
+  stroke: currentColor;
+  color: #053b1e !important;
 }
 
 /* Floating WhatsApp mark: official simple-icons glyph on a white disc. */
-[data-cta-location="fab"] svg {
+[data-cta-location="fab"] svg:not(.lucide):not(.lws-icon) {
   fill: #25D366;
 }
 
@@ -543,30 +546,19 @@ button.btn.btn-wa svg {
    that may never come.
    ========================================================================== */
 
-/* ---------------------------------------------------------- icon font ---
-   Icons are ligatures in Material Symbols Rounded: until that font is in
-   place the browser has the literal glyph name ("arrow_forward", "menu") to
-   render. `display=block` in the font URL keeps those hidden rather than
-   showing the raw text, and the rules here reserve the box and clip anything
-   that escapes, so a slow or failed font load costs an icon — never a line of
-   gibberish shoving the layout sideways. */
-.material-symbols-rounded {
-  font-family: "Material Symbols Rounded", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  overflow: hidden;
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
+/* ---------------------------------------------------------- icons ---
+   Lucide SVGs. Never hide them behind a font-face gate. */
+svg.lws-icon,
+svg.lucide {
+  display: inline-block;
+  flex-shrink: 0;
+  overflow: visible;
+  vertical-align: middle;
 }
-/* Hold icons until the face is decoded. The boot veil now waits on this
-   font too, so icons arrive with the first paint instead of popping in late. */
-html.js:not(.fonts-ready) .material-symbols-rounded { visibility: hidden; }
+svg.lws-icon:not([data-filled="true"]),
+svg.lucide:not([data-filled="true"]) {
+  fill: none;
+}
 
 /* ------------------------------------------------------------- skeletons ---
    Shared shimmer for any placeholder block. */

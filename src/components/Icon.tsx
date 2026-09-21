@@ -154,7 +154,8 @@ export function Icon({
       strokeLinecap="round"
       strokeLinejoin="round"
       fill={filled && FILLABLE.has(key) ? "currentColor" : "none"}
-      className={`inline-flex shrink-0 ${className}`}
+      className={`lws-icon inline-flex shrink-0 ${className}`}
+      data-filled={filled && FILLABLE.has(key) ? "true" : undefined}
       style={style}
     />
   );
