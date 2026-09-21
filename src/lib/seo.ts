@@ -608,19 +608,27 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/privacy",
     title: "Privacy Policy | How We Handle Your Data",
     description:
-      "How Learn With Smile collects and uses your data. WhatsApp admissions, Razorpay payments, class recordings. We do not sell personal information at all.",
+      "How Learn With Smile collects and uses your data — including free-consultation notes on WhatsApp. Razorpay payments, class recordings. We do not sell personal information.",
     shortTitle: "Privacy Policy",
-    keywords: ["learn with smile privacy policy", "english class data protection india"],
+    keywords: [
+      "learn with smile privacy policy",
+      "english class data protection india",
+      "whatsapp consultation privacy english class",
+    ],
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-21",
     summary:
-      "Privacy Policy: what we collect (name, WhatsApp, email, course notes, Razorpay payment status, class recordings), why, who we share it with, and how to ask for correction or deletion.",
+      "Privacy Policy: what we collect (name, WhatsApp, consultation notes, email, course notes, Razorpay payment status, class recordings), why, who we share it with, and how to ask for correction or deletion.",
     faqs: [
       {
         q: "Does Learn With Smile sell my personal information?",
-        a: "No. We use your details to reply, enrol you, run live classes and process fees through Razorpay. We do not sell personal information or send it to advertising networks.",
+        a: "No. We use your details to reply, run a free consultation, enrol you, run live classes and process fees through Razorpay. We do not sell personal information or send it to advertising networks.",
+      },
+      {
+        q: "What do you keep from the free consultation?",
+        a: "The WhatsApp thread plus notes needed to place you: the bottleneck we named, the questions you asked, and the one course we recommended — or that we told you to stay free. The consultation is counselling, not a class. WhatsApp (Meta) also processes that conversation under its own policy.",
       },
       {
         q: "Who processes my card or UPI payment?",
@@ -637,16 +645,24 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/terms",
     title: "Terms of Use | Live English Classes",
     description:
-      "Rules for Learn With Smile: live online classes, fees inclusive of taxes, no school certificate, WhatsApp enrolment, and Indian law. Kolkata courts apply.",
+      "Rules for Learn With Smile: free consultation is counselling not a class, live online rooms, tax-inclusive fees, no school certificate, WhatsApp enrolment, Indian law.",
     shortTitle: "Terms of Use",
-    keywords: ["learn with smile terms of use", "online english class terms india"],
+    keywords: [
+      "learn with smile terms of use",
+      "online english class terms india",
+      "free consultation terms english class",
+    ],
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-21",
     summary:
-      "Terms of Use: live online teaching only, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
+      "Terms of Use: free consultation is 1:1 counselling not a class, live online teaching, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
     faqs: [
+      {
+        q: "Is the free consultation a class I can sit for free?",
+        a: "No. Get Free Consultation is one-to-one counselling on WhatsApp: we diagnose the bottleneck, answer your questions, and recommend one course. It is not a sample class and not speaking minutes on a mic. Those minutes are the paid room. Messaging us does not oblige you to enrol.",
+      },
       {
         q: "Does Learn With Smile issue a course certificate?",
         a: "No. We do not issue a school certificate. IELTS and similar scores are issued only by the test board. We do not sell IELTS as a course.",
@@ -662,15 +678,19 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "How refunds and cancellations work at Learn With Smile. Free consultation first, prepaid monthly fees, and good-faith review of duplicate charges or undelivered classes.",
+      "Refunds at Learn With Smile: free consultation first (counselling, not a class), prepaid monthly fees, good-faith review of duplicates or undelivered classes. Indian consumer rights still apply.",
     shortTitle: "Refunds and Cancellation",
-    keywords: ["learn with smile refund policy", "english class cancellation india"],
+    keywords: [
+      "learn with smile refund policy",
+      "english class cancellation india",
+      "free consultation refund english class",
+    ],
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-21",
     summary:
-      "Refunds: the consultation is free. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
+      "Refunds: the consultation is free counselling, not a class — nothing to refund. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
@@ -682,7 +702,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is the consultation refundable?",
-        a: "The consultation is free, so there is nothing to refund. Get the consultation before you enrol. It is counselling — courses, curriculum and your requirements — not a full class.",
+        a: "The consultation is free, so there is nothing to refund. Get it before you enrol. It is counselling — courses, curriculum and your requirements — not a full class and not a demo class.",
+      },
+      {
+        q: "You did not give me a free class. Can I get my money back?",
+        a: "No class is included in the consultation. That is stated before you pay. Speaking minutes are the paid batch of approximately six learners. Get the free consultation first so the format is clear in writing on WhatsApp.",
       },
     ],
   },
@@ -701,7 +725,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.4,
     changefreq: "yearly",
-    dateModified: "2026-09-20",
+    dateModified: "2026-09-21",
     summary:
       "Child Protection Policy for adult rooms 15+: we do not currently run Kids or Teens courses. Parent is the customer if the learner is under 18. No 1:1 video with a child unless the parent stays on the call. Indian law (DPDP, POCSO, JJ Act) is the floor. No COPPA/GDPR certificate claimed.",
     faqs: [

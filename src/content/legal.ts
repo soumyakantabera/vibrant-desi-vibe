@@ -9,7 +9,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-12";
+export const LEGAL_UPDATED = "2026-09-21";
 
 export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
   "/privacy": {
@@ -30,16 +30,17 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "What this policy covers",
         paragraphs: [
-          "This policy applies to www.learnwithsmile.app and to personal information you give us when you enquire, get a free consultation, enrol, pay, or attend a class. It does not apply to websites, apps or payment pages we do not control, including WhatsApp and Razorpay.",
+          "This policy applies to www.learnwithsmile.app and to personal information you give us when you enquire, get a free consultation (counselling on WhatsApp — not a class), enrol, pay, or attend a class. It does not apply to websites, apps or payment pages we do not control, including WhatsApp and Razorpay.",
         ],
       },
       {
         heading: "Information we collect",
         paragraphs: [
-          "We collect only what we need to answer you, run a class, or process a fee.",
+          "We collect only what we need to answer you, run a consultation, run a class, or process a fee.",
         ],
         bullets: [
           "Identity and contact: name, WhatsApp number, email address, city or state, and preferred class slot.",
+          "Consultation notes: the problem you describe, questions you ask (fees, GST, batch, timings, Hindi or Bengali support, certificate, IELTS, kids, refunds), the bottleneck we name, and the one course we recommend — or that we told you to stay free.",
           "Course details: the programme you ask about, goals you mention, and notes needed to place you in a suitable batch.",
           "Class delivery: attendance, teacher feedback, and recordings of live sessions for enrolled learners to revise.",
           "Payments: amount, date, course, and payment status. Card, UPI and wallet details are collected and processed by Razorpay. We do not store full card numbers on this website.",
@@ -49,20 +50,20 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How we use information",
         paragraphs: [
-          "We use personal information to reply on WhatsApp, confirm a consultation or batch, deliver live classes, share class recordings with the enrolled learner, send fee and timetable details, process payments through Razorpay, and keep records we reasonably need for accounts, tax and dispute handling.",
-          "We do not sell personal information. We do not use it to run advertising networks or third-party marketing lists.",
+          "We use personal information to reply on WhatsApp, run a free consultation (diagnose the bottleneck, answer your queries, recommend one course), confirm a batch, deliver live classes, share class recordings with the enrolled learner, send fee and timetable details, process payments through Razorpay, and keep records we reasonably need for accounts, tax and dispute handling.",
+          "The consultation is counselling, not a class. Notes from it are used to place you — or to leave you unenrolled if the room is not a fit. We do not sell personal information. We do not use it to run advertising networks or third-party marketing lists.",
         ],
       },
       {
         heading: "Legal basis, in plain terms",
         paragraphs: [
-          "We process information because you asked us for a class or a reply, because we have a contract to teach you after you enrol, because we must keep certain payment and tax records, or because we have a legitimate need to run and secure the website. Where Indian law requires consent for a specific use, we will ask before that use.",
+          "We process information because you asked us for a consultation, a class or a reply, because we have a contract to teach you after you enrol, because we must keep certain payment and tax records, or because we have a legitimate need to run and secure the website. Where Indian law requires consent for a specific use, we will ask before that use.",
         ],
       },
       {
         heading: "WhatsApp, email and payments",
         paragraphs: [
-          "WhatsApp is our preferred admissions channel. When you message us, WhatsApp (Meta) also processes that conversation under its own terms and privacy policy.",
+          "WhatsApp is our preferred admissions and consultation channel. When you tap Get Free Consultation or message us, WhatsApp (Meta) also processes that conversation under its own terms and privacy policy. The diagnosis, course recommendation, fee and slot stay in that written thread so you can re-read them.",
           "Fees are collected through Razorpay. Razorpay’s privacy policy and security practices apply to data you enter on Razorpay’s checkout. We receive confirmation that a payment succeeded or failed, not your full card number.",
         ],
       },
@@ -137,7 +138,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Terms",
     h1: "Terms of Use",
     standfirst:
-      "These terms govern use of this website and enrolment in Learn With Smile live online classes. Please read them before you pay a fee.",
+      "These terms govern use of this website, the free consultation, and enrolment in Learn With Smile live online classes. Please read them before you pay a fee.",
     updated: LEGAL_UPDATED,
     sections: [
       {
@@ -157,9 +158,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Eligibility",
         paragraphs: [
-          "Adult English rooms are for learners aged 15 and above.",
+          "Adult English rooms are for learners aged 15 and above. We do not currently run Kids or Teens courses.",
           "Enrolment is for learners who are in India. We do not take enrolment from outside India. Fees on this site are India pricing, in Indian Rupees, inclusive of taxes.",
-          "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time. For ages 6–11, a parent should stay within earshot of the room.",
+          "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time.",
         ],
       },
       {
@@ -170,9 +171,16 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
-        heading: "Consultation, enrolment and fees",
+        heading: "Free consultation (counselling, not a class)",
         paragraphs: [
-          "The consultation is free and does not require payment. Messaging us does not create an obligation to enrol.",
+          "Get Free Consultation is a one-to-one counselling session on WhatsApp. It is free. There is no payment, card or UPI to book. Messaging us does not create an obligation to enrol.",
+          "In the session we diagnose your English bottleneck, discuss courses and curriculum, understand your requirements one by one, answer the questions you bring, and recommend one course — or tell you to stay free. Fee, duration, batch size and IST slot come in writing on WhatsApp.",
+          "The consultation is not a class, not a sample of the paid hour, and not a placement test with a score. You will not receive speaking minutes on a microphone in the consultation. Those minutes are the paid room. People who search for a free demo class are offered this counselling instead.",
+        ],
+      },
+      {
+        heading: "Enrolment and fees",
+        paragraphs: [
           "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. There is no separate registration fee or material fee for the standard English batches described on this site.",
           "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart.",
         ],
@@ -230,13 +238,14 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Refunds",
     h1: "Refunds and Cancellation",
     standfirst:
-      "Please read this before you pay. Get a free consultation first — we discuss courses, curriculum and your requirements one by one. It is not a full class. Statutory rights under Indian law still apply.",
+      "Please read this before you pay. Get a free consultation first — counselling on courses, curriculum and your requirements, one by one. It is not a full class and not a demo class. Statutory rights under Indian law still apply.",
     updated: LEGAL_UPDATED,
     sections: [
       {
         heading: "Please get a free consultation first",
         paragraphs: [
-          "The consultation is free. There is nothing to refund on a consultation. We ask you to join the consultation, ask questions, and confirm the fee, slot and syllabus on WhatsApp before you pay. Enrol only if the format fits.",
+          "The consultation is free. There is nothing to refund on a consultation. Join it on WhatsApp, ask every question, and confirm the fee, slot and syllabus in writing before you pay. Enrol only if the format fits.",
+          "What you get: a named diagnosis of your bottleneck, one course recommendation (or an honest “this is not us”), and answers to fees, GST, recordings, refunds, Hindi or Bengali support, certificate, IELTS, kids and timings. What you do not get: a sample class, 8–10 minutes on a mic, or a fluency promise. Speaking minutes are the paid batch of approximately six learners.",
         ],
       },
       {
@@ -251,6 +260,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         paragraphs: [
           "Once a paid billing period has started, we do not ordinarily refund that period because you changed your mind, missed classes, found the work difficult, or did not obtain a particular job, visa, band score or other result.",
           "We also do not ordinarily refund because of your internet, electricity or device problems, or because you cannot attend the IST slot you confirmed.",
+          "We do not offer a demo class. There is no refund of a class you expected to sit for free in the consultation. The consultation is counselling. Speaking minutes are the paid room.",
         ],
       },
       {
@@ -350,7 +360,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "The parent is the customer when the learner is under 18",
         paragraphs: [
-          "Fees, WhatsApp, timetable and class recordings sit on the parent’s or guardian’s number. The learner does not need a phone. The parent joins the free consultation on camera. Under 18, a parent or guardian must enrol and pay.",
+          "Fees, WhatsApp, timetable and class recordings sit on the parent’s or guardian’s number. The learner does not need a phone. The parent takes the free consultation on WhatsApp (counselling — not a class) and must enrol and pay if the learner is under 18.",
           "We do not open a private chat with a learner under 18 on a number the parent does not control. If a teenager messages us from their own phone, we still copy the parent on enrolment, fees and recordings.",
         ],
       },
