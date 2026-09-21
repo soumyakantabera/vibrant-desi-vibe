@@ -930,12 +930,12 @@ function WorkplaceIcon() {
   );
 }
 
-// Free Consultation — ticket with a play button
+// Free Consultation — two chat bubbles (counselling, not a class)
 function FreeDemoIcon() {
   return (
     <IconFrame>
-      <path d="M3.5 8.5a1.5 1.5 0 0 1 1.5-1.5h14a1.5 1.5 0 0 1 1.5 1.5v2a2 2 0 0 0 0 3v2a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 3.5 15.5v-2a2 2 0 0 0 0-3z" />
-      <path d="M10.5 9.5v5l4-2.5z" fill="currentColor" stroke="none" />
+      <path d="M4.5 7.2h9.2a1.8 1.8 0 0 1 1.8 1.8v5.1a1.8 1.8 0 0 1-1.8 1.8H10l-2.8 2.4v-2.4H4.5A1.8 1.8 0 0 1 2.7 14.1V9a1.8 1.8 0 0 1 1.8-1.8z" />
+      <path d="M16.2 4.8h3.3A1.6 1.6 0 0 1 21.1 6.4v4.2a1.6 1.6 0 0 1-1.6 1.6h-1.4" />
     </IconFrame>
   );
 }

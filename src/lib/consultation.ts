@@ -5,6 +5,7 @@
  * Visible copy never calls this a class. People who search "free demo class"
  * still match via meta keywords; the page they land on tells them the truth.
  */
+import type { IconName } from "@/components/Icon";
 import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 export const CONSULTATION_PATH = "/book-free-demo";
@@ -23,7 +24,7 @@ export const CONSULTATION = {
 } as const;
 
 export const CONSULTATION_WALK_AWAY: {
-  icon: "compass" | "check" | "book" | "shield";
+  icon: IconName;
   color: "brand" | "sunshine" | "coral" | "indigo";
   title: string;
   body: string;
@@ -54,62 +55,73 @@ export const CONSULTATION_WALK_AWAY: {
   },
 ];
 
-export const CONSULTATION_STEPS: { title: string; body: string }[] = [
+export const CONSULTATION_STEPS: { icon: IconName; title: string; body: string }[] = [
   {
+    icon: "whatsapp",
     title: "Message WhatsApp",
     body: "Tap Get Free Consultation. WhatsApp opens with a message ready to send. Send it any time.",
   },
   {
+    icon: "clock",
     title: "We reply 09:00–12:00 IST",
     body: "We confirm a one-to-one counselling slot. Phone is a fallback only if you ask.",
   },
   {
+    icon: "mic",
     title: "You describe the problem",
     body: "Shop, freeze, standup, HR screen, career change, visa form — whatever you actually need English for. We ask, one by one.",
   },
   {
+    icon: "compass",
     title: "We name the bottleneck and the room",
     body: "One recommendation. Fee, duration and IST slot in writing. You decide. You do not sit a full class for free.",
   },
 ];
 
 export const CONSULTATION_BOTTLENECKS: {
+  icon: IconName;
   ifThis: string;
   weName: string;
   weRecommend: string;
   href: string;
 }[] = [
   {
+    icon: "mic",
     ifThis: "Cannot finish a sentence in a shop or on a phone call",
     weName: "Spoken English is the gap",
     weRecommend: "Spoken English — 6 months, ₹999/mo, ≈6 learners",
     href: "/course-spoken-english",
   },
   {
+    icon: "record_voice_over",
     ifThis: "You know the words. You freeze when you speak.",
     weName: "Freeze is the gap, not grammar",
     weRecommend: "Interactive Speaking — 3 months, ₹1,499/mo",
     href: "/course-interactive-speaking",
   },
   {
+    icon: "headset",
     ifThis: "Chat is fine. Meetings, calls or emails are not.",
     weName: "Workplace English is the gap",
     weRecommend: "Workplace English — 3 months, ₹1,999/mo",
     href: "/course-business-english",
   },
   {
+    icon: "target",
     ifThis: "Interviews fail on the 60-second intro, not the CV",
     weName: "Interview English, inside an existing room",
     weRecommend: "Spoken or Interactive — not a separate product",
     href: "/spoken-business-or-interactive-english",
   },
   {
+    icon: "compass",
     ifThis: "The question is which career, not which tense",
     weName: "Career choice is the gap",
     weRecommend: "1:1 Career Counselling — ₹1,999 total, 3 × 60 min",
     href: "/course-career-counselling",
   },
   {
+    icon: "school",
     ifThis: "A visa, university or HR form asks for a band",
     weName: "That is an exam paper, not our room",
     weRecommend: "Sit IELTS with IDP or British Council. We do not sell it.",
@@ -117,22 +129,52 @@ export const CONSULTATION_BOTTLENECKS: {
   },
 ];
 
-export const CONSULTATION_QUERIES: string[] = [
-  "Which course do I actually need — Spoken, Interactive, Workplace, or counselling?",
-  "What is the fee, and is GST included?",
-  "How many learners are in the room, and how many minutes will I speak?",
-  "What IST batch can I join around a job or a home day?",
-  "Can the teacher explain in Hindi or Bengali when a concept stalls?",
-  "Do you issue a certificate? Do I need IELTS for a job in India?",
-  "Is this for children? (Adult rooms are 15+. We will say no if it is a child.)",
-  "What happens if I miss a class, and what is the refund rule after I pay?",
+export const CONSULTATION_QUERIES: { icon: IconName; text: string }[] = [
+  {
+    icon: "compass",
+    text: "Which course do I actually need — Spoken, Interactive, Workplace, or counselling?",
+  },
+  { icon: "rupee", text: "What is the fee, and is GST included?" },
+  {
+    icon: "users",
+    text: "How many learners are in the room, and how many minutes will I speak?",
+  },
+  { icon: "clock", text: "What IST batch can I join around a job or a home day?" },
+  {
+    icon: "languages",
+    text: "Can the teacher explain in Hindi or Bengali when a concept stalls?",
+  },
+  {
+    icon: "trophy",
+    text: "Do you issue a certificate? Do I need IELTS for a job in India?",
+  },
+  {
+    icon: "shield",
+    text: "Is this for children? (Adult rooms are 15+. We will say no if it is a child.)",
+  },
+  {
+    icon: "clipboard",
+    text: "What happens if I miss a class, and what is the refund rule after I pay?",
+  },
 ];
 
-export const CONSULTATION_NOT_THIS: string[] = [
-  "Not a sample of the paid hour. You will not get 8–10 minutes on a mic. That is the paid room.",
-  "Not a placement test with a score. The diagnosis is a sentence: which bottleneck, which room.",
-  "Not a counsellor pitch that hides the fee. Fee, duration and slot come in writing on WhatsApp.",
-  "Not a promise of fluency, a job, a band, or a certificate.",
+export const CONSULTATION_NOT_THIS: { icon: IconName; text: string }[] = [
+  {
+    icon: "play",
+    text: "Not a sample of the paid hour. You will not get 8–10 minutes on a mic. That is the paid room.",
+  },
+  {
+    icon: "x-circle",
+    text: "Not a placement test with a score. The diagnosis is a sentence: which bottleneck, which room.",
+  },
+  {
+    icon: "ban",
+    text: "Not a counsellor pitch that hides the fee. Fee, duration and slot come in writing on WhatsApp.",
+  },
+  {
+    icon: "trophy",
+    text: "Not a promise of fluency, a job, a band, or a certificate.",
+  },
 ];
 
 /**
@@ -140,31 +182,37 @@ export const CONSULTATION_NOT_THIS: string[] = [
  * Named, specific, and honest about when they win.
  */
 export const CONSULTATION_VS_MARKET: {
+  icon: IconName;
   them: string;
   theirSession: string;
   weDoInstead: string;
 }[] = [
   {
+    icon: "headset",
     them: "EngVarta-style 1:1 apps",
     theirSession: "No counselling. You pick a 15-minute call and talk. Useful after you can already speak.",
     weDoInstead: "We name the bottleneck first. Beginners who cannot form a sentence should not buy 1:1 minutes yet.",
   },
   {
+    icon: "globe",
     them: "Cambly / native-speaker apps",
     theirSession: "Tutor lottery. Accent and idiom. ₹8,000–₹15,000/month if daily. No 6-month map.",
     weDoInstead: "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
   },
   {
+    icon: "school",
     them: "British Council English Online",
     theirSession: "Counsellor pitch for a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
     weDoInstead: "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
   },
   {
+    icon: "users",
     them: "Veta-style / city classrooms",
     theirSession: "Walk-in. Sit in 25–40, or a pitch that still will not print the cap. Commute on top.",
     weDoInstead: "Cap is approximately 6, printed. Consultation is 1:1 counselling, not a packed room you sample.",
   },
   {
+    icon: "trophy",
     them: "Exam shops (EEC-style visa stack)",
     theirSession: "The free session sells IELTS/PTE. Spoken is an add-on. Fine if the visa is the goal.",
     weDoInstead: "If no form asked for a band, we will tell you IELTS is the wrong buy. We do not sell that paper.",

@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
 import { FeatureCard, SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { BrandIcon } from "@/components/BrandIcon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { PaymentTrust } from "@/components/PaymentTrust";
@@ -39,7 +40,7 @@ function Page() {
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
-            <Icon name="spark" size={14} /> {DEMO_CTA}
+            <Icon name="compass" size={14} /> {DEMO_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
             Get Free Consultation. <span className="text-sunshine">Leave knowing the room.</span>
@@ -50,7 +51,7 @@ function Page() {
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
-              <Icon name="spark" size={18} /> {DEMO_CTA}
+              <Icon name="compass" size={18} /> {DEMO_CTA}
             </WaButton>
           </div>
         </div>
@@ -81,10 +82,14 @@ function Page() {
               One-to-one on WhatsApp. Replies {CONSULTATION.hours}. No payment to book.
             </p>
             <ol className="space-y-4">
-              {CONSULTATION_STEPS.map((step, i) => (
+              {CONSULTATION_STEPS.map((step) => (
                 <li key={step.title} className="flex gap-4">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-extrabold text-brand-deep">
-                    {i + 1}
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-deep">
+                    {step.icon === "whatsapp" ? (
+                      <BrandIcon name="whatsapp" size={18} />
+                    ) : (
+                      <Icon name={step.icon} size={18} />
+                    )}
                   </span>
                   <div>
                     <h3 className="font-display font-bold text-ink">{step.title}</h3>
@@ -101,7 +106,7 @@ function Page() {
                 className="w-full justify-center sm:w-auto"
                 goal="free_consultation"
               >
-                <Icon name="spark" size={18} /> {DEMO_CTA}
+                <Icon name="compass" size={18} /> {DEMO_CTA}
               </WaButton>
             </div>
           </div>
@@ -140,7 +145,14 @@ function Page() {
                 <tbody>
                   {CONSULTATION_BOTTLENECKS.map((row) => (
                     <tr key={row.ifThis} className="border-t border-border align-top">
-                      <td className="px-4 py-3 text-ink/90">{row.ifThis}</td>
+                      <td className="px-4 py-3 text-ink/90">
+                        <span className="flex gap-3">
+                          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-deep">
+                            <Icon name={row.icon} size={16} />
+                          </span>
+                          <span>{row.ifThis}</span>
+                        </span>
+                      </td>
                       <td className="px-4 py-3 text-ink/90">{row.weName}</td>
                       <td className="px-4 py-3 text-ink/90">
                         <Link to={row.href} className="font-display font-bold text-brand-deep hover:underline">
@@ -173,9 +185,11 @@ function Page() {
             </p>
             <ul className="space-y-2">
               {CONSULTATION_QUERIES.map((q) => (
-                <li key={q} className="flex gap-3 text-ink/90 leading-relaxed">
-                  <Icon name="check" size={16} className="text-brand shrink-0 mt-1.5" />
-                  <span>{q}</span>
+                <li key={q.text} className="flex gap-3 text-ink/90 leading-relaxed">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-deep">
+                    <Icon name={q.icon} size={16} />
+                  </span>
+                  <span className="pt-1">{q.text}</span>
                 </li>
               ))}
             </ul>
@@ -183,9 +197,12 @@ function Page() {
           <div className="rounded-2xl border border-coral/25 bg-[#FFF4F1] p-6">
             <h2 className="text-xl font-display font-extrabold text-[#8E2A1E] mb-3">What this is not</h2>
             <ul className="space-y-3">
-              {CONSULTATION_NOT_THIS.map((line) => (
-                <li key={line} className="text-sm text-ink/90 leading-relaxed">
-                  {line}
+              {CONSULTATION_NOT_THIS.map((item) => (
+                <li key={item.text} className="flex gap-3 text-sm text-ink/90 leading-relaxed">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#FFE0DC] text-[#8E2A1E]">
+                    <Icon name={item.icon} size={16} />
+                  </span>
+                  <span className="pt-1">{item.text}</span>
                 </li>
               ))}
             </ul>
@@ -219,9 +236,26 @@ function Page() {
                 <tbody>
                   {CONSULTATION_VS_MARKET.map((row) => (
                     <tr key={row.them} className="border-t border-border align-top">
-                      <td className="px-4 py-3 font-display font-bold text-ink">{row.them}</td>
-                      <td className="px-4 py-3 text-ink/90">{row.theirSession}</td>
-                      <td className="px-4 py-3 text-ink/90">{row.weDoInstead}</td>
+                      <td className="px-4 py-3 font-display font-bold text-ink">
+                        <span className="flex gap-3 items-start">
+                          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-deep">
+                            <Icon name={row.icon} size={16} />
+                          </span>
+                          <span>{row.them}</span>
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-ink/90">
+                        <span className="flex gap-2">
+                          <Icon name="ban" size={14} className="text-[#8E2A1E] shrink-0 mt-0.5" />
+                          <span>{row.theirSession}</span>
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-ink/90">
+                        <span className="flex gap-2">
+                          <Icon name="check" size={14} className="text-brand shrink-0 mt-0.5" />
+                          <span>{row.weDoInstead}</span>
+                        </span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -267,7 +301,7 @@ function Page() {
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
-              <Icon name="spark" size={18} /> {DEMO_CTA}
+              <Icon name="compass" size={18} /> {DEMO_CTA}
             </WaButton>
           </div>
           <PaymentTrust tone="dark" align="center" className="mt-8" />

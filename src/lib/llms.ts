@@ -800,8 +800,8 @@ export function buildLlmsJson(updated: string): string {
         we_recommend: row.weRecommend,
         url: abs(row.href),
       })),
-      queries_resolved: CONSULTATION_QUERIES,
-      not_this: CONSULTATION_NOT_THIS,
+      queries_resolved: CONSULTATION_QUERIES.map((q) => q.text),
+      not_this: CONSULTATION_NOT_THIS.map((item) => item.text),
       vs_other_institutes: CONSULTATION_VS_MARKET.map((row) => ({
         them: row.them,
         their_session: row.theirSession,
