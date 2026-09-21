@@ -26,7 +26,7 @@ const COMPANY = [
   { to: "/educator", label: "Educator" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/blog", label: "Blog" },
-  { to: "/book-free-demo", label: "Book a Free Demo" },
+  { to: "/book-free-demo", label: "Get Free Consultation" },
 ];
 
 /**

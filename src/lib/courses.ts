@@ -119,19 +119,19 @@ export const COURSES: Record<string, CourseData> = {
           "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
         name: "Kavya Reddy",
         detail: "Spoken English · Advocate, Hyderabad",
-        waMessage: "Hi, I want the same Spoken English result as Kavya. Can I get a free demo?",
+        waMessage: "Hi, I want the same Spoken English result as Kavya. Can I get a free consultation?",
       },
       {
         quote: "The gamified flashcard sessions are addictive. I look forward to every class now.",
         name: "Rakesh Verma",
         detail: "Spoken English · Shopkeeper, Patna",
-        waMessage: "Hi, please share Spoken English demo details.",
+        waMessage: "Hi, please share Spoken English consultation details.",
       },
       {
         quote: "Small batch + real corrections every class. That's what made the difference.",
         name: "Meera Iyer",
         detail: "Spoken English · Homemaker, Chennai",
-        waMessage: "Hi, I want to join Spoken English. Free demo please.",
+        waMessage: "Hi, I want to join Spoken English. Free consultation please.",
       },
     ],
     metaDescription:
@@ -204,21 +204,21 @@ export const COURSES: Record<string, CourseData> = {
           "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
         name: "Neha Patel",
         detail: "Workplace English · Tax Analyst, Ahmedabad",
-        waMessage: "Hi, I want Neha's client-call result. Workplace English demo please.",
+        waMessage: "Hi, I want Neha's client-call result. Workplace English free consultation please.",
       },
       {
         quote:
           "Partners asked me to walk the working papers in English. A batch of around six meant I rehearsed every week. I present now.",
         name: "Rohan Deshpande",
         detail: "Workplace English · Chartered Accountant, Mumbai",
-        waMessage: "Hi, I saw Rohan's CA story. Workplace English demo please.",
+        waMessage: "Hi, I saw Rohan's CA story. Workplace English free consultation please.",
       },
       {
         quote:
           "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
         name: "Aditya Nair",
         detail: "Workplace English · BI Analyst, Pune",
-        waMessage: "Hi, I saw Aditya's career switch. Workplace English demo please.",
+        waMessage: "Hi, I saw Aditya's career switch. Workplace English free consultation please.",
       },
     ],
     metaDescription:
@@ -297,7 +297,7 @@ export const COURSES: Record<string, CourseData> = {
           "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
         name: "Ananya Iyer",
         detail: "Interactive Speaking · Data Analyst, Bengaluru",
-        waMessage: "Hi, I saw Ananya's standup story. Interactive Speaking demo please.",
+        waMessage: "Hi, I saw Ananya's standup story. Interactive Speaking free consultation please.",
       },
     ],
     faqs: [

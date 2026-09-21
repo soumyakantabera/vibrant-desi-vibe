@@ -96,7 +96,7 @@ const MARKET = [
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I'd like to know why Learn With Smile fits me. Free demo please."
+      waMessage="Hi, I'd like to know why Learn With Smile fits me. Free consultation please."
       footerImage={IMG.liveClass}
     >
       <section className="relative overflow-hidden">
@@ -155,7 +155,7 @@ function Page() {
                     tone: "indigo",
                     icon: SnapIcons.refresh,
                     big: "Free",
-                    small: "Demo on WhatsApp",
+                    small: "Consultation on WhatsApp",
                   },
                   {
                     tone: "coral",

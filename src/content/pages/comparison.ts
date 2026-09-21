@@ -169,7 +169,7 @@ export const body: ArticleBody = [
     t: "ol",
     items: [
       "Pick three options from different categories above — say one app, one small batch, one large batch.",
-      "Take the free trial or demo class of each in the same week, while your impressions are comparable.",
+      "Take the free trial or consultation of each in the same week, while your impressions are comparable.",
       "In each one, count how many minutes **you** spoke. Not the teacher, not the class. You.",
       "Ask each provider one question: what is the actual batch size, not the maximum?",
       "Then pick, and give it three months before judging it. Nothing in language learning shows results in three weeks.",

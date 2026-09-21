@@ -8,7 +8,7 @@ export function WhatsAppFab({
   message?: string;
 }) {
   const whatsapp = waLink(message);
-  const demo = waLink(DEMO_MSG);
+  const consult = waLink(DEMO_MSG);
   return (
     <>
       <a
@@ -42,11 +42,11 @@ export function WhatsAppFab({
           <BrandIcon name="whatsapp" size={16} color="#053b1e" /> {CHAT_CTA}
         </a>
         <a
-          href={demo}
+          href={consult}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-sun btn-sm justify-center px-2"
-          data-cta-goal="free_demo"
+          data-cta-goal="free_consultation"
         >
           <Icon name="spark" size={16} /> {DEMO_CTA}
         </a>

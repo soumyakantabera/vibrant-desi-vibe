@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "English classes are sold in **months**. Fluency is built in **minutes you spoke**. A 60-minute class with around 6 learners and a 60-minute class with 35 people are not the same product. Here is the arithmetic we use in every demo, and the bands we see across India in 2026.",
+    text: "English classes are sold in **months**. Fluency is built in **minutes you spoke**. A 60-minute class with around 6 learners and a 60-minute class with 35 people are not the same product. Here is the arithmetic we use in every consultation, and the bands we see across India in 2026.",
   },
 
   { t: "h2", text: "The formula" },
@@ -49,7 +49,7 @@ export const body: ArticleBody = [
     text: "EngVarta-style sessions from ~₹108 are the cheapest *speaking minute* in India if you already have language. Cambly at ~$10/hour is the most expensive speaking minute. British Council modules (often ₹8,800–₹16,000) sell a CEFR level and a brand — speaking time is 4–6 minutes in a 8–12 group, which is honest, just not cheap.",
   },
 
-  { t: "h2", text: "How to audit a demo in 15 minutes" },
+  { t: "h2", text: "How to audit a live class in 15 minutes" },
   {
     t: "ol",
     items: [
@@ -71,9 +71,9 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Sit in our batch of around 6 and count your own minutes.",
+    text: "Get a free consultation. We will walk you through the batch of around 6, the speaking minutes, and whether the room fits you.",
     course: "/book-free-demo",
-    label: "Book a Free Demo",
+    label: "Get Free Consultation",
   },
 
   { t: "h2", text: "When fewer minutes are still the right buy" },

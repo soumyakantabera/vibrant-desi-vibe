@@ -181,10 +181,10 @@ function BlogPostPage() {
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">Want to practise this live?</h2>
+          <h2 className="text-cream text-2xl md:text-3xl">Want a free consultation?</h2>
           <p className="mt-3 text-white">
-            The demo is free. Chat on WhatsApp to book one. With approximately 6
-            learners, you speak in every session.
+            Get Free Consultation on WhatsApp. We discuss courses, curriculum and
+            your requirements one by one. It is not a full class.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">

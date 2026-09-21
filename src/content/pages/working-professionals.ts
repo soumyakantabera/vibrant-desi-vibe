@@ -14,7 +14,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "The three slots" },
   {
     t: "table",
-    caption: "Typical IST windows. Exact batch times are confirmed on WhatsApp after the demo.",
+    caption: "Typical IST windows. Exact batch times are confirmed on WhatsApp after the consultation.",
     head: ["Slot", "Who it usually fits", "What to pick"],
     rows: [
       ["Morning", "Before office, teachers, early shifts", "Spoken or Interactive"],
@@ -58,6 +58,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Tell us your shift. We will suggest morning, evening or weekend — and Spoken, Interactive or Business.",
     course: "/book-free-demo",
-    label: "Book a Free Demo",
+    label: "Get Free Consultation",
   },
 ];

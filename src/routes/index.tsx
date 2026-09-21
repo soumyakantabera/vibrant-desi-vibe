@@ -90,7 +90,7 @@ function Home() {
       name: "Neha Patel",
       detail: "Workplace English · Tax Analyst, Ahmedabad",
       waMessage:
-        "Hi, I saw Neha's tax-analyst story. I want the same result. Workplace English demo please.",
+        "Hi, I saw Neha's tax-analyst story. I want the same result. Workplace English free consultation please.",
     },
     {
       quote:
@@ -98,7 +98,7 @@ function Home() {
       name: "Kavya Reddy",
       detail: "Spoken English · Advocate, Hyderabad",
       waMessage:
-        "Hi, I saw Kavya's story. I want the same result. Can I get a free demo for Spoken English?",
+        "Hi, I saw Kavya's story. I want the same result. Can I get a free consultation for Spoken English?",
     },
     {
       quote:
@@ -106,13 +106,13 @@ function Home() {
       name: "Vikram Singh",
       detail: "Spoken English · Bank Asst. Manager, Delhi",
       waMessage:
-        "Hi, I saw Vikram's promotion story. I want the same career move. Spoken English demo please.",
+        "Hi, I saw Vikram's promotion story. I want the same career move. Spoken English free consultation please.",
     },
   ];
 
   return (
     <Layout
-      waMessage="Hi, I am interested in a free demo. Please guide me."
+      waMessage="Hi, I am interested in a free consultation. Please guide me."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -168,7 +168,7 @@ function Home() {
                 variant="sun"
                 size="lg"
                 className="w-full sm:w-auto justify-center"
-                goal="free_demo"
+                goal="free_consultation"
               >
                 <Icon name="spark" size={18} /> {DEMO_CTA}
               </WaButton>
@@ -394,7 +394,7 @@ function Home() {
             ))}
           </Reveal>
           <div className="text-center mt-10">
-            <WaButton message="Hi, I am interested in a free demo. Please guide me." variant="sun" size="lg">
+            <WaButton message="Hi, I am interested in a free consultation. Please guide me." variant="sun" size="lg">
               {DEMO_CTA}
             </WaButton>
           </div>
@@ -576,19 +576,19 @@ function Home() {
                 <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">Free</p>
-              <p className="mt-1 text-sm text-ink/75">Message us on WhatsApp to start</p>
+              <p className="mt-1 text-sm text-ink/75">One-to-one counselling — not a full class</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Meet your teacher
+                  Discuss courses and curriculum
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Ask questions before deciding
+                  Understand your requirements, one by one
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Chat on WhatsApp
+                  Not a full class — counselling on WhatsApp
                 </li>
               </ul>
             </article>
@@ -599,7 +599,7 @@ function Home() {
             </p>
             <div className="mt-3">
               <WaButton
-                message="Hi, please send me the exact pricing and next available demo slot for my course."
+                message="Hi, please send me the exact pricing and next available consultation slot for my course."
                 variant="wa"
                 size="sm"
               >
@@ -641,7 +641,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
-              data-cta-goal="free_demo"
+              data-cta-goal="free_consultation"
             >
               <SmartImage
                 src={IMG.womanLaptop}
@@ -655,7 +655,9 @@ function Home() {
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
                   <Icon name="spark" size={22} /> {DEMO_CTA}
                 </h3>
-                <p className="text-cream/95 mb-4">One WhatsApp message. We’ll share the next slot.</p>
+                <p className="text-cream/95 mb-4">
+                  Courses, curriculum and your requirements — one by one. Not a full class.
+                </p>
                 <span className="btn btn-sun btn-sm">
                   {DEMO_CTA} <Icon name="arrow-right" size={14} />
                 </span>
@@ -671,7 +673,7 @@ function Home() {
         eyebrow="Common Questions"
         title="Your Questions, Answered Plainly"
         subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-        waMessage="Hi, I have a question before booking a demo."
+        waMessage="Hi, I have a question before getting a free consultation."
       />
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
@@ -928,7 +930,7 @@ function WorkplaceIcon() {
   );
 }
 
-// Free Demo — ticket with a play button
+// Free Consultation — ticket with a play button
 function FreeDemoIcon() {
   return (
     <IconFrame>

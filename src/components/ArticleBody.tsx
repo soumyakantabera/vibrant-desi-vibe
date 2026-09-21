@@ -5,7 +5,7 @@ import type { ArticleBody as ArticleBodyBlocks, Block } from "@/content/blog/blo
 import { headingId } from "@/content/blog/blocks";
 import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 /**
  * Renders an article body (see src/content/blog/blocks.ts).
@@ -73,10 +73,11 @@ export function WaStrip({ message }: { message: string }) {
       className="mt-8 rounded-2xl border border-brand/20 bg-brand-soft/60 p-5 md:p-6"
       data-cta-location="mid_article"
     >
-      <p className="font-display font-extrabold text-ink">Want to try this live?</p>
+      <p className="font-display font-extrabold text-ink">Want a free consultation?</p>
       <p className="mt-1 text-sm text-ink/80 leading-relaxed">
-        Free demo. One WhatsApp message. No payment to book. Batches of around 6,
-        from ₹999/mo, inclusive of taxes.
+        Get Free Consultation. We discuss courses, curriculum and your
+        requirements one by one — not a full class. One WhatsApp message. No
+        payment to book.
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
         <WaButton message={message} variant="sun" size="sm">
@@ -208,10 +209,10 @@ function BlockView({ block }: { block: Block }) {
           <div className="mt-4 flex flex-wrap gap-3">
             {block.course === "/book-free-demo" ? (
               <WaButton
-                message="Hi, I'd like a free demo. Please share the next slot."
+                message={DEMO_MSG}
                 variant="sun"
                 size="sm"
-                goal="free_demo"
+                goal="free_consultation"
               >
                 {block.label}
               </WaButton>
@@ -221,7 +222,7 @@ function BlockView({ block }: { block: Block }) {
               </Link>
             )}
             <WaButton
-              message={`Hi, I read your article and I'd like a free demo class. Please guide me.`}
+              message={`Hi, I read your article and I'd like a free consultation to understand my requirements. Please guide me.`}
               variant="wa"
               size="sm"
             >

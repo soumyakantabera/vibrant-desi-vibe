@@ -135,6 +135,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Compare us in a class. Approximately 6 learners. From ₹999/mo, inclusive of taxes. 500+ learners, 7 years.",
     course: "/book-free-demo",
-    label: "Book a Free Demo",
+    label: "Get Free Consultation",
   },
 ];

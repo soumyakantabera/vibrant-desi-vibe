@@ -136,7 +136,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "All figures are inclusive of taxes. There is no registration fee and no material fee. The demo is free. Chat on WhatsApp to book one.",
+    text: "All figures are inclusive of taxes. There is no registration fee and no material fee. The consultation is free. Chat on WhatsApp to book one.",
   },
 
   { t: "h2", text: "Batch timings, on IST" },

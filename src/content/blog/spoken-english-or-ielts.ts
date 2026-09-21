@@ -82,6 +82,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Not sure? Sit in a live batch of around 6. We will tell you if IELTS is the wrong buy.",
     course: "/book-free-demo",
-    label: "Book a Free Demo",
+    label: "Get Free Consultation",
   },
 ];

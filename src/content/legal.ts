@@ -30,7 +30,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "What this policy covers",
         paragraphs: [
-          "This policy applies to www.learnwithsmile.app and to personal information you give us when you enquire, book a free demo, enrol, pay, or attend a class. It does not apply to websites, apps or payment pages we do not control, including WhatsApp and Razorpay.",
+          "This policy applies to www.learnwithsmile.app and to personal information you give us when you enquire, get a free consultation, enrol, pay, or attend a class. It does not apply to websites, apps or payment pages we do not control, including WhatsApp and Razorpay.",
         ],
       },
       {
@@ -49,7 +49,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How we use information",
         paragraphs: [
-          "We use personal information to reply on WhatsApp, confirm a demo or batch, deliver live classes, share class recordings with the enrolled learner, send fee and timetable details, process payments through Razorpay, and keep records we reasonably need for accounts, tax and dispute handling.",
+          "We use personal information to reply on WhatsApp, confirm a consultation or batch, deliver live classes, share class recordings with the enrolled learner, send fee and timetable details, process payments through Razorpay, and keep records we reasonably need for accounts, tax and dispute handling.",
           "We do not sell personal information. We do not use it to run advertising networks or third-party marketing lists.",
         ],
       },
@@ -143,7 +143,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Agreement",
         paragraphs: [
-          "By using www.learnwithsmile.app, messaging us for a demo, or paying a course fee, you agree to these terms, our Privacy Policy and our Refunds and Cancellation Policy. If you do not agree, do not use the site or enrol.",
+          "By using www.learnwithsmile.app, messaging us for a consultation, or paying a course fee, you agree to these terms, our Privacy Policy and our Refunds and Cancellation Policy. If you do not agree, do not use the site or enrol.",
           "These pages describe how we run the school. They are not legal advice to you. If a term conflicts with a right under Indian law that cannot be waived, that right still applies.",
         ],
       },
@@ -170,9 +170,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
-        heading: "Demo, enrolment and fees",
+        heading: "Consultation, enrolment and fees",
         paragraphs: [
-          "A demo is free and does not require payment. Messaging us does not create an obligation to enrol.",
+          "A the consultation is free and does not require payment. Messaging us does not create an obligation to enrol.",
           "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. There is no separate registration fee or material fee for the standard English batches described on this site.",
           "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart.",
         ],
@@ -230,13 +230,13 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Refunds",
     h1: "Refunds and Cancellation",
     standfirst:
-      "Please read this before you pay. A free demo is available so you can see the class. Statutory rights under Indian law still apply.",
+      "Please read this before you pay. Get a free consultation first — we discuss courses, curriculum and your requirements one by one. It is not a full class. Statutory rights under Indian law still apply.",
     updated: LEGAL_UPDATED,
     sections: [
       {
-        heading: "Please try a demo first",
+        heading: "Please get a free consultation first",
         paragraphs: [
-          "The demo is free. There is nothing to refund on a demo. We ask you to join a live session, ask questions, and confirm the fee, slot and syllabus on WhatsApp before you pay. Enrol only if the format fits.",
+          "The consultation is free. There is nothing to refund on a consultation. We ask you to join the consultation, ask questions, and confirm the fee, slot and syllabus on WhatsApp before you pay. Enrol only if the format fits.",
         ],
       },
       {
@@ -350,7 +350,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "The parent is the customer when the learner is under 18",
         paragraphs: [
-          "Fees, WhatsApp, timetable and class recordings sit on the parent’s or guardian’s number. The learner does not need a phone. The parent joins the free demo on camera. Under 18, a parent or guardian must enrol and pay.",
+          "Fees, WhatsApp, timetable and class recordings sit on the parent’s or guardian’s number. The learner does not need a phone. The parent joins the free consultation on camera. Under 18, a parent or guardian must enrol and pay.",
           "We do not open a private chat with a learner under 18 on a number the parent does not control. If a teenager messages us from their own phone, we still copy the parent on enrolment, fees and recordings.",
         ],
       },

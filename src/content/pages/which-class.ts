@@ -86,6 +86,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Unsure? Unsure? Chat on WhatsApp. We’ll place you in Spoken, Interactive or Business — not all three.",
     course: "/book-free-demo",
-    label: "Book a Free Demo",
+    label: "Get Free Consultation",
   },
 ];

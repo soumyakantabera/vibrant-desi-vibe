@@ -378,7 +378,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "cta",
       text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹999/mo, inclusive of taxes.`,
       course: "/book-free-demo",
-      label: "Book a Free Demo",
+      label: "Get Free Consultation",
     },
   ];
 }

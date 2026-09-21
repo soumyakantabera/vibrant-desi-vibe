@@ -57,7 +57,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Presentations and standups"
-      waMessage="Hi, I want to explain my work in English. Demo please."
+      waMessage="Hi, I want to explain my work in English. Free consultation please."
       ctaTitle="Bring one real update"
       ctaBody="We will run it in a live group of around 6."
     />

@@ -14,12 +14,12 @@
  * name to the SERP title itself. Every character spent on "| Learn With Smile"
  * is a character not spent on a keyword.
  *
- * The `keywords` arrays below are internal targeting notes only. They are not
- * emitted as a `<meta name="keywords">` tag: Google has ignored that tag since
- * 2009, Bing treats it as a spam signal, and publishing the full target list
- * hands competitors the keyword research for free. The real AI-visibility lever
- * is `faqs` below — question-shaped headings with self-contained answers are
- * what actually gets retrieved and cited.
+ * The `keywords` arrays below are targeting notes AND are emitted as a
+ * `<meta name="keywords">` tag so SEM, Search Console and AI crawlers see
+ * the same list. Google still largely ignores the tag for ranking; we keep
+ * it because paid search, Bing and assistants do read it. Visible page copy
+ * never says "demo class" — that phrase lives here, in titles and in
+ * descriptions so we still match "free demo class" searches.
  */
 
 import { verificationMeta } from "@/lib/analytics";
@@ -196,6 +196,51 @@ const CORE_KEYWORDS = [
   "spoken english classes kolkata online",
 ];
 
+/**
+ * Pushed onto every page's meta keywords, titles and SEM targeting.
+ * Visible UI says "Get Free Consultation". Meta still ranks for demo-class
+ * searches, and for counselling / consultation queries.
+ */
+export const CONSULTATION_KEYWORDS = [
+  "get free consultation",
+  "get a free consultation",
+  "free consultation",
+  "free consultation to understand their requirements",
+  "free consultation to understand your requirements",
+  "free counselling",
+  "get a free counselling",
+  "get free counselling",
+  "free counselling to understand requirements",
+  "english class free counselling india",
+  "demo class",
+  "free demo class",
+  "free demo class online",
+  "free demo class online india",
+  "book free demo class",
+  "free english demo class",
+  "free english demo class online india",
+  "free ielts demo class online",
+  "english class free demo whatsapp",
+  "free trial spoken english class",
+  "spoken english free demo class",
+  "online english free demo class",
+  "free demo class spoken english india",
+];
+
+function uniqueKeywords(...lists: Array<string[] | undefined>): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const list of lists) {
+    for (const item of list ?? []) {
+      const key = item.trim().toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      out.push(item);
+    }
+  }
+  return out;
+}
+
 /* --------------------------------------------------------------------------
  * Page metadata
  * ------------------------------------------------------------------------ */
@@ -205,7 +250,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/",
     title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India.",
+      "Speak better English with a teacher who knows your name. Get a free consultation. Free counselling on courses. Free demo class online. From ₹999/mo.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -247,8 +292,8 @@ export const PAGES: Record<string, PageSeo> = {
         a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join morning, evening or weekend slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
       },
       {
-        q: "Can I try a class before I enrol?",
-        a: "Yes. Message us on WhatsApp at +91 96744 79949. We confirm a slot.",
+        q: "Can I get a free consultation before I enrol?",
+        a: "Yes. Tap Get Free Consultation — it opens WhatsApp. We discuss our courses and curriculum and understand your requirements one by one. It is not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -339,7 +384,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is there a refund if I don't like the course after enrolling?",
-        a: "The demo is free. Monthly fees are prepaid because a live seat is reserved, so we do not run a routine refund after a paid period has started. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Full policy: https://www.learnwithsmile.app/refunds — message WhatsApp before you enrol.",
+        a: "The consultation is free. Monthly fees are prepaid because a live seat is reserved, so we do not run a routine refund after a paid period has started. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Full policy: https://www.learnwithsmile.app/refunds — message WhatsApp before you enrol.",
       },
       {
         q: "Are the classes live or pre-recorded?",
@@ -475,28 +520,36 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Free Demo | Learn With Smile",
-    description: "Message us on WhatsApp for a free demo. We reply 09:00–12:00 IST.",
-    shortTitle: "Book a Free Demo",
+    title: "Get Free Consultation | Free Demo Class | Counselling",
+    description:
+      "Get a free consultation to understand your requirements. Free counselling on courses and curriculum — not a full class. WhatsApp. Free demo class.",
+    shortTitle: "Get Free Consultation",
     keywords: [
-      "free english demo class online india",
-      "free trial spoken english class",
-      "book english class on whatsapp",
-      "free ielts demo class online",
-      "english class free demo whatsapp",
+      ...CONSULTATION_KEYWORDS,
+      "get free consultation learn with smile",
+      "free counselling spoken english india",
+      "free consultation spoken english whatsapp",
+      "book free demo class online india",
+      "free demo class spoken english whatsapp",
     ],
     ogImage: "/og/default.jpg",
     priority: 0.9,
     changefreq: "monthly",
-    summary: "Free demo: one WhatsApp message to +91 96744 79949. We reply 09:00–12:00 IST.",
+    dateModified: "2026-09-21",
+    summary:
+      "Get Free Consultation: one WhatsApp message to +91 96744 79949. We discuss courses, curriculum and your requirements one by one. Not a full class. We reply 09:00–12:00 IST.",
     faqs: [
       {
-        q: "How do I book a free demo class at Learn With Smile?",
-        a: "Tap Book a Free Demo — it opens WhatsApp with a message ready to send. Or message +91 96744 79949. We reply 09:00–12:00 IST.",
+        q: "How do I get a free consultation at Learn With Smile?",
+        a: "Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message +91 96744 79949. We reply 09:00–12:00 IST.",
       },
       {
-        q: "What happens in the demo class?",
-        a: "You join a live class, see the teaching style, and get to speak. Afterwards we send fees, timings and the syllabus on WhatsApp.",
+        q: "What happens in the free consultation?",
+        a: "It is not a full class. We discuss our courses and curriculum, and understand your requirements one by one. Then we recommend the right batch. Fees, timings and syllabus follow on WhatsApp.",
+      },
+      {
+        q: "Is the free consultation a full English class?",
+        a: "No. People sometimes expect a full class for free. The consultation is one-to-one counselling: courses, curriculum, and your goal. You enrol only if the format fits.",
       },
       {
         q: "Will you call me after I send my WhatsApp number?",
@@ -563,7 +616,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "How refunds and cancellations work at Learn With Smile. Free demos, prepaid monthly fees, and good-faith review of duplicate charges or undelivered classes.",
+      "How refunds and cancellations work at Learn With Smile. Free consultation first, prepaid monthly fees, and good-faith review of duplicate charges or undelivered classes.",
     shortTitle: "Refunds and Cancellation",
     keywords: ["learn with smile refund policy", "english class cancellation india"],
     ogImage: "/og/default.jpg",
@@ -571,7 +624,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "yearly",
     dateModified: "2026-09-11",
     summary:
-      "Refunds: demo is free. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
+      "Refunds: the consultation is free. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
@@ -582,8 +635,8 @@ export const PAGES: Record<string, PageSeo> = {
         a: "Message +91 96744 79949 on WhatsApp before that month is billed. This website does not run an automatic card subscription.",
       },
       {
-        q: "Is the demo refundable?",
-        a: "The demo is free, so there is nothing to refund. Join it before you enrol.",
+        q: "Is the consultation refundable?",
+        a: "The consultation is free, so there is nothing to refund. Get the consultation before you enrol. It is counselling — courses, curriculum and your requirements — not a full class.",
       },
     ],
   },
@@ -1510,9 +1563,11 @@ export type HeadResult = {
 
 /**
  * Builds the full head payload for a page: title, description, robots
- * directives, canonical, Open Graph, Twitter and JSON-LD.
+ * directives, canonical, Open Graph, Twitter, keywords and JSON-LD.
  *
- * No `<meta name="keywords">` — see the note at the top of this file.
+ * Keywords are emitted for SEM / Bing / AI crawlers. Visible copy still
+ * says "Get Free Consultation"; the keyword list also carries "free demo
+ * class" so those searches keep matching.
  */
 export function buildHead(opts: {
   path: string;
@@ -1521,14 +1576,17 @@ export function buildHead(opts: {
   ogImage: string;
   ogType?: string;
   jsonLd?: unknown[];
+  keywords?: string[];
 }): HeadResult {
   const url = abs(opts.path);
   const image = abs(opts.ogImage);
+  const keywords = uniqueKeywords(opts.keywords, CONSULTATION_KEYWORDS);
 
   return {
     meta: [
       { title: opts.title },
       { name: "description", content: opts.description },
+      { name: "keywords", content: keywords.join(", ") },
       // max-*-preview:-1 lets Google (and, in practice, AI summarisers) use the
       // whole page rather than a truncated snippet.
       {
@@ -1645,6 +1703,7 @@ export function pageHead(path: string): HeadResult {
     description: page.description,
     ogImage: page.ogImage,
     jsonLd,
+    keywords: page.keywords,
   });
   if (page.dateModified ?? CONTENT_REVISED) {
     head.meta.push(
@@ -1726,6 +1785,7 @@ export function blogPostHead(post: BlogPost): HeadResult {
     ogImage: "/og/blog.jpg",
     ogType: "article",
     jsonLd,
+    keywords: CONSULTATION_KEYWORDS,
   });
 
   head.meta.push(

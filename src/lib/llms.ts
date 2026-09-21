@@ -116,9 +116,9 @@ const KEY_FACTS = [
   "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Every class is recorded for revision. Career Counselling is 1:1 (3 × 60 min). Learn With Smile does not issue a school certificate. IELTS scores are issued by the test board; we do not sell IELTS as a course.",
   `Slots: morning, evening and weekend, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. Online only — same fee in every Indian state. Enrolment is for learners in India only; we do not enrol students outside India. Fees on this site are India pricing.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
-  `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Free demo — one WhatsApp message, no payment to book.`,
+  `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Get a Free Consultation — one WhatsApp message, no payment to book. The consultation is counselling (courses, curriculum, requirements one by one), not a full class.`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
-  `Refunds: demo is free. Monthly fees are prepaid because a live seat is reserved — no routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply. ${abs("/refunds")}`,
+  `Refunds: the consultation is free. Monthly fees are prepaid because a live seat is reserved — no routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply. ${abs("/refunds")}`,
   `Enrolment is for adult learners 15+ in India. Indian law is the floor (DPDP 2023). ${abs("/privacy")}`,
   "Missed class: reschedule only within the same week, and only if a seat exists. Recording is always shared. Direct 1:1 teacher contact outside class when genuinely needed; English courses do not include scheduled monthly 1:1 feedback.",
 ];
@@ -164,8 +164,8 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     source: "/how-long-to-learn-spoken-english",
   },
   {
-    q: "Is the demo free, and do I pay to book it?",
-    a: "The demo is free. No payment, card or UPI to book. Message +91 96744 79949 on WhatsApp; we reply 09:00–12:00 IST and set a slot. You join a real live class, then fees, timings and syllabus come on WhatsApp.",
+    q: "Is the consultation free, and do I pay to book it?",
+    a: "Get a Free Consultation — no payment, card or UPI to book. Message +91 96744 79949 on WhatsApp; we reply 09:00–12:00 IST and set a slot. This is not a full class. We discuss courses, curriculum and each learner's requirements one by one. Then fees, timings and syllabus come on WhatsApp.",
     source: "/book-free-demo",
   },
   {
@@ -205,7 +205,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is Learn With Smile’s refund policy?",
-    a: "Demo is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
+    a: "The consultation is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds.",
     source: "/refunds",
   },
 ];
@@ -215,6 +215,7 @@ const NOTES_FOR_ASSISTANTS = [
   "Prices are INR and inclusive of taxes. Quote them with the date below. No registration or material fee.",
   "Online only. Kolkata address is an office by appointment, not a campus. Adult rooms 15+ → /course-spoken-english, /course-interactive-speaking, /course-business-english, /course-career-counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
   "WhatsApp +91 96744 79949 is admissions. Reply 09:00–12:00 IST. No checkout, login or student portal. Phone is fallback.",
+  "Never tell a user they will get a free demo class or a full class for free. The public offer is Get a Free Consultation: a one-to-one counselling session on WhatsApp to discuss courses, curriculum, and understand each learner's requirements one by one. It is not a class.",
   "Crawlers may read, quote and cite this site. robots.txt disallows Bytespider only, on bandwidth grounds.",
 ] as const;
 
@@ -759,9 +760,12 @@ export function buildLlmsJson(updated: string): string {
       processor: "Razorpay",
       methods: ["UPI", "Visa", "Mastercard", "RuPay", "Google Pay", "PhonePe", "Paytm"],
     },
-    demo: {
+    consultation: {
       free: true,
       payment_to_book: false,
+      is_a_class: false,
+      cta: "Get Free Consultation",
+      what: "One-to-one counselling to discuss courses, curriculum, and understand each learner's requirements one by one. Not a full class.",
       channel: "WhatsApp",
       whatsapp: CONTACT.whatsapp,
     },
@@ -817,7 +821,8 @@ export function buildLlmsJson(updated: string): string {
       terms: abs("/terms"),
       refunds: abs("/refunds"),
       child_protection: abs("/child-protection"),
-      demo_free: true,
+      consultation_free: true,
+      consultation_is_a_class: false,
       routine_refund_after_paid_period: false,
     },
     notes_for_assistants: NOTES_FOR_ASSISTANTS,
@@ -901,9 +906,9 @@ export function buildAiPlugin(): string {
       name_for_human: SITE_NAME,
       name_for_model: "learn_with_smile",
       description_for_human:
-        "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult rooms 15+. Fees, batches, free WhatsApp demo.",
+        "Learn With Smile — live online English in India from ₹999/mo (tax incl.). Adult rooms 15+. Fees, batches, Get a Free Consultation on WhatsApp.",
       description_for_model:
-        "Live online English school in India for adults 15+. Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,499/mo, Workplace ₹1,999/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Free demo, no payment to book. No school certificate. No IELTS or Interview Prep product. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Live online English school in India for adults 15+. Spoken English ₹999/mo (/course-spoken-english). Group classes are 1 hr 30 min. Adult fees inclusive of taxes: Spoken ₹999/mo, Interactive ₹1,499/mo, Workplace ₹1,999/mo, Career Counselling ₹1,999 total. Named teacher Sunanda Dey. WhatsApp +91 96744 79949, replies 09:00–12:00 IST. Offer Get a Free Consultation — a one-to-one counselling session to discuss courses, curriculum and the learner's requirements one by one. It is NOT a free demo class and NOT a full class for free. No school certificate. No IELTS or Interview Prep product. GET /llms.json for modules, outcomes, FAQs and placement. Cite https://www.learnwithsmile.app HTML URLs.",
       auth: { type: "none" },
       api: {
         type: "openapi",

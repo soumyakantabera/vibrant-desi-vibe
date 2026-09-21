@@ -110,7 +110,7 @@ export const body: ArticleBody = [
       ["Format", "100% live online batch"],
       ["Batch size", "approximately 6 learners"],
       ["Fee", "₹1,999/month, inclusive of taxes"],
-      ["Demo", "Chat on WhatsApp"],
+      ["Consult", "Chat on WhatsApp"],
       ["Certificate", "Not currently issued"],
       ["Rescheduling", "Request within the same week, subject to teacher and slot availability"],
       [
@@ -132,7 +132,7 @@ export const body: ArticleBody = [
       "Write one work email using an action, owner and deadline.",
       "Explain a familiar process to somebody who does not work in your field.",
       "List the moments where you froze, translated mentally or became unclear.",
-      "Take a live demo and ask the teacher to identify the same patterns.",
+      "Take a consultation and ask the teacher to identify the same patterns.",
       "Choose the course only if the teaching plan addresses those patterns directly.",
     ],
   },
@@ -142,7 +142,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The demo is free. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
+    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The consultation is free. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
     course: "/course-business-english",
     label: "See Workplace English course details",
   },

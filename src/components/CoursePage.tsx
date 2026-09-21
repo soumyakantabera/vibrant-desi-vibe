@@ -11,6 +11,7 @@ import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import {
   CONTACT,
   CONTENT_REVISED,
+  CONSULTATION_KEYWORDS,
   COURSE_SEO,
   SITE_NAME,
   SITE_URL,
@@ -160,7 +161,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary =
     data.waDemo ??
-    `Hi, I am interested in the ${data.title} course. Please share batch details and a free demo slot.`;
+    `Hi, I am interested in the ${data.title} course. Please share batch details and a free consultation slot.`;
   const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
   const faqs = courseFaqs(data);
@@ -420,7 +421,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               eyebrow="Free Learning Guides"
               eyebrowTone="indigo"
               title={`Practise ${data.title} Between Classes`}
-              subtitle="Use these practical lessons before your demo or between live sessions."
+              subtitle="Use these practical lessons before your consultation or between live sessions."
             />
             <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {RELATED_GUIDES[data.slug].map((guide) => (
@@ -483,7 +484,8 @@ export function CoursePage({ data }: { data: CourseData }) {
         <div className="container-x text-center text-cream">
           <h2 className="text-cream text-3xl md:text-4xl">Ready to start {data.title}?</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
-            Tell us your goal — we'll set up your free live demo on the next available slot.
+            Tell us your goal — we'll set up a free consultation on the next available slot.
+            We discuss courses, curriculum and your requirements one by one. It is not a full class.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waPrimary} variant="sun" size="lg">
@@ -640,6 +642,7 @@ export function courseSeo(d: CourseData) {
     description: extra?.description ?? d.metaDescription,
     ogImage,
     jsonLd,
+    keywords: extra?.keywords ?? CONSULTATION_KEYWORDS,
   });
   head.meta.push(
     { name: "revised", content: revised },

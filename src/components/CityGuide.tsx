@@ -58,9 +58,9 @@ export function CityGuide({ slug }: { slug: string }) {
       body={cityBody(city)}
       faqs={page?.faqs ?? []}
       faqTitle={`Spoken English in ${city.name} — questions`}
-      waMessage={`Hi, I'm in ${city.name} and I'd like a free demo for Spoken English. Please share batch timings.`}
-      ctaTitle="See a batch of around six for yourself"
-      ctaBody="Message us on WhatsApp. Same fee as Kolkata, Mumbai or Kochi."
+      waMessage={`Hi, I'm in ${city.name} and I'd like a free consultation for Spoken English. Please share batch timings.`}
+      ctaTitle="Get a free consultation for your city"
+      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee as Kolkata, Mumbai or Kochi."
     />
   );
 }

@@ -58,9 +58,9 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How to Choose a Spoken English Class in India: 7 Checks",
     seoTitle: "Choose a Spoken English Class | 7 Checks",
     description:
-      "Seven checks for any Indian English class: batch cap, speaking minutes, GST, named teacher, real demo, review patterns, certificate vs speaking. ₹999/mo.",
+      "Seven checks for any Indian English class: batch cap, speaking minutes, GST, named teacher, live class you can evaluate, review patterns, certificate vs speaking. ₹999/mo.",
     excerpt:
-      "Cap, minutes, GST, named teacher, real demo, review patterns, certificate. Run them on us too.",
+      "Cap, minutes, GST, named teacher, live class you can evaluate, review patterns, certificate. Run them on us too.",
     tag: "Guides",
     img: "speaking",
     imgAlt: "Adult learner comparing online English class options on a laptop",
@@ -71,7 +71,7 @@ export const BLOG_POSTS: BlogPost[] = [
     wordCount: 579,
     relatedCourses: ["/course-spoken-english"],
     shortAnswer:
-      "Ask seven things: batch cap, speaking minutes, GST, named teacher, a real demo, review patterns, and whether you need a certificate or a voice. Run them on us too.",
+      "Ask seven things: batch cap, speaking minutes, GST, named teacher, a live class you can evaluate, review patterns, and whether you need a certificate or a voice. Run them on us too.",
     faqs: [
       {
         q: "How do I choose a spoken English class in India?",

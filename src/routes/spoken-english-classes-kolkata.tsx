@@ -69,7 +69,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Spoken English in Kolkata — Questions & Answers"
-      waMessage="Hi, I'm in Kolkata and I'd like a free demo for Spoken English. Please share batch timings."
+      waMessage="Hi, I'm in Kolkata and I'd like a free consultation for Spoken English. Please share batch timings."
       ctaTitle="See a batch of around six for yourself"
       ctaBody="Message us on WhatsApp and we'll put you in the next available slot."
     />

@@ -20,7 +20,7 @@ function Page() {
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.womanLaptop}
-            alt="Student booking a free online demo class on a laptop"
+            alt="Student booking a free consultation for live online English classes"
             fill
             priority
             sizes="100vw"
@@ -32,16 +32,17 @@ function Page() {
             <Icon name="spark" size={14} /> {DEMO_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Book a Free Demo. <span className="text-sunshine">On WhatsApp.</span>
+            Get Free Consultation. <span className="text-sunshine">On WhatsApp.</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Message us anytime. We reply 09:00–12:00 IST and confirm a slot.
+            This is not a full class. In this session we discuss our courses and
+            curriculum, and understand your requirements one by one.
           </p>
           <div className="mt-8 flex flex-wrap gap-3" data-cta-location="hero">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
-            <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_demo">
+            <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
               <Icon name="spark" size={18} /> {DEMO_CTA}
             </WaButton>
           </div>
@@ -51,12 +52,15 @@ function Page() {
       <section className="section">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
           <div className="card-soft">
-            <h2 className="text-2xl mb-4">What happens when you tap WhatsApp</h2>
+            <h2 className="text-2xl mb-4">What happens in the free consultation</h2>
             <ol className="space-y-3 text-ink/90 list-decimal pl-5">
               <li>WhatsApp opens with a message ready to send.</li>
               <li>Send it anytime. We reply 09:00–12:00 IST.</li>
-              <li>We confirm a slot.</li>
-              <li>You join the class.</li>
+              <li>We confirm a one-to-one consultation slot.</li>
+              <li>
+                We discuss courses, curriculum and your goal — one by one. Then you
+                decide. You do not sit a full class for free.
+              </li>
             </ol>
             <div className="mt-6" data-cta-location="mid">
               <WaButton
@@ -64,7 +68,7 @@ function Page() {
                 variant="sun"
                 size="lg"
                 className="w-full justify-center"
-                goal="free_demo"
+                goal="free_consultation"
               >
                 <Icon name="spark" size={18} /> {DEMO_CTA}
               </WaButton>
@@ -72,7 +76,7 @@ function Page() {
           </div>
           <SmartImage
             src={IMG.studentLaptop}
-            alt="Indian learner in a live English class"
+            alt="Indian learner preparing for a live English class"
             className="rounded-3xl shadow-lg h-[280px] w-full md:h-[360px]"
             sizes="(min-width: 1024px) 45vw, 100vw"
           />
@@ -82,9 +86,9 @@ function Page() {
       <FaqSection
         faqs={PAGES["/book-free-demo"].faqs ?? []}
         eyebrow="Before You Book"
-        title="Questions about the demo"
+        title="Questions about the consultation"
         subtitle="Message anytime. We reply 09:00–12:00 IST."
-        waMessage="Hi, I have a question about the free demo."
+        waMessage="Hi, I have a question about the free consultation."
       />
     </Layout>
   );

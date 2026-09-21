@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most “best institute” pages in India are written by the institute. This is a **7-check** you can run on anyone — us included — in one week, using public numbers: fees, batch cap, Google review *patterns*, and a demo you can count.",
+    text: "Most “best institute” pages in India are written by the institute. This is a **7-check** you can run on anyone — us included — in one week, using public numbers: fees, batch cap, Google review *patterns*, and a consultation you can count.",
   },
 
   { t: "h2", text: "The 7 checks" },
@@ -26,7 +26,7 @@ export const body: ArticleBody = [
     head: ["If they fail…", "You are usually looking at"],
     rows: [
       ["No printed cap", "City classroom / franchise (Veta-style, local rooms of 25–40)"],
-      ["Demo is a counsellor", "Exam shop (EEC-style visa stack, spoken add-on ~₹7,500)"],
+      ["Trial is only a counsellor pitch", "Exam shop (EEC-style visa stack, spoken add-on ~₹7,500)"],
       ["₹8k–₹16k per module, CEFR levels", "British Council English Online — buy for the badge"],
       ["₹100–₹400 per 1:1, no syllabus", "EngVarta-style daily practice"],
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
@@ -59,7 +59,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "**“Is ₹999 too cheap to be real?”** Inclusive of taxes, no registration, batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
-      "**“Can I start next week?”** Usually yes. Message for the next IST slot. Demo is free.",
+      "**“Can I start next week?”** Usually yes. Message for the next IST slot. The consultation is free.",
       "**“Do you issue a certificate?”** No. Indian interviews hear you. Visas read an exam-board score — sit IELTS with the test board; we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
     ],
   },
@@ -72,6 +72,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Make us trial one of three. Approx. 6 learners. From ₹999/mo.",
     course: "/book-free-demo",
-    label: "Book a Free Demo",
+    label: "Get Free Consultation",
   },
 ];
