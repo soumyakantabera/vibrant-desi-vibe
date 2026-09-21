@@ -123,11 +123,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Freshers", path: "/spoken-english-for-freshers-india" },
     ],
     summary:
-      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interactive Speaking — interview English is practised there. No placement guarantee.",
+      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interview Preparation — 2 months, ₹1,999/month. No placement guarantee.",
     faqs: [
       {
         q: "Which English course should a fresher take in India?",
-        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interactive Speaking (3 months, ₹1,499/month) — interview English is practised in those rooms. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
+        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹1,999/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
       },
       {
         q: "Do I need IELTS for campus placements in India?",

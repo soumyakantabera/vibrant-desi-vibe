@@ -171,7 +171,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         head: ["If this is true", "Take", "Fee"],
         rows: [
           ["You cannot finish a sentence on a phone call", "Basic Spoken English, 6 months, ~6 learners", "₹999/month"],
-          ["You can chat, HR screens still collapse", "Interactive Speaking, 3 months", "₹1,499/month"],
+          ["You can chat, HR screens still collapse", "Interview Preparation, 2 months", "₹1,999/month"],
         ],
       },
       {

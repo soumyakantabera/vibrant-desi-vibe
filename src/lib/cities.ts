@@ -343,6 +343,7 @@ export function cityBody(city: CityRecord): ArticleBody {
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
         ["Interactive Speaking", "3 months", "₹1,499/month"],
         ["Workplace English", "3 months", "₹1,999/month"],
+        ["Interview Preparation", "2 months, ~6 learners", "₹1,999/month"],
         ["Career Counselling", "3 × 60 min, 1:1", "₹1,999 total"],
       ],
     },
