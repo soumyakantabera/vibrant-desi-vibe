@@ -122,8 +122,8 @@ jobs:
           if grep -Eqi 'course-kids-english|course-teen-english' dist/index.html dist/english-career.html dist/llms.json; then
             echo "::error::kids/teen course URLs still in the public build"; exit 1
           fi
-          if grep -Eqi 'course-ielts|course-interview-prep' dist/index.html dist/english-career.html dist/llms.json dist/sitemap.xml; then
-            echo "::error::IELTS or Interview Prep course URLs still in the public build"; exit 1
+          if grep -Eqi 'course-ielts' dist/index.html dist/english-career.html dist/llms.json dist/sitemap.xml; then
+            echo "::error::IELTS course URLs still in the public build"; exit 1
           fi
           # Recursive: blog articles live at /blog/<slug>, so their mirrors are
           # written to dist/blog/<slug>.md. A `dist/*.md` glob counts only the

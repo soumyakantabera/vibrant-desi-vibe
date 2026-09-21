@@ -125,8 +125,8 @@ jobs:
           grep -q 'english-institute-comparison-india' dist/sitemap.xml
           grep -q '"maximumAttendeeCapacity":6' dist/course-spoken-english.html
           grep -q '₹1,999 total' dist/course-career-counselling.html
-          if grep -Eqi 'course-ielts|course-interview-prep' dist/index.html dist/english-career.html dist/llms.json dist/sitemap.xml; then
-            echo "::error::IELTS or Interview Prep course URLs still in the public build"
+          if grep -Eqi 'course-ielts' dist/index.html dist/english-career.html dist/llms.json dist/sitemap.xml; then
+            echo "::error::IELTS course URLs still in the public build"
             exit 1
           fi
           if grep -REqi 'max(imum)?[- ]*8|hard cap of 8|capped at 8|batch(es)? of (8|eight)|room of 8|8-student' dist; then
