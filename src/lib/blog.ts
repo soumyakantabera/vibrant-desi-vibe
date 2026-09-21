@@ -44,7 +44,7 @@ export type BlogPost = {
   wordCount: number;
   /** In-body and footer links to the courses the article is actually about. */
   relatedCourses: string[];
-  /** Article-specific meta keywords. CONSULTATION_KEYWORDS are merged in `blogPostHead`. */
+  /** Article-specific meta keywords. India-market + CONSULTATION_KEYWORDS are merged in `buildHead`. */
   keywords?: string[];
   /** One-line snippet box under the H1. */
   shortAnswer?: string;

@@ -200,9 +200,38 @@ const CORE_KEYWORDS = [
 ];
 
 /**
+ * India-market terms pushed onto every page (meta keywords, SEM, Bing, LLMs).
+ * Geo, price, GST, medium of instruction, IST, audience — the queries people
+ * in India actually type. Page-specific keywords still go first.
+ */
+export const INDIA_MARKET_KEYWORDS = [
+  ...CORE_KEYWORDS,
+  "spoken english classes india",
+  "english speaking course india fees",
+  "gst inclusive english class india",
+  "english class fees inclusive of taxes india",
+  "hindi medium spoken english classes",
+  "bengali medium spoken english classes",
+  "spoken english for working professionals india",
+  "spoken english for freshers india",
+  "spoken english for homemakers india",
+  "ist live english class india",
+  "online english class west bengal",
+  "spoken english classes delhi ncr online",
+  "spoken english classes mumbai pune online",
+  "spoken english classes bengaluru hyderabad chennai",
+  "spoken english classes ahmedabad surat nagpur",
+  "english class 999 rupees per month",
+  "upi payment english class india",
+  "small batch spoken english india approximately 6 learners",
+  "live english class with indian teacher",
+  "online spoken english adults 15+",
+];
+
+/**
  * Pushed onto every page's meta keywords, titles and SEM targeting.
  * Visible UI says "Get Free Consultation". Meta still ranks for demo-class
- * searches, and for counselling / consultation queries.
+ * searches, and for counselling / consulting / consultation queries.
  */
 export const CONSULTATION_KEYWORDS = [
   "get free consultation",
@@ -214,12 +243,20 @@ export const CONSULTATION_KEYWORDS = [
   "get a free counselling",
   "get free counselling",
   "free counselling to understand requirements",
+  "free consulting",
+  "get free consulting",
+  "get a free consulting",
+  "free consulting to understand requirements",
   "english class free counselling india",
+  "english class free consulting india",
   "free english consultation india",
+  "free english consulting india",
   "spoken english counselling whatsapp",
+  "spoken english consulting whatsapp",
   "what happens in free english consultation",
   "what do you get in free english consultation",
   "english course counselling session india",
+  "english course consulting session india",
   "which english course consultation",
   "help choose spoken english course india",
   "diagnose spoken english problem",
@@ -227,6 +264,7 @@ export const CONSULTATION_KEYWORDS = [
   "best spoken english consultation india",
   "spoken english counselling vs demo class",
   "free counselling spoken english kolkata",
+  "free consulting spoken english kolkata",
   "english course recommendation after counselling",
   "demo class",
   "free demo class",
@@ -1623,7 +1661,9 @@ export type HeadResult = {
  *
  * Keywords are emitted for SEM / Bing / AI crawlers. Visible copy still
  * says "Get Free Consultation"; the keyword list also carries "free demo
- * class" so those searches keep matching.
+ * class" so those searches keep matching. India-market terms (fees, GST,
+ * Hindi/Bengali medium, IST, cities) and counselling/consulting spellings
+ * are merged onto every page.
  */
 export function buildHead(opts: {
   path: string;
@@ -1636,7 +1676,12 @@ export function buildHead(opts: {
 }): HeadResult {
   const url = abs(opts.path);
   const image = abs(opts.ogImage);
-  const keywords = uniqueKeywords(opts.keywords, CONSULTATION_KEYWORDS);
+  const keywords = uniqueKeywords(
+    opts.keywords,
+    INDIA_MARKET_KEYWORDS,
+    BRAND_KEYWORDS,
+    CONSULTATION_KEYWORDS,
+  );
 
   return {
     meta: [

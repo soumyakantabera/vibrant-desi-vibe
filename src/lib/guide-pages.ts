@@ -285,16 +285,35 @@ const NEW_GUIDES: Record<string, PageSeo> = {
   },
 };
 
+function cityAliases(city: (typeof CITIES)[number]): string[] {
+  const slug = city.slug;
+  if (slug === "bengaluru") return ["bangalore"];
+  if (slug === "visakhapatnam") return ["vizag"];
+  if (slug === "kochi") return ["cochin"];
+  if (slug === "delhi") return ["delhi ncr", "gurgaon", "noida", "gurugram"];
+  if (slug === "mumbai") return ["thane", "navi mumbai"];
+  return [];
+}
+
 function cityPage(city: (typeof CITIES)[number]): PageSeo {
+  const name = city.name.toLowerCase();
+  const aliases = cityAliases(city);
   return {
     path: city.path,
     title: city.title,
     description: city.description,
     shortTitle: city.name,
     keywords: [
-      `spoken english classes ${city.name.toLowerCase()}`,
-      `spoken english classes in ${city.name.toLowerCase()} online`,
-      `english speaking course ${city.name.toLowerCase()} fees`,
+      `spoken english classes ${name}`,
+      `spoken english classes in ${name} online`,
+      `english speaking course ${name} fees`,
+      `free consultation spoken english ${name}`,
+      `free counselling spoken english ${name}`,
+      `free consulting spoken english ${name}`,
+      ...aliases.flatMap((a) => [
+        `spoken english classes ${a} online`,
+        `free consultation spoken english ${a}`,
+      ]),
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.75,
