@@ -123,9 +123,9 @@ export const BLOG_POSTS: BlogPost[] = [
     imgAlt: "Learner choosing between spoken English practice and IELTS writing",
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-21",
     readingTime: 5,
-    wordCount: 524,
+    wordCount: 577,
     relatedCourses: ["/course-spoken-english", "/course-business-english"],
     keywords: [
       "spoken english or ielts",
