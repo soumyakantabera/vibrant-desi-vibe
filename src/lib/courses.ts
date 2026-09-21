@@ -94,7 +94,7 @@ export const COURSES: Record<string, CourseData> = {
     faqs: [
       {
         q: "Do you cover job interviews?",
-        a: "Yes. In this Spoken English room you practise the 90-second introduction, HR-style questions and STAR answers live in the batch of about 6. It is interview English inside the 6-month course — not a separate interview fee.",
+        a: "Yes. In this Spoken English room you practise the 90-second introduction, HR-style questions and STAR answers live in the batch of about 6. If you already speak and the interview is the only freeze, take Interview Preparation — 2 months, ₹1,999/month.",
       },
       {
         q: "I can barely speak. Will this work for me?",
@@ -303,7 +303,7 @@ export const COURSES: Record<string, CourseData> = {
     faqs: [
       {
         q: "Do you cover job interviews?",
-        a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. You talk every hour — including the questions that freeze people in interviews.",
+        a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. If the interview is the only gap and you already talk, take Interview Preparation — 2 months, ₹1,999/month.",
       },
     ],
     metaDescription:
@@ -361,6 +361,132 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "1:1 Career Counselling online — 3 × 60-min sessions · ₹1,999 total. Discover, map and act. Free 15-min intro on WhatsApp.",
-  }
+      "1:1 Career Counselling online — 3 × 60-min sessions · ₹1,999 total. Discover, map and act. Free consultation on WhatsApp.",
+  },
+  "interview-preparation": {
+    slug: "interview-preparation",
+    title: "Interview Preparation",
+    tagline:
+      "2 months of live HR screens, 60-second intros, STAR stories and mocks. Approx. 6 learners, up to 2 classes/week, ₹1,999/month, inclusive of taxes. For people who can already talk — and still fail the interview.",
+    category: "Work & Career",
+    categoryColor: "indigo",
+    icon: "clipboard",
+    heroImage: IMG.interview,
+    midImage: IMG.womanOffice,
+    footerImage: IMG.manOffice,
+    duration: "2 months · 1 hr 30 min · up to 2 classes/week",
+    durationQualifier: "The interview is a room. Rehearse it before the real one.",
+    format: "Live batch · approximately 6 learners",
+    price: "₹1,999/month",
+    liveNote:
+      "✓ 100% online live · ✓ Recorded mocks · ✓ Morning · evening · weekend IST · ✓ Pan-India · Based in Kolkata",
+    outcomes: [
+      "A 60-second 'tell me about yourself' that lands",
+      "HR questions — why you, why this company, strengths, notice period — without freezing",
+      "STAR stories for conflict, failure, leadership, achievement",
+      "Explain your work in 3 minutes in English",
+      "Panel and salary talk without dropping the number",
+      "Two recorded mocks with notes you can replay",
+    ],
+    modules: [
+      {
+        title: "The 60-second intro",
+        items: [
+          "Present → past → future, timed to 60 seconds",
+          "Cut the life story. Keep the job thread",
+          "Openers that do not start with 'Myself…'",
+          "Record, replay, cut 10 seconds",
+        ],
+      },
+      {
+        title: "HR screens",
+        items: [
+          "Why this company, why you, why now",
+          "Strengths and weaknesses that sound adult",
+          "Notice period and current CTC, said calmly",
+          "Questions you ask them — not 'no questions'",
+        ],
+      },
+      {
+        title: "STAR stories",
+        items: [
+          "Situation, task, action, result — one story each",
+          "Conflict with a senior, without blaming",
+          "A failure you actually learned from",
+          "Leadership when you had no title",
+        ],
+      },
+      {
+        title: "Explain your work",
+        items: [
+          "A 3-minute walk-through of what you do",
+          "Numbers, names, next step — no jargon dump",
+          "When you do not know: 'I’ll confirm by 4pm IST'",
+          "Whiteboard / screen-share in English",
+        ],
+      },
+      {
+        title: "Panel and salary",
+        items: [
+          "Two interviewers, one answer — who you look at",
+          "Expected CTC without collapsing",
+          "Counter-offer English that does not sound greedy",
+          "Closing: 'When should I follow up?'",
+        ],
+      },
+      {
+        title: "Live mocks",
+        items: [
+          "Two full mocks in the batch, recorded",
+          "Teacher notes on freeze points, not grammar essays",
+          "Replay the recording before the real screen",
+          "Same-week reschedule if a seat exists",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "I already speak English. Do I still need this?",
+        a: "If interviews are the place you freeze, yes. Daily chat and an HR screen are different rooms. This course is for people who can hold a conversation and still lose the job on the 60-second intro, STAR, or salary line.",
+      },
+      {
+        q: "How is this different from Spoken English or Interactive Speaking?",
+        a: "Spoken English builds the sentence from zero. Interactive builds freeze-free talk. Interview Preparation assumes you can already talk and drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. If you cannot yet form a sentence, start with Spoken English at ₹999/month.",
+      },
+      {
+        q: "Is this the same as Career Counselling?",
+        a: "No. Career Counselling is 1:1 about which path to take. Interview Preparation is a live batch about how you sound when someone already invited you to the screen. Different bottleneck.",
+      },
+      {
+        q: "Do you guarantee I will get the job?",
+        a: "No. We rehearse the English of the interview. The offer depends on the role, the panel and your work. We do not sell a placement.",
+      },
+      {
+        q: "What's the batch size?",
+        a: "Approximately 6 learners, so every mock is heard. 1 hr 30 min, up to 2 classes a week, 2 months, ₹1,999/month inclusive of taxes.",
+      },
+      {
+        q: "How do I start?",
+        a: "Get a free consultation on WhatsApp. We will say if this room fits, or if Spoken / Interactive / Workplace is the actual gap.",
+      },
+    ],
+    testimonials: [
+      {
+        quote:
+          "I could talk in the office. The HR screen was a different language. Two mocks later the 60-second intro stopped shaking.",
+        name: "Sneha Kulkarni",
+        detail: "Interview Preparation · Analyst, Pune",
+        waMessage: "Hi, I saw Sneha's interview story. Interview Preparation free consultation please.",
+      },
+      {
+        quote:
+          "STAR was a template I had copied. Saying it out loud in a batch of six is what made it mine.",
+        name: "Rahul Menon",
+        detail: "Interview Preparation · Support Engineer, Kochi",
+        waMessage: "Hi, I want Rahul's STAR result. Interview Preparation free consultation please.",
+      },
+    ],
+    metaDescription:
+      "Interview Preparation in English: 2 months, live batch of approximately 6, ₹1,999/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Kolkata teacher, pan-India.",
+  },
 };

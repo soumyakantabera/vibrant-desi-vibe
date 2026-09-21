@@ -48,7 +48,7 @@ export function WhatsAppFab({
           className="btn btn-sun btn-sm justify-center px-2"
           data-cta-goal="free_consultation"
         >
-          <Icon name="spark" size={16} /> {DEMO_CTA}
+          <Icon name="compass" size={16} /> {DEMO_CTA}
         </a>
       </div>
     </>

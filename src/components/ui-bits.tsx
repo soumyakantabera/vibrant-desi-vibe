@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { waLink } from "@/lib/whatsapp";
+import { waLink, DEMO_CTA } from "@/lib/whatsapp";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
 import { CITY_PATHS } from "@/lib/cities";
@@ -244,6 +244,11 @@ export function WaButton({
   goal?: string;
 }) {
   const cls = `btn btn-${variant} ${size === "lg" ? "btn-lg" : size === "sm" ? "btn-sm" : ""} ${className}`;
+  const consult =
+    goal === "free_consultation" ||
+    children === DEMO_CTA ||
+    (Array.isArray(children) && children.some((c) => c === DEMO_CTA));
+  const iconSize = size === "sm" ? 16 : size === "lg" ? 18 : 16;
   return (
     <a
       href={waLink(message)}
@@ -252,9 +257,10 @@ export function WaButton({
       className={cls}
       data-cta-goal={goal}
     >
-      {variant === "wa" && (
-        <BrandIcon name="whatsapp" size={size === "sm" ? 16 : 18} color="#053b1e" />
+      {variant === "wa" && !consult && (
+        <BrandIcon name="whatsapp" size={iconSize} color="#053b1e" />
       )}
+      {consult && <Icon name="compass" size={iconSize} />}
       <span>{children}</span>
     </a>
   );

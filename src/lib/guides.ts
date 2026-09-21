@@ -31,7 +31,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-business-or-interactive-english",
     title: "Which class you need",
-    sub: "Spoken, Interactive or Business. Exam course only if a form asks.",
+    sub: "Spoken, Interactive, Workplace or Interview Preparation. Exam only if a form asks.",
     icon: "compass",
     color: "brand",
     group: "choose",

@@ -146,6 +146,23 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "A concrete example of turning communication growth into a career plan.",
     },
   ],
+  "interview-preparation": [
+    {
+      href: "/blog/tell-me-about-yourself-in-60-seconds",
+      title: "Tell me about yourself in 60 seconds",
+      description: "Present → past → future. Cut the life story. Keep the job thread.",
+    },
+    {
+      href: "/spoken-business-or-interactive-english",
+      title: "Which English class do I need?",
+      description: "If you cannot form a sentence yet, Interview Preparation is the wrong room.",
+    },
+    {
+      href: "/english-for-presentations-india",
+      title: "Explain your work in 3 minutes",
+      description: "The same muscle as a technical round — numbers, names, next step.",
+    },
+  ],
 };
 
 const TEACHER_NOTE: Record<string, string> = {
@@ -154,6 +171,8 @@ const TEACHER_NOTE: Record<string, string> = {
     "The same teacher on every workplace hour. They learn how you sound on a client call.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
   "career-counselling": "Three 1:1 sessions after they have read your background.",
+  "interview-preparation":
+    "The same teacher on every mock. They hear the freeze on the 60-second intro — and they mark it until it stops.",
 };
 
 export function CoursePage({ data }: { data: CourseData }) {

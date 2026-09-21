@@ -217,7 +217,7 @@ function Page() {
               {DEMO_CTA}
             </WaButton>
             <Link to="/english-career" className="btn btn-white btn-lg">
-              See all 6 courses
+              See all courses
             </Link>
           </div>
         </div>

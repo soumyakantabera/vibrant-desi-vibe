@@ -201,7 +201,7 @@ function Page() {
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg">
-              <Icon name="spark" size={18} /> {DEMO_CTA}
+              {DEMO_CTA}
             </WaButton>
           </div>
         </div>

@@ -13,6 +13,8 @@ export const CALL_LINK = `tel:+${WHATSAPP_PHONE}`;
  * they hold are the public CTA.
  */
 export const DEMO_CTA = "Get Free Consultation";
+/** Same SVG on every Get Free Consultation button — never a letter or ligature. */
+export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
 export const DEMO_MSG =
   "Hi, I'd like a free consultation to understand my requirements. Please share a slot so we can diagnose my bottleneck and choose one course.";

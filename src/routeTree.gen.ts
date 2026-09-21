@@ -17,7 +17,9 @@ import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
 import { Route as CourseInteractiveSpeakingRouteImport } from './routes/course-interactive-speaking'
+import { Route as CourseInterviewPreparationRouteImport } from './routes/course-interview-preparation'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
+import { Route as EducatorRouteImport } from './routes/educator'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
 import { Route as EnglishForClientCallsIndiaRouteImport } from './routes/english-for-client-calls-india'
@@ -26,7 +28,6 @@ import { Route as EnglishForPresentationsIndiaRouteImport } from './routes/engli
 import { Route as EnglishForWorkingProfessionalsIndiaRouteImport } from './routes/english-for-working-professionals-india'
 import { Route as EnglishHindiBengaliMediumRouteImport } from './routes/english-hindi-bengali-medium'
 import { Route as EnglishInstituteComparisonIndiaRouteImport } from './routes/english-institute-comparison-india'
-import { Route as EducatorRouteImport } from './routes/educator'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as FreeEnglishSpeakingPracticeVsPaidClassRouteImport } from './routes/free-english-speaking-practice-vs-paid-class'
 import { Route as GuidesRouteImport } from './routes/guides'
@@ -105,9 +106,20 @@ const CourseInteractiveSpeakingRoute =
     path: '/course-interactive-speaking',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CourseInterviewPreparationRoute =
+  CourseInterviewPreparationRouteImport.update({
+    id: '/course-interview-preparation',
+    path: '/course-interview-preparation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
   id: '/course-spoken-english',
   path: '/course-spoken-english',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EducatorRoute = EducatorRouteImport.update({
+  id: '/educator',
+  path: '/educator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnglishCareerRoute = EnglishCareerRouteImport.update({
@@ -156,11 +168,6 @@ const EnglishInstituteComparisonIndiaRoute =
     path: '/english-institute-comparison-india',
     getParentRoute: () => rootRouteImport,
   } as any)
-const EducatorRoute = EducatorRouteImport.update({
-  id: '/educator',
-  path: '/educator',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
@@ -371,7 +378,9 @@ export interface FileRoutesByFullPath {
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
+  '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
+  '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
   '/english-for-client-calls-india': typeof EnglishForClientCallsIndiaRoute
@@ -380,7 +389,6 @@ export interface FileRoutesByFullPath {
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
-  '/educator': typeof EducatorRoute
   '/founder': typeof FounderRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
@@ -426,7 +434,9 @@ export interface FileRoutesByTo {
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
+  '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
+  '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
   '/english-for-client-calls-india': typeof EnglishForClientCallsIndiaRoute
@@ -435,7 +445,6 @@ export interface FileRoutesByTo {
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
-  '/educator': typeof EducatorRoute
   '/founder': typeof FounderRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
@@ -482,7 +491,9 @@ export interface FileRoutesById {
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
+  '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
+  '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
   '/english-for-client-calls-india': typeof EnglishForClientCallsIndiaRoute
@@ -491,7 +502,6 @@ export interface FileRoutesById {
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
-  '/educator': typeof EducatorRoute
   '/founder': typeof FounderRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
@@ -539,7 +549,9 @@ export interface FileRouteTypes {
     | '/course-business-english'
     | '/course-career-counselling'
     | '/course-interactive-speaking'
+    | '/course-interview-preparation'
     | '/course-spoken-english'
+    | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
     | '/english-for-client-calls-india'
@@ -548,7 +560,6 @@ export interface FileRouteTypes {
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
-    | '/educator'
     | '/founder'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
@@ -594,7 +605,9 @@ export interface FileRouteTypes {
     | '/course-business-english'
     | '/course-career-counselling'
     | '/course-interactive-speaking'
+    | '/course-interview-preparation'
     | '/course-spoken-english'
+    | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
     | '/english-for-client-calls-india'
@@ -603,7 +616,6 @@ export interface FileRouteTypes {
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
-    | '/educator'
     | '/founder'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
@@ -649,7 +661,9 @@ export interface FileRouteTypes {
     | '/course-business-english'
     | '/course-career-counselling'
     | '/course-interactive-speaking'
+    | '/course-interview-preparation'
     | '/course-spoken-english'
+    | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
     | '/english-for-client-calls-india'
@@ -658,7 +672,6 @@ export interface FileRouteTypes {
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
-    | '/educator'
     | '/founder'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
@@ -705,7 +718,9 @@ export interface RootRouteChildren {
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
   CourseInteractiveSpeakingRoute: typeof CourseInteractiveSpeakingRoute
+  CourseInterviewPreparationRoute: typeof CourseInterviewPreparationRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
+  EducatorRoute: typeof EducatorRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
   EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
   EnglishForClientCallsIndiaRoute: typeof EnglishForClientCallsIndiaRoute
@@ -714,7 +729,6 @@ export interface RootRouteChildren {
   EnglishForWorkingProfessionalsIndiaRoute: typeof EnglishForWorkingProfessionalsIndiaRoute
   EnglishHindiBengaliMediumRoute: typeof EnglishHindiBengaliMediumRoute
   EnglishInstituteComparisonIndiaRoute: typeof EnglishInstituteComparisonIndiaRoute
-  EducatorRoute: typeof EducatorRoute
   FounderRoute: typeof FounderRoute
   FreeEnglishSpeakingPracticeVsPaidClassRoute: typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   GuidesRoute: typeof GuidesRoute
@@ -810,11 +824,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CourseInteractiveSpeakingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/course-interview-preparation': {
+      id: '/course-interview-preparation'
+      path: '/course-interview-preparation'
+      fullPath: '/course-interview-preparation'
+      preLoaderRoute: typeof CourseInterviewPreparationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/course-spoken-english': {
       id: '/course-spoken-english'
       path: '/course-spoken-english'
       fullPath: '/course-spoken-english'
       preLoaderRoute: typeof CourseSpokenEnglishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/educator': {
+      id: '/educator'
+      path: '/educator'
+      fullPath: '/educator'
+      preLoaderRoute: typeof EducatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/english-career': {
@@ -871,13 +899,6 @@ declare module '@tanstack/react-router' {
       path: '/english-institute-comparison-india'
       fullPath: '/english-institute-comparison-india'
       preLoaderRoute: typeof EnglishInstituteComparisonIndiaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/educator': {
-      id: '/educator'
-      path: '/educator'
-      fullPath: '/educator'
-      preLoaderRoute: typeof EducatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/founder': {
@@ -1138,7 +1159,9 @@ const rootRouteChildren: RootRouteChildren = {
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
   CourseInteractiveSpeakingRoute: CourseInteractiveSpeakingRoute,
+  CourseInterviewPreparationRoute: CourseInterviewPreparationRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
+  EducatorRoute: EducatorRoute,
   EnglishCareerRoute: EnglishCareerRoute,
   EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,
   EnglishForClientCallsIndiaRoute: EnglishForClientCallsIndiaRoute,
@@ -1148,7 +1171,6 @@ const rootRouteChildren: RootRouteChildren = {
     EnglishForWorkingProfessionalsIndiaRoute,
   EnglishHindiBengaliMediumRoute: EnglishHindiBengaliMediumRoute,
   EnglishInstituteComparisonIndiaRoute: EnglishInstituteComparisonIndiaRoute,
-  EducatorRoute: EducatorRoute,
   FounderRoute: FounderRoute,
   FreeEnglishSpeakingPracticeVsPaidClassRoute:
     FreeEnglishSpeakingPracticeVsPaidClassRoute,
@@ -1196,10 +1218,11 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
+import type { startInstance } from './start.ts'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
   }
 }

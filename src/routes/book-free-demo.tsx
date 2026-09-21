@@ -51,7 +51,7 @@ function Page() {
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
-              <Icon name="compass" size={18} /> {DEMO_CTA}
+              {DEMO_CTA}
             </WaButton>
           </div>
         </div>
@@ -106,7 +106,7 @@ function Page() {
                 className="w-full justify-center sm:w-auto"
                 goal="free_consultation"
               >
-                <Icon name="compass" size={18} /> {DEMO_CTA}
+                {DEMO_CTA}
               </WaButton>
             </div>
           </div>
@@ -294,14 +294,14 @@ function Page() {
           <h2 className="text-cream text-2xl md:text-3xl">Bring the problem. Leave with one room.</h2>
           <p className="mt-3 text-white">
             Get Free Consultation. We diagnose the bottleneck, answer your queries, and place you in
-            Spoken, Interactive, Workplace or counselling — or tell you to stay free.
+            Spoken, Interactive, Workplace, Interview Preparation or counselling — or tell you to stay free.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
-              <Icon name="compass" size={18} /> {DEMO_CTA}
+              {DEMO_CTA}
             </WaButton>
           </div>
           <PaymentTrust tone="dark" align="center" className="mt-8" />

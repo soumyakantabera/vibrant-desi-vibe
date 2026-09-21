@@ -170,7 +170,7 @@ function Home() {
                 className="w-full sm:w-auto justify-center"
                 goal="free_consultation"
               >
-                <Icon name="spark" size={18} /> {DEMO_CTA}
+                {DEMO_CTA}
               </WaButton>
             </div>
             <PaymentTrust tone="dark" className="mt-4" />
@@ -571,7 +571,7 @@ function Home() {
             <article className="order-3 flex h-full flex-col overflow-hidden rounded-3xl border border-[#E8DFDC] border-t-4 border-t-[#C84D3F] bg-white p-5 shadow-[0_16px_40px_-30px_rgba(165,61,50,.4)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(165,61,50,.45)] sm:p-6 lg:order-none">
               <div className="mb-4 flex items-center gap-3">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFF0ED] text-[#A53D32]">
-                  <FreeDemoIcon />
+                  <Icon name="compass" size={22} />
                 </span>
                 <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
               </div>
@@ -653,13 +653,14 @@ function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20" />
               <div className="relative p-7 text-cream">
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
-                  <Icon name="spark" size={22} /> {DEMO_CTA}
+                  <Icon name="compass" size={22} /> {DEMO_CTA}
                 </h3>
                 <p className="text-cream/95 mb-4">
                   Courses, curriculum and your requirements — one by one. Not a full class.
                 </p>
                 <span className="btn btn-sun btn-sm">
-                  {DEMO_CTA} <Icon name="arrow-right" size={14} />
+                  <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
+                  <Icon name="arrow-right" size={14} />
                 </span>
               </div>
             </a>
@@ -926,16 +927,6 @@ function WorkplaceIcon() {
       <circle cx="12" cy="8.5" r="2.8" />
       <path d="M6.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5" />
       <path d="M12 2.5v1.6M4.4 5.4l1.1 1.1M19.6 5.4l-1.1 1.1M2.5 11.5h1.6M19.9 11.5h1.6" />
-    </IconFrame>
-  );
-}
-
-// Free Consultation — two chat bubbles (counselling, not a class)
-function FreeDemoIcon() {
-  return (
-    <IconFrame>
-      <path d="M4.5 7.2h9.2a1.8 1.8 0 0 1 1.8 1.8v5.1a1.8 1.8 0 0 1-1.8 1.8H10l-2.8 2.4v-2.4H4.5A1.8 1.8 0 0 1 2.7 14.1V9a1.8 1.8 0 0 1 1.8-1.8z" />
-      <path d="M16.2 4.8h3.3A1.6 1.6 0 0 1 21.1 6.4v4.2a1.6 1.6 0 0 1-1.6 1.6h-1.4" />
     </IconFrame>
   );
 }

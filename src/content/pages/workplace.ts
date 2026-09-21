@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need interview answers rather than day-to-day office communication",
-        "Practise interview English in Spoken or Interactive — we do not sell a separate Interview Prep room.",
+        "Take Interview Preparation — 2 months, ₹1,999/month. HR screens, STAR and recorded mocks. Workplace English is meetings after you have the job.",
       ],
     ],
   },

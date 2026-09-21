@@ -66,9 +66,9 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Four live programmes. Spoken, Interactive Speaking, Workplace English and 1:1
-              Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is practised
-              in Spoken and Interactive. From ₹999/month, inclusive of taxes. No registration fee.
+              Five live programmes. Spoken, Interactive Speaking, Workplace English, Interview
+              Preparation and 1:1 Career Counselling. Interview Preparation is the room when the HR
+              screen is the bottleneck. From ₹999/month, inclusive of taxes. No registration fee.
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -114,7 +114,7 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "4 programmes",
+                    big: "5 programmes",
                     small: "Adults 15+ · live rooms",
                   },
                   {

@@ -184,7 +184,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "For the full syllabus and outcomes of each, see [all four programmes](/english-career).",
+    text: "For the full syllabus and outcomes of each, see [all programmes](/english-career).",
   },
   {
     t: "cta",

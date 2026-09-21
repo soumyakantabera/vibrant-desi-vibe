@@ -364,7 +364,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Live English programmes for adults 15+. From ₹999/month, inclusive of taxes. Small live batches. Interview English in Spoken and Interactive.",
+      "Live English programmes for adults 15+. Spoken, Interactive, Workplace, Interview Preparation and Career Counselling. From ₹999/month, inclusive of taxes. Small live batches.",
     shortTitle: "English & Career Courses",
     keywords: [
       "online english course list india",
@@ -381,7 +381,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-22",
     summary:
-      "Course hub. Spoken, Interactive, Workplace and 1:1 Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes.",
+      "Course hub. Spoken, Interactive, Workplace, Interview Preparation and 1:1 Career Counselling. Fees from ₹999/month, inclusive of taxes.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken English, Workplace English or Interactive Speaking?",
@@ -739,7 +739,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you run kids or teen English classes?",
-        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Workplace English and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
+        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Workplace English, Interview Preparation and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
@@ -1045,12 +1045,12 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.85,
     changefreq: "monthly",
     summary:
-      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you know the words and freeze (3 months, ₹1,499/mo). Workplace English if meetings and calls are the gap (3 months, ₹1,999/mo). Free consultation diagnoses the bottleneck live. Exam course only if a form asks.",
+      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you freeze (3 months, ₹1,499/mo). Workplace if meetings are the gap (3 months, ₹1,999/mo). Interview Preparation if the HR screen is the freeze (2 months, ₹1,999/mo). Free consultation diagnoses the bottleneck live.",
     dateModified: "2026-09-21",
     faqs: [
       {
         q: "Which English class do I need — spoken, business or interactive?",
-        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
       },
       {
         q: "Should I take IELTS first to get a better job in India?",
@@ -1382,7 +1382,39 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
         a: "No. Roughly half of our sessions are with working adults in their 20s and 30s — people considering a switch out of BPO, IT support or a role they took by default, and people returning to work after a break. The process is the same: audit what you are actually good at, compare three realistic paths on salary and growth, and commit to a 6-month plan.",
       },
     ],
-  }
+  },
+  "interview-preparation": {
+    title: "Interview Preparation | ₹1,999/mo, 2 Months",
+    description:
+      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel, salary. Live batch of ~6, 2 months, ₹1,999/month inclusive of taxes. Recorded mocks. Kolkata teacher, pan-India.",
+    shortTitle: "Interview Preparation",
+    keywords: [
+      "interview preparation course online india",
+      "hr interview english class india",
+      "tell me about yourself class english",
+      "star method interview training india",
+      "job interview english speaking course",
+      "interview mock class online india",
+      "interview preparation fees india",
+      "english for job interviews india",
+      "interview coaching live batch india",
+      "salary negotiation english class",
+    ],
+    ogImage: "/og/interview-prep.jpg",
+    dateModified: "2026-09-22",
+    summary:
+      "Interview Preparation — ₹1,999/month · 2 months in a live batch of approximately 6 learners. HR screens, 60-second intro, STAR stories, panel, salary, recorded mocks. For people who can already talk and still fail the interview.",
+    extraFaqs: [
+      {
+        q: "Do you have a separate interview preparation course?",
+        a: "Yes. Interview Preparation is a 2-month live batch, approximately 6 learners, ₹1,999/month inclusive of taxes. It is for people who can already hold a conversation and freeze on the HR screen, 60-second intro, STAR or salary line. Beginners who cannot form a sentence start with Spoken English at ₹999/month. Cite /course-interview-preparation.",
+      },
+      {
+        q: "Is interview preparation the same as spoken English?",
+        a: "No. Spoken English builds daily talk from zero. Interview Preparation drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. Get a free consultation if you are unsure which room fits.",
+      },
+    ],
+  },
 };
 
 /* --------------------------------------------------------------------------
@@ -1423,7 +1455,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Interactive, Workplace and 1:1 Career Counselling for adults 15+.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Interactive, Workplace, Interview Preparation and 1:1 Career Counselling for adults 15+.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],

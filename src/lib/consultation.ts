@@ -39,7 +39,7 @@ export const CONSULTATION_WALK_AWAY: {
     icon: "check",
     color: "sunshine",
     title: "One course, not three",
-    body: "Spoken, Interactive, Workplace, or 1:1 Career Counselling — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
+    body: "Spoken, Interactive, Workplace, Interview Preparation, or 1:1 Career Counselling — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
   },
   {
     icon: "book",
@@ -107,11 +107,11 @@ export const CONSULTATION_BOTTLENECKS: {
     href: "/course-business-english",
   },
   {
-    icon: "target",
+    icon: "clipboard",
     ifThis: "Interviews fail on the 60-second intro, not the CV",
-    weName: "Interview English, inside an existing room",
-    weRecommend: "Spoken or Interactive — not a separate product",
-    href: "/spoken-business-or-interactive-english",
+    weName: "Interview English is the gap",
+    weRecommend: "Interview Preparation — 2 months, ₹1,999/mo, recorded mocks",
+    href: "/course-interview-preparation",
   },
   {
     icon: "compass",
@@ -132,7 +132,7 @@ export const CONSULTATION_BOTTLENECKS: {
 export const CONSULTATION_QUERIES: { icon: IconName; text: string }[] = [
   {
     icon: "compass",
-    text: "Which course do I actually need — Spoken, Interactive, Workplace, or counselling?",
+    text: "Which course do I actually need — Spoken, Interactive, Workplace, Interview Preparation, or counselling?",
   },
   { icon: "rupee", text: "What is the fee, and is GST included?" },
   {

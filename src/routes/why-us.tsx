@@ -128,7 +128,7 @@ function Page() {
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={DEMO_MSG} variant="sun" size="lg">
-                <Icon name="spark" size={18} /> {DEMO_CTA}
+                {DEMO_CTA}
               </WaButton>
               <Link to="/english-institute-comparison-india" className="btn btn-white btn-lg">
                 Compare the market
@@ -272,7 +272,7 @@ function Page() {
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={DEMO_MSG} variant="sun" size="lg">
-                <Icon name="spark" size={18} /> {DEMO_CTA}
+                {DEMO_CTA}
               </WaButton>
               <Link to="/english-class-fees-india" className="btn btn-ghost-white">
                 See fees in India

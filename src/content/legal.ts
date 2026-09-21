@@ -164,7 +164,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Who we are and what we offer",
         paragraphs: [
           "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes: Spoken English, Interactive Speaking, Workplace English and 1:1 Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is practised inside Spoken and Interactive rooms. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
-          "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS or Interview Preparation as separate courses.",
+          "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
       },
       {
