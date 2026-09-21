@@ -248,7 +248,6 @@ section > .container-x { position: relative; z-index: 10; }
 .bg-sunshine p,
 .bg-sunshine li,
 .bg-sunshine strong,
-.bg-sunshine span,
 .bg-yellow-300 p,
 .bg-yellow-300 strong,
 .bg-yellow-400 p,
@@ -257,7 +256,6 @@ section > .container-x { position: relative; z-index: 10; }
 .bg-brand-deep .bg-sunshine p,
 .bg-brand-deep .bg-sunshine li,
 .bg-brand-deep .bg-sunshine strong,
-.bg-brand-deep .bg-sunshine span,
 .bg-brand .bg-sunshine,
 .bg-brand .bg-sunshine p,
 .bg-brand .bg-sunshine strong,
@@ -265,6 +263,19 @@ section > .container-x { position: relative; z-index: 10; }
 .bg-ink .bg-sunshine p,
 .bg-ink .bg-sunshine strong {
   color: #14200A !important;
+}
+
+/* Icon discs on the yellow strip: yellow glyph on ink circle.
+   A blanket `span { color: ink }` made those SVGs the same colour as the disc. */
+.bg-sunshine span.bg-ink,
+.bg-sunshine .bg-ink {
+  color: #F5B700 !important;
+}
+.bg-sunshine span.bg-ink svg.lucide,
+.bg-sunshine span.bg-ink svg.lws-icon {
+  color: #F5B700 !important;
+  stroke: currentColor;
+  fill: none !important;
 }
 
 /* Sunshine TEXT on dark backgrounds — keep the bright yellow */

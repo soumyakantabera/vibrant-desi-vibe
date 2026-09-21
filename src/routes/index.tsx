@@ -233,7 +233,7 @@ function Home() {
           {DIFFERENTIATORS.map(({ icon, title, body }) => (
             <div key={title} className="flex items-start gap-3">
               <span className="h-9 w-9 rounded-full bg-ink text-sunshine grid place-items-center shrink-0">
-                <Icon name={icon} size={17} />
+                <Icon name={icon} size={17} className="text-sunshine" />
               </span>
               <p>
                 <strong className="font-display block">{title}</strong>
