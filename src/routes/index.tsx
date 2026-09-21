@@ -744,12 +744,12 @@ function StoryTile({
 }) {
   if (tone === "sun") {
     return (
-      <div className="rounded-2xl p-5 bg-sunshine">
-        <div className="h-10 w-10 rounded-xl bg-ink/10 text-ink flex items-center justify-center mb-2">
+      <div className="rounded-2xl p-5 bg-sunshine text-ink">
+        <div className="h-10 w-10 rounded-xl bg-ink/15 text-ink flex items-center justify-center mb-2">
           <Icon name={icon} size={20} />
         </div>
         <strong className="text-ink font-display block">{title}</strong>
-        <p className="text-ink/90 text-sm mt-1">{children}</p>
+        <p className="text-ink text-sm mt-1 leading-snug">{children}</p>
       </div>
     );
   }

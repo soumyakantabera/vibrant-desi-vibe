@@ -36,6 +36,13 @@
 @source "../src";
 @import "tw-animate-css";
 
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -238,9 +245,33 @@ section > .container-x { position: relative; z-index: 10; }
   color: #14281D;
 }
 
-/* Yellow/sunshine fills on light = very hard to read — darken text */
-.bg-sunshine, .bg-yellow-300, .bg-yellow-400 {
-  color: #1A1300;
+/* Yellow/sunshine fills: dark type even when the tile sits inside a dark band
+   (.bg-brand-deep p / strong would otherwise force white onto yellow). */
+.bg-sunshine,
+.bg-yellow-300,
+.bg-yellow-400 {
+  color: #14200A;
+}
+.bg-sunshine p,
+.bg-sunshine li,
+.bg-sunshine strong,
+.bg-sunshine span,
+.bg-yellow-300 p,
+.bg-yellow-300 strong,
+.bg-yellow-400 p,
+.bg-yellow-400 strong,
+.bg-brand-deep .bg-sunshine,
+.bg-brand-deep .bg-sunshine p,
+.bg-brand-deep .bg-sunshine li,
+.bg-brand-deep .bg-sunshine strong,
+.bg-brand-deep .bg-sunshine span,
+.bg-brand .bg-sunshine,
+.bg-brand .bg-sunshine p,
+.bg-brand .bg-sunshine strong,
+.bg-ink .bg-sunshine,
+.bg-ink .bg-sunshine p,
+.bg-ink .bg-sunshine strong {
+  color: #14200A !important;
 }
 
 /* Sunshine TEXT on dark backgrounds — keep the bright yellow */
