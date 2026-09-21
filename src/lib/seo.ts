@@ -281,6 +281,135 @@ export const CONSULTATION_KEYWORDS = [
   "free demo class spoken english india",
 ];
 
+/** Product — Spoken English (beginner / ₹999 / 6 months). */
+export const SPOKEN_KEYWORDS = [
+  "basic spoken english course for beginners",
+  "spoken english class for zero level students",
+  "english speaking course 999 per month",
+  "6 month spoken english course india",
+  "how to speak english fluently from zero",
+  "spoken english classes online with live teacher",
+  "spoken english course fees in india 2026",
+  "english speaking classes under 1000 rupees india",
+];
+
+/** Product — Interactive Speaking (freeze / hesitation). */
+export const INTERACTIVE_KEYWORDS = [
+  "english speaking practice online india",
+  "how to stop hesitating while speaking english",
+  "english fluency practice group online",
+  "english speaking club online india",
+  "daily english conversation practice class",
+  "english debate and storytelling class online",
+  "overcome english speaking fear india",
+];
+
+/** Product — Workplace English. */
+export const WORKPLACE_KEYWORDS = [
+  "workplace english course india fees",
+  "business english course online india",
+  "english for working professionals india",
+  "english for client meetings and presentations",
+  "english for office meetings india",
+  "english for bpo and customer support",
+  "corporate english communication course",
+  "professional email writing course english",
+  "english for it professionals standup",
+];
+
+/** Product — Interview Preparation. */
+export const INTERVIEW_KEYWORDS = [
+  "interview preparation course online india",
+  "hr interview english class india",
+  "tell me about yourself class english",
+  "star method interview training india",
+  "job interview english speaking course",
+  "interview mock class online india",
+  "interview preparation fees india",
+  "english for job interviews india",
+  "interview coaching live batch india",
+  "salary negotiation english class",
+  "campus placement english class india",
+  "fresher interview english course",
+  "bpo interview english class",
+  "walk in interview english speaking",
+  "government job interview english",
+  "tcs infosys interview english class",
+  "interview preparation kolkata online",
+  "hr round english coaching india",
+  "job interview coaching pan india",
+  "mock interview class rupees 1999",
+  "best online spoken english course for job interviews india",
+];
+
+/** Product — 1:1 Career Counselling. */
+export const CAREER_KEYWORDS = [
+  "career counselling online india",
+  "career guidance for students india",
+  "career counselling fees india",
+  "which career is right for me india",
+  "career change guidance india",
+  "one to one career counselling online",
+  "career counselling 1999 rupees",
+];
+
+/** Audience long-tail — who searches, not the product name. */
+export const AUDIENCE_KEYWORDS = [
+  "spoken english for working professionals india",
+  "spoken english for freshers india",
+  "spoken english for homemakers india",
+  "spoken english for job seekers india",
+  "spoken english for it professionals india",
+  "spoken english for bpo professionals",
+  "english speaking course after graduation india",
+  "english class for adults 15 plus india",
+];
+
+/** Geo long-tail — city + online (same fee, IST). */
+export const GEO_KEYWORDS = [
+  "spoken english classes kolkata online",
+  "spoken english classes delhi ncr online",
+  "spoken english classes mumbai pune online",
+  "spoken english classes bengaluru hyderabad chennai",
+  "spoken english classes ahmedabad surat nagpur",
+  "spoken english classes kochi coimbatore visakhapatnam",
+  "spoken english classes patna guwahati online",
+  "spoken english classes west bengal online",
+  "spoken english near me online india",
+];
+
+/** Questions assistants and People-Also-Ask actually get. */
+export const AEO_KEYWORDS = [
+  "how much do online spoken english classes cost in india",
+  "which english course should i take spoken or workplace",
+  "free consultation vs free demo class english",
+  "what happens in free english consultation",
+  "spoken english vs ielts which to take",
+  "engvarta vs live english class india",
+  "best small batch spoken english india",
+];
+
+/**
+ * Named clusters for SEM, Bing, ChatGPT Actions and llms.json.
+ * Page-specific keywords still go first; these are merged on every page
+ * so interview / workplace / counselling queries never miss a URL.
+ */
+export const KEYWORD_CLUSTERS = {
+  brand: BRAND_KEYWORDS,
+  core: CORE_KEYWORDS,
+  india_market: INDIA_MARKET_KEYWORDS,
+  consultation: CONSULTATION_KEYWORDS.filter((k) => !/demo/i.test(k)),
+  demo_class_hidden: CONSULTATION_KEYWORDS.filter((k) => /demo/i.test(k)),
+  spoken: SPOKEN_KEYWORDS,
+  interactive: INTERACTIVE_KEYWORDS,
+  workplace: WORKPLACE_KEYWORDS,
+  interview: INTERVIEW_KEYWORDS,
+  career: CAREER_KEYWORDS,
+  audience: AUDIENCE_KEYWORDS,
+  geo: GEO_KEYWORDS,
+  aeo: AEO_KEYWORDS,
+} as const;
+
 function uniqueKeywords(...lists: Array<string[] | undefined>): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
@@ -294,6 +423,21 @@ function uniqueKeywords(...lists: Array<string[] | undefined>): string[] {
   }
   return out;
 }
+
+/** Every public HTML page carries this stack after its own keywords. */
+export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
+  INDIA_MARKET_KEYWORDS,
+  BRAND_KEYWORDS,
+  CONSULTATION_KEYWORDS,
+  SPOKEN_KEYWORDS,
+  INTERACTIVE_KEYWORDS,
+  WORKPLACE_KEYWORDS,
+  INTERVIEW_KEYWORDS,
+  CAREER_KEYWORDS,
+  AUDIENCE_KEYWORDS,
+  GEO_KEYWORDS,
+  AEO_KEYWORDS,
+);
 
 /* --------------------------------------------------------------------------
  * Page metadata
@@ -309,17 +453,12 @@ export const PAGES: Record<string, PageSeo> = {
     keywords: [
       ...CORE_KEYWORDS,
       ...BRAND_KEYWORDS,
+      ...INTERVIEW_KEYWORDS,
+      ...WORKPLACE_KEYWORDS,
+      ...AEO_KEYWORDS,
       "best online spoken english classes in india",
       "english class fees per month in india",
-      "business english course india",
-      "workplace english course india",
-      "interview english practice india",
       "career counselling online india",
-      "spoken english classes west bengal",
-      "spoken english classes maharashtra online",
-      "spoken english classes karnataka tamil nadu kerala",
-      "spoken english classes delhi ncr online",
-      "spoken english classes gujarat telangana",
       "live english class with real teacher",
     ],
     ogImage: "/og/default.jpg",
@@ -367,16 +506,13 @@ export const PAGES: Record<string, PageSeo> = {
       "Live English programmes for adults 15+. Spoken, Interactive, Workplace, Interview Preparation and Career Counselling. From ₹999/month, inclusive of taxes. Small live batches.",
     shortTitle: "English & Career Courses",
     keywords: [
+      ...INTERVIEW_KEYWORDS,
+      ...WORKPLACE_KEYWORDS,
+      ...SPOKEN_KEYWORDS,
       "online english course list india",
       "english course fees comparison india",
-      "spoken english vs business english course",
       "which english course should i take",
       "ielts vs spoken english course",
-      "online english and career courses india",
-      "english course duration and fees india",
-      "interview preparation course online india",
-      "hr interview english class india",
-      "job interview english speaking course",
       ...CORE_KEYWORDS,
     ],
     ogImage: "/og/spoken-english.jpg",
@@ -1273,14 +1409,9 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "Practical Spoken English for beginners: 6 months, up to 2 live classes weekly, ~6 learners. ₹999/month, inclusive of taxes. Kolkata teacher, pan-India.",
     shortTitle: "Basic Spoken English",
     keywords: [
+      ...SPOKEN_KEYWORDS,
       "spoken english classes online india",
-      "basic spoken english course for beginners",
-      "english speaking course 999 per month",
-      "spoken english class for zero level students",
-      "english speaking classes online with live teacher",
-      "6 month spoken english course india",
       "spoken english classes kolkata online",
-      "how to speak english fluently from zero",
     ],
     ogImage: "/og/spoken-english.jpg",
     summary:
@@ -1306,15 +1437,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "Workplace English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, inclusive of taxes.",
     shortTitle: "Workplace English",
     keywords: [
-      "business english course online india",
-      "english for working professionals india",
-      "corporate english communication course",
-      "professional email writing course english",
-      "english for client meetings and presentations",
-      "workplace english course india fees",
-      "professional english speaking course online india",
-      "english communication for working professionals",
-      "english for bpo and customer support",
+      ...WORKPLACE_KEYWORDS,
       "business english classes evening batch india",
     ],
     ogImage: "/og/business-english.jpg",
@@ -1336,14 +1459,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     description:
       "Live speaking — games, debates, role-plays. 3 months, up to 2 classes/week, ~6 learners. ₹1,499/month, inclusive of taxes. Fluency, not grammar lectures.",
     shortTitle: "Interactive Speaking",
-    keywords: [
-      "english speaking practice online india",
-      "daily english conversation practice class",
-      "english fluency practice group online",
-      "english speaking club online india",
-      "how to stop hesitating while speaking english",
-      "english debate and storytelling class online",
-    ],
+    keywords: [...INTERACTIVE_KEYWORDS],
     ogImage: "/og/interactive-speaking.jpg",
     summary:
       "Interactive Speaking — ₹1,499/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
@@ -1363,15 +1479,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     description:
       "Three 60-min 1:1 sessions, ₹1,999 total, inclusive of taxes. Strengths map, 3 career paths, 6-month plan, plus resume and LinkedIn review. 1:1 online.",
     shortTitle: "Career Counselling",
-    keywords: [
-      "career counselling online india",
-      "career guidance for students india",
-      "career counselling fees india",
-      "which career is right for me india",
-      "career change guidance india",
-      "stream and course selection counselling",
-      "one to one career counselling online",
-    ],
+    keywords: [...CAREER_KEYWORDS, "stream and course selection counselling"],
     ogImage: "/og/career-counselling.jpg",
     summary:
       "Career Counselling — 3 × 60-minute 1:1 online sessions, ₹1,999 total. Strengths mapping, three shortlisted career paths, a 6-month action plan, resume and LinkedIn review.",
@@ -1391,28 +1499,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     description:
       "Interview Preparation in English: HR screens, 60-second intro, STAR, panel, salary. Live batch of ~6, 2 months, ₹1,999/month inclusive of taxes. Recorded mocks. Kolkata teacher, pan-India.",
     shortTitle: "Interview Preparation",
-    keywords: [
-      "interview preparation course online india",
-      "hr interview english class india",
-      "tell me about yourself class english",
-      "star method interview training india",
-      "job interview english speaking course",
-      "interview mock class online india",
-      "interview preparation fees india",
-      "english for job interviews india",
-      "interview coaching live batch india",
-      "salary negotiation english class",
-      "campus placement english class india",
-      "fresher interview english course",
-      "bpo interview english class",
-      "walk in interview english speaking",
-      "government job interview english",
-      "tcs infosys interview english class",
-      "interview preparation kolkata online",
-      "hr round english coaching india",
-      "job interview coaching pan india",
-      "mock interview class rupees 1999",
-    ],
+    keywords: [...INTERVIEW_KEYWORDS],
     ogImage: "/og/interview-prep.jpg",
     dateModified: "2026-09-22",
     summary:
@@ -1812,12 +1899,7 @@ export function buildHead(opts: {
 }): HeadResult {
   const url = abs(opts.path);
   const image = abs(opts.ogImage);
-  const keywords = uniqueKeywords(
-    opts.keywords,
-    INDIA_MARKET_KEYWORDS,
-    BRAND_KEYWORDS,
-    CONSULTATION_KEYWORDS,
-  );
+  const keywords = uniqueKeywords(opts.keywords, EVERY_PAGE_KEYWORDS);
 
   return {
     meta: [
