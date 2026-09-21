@@ -1,4 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
+import { ADMISSION, admissionCaption, admissionVersus } from "@/lib/fees";
 
 /**
  * Body copy for /english-class-fees-india.
@@ -122,7 +123,7 @@ export const body: ArticleBody = [
       [
         "Is there a registration or material fee?",
         "A one-off ₹2,000 joining fee changes the maths on a short course completely.",
-        "Neither. There is no joining fee and no material fee.",
+        admissionVersus(),
       ],
       [
         "Is there a lock-in?",
@@ -169,13 +170,14 @@ export const body: ArticleBody = [
   { t: "h2", text: "Our fees, in full" },
   {
     t: "table",
-    caption: "All figures are inclusive of taxes. No registration fee, no material fee, billed monthly.",
+    caption: admissionCaption(),
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
       ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,499/month"],
       ["Workplace English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
       ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,999/month"],
+      ["Admission (monthly courses)", "One-time per enrolment", "Spoken · Interactive · Workplace · Interview", ADMISSION.display],
       ["Career Counselling", "3 sessions", "1:1", "₹1,999 total"],
     ],
   },

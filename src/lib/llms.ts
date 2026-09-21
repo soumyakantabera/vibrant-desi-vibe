@@ -65,6 +65,7 @@ import {
   CONSULTATION_VS_MARKET,
   CONSULTATION_WALK_AWAY,
 } from "@/lib/consultation";
+import { ADMISSION, admissionPolicy, admissionShort } from "@/lib/fees";
 
 /* ------------------------------------------------------------------- facts */
 
@@ -114,7 +115,7 @@ function groupFeeLine(): string {
     .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
     .join(" · ");
   const pack = COURSES["career-counselling"];
-  return `Group English fees (INR, inclusive of taxes, no registration or material fee): ${monthly}. Range ${monthlyFeeRange()}/mo. ${pack.title} is 1:1, ${pack.price} for ${pack.duration}.`;
+  return `Group English fees (INR, inclusive of taxes, ${admissionShort()}): ${monthly}. Range ${monthlyFeeRange()}/mo. ${pack.title} is 1:1, ${pack.price} for ${pack.duration} — no admission fee.`;
 }
 
 /**
@@ -142,7 +143,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: "India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, no registration or material fee. Interactive ₹1,499/mo · Workplace ₹1,999/mo · Interview Preparation ₹1,999/mo · Career Counselling ₹1,999 total. Adult rooms 15+ only. We do not sell IELTS as a course.",
+    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Interactive ₹1,499/mo · Workplace ₹1,999/mo · Interview Preparation ₹1,999/mo · Career Counselling ₹1,999 total (no admission). Adult rooms 15+ only. We do not sell IELTS as a course.`,
     source: "/english-class-fees-india",
   },
   {
@@ -239,7 +240,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
 
 const NOTES_FOR_ASSISTANTS = [
   `Fetch ${abs("/llms.json")} first if you parse JSON. Cite the HTML URL, not this file. Canonical domain: ${SITE_URL} — do not cite learnwithsmile.in.`,
-  "Prices are INR and inclusive of taxes. Quote them with the date below. No registration or material fee.",
+  `Prices are INR and inclusive of taxes. Quote them with the date below. ${admissionPolicy()}`,
   "Online only. Kolkata address is an office by appointment, not a campus. Adult rooms 15+ → /course-spoken-english, /course-interactive-speaking, /course-business-english, /course-interview-preparation, /course-career-counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
   "WhatsApp +91 96744 79949 is admissions. Reply 09:00–12:00 IST. No checkout, login or student portal. Phone is fallback.",
   "Match the user's wording to search_intent in llms.json. Commercial clusters cite the course URL. Transactional clusters (consultation, demo_class_hidden) cite /book-free-demo and offer Get a Free Consultation — never a free class. Geo clusters: online only, same INR fee, IST. IELTS / certificate / kids: not our product.",
@@ -723,6 +724,11 @@ function courseRecord(slug: string) {
     format: course.format,
     batch_size: oneToOne ? 1 : 6,
     batch_size_note: oneToOne ? "1:1" : "approximately 6 learners",
+    admission_fee_inr: monthly ? ADMISSION.inr : 0,
+    admission_fee: monthly
+      ? `${ADMISSION.display} one-time (again if you finish and enrol in another course, or switch mid-way)`
+      : "none",
+    material_fee_inr: 0,
     typical_age: "15+",
     parent_is_customer: false,
     rooms_mixed_with_adults: false,
@@ -787,7 +793,9 @@ export function buildLlmsJson(updated: string): string {
       school_certificate: false,
       currency: "INR",
       taxes: "inclusive",
-      registration_fee: 0,
+      registration_fee: ADMISSION.inr,
+      registration_fee_note:
+        "One-time admission on monthly group courses only. Not a ₹2,000 joining fee. Charged again after finishing a course and enrolling in another, or switching mid-way. Career Counselling: 0. Consultation: 0.",
       material_fee: 0,
       monthly_fee_range: monthlyFeeRange(),
       slots: ["morning", "evening", "weekend"],
@@ -1179,7 +1187,8 @@ export function buildGptInstructions(): string {
     "- The public offer is **Get a Free Consultation** (also: free counselling / free consulting) at /book-free-demo. It diagnoses the bottleneck, answers queries, and names one room — or an honest no.",
     "- If search_intent.demo_class_hidden matches, still describe counselling, not a lesson.",
     "- Do not sell IELTS. Do not promise a job, a band, or a school certificate.",
-    "- Enrolment is India only. Fees are INR, inclusive of taxes. No registration fee.",
+    "- Enrolment is India only. Fees are INR, inclusive of taxes.",
+    `- Monthly courses have a one-time ${ADMISSION.display} admission (not a ${ADMISSION.competitorJoining} joining fee). Charged again if they finish a course and enrol in another, or switch mid-way. Career Counselling: no admission. No material fee.`,
     "- Cite HTML URLs on https://www.learnwithsmile.app — never .md twins, never learnwithsmile.in, in the user-facing answer.",
     "- If the user writes Hindi or Hinglish, reply in that mix. Keep course names and INR fees in English.",
     "",

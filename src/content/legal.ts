@@ -193,7 +193,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Enrolment and fees",
         paragraphs: [
-          "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. There is no separate registration fee or material fee for the standard English batches described on this site.",
+          "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. Monthly group English courses (Spoken English, Interactive Speaking, Workplace English, Interview Preparation) have a one-time ₹600 admission fee, inclusive of taxes. It is not a ₹2,000 joining fee. It is charged when you first enrol, and again if you finish one course and enrol in another, or if you change course mid-way. Continuing the same monthly course does not attract another admission. Career Counselling (1:1 package) has no admission fee. There is no material fee.",
           "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart.",
         ],
       },
@@ -263,8 +263,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How fees work",
         paragraphs: [
-          "English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp. Career Counselling is a prepaid 1:1 package as described on its course page.",
-          "A live seat is reserved when you pay. That is why we do not run a routine, no-questions-asked refund after a paid period has started.",
+          "English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp. Monthly group courses also take a one-time ₹600 admission fee (not a ₹2,000 joining fee) at first enrolment, and again if you finish a course and enrol in another or switch mid-way. Career Counselling is a prepaid 1:1 package as described on its course page, with no admission fee.",
+          "A live seat is reserved when you pay. That is why we do not run a routine, no-questions-asked refund after a paid period has started. The admission fee is part of that enrolment and is not refunded as a matter of course once the paid period has started.",
         ],
       },
       {

@@ -1,4 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
+import { ADMISSION, admissionCaption } from "@/lib/fees";
 
 /**
  * /english-institute-comparison-india
@@ -64,14 +65,14 @@ export const body: ArticleBody = [
   { t: "h2", text: "Our fees, so the row is not a slogan" },
   {
     t: "table",
-    caption:
-      "Inclusive of taxes. No registration fee. Billed monthly. English batches of approximately 6 learners.",
+    caption: admissionCaption(),
     head: ["Course", "Duration", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "₹999/month"],
       ["Interactive Speaking", "3 months", "₹1,499/month"],
       ["Workplace English", "3 months", "₹1,999/month"],
       ["Interview Preparation", "2 months", "₹1,999/month"],
+      ["Admission (monthly courses)", "One-time per enrolment", ADMISSION.display],
       ["Career Counselling", "3 × 60-min 1:1", "₹1,999"],
     ],
   },

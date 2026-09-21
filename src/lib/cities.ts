@@ -1,4 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
+import { ADMISSION, admissionCaption, admissionShort } from "@/lib/fees";
 
 type Faq = { q: string; a: string };
 
@@ -298,7 +299,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
     },
     {
       q: `How much do spoken English classes cost in ${city.name}?`,
-      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, with no registration or material fee. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
+      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
     },
     {
       q: `Can the teacher explain if I studied in ${city.medium}?`,
@@ -337,13 +338,14 @@ export function cityBody(city: CityRecord): ArticleBody {
     { t: "h2", text: "Fees, in full" },
     {
       t: "table",
-      caption: `Same pan-India fees. Inclusive of taxes. No registration or material fee. ${city.name} is not a different price list.`,
+      caption: `Same pan-India fees. ${admissionCaption()} ${city.name} is not a different price list.`,
       head: ["Course", "Duration", "Fee"],
       rows: [
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
         ["Interactive Speaking", "3 months", "₹1,499/month"],
         ["Workplace English", "3 months", "₹1,999/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹1,999/month"],
+        ["Admission (monthly courses)", "One-time per enrolment", ADMISSION.display],
         ["Career Counselling", "3 × 60 min, 1:1", "₹1,999 total"],
       ],
     },

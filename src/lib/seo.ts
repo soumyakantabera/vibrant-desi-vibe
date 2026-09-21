@@ -670,7 +670,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes. Monthly courses have a one-time ₹600 admission fee (not a ₹2,000 joining fee) — charged again if you finish a course and enrol in another, or switch mid-way. No material fee. Career Counselling has no admission. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -1125,7 +1125,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much do spoken English classes cost in Kolkata?",
-        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, with no registration or material fee. The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
+        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, plus a one-time ₹600 admission on monthly courses (not a ₹2,000 joining fee; no material fee). The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
       },
       {
         q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
@@ -1185,7 +1185,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do online English class fees in India include taxes?",
-        a: "Often not, and it is the most common surprise on the invoice. Ask whether the advertised figure is inclusive, because 18% on a ₹2,000/month course is ₹360 a month you did not budget for. Learn With Smile's prices are inclusive of taxes and there are no registration or material fees. Also ask about lock-in: a quarterly or annual payment that cannot be cancelled is a much larger commitment than a monthly fee.",
+        a: "Often not, and it is the most common surprise on the invoice. Ask whether the advertised figure is inclusive, because 18% on a ₹2,000/month course is ₹360 a month you did not budget for. Learn With Smile's prices are inclusive of taxes. Monthly courses have a one-time ₹600 admission (not a ₹2,000 joining fee) and no material fee. Also ask about lock-in: a quarterly or annual payment that cannot be cancelled is a much larger commitment than a monthly fee.",
       },
       {
         q: "How much does IELTS coaching cost in India?",
@@ -1273,7 +1273,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much does Learn With Smile Workplace English cost?",
-        a: "The course costs ₹1,999 per month inclusive of taxes. It runs for three months with up to two live class days per week in a batch of approximately 6 learners. There is no registration or material fee. Chat on WhatsApp.",
+        a: "The course costs ₹1,999 per month inclusive of taxes, plus a one-time ₹600 admission on monthly courses (not a ₹2,000 joining fee). It runs for three months with up to two live class days per week in a batch of approximately 6 learners. There is no material fee. Chat on WhatsApp.",
       },
       {
         q: "Does the course include scheduled 1:1 feedback?",

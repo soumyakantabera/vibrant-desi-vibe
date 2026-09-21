@@ -83,7 +83,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**“Is ₹999 too cheap to be real?”** Inclusive of taxes, no registration, batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
+      "**“Is ₹999 too cheap to be real?”** Inclusive of taxes, one-time ₹600 admission on monthly courses (not a ₹2,000 joining fee), batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
       "**“Can I start next week?”** Usually yes. Message for the next IST slot. Get a free consultation first — we diagnose the room before we seat you.",
       "**“Do you issue a certificate?”** No. Indian interviews hear you. Visas read an exam-board score — sit IELTS with the test board; we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
     ],

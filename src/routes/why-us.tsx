@@ -212,7 +212,7 @@ function Page() {
             Real teacher, real time, real Q&A. No passive video sold as a class.
           </FeatureCard>
           <FeatureCard icon="rupee" color="sunshine" title="From ₹999/mo, inclusive of taxes">
-            No registration fee. No material fee. Monthly UPI.
+            One-time ₹600 admission on monthly courses — not a ₹2,000 joining fee. No material fee. Monthly UPI.
           </FeatureCard>
           <FeatureCard icon="star" color="coral" title={`${RATING_DISPLAY} ${RATING.source}`}>
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.
