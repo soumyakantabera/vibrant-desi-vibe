@@ -2106,13 +2106,16 @@ export function buildHead(opts: {
       { title: opts.title },
       { name: "description", content: opts.description },
       { name: "keywords", content: keywords.join(", ") },
-      // max-*-preview:-1 lets Google (and, in practice, AI summarisers) use the
-      // whole page rather than a truncated snippet.
+      // Bing Copilot / grounding: NOARCHIVE and NOCACHE exclude the page from
+      // Copilot answers. We never emit those. Google preview tokens stay on
+      // googlebot only — Bing's 2026 GEO scan has flagged Google-only tokens
+      // as NOARCHIVE on /course-business-english.
       {
         name: "robots",
-        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+        content: "index, follow",
       },
-      { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      { name: "bingbot", content: "index, follow" },
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
       { name: "theme-color", content: "#0E7C5A" },
@@ -2164,11 +2167,6 @@ export function siteHead(): HeadResult {
       // pointed at. Emits nothing until the codes are filled in —
       // see src/lib/analytics.ts.
       ...verificationMeta(),
-      {
-        name: "robots",
-        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-      },
-      { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
       { name: "theme-color", content: "#0E7C5A" },

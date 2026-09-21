@@ -22,7 +22,7 @@ export function Layout({
         Skip to content
       </a>
       <Nav />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1" data-snippet="">
         {children}
       </main>
       <Footer image={footerImage} />

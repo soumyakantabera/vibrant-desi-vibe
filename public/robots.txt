@@ -51,6 +51,15 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
+Disallow: /assets/*.js
+Disallow: /assets/*.css
+Disallow: /*.map$
+
+User-agent: bingbot
+Allow: /
+Disallow: /assets/*.js
+Disallow: /assets/*.css
+Disallow: /*.map$
 
 User-agent: Slurp
 Allow: /
@@ -148,6 +157,9 @@ User-agent: BingPreview
 Allow: /
 
 User-agent: Copilot
+Allow: /
+
+User-agent: MicrosoftPreview
 Allow: /
 
 Sitemap: https://www.learnwithsmile.app/sitemap.xml
