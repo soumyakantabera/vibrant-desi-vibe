@@ -9,7 +9,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-21";
+export const LEGAL_UPDATED = "2026-09-22";
 
 export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
   "/privacy": {
@@ -64,7 +64,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "WhatsApp, email and payments",
         paragraphs: [
           "WhatsApp is our preferred admissions and consultation channel. When you tap Get Free Consultation or message us, WhatsApp (Meta) also processes that conversation under its own terms and privacy policy. The diagnosis, course recommendation, fee and slot stay in that written thread so you can re-read them.",
-          "Fees are collected through Razorpay. Razorpay’s privacy policy and security practices apply to data you enter on Razorpay’s checkout. We receive confirmation that a payment succeeded or failed, not your full card number.",
+          "We use the WhatsApp Business app on our devices. We do not run the WhatsApp Cloud API, and we do not copy full chat logs into a CRM, helpdesk or this website. Notes we need to place you (name, number, bottleneck, recommended course, slot) may be written down by staff for that purpose only.",
+          "End-to-end encryption, where WhatsApp applies it, protects messages in transit. It does not replace this policy. Meta still processes business metadata (that a number messaged us, when, and delivery status) under WhatsApp’s rules. We cannot erase Meta’s copy of a chat, or the copy on your phone. We can delete the chat from our devices and stop writing to you.",
+          "Fees are collected through Razorpay. Razorpay’s privacy policy and security practices apply to data you enter on Razorpay’s checkout. We receive confirmation that a payment succeeded or failed, not your full card number. Do not send full card numbers, UPI PINs or OTPs on WhatsApp.",
         ],
       },
       {
@@ -101,14 +103,24 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How long we keep information",
         paragraphs: [
-          "Enquiry messages that do not lead to enrolment are kept only as long as needed to reply and for a short follow-up. Enrolment, attendance and payment records are kept for the duration of the course and for a reasonable period afterwards for accounts, tax and genuine disputes. We then delete or anonymise what we no longer need, unless the law requires a longer hold.",
+          "We keep personal information only while we need it for the purpose you contacted us, or while a law requires a hold. WhatsApp chats live in two places: on our devices, which we control, and on WhatsApp/Meta’s systems, which we do not.",
+        ],
+        bullets: [
+          "Consultation chats that do not lead to enrolment: kept on our devices for 90 days after the last message, then deleted from our devices. We may keep a one-line note (number, date, “consulted, did not enrol”) for up to 12 months so we do not message you again by mistake. Diagnosis notes are not kept after that.",
+          "Enrolled learners: the WhatsApp thread is kept for the paid course and 12 months after the last paid month (refunds, missed-class records, recordings). We then delete the chat from our devices.",
+          "Batch WhatsApp groups: for the duration of that batch and 30 days after it ends, then the group is closed.",
+          "Payment, invoice and GST records: kept for 8 years from the end of the relevant financial year, as Indian tax rules require, even if the chat is deleted. These are amount, date, course and status — not the full consultation thread.",
+          "Class recordings: for the batch to revise during the course, then deleted or overwritten within 12 months after the batch ends, unless a genuine dispute is open.",
+          "Server logs: as long as our host reasonably needs them to run and secure the site, typically weeks rather than years.",
         ],
       },
       {
-        heading: "Your choices",
+        heading: "If you ask us to stop or delete",
         paragraphs: [
-          "You may ask us, via WhatsApp or email, to access the information we hold about you, correct it, or delete it where we do not need to keep it. You may also ask us to stop contacting you about enrolment.",
-          "We may need to keep some records (for example a paid invoice) even after you leave a course. We will explain if we cannot complete a deletion request in full.",
+          "Message WhatsApp or email and say you want us to stop, or to delete what we hold. We reply 09:00–12:00 IST. We aim to close a deletion request within 30 days.",
+          "Stopping contact: we will not write to you about enrolment after that, except as needed to finish a paid month already running or a refund already in progress.",
+          "Deleting a WhatsApp chat: we delete it from our devices. We cannot delete the copy on your phone, or Meta’s processing of that conversation. If you paid, we still keep the invoice for the tax period above.",
+          "Correcting a note: if we named the wrong bottleneck or course in the consultation thread, message us and we will correct our notes and confirm in writing.",
         ],
       },
       {

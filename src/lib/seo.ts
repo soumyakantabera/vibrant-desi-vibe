@@ -608,7 +608,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/privacy",
     title: "Privacy Policy | How We Handle Your Data",
     description:
-      "How Learn With Smile collects and uses your data — including free-consultation notes on WhatsApp. Razorpay payments, class recordings. We do not sell personal information.",
+      "How Learn With Smile collects and uses your data — including free-consultation notes on WhatsApp, how long chats are kept, Razorpay payments and class recordings. We do not sell personal information.",
     shortTitle: "Privacy Policy",
     keywords: [
       "learn with smile privacy policy",
@@ -618,9 +618,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-22",
     summary:
-      "Privacy Policy: what we collect (name, WhatsApp, consultation notes, email, course notes, Razorpay payment status, class recordings), why, who we share it with, and how to ask for correction or deletion.",
+      "Privacy Policy: what we collect (name, WhatsApp, consultation notes, email, course notes, Razorpay payment status, class recordings), how long WhatsApp chats are kept, who we share with, and how to ask for correction or deletion.",
     faqs: [
       {
         q: "Does Learn With Smile sell my personal information?",
@@ -631,12 +631,16 @@ export const PAGES: Record<string, PageSeo> = {
         a: "The WhatsApp thread plus notes needed to place you: the bottleneck we named, the questions you asked, and the one course we recommended — or that we told you to stay free. The consultation is counselling, not a class. WhatsApp (Meta) also processes that conversation under its own policy.",
       },
       {
+        q: "How long do you keep my WhatsApp chat?",
+        a: "If you do not enrol: 90 days after the last message, then we delete the chat from our devices. We may keep a one-line “consulted, did not enrol” note for up to 12 months so we do not message you again. If you enrol: the thread for the course plus 12 months after the last paid month. We cannot erase Meta’s copy or the copy on your phone. Paid invoices are kept 8 years for Indian tax rules.",
+      },
+      {
         q: "Who processes my card or UPI payment?",
         a: "Razorpay. We receive payment status, not your full card number. WhatsApp messages are also processed by Meta under WhatsApp’s own policy.",
       },
       {
         q: "How do I ask you to delete my data?",
-        a: "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. We will delete what we no longer need. We may keep invoices and similar records that tax or accounting rules require.",
+        a: "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. Say stop or delete. We reply 09:00–12:00 IST and aim to close a deletion request within 30 days. We delete the chat from our devices. Invoices from a paid course are kept for the tax period. We cannot delete WhatsApp’s copy or yours.",
       },
     ],
   },
@@ -655,7 +659,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-22",
     summary:
       "Terms of Use: free consultation is 1:1 counselling not a class, live online teaching, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
     faqs: [
@@ -688,7 +692,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-22",
     summary:
       "Refunds: the consultation is free counselling, not a class — nothing to refund. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
     faqs: [
@@ -725,7 +729,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.4,
     changefreq: "yearly",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-22",
     summary:
       "Child Protection Policy for adult rooms 15+: we do not currently run Kids or Teens courses. Parent is the customer if the learner is under 18. No 1:1 video with a child unless the parent stays on the call. Indian law (DPDP, POCSO, JJ Act) is the floor. No COPPA/GDPR certificate claimed.",
     faqs: [
