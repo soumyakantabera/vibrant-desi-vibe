@@ -243,6 +243,9 @@ export const CONSULTATION_KEYWORDS = [
   "get a free counselling",
   "get free counselling",
   "free counselling to understand requirements",
+  "free counseling",
+  "get free counseling",
+  "free counseling to understand requirements",
   "free consulting",
   "get free consulting",
   "get a free consulting",
@@ -390,6 +393,87 @@ export const AEO_KEYWORDS = [
 ];
 
 /**
+ * Semantic variations — same intent, different words people actually type.
+ * Synonyms (classes/course/coaching/tuition), US/UK spellings, legacy city
+ * names, and the problem-shaped queries ("cannot speak fluently") that never
+ * use the product name.
+ */
+export const SEMANTIC_KEYWORDS = [
+  // spoken / communication
+  "conversational english course india",
+  "oral english classes online india",
+  "english speaking training online india",
+  "english fluency course online india",
+  "spoken english coaching institute online",
+  "spoken english tuition online india",
+  "english communication skills training india",
+  "how to speak english fluently in india",
+  "improve spoken english online with teacher",
+  // format
+  "live zoom english class india",
+  "small group spoken english class india",
+  "english class batch of 6 online",
+  "named teacher live english class",
+  "not a recorded english course",
+  "online english class from home india",
+  // price / payment
+  "spoken english monthly fees india",
+  "spoken english course price in rupees",
+  "cheapest live spoken english class india",
+  "english class no registration fee india",
+  "gst included spoken english course",
+  "pay english class by upi",
+  // consultation (incl. US spelling)
+  "free counseling english class india",
+  "free english counseling session",
+  "book free consultation whatsapp english",
+  "spoken english advisor india",
+  "english course needs assessment",
+  "which english course is right for me",
+  "no obligation english consultation",
+  "english class counselling call",
+  // interview
+  "self introduction in english for interview",
+  "introduce yourself in interview english",
+  "hr round english practice online",
+  "campus placement speaking skills india",
+  "job interview english training online",
+  "mock hr interview class india",
+  "how to answer tell me about yourself in english",
+  "english for campus interviews india",
+  // workplace
+  "office english course india",
+  "professional english speaking course india",
+  "email english course india",
+  "english for meetings and calls",
+  "client facing english india",
+  "call center english course india",
+  "english for standup meetings",
+  // freeze / confidence
+  "lack of confidence in english speaking",
+  "stage fear english speaking class",
+  "cannot speak english fluently india",
+  "english conversation class to remove hesitation",
+  "nervous while speaking english class",
+  // audience aliases
+  "spoken english for housewives india",
+  "spoken english for working women india",
+  "english class for graduates india",
+  "english for campus placements india",
+  "wfh english speaking class india",
+  // geo aliases
+  "calcutta spoken english classes online",
+  "bangalore spoken english classes online",
+  "bombay spoken english classes online",
+  "gurgaon noida spoken english online",
+  // career aliases
+  "career counseling online india",
+  "career coach online india",
+  "career guidance after graduation india",
+  "career counselling for working professionals",
+];
+
+/**
  * Named clusters for SEM, Bing, ChatGPT Actions and llms.json.
  * Page-specific keywords still go first; these are merged on every page
  * so interview / workplace / counselling queries never miss a URL.
@@ -408,6 +492,7 @@ export const KEYWORD_CLUSTERS = {
   audience: AUDIENCE_KEYWORDS,
   geo: GEO_KEYWORDS,
   aeo: AEO_KEYWORDS,
+  semantic: SEMANTIC_KEYWORDS,
 } as const;
 
 function uniqueKeywords(...lists: Array<string[] | undefined>): string[] {
@@ -437,6 +522,7 @@ export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
   AUDIENCE_KEYWORDS,
   GEO_KEYWORDS,
   AEO_KEYWORDS,
+  SEMANTIC_KEYWORDS,
 );
 
 /* --------------------------------------------------------------------------
