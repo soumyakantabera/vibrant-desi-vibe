@@ -327,10 +327,10 @@ export const BLOG_POSTS: BlogPost[] = [
     imgAlt: "Candidate answering questions in an online job interview",
     author: "Sunanda Dey",
     datePublished: "2026-08-25",
-    dateModified: "2026-08-25",
+    dateModified: "2026-09-22",
     readingTime: 8,
     wordCount: 1584,
-    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking", "/course-interview-preparation"],
     keywords: [
       "tell me about yourself in 60 seconds",
       "interview english india",

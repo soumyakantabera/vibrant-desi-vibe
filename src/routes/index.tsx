@@ -369,7 +369,7 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "8 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
+              { n: 1, lbl: "Choose Course", sub: "5 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },

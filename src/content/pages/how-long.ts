@@ -44,7 +44,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Interactive **₹1,499/month for 3 months**, Workplace **₹1,999/month for 3 months**. Inclusive of taxes. Batch of around 6. Interview English is practised in Spoken and Interactive — not sold as a separate room.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Interactive **₹1,499/month for 3 months**, Workplace **₹1,999/month for 3 months**, Interview Preparation **₹1,999/month for 2 months**. Inclusive of taxes. Batch of around 6.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },

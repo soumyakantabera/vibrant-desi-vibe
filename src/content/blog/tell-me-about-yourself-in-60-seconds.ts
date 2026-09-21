@@ -212,7 +212,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Interview English is practised live in Spoken English and Interactive Speaking — HR rounds, STAR behavioural answers, and a 60-second intro you can actually retrieve in the chair. Batches of approximately 6 learners.",
+    text: "Interview English is a module in Spoken English and Interactive Speaking. If the interview is the only freeze and you already talk, [Interview Preparation](/course-interview-preparation) is the 2-month room — HR screens, STAR, recorded mocks, batch of about 6.",
     course: "/course-spoken-english",
     label: "See Spoken English",
   },

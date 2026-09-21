@@ -331,7 +331,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Workplace English ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. Interview English is practised inside Spoken and Interactive rooms. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes and there are no registration or material fees. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -389,7 +389,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Workplace English ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. Interview English is practised in Spoken and Interactive rooms. We do not sell a separate IELTS or Interview Preparation course.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Workplace English ₹1,999 per month, Interview Preparation ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. We do not sell IELTS as a course.",
       },
       {
         q: "Who can join?",
@@ -802,7 +802,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you prepare Kolkata students for job interviews too?",
-        a: "Yes. Interview English — HR screens, tell-me-about-yourself, STAR — is practised inside Spoken English and Interactive Speaking. Workplace English at ₹1,999/month covers professionals in IT, BPO, customer support and other client-facing roles. We do not sell a separate IELTS or Interview Preparation course. All English rooms are live with approximately 6 learners per batch.",
+        a: "Yes. Interview Preparation is a 2-month live batch, approximately 6 learners, ₹1,999/month inclusive of taxes — HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Spoken and Interactive still practise interview English inside those rooms. Workplace English at ₹1,999/month covers meetings and client calls after you have the job. We do not sell IELTS as a course.",
       },
     ],
   },
@@ -976,7 +976,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,499/month. Workplace English is 3 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,499/month. Workplace English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
       },
     ],
   },
