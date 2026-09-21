@@ -304,9 +304,9 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Interactive Speaking, Workplace English and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
+            subtitle="Spoken English, Interactive Speaking, Workplace English, Interview Preparation and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
-          <Reveal stagger className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-4">
+          <Reveal stagger className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2">
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -800,7 +800,10 @@ function CategoryCard({ category }: { category: CourseCategory }) {
   const visual = COURSES[category.featuredSlug];
   const tone = CATEGORY_TONES[category.tone];
   const destination = "/english-career" as const;
-  const cta = "Explore both programmes";
+  const cta =
+    category.slugs.length === 2
+      ? "Explore both programmes"
+      : `Explore ${category.slugs.length} programmes`;
   const pill = `${category.slugs.length} programmes`;
 
   return (
