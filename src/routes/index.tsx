@@ -27,6 +27,7 @@ import {
 } from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
 import { waLink, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import { CONSULTATION } from "@/lib/consultation";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -173,6 +174,7 @@ function Home() {
                 {DEMO_CTA}
               </WaButton>
             </div>
+            <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 09:00–12:00 IST.
@@ -575,20 +577,20 @@ function Home() {
                 </span>
                 <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
               </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">Free</p>
-              <p className="mt-1 text-sm text-ink/75">One-to-one counselling — not a full class</p>
+              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">100% Free</p>
+              <p className="mt-1 text-sm text-ink/75">Personalised 1:1 counselling — just you, not a class</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Discuss courses and curriculum
+                  100% free. No payment, card or UPI to book
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Understand your requirements, one by one
+                  Personalised 1:1 — your requirements, one by one
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Not a full class — counselling on WhatsApp
+                  Named bottleneck + one course. Not a full class
                 </li>
               </ul>
             </article>
@@ -656,7 +658,8 @@ function Home() {
                   <Icon name="compass" size={22} /> {DEMO_CTA}
                 </h3>
                 <p className="text-cream/95 mb-4">
-                  Courses, curriculum and your requirements — one by one. Not a full class.
+                  100% free. Personalised 1:1. Courses, curriculum and your requirements — one by
+                  one. Not a full class.
                 </p>
                 <span className="btn btn-sun btn-sm">
                   <Icon name="compass" size={14} /> {DEMO_CTA}{" "}

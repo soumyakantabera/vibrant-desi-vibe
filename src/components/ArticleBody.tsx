@@ -73,11 +73,10 @@ export function WaStrip({ message }: { message: string }) {
       className="mt-8 rounded-2xl border border-brand/20 bg-brand-soft/60 p-5 md:p-6"
       data-cta-location="mid_article"
     >
-      <p className="font-display font-extrabold text-ink">Want a free consultation?</p>
+      <p className="font-display font-extrabold text-ink">Want a free, personalised consultation?</p>
       <p className="mt-1 text-sm text-ink/80 leading-relaxed">
-        Get Free Consultation. We name your bottleneck, answer your questions, and
-        place you in one course — not a full class. One WhatsApp message. No
-        payment to book.
+        100% free. Personalised 1:1 — just you. We name your bottleneck, answer your questions,
+        and place you in one course. Not a full class. One WhatsApp message. No payment to book.
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
         <WaButton message={message} variant="sun" size="sm">

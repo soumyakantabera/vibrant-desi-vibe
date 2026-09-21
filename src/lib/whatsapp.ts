@@ -17,7 +17,7 @@ export const DEMO_CTA = "Get Free Consultation";
 export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
 export const DEMO_MSG =
-  "Hi, I'd like a free consultation to understand my requirements. Please share a slot so we can diagnose my bottleneck and choose one course.";
+  "Hi, I'd like a free personalised 1:1 consultation. Please share a slot so we can go through my requirements one by one, diagnose my bottleneck and choose one course.";
 export const CHAT_MSG = "Hi, I want to improve my English. Please help me choose the right course.";
 
 /**

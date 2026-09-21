@@ -8,6 +8,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import { CONSULTATION } from "@/lib/consultation";
 import {
   CONTACT,
   CONTENT_REVISED,
@@ -282,6 +283,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 {DEMO_CTA}
               </WaButton>
             </div>
+            <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
             <PaymentTrust tone="dark" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">
@@ -503,8 +505,8 @@ export function CoursePage({ data }: { data: CourseData }) {
         <div className="container-x text-center text-cream">
           <h2 className="text-cream text-3xl md:text-4xl">Ready to start {data.title}?</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
-            Tell us your goal — we'll set up a free consultation on the next available slot.
-            We discuss courses, curriculum and your requirements one by one. It is not a full class.
+            Tell us your goal — 100% free, personalised 1:1 consultation. We discuss courses,
+            curriculum and your requirements one by one. It is not a full class.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waPrimary} variant="sun" size="lg">

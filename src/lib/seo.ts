@@ -686,7 +686,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I get a free consultation before I enrol?",
-        a: "Yes. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
+        a: "Yes. 100% free and personalised 1:1. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -915,7 +915,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/book-free-demo",
     title: "Get Free Consultation | Free Demo Class | Counselling",
     description:
-      "Free consultation: we diagnose your bottleneck, answer every query, recommend one course. Not a class. Free demo class seekers — this is counselling.",
+      "100% free, personalised 1:1 consultation. We diagnose your bottleneck, answer every query, recommend one course. Not a class. Free demo class seekers — this is counselling.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -933,7 +933,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-22",
     summary:
-      "Get Free Consultation: WhatsApp counselling, not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
+      "Get Free Consultation: 100% free, personalised 1:1 WhatsApp counselling, not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,
