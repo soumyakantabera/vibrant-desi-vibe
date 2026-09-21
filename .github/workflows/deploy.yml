@@ -96,6 +96,8 @@ jobs:
           test -s dist/.well-known/llms.txt
           test -s dist/.well-known/llms.json
           test -s dist/.well-known/ai-plugin.json
+          test -s dist/chatgpt-actions.md
+          test -s dist/.well-known/chatgpt-actions.md
           for file in dist/llms.txt dist/llms-full.txt dist/llms.json dist/index.md dist/course-spoken-english.md; do
             if ! grep -q '₹' "$file"; then
               echo "::error::$file is missing course fees"; exit 1
@@ -130,7 +132,9 @@ jobs:
           # top level and would report 17 mirrors against 22 sitemap URLs even
           # though all 22 exist.
           urls=$(grep -c '<loc>' dist/sitemap.xml)
-          mirrors=$(find dist -name '*.md' | wc -l)
+          # Page mirrors only. chatgpt-actions.md and .well-known copies are
+          # GPT instruction files, not sitemap URLs.
+          mirrors=$(find dist -name '*.md' ! -path 'dist/.well-known/*' ! -name 'chatgpt-actions.md' | wc -l)
           if [ "$urls" -ne "$mirrors" ]; then
             echo "::error::$urls URLs in the sitemap but $mirrors Markdown mirrors"; exit 1
           fi

@@ -16,7 +16,7 @@
  *
  * Icons are lucide SVG paths (src/components/Icon.tsx). The old Material
  * Symbols font is not loaded — a late or missing icon font used to flash
- * ligature names ("arrow_forward") or hide the whole glyph.
+ * ligature names ("arrow_forward") or hide the whole glyph. */
 @import "@fontsource/manrope/latin-400.css";
 @import "@fontsource/manrope/latin-500.css";
 @import "@fontsource/manrope/latin-600.css";
