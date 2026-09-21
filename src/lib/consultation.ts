@@ -251,7 +251,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
 ];
 
 export const CONSULTATION_HOWTO = {
-  name: "How to get a free English class consultation",
+  name: "How to get a free English consultation",
   description:
     "Book a free one-to-one counselling session on WhatsApp. Learn With Smile diagnoses your English bottleneck, answers your questions, and recommends one course. It is not a class.",
   totalTime: "PT20M",

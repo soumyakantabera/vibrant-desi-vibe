@@ -25,7 +25,7 @@
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
-import { CONSULTATION_FAQS, CONSULTATION_HOWTO } from "@/lib/consultation";
+import { CONSULTATION, CONSULTATION_FAQS, CONSULTATION_HOWTO, CONSULTATION_PATH } from "@/lib/consultation";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
@@ -33,7 +33,7 @@ export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
 /** Last content revision used when a page has no page-specific date. */
-export const CONTENT_REVISED = "2026-09-12";
+export const CONTENT_REVISED = "2026-09-22";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -325,7 +325,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
-    dateModified: "2026-09-12",
+    dateModified: "2026-09-22",
     summary:
       "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes.",
     faqs: [
@@ -379,7 +379,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-09-12",
+    dateModified: "2026-09-22",
     summary:
       "Course hub. Spoken, Interactive, Workplace and 1:1 Career Counselling. Interview English (HR, tell-me-about-yourself, STAR) is inside Spoken and Interactive. Fees from ₹999/month, inclusive of taxes.",
     faqs: [
@@ -592,7 +592,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-22",
     summary:
       "Get Free Consultation: WhatsApp counselling, not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
@@ -1472,7 +1472,7 @@ export function organizationLd() {
         email: CONTACT.email,
         url: CONTACT.whatsapp,
         description:
-          "WhatsApp is the preferred admissions channel; phone calls are a fallback. Enrolment is for learners in India only.",
+          "WhatsApp is the preferred admissions and consultation channel. Get Free Consultation is counselling, not a class. Phone is a fallback. Enrolment is for learners in India only.",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {
@@ -1490,19 +1490,20 @@ export function organizationLd() {
       itemListElement: [
         {
           "@type": "Offer",
-          name: "Get Free Consultation",
-          url: abs("/book-free-demo"),
+          name: CONSULTATION.cta,
+          url: abs(CONSULTATION_PATH),
           price: 0,
           priceCurrency: "INR",
           availability: "https://schema.org/InStock",
           category: "Consultation",
-          description:
-            "Free one-to-one counselling on WhatsApp. We diagnose your English bottleneck, answer every query, and recommend one course. Not a class.",
+          description: CONSULTATION.what,
           itemOffered: {
             "@type": "Service",
-            name: "Free English class consultation",
-            url: abs("/book-free-demo"),
+            "@id": `${abs(CONSULTATION_PATH)}#consultation`,
+            name: CONSULTATION.cta,
+            url: abs(CONSULTATION_PATH),
             serviceType: "Educational counselling",
+            description: CONSULTATION.what,
           },
         },
         ...Object.keys(COURSE_SEO).map((slug) => ({
@@ -1537,10 +1538,68 @@ export function organizationLd() {
     sameAs: [...SAME_AS],
     hasMerchantReturnPolicy: {
       "@type": "MerchantReturnPolicy",
+      name: "Consultation is free. Prepaid months are not routinely refunded.",
       applicableCountry: "IN",
       returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
       merchantReturnLink: abs("/refunds"),
+      url: abs("/refunds"),
     },
+  };
+}
+
+export function consultationServiceLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${abs(CONSULTATION_PATH)}#consultation`,
+    name: CONSULTATION.cta,
+    alternateName: [
+      "Free counselling",
+      "Free consulting",
+      "Free English consultation",
+      "Spoken English counselling",
+    ],
+    serviceType: "Educational counselling",
+    category: "Educational counselling",
+    description: CONSULTATION.what,
+    url: abs(CONSULTATION_PATH),
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: { "@type": "Country", name: "India" },
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "student",
+      audienceType: "Adults 15+",
+    },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: CONTACT.whatsapp,
+      servicePhone: CONTACT.phone,
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "09:00",
+        closes: "12:00",
+      },
+    },
+    hoursAvailable: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "09:00",
+      closes: "12:00",
+    },
+    offers: {
+      "@type": "Offer",
+      url: abs(CONSULTATION_PATH),
+      price: 0,
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      eligibleRegion: { "@type": "Country", name: "India" },
+    },
+    isRelatedTo: Object.keys(COURSE_SEO).map((slug) => ({
+      "@type": "Course",
+      name: COURSE_SEO[slug].shortTitle,
+      url: abs(`/course-${slug}`),
+    })),
   };
 }
 
@@ -1553,8 +1612,9 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India. Get a free consultation — counselling, not a class.",
     publisher: { "@id": `${SITE_URL}/#organization` },
+    dateModified: CONTENT_REVISED,
     potentialAction: {
       "@type": "CommunicateAction",
       name: "Get Free Consultation",
@@ -1620,7 +1680,7 @@ export function howToLd(howTo: {
     step: howTo.steps.map((text, i) => ({
       "@type": "HowToStep",
       position: i + 1,
-      name: `Step ${i + 1}`,
+      name: text.split(". ")[0] || `Step ${i + 1}`,
       text,
     })),
   };
@@ -1670,6 +1730,9 @@ export function webPageLd(page: {
         }
       : {}),
     ...(isEducatorProfile ? { mainEntity: { "@id": `${abs("/educator")}#person` } } : {}),
+    ...(page.path === CONSULTATION_PATH
+      ? { mainEntity: { "@id": `${abs(CONSULTATION_PATH)}#consultation` } }
+      : {}),
   };
 }
 
@@ -1826,6 +1889,7 @@ export function pageHead(path: string): HeadResult {
 
   if (page.faqs?.length) jsonLd.push(faqLd(page.faqs));
   if (page.howTo) jsonLd.push(howToLd(page.howTo));
+  if (path === CONSULTATION_PATH) jsonLd.push(consultationServiceLd());
 
   const head = buildHead({
     path: page.path,

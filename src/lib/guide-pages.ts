@@ -1,7 +1,7 @@
 import type { PageSeo } from "@/lib/seo";
 import { CITIES, cityFaqs } from "@/lib/cities";
 
-const UPDATED = "2026-09-11";
+const UPDATED = "2026-09-22";
 
 const NEW_GUIDES: Record<string, PageSeo> = {
   "/guides": {
