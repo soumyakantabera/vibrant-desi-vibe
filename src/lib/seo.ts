@@ -2184,6 +2184,12 @@ export function siteHead(): HeadResult {
         title: "llms.json",
         href: abs("/llms.json"),
       },
+      {
+        rel: "alternate",
+        type: "application/openapi+json",
+        title: "ChatGPT Actions",
+        href: abs("/openapi.json"),
+      },
     ],
     // Entity graph for the whole site — correct on every page, and what lets
     // Google and AI assistants resolve "Learn With Smile" to a real business.

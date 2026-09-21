@@ -90,6 +90,15 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-AdsBot
+Allow: /
+
+User-agent: ChatGPT-Agent
+Allow: /
+
+User-agent: ChatGPT Agent
+Allow: /
+
 # --------------------------------------------------------------- Anthropic
 User-agent: ClaudeBot
 Allow: /
