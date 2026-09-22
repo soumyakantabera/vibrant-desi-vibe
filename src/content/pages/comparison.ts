@@ -89,7 +89,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "**If the learner is under about 14, use one of these rather than us.** Teaching children is a different skill involving gamified curricula built for short attention spans, parent reporting and safeguarding, and the platforms built for it do it properly. Our classes are designed for learners from roughly 15 upwards; putting a nine-year-old into an adult batch wastes your money and their time. Judge these on the individual teacher and the trial class, and be sceptical of long prepaid packages.",
+    text: "**If the learner is under about 14, use one of these rather than us.** PlanetSpark is the named kids 1:1 in this market: public speaking and English, typically ages 4–13, course bundles often **₹13,000–₹65,000**, with a free demo class for the child. Teaching children is a different skill — parent reporting, short attention, safeguarding. Our classes are 15+. Putting a nine-year-old into an adult batch of around 6 wastes your money. Judge kids platforms on the individual teacher and the trial, and be sceptical of long prepaid packages.",
   },
 
   { t: "h3", text: "4. Established institutions" },

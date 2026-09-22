@@ -33,12 +33,12 @@ export type MarketRow = {
   extra: string;
   batch: string;
   session: string;
-  tone: "us" | "indigo" | "coral" | "sun" | "ink";
+  tone: "us" | "indigo" | "coral" | "sun" | "ink" | "play";
 };
 
 /**
- * Named 2026 comparison. Same bands as /english-institute-comparison-india.
- * Do not invent a new competitor fee here.
+ * Online 2026 comparison. Public bands only — confirm on their site.
+ * PlanetSpark is kids 4–13. We are adults 15+.
  */
 export const MARKET_COMPARE: readonly MarketRow[] = [
   {
@@ -46,7 +46,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     us: true,
     fee: "From ₹999/mo, tax incl.",
     extra: `${ADMISSION.display} admission — not a ${ADMISSION.competitorJoining} joining fee`,
-    batch: "≈6 live",
+    batch: "≈6 live · adults 15+",
     session: "Free consultation. Not a class.",
     tone: "us",
   },
@@ -54,7 +54,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     name: "EngVarta",
     fee: "₹2,700 / 25 × 15-min",
     extra: "No 6-month syllabus",
-    batch: "1:1 on demand",
+    batch: "1:1 audio, on demand",
     session: "No counselling — you talk",
     tone: "indigo",
   },
@@ -62,9 +62,25 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     name: "Cambly",
     fee: "₹8,000–₹15,000/mo if daily",
     extra: "Tutor lottery",
-    batch: "1:1 native",
+    batch: "1:1 native video",
     session: "Tutor lottery. No map.",
     tone: "coral",
+  },
+  {
+    name: "italki / Preply",
+    fee: "₹250–₹4,000 / lesson",
+    extra: "You pick the tutor",
+    batch: "1:1 marketplace",
+    session: "Trial lesson with that tutor",
+    tone: "sun",
+  },
+  {
+    name: "PlanetSpark",
+    fee: "₹13,000–₹65,000 / course",
+    extra: "Kids 4–13. Public speaking.",
+    batch: "1:1 kids online",
+    session: "Free demo class for the child",
+    tone: "play",
   },
   {
     name: "British Council Online",
@@ -72,16 +88,24 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     extra: "CEFR classroom / badge",
     batch: "Often 8–12",
     session: "Counsellor pitches a module",
-    tone: "sun",
+    tone: "ink",
   },
   {
-    name: "Veta-style rooms",
-    fee: "₹3,500–₹10,000 / 2–4 mo",
-    extra: "Material / GST extras common",
-    batch: "25–40 common",
-    session: "Walk-in or packed sample",
-    tone: "ink",
+    name: "ELSA / Duolingo / Speak",
+    fee: "₹300–₹1,200/mo",
+    extra: "AI. No named teacher.",
+    batch: "Solo app",
+    session: "None — you tap Start",
+    tone: "indigo",
+  },
+  {
+    name: "IELTS / Leap-style shops",
+    fee: "₹8,000–₹35,000 / course",
+    extra: "Exam paper. Not fluency.",
+    batch: "Exam batch",
+    session: "Pitch for IELTS/PTE",
+    tone: "coral",
   },
 ] as const;
 
-export const COMPARE_BLURB = `Updated ${COMPARE_REVISED_LABEL}. Public 2026 fee bands — confirm on their site before you pay. We sell one of the rows.`;
+export const COMPARE_BLURB = `Updated ${COMPARE_REVISED_LABEL}. Online 2026 fee bands — confirm on their site before you pay. We sell one of the rows. PlanetSpark is for children. We are adults 15+.`;

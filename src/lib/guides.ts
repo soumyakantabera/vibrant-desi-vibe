@@ -95,7 +95,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-institute-comparison-india",
     title: "Compare institutes, 2026",
-    sub: "₹999 live vs EngVarta, British Council and Veta. Fees and speaking minutes.",
+    sub: "₹999 live vs PlanetSpark (kids), EngVarta, Cambly, italki. Fees dated 22 Sep 2026.",
     icon: "chart",
     color: "coral",
     group: "money",

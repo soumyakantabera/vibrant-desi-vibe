@@ -228,6 +228,12 @@ export const CONSULTATION_VS_MARKET: {
   weDoInstead: string;
 }[] = [
   {
+    icon: "spark",
+    them: "PlanetSpark-style kids 1:1",
+    theirSession: "A free demo class for a child (typically 4–13). Public speaking packages often ₹13,000–₹65,000 per course.",
+    weDoInstead: "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹999/mo.",
+  },
+  {
     icon: "headset",
     them: "EngVarta-style 1:1 apps",
     theirSession: "No counselling. You pick a 15-minute call and talk. Useful after you can already speak.",

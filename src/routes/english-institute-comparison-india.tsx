@@ -44,6 +44,22 @@ const ROWS = [
     body: "On-demand native video. Tutor quality varies. Beginners often freeze. Accent is the product, not a beginner map.",
   },
   {
+    color: "indigo" as const,
+    icon: "users" as const,
+    tag: "Marketplace",
+    title: "italki / Preply",
+    fee: "₹250–₹4,000 / lesson",
+    body: "You pick the tutor. Good if you already know what to study. No 6-month map unless you build it.",
+  },
+  {
+    color: "sunshine" as const,
+    icon: "spark" as const,
+    tag: "Kids 4–13",
+    title: "PlanetSpark",
+    fee: "₹13,000–₹65,000 / course",
+    body: "Live 1:1 public speaking for children. Free demo class for the child. Not an adult spoken-English room. If the learner is under 15, go there — not here.",
+  },
+  {
     color: "sunshine" as const,
     icon: "trophy" as const,
     tag: "Exam & CEFR",
@@ -153,8 +169,8 @@ function Page() {
             <span className="text-sunshine">₹999 live vs apps and institutes</span>
           </h1>
           <p className="mt-5 text-lg text-white/95">
-            Learn With Smile vs EngVarta, Cambly, British Council and Veta-style rooms. We sell one
-            row. 500+ learners, 7 years, approximately 6 per batch.
+            Learn With Smile vs PlanetSpark, EngVarta, Cambly, italki, British Council. We sell
+            the adult small-batch row. PlanetSpark is kids 4–13. 500+ learners, 7 years.
           </p>
           <p className="mt-4 text-sm text-white/80">
             Last updated <time dateTime={UPDATED}>{formatIsoDate(UPDATED)}</time>. Public 2026
@@ -177,12 +193,13 @@ function Page() {
       <section className="section">
         <div className="container-x">
           <CompareDiff />
-          <p className="eyebrow mt-10">Five products. One market.</p>
-          <h2 className="mt-2 max-w-3xl">Who each institute is actually for</h2>
+          <p className="eyebrow mt-10">Online 2026. Named brands.</p>
+          <h2 className="mt-2 max-w-3xl">Who each online institute is actually for</h2>
           <p className="mt-3 max-w-3xl text-ink/80">
-            Not a ranking. Public 2026 bands. Confirm on their site before you pay.
+            Not a ranking. Public 2026 bands. PlanetSpark is children. We are adults 15+. Confirm
+            on their site before you pay.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {ROWS.map((row) => (
               <FeatureCard key={row.title} icon={row.icon} color={row.color} title={row.title}>
                 <p className="text-xs font-bold uppercase tracking-wide text-ink/55">{row.tag}</p>
