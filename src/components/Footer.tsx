@@ -41,7 +41,7 @@ const GUIDES = FOOTER_GUIDES;
 const IMG_DEFAULT = IMG.groupClass;
 
 export function Footer({ image }: { image?: string }) {
-  const wa = waLink("Hi, I want a free consultation.");
+  const wa = waLink("Hi, I want a free consultation for spoken English.");
   return (
     <footer className="bg-ink text-cream pt-16 pb-24 sm:pb-8 mt-10" data-cta-location="footer">
       <div className="container-x">

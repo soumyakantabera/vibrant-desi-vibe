@@ -220,7 +220,7 @@ function BlockView({ block }: { block: Block }) {
               </Link>
             )}
             <WaButton
-              message="Hi, I want a free consultation."
+              message="Hi, I want a free consultation for spoken English."
               variant="wa"
               size="sm"
             >

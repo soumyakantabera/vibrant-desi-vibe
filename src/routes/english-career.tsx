@@ -222,7 +222,7 @@ function Page() {
         eyebrow="Course FAQs"
         title="Choosing Between Our Courses"
         subtitle="Spoken, Interactive, Workplace or Career Counselling? Start here."
-        waMessage="Hi, I want a free consultation to choose my course."
+        waMessage="Hi, I want a free consultation to choose my spoken English course."
       />
 
       <section className="section bg-brand-deep">

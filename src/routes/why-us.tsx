@@ -94,7 +94,7 @@ const MARKET = [
 ];
 
 function Page() {
-  const wa = "Hi, I want a free consultation to know why Learn With Smile.";
+  const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
     <Layout
       waMessage={wa}
@@ -251,7 +251,7 @@ function Page() {
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
         subtitle="₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6."
-        waMessage="Hi, I want a free consultation to know how your classes work."
+        waMessage="Hi, I want a free consultation to know how your spoken English classes work."
       />
 
       <section className="section bg-brand-deep">

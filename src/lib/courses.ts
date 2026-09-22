@@ -297,7 +297,7 @@ export const COURSES: Record<string, CourseData> = {
           "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
         name: "Ananya Iyer",
         detail: "Interactive Speaking · Data Analyst, Bengaluru",
-        waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking.",
+        waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive English speaking.",
       },
     ],
     faqs: [
@@ -476,14 +476,14 @@ export const COURSES: Record<string, CourseData> = {
           "I could talk in the office. The HR screen was a different language. Two mocks later the 60-second intro stopped shaking.",
         name: "Sneha Kulkarni",
         detail: "Interview Preparation · Analyst, Pune",
-        waMessage: "Hi, I saw Sneha's story and I want a free consultation for Interview Preparation.",
+        waMessage: "Hi, I saw Sneha's story and I want a free consultation for English interview preparation.",
       },
       {
         quote:
           "STAR was a template I had copied. Saying it out loud in a batch of six is what made it mine.",
         name: "Rahul Menon",
         detail: "Interview Preparation · Support Engineer, Kochi",
-        waMessage: "Hi, I saw Rahul's story and I want a free consultation for Interview Preparation.",
+        waMessage: "Hi, I saw Rahul's story and I want a free consultation for English interview preparation.",
       },
     ],
     metaDescription:

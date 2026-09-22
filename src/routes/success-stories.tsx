@@ -39,7 +39,7 @@ const STORIES = [
       "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
     name: "Ananya Iyer",
     detail: "Interactive Speaking · Data Analyst, Bengaluru",
-    waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking.",
+    waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive English speaking.",
   },
   {
     quote:
@@ -60,7 +60,7 @@ const STORIES = [
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I read the success stories and I want a free consultation."
+      waMessage="Hi, I read the success stories and I want a free consultation for spoken English."
       footerImage={IMG.graduation}
     >
       <section className="relative">
@@ -103,7 +103,7 @@ function Page() {
         eyebrow="Results FAQs"
         title="Do Online English Classes Actually Change Careers?"
         subtitle="What our learners achieved, and what English can and cannot do for you."
-        waMessage="Hi, I read the success stories and I want a free consultation."
+        waMessage="Hi, I read the success stories and I want a free consultation for spoken English."
       />
 
       <section className="section bg-brand-soft/40">
@@ -114,14 +114,14 @@ function Page() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton
-              message="Hi, I want a free consultation to be the next success story."
+              message="Hi, I want a free consultation for spoken English."
               variant="sun"
               size="lg"
             >
               Get Free Consultation
             </WaButton>
             <WaButton
-              message="Hi, I want a free consultation to choose my course."
+              message="Hi, I want a free consultation to choose my spoken English course."
               variant="wa"
               size="lg"
             >

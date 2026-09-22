@@ -113,7 +113,7 @@ function Home() {
 
   return (
     <Layout
-      waMessage="Hi, I want a free consultation."
+      waMessage="Hi, I want a free consultation for spoken English."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -324,7 +324,7 @@ function Home() {
               </p>
             </div>
             <WaButton
-              message="Hi, I want a free consultation to choose my course."
+              message="Hi, I want a free consultation to choose my spoken English course."
               variant="wa"
               size="md"
             >
@@ -396,7 +396,7 @@ function Home() {
             ))}
           </Reveal>
           <div className="text-center mt-10">
-            <WaButton message="Hi, I want a free consultation." variant="sun" size="lg">
+            <WaButton message="Hi, I want a free consultation for spoken English." variant="sun" size="lg">
               {DEMO_CTA}
             </WaButton>
           </div>
@@ -601,7 +601,7 @@ function Home() {
             </p>
             <div className="mt-3">
               <WaButton
-                message="Hi, I want a free consultation, the fees and the next slot."
+                message="Hi, I want a free consultation for spoken English, the fees and the next slot."
                 variant="wa"
                 size="sm"
               >
@@ -674,7 +674,7 @@ function Home() {
         eyebrow="Common Questions"
         title="Your Questions, Answered Plainly"
         subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-        waMessage="Hi, I want a free consultation."
+        waMessage="Hi, I want a free consultation for spoken English."
       />
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}

@@ -29,7 +29,9 @@ export function waConsult(forWhat?: string): string {
 function ensureSpokenEnglish(sentence: string): string {
   const t = sentence.replace(/[.?!]+$/, "");
   if (/english/i.test(t)) return `${t}.`;
-  return `${t} for spoken English.`;
+  // Only tack it on when the line still ends on “free consultation”.
+  if (/free consultation$/i.test(t)) return `${t} for spoken English.`;
+  return `${t}.`;
 }
 
 /** Safety net: every WhatsApp prefill has “free consultation” and “spoken English”. */

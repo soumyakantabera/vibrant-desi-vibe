@@ -109,7 +109,7 @@ export const Route = createFileRoute("/english-institute-comparison-india")({
 function Page() {
   const page = PAGES[PATH];
   const waMessage =
-    "Hi, I am comparing institutes and I want a free consultation.";
+    "Hi, I am comparing institutes and I want a free consultation for spoken English.";
   return (
     <Layout waMessage={waMessage} footerImage={IMG.speaking}>
       <section className="relative overflow-hidden">

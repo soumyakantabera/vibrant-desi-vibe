@@ -179,9 +179,12 @@ const TEACHER_NOTE: Record<string, string> = {
 export function CoursePage({ data }: { data: CourseData }) {
   const isCareerCounselling = data.slug === "career-counselling";
   const teacherNote = TEACHER_NOTE[data.slug];
+  const consultFor = /english/i.test(data.title)
+    ? data.title
+    : `spoken English (${data.title})`;
   const waPrimary =
-    data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
-  const waSyllabus = `Hi, I want a free consultation and the ${data.title} fees.`;
+    data.waDemo ?? `Hi, I want a free consultation for ${consultFor}.`;
+  const waSyllabus = `Hi, I want a free consultation for ${consultFor} and the fees.`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
   const faqs = courseFaqs(data);
   const snapshot = (
