@@ -1,5 +1,3 @@
-import { ADMISSION } from "@/lib/fees";
-
 /** Visible + schema date for the institute comparison. Public 2026 bands. */
 export const COMPARE_REVISED = "2026-09-22";
 
@@ -45,7 +43,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     name: "Learn With Smile",
     us: true,
     fee: "From ₹999/mo, tax incl.",
-    extra: `${ADMISSION.display} admission — not a ${ADMISSION.competitorJoining} joining fee`,
+    extra: "Named teacher. No material fee.",
     batch: "≈6 live · adults 15+",
     session: "Free consultation. Not a class.",
     tone: "us",

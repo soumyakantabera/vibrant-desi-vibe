@@ -1,5 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
-import { ADMISSION, admissionCaption } from "@/lib/fees";
+import { admissionCaption } from "@/lib/fees";
 
 /**
  * Body copy for /spoken-english-classes-kolkata.
@@ -133,7 +133,6 @@ export const body: ArticleBody = [
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,499/month"],
       ["Workplace English", "3 months · up to 2 classes/week", "₹1,999/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,999/month"],
-      ["Admission (monthly courses)", "One-time per enrolment", ADMISSION.display],
       ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999 total"],
     ],
   },

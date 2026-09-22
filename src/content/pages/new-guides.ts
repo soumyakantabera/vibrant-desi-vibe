@@ -350,7 +350,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         items: [
           "**A map.** 6-month Spoken English, 3-month Interactive or Workplace — you are not guessing.",
           "**A named teacher** who heard last Tuesday’s error.",
-          "**A seat** in a batch of around 6, so you cannot hide. Inclusive of taxes. One-time ₹600 admission on monthly courses — not a ₹2,000 joining fee. No material fee.",
+          "**A seat** in a batch of around 6, so you cannot hide. Inclusive of taxes. No material fee.",
         ],
       },
       {

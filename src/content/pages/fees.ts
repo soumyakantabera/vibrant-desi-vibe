@@ -1,5 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
-import { ADMISSION, admissionCaption, admissionVersus } from "@/lib/fees";
+import { admissionCaption, admissionVersus } from "@/lib/fees";
 
 /**
  * Body copy for /english-class-fees-india.
@@ -177,7 +177,6 @@ export const body: ArticleBody = [
       ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,499/month"],
       ["Workplace English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
       ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,999/month"],
-      ["Admission (monthly courses)", "One-time per enrolment", "Spoken · Interactive · Workplace · Interview", ADMISSION.display],
       ["Career Counselling", "3 sessions", "1:1", "₹1,999 total"],
     ],
   },

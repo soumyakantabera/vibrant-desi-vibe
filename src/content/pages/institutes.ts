@@ -1,5 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
-import { ADMISSION, admissionCaption } from "@/lib/fees";
+import { admissionCaption } from "@/lib/fees";
 import { COMPARE_BLURB, COMPARE_REVISED_LABEL } from "@/lib/compare";
 
 /**
@@ -28,7 +28,7 @@ export const body: ArticleBody = [
       [
         "Learn With Smile (us)",
         "₹999–₹1,999/mo inclusive of taxes",
-        `Adults 15+. Live ≈6. ${ADMISSION.display} admission — not a ${ADMISSION.competitorJoining} joining fee.`,
+        "Adults 15+. Live ≈6. Named teacher. No material fee.",
         "Free consultation. Not a class.",
       ],
       [
@@ -90,7 +90,6 @@ export const body: ArticleBody = [
       ["Interactive Speaking", "3 months", "₹1,499/month"],
       ["Workplace English", "3 months", "₹1,999/month"],
       ["Interview Preparation", "2 months", "₹1,999/month"],
-      ["Admission (monthly courses)", "One-time per enrolment", ADMISSION.display],
       ["Career Counselling", "3 × 60-min 1:1", "₹1,999"],
     ],
   },

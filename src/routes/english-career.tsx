@@ -68,7 +68,7 @@ function Page() {
             <p className="mt-5 text-base md:text-lg text-white">
               Five live programmes. Spoken, Interactive Speaking, Workplace English, Interview
               Preparation and 1:1 Career Counselling. Interview Preparation is the room when the HR
-              screen is the bottleneck. From ₹999/month, inclusive of taxes. One-time ₹600 admission on monthly courses — not a ₹2,000 joining fee.
+              screen is the bottleneck. From ₹999/month, inclusive of taxes.
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.

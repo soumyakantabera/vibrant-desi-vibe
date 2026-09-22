@@ -11,7 +11,6 @@ import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/institutes";
 import { COMPARE_REVISED, formatIsoDate } from "@/lib/compare";
 import { CompareDiff } from "@/components/CompareDiff";
-import { ADMISSION } from "@/lib/fees";
 
 import { CHAT_CTA, DEMO_CTA } from "@/lib/whatsapp";
 
@@ -24,7 +23,7 @@ const ROWS = [
     icon: "smile" as const,
     tag: "Us",
     title: "Learn With Smile",
-    fee: `From ₹999/mo, tax incl. + ${ADMISSION.display} admission (not ${ADMISSION.competitorJoining})`,
+    fee: "From ₹999/mo, tax incl.",
     body: "Named live teacher. Approximately 6 learners. 6-month map. 500+ learners, 7 years, Kolkata & pan-India. Free consultation — not a class.",
   },
   {
