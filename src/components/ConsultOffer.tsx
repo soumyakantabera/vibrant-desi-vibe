@@ -12,9 +12,9 @@ const PILL_CLASS = [
 ] as const;
 
 const CARD_CLASS = {
-  coral: "bg-[#C84D3F] text-white",
-  indigo: "bg-[#3D3DB8] text-white",
-  sun: "bg-ink text-sunshine",
+  coral: "consult-card bg-[#C84D3F] text-white",
+  indigo: "consult-card bg-[#3D3DB8] text-white",
+  sun: "consult-card bg-[#14532D] text-white",
 } as const;
 
 /**

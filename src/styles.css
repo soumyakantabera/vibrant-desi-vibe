@@ -265,8 +265,19 @@ section > .container-x { position: relative; z-index: 10; }
   color: #14200A !important;
 }
 
-/* Icon discs on the yellow strip: yellow glyph on ink circle.
-   A blanket `span { color: ink }` made those SVGs the same colour as the disc. */
+/* Nested colour cards inside the yellow consult band keep their own type. */
+.bg-sunshine .consult-card,
+.bg-sunshine .consult-card p,
+.bg-sunshine .consult-card li,
+.bg-sunshine .consult-card strong,
+.bg-sunshine .consult-card svg {
+  color: #fff !important;
+}
+.bg-sunshine .consult-card svg.lucide,
+.bg-sunshine .consult-card svg.lws-icon {
+  stroke: currentColor;
+  fill: none !important;
+}
 .bg-sunshine span.bg-ink,
 .bg-sunshine .bg-ink {
   color: #F5B700 !important;
