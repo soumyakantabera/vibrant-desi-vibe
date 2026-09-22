@@ -12,6 +12,8 @@ import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/bl
 import type { Faq } from "@/lib/seo";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
+import { formatIsoDate } from "@/lib/compare";
+import { CompareDiff } from "@/components/CompareDiff";
 
 /**
  * Shared shell for the long-form landing pages (`/spoken-english-classes-kolkata`,
@@ -93,7 +95,9 @@ export function GuidePage({
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
-              Last updated <time dateTime={lastUpdated}>{lastUpdated}</time>
+              Last updated{" "}
+              <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>
+              . Fees and institute bands checked against public 2026 prices.
             </p>
           )}
         </div>
@@ -109,6 +113,7 @@ export function GuidePage({
               <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
             </div>
           )}
+          <CompareDiff />
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
         </div>

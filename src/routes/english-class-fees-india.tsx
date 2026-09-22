@@ -12,7 +12,7 @@ const PATH = "/english-class-fees-india";
  * This is a content revision date, not the build date: rebuilding unchanged
  * code must not claim that the research was reviewed again.
  */
-const UPDATED = "2026-09-01";
+const UPDATED = "2026-09-22";
 
 // The literal, not PATH: @tanstack/router-plugin statically analyses this
 // call to generate the route tree and cannot follow a constant. With a

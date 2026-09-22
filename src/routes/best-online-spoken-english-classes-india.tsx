@@ -8,7 +8,7 @@ import { body } from "@/content/pages/comparison";
 const PATH = "/best-online-spoken-english-classes-india";
 
 // Content revision date, deliberately not the deployment date.
-const UPDATED = "2026-09-01";
+const UPDATED = "2026-09-22";
 
 // The literal, not PATH: @tanstack/router-plugin statically analyses this
 // call to generate the route tree and cannot follow a constant. With a

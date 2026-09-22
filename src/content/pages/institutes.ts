@@ -1,5 +1,6 @@
 import type { ArticleBody } from "@/content/blog/blocks";
 import { ADMISSION, admissionCaption } from "@/lib/fees";
+import { COMPARE_BLURB, COMPARE_REVISED_LABEL } from "@/lib/compare";
 
 /**
  * /english-institute-comparison-india
@@ -10,53 +11,53 @@ import { ADMISSION, admissionCaption } from "@/lib/fees";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**We sell one of the rows.** Learn With Smile is a live online English school from ₹999/month, inclusive of taxes. This page is a fit-guide, not a ranking. Fees are **public 2026 bands** — confirm on the provider's site before you pay.",
+    text: `**We sell one of the rows.** Learn With Smile is a live online English school from ₹999/month, inclusive of taxes. **${COMPARE_BLURB}** This page is a fit-guide, not a ranking.`,
   },
   {
     t: "p",
     text: "Five products get sold as “English class.” They are not the same: a 15-minute app call, a native-speaker chat, a CEFR module, a 30-student classroom, and a named live batch of around 6. Pick the bottleneck, not the brand.",
   },
 
-  { t: "h2", text: "Named comparison — 2026 fees and format" },
+  { t: "h2", text: `Named comparison — 2026 fees and format (updated ${COMPARE_REVISED_LABEL})` },
   {
     t: "table",
     caption:
-      "Public ranges checked in 2026. Batch figures are what those formats usually run, not a promise on every slot.",
-    head: ["Institute", "From fee", "Format", "Your mic / hour", "Fits"],
+      `Public ranges checked ${COMPARE_REVISED_LABEL}. Batch figures are what those formats usually run, not a promise on every slot. ${admissionCaption()}`,
+    head: ["Institute", "From fee", "Extra / joining", "Format", "Fits"],
     rows: [
       [
         "Learn With Smile (us)",
         "₹999–₹1,999/mo inclusive of taxes",
-        "Live group, approx. 6 learners, named teacher, IST",
-        "About 8–10 minutes",
+        `${ADMISSION.display} admission — not a ${ADMISSION.competitorJoining} joining fee. No material fee.`,
+        "Live group, approx. 6, named teacher, IST",
         "Adults 15+ who need a syllabus and the mic",
       ],
       [
         "EngVarta",
         "₹2,700 / 25 × 15-min calls (~₹108)",
+        "Pack of calls. No joining fee advertised.",
         "On-demand 1:1 audio, Indian tutors",
-        "15 minutes, no syllabus",
         "Intermediates who already have language and need daily reps",
       ],
       [
         "Cambly",
         "~₹8,000–₹15,000/mo if daily",
+        "Subscription. Tutor lottery.",
         "On-demand 1:1 video, native speakers",
-        "25–50 minutes, tutor lottery",
         "Fluent speakers who want accent and idiom",
       ],
       [
         "British Council English Online",
         "₹8,800–₹16,000 / 6-class module",
+        "Module price. You buy the badge.",
         "CEFR live group, often 8–12 (cap often 10)",
-        "About 4–6 minutes",
         "People who want a published CEFR classroom",
       ],
       [
         "Veta-style classrooms",
         "₹3,500–₹10,000 for 2–4 months",
+        "Material / GST extras common on Google reviews",
         "Offline franchise rooms, large batches common (25–40)",
-        "1–2 minutes",
         "Learners who want a neighbourhood classroom and peer energy",
       ],
     ],

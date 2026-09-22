@@ -9,10 +9,14 @@ import { SmartImage } from "@/components/SmartImage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/institutes";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
+import { COMPARE_REVISED, formatIsoDate } from "@/lib/compare";
+import { CompareDiff } from "@/components/CompareDiff";
+import { ADMISSION } from "@/lib/fees";
+
+import { CHAT_CTA, DEMO_CTA } from "@/lib/whatsapp";
 
 const PATH = "/english-institute-comparison-india";
-const UPDATED = "2026-09-03";
+const UPDATED = COMPARE_REVISED;
 
 const ROWS = [
   {
@@ -20,8 +24,8 @@ const ROWS = [
     icon: "smile" as const,
     tag: "Us",
     title: "Learn With Smile",
-    fee: "From ₹999/mo inclusive of taxes",
-    body: "Named live teacher. Approximately 6 learners. 6-month map. 500+ learners, 7 years, Kolkata & pan-India.",
+    fee: `From ₹999/mo, tax incl. + ${ADMISSION.display} admission (not ${ADMISSION.competitorJoining})`,
+    body: "Named live teacher. Approximately 6 learners. 6-month map. 500+ learners, 7 years, Kolkata & pan-India. Free consultation — not a class.",
   },
   {
     color: "indigo" as const,
@@ -153,7 +157,8 @@ function Page() {
             row. 500+ learners, 7 years, approximately 6 per batch.
           </p>
           <p className="mt-4 text-sm text-white/80">
-            Last updated <time dateTime={UPDATED}>{UPDATED}</time>
+            Last updated <time dateTime={UPDATED}>{formatIsoDate(UPDATED)}</time>. Public 2026
+            fee bands.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <WaButton message={waMessage} variant="wa" size="lg">
@@ -171,7 +176,8 @@ function Page() {
 
       <section className="section">
         <div className="container-x">
-          <p className="eyebrow">Five products. One market.</p>
+          <CompareDiff />
+          <p className="eyebrow mt-10">Five products. One market.</p>
           <h2 className="mt-2 max-w-3xl">Who each institute is actually for</h2>
           <p className="mt-3 max-w-3xl text-ink/80">
             Not a ranking. Public 2026 bands. Confirm on their site before you pay.

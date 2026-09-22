@@ -1232,6 +1232,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.7,
     changefreq: "monthly",
+    dateModified: "2026-09-22",
     summary:
       "Comparison guide. The main formats for learning spoken English online in India — 1:1 practice apps, native-speaker platforms, children's platforms, institutional courses, small and large live batches, AI apps — organised by which learner each suits rather than as a ranking. Written by one of the providers, and says so.",
     faqs: [
@@ -1344,7 +1345,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-institute-comparison-india",
     title: "Compare English Classes India | ₹999 vs EngVarta & BC",
     description:
-      "From ₹999/mo vs EngVarta 1:1, British Council modules and Veta rooms. Named teacher, ~6 learners, 500+, 7 years. Free consultation diagnoses the gap.",
+      "Updated 22 Sep 2026. From ₹999/mo vs EngVarta, British Council and Veta. ₹600 admission, not a ₹2,000 joining fee. Free consultation — not a class.",
     shortTitle: "English Institutes in India, Compared",
     keywords: [
       "best spoken english institute in india 2026",
@@ -1354,10 +1355,12 @@ export const PAGES: Record<string, PageSeo> = {
       "best english class for working professionals india",
       "free english consultation vs demo class",
       "learn with smile vs engvarta vs british council",
+      "spoken english 600 admission vs 2000 joining fee",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
+    dateModified: "2026-09-22",
     summary:
       "Named 2026 comparison: Learn With Smile from ₹999/month (approx. 6 learners, 500+, 7 years) vs EngVarta (₹2,700 / 25 calls), Cambly (₹8k–₹15k/mo if daily), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months). Written by one of the providers.",
     faqs: [
