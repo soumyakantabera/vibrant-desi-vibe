@@ -42,11 +42,11 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Workplace English Guide"
-      breadcrumb="Workplace English Course Online India"
+      eyebrow="Business English Guide"
+      breadcrumb="Business English Course Online India"
       h1={
         <>
-          Workplace English in India — ₹1,999/mo, inclusive of taxes,{" "}
+          Business English in India — ₹1,999/mo, inclusive of taxes,{" "}
           <span className="text-sunshine">Approx. 6 learners, 3 Months</span>
         </>
       }
@@ -56,10 +56,10 @@ function Page() {
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="Workplace English — Straight Answers"
-      waMessage="Hi, I want a free consultation for Workplace English."
+      faqTitle="Business English — Straight Answers"
+      waMessage="Hi, I want a free consultation for Business English."
       ctaTitle="Bring one real workplace problem"
-      ctaBody="Tell us the meeting, call, email or presentation situation that is difficult. We will tell you honestly whether Workplace English or another course is the better fit."
+      ctaBody="Tell us the meeting, call, email or presentation situation that is difficult. We will tell you honestly whether Business English or another course is the better fit."
     />
   );
 }

@@ -30,7 +30,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,499/month). If meetings and calls are the gap, take Workplace English (₹1,999/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 09:00–12:00 IST.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,499/month). If meetings and calls are the gap, take Business English (₹1,999/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 09:00–12:00 IST.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -262,7 +262,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/english-for-it-professionals-india",
     title: "Spoken English for IT Professionals India",
     description:
-      "Standups, tickets, client calls for Indian IT. Workplace English ₹1,999/mo or Spoken ₹999/mo, around 6 learners, inclusive of taxes. IST live batches.",
+      "Standups, tickets, client calls for Indian IT. Business English ₹1,999/mo or Spoken ₹999/mo, around 6 learners, inclusive of taxes. IST live batches.",
     shortTitle: "IT professionals",
     keywords: [
       "english for it professionals india",
@@ -282,7 +282,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course is best for IT professionals in India?",
-        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Workplace English (₹1,999/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
+        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Business English (₹1,999/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
       },
     ],
   },

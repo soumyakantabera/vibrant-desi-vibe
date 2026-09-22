@@ -26,7 +26,7 @@ export const Route = createFileRoute("/educator")({
         knowsAbout: [
           "Spoken English",
           "Interactive Speaking",
-          "Workplace English",
+          "Business English",
           "Career Counselling",
         ],
         knowsLanguage: ["en-IN", "hi-IN", "bn-IN"],
@@ -176,7 +176,7 @@ function Page() {
             teaches={[
               "Basic & Interactive Spoken English",
               "Interview English inside Spoken and Interactive rooms",
-              "Workplace English for professionals",
+              "Business English for professionals",
               "1:1 Career Counselling",
             ]}
             promises={[

@@ -2,8 +2,9 @@ import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { PageSkeleton } from "./components/PageSkeleton";
+import { AppErrorComponent } from "@/lib/error-component";
 
-export const getRouter = () => {
+export function getRouter() {
   const queryClient = new QueryClient();
 
   const router = createRouter({
@@ -12,6 +13,7 @@ export const getRouter = () => {
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     basepath: import.meta.env.BASE_URL,
+    defaultErrorComponent: AppErrorComponent,
 
     // Start fetching a page's chunk as soon as the reader shows intent
     // (hovering a link, or touching it on a phone). On a slow connection that
@@ -32,4 +34,4 @@ export const getRouter = () => {
   });
 
   return router;
-};
+}

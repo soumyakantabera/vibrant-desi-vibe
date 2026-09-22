@@ -142,7 +142,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         q: "Is IELTS useful for a job in India?",
-        a: "Only if the form asks. Indian interviews judge a 60-second intro, not a Writing Task 2. Workplace English, or interview English inside Spoken and Interactive, is usually the cheaper, faster room.",
+        a: "Only if the form asks. Indian interviews judge a 60-second intro, not a Writing Task 2. Business English, or interview English inside Spoken and Interactive, is usually the cheaper, faster room.",
       },
     ],
   },
@@ -188,7 +188,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Practical English for entering meetings, giving updates, clarifying, disagreeing and closing with decisions — written for Indian working professionals.",
     excerpt:
       "Useful meeting English for updates, questions and disagreement — without corporate jargon.",
-    tag: "Workplace English",
+    tag: "Business English",
     img: "presentation",
     imgAlt: "Indian professional speaking during an online office meeting",
     author: "Sunanda Dey",
@@ -225,7 +225,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A practical guide to English for BPO and customer support calls: clarify problems, handle complaints, explain next steps and close without confusion.",
     excerpt:
       "Clear call handling, complaint language and recovery phrases — no fake accent promises.",
-    tag: "Workplace English",
+    tag: "Business English",
     img: "businessEnglish",
     imgAlt: "Customer support professional speaking with a client online",
     author: "Sunanda Dey",
@@ -291,7 +291,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Five wording swaps that make workplace emails sound confident rather than apologetic, with before-and-after examples from real Indian office correspondence.",
     excerpt: "Small wording swaps that instantly upgrade your workplace emails.",
-    tag: "Workplace English",
+    tag: "Business English",
     img: "businessEnglish",
     imgAlt: "Professional writing a work email on a laptop in an office",
     author: "Sunanda Dey",

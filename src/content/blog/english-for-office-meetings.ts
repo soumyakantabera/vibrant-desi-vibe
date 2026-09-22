@@ -161,7 +161,7 @@ export const body: ArticleBody = [
     text: "Repeat that for four weeks and you will improve. A live course becomes useful when you need somebody to create harder situations, catch patterns you cannot hear yourself and make you practise even when work is busy.",
   },
 
-  { t: "h2", text: "When Workplace English is the wrong course" },
+  { t: "h2", text: "When Business English is the wrong course" },
   {
     t: "ul",
     items: [
@@ -173,8 +173,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹1,999/month inclusive of taxes.",
+    text: "Business English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹1,999/month inclusive of taxes.",
     course: "/course-business-english",
-    label: "See the Workplace English syllabus",
+    label: "See the Business English syllabus",
   },
 ];

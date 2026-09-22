@@ -243,7 +243,7 @@ function Page() {
       <GuidesStrip
         eyebrow="Guides"
         title="Read these before you pay anyone"
-        subtitle="Fees, Kolkata classrooms, workplace English and an honest 2026 comparison — written to be useful even if you never join us."
+        subtitle="Fees, Kolkata classrooms, business English and an honest 2026 comparison — written to be useful even if you never join us."
       />
 
       <FaqSection

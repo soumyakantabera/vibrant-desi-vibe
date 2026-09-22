@@ -4,11 +4,11 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Workplace English ₹1,999/mo, Interactive ₹1,499/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **09:00–12:00 IST**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Business English ₹1,999/mo, Interactive ₹1,499/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **09:00–12:00 IST**.",
   },
   {
     t: "p",
-    text: "Aditya did Workplace English from a back-office calendar and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi while still in the job. The room is built for people who already have a calendar.",
+    text: "Aditya did Business English from a back-office calendar and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi while still in the job. The room is built for people who already have a calendar.",
   },
 
   { t: "h2", text: "The three slots" },
@@ -18,7 +18,7 @@ export const body: ArticleBody = [
     head: ["Slot", "Who it usually fits", "What to pick"],
     rows: [
       ["Morning", "Before office, teachers, early shifts", "Spoken or Interactive"],
-      ["Evening (~7pm IST)", "Standard office end", "Workplace English if meetings are the gap"],
+      ["Evening (~7pm IST)", "Standard office end", "Business English if meetings are the gap"],
       [
         "Weekend",
         "Night shifts, Sector V / New Town late finishes, BPO rosters",
@@ -39,7 +39,7 @@ export const body: ArticleBody = [
     items: [
       "Daily talk still shaky → [Spoken English](/course-spoken-english), 6 months, ₹999/mo.",
       "You freeze on calls you could write → [Interactive](/course-interactive-speaking), 3 months.",
-      "Meetings, clients, emails, updates → [Workplace English](/course-business-english), 3 months, ₹1,999/mo. Then [client calls](/english-for-client-calls-india) and [presentations](/english-for-presentations-india).",
+      "Meetings, clients, emails, updates → [Business English](/course-business-english), 3 months, ₹1,999/mo. Then [client calls](/english-for-client-calls-india) and [presentations](/english-for-presentations-india).",
       "Hindi- or Bengali-medium start → [that guide](/english-hindi-bengali-medium).",
     ],
   },

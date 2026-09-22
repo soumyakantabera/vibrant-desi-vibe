@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Three products get sold as “English class” in India: **Spoken English**, **Workplace English**, and **IELTS**. They have different clocks, different fees, and different failure modes. Pick the wrong one and you spend 3 months practising the exam when you still cannot hold a phone call — or you spend 6 months chatting when you needed Band 7 writing.",
+    text: "Three products get sold as “English class” in India: **Spoken English**, **Business English**, and **IELTS**. They have different clocks, different fees, and different failure modes. Pick the wrong one and you spend 3 months practising the exam when you still cannot hold a phone call — or you spend 6 months chatting when you needed Band 7 writing.",
   },
 
   { t: "h2", text: "The 2-minute picker" },
@@ -19,7 +19,7 @@ export const body: ArticleBody = [
       ],
       [
         "You can chat, but meetings, emails, clients go silent",
-        "Workplace English",
+        "Business English",
         "₹1,999/mo, 3 months, approx. 6 learners",
         "Work talk in ~3 months",
       ],

@@ -80,7 +80,7 @@ export const CONSULTATION_WALK_AWAY: {
     icon: "compass",
     color: "brand",
     title: "Your bottleneck, named",
-    body: "Cannot form a sentence, freeze on words you already have, workplace English, interview English, or a career choice. We say which one is actually in the way — in one sentence.",
+    body: "Cannot form a sentence, freeze on words you already have, business English, interview English, or a career choice. We say which one is actually in the way — in one sentence.",
   },
   {
     icon: "check",
@@ -149,8 +149,8 @@ export const CONSULTATION_BOTTLENECKS: {
   {
     icon: "headset",
     ifThis: "Chat is fine. Meetings, calls or emails are not.",
-    weName: "Workplace English is the gap",
-    weRecommend: "Workplace English — 3 months, ₹1,999/mo",
+    weName: "Business English is the gap",
+    weRecommend: "Business English — 3 months, ₹1,999/mo",
     href: "/course-business-english",
   },
   {
@@ -275,7 +275,7 @@ export const CONSULTATION_VS_MARKET: {
 export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   {
     q: "What do I actually get in the free consultation?",
-    a: "It is 100% free, in a small batch, with personalised advice — we hear each person's requirements one by one. Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck — cannot hold a conversation, freeze, workplace English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought — fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
+    a: "It is 100% free, in a small batch, with personalised advice — we hear each person's requirements one by one. Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck — cannot hold a conversation, freeze, business English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought — fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
   },
   {
     q: "How is your free consultation different from other institutes’ free sessions?",
@@ -291,7 +291,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,499/month). Chat is fine, meetings and calls are not → Workplace English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). Career choice → paid 1:1 Career Counselling (₹1,999 total) — not the free consultation. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,499/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). Career choice → paid 1:1 Career Counselling (₹1,999 total) — not the free consultation. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Is the free consultation a full English class?",

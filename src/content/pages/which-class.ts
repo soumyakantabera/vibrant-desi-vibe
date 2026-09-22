@@ -7,7 +7,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,499/mo). If the problem is meetings, calls and emails, take [Workplace English](/course-business-english) (3 months, ₹1,999/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹1,999/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,499/mo). If the problem is meetings, calls and emails, take [Business English](/course-business-english) (3 months, ₹1,999/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹1,999/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
@@ -63,7 +63,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Business English — when work is the gap" },
   {
     t: "p",
-    text: "Workplace English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Neha’s tax-desk calls and Aditya’s BI Analyst switch are this room. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
+    text: "Business English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Neha’s tax-desk calls and Aditya’s BI Analyst switch are this room. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
   },
 
   { t: "h2", text: "What not to buy first" },

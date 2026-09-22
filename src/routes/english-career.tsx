@@ -66,7 +66,7 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Five live programmes. Spoken, Interactive Speaking, Workplace English, Interview
+              Five live programmes. Spoken, Interactive Speaking, Business English, Interview
               Preparation and 1:1 Career Counselling. Interview Preparation is the room when the HR
               screen is the bottleneck. From ₹999/month, inclusive of taxes.
             </p>

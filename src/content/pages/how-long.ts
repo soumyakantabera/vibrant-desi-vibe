@@ -9,7 +9,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice — up to 2 classes a week plus 10–15 minutes a day. Workplace English — meetings, calls, updates — is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
+    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice — up to 2 classes a week plus 10–15 minutes a day. Business English — meetings, calls, updates — is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
   },
   {
     t: "p",
@@ -29,7 +29,7 @@ export const body: ArticleBody = [
         "Introduce yourself, shops, phone calls, 2 minutes on a topic",
       ],
       [
-        "Workplace English",
+        "Business English",
         "Can chat, freeze in meetings",
         "3 months on top, or 3 months if you already speak",
         "Updates, client calls, emails, a 5-minute presentation",
@@ -56,7 +56,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "**30 days:** confidence and a few set phrases, if you already understand English.",
-      "**90 days:** workplace English, if you can already hold a five-minute chat.",
+      "**90 days:** business English, if you can already hold a five-minute chat.",
       "**180 days:** everyday fluency from zero, with live correction twice a week.",
       "**270–360 days:** professional or exam English from zero.",
     ],

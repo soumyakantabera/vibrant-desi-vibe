@@ -331,7 +331,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "ul",
       items: [
         `**Commute.** ${city.commute} is longer than the class.`,
-        `**Industry English.** ${city.industries} need names, numbers and a next step — not a fake accent. That is [client-call English](/english-for-client-calls-india) and [Workplace English](/workplace-english-course-online-india).`,
+        `**Industry English.** ${city.industries} need names, numbers and a next step — not a fake accent. That is [client-call English](/english-for-client-calls-india) and [Business English](/workplace-english-course-online-india).`,
         `**School medium.** ${city.medium} is not a wall. [Hindi- and Bengali-medium learners](/english-hindi-bengali-medium) are the majority of our rooms.`,
       ],
     },
@@ -343,7 +343,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       rows: [
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
         ["Interactive Speaking", "3 months", "₹1,499/month"],
-        ["Workplace English", "3 months", "₹1,999/month"],
+        ["Business English", "3 months", "₹1,999/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹1,999/month"],
           ["Career Counselling", "3 × 60 min, 1:1", "₹1,999 total"],
       ],

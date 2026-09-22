@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Workplace English](/course-business-english) practises that live — 3 months, ₹1,999/mo, inclusive of taxes, approx. 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
+    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Business English](/course-business-english) practises that live — 3 months, ₹1,999/mo, inclusive of taxes, approx. 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
   },
   {
     t: "p",
@@ -42,7 +42,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Difficult client — still structure" },
   {
     t: "p",
-    text: "Acknowledge. State the fact. Give the next step. Offer a time. You do not need a bigger vocabulary. You need a spine. Role-plays in Workplace English and [Interactive](/course-interactive-speaking) are where that spine gets used under mild pressure.",
+    text: "Acknowledge. State the fact. Give the next step. Offer a time. You do not need a bigger vocabulary. You need a spine. Role-plays in Business English and [Interactive](/course-interactive-speaking) are where that spine gets used under mild pressure.",
   },
   {
     t: "ul",
@@ -63,6 +63,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Bring a real call you have this week. We will practise it in a live batch of around 6.",
     course: "/course-business-english",
-    label: "See Workplace English",
+    label: "See Business English",
   },
 ];

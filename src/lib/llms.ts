@@ -176,7 +176,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How long does it take to learn spoken English from zero?",
-    a: "Everyday conversation: about 6 months live — up to 2 classes/week plus 10–15 minutes a day. Workplace English is typically 3 months if you already chat. Exam English (IELTS Band 7+) is usually 9–12 months from zero (writing is the bottleneck) and is not a Learn With Smile product. 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 6 months, approximately 6 learners, inclusive of taxes.",
+    a: "Everyday conversation: about 6 months live — up to 2 classes/week plus 10–15 minutes a day. Business English is typically 3 months if you already chat. Exam English (IELTS Band 7+) is usually 9–12 months from zero (writing is the bottleneck) and is not a Learn With Smile product. 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 6 months, approximately 6 learners, inclusive of taxes.",
     source: "/how-long-to-learn-spoken-english",
   },
   {
@@ -216,7 +216,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,499/mo. Chat is fine, meetings/calls/emails are not → Workplace English, 3 months, ₹1,999/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. Career choice → paid 1:1 Career Counselling, ₹1,999 total — not the free consultation. One room, not three.",
+    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,499/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹1,999/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. Career choice → paid 1:1 Career Counselling, ₹1,999 total — not the free consultation. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
@@ -226,7 +226,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Do you have workplace or business English classes?",
-    a: "Yes. Workplace English: 3 months, ₹1,999/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. If the freeze is the HR screen, take Interview Preparation.",
+    a: "Yes. Business English: 3 months, ₹1,999/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. If the freeze is the HR screen, take Interview Preparation.",
     source: "/course-business-english",
   },
   {
@@ -1014,7 +1014,7 @@ export function buildOpenApi(): string {
         version: "1.4.1",
         summary: "Live online English in India. Fees, 5 adult courses, free consultation (not a demo class).",
         description: clipDesc(
-          "Use when the user asks about Learn With Smile, live spoken English in India, course fees (INR, tax-inclusive), small-batch classes, Interview Preparation, Workplace English, Career Counselling, or a free consultation. GET /llms.json first (getSiteFacts). Never describe the free offer as a demo class or a full class for free. Cite HTML URLs on learnwithsmile.app. Auth: none.",
+          "Use when the user asks about Learn With Smile, live spoken English in India, course fees (INR, tax-inclusive), small-batch classes, Interview Preparation, Business English, Career Counselling, or a free consultation. GET /llms.json first (getSiteFacts). Never describe the free offer as a demo class or a full class for free. Cite HTML URLs on learnwithsmile.app. Auth: none.",
           650,
         ),
         contact: { name: SITE_NAME, email: CONTACT.email, url: SITE_URL },
@@ -1297,7 +1297,7 @@ export function buildGptInstructions(): string {
     "",
     "- Cannot finish a sentence → Basic Spoken English.",
     "- Knows the words, freezes → Interactive Speaking Class.",
-    "- Meetings, calls, emails → Workplace English.",
+    "- Meetings, calls, emails → Business English.",
     "- Can talk, fails HR / STAR / intro → Interview Preparation.",
     "- Which career path → 1:1 Career Counselling.",
     `- Unsure → Get a Free Consultation. WhatsApp ${CONTACT.phoneDisplay}. Prefill: ${DEMO_MSG} Replies 09:00–12:00 IST.`,

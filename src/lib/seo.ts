@@ -327,7 +327,7 @@ export const INTERACTIVE_KEYWORDS = [
   "overcome english speaking fear india",
 ];
 
-/** Product — Workplace English. */
+/** Product — Business English. */
 export const WORKPLACE_KEYWORDS = [
   "workplace english course india fees",
   "business english course online india",
@@ -690,7 +690,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Workplace English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes. No material fee. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Business English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes. No material fee. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -744,11 +744,11 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should I choose — Spoken, Interactive, Workplace or Interview Preparation?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Interactive Speaking (₹1,499/month, 3 months) if you know the words and freeze. Choose Workplace English (₹1,999/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹1,999/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Interactive Speaking (₹1,499/month, 3 months) if you know the words and freeze. Choose Business English (₹1,999/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹1,999/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Workplace English ₹1,999 per month, Interview Preparation ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. We do not sell IELTS as a course.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Business English ₹1,999 per month, Interview Preparation ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. We do not sell IELTS as a course.",
       },
       {
         q: "Who can join?",
@@ -756,7 +756,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I take two courses at the same time?",
-        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit — typically Workplace English with Career Counselling. Message us on WhatsApp so we can check the available schedules.",
+        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit — typically Business English with Career Counselling. Message us on WhatsApp so we can check the available schedules.",
       },
     ],
   },
@@ -914,7 +914,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/blog",
     title: "English & Career Blog | Tips for Indian Learners",
     description:
-      "Notes from teachers who run live classes: IELTS Band 7, interview answers, workplace English, how long fluency takes. From ₹999/month, inclusive of taxes.",
+      "Notes from teachers who run live classes: IELTS Band 7, interview answers, business English, how long fluency takes. From ₹999/month, inclusive of taxes.",
     shortTitle: "Blog",
     keywords: [
       "english learning tips india",
@@ -1098,7 +1098,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you run kids or teen English classes?",
-        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Workplace English, Interview Preparation and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
+        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
@@ -1161,7 +1161,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you prepare Kolkata students for job interviews too?",
-        a: "Yes. Interview Preparation is a 2-month live batch, approximately 6 learners, ₹1,999/month inclusive of taxes — HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Spoken and Interactive still practise interview English inside those rooms. Workplace English at ₹1,999/month covers meetings and client calls after you have the job. We do not sell IELTS as a course.",
+        a: "Yes. Interview Preparation is a 2-month live batch, approximately 6 learners, ₹1,999/month inclusive of taxes — HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Spoken and Interactive still practise interview English inside those rooms. Business English at ₹1,999/month covers meetings and client calls after you have the job. We do not sell IELTS as a course.",
       },
     ],
   },
@@ -1265,10 +1265,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/workplace-english-course-online-india": {
     path: "/workplace-english-course-online-india",
-    title: "Workplace English Online | ₹1,999/mo, 7 Years",
+    title: "Business English Online | ₹1,999/mo, 7 Years",
     description:
       "A practical guide to English for meetings, client calls, updates, emails and presentations — plus who needs a course and who should practise independently.",
-    shortTitle: "Workplace English Course Guide",
+    shortTitle: "Business English Course Guide",
     keywords: [
       "workplace english course online india",
       "english communication for working professionals",
@@ -1282,18 +1282,18 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "A practical buyer and self-study guide to workplace English in India: meetings, client calls, status updates, emails and presentations; who needs live training; and how the Learn With Smile course with approximately 6 learners per batch works.",
+      "A practical buyer and self-study guide to business English in India: meetings, client calls, status updates, emails and presentations; who needs live training; and how the Learn With Smile course with approximately 6 learners per batch works.",
     faqs: [
       {
-        q: "What is Workplace English?",
-        a: "Workplace English is the spoken and written English used to complete real work: giving updates, joining meetings, asking for clarification, speaking with clients, writing concise messages and presenting an idea. It is sometimes marketed as Business English, but it is useful well beyond managers and corporate offices — including freshers, IT and BPO employees, customer support teams, sales staff and freelancers.",
+        q: "What is Business English?",
+        a: "Business English is the spoken and written English used to complete real work: giving updates, joining meetings, asking for clarification, speaking with clients, writing concise messages and presenting an idea. People also search this as workplace English. It is useful well beyond managers and corporate offices — including freshers, IT and BPO employees, customer support teams, sales staff and freelancers.",
       },
       {
-        q: "Who should join a Workplace English course?",
+        q: "Who should join a Business English course?",
         a: "Join if you can already hold a basic English conversation but become unclear or silent in meetings, calls, updates or professional writing. If you cannot yet form everyday sentences, start with Basic Spoken English. If you speak comfortably at work and only need vocabulary, use free reading and practice resources instead of buying a course.",
       },
       {
-        q: "How much does Learn With Smile Workplace English cost?",
+        q: "How much does Learn With Smile Business English cost?",
         a: "The course costs ₹1,999 per month inclusive of taxes. It runs for three months with up to two live class days per week in a batch of approximately 6 learners. There is no material fee. Chat on WhatsApp.",
       },
       {
@@ -1301,7 +1301,7 @@ export const PAGES: Record<string, PageSeo> = {
         a: "No. Feedback and correction happen during the live classes. Outside class, direct contact with the teacher is assured when a learner genuinely needs help, but there is currently no scheduled recurring 1:1 feedback session.",
       },
       {
-        q: "Will Workplace English guarantee a promotion or salary increase?",
+        q: "Will Business English guarantee a promotion or salary increase?",
         a: "No ethical course can guarantee that. Clearer communication can remove one barrier at work, but promotion and salary decisions also depend on role, technical performance, experience, company conditions and available opportunities. The course practises communication situations; it does not promise a job outcome.",
       },
     ],
@@ -1336,7 +1336,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,499/month. Workplace English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,499/month. Business English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
       },
     ],
   },
@@ -1423,14 +1423,14 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English class do I need — spoken, business or interactive?",
-        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Workplace English — 3 months, ₹1,999/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Business English — 3 months, ₹1,999/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
       },
       {
         q: "Should I take IELTS first to get a better job in India?",
         a: "Most Indian interviews hear you speak. Start with spoken, interactive or business English. Sit IELTS when a form, a university or a country asks for the band. The exam is a paper. The job conversation is a room.",
       },
       {
-        q: "Can I take Spoken English and Workplace English together?",
+        q: "Can I take Spoken English and Business English together?",
         a: "Usually no — they train different bottlenecks. Finish the room you need first. We place you in one class, not three. Message anytime; we reply 09:00–12:00 IST.",
       },
       {
@@ -1503,7 +1503,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long does spoken English take if I studied in Hindi or Bengali medium?",
-        a: "About 6 months live from zero, up to 2 classes a week plus 10–15 minutes a day. Workplace English is typically a further 3 months if meetings are the next job. 30-day fluency from zero is marketing.",
+        a: "About 6 months live from zero, up to 2 classes a week plus 10–15 minutes a day. Business English is typically a further 3 months if meetings are the next job. 30-day fluency from zero is marketing.",
       },
     ],
   },
@@ -1529,7 +1529,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Can I learn English while working a full-time job in India?",
-        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,499/month, Workplace English ₹1,999/month. Approx. 6 learners. Aditya did Workplace English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
+        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,499/month, Business English ₹1,999/month. Approx. 6 learners. Aditya did Business English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
       },
       {
         q: "What if I miss a live English class because of a work shift?",
@@ -1546,7 +1546,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-client-calls-india",
     title: "Client-Call English | Names & Next Step",
     description:
-      "Client-call English is clarity, not accent: names, numbers, next step. Workplace English, 3 months, ₹1,999/mo, approx. 6 learners. Kolkata & pan-India. Inclusive of taxes.",
+      "Client-call English is clarity, not accent: names, numbers, next step. Business English, 3 months, ₹1,999/mo, approx. 6 learners. Kolkata & pan-India. Inclusive of taxes.",
     shortTitle: "Client-call English",
     keywords: [
       "english for client calls india",
@@ -1559,11 +1559,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Client-call English is names, numbers and the next step — not a fake accent. Workplace English practises that live, 3 months, ₹1,999/month, approx. 6 learners. Neha now takes the Mumbai client call herself.",
+      "Client-call English is names, numbers and the next step — not a fake accent. Business English practises that live, 3 months, ₹1,999/month, approx. 6 learners. Neha now takes the Mumbai client call herself.",
     faqs: [
       {
         q: "How do I speak English on client calls without freezing?",
-        a: "Use a four-line update: where we are, what changed, what you will do next, what you need from them. If you do not have the answer, give a time: “I’ll confirm by 4pm IST and message you.” Workplace English drills this live — 3 months, ₹1,999/month, approx. 6 learners. If you freeze before the call starts, add Interactive Speaking.",
+        a: "Use a four-line update: where we are, what changed, what you will do next, what you need from them. If you do not have the answer, give a time: “I’ll confirm by 4pm IST and message you.” Business English drills this live — 3 months, ₹1,999/month, approx. 6 learners. If you freeze before the call starts, add Interactive Speaking.",
       },
       {
         q: "Do I need a native accent for Indian client calls?",
@@ -1571,7 +1571,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is Spoken English enough for client-facing work?",
-        a: "If you cannot yet hold a simple conversation, start with Spoken English for 6 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. If chat is already fine, Workplace English is the room.",
+        a: "If you cannot yet hold a simple conversation, start with Spoken English for 6 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. If chat is already fine, Business English is the room.",
       },
     ],
   },
@@ -1593,7 +1593,7 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Explaining your work in English is three beats: one outcome, three points, one ask. Workplace English and Interactive Speaking both drill this live. Ananya now speaks the dashboard in Monday standups.",
+      "Explaining your work in English is three beats: one outcome, three points, one ask. Business English and Interactive Speaking both drill this live. Ananya now speaks the dashboard in Monday standups.",
     faqs: [
       {
         q: "How do I explain my work in English in 3 minutes?",
@@ -1605,7 +1605,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which English course helps with presentations at work?",
-        a: "If you can already chat and the deck is the problem — Workplace English, 3 months, ₹1,999/month. If you freeze before slide one — Interactive, 3 months, ₹1,499/month. If daily English is still the gap — Spoken, 6 months, ₹999/month, then come back to decks.",
+        a: "If you can already chat and the deck is the problem — Business English, 3 months, ₹1,999/month. If you freeze before slide one — Interactive, 3 months, ₹1,499/month. If daily English is still the gap — Spoken, 6 months, ₹999/month, then come back to decks.",
       },
     ],
   },
@@ -1666,24 +1666,24 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "business-english": {
-    title: "Workplace English Course | ₹1,999/mo",
+    title: "Business English Course | ₹1,999/mo",
     description:
-      "Workplace English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, inclusive of taxes.",
-    shortTitle: "Workplace English",
+      "Business English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, inclusive of taxes.",
+    shortTitle: "Business English",
     keywords: [
       ...WORKPLACE_KEYWORDS,
       "business english classes evening batch india",
     ],
     ogImage: "/og/business-english.jpg",
     summary:
-      "Workplace English — ₹1,999/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations.",
+      "Business English — ₹1,999/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations.",
     extraFaqs: [
       {
-        q: "What is the difference between Spoken English and Workplace English?",
-        a: "Spoken English builds the underlying ability to hold a conversation — grammar, vocabulary, pronunciation and confidence. Workplace English assumes you can already manage a basic conversation and practises the situations that affect your job: status updates, meetings, client calls, clarification, emails and presentations. If you cannot yet hold a five-minute conversation, start with Basic Spoken English first.",
+        q: "What is the difference between Spoken English and Business English?",
+        a: "Spoken English builds the underlying ability to hold a conversation — grammar, vocabulary, pronunciation and confidence. Business English assumes you can already manage a basic conversation and practises the situations that affect your job: status updates, meetings, client calls, clarification, emails and presentations. If you cannot yet hold a five-minute conversation, start with Basic Spoken English first.",
       },
       {
-        q: "Is there a Workplace English course that fits around a full-time job?",
+        q: "Is there a Business English course that fits around a full-time job?",
         a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The three-month course is ₹1,999/month; every class is recorded so a missed session because of a work escalation does not set you back.",
       },
     ],

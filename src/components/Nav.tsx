@@ -31,7 +31,7 @@ const ENGLISH_COURSES: NavItem[] = [
   },
   {
     to: "/course-business-english",
-    label: "Workplace English",
+    label: "Business English",
     icon: "headset",
     desc: "3 months · ₹1,999/month, inclusive of taxes",
   },

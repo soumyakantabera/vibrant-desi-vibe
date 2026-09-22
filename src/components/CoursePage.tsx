@@ -99,7 +99,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     },
     {
       href: "/workplace-english-course-online-india",
-      title: "Workplace English course guide",
+      title: "Business English course guide",
       description: "Who needs workplace training, what to practise and when not to buy a course.",
     },
     {
@@ -115,7 +115,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/blog/5-email-phrases-that-sound-more-professional",
       title: "5 email phrases that sound more professional",
-      description: "Clearer workplace English without inflated or outdated wording.",
+      description: "Clearer business English without inflated or outdated wording.",
     },
     {
       href: "/blog/bpo-to-client-facing-role-roadmap",

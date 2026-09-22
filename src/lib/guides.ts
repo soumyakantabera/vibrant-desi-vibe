@@ -118,7 +118,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   },
   {
     to: "/workplace-english-course-online-india",
-    title: "Workplace English guide",
+    title: "Business English guide",
     sub: "Meetings, calls, emails, presentations — ₹1,999/mo, 3 months.",
     icon: "headset",
     color: "indigo",

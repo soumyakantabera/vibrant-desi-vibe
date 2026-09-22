@@ -89,9 +89,9 @@ function Home() {
       quote:
         "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
       name: "Neha Patel",
-      detail: "Workplace English · Tax Analyst, Ahmedabad",
+      detail: "Business English · Tax Analyst, Ahmedabad",
       waMessage:
-        "Hi, I saw Neha's story and I want a free consultation for Workplace English.",
+        "Hi, I saw Neha's story and I want a free consultation for Business English.",
     },
     {
       quote:
@@ -174,7 +174,10 @@ function Home() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
+            <p className="mt-3 text-sm font-semibold text-sunshine">
+              Tell us your goal. We reply with the right course and the fee — no pressure, no
+              payment to book.
+            </p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 09:00–12:00 IST.
@@ -306,7 +309,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Interactive Speaking, Workplace English, Interview Preparation and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
+            subtitle="Spoken English, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Guidance. Start with the result you need — not a confusing course name."
           />
           <Reveal stagger className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2">
             {COURSE_CATEGORIES.map((category) => (
@@ -545,7 +548,7 @@ function Home() {
                     <WorkplaceIcon />
                   </span>
                   <h3 className="font-display text-lg font-extrabold text-ink">
-                    Workplace English
+                    Business English
                   </h3>
                 </div>
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
@@ -657,7 +660,10 @@ function Home() {
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
                   <Icon name="compass" size={22} /> {DEMO_CTA}
                 </h3>
-                <p className="text-cream/95 mb-4">{CONSULTATION.punch}</p>
+                <p className="text-cream/95 mb-4">
+                  Ready when you are. Message us your goal — we reply 09:00–12:00 IST with the
+                  course and fee that actually fit.
+                </p>
                 <span className="btn btn-sun btn-sm">
                   <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
                   <Icon name="arrow-right" size={14} />
@@ -923,7 +929,7 @@ function BatchIcon() {
   );
 }
 
-// Workplace English — one speaker presenting an idea clearly
+// Business English — one speaker presenting an idea clearly
 function WorkplaceIcon() {
   return (
     <IconFrame>

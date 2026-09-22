@@ -185,7 +185,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes: Spoken English, Interactive Speaking, Workplace English, Interview Preparation and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes: Spoken English, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
       },
@@ -364,7 +364,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Adult rooms only",
         paragraphs: [
-          "The live catalogue is Spoken English, Interactive Speaking, Workplace English, Interview Preparation and 1:1 Career Counselling. All of those rooms are for learners 15+.",
+          "The live catalogue is Spoken English, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. All of those rooms are for learners 15+.",
           "We do not currently run Spoken English for Kids or Spoken English for Teens. A child under 15 is not placed in an adult batch. For children, look at a dedicated kids platform.",
         ],
       },

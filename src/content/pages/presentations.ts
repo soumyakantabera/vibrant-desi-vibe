@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Explaining your work in English is three beats: **one outcome, three points, one ask.** You do not need a TED talk. You need 3 minutes that a manager can repeat. [Workplace English](/course-business-english) and [Interactive Speaking](/course-interactive-speaking) both drill this live. Rohan now walks working papers with partners in Mumbai — [his story](/success-stories).",
+    text: "**Short answer.** Explaining your work in English is three beats: **one outcome, three points, one ask.** You do not need a TED talk. You need 3 minutes that a manager can repeat. [Business English](/course-business-english) and [Interactive Speaking](/course-interactive-speaking) both drill this live. Rohan now walks working papers with partners in Mumbai — [his story](/success-stories).",
   },
 
   { t: "h2", text: "The 3-minute spine" },
@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Which class" },
   {
     t: "p",
-    text: "If you can already chat and the deck is the problem → Workplace English, 3 months, ₹1,999/mo. If you freeze before slide one → Interactive, 3 months, ₹1,499/mo. If daily English is still the gap → Spoken, 6 months, ₹999/mo, then come back to decks. [Which class do I need?](/spoken-business-or-interactive-english).",
+    text: "If you can already chat and the deck is the problem → Business English, 3 months, ₹1,999/mo. If you freeze before slide one → Interactive, 3 months, ₹1,499/mo. If daily English is still the gap → Spoken, 6 months, ₹999/mo, then come back to decks. [Which class do I need?](/spoken-business-or-interactive-english).",
   },
   {
     t: "p",
@@ -61,6 +61,6 @@ export const body: ArticleBody = [
     t: "cta",
     text: "Bring one real update from this week. We will run it in a live group of around 6.",
     course: "/course-business-english",
-    label: "See Workplace English",
+    label: "See Business English",
   },
 ];

@@ -153,7 +153,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Do you need a dedicated BPO course?" },
   {
     t: "p",
-    text: "Not automatically. If you are a beginner, build everyday spoken English first. If you already work in support and need call handling, client communication, updates and professional writing, a broader Workplace English course can cover the relevant skills without inventing another course name. If your immediate goal is clearing the recruitment round, practise interview English in Spoken or Interactive rather than Workplace English.",
+    text: "Not automatically. If you are a beginner, build everyday spoken English first. If you already work in support and need call handling, client communication, updates and professional writing, a broader Business English course can cover the relevant skills without inventing another course name. If your immediate goal is clearing the recruitment round, practise interview English in Spoken or Interactive rather than Business English.",
   },
   {
     t: "p",
@@ -161,8 +161,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace English practises calls, clarification, status updates, professional messages and presentations in a live batch of approximately 6 learners. Bring one real support or client scenario and judge the correction for yourself.",
+    text: "Business English practises calls, clarification, status updates, professional messages and presentations in a live batch of approximately 6 learners. Bring one real support or client scenario and judge the correction for yourself.",
     course: "/course-business-english",
-    label: "Explore Workplace English",
+    label: "Explore Business English",
   },
 ];

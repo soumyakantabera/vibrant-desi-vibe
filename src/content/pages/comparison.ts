@@ -42,7 +42,7 @@ export const body: ArticleBody = [
         "Daily 1:1 practice, or a small live batch built around speaking reps",
       ],
       [
-        "A working professional who needs workplace English",
+        "A working professional who needs business English",
         "A short business-focused live course, or 1:1 with a specific brief",
       ],
       [

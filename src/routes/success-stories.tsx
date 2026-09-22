@@ -17,15 +17,15 @@ const STORIES = [
     quote:
       "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
     name: "Neha Patel",
-    detail: "Workplace English · Tax Analyst, Ahmedabad",
-    waMessage: "Hi, I saw Neha's story and I want a free consultation for Workplace English.",
+    detail: "Business English · Tax Analyst, Ahmedabad",
+    waMessage: "Hi, I saw Neha's story and I want a free consultation for Business English.",
   },
   {
     quote:
       "Partners asked me to walk the working papers in English. A batch of around six meant I rehearsed every week. I present now.",
     name: "Rohan Deshpande",
-    detail: "Workplace English · Chartered Accountant, Mumbai",
-    waMessage: "Hi, I saw Rohan's story and I want a free consultation for Workplace English.",
+    detail: "Business English · Chartered Accountant, Mumbai",
+    waMessage: "Hi, I saw Rohan's story and I want a free consultation for Business English.",
   },
   {
     quote:
@@ -52,8 +52,8 @@ const STORIES = [
     quote:
       "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
     name: "Aditya Nair",
-    detail: "Workplace English · BI Analyst, Pune",
-    waMessage: "Hi, I saw Aditya's story and I want a free consultation for Workplace English.",
+    detail: "Business English · BI Analyst, Pune",
+    waMessage: "Hi, I saw Aditya's story and I want a free consultation for Business English.",
   },
 ];
 

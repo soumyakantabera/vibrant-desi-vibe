@@ -24,7 +24,7 @@ export const COURSE_CATEGORIES = [
     id: "work-and-career",
     title: "Work & Career · from ₹1,999/month, inclusive of taxes",
     description:
-      "Workplace English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling ₹1,999 total. Meetings, HR screens, mocks and a named counsellor. Live quality teaching. Batches of approximately 6 learners; counselling is 1:1.",
+      "Business English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling ₹1,999 total. Meetings, HR screens, mocks and a named counsellor. Live quality teaching. Batches of approximately 6 learners; counselling is 1:1.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",

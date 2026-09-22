@@ -3,7 +3,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most people searching for a Business English course do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. That is why we now call this **Workplace English**.",
+    text: "Most people searching for a Business English course do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. That is this room: **Business English** — meetings, calls, emails and presentations. Not an MBA module.",
   },
   {
     t: "p",
@@ -21,7 +21,7 @@ export const body: ArticleBody = [
       ],
       [
         "You speak socially but freeze in meetings, calls or presentations",
-        "Workplace English is the intended fit.",
+        "Business English is the intended fit.",
       ],
       [
         "You communicate well but want a more international accent",
@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need interview answers rather than day-to-day office communication",
-        "Take Interview Preparation — 2 months, ₹1,999/month. HR screens, STAR and recorded mocks. Workplace English is meetings after you have the job.",
+        "Take Interview Preparation — 2 months, ₹1,999/month. HR screens, STAR and recorded mocks. Business English is meetings after you have the job.",
       ],
     ],
   },
@@ -80,7 +80,7 @@ export const body: ArticleBody = [
   { t: "h3", text: "5. Presentations and explanations" },
   {
     t: "p",
-    text: "A presentation is an explanation with a visible structure. Start with the problem, show the important evidence, recommend an action and stop. Workplace English practice should include handling questions and honestly saying when you need to check something; pretending to know is not fluency.",
+    text: "A presentation is an explanation with a visible structure. Start with the problem, show the important evidence, recommend an action and stop. Business English practice should include handling questions and honestly saying when you need to check something; pretending to know is not fluency.",
   },
 
   { t: "h2", text: "What a serious course should include" },
@@ -100,7 +100,7 @@ export const body: ArticleBody = [
     text: "Trial classes are common across the market. Do not judge a provider because the first class is free. Count your own speaking minutes, notice whether the teacher corrects useful patterns, and ask what the **actual** batch size is. Those answers are harder to fake than a polished sales page.",
   },
 
-  { t: "h2", text: "How Learn With Smile delivers Workplace English" },
+  { t: "h2", text: "How Learn With Smile delivers Business English" },
   {
     t: "table",
     head: ["Item", "Current offer"],
@@ -142,8 +142,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Workplace English class before deciding. The consultation is free. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
+    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Business English class before deciding. The consultation is free. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
     course: "/course-business-english",
-    label: "See Workplace English course details",
+    label: "See Business English course details",
   },
 ];

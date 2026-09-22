@@ -91,7 +91,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "The technical interview is usually not the problem. The problem is the client call six months in, where you understand every word and cannot get a sentence out. That is workplace English rather than general fluency — meetings, status updates and disagreeing with a senior politely — which is covered in [Workplace English](/course-business-english).",
+    text: "The technical interview is usually not the problem. The problem is the client call six months in, where you understand every word and cannot get a sentence out. That is business English rather than general fluency — meetings, status updates and disagreeing with a senior politely — which is covered in [Business English](/course-business-english).",
   },
   {
     t: "h3",
@@ -131,7 +131,7 @@ export const body: ArticleBody = [
     rows: [
       ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,499/month"],
-      ["Workplace English", "3 months · up to 2 classes/week", "₹1,999/month"],
+      ["Business English", "3 months · up to 2 classes/week", "₹1,999/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,999/month"],
       ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999 total"],
     ],
