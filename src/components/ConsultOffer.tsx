@@ -1,21 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
-import { CONSULTATION, CONSULTATION_PROOF } from "@/lib/consultation";
+import { CONSULTATION, CONSULTATION_PROOF, PROOF_CARD_CLASS } from "@/lib/consultation";
 import { DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 const PILL_CLASS = [
   "bg-[#C84D3F] text-white",
   "bg-[#3D3DB8] text-white",
-  "bg-brand-deep text-cream",
+  "bg-[#0E7C5A] text-white",
   "bg-ink text-sunshine",
 ] as const;
-
-const CARD_CLASS = {
-  coral: "consult-card bg-[#C84D3F] text-white",
-  indigo: "consult-card bg-[#3D3DB8] text-white",
-  sun: "consult-card bg-[#14532D] text-white",
-} as const;
 
 /**
  * High-visibility consultation closer. Layout mounts the sun band on every
@@ -70,7 +64,7 @@ export function ConsultOffer({
             {CONSULTATION_PROOF.map((card) => (
               <div
                 key={card.kicker}
-                className={`rounded-2xl p-4 md:p-5 ${CARD_CLASS[card.tone]}`}
+                className={`rounded-2xl p-4 md:p-5 ${PROOF_CARD_CLASS[card.tone]}`}
               >
                 <p className="flex items-center gap-2 text-xs font-display font-extrabold uppercase tracking-[0.14em] opacity-90">
                   <Icon name={card.icon} size={14} /> {card.kicker}

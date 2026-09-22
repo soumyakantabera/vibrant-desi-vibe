@@ -266,6 +266,11 @@ section > .container-x { position: relative; z-index: 10; }
 }
 
 /* Nested colour cards inside the yellow consult band keep their own type. */
+.consult-card,
+.consult-card p,
+.consult-card li,
+.consult-card strong,
+.consult-card svg,
 .bg-sunshine .consult-card,
 .bg-sunshine .consult-card p,
 .bg-sunshine .consult-card li,

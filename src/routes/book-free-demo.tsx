@@ -18,6 +18,7 @@ import {
   CONSULTATION_STEPS,
   CONSULTATION_VS_MARKET,
   CONSULTATION_WALK_AWAY,
+  PROOF_CARD_CLASS,
 } from "@/lib/consultation";
 
 export const Route = createFileRoute("/book-free-demo")({
@@ -88,13 +89,7 @@ function Page() {
             {CONSULTATION_PROOF.map((card) => (
               <div
                 key={card.kicker}
-                className={
-                  card.tone === "coral"
-                    ? "rounded-2xl p-5 bg-[#C84D3F] text-white"
-                    : card.tone === "indigo"
-                      ? "rounded-2xl p-5 bg-[#3D3DB8] text-white"
-                      : "rounded-2xl p-5 bg-ink text-sunshine"
-                }
+                className={`rounded-2xl p-5 ${PROOF_CARD_CLASS[card.tone]}`}
               >
                 <p className="flex items-center gap-2 text-xs font-display font-extrabold uppercase tracking-[0.14em] opacity-90">
                   <Icon name={card.icon} size={14} /> {card.kicker}

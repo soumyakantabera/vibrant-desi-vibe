@@ -33,6 +33,13 @@ export const CONSULTATION = {
     "Get a free spoken English consultation. Small batch. Personalised advice. We don't sell the room until you see it. Not a class. WhatsApp +91 96744 79949.",
 } as const;
 
+/** Same three cards on /book-free-demo and the sitewide yellow band. White type, brand colours. */
+export const PROOF_CARD_CLASS = {
+  coral: "consult-card bg-[#C84D3F] text-white",
+  indigo: "consult-card bg-[#3D3DB8] text-white",
+  sun: "consult-card bg-[#0E7C5A] text-white",
+} as const;
+
 export const CONSULTATION_PROOF: {
   icon: IconName;
   kicker: string;
