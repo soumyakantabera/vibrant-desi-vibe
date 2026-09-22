@@ -18,7 +18,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       "what happens in free english consultation",
       "help choose spoken english course india",
       "interview preparation course online india",
-      "workplace english course india fees",
+      "business english course india fees",
       "spoken english for working professionals india",
     ],
     ogImage: "/og/spoken-english.jpg",

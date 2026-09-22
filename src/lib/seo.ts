@@ -329,8 +329,11 @@ export const INTERACTIVE_KEYWORDS = [
 
 /** Product — Business English. */
 export const WORKPLACE_KEYWORDS = [
-  "workplace english course india fees",
   "business english course online india",
+  "business english course india fees",
+  "business english classes online india",
+  "business english for working professionals",
+  "business english course kolkata",
   "english for working professionals india",
   "english for client meetings and presentations",
   "english for office meetings india",
@@ -338,6 +341,7 @@ export const WORKPLACE_KEYWORDS = [
   "corporate english communication course",
   "professional email writing course english",
   "english for it professionals standup",
+  "workplace english course india fees",
 ];
 
 /** Product — Interview Preparation. */
@@ -1270,13 +1274,14 @@ export const PAGES: Record<string, PageSeo> = {
       "A practical guide to English for meetings, client calls, updates, emails and presentations — plus who needs a course and who should practise independently.",
     shortTitle: "Business English Course Guide",
     keywords: [
-      "workplace english course online india",
+      "business english course online india",
+      "business english course india fees",
       "english communication for working professionals",
       "professional english speaking course online india",
-      "business english course online india",
       "english for office meetings and client calls",
       "english for bpo and customer support",
       "office english speaking course india",
+      "workplace english course online india",
     ],
     ogImage: "/og/business-english.jpg",
     priority: 0.8,
@@ -1552,7 +1557,7 @@ export const PAGES: Record<string, PageSeo> = {
       "english for client calls india",
       "english for bpo customer support",
       "how to speak on client calls in english",
-      "workplace english for client meetings",
+      "business english for client meetings",
       "english for customer support india",
     ],
     ogImage: "/og/business-english.jpg",
@@ -1673,6 +1678,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     keywords: [
       ...WORKPLACE_KEYWORDS,
       "business english classes evening batch india",
+      "business english course for working professionals india",
     ],
     ogImage: "/og/business-english.jpg",
     summary:
