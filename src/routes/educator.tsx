@@ -132,7 +132,7 @@ function EducatorCard({
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I'd like to speak to Sunanda Dey, the educator at Learn With Smile, for a free consultation."
+      waMessage="Hi, I want to speak to Sunanda."
       footerImage={IMG.teacherWoman}
     >
       <section className="relative">
@@ -185,7 +185,7 @@ function Page() {
               "Honest feedback delivered with patience",
               "Outcomes you can show — not hours sat through",
             ]}
-            waMessage="Hi Sunanda, I read your story. I'd like to get a free consultation."
+            waMessage="Hi Sunanda, I read your story."
           />
         </div>
       </section>

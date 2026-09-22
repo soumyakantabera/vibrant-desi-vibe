@@ -17,9 +17,8 @@ export const DEMO_CTA = "Get Free Consultation";
 /** Same SVG on every Get Free Consultation button — never a letter or ligature. */
 export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
-export const DEMO_MSG =
-  "Hi, I'd like a free small-batch consultation with personalised advice. Please share a slot so we can go through my requirements one by one, diagnose my bottleneck and choose one course.";
-export const CHAT_MSG = "Hi, I want to improve my English. Please help me choose the right course.";
+export const DEMO_MSG = "Hi, I want free consultation.";
+export const CHAT_MSG = "Hi, I want to improve my English.";
 
 /**
  * A plain WhatsApp deep link. No lead ID, campaign code, referrer or landing

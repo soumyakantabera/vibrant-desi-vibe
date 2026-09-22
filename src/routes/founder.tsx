@@ -16,7 +16,7 @@ export const Route = createFileRoute("/founder")({
 
 function Page() {
   return (
-    <Layout waMessage="Hi, I'd like to speak to Sunanda Dey, the educator at Learn With Smile, for a free consultation.">
+    <Layout waMessage="Hi, I want to speak to Sunanda.">
       <Navigate to="/educator" replace />
       <section className="section">
         <div className="container-x max-w-xl py-16">

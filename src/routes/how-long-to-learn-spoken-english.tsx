@@ -58,7 +58,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="How long does spoken English take — straight answers"
-      waMessage="Hi, I want to know how long spoken English will take for me. I can currently ___."
+      waMessage="Hi, how long will Spoken English take for me?"
       ctaTitle="See how much you speak"
       ctaBody="Join a live batch of around 6. Hear how much you speak."
     />

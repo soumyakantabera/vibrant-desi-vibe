@@ -57,7 +57,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Medium of school, medium of career"
-      waMessage="Hi, I studied in Hindi / Bengali medium. I want Spoken English — please give me a free consultation."
+      waMessage="Hi, Hindi / Bengali medium. Spoken English?"
       ctaTitle="Message in Hindi, Bengali or English"
       ctaBody="We will place you in a live Spoken batch. From ₹999/mo, inclusive of taxes."
     />

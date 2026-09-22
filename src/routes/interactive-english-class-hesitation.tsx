@@ -58,7 +58,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Freeze and interactive class"
-      waMessage="Hi, I freeze when I speak English. I want Interactive Speaking — free consultation please."
+      waMessage="Hi, I freeze when I speak. Interactive Speaking?"
       ctaTitle="Count how many times you speak"
       ctaBody="One Interactive hour. Approx. 6 learners."
     />

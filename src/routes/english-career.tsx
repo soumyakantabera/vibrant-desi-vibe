@@ -49,7 +49,7 @@ export const Route = createFileRoute("/english-career")({
 
 function Page() {
   const wa =
-    "Hi, I am interested in the English & Career track. Please help me choose the right course.";
+    "Hi, I want English & Career. Which course?";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
       <section className="relative overflow-hidden">
@@ -222,7 +222,7 @@ function Page() {
         eyebrow="Course FAQs"
         title="Choosing Between Our Courses"
         subtitle="Spoken, Interactive, Workplace or Career Counselling? Start here."
-        waMessage="Hi, I am not sure which course fits me. Can you help me choose?"
+        waMessage="Hi, which course fits me?"
       />
 
       <section className="section bg-brand-deep">

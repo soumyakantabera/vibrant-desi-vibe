@@ -325,7 +325,7 @@ function Page() {
         eyebrow="Before You Book"
         title="Questions about the consultation"
         subtitle="Message anytime. We reply 09:00–12:00 IST."
-        waMessage="Hi, I have a question about the free consultation — I want to know which course fits me."
+        waMessage="Hi, I have a question on free consultation."
       />
 
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">

@@ -180,9 +180,8 @@ export function CoursePage({ data }: { data: CourseData }) {
   const isCareerCounselling = data.slug === "career-counselling";
   const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary =
-    data.waDemo ??
-    `Hi, I am interested in the ${data.title} course. Please share batch details and a free consultation slot.`;
-  const waSyllabus = `Hi, can you send me the full syllabus and pricing for ${data.title}?`;
+    data.waDemo ?? `Hi, I want ${data.title}.`;
+  const waSyllabus = `Hi, please send ${data.title} fees.`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
   const faqs = courseFaqs(data);
   const snapshot = (

@@ -63,7 +63,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Choosing an Online English Class — Questions & Answers"
-      waMessage="Hi, I'm comparing options. Can you help me work out whether your course fits what I need?"
+      waMessage="Hi, I am comparing classes. Does this fit me?"
       ctaTitle="Take three trials in one week"
       ctaBody="Ours is one of them. Chat on WhatsApp and we'll share the next slot."
     />

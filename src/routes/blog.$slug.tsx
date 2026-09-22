@@ -41,7 +41,7 @@ function BlogPostPage() {
   const body = ARTICLE_BODIES[post.slug] ?? [];
   const related = getRelatedPosts(post.slug, 2);
   const heroImage = IMG[post.img as keyof typeof IMG] ?? IMG.blogDesk;
-  const waMessage = `Hi, I read "${post.title}" on your blog and I'd like to know more.`;
+  const waMessage = "Hi, I read your blog. Free consultation please.";
   const toc = articleToc(body);
 
   return (

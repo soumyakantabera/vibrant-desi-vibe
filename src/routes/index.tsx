@@ -91,7 +91,7 @@ function Home() {
       name: "Neha Patel",
       detail: "Workplace English · Tax Analyst, Ahmedabad",
       waMessage:
-        "Hi, I saw Neha's tax-analyst story. I want the same result. Workplace English free consultation please.",
+        "Hi, I saw Neha's story. Workplace English?",
     },
     {
       quote:
@@ -99,7 +99,7 @@ function Home() {
       name: "Kavya Reddy",
       detail: "Spoken English · Advocate, Hyderabad",
       waMessage:
-        "Hi, I saw Kavya's story. I want the same result. Can I get a free consultation for Spoken English?",
+        "Hi, I saw Kavya's story. Spoken English?",
     },
     {
       quote:
@@ -107,13 +107,13 @@ function Home() {
       name: "Vikram Singh",
       detail: "Spoken English · Bank Asst. Manager, Delhi",
       waMessage:
-        "Hi, I saw Vikram's promotion story. I want the same career move. Spoken English free consultation please.",
+        "Hi, I saw Vikram's story. Spoken English?",
     },
   ];
 
   return (
     <Layout
-      waMessage="Hi, I am interested in a free consultation. Please guide me."
+      waMessage="Hi, I want free consultation."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -324,7 +324,7 @@ function Home() {
               </p>
             </div>
             <WaButton
-              message="Hi, I am not sure which course is right for me. Can you recommend one based on my goal?"
+              message="Hi, which course is right for me?"
               variant="wa"
               size="md"
             >
@@ -396,7 +396,7 @@ function Home() {
             ))}
           </Reveal>
           <div className="text-center mt-10">
-            <WaButton message="Hi, I am interested in a free consultation. Please guide me." variant="sun" size="lg">
+            <WaButton message="Hi, I want free consultation." variant="sun" size="lg">
               {DEMO_CTA}
             </WaButton>
           </div>
@@ -601,7 +601,7 @@ function Home() {
             </p>
             <div className="mt-3">
               <WaButton
-                message="Hi, please send me the exact pricing and next available consultation slot for my course."
+                message="Hi, fees and next slot please."
                 variant="wa"
                 size="sm"
               >
@@ -674,7 +674,7 @@ function Home() {
         eyebrow="Common Questions"
         title="Your Questions, Answered Plainly"
         subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-        waMessage="Hi, I have a question before getting a free consultation."
+        waMessage="Hi, I have a question."
       />
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}

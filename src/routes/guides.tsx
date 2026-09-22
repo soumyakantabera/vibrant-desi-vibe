@@ -39,7 +39,7 @@ export const Route = createFileRoute("/guides")({
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I was reading your guides. Please help me choose the right English class."
+      waMessage="Hi, I read your guides. Which course?"
       footerImage={IMG.blogDesk}
     >
       <section className="relative">

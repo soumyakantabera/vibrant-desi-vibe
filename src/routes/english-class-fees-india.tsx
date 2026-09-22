@@ -67,7 +67,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="English Class Fees in India — Questions & Answers"
-      waMessage="Hi, I have a question about your fees and which course fits my budget."
+      waMessage="Hi, fees please."
       ctaTitle="Want a quote for your specific goal?"
       ctaBody="Tell us what you need on WhatsApp and we'll tell you which course fits and what it costs — including when the answer is that you don't need us."
     />

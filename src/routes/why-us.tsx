@@ -96,7 +96,7 @@ const MARKET = [
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I'd like to know why Learn With Smile fits me. Free consultation please."
+      waMessage="Hi, why Learn With Smile?"
       footerImage={IMG.liveClass}
     >
       <section className="relative overflow-hidden">
@@ -250,7 +250,7 @@ function Page() {
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
         subtitle="₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6."
-        waMessage="Hi, I want to understand how your classes work."
+        waMessage="Hi, how do your classes work?"
       />
 
       <section className="section bg-brand-deep">
