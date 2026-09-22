@@ -17,25 +17,29 @@ export const DEMO_CTA = "Get Free Consultation";
 export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
 /** One sentence. Chat and Consult share this when the page has no extra context. */
-export const DEMO_MSG = "Hi, I want a free consultation.";
+export const DEMO_MSG = "Hi, I want a free consultation for spoken English.";
 export const CHAT_MSG = DEMO_MSG;
 
-/** Page-specific one-liner. Always includes “free consultation”. */
+/** Page-specific one-liner. Always includes “free consultation” and English. */
 export function waConsult(forWhat?: string): string {
   if (!forWhat?.trim()) return DEMO_MSG;
-  const topic = forWhat.trim().replace(/[.?!]+$/, "");
-  if (/free consultation/i.test(topic)) return `${topic}.`;
-  return `Hi, I want a free consultation for ${topic}.`;
+  return withConsultAsk(`Hi, I want a free consultation for ${forWhat.trim()}`);
 }
 
-/** Safety net: never send a WhatsApp text that omits “free consultation”. */
+function ensureSpokenEnglish(sentence: string): string {
+  const t = sentence.replace(/[.?!]+$/, "");
+  if (/english/i.test(t)) return `${t}.`;
+  return `${t} for spoken English.`;
+}
+
+/** Safety net: every WhatsApp prefill has “free consultation” and “spoken English”. */
 export function withConsultAsk(message: string): string {
-  const t = message.trim();
-  if (/free consultation/i.test(t)) {
-    return t.replace(/\s*Free consultation please\.?$/i, "").replace(/[.?!]+$/, "") + ".";
+  let t = message.trim().replace(/\s*Free consultation please\.?$/i, "").replace(/[.?!]+$/, "");
+  if (!/free consultation/i.test(t)) {
+    const rest = t.replace(/^Hi,?\s*/i, "");
+    t = rest ? `Hi, I want a free consultation for ${rest}` : "Hi, I want a free consultation";
   }
-  const rest = t.replace(/^Hi,?\s*/i, "").replace(/[.?!]+$/, "");
-  return rest ? `Hi, I want a free consultation for ${rest}.` : DEMO_MSG;
+  return ensureSpokenEnglish(t);
 }
 
 /**

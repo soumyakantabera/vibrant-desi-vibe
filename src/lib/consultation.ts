@@ -22,12 +22,12 @@ export const CONSULTATION = {
   /** Brutal line — we show the room before money. */
   headline: "We don't sell the room until you see it.",
   /** Magnet under every consultation button. */
-  hook: "Free. Small batch. See the course before you pay.",
+  hook: "Free spoken English consultation. Small batch. See the course before you pay.",
   punch:
-    "Other institutes pitch a class. We put the bottleneck, the course and the fee in writing. Then you enrol — or you walk. Still free. Not a class.",
-  pills: ["100% free", "Small batch", "Personalised advice", "Fee in writing"],
+    "Other institutes pitch a class. We put the spoken English bottleneck, the course and the fee in writing. Then you enrol — or you walk. Still free. Not a class.",
+  pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "100% free small-batch consultation. Personalised advice: we hear each person's requirements one by one, name the bottleneck, show the course and the fee in writing — then you decide. Not a packed pitch. Not a class.",
+  what: "100% free small-batch spoken English consultation. Personalised advice: we hear each person's requirements one by one, name the bottleneck, show the course and the fee in writing — then you decide. Not a packed pitch. Not a class.",
 } as const;
 
 export const CONSULTATION_PROOF: {

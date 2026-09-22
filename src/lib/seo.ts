@@ -272,7 +272,10 @@ export const CONSULTATION_KEYWORDS = [
   "personalized advice english consultation",
   "personalised english counselling small batch",
   "free small group english counselling india",
-  "free consultation small batch spoken english",
+  "free consultation for spoken english",
+  "spoken english free consultation",
+  "spoken english free consultation whatsapp",
+  "get free consultation spoken english",
   "see the course before you enrol",
   "see before you pay english class india",
   "we don't sell without showing the course",
@@ -545,7 +548,7 @@ export const CLUSTER_INTENT = {
   consultation: {
     intent: "transactional",
     funnel: "decide",
-    job: "Book a free small-batch consultation — see the bottleneck, course and fee before you pay.",
+    job: "Book a free small-batch spoken English consultation — see the bottleneck, course and fee before you pay.",
     land: "/book-free-demo",
     next: "Get Free Consultation",
   },
@@ -930,7 +933,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/book-free-demo",
     title: "We Don't Sell the Room Until You See It | Free Consultation",
     description:
-      "Free small-batch consultation. Personalised advice. We name the bottleneck, show the course and the fee in writing — then you enrol. Not a class. Free demo class seekers — this is counselling.",
+      "Free small-batch spoken English consultation. Personalised advice. We name the bottleneck, show the course and the fee in writing — then you enrol. Not a class. Free demo class seekers — this is counselling.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -1849,7 +1852,7 @@ export function organizationLd() {
             "@id": `${abs(CONSULTATION_PATH)}#consultation`,
             name: CONSULTATION.cta,
             url: abs(CONSULTATION_PATH),
-            serviceType: "Educational counselling",
+            serviceType: "Spoken English consultation",
             description: CONSULTATION.what,
           },
         },

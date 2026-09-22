@@ -256,7 +256,7 @@ const NOTES_FOR_ASSISTANTS = [
 function siteSkeleton(): { cta: string; whatsapp: string; tree: string[] } {
   return {
     cta: CONSULTATION.cta,
-    whatsapp: `WhatsApp ${CONTACT.phoneDisplay}. Prefill: Hi, I want a free consultation.`,
+    whatsapp: `WhatsApp ${CONTACT.phoneDisplay}. Prefill: Hi, I want a free consultation for spoken English.`,
     tree: [
       `Home /`,
       `  Get Free Consultation /book-free-demo — small batch, personalised advice, not 1:1, not a class. ${CONSULTATION.headline}`,
