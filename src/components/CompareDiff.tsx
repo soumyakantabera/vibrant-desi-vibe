@@ -2,12 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { COMPARE_BLURB, COMPARE_REVISED, MARKET_COMPARE } from "@/lib/compare";
 
 const TONE: Record<(typeof MARKET_COMPARE)[number]["tone"], string> = {
-  us: "bg-sunshine text-ink border-ink/10",
-  indigo: "bg-[#3D3DB8] text-white",
-  coral: "bg-[#C84D3F] text-white",
-  sun: "bg-[#14532D] text-white",
-  ink: "bg-ink text-cream",
-  play: "bg-[#6B3FA0] text-white",
+  us: "compare-card bg-sunshine",
+  indigo: "compare-card bg-[#3D3DB8]",
+  coral: "compare-card bg-[#C84D3F]",
+  sun: "compare-card bg-[#1B7A4E]",
+  ink: "compare-card bg-[#1E4D8C]",
+  play: "compare-card bg-[#6B3FA0]",
 };
 
 /**
@@ -32,7 +32,7 @@ export function CompareDiff() {
       </p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {MARKET_COMPARE.map((row) => (
-          <div key={row.name} className={`rounded-2xl p-4 ${TONE[row.tone]}`}>
+          <div key={row.name} className={`rounded-2xl p-4 ${TONE[row.tone]}`} data-ink={row.us ? "0" : "1"}>
             <p className="text-[11px] font-display font-extrabold uppercase tracking-[0.12em] opacity-80">
               {row.us ? "Us · adults 15+" : "Online"}
             </p>

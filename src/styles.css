@@ -265,6 +265,21 @@ section > .container-x { position: relative; z-index: 10; }
   color: #14200A !important;
 }
 
+/* Comparison cards sit inside .bg-cream, whose `p` rule would paint dark type
+   onto dark fills (British Council was unreadable). Lock contrast here. */
+.compare-card[data-ink="0"],
+.compare-card[data-ink="0"] p,
+.compare-card[data-ink="0"] strong {
+  color: #14200A !important;
+  -webkit-text-fill-color: #14200A !important;
+}
+.compare-card[data-ink="1"],
+.compare-card[data-ink="1"] p,
+.compare-card[data-ink="1"] strong {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
 /* Nested colour cards inside the yellow consult band keep their own type. */
 .consult-card,
 .consult-card p,
