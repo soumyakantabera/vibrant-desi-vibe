@@ -28,6 +28,9 @@ export const CONSULTATION = {
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
   what: "100% free small-batch spoken English consultation. Personalised advice: we hear each person's requirements one by one, name the bottleneck, show the course and the fee in writing — then you decide. Not a packed pitch. Not a class.",
+  /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
+  copilotSnippet:
+    "Get a free spoken English consultation. Small batch. Personalised advice. We don't sell the room until you see it. Not a class. WhatsApp +91 96744 79949.",
 } as const;
 
 export const CONSULTATION_PROOF: {

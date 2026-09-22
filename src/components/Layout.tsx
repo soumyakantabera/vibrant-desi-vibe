@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { WhatsAppFab } from "./WhatsAppFab";
 import { CookieBar } from "./CookieBar";
 import { ConsultOffer } from "./ConsultOffer";
+import { CONSULTATION } from "@/lib/consultation";
 
 export function Layout({
   children,
@@ -23,7 +24,7 @@ export function Layout({
         Skip to content
       </a>
       <Nav />
-      <main id="main-content" className="flex-1" data-snippet="">
+      <main id="main-content" className="flex-1" data-snippet={CONSULTATION.copilotSnippet}>
         {children}
       </main>
       <ConsultOffer />

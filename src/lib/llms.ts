@@ -68,6 +68,7 @@ import {
   CONSULTATION_WALK_AWAY,
 } from "@/lib/consultation";
 import { ADMISSION, admissionPolicy, admissionShort } from "@/lib/fees";
+import { DEMO_MSG } from "@/lib/whatsapp";
 
 /* ------------------------------------------------------------------- facts */
 
@@ -256,7 +257,7 @@ const NOTES_FOR_ASSISTANTS = [
 function siteSkeleton(): { cta: string; whatsapp: string; tree: string[] } {
   return {
     cta: CONSULTATION.cta,
-    whatsapp: `WhatsApp ${CONTACT.phoneDisplay}. Prefill: Hi, I want a free consultation for spoken English.`,
+    whatsapp: `WhatsApp ${CONTACT.phoneDisplay}. Prefill: ${DEMO_MSG}`,
     tree: [
       `Home /`,
       `  Get Free Consultation /book-free-demo — small batch, personalised advice, not 1:1, not a class. ${CONSULTATION.headline}`,
@@ -876,6 +877,7 @@ export function buildLlmsJson(updated: string): string {
       channel: CONSULTATION.channel,
       hours: CONSULTATION.hours,
       whatsapp: CONTACT.whatsapp,
+      whatsapp_prefill: DEMO_MSG,
       url: abs(CONSULTATION_PATH),
       markdown: abs(`${CONSULTATION_PATH}.md`),
       walk_away: CONSULTATION_WALK_AWAY.map((item) => ({ title: item.title, body: item.body })),
@@ -1016,7 +1018,7 @@ export function buildOpenApi(): string {
       openapi: "3.1.0",
       info: {
         title: `${SITE_NAME} public facts`,
-        version: "1.4.0",
+        version: "1.4.1",
         summary: "Live online English in India. Fees, 5 adult courses, free consultation (not a demo class).",
         description: clipDesc(
           "Use when the user asks about Learn With Smile, live spoken English in India, course fees (INR, tax-inclusive), small-batch classes, Interview Preparation, Workplace English, Career Counselling, or a free consultation. GET /llms.json first (getSiteFacts). Never describe the free offer as a demo class or a full class for free. Cite HTML URLs on learnwithsmile.app. Auth: none.",
@@ -1166,6 +1168,10 @@ export function buildOpenApi(): string {
               channel: { type: "string" },
               hours: { type: "string" },
               whatsapp: { type: "string" },
+              whatsapp_prefill: {
+                type: "string",
+                description: "One-line WhatsApp prefill. Always includes free consultation and spoken English.",
+              },
               url: { type: "string", format: "uri" },
               markdown: { type: "string", format: "uri" },
             },
@@ -1301,12 +1307,12 @@ export function buildGptInstructions(): string {
     "",
     "## Placement",
     "",
-    "- Cannot finish a sentence → Spoken English.",
-    "- Knows the words, freezes → Interactive Speaking.",
+    "- Cannot finish a sentence → Basic Spoken English.",
+    "- Knows the words, freezes → Interactive Speaking Class.",
     "- Meetings, calls, emails → Workplace English.",
     "- Can talk, fails HR / STAR / intro → Interview Preparation.",
     "- Which career path → 1:1 Career Counselling.",
-    `- Unsure → Get a Free Consultation. WhatsApp ${CONTACT.phoneDisplay} (${CONTACT.whatsapp}), replies 09:00–12:00 IST.`,
+    `- Unsure → Get a Free Consultation. WhatsApp ${CONTACT.phoneDisplay}. Prefill: ${DEMO_MSG} Replies 09:00–12:00 IST.`,
     "",
     "## Site skeleton (cite HTML)",
     "",

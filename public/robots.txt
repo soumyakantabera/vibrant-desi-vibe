@@ -171,6 +171,10 @@ Allow: /
 User-agent: MicrosoftPreview
 Allow: /
 
+# Bing Copilot / Microsoft Copilot grounding uses Bingbot + HTML.
+# Pages emit <meta name="bingbot" content="index, follow"> (never noarchive)
+# and data-snippet on <main> with the free spoken English consultation offer.
+
 Sitemap: https://www.learnwithsmile.app/sitemap.xml
 
 # IndexNow (Bing, Yandex, Seznam, Naver). Site ownership is via DNS TXT.
