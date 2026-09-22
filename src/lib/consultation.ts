@@ -275,7 +275,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,499/month). Chat is fine, meetings and calls are not → Workplace English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). Career choice → 1:1 counselling (₹1,999 total). Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,499/month). Chat is fine, meetings and calls are not → Workplace English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). Career choice → paid 1:1 Career Counselling (₹1,999 total) — not the free consultation. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Is the free consultation a full English class?",
