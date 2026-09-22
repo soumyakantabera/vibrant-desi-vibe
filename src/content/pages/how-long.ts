@@ -44,13 +44,13 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Interactive **₹1,499/month for 3 months**, Workplace **₹1,999/month for 3 months**, Interview Preparation **₹1,999/month for 2 months**. Inclusive of taxes. Batch of around 6.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Interactive **₹1,199/month for 3 months**, Workplace **₹1,999/month for 3 months**, Interview Preparation **₹1,999/month for 2 months**. Inclusive of taxes. Batch of around 6.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },
   {
     t: "p",
-    text: "A complete beginner needs sounds, 1,000+ words, tense patterns, and the habit of opening their mouth. That is not a 30-day stack. What *can* move in 30 days is hesitation — if you already have the language and you are just afraid to use it. That is a different problem, and it is the one [Interactive Speaking](/course-interactive-speaking) is for (₹1,499/month, 3 months).",
+    text: "A complete beginner needs sounds, 1,000+ words, tense patterns, and the habit of opening their mouth. That is not a 30-day stack. What *can* move in 30 days is hesitation — if you already have the language and you are just afraid to use it. That is a different problem, and it is the one [Interactive Speaking](/course-interactive-speaking) is for (₹1,199/month, 3 months).",
   },
   {
     t: "ul",

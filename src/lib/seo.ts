@@ -694,7 +694,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,499/month, Business English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes. No material fee. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,199/month, Business English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes. No material fee. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -748,11 +748,11 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should I choose — Spoken, Interactive, Workplace or Interview Preparation?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Interactive Speaking (₹1,499/month, 3 months) if you know the words and freeze. Choose Business English (₹1,999/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹1,999/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Interactive Speaking (₹1,199/month, 3 months) if you know the words and freeze. Choose Business English (₹1,999/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹1,999/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,499 per month, Business English ₹1,999 per month, Interview Preparation ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. We do not sell IELTS as a course.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,199 per month, Business English ₹1,999 per month, Interview Preparation ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. We do not sell IELTS as a course.",
       },
       {
         q: "Who can join?",
@@ -1341,7 +1341,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,499/month. Business English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,199/month. Business English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
       },
     ],
   },
@@ -1423,12 +1423,12 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.85,
     changefreq: "monthly",
     summary:
-      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you freeze (3 months, ₹1,499/mo). Workplace if meetings are the gap (3 months, ₹1,999/mo). Interview Preparation if the HR screen is the freeze (2 months, ₹1,999/mo). Free consultation diagnoses the bottleneck live.",
+      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you freeze (3 months, ₹1,199/mo). Workplace if meetings are the gap (3 months, ₹1,999/mo). Interview Preparation if the HR screen is the freeze (2 months, ₹1,999/mo). Free consultation diagnoses the bottleneck live.",
     dateModified: "2026-09-21",
     faqs: [
       {
         q: "Which English class do I need — spoken, business or interactive?",
-        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,499/month. If chat is fine and meetings, calls or emails are not, take Business English — 3 months, ₹1,999/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,199/month. If chat is fine and meetings, calls or emails are not, take Business English — 3 months, ₹1,999/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹1,999/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
       },
       {
         q: "Should I take IELTS first to get a better job in India?",
@@ -1449,7 +1449,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/interactive-english-class-hesitation",
     title: "Stop Freezing | Interactive English Class",
     description:
-      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,499/mo, approx. 6 learners. Kolkata & pan-India. Live.",
+      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, approx. 6 learners. Kolkata & pan-India. Live.",
     shortTitle: "Interactive English when you freeze",
     keywords: [
       "how to stop hesitating while speaking english",
@@ -1462,11 +1462,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Freeze is a habit, not a vocabulary hole. Interactive Speaking is 3 months, ₹1,499/month, approx. 6 learners: games, debates, 1-minute prompts so you talk every hour. Spoken English first if you still cannot form a sentence.",
+      "Freeze is a habit, not a vocabulary hole. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts so you talk every hour. Spoken English first if you still cannot form a sentence.",
     faqs: [
       {
         q: "I know English but freeze when I speak. Which class should I take?",
-        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of around 6, 3 months, ₹1,499/month inclusive of taxes. Ananya’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
+        a: "Interactive Speaking. You already have the words; the checking step between thinking and speaking is the freeze. The class is games, debates, role-plays and 1-minute prompts in a batch of around 6, 3 months, ₹1,199/month inclusive of taxes. Ananya’s standup story is this problem. If you cannot yet form a sentence, start with Spoken English instead.",
       },
       {
         q: "Is an interactive English class just games, or will I actually speak?",
@@ -1530,11 +1530,11 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,499, Workplace ₹1,999. Approx. 6 learners. Replies 09:00–12:00 IST.",
+      "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,999. Approx. 6 learners. Replies 09:00–12:00 IST.",
     faqs: [
       {
         q: "Can I learn English while working a full-time job in India?",
-        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,499/month, Business English ₹1,999/month. Approx. 6 learners. Aditya did Business English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
+        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Business English ₹1,999/month. Approx. 6 learners. Aditya did Business English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
       },
       {
         q: "What if I miss a live English class because of a work shift?",
@@ -1585,7 +1585,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-presentations-india",
     title: "English for Presentations | 3 Minutes",
     description:
-      "Explain your work in 3 minutes: one outcome, three beats, one ask. Live practice. Workplace or Interactive. From ₹1,499/mo, approx. 6 learners.",
+      "Explain your work in 3 minutes: one outcome, three beats, one ask. Live practice. Workplace or Interactive. From ₹1,199/mo, approx. 6 learners.",
     shortTitle: "Presentation English",
     keywords: [
       "english for presentations india",
@@ -1610,7 +1610,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Which English course helps with presentations at work?",
-        a: "If you can already chat and the deck is the problem — Business English, 3 months, ₹1,999/month. If you freeze before slide one — Interactive, 3 months, ₹1,499/month. If daily English is still the gap — Spoken, 6 months, ₹999/month, then come back to decks.",
+        a: "If you can already chat and the deck is the problem — Business English, 3 months, ₹1,999/month. If you freeze before slide one — Interactive, 3 months, ₹1,199/month. If daily English is still the gap — Spoken, 6 months, ₹999/month, then come back to decks.",
       },
     ],
   },
@@ -1695,14 +1695,14 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "interactive-speaking": {
-    title: "Interactive Speaking | ₹1,499/mo, 3 Months",
+    title: "Interactive Speaking | ₹1,199/mo, 3 Months",
     description:
-      "Live speaking — games, debates, role-plays. 3 months, up to 2 classes/week, ~6 learners. ₹1,499/month, inclusive of taxes. Fluency, not grammar lectures.",
+      "Live speaking — games, debates, role-plays. 3 months, up to 2 classes/week, ~6 learners. ₹1,199/month, inclusive of taxes. Fluency, not grammar lectures.",
     shortTitle: "Interactive Speaking",
     keywords: [...INTERACTIVE_KEYWORDS],
     ogImage: "/og/interactive-speaking.jpg",
     summary:
-      "Interactive Speaking — ₹1,499/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
+      "Interactive Speaking — ₹1,199/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",

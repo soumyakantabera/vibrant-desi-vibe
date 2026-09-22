@@ -51,7 +51,7 @@ function Page() {
           <span className="text-sunshine">Interactive English, live</span>
         </>
       }
-      standfirst="Games, debates, 1-minute prompts. You talk every class. 3 months, ₹1,499/mo, inclusive of taxes, approx. 6 learners."
+      standfirst="Games, debates, 1-minute prompts. You talk every class. 3 months, ₹1,199/mo, inclusive of taxes, approx. 6 learners."
       heroImage={IMG.interactiveSpeaking}
       heroAlt="Small live interactive English class where every learner speaks"
       lastUpdated={UPDATED}

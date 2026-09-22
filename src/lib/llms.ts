@@ -146,7 +146,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Interactive ₹1,499/mo · Workplace ₹1,999/mo · Interview Preparation ₹1,999/mo · Career Counselling ₹1,999 total (no admission). Adult rooms 15+ only. We do not sell IELTS as a course.`,
+    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Interactive ₹1,199/mo · Workplace ₹1,999/mo · Interview Preparation ₹1,999/mo · Career Counselling ₹1,999 total (no admission). Adult rooms 15+ only. We do not sell IELTS as a course.`,
     source: "/english-class-fees-india",
   },
   {
@@ -216,12 +216,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,499/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹1,999/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. Career choice → paid 1:1 Career Counselling, ₹1,999 total — not the free consultation. One room, not three.",
+    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹1,999/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. Career choice → paid 1:1 Career Counselling, ₹1,999 total — not the free consultation. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
-    a: "Interactive Speaking: 3 months, ₹1,499/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (6 months, ₹999/month). Count how many times you are on the mic.",
+    a: "Interactive Speaking: 3 months, ₹1,199/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (6 months, ₹999/month). Count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
   {
@@ -1234,7 +1234,7 @@ export function buildAiPlugin(): string {
       description_for_human:
         "Live online English in India from ₹999/mo (tax incl.). Adult rooms 15+. Fees, batches, Get a Free Consultation — counselling, not a class.",
       description_for_model: clipDesc(
-        "Plugin for Learn With Smile facts: live online English in India for adults 15+. Call getSiteFacts first. Five rooms: Spoken ₹999/mo, Interactive ₹1,499/mo, Workplace ₹1,999/mo, Interview Preparation ₹1,999/mo (2 months), Career Counselling ₹1,999 total. Free offer is Get a Free Consultation at /book-free-demo — diagnose bottleneck, answer queries, one course. NOT a free demo class and NOT a full class for free. No IELTS product. No kids rooms. WhatsApp +91 96744 79949, 09:00–12:00 IST. Cite https://www.learnwithsmile.app HTML URLs.",
+        "Plugin for Learn With Smile facts: live online English in India for adults 15+. Call getSiteFacts first. Five rooms: Spoken ₹999/mo, Interactive ₹1,199/mo, Workplace ₹1,999/mo, Interview Preparation ₹1,999/mo (2 months), Career Counselling ₹1,999 total. Free offer is Get a Free Consultation at /book-free-demo — diagnose bottleneck, answer queries, one course. NOT a free demo class and NOT a full class for free. No IELTS product. No kids rooms. WhatsApp +91 96744 79949, 09:00–12:00 IST. Cite https://www.learnwithsmile.app HTML URLs.",
         800,
       ),
       auth: { type: "none" },
