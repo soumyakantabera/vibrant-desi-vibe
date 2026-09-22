@@ -11,6 +11,26 @@ export type LegalDoc = {
 
 export const LEGAL_UPDATED = "2026-09-22";
 
+const YOUR_CHOICES: LegalSection = {
+  heading: "Your choices",
+  paragraphs: [
+    "You may ask us to access, correct or delete personal information we hold, to stop enrolment messages, or to reject optional analytics cookies. Message WhatsApp or email. We reply 09:00–12:00 IST. Deleting a chat from our devices does not erase the copy on your phone or on WhatsApp/Meta.",
+  ],
+};
+
+const GRIEVANCE_OFFICER: LegalSection = {
+  heading: "Grievance Officer",
+  paragraphs: [
+    "Under the Consumer Protection (E-Commerce) Rules, 2020, you may send a complaint about this website, a consultation, enrolment, a fee or a refund to our Grievance Officer. We acknowledge complaints within 48 hours and aim to resolve them within 30 days.",
+  ],
+  bullets: [
+    "Name: Soumyakanta Bera",
+    "Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India",
+    "Email: learnwithsmile.in@gmail.com",
+    "Phone / WhatsApp: +91 96744 79949",
+  ],
+};
+
 export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
   "/privacy": {
     path: "/privacy",
@@ -123,6 +143,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Correcting a note: if we named the wrong bottleneck or course in the consultation thread, message us and we will correct our notes and confirm in writing.",
         ],
       },
+      YOUR_CHOICES,
+      GRIEVANCE_OFFICER,
       {
         heading: "Children and young people",
         paragraphs: [
@@ -243,6 +265,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "These terms are governed by the laws of India. Subject to any non-waivable consumer rights, courts in Kolkata, West Bengal, India have jurisdiction over disputes arising from the website or the classes.",
         ],
       },
+      YOUR_CHOICES,
+      GRIEVANCE_OFFICER,
     ],
   },
   "/refunds": {
@@ -318,6 +342,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "This policy explains our usual practice. It does not take away rights you have under applicable Indian consumer law that cannot be waived. If those rights require a remedy in a particular case, that remedy still applies.",
         ],
       },
+      YOUR_CHOICES,
+      GRIEVANCE_OFFICER,
     ],
   },
   "/child-protection": {
