@@ -984,7 +984,7 @@ export function buildOpenApi(): string {
       openapi: "3.1.0",
       info: {
         title: `${SITE_NAME} public facts`,
-        version: "1.2.0",
+        version: "1.3.0",
         summary: "Live online English in India. Fees, 5 adult courses, free consultation (not a demo class).",
         description: clipDesc(
           "Use when the user asks about Learn With Smile, live spoken English in India, course fees (INR, tax-inclusive), small-batch classes, Interview Preparation, Workplace English, Career Counselling, or a free consultation. GET /llms.json first (getSiteFacts). Never describe the free offer as a demo class or a full class for free. Cite HTML URLs on learnwithsmile.app. Auth: none.",
@@ -999,7 +999,7 @@ export function buildOpenApi(): string {
       },
       tags: [
         { name: "Facts", description: "Start here. JSON identity, fees, placement, search intent." },
-        { name: "Consultation", description: "What the free consultation is — counselling, not a class." },
+        { name: "Consultation", description: "See the room before you pay — small-batch counselling, not a class." },
         { name: "Courses", description: "Five adult rooms 15+ as Markdown." },
         { name: "Policy", description: "Child protection, adults-only catalogue." },
       ],
@@ -1028,7 +1028,10 @@ export function buildOpenApi(): string {
                         free: true,
                         is_a_class: false,
                         is_a_demo_class: false,
-                        cta: "Get a Free Consultation",
+                        format: "small-batch",
+                        sell_before_showing: false,
+                        headline: CONSULTATION.headline,
+                        cta: CONSULTATION.cta,
                         url: abs("/book-free-demo"),
                       },
                     },
@@ -1094,25 +1097,76 @@ export function buildOpenApi(): string {
       },
       components: {
         schemas: {
+          ProofItem: {
+            type: "object",
+            description: "One thing the learner sees in the free consultation.",
+            properties: {
+              kicker: { type: "string", description: "See | Get | Then" },
+              title: { type: "string" },
+              body: { type: "string" },
+            },
+          },
+          Consultation: {
+            type: "object",
+            description:
+              "Free small-batch counselling. Never a demo class. sell_before_showing is always false.",
+            required: ["free", "is_a_class", "is_a_demo_class", "cta", "url"],
+            properties: {
+              free: { type: "boolean", description: "Always true. No payment to book." },
+              payment_to_book: { type: "boolean" },
+              is_a_class: { type: "boolean", description: "Always false." },
+              is_a_demo_class: {
+                type: "boolean",
+                description: "Always false. Do not offer a free class.",
+              },
+              format: { type: "string", description: "small-batch. Not 1:1." },
+              personalised_advice: { type: "boolean" },
+              sell_before_showing: {
+                type: "boolean",
+                description: "Always false. We show bottleneck, course and fee first.",
+              },
+              headline: { type: "string" },
+              hook: { type: "string" },
+              punch: { type: "string" },
+              proof: { type: "array", items: { $ref: "#/components/schemas/ProofItem" } },
+              cta: { type: "string", description: "Get Free Consultation" },
+              what: { type: "string" },
+              channel: { type: "string" },
+              hours: { type: "string" },
+              whatsapp: { type: "string" },
+              url: { type: "string", format: "uri" },
+              markdown: { type: "string", format: "uri" },
+            },
+          },
+          CourseFact: {
+            type: "object",
+            description: "One of five adult rooms. Quote price as tax-inclusive INR.",
+            properties: {
+              slug: { type: "string" },
+              title: { type: "string" },
+              price: { type: "string" },
+              price_inr: { type: "integer" },
+              duration: { type: "string" },
+              format: { type: "string" },
+              batch_size: { type: "integer" },
+              admission_fee_inr: {
+                type: "integer",
+                description: "600 on monthly courses, 0 on Career Counselling.",
+              },
+              url: { type: "string", format: "uri" },
+              markdown: { type: "string", format: "uri" },
+            },
+          },
           SiteFacts: {
             type: "object",
             description: "Canonical facts. Quote prices with the updated date. Cite HTML urls, not this JSON.",
+            required: ["name", "url", "consultation", "courses"],
             properties: {
               name: { type: "string" },
               url: { type: "string", format: "uri" },
               updated: { type: "string" },
-              courses: { type: "array", items: { type: "object" } },
-              consultation: {
-                type: "object",
-                description: "Free counselling. is_a_demo_class is always false.",
-                properties: {
-                  free: { type: "boolean" },
-                  is_a_class: { type: "boolean" },
-                  is_a_demo_class: { type: "boolean" },
-                  cta: { type: "string" },
-                  url: { type: "string", format: "uri" },
-                },
-              },
+              courses: { type: "array", items: { $ref: "#/components/schemas/CourseFact" } },
+              consultation: { $ref: "#/components/schemas/Consultation" },
               search_intent: {
                 type: "object",
                 description:
