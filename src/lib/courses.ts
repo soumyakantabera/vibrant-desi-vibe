@@ -228,7 +228,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays, interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,499/month, inclusive of taxes. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays, interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,199/month, inclusive of taxes. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -238,7 +238,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,499/month",
+    price: "₹1,199/month",
     liveNote:
       "✓ 100% online live · ✓ Interview rounds in this room · ✓ Flexible morning · evening · weekend slots · ✓ Pan-India · Based in Kolkata",
     outcomes: [
@@ -307,7 +307,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,499/month, inclusive of taxes.",
+      "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,199/month, inclusive of taxes.",
   },
   "career-counselling": {
     slug: "career-counselling",

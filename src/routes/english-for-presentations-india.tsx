@@ -50,7 +50,7 @@ function Page() {
           Explain your work <span className="text-sunshine">in 3 minutes.</span>
         </>
       }
-      standfirst="One outcome, three beats, one ask. Standups, reviews, client decks. Live practice. From ₹1,499/mo, inclusive of taxes."
+      standfirst="One outcome, three beats, one ask. Standups, reviews, client decks. Live practice. From ₹1,199/mo, inclusive of taxes."
       heroImage={IMG.presentation}
       heroAlt="Indian professional presenting work in a live English class"
       lastUpdated={UPDATED}

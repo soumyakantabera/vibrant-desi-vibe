@@ -132,7 +132,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "ul",
         items: [
           "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
-          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,499/month.",
+          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,199/month.",
           "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹1,999/month.",
         ],
       },
@@ -151,7 +151,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for freshers in India",
     h1Accent: "The 60-second chair",
     standfirst:
-      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet. Interactive Speaking ₹1,499/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
+      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet. Interactive Speaking ₹1,199/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
     shortAnswer:
       "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still bomb HR, take Interactive Speaking — interview English is practised there. IELTS is for forms, not most Indian campus drives, and we do not sell it.",
     image: IMG.interview,
@@ -457,7 +457,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         head: ["If this is true", "Take", "Fee"],
         rows: [
           ["You cannot hold a simple conversation", "Spoken English, 6 months", "₹999/month"],
-          ["You know the words and freeze on the standup", "Interactive Speaking, 3 months", "₹1,499/month"],
+          ["You know the words and freeze on the standup", "Interactive Speaking, 3 months", "₹1,199/month"],
           ["Chat is fine; meetings, tickets, clients are not", "Business English, 3 months", "₹1,999/month"],
         ],
       },
