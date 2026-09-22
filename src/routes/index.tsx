@@ -99,7 +99,7 @@ function Home() {
       name: "Kavya Reddy",
       detail: "Spoken English · Advocate, Hyderabad",
       waMessage:
-        "Hi, I saw Kavya's story and I want a free consultation for Spoken English.",
+        "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
     },
     {
       quote:
@@ -107,7 +107,7 @@ function Home() {
       name: "Vikram Singh",
       detail: "Spoken English · Bank Asst. Manager, Delhi",
       waMessage:
-        "Hi, I saw Vikram's story and I want a free consultation for Spoken English.",
+        "Hi, I saw Vikram's story and I want a free consultation for Basic Spoken English.",
     },
   ];
 

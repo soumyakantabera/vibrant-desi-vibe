@@ -32,21 +32,21 @@ const STORIES = [
       "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
     name: "Kavya Reddy",
     detail: "Spoken English · Advocate, Hyderabad",
-    waMessage: "Hi, I saw Kavya's story and I want a free consultation for Spoken English.",
+    waMessage: "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
   },
   {
     quote:
       "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
     name: "Ananya Iyer",
     detail: "Interactive Speaking · Data Analyst, Bengaluru",
-    waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive English speaking.",
+    waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking Class.",
   },
   {
     quote:
       "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
     name: "Vikram Singh",
     detail: "Spoken English · Bank Asst. Manager, Delhi",
-    waMessage: "Hi, I saw Vikram's story and I want a free consultation for Spoken English.",
+    waMessage: "Hi, I saw Vikram's story and I want a free consultation for Basic Spoken English.",
   },
   {
     quote:

@@ -119,19 +119,19 @@ export const COURSES: Record<string, CourseData> = {
           "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
         name: "Kavya Reddy",
         detail: "Spoken English · Advocate, Hyderabad",
-        waMessage: "Hi, I saw Kavya's story and I want a free consultation for Spoken English.",
+        waMessage: "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
       },
       {
         quote: "The gamified flashcard sessions are addictive. I look forward to every class now.",
         name: "Rakesh Verma",
         detail: "Spoken English · Shopkeeper, Patna",
-        waMessage: "Hi, I want a free consultation for Spoken English.",
+        waMessage: "Hi, I want a free consultation for Basic Spoken English.",
       },
       {
         quote: "Small batch + real corrections every class. That's what made the difference.",
         name: "Meera Iyer",
         detail: "Spoken English · Homemaker, Chennai",
-        waMessage: "Hi, I want a free consultation for Spoken English.",
+        waMessage: "Hi, I want a free consultation for Basic Spoken English.",
       },
     ],
     metaDescription:
@@ -297,7 +297,7 @@ export const COURSES: Record<string, CourseData> = {
           "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
         name: "Ananya Iyer",
         detail: "Interactive Speaking · Data Analyst, Bengaluru",
-        waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive English speaking.",
+        waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking Class.",
       },
     ],
     faqs: [
@@ -476,14 +476,14 @@ export const COURSES: Record<string, CourseData> = {
           "I could talk in the office. The HR screen was a different language. Two mocks later the 60-second intro stopped shaking.",
         name: "Sneha Kulkarni",
         detail: "Interview Preparation · Analyst, Pune",
-        waMessage: "Hi, I saw Sneha's story and I want a free consultation for English interview preparation.",
+        waMessage: "Hi, I saw Sneha's story and I want a free consultation for Interview Preparation.",
       },
       {
         quote:
           "STAR was a template I had copied. Saying it out loud in a batch of six is what made it mine.",
         name: "Rahul Menon",
         detail: "Interview Preparation · Support Engineer, Kochi",
-        waMessage: "Hi, I saw Rahul's story and I want a free consultation for English interview preparation.",
+        waMessage: "Hi, I saw Rahul's story and I want a free consultation for Interview Preparation.",
       },
     ],
     metaDescription:
