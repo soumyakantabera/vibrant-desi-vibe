@@ -67,7 +67,7 @@ function Page() {
 
   return (
     <Layout
-      waMessage="Hi, I read the blog. Free consultation please."
+      waMessage="Hi, I read the blog and I want a free consultation."
       footerImage={IMG.blogDesk}
     >
       <section className="relative">
@@ -134,7 +134,7 @@ function Page() {
                   </span>
                 </Link>
                 <WaButton
-                  message="Hi, I read your blog. Free consultation please."
+                  message="Hi, I read your blog and I want a free consultation."
                   variant="wa"
                   size="sm"
                   className="mt-4"

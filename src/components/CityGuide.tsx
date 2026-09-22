@@ -58,7 +58,7 @@ export function CityGuide({ slug }: { slug: string }) {
       body={cityBody(city)}
       faqs={page?.faqs ?? []}
       faqTitle={`Spoken English in ${city.name} — questions`}
-      waMessage={`Hi, I am in ${city.name}. Spoken English?`}
+      waMessage={`Hi, I am in ${city.name} and I want a free consultation for Spoken English.`}
       ctaTitle="Get a free consultation for your city"
       ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee as Kolkata, Mumbai or Kochi."
     />

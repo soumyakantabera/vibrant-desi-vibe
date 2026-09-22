@@ -132,7 +132,7 @@ function EducatorCard({
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I want to speak to Sunanda."
+      waMessage="Hi, I want a free consultation with Sunanda."
       footerImage={IMG.teacherWoman}
     >
       <section className="relative">
@@ -185,7 +185,7 @@ function Page() {
               "Honest feedback delivered with patience",
               "Outcomes you can show — not hours sat through",
             ]}
-            waMessage="Hi Sunanda, I read your story."
+            waMessage="Hi Sunanda, I read your story and I want a free consultation."
           />
         </div>
       </section>
@@ -197,7 +197,7 @@ function Page() {
             Tell us your goal — we’ll reply on WhatsApp.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message="Hi, I want a free consultation with Sunanda." variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg">

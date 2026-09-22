@@ -58,7 +58,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Which class — straight answers"
-      waMessage="Hi, Spoken, Interactive or Workplace — which one?"
+      waMessage="Hi, I want a free consultation to choose Spoken, Interactive or Workplace."
       ctaTitle="We'll place you in one course"
       ctaBody="Spoken, Interactive or Business — not all three."
     />

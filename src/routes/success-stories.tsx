@@ -18,49 +18,49 @@ const STORIES = [
       "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
     name: "Neha Patel",
     detail: "Workplace English · Tax Analyst, Ahmedabad",
-    waMessage: "Hi, I saw Neha's story. Workplace English?",
+    waMessage: "Hi, I saw Neha's story and I want a free consultation for Workplace English.",
   },
   {
     quote:
       "Partners asked me to walk the working papers in English. A batch of around six meant I rehearsed every week. I present now.",
     name: "Rohan Deshpande",
     detail: "Workplace English · Chartered Accountant, Mumbai",
-    waMessage: "Hi, I saw Rohan's story. Workplace English?",
+    waMessage: "Hi, I saw Rohan's story and I want a free consultation for Workplace English.",
   },
   {
     quote:
       "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
     name: "Kavya Reddy",
     detail: "Spoken English · Advocate, Hyderabad",
-    waMessage: "Hi, I saw Kavya's story. Spoken English?",
+    waMessage: "Hi, I saw Kavya's story and I want a free consultation for Spoken English.",
   },
   {
     quote:
       "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
     name: "Ananya Iyer",
     detail: "Interactive Speaking · Data Analyst, Bengaluru",
-    waMessage: "Hi, I saw Ananya's story. Interactive Speaking?",
+    waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking.",
   },
   {
     quote:
       "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
     name: "Vikram Singh",
     detail: "Spoken English · Bank Asst. Manager, Delhi",
-    waMessage: "Hi, I saw Vikram's story. Spoken English?",
+    waMessage: "Hi, I saw Vikram's story and I want a free consultation for Spoken English.",
   },
   {
     quote:
       "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
     name: "Aditya Nair",
     detail: "Workplace English · BI Analyst, Pune",
-    waMessage: "Hi, I saw Aditya's story. Workplace English?",
+    waMessage: "Hi, I saw Aditya's story and I want a free consultation for Workplace English.",
   },
 ];
 
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I read the success stories. Free consultation please."
+      waMessage="Hi, I read the success stories and I want a free consultation."
       footerImage={IMG.graduation}
     >
       <section className="relative">
@@ -103,7 +103,7 @@ function Page() {
         eyebrow="Results FAQs"
         title="Do Online English Classes Actually Change Careers?"
         subtitle="What our learners achieved, and what English can and cannot do for you."
-        waMessage="Hi, I read the success stories."
+        waMessage="Hi, I read the success stories and I want a free consultation."
       />
 
       <section className="section bg-brand-soft/40">
@@ -114,14 +114,14 @@ function Page() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton
-              message="Hi, I want to be the next success story."
+              message="Hi, I want a free consultation to be the next success story."
               variant="sun"
               size="lg"
             >
               Get Free Consultation
             </WaButton>
             <WaButton
-              message="Hi, which course for my goal?"
+              message="Hi, I want a free consultation to choose my course."
               variant="wa"
               size="lg"
             >

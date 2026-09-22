@@ -39,7 +39,7 @@ export const Route = createFileRoute("/guides")({
 function Page() {
   return (
     <Layout
-      waMessage="Hi, I read your guides. Which course?"
+      waMessage="Hi, I read your guides and I want a free consultation."
       footerImage={IMG.blogDesk}
     >
       <section className="relative">
@@ -122,10 +122,10 @@ function Page() {
             you in one course — or tell you to stay free. Not a class.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message="Hi, I read your guides and I want a free consultation." variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
-            <WaButton message={DEMO_MSG} variant="sun" size="lg">
+            <WaButton message="Hi, I read your guides and I want a free consultation." variant="sun" size="lg">
               {DEMO_CTA}
             </WaButton>
           </div>

@@ -41,7 +41,7 @@ function BlogPostPage() {
   const body = ARTICLE_BODIES[post.slug] ?? [];
   const related = getRelatedPosts(post.slug, 2);
   const heroImage = IMG[post.img as keyof typeof IMG] ?? IMG.blogDesk;
-  const waMessage = "Hi, I read your blog. Free consultation please.";
+  const waMessage = "Hi, I read your blog and I want a free consultation.";
   const toc = articleToc(body);
 
   return (
@@ -186,7 +186,7 @@ function BlogPostPage() {
           <p className="mt-3 text-white">{CONSULTATION.punch}</p>
           <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message={waMessage} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">

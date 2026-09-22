@@ -105,7 +105,7 @@ export function LegalPage({ path }: { path: LegalDoc["path"] }) {
           eyebrow="Questions"
           title="Short answers"
           subtitle="The same points, in the way people usually ask."
-          waMessage="Hi, I have a question on policy."
+          waMessage="Hi, I want a free consultation about your policy."
         />
       ) : null}
     </Layout>

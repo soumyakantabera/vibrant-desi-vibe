@@ -57,7 +57,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Workplace English — Straight Answers"
-      waMessage="Hi, I need English for work."
+      waMessage="Hi, I want a free consultation for Workplace English."
       ctaTitle="Bring one real workplace problem"
       ctaBody="Tell us the meeting, call, email or presentation situation that is difficult. We will tell you honestly whether Workplace English or another course is the better fit."
     />

@@ -81,7 +81,7 @@ export function WaStrip({ message }: { message: string }) {
         <WaButton message={message} variant="sun" size="sm">
           {DEMO_CTA}
         </WaButton>
-        <WaButton message={CHAT_MSG} variant="wa" size="sm">
+        <WaButton message={message} variant="wa" size="sm">
           {CHAT_CTA}
         </WaButton>
       </div>
@@ -220,7 +220,7 @@ function BlockView({ block }: { block: Block }) {
               </Link>
             )}
             <WaButton
-              message="Hi, I want free consultation."
+              message="Hi, I want a free consultation."
               variant="wa"
               size="sm"
             >

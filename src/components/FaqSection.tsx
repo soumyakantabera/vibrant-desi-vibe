@@ -18,7 +18,7 @@ export function FaqSection({
   eyebrow = "FAQs",
   title = "Questions People Actually Ask",
   subtitle = "Straight answers. Message anytime; WhatsApp replies 09:00–12:00 IST.",
-  waMessage = "Hi, I have a question.",
+  waMessage = "Hi, I want a free consultation.",
   className = "section bg-cream",
 }: {
   faqs: Faq[];

@@ -180,8 +180,8 @@ export function CoursePage({ data }: { data: CourseData }) {
   const isCareerCounselling = data.slug === "career-counselling";
   const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary =
-    data.waDemo ?? `Hi, I want ${data.title}.`;
-  const waSyllabus = `Hi, please send ${data.title} fees.`;
+    data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
+  const waSyllabus = `Hi, I want a free consultation and the ${data.title} fees.`;
   const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
   const faqs = courseFaqs(data);
   const snapshot = (
@@ -275,7 +275,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 "✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live syllabus · ✓ Pan-India · Based in Kolkata"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
-              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              <WaButton message={waPrimary} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={waPrimary} variant="sun" size="lg">
@@ -509,7 +509,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             <WaButton message={waPrimary} variant="sun" size="lg">
               {DEMO_CTA}
             </WaButton>
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message={waPrimary} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
           </div>

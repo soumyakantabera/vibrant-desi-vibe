@@ -67,7 +67,7 @@ function Page() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3" data-cta-location="hero">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message={DEMO_MSG} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
@@ -325,7 +325,7 @@ function Page() {
         eyebrow="Before You Book"
         title="Questions about the consultation"
         subtitle="Message anytime. We reply 09:00–12:00 IST."
-        waMessage="Hi, I have a question on free consultation."
+        waMessage="Hi, I want a free consultation."
       />
 
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
@@ -338,7 +338,7 @@ function Page() {
             counselling — or tell you to stay free.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message={DEMO_MSG} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">

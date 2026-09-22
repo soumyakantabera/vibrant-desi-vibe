@@ -94,9 +94,10 @@ const MARKET = [
 ];
 
 function Page() {
+  const wa = "Hi, I want a free consultation to know why Learn With Smile.";
   return (
     <Layout
-      waMessage="Hi, why Learn With Smile?"
+      waMessage={wa}
       footerImage={IMG.liveClass}
     >
       <section className="relative overflow-hidden">
@@ -124,10 +125,10 @@ function Page() {
               ₹999/mo, inclusive of taxes.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              <WaButton message={wa} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
-              <WaButton message={DEMO_MSG} variant="sun" size="lg">
+              <WaButton message={wa} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
               <Link to="/english-institute-comparison-india" className="btn btn-white btn-lg">
@@ -250,7 +251,7 @@ function Page() {
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
         subtitle="₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6."
-        waMessage="Hi, how do your classes work?"
+        waMessage="Hi, I want a free consultation to know how your classes work."
       />
 
       <section className="section bg-brand-deep">
@@ -268,10 +269,10 @@ function Page() {
               Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              <WaButton message={wa} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
-              <WaButton message={DEMO_MSG} variant="sun" size="lg">
+              <WaButton message={wa} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
               <Link to="/english-class-fees-india" className="btn btn-ghost-white">

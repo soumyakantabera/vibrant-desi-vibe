@@ -109,7 +109,7 @@ export const Route = createFileRoute("/english-institute-comparison-india")({
 function Page() {
   const page = PAGES[PATH];
   const waMessage =
-    "Hi, I am comparing institutes. Batch of 6 ok?";
+    "Hi, I am comparing institutes and I want a free consultation.";
   return (
     <Layout waMessage={waMessage} footerImage={IMG.speaking}>
       <section className="relative overflow-hidden">
@@ -156,7 +156,7 @@ function Page() {
             Last updated <time dateTime={UPDATED}>{UPDATED}</time>
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message={waMessage} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">
@@ -210,7 +210,7 @@ function Page() {
             Approximately 6 learners. From ₹999/mo, inclusive of taxes. Spoken, Interactive, Workplace, Career Counselling.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <WaButton message={CHAT_MSG} variant="wa" size="lg">
+            <WaButton message={waMessage} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
             <WaButton message={waMessage} variant="sun" size="lg">

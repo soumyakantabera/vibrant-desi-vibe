@@ -49,7 +49,7 @@ export const Route = createFileRoute("/english-career")({
 
 function Page() {
   const wa =
-    "Hi, I want English & Career. Which course?";
+    "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
       <section className="relative overflow-hidden">
@@ -89,7 +89,7 @@ function Page() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3" data-cta-location="hero">
-              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              <WaButton message={wa} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={wa} variant="sun" size="lg">
@@ -222,7 +222,7 @@ function Page() {
         eyebrow="Course FAQs"
         title="Choosing Between Our Courses"
         subtitle="Spoken, Interactive, Workplace or Career Counselling? Start here."
-        waMessage="Hi, which course fits me?"
+        waMessage="Hi, I want a free consultation to choose my course."
       />
 
       <section className="section bg-brand-deep">
@@ -240,7 +240,7 @@ function Page() {
               right course during 09:00–12:00 IST on WhatsApp.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <WaButton message={CHAT_MSG} variant="wa" size="lg">
+              <WaButton message={wa} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={wa} variant="sun" size="lg">

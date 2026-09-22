@@ -57,7 +57,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="English while you work"
-      waMessage="Hi, I work. Morning or evening English?"
+      waMessage="Hi, I work and I want a free consultation for morning or evening English."
       ctaTitle="Tell us your shift"
       ctaBody="We suggest morning, evening or weekend — and Spoken, Interactive or Business."
     />
