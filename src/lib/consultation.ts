@@ -19,12 +19,46 @@ export const CONSULTATION = {
   channel: "WhatsApp",
   hours: "09:00–12:00 IST",
   phoneDisplay: WHATSAPP_DISPLAY,
-  /** Magnet line under every consultation button — free + small batch + advice, never “demo”. */
-  hook: "100% free · Small batch · Personalised advice",
-  pills: ["100% free", "Small batch", "Personalised advice", "Requirements, one by one"],
+  /** Brutal line — we show the room before money. */
+  headline: "We don't sell the room until you see it.",
+  /** Magnet under every consultation button. */
+  hook: "Free. Small batch. See the course before you pay.",
+  punch:
+    "Other institutes pitch a class. We put the bottleneck, the course and the fee in writing. Then you enrol — or you walk. Still free. Not a class.",
+  pills: ["100% free", "Small batch", "Personalised advice", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "100% free. A small-batch consultation — not a packed pitch and not a class. Personalised advice: we hear each person's requirements one by one, name the bottleneck, and recommend one course. Or tell you to stay free.",
+  what: "100% free small-batch consultation. Personalised advice: we hear each person's requirements one by one, name the bottleneck, show the course and the fee in writing — then you decide. Not a packed pitch. Not a class.",
 } as const;
+
+export const CONSULTATION_PROOF: {
+  icon: IconName;
+  kicker: string;
+  title: string;
+  body: string;
+  tone: "coral" | "indigo" | "sun";
+}[] = [
+  {
+    icon: "compass",
+    kicker: "See",
+    title: "The bottleneck",
+    body: "Named in one sentence. Spoken, freeze, workplace, interview, or career.",
+    tone: "coral",
+  },
+  {
+    icon: "book",
+    kicker: "Get",
+    title: "One course, in writing",
+    body: "Fee, duration, batch size, IST slot. Or an honest “this is not us”.",
+    tone: "indigo",
+  },
+  {
+    icon: "shield",
+    kicker: "Then",
+    title: "You decide",
+    body: "Enrol, or walk. Still free. We do not take money until you have seen the room.",
+    tone: "sun",
+  },
+];
 
 export const CONSULTATION_WALK_AWAY: {
   icon: IconName;

@@ -273,6 +273,13 @@ export const CONSULTATION_KEYWORDS = [
   "personalised english counselling small batch",
   "free small group english counselling india",
   "free consultation small batch spoken english",
+  "see the course before you enrol",
+  "see before you pay english class india",
+  "we don't sell without showing the course",
+  "english consultation fee in writing",
+  "named bottleneck before enrolment",
+  "honest no english consultation india",
+  "show the room before you pay spoken english",
   "spoken english counselling vs demo class",
   "free counselling spoken english kolkata",
   "free consulting spoken english kolkata",
@@ -538,7 +545,7 @@ export const CLUSTER_INTENT = {
   consultation: {
     intent: "transactional",
     funnel: "decide",
-    job: "Book a free small-batch consultation — personalised advice, one course named.",
+    job: "Book a free small-batch consultation — see the bottleneck, course and fee before you pay.",
     land: "/book-free-demo",
     next: "Get Free Consultation",
   },
@@ -921,9 +928,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "Get Free Consultation | Free Demo Class | Counselling",
+    title: "We Don't Sell the Room Until You See It | Free Consultation",
     description:
-      "100% free small-batch consultation with personalised advice. We diagnose your bottleneck, answer every query, recommend one course. Not a class. Free demo class seekers — this is counselling.",
+      "Free small-batch consultation. Personalised advice. We name the bottleneck, show the course and the fee in writing — then you enrol. Not a class. Free demo class seekers — this is counselling.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -941,7 +948,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-22",
     summary:
-      "Get Free Consultation: 100% free, small-batch counselling with personalised advice — not a class. We diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell you to stay free. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
+      "Get Free Consultation: we don't sell the room until you see it. 100% free, small-batch counselling with personalised advice. Bottleneck named, course and fee in writing, then you decide. Not a class. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,

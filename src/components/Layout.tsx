@@ -3,6 +3,7 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { WhatsAppFab } from "./WhatsAppFab";
 import { CookieBar } from "./CookieBar";
+import { ConsultOffer } from "./ConsultOffer";
 
 export function Layout({
   children,
@@ -25,6 +26,7 @@ export function Layout({
       <main id="main-content" className="flex-1" data-snippet="">
         {children}
       </main>
+      <ConsultOffer />
       <Footer image={footerImage} />
       <CookieBar />
       <WhatsAppFab message={waMessage} />

@@ -13,6 +13,7 @@ import {
   CONSULTATION,
   CONSULTATION_BOTTLENECKS,
   CONSULTATION_NOT_THIS,
+  CONSULTATION_PROOF,
   CONSULTATION_QUERIES,
   CONSULTATION_STEPS,
   CONSULTATION_VS_MARKET,
@@ -43,15 +44,23 @@ function Page() {
             <Icon name="compass" size={14} /> {DEMO_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Free. Small batch. <span className="text-sunshine">Personalised advice.</span>
+            We don't sell the room until <span className="text-sunshine">you see it.</span>
           </h1>
-          <p className="mt-5 text-lg text-white">{CONSULTATION.what}</p>
+          <p className="mt-5 text-lg text-white">{CONSULTATION.punch}</p>
           <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {CONSULTATION.pills.map((pill) => (
+            {CONSULTATION.pills.map((pill, i) => (
               <span
                 key={pill}
-                className="inline-flex items-center rounded-full bg-cream/10 border border-cream/20 px-3 py-1.5 text-xs font-display font-bold text-cream"
+                className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs font-display font-extrabold ${
+                  i === 0
+                    ? "bg-[#C84D3F] text-white"
+                    : i === 1
+                      ? "bg-[#3D3DB8] text-white"
+                      : i === 2
+                        ? "bg-sunshine text-ink"
+                        : "bg-ink text-sunshine"
+                }`}
               >
                 {pill}
               </span>
@@ -72,9 +81,29 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="What you walk away with"
-            title="Exactly what you get — and what you do not"
-            subtitle="100% free. Small batch. Personalised advice — each person's requirements, one by one. Other institutes sell a free session as a class, a pitch, or 15 minutes of talk. This one is counselling. You leave with a diagnosis, one recommendation, and answers — in writing."
+            title="See it. Then pay."
+            subtitle={CONSULTATION.punch}
           />
+          <div className="grid gap-3 sm:grid-cols-3 mb-8">
+            {CONSULTATION_PROOF.map((card) => (
+              <div
+                key={card.kicker}
+                className={
+                  card.tone === "coral"
+                    ? "rounded-2xl p-5 bg-[#C84D3F] text-white"
+                    : card.tone === "indigo"
+                      ? "rounded-2xl p-5 bg-[#3D3DB8] text-white"
+                      : "rounded-2xl p-5 bg-ink text-sunshine"
+                }
+              >
+                <p className="flex items-center gap-2 text-xs font-display font-extrabold uppercase tracking-[0.14em] opacity-90">
+                  <Icon name={card.icon} size={14} /> {card.kicker}
+                </p>
+                <p className="mt-2 font-display text-xl font-extrabold">{card.title}</p>
+                <p className="mt-1 text-sm leading-relaxed opacity-95">{card.body}</p>
+              </div>
+            ))}
+          </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {CONSULTATION_WALK_AWAY.map((item) => (
               <FeatureCard key={item.title} icon={item.icon} color={item.color} title={item.title}>

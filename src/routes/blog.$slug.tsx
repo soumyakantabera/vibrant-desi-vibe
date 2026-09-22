@@ -14,6 +14,7 @@ import { ARTICLE_BODIES } from "@/content/blog";
 import { articleToc } from "@/content/blog/blocks";
 import { blogPostHead } from "@/lib/seo";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
+import { CONSULTATION } from "@/lib/consultation";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -181,11 +182,9 @@ function BlogPostPage() {
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">Want a free consultation?</h2>
-          <p className="mt-3 text-white">
-            Get Free Consultation on WhatsApp. We discuss courses, curriculum and
-            your requirements one by one. It is not a full class.
-          </p>
+          <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
+          <p className="mt-3 text-white">{CONSULTATION.punch}</p>
+          <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">
               {CHAT_CTA}

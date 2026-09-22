@@ -6,6 +6,7 @@ import { headingId } from "@/content/blog/blocks";
 import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
+import { CONSULTATION } from "@/lib/consultation";
 
 /**
  * Renders an article body (see src/content/blog/blocks.ts).
@@ -73,11 +74,9 @@ export function WaStrip({ message }: { message: string }) {
       className="mt-8 rounded-2xl border border-brand/20 bg-brand-soft/60 p-5 md:p-6"
       data-cta-location="mid_article"
     >
-      <p className="font-display font-extrabold text-ink">Want a free consultation?</p>
-      <p className="mt-1 text-sm text-ink/80 leading-relaxed">
-        100% free. Small batch. Personalised advice. We name your bottleneck, answer your questions,
-        and place you in one course. Not a full class. One WhatsApp message. No payment to book.
-      </p>
+      <p className="font-display font-extrabold text-ink">{CONSULTATION.headline}</p>
+      <p className="mt-1 text-sm text-ink/80 leading-relaxed">{CONSULTATION.punch}</p>
+      <p className="mt-1 text-xs font-semibold text-brand-deep">{CONSULTATION.hook}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         <WaButton message={message} variant="sun" size="sm">
           {DEMO_CTA}

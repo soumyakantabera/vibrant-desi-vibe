@@ -11,6 +11,7 @@ import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
 import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import { CONSULTATION } from "@/lib/consultation";
 
 /**
  * Shared shell for the long-form landing pages (`/spoken-english-classes-kolkata`,
@@ -126,8 +127,9 @@ export function GuidePage({
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">{ctaTitle}</h2>
-          <p className="mt-3 text-white">{ctaBody}</p>
+          <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
+          <p className="mt-3 text-white">{CONSULTATION.punch}</p>
+          <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={CHAT_MSG} variant="wa" size="lg">
               {CHAT_CTA}

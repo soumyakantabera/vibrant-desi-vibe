@@ -185,7 +185,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Free consultation (counselling, not a class)",
         paragraphs: [
-          "Get Free Consultation is a 100% free, small-batch counselling session with personalised advice. There is no payment, card or UPI to book. Messaging us does not create an obligation to enrol. We hear each person's requirements one by one.",
+          "Get Free Consultation is a 100% free, small-batch counselling session with personalised advice. We name the bottleneck, show the course and the fee in writing, then you decide. There is no payment, card or UPI to book. Messaging us does not create an obligation to enrol. We hear each person's requirements one by one. It is not a class.",
           "In the session we diagnose your English bottleneck, discuss courses and curriculum, understand your requirements one by one, answer the questions you bring, and recommend one course — or tell you to stay free. Fee, duration, batch size and IST slot come in writing on WhatsApp.",
           "The consultation is not a class, not a sample of the paid hour, and not a placement test with a score. You will not receive speaking minutes on a microphone in the consultation. Those minutes are the paid room. People who search for a free demo class are offered this counselling instead.",
         ],

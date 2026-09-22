@@ -503,11 +503,9 @@ export function CoursePage({ data }: { data: CourseData }) {
       <section className="relative py-16 md:py-20 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x text-center text-cream">
-          <h2 className="text-cream text-3xl md:text-4xl">Ready to start {data.title}?</h2>
-          <p className="mt-3 text-white max-w-xl mx-auto">
-            Tell us your goal — 100% free, small-batch consultation with personalised advice. We discuss courses,
-            curriculum and your requirements one by one. It is not a full class.
-          </p>
+          <h2 className="text-cream text-3xl md:text-4xl">{CONSULTATION.headline}</h2>
+          <p className="mt-3 text-white max-w-xl mx-auto">{CONSULTATION.punch}</p>
+          <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waPrimary} variant="sun" size="lg">
               {DEMO_CTA}

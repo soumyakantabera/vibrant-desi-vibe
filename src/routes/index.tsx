@@ -577,20 +577,20 @@ function Home() {
                 </span>
                 <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
               </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">100% Free</p>
-              <p className="mt-1 text-sm text-ink/75">Small-batch counselling — personalised advice, not a class</p>
+              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">See it. Then pay.</p>
+              <p className="mt-1 text-sm text-ink/75">{CONSULTATION.hook}</p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  100% free. No payment, card or UPI to book
+                  Bottleneck named — not a pitch
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Small batch. Personalised advice — your requirements, one by one
+                  One course + fee in writing
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Named bottleneck + one course. Not a full class
+                  Enrol, or walk. Still free. Not a class
                 </li>
               </ul>
             </article>
@@ -657,10 +657,7 @@ function Home() {
                 <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
                   <Icon name="compass" size={22} /> {DEMO_CTA}
                 </h3>
-                <p className="text-cream/95 mb-4">
-                  100% free. Small batch. Personalised advice. Courses, curriculum and your
-                  requirements — one by one. Not a full class.
-                </p>
+                <p className="text-cream/95 mb-4">{CONSULTATION.punch}</p>
                 <span className="btn btn-sun btn-sm">
                   <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
                   <Icon name="arrow-right" size={14} />
