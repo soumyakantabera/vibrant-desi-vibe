@@ -9,7 +9,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-22";
+export const LEGAL_UPDATED = "2026-09-24";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
@@ -28,6 +28,18 @@ const GRIEVANCE_OFFICER: LegalSection = {
     "Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India",
     "Email: learnwithsmile.in@gmail.com",
     "Phone / WhatsApp: +91 96744 79949",
+  ],
+};
+
+/** Same wording on privacy, terms and refunds. */
+const SCHEDULE_AND_LATENESS: LegalSection = {
+  heading: "Weekly schedule, lateness and refunds",
+  paragraphs: [
+    "You follow the weekly schedule we send on WhatsApp. A missed class can be moved only inside that same week, and only if a teacher and a free slot exist. We do not promise a make-up seat.",
+    "A class from this week cannot be pushed to next week. Next week runs only on next week’s schedule. A missed class that was not moved inside the same week is treated as delivered.",
+    "Tell us the times you can attend before we send that week’s schedule. If you do not, or if you ask to change after the schedule is already sent, that is not a refund. We do not hold a seat for times you never gave us.",
+    "Joining late is your responsibility, not the teacher’s. The class starts at the time on the schedule. Minutes you miss because you joined late are not taught again and are not refunded.",
+    "If something is wrong — slot, teacher, batch, fee, or a class we did not hold — tell us on WhatsApp in that same week. A problem you never raise is not a refund. We cannot review what you did not tell us.",
   ],
 };
 
@@ -96,6 +108,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Please do not share a recording outside your batch. If you do not wish to appear in a recording, tell us on WhatsApp before the session so we can discuss a practical arrangement.",
         ],
       },
+      SCHEDULE_AND_LATENESS,
       {
         heading: "Cookies and analytics",
         paragraphs: [
@@ -224,9 +237,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         paragraphs: [
           "English group classes are live, with a typical batch of approximately six learners, and up to two class days per week unless a course page says otherwise. Career Counselling is a separate 1:1 service.",
           "Every live class is the primary lesson. Recordings, where provided, are for revision. A recording is not a substitute for attending.",
-          "A missed class may be rescheduled only within the same week and only if a teacher and slot are available. We do not guarantee a make-up slot.",
         ],
       },
+      SCHEDULE_AND_LATENESS,
       {
         heading: "Your conduct",
         paragraphs: [
@@ -299,6 +312,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "We do not offer a demo class. There is no refund of a class you expected to sit for free in the consultation. The consultation is counselling. Speaking minutes are the paid room.",
         ],
       },
+      SCHEDULE_AND_LATENESS,
       {
         heading: "What we will review in good faith",
         paragraphs: [
@@ -321,7 +335,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Career Counselling packages",
         paragraphs: [
-          "Career Counselling is prepaid for a set number of 1:1 sessions. If we have not delivered a session, we will try to reschedule. If we cannot deliver a remaining session, we will discuss a fair adjustment for the unused session. Sessions you skip without notice may be treated as delivered.",
+          "Career Counselling is prepaid for a set number of 1:1 sessions. A missed session can be moved only inside the same week, and only if a slot is free. If you skip it without telling us that week, it is treated as delivered. If we cannot deliver a session we still owe, we will discuss a fair adjustment for that unused session.",
         ],
       },
       {
