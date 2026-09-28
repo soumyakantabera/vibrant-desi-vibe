@@ -276,6 +276,24 @@ for (const [from, to] of [["founder", "educator"]]) {
   console.log(`  aliased   /${from} → /${to}`);
 }
 
+// Old course URL. Not in ALL_PATHS, so it stays out of the sitemap and llms.json.
+// The file still has to exist: deploy checks it, and old links should not 404.
+{
+  const pathname = "/course-career-counselling";
+  const ssrHtml = await renderPath(pathname);
+  const page = buildPage(pathname, ssrHtml);
+  const canonical = expectedCanonical(pathname);
+  if (!page.includes(`rel="canonical" href="${canonical}"`)) {
+    throw new Error(`prerender: ${pathname} is missing its canonical`);
+  }
+  if (!page.includes("We do not offer career counselling")) {
+    throw new Error(`prerender: ${pathname} still reads like a live course`);
+  }
+  writeFile("course-career-counselling.html", page);
+  writeFile("course-career-counselling/index.html", page);
+  console.log("  prerendered /course-career-counselling (not in the sitemap)");
+}
+
 /* ---------------------------------------------------------------- sitemap */
 
 function xml(value) {
