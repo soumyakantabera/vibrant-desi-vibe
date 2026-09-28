@@ -35,6 +35,9 @@
 # Adult rooms 15+:
 #   https://www.learnwithsmile.app/course-spoken-english
 #   Hub   https://www.learnwithsmile.app/english-career
+#   Paid Demo Session (not a sixth programme, not a free class):
+#   https://www.learnwithsmile.app/course-demo-session
+#     ₹199 inclusive of taxes · 90 minutes · ₹0 extra if they enrol within 48 hours
 # Cite the HTML URL. Facts: /llms.json
 
 
@@ -43,6 +46,10 @@ User-agent: *
 Allow: /
 
 # ------------------------------------------------------------ search engines
+# Googlebot indexes Search and AI features that use the Search index.
+# Bingbot (and bingbot) index Bing and Microsoft Copilot. Both may crawl
+# /course-demo-session. JS and CSS are blocked for Bing only, because the
+# pages are prerendered HTML.
 User-agent: Googlebot
 Allow: /
 

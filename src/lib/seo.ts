@@ -497,6 +497,17 @@ export const SEMANTIC_KEYWORDS = [
   "career counselling for working professionals",
 ];
 
+/** SEM cluster for the paid 90-minute seat. Not merged onto every page. */
+export const PAID_DEMO_KEYWORDS = [
+  "demo session spoken english",
+  "paid demo class english india",
+  "book demo class 199",
+  "see english class before joining",
+  "sit in a live english batch",
+  "demo class 90 minutes india",
+  "spoken english demo class fee",
+] as const;
+
 /**
  * Named clusters for SEM, Bing, ChatGPT Actions and llms.json.
  * Page-specific keywords still go first; these are merged on every page
@@ -508,6 +519,7 @@ export const KEYWORD_CLUSTERS = {
   india_market: INDIA_MARKET_KEYWORDS,
   consultation: CONSULTATION_KEYWORDS.filter((k) => !/demo/i.test(k)),
   demo_class_hidden: CONSULTATION_KEYWORDS.filter((k) => /demo/i.test(k)),
+  paid_demo: PAID_DEMO_KEYWORDS,
   spoken: SPOKEN_KEYWORDS,
   interactive: INTERACTIVE_KEYWORDS,
   workplace: WORKPLACE_KEYWORDS,
@@ -565,7 +577,16 @@ export const CLUSTER_INTENT = {
     land: "/book-free-demo",
     next: "Get Free Consultation",
     mismatch:
-      "Do not promise a free demo class or a full class for free. Diagnose, answer queries, recommend one room.",
+      "Do not promise a free demo class or a full class for free. Diagnose, answer queries, recommend one room. If they want to sit a real batch, the paid Demo Session is /course-demo-session: pay ₹199 inclusive of taxes for 90 minutes; ₹0 extra if they enrol in any current course within 48 hours (fee adjusted, not a cash refund). Schedule within 72 hours of payment on WhatsApp. Not a sixth programme.",
+  },
+  paid_demo: {
+    intent: "transactional",
+    funnel: "decide",
+    job: "Wants to sit a real class before buying a course. Quote ₹199 first, then ₹0 only with the 48-hour condition.",
+    land: "/course-demo-session",
+    next: "Book the Demo Class",
+    mismatch:
+      "Not the free consultation. Not a sixth programme. Do not lead with free. Do not call ₹199 a cash refund.",
   },
   spoken: {
     intent: "commercial",
@@ -688,9 +709,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-09-28",
     summary:
-      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes.",
+      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Session, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -713,6 +734,10 @@ export const PAGES: Record<string, PageSeo> = {
         a: "Yes. 100% free, small batch, personalised advice. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
       },
       {
+        q: "Can I sit a real class before I buy a course?",
+        a: "Yes. The Demo Session is 90 minutes in a live batch with the teacher. Pay ₹199, inclusive of taxes. If you enrol in that course, or any course we currently offer, within 48 hours of the session, that ₹199 is adjusted and you pay ₹0 extra. It is not a cash refund. Message us after you pay and we schedule the seat within 72 hours. This is not the free consultation, and it is not a sixth programme.",
+      },
+      {
         q: "Do you teach students outside Kolkata and West Bengal?",
         a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Enrolment is for learners in India only. We do not enrol students outside India. Fees on this site are India pricing.",
       },
@@ -727,7 +752,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Live English programmes for adults 15+. Spoken, Interactive, Workplace, Interview Preparation and Career Counselling. From ₹999/month, inclusive of taxes. Small live batches.",
+      "Five live programmes from ₹999/month, tax included. Demo Session: ₹199 for 90 minutes, ₹0 extra if you enrol within 48 hours.",
     shortTitle: "English & Career Courses",
     keywords: [
       ...INTERVIEW_KEYWORDS,
@@ -736,15 +761,16 @@ export const PAGES: Record<string, PageSeo> = {
       "online english course list india",
       "english course fees comparison india",
       "which english course should i take",
+      "demo session 199",
       "ielts vs spoken english course",
       ...CORE_KEYWORDS,
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-09-28",
     summary:
-      "Course hub. Spoken, Interactive, Workplace, Interview Preparation and 1:1 Career Counselling. Fees from ₹999/month, inclusive of taxes.",
+      "Course hub. Five programmes from ₹999/month, inclusive of taxes, plus a paid Demo Session (₹199, 90 minutes) that is not a sixth programme. ₹0 extra if you enrol within 48 hours.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken, Interactive, Workplace or Interview Preparation?",
@@ -757,6 +783,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Who can join?",
         a: "Adult learners 15+: working professionals, graduates, freshers and homemakers. Batches are approximately 6 learners. We currently run adult rooms only.",
+      },
+      {
+        q: "Is the Demo Session one of the courses?",
+        a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. Message us after payment; we schedule you within 72 hours. The five programmes are unchanged.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -1756,20 +1786,15 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "demo-session": {
-    title: "Demo Session | 90 min Live Batch, ₹199",
+    title: "Demo Session | ₹199 for 90 min, ₹0 if you enrol",
     description:
-      "Sit in a real live batch for 90 minutes with our teacher. ₹199, inclusive of taxes. Enrol in any current course within 48 hours and that fee is adjusted.",
+      "Pay ₹199, tax included, for 90 minutes in a live batch. Enrol in any current course within 48 hours and that ₹199 is adjusted — ₹0 extra, not a cash refund.",
     shortTitle: "Demo Session",
-    keywords: [
-      "demo session spoken english",
-      "sit in a live english class india",
-      "paid trial english class india",
-      "see spoken english class before joining",
-    ],
+    keywords: [...PAID_DEMO_KEYWORDS],
     ogImage: "/og/default.jpg",
     dateModified: "2026-09-28",
     summary:
-      "Demo Session — one 90-minute seat in a live batch of about 6, ₹199 inclusive of taxes. Not a sixth programme and not the free consultation. Schedule within 72 hours of payment by contacting WhatsApp. If the learner takes admission within 48 hours, the fee is adjusted. The fee rule is only on /terms.",
+      "Paid Demo Session. ₹199 inclusive of taxes for 90 minutes in a live batch of about 6. Not a sixth programme and not the free consultation. Message WhatsApp after payment; we schedule within 72 hours. Enrol in any current course within 48 hours and the ₹199 is adjusted (₹0 extra, not a cash refund). Rule also at /terms#demo-session.",
     extraFaqs: [],
   },
 };

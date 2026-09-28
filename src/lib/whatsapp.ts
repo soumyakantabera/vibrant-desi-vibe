@@ -5,10 +5,9 @@ export const CALL_LINK = `tel:+${WHATSAPP_PHONE}`;
 /**
  * Primary conversion labels.
  *
- * Visible site copy never says "demo" or "free demo class" — people hear
- * "full class for free". The offer is a small-batch counselling session with
- * personalised advice: courses, curriculum, and each learner's requirements,
- * one by one.
+ * Programme CTAs say "Get Free Consultation", never "free demo class".
+ * The paid Demo Session is a separate page, menu item and homepage ribbon.
+ * Do not send its enrol prefill through withConsultAsk — use waDirect.
  *
  * Constant names stay DEMO_* so existing imports do not churn.
  */

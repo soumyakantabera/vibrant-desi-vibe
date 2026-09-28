@@ -597,7 +597,8 @@ export function courseSeo(d: CourseData) {
       price,
       priceCurrency: "INR",
       valueAddedTaxIncluded: true,
-      unitText: /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
+      unitText:
+        d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
     };
   }
 
