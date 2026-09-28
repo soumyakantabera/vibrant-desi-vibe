@@ -98,7 +98,7 @@ export function Nav() {
           <Link to="/course-demo-session" className="demo-ribbon">
             <span className="container-x flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 py-2 text-center text-[13px] sm:text-sm font-display font-extrabold leading-snug">
               <Icon name="play" size={14} />
-              <span>Demo class</span>
+              <span>See the teacher. See the batch.</span>
               <span aria-hidden="true">·</span>
               <span>If you join, it costs you nothing.</span>
             </span>
