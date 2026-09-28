@@ -98,7 +98,7 @@ export function Nav() {
                 <span className="px-0.5">Book the Demo Class</span>
                 <span className="demo-ribbon-price inline-flex items-center gap-1 rounded-full bg-sunshine px-2 py-0.5 leading-none text-ink">
                   <span>₹199</span>
-                  <span className="text-[10px] font-bold">90 min · tax incl.</span>
+                  <span className="text-[10px] font-bold">90 min</span>
                 </span>
                 <span className="demo-ribbon-zero inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-semibold leading-none">
                   <span className="font-extrabold">₹0</span>
