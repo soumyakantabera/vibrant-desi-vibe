@@ -547,6 +547,10 @@ section > .container-x {
 .demo-ribbon svg {
   color: #0b1f14;
 }
+.demo-ribbon .demo-ribbon-cta,
+.demo-ribbon .demo-ribbon-cta span {
+  color: #ffffff;
+}
 .demo-ribbon svg {
   stroke: currentColor;
 }

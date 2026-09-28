@@ -96,11 +96,11 @@ export function Nav() {
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         {isHome && (
           <Link to="/course-demo-session" className="demo-ribbon">
-            <span className="container-x flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 py-2 text-center text-[13px] sm:text-sm font-display font-extrabold leading-snug">
-              <Icon name="play" size={14} />
-              <span>See the teacher. See the batch.</span>
-              <span aria-hidden="true">·</span>
-              <span>If you join, it costs you nothing.</span>
+            <span className="container-x flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 py-2 text-center text-[13px] sm:text-sm font-display font-extrabold leading-snug">
+              <span>Don’t buy the course blind. If you join, it costs you nothing.</span>
+              <span className="demo-ribbon-cta inline-flex items-center rounded-full bg-ink px-3 py-1 text-[12px] sm:text-[13px] font-extrabold text-white">
+                Book the Demo Class @ Rs. 199/-
+              </span>
             </span>
           </Link>
         )}
