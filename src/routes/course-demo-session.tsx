@@ -55,23 +55,22 @@ function DemoSessionPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/80 to-[#8F332A]/75" />
         </div>
-        <div className="container-x py-14 md:py-24">
-          <Link
-            to="/english-career"
-            className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline"
-          >
-            <Icon name="arrow-right" size={14} className="rotate-180" /> Courses
-          </Link>
-          <p className="eyebrow eyebrow-white mt-4">For people who are serious</p>
-          <h1 className="mt-3 max-w-3xl text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
-            Demo Session.
-            <span className="block text-sunshine">If you join, it costs you nothing.</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-base md:text-lg text-white">
-            90 minutes in a real batch, in front of our teacher. Not a sales call. Not a recording.
-            ₹199 to sit the class. Take admission within 48 hours — in that course, or any course we
-            offer — and the ₹199 is adjusted against your fee.
-          </p>
+        <div className="container-x py-16 md:py-24">
+          <div className="text-cream max-w-3xl">
+            <Link
+              to="/english-career"
+              className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline"
+            >
+              <Icon name="arrow-right" size={14} className="rotate-180" /> {d.category}
+            </Link>
+            <div className="mt-3 flex items-start gap-2">
+              <Icon name={d.icon} size={36} className="mt-1 shrink-0 text-sunshine" />
+              <h1 className="text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
+                {d.title}
+              </h1>
+            </div>
+            <p className="mt-4 text-lg text-white max-w-2xl">{d.tagline}</p>
+          </div>
           <div className="mt-6 flex flex-wrap gap-2 text-sm font-display font-bold">
             <span className="inline-flex items-center gap-2 rounded-full bg-sunshine px-3 py-1.5 text-ink">
               <Icon name="rupee" size={14} /> ₹199 · tax included
