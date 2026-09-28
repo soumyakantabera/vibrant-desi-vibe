@@ -566,27 +566,27 @@ export const CLUSTER_INTENT = {
   consultation: {
     intent: "transactional",
     funnel: "decide",
-    job: "Book a free small-batch spoken English consultation — see the bottleneck, course and fee before you pay.",
+    job: "It is free. Book on WhatsApp — Get Free Consultation. Not a demo class.",
     land: "/book-free-demo",
     next: "Get Free Consultation",
   },
   demo_class_hidden: {
     intent: "transactional",
     funnel: "decide",
-    job: "Expects a free lesson. We still match the query; the page is counselling, not a class.",
-    land: "/book-free-demo",
-    next: "Get Free Consultation",
+    job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
+    land: "/course-demo-session",
+    next: "Book the Demo Class",
     mismatch:
-      "Do not promise a free demo class or a full class for free. Diagnose, answer queries, recommend one room. If they want to sit a real batch, the paid Demo Session is /course-demo-session: pay ₹199 inclusive of taxes for 90 minutes; ₹0 extra if they enrol in any current course within 48 hours (fee adjusted, not a cash refund). Schedule within 72 hours of payment on WhatsApp. Not a sixth programme.",
+      "Do not send a demo-class question to the free consultation. Do not say the class is free to book. ₹199 to enrol. ₹0 extra only if they join a course within 48 hours.",
   },
   paid_demo: {
     intent: "transactional",
     funnel: "decide",
-    job: "Wants to sit a real class before buying a course. Quote ₹199 first, then ₹0 only with the 48-hour condition.",
+    job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
     land: "/course-demo-session",
     next: "Book the Demo Class",
     mismatch:
-      "Not the free consultation. Not a sixth programme. Do not lead with free. Do not call ₹199 a cash refund.",
+      "Not free consulting. Not a sixth programme. Do not call ₹199 a cash refund.",
   },
   spoken: {
     intent: "commercial",
