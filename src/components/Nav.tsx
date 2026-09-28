@@ -51,7 +51,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-demo-session",
     label: "Demo Session",
     icon: "play",
-    desc: "90 min · ₹199 · nothing if you enrol",
+    desc: "90 min · ₹199 · If you join, it costs you nothing.",
   },
 ];
 
