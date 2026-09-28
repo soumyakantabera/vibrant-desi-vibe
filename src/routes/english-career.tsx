@@ -23,10 +23,7 @@ export const Route = createFileRoute("/english-career")({
     const head = pageHead("/english-career");
     // Course hub: an ItemList of every live programme gives Google (and AI
     // answer engines) the whole catalogue with prices from a single fetch.
-    const hubSlugs = [
-      ...COURSE_CATEGORIES.flatMap((g) => [...g.slugs]),
-      DEMO_SESSION.slug,
-    ];
+    const hubSlugs = [...COURSE_CATEGORIES.flatMap((g) => [...g.slugs]), DEMO_SESSION.slug];
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -52,8 +49,7 @@ export const Route = createFileRoute("/english-career")({
 });
 
 function Page() {
-  const wa =
-    "Hi, I want a free consultation for English and Career.";
+  const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
       <section className="relative overflow-hidden">
@@ -157,9 +153,7 @@ function Page() {
                 className="scroll-mt-28"
               >
                 <div className="mb-5 flex items-start gap-3">
-                  <span
-                    className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-deep"
-                  >
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-deep">
                     <Icon name={group.icon} size={22} />
                   </span>
                   <div>
@@ -200,9 +194,7 @@ function Page() {
                           <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
                             {c.price}
                           </span>
-                          <span className="pill bg-brand-soft text-brand-deep">
-                            {c.duration}
-                          </span>
+                          <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
                         </div>
                         <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
                         <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/85">
@@ -236,8 +228,8 @@ function Page() {
               </p>
               <ul className="mt-4 grid gap-2 text-sm text-ink/85">
                 <li className="flex gap-2">
-                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
-                  A real batch of about 6. Not a sales call.
+                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />A real batch
+                  of about 6. Not a sales call.
                 </li>
                 <li className="flex gap-2">
                   <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
@@ -262,14 +254,27 @@ function Page() {
                 </a>
               </div>
             </div>
-            <div className="rounded-3xl bg-ink px-6 py-8 text-cream text-center">
-              <p className="text-xs font-display font-bold uppercase tracking-[0.14em] text-sunshine">
-                One class
-              </p>
-              <p className="mt-2 font-display text-5xl font-extrabold text-sunshine">₹199</p>
-              <p className="mt-1 text-sm text-white/85">90 minutes · tax included</p>
-              <p className="mt-4 text-lg font-display font-extrabold">₹0 if you enrol</p>
-              <p className="mt-1 text-sm text-white/80">within 48 hours of the session</p>
+            <div className="rounded-3xl bg-ink px-5 py-6 text-cream sm:px-6 sm:py-8">
+              <div className="grid grid-cols-2 gap-3 text-center">
+                <div>
+                  <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/70">
+                    Pay now
+                  </p>
+                  <p className="mt-2 font-display text-4xl font-extrabold text-sunshine sm:text-5xl">
+                    ₹199
+                  </p>
+                  <p className="mt-1 text-xs text-white/80">90 min · tax included</p>
+                </div>
+                <div className="border-l border-white/15">
+                  <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/70">
+                    If you enrol
+                  </p>
+                  <p className="mt-2 font-display text-4xl font-extrabold text-white sm:text-5xl">
+                    ₹0
+                  </p>
+                  <p className="mt-1 text-xs text-white/80">within 48 hours</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -312,4 +317,3 @@ function Page() {
     </Layout>
   );
 }
-

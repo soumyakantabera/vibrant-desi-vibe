@@ -71,16 +71,25 @@ function DemoSessionPage() {
             </div>
             <p className="mt-4 text-lg text-white max-w-2xl">{d.tagline}</p>
           </div>
-          <div className="mt-6 flex flex-wrap gap-2 text-sm font-display font-bold">
-            <span className="inline-flex items-center gap-2 rounded-full bg-sunshine px-3 py-1.5 text-ink">
-              <Icon name="rupee" size={14} /> ₹199 · tax included
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-cream/10 border border-cream/20 px-3 py-1.5 text-white">
-              <Icon name="clock" size={14} className="text-sage" /> 90 minutes
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-cream/10 border border-cream/20 px-3 py-1.5 text-white">
-              <Icon name="users" size={14} className="text-sage" /> Live batch
-            </span>
+          <div className="mt-6 inline-flex max-w-full flex-wrap overflow-hidden rounded-2xl border border-white/15 bg-black/25 text-left">
+            <div className="px-4 py-3">
+              <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/75">
+                Pay now
+              </p>
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine">
+                ₹199
+              </p>
+              <p className="mt-1 text-xs text-white/80">90 min · inclusive of taxes</p>
+            </div>
+            <div className="border-t border-white/15 px-4 py-3 sm:border-t-0 sm:border-l">
+              <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/75">
+                If you enrol
+              </p>
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white">
+                ₹0
+              </p>
+              <p className="mt-1 text-xs text-white/80">within 48 hours</p>
+            </div>
           </div>
           <div className="mt-7 flex flex-wrap gap-3">
             <a

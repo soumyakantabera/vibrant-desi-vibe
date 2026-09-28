@@ -51,7 +51,7 @@ const ENGLISH_COURSES: NavItem[] = [
     to: "/course-demo-session",
     label: "Demo Session",
     icon: "play",
-    desc: "90 min · ₹199 · If you join, it costs you nothing.",
+    desc: "₹199 · 90 min · If you join, it costs you nothing.",
   },
 ];
 
@@ -100,8 +100,12 @@ export function Nav() {
               <span>Don’t buy the course blind. If you join, it costs you nothing.</span>
               <span className="demo-ribbon-cta inline-flex items-center gap-2 rounded-full bg-ink py-1 pl-3 pr-1 text-[12px] sm:text-[13px] font-extrabold text-white">
                 <span>Book the Demo Class</span>
-                <span className="demo-ribbon-price rounded-full bg-sunshine px-2.5 py-0.5 text-ink">
-                  ₹199
+                <span className="demo-ribbon-price inline-flex items-center gap-1.5 rounded-full bg-sunshine py-0.5 pl-2.5 pr-2 text-ink">
+                  <span className="text-[15px] leading-none">₹199</span>
+                  <span className="text-left text-[10px] font-bold leading-tight">
+                    90 min
+                    <span className="block font-semibold opacity-80">tax included</span>
+                  </span>
                 </span>
               </span>
             </span>
