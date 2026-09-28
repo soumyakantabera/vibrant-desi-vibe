@@ -90,18 +90,18 @@ export function Nav() {
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         {isHome && (
           <Link to="/course-demo-session" className="demo-ribbon">
-            <span className="container-x flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-3 py-1 text-center text-[12.5px] font-display font-bold leading-none sm:px-7 sm:text-[13px]">
-              <span className="leading-tight">
+            <span className="demo-ribbon-inner container-x">
+              <span className="demo-ribbon-line">
                 Don’t buy the course blind. If you join, it costs you nothing.
               </span>
-              <span className="demo-ribbon-cta inline-flex max-w-full flex-wrap items-center justify-center gap-1 rounded-full bg-ink py-0.5 pl-2.5 pr-0.5 text-[12px] font-extrabold leading-none text-white">
-                <span className="px-0.5">Book the Demo Class</span>
-                <span className="demo-ribbon-price inline-flex items-center gap-1 rounded-full bg-sunshine px-2 py-0.5 leading-none text-ink">
+              <span className="demo-ribbon-cta">
+                <span>Book the Demo Class</span>
+                <span className="demo-ribbon-price">
                   <span>₹199</span>
-                  <span className="text-[10px] font-bold">90 min</span>
+                  <span className="demo-ribbon-mins">90 min</span>
                 </span>
-                <span className="demo-ribbon-zero inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-semibold leading-none">
-                  <span className="font-extrabold">₹0</span>
+                <span className="demo-ribbon-zero">
+                  <span>₹0</span>
                   <span>if you enrol · 48 hrs</span>
                 </span>
               </span>

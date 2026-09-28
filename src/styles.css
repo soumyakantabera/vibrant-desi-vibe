@@ -535,35 +535,100 @@ section > .container-x {
   color: #ffffff !important;
 }
 
-/* Homepage header ribbon — peach into teal, dark type on both ends */
+/* Homepage header ribbon — peach into teal. Thin bar, price still the loudest chip. */
 .demo-ribbon {
+  --ribbon-ink: #0b1f14;
+  --ribbon-chip: #14200a;
+  --ribbon-price: #f5b700;
   display: block;
   background: linear-gradient(90deg, #ffc4a8 0%, #f7d0be 42%, #7ed9cc 100%);
-  color: #0b1f14;
+  color: var(--ribbon-ink);
+  font-family: var(--font-display);
   text-decoration: none;
 }
-.demo-ribbon,
-.demo-ribbon span,
-.demo-ribbon svg {
-  color: #0b1f14;
+.demo-ribbon:hover {
+  background: linear-gradient(90deg, #ffb89a 0%, #f3c4ae 42%, #6dcec0 100%);
 }
-.demo-ribbon .demo-ribbon-cta,
-.demo-ribbon .demo-ribbon-cta span {
+.demo-ribbon:focus-visible {
+  outline: 2px solid var(--ribbon-chip);
+  outline-offset: -2px;
+}
+.demo-ribbon-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem 0.55rem;
+  padding: 0.28rem 0.75rem;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.demo-ribbon-line {
+  color: var(--ribbon-ink);
+}
+.demo-ribbon-cta {
+  display: inline-flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  border-radius: 999px;
+  background: var(--ribbon-chip);
+  padding: 2px 2px 2px 10px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+.demo-ribbon-cta,
+.demo-ribbon-cta > span,
+.demo-ribbon-zero,
+.demo-ribbon-zero span {
   color: #ffffff;
 }
-.demo-ribbon .demo-ribbon-cta .demo-ribbon-price,
-.demo-ribbon .demo-ribbon-cta .demo-ribbon-price span {
-  color: #14200a;
+.demo-ribbon-price {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  border-radius: 999px;
+  background: var(--ribbon-price);
+  padding: 3px 8px;
+  color: var(--ribbon-chip);
+}
+.demo-ribbon-price,
+.demo-ribbon-price span {
+  color: var(--ribbon-chip);
   background: transparent;
 }
-.demo-ribbon .demo-ribbon-cta .demo-ribbon-price {
-  background: #f5b700;
+.demo-ribbon-price {
+  background: var(--ribbon-price);
 }
-.demo-ribbon svg {
-  stroke: currentColor;
+.demo-ribbon-mins {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  opacity: 0.8;
 }
-.demo-ribbon:hover {
-  filter: saturate(1.08) brightness(0.98);
+.demo-ribbon-zero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 2px 8px 2px 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.demo-ribbon-zero span:first-child {
+  font-weight: 800;
+}
+@media (min-width: 640px) {
+  .demo-ribbon-inner {
+    font-size: 13px;
+    padding-top: 0.32rem;
+    padding-bottom: 0.32rem;
+  }
 }
 @media (max-width: 639px) {
   .demo-ribbon .container-x {
