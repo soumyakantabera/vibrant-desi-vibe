@@ -16,6 +16,7 @@ import { Route as BookFreeDemoRouteImport } from './routes/book-free-demo'
 import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
+import { Route as CourseDemoSessionRouteImport } from './routes/course-demo-session'
 import { Route as CourseInteractiveSpeakingRouteImport } from './routes/course-interactive-speaking'
 import { Route as CourseInterviewPreparationRouteImport } from './routes/course-interview-preparation'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
@@ -98,6 +99,11 @@ const CourseBusinessEnglishRoute = CourseBusinessEnglishRouteImport.update({
 const CourseCareerCounsellingRoute = CourseCareerCounsellingRouteImport.update({
   id: '/course-career-counselling',
   path: '/course-career-counselling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CourseDemoSessionRoute = CourseDemoSessionRouteImport.update({
+  id: '/course-demo-session',
+  path: '/course-demo-session',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CourseInteractiveSpeakingRoute =
@@ -377,6 +383,7 @@ export interface FileRoutesByFullPath {
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
+  '/course-demo-session': typeof CourseDemoSessionRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
@@ -433,6 +440,7 @@ export interface FileRoutesByTo {
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
+  '/course-demo-session': typeof CourseDemoSessionRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
@@ -490,6 +498,7 @@ export interface FileRoutesById {
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
+  '/course-demo-session': typeof CourseDemoSessionRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
@@ -548,6 +557,7 @@ export interface FileRouteTypes {
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
+    | '/course-demo-session'
     | '/course-interactive-speaking'
     | '/course-interview-preparation'
     | '/course-spoken-english'
@@ -604,6 +614,7 @@ export interface FileRouteTypes {
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
+    | '/course-demo-session'
     | '/course-interactive-speaking'
     | '/course-interview-preparation'
     | '/course-spoken-english'
@@ -660,6 +671,7 @@ export interface FileRouteTypes {
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
+    | '/course-demo-session'
     | '/course-interactive-speaking'
     | '/course-interview-preparation'
     | '/course-spoken-english'
@@ -717,6 +729,7 @@ export interface RootRouteChildren {
   ChildProtectionRoute: typeof ChildProtectionRoute
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
+  CourseDemoSessionRoute: typeof CourseDemoSessionRoute
   CourseInteractiveSpeakingRoute: typeof CourseInteractiveSpeakingRoute
   CourseInterviewPreparationRoute: typeof CourseInterviewPreparationRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
@@ -815,6 +828,13 @@ declare module '@tanstack/react-router' {
       path: '/course-career-counselling'
       fullPath: '/course-career-counselling'
       preLoaderRoute: typeof CourseCareerCounsellingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-demo-session': {
+      id: '/course-demo-session'
+      path: '/course-demo-session'
+      fullPath: '/course-demo-session'
+      preLoaderRoute: typeof CourseDemoSessionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-interactive-speaking': {
@@ -1158,6 +1178,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChildProtectionRoute: ChildProtectionRoute,
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
+  CourseDemoSessionRoute: CourseDemoSessionRoute,
   CourseInteractiveSpeakingRoute: CourseInteractiveSpeakingRoute,
   CourseInterviewPreparationRoute: CourseInterviewPreparationRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,

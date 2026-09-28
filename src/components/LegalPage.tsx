@@ -52,7 +52,7 @@ export function LegalPage({ path }: { path: LegalDoc["path"] }) {
             Rights under Indian law that cannot be waived still apply.
           </p>
           {doc.sections.map((s) => (
-            <section key={s.heading} className="mb-9">
+            <section key={s.heading} id={s.id} className="mb-9 scroll-mt-28">
               <h2 className="text-xl md:text-2xl font-display font-extrabold text-ink mb-3">
                 {s.heading}
               </h2>

@@ -1,0 +1,233 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Layout } from "@/components/Layout";
+import { Icon } from "@/components/Icon";
+import { SmartImage } from "@/components/SmartImage";
+import { PaymentTrust } from "@/components/PaymentTrust";
+import { courseFaqs, courseSeo } from "@/components/CoursePage";
+import { COURSES } from "@/lib/courses";
+import { DEMO_SESSION } from "@/lib/demo-session";
+import { waDirect } from "@/lib/whatsapp";
+
+const d = COURSES["demo-session"];
+
+export const Route = createFileRoute("/course-demo-session")({
+  component: DemoSessionPage,
+  head: () => courseSeo(d),
+});
+
+const STEPS = [
+  {
+    n: "1",
+    title: "Pay ₹199",
+    body: "Inclusive of taxes. We send the payment link on WhatsApp. This holds a seat in a live batch.",
+  },
+  {
+    n: "2",
+    title: "Message us",
+    body: "Contact us after you pay. We schedule the session within 72 hours of payment. No message, no seat.",
+  },
+  {
+    n: "3",
+    title: "Sit the class",
+    body: "90 minutes. Real teacher. Real batch of about 6. You see the session from the front row, not a brochure.",
+  },
+  {
+    n: "4",
+    title: "Enrol if it fits",
+    body: "Take admission within 48 hours — that course, or any course we offer — and the ₹199 comes off the fee.",
+  },
+];
+
+function DemoSessionPage() {
+  const enrol = waDirect(DEMO_SESSION.enrolMessage);
+  const faqs = courseFaqs(d);
+
+  return (
+    <Layout footerImage={d.footerImage}>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <SmartImage
+            src={d.heroImage}
+            alt="Live online English class in session"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/80 to-[#8F332A]/75" />
+        </div>
+        <div className="container-x py-14 md:py-24">
+          <Link
+            to="/english-career"
+            className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline"
+          >
+            <Icon name="arrow-right" size={14} className="rotate-180" /> Courses
+          </Link>
+          <p className="eyebrow eyebrow-white mt-4">For people who are serious</p>
+          <h1 className="mt-3 max-w-3xl text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
+            Demo Session.
+            <span className="block text-sunshine">If you join, it costs you nothing.</span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-base md:text-lg text-white">
+            90 minutes in a real batch, in front of our teacher. Not a sales call. Not a recording.
+            ₹199 to sit the class. Take admission within 48 hours — in that course, or any course we
+            offer — and the ₹199 is adjusted against your fee.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2 text-sm font-display font-bold">
+            <span className="inline-flex items-center gap-2 rounded-full bg-sunshine px-3 py-1.5 text-ink">
+              <Icon name="rupee" size={14} /> ₹199 · tax included
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-cream/10 border border-cream/20 px-3 py-1.5 text-white">
+              <Icon name="clock" size={14} className="text-sage" /> 90 minutes
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-cream/10 border border-cream/20 px-3 py-1.5 text-white">
+              <Icon name="users" size={14} className="text-sage" /> Live batch
+            </span>
+          </div>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href={enrol}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-sun btn-lg"
+            >
+              <Icon name="play" size={18} /> Enrol for ₹199
+            </a>
+            <a href={enrol} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
+              Schedule on WhatsApp
+            </a>
+          </div>
+          <p className="mt-3 max-w-xl text-sm font-semibold text-white/95">
+            Pay, then message us. We place you within 72 hours of payment.
+          </p>
+          <PaymentTrust tone="dark" className="mt-4" />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-x grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+          <div>
+            <p className="eyebrow eyebrow-sun">Why ₹199 is not the price</p>
+            <h2 className="mt-3 text-3xl md:text-4xl text-ink">
+              Serious about a course? This session is free.
+            </h2>
+            <p className="mt-4 text-ink/85 leading-relaxed">
+              The ₹199 only stays if you look and leave. Join the course you just sat, or any course
+              we currently offer, within 48 hours of the class, and we take ₹199 off that fee. You
+              saw the teacher. You saw the batch. You did not pay extra for the privilege.
+            </p>
+            <p className="mt-3 text-sm text-ink/70">
+              The written rule is in our{" "}
+              <Link
+                to="/terms"
+                hash="demo-session"
+                className="font-semibold text-brand-deep underline"
+              >
+                Terms
+              </Link>
+              .
+            </p>
+          </div>
+          <SmartImage
+            src={d.midImage}
+            alt="Small live batch in an online English class"
+            className="rounded-3xl shadow-lg h-[320px] w-full"
+            sizes="(min-width: 1024px) 40vw, 100vw"
+          />
+        </div>
+      </section>
+
+      <section className="section bg-brand-soft/40">
+        <div className="container-x">
+          <h2 className="text-2xl md:text-3xl text-ink">How you get the seat</h2>
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {STEPS.map((step) => (
+              <article key={step.n} className="card-soft">
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand text-white font-display font-extrabold">
+                  {step.n}
+                </span>
+                <h3 className="mt-3 font-display font-bold text-ink">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/85">{step.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-x grid lg:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl text-ink">What you will see</h2>
+            <ul className="mt-5 grid gap-3">
+              {d.outcomes.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-white p-4"
+                >
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-white">
+                    <Icon name="check" size={14} />
+                  </span>
+                  <span className="text-sm leading-relaxed text-ink/85">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid gap-4">
+            {d.modules.map((mod, i) => (
+              <article key={mod.title} className="card-soft">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-indigo-pop/10 font-display font-extrabold text-indigo-pop">
+                    {i + 1}
+                  </span>
+                  <h3 className="font-display font-bold text-ink">{mod.title}</h3>
+                </div>
+                <ul className="mt-3 space-y-2 text-sm text-ink/90">
+                  {mod.items.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <Icon name="check" size={14} className="mt-0.5 shrink-0 text-brand" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-cream" id="faq">
+        <div className="container-x max-w-3xl">
+          <h2 className="text-2xl md:text-3xl text-ink">Before you pay</h2>
+          <div className="mt-6 grid gap-3">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="card-soft" open>
+                <summary className="cursor-pointer list-none font-display font-bold text-ink">
+                  {faq.q}
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-ink/85">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+        <div className="container-x relative text-center text-cream">
+          <h2 className="text-3xl md:text-4xl text-cream">See the class. Then decide.</h2>
+          <p className="mx-auto mt-3 max-w-xl text-white">
+            ₹199 for 90 minutes with the teacher. Nothing extra if you enrol within 48 hours.
+          </p>
+          <a
+            href={enrol}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-sun btn-lg mt-6"
+          >
+            <Icon name="play" size={18} /> Enrol for the Demo Session
+          </a>
+          <PaymentTrust tone="dark" align="center" className="mt-5" />
+        </div>
+      </section>
+    </Layout>
+  );
+}

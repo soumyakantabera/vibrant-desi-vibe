@@ -47,6 +47,12 @@ const ENGLISH_COURSES: NavItem[] = [
     icon: "target",
     desc: "3 × 60 min · ₹1,999 total",
   },
+  {
+    to: "/course-demo-session",
+    label: "Demo Session",
+    icon: "play",
+    desc: "90 min · ₹199 · nothing if you enrol",
+  },
 ];
 
 export function Nav() {

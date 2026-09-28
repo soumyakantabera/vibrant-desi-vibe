@@ -1,4 +1,9 @@
-export type LegalSection = { heading: string; paragraphs: string[]; bullets?: string[] };
+export type LegalSection = {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+  id?: string;
+};
 
 export type LegalDoc = {
   path: "/privacy" | "/terms" | "/refunds" | "/child-protection";
@@ -186,7 +191,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     h1: "Terms of Use",
     standfirst:
       "These terms govern use of this website, the free consultation, and enrolment in Learn With Smile live online classes. Please read them before you pay a fee.",
-    updated: LEGAL_UPDATED,
+    updated: "2026-09-28",
     sections: [
       {
         heading: "Agreement",
@@ -199,6 +204,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Who we are and what we offer",
         paragraphs: [
           "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes: Spoken English, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
+          "We also offer a paid Demo Session: one 90-minute seat in a live batch, at ₹199 inclusive of taxes, for a learner who wants to see a real class before enrolling. It is not a sixth programme and it is not the free consultation. The fee rule for that session is only in the Demo Session section below.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
       },
@@ -223,6 +229,17 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Get Free Consultation is a 100% free, small-batch counselling session with personalised advice. We name the bottleneck, show the course and the fee in writing, then you decide. There is no payment, card or UPI to book. Messaging us does not create an obligation to enrol. We hear each person's requirements one by one. It is not a class.",
           "In the session we diagnose your English bottleneck, discuss courses and curriculum, understand your requirements one by one, answer the questions you bring, and recommend one course — or tell you to stay free. Fee, duration, batch size and IST slot come in writing on WhatsApp.",
           "The consultation is not a class, not a sample of the paid hour, and not a placement test with a score. You will not receive speaking minutes on a microphone in the consultation. Those minutes are the paid room. People who search for a free demo class are offered this counselling instead.",
+        ],
+      },
+      {
+        id: "demo-session",
+        heading: "Demo Session",
+        paragraphs: [
+          "The Demo Session is a paid seat in a live batch. It lasts 90 minutes. The fee is ₹199, inclusive of taxes. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
+          "After payment you must contact us on WhatsApp (+91 96744 79949) to schedule the session. The session has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
+          "The Demo Session fee is not refundable. It is reimbursable in one case only: within 48 hours after the demo class, you take admission in the course whose session you attended, or in any other course we are currently offering. Reimbursement means the ₹199 is adjusted against that course fee. It is not paid back in cash to your bank, card or UPI, and it is not available for any other reason.",
+          "If you do not take admission within those 48 hours, the ₹199 is not reimbursed. Missing the session, joining late, or changing your mind does not create a refund or a reimbursement.",
+          "Nothing in this section removes a right under Indian law that cannot be waived.",
         ],
       },
       {

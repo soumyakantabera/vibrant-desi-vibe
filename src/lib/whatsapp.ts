@@ -51,3 +51,13 @@ export function withConsultAsk(message: string): string {
 export function waLink(message: string) {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(withConsultAsk(message))}`;
 }
+
+/**
+ * A WhatsApp link that is sent as written.
+ * Use this for the paid Demo Session. `waLink` rewrites every message into a
+ * free-consultation prefill, which is the wrong ask for someone enrolling.
+ */
+export function waDirect(message: string) {
+  const text = message.trim().replace(/[.?!]+$/, "");
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(`${text}.`)}`;
+}

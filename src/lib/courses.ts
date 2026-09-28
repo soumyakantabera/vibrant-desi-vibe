@@ -489,4 +489,82 @@ export const COURSES: Record<string, CourseData> = {
     metaDescription:
       "Interview Preparation in English: 2 months, live batch of approximately 6, ₹1,999/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Kolkata teacher, pan-India.",
   },
+  "demo-session": {
+    slug: "demo-session",
+    title: "Demo Session",
+    tagline:
+      "90 minutes in a real live batch, in front of our teacher. ₹199, inclusive of taxes. Enrol in any course we offer within 48 hours and that fee is adjusted — if you are serious, this costs you nothing.",
+    category: "See a real class",
+    categoryColor: "brand",
+    icon: "play",
+    heroImage: IMG.heroClass,
+    midImage: IMG.groupClass,
+    footerImage: IMG.teacherWoman,
+    duration: "90 minutes",
+    durationQualifier: "One live class · not a sales call",
+    format: "Live batch · approximately 6 learners",
+    price: "₹199",
+    liveNote:
+      "✓ Pay ₹199 · ✓ Message us to schedule within 72 hours · ✓ 90 minutes with the teacher · ✓ Fee adjusted if you enrol within 48 hours",
+    outcomes: [
+      "Sit in a real batch, not a private pitch",
+      "See how the teacher corrects, live",
+      "Hear what a class of about 6 actually sounds like",
+      "Decide the room with your own ears",
+      "The ₹199 comes off the course fee if you enrol within 48 hours",
+    ],
+    modules: [
+      {
+        title: "You pay, then you write to us",
+        items: [
+          "₹199, inclusive of taxes, on the payment link we send",
+          "Message WhatsApp as soon as you have paid",
+          "We schedule the seat within 72 hours of payment",
+          "No message, no seat — contact us to be placed",
+        ],
+      },
+      {
+        title: "You sit the real hour",
+        items: [
+          "90 minutes with the batch and the teacher",
+          "The class runs as it does for enrolled learners",
+          "You see speaking time, correction and pace",
+          "About 6 learners — not a hall, not a recording",
+        ],
+      },
+      {
+        title: "Serious learners pay nothing extra",
+        items: [
+          "Take admission within 48 hours after the session",
+          "That course, or any course we currently offer",
+          "The ₹199 is adjusted against the course fee",
+          "The written rule is in our Terms",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What do I actually sit in?",
+        a: "A real live class. 90 minutes, with our teacher, in a batch of about 6. It is the session enrolled learners attend — not a counselling call and not a recording.",
+      },
+      {
+        q: "Who should pay for this?",
+        a: "Someone who is serious about seeing the teaching before a longer course. If you already know you want a room, message us for a free consultation and enrol directly. This seat is for the person who wants to watch the class happen.",
+      },
+      {
+        q: "Does it cost anything if I join a course?",
+        a: "₹199, inclusive of taxes, holds the seat. Take admission within 48 hours after the session — in the course you attended, or in any other course we currently offer — and that ₹199 is adjusted against the course fee. If you are serious, the session costs you nothing. The written rule is at https://www.learnwithsmile.app/terms#demo-session.",
+      },
+      {
+        q: "When is the class?",
+        a: "You choose by contacting us. After payment, message WhatsApp. We schedule the session within 72 hours of payment. We cannot place you if you do not write.",
+      },
+      {
+        q: "Is this the free consultation?",
+        a: "No. Get Free Consultation is counselling: we name the bottleneck and recommend a course. It has no fee and it is not a class. The Demo Session is the paid 90-minute seat in the batch.",
+      },
+    ],
+    metaDescription:
+      "Sit in a real live batch for 90 minutes with our teacher. ₹199, inclusive of taxes. Enrol in any current course within 48 hours and that fee is adjusted.",
+  },
 };

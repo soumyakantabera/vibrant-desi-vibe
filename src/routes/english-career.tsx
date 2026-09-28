@@ -11,7 +11,8 @@ import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
+import { CHAT_CTA, DEMO_CTA, waDirect } from "@/lib/whatsapp";
+import { DEMO_SESSION } from "@/lib/demo-session";
 
 type CoursePath = `/course-${CourseSlug}`;
 
@@ -22,7 +23,10 @@ export const Route = createFileRoute("/english-career")({
     const head = pageHead("/english-career");
     // Course hub: an ItemList of every live programme gives Google (and AI
     // answer engines) the whole catalogue with prices from a single fetch.
-    const hubSlugs = COURSE_CATEGORIES.flatMap((g) => [...g.slugs]);
+    const hubSlugs = [
+      ...COURSE_CATEGORIES.flatMap((g) => [...g.slugs]),
+      DEMO_SESSION.slug,
+    ];
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -213,6 +217,60 @@ function Page() {
                 </Reveal>
               </section>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-sunshine/25" id="demo-session">
+        <div className="container-x">
+          <div className="grid items-center gap-8 rounded-[28px] border border-sunshine/50 bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
+            <div className="min-w-0">
+              <p className="eyebrow eyebrow-sun">Not a sixth course · a seat in the real one</p>
+              <h2 className="mt-3 text-3xl md:text-4xl text-ink">
+                Demo Session. Serious? Then it costs nothing.
+              </h2>
+              <p className="mt-4 text-ink/85 leading-relaxed">
+                Want to see the teacher, in a batch, before you commit? Sit one live class for 90
+                minutes. ₹199, inclusive of taxes. Take admission within 48 hours — in that course,
+                or any course we currently offer — and the ₹199 is adjusted against your fee.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm text-ink/85">
+                <li className="flex gap-2">
+                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
+                  A real batch of about 6. Not a sales call.
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
+                  Message us after you pay. We schedule you within 72 hours.
+                </li>
+                <li className="flex gap-2">
+                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
+                  If you enrol in time, you did not pay extra to look.
+                </li>
+              </ul>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link to="/course-demo-session" className="btn btn-sun btn-lg">
+                  <Icon name="play" size={18} /> See the Demo Session
+                </Link>
+                <a
+                  href={waDirect(DEMO_SESSION.enrolMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-wa btn-lg"
+                >
+                  Enrol for ₹199
+                </a>
+              </div>
+            </div>
+            <div className="rounded-3xl bg-ink px-6 py-8 text-cream text-center">
+              <p className="text-xs font-display font-bold uppercase tracking-[0.14em] text-sunshine">
+                One class
+              </p>
+              <p className="mt-2 font-display text-5xl font-extrabold text-sunshine">₹199</p>
+              <p className="mt-1 text-sm text-white/85">90 minutes · tax included</p>
+              <p className="mt-4 text-lg font-display font-extrabold">₹0 if you enrol</p>
+              <p className="mt-1 text-sm text-white/80">within 48 hours of the session</p>
+            </div>
           </div>
         </div>
       </section>

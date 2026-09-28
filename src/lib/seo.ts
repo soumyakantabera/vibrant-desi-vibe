@@ -1755,6 +1755,23 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
+  "demo-session": {
+    title: "Demo Session | 90 min Live Batch, ₹199",
+    description:
+      "Sit in a real live batch for 90 minutes with our teacher. ₹199, inclusive of taxes. Enrol in any current course within 48 hours and that fee is adjusted.",
+    shortTitle: "Demo Session",
+    keywords: [
+      "demo session spoken english",
+      "sit in a live english class india",
+      "paid trial english class india",
+      "see spoken english class before joining",
+    ],
+    ogImage: "/og/default.jpg",
+    dateModified: "2026-09-28",
+    summary:
+      "Demo Session — one 90-minute seat in a live batch of about 6, ₹199 inclusive of taxes. Not a sixth programme and not the free consultation. Schedule within 72 hours of payment by contacting WhatsApp. If the learner takes admission within 48 hours, the fee is adjusted. The fee rule is only on /terms.",
+    extraFaqs: [],
+  },
 };
 
 /* --------------------------------------------------------------------------
@@ -1878,7 +1895,9 @@ export function organizationLd() {
             description: CONSULTATION.what,
           },
         },
-        ...Object.keys(COURSE_SEO).map((slug) => ({
+        ...Object.keys(COURSE_SEO)
+          .filter((slug) => slug !== "demo-session")
+          .map((slug) => ({
           "@type": "Offer",
           url: abs(`/course-${slug}`),
           itemOffered: {
@@ -1969,7 +1988,9 @@ export function consultationServiceLd() {
       availability: "https://schema.org/InStock",
       eligibleRegion: { "@type": "Country", name: "India" },
     },
-    isRelatedTo: Object.keys(COURSE_SEO).map((slug) => ({
+    isRelatedTo: Object.keys(COURSE_SEO)
+      .filter((slug) => slug !== "demo-session")
+      .map((slug) => ({
       "@type": "Course",
       name: COURSE_SEO[slug].shortTitle,
       url: abs(`/course-${slug}`),
