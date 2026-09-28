@@ -551,6 +551,10 @@ section > .container-x {
 .demo-ribbon .demo-ribbon-cta span {
   color: #ffffff;
 }
+.demo-ribbon .demo-ribbon-cta .demo-ribbon-price {
+  color: #14200a;
+  background: #f5b700;
+}
 .demo-ribbon svg {
   stroke: currentColor;
 }

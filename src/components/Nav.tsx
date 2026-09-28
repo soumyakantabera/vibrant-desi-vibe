@@ -98,8 +98,11 @@ export function Nav() {
           <Link to="/course-demo-session" className="demo-ribbon">
             <span className="container-x flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 py-2 text-center text-[13px] sm:text-sm font-display font-extrabold leading-snug">
               <span>Don’t buy the course blind. If you join, it costs you nothing.</span>
-              <span className="demo-ribbon-cta inline-flex items-center rounded-full bg-ink px-3 py-1 text-[12px] sm:text-[13px] font-extrabold text-white">
-                Book the Demo Class @ Rs. 199/-
+              <span className="demo-ribbon-cta inline-flex items-center gap-2 rounded-full bg-ink py-1 pl-3 pr-1 text-[12px] sm:text-[13px] font-extrabold text-white">
+                <span>Book the Demo Class</span>
+                <span className="demo-ribbon-price rounded-full bg-sunshine px-2.5 py-0.5 text-ink">
+                  ₹199
+                </span>
               </span>
             </span>
           </Link>
