@@ -282,7 +282,7 @@ for (const [from, to] of [["founder", "educator"]]) {
   const pathname = "/course-career-counselling";
   const ssrHtml = await renderPath(pathname);
   const page = buildPage(pathname, ssrHtml);
-  const canonical = expectedCanonical(pathname);
+  const canonical = "https://www.learnwithsmile.app/course-career-counselling";
   if (!page.includes(`rel="canonical" href="${canonical}"`)) {
     throw new Error(`prerender: ${pathname} is missing its canonical`);
   }
