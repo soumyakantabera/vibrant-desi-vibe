@@ -374,7 +374,7 @@ export const BLOG_POSTS: BlogPost[] = [
     relatedCourses: ["/course-interview-preparation", "/course-spoken-english"],
     keywords: [
       "bpo to client facing role",
-      "career counselling english india",
+      "bpo to client facing english",
       "back office to client facing english",
     ],
   },

@@ -90,7 +90,6 @@ export const body: ArticleBody = [
       ["Interactive Speaking", "3 months", "₹1,199/month"],
       ["Business English", "3 months", "₹1,999/month"],
       ["Interview Preparation", "2 months", "₹1,999/month"],
-      ["Career Counselling", "3 × 60-min 1:1", "₹1,999"],
     ],
   },
   {

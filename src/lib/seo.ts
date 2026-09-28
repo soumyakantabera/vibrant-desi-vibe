@@ -369,7 +369,7 @@ export const INTERVIEW_KEYWORDS = [
   "best online spoken english course for job interviews india",
 ];
 
-/** Product — 1:1 Career Counselling. */
+/** Search phrases that used to land on a course we do not offer. */
 export const CAREER_KEYWORDS = [
   "career counselling online india",
   "career guidance for students india",
@@ -377,7 +377,6 @@ export const CAREER_KEYWORDS = [
   "which career is right for me india",
   "career change guidance india",
   "one to one career counselling online",
-  "career counselling 1999 rupees",
 ];
 
 /** Audience long-tail — who searches, not the product name. */

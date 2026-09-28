@@ -309,60 +309,6 @@ export const COURSES: Record<string, CourseData> = {
     metaDescription:
       "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,199/month, inclusive of taxes.",
   },
-  "career-counselling": {
-    slug: "career-counselling",
-    title: "Career Counselling",
-    tagline:
-      "1:1 quality guidance — 3 × 60-min sessions for ₹1,999 total, inclusive of taxes. Strengths map, 3 career paths, 6-month action plan, resume and LinkedIn review.",
-    category: "Career Guidance",
-    categoryColor: "brand",
-    icon: "compass",
-    heroImage: IMG.careerCounselling,
-    midImage: IMG.womanOffice,
-    footerImage: IMG.studentLaptop,
-    duration: "3 sessions × 60 min",
-    format: "1:1 personalised",
-    price: "₹1,999 total",
-    outcomes: [
-      "Discover your strengths & interests",
-      "Shortlist 3 right-fit career paths",
-      "Get a 6-month action plan",
-      "Course/college recommendations",
-      "Resume + LinkedIn review",
-      "Clarity, not confusion",
-    ],
-    modules: [
-      {
-        title: "Discovery",
-        items: [
-          "Strengths inventory",
-          "Interest assessment",
-          "Values & lifestyle goals",
-          "Skill audit",
-        ],
-      },
-      {
-        title: "Mapping",
-        items: [
-          "3 career path comparison",
-          "Salary & growth research",
-          "Pros & cons grid",
-          "Reality check conversation",
-        ],
-      },
-      {
-        title: "Action Plan",
-        items: [
-          "6-month milestones",
-          "Course/college options",
-          "Networking targets",
-          "Weekly check-ins (optional)",
-        ],
-      },
-    ],
-    metaDescription:
-      "1:1 Career Counselling online — 3 × 60-min sessions · ₹1,999 total. Discover, map and act. Free consultation on WhatsApp.",
-  },
   "interview-preparation": {
     slug: "interview-preparation",
     title: "Interview Preparation",
@@ -454,8 +400,8 @@ export const COURSES: Record<string, CourseData> = {
         a: "Spoken English builds the sentence from zero. Interactive builds freeze-free talk. Interview Preparation assumes you can already talk and drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. If you cannot yet form a sentence, start with Spoken English at ₹999/month.",
       },
       {
-        q: "Is this the same as Career Counselling?",
-        a: "No. Interview Preparation is a live batch about how you sound when someone already invited you to the screen. We do not offer a separate career-counselling course.",
+        q: "Is there a separate career course?",
+        a: "No. Interview Preparation is a live batch about how you sound when someone already invited you to the screen. We do not offer career counselling.",
       },
       {
         q: "Do you guarantee I will get the job?",

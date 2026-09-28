@@ -285,7 +285,7 @@ function Page() {
         faqs={PAGES["/english-career"].faqs ?? []}
         eyebrow="Course FAQs"
         title="Choosing Between Our Courses"
-        subtitle="Spoken, Interactive, Workplace or Career Counselling? Start here."
+        subtitle="Spoken, Interactive, Workplace or Interview Preparation? Start here."
         waMessage="Hi, I want a free consultation to choose my spoken English course."
       />
 

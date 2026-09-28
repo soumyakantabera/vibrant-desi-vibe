@@ -92,7 +92,7 @@ export const body: ArticleBody = [
     items: [
       "**You describe the problem.** Shop, freeze, standup, HR screen, career change, visa form.",
       "**We name the bottleneck.** One sentence. Not three rooms.",
-      "**You leave with one recommendation** — Spoken, Interactive, Workplace, Interview Preparation, Career Counselling, sit IELTS with the test board, or stay free — plus fee, duration and IST slot in writing.",
+      "**You leave with one recommendation** — Spoken, Interactive, Workplace, Interview Preparation, sit IELTS with the test board, or stay free — plus fee, duration and IST slot in writing.",
       "**Every question you brought gets an answer.** Fees, GST, recordings, certificate, kids, refunds. If we cannot answer it, we say so.",
     ],
   },

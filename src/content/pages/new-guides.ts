@@ -405,7 +405,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "Spoken English, Interactive, Workplace and Career Counselling fees sit on the [India fees guide](/english-class-fees-india). Do not buy IELTS coaching to “get a better job in India” if no form asked for a band.",
+        text: "Spoken English, Interactive, Workplace and Interview Preparation fees sit on the [India fees guide](/english-class-fees-india). Do not buy IELTS coaching to “get a better job in India” if no form asked for a band.",
       },
       { t: "h2", text: "What is not included anywhere honest" },
       {

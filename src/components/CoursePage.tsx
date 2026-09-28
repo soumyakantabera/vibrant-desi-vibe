@@ -140,13 +140,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "Low-stakes practice ideas you can use between live classes.",
     },
   ],
-  "career-counselling": [
-    {
-      href: "/blog/bpo-to-client-facing-role-roadmap",
-      title: "BPO to client-facing role roadmap",
-      description: "A concrete example of turning communication growth into a career plan.",
-    },
-  ],
   "interview-preparation": [
     {
       href: "/blog/tell-me-about-yourself-in-60-seconds",
@@ -171,13 +164,11 @@ const TEACHER_NOTE: Record<string, string> = {
   "business-english":
     "The same teacher on every workplace hour. They learn how you sound on a client call.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
-  "career-counselling": "Three 1:1 sessions after they have read your background.",
   "interview-preparation":
     "The same teacher on every mock. They hear the freeze on the 60-second intro — and they mark it until it stops.",
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
-  const isCareerCounselling = data.slug === "career-counselling";
   const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary =
     data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
@@ -205,10 +196,8 @@ export function CoursePage({ data }: { data: CourseData }) {
         {
           tone: "coral",
           icon: SnapIcons.people,
-          big: data.snapshotBatchBig ?? (isCareerCounselling ? "1:1" : "Approx. 6 learners"),
-          small:
-            data.snapshotBatchSmall ??
-            (isCareerCounselling ? "Career guidance sessions" : "In this live course batch"),
+          big: data.snapshotBatchBig ?? "Approx. 6 learners",
+          small: data.snapshotBatchSmall ?? "In this live course batch",
         },
       ]}
       footer="Message Anytime · Replies 09:00–12:00 IST"
@@ -562,7 +551,7 @@ export function courseSeo(d: CourseData) {
     courseMode: "Online",
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity: d.slug === "career-counselling" ? 1 : 6,
+    maximumAttendeeCapacity: 6,
     instructor: {
       "@type": "Person",
       "@id": `${abs("/educator")}#person`,

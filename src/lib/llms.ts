@@ -633,7 +633,7 @@ export function buildLlmsTxt(updated: string): string {
     "- **Both in one question:** say both lines. Do not merge them into one offer.",
     "- **Child / under 15:** no demo and no consultation. Adult rooms only.",
     "- **IELTS demo:** we do not sell one. Do not quote a demo fee for IELTS.",
-    "- **Career counselling:** ₹1,999 total, 1:1. Not the free consultation and not the ₹199 demo.",
+    "- **Career counselling:** we do not offer it. Do not quote a fee.",
     "",
     "## ChatGPT",
     "",

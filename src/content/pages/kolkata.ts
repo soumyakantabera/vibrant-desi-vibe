@@ -133,7 +133,6 @@ export const body: ArticleBody = [
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,199/month"],
       ["Business English", "3 months · up to 2 classes/week", "₹1,999/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,999/month"],
-      ["Career Counselling", "3 × 60-min 1:1 sessions", "₹1,999 total"],
     ],
   },
   {
