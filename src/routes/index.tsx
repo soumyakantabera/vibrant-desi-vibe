@@ -311,7 +311,7 @@ function Home() {
             title="Choose the Goal You Need Now"
             subtitle="Spoken English, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
           />
-          <Reveal stagger className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2">
+          <Reveal stagger className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4">
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -814,7 +814,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
 
   return (
     <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[16/9]">
         <SmartImage
           src={visual.heroImage}
           alt={`${category.title} online courses in India`}
@@ -835,12 +835,12 @@ function CategoryCard({ category }: { category: CourseCategory }) {
           <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
             <Icon name={category.icon as IconName} size={16} />
           </span>
-          <h3 className="font-display text-base font-extrabold leading-tight text-ink sm:text-lg">
+          <h3 className="font-display text-sm font-extrabold leading-tight text-ink lg:text-[15px]">
             {category.title}
           </h3>
         </div>
 
-        <p className="mt-2 line-clamp-2 text-sm leading-snug text-ink/80">{category.description}</p>
+        <p className="mt-1.5 line-clamp-2 text-[13px] leading-snug text-ink/80">{category.description}</p>
 
         <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
           {category.slugs.map((slug) => {
@@ -860,7 +860,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
         <Link
           to={destination}
           hash={category.id}
-          className="mt-3.5 inline-flex min-h-10 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-2 text-center text-sm font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
+          className="mt-3 inline-flex min-h-9 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-1.5 text-center text-[13px] font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
         >
           {cta}
           <Icon name="arrow-right" size={14} />
