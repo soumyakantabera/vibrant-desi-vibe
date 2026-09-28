@@ -96,30 +96,24 @@ export function Nav() {
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         {isHome && (
           <Link to="/course-demo-session" className="demo-ribbon">
-            <span className="container-x flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 py-2 text-center text-[13px] sm:text-sm font-display font-extrabold leading-snug">
-              <span>Don’t buy the course blind. If you join, it costs you nothing.</span>
-              <span className="demo-ribbon-cta inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full bg-ink py-1 pl-3 pr-1 text-[12px] sm:text-[13px] font-extrabold text-white">
+            <span className="container-x flex flex-col items-center gap-1.5 px-3 py-2 text-center text-[13px] font-display font-extrabold leading-snug sm:px-7 sm:text-sm md:flex-row md:flex-wrap md:justify-center md:gap-x-2.5">
+              <span className="max-w-[18rem] sm:max-w-none">
+                Don’t buy the course blind. If you join, it costs you nothing.
+              </span>
+              <span className="demo-ribbon-cta flex w-full max-w-md flex-wrap items-center justify-center gap-1.5 rounded-2xl bg-ink px-2 py-1 text-[12px] font-extrabold text-white sm:w-auto sm:rounded-full sm:py-1 sm:pl-3 sm:pr-1 sm:text-[13px]">
                 <span>Book the Demo Class</span>
-                <span className="demo-ribbon-price inline-flex items-center gap-1.5 rounded-full bg-sunshine py-0.5 pl-2 pr-2 text-ink">
-                  <span className="text-left text-[9px] font-bold uppercase leading-tight tracking-wide">
-                    Pay
-                    <span className="block">now</span>
-                  </span>
+                <span className="demo-ribbon-price inline-flex items-center gap-1.5 rounded-full bg-sunshine px-2.5 py-1 text-ink">
                   <span className="text-[15px] leading-none">₹199</span>
                   <span className="text-left text-[10px] font-bold leading-tight">
                     90 min
-                    <span className="block font-semibold opacity-80">tax included</span>
+                    <span className="hidden font-semibold opacity-80 sm:block">tax included</span>
                   </span>
                 </span>
-                <span className="demo-ribbon-zero inline-flex items-center gap-1.5 rounded-full bg-white/10 py-0.5 pl-2 pr-2">
-                  <span className="text-left text-[9px] font-bold uppercase leading-tight tracking-wide">
-                    If you
-                    <span className="block">enrol</span>
-                  </span>
+                <span className="demo-ribbon-zero inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1">
                   <span className="text-[13px] leading-none">₹0</span>
                   <span className="text-left text-[10px] font-semibold leading-tight">
-                    within
-                    <span className="block">48 hours</span>
+                    if you enrol
+                    <span className="block">in 48 hrs</span>
                   </span>
                 </span>
               </span>

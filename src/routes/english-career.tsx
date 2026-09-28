@@ -241,25 +241,25 @@ function Page() {
                   If you enrol in time, you did not pay extra to look.
                 </li>
               </ul>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link to="/course-demo-session" className="btn btn-sun btn-lg">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link to="/course-demo-session" className="btn btn-sun btn-lg w-full sm:w-auto">
                   <Icon name="play" size={18} /> See the Demo Session
                 </Link>
                 <a
                   href={waDirect(DEMO_SESSION.enrolMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-wa btn-lg"
+                  className="btn btn-wa btn-lg w-full sm:w-auto"
                   data-cta-goal="whatsapp_demo"
                 >
                   <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
                 </a>
               </div>
             </div>
-            <div className="rounded-3xl bg-ink px-5 py-6 text-cream sm:px-6 sm:py-8">
-              <div className="grid grid-cols-2 gap-3 text-center">
+            <div className="rounded-3xl bg-ink px-4 py-5 text-cream sm:px-6 sm:py-8">
+              <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-4 text-center min-[420px]:gap-3">
                 <div>
-                  <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/70">
+                  <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/70">
                     Pay now
                   </p>
                   <p className="mt-2 font-display text-4xl font-extrabold text-sunshine sm:text-5xl">
@@ -267,8 +267,8 @@ function Page() {
                   </p>
                   <p className="mt-1 text-xs text-white/80">90 min · tax included</p>
                 </div>
-                <div className="border-l border-white/15">
-                  <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/70">
+                <div className="border-t border-white/15 pt-4 min-[420px]:border-t-0 min-[420px]:border-l min-[420px]:pt-0">
+                  <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/70">
                     If you enrol
                   </p>
                   <p className="mt-2 font-display text-4xl font-extrabold text-white sm:text-5xl">

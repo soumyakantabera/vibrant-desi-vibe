@@ -565,6 +565,12 @@ section > .container-x {
 .demo-ribbon:hover {
   filter: saturate(1.08) brightness(0.98);
 }
+@media (max-width: 639px) {
+  .demo-ribbon .container-x {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
 
 /* Reusable utilities */
 @layer components {

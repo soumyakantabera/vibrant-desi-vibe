@@ -72,32 +72,32 @@ function DemoSessionPage() {
             </div>
             <p className="mt-4 text-lg text-white max-w-2xl">{d.tagline}</p>
           </div>
-          <div className="mt-6 inline-flex max-w-full flex-wrap overflow-hidden rounded-2xl border border-white/15 bg-black/25 text-left">
+          <div className="mt-6 grid w-full max-w-md grid-cols-1 min-[420px]:grid-cols-2 overflow-hidden rounded-2xl border border-white/15 bg-black/25 text-left">
             <div className="px-4 py-3">
-              <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/75">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
                 Pay now
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine sm:text-4xl">
                 ₹199
               </p>
-              <p className="mt-1 text-xs text-white/80">90 min · inclusive of taxes</p>
+              <p className="mt-1 text-xs text-white/80">90 min · tax included</p>
             </div>
-            <div className="border-t border-white/15 px-4 py-3 sm:border-t-0 sm:border-l">
-              <p className="text-[11px] font-display font-bold uppercase tracking-[0.14em] text-white/75">
+            <div className="border-t border-white/15 px-4 py-3 min-[420px]:border-t-0 min-[420px]:border-l">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
                 If you enrol
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white sm:text-4xl">
                 ₹0
               </p>
               <p className="mt-1 text-xs text-white/80">within 48 hours</p>
             </div>
           </div>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-7">
             <a
               href={enrol}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-wa btn-lg"
+              className="btn btn-wa btn-lg w-full sm:w-auto"
               data-cta-goal="whatsapp_demo"
             >
               <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
@@ -228,7 +228,7 @@ function DemoSessionPage() {
             href={enrol}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-wa btn-lg mt-6"
+            className="btn btn-wa btn-lg mt-6 w-full sm:w-auto"
             data-cta-goal="whatsapp_demo"
           >
             <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
