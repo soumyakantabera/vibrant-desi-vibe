@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Icon } from "@/components/Icon";
+import { BrandIcon } from "@/components/BrandIcon";
 import { SmartImage } from "@/components/SmartImage";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { courseFaqs, courseSeo } from "@/components/CoursePage";
@@ -96,12 +97,10 @@ function DemoSessionPage() {
               href={enrol}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-sun btn-lg"
+              className="btn btn-wa btn-lg"
+              data-cta-goal="whatsapp_demo"
             >
-              <Icon name="play" size={18} /> Enrol for ₹199
-            </a>
-            <a href={enrol} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
-              Schedule on WhatsApp
+              <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
             </a>
           </div>
           <p className="mt-3 max-w-xl text-sm font-semibold text-white/95">
@@ -229,9 +228,10 @@ function DemoSessionPage() {
             href={enrol}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-sun btn-lg mt-6"
+            className="btn btn-wa btn-lg mt-6"
+            data-cta-goal="whatsapp_demo"
           >
-            <Icon name="play" size={18} /> Enrol for the Demo Session
+            <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
           </a>
           <PaymentTrust tone="dark" align="center" className="mt-5" />
         </div>

@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { BrandIcon } from "@/components/BrandIcon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
@@ -249,8 +250,9 @@ function Page() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-wa btn-lg"
+                  data-cta-goal="whatsapp_demo"
                 >
-                  Enrol for ₹199
+                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
                 </a>
               </div>
             </div>
