@@ -86,7 +86,7 @@ export const CONSULTATION_WALK_AWAY: {
     icon: "check",
     color: "sunshine",
     title: "One course, not three",
-    body: "Spoken, Interactive, Workplace, Interview Preparation, or 1:1 Career Counselling — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
+    body: "Spoken, Interactive, Workplace or Interview Preparation — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
   },
   {
     icon: "book",
@@ -159,13 +159,6 @@ export const CONSULTATION_BOTTLENECKS: {
     weName: "Interview English is the gap",
     weRecommend: "Interview Preparation — 2 months, ₹1,999/mo, recorded mocks",
     href: "/course-interview-preparation",
-  },
-  {
-    icon: "compass",
-    ifThis: "The question is which career, not which tense",
-    weName: "Career choice is the gap",
-    weRecommend: "1:1 Career Counselling — ₹1,999 total, 3 × 60 min",
-    href: "/course-career-counselling",
   },
   {
     icon: "school",
@@ -291,7 +284,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,199/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). Career choice → paid 1:1 Career Counselling (₹1,999 total) — not the free consultation. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,199/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Is the free consultation a full English class?",

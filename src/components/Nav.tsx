@@ -42,12 +42,6 @@ const ENGLISH_COURSES: NavItem[] = [
     desc: "2 months · ₹1,999/month, inclusive of taxes",
   },
   {
-    to: "/course-career-counselling",
-    label: "Career Counselling",
-    icon: "target",
-    desc: "3 × 60 min · ₹1,999 total",
-  },
-  {
     to: "/course-demo-session",
     label: "Demo Session",
     icon: "play",

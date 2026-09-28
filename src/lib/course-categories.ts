@@ -3,7 +3,6 @@ export const COURSE_SLUGS = [
   "interactive-speaking",
   "business-english",
   "interview-preparation",
-  "career-counselling",
 ] as const;
 
 export type CourseSlug = (typeof COURSE_SLUGS)[number];
@@ -24,11 +23,11 @@ export const COURSE_CATEGORIES = [
     id: "work-and-career",
     title: "Work & Career · from ₹1,999/month, inclusive of taxes",
     description:
-      "Business English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling ₹1,999 total. Meetings, HR screens, mocks and a named counsellor. Live quality teaching. Batches of approximately 6 learners; counselling is 1:1.",
+      "Business English ₹1,999/month and Interview Preparation ₹1,999/month. Meetings, HR screens and mocks. Live quality teaching. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",
-    slugs: ["business-english", "interview-preparation", "career-counselling"],
+    slugs: ["business-english", "interview-preparation"],
   },
 ] as const satisfies ReadonlyArray<{
   id: string;

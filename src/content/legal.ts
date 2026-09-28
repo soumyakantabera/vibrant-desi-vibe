@@ -203,7 +203,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication and career classes: Spoken English, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication classes: Spoken English, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
           "We also offer a paid Demo Session: one 90-minute seat in a live batch, at ₹199 inclusive of taxes, for a learner who wants to see a real class before enrolling. It is not a sixth programme and it is not the free consultation. The fee rule for that session is only in the Demo Session section below.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
@@ -252,7 +252,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Classes",
         paragraphs: [
-          "English group classes are live, with a typical batch of approximately six learners, and up to two class days per week unless a course page says otherwise. Career Counselling is a separate 1:1 service.",
+          "English group classes are live, with a typical batch of approximately six learners, and up to two class days per week unless a course page says otherwise.",
           "Every live class is the primary lesson. Recordings, where provided, are for revision. A recording is not a substitute for attending.",
         ],
       },
@@ -317,7 +317,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How fees work",
         paragraphs: [
-          "English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp. Career Counselling is a prepaid 1:1 package as described on its course page.",
+          "English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp.",
           "A live seat is reserved when you pay. That is why we do not run a routine, no-questions-asked refund after a paid period has started.",
         ],
       },
@@ -350,9 +350,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
-        heading: "Career Counselling packages",
+        heading: "Career counselling",
         paragraphs: [
-          "Career Counselling is prepaid for a set number of 1:1 sessions. A missed session can be moved only inside the same week, and only if a slot is free. If you skip it without telling us that week, it is treated as delivered. If we cannot deliver a session we still owe, we will discuss a fair adjustment for that unused session.",
+          "We do not offer career counselling. The live rooms are Spoken English, Interactive Speaking, Business English and Interview Preparation.",
         ],
       },
       {
@@ -395,7 +395,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Adult rooms only",
         paragraphs: [
-          "The live catalogue is Spoken English, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. All of those rooms are for learners 15+.",
+          "The live catalogue is Spoken English, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. All of those rooms are for learners 15+.",
           "We do not currently run Spoken English for Kids or Spoken English for Teens. A child under 15 is not placed in an adult batch. For children, look at a dedicated kids platform.",
         ],
       },
@@ -422,7 +422,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who is in which room",
         paragraphs: [
-          "Adult English rooms: 15+, batches of about 6, 1 hr 30 min, up to 2 classes/week. Career Counselling is 1:1 and is an adult service.",
+          "Adult English rooms: 15+, batches of about 6, 1 hr 30 min, up to 2 classes/week.",
           "A 15–17-year-old may join an adult Spoken room only with the parent on WhatsApp and a clear written confirmation. We will not mix under-15s into adult rooms.",
         ],
       },
@@ -437,7 +437,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "How class is kept safe",
         paragraphs: [
           "For a 15–17-year-old in an adult room, the parent is informed of the slot and may sit in.",
-          "No 1:1 video with a learner under 18 unless the parent stays on the call. Group classes are the default. Career Counselling 1:1 is an adult service and is not sold as a children’s session.",
+          "No 1:1 video with a learner under 18 unless the parent stays on the call. Group classes are the default. We do not offer career counselling.",
           "Teachers do not ask a learner under 18 to turn off the camera so they are alone, to share passwords, or to move to a different app the parent has not agreed to.",
         ],
       },

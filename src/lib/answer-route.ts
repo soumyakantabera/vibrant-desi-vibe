@@ -50,7 +50,7 @@ export function answerFor(route: AskRoute): string {
     case "not_for_children":
       return "Adult rooms only, 15+. No demo class and no consultation for a child.";
     case "career":
-      return "Career Counselling is 1:1, ₹1,999 total. Not the free consultation and not the ₹199 demo.";
+      return "We do not offer career counselling. The rooms are Spoken English, Interactive Speaking, Business English and Interview Preparation.";
     case "not_ielts":
       return "We do not sell an IELTS demo or an IELTS course. The demo class is the spoken batch: it costs nothing if you join, ₹199 to enrol.";
     default:

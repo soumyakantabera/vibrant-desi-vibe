@@ -124,7 +124,7 @@ jobs:
           test -s dist/learnwithsmile-indexnow-2026.txt
           grep -q 'english-institute-comparison-india' dist/sitemap.xml
           grep -q '"maximumAttendeeCapacity":6' dist/course-spoken-english.html
-          grep -q '₹1,999 total' dist/course-career-counselling.html
+          grep -q 'We do not offer career counselling' dist/course-career-counselling.html
           if grep -Eqi 'course-ielts' dist/index.html dist/english-career.html dist/llms.json dist/sitemap.xml; then
             echo "::error::IELTS course URLs still in the public build"
             exit 1
@@ -133,8 +133,8 @@ jobs:
             echo "::error::Obsolete eight-learner batch claim leaked into the public build"
             exit 1
           fi
-          if grep -Eqi '₹1,999/(mo|month)' dist/course-career-counselling.html; then
-            echo "::error::Career Counselling is a package price, not a monthly price"
+          if grep -Eqi 'course-career-counselling' dist/sitemap.xml dist/llms.json; then
+            echo "::error::Career Counselling is still listed as a course"
             exit 1
           fi
           if grep -REqi 'Lead ref:|utm_source|lws_campaign|googletagmanager|data-analytics' dist; then

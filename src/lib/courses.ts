@@ -455,7 +455,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "Is this the same as Career Counselling?",
-        a: "No. Career Counselling is 1:1 about which path to take. Interview Preparation is a live batch about how you sound when someone already invited you to the screen. Different bottleneck.",
+        a: "No. Interview Preparation is a live batch about how you sound when someone already invited you to the screen. We do not offer a separate career-counselling course.",
       },
       {
         q: "Do you guarantee I will get the job?",

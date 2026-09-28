@@ -619,9 +619,10 @@ export const CLUSTER_INTENT = {
   career: {
     intent: "commercial",
     funnel: "consider",
-    job: "Which path, not which tense. 1:1 counselling, not a group English room.",
-    land: "/course-career-counselling",
+    job: "We do not offer career counselling. Send them to an English room or the free consultation.",
+    land: "/english-career",
     next: "Get Free Consultation",
+    mismatch: "Do not quote a career-counselling fee or URL. That course is not offered.",
   },
   audience: {
     intent: "informational",
@@ -715,7 +716,7 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,199/month, Business English ₹1,999/month, Interview Preparation ₹1,999/month, and 1:1 Career Counselling is ₹1,999 total for three 60-minute sessions. All prices are inclusive of taxes. No material fee. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,199/month, Business English ₹1,999/month and Interview Preparation ₹1,999/month. All prices are inclusive of taxes. No material fee. We do not offer career counselling. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -778,7 +779,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,199 per month, Business English ₹1,999 per month, Interview Preparation ₹1,999 per month, and 1:1 Career Counselling is ₹1,999 total for the complete 3-session package. All fees are inclusive of taxes. We do not sell IELTS as a course.",
+        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,199 per month, Business English ₹1,999 per month and Interview Preparation ₹1,999 per month. All fees are inclusive of taxes. We do not offer career counselling and we do not sell IELTS as a course.",
       },
       {
         q: "Who can join?",
@@ -790,7 +791,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I take two courses at the same time?",
-        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit — typically Business English with Career Counselling. Message us on WhatsApp so we can check the available schedules.",
+        a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit. Message us on WhatsApp so we can check the available schedules.",
       },
     ],
   },
@@ -939,7 +940,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile help with career guidance, or only English speaking?",
-        a: "Both, if you need it. Alongside the English courses we run standalone 1:1 Career Counselling (₹1,999 total for three 60-minute sessions). Many learners combine an English course with a counselling session when the actual goal is a career or course change, not just language practice.",
+        a: "Both, if you need it. The English courses are Spoken, Interactive, Business English and Interview Preparation. We do not offer career counselling. Message us on WhatsApp and we will name the room.",
       },
     ],
   },
@@ -1132,7 +1133,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you run kids or teen English classes?",
-        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Business English, Interview Preparation and 1:1 Career Counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
+        a: "No. The live catalogue is adult rooms only (15+): Spoken, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. For children, look at a dedicated kids platform. Do not put a child under 15 in an adult Spoken English batch.",
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
@@ -1371,7 +1372,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,199/month. Business English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. Career Counselling is ₹1,999 total for three 1:1 sessions.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,199/month. Business English is 3 months at ₹1,999/month. Interview Preparation is 2 months at ₹1,999/month. We do not offer career counselling.",
       },
     ],
   },
@@ -1744,26 +1745,6 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
-  "career-counselling": {
-    title: "1:1 Career Counselling | ₹1,999 Total, 3×60 min",
-    description:
-      "Three 60-min 1:1 sessions, ₹1,999 total, inclusive of taxes. Strengths map, 3 career paths, 6-month plan, plus resume and LinkedIn review. 1:1 online.",
-    shortTitle: "Career Counselling",
-    keywords: [...CAREER_KEYWORDS, "stream and course selection counselling"],
-    ogImage: "/og/career-counselling.jpg",
-    summary:
-      "Career Counselling — 3 × 60-minute 1:1 online sessions, ₹1,999 total. Strengths mapping, three shortlisted career paths, a 6-month action plan, resume and LinkedIn review.",
-    extraFaqs: [
-      {
-        q: "How much does career counselling cost in India?",
-        a: "Learn With Smile charges ₹1,999 total for three 60-minute 1:1 online sessions plus a written 6-month action plan and a resume and LinkedIn review. Independent career counsellors in India typically charge ₹1,500–₹5,000 per session, and psychometric-test-led packages from larger firms run ₹5,000–₹15,000.",
-      },
-      {
-        q: "Is career counselling only for school students?",
-        a: "No. Roughly half of our sessions are with working adults in their 20s and 30s — people considering a switch out of BPO, IT support or a role they took by default, and people returning to work after a break. The process is the same: audit what you are actually good at, compare three realistic paths on salary and growth, and commit to a 6-month plan.",
-      },
-    ],
-  },
   "interview-preparation": {
     title: "Interview Preparation | ₹1,999/mo, 2 Months",
     description:
@@ -1837,7 +1818,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Interactive, Workplace, Interview Preparation and 1:1 Career Counselling for adults 15+.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Interactive, Workplace and Interview Preparation for adults 15+.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],

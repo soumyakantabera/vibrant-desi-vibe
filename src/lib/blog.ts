@@ -371,7 +371,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-27",
     readingTime: 9,
     wordCount: 1874,
-    relatedCourses: ["/course-career-counselling", "/course-spoken-english"],
+    relatedCourses: ["/course-interview-preparation", "/course-spoken-english"],
     keywords: [
       "bpo to client facing role",
       "career counselling english india",

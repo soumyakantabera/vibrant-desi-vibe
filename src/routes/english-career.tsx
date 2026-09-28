@@ -67,13 +67,12 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Five live programmes. Spoken, Interactive Speaking, Business English, Interview
-              Preparation and 1:1 Career Counselling. Interview Preparation is the room when the HR
+              Four live programmes. Spoken, Interactive Speaking, Business English and Interview
+              Preparation. Interview Preparation is the room when the HR
               screen is the bottleneck. From ₹999/month, inclusive of taxes.
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
-              Career Counselling is 1:1. Rooms are never mixed.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-display font-bold">
               {COURSE_CATEGORIES.flatMap((g) => [...g.slugs]).map((slug) => {
@@ -115,7 +114,7 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "5 programmes",
+                    big: "4 programmes",
                     small: "Adults 15+ · live rooms",
                   },
                   {
@@ -142,8 +141,8 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Clear Categories"
-            title="5 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
-            subtitle="Spoken, Interactive, Workplace and 1:1 Career Counselling. Pick the outcome, then the fee and duration."
+            title="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
+            subtitle="Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (
