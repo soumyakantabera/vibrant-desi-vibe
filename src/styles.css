@@ -83,43 +83,58 @@
   --app-css: 1;
 
   --radius: 1rem;
-  --background: #FFFFFF;
-  --foreground: #0B1F14;
+  --background: #ffffff;
+  --foreground: #0b1f14;
   --card: #ffffff;
-  --card-foreground: #0B1F14;
-  --primary: #0E7C5A;
+  --card-foreground: #0b1f14;
+  --primary: #0e7c5a;
   --primary-foreground: #ffffff;
-  --secondary: #F5B700;
-  --secondary-foreground: #0B1F14;
-  --muted: #F1F4F2;
-  --muted-foreground: #2C3A31;
-  --accent: #FFE7B5;
-  --accent-foreground: #0B1F14;
-  --border: #E5EAE6;
-  --input: #E5EAE6;
-  --ring: #0E7C5A;
+  --secondary: #f5b700;
+  --secondary-foreground: #0b1f14;
+  --muted: #f1f4f2;
+  --muted-foreground: #2c3a31;
+  --accent: #ffe7b5;
+  --accent-foreground: #0b1f14;
+  --border: #e5eae6;
+  --input: #e5eae6;
+  --ring: #0e7c5a;
 
-  --brand: #0E7C5A;
+  --brand: #0e7c5a;
   --brand-deep: #084633;
-  --brand-soft: #D6F2E2;
-  --sunshine: #F5B700;
-  --coral: #FF6B5B;
-  --coral-deep: #A53D32;
-  --indigo-pop: #5B5BD6;
-  --sage: #A8D5BA;
-  --cream: #FFFFFF;
-  --ink: #0B1F14;
-  --wa: #25D366;
-  --wa-deep: #128C7E;
+  --brand-soft: #d6f2e2;
+  --sunshine: #f5b700;
+  --coral: #ff6b5b;
+  --coral-deep: #a53d32;
+  --indigo-pop: #5b5bd6;
+  --sage: #a8d5ba;
+  --cream: #ffffff;
+  --ink: #0b1f14;
+  --wa: #25d366;
+  --wa-deep: #128c7e;
 }
 
-.dark { color-scheme: dark; }
+.dark {
+  color-scheme: dark;
+}
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; -webkit-tap-highlight-color: rgba(14, 124, 90, 0.18); }
-  a { color: inherit; }
-  a:link, a:visited, a:hover, a:active, a:focus { color: inherit; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(14, 124, 90, 0.18);
+  }
+  a {
+    color: inherit;
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active,
+  a:focus {
+    color: inherit;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -127,7 +142,11 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-display);
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -136,8 +155,18 @@
     font-style: normal;
   }
   /* Kill italics globally per brand rule */
-  em, i, .italic { font-style: normal; font-weight: 700; color: #FFD96B; }
-  p { text-wrap: pretty; color: var(--foreground); font-weight: 450; }
+  em,
+  i,
+  .italic {
+    font-style: normal;
+    font-weight: 700;
+    color: #ffd96b;
+  }
+  p {
+    text-wrap: pretty;
+    color: var(--foreground);
+    font-weight: 450;
+  }
   /* White label on brand-deep — mouse-drag on PC and long-press on touch.
      The previous sunshine/ink pairing turned the filled-green CTA label dark
      the moment a learner selected it. */
@@ -153,8 +182,13 @@
 }
 
 /* Ensure hero/bg-image sections layer correctly: bg div sits behind content */
-section { isolation: isolate; }
-section > .container-x { position: relative; z-index: 10; }
+section {
+  isolation: isolate;
+}
+section > .container-x {
+  position: relative;
+  z-index: 10;
+}
 
 /* ===== Contrast safety net (WCAG AA) =====
    Text colour is derived from the *background* it sits on, so copy stays
@@ -167,75 +201,179 @@ section > .container-x { position: relative; z-index: 10; }
    forced onto a near-white background (which made copy invisible). */
 
 /* --- Dark, solid surfaces + dark gradients: force bright text --- */
-.bg-brand, .bg-brand-deep, .bg-ink, .bg-indigo-pop, .bg-wa-deep,
-[class*="bg-brand-deep/"], [class*="bg-ink/"],
-[class*="from-ink"], [class*="via-ink"],
-[class*="from-brand-deep"], [class*="via-brand-deep"],
-[class*="from-indigo-pop"], [class*="via-indigo-pop"] {
-  color: #FFFFFF;
+.bg-brand,
+.bg-brand-deep,
+.bg-ink,
+.bg-indigo-pop,
+.bg-wa-deep,
+[class*="bg-brand-deep/"],
+[class*="bg-ink/"],
+[class*="from-ink"],
+[class*="via-ink"],
+[class*="from-brand-deep"],
+[class*="via-brand-deep"],
+[class*="from-indigo-pop"],
+[class*="via-indigo-pop"] {
+  color: #ffffff;
 }
-.bg-brand p, .bg-brand li, .bg-brand span:not([class*="bg-"]),
-.bg-brand-deep p, .bg-brand-deep li, .bg-brand-deep span:not([class*="bg-"]),
-.bg-ink p, .bg-ink li, .bg-ink span:not([class*="bg-"]),
-.bg-indigo-pop p, .bg-indigo-pop li, .bg-indigo-pop span:not([class*="bg-"]),
-[class*="bg-brand-deep/"] p, [class*="bg-brand-deep/"] li,
-[class*="bg-ink/"] p, [class*="bg-ink/"] li,
-[class*="from-ink"] p, [class*="from-ink"] li,
-[class*="from-brand-deep"] p, [class*="from-brand-deep"] li,
-[class*="via-indigo-pop"] p, [class*="via-indigo-pop"] li {
-  color: #F4FAF6;
+.bg-brand p,
+.bg-brand li,
+.bg-brand span:not([class*="bg-"]),
+.bg-brand-deep p,
+.bg-brand-deep li,
+.bg-brand-deep span:not([class*="bg-"]),
+.bg-ink p,
+.bg-ink li,
+.bg-ink span:not([class*="bg-"]),
+.bg-indigo-pop p,
+.bg-indigo-pop li,
+.bg-indigo-pop span:not([class*="bg-"]),
+[class*="bg-brand-deep/"] p,
+[class*="bg-brand-deep/"] li,
+[class*="bg-ink/"] p,
+[class*="bg-ink/"] li,
+[class*="from-ink"] p,
+[class*="from-ink"] li,
+[class*="from-brand-deep"] p,
+[class*="from-brand-deep"] li,
+[class*="via-indigo-pop"] p,
+[class*="via-indigo-pop"] li {
+  color: #f4faf6;
 }
 /* Spans/strongs inside buttons must inherit the button's own colour, not the section override.
    Double-class trick (.btn.btn) raises specificity to (0,2,1) to beat .bg-brand span:not([class*="bg-"]). */
-.btn.btn span, .btn.btn strong { color: inherit !important; }
-.bg-brand h1, .bg-brand h2, .bg-brand h3, .bg-brand h4, .bg-brand h5,
-.bg-brand-deep h1, .bg-brand-deep h2, .bg-brand-deep h3, .bg-brand-deep h4, .bg-brand-deep h5,
-.bg-ink h1, .bg-ink h2, .bg-ink h3, .bg-ink h4, .bg-ink h5,
-.bg-indigo-pop h1, .bg-indigo-pop h2, .bg-indigo-pop h3,
-[class*="bg-brand-deep/"] h1, [class*="bg-brand-deep/"] h2, [class*="bg-brand-deep/"] h3,
-[class*="from-ink"] h1, [class*="from-ink"] h2, [class*="from-ink"] h3, [class*="from-ink"] h4, [class*="from-ink"] h5,
-[class*="from-brand-deep"] h1, [class*="from-brand-deep"] h2, [class*="from-brand-deep"] h3,
-[class*="via-indigo-pop"] h1, [class*="via-indigo-pop"] h2, [class*="via-indigo-pop"] h3 {
-  color: #FFFFFF;
+.btn.btn span,
+.btn.btn strong {
+  color: inherit !important;
 }
-.bg-brand strong, .bg-brand-deep strong, .bg-ink strong,
-[class*="bg-brand-deep/"] strong, [class*="bg-ink/"] strong,
-[class*="from-ink"] strong, [class*="from-brand-deep"] strong { color: #FFFFFF; font-weight: 800; }
+.bg-brand h1,
+.bg-brand h2,
+.bg-brand h3,
+.bg-brand h4,
+.bg-brand h5,
+.bg-brand-deep h1,
+.bg-brand-deep h2,
+.bg-brand-deep h3,
+.bg-brand-deep h4,
+.bg-brand-deep h5,
+.bg-ink h1,
+.bg-ink h2,
+.bg-ink h3,
+.bg-ink h4,
+.bg-ink h5,
+.bg-indigo-pop h1,
+.bg-indigo-pop h2,
+.bg-indigo-pop h3,
+[class*="bg-brand-deep/"] h1,
+[class*="bg-brand-deep/"] h2,
+[class*="bg-brand-deep/"] h3,
+[class*="from-ink"] h1,
+[class*="from-ink"] h2,
+[class*="from-ink"] h3,
+[class*="from-ink"] h4,
+[class*="from-ink"] h5,
+[class*="from-brand-deep"] h1,
+[class*="from-brand-deep"] h2,
+[class*="from-brand-deep"] h3,
+[class*="via-indigo-pop"] h1,
+[class*="via-indigo-pop"] h2,
+[class*="via-indigo-pop"] h3 {
+  color: #ffffff;
+}
+.bg-brand strong,
+.bg-brand-deep strong,
+.bg-ink strong,
+[class*="bg-brand-deep/"] strong,
+[class*="bg-ink/"] strong,
+[class*="from-ink"] strong,
+[class*="from-brand-deep"] strong {
+  color: #ffffff;
+  font-weight: 800;
+}
 
-.bg-brand .text-muted-foreground, .bg-brand-deep .text-muted-foreground,
-.bg-ink .text-muted-foreground, .bg-indigo-pop .text-muted-foreground,
-[class*="from-ink"] .text-muted-foreground, [class*="from-brand-deep"] .text-muted-foreground {
-  color: #EAF5EE !important;
+.bg-brand .text-muted-foreground,
+.bg-brand-deep .text-muted-foreground,
+.bg-ink .text-muted-foreground,
+.bg-indigo-pop .text-muted-foreground,
+[class*="from-ink"] .text-muted-foreground,
+[class*="from-brand-deep"] .text-muted-foreground {
+  color: #eaf5ee !important;
 }
 
 /* Translucent white/cream helper text on dark surfaces — keep it bright */
-.text-white\/50, .text-white\/55, .text-white\/60, .text-white\/65,
-.text-white\/70, .text-white\/75, .text-white\/80, .text-white\/85, .text-white\/90, .text-white\/95 {
-  color: #F4FAF6 !important;
+.text-white\/50,
+.text-white\/55,
+.text-white\/60,
+.text-white\/65,
+.text-white\/70,
+.text-white\/75,
+.text-white\/80,
+.text-white\/85,
+.text-white\/90,
+.text-white\/95 {
+  color: #f4faf6 !important;
 }
-.text-cream\/70, .text-cream\/75, .text-cream\/80, .text-cream\/85, .text-cream\/90, .text-cream\/95 {
-  color: #F4FAF6 !important;
+.text-cream\/70,
+.text-cream\/75,
+.text-cream\/80,
+.text-cream\/85,
+.text-cream\/90,
+.text-cream\/95 {
+  color: #f4faf6 !important;
 }
 
 /* --- Light backgrounds: keep body copy at strong contrast --- */
-.text-muted-foreground { color: #2C3A31 !important; }
-.text-foreground\/60, .text-foreground\/70, .text-foreground\/80,
-.text-ink\/50, .text-ink\/60, .text-ink\/70, .text-ink\/75, .text-ink\/80 {
-  color: #1A2A20 !important;
+.text-muted-foreground {
+  color: #2c3a31 !important;
+}
+.text-foreground\/60,
+.text-foreground\/70,
+.text-foreground\/80,
+.text-ink\/50,
+.text-ink\/60,
+.text-ink\/70,
+.text-ink\/75,
+.text-ink\/80 {
+  color: #1a2a20 !important;
 }
 
 /* --- Soft / light surfaces + light gradients + coral: force dark text --- */
-.bg-brand-soft, .bg-sage, .bg-accent, .bg-cream, .bg-muted, .bg-secondary, .bg-coral,
-[class*="from-white"], [class*="to-white"],
-[class*="from-cream"], [class*="to-cream"],
-[class*="from-brand-soft"], [class*="to-brand-soft"] {
-  color: #0B1F14;
+.bg-brand-soft,
+.bg-sage,
+.bg-accent,
+.bg-cream,
+.bg-muted,
+.bg-secondary,
+.bg-coral,
+[class*="from-white"],
+[class*="to-white"],
+[class*="from-cream"],
+[class*="to-cream"],
+[class*="from-brand-soft"],
+[class*="to-brand-soft"] {
+  color: #0b1f14;
 }
-.bg-brand-soft p, .bg-sage p, .bg-accent p, .bg-cream p, .bg-muted p, .bg-secondary p, .bg-coral p,
-.bg-brand-soft li, .bg-sage li, .bg-accent li, .bg-muted li, .bg-coral li,
-[class*="from-white"] p, [class*="from-cream"] p, [class*="to-cream"] p, [class*="from-brand-soft"] p,
-[class*="from-white"] li, [class*="from-cream"] li, [class*="to-cream"] li, [class*="from-brand-soft"] li {
-  color: #14281D;
+.bg-brand-soft p,
+.bg-sage p,
+.bg-accent p,
+.bg-cream p,
+.bg-muted p,
+.bg-secondary p,
+.bg-coral p,
+.bg-brand-soft li,
+.bg-sage li,
+.bg-accent li,
+.bg-muted li,
+.bg-coral li,
+[class*="from-white"] p,
+[class*="from-cream"] p,
+[class*="to-cream"] p,
+[class*="from-brand-soft"] p,
+[class*="from-white"] li,
+[class*="from-cream"] li,
+[class*="to-cream"] li,
+[class*="from-brand-soft"] li {
+  color: #14281d;
 }
 
 /* Yellow/sunshine fills: dark type even when the tile sits inside a dark band
@@ -243,7 +381,7 @@ section > .container-x { position: relative; z-index: 10; }
 .bg-sunshine,
 .bg-yellow-300,
 .bg-yellow-400 {
-  color: #14200A;
+  color: #14200a;
 }
 .bg-sunshine p,
 .bg-sunshine li,
@@ -262,7 +400,7 @@ section > .container-x { position: relative; z-index: 10; }
 .bg-ink .bg-sunshine,
 .bg-ink .bg-sunshine p,
 .bg-ink .bg-sunshine strong {
-  color: #14200A !important;
+  color: #14200a !important;
 }
 
 /* Comparison cards sit inside .bg-cream, whose `p` rule would paint dark type
@@ -270,8 +408,8 @@ section > .container-x { position: relative; z-index: 10; }
 .compare-card[data-ink="0"],
 .compare-card[data-ink="0"] p,
 .compare-card[data-ink="0"] strong {
-  color: #14200A !important;
-  -webkit-text-fill-color: #14200A !important;
+  color: #14200a !important;
+  -webkit-text-fill-color: #14200a !important;
 }
 .compare-card[data-ink="1"],
 .compare-card[data-ink="1"] p,
@@ -300,49 +438,71 @@ section > .container-x { position: relative; z-index: 10; }
 }
 .bg-sunshine span.bg-ink,
 .bg-sunshine .bg-ink {
-  color: #F5B700 !important;
+  color: #f5b700 !important;
 }
 .bg-sunshine span.bg-ink svg.lucide,
 .bg-sunshine span.bg-ink svg.lws-icon {
-  color: #F5B700 !important;
+  color: #f5b700 !important;
   stroke: currentColor;
   fill: none !important;
 }
 
 /* Sunshine TEXT on dark backgrounds — keep the bright yellow */
-.bg-brand .text-sunshine, .bg-brand-deep .text-sunshine, .bg-ink .text-sunshine,
+.bg-brand .text-sunshine,
+.bg-brand-deep .text-sunshine,
+.bg-ink .text-sunshine,
 .bg-indigo-pop .text-sunshine,
-[class*="from-ink"] .text-sunshine, [class*="from-brand-deep"] .text-sunshine,
+[class*="from-ink"] .text-sunshine,
+[class*="from-brand-deep"] .text-sunshine,
 [class*="via-indigo-pop"] .text-sunshine {
-  color: #F5B700 !important;
+  color: #f5b700 !important;
 }
 
 /* Sunshine TEXT only reads on dark; on light surfaces darken to amber */
-.bg-white .text-sunshine, .bg-cream .text-sunshine, .bg-muted .text-sunshine,
+.bg-white .text-sunshine,
+.bg-cream .text-sunshine,
+.bg-muted .text-sunshine,
 .bg-brand-soft .text-sunshine,
-[class*="from-white"] .text-sunshine, [class*="from-cream"] .text-sunshine,
+[class*="from-white"] .text-sunshine,
+[class*="from-cream"] .text-sunshine,
 [class*="from-brand-soft"] .text-sunshine {
-  color: #8A6D00 !important;
+  color: #8a6d00 !important;
 }
 
 /* WhatsApp greens: --wa (#25D366) is too light for white text */
-.bg-wa { color: #053B1E; }
-.bg-wa.text-white, .bg-wa .text-white { color: #0B1F14 !important; }
-.text-wa { color: #084633; }
+.bg-wa {
+  color: #053b1e;
+}
+.bg-wa.text-white,
+.bg-wa .text-white {
+  color: #0b1f14 !important;
+}
+.text-wa {
+  color: #084633;
+}
 
 /* Links default to inherit; force white on dark sections + dark gradients.
    Exclude .btn so buttons keep their own variant colors (e.g. btn-white = dark text). */
-.bg-brand a:not(.btn), .bg-brand-deep a:not(.btn), .bg-ink a:not(.btn),
-[class*="from-ink"] a:not(.btn), [class*="from-brand-deep"] a:not(.btn), [class*="via-indigo-pop"] a:not(.btn) {
-  color: #FFFFFF; text-decoration-color: rgba(255,255,255,.6);
+.bg-brand a:not(.btn),
+.bg-brand-deep a:not(.btn),
+.bg-ink a:not(.btn),
+[class*="from-ink"] a:not(.btn),
+[class*="from-brand-deep"] a:not(.btn),
+[class*="via-indigo-pop"] a:not(.btn) {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Pills / chips on dark sections + dark gradients */
-.bg-brand .pill, .bg-brand-deep .pill, .bg-ink .pill,
-[class*="from-ink"] .pill, [class*="from-brand-deep"] .pill, [class*="via-indigo-pop"] .pill {
-  background: rgba(255,255,255,.14);
-  color: #FFFFFF;
-  border-color: rgba(255,255,255,.28);
+.bg-brand .pill,
+.bg-brand-deep .pill,
+.bg-ink .pill,
+[class*="from-ink"] .pill,
+[class*="from-brand-deep"] .pill,
+[class*="via-indigo-pop"] .pill {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 /* Course-card "View Full Syllabus" pill — UNLAYERED so it beats the contrast
@@ -354,7 +514,7 @@ section > .container-x { position: relative; z-index: 10; }
 }
 .group:is(:hover, :active, :focus, :focus-within, :focus-visible) .syllabus-cta,
 .syllabus-cta:is(:hover, :active, :focus, :focus-visible) {
-  background: #0E7C5A !important;
+  background: #0e7c5a !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
@@ -375,48 +535,123 @@ section > .container-x { position: relative; z-index: 10; }
   color: #ffffff !important;
 }
 
+/* Homepage header ribbon — peach into teal, dark type on both ends */
+.demo-ribbon {
+  display: block;
+  background: linear-gradient(90deg, #ffc4a8 0%, #f7d0be 42%, #7ed9cc 100%);
+  color: #0b1f14;
+  text-decoration: none;
+}
+.demo-ribbon,
+.demo-ribbon span,
+.demo-ribbon svg {
+  color: #0b1f14;
+}
+.demo-ribbon svg {
+  stroke: currentColor;
+}
+.demo-ribbon:hover {
+  filter: saturate(1.08) brightness(0.98);
+}
+
 /* Reusable utilities */
 @layer components {
-  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-7 lg:px-10; }
-  .section { @apply py-12 md:py-14 lg:py-16; }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-7 lg:px-10;
+  }
+  .section {
+    @apply py-12 md:py-14 lg:py-16;
+  }
   .eyebrow {
-    display: inline-flex; align-items: center; gap: .4rem;
-    background: var(--brand-soft); color: var(--brand-deep);
-    font-family: var(--font-display); font-weight: 700;
-    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
-    padding: .45rem .8rem; border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--brand-soft);
+    color: var(--brand-deep);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
     border: 1px solid color-mix(in oklab, var(--brand) 20%, transparent);
   }
-  .eyebrow-sun { background: #FFEFC1; color: #6B4A00; border-color: #F2D272; }
-  .eyebrow-coral { background: #FFE0DC; color: #8E2A1E; border-color: #FFB7AE; }
-  .eyebrow-indigo { background: #E2E2FB; color: #2E2E8A; border-color: #B9B9F3; }
-  .eyebrow-white { background: rgba(255,255,255,.18); color: #fff; border-color: rgba(255,255,255,.35); }
+  .eyebrow-sun {
+    background: #ffefc1;
+    color: #6b4a00;
+    border-color: #f2d272;
+  }
+  .eyebrow-coral {
+    background: #ffe0dc;
+    color: #8e2a1e;
+    border-color: #ffb7ae;
+  }
+  .eyebrow-indigo {
+    background: #e2e2fb;
+    color: #2e2e8a;
+    border-color: #b9b9f3;
+  }
+  .eyebrow-white {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.35);
+  }
 
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
-    font-family: var(--font-display); font-weight: 700;
-    padding: .85rem 1.25rem; border-radius: 999px;
-    font-size: .95rem; line-height: 1.2; min-height: 48px;
-    transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
-    white-space: normal; text-align: center; text-decoration: none;
-    box-shadow: 0 1px 0 rgba(0,0,0,.04);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    min-height: 48px;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+    white-space: normal;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
   }
-  .btn:hover { transform: translateY(-2px); }
-  .btn:active { transform: translateY(0); }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
   .btn:focus-visible {
-    outline: 3px solid #FFFFFF;
+    outline: 3px solid #ffffff;
     outline-offset: 2px;
-    box-shadow: 0 0 0 5px var(--brand-deep), 0 8px 24px -10px rgba(8,70,51,.55);
+    box-shadow:
+      0 0 0 5px var(--brand-deep),
+      0 8px 24px -10px rgba(8, 70, 51, 0.55);
   }
-  .btn-lg { padding: 1rem 1.5rem; font-size: 1.02rem; min-height: 54px; }
-  .btn-sm { padding: .6rem .95rem; font-size: .85rem; min-height: 40px; }
+  .btn-lg {
+    padding: 1rem 1.5rem;
+    font-size: 1.02rem;
+    min-height: 54px;
+  }
+  .btn-sm {
+    padding: 0.6rem 0.95rem;
+    font-size: 0.85rem;
+    min-height: 40px;
+  }
   /* Primary CTA: deepened green lifts white-text contrast to ~6.3:1 (was 5.2:1)
      while staying in the brand-green family. */
   .btn-primary {
-    background: #0B6E4F; color: #fff;
-    box-shadow: 0 8px 22px -12px rgba(8,70,51,.75);
+    background: #0b6e4f;
+    color: #fff;
+    box-shadow: 0 8px 22px -12px rgba(8, 70, 51, 0.75);
   }
-  .btn-primary:hover { background: var(--brand-deep); }
+  .btn-primary:hover {
+    background: var(--brand-deep);
+  }
   .btn-primary,
   .btn-primary:link,
   .btn-primary:visited,
@@ -433,54 +668,101 @@ section > .container-x { position: relative; z-index: 10; }
   .btn-wa:link,
   .btn-wa:visited,
   .btn-wa:focus {
-    background: #25D366;
+    background: #25d366;
     color: #053b1e !important;
     -webkit-text-fill-color: #053b1e !important;
-    box-shadow: 0 8px 22px -12px rgba(5, 59, 30, .65);
+    box-shadow: 0 8px 22px -12px rgba(5, 59, 30, 0.65);
     border: 0;
   }
   .btn-wa:hover,
   .btn-wa:active {
-    background: #1EBE5B;
+    background: #1ebe5b;
     color: #053b1e !important;
     -webkit-text-fill-color: #053b1e !important;
     border: 0;
   }
   .btn-sun {
-    background: var(--sunshine); color: var(--ink);
-    box-shadow: 0 8px 22px -12px rgba(107,74,0,.65);
+    background: var(--sunshine);
+    color: var(--ink);
+    box-shadow: 0 8px 22px -12px rgba(107, 74, 0, 0.65);
   }
-  .btn-sun:hover { background: #E0A800; }
-  .btn-coral { background: var(--coral); color: var(--ink); }
-  .btn-coral:hover { background: #F0584A; }
-  .btn-outline { background: transparent; color: var(--brand-deep); border: 2px solid var(--brand); }
-  .btn-outline:hover { background: var(--brand); color: #fff; }
-  .btn-white { background: #fff; color: var(--brand-deep); }
-  .btn-ghost-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.5); padding: .8rem 1.2rem; border-radius: 999px; display:inline-flex; align-items:center; gap:.4rem; font-family: var(--font-display); font-weight: 700; }
-  .btn-ghost-white:hover { background: rgba(255,255,255,.12); }
+  .btn-sun:hover {
+    background: #e0a800;
+  }
+  .btn-coral {
+    background: var(--coral);
+    color: var(--ink);
+  }
+  .btn-coral:hover {
+    background: #f0584a;
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--brand-deep);
+    border: 2px solid var(--brand);
+  }
+  .btn-outline:hover {
+    background: var(--brand);
+    color: #fff;
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--brand-deep);
+  }
+  .btn-ghost-white {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    padding: 0.8rem 1.2rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .btn-ghost-white:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
   /* Light-fill buttons must keep dark text even inside dark sections, where the
      contrast safety-net (higher specificity) would otherwise flip it to light
      and leave it unreadable on yellow/coral. Neither changes text on hover. */
-  .btn-sun, .btn-coral { color: var(--ink) !important; }
+  .btn-sun,
+  .btn-coral {
+    color: var(--ink) !important;
+  }
 
   .card-soft {
-    background: #fff; border-radius: 1.1rem; padding: 1.1rem;
-    border: 1px solid #D4DED7;
-    box-shadow: 0 2px 4px rgba(14,36,22,.05), 0 14px 34px -22px rgba(8,70,51,.35);
+    background: #fff;
+    border-radius: 1.1rem;
+    padding: 1.1rem;
+    border: 1px solid #d4ded7;
+    box-shadow:
+      0 2px 4px rgba(14, 36, 22, 0.05),
+      0 14px 34px -22px rgba(8, 70, 51, 0.35);
   }
   @media (min-width: 768px) {
-    .card-soft { padding: 1rem 1.1rem; }
+    .card-soft {
+      padding: 1rem 1.1rem;
+    }
   }
   .pill {
-    display:inline-flex; align-items:center; gap:.4rem;
-    padding:.4rem .75rem; border-radius: 999px;
-    font-size:.78rem; font-weight:600;
-    background: #fff; color: var(--brand-deep);
-    border:1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: #fff;
+    color: var(--brand-deep);
+    border: 1px solid var(--border);
   }
   .grad-text {
     background: linear-gradient(90deg, var(--brand) 0%, var(--indigo-pop) 50%, var(--coral) 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 
@@ -491,17 +773,17 @@ a.btn.btn-wa:link,
 a.btn.btn-wa:visited,
 a.btn.btn-wa:focus,
 button.btn.btn-wa {
-  background: #25D366 !important;
+  background: #25d366 !important;
   color: #053b1e !important;
   -webkit-text-fill-color: #053b1e !important;
-  box-shadow: 0 8px 22px -12px rgba(5, 59, 30, .65);
+  box-shadow: 0 8px 22px -12px rgba(5, 59, 30, 0.65);
   border: 0 !important;
 }
 a.btn.btn-wa:hover,
 a.btn.btn-wa:active,
 button.btn.btn-wa:hover,
 button.btn.btn-wa:active {
-  background: #1EBE5B !important;
+  background: #1ebe5b !important;
   color: #053b1e !important;
   -webkit-text-fill-color: #053b1e !important;
   border: 0 !important;
@@ -528,43 +810,85 @@ button.btn.btn-wa svg.lws-icon {
 
 /* Floating WhatsApp mark: official simple-icons glyph on a white disc. */
 [data-cta-location="fab"] svg:not(.lucide):not(.lws-icon) {
-  fill: #25D366;
+  fill: #25d366;
 }
 
 /* Custom animations */
 @keyframes wa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
-  70% { box-shadow: 0 0 0 22px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 22px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
 @keyframes wa-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 @keyframes float-soft {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-10px) rotate(2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
 }
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
-.animate-wa-pulse { animation: wa-pulse 2.2s infinite; }
-.animate-wa-bob { animation: wa-bob 3s ease-in-out infinite; }
-.animate-float { animation: float-soft 6s ease-in-out infinite; }
+.animate-wa-pulse {
+  animation: wa-pulse 2.2s infinite;
+}
+.animate-wa-bob {
+  animation: wa-bob 3s ease-in-out infinite;
+}
+.animate-float {
+  animation: float-soft 6s ease-in-out infinite;
+}
 
 /* Hide scrollbar but allow scroll */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 @layer components {
   .input {
-    width: 100%; padding: .8rem 1rem; border-radius: .9rem;
-    border: 1.5px solid var(--border); background: #fff;
-    font-family: var(--font-sans); font-size: .95rem; color: var(--ink);
-    outline: none; transition: border-color .15s, box-shadow .15s;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 0.9rem;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--ink);
+    outline: none;
+    transition:
+      border-color 0.15s,
+      box-shadow 0.15s;
   }
-  .input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent); }
+  .input:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent);
+  }
 }
 
 /* ==========================================================================
@@ -608,20 +932,32 @@ svg.lucide:not([data-filled="true"]) {
   position: relative;
   overflow: hidden;
   background: color-mix(in oklab, var(--brand) 7%, #eef2ef);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 .skeleton::after,
 .img-frame-plain:not([data-loaded])::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, transparent 25%, rgba(255,255,255,.55) 50%, transparent 75%);
+  background: linear-gradient(
+    100deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 75%
+  );
   background-size: 220% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
 }
-.skeleton-on-dark { background: rgba(255,255,255,.10); }
+.skeleton-on-dark {
+  background: rgba(255, 255, 255, 0.1);
+}
 .skeleton-on-dark::after {
-  background: linear-gradient(100deg, transparent 25%, rgba(255,255,255,.18) 50%, transparent 75%);
+  background: linear-gradient(
+    100deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 75%
+  );
   background-size: 220% 100%;
 }
 
@@ -639,57 +975,95 @@ svg.lucide:not([data-filled="true"]) {
   background-position: center;
   background-repeat: no-repeat;
 }
-.img-frame-fill { position: absolute; inset: 0; width: 100%; height: 100%; }
+.img-frame-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 .img-el {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
-.img-frame > .img-el { position: absolute; inset: 0; }
+.img-frame > .img-el {
+  position: absolute;
+  inset: 0;
+}
 /* Cross-fade the sharp photo over the blurred preview behind it. Opacity only
    — the frame keeps its own transforms free for hover effects, and a plain
    fade stays cheap on the low-end phones this is all for. */
-html.js .img-el[data-fade]:not([data-loaded]) { opacity: 0; }
-html.js .img-el[data-fade][data-loaded] { opacity: 1; }
+html.js .img-el[data-fade]:not([data-loaded]) {
+  opacity: 0;
+}
+html.js .img-el[data-fade][data-loaded] {
+  opacity: 1;
+}
 
 /* --------------------------------------------------------- scroll reveal ---
    Set by <Reveal> after mount, and only for blocks that are still below the
    fold — whatever is already on screen is left exactly as it was painted. */
 @keyframes reveal-in {
-  from { opacity: 0; transform: translate3d(0, 22px, 0); }
-  to   { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 html.js [data-reveal="out"],
-html.js [data-reveal-stagger="out"] > * { opacity: 0; }
+html.js [data-reveal-stagger="out"] > * {
+  opacity: 0;
+}
 html.js [data-reveal="in"] {
-  animation: reveal-in .6s cubic-bezier(.22,.61,.36,1) both;
+  animation: reveal-in 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   animation-delay: var(--reveal-delay, 0ms);
 }
 html.js [data-reveal-stagger="in"] > * {
-  animation: reveal-in .55s cubic-bezier(.22,.61,.36,1) both;
+  animation: reveal-in 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
-html.js [data-reveal-stagger="in"] > *:nth-child(1) { animation-delay: 0ms; }
-html.js [data-reveal-stagger="in"] > *:nth-child(2) { animation-delay: 70ms; }
-html.js [data-reveal-stagger="in"] > *:nth-child(3) { animation-delay: 140ms; }
-html.js [data-reveal-stagger="in"] > *:nth-child(4) { animation-delay: 210ms; }
-html.js [data-reveal-stagger="in"] > *:nth-child(5) { animation-delay: 260ms; }
-html.js [data-reveal-stagger="in"] > *:nth-child(6) { animation-delay: 310ms; }
-html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; }
+html.js [data-reveal-stagger="in"] > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(2) {
+  animation-delay: 70ms;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(3) {
+  animation-delay: 140ms;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(4) {
+  animation-delay: 210ms;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(5) {
+  animation-delay: 260ms;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(6) {
+  animation-delay: 310ms;
+}
+html.js [data-reveal-stagger="in"] > *:nth-child(n + 7) {
+  animation-delay: 360ms;
+}
 
 /* ------------------------------------------------------- route progress ---
    Shown while the next page's code is downloading. */
 .route-progress {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   z-index: 60;
   pointer-events: none;
   opacity: 0;
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease;
 }
-.route-progress[data-visible] { opacity: 1; }
+.route-progress[data-visible] {
+  opacity: 1;
+}
 .route-progress-bar {
   display: block;
   height: 100%;
@@ -698,7 +1072,7 @@ html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; 
   transform: scaleX(0);
   background: linear-gradient(90deg, var(--brand) 0%, var(--indigo-pop) 55%, var(--sunshine) 100%);
   box-shadow: 0 0 10px color-mix(in oklab, var(--brand) 55%, transparent);
-  transition: transform .35s cubic-bezier(.2,.8,.3,1);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
 /* --------------------------------------------------------- first paint ---
@@ -711,22 +1085,60 @@ html.js [data-reveal-stagger="in"] > *:nth-child(n+7) { animation-delay: 360ms; 
    Where the browser supports it, the router cross-fades between pages instead
    of cutting; elsewhere this block simply does nothing. */
 @media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root) { animation: vt-fade-out .18s ease both; }
-  ::view-transition-new(root) { animation: vt-fade-in .28s ease both; }
+  ::view-transition-old(root) {
+    animation: vt-fade-out 0.18s ease both;
+  }
+  ::view-transition-new(root) {
+    animation: vt-fade-in 0.28s ease both;
+  }
 }
-@keyframes vt-fade-out { to { opacity: 0; } }
-@keyframes vt-fade-in { from { opacity: 0; transform: translate3d(0, 8px, 0); } }
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+}
 
 /* ----------------------------------------------------- reduced motion ---
    Honour the OS setting: content still fades in, nothing slides, shimmers, or
    bobs, and the reveal animation collapses to "just be visible". */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .animate-wa-pulse, .animate-wa-bob, .animate-float { animation: none; }
-  .skeleton::after, .img-frame-plain:not([data-loaded])::after { animation: none; }
-  html.js [data-reveal="in"], html.js [data-reveal-stagger="in"] > * { animation: none; opacity: 1; }
-  html.js [data-reveal="out"], html.js [data-reveal-stagger="out"] > * { opacity: 1; }
-  .img-el { transition: opacity .2s ease; }
-  .btn, .btn:hover, .btn:active { transform: none; transition: none; }
-  .route-progress-bar { transition: none; }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-wa-pulse,
+  .animate-wa-bob,
+  .animate-float {
+    animation: none;
+  }
+  .skeleton::after,
+  .img-frame-plain:not([data-loaded])::after {
+    animation: none;
+  }
+  html.js [data-reveal="in"],
+  html.js [data-reveal-stagger="in"] > * {
+    animation: none;
+    opacity: 1;
+  }
+  html.js [data-reveal="out"],
+  html.js [data-reveal-stagger="out"] > * {
+    opacity: 1;
+  }
+  .img-el {
+    transition: opacity 0.2s ease;
+  }
+  .btn,
+  .btn:hover,
+  .btn:active {
+    transform: none;
+    transition: none;
+  }
+  .route-progress-bar {
+    transition: none;
+  }
 }

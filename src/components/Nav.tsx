@@ -89,9 +89,21 @@ export function Nav() {
   const coursesActive =
     location.pathname.startsWith("/course-") || location.pathname === "/english-career";
 
+  const isHome = location.pathname === "/";
+
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+        {isHome && (
+          <Link to="/course-demo-session" className="demo-ribbon">
+            <span className="container-x flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 py-2 text-center text-[13px] sm:text-sm font-display font-extrabold leading-snug">
+              <Icon name="play" size={14} />
+              <span>Demo class</span>
+              <span aria-hidden="true">·</span>
+              <span>If you join, it costs you nothing.</span>
+            </span>
+          </Link>
+        )}
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
           {/* Brand */}
           <Link
@@ -198,18 +210,28 @@ export function Nav() {
 
       {/* MOBILE SHEET */}
       {open && (
-        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <div
+          className="fixed inset-0 z-50 lg:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mobile-menu-title"
+        >
           <div
             className="absolute inset-0 bg-ink/60 backdrop-blur-sm animate-in fade-in"
             onClick={() => setOpen(false)}
           />
-          <aside id="mobile-menu" className="absolute right-0 top-0 h-full w-[92%] max-w-sm bg-cream shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right">
+          <aside
+            id="mobile-menu"
+            className="absolute right-0 top-0 h-full w-[92%] max-w-sm bg-cream shadow-2xl flex flex-col overflow-y-auto animate-in slide-in-from-right"
+          >
             {/* Header */}
             <div className="sticky top-0 z-10 bg-gradient-to-br from-brand-deep to-brand text-cream px-5 pt-5 pb-6">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Logo size={34} />
-                  <span id="mobile-menu-title" className="font-display font-extrabold text-lg">Menu</span>
+                  <span id="mobile-menu-title" className="font-display font-extrabold text-lg">
+                    Menu
+                  </span>
                 </div>
                 <button
                   onClick={() => setOpen(false)}
