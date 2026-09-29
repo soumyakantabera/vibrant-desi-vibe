@@ -72,17 +72,17 @@ function DemoSessionPage() {
             </div>
             <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">{d.tagline}</p>
           </div>
-          <div className="mt-6 grid w-full max-w-md grid-cols-1 overflow-hidden rounded-2xl text-left text-ink min-[420px]:grid-cols-2">
-            <div className="bg-sunshine px-4 py-3">
-              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-ink/70">
+          <div className="mt-6 grid w-full max-w-md grid-cols-1 overflow-hidden rounded-2xl text-left min-[420px]:grid-cols-2">
+            <div className="bg-brand px-4 py-3 text-cream">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
                 Pay now
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-ink sm:text-4xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white sm:text-4xl">
                 ₹199
               </p>
-              <p className="mt-1 text-xs font-semibold text-ink/80">90 min · tax included</p>
+              <p className="mt-1 text-xs font-semibold text-white/85">90 min · tax included</p>
             </div>
-            <div className="border-t border-ink/10 bg-coral px-4 py-3 min-[420px]:border-t-0 min-[420px]:border-l">
+            <div className="border-t border-white/25 bg-[#25D366] px-4 py-3 text-ink min-[420px]:border-t-0 min-[420px]:border-l">
               <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-ink/70">
                 If you enrol
               </p>
