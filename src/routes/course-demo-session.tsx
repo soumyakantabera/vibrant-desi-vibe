@@ -72,28 +72,24 @@ function DemoSessionPage() {
             </div>
             <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">{d.tagline}</p>
           </div>
-          <div className="mt-6 grid w-full grid-cols-2 overflow-hidden rounded-2xl border border-white/15 bg-black/35 text-left">
-            <div className="min-w-0 px-3 py-3.5 min-[420px]:px-5 min-[420px]:py-5 sm:px-8 sm:py-6">
-              <p className="text-[10px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75 min-[420px]:text-[11px]">
+          <div className="mt-6 grid w-full max-w-md grid-cols-1 overflow-hidden rounded-2xl text-left min-[420px]:grid-cols-2">
+            <div className="bg-brand-deep px-4 py-3">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
                 Pay now
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine min-[420px]:text-4xl md:text-5xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine sm:text-4xl">
                 ₹199
               </p>
-              <p className="mt-1 text-[11px] leading-snug text-white/80 min-[420px]:text-sm">
-                90 min · tax included
-              </p>
+              <p className="mt-1 text-xs text-white/80">90 min · tax included</p>
             </div>
-            <div className="min-w-0 border-l border-white/15 px-3 py-3.5 min-[420px]:px-5 min-[420px]:py-5 sm:px-8 sm:py-6">
-              <p className="text-[10px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75 min-[420px]:text-[11px]">
+            <div className="border-t border-white/15 bg-ink px-4 py-3 min-[420px]:border-t-0 min-[420px]:border-l">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
                 If you enrol
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white min-[420px]:text-4xl md:text-5xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white sm:text-4xl">
                 ₹0
               </p>
-              <p className="mt-1 text-[11px] leading-snug text-white/80 min-[420px]:text-sm">
-                within 48 hours
-              </p>
+              <p className="mt-1 text-xs text-white/80">within 48 hours</p>
             </div>
           </div>
           <div className="mt-7">
