@@ -56,7 +56,7 @@ function DemoSessionPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/80 to-[#8F332A]/75" />
         </div>
-        <div className="container-x py-16 md:py-24">
+        <div className="container-x py-10 sm:py-16 md:py-24">
           <div className="text-cream max-w-3xl">
             <Link
               to="/english-career"
@@ -65,31 +65,35 @@ function DemoSessionPage() {
               <Icon name="arrow-right" size={14} className="rotate-180" /> {d.category}
             </Link>
             <div className="mt-3 flex items-start gap-2">
-              <Icon name={d.icon} size={36} className="mt-1 shrink-0 text-sunshine" />
-              <h1 className="text-4xl md:text-6xl font-extrabold text-cream leading-[1.05]">
+              <Icon name={d.icon} size={28} className="mt-1 shrink-0 text-sunshine" />
+              <h1 className="text-3xl font-extrabold leading-[1.05] text-cream sm:text-4xl md:text-6xl">
                 {d.title}
               </h1>
             </div>
-            <p className="mt-4 text-lg text-white max-w-2xl">{d.tagline}</p>
+            <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">{d.tagline}</p>
           </div>
-          <div className="mt-8 grid w-full grid-cols-1 overflow-hidden rounded-2xl border border-white/15 bg-black/35 text-left sm:grid-cols-2">
-            <div className="px-5 py-5 sm:px-8 sm:py-6">
-              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
+          <div className="mt-6 grid w-full grid-cols-2 overflow-hidden rounded-2xl border border-white/15 bg-black/35 text-left">
+            <div className="min-w-0 px-3 py-3.5 min-[420px]:px-5 min-[420px]:py-5 sm:px-8 sm:py-6">
+              <p className="text-[10px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75 min-[420px]:text-[11px]">
                 Pay now
               </p>
-              <p className="mt-1 font-display text-4xl font-extrabold leading-none text-sunshine md:text-5xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine min-[420px]:text-4xl md:text-5xl">
                 ₹199
               </p>
-              <p className="mt-1 text-sm text-white/80">90 min · tax included</p>
+              <p className="mt-1 text-[11px] leading-snug text-white/80 min-[420px]:text-sm">
+                90 min · tax included
+              </p>
             </div>
-            <div className="border-t border-white/15 px-5 py-5 sm:border-t-0 sm:border-l sm:px-8 sm:py-6">
-              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
+            <div className="min-w-0 border-l border-white/15 px-3 py-3.5 min-[420px]:px-5 min-[420px]:py-5 sm:px-8 sm:py-6">
+              <p className="text-[10px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75 min-[420px]:text-[11px]">
                 If you enrol
               </p>
-              <p className="mt-1 font-display text-4xl font-extrabold leading-none text-white md:text-5xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white min-[420px]:text-4xl md:text-5xl">
                 ₹0
               </p>
-              <p className="mt-1 text-sm text-white/80">within 48 hours</p>
+              <p className="mt-1 text-[11px] leading-snug text-white/80 min-[420px]:text-sm">
+                within 48 hours
+              </p>
             </div>
           </div>
           <div className="mt-7">
