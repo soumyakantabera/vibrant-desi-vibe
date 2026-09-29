@@ -82,7 +82,7 @@ function DemoSessionPage() {
               </p>
               <p className="mt-1 text-xs font-semibold text-white/90">90 min · tax included</p>
             </div>
-            <div className="border-t-2 border-[#053b1e]/15 bg-[#3DDC84] px-4 py-3 text-[#053b1e] min-[420px]:border-t-0 min-[420px]:border-l-2">
+            <div className="border-t-2 border-[#053b1e]/15 bg-[#C6FF00] px-4 py-3 text-[#053b1e] min-[420px]:border-t-0 min-[420px]:border-l-2">
               <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em]">
                 If you enrol
               </p>
