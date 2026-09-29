@@ -21,7 +21,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -156,7 +156,7 @@ jobs:
           fi
           echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
       # Start a fresh workflow after a Pages API/OIDC failure; rerunning only this job
       # can leave duplicate github-pages artifacts in the same run.
@@ -171,7 +171,7 @@ jobs:
         run: sleep 20
 
       - id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Notify Bing and IndexNow of updated URLs
         if: success()
