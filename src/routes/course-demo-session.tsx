@@ -72,24 +72,24 @@ function DemoSessionPage() {
             </div>
             <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">{d.tagline}</p>
           </div>
-          <div className="mt-6 grid w-full max-w-md grid-cols-1 overflow-hidden rounded-2xl text-left min-[420px]:grid-cols-2">
-            <div className="bg-brand-deep px-4 py-3">
-              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
+          <div className="mt-6 grid w-full max-w-md grid-cols-1 overflow-hidden rounded-2xl text-left text-ink min-[420px]:grid-cols-2">
+            <div className="bg-sunshine px-4 py-3">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-ink/70">
                 Pay now
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-sunshine sm:text-4xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-ink sm:text-4xl">
                 ₹199
               </p>
-              <p className="mt-1 text-xs text-white/80">90 min · tax included</p>
+              <p className="mt-1 text-xs font-semibold text-ink/80">90 min · tax included</p>
             </div>
-            <div className="border-t border-white/15 bg-ink px-4 py-3 min-[420px]:border-t-0 min-[420px]:border-l">
-              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/75">
+            <div className="border-t border-ink/10 bg-coral px-4 py-3 min-[420px]:border-t-0 min-[420px]:border-l">
+              <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-ink/70">
                 If you enrol
               </p>
-              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white sm:text-4xl">
+              <p className="mt-1 font-display text-3xl font-extrabold leading-none text-ink sm:text-4xl">
                 ₹0
               </p>
-              <p className="mt-1 text-xs text-white/80">within 48 hours</p>
+              <p className="mt-1 text-xs font-semibold text-ink/80">within 48 hours</p>
             </div>
           </div>
           <div className="mt-7">
