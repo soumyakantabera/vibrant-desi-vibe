@@ -19,13 +19,13 @@ export const Route = createFileRoute("/course-demo-session")({
 const STEPS = [
   {
     n: "1",
-    title: "Pay ₹199",
-    body: "Inclusive of taxes. We send the payment link on WhatsApp. This holds a seat in a live batch.",
+    title: "WhatsApp us",
+    body: "Message us first. Tell us you want the 90-minute seat. We reply with the payment link.",
   },
   {
     n: "2",
-    title: "Message us",
-    body: "Contact us after you pay. We schedule the session within 72 hours of payment. No message, no seat.",
+    title: "Pay ₹199",
+    body: "Inclusive of taxes. This holds the seat. We schedule the session within 72 hours of payment.",
   },
   {
     n: "3",
@@ -108,7 +108,7 @@ function DemoSessionPage() {
             </a>
           </div>
           <p className="mt-3 max-w-xl text-sm font-semibold text-white/95">
-            Pay, then message us. We place you within 72 hours of payment.
+            WhatsApp us, then pay. We place you within 72 hours of payment.
           </p>
           <PaymentTrust tone="dark" className="mt-4" />
         </div>

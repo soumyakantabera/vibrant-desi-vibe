@@ -735,7 +735,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I sit a real class before I buy a course?",
-        a: "Yes. The Demo Session is 90 minutes in a live batch with the teacher. Pay ₹199, inclusive of taxes. If you enrol in that course, or any course we currently offer, within 48 hours of the session, that ₹199 is adjusted and you pay ₹0 extra. It is not a cash refund. Message us after you pay and we schedule the seat within 72 hours. This is not the free consultation, and it is not a sixth programme.",
+        a: "Yes. The Demo Session is 90 minutes in a live batch with the teacher. WhatsApp us first, then pay ₹199, inclusive of taxes. If you enrol in that course, or any course we currently offer, within 48 hours of the session, that ₹199 is adjusted and you pay ₹0 extra. It is not a cash refund. We schedule the seat within 72 hours of payment. This is not the free consultation, and it is not a sixth programme.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -786,7 +786,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is the Demo Session one of the courses?",
-        a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. Message us after payment; we schedule you within 72 hours. The five programmes are unchanged.",
+        a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. WhatsApp us first, then pay. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. We schedule you within 72 hours of payment. The four programmes are unchanged.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -1774,7 +1774,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ogImage: "/og/default.jpg",
     dateModified: "2026-09-28",
     summary:
-      "Paid Demo Session. ₹199 inclusive of taxes for 90 minutes in a live batch of about 6. Not a sixth programme and not the free consultation. Message WhatsApp after payment; we schedule within 72 hours. Enrol in any current course within 48 hours and the ₹199 is adjusted (₹0 extra, not a cash refund). Rule also at /terms#demo-session.",
+      "Paid Demo Session. ₹199 inclusive of taxes for 90 minutes in a live batch of about 6. Not a sixth programme and not the free consultation. WhatsApp us first, then pay; we schedule within 72 hours of payment. Enrol in any current course within 48 hours and the ₹199 is adjusted (₹0 extra, not a cash refund). Rule also at /terms#demo-session.",
     extraFaqs: [],
   },
 };

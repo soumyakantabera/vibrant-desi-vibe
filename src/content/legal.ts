@@ -236,7 +236,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Demo Session",
         paragraphs: [
           "The Demo Session is a paid seat in a live batch. It lasts 90 minutes. The fee is ₹199, inclusive of taxes. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
-          "After payment you must contact us on WhatsApp (+91 96744 79949) to schedule the session. The session has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
+          "Message us on WhatsApp first (+91 96744 79949). We send the payment link. The session has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
           "The Demo Session fee is not refundable. It is reimbursable in one case only: within 48 hours after the demo class, you take admission in the course whose session you attended, or in any other course we are currently offering. Reimbursement means the ₹199 is adjusted against that course fee. It is not paid back in cash to your bank, card or UPI, and it is not available for any other reason.",
           "If you do not take admission within those 48 hours, the ₹199 is not reimbursed. Missing the session, joining late, or changing your mind does not create a refund or a reimbursement.",
           "Nothing in this section removes a right under Indian law that cannot be waived.",

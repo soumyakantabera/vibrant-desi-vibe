@@ -72,7 +72,7 @@ import {
 import { admissionPolicy, admissionShort } from "@/lib/fees";
 import { DEMO_MSG } from "@/lib/whatsapp";
 
-const DEMO_RULE = `Paid Demo Session at ${DEMO_SESSION.path}: pay ${DEMO_SESSION.price} inclusive of taxes for ${DEMO_SESSION.minutes} minutes in a live batch of about 6. If the learner enrols in that course or any course currently offered within ${DEMO_SESSION.adjustWithinHours} hours of the session, that ${DEMO_SESSION.price} is adjusted and they pay ₹0 extra — not a cash refund. After payment, message WhatsApp; the seat is scheduled within ${DEMO_SESSION.scheduleWithinHours} hours. Not a sixth programme. Not the free consultation.`;
+const DEMO_RULE = `Paid Demo Session at ${DEMO_SESSION.path}: WhatsApp first, then pay ${DEMO_SESSION.price} inclusive of taxes for ${DEMO_SESSION.minutes} minutes in a live batch of about 6. If the learner enrols in that course or any course currently offered within ${DEMO_SESSION.adjustWithinHours} hours of the session, that ${DEMO_SESSION.price} is adjusted and they pay ₹0 extra — not a cash refund. The seat is scheduled within ${DEMO_SESSION.scheduleWithinHours} hours of payment. Not a sixth programme. Not the free consultation.`;
 
 /* ------------------------------------------------------------------- facts */
 

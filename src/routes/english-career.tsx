@@ -233,7 +233,7 @@ function Page() {
                 </li>
                 <li className="flex gap-2">
                   <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
-                  Message us after you pay. We schedule you within 72 hours.
+                  WhatsApp us first, then pay. We schedule you within 72 hours of payment.
                 </li>
                 <li className="flex gap-2">
                   <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />

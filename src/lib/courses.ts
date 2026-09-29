@@ -451,7 +451,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹199",
     liveNote:
-      "✓ Pay ₹199 · ✓ Message us to schedule within 72 hours · ✓ 90 minutes with the teacher · ✓ Fee adjusted if you enrol within 48 hours",
+      "✓ WhatsApp us first · ✓ Then pay ₹199 · ✓ We schedule within 72 hours · ✓ Fee adjusted if you enrol within 48 hours",
     outcomes: [
       "Sit in a real batch, not a private pitch",
       "See how the teacher corrects, live",
@@ -461,10 +461,10 @@ export const COURSES: Record<string, CourseData> = {
     ],
     modules: [
       {
-        title: "You pay, then you write to us",
+        title: "You WhatsApp us, then you pay",
         items: [
-          "₹199, inclusive of taxes, on the payment link we send",
-          "Message WhatsApp as soon as you have paid",
+          "Message WhatsApp first and ask for the Demo Session",
+          "We send the payment link for ₹199, inclusive of taxes",
           "We schedule the seat within 72 hours of payment",
           "No message, no seat — contact us to be placed",
         ],
@@ -503,7 +503,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "When is the class?",
-        a: "You choose by contacting us. After payment, message WhatsApp. We schedule the session within 72 hours of payment. We cannot place you if you do not write.",
+        a: "WhatsApp us first. We send the ₹199 payment link. After you pay, we schedule the session within 72 hours. We cannot place you if you do not write.",
       },
       {
         q: "Is this the free consultation?",
