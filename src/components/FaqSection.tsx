@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import type { Faq } from "@/lib/seo";
@@ -24,7 +25,7 @@ export function FaqSection({
   faqs: Faq[];
   eyebrow?: string;
   title?: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   waMessage?: string;
   className?: string;
 }) {

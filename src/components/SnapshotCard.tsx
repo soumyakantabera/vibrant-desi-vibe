@@ -13,8 +13,8 @@ export type SnapshotRow = {
 export type SnapshotCardProps = {
   badge?: string;
   eyebrow?: string;
-  headline?: { big: string; suffix?: string };
-  subnote?: string;
+  headline?: { big: ReactNode; suffix?: ReactNode };
+  subnote?: ReactNode;
   rows: SnapshotRow[];
   footer?: string;
   sticker?: { top: string; bottom: string };

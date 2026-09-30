@@ -1,13 +1,13 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, type ReactNode } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
-import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, intlZero, type IntlSlug } from "@/lib/intl-fees";
+import { FeeText } from "@/components/FeeText";
+import type { IntlSlug } from "@/lib/intl-fees";
 
-type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
+type NavItem = { to: string; label: string; icon?: IconName; desc?: ReactNode };
 
 const MAIN: NavItem[] = [
   { to: "/", label: "Home" },
@@ -63,7 +63,6 @@ const ENGLISH_COURSES: {
 ];
 
 export function Nav() {
-  const intl = useIntlMarket();
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const { location } = useRouterState();
@@ -101,11 +100,7 @@ export function Nav() {
     to: c.to,
     label: c.label,
     icon: c.icon,
-    desc: intl
-      ? c.slug === "demo-session"
-        ? `${INTL_FEE[c.slug].display} · 90 min · If you join, it costs you nothing.`
-        : `${c.inr.split(" · ")[0]} · ${INTL_FEE[c.slug].display}`
-      : c.inr,
+    desc: <FeeText text={c.inr} />,
   }));
 
   const isHome = location.pathname === "/";
@@ -122,11 +117,11 @@ export function Nav() {
               <span className="demo-ribbon-cta">
                 <span>Book the Demo Class</span>
                 <span className="demo-ribbon-price">
-                  <span>{intl ? INTL_FEE["demo-session"].display : "₹199"}</span>
+                  <FeeText text="₹199" />
                   <span className="demo-ribbon-mins">90 min</span>
                 </span>
                 <span className="demo-ribbon-zero">
-                  <span>{intl ? intlZero() : "₹0"}</span>
+                  <FeeText text="₹0" />
                   <span>if you enrol · 48 hrs</span>
                 </span>
               </span>

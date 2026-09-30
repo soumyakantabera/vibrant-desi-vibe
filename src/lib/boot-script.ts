@@ -1,3 +1,6 @@
+import { TZ_TO_COUNTRY } from "./country";
+import { BOT_UA } from "./intl-fees";
+
 /**
  * The boot gate: the few lines that decide when the site is allowed to appear.
  *
@@ -118,6 +121,41 @@ const BOOT_SCRIPT_SOURCE = `(function () {
   if (w.MutationObserver) {
     new MutationObserver(apply).observe(root, { attributes: true, attributeFilter: ["class"] });
   }
+
+  // Fee market. Both labels are already in the HTML. This class is set before
+  // the body is parsed, so the first paint — including the paint under the
+  // veil — shows the right one. React will try to strip classes it did not
+  // render; the name stays in flags, and the observer puts it back.
+  var TZ = ${JSON.stringify(TZ_TO_COUNTRY)};
+  var bot = false;
+  try {
+    bot = !!(w.navigator && w.navigator.webdriver) || ${BOT_UA}.test((w.navigator && w.navigator.userAgent) || "");
+  } catch (e) {}
+  var readIso = function () {
+    try {
+      var raw = w.localStorage.getItem("lws.country.v1");
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        var stored = parsed && parsed.iso2 ? String(parsed.iso2).toUpperCase() : "";
+        if (/^[A-Z]{2}$/.test(stored)) return stored;
+      }
+    } catch (e) {}
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      if (TZ[tz]) return TZ[tz];
+    } catch (e2) {}
+    return "IN";
+  };
+  var applyMarket = function (iso2) {
+    var iso = String(iso2 || "IN").toUpperCase();
+    var intl = !bot && iso !== "IN";
+    if (intl) raise("lws-intl");
+    else drop("lws-intl");
+    w.__lwsMarket.iso2 = iso;
+    w.__lwsMarket.intl = intl;
+  };
+  w.__lwsMarket = { iso2: "IN", intl: false, set: function (iso2) { applyMarket(iso2); } };
+  applyMarket(readIso());
 
   var t0 = Date.now(), done = false;
   var need = { css: false, fonts: false, media: false };
@@ -282,6 +320,11 @@ html.js.booting.app-ready::before { opacity: 0; pointer-events: none; }
 @media print {
   html.js.booting body { opacity: 1; }
   html.js.booting::before { display: none; }
-}`;
+}
+
+.lws-usd { display: none !important; }
+html.lws-intl .lws-inr { display: none !important; }
+html.lws-intl .lws-usd { display: inline !important; }
+html.lws-intl:not(.lws-market-live) select.lws-country { color: transparent; }`;
 
 export const BOOT_CSS = compactCss(BOOT_CSS_SOURCE);

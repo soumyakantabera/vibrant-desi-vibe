@@ -15,7 +15,7 @@ export function SectionHeader({
   align = "center",
   invert,
 }: {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   eyebrowTone?: "default" | "sun" | "coral" | "indigo" | "white";
   title: ReactNode;
   subtitle?: ReactNode;
@@ -55,7 +55,7 @@ export function FeatureCard({
 }: {
   icon: IconName;
   color?: "brand" | "sunshine" | "coral" | "indigo" | "sage";
-  title: string;
+  title: ReactNode;
   children: ReactNode;
 }) {
   const ringMap = {

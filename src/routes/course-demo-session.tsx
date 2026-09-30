@@ -8,8 +8,8 @@ import { courseFaqs, courseSeo } from "@/components/CoursePage";
 import { COURSES } from "@/lib/courses";
 import { DEMO_SESSION } from "@/lib/demo-session";
 import { waDirect } from "@/lib/whatsapp";
-import { useIntlMarket } from "@/hooks/use-intl-market";
-import { applyIntlFees, intlUnit } from "@/lib/intl-fees";
+import { FeeText, MarketCopy } from "@/components/FeeText";
+import { intlUnit } from "@/lib/intl-fees";
 
 const d = COURSES["demo-session"];
 
@@ -42,10 +42,9 @@ const STEPS = [
 ];
 
 function DemoSessionPage() {
-  const intl = useIntlMarket();
   const enrol = waDirect(DEMO_SESSION.enrolMessage);
   const faqs = courseFaqs(d);
-  const fee = (text: string) => applyIntlFees(text, intl);
+  const fee = (text: string) => <FeeText text={text} />;
 
   return (
     <Layout footerImage={d.footerImage}>
@@ -85,7 +84,7 @@ function DemoSessionPage() {
                 {fee("₹199")}
               </p>
               <p className="mt-1 text-xs font-semibold text-white/90">
-                {intl ? `90 min · ${intlUnit()}` : "90 min · tax included"}
+                <MarketCopy inr="90 min · tax included" usd={`90 min · ${intlUnit()}`} />
               </p>
             </div>
             <div className="border-t-2 border-[#053b1e]/15 bg-[#C6FF00] px-4 py-3 text-[#053b1e] min-[420px]:border-t-0 min-[420px]:border-l-2">

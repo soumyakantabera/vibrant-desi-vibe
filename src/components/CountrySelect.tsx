@@ -6,6 +6,7 @@ import {
   DEFAULT_COUNTRY,
   countryName,
   detectCountry,
+  isCountryCode,
   readStoredCountry,
   writeStoredCountry,
   type CountryChoice,
@@ -23,12 +24,19 @@ export function CountrySelect() {
 
   useEffect(() => {
     let cancelled = false;
+    const bootIso = (window as Window & { __lwsMarket?: { iso2?: string } }).__lwsMarket?.iso2;
     const stored = readStoredCountry();
     if (stored?.source === "manual") {
       setChoice(stored);
-      return;
+    } else if (bootIso && isCountryCode(bootIso)) {
+      setChoice({ iso2: bootIso, name: countryName(bootIso), source: stored?.source ?? "timezone" });
+    } else if (stored) {
+      setChoice(stored);
     }
-    if (stored) setChoice(stored);
+    document.documentElement.classList.add("lws-market-live");
+    if (stored?.source === "manual") return () => {
+      cancelled = true;
+    };
     void detectCountry().then((detected) => {
       if (cancelled) return;
       const latest = readStoredCountry();
@@ -61,7 +69,7 @@ export function CountrySelect() {
       <Icon name="globe" size={13} />
       <span className="sr-only">Country</span>
       <select
-        className="max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-0.5 pr-4 text-[11px] font-medium text-cream underline decoration-cream/35 underline-offset-2 focus:outline-none"
+        className="lws-country max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-0.5 pr-4 text-[11px] font-medium text-cream underline decoration-cream/35 underline-offset-2 focus:outline-none"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%23F6EFE4' d='M0 0l5 6 5-6z'/></svg>\")",

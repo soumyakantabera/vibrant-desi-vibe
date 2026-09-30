@@ -28,8 +28,8 @@ import {
 import { COURSES } from "@/lib/courses";
 import { waLink, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
-import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, applyIntlFees, intlUnit } from "@/lib/intl-fees";
+import { FeePair, FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
+import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -86,9 +86,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const intl = useIntlMarket();
-  const spoken = intl ? INTL_FEE["spoken-english"] : null;
-  const business = intl ? INTL_FEE["business-english"] : null;
   const TESTIMONIALS = [
     {
       quote:
@@ -154,8 +151,10 @@ function Home() {
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Real teachers. Small batches. Gamified, interactive live English classes — designed
               for the demands of today's market. From{" "}
-              <strong className="text-sunshine">{spoken ? spoken.display : "₹999/mo"}</strong>
-              {spoken ? ` · ${intlUnit()}.` : ", inclusive of taxes."} For everyone: adults, professionals
+              <strong className="text-sunshine">
+                <FeeText text="₹999/mo" />
+              </strong>
+              <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> For everyone: adults, professionals
               and graduates.
             </p>
             <div
@@ -191,7 +190,7 @@ function Home() {
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "7 years · about 6 a batch · Kolkata, pan-India & now worldwide",
-                spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/month, inclusive of taxes",
+                "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
                 "Small batches — approx. 6 learners",
               ].map((s) => (
@@ -200,7 +199,7 @@ function Home() {
                   className="snap-start shrink-0 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20 whitespace-nowrap"
                 >
                   <Icon name="check" size={14} className="text-sage" />
-                  {s}
+                  <FeeText text={s} />
                 </span>
               ))}
             </div>
@@ -211,13 +210,12 @@ function Home() {
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
               <SnapshotCard
                 eyebrow="Course fees start at"
-                headline={
-                  spoken
-                    ? { big: spoken.big, suffix: spoken.suffix }
-                    : { big: "₹999", suffix: "/month" }
-                }
+                headline={feeHeadline("₹999/month", "spoken-english")}
                 subnote={
-                  spoken ? `${intlUnit()} · billed monthly` : "Monthly billing · inclusive of taxes · UPI accepted"
+                  <MarketCopy
+                    inr="Monthly billing · inclusive of taxes · UPI accepted"
+                    usd={`${intlUnit()} · billed monthly`}
+                  />
                 }
                 rows={[
                   {
@@ -254,7 +252,9 @@ function Home() {
               </span>
               <p>
                 <strong className="font-display block">{title}</strong>
-                <span className="text-ink/80">{applyIntlFees(body, intl)}</span>
+                <span className="text-ink/80">
+                  <FeeText text={body} />
+                </span>
               </p>
             </div>
           ))}
@@ -374,11 +374,7 @@ function Home() {
             <GlassCard
               icon="users"
               title="Small Live Batches"
-              pricing={
-                spoken
-                  ? `Approx. 6 learners · From ${spoken.display} · ${intlUnit()}`
-                  : "Approx. 6 learners · From ₹999/mo, inclusive of taxes"
-              }
+              pricing={<FeeText text="Approx. 6 learners · From ₹999/mo, inclusive of taxes" />}
             >
               Scheduled English cohorts usually have around 6 learners. You practise with
               classmates, speak in every class and receive corrections during the lesson.
@@ -390,7 +386,7 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: spoken ? `4 programmes · from ${spoken.display}` : "4 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
+              { n: 1, lbl: "Choose Course", sub: "4 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
@@ -410,7 +406,9 @@ function Home() {
                   {s.n}
                 </div>
                 <div className="text-cream font-display font-bold mt-3">{s.lbl}</div>
-                <div className="text-white/85 text-xs mt-1">{s.sub}</div>
+                <div className="text-white/85 text-xs mt-1">
+                  <FeeText text={s.sub} />
+                </div>
               </div>
             ))}
           </Reveal>
@@ -429,9 +427,7 @@ function Home() {
             eyebrow="What We Offer"
             title="Why Our Teaching Works"
             subtitle={
-              spoken
-                ? `Spoken, business and interactive English — live, practical, about 6 in a batch, from ${spoken.display} · ${intlUnit()}. 7 years, 500+ learners.`
-                : "Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
+              <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners." />
             }
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -526,9 +522,11 @@ function Home() {
       <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
         <div className="container-x">
           <SectionHeader
-            eyebrow={spoken ? "Simple pricing" : "Simple, India-Friendly Pricing"}
+            eyebrow={
+              <MarketCopy inr="Simple, India-Friendly Pricing" usd="Simple pricing" />
+            }
             eyebrowTone="indigo"
-            title={spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/mo · inclusive of taxes"}
+            title={<FeeText text="From ₹999/mo · inclusive of taxes" />}
             subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
@@ -542,11 +540,13 @@ function Home() {
                 </h3>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                {spoken ? spoken.big : "₹999"}
-                <span className="text-base font-bold text-ink/75">{spoken ? spoken.suffix : "/month"}</span>
+                <FeePair inr="₹999" usd={INTL_FEE["spoken-english"].big} />
+                <span className="text-base font-bold text-ink/75">
+                  <FeePair inr="/month" usd={INTL_FEE["spoken-english"].suffix} />
+                </span>
               </p>
               <p className="mt-1 text-sm text-ink/75">
-                {spoken ? `${intlUnit()} · billed monthly` : "Inclusive of taxes · billed monthly"}
+                <MarketCopy inr="Inclusive of taxes · billed monthly" usd={`${intlUnit()} · billed monthly`} />
               </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
@@ -577,13 +577,16 @@ function Home() {
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                {business ? business.big : "₹1,999"}
+                <FeePair inr="₹1,999" usd={INTL_FEE["business-english"].big} />
                 <span className="text-base font-bold text-ink/75">
-                  {business ? business.suffix : "/month"}
+                  <FeePair inr="/month" usd={INTL_FEE["business-english"].suffix} />
                 </span>
               </p>
               <p className="mt-1 text-sm text-ink/75">
-                {business ? `${intlUnit()} · 3 months · up to 2 classes/week` : "Inclusive of taxes · 3 months · up to 2 classes/week"}
+                <MarketCopy
+                  inr="Inclusive of taxes · 3 months · up to 2 classes/week"
+                  usd={`${intlUnit()} · 3 months · up to 2 classes/week`}
+                />
               </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
@@ -628,9 +631,10 @@ function Home() {
           </Reveal>
           <div className="mt-7 text-center">
             <p className="text-sm text-ink/75">
-              {intl
-                ? `You are outside India. These are international fees, in ${intlUnit()}.`
-                : "All prices are in INR and inclusive of taxes."}
+              <MarketCopy
+                inr="All prices are in INR and inclusive of taxes."
+                usd={`You are outside India. These are international fees, in ${intlUnit()}.`}
+              />
             </p>
             <div className="mt-3">
               <WaButton
@@ -908,7 +912,7 @@ function GlassCard({
 }: {
   icon: IconName;
   title: string;
-  pricing: string;
+  pricing: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (

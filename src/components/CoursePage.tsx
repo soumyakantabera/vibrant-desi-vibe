@@ -7,8 +7,8 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { applyIntlFees, intlUnit, isIntlSlug, INTL_FEE } from "@/lib/intl-fees";
-import { useIntlMarket } from "@/hooks/use-intl-market";
+import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
+import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import {
@@ -172,33 +172,27 @@ const TEACHER_NOTE: Record<string, string> = {
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
-  const intl = useIntlMarket() && isIntlSlug(data.slug);
-  const intlFee = intl && isIntlSlug(data.slug) ? INTL_FEE[data.slug] : null;
-  const shownPrice = intlFee?.display ?? data.price;
-  const shownTagline = applyIntlFees(data.tagline, !!intlFee);
-  const shownLive =
-    data.liveNote != null ? applyIntlFees(data.liveNote, !!intlFee) : data.liveNote;
+  const shownTagline = <FeeText text={data.tagline} />;
+  const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
   const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary =
     data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
   const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
-  const priceMatch = data.price.match(/(₹[\d,]+)\s*(.*)/);
   const faqs = courseFaqs(data);
   const snapshot = (
     <SnapshotCard
       badge={`Live · ${data.format}`}
       eyebrow="Course fee starts at"
-      headline={
-        intlFee
-          ? { big: intlFee.big, suffix: intlFee.suffix || undefined }
-          : priceMatch
-            ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
-            : { big: data.price }
-      }
+      headline={isIntlSlug(data.slug) ? feeHeadline(data.price, data.slug) : { big: data.price }}
       subnote={
-        intlFee
-          ? `${data.duration} · ${intlUnit()}`
-          : `${data.duration} · inclusive of taxes`
+        <>
+          {data.duration} ·{" "}
+          {isIntlSlug(data.slug) ? (
+            <FeePair inr="inclusive of taxes" usd={intlUnit()} />
+          ) : (
+            "inclusive of taxes"
+          )}
+        </>
       }
       rows={[
         { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
@@ -245,8 +239,8 @@ export function CoursePage({ data }: { data: CourseData }) {
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
-                  {intlFee ? null : <Icon name="rupee" size={14} />}
-                  {shownPrice}
+                  <Icon name="rupee" size={14} className="lws-inr" />
+                  <FeeText text={data.price} />
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
                   <Icon name="clock" size={14} className="text-sage" />

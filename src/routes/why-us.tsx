@@ -14,8 +14,8 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
-import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, applyIntlFees, intlUnit } from "@/lib/intl-fees";
+import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
+import { intlUnit } from "@/lib/intl-fees";
 
 export const Route = createFileRoute("/why-us")({
   component: Page,
@@ -96,8 +96,6 @@ const MARKET = [
 ];
 
 function Page() {
-  const intl = useIntlMarket();
-  const spoken = intl ? INTL_FEE["spoken-english"] : null;
   const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
     <Layout
@@ -126,8 +124,7 @@ function Page() {
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
               A teacher who knows your name. 500+ learners, 7 years, about 6 in a batch. You speak
-              every class. Kolkata, pan-India, now worldwide.{" "}
-              {spoken ? `From ${spoken.display} · ${intlUnit()}.` : "From ₹999/mo, inclusive of taxes."}
+              every class. Kolkata, pan-India, now worldwide. <FeeText text="From ₹999/mo, inclusive of taxes." />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">
@@ -148,13 +145,12 @@ function Page() {
               <SnapshotCard
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
-                headline={
-                  spoken
-                    ? { big: spoken.big, suffix: spoken.suffix }
-                    : { big: "₹999", suffix: "/mo" }
-                }
+                headline={feeHeadline("₹999/mo", "spoken-english")}
                 subnote={
-                  spoken ? `${intlUnit()} · international fee` : "inclusive of taxes · Kolkata-born · heard across India"
+                  <MarketCopy
+                    inr="inclusive of taxes · Kolkata-born · heard across India"
+                    usd={`${intlUnit()} · international fee`}
+                  />
                 }
                 rows={[
                   {
@@ -198,13 +194,13 @@ function Page() {
                 key={m.tag}
                 className="flex h-full min-w-0 flex-col overflow-hidden rounded-2xl"
               >
-                <FeatureCard icon={m.icon} color={m.color} title={applyIntlFees(m.title, intl)}>
+                <FeatureCard icon={m.icon} color={m.color} title={<FeeText text={m.title} />}>
                   <span className="mb-2 block text-[11px] font-display font-bold uppercase tracking-wider text-ink/55">
                     {m.tag}
                   </span>
-                  {applyIntlFees(m.body, intl)}
+                  <FeeText text={m.body} />
                   <span className="mt-3 block font-display text-sm font-extrabold text-ink">
-                    {applyIntlFees(m.stat, intl)}
+                    <FeeText text={m.stat} />
                   </span>
                 </FeatureCard>
               </article>
@@ -226,9 +222,9 @@ function Page() {
           <FeatureCard
             icon="rupee"
             color="sunshine"
-            title={spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/mo, inclusive of taxes"}
+            title={<FeeText text="From ₹999/mo, inclusive of taxes" />}
           >
-            {spoken ? `No material fee. Billed monthly in ${intlUnit()}.` : "No material fee. Monthly UPI."}
+            <MarketCopy inr="No material fee. Monthly UPI." usd={`No material fee. Billed monthly in ${intlUnit()}.`} />
           </FeatureCard>
           <FeatureCard icon="star" color="coral" title={`${RATING_DISPLAY} ${RATING.source}`}>
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.
@@ -266,9 +262,7 @@ function Page() {
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
         subtitle={
-          spoken
-            ? `${spoken.display} · ${intlUnit()}. 7 years, 500+ learners, live vs recorded, batch of around 6.`
-            : "₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6."
+          <FeeText text="₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6." />
         }
         waMessage="Hi, I want a free consultation to know how your spoken English classes work."
       />
@@ -285,9 +279,7 @@ function Page() {
           <div className="text-cream">
             <h2 className="text-3xl text-cream md:text-4xl">Ready to start?</h2>
             <p className="mt-3 text-white/95">
-              {spoken
-                ? `Chat on WhatsApp. 7 years, 500+ learners, from ${spoken.display} · ${intlUnit()}.`
-                : "Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes."}
+              <FeeText text="Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes." />
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">

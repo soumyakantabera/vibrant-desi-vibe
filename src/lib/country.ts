@@ -63,7 +63,7 @@ export function asCountry(code: string | undefined | null): CountryCode {
   return DEFAULT_COUNTRY;
 }
 
-const TZ_TO_COUNTRY: Record<string, CountryCode> = {
+export const TZ_TO_COUNTRY: Record<string, CountryCode> = {
   "Asia/Kolkata": "IN",
   "Asia/Calcutta": "IN",
   "Asia/Colombo": "LK",
@@ -138,6 +138,8 @@ export function writeStoredCountry(next: CountryChoice) {
   try {
     window.localStorage.setItem(COUNTRY_STORAGE_KEY, JSON.stringify(next));
     window.dispatchEvent(new CustomEvent(COUNTRY_EVENT, { detail: next }));
+    const api = (window as Window & { __lwsMarket?: { set?: (iso2: string) => void } }).__lwsMarket;
+    api?.set?.(next.iso2);
   } catch {
     /* private mode */
   }

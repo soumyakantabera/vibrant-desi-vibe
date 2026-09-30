@@ -10,7 +10,7 @@ import { IMG } from "@/lib/images";
 import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
 import { FOOTER_CITIES } from "@/lib/cities";
-import { useIntlMarket } from "@/hooks/use-intl-market";
+import { FeeText, MarketCopy } from "@/components/FeeText";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
@@ -42,7 +42,6 @@ const GUIDES = FOOTER_GUIDES;
 const IMG_DEFAULT = IMG.groupClass;
 
 export function Footer({ image }: { image?: string }) {
-  const intl = useIntlMarket();
   const wa = waLink("Hi, I want a free consultation for spoken English.");
   return (
     <footer className="bg-ink text-cream pt-16 pb-24 sm:pb-8 mt-10" data-cta-location="footer">
@@ -59,9 +58,7 @@ export function Footer({ image }: { image?: string }) {
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              {intl
-                ? `500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ${INTL_FEE["spoken-english"].display}. ${intlUnit()}.`
-                : "500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹999/mo, inclusive of taxes. Kolkata, pan-India, now worldwide."}
+              <FeeText text="500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹999/mo, inclusive of taxes. Kolkata, pan-India, now worldwide." />
             </p>
             <SmartImage
               src={image || IMG_DEFAULT}
@@ -92,9 +89,7 @@ export function Footer({ image }: { image?: string }) {
                 Live spoken English from these cities
               </p>
               <p className="mt-2 text-sm text-white/85">
-                {intl
-                  ? `Same teacher. Same ${INTL_FEE["spoken-english"].display}. IST morning, evening and weekend batches — no walk-in campus.`
-                  : "Same teacher. Same ₹999/mo, inclusive of taxes. IST morning, evening and weekend batches — no walk-in campus."}
+                <FeeText text="Same teacher. Same ₹999/mo, inclusive of taxes. IST morning, evening and weekend batches — no walk-in campus." />
               </p>
             </div>
             <ul className="flex flex-wrap gap-2 lg:max-w-3xl lg:justify-end">
@@ -201,26 +196,22 @@ export function Footer({ image }: { image?: string }) {
 }
 
 function EnrolmentNote() {
-  const intl = useIntlMarket();
-  if (!intl) {
-    return (
-      <>
-        Fees on this site are India pricing, in Indian Rupees, inclusive of taxes. These published
-        figures are for learners in India.
-      </>
-    );
-  }
   const spoken = INTL_FEE["spoken-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
   const business = INTL_FEE["business-english"].display;
   const interview = INTL_FEE["interview-preparation"].display;
   const demo = INTL_FEE["demo-session"].display;
   return (
-    <>
-      You are outside India. International fees: Basic Spoken English {spoken}, Interactive Speaking{" "}
-      {interactive}, Business English {business}, Interview Preparation {interview}. Demo session{" "}
-      {demo}.
-    </>
+    <MarketCopy
+      inr="Fees on this site are India pricing, in Indian Rupees, inclusive of taxes. These published figures are for learners in India."
+      usd={
+        <>
+          You are outside India. International fees, in {intlUnit()}: Basic Spoken English {spoken},
+          Interactive Speaking {interactive}, Business English {business}, Interview Preparation{" "}
+          {interview}. Demo session {demo}.
+        </>
+      }
+    />
   );
 }
 

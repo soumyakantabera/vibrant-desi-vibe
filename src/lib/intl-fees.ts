@@ -80,7 +80,7 @@ export function applyIntlFees(text: string, intl: boolean): string {
  * contains Googlebot; GPT, Claude, Perplexity, Bing and ad bots are listed
  * explicitly. Do not match WhatsApp's in-app browser — that is a real learner.
  */
-const BOT_UA =
+export const BOT_UA =
   /bot|crawl|spider|slurp|mediapartners|adsbot|google-inspection|googleother|storebot|apis-google|feedfetcher|bingpreview|facebookexternalhit|embedly|quora link preview|pinterest|redditbot|telegrambot|slackbot|discordbot|linkedinbot|twitterbot|applebot|duckduck|baiduspider|yandex|sogou|ia_archiver|semrush|ahrefs|mj12bot|dotbot|petalbot|bytespider|gptbot|chatgpt|oai-searchbot|claudebot|anthropic|perplexity|amazonbot|meta-external|cohere|diffbot|dataforseo|serpstat|lighthouse|pagespeed|gtmetrix|pingdom|uptimerobot|prerender|headlesschrome|phantomjs|scrapy|wget|curl\//i;
 
 export function isSearchOrLlmBot(ua: string | undefined | null): boolean {
