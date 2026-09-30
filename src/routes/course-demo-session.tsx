@@ -180,7 +180,7 @@ function DemoSessionPage() {
                   <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-white">
                     <Icon name="check" size={14} />
                   </span>
-                  <span className="text-sm leading-relaxed text-ink/85">{item}</span>
+                  <span className="text-sm leading-relaxed text-ink/85">{fee(item)}</span>
                 </li>
               ))}
             </ul>
@@ -192,13 +192,13 @@ function DemoSessionPage() {
                   <span className="grid h-9 w-9 place-items-center rounded-xl bg-indigo-pop/10 font-display font-extrabold text-indigo-pop">
                     {i + 1}
                   </span>
-                  <h3 className="font-display font-bold text-ink">{mod.title}</h3>
+                  <h3 className="font-display font-bold text-ink">{fee(mod.title)}</h3>
                 </div>
                 <ul className="mt-3 space-y-2 text-sm text-ink/90">
                   {mod.items.map((item) => (
                     <li key={item} className="flex gap-2">
                       <Icon name="check" size={14} className="mt-0.5 shrink-0 text-brand" />
-                      {item}
+                      {fee(item)}
                     </li>
                   ))}
                 </ul>
@@ -215,9 +215,9 @@ function DemoSessionPage() {
             {faqs.map((faq) => (
               <details key={faq.q} className="card-soft" open>
                 <summary className="cursor-pointer list-none font-display font-bold text-ink">
-                  {faq.q}
+                  {fee(faq.q)}
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-ink/85">{faq.a}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/85">{fee(faq.a)}</p>
               </details>
             ))}
           </div>
