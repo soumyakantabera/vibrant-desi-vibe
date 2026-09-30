@@ -14,6 +14,8 @@ import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, DEMO_CTA, waDirect } from "@/lib/whatsapp";
 import { DEMO_SESSION } from "@/lib/demo-session";
+import { useIntlMarket } from "@/hooks/use-intl-market";
+import { INTL_FEE, applyIntlFees } from "@/lib/intl-fees";
 
 type CoursePath = `/course-${CourseSlug}`;
 
@@ -50,6 +52,10 @@ export const Route = createFileRoute("/english-career")({
 });
 
 function Page() {
+  const intl = useIntlMarket();
+  const spoken = intl ? INTL_FEE["spoken-english"] : null;
+  const demo = intl ? INTL_FEE["demo-session"].display : "₹199";
+  const zero = intl ? "$0" : "₹0";
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
@@ -69,7 +75,8 @@ function Page() {
             <p className="mt-5 text-base md:text-lg text-white">
               Four live programmes. Spoken, Interactive Speaking, Business English and Interview
               Preparation. Interview Preparation is the room when the HR
-              screen is the bottleneck. From ₹999/month, inclusive of taxes.
+              screen is the bottleneck.{" "}
+              {spoken ? `From ${spoken.display} · USD.` : "From ₹999/month, inclusive of taxes."}
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -82,7 +89,7 @@ function Page() {
                     key={slug}
                     className="inline-flex items-center gap-1.5 rounded-full bg-cream/10 border border-cream/20 px-2.5 py-1 text-white"
                   >
-                    {c.title} · {c.price}
+                    {c.title} · {intl ? applyIntlFees(c.price, true) : c.price}
                   </span>
                 );
               })}
@@ -108,8 +115,16 @@ function Page() {
               <SnapshotCard
                 badge="Live · English Track"
                 eyebrow="Whole track from"
-                headline={{ big: "₹999", suffix: "/month" }}
-                subnote="₹999–₹1,999/month · inclusive of taxes · Razorpay"
+                headline={
+                  spoken
+                    ? { big: spoken.big, suffix: spoken.suffix }
+                    : { big: "₹999", suffix: "/month" }
+                }
+                subnote={
+                  spoken
+                    ? `USD · ${INTL_FEE["spoken-english"].display} to ${INTL_FEE["interview-preparation"].display}`
+                    : "₹999–₹1,999/month · inclusive of taxes · Razorpay"
+                }
                 rows={[
                   {
                     tone: "brand",
@@ -141,7 +156,11 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Clear Categories"
-            title="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
+            title={
+              spoken
+                ? `4 Programmes · Small live rooms · From ${spoken.display}`
+                : "4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes"
+            }
             subtitle="Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
@@ -192,13 +211,13 @@ function Page() {
                             <Icon name={c.icon} size={20} />
                           </span>
                           <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
-                            {c.price}
+                            {intl ? applyIntlFees(c.price, true) : c.price}
                           </span>
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
                         </div>
                         <h3 className="text-lg font-display font-bold text-ink">{c.title}</h3>
                         <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/85">
-                          {c.tagline}
+                          {applyIntlFees(c.tagline, intl)}
                         </p>
                         <span className="syllabus-cta mt-4 inline-flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-sm font-display font-bold transition bg-brand-soft text-brand-deep group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white group-focus-within:bg-brand group-focus-within:text-white">
                           View Full Syllabus <Icon name="arrow-right" size={14} />
@@ -223,8 +242,10 @@ function Page() {
               </h2>
               <p className="mt-4 text-ink/85 leading-relaxed">
                 Want to see the teacher, in a batch, before you commit? Sit one live class for 90
-                minutes. ₹199, inclusive of taxes. Take admission within 48 hours — in that course,
-                or any course we currently offer — and the ₹199 is adjusted against your fee.
+                minutes. {demo}
+                {intl ? " · USD." : ", inclusive of taxes."} Take admission within 48 hours — in that
+                course, or any course we currently offer — and the {demo} is adjusted against your
+                fee.
               </p>
               <ul className="mt-4 grid gap-2 text-sm text-ink/85">
                 <li className="flex gap-2">
@@ -251,7 +272,7 @@ function Page() {
                   className="btn btn-wa btn-lg w-full sm:w-auto"
                   data-cta-goal="whatsapp_demo"
                 >
-                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
+                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for {demo}
                 </a>
               </div>
             </div>
@@ -262,16 +283,18 @@ function Page() {
                     Pay now
                   </p>
                   <p className="mt-2 font-display text-4xl font-extrabold text-sunshine sm:text-5xl">
-                    ₹199
+                    {demo}
                   </p>
-                  <p className="mt-1 text-xs text-white/80">90 min · tax included</p>
+                  <p className="mt-1 text-xs text-white/80">
+                    {intl ? "90 min · USD" : "90 min · tax included"}
+                  </p>
                 </div>
                 <div className="border-t border-white/15 pt-4 min-[420px]:border-t-0 min-[420px]:border-l min-[420px]:pt-0">
                   <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/70">
                     If you enrol
                   </p>
                   <p className="mt-2 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    ₹0
+                    {zero}
                   </p>
                   <p className="mt-1 text-xs text-white/80">within 48 hours</p>
                 </div>

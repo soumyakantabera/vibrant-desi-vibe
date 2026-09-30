@@ -28,6 +28,8 @@ import {
 import { COURSES } from "@/lib/courses";
 import { waLink, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
+import { useIntlMarket } from "@/hooks/use-intl-market";
+import { INTL_FEE, applyIntlFees } from "@/lib/intl-fees";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -84,6 +86,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const intl = useIntlMarket();
+  const spoken = intl ? INTL_FEE["spoken-english"] : null;
+  const business = intl ? INTL_FEE["business-english"] : null;
   const TESTIMONIALS = [
     {
       quote:
@@ -149,8 +154,9 @@ function Home() {
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Real teachers. Small batches. Gamified, interactive live English classes — designed
               for the demands of today's market. From{" "}
-              <strong className="text-sunshine">₹999/mo</strong>, inclusive of taxes. For everyone:
-              adults, professionals and graduates.
+              <strong className="text-sunshine">{spoken ? spoken.display : "₹999/mo"}</strong>
+              {spoken ? " · USD." : ", inclusive of taxes."} For everyone: adults, professionals
+              and graduates.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -185,7 +191,7 @@ function Home() {
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "7 Years · Kolkata & Pan-India",
-                "From ₹999/month, inclusive of taxes",
+                spoken ? `From ${spoken.display} · USD` : "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
                 "Small batches — approx. 6 learners",
               ].map((s) => (
@@ -205,8 +211,14 @@ function Home() {
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
               <SnapshotCard
                 eyebrow="Course fees start at"
-                headline={{ big: "₹999", suffix: "/month" }}
-                subnote="Monthly billing · inclusive of taxes · UPI accepted"
+                headline={
+                  spoken
+                    ? { big: spoken.big, suffix: spoken.suffix }
+                    : { big: "₹999", suffix: "/month" }
+                }
+                subnote={
+                  spoken ? "USD · billed monthly" : "Monthly billing · inclusive of taxes · UPI accepted"
+                }
                 rows={[
                   {
                     tone: "brand",
@@ -242,7 +254,7 @@ function Home() {
               </span>
               <p>
                 <strong className="font-display block">{title}</strong>
-                <span className="text-ink/80">{body}</span>
+                <span className="text-ink/80">{applyIntlFees(body, intl)}</span>
               </p>
             </div>
           ))}
@@ -362,7 +374,11 @@ function Home() {
             <GlassCard
               icon="users"
               title="Small Live Batches"
-              pricing="Approx. 6 learners · From ₹999/mo, inclusive of taxes"
+              pricing={
+                spoken
+                  ? `Approx. 6 learners · From ${spoken.display} · USD`
+                  : "Approx. 6 learners · From ₹999/mo, inclusive of taxes"
+              }
             >
               Scheduled English cohorts usually have around 6 learners. You practise with
               classmates, speak in every class and receive corrections during the lesson.
@@ -374,7 +390,7 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "4 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
+              { n: 1, lbl: "Choose Course", sub: spoken ? `4 programmes · from ${spoken.display}` : "4 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
@@ -412,7 +428,11 @@ function Home() {
           <SectionHeader
             eyebrow="What We Offer"
             title="Why Our Teaching Works"
-            subtitle="Spoken, business and interactive English — live, practical, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
+            subtitle={
+              spoken
+                ? `Spoken, business and interactive English — live, practical, from ${spoken.display} · USD. 7 years, 500+ learners.`
+                : "Spoken, business and interactive English — live, practical, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
+            }
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
@@ -506,9 +526,9 @@ function Home() {
       <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
         <div className="container-x">
           <SectionHeader
-            eyebrow="Simple, India-Friendly Pricing"
+            eyebrow={spoken ? "Simple pricing" : "Simple, India-Friendly Pricing"}
             eyebrowTone="indigo"
-            title="From ₹999/mo · inclusive of taxes"
+            title={spoken ? `From ${spoken.display} · USD` : "From ₹999/mo · inclusive of taxes"}
             subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
@@ -522,9 +542,12 @@ function Home() {
                 </h3>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                ₹999<span className="text-base font-bold text-ink/75">/month</span>
+                {spoken ? spoken.big : "₹999"}
+                <span className="text-base font-bold text-ink/75">{spoken ? spoken.suffix : "/month"}</span>
               </p>
-              <p className="mt-1 text-sm text-ink/75">Inclusive of taxes · billed monthly</p>
+              <p className="mt-1 text-sm text-ink/75">
+                {spoken ? "USD · billed monthly" : "Inclusive of taxes · billed monthly"}
+              </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-brand" />
@@ -554,9 +577,14 @@ function Home() {
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                ₹1,999<span className="text-base font-bold text-ink/75">/month</span>
+                {business ? business.big : "₹1,999"}
+                <span className="text-base font-bold text-ink/75">
+                  {business ? business.suffix : "/month"}
+                </span>
               </p>
-              <p className="mt-1 text-sm text-ink/75">Inclusive of taxes · 3 months · up to 2 classes/week</p>
+              <p className="mt-1 text-sm text-ink/75">
+                {business ? "USD · 3 months · up to 2 classes/week" : "Inclusive of taxes · 3 months · up to 2 classes/week"}
+              </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
@@ -600,7 +628,9 @@ function Home() {
           </Reveal>
           <div className="mt-7 text-center">
             <p className="text-sm text-ink/75">
-              All prices are in INR and inclusive of taxes.
+              {intl
+                ? "You are outside India. These are international fees, in USD."
+                : "All prices are in INR and inclusive of taxes."}
             </p>
             <div className="mt-3">
               <WaButton

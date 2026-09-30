@@ -121,7 +121,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Strictly necessary storage is used to deliver the pages, keep the site available and secure, and remember this notice and similar choices on your device. This group runs whether you choose Accept or Reject.",
           "Analytics storage, including Google Analytics or a comparable measurement tool, is used only if you choose Accept. It helps us understand how the site is used (for example, which pages are opened) so we can improve it. It is not used to show you advertisements, and we do not sell this information. Google may process measurement data on servers outside India under Google’s terms. WhatsApp links on this site are not tagged with advertising pixels.",
           "You may Reject optional analytics. Necessary functions still work. You can change your mind later by clearing this site’s data in your browser.",
-          "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That is for later fee and tax display. We do not use it to enrol you outside India, and we do not send that lookup to an advertising network.",
+          "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That lookup decides whether this browser shows the India fee or the fee for a learner outside India. We do not send that lookup to an advertising network.",
         ],
       },
       {
@@ -212,7 +212,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Eligibility",
         paragraphs: [
           "Adult English rooms are for learners aged 15 and above. We do not currently run Kids or Teens courses.",
-          "Enrolment is for learners who are in India. We do not take enrolment from outside India. Fees on this site are India pricing, in Indian Rupees, inclusive of taxes.",
+          "Fees published on this website — including search results, guides and this policy — are India pricing, in Indian Rupees, inclusive of taxes. Those published figures are for learners in India. A learner outside India is not charged the India figure. The fee that applies is the one shown for their country in the browser and confirmed on WhatsApp before they pay.",
           "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time.",
         ],
       },
@@ -413,9 +413,9 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
-        heading: "India only — no enrolment outside India",
+        heading: "Published fees are India pricing",
         paragraphs: [
-          "We enrol learners who are in India. We do not take enrolment from outside India. The prices published on this site are for India only, in Indian Rupees, inclusive of taxes.",
+          "The prices in these pages, in search results, and in this policy are India pricing, in Indian Rupees, inclusive of taxes. They are the fees for learners in India. They are not the fee for a learner outside India. That fee is confirmed on WhatsApp before payment. This file and the public pages do not publish a second currency for search engines or answer engines.",
           "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law.",
         ],
       },

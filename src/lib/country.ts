@@ -1,7 +1,10 @@
 /**
- * Country for later fee / tax routing. Detection is client-side (IP, then
- * timezone). The choice is stored in this browser only. Enrolment and the
- * prices on the site stay India-only until a tax table is wired on purpose.
+ * Country for fee display. Detection is client-side (IP, then timezone).
+ * The choice is stored in this browser only.
+ *
+ * India — and every crawler — keeps the INR prices already in the HTML.
+ * Any other country, after this runs in a real browser, may show the
+ * international fee. SEO, llms.txt and schema are not switched here.
  */
 
 export const COUNTRY_STORAGE_KEY = "lws.country.v1";

@@ -4,6 +4,8 @@ import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
+import { useIntlMarket } from "@/hooks/use-intl-market";
+import { INTL_FEE, type IntlSlug } from "@/lib/intl-fees";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -16,40 +18,52 @@ const MAIN: NavItem[] = [
   { to: "/blog", label: "Blog" },
 ];
 
-const ENGLISH_COURSES: NavItem[] = [
+const ENGLISH_COURSES: {
+  to: string;
+  label: string;
+  icon?: IconName;
+  slug: IntlSlug;
+  inr: string;
+}[] = [
   {
     to: "/course-spoken-english",
     label: "Basic Spoken English",
     icon: "mic",
-    desc: "6 months · ₹999/month, inclusive of taxes",
+    slug: "spoken-english",
+    inr: "6 months · ₹999/month, inclusive of taxes",
   },
   {
     to: "/course-interactive-speaking",
     label: "Interactive Speaking",
     icon: "headset",
-    desc: "3 months · ₹1,199/month, inclusive of taxes",
+    slug: "interactive-speaking",
+    inr: "3 months · ₹1,199/month, inclusive of taxes",
   },
   {
     to: "/course-business-english",
     label: "Business English",
     icon: "headset",
-    desc: "3 months · ₹1,999/month, inclusive of taxes",
+    slug: "business-english",
+    inr: "3 months · ₹1,999/month, inclusive of taxes",
   },
   {
     to: "/course-interview-preparation",
     label: "Interview Preparation",
     icon: "clipboard",
-    desc: "2 months · ₹1,999/month, inclusive of taxes",
+    slug: "interview-preparation",
+    inr: "2 months · ₹1,999/month, inclusive of taxes",
   },
   {
     to: "/course-demo-session",
     label: "Demo Session",
     icon: "play",
-    desc: "₹199 · 90 min · If you join, it costs you nothing.",
+    slug: "demo-session",
+    inr: "₹199 · 90 min · If you join, it costs you nothing.",
   },
 ];
 
 export function Nav() {
+  const intl = useIntlMarket();
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const { location } = useRouterState();
@@ -83,6 +97,17 @@ export function Nav() {
   const coursesActive =
     location.pathname.startsWith("/course-") || location.pathname === "/english-career";
 
+  const courses: NavItem[] = ENGLISH_COURSES.map((c) => ({
+    to: c.to,
+    label: c.label,
+    icon: c.icon,
+    desc: intl
+      ? c.slug === "demo-session"
+        ? `${INTL_FEE[c.slug].display} · 90 min · If you join, it costs you nothing.`
+        : `${c.inr.split(" · ")[0]} · ${INTL_FEE[c.slug].display}`
+      : c.inr,
+  }));
+
   const isHome = location.pathname === "/";
 
   return (
@@ -97,11 +122,11 @@ export function Nav() {
               <span className="demo-ribbon-cta">
                 <span>Book the Demo Class</span>
                 <span className="demo-ribbon-price">
-                  <span>₹199</span>
+                  <span>{intl ? INTL_FEE["demo-session"].display : "₹199"}</span>
                   <span className="demo-ribbon-mins">90 min</span>
                 </span>
                 <span className="demo-ribbon-zero">
-                  <span>₹0</span>
+                  <span>{intl ? "$0" : "₹0"}</span>
                   <span>if you enrol · 48 hrs</span>
                 </span>
               </span>
@@ -170,7 +195,7 @@ export function Nav() {
                       title="Courses by Goal"
                       tone="brand"
                       categoryHref="/english-career"
-                      items={ENGLISH_COURSES}
+                      items={courses}
                       onPick={() => setCoursesOpen(false)}
                     />
                   </div>
@@ -287,7 +312,7 @@ export function Nav() {
                 View all courses →
               </Link>
               <div className="grid gap-1 pb-6">
-                {ENGLISH_COURSES.map((c) => (
+                {courses.map((c) => (
                   <MobileCourseLink
                     key={c.to}
                     item={c}

@@ -71,7 +71,7 @@ export function CountrySelect() {
         value={choice.iso2}
         onChange={(e) => onPick(e.target.value as CountryCode)}
         aria-label="Country"
-        title="Country — stored on this device for later fees and tax"
+        title="Country. India keeps India fees. Any other country shows the international fee on this device."
       >
         {COUNTRY_OPTIONS.map((row) => (
           <option key={row.iso2} value={row.iso2} className="text-ink">

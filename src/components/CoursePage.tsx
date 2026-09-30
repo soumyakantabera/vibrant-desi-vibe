@@ -7,7 +7,9 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import { applyIntlFees, isIntlSlug, INTL_FEE } from "@/lib/intl-fees";
+import { useIntlMarket } from "@/hooks/use-intl-market";
+import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import {
   CONTACT,
@@ -169,6 +171,12 @@ const TEACHER_NOTE: Record<string, string> = {
 };
 
 export function CoursePage({ data }: { data: CourseData }) {
+  const intl = useIntlMarket() && isIntlSlug(data.slug);
+  const intlFee = intl && isIntlSlug(data.slug) ? INTL_FEE[data.slug] : null;
+  const shownPrice = intlFee?.display ?? data.price;
+  const shownTagline = applyIntlFees(data.tagline, !!intlFee);
+  const shownLive =
+    data.liveNote != null ? applyIntlFees(data.liveNote, !!intlFee) : data.liveNote;
   const teacherNote = TEACHER_NOTE[data.slug];
   const waPrimary =
     data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
@@ -180,11 +188,17 @@ export function CoursePage({ data }: { data: CourseData }) {
       badge={`Live · ${data.format}`}
       eyebrow="Course fee starts at"
       headline={
-        priceMatch
-          ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
-          : { big: data.price }
+        intlFee
+          ? { big: intlFee.big, suffix: intlFee.suffix || undefined }
+          : priceMatch
+            ? { big: priceMatch[1], suffix: priceMatch[2] ? ` ${priceMatch[2]}` : undefined }
+            : { big: data.price }
       }
-      subnote={`${data.duration} · inclusive of taxes`}
+      subnote={
+        intlFee
+          ? `${data.duration} · USD`
+          : `${data.duration} · inclusive of taxes`
+      }
       rows={[
         { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
         {
@@ -225,13 +239,13 @@ export function CoursePage({ data }: { data: CourseData }) {
                 {data.title}
               </h1>
             </div>
-            <p className="mt-4 text-lg text-white max-w-2xl">{data.tagline}</p>
+            <p className="mt-4 text-lg text-white max-w-2xl">{shownTagline}</p>
             {teacherNote && <p className="mt-2 text-base text-white/90">{teacherNote}</p>}
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
-                  <Icon name="rupee" size={14} />
-                  {data.price}
+                  {intlFee ? null : <Icon name="rupee" size={14} />}
+                  {shownPrice}
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream/10 border border-cream/20">
                   <Icon name="clock" size={14} className="text-sage" />
@@ -260,7 +274,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               )}
             </div>
             <p className="mt-3 text-sm text-white/90">
-              {data.liveNote ??
+              {shownLive ??
                 "✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live syllabus · ✓ Pan-India · Based in Kolkata"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">

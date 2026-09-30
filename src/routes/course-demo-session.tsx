@@ -8,6 +8,8 @@ import { courseFaqs, courseSeo } from "@/components/CoursePage";
 import { COURSES } from "@/lib/courses";
 import { DEMO_SESSION } from "@/lib/demo-session";
 import { waDirect } from "@/lib/whatsapp";
+import { useIntlMarket } from "@/hooks/use-intl-market";
+import { applyIntlFees } from "@/lib/intl-fees";
 
 const d = COURSES["demo-session"];
 
@@ -40,8 +42,10 @@ const STEPS = [
 ];
 
 function DemoSessionPage() {
+  const intl = useIntlMarket();
   const enrol = waDirect(DEMO_SESSION.enrolMessage);
   const faqs = courseFaqs(d);
+  const fee = (text: string) => applyIntlFees(text, intl);
 
   return (
     <Layout footerImage={d.footerImage}>
@@ -70,7 +74,7 @@ function DemoSessionPage() {
                 {d.title}
               </h1>
             </div>
-            <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">{d.tagline}</p>
+            <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">{fee(d.tagline)}</p>
           </div>
           <div className="mt-6 grid w-full max-w-md grid-cols-1 overflow-hidden rounded-2xl text-left min-[420px]:grid-cols-2">
             <div className="bg-brand-deep px-4 py-3 text-white">
@@ -78,16 +82,18 @@ function DemoSessionPage() {
                 Pay now
               </p>
               <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white sm:text-4xl">
-                ₹199
+                {fee("₹199")}
               </p>
-              <p className="mt-1 text-xs font-semibold text-white/90">90 min · tax included</p>
+              <p className="mt-1 text-xs font-semibold text-white/90">
+                {intl ? "90 min · USD" : "90 min · tax included"}
+              </p>
             </div>
             <div className="border-t-2 border-[#053b1e]/15 bg-[#C6FF00] px-4 py-3 text-[#053b1e] min-[420px]:border-t-0 min-[420px]:border-l-2">
               <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em]">
                 If you enrol
               </p>
               <p className="mt-1 font-display text-3xl font-extrabold leading-none sm:text-4xl">
-                ₹0
+                {fee("₹0")}
               </p>
               <p className="mt-1 text-xs font-semibold">within 48 hours</p>
             </div>
@@ -100,7 +106,7 @@ function DemoSessionPage() {
               className="btn btn-wa btn-lg w-full sm:w-auto"
               data-cta-goal="whatsapp_demo"
             >
-              <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
+              <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for {fee("₹199")}
             </a>
           </div>
           <p className="mt-3 max-w-xl text-sm font-semibold text-white/95">
@@ -113,14 +119,15 @@ function DemoSessionPage() {
       <section className="section">
         <div className="container-x grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div>
-            <p className="eyebrow eyebrow-sun">Why ₹199 is not the price</p>
+            <p className="eyebrow eyebrow-sun">Why {fee("₹199")} is not the price</p>
             <h2 className="mt-3 text-3xl md:text-4xl text-ink">
               Serious about a course? This session is free.
             </h2>
             <p className="mt-4 text-ink/85 leading-relaxed">
-              The ₹199 only stays if you look and leave. Join the course you just sat, or any course
-              we currently offer, within 48 hours of the class, and we take ₹199 off that fee. You
-              saw the teacher. You saw the batch. You did not pay extra for the privilege.
+              The {fee("₹199")} only stays if you look and leave. Join the course you just sat, or any
+              course we currently offer, within 48 hours of the class, and we take {fee("₹199")} off
+              that fee. You saw the teacher. You saw the batch. You did not pay extra for the
+              privilege.
             </p>
             <p className="mt-3 text-sm text-ink/70">
               The written rule is in our{" "}
@@ -152,8 +159,8 @@ function DemoSessionPage() {
                 <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand text-white font-display font-extrabold">
                   {step.n}
                 </span>
-                <h3 className="mt-3 font-display font-bold text-ink">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/85">{step.body}</p>
+                <h3 className="mt-3 font-display font-bold text-ink">{fee(step.title)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/85">{fee(step.body)}</p>
               </article>
             ))}
           </div>
@@ -222,7 +229,7 @@ function DemoSessionPage() {
         <div className="container-x relative text-center text-cream">
           <h2 className="text-3xl md:text-4xl text-cream">See the class. Then decide.</h2>
           <p className="mx-auto mt-3 max-w-xl text-white">
-            ₹199 for 90 minutes with the teacher. Nothing extra if you enrol within 48 hours.
+            {fee("₹199")} for 90 minutes with the teacher. Nothing extra if you enrol within 48 hours.
           </p>
           <a
             href={enrol}
@@ -231,7 +238,7 @@ function DemoSessionPage() {
             className="btn btn-wa btn-lg mt-6 w-full sm:w-auto"
             data-cta-goal="whatsapp_demo"
           >
-            <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for ₹199
+            <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for {fee("₹199")}
           </a>
           <PaymentTrust tone="dark" align="center" className="mt-5" />
         </div>

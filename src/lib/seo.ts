@@ -739,7 +739,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
-        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Enrolment is for learners in India only. We do not enrol students outside India. Fees on this site are India pricing.",
+        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Fees published on this site are India pricing, in Indian Rupees, inclusive of taxes.",
       },
       {
         q: "Who are the classes for?",
@@ -1817,7 +1817,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Enrolment and published fees are for learners in India only. Spoken, Interactive, Workplace and Interview Preparation for adults 15+.",
+      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Published fees are India pricing, in Indian Rupees. Spoken, Interactive, Workplace and Interview Preparation for adults 15+.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],
@@ -1866,7 +1866,7 @@ export function organizationLd() {
         email: CONTACT.email,
         url: CONTACT.whatsapp,
         description:
-          "WhatsApp is the preferred admissions and consultation channel. Get Free Consultation is counselling, not a class. Phone is a fallback. Enrolment is for learners in India only.",
+          "WhatsApp is the preferred admissions and consultation channel. Get Free Consultation is counselling, not a class. Phone is a fallback. Published fees are India pricing, in Indian Rupees, inclusive of taxes.",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {
@@ -1880,7 +1880,7 @@ export function organizationLd() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Live online English courses in India",
-      description: "Enrolment and fees are for learners in India only. Prices in INR, inclusive of taxes.",
+      description: "Published fees are India pricing, in Indian Rupees, inclusive of taxes.",
       itemListElement: [
         {
           "@type": "Offer",
