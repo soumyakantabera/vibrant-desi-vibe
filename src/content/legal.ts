@@ -61,7 +61,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Who we are",
         paragraphs: [
           "Learn With Smile provides live online English communication and career classes. We are based in Kolkata, West Bengal, India, and teach learners across India over the internet.",
-          "For privacy questions, message us on WhatsApp at +91 96744 79949 or email info@learnwithsmile.app. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
+          "For privacy questions, message us on WhatsApp at +91 96744 79949 or email learnwithsmile.in@gmail.com. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
         ],
       },
       {
@@ -358,7 +358,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to ask",
         paragraphs: [
-          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 09:00–12:00 IST. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
+          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email learnwithsmile.in@gmail.com. We reply during 09:00–12:00 IST. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
         ],
       },
       {
@@ -457,7 +457,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to raise a concern",
         paragraphs: [
-          "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. Name the learner only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST.",
+          "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Name the learner only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST.",
           "If we reasonably believe a child is at immediate risk of harm, we may contact the parent and, where Indian law requires it, the police or a child-welfare authority, even if you asked us not to. We will not promise secrecy that the law does not allow.",
           "A parent may also approach the National Commission for Protection of Child Rights (NCPCR), a State Commission, or the police. This school is not those bodies.",
         ],

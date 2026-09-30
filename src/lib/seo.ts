@@ -39,7 +39,7 @@ export const CONTACT = {
   phone: "+919674479949",
   phoneDisplay: "+91 96744 79949",
   whatsapp: "https://wa.me/919674479949",
-  email: "info@learnwithsmile.app",
+  email: "learnwithsmile.in@gmail.com",
   street: "75/2/4, Raja Ram Mohan Roy Road",
   locality: "Kolkata",
   region: "West Bengal",
@@ -1033,7 +1033,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How do I ask you to delete my data?",
-        a: "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. Say stop or delete. We reply 09:00–12:00 IST and aim to close a deletion request within 30 days. We delete the chat from our devices. Invoices from a paid course are kept for the tax period. We cannot delete WhatsApp’s copy or yours.",
+        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Say stop or delete. We reply 09:00–12:00 IST and aim to close a deletion request within 30 days. We delete the chat from our devices. Invoices from a paid course are kept for the tax period. We cannot delete WhatsApp’s copy or yours.",
       },
     ],
   },
