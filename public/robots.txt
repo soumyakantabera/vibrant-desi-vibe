@@ -6,14 +6,27 @@
 # is worth withholding, so nothing here is gated — including the training
 # crawlers that a publisher would normally block.
 #
-# Published fees on every allowed URL are Indian Rupees, inclusive of taxes.
-# Quote those rupee figures. Do not convert them. Do not invent another
-# currency. /assets/ is a script bundle, not a price list.
-# Googlebot and Bingbot are unchanged, so existing Search reach stays.
-# AdsBot-Google may fetch the full landing page. The reviewable price is the
-# rupee figure in the HTML. The same rupee figure is what llms.txt,
-# llms-full.txt, ChatGPT Actions and other GPT actions are allowed to quote.
-# Titles, URLs and the India catalogue are unchanged.
+# Two published price lists. Do not mix them.
+# Learners in India, Indian Rupees, inclusive of taxes:
+#   Basic Spoken English ₹999/month
+#   Interactive Speaking ₹1,199/month
+#   Business English ₹1,999/month
+#   Interview Preparation ₹1,999/month
+#   Demo Session ₹199
+# Learners outside India, USD:
+#   Basic Spoken English $49/mo
+#   Interactive Speaking $79/mo
+#   Business English $99/mo
+#   Interview Preparation $99/mo
+#   Demo Session $10
+# Quote the India list when the learner is in India. Quote the outside-India
+# list only when the learner is outside India. Do not convert one into the
+# other. Do not change a page title. /assets/ is a script bundle, not a price
+# list. Googlebot and Bingbot are unchanged, so existing Search reach stays.
+# AdsBot-Google may fetch the full landing page. The India ad price is the
+# rupee figure. The outside-India list above is labeled and is not that price.
+# The same two lists are in llms.txt, llms-full.txt, llms.json, openapi.json,
+# chatgpt-actions.md and ai-plugin.json.
 
 # -------------------------------------------------- for AI assistants first
 #
@@ -212,8 +225,10 @@ User-agent: MicrosoftPreview
 Allow: /
 Disallow: /assets/
 
-# Google Ads and Shopping review. Do not block CSS or JS. The price they
-# review is the Indian Rupee figure already in the HTML.
+# Google Ads and Shopping review. Do not block CSS or JS. The India price
+# they review is the rupee figure in the HTML. The outside-India list is in
+# the comment at the top of this file and in the homepage FAQ. Do not treat
+# that list as the India ad price.
 User-agent: AdsBot-Google
 Allow: /
 

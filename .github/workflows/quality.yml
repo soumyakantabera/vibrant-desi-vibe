@@ -121,21 +121,25 @@ jobs:
           grep -q 'getSiteFacts' dist/openapi.json
           grep -q 'rel="describedby"' dist/index.html
           grep -q 'learnwithsmile-indexnow-2026' dist/robots.txt
-          if find dist -type f \( -name '*.html' -o -name '*.md' -o -name '*.txt' -o -name '*.xml' -o -name '*.json' \) ! -path 'dist/assets/*' -print0 \
-            | xargs -0 grep -nE '\$[[:space:]]*[0-9]|USD|dollars?' \
-            | grep -vE '\$10/hour'; then
-            echo "::error::A non-rupee fee leaked into an indexable or assistant file"
+          if grep -E '<title>[^<]*(\$49|\$79|\$99|USD)' dist/*.html; then
+            echo "::error::A page title left the India rupee price"
             exit 1
           fi
+          for f in dist/llms.txt dist/llms-full.txt dist/llms.json dist/openapi.json dist/chatgpt-actions.md dist/ai-plugin.json dist/robots.txt dist/index.html dist/course-spoken-english.html; do
+            if ! grep -q '₹999' "$f" || ! grep -q '\$49' "$f" || ! grep -q 'outside India' "$f"; then
+              echo "::error::$f is missing a labeled India or outside-India price"
+              exit 1
+            fi
+          done
           if find dist/assets -name '*.js' -print0 \
             | xargs -0 grep -nE '\$49|\$79|\$99|USD'; then
-            echo "::error::A second price list leaked into the script bundle"
+            echo "::error::A price list leaked into the script bundle"
             exit 1
           fi
           grep -q 'published_fees' dist/llms.json
-          grep -q 'Published fees are for learners in India' dist/llms.txt
-          grep -q 'Published fees are for learners in India' dist/llms-full.txt
-          grep -q 'Published fees are for learners in India' dist/chatgpt-actions.md
+          grep -q 'Two published price lists' dist/llms.txt
+          grep -q 'Two published price lists' dist/llms-full.txt
+          grep -q 'Two published price lists' dist/chatgpt-actions.md
           grep -q 'User-agent: AdsBot-Google' dist/robots.txt
           grep -q 'User-agent: Googlebot' dist/robots.txt
           test -s dist/learnwithsmile-indexnow-2026.txt

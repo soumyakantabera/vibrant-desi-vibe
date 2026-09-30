@@ -16,6 +16,7 @@ import {
   CONTENT_REVISED,
   CONSULTATION_KEYWORDS,
   COURSE_SEO,
+  OUTSIDE_INDIA_FEE_FAQ,
   SITE_NAME,
   SITE_URL,
   abs,
@@ -545,7 +546,7 @@ function workloadISO(d: string): string | undefined {
  * the structured data as not matching the page.
  */
 export function courseFaqs(d: CourseData) {
-  return [...(d.faqs ?? []), ...(COURSE_SEO[d.slug]?.extraFaqs ?? [])];
+  return [...(d.faqs ?? []), ...(COURSE_SEO[d.slug]?.extraFaqs ?? []), OUTSIDE_INDIA_FEE_FAQ];
 }
 
 export function courseSeo(d: CourseData) {

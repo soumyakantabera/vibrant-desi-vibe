@@ -24,6 +24,8 @@
 
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
+import { publishedFeeLock } from "@/lib/fees";
+import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
 import { CONSULTATION, CONSULTATION_FAQS, CONSULTATION_HOWTO, CONSULTATION_PATH } from "@/lib/consultation";
 
@@ -137,6 +139,12 @@ export function markdownPathFor(path: string): string {
 }
 
 export type Faq = { q: string; a: string };
+
+/** Same answer in the homepage FAQ, course FAQ schema, and assistant files. */
+export const OUTSIDE_INDIA_FEE_FAQ: Faq = {
+  q: "What do learners outside India pay?",
+  a: publishedFeeLock(),
+};
 
 export type PageSeo = {
   path: string;
@@ -739,8 +747,9 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
-        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee. IST morning, evening and weekend slots. Fees published on this site are India pricing, in Indian Rupees, inclusive of taxes.",
+        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee inside India. IST morning, evening and weekend slots.",
       },
+      OUTSIDE_INDIA_FEE_FAQ,
       {
         q: "Who are the classes for?",
         a: "Adult learners 15+: working professionals, graduates, freshers, homemakers and anyone who needs live speaking practice. Batches are approximately 6 learners. We currently run adult rooms only.",
@@ -1817,7 +1826,7 @@ export function organizationLd() {
     },
     image: abs("/og/default.jpg"),
     description:
-      "Live online English school in India. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Published fees are India pricing, in Indian Rupees. Spoken, Interactive, Workplace and Interview Preparation for adults 15+.",
+      "Live online English school. India fees from ₹999/month, inclusive of taxes. Learners outside India pay the labeled fee, not the rupee figure. Spoken, Interactive, Workplace and Interview Preparation for adults 15+.",
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],
@@ -1825,7 +1834,7 @@ export function organizationLd() {
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹1,999/month",
-    currenciesAccepted: "INR",
+    currenciesAccepted: `INR, ${intlUnit()}`,
     paymentAccepted: "UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm",
     foundingDate: String(FOUNDING_YEAR),
     employee: {
@@ -1866,7 +1875,7 @@ export function organizationLd() {
         email: CONTACT.email,
         url: CONTACT.whatsapp,
         description:
-          "WhatsApp is the preferred admissions and consultation channel. Get Free Consultation is counselling, not a class. Phone is a fallback. Published fees are India pricing, in Indian Rupees, inclusive of taxes.",
+          "WhatsApp is the preferred admissions and consultation channel. Get Free Consultation is counselling, not a class. Phone is a fallback. India fees are in Indian Rupees, inclusive of taxes. Learners outside India pay the labeled fee.",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Bengali"],
         hoursAvailable: {
