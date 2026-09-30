@@ -799,7 +799,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/why-us",
     title: "Why Us | Built for Indian Learners",
     description:
-      "500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from ₹999/month. Kolkata & pan-India. Inclusive of taxes.",
+      "500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹999/month, inclusive of taxes. Kolkata, pan-India, now worldwide.",
     shortTitle: "Why Learn With Smile",
     keywords: [
       "small batch english classes online india",
@@ -854,9 +854,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/about-us": {
     path: "/about-us",
-    title: "About Us | 7 Years, Kolkata & Pan-India",
+    title: "About Us | 7 Years, Kolkata, India & Worldwide",
     description:
-      "7 years of live teaching, 500+ learners, from ₹999/month. A Kolkata classroom that went online — same teacher, learners across India.",
+      "7 years of live teaching, 500+ learners, about 6 in a batch, from ₹999/month. A Kolkata classroom that went online — across India, and now worldwide.",
     shortTitle: "About Us",
     keywords: [
       "learn with smile about",
@@ -896,7 +896,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/success-stories",
     title: "Real Indian Learners | Real Results",
     description:
-      "Tax desks, court briefs, bank promotions, BI Analyst jobs — named Learn With Smile learners. Spoken English from ₹999/mo. Kolkata & pan-India.",
+      "Tax desks, court briefs, bank promotions, BI Analyst jobs — named Learn With Smile learners. Spoken English from ₹999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide.",
     shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
@@ -1479,7 +1479,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/interactive-english-class-hesitation",
     title: "Stop Freezing | Interactive English Class",
     description:
-      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, approx. 6 learners. Kolkata & pan-India. Live.",
+      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, about 6 in a batch. Kolkata, pan-India, now worldwide. Live.",
     shortTitle: "Interactive English when you freeze",
     keywords: [
       "how to stop hesitating while speaking english",
@@ -1513,7 +1513,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-hindi-bengali-medium",
     title: "Hindi & Bengali Medium English Classes",
     description:
-      "Hindi-medium or Bengali-medium is not a wall. Live batch of around 6. Explain in your language, then English. 6 months from ₹999/mo. Kolkata & pan-India.",
+      "Hindi-medium or Bengali-medium is not a wall. About 6 in a batch. Explain in your language, then English. 6 months from ₹999/mo. Kolkata, pan-India, now worldwide.",
     shortTitle: "Hindi & Bengali medium",
     keywords: [
       "spoken english for hindi medium students",
@@ -1547,7 +1547,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-working-professionals-india",
     title: "English for Working Professionals India",
     description:
-      "Keep the job. Speak better English. Morning, evening, weekend IST. Live class; recording is revision. From ₹999/mo, approx. 6 learners. Kolkata & pan-India.",
+      "Keep the job. Speak better English. Morning, evening, weekend IST. Live class; recording is revision. From ₹999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide.",
     shortTitle: "Working professionals",
     keywords: [
       "english classes for working professionals india",
@@ -1581,7 +1581,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-client-calls-india",
     title: "Client-Call English | Names & Next Step",
     description:
-      "Client-call English is clarity, not accent: names, numbers, next step. Business English, 3 months, ₹1,999/mo, approx. 6 learners. Kolkata & pan-India. Inclusive of taxes.",
+      "Client-call English is clarity, not accent: names, numbers, next step. Business English, 3 months, ₹1,999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide. Inclusive of taxes.",
     shortTitle: "Client-call English",
     keywords: [
       "english for client calls india",
@@ -1675,7 +1675,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
-      "Practical Spoken English for beginners: 6 months, up to 2 live classes weekly, ~6 learners. ₹999/month, inclusive of taxes. Kolkata teacher, pan-India.",
+      "Practical Spoken English for beginners: 6 months, up to 2 live classes weekly, about 6 in a batch. ₹999/month, inclusive of taxes. Kolkata, pan-India, now worldwide.",
     shortTitle: "Basic Spoken English",
     keywords: [
       ...SPOKEN_KEYWORDS,
@@ -1747,7 +1747,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interview-preparation": {
     title: "Interview Preparation | ₹1,999/mo, 2 Months",
     description:
-      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel, salary. Live batch of ~6, 2 months, ₹1,999/month inclusive of taxes. Recorded mocks. Kolkata teacher, pan-India.",
+      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel, salary. About 6 in a batch, 2 months, ₹1,999/month inclusive of taxes. Recorded mocks. Kolkata, pan-India, now worldwide.",
     shortTitle: "Interview Preparation",
     keywords: [...INTERVIEW_KEYWORDS],
     ogImage: "/og/interview-prep.jpg",
@@ -2012,7 +2012,7 @@ export function webSiteLd() {
     url: SITE_URL,
     inLanguage: "en-IN",
     description:
-      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, from ₹999/month, inclusive of taxes. Kolkata & pan-India. Get a free consultation — counselling, not a class.",
+      "Speak better English with a teacher who knows your name. 500+ learners, 7 years, about 6 in a batch, from ₹999/month, inclusive of taxes. Kolkata, pan-India, now worldwide. Get a free consultation — counselling, not a class.",
     publisher: { "@id": `${SITE_URL}/#organization` },
     dateModified: CONTENT_REVISED,
     potentialAction: {

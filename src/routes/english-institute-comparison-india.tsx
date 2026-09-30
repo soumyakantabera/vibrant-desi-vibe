@@ -24,7 +24,7 @@ const ROWS = [
     tag: "Us",
     title: "Learn With Smile",
     fee: "From ₹999/mo, tax incl.",
-    body: "Named live teacher. Approximately 6 learners. 6-month map. 500+ learners, 7 years, Kolkata & pan-India. Free consultation — not a class.",
+    body: "Named live teacher. About 6 in a batch. 6-month map. 500+ learners, 7 years. Kolkata, pan-India, now worldwide. Free consultation — not a class.",
   },
   {
     color: "indigo" as const,

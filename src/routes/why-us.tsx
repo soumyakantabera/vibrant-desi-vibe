@@ -125,7 +125,8 @@ function Page() {
               Teachers.
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
-              A teacher who knows your name. 500+ learners, 7 years. You speak every class.{" "}
+              A teacher who knows your name. 500+ learners, 7 years, about 6 in a batch. You speak
+              every class. Kolkata, pan-India, now worldwide.{" "}
               {spoken ? `From ${spoken.display} · ${intlUnit()}.` : "From ₹999/mo, inclusive of taxes."}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">

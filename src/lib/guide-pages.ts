@@ -8,7 +8,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/guides",
     title: "English Class Guides | Fees, Fit, Cities",
     description:
-      "Which class, what the free consultation is, fees, beginners, IT, cities — honest live-English guides from ₹999/mo, inclusive of taxes. Kolkata & pan-India.",
+      "Which class, what the free consultation is, fees, beginners, IT, cities — honest live-English guides from ₹999/mo, inclusive of taxes. About 6 in a batch. Kolkata, pan-India, now worldwide.",
     shortTitle: "Guides",
     keywords: [
       "spoken english class guides india",

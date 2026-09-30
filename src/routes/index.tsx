@@ -142,7 +142,7 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              7 Years · Kolkata & Pan-India
+              7 years · about 6 a batch · Kolkata, pan-India & now worldwide
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.
@@ -190,7 +190,7 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "7 Years · Kolkata & Pan-India",
+                "7 years · about 6 a batch · Kolkata, pan-India & now worldwide",
                 spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
                 "Small batches — approx. 6 learners",
@@ -430,8 +430,8 @@ function Home() {
             title="Why Our Teaching Works"
             subtitle={
               spoken
-                ? `Spoken, business and interactive English — live, practical, from ${spoken.display} · ${intlUnit()}. 7 years, 500+ learners.`
-                : "Spoken, business and interactive English — live, practical, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
+                ? `Spoken, business and interactive English — live, practical, about 6 in a batch, from ${spoken.display} · ${intlUnit()}. 7 years, 500+ learners.`
+                : "Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
             }
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

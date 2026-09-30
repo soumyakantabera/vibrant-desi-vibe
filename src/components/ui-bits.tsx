@@ -180,16 +180,16 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
     <section className={invert ? "bg-brand-deep py-8 md:py-10" : "bg-[#F7F4EE] py-8 md:py-10"}>
       <div className="container-x">
         <p className={`font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
-          Across India
+          From Kolkata
         </p>
         <h2
           className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${heading}`}
         >
-          Kolkata-based. Teaching pan-India.
+          Kolkata, pan-India, now worldwide.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          Same teacher. Same fee. Morning, evening and weekend IST — metros and towns across India
-          on the same live class. Published fees are India pricing, inclusive of taxes.
+          About 6 learners in a live batch. Same teacher. Morning, evening and weekend IST.
+          India fees stay the India price. Learners outside India join the same class.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           States

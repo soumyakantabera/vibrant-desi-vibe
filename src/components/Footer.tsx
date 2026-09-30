@@ -55,13 +55,13 @@ export function Footer({ image }: { image?: string }) {
                 <div className="font-display font-extrabold text-xl">
                   Learn With <span className="text-sunshine">Smile</span>
                 </div>
-                <div className="text-xs text-white/85">7 Years · Kolkata & Pan-India</div>
+                <div className="text-xs text-white/85">7 years · about 6 a batch · now worldwide</div>
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
               {intl
-                ? `500+ learners. 7 years. A teacher who knows your name. Small live batches from ${INTL_FEE["spoken-english"].display}. ${intlUnit()}.`
-                : "500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from ₹999/mo, inclusive of taxes. Kolkata-based, teaching pan-India."}
+                ? `500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ${INTL_FEE["spoken-english"].display}. ${intlUnit()}.`
+                : "500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹999/mo, inclusive of taxes. Kolkata, pan-India, now worldwide."}
             </p>
             <SmartImage
               src={image || IMG_DEFAULT}
@@ -127,7 +127,7 @@ export function Footer({ image }: { image?: string }) {
             </a>
             <span className="inline-flex items-center gap-2">
               <Icon name="globe" size={16} />
-              Kolkata · Online · Pan-India
+              Kolkata · pan-India · now worldwide · about 6 a batch
             </span>
             <span className="inline-flex items-center gap-2">
               <Icon name="clock" size={16} />

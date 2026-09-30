@@ -20,7 +20,7 @@ export const Route = createFileRoute("/educator")({
         name: "Sunanda Dey",
         jobTitle: "Educator",
         description:
-          "English and career educator with 7 years of live online teaching experience, working with learners across India.",
+          "English and career educator with 7 years of live online teaching. About 6 learners in a batch. Kolkata, across India, and now worldwide.",
         image: abs("/og/founder.jpg"),
         url: abs("/educator"),
         knowsAbout: [
@@ -155,7 +155,7 @@ function Page() {
           </h1>
           <p className="mt-4 text-lg text-white">
             Sunanda Dey — educator. 100% live. From ₹999/mo, inclusive of taxes.
-            Kolkata-based, teaching learners across India.
+            Kolkata-based. About 6 in a batch. Pan-India, and now worldwide.
           </p>
         </div>
       </section>

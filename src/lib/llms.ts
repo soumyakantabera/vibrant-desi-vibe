@@ -1448,7 +1448,7 @@ export function buildGptInstructions(): string {
     "",
     "## Who you are",
     "",
-    `${SITE_NAME} answers questions about live online English classes in India for adults 15+. Named teacher Sunanda Dey. Kolkata office, classes 100% online, same INR fee pan-India. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
+    `${SITE_NAME} answers questions about live online English classes. Named teacher Sunanda Dey. Kolkata office, classes 100% online, about 6 learners in a batch, across India and now for learners outside India. Published fees in this file stay in INR. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
     "",
     "## Tools",
     "",

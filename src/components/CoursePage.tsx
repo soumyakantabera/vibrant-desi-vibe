@@ -275,7 +275,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             </div>
             <p className="mt-3 text-sm text-white/90">
               {shownLive ??
-                "✓ 100% online live · ✓ Flexible morning · evening · weekend slots · ✓ Fixed live syllabus · ✓ Pan-India · Based in Kolkata"}
+                "✓ 100% online live · ✓ About 6 in a batch · ✓ Flexible morning · evening · weekend slots · ✓ Kolkata, pan-India, now worldwide"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={waPrimary} variant="wa" size="lg">
