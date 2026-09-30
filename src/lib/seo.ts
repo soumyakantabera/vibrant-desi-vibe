@@ -1001,7 +1001,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/privacy",
     title: "Privacy Policy | How We Handle Your Data",
     description:
-      "How Learn With Smile collects and uses your data — including free-consultation notes on WhatsApp, how long chats are kept, Razorpay payments and class recordings. We do not sell personal information.",
+      "How Learn With Smile collects and uses your data, in India and outside India — consultation notes, Razorpay, class recordings, your right to access, correct, delete or export, and how to complain.",
     shortTitle: "Privacy Policy",
     keywords: [
       "learn with smile privacy policy",
@@ -1011,9 +1011,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-09-30",
     summary:
-      "Privacy Policy: what we collect (name, WhatsApp, consultation notes, email, course notes, Razorpay payment status, class recordings), how long WhatsApp chats are kept, who we share with, and how to ask for correction or deletion.",
+      "Privacy Policy: what we collect, why, who we share with (including providers outside your country), how long we keep it, and your right to access, correct, delete, restrict, object and export. We do not sell personal information. Learners outside India may enrol.",
     faqs: [
       {
         q: "Does Learn With Smile sell my personal information?",
@@ -1033,7 +1033,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How do I ask you to delete my data?",
-        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Say stop or delete. We reply 09:00–12:00 IST and aim to close a deletion request within 30 days. We delete the chat from our devices. Invoices from a paid course are kept for the tax period. We cannot delete WhatsApp’s copy or yours.",
+        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. You may ask us to access, correct, delete, restrict or export what we hold, or to object to a use that is only in our interest. We reply 09:00–12:00 IST and aim to answer within 30 days. Invoices from a paid course are kept for the Indian tax period. We cannot delete WhatsApp’s copy or yours. You may also complain to a data-protection authority where you live.",
       },
     ],
   },
@@ -1042,7 +1042,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/terms",
     title: "Terms of Use | Live English Classes",
     description:
-      "Rules for Learn With Smile: free consultation is counselling not a class, live online rooms, tax-inclusive fees, no school certificate, WhatsApp enrolment, Indian law.",
+      "Rules for Learn With Smile: learners in India and outside India, free consultation is not a class, cancel a month before its first class for a full refund, no school certificate.",
     shortTitle: "Terms of Use",
     keywords: [
       "learn with smile terms of use",
@@ -1052,9 +1052,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-09-30",
     summary:
-      "Terms of Use: free consultation is small-batch counselling with personalised advice (not a class), live online teaching, no school certificate, no guaranteed band or job, WhatsApp enrolment, recordings for personal revision, governed by Indian law and Kolkata courts.",
+      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class. After that class, that month is not refunded for a change of mind. Indian law and Kolkata courts, without removing a mandatory right where you live.",
     faqs: [
       {
         q: "Is the free consultation a class I can sit for free?",
@@ -1075,7 +1075,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "Refunds at Learn With Smile: free consultation first (counselling, not a class), prepaid monthly fees, good-faith review of duplicates or undelivered classes. Indian consumer rights still apply.",
+      "Refunds at Learn With Smile: full refund of a paid month if you cancel before its first live class. After that class, no refund for a change of mind. Demo fee refunded only if you cancel before the session. Rights that cannot be waived still apply.",
     shortTitle: "Refunds and Cancellation",
     keywords: [
       "learn with smile refund policy",
@@ -1085,13 +1085,13 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-09-30",
     summary:
-      "Refunds: the consultation is free counselling, not a class — nothing to refund. Monthly fees are prepaid. No routine refund after a paid period starts. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply.",
+      "Refunds: cancel a paid month before its first live class for a full refund. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Session is refunded in cash only if cancelled before it is held. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
-        a: "Not as a routine. A live seat is reserved when you pay. Duplicate payments, charges in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp with the payment date and reason.",
+        a: "Yes, if you tell us before the first live class of that month has been held. After that class, we do not refund the month for a change of mind, missed later classes, or a result we did not promise. Duplicate payments, charges in error, and classes we cannot deliver are still reviewed. Message WhatsApp with the payment date and reason.",
       },
       {
         q: "How do I cancel a later month?",
@@ -1112,7 +1112,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/child-protection",
     title: "Child Protection Policy | Adult Rooms 15+",
     description:
-      "Learn With Smile currently runs adult English rooms for learners 15+. We do not offer Kids or Teens courses. Indian law as the floor. Parent is the account holder if the learner is under 18.",
+      "Learn With Smile currently runs adult English rooms for learners 15+, in India and outside India. We do not enrol anyone under 15. Indian law is the floor. A parent is the account holder if the learner is under 18.",
     shortTitle: "Child Protection Policy",
     keywords: [
       "child protection policy online english class india",
@@ -1122,9 +1122,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.4,
     changefreq: "yearly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-09-30",
     summary:
-      "Child Protection Policy for adult rooms 15+: we do not currently run Kids or Teens courses. Parent is the customer if the learner is under 18. No 1:1 video with a child unless the parent stays on the call. Indian law (DPDP, POCSO, JJ Act) is the floor. No COPPA/GDPR certificate claimed.",
+      "Child Protection Policy for adult rooms 15+, in India and outside India. We do not enrol anyone under 15. Parent is the customer if the learner is under 18. No 1:1 video unless the parent stays on the call. Indian law is the floor. No COPPA or GDPR certificate is claimed. A child-protection right that cannot be waived still applies.",
     faqs: [
       {
         q: "Do you have a child protection policy?",
@@ -1136,7 +1136,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are you COPPA or GDPR certified for children?",
-        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act). Enrolment is for learners in India only. If the learner is under 18, the parent is the account holder. We are an Indian school — not a COPPA- or GDPR-certified programme.",
+        a: "We follow Indian child-protection and privacy law (DPDP, POCSO, JJ Act) as the floor, for learners in India and outside India. We do not claim a COPPA or GDPR certificate. We do not enrol anyone under 15. If the learner is under 18, the parent is the account holder. A child-protection right that cannot be waived still applies.",
       },
     ],
   },

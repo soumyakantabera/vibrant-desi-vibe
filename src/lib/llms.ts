@@ -137,7 +137,7 @@ const KEY_FACTS = [
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Office by appointment, not a campus: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 09:00–12:00 IST. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Get a Free Consultation — one WhatsApp message, no payment to book. Counselling, not a class: we diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell the learner to stay free. ${abs(CONSULTATION_PATH)}`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
-  `Refunds: the consultation is free. Monthly fees are prepaid because a live seat is reserved — no routine refund after a paid period starts. The Demo Session (${DEMO_SESSION.price}) is not a cash refund; it is adjusted only if the learner takes admission within ${DEMO_SESSION.adjustWithinHours} hours. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. Indian consumer rights that cannot be waived still apply. ${abs("/refunds")} ${abs("/terms")}#demo-session`,
+  `Refunds: full refund of a paid month if the learner cancels before the first live class of that month is held. After that class, no refund of that month for a change of mind. Later unbilled months can be stopped. The Demo Session (${DEMO_SESSION.price}) is refunded in cash only if cancelled before the session; after it is held, it is adjusted only if the learner takes admission within ${DEMO_SESSION.adjustWithinHours} hours. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. A consumer right that cannot be waived, in India or where the learner lives, still applies. ${abs("/refunds")} ${abs("/terms")}#demo-session`,
   `Adult learners 15+. Published fees in this file are India pricing, INR, inclusive of taxes. ${abs("/privacy")}`,
   "Missed class: reschedule only within the same week, and only if a seat exists. Recording is always shared. Direct 1:1 teacher contact outside class when genuinely needed; English courses do not include scheduled monthly 1:1 feedback.",
   DEMO_RULE,
@@ -245,7 +245,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is Learn With Smile’s refund policy?",
-    a: "The consultation is free. Monthly fees are prepaid (a live seat is reserved), so there is no routine refund after a paid period starts. The Demo Session fee is not refunded in cash; it is adjusted against a course fee only if you take admission within 48 hours of the session. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. Message WhatsApp before you enrol. Full policy: https://www.learnwithsmile.app/refunds. Demo rule: https://www.learnwithsmile.app/terms#demo-session.",
+    a: "Cancel a paid month before its first live class for a full refund. After that class has been held, that month is not refunded for a change of mind. The Demo Session is refunded in cash only if you cancel before it is held. After it is held, the fee is adjusted against a course only if you take admission within 48 hours. Duplicate charges, payments in error, and classes we cannot deliver are reviewed in good faith. A right that cannot be waived still applies. Full policy: https://www.learnwithsmile.app/refunds. Demo rule: https://www.learnwithsmile.app/terms#demo-session.",
     source: "/refunds",
   },
 ];

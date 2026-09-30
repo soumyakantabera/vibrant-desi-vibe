@@ -14,12 +14,12 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-24";
+export const LEGAL_UPDATED = "2026-09-30";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
   paragraphs: [
-    "You may ask us to access, correct or delete personal information we hold, to stop enrolment messages, or to reject optional analytics cookies. Message WhatsApp or email. We reply 09:00–12:00 IST. Deleting a chat from our devices does not erase the copy on your phone or on WhatsApp/Meta.",
+    "You may ask us to access, correct, delete, restrict or export personal information we hold, to object to a use that is only in our own interest, to stop enrolment messages, or to reject optional analytics cookies. These requests are open to learners in India and outside India. Message WhatsApp or email. We reply 09:00–12:00 IST and aim to answer within 30 days. Deleting a chat from our devices does not erase the copy on your phone or on WhatsApp/Meta. You may also complain to a data-protection or consumer authority where you live.",
   ],
 };
 
@@ -60,14 +60,14 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are",
         paragraphs: [
-          "Learn With Smile provides live online English communication and career classes. We are based in Kolkata, West Bengal, India, and teach learners across India over the internet.",
+          "Learn With Smile provides live online English classes. The business is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, at 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. We teach from Kolkata. Learners in India and learners outside India may use this site and enrol in the same live online batch.",
           "For privacy questions, message us on WhatsApp at +91 96744 79949 or email learnwithsmile.in@gmail.com. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
         ],
       },
       {
         heading: "What this policy covers",
         paragraphs: [
-          "This policy applies to www.learnwithsmile.app and to personal information you give us when you enquire, get a free consultation (counselling on WhatsApp — not a class), enrol, pay, or attend a class. It does not apply to websites, apps or payment pages we do not control, including WhatsApp and Razorpay.",
+          "This policy applies to www.learnwithsmile.app and to personal information you give us when you enquire, get a free consultation (counselling on WhatsApp — not a class), enrol, pay, or attend a class, whether you are in India or outside India. It does not apply to websites, apps or payment pages we do not control, including WhatsApp and Razorpay.",
         ],
       },
       {
@@ -94,7 +94,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Legal basis, in plain terms",
         paragraphs: [
-          "We process information because you asked us for a consultation, a class or a reply, because we have a contract to teach you after you enrol, because we must keep certain payment and tax records, or because we have a legitimate need to run and secure the website. Where Indian law requires consent for a specific use, we will ask before that use.",
+          "We process information because you asked us for a consultation, a class or a reply (steps before a contract), because we have a contract to teach you after you enrol, because Indian tax law requires us to keep certain payment records, or because we have a legitimate interest in running and securing the website that is not overridden by your rights. Analytics cookies run only if you choose Accept. Where a law that applies to you requires consent for a specific use, we will ask before that use.",
+          "If you live outside India, we use the same grounds. A law such as the EU or UK GDPR, or a US state privacy law, may give those grounds different names. We do not claim a GDPR, UK GDPR or CCPA certificate. We do honour the rights listed on this page for every learner.",
         ],
       },
       {
@@ -139,6 +140,28 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
+        heading: "Where information is processed",
+        paragraphs: [
+          "We are established in India. Staff use your information from India. Some providers may process it in other countries when you use them: WhatsApp/Meta if you message us, Razorpay if you pay, GitHub Pages which hosts the public site, and Google if you accept analytics. We do not claim that every country those providers use has been declared adequate by a European or UK authority. We share only what that provider needs for the task.",
+          "You can reject analytics and still use the site. You may email learnwithsmile.in@gmail.com instead of WhatsApp. Class placement and the written fee are still confirmed on WhatsApp before you pay.",
+        ],
+      },
+      {
+        heading: "We do not sell personal information",
+        paragraphs: [
+          "We do not sell personal information. We do not share it for cross-context behavioural advertising. We do not use it to build advertising profiles. Country detection in your browser is used only to show the fee that applies to you. It is not sent to an advertising network.",
+        ],
+      },
+      {
+        heading: "Your privacy rights",
+        paragraphs: [
+          "Wherever you live, you may ask us to see the personal information we hold, correct it, delete it (subject to records we must keep), restrict how we use it while a dispute is open, object to a use that rests only on our legitimate interests, and receive a copy of the notes we wrote down — name, number, course, slot and the bottleneck we named — in a common electronic format.",
+          "You may withdraw consent for analytics cookies by clearing this site’s data in your browser. Withdrawal does not undo measurement that already happened. We do not decide enrolment or fees by solely automated means.",
+          "We aim to answer within 30 days. We may ask you to confirm you are the person the information is about. We will not charge a fee unless a request is manifestly unfounded or repeated without reason.",
+          "You may complain to a data-protection authority in your country, and to our Grievance Officer in India. Writing to us first is useful. It is not a condition of complaining to an authority.",
+        ],
+      },
+      {
         heading: "How long we keep information",
         paragraphs: [
           "We keep personal information only while we need it for the purpose you contacted us, or while a law requires a hold. WhatsApp chats live in two places: on our devices, which we control, and on WhatsApp/Meta’s systems, which we do not.",
@@ -168,7 +191,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         paragraphs: [
           "Adult rooms are for learners aged 15 and above.",
           "If the learner is under 18, a parent or guardian must complete enrolment and payment and is the person we message on WhatsApp. Under the Digital Personal Data Protection Act, 2023, we treat that parent or guardian as the person who consents to our use of the child’s information for running the class. We do not use children’s data to show ads. We do not publish children’s photos or class recordings.",
-          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Enrolment is for learners in India only. We do not enrol students outside India. Indian law and this policy apply. If we learn that we have collected information from a child without appropriate parental consent, we will delete it where we reasonably can. We currently run adult rooms only (15+). How we handle under-18 learners in those rooms, and how to report a concern, is in our Child Protection Policy at https://www.learnwithsmile.app/child-protection.",
+          "We do not claim a COPPA, GDPR or children’s-privacy certificate. Learners outside India may enrol. Adult rooms are for ages 15 and above. We do not knowingly collect personal information from anyone under 13, and we do not enrol anyone under 15. If the learner is 15, 16 or 17, a parent or guardian must enrol and is the person we message, in India or outside India. If we learn that we collected a child’s information without the right consent, we delete it where we reasonably can. Indian law applies to how we run the school. A child-protection or privacy right in the child’s own country that cannot be waived still applies. The operating rules are at https://www.learnwithsmile.app/child-protection.",
         ],
       },
       {
@@ -191,13 +214,13 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     h1: "Terms of Use",
     standfirst:
       "These terms govern use of this website, the free consultation, and enrolment in Learn With Smile live online classes. Please read them before you pay a fee.",
-    updated: "2026-09-28",
+    updated: LEGAL_UPDATED,
     sections: [
       {
         heading: "Agreement",
         paragraphs: [
           "By using www.learnwithsmile.app, messaging us for a consultation, or paying a course fee, you agree to these terms, our Privacy Policy and our Refunds and Cancellation Policy. If you do not agree, do not use the site or enrol.",
-          "These pages describe how we run the school. They are not legal advice to you. If a term conflicts with a right under Indian law that cannot be waived, that right still applies.",
+          "These pages describe how we run the school. They are not legal advice to you. If a term conflicts with a right that cannot be waived — under Indian law, or under a consumer, privacy or child-protection law in the country where you normally live — that right still applies.",
         ],
       },
       {
@@ -211,8 +234,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Eligibility",
         paragraphs: [
-          "Adult English rooms are for learners aged 15 and above. We do not currently run Kids or Teens courses.",
-          "Fees published on this website — including search results, guides and this policy — are India pricing, in Indian Rupees, inclusive of taxes. Those published figures are for learners in India. A learner outside India is not charged the India figure. The fee that applies is the one shown for their country in the browser and confirmed on WhatsApp before they pay.",
+          "Adult English rooms are for learners aged 15 and above, in India and outside India. We do not currently run Kids or Teens courses. Classes are live online and run on India Standard Time.",
+          "Fees published in search results, guides and these policies are India pricing, in Indian Rupees, inclusive of taxes. Those published figures are for learners in India. A learner outside India is not charged that figure. The fee that applies is the one shown for them in the browser and confirmed in writing on WhatsApp before they pay. We do not change that confirmed fee for the same paid period.",
           "If the learner is under 18, a parent or guardian must agree to these terms, complete payment, and remain the account holder we message. You are responsible for a working internet connection, a device with a microphone, and joining at the scheduled IST time.",
         ],
       },
@@ -235,17 +258,17 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         id: "demo-session",
         heading: "Demo Session",
         paragraphs: [
-          "The Demo Session is a paid seat in a live batch. It lasts 90 minutes. The fee is ₹199, inclusive of taxes. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
+          "The Demo Session is a paid seat in a live batch. It lasts 90 minutes. For a learner in India the fee is ₹199, inclusive of taxes. For a learner outside India it is the demo fee shown before payment, confirmed on WhatsApp. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
           "Message us on WhatsApp first (+91 96744 79949). We send the payment link. The session has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
-          "The Demo Session fee is not refundable. It is reimbursable in one case only: within 48 hours after the demo class, you take admission in the course whose session you attended, or in any other course we are currently offering. Reimbursement means the ₹199 is adjusted against that course fee. It is not paid back in cash to your bank, card or UPI, and it is not available for any other reason.",
-          "If you do not take admission within those 48 hours, the ₹199 is not reimbursed. Missing the session, joining late, or changing your mind does not create a refund or a reimbursement.",
-          "Nothing in this section removes a right under Indian law that cannot be waived.",
+          "The Demo Session fee is refunded in cash if you cancel before the session is held. After the session has been held, it is not paid back in cash. Within 48 hours after the session, if you take admission in the course you attended, or in any other course we currently offer, that fee is adjusted against the course fee.",
+          "By paying and asking us to schedule within 72 hours, you ask us to perform the session promptly. Missing it, joining late, or changing your mind after it was held does not create a cash refund.",
+          "Nothing in this section removes a right that cannot be waived under Indian law or under the law where you live.",
         ],
       },
       {
         heading: "Enrolment and fees",
         paragraphs: [
-          "Enrolment is confirmed when we accept you into a batch and the applicable fee is paid. Fees are listed in Indian Rupees and are inclusive of taxes unless a page clearly says otherwise. There is no material fee.",
+          "Enrolment is open to learners in India and outside India. It is confirmed when we accept you into a batch and the fee confirmed on WhatsApp is paid. For a learner in India, that fee is the Indian Rupee price on the course page, inclusive of taxes. For a learner outside India, it is the price shown for them before payment, repeated in writing on WhatsApp. There is no material fee. We do not charge a second fee for the same period after you have paid.",
           "Payments are collected through Razorpay or another method we specify on WhatsApp. We do not operate a student login or an in-site checkout cart.",
         ],
       },
@@ -257,6 +280,14 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       SCHEDULE_AND_LATENESS,
+      {
+        heading: "Cancelling before the first class",
+        paragraphs: [
+          "You may cancel a paid course month and receive a full refund of that month if you tell us on WhatsApp or by email before the first live class of that month has been held. The refund goes back to the original payment method where the provider allows it.",
+          "If you ask us to hold that first class, the month is treated as started once the class has been held. We do not then refund that month because you changed your mind, missed later classes, found the work difficult, or did not get a job, visa, exam score or other result. You may still cancel any later month that has not been billed.",
+          "If the law where you live gives you a longer right to withdraw from a distance contract, and that right cannot be waived, the longer right still applies. Asking us to start teaching can end that right for teaching already performed. We will confirm the position in writing if you cancel inside such a window.",
+        ],
+      },
       {
         heading: "Your conduct",
         paragraphs: [
@@ -279,8 +310,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Limitation of liability",
         paragraphs: [
-          "The website and classes are provided as a live teaching service. To the extent permitted by Indian law, we are not liable for loss of profit, loss of opportunity, or indirect or consequential loss, or for interruption caused by internet failure, device failure, third-party apps (including WhatsApp) or payment providers.",
-          "Nothing in these terms excludes liability that Indian law does not allow us to exclude, including liability for fraud or for personal injury caused by our negligence.",
+          "Our total liability for a paid period is limited to the fees you paid us for that period, except where the law does not allow a limit. We are not liable for loss of profit, loss of a job or visa, or for interruption caused by your internet, your device, WhatsApp, or a payment provider.",
+          "We do not limit liability for fraud, for death or personal injury caused by our negligence, or for any other liability the law does not allow us to limit. A mandatory right where you live is not cut down by this clause.",
         ],
       },
       {
@@ -292,7 +323,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Governing law",
         paragraphs: [
-          "These terms are governed by the laws of India. Subject to any non-waivable consumer rights, courts in Kolkata, West Bengal, India have jurisdiction over disputes arising from the website or the classes.",
+          "The contract is governed by the laws of India. Courts in Kolkata, West Bengal, India may hear disputes about the website or the classes.",
+          "That choice does not remove a mandatory consumer, privacy or child-protection right in the country where you normally live, where that right cannot be waived. You may also use a consumer authority there. Please write to our Grievance Officer first so we can fix the problem.",
         ],
       },
       YOUR_CHOICES,
@@ -304,7 +336,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Refunds",
     h1: "Refunds and Cancellation",
     standfirst:
-      "Please read this before you pay. Get a free consultation first — counselling on courses, curriculum and your requirements, one by one. It is not a full class and not a demo class. Statutory rights under Indian law still apply.",
+      "Please read this before you pay. The free consultation is counselling, not a class. You may cancel a paid month for a full refund before its first live class is held. After that class, that month is not refunded for a change of mind. A right that cannot be waived, in India or where you live, still applies.",
     updated: LEGAL_UPDATED,
     sections: [
       {
@@ -317,16 +349,16 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How fees work",
         paragraphs: [
-          "English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp.",
-          "A live seat is reserved when you pay. That is why we do not run a routine, no-questions-asked refund after a paid period has started.",
+          "For a learner in India, English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp. For a learner outside India, the fee is the price shown for them before they pay, and the same figure confirmed in writing on WhatsApp. A live seat is reserved when you pay.",
         ],
       },
       {
-        heading: "What we do not refund as a matter of course",
+        heading: "Before the first class, and after it",
         paragraphs: [
-          "Once a paid billing period has started, we do not ordinarily refund that period because you changed your mind, missed classes, found the work difficult, or did not obtain a particular job, visa, band score or other result.",
-          "We also do not ordinarily refund because of your internet, electricity or device problems, or because you cannot attend the IST slot you confirmed.",
-          "We do not offer a demo class. There is no refund of a class you expected to sit for free in the consultation. The consultation is counselling. Speaking minutes are the paid room.",
+          "Cancel on WhatsApp or by email before the first live class of a paid month has been held, and we refund that month in full to the original payment method where the provider allows it.",
+          "Once that first class has been held, we do not refund the month because you changed your mind, missed later classes, found the work difficult, or did not obtain a job, visa, band score or other result. Your internet, electricity or device, or a later inability to attend the IST slot you confirmed, is also not a refund of that month.",
+          "You may still stop any later month before it is billed. If the law where you live gives a longer withdrawal right that cannot be waived, that right still applies, including where asking us to start the class ends the right only for the teaching already given.",
+          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. The paid Demo Session is refunded in cash only if you cancel before it is held. After it is held, the fee is adjusted against a course only if you take admission within 48 hours. It is not a cash refund after the session.",
         ],
       },
       SCHEDULE_AND_LATENESS,
@@ -370,7 +402,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Your legal rights",
         paragraphs: [
-          "This policy explains our usual practice. It does not take away rights you have under applicable Indian consumer law that cannot be waived. If those rights require a remedy in a particular case, that remedy still applies.",
+          "This policy is our usual practice for learners in India and outside India. It does not take away a right under Indian consumer law, or under the consumer law where you live, that cannot be waived. If that right requires a remedy, the remedy still applies.",
         ],
       },
       YOUR_CHOICES,
@@ -389,7 +421,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "What this page is — and is not",
         paragraphs: [
           "This policy describes how we place, teach, message and record learners under 18 in our live online rooms. It sits next to our Privacy Policy, Terms of Use and Refunds page. Those four pages together are the written rules.",
-          "We are a live online English school, not a child-welfare authority, counsellor or hospital. We do not claim a safeguarding certificate, an NCPCR licence, a COPPA seal, a GDPR children’s-privacy badge, or any other official stamp. Indian law still applies even when we do not hold those badges.",
+          "We are a live online English school in Kolkata, not a child-welfare authority, counsellor or hospital. We do not claim a safeguarding certificate, an NCPCR licence, a COPPA seal, a GDPR children’s-privacy badge, or any other official stamp. We still follow the rules below for every learner under 18, in India or outside India.",
         ],
       },
       {
@@ -402,7 +434,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "India — the laws we treat as the floor",
         paragraphs: [
-          "We are based in Kolkata, West Bengal, India. Classes are online. The contract is governed by Indian law. For under-18 learners we treat the following as the minimum, not a marketing list:",
+          "We are based in Kolkata, West Bengal, India. Classes are online and open to learners outside India. The contract is governed by Indian law. For under-18 learners we treat the following Indian laws as the floor, not a marketing list:",
         ],
         bullets: [
           "The Digital Personal Data Protection Act, 2023: a parent or guardian consents to our use of a child’s information to run the class. We do not use that information to show ads.",
@@ -416,7 +448,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Published fees are India pricing",
         paragraphs: [
           "The prices in these pages, in search results, and in this policy are India pricing, in Indian Rupees, inclusive of taxes. They are the fees for learners in India. They are not the fee for a learner outside India. That fee is confirmed on WhatsApp before payment. This file and the public pages do not publish a second currency for search engines or answer engines.",
-          "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime. The contract remains under Indian law and Kolkata courts, subject to any non-waivable consumer or child-rights law.",
+          "We do not claim compliance with the US COPPA rule, the EU GDPR children’s provisions, the UK Age Appropriate Design Code, or any other foreign children’s-privacy regime, and we do not display a badge for them. We still apply the stricter of our own rules and a non-waivable child-protection rule in the child’s country. Our own rules are stricter than a simple age-13 cutoff: we do not knowingly collect information from anyone under 13, and we do not enrol anyone under 15, anywhere. A 15-to-17-year-old needs a parent or guardian on the enrolment, in India or outside India. The contract remains under Indian law and Kolkata courts, subject to any right that cannot be waived.",
         ],
       },
       {
