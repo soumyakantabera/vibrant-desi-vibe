@@ -121,6 +121,29 @@ jobs:
           if ! grep -q '₹999' dist/course-spoken-english.html; then
             echo "::error::spoken english page missing ₹999"; exit 1
           fi
+          # Rupee fees only, outside the script bundle. Another company's
+          # "$10/hour" comparison stays — it is not our price. A match here would
+          # put a second currency into Search, ads review, or an assistant file.
+          if find dist -type f \( -name '*.html' -o -name '*.md' -o -name '*.txt' -o -name '*.xml' -o -name '*.json' \) ! -path 'dist/assets/*' -print0 \
+            | xargs -0 grep -nE '\$[[:space:]]*[0-9]|USD|dollars?' \
+            | grep -vE '\$10/hour'; then
+            echo "::error::A non-rupee fee leaked into an indexable or assistant file"
+            exit 1
+          fi
+          if find dist/assets -name '*.js' -print0 \
+            | xargs -0 grep -nE '\$49|\$79|\$99|USD'; then
+            echo "::error::A second price list leaked into the script bundle"
+            exit 1
+          fi
+          if ! grep -q 'Disallow: /assets/' dist/robots.txt; then
+            echo "::error::robots.txt no longer keeps assistant crawlers off the script bundle"; exit 1
+          fi
+          if ! grep -q 'User-agent: Googlebot' dist/robots.txt; then
+            echo "::error::robots.txt lost Googlebot"; exit 1
+          fi
+          if ! grep -q 'User-agent: AdsBot-Google' dist/robots.txt; then
+            echo "::error::robots.txt lost AdsBot-Google"; exit 1
+          fi
           if grep -Eqi 'course-kids-english|course-teen-english' dist/index.html dist/english-career.html dist/llms.json; then
             echo "::error::kids/teen course URLs still in the public build"; exit 1
           fi

@@ -15,7 +15,7 @@ import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, applyIntlFees } from "@/lib/intl-fees";
+import { INTL_FEE, applyIntlFees, intlUnit } from "@/lib/intl-fees";
 
 export const Route = createFileRoute("/why-us")({
   component: Page,
@@ -126,7 +126,7 @@ function Page() {
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
               A teacher who knows your name. 500+ learners, 7 years. You speak every class.{" "}
-              {spoken ? `From ${spoken.display} · USD.` : "From ₹999/mo, inclusive of taxes."}
+              {spoken ? `From ${spoken.display} · ${intlUnit()}.` : "From ₹999/mo, inclusive of taxes."}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">
@@ -153,7 +153,7 @@ function Page() {
                     : { big: "₹999", suffix: "/mo" }
                 }
                 subnote={
-                  spoken ? "USD · international fee" : "inclusive of taxes · Kolkata-born · heard across India"
+                  spoken ? `${intlUnit()} · international fee` : "inclusive of taxes · Kolkata-born · heard across India"
                 }
                 rows={[
                   {
@@ -225,9 +225,9 @@ function Page() {
           <FeatureCard
             icon="rupee"
             color="sunshine"
-            title={spoken ? `From ${spoken.display} · USD` : "From ₹999/mo, inclusive of taxes"}
+            title={spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/mo, inclusive of taxes"}
           >
-            {spoken ? "No material fee. Billed monthly in USD." : "No material fee. Monthly UPI."}
+            {spoken ? `No material fee. Billed monthly in ${intlUnit()}.` : "No material fee. Monthly UPI."}
           </FeatureCard>
           <FeatureCard icon="star" color="coral" title={`${RATING_DISPLAY} ${RATING.source}`}>
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.
@@ -266,7 +266,7 @@ function Page() {
         title="How We Teach — Questions Answered"
         subtitle={
           spoken
-            ? `${spoken.display} · USD. 7 years, 500+ learners, live vs recorded, batch of around 6.`
+            ? `${spoken.display} · ${intlUnit()}. 7 years, 500+ learners, live vs recorded, batch of around 6.`
             : "₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6."
         }
         waMessage="Hi, I want a free consultation to know how your spoken English classes work."
@@ -285,7 +285,7 @@ function Page() {
             <h2 className="text-3xl text-cream md:text-4xl">Ready to start?</h2>
             <p className="mt-3 text-white/95">
               {spoken
-                ? `Chat on WhatsApp. 7 years, 500+ learners, from ${spoken.display} · USD.`
+                ? `Chat on WhatsApp. 7 years, 500+ learners, from ${spoken.display} · ${intlUnit()}.`
                 : "Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes."}
             </p>
             <div className="mt-5 flex flex-wrap gap-3">

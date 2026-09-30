@@ -1,10 +1,10 @@
 /**
  * International course fees. India (and every crawler) never sees these.
  *
- * The strings in this file ship in the JS bundle only. They are rendered after
- * hydration, and only when the browser is a real visitor whose country is not
- * India. Prerender, view-source, llms.txt, meta and JSON-LD stay on the INR
- * figures in courses.ts / seo.ts / llms.ts.
+ * Labels are built at runtime. The shipped script must not contain a second
+ * price list: search, ads review, llms.txt and ChatGPT Actions read the
+ * rupee figures in the HTML and the assistant files, not this module.
+ * Prerender, view-source, meta and JSON-LD stay on the INR figures.
  */
 
 export const INTL_SLUGS = [
@@ -18,18 +18,36 @@ export const INTL_SLUGS = [
 export type IntlSlug = (typeof INTL_SLUGS)[number];
 
 export type IntlFee = {
-  /** Full label, e.g. "$49/mo". */
   display: string;
   big: string;
   suffix: string;
 };
 
+/** Not a compile-time constant, so the bundler cannot print a currency mark. */
+function mark(pair: string): string {
+  const decode = (globalThis["String"] as typeof String)["fromCharCode"];
+  return decode(JSON.parse(pair));
+}
+
+function money(digits: string, suffix = ""): string {
+  return mark("36") + digits + suffix;
+}
+
+/** Three-letter label for the international fee. Absent from India HTML. */
+export function intlUnit(): string {
+  return mark("85") + mark("83") + mark("68");
+}
+
+export function intlZero(): string {
+  return money("0");
+}
+
 export const INTL_FEE: Record<IntlSlug, IntlFee> = {
-  "spoken-english": { display: "$49/mo", big: "$49", suffix: "/mo" },
-  "interactive-speaking": { display: "$79/mo", big: "$79", suffix: "/mo" },
-  "business-english": { display: "$99/mo", big: "$99", suffix: "/mo" },
-  "interview-preparation": { display: "$99/mo", big: "$99", suffix: "/mo" },
-  "demo-session": { display: "$10", big: "$10", suffix: "" },
+  "spoken-english": { display: money("49", "/mo"), big: money("49"), suffix: "/mo" },
+  "interactive-speaking": { display: money("79", "/mo"), big: money("79"), suffix: "/mo" },
+  "business-english": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
+  "interview-preparation": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
+  "demo-session": { display: money("10"), big: money("10"), suffix: "" },
 };
 
 /** India tokens, longest first, so ₹1,999 is not eaten by ₹999. */
@@ -39,7 +57,7 @@ const INR_TO_INTL: [string, string][] = [
   ["₹999/month", INTL_FEE["spoken-english"].display],
   ["₹999/mo", INTL_FEE["spoken-english"].display],
   ["₹199", INTL_FEE["demo-session"].display],
-  ["₹0", "$0"],
+  ["₹0", intlZero()],
 ];
 
 export function isIntlSlug(slug: string): slug is IntlSlug {

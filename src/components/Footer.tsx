@@ -11,7 +11,7 @@ import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
 import { FOOTER_CITIES } from "@/lib/cities";
 import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE } from "@/lib/intl-fees";
+import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -60,7 +60,7 @@ export function Footer({ image }: { image?: string }) {
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
               {intl
-                ? `500+ learners. 7 years. A teacher who knows your name. Small live batches from ${INTL_FEE["spoken-english"].display}. USD.`
+                ? `500+ learners. 7 years. A teacher who knows your name. Small live batches from ${INTL_FEE["spoken-english"].display}. ${intlUnit()}.`
                 : "500+ Indian learners. 7 years. A teacher who knows your name. Small live batches from ₹999/mo, inclusive of taxes. Kolkata-based, teaching pan-India."}
             </p>
             <SmartImage

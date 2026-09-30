@@ -5,6 +5,15 @@
 # being cited in a ChatGPT or Perplexity answer is worth more than the content
 # is worth withholding, so nothing here is gated — including the training
 # crawlers that a publisher would normally block.
+#
+# Published fees on every allowed URL are Indian Rupees, inclusive of taxes.
+# Quote those rupee figures. Do not convert them. Do not invent another
+# currency. /assets/ is a script bundle, not a price list.
+# Googlebot and Bingbot are unchanged, so existing Search reach stays.
+# AdsBot-Google may fetch the full landing page. The reviewable price is the
+# rupee figure in the HTML. The same rupee figure is what llms.txt,
+# llms-full.txt, ChatGPT Actions and other GPT actions are allowed to quote.
+# Titles, URLs and the India catalogue are unchanged.
 
 # -------------------------------------------------- for AI assistants first
 #
@@ -82,6 +91,7 @@ Allow: /
 # Search and AI features that use the Search index.
 User-agent: Google-Extended
 Allow: /
+Disallow: /assets/
 
 # --------------------------------------------------------------- OpenAI
 # GPTBot        — model training crawler
@@ -90,41 +100,53 @@ Allow: /
 # ChatGPT-User  — live fetch when a user asks ChatGPT about a specific page
 User-agent: GPTBot
 Allow: /
+Disallow: /assets/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /assets/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /assets/
 
 User-agent: OAI-AdsBot
 Allow: /
+Disallow: /assets/
 
 User-agent: ChatGPT-Agent
 Allow: /
+Disallow: /assets/
 
 User-agent: ChatGPT Agent
 Allow: /
+Disallow: /assets/
 
 # --------------------------------------------------------------- Anthropic
 User-agent: ClaudeBot
 Allow: /
+Disallow: /assets/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /assets/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /assets/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /assets/
 
 # --------------------------------------------------------------- Perplexity
 User-agent: PerplexityBot
 Allow: /
+Disallow: /assets/
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /assets/
 
 # ------------------------------------------------------- other AI assistants
 User-agent: Applebot
@@ -132,24 +154,31 @@ Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /assets/
 
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /assets/
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /assets/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /assets/
 
 User-agent: YouBot
 Allow: /
+Disallow: /assets/
 
 User-agent: CCBot
 Allow: /
+Disallow: /assets/
 
 User-agent: Diffbot
 Allow: /
+Disallow: /assets/
 
 User-agent: Timpibot
 Allow: /
@@ -162,20 +191,36 @@ Allow: /
 # grounds, not content grounds.
 User-agent: MistralAI-User
 Allow: /
+Disallow: /assets/
 
 User-agent: DuckAssistBot
 Allow: /
+Disallow: /assets/
 
 User-agent: Bytespider
 Disallow: /
 
 User-agent: BingPreview
 Allow: /
+Disallow: /assets/
 
 User-agent: Copilot
 Allow: /
+Disallow: /assets/
 
 User-agent: MicrosoftPreview
+Allow: /
+Disallow: /assets/
+
+# Google Ads and Shopping review. Do not block CSS or JS. The price they
+# review is the Indian Rupee figure already in the HTML.
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Mediapartners-Google
 Allow: /
 
 # Bing Copilot / Microsoft Copilot grounding uses Bingbot + HTML.

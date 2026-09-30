@@ -364,6 +364,44 @@ writeFile(".well-known/openapi.json", openapi);
 writeFile(".well-known/ai-plugin.json", buildAiPlugin());
 writeFile(".well-known/chatgpt-actions.md", buildGptInstructions());
 
+/* ---------------------------------------------------------------- fee lock */
+// Indexable HTML, assistant files, and ads copy must stay on rupee fees.
+// Existing comparisons that name another company's hourly rate stay — they
+// are not our price. Titles and URLs are not rewritten here.
+// The script bundle is scanned for our own fee tokens only. Minified names
+// such as $0 and regex tokens such as $1 are not fees.
+const COMPETITOR_HOURLY = /~?\$10\/hour/g;
+const publishedLeak = /\$49|\$79|\$99|\$10(?!\/hour)|\bUSD\b|\bdollars?\b/i;
+const scriptLeak = /\$49|\$79|\$99|\$10(?!\/hour)(?!=)|\bUSD\b/;
+const feeFiles = [];
+const scriptFiles = [];
+function walkFeeFiles(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walkFeeFiles(full);
+      continue;
+    }
+    if (entry.name.endsWith(".js")) scriptFiles.push(full);
+    else if (/\.(html|md|txt|xml|json)$/.test(entry.name)) feeFiles.push(full);
+  }
+}
+walkFeeFiles(DIST);
+const leaks = [];
+for (const file of feeFiles) {
+  const text = fs.readFileSync(file, "utf8").replace(COMPETITOR_HOURLY, "");
+  if (publishedLeak.test(text)) leaks.push(path.relative(DIST, file));
+}
+for (const file of scriptFiles) {
+  const text = fs.readFileSync(file, "utf8").replace(COMPETITOR_HOURLY, "");
+  if (scriptLeak.test(text)) leaks.push(path.relative(DIST, file));
+}
+if (leaks.length) {
+  throw new Error(
+    `prerender: non-rupee fee leaked into indexable or assistant files:\n${leaks.join("\n")}`,
+  );
+}
+
 /* -------------------------------------------------------------------- log */
 
 const totalKb = rendered.reduce((n, r) => n + r.bytes, 0) / 1024;

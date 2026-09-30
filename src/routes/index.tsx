@@ -29,7 +29,7 @@ import { COURSES } from "@/lib/courses";
 import { waLink, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, applyIntlFees } from "@/lib/intl-fees";
+import { INTL_FEE, applyIntlFees, intlUnit } from "@/lib/intl-fees";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -155,7 +155,7 @@ function Home() {
               Real teachers. Small batches. Gamified, interactive live English classes — designed
               for the demands of today's market. From{" "}
               <strong className="text-sunshine">{spoken ? spoken.display : "₹999/mo"}</strong>
-              {spoken ? " · USD." : ", inclusive of taxes."} For everyone: adults, professionals
+              {spoken ? ` · ${intlUnit()}.` : ", inclusive of taxes."} For everyone: adults, professionals
               and graduates.
             </p>
             <div
@@ -191,7 +191,7 @@ function Home() {
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "7 Years · Kolkata & Pan-India",
-                spoken ? `From ${spoken.display} · USD` : "From ₹999/month, inclusive of taxes",
+                spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
                 "Small batches — approx. 6 learners",
               ].map((s) => (
@@ -217,7 +217,7 @@ function Home() {
                     : { big: "₹999", suffix: "/month" }
                 }
                 subnote={
-                  spoken ? "USD · billed monthly" : "Monthly billing · inclusive of taxes · UPI accepted"
+                  spoken ? `${intlUnit()} · billed monthly` : "Monthly billing · inclusive of taxes · UPI accepted"
                 }
                 rows={[
                   {
@@ -376,7 +376,7 @@ function Home() {
               title="Small Live Batches"
               pricing={
                 spoken
-                  ? `Approx. 6 learners · From ${spoken.display} · USD`
+                  ? `Approx. 6 learners · From ${spoken.display} · ${intlUnit()}`
                   : "Approx. 6 learners · From ₹999/mo, inclusive of taxes"
               }
             >
@@ -430,7 +430,7 @@ function Home() {
             title="Why Our Teaching Works"
             subtitle={
               spoken
-                ? `Spoken, business and interactive English — live, practical, from ${spoken.display} · USD. 7 years, 500+ learners.`
+                ? `Spoken, business and interactive English — live, practical, from ${spoken.display} · ${intlUnit()}. 7 years, 500+ learners.`
                 : "Spoken, business and interactive English — live, practical, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners."
             }
           />
@@ -528,7 +528,7 @@ function Home() {
           <SectionHeader
             eyebrow={spoken ? "Simple pricing" : "Simple, India-Friendly Pricing"}
             eyebrowTone="indigo"
-            title={spoken ? `From ${spoken.display} · USD` : "From ₹999/mo · inclusive of taxes"}
+            title={spoken ? `From ${spoken.display} · ${intlUnit()}` : "From ₹999/mo · inclusive of taxes"}
             subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
           />
           <Reveal stagger className="grid gap-5 lg:grid-cols-3">
@@ -546,7 +546,7 @@ function Home() {
                 <span className="text-base font-bold text-ink/75">{spoken ? spoken.suffix : "/month"}</span>
               </p>
               <p className="mt-1 text-sm text-ink/75">
-                {spoken ? "USD · billed monthly" : "Inclusive of taxes · billed monthly"}
+                {spoken ? `${intlUnit()} · billed monthly` : "Inclusive of taxes · billed monthly"}
               </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
@@ -583,7 +583,7 @@ function Home() {
                 </span>
               </p>
               <p className="mt-1 text-sm text-ink/75">
-                {business ? "USD · 3 months · up to 2 classes/week" : "Inclusive of taxes · 3 months · up to 2 classes/week"}
+                {business ? `${intlUnit()} · 3 months · up to 2 classes/week` : "Inclusive of taxes · 3 months · up to 2 classes/week"}
               </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
@@ -629,7 +629,7 @@ function Home() {
           <div className="mt-7 text-center">
             <p className="text-sm text-ink/75">
               {intl
-                ? "You are outside India. These are international fees, in USD."
+                ? `You are outside India. These are international fees, in ${intlUnit()}.`
                 : "All prices are in INR and inclusive of taxes."}
             </p>
             <div className="mt-3">

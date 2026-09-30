@@ -5,7 +5,7 @@ import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
 import { CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
 import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, type IntlSlug } from "@/lib/intl-fees";
+import { INTL_FEE, intlZero, type IntlSlug } from "@/lib/intl-fees";
 
 type NavItem = { to: string; label: string; icon?: IconName; desc?: string };
 
@@ -126,7 +126,7 @@ export function Nav() {
                   <span className="demo-ribbon-mins">90 min</span>
                 </span>
                 <span className="demo-ribbon-zero">
-                  <span>{intl ? "$0" : "₹0"}</span>
+                  <span>{intl ? intlZero() : "₹0"}</span>
                   <span>if you enrol · 48 hrs</span>
                 </span>
               </span>

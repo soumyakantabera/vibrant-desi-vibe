@@ -7,7 +7,7 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { applyIntlFees, isIntlSlug, INTL_FEE } from "@/lib/intl-fees";
+import { applyIntlFees, intlUnit, isIntlSlug, INTL_FEE } from "@/lib/intl-fees";
 import { useIntlMarket } from "@/hooks/use-intl-market";
 import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
@@ -196,7 +196,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       }
       subnote={
         intlFee
-          ? `${data.duration} · USD`
+          ? `${data.duration} · ${intlUnit()}`
           : `${data.duration} · inclusive of taxes`
       }
       rows={[

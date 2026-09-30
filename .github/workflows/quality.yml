@@ -121,6 +121,23 @@ jobs:
           grep -q 'getSiteFacts' dist/openapi.json
           grep -q 'rel="describedby"' dist/index.html
           grep -q 'learnwithsmile-indexnow-2026' dist/robots.txt
+          if find dist -type f \( -name '*.html' -o -name '*.md' -o -name '*.txt' -o -name '*.xml' -o -name '*.json' \) ! -path 'dist/assets/*' -print0 \
+            | xargs -0 grep -nE '\$[[:space:]]*[0-9]|USD|dollars?' \
+            | grep -vE '\$10/hour'; then
+            echo "::error::A non-rupee fee leaked into an indexable or assistant file"
+            exit 1
+          fi
+          if find dist/assets -name '*.js' -print0 \
+            | xargs -0 grep -nE '\$49|\$79|\$99|USD'; then
+            echo "::error::A second price list leaked into the script bundle"
+            exit 1
+          fi
+          grep -q 'published_fees' dist/llms.json
+          grep -q 'Published fees are for learners in India' dist/llms.txt
+          grep -q 'Published fees are for learners in India' dist/llms-full.txt
+          grep -q 'Published fees are for learners in India' dist/chatgpt-actions.md
+          grep -q 'User-agent: AdsBot-Google' dist/robots.txt
+          grep -q 'User-agent: Googlebot' dist/robots.txt
           test -s dist/learnwithsmile-indexnow-2026.txt
           grep -q 'english-institute-comparison-india' dist/sitemap.xml
           grep -q '"maximumAttendeeCapacity":6' dist/course-spoken-english.html

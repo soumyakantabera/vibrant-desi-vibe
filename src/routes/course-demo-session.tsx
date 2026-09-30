@@ -9,7 +9,7 @@ import { COURSES } from "@/lib/courses";
 import { DEMO_SESSION } from "@/lib/demo-session";
 import { waDirect } from "@/lib/whatsapp";
 import { useIntlMarket } from "@/hooks/use-intl-market";
-import { applyIntlFees } from "@/lib/intl-fees";
+import { applyIntlFees, intlUnit } from "@/lib/intl-fees";
 
 const d = COURSES["demo-session"];
 
@@ -85,7 +85,7 @@ function DemoSessionPage() {
                 {fee("₹199")}
               </p>
               <p className="mt-1 text-xs font-semibold text-white/90">
-                {intl ? "90 min · USD" : "90 min · tax included"}
+                {intl ? `90 min · ${intlUnit()}` : "90 min · tax included"}
               </p>
             </div>
             <div className="border-t-2 border-[#053b1e]/15 bg-[#C6FF00] px-4 py-3 text-[#053b1e] min-[420px]:border-t-0 min-[420px]:border-l-2">

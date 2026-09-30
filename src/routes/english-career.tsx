@@ -15,7 +15,7 @@ import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, DEMO_CTA, waDirect } from "@/lib/whatsapp";
 import { DEMO_SESSION } from "@/lib/demo-session";
 import { useIntlMarket } from "@/hooks/use-intl-market";
-import { INTL_FEE, applyIntlFees } from "@/lib/intl-fees";
+import { INTL_FEE, applyIntlFees, intlUnit, intlZero } from "@/lib/intl-fees";
 
 type CoursePath = `/course-${CourseSlug}`;
 
@@ -55,7 +55,7 @@ function Page() {
   const intl = useIntlMarket();
   const spoken = intl ? INTL_FEE["spoken-english"] : null;
   const demo = intl ? INTL_FEE["demo-session"].display : "₹199";
-  const zero = intl ? "$0" : "₹0";
+  const zero = intl ? intlZero() : "₹0";
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
@@ -76,7 +76,7 @@ function Page() {
               Four live programmes. Spoken, Interactive Speaking, Business English and Interview
               Preparation. Interview Preparation is the room when the HR
               screen is the bottleneck.{" "}
-              {spoken ? `From ${spoken.display} · USD.` : "From ₹999/month, inclusive of taxes."}
+              {spoken ? `From ${spoken.display} · ${intlUnit()}.` : "From ₹999/month, inclusive of taxes."}
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -122,7 +122,7 @@ function Page() {
                 }
                 subnote={
                   spoken
-                    ? `USD · ${INTL_FEE["spoken-english"].display} to ${INTL_FEE["interview-preparation"].display}`
+                    ? `${intlUnit()} · ${INTL_FEE["spoken-english"].display} to ${INTL_FEE["interview-preparation"].display}`
                     : "₹999–₹1,999/month · inclusive of taxes · Razorpay"
                 }
                 rows={[
@@ -243,7 +243,7 @@ function Page() {
               <p className="mt-4 text-ink/85 leading-relaxed">
                 Want to see the teacher, in a batch, before you commit? Sit one live class for 90
                 minutes. {demo}
-                {intl ? " · USD." : ", inclusive of taxes."} Take admission within 48 hours — in that
+                {intl ? ` · ${intlUnit()}.` : ", inclusive of taxes."} Take admission within 48 hours — in that
                 course, or any course we currently offer — and the {demo} is adjusted against your
                 fee.
               </p>
@@ -286,7 +286,7 @@ function Page() {
                     {demo}
                   </p>
                   <p className="mt-1 text-xs text-white/80">
-                    {intl ? "90 min · USD" : "90 min · tax included"}
+                    {intl ? `90 min · ${intlUnit()}` : "90 min · tax included"}
                   </p>
                 </div>
                 <div className="border-t border-white/15 pt-4 min-[420px]:border-t-0 min-[420px]:border-l min-[420px]:pt-0">
