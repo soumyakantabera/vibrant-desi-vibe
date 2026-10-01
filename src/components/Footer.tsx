@@ -206,9 +206,11 @@ function EnrolmentNote() {
       inr="Fees on this site are India pricing, in Indian Rupees, inclusive of taxes. These published figures are for learners in India."
       usd={
         <>
-          You are outside India. International fees, in {intlUnit()}: Basic Spoken English {spoken},
-          Interactive Speaking {interactive}, Business English {business}, Interview Preparation{" "}
-          {interview}. Demo session {demo}.
+          Fees shown to a learner outside India are the international list, in {intlUnit()}. These
+          published figures are Basic Spoken English {spoken}, Interactive Speaking {interactive},
+          Business English {business}, Interview Preparation {interview}, and a demo session of{" "}
+          {demo}. They are the labeled fee, not a conversion of the India price. The fee confirmed
+          on WhatsApp is the contract price.
         </>
       }
     />

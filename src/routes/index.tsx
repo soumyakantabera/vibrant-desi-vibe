@@ -633,7 +633,7 @@ function Home() {
             <p className="text-sm text-ink/75">
               <MarketCopy
                 inr="All prices are in INR and inclusive of taxes."
-                usd={`You are outside India. These are international fees, in ${intlUnit()}.`}
+                usd={`These published figures are the international fee, in ${intlUnit()}, for learners outside India. They are the labeled fee, not a conversion of the India price.`}
               />
             </p>
             <div className="mt-3">
