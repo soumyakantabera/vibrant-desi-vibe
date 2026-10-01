@@ -139,7 +139,7 @@ function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              7 years · about 6 a batch · Kolkata, pan-India & now worldwide
+              7 years · about 6 a batch · pan-India & now worldwide
             </span>
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.
@@ -189,7 +189,7 @@ function Home() {
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
-                "7 years · about 6 a batch · Kolkata, pan-India & now worldwide",
+                "7 years · about 6 a batch · pan-India & now worldwide",
                 "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
                 "Small batches — approx. 6 learners",
