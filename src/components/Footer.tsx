@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
@@ -40,7 +40,11 @@ const GUIDES = FOOTER_GUIDES;
 
 const IMG_DEFAULT = IMG.groupClass;
 
+const POLICY_PATHS = new Set(["/privacy", "/terms", "/refunds", "/child-protection"]);
+
 export function Footer({ image }: { image?: string }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const showDeveloper = !POLICY_PATHS.has(pathname);
   const wa = waLink("Hi, I want a free consultation for spoken English.");
   return (
     <footer className="bg-ink text-cream pt-16 pb-24 sm:pb-8 mt-10" data-cta-location="footer">
@@ -141,10 +145,12 @@ export function Footer({ image }: { image?: string }) {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
           <div className="space-y-1">
             <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
-            <p>
-              © Webify Bharat India. This site is fully managed and developed by Webify Bharat
-              India, and solely owned by Webify Bharat India.
-            </p>
+            {showDeveloper ? (
+              <p>
+                © Webify Bharat India. This site is fully managed and developed by Webify Bharat
+                India, and solely owned by Webify Bharat India.
+              </p>
+            ) : null}
             <p className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
               <Link to="/privacy" className="hover:text-sunshine">
                 Privacy
