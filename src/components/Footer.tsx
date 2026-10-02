@@ -170,7 +170,10 @@ export function Footer({ image }: { image?: string }) {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
           <div className="space-y-1">
             <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
-            <p>This website is made and crafted by Soumyakanta Bera.</p>
+            <p>
+              This site is fully managed and developed by Webify Bharat India. Solely owned by
+              Webify Bharat India.
+            </p>
             <p className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
               <Link to="/privacy" className="hover:text-sunshine">
                 Privacy
