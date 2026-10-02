@@ -171,8 +171,8 @@ export function Footer({ image }: { image?: string }) {
           <div className="space-y-1">
             <p>© {new Date().getFullYear()} Learn With Smile. All rights reserved.</p>
             <p>
-              This site is fully managed and developed by Webify Bharat India. Solely owned by
-              Webify Bharat India.
+              © Webify Bharat India. This site is fully managed and developed by Webify Bharat
+              India, and solely owned by Webify Bharat India.
             </p>
             <p className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
               <Link to="/privacy" className="hover:text-sunshine">
