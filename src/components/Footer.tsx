@@ -187,6 +187,9 @@ export function Footer({ image }: { image?: string }) {
               <Link to="/child-protection" className="hover:text-sunshine">
                 Child protection
               </Link>
+              <Link to="/privacy" hash="grievance-officer" className="hover:text-sunshine">
+                Grievance Officer
+              </Link>
             </p>
           </div>
           <p className="font-display font-semibold text-cream/90">

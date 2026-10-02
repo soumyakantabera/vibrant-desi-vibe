@@ -1010,7 +1010,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/privacy",
     title: "Privacy Policy | How We Handle Your Data",
     description:
-      "How Learn With Smile collects and uses your data, in India and outside India — consultation notes, Razorpay, class recordings, your right to access, correct, delete or export, and how to complain.",
+      "How Learn With Smile collects and uses your data, in India and outside India — consultation notes, Razorpay, class recordings, your right to access, correct, delete or export, and the Grievance Officer.",
     shortTitle: "Privacy Policy",
     keywords: [
       "learn with smile privacy policy",
@@ -1020,9 +1020,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-30",
+    dateModified: "2026-10-02",
     summary:
-      "Privacy Policy: what we collect, why, who we share with (including providers outside your country), how long we keep it, and your right to access, correct, delete, restrict, object and export. We do not sell personal information. Learners outside India may enrol.",
+      "Privacy Policy: what we collect, why, who we share with (including providers outside your country), how long we keep it, and your right to access, correct, delete, restrict, object and export. We do not sell personal information. Learners outside India may enrol. The Grievance Officer is Soumyakanta Bera.",
     faqs: [
       {
         q: "Does Learn With Smile sell my personal information?",
@@ -1044,6 +1044,10 @@ export const PAGES: Record<string, PageSeo> = {
         q: "How do I ask you to delete my data?",
         a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. You may ask us to access, correct, delete, restrict or export what we hold, or to object to a use that is only in our interest. We reply 09:00–12:00 IST and aim to answer within 30 days. Invoices from a paid course are kept for the Indian tax period. We cannot delete WhatsApp’s copy or yours. You may also complain to a data-protection authority where you live.",
       },
+      {
+        q: "Who is the Grievance Officer?",
+        a: "Soumyakanta Bera, Grievance Officer, Learn With Smile. Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India. Email learnwithsmile.in@gmail.com. Phone and WhatsApp +91 96744 79949. We acknowledge a complaint within 48 hours and aim to resolve it within 30 days.",
+      },
     ],
   },
 
@@ -1051,7 +1055,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/terms",
     title: "Terms of Use | Live English Classes",
     description:
-      "Rules for Learn With Smile: learners in India and outside India, free consultation is not a class, cancel a month before its first class for a full refund, no school certificate.",
+      "Rules for Learn With Smile: learners in India and outside India, free consultation is not a class, cancel a month before its first class for a full refund, no school certificate. Complaints go to the Grievance Officer.",
     shortTitle: "Terms of Use",
     keywords: [
       "learn with smile terms of use",
@@ -1061,9 +1065,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-30",
+    dateModified: "2026-10-02",
     summary:
-      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class. After that class, that month is not refunded for a change of mind. Indian law and Kolkata courts, without removing a mandatory right where you live.",
+      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class. After that class, that month is not refunded for a change of mind. Indian law and Kolkata courts, without removing a mandatory right where you live. The Grievance Officer is Soumyakanta Bera.",
     faqs: [
       {
         q: "Is the free consultation a class I can sit for free?",
@@ -1076,6 +1080,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Do you guarantee fluency, a job or an IELTS band?",
         a: "No. Results depend on your starting level, attendance and practice. We do not guarantee fluency in a set number of days, a job, a visa or a particular exam score.",
+      },
+      {
+        q: "Who is the Grievance Officer?",
+        a: "Soumyakanta Bera. Complaints about this website, a consultation, enrolment, a fee or a refund go to the Grievance Officer at learnwithsmile.in@gmail.com or WhatsApp +91 96744 79949. Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India. We acknowledge within 48 hours.",
       },
     ],
   },
@@ -1094,7 +1102,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-09-30",
+    dateModified: "2026-10-02",
     summary:
       "Refunds: cancel a paid month before its first live class for a full refund. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Session is refunded in cash only if cancelled before it is held. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
     faqs: [
@@ -1131,7 +1139,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.4,
     changefreq: "yearly",
-    dateModified: "2026-09-30",
+    dateModified: "2026-10-02",
     summary:
       "Child Protection Policy for adult rooms 15+, in India and outside India. We do not enrol anyone under 15. Parent is the customer if the learner is under 18. No 1:1 video unless the parent stays on the call. Indian law is the floor. No COPPA or GDPR certificate is claimed. A child-protection right that cannot be waived still applies.",
     faqs: [

@@ -14,7 +14,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-09-30";
+export const LEGAL_UPDATED = "2026-10-02";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
@@ -24,9 +24,10 @@ const YOUR_CHOICES: LegalSection = {
 };
 
 const GRIEVANCE_OFFICER: LegalSection = {
+  id: "grievance-officer",
   heading: "Grievance Officer",
   paragraphs: [
-    "Under the Consumer Protection (E-Commerce) Rules, 2020, you may send a complaint about this website, a consultation, enrolment, a fee or a refund to our Grievance Officer. We acknowledge complaints within 48 hours and aim to resolve them within 30 days.",
+    "Our Grievance Officer is Soumyakanta Bera. Under the Consumer Protection (E-Commerce) Rules, 2020, you may send a complaint about this website, a consultation, enrolment, a fee or a refund to the Grievance Officer. The same officer receives privacy complaints. We acknowledge complaints within 48 hours and aim to resolve them within 30 days.",
   ],
   bullets: [
     "Name: Soumyakanta Bera",
@@ -54,7 +55,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Privacy",
     h1: "Privacy Policy",
     standfirst:
-      "This page explains what personal information Learn With Smile collects, why we collect it, and how you can ask us to correct or delete it.",
+      "This page explains what personal information Learn With Smile collects, why we collect it, and how you can ask us to correct or delete it. Complaints go to the Grievance Officer named on this page.",
     updated: LEGAL_UPDATED,
     sections: [
       {
@@ -62,6 +63,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         paragraphs: [
           "Learn With Smile provides live online English classes. The business is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, at 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. We teach from Kolkata. Learners in India and learners outside India may use this site and enrol in the same live online batch.",
           "For privacy questions, message us on WhatsApp at +91 96744 79949 or email learnwithsmile.in@gmail.com. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
+          "The Grievance Officer for this policy is Soumyakanta Bera. Name, address, email and phone are in the Grievance Officer section below.",
         ],
       },
       {
@@ -213,7 +215,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     eyebrow: "Terms",
     h1: "Terms of Use",
     standfirst:
-      "These terms govern use of this website, the free consultation, and enrolment in Learn With Smile live online classes. Please read them before you pay a fee.",
+      "These terms govern use of this website, the free consultation, and enrolment in Learn With Smile live online classes. Please read them before you pay a fee. A complaint about the site, a consultation, a fee or a class goes to the Grievance Officer named on this page.",
     updated: LEGAL_UPDATED,
     sections: [
       {
@@ -221,6 +223,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         paragraphs: [
           "By using www.learnwithsmile.app, messaging us for a consultation, or paying a course fee, you agree to these terms, our Privacy Policy and our Refunds and Cancellation Policy. If you do not agree, do not use the site or enrol.",
           "These pages describe how we run the school. They are not legal advice to you. If a term conflicts with a right that cannot be waived — under Indian law, or under a consumer, privacy or child-protection law in the country where you normally live — that right still applies.",
+          "The Grievance Officer for these terms is Soumyakanta Bera. Write there first about the website, a consultation, enrolment, a fee or a refund. We acknowledge a complaint within 48 hours.",
         ],
       },
       {
@@ -489,7 +492,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to raise a concern",
         paragraphs: [
-          "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Name the learner only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST.",
+          "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Name the learner only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST. The Grievance Officer is Soumyakanta Bera. The contact block is at the end of this page.",
           "If we reasonably believe a child is at immediate risk of harm, we may contact the parent and, where Indian law requires it, the police or a child-welfare authority, even if you asked us not to. We will not promise secrecy that the law does not allow.",
           "A parent may also approach the National Commission for Protection of Child Rights (NCPCR), a State Commission, or the police. This school is not those bodies.",
         ],
@@ -500,6 +503,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "We may pause a seat, move a learner, refuse a later month, or end a teacher’s work on a batch. That is in addition to whatever the law requires. We do not run a public disciplinary scoreboard.",
         ],
       },
+      GRIEVANCE_OFFICER,
       {
         heading: "Changes",
         paragraphs: [
