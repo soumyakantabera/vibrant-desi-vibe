@@ -57,7 +57,7 @@ export const body: ArticleBody = [
   {
     t: "cta",
     text: "Tell us your shift. We will suggest morning, evening or weekend — and Spoken, Interactive or Business.",
-    course: "/book-free-demo",
+    course: "/free-consultation",
     label: "Get Free Consultation",
   },
 ];

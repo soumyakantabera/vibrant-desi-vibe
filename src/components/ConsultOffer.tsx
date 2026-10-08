@@ -80,7 +80,7 @@ export function ConsultOffer({
             {DEMO_CTA}
           </WaButton>
           <Link
-            to="/book-free-demo"
+            to="/free-consultation"
             className={sun ? "btn btn-outline btn-lg border-ink text-ink" : "btn btn-white btn-lg"}
           >
             See what you get

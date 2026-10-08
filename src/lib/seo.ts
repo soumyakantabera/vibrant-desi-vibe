@@ -174,7 +174,14 @@ export type PageSeo = {
   dateModified?: string;
   /** HowTo JSON-LD — visible steps on the page must match. */
   howTo?: { name: string; description: string; steps: string[]; totalTime?: string };
+  /**
+   * Language of the page's main content, when it is not English. Drives
+   * hreflang, og:locale, WebPage.inLanguage and the sitemap entry.
+   */
+  lang?: PageLang;
 };
+
+export type PageLang = "en-IN" | "hi-IN" | "bn-IN";
 
 /* --------------------------------------------------------------------------
  * Keyword strategy — target market: India
@@ -573,7 +580,7 @@ export const CLUSTER_INTENT = {
     intent: "transactional",
     funnel: "decide",
     job: "It is free. Book on WhatsApp — Get Free Consultation. Not a demo class.",
-    land: "/book-free-demo",
+    land: "/free-consultation",
     next: "Get Free Consultation",
   },
   demo_class_hidden: {
@@ -656,7 +663,7 @@ export const CLUSTER_INTENT = {
     intent: "mixed",
     funnel: "consider",
     job: "Same need, different words (tuition, counseling, housewives, Calcutta). Route to the matching product cluster.",
-    land: "/book-free-demo",
+    land: "/free-consultation",
     next: "Get Free Consultation",
   },
 } as const;
@@ -907,7 +914,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/success-stories",
     title: "Spoken English Success Stories | Real Learners",
     description:
-      "Tax desks, court briefs, bank promotions, BI Analyst jobs — named Learn With Smile learners. Spoken English from ₹999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide.",
+      "Tax desks, court briefs, bank promotions, BI Analyst jobs: what named Learn With Smile learners did with their English. Live classes from ₹999/mo.",
     shortTitle: "Success Stories",
     keywords: [
       "learn with smile reviews",
@@ -976,8 +983,8 @@ export const PAGES: Record<string, PageSeo> = {
       "Blog: practical English and career articles written by Learn With Smile teachers for Indian learners.",
   },
 
-  "/book-free-demo": {
-    path: "/book-free-demo",
+  "/free-consultation": {
+    path: "/free-consultation",
     title: "Free Spoken English Consultation on WhatsApp",
     description:
       "Free WhatsApp consultation: we find your speaking gap and recommend a live batch, with the fee in writing. Counselling, not a class. ₹199 demo optional.",
@@ -1012,7 +1019,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/privacy",
     title: "Privacy Policy | How We Handle Your Data",
     description:
-      "How Learn With Smile collects and uses your data, in India and outside India — consultation notes, Razorpay, class recordings, your right to access, correct, delete or export, and the Grievance Officer.",
+      "How Learn With Smile collects and uses your data: consultation notes, Razorpay payments, class recordings, your rights, and the Grievance Officer.",
     shortTitle: "Privacy Policy",
     keywords: [
       "learn with smile privacy policy",
@@ -1057,7 +1064,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/terms",
     title: "Terms of Use | Live English Classes",
     description:
-      "Rules for Learn With Smile: learners in India and outside India, free consultation is not a class, cancel a month before its first class for a full refund, no school certificate. Complaints go to the Grievance Officer.",
+      "Terms for Learn With Smile classes: the free consultation is not a class, refunds before a month's first class, no certificate, and how to complain.",
     shortTitle: "Terms of Use",
     keywords: [
       "learn with smile terms of use",
@@ -1094,7 +1101,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "Refunds at Learn With Smile: full refund of a paid month if you cancel before its first live class. After that class, no refund for a change of mind. Demo fee refunded only if you cancel before the session. Rights that cannot be waived still apply.",
+      "Full refund of a paid month if you cancel before its first live class; no refund for a change of mind after it. Demo fee refunded only before the session.",
     shortTitle: "Refunds and Cancellation",
     keywords: [
       "learn with smile refund policy",
@@ -1131,7 +1138,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/child-protection",
     title: "Child Protection Policy | Adult Rooms 15+",
     description:
-      "Learn With Smile currently runs adult English rooms for learners 15+, in India and outside India. We do not enrol anyone under 15. Indian law is the floor. A parent is the account holder if the learner is under 18.",
+      "Learn With Smile runs adult English classes for learners 15+. We do not enrol anyone under 15; a parent holds the account for learners under 18.",
     shortTitle: "Child Protection Policy",
     keywords: [
       "child protection policy online english class india",
@@ -1318,18 +1325,20 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/workplace-english-course-online-india": {
     path: "/workplace-english-course-online-india",
-    title: "Business English Online | ₹1,999/mo, 7 Years",
+    title: "Workplace English Guide: Meetings, Calls, Emails",
     description:
-      "A practical guide to English for meetings, client calls, updates, emails and presentations — plus who needs a course and who should practise independently.",
-    shortTitle: "Business English Course Guide",
+      "What to say in meetings, client calls, status updates, emails and presentations — and how to tell whether you need a course or just practice.",
+    shortTitle: "Workplace English Guide",
+    // Informational intent. Price-led "business english course" queries belong
+    // to /course-business-english; this page must not compete with it.
     keywords: [
-      "business english course online india",
-      "business english course india fees",
-      "english communication for working professionals",
-      "professional english speaking course online india",
+      "workplace english",
+      "how to improve english at work",
       "english for office meetings and client calls",
+      "english for status updates and standups",
+      "office english phrases",
       "english for bpo and customer support",
-      "office english speaking course india",
+      "english communication for working professionals",
       "workplace english course online india",
     ],
     ogImage: "/og/business-english.jpg",
@@ -1365,7 +1374,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/how-long-to-learn-spoken-english",
     title: "How Long to Learn Spoken English | 6 Months",
     description:
-      "Everyday English from zero: ~6 months live. Workplace 3 months. Exam English 9–12 months if a form asks. 30-day fluency is marketing. ₹999/mo, approx. 6 learners. Inclusive of taxes.",
+      "Everyday English from zero takes about 6 months of live practice; workplace English about 3. Why 30-day fluency is marketing, and what to expect.",
     shortTitle: "How Long to Learn Spoken English",
     keywords: [
       "how long to learn spoken english from zero",
@@ -1498,7 +1507,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/interactive-english-class-hesitation",
     title: "Stop Freezing | Interactive English Class",
     description:
-      "You know the words. You freeze. Games, debates, 1-minute prompts — you talk every hour. 3 months, ₹1,199/mo, about 6 in a batch. Kolkata, pan-India, now worldwide. Live.",
+      "You know the words but freeze. Games, debates and 1-minute prompts make you talk every class. 3 months, ₹1,199/mo, about 6 per batch, live.",
     shortTitle: "Interactive English when you freeze",
     keywords: [
       "how to stop hesitating while speaking english",
@@ -1532,7 +1541,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-hindi-bengali-medium",
     title: "Hindi & Bengali Medium English Classes",
     description:
-      "Hindi-medium or Bengali-medium is not a wall. About 6 in a batch. Explain in your language, then English. 6 months from ₹999/mo. Kolkata, pan-India, now worldwide.",
+      "Hindi- or Bengali-medium is not a wall. The teacher explains in your language, then you practise in English. About 6 per batch, from ₹999/mo.",
     shortTitle: "Hindi & Bengali medium",
     keywords: [
       "spoken english for hindi medium students",
@@ -1566,7 +1575,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-working-professionals-india",
     title: "English for Working Professionals India",
     description:
-      "Keep the job. Speak better English. Morning, evening, weekend IST. Live class; recording is revision. From ₹999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide.",
+      "Keep the job, speak better English. Live morning, evening and weekend IST batches of about 6, from ₹999/month inclusive of taxes.",
     shortTitle: "Working professionals",
     keywords: [
       "english classes for working professionals india",
@@ -1600,7 +1609,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-client-calls-india",
     title: "Client-Call English | Names & Next Step",
     description:
-      "Client-call English is clarity, not accent: names, numbers, next step. Business English, 3 months, ₹1,999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide. Inclusive of taxes.",
+      "Client-call English is clarity, not accent: names, numbers and the next step. Business English, 3 months, ₹1,999/mo incl. taxes, about 6 per batch.",
     shortTitle: "Client-call English",
     keywords: [
       "english for client calls india",
@@ -1707,7 +1716,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
-      "Practical Spoken English for beginners: 6 months, up to 2 live classes weekly, about 6 in a batch. ₹999/month, inclusive of taxes. Kolkata, pan-India, now worldwide.",
+      "Practical spoken English for beginners: 6 months, up to 2 live classes a week, about 6 in a batch. ₹999/month, inclusive of taxes.",
     shortTitle: "Basic Spoken English",
     keywords: [
       ...SPOKEN_KEYWORDS,
@@ -1868,7 +1877,6 @@ export function organizationLd() {
       url: abs("/educator"),
     },
     publishingPrinciples: abs("/terms"),
-    ethicsPolicy: abs("/privacy"),
     privacyPolicy: abs("/privacy"),
     termsOfService: abs("/terms"),
     address: {
@@ -2136,6 +2144,7 @@ export function webPageLd(page: {
   description: string;
   dateModified?: string;
   ogImage?: string;
+  lang?: PageLang;
 }) {
   const isEducatorProfile = page.path === "/educator";
   const isLegal =
@@ -2150,7 +2159,7 @@ export function webPageLd(page: {
     url: abs(page.path),
     name: page.title,
     description: page.description,
-    inLanguage: "en-IN",
+    inLanguage: page.lang ?? "en-IN",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
     ...(page.ogImage
@@ -2209,7 +2218,9 @@ export function buildHead(opts: {
   ogType?: string;
   jsonLd?: unknown[];
   keywords?: string[];
+  lang?: PageLang;
 }): HeadResult {
+  const lang = opts.lang ?? "en-IN";
   const url = abs(opts.path);
   const image = abs(opts.ogImage);
   const keywords = uniqueKeywords(opts.keywords).slice(0, META_KEYWORD_LIMIT);
@@ -2237,7 +2248,7 @@ export function buildHead(opts: {
       { property: "og:description", content: opts.description },
       { property: "og:type", content: opts.ogType ?? "website" },
       { property: "og:url", content: url },
-      { property: "og:locale", content: SITE_LOCALE },
+      { property: "og:locale", content: lang === "en-IN" ? SITE_LOCALE : lang.replace("-", "_") },
       { property: "og:image", content: image },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -2249,7 +2260,7 @@ export function buildHead(opts: {
     ],
     links: [
       { rel: "canonical", href: url },
-      { rel: "alternate", hrefLang: "en-IN", href: url },
+      { rel: "alternate", hrefLang: lang, href: url },
       { rel: "alternate", hrefLang: "x-default", href: url },
       // The Markdown mirror of this page. `rel` stays first: the prerender step
       // matches on `<link rel="(canonical|alternate)"` to mark the tags the
@@ -2342,6 +2353,7 @@ export function pageHead(path: string): HeadResult {
     ogImage: page.ogImage,
     jsonLd,
     keywords: page.keywords,
+    lang: page.lang,
   });
   if (page.dateModified ?? CONTENT_REVISED) {
     head.meta.push(
@@ -2450,6 +2462,7 @@ export type SitemapUrl = {
   changefreq: PageSeo["changefreq"];
   priority: number;
   image: { loc: string; title: string };
+  lang?: PageLang;
 };
 
 /**
@@ -2471,6 +2484,7 @@ export function sitemapUrls(): SitemapUrl[] {
         changefreq: page.changefreq,
         priority: page.priority,
         image: { loc: abs(page.ogImage), title: page.shortTitle },
+        lang: page.lang,
       };
     }
     if (path.startsWith("/blog/")) {

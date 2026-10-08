@@ -42,7 +42,7 @@ export const Route = createFileRoute("/spoken-english-classes-kolkata")({
         ],
         availableChannel: {
           "@type": "ServiceChannel",
-          serviceUrl: abs("/book-free-demo"),
+          serviceUrl: abs("/free-consultation"),
           availableLanguage: ["en-IN", "hi", "bn"],
         },
       }),

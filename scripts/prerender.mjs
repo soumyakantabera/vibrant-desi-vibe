@@ -35,6 +35,7 @@ const {
   renderPath,
   buildLlmsTxt,
   buildLlmsFullTxt,
+  LLMS_PART_FILES,
   buildLlmsJson,
   buildOpenApi,
   buildAiPlugin,
@@ -46,6 +47,8 @@ const {
   BLOG_POSTS,
   actualWordCounts,
   sitemapUrls,
+  REDIRECTS,
+  MOVED_MARKDOWN,
 } = mod;
 
 const today = new Date().toISOString().slice(0, 10);
@@ -276,6 +279,49 @@ for (const [from, to] of [["founder", "educator"]]) {
   console.log(`  aliased   /${from} → /${to}`);
 }
 
+// Moved and retired URLs (src/lib/redirects.ts). Pages has no 301, so each old
+// path gets a static page: instant meta refresh, canonical to the new URL, and
+// a plain link for anything that ignores both. Not in ALL_PATHS or the sitemap.
+const SITE = "https://www.learnwithsmile.app";
+// The deploy's IndexNow step also submits these, so Bing recrawls the old URLs
+// and sees the move. Written outside dist/ so it is not published.
+fs.writeFileSync(
+  path.resolve("dist-prerender/redirected-urls.txt"),
+  Object.keys(REDIRECTS)
+    .map((from) => `${SITE}${from}`)
+    .join("\n") + "\n",
+);
+// The deploy's mirror count excludes these: they are aliases, not sitemap URLs.
+fs.writeFileSync(
+  path.resolve("dist-prerender/moved-markdown.txt"),
+  MOVED_MARKDOWN.map((from) => `dist${markdownPathFor(from)}`).join("\n") + "\n",
+);
+for (const [from, to] of Object.entries(REDIRECTS)) {
+  if (!ALL_PATHS.includes(to)) {
+    throw new Error(`prerender: redirect ${from} → ${to} points at a page that is not built`);
+  }
+  if (ALL_PATHS.includes(from)) {
+    throw new Error(`prerender: ${from} is both a live page and a redirect`);
+  }
+  const target = `${SITE}${to}`;
+  const stub =
+    `<!doctype html>\n<html lang="en-IN"><head><meta charset="utf-8">` +
+    `<title>Moved</title>` +
+    `<link rel="canonical" href="${target}">` +
+    `<meta http-equiv="refresh" content="0; url=${to}">` +
+    `<script>location.replace(${JSON.stringify(to)}+location.search+location.hash)</script>` +
+    `</head><body><p>This page has moved to <a href="${to}">${target}</a>.</p></body></html>\n`;
+  const slug = from.replace(/^\//, "");
+  writeFile(`${slug}.html`, stub);
+  writeFile(`${slug}/index.html`, stub);
+  // A Markdown mirror cannot redirect. Serve the new page's text at the old
+  // .md path so assistants and GPT Actions built on the old URL keep working.
+  const oldMd = path.join(DIST, markdownPathFor(from).replace(/^\//, ""));
+  const newMd = path.join(DIST, markdownPathFor(to).replace(/^\//, ""));
+  if (MOVED_MARKDOWN.includes(from)) fs.copyFileSync(newMd, oldMd);
+  console.log(`  redirect  ${from} → ${to}`);
+}
+
 // Old course URL. Not in ALL_PATHS, so it stays out of the sitemap and llms.json.
 // The file still has to exist: deploy checks it, and old links should not 404.
 {
@@ -304,14 +350,14 @@ function xml(value) {
     .replace(/"/g, "\u0026quot;");
 }
 
-function sitemapEntry({ loc, lastmod, changefreq, priority, image }) {
+function sitemapEntry({ loc, lastmod, changefreq, priority, image, lang }) {
   return [
     "  <url>",
     `    <loc>${xml(loc)}</loc>`,
     ...(lastmod ? [`    <lastmod>${lastmod}</lastmod>`] : []),
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority.toFixed(1)}</priority>`,
-    `    <xhtml:link rel="alternate" hreflang="en-IN" href="${xml(loc)}"/>`,
+    `    <xhtml:link rel="alternate" hreflang="${lang ?? "en-IN"}" href="${xml(loc)}"/>`,
     `    <xhtml:link rel="alternate" hreflang="x-default" href="${xml(loc)}"/>`,
     "    <image:image>",
     `      <image:loc>${xml(image.loc)}</image:loc>`,
@@ -353,7 +399,9 @@ const llmsTxt = buildLlmsTxt(today);
 const llmsJson = buildLlmsJson(today);
 const openapi = buildOpenApi();
 writeFile("llms.txt", llmsTxt);
-writeFile("llms-full.txt", buildLlmsFullTxt(docs, today));
+for (const [part, file] of Object.entries(LLMS_PART_FILES)) {
+  writeFile(file, buildLlmsFullTxt(docs, today, part));
+}
 writeFile("llms.json", llmsJson);
 writeFile("openapi.json", openapi);
 writeFile("ai-plugin.json", buildAiPlugin());

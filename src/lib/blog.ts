@@ -60,7 +60,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How to Choose a Spoken English Class in India: 7 Checks",
     seoTitle: "Choose a Spoken English Class | 7 Checks",
     description:
-      "Seven checks for any Indian English class: batch cap, speaking minutes, GST, named teacher, what the free session actually is, review patterns, certificate vs speaking. ₹999/mo.",
+      "Seven checks before you pay for an English class in India: batch size, speaking minutes, GST, a named teacher, what the free session is, and reviews.",
     excerpt:
       "Cap, minutes, GST, named teacher, what their free session is, review patterns, certificate. Run them on us too.",
     tag: "Guides",
@@ -93,7 +93,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         q: "What should a free English consultation actually give me?",
-        a: "A named diagnosis of your bottleneck, one course recommendation with fee and slot in writing, and answers to your questions. Learn With Smile’s session is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/book-free-demo",
+        a: "A named diagnosis of your bottleneck, one course recommendation with fee and slot in writing, and answers to your questions. Learn With Smile’s session is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/free-consultation",
       },
     ],
     howTo: {
@@ -151,7 +151,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Speaking Minutes in a 60-Minute English Class",
     seoTitle: "Speaking Minutes in a 60-Min English Class",
     description:
-      "Your mic in 60 minutes: about 8–10 min in a batch of around 6, 1–2 min in a room of 30, 50 min in 1:1. Why months on a brochure are not speaking minutes. ₹999/mo, approximately 6 learners.",
+      "How long you actually speak in a 60-minute English class: about 8–10 minutes in a batch of 6, 1–2 in a room of 30, up to 50 one-to-one.",
     excerpt: "Fluency is minutes you spoke, not months on the brochure. Here is the arithmetic.",
     tag: "Spoken English",
     img: "groupClass",
@@ -361,7 +361,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "BPO to Client-Facing Role: The Realistic 6-Month Roadmap",
     seoTitle: "BPO to Client-Facing Role: A Realistic 6-Month Plan",
     description:
-      "A month-by-month plan for moving from back-office BPO work into a client-facing role in India — what to learn, in what order, and how to prove it in interviews.",
+      "A month-by-month plan for moving from back-office BPO work into a client-facing role in India: what to learn, in what order, and how to prove it.",
     excerpt: "What to learn, in what order, and how to talk about it in interviews.",
     tag: "Career",
     img: "career",

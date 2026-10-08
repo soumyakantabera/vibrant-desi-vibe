@@ -29,7 +29,7 @@ export function cityHead(slug: string) {
       ],
       availableChannel: {
         "@type": "ServiceChannel",
-        serviceUrl: abs("/book-free-demo"),
+        serviceUrl: abs("/free-consultation"),
         availableLanguage: ["en-IN", "hi", "bn"],
       },
     }),
@@ -60,7 +60,7 @@ export function CityGuide({ slug }: { slug: string }) {
       faqTitle={`Spoken English in ${city.name} — questions`}
       waMessage={`Hi, I am in ${city.name} and I want a free consultation for Basic Spoken English.`}
       ctaTitle="Get a free consultation for your city"
-      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee as Kolkata, Mumbai or Kochi."
+      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee everywhere in India."
     />
   );
 }

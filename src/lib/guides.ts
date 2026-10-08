@@ -21,7 +21,7 @@ export const GUIDE_GROUPS: { id: GuideGroup; title: string; blurb: string }[] = 
 
 export const GUIDE_CARDS: GuideCard[] = [
   {
-    to: "/book-free-demo",
+    to: "/free-consultation",
     title: "What the free consultation is",
     sub: "We diagnose your bottleneck, answer every query, and place you in one course. Not a class.",
     icon: "spark",
@@ -118,8 +118,8 @@ export const GUIDE_CARDS: GuideCard[] = [
   },
   {
     to: "/workplace-english-course-online-india",
-    title: "Business English guide",
-    sub: "Meetings, calls, emails, presentations — ₹1,999/mo, 3 months.",
+    title: "Workplace English guide",
+    sub: "What to say in meetings, calls, updates and emails — course or self-study.",
     icon: "headset",
     color: "indigo",
     group: "work",
@@ -181,6 +181,22 @@ export const GUIDE_CARDS: GuideCard[] = [
     group: "audience",
   },
   {
+    to: "/spoken-english-in-hindi",
+    title: "Spoken English in Hindi",
+    sub: "English बोलना कैसे सीखें — रोज़ का अभ्यास, आम गलतियाँ, 6 महीने का प्लान।",
+    icon: "translate",
+    color: "coral",
+    group: "audience",
+  },
+  {
+    to: "/spoken-english-in-bengali",
+    title: "Spoken English in Bengali",
+    sub: "ইংরেজি বলতে শিখুন — রোজের অভ্যাস, সাধারণ ভুল, 6 মাসের পরিকল্পনা।",
+    icon: "translate",
+    color: "brand",
+    group: "audience",
+  },
+  {
     to: "/spoken-english-classes-kolkata",
     title: "Kolkata",
     sub: "Live from Kolkata vs 25–40 student classrooms. Morning, evening, weekend.",
@@ -213,14 +229,6 @@ export const GUIDE_CARDS: GuideCard[] = [
     group: "city",
   },
   {
-    to: "/spoken-english-classes-pune",
-    title: "Pune",
-    sub: "Hinjewadi traffic vs a 60-minute live room. Same pan-India fee.",
-    icon: "location_on",
-    color: "coral",
-    group: "city",
-  },
-  {
     to: "/spoken-english-classes-hyderabad",
     title: "Hyderabad",
     sub: "HITEC City and Gachibowli. Client English without a fake accent.",
@@ -228,83 +236,11 @@ export const GUIDE_CARDS: GuideCard[] = [
     color: "brand",
     group: "city",
   },
-  {
-    to: "/spoken-english-classes-chennai",
-    title: "Chennai",
-    sub: "OMR commute vs live IST. Tamil-medium welcome. From ₹999/mo.",
-    icon: "location_on",
-    color: "indigo",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-ahmedabad",
-    title: "Ahmedabad",
-    sub: "Gujarati-medium start is not a wall. Live batch of around 6.",
-    icon: "location_on",
-    color: "sunshine",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-nagpur",
-    title: "Nagpur",
-    sub: "MIHAN and Wardha Road. Live IST batch of around 6. Same ₹999/mo.",
-    icon: "location_on",
-    color: "brand",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-surat",
-    title: "Surat",
-    sub: "Gujarati-medium start is not a wall. Live from ₹999/mo, inclusive of taxes.",
-    icon: "location_on",
-    color: "coral",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-coimbatore",
-    title: "Coimbatore",
-    sub: "Tamil-medium welcome. Skip Avinashi Road. Same pan-India live fee.",
-    icon: "location_on",
-    color: "indigo",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-kochi",
-    title: "Kochi",
-    sub: "Infopark commute vs a 60-minute live room. Same ₹999/mo as Kolkata.",
-    icon: "location_on",
-    color: "sunshine",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-visakhapatnam",
-    title: "Visakhapatnam",
-    sub: "Vizag / MVP Colony. Telugu-medium welcome. Live IST from ₹999/mo.",
-    icon: "location_on",
-    color: "brand",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-patna",
-    title: "Patna",
-    sub: "Hindi-medium is not a wall. Live batch of around 6. From ₹999/mo.",
-    icon: "location_on",
-    color: "coral",
-    group: "city",
-  },
-  {
-    to: "/spoken-english-classes-guwahati",
-    title: "Guwahati",
-    sub: "GS Road commute vs live IST. Assamese, Hindi, Bengali welcome.",
-    icon: "location_on",
-    color: "indigo",
-    group: "city",
-  },
 ];
 
 /** Homepage strip — the converting nine, not the whole catalogue. */
 export const FEATURED_GUIDE_PATHS = [
-  "/book-free-demo",
+  "/free-consultation",
   "/spoken-business-or-interactive-english",
   "/english-class-fees-india",
   "/how-long-to-learn-spoken-english",
@@ -321,7 +257,7 @@ export const FEATURED_GUIDES = FEATURED_GUIDE_PATHS.map(
 
 export const FOOTER_GUIDES = [
   { to: "/guides", label: "All English class guides" },
-  { to: "/book-free-demo", label: "What the free consultation is" },
+  { to: "/free-consultation", label: "What the free consultation is" },
   { to: "/spoken-business-or-interactive-english", label: "Which class you need" },
   { to: "/english-class-fees-india", label: "English class fees in India" },
   { to: "/how-long-to-learn-spoken-english", label: "How long spoken English takes" },

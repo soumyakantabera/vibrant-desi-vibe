@@ -2,13 +2,105 @@ import type { PageSeo } from "@/lib/seo";
 import { CITIES, cityFaqs } from "@/lib/cities";
 
 const UPDATED = "2026-09-22";
+/** City pages were rewritten with city-specific sections on this date. */
+const CITY_UPDATED = "2026-10-08";
 
 const NEW_GUIDES: Record<string, PageSeo> = {
+  // Written in Hindi and Bengali for learners who search in their own language.
+  // `lang` sets hreflang, og:locale and inLanguage for these two only.
+  "/spoken-english-in-hindi": {
+    path: "/spoken-english-in-hindi",
+    lang: "hi-IN",
+    title: "Spoken English in Hindi | English Bolna Kaise Sikhe",
+    description:
+      "English बोलना कैसे सीखें: रोज़ 15 मिनट का अभ्यास, हिंदी बोलने वालों की आम गलतियाँ और 6 महीने का सच्चा प्लान। लाइव क्लास ₹999/माह से।",
+    shortTitle: "Spoken English in Hindi",
+    keywords: [
+      "spoken english in hindi",
+      "english bolna kaise sikhe",
+      "english speaking course in hindi",
+      "english sikhne ka tarika",
+      "hindi se english bolna sikhe",
+      "english बोलना कैसे सीखें",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.7,
+    changefreq: "monthly",
+    dateModified: CITY_UPDATED,
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Spoken English in Hindi", path: "/spoken-english-in-hindi" },
+    ],
+    summary:
+      "Hindi-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Hindi speakers make, and when a live class helps. Classes from ₹999/month inclusive of taxes.",
+    faqs: [
+      {
+        q: "English बोलना सीखने में कितना समय लगता है?",
+        a: "शून्य से रोज़मर्रा की बातचीत तक आम तौर पर करीब 6 महीने, अगर हफ़्ते में 2 लाइव क्लास हों और रोज़ थोड़ा अभ्यास। ऑफ़िस की English अक्सर 3 महीने और। 30 दिन में फ़्लुएंसी का दावा विज्ञापन है।",
+      },
+      {
+        q: "क्या हिंदी-मीडियम से पढ़े लोग English बोलना सीख सकते हैं?",
+        a: "हाँ। स्कूल की भाषा ने तय किया कि आपने कितनी English सुनी, यह नहीं कि आप बोल सकते हैं या नहीं। Learn With Smile की क्लास English में होती है; कोई बात अटके तो टीचर हिंदी में समझाती हैं, फिर वापस English।",
+      },
+      {
+        q: "Learn With Smile की फ़ीस कितनी है?",
+        a: "Basic Spoken English ₹999/माह (6 महीने), Interactive Speaking ₹1,199/माह, Business English ₹1,999/माह, Interview Preparation ₹1,999/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
+      },
+      {
+        q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
+        a: "शुरुआत हाँ — रोज़ ज़ोर से बोलना, रिकॉर्ड करना और शैडोइंग बहुत मदद करते हैं। पर अपनी गलतियाँ खुद पकड़ना मुश्किल है, और असली बातचीत का दबाव अकेले नहीं बनता। अगर 3–4 हफ़्ते बाद भी अटकते हैं, तो छोटा लाइव बैच मदद करता है।",
+      },
+    ],
+  },
+  "/spoken-english-in-bengali": {
+    path: "/spoken-english-in-bengali",
+    lang: "bn-IN",
+    title: "Spoken English in Bengali | English Bolte Shikhun",
+    description:
+      "ইংরেজি বলতে শিখুন: রোজ 15 মিনিটের অভ্যাস, বাঙালিদের সাধারণ ভুল আর 6 মাসের সত্যি পরিকল্পনা। কলকাতা থেকে লাইভ ক্লাস, ₹999/মাস থেকে।",
+    shortTitle: "Spoken English in Bengali",
+    keywords: [
+      "spoken english in bengali",
+      "english bolte shikhun",
+      "bengali to english speaking course",
+      "spoken english class kolkata bengali",
+      "bangla theke english bola",
+      "ইংরেজি বলতে শিখুন",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    priority: 0.7,
+    changefreq: "monthly",
+    dateModified: CITY_UPDATED,
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Spoken English in Bengali", path: "/spoken-english-in-bengali" },
+    ],
+    summary:
+      "Bengali-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Bengali speakers make (he/she, v/bh, s/sh), and when a live class helps. Taught from Kolkata, from ₹999/month inclusive of taxes.",
+    faqs: [
+      {
+        q: "ইংরেজি বলতে শিখতে কত সময় লাগে?",
+        a: "শূন্য থেকে রোজকার কথাবার্তা পর্যন্ত সাধারণত প্রায় 6 মাস, যদি সপ্তাহে 2টো লাইভ ক্লাস আর রোজ একটু অভ্যাস থাকে। অফিসের ইংরেজির জন্য প্রায়ই আরও 3 মাস। 30 দিনে ফ্লুয়েন্সির দাবি বিজ্ঞাপন।",
+      },
+      {
+        q: "বাংলা মিডিয়ামে পড়লে কি ইংরেজি বলা শেখা যায়?",
+        a: "হ্যাঁ। স্কুলের মাধ্যম ঠিক করেছে আপনি কতটা ইংরেজি শুনেছেন, আপনি বলতে পারবেন কিনা তা নয়। Learn With Smile-এর ক্লাস ইংরেজিতে হয়; কিছু না বুঝলে টিচার বাংলায় বুঝিয়ে দেন, তারপর আবার ইংরেজিতে।",
+      },
+      {
+        q: "Learn With Smile-এর ফি কত?",
+        a: "Basic Spoken English ₹999/মাস (6 মাস), Interactive Speaking ₹1,199/মাস, Business English ₹1,999/মাস, Interview Preparation ₹1,999/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
+      },
+      {
+        q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",
+        a: "না। সব ক্লাস লাইভ অনলাইন। আমাদের টিচার কলকাতা থেকে পড়ান, আর কলকাতায় একটা অফিস আছে যেখানে আগে থেকে সময় নিয়ে দেখা করা যায় — কিন্তু সেটা ক্লাসরুম নয়।",
+      },
+    ],
+  },
   "/guides": {
     path: "/guides",
     title: "English Class Guides | Fees, Fit, Cities",
     description:
-      "Which class, what the free consultation is, fees, beginners, IT, cities — honest live-English guides from ₹999/mo, inclusive of taxes. About 6 in a batch. Kolkata, pan-India, now worldwide.",
+      "Honest guides to choosing a live English class in India: which course fits, fees, how long it takes, beginners, IT, workplace and cities.",
     shortTitle: "Guides",
     keywords: [
       "spoken english class guides india",
@@ -34,7 +126,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "What do I get in the free consultation?",
-        a: "A named diagnosis of your problem, one course recommendation with fee and IST slot in writing, and answers to every question you bring. It is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/book-free-demo",
+        a: "A named diagnosis of your problem, one course recommendation with fee and IST slot in writing, and answers to every question you bring. It is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/free-consultation",
       },
     ],
   },
@@ -291,8 +383,6 @@ const NEW_GUIDES: Record<string, PageSeo> = {
 function cityAliases(city: (typeof CITIES)[number]): string[] {
   const slug = city.slug;
   if (slug === "bengaluru") return ["bangalore"];
-  if (slug === "visakhapatnam") return ["vizag"];
-  if (slug === "kochi") return ["cochin"];
   if (slug === "delhi") return ["delhi ncr", "gurgaon", "noida", "gurugram"];
   if (slug === "mumbai") return ["thane", "navi mumbai"];
   return [];
@@ -321,7 +411,7 @@ function cityPage(city: (typeof CITIES)[number]): PageSeo {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.75,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: CITY_UPDATED,
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: city.name, path: city.path },

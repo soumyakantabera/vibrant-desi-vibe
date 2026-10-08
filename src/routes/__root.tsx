@@ -1,8 +1,7 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -22,7 +21,7 @@ import { BOOT_SCRIPT, BOOT_CSS, FONT_CSS } from "@/lib/boot-script";
 import { markAppReady, prefetchWhenIdle } from "@/lib/boot";
 
 /** Pages a reader is most likely to open next, fetched during idle time. */
-const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/book-free-demo"];
+const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/free-consultation"];
 
 function NotFoundComponent() {
   return (
@@ -81,7 +80,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => {
     // Site-wide only — no title, description, canonical or page JSON-LD here.
     // Every route supplies those through `pageHead()` / `courseSeo()`.
@@ -162,7 +161,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
   const router = useRouter();
 
   // The page is built and painted: let the boot gate open (once everything
@@ -173,9 +171,9 @@ function RootComponent() {
   }, [router]);
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <RouteProgress />
       <Outlet />
-    </QueryClientProvider>
+    </>
   );
 }

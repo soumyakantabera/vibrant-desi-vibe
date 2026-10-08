@@ -205,7 +205,7 @@ function BlockView({ block }: { block: Block }) {
         >
           <p className="text-white/95 leading-relaxed">{inline(block.text)}</p>
           <div className="mt-4 flex flex-wrap gap-3">
-            {block.course === "/book-free-demo" ? (
+            {block.course === "/free-consultation" ? (
               <WaButton
                 message={DEMO_MSG}
                 variant="sun"

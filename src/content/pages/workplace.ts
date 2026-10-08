@@ -3,11 +3,11 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most people searching for a Business English course do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. That is this room: **Business English** — meetings, calls, emails and presentations. Not an MBA module.",
+    text: "Most people who want better English at work do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. This guide covers those moments — and, if you need live practice, what our [Business English course](/course-business-english) does. Not an MBA module.",
   },
   {
     t: "p",
-    text: "The name is broader, but the promise is narrower: practise English for situations that happen at work. It is not a personality-development course, an accent makeover, a management qualification or a certificate programme.",
+    text: "The course name is broad, but its promise is narrow: practise English for situations that happen at work. It is not a personality-development course, an accent makeover, a management qualification or a certificate programme.",
   },
 
   { t: "h2", text: "First: do you actually need this course?" },

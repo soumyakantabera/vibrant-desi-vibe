@@ -6,7 +6,7 @@ import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/workplace";
 
 const PATH = "/workplace-english-course-online-india";
-const UPDATED = "2026-09-02";
+const UPDATED = "2026-10-08";
 
 export const Route = createFileRoute("/workplace-english-course-online-india")({
   component: Page,
@@ -42,21 +42,21 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
-      eyebrow="Business English Guide"
-      breadcrumb="Business English Course Online India"
+      eyebrow="Workplace English Guide"
+      breadcrumb="Workplace English guide"
       h1={
         <>
-          Business English in India — ₹1,999/mo, inclusive of taxes,{" "}
-          <span className="text-sunshine">Approx. 6 learners, 3 Months</span>
+          English at work:{" "}
+          <span className="text-sunshine">meetings, calls, updates and emails</span>
         </>
       }
-      standfirst="Meetings, client calls, updates, emails, presentations. 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/mo inclusive of taxes. Who should join — and who should self-study."
+      standfirst="What to say in the moments that decide how you come across at work — and how to tell whether you need a course or just practice. If you need a course, Business English is ₹1,999/mo, inclusive of taxes."
       heroImage={IMG.businessEnglish}
       heroAlt="Indian professional practising English for an online workplace meeting"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
-      faqTitle="Business English — Straight Answers"
+      faqTitle="Workplace English — Straight Answers"
       waMessage="Hi, I want a free consultation for Business English."
       ctaTitle="Bring one real workplace problem"
       ctaBody="Tell us the meeting, call, email or presentation situation that is difficult. We will tell you honestly whether Business English or another course is the better fit."

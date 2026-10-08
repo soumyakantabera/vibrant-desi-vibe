@@ -81,7 +81,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "Beginners sit in the Spoken English room. Approx. 6 learners. ₹999/mo, inclusive of taxes.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],
@@ -139,7 +139,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "Fluency is a room you speak in, not a poster. Approx. 6 learners. From ₹999/mo.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],
@@ -199,7 +199,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "Freshers sit in Spoken or Interactive — one room, not both. Message us.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],
@@ -252,7 +252,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "Daytime Spoken English. Approx. 6 learners. ₹999/mo, inclusive of taxes.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],
@@ -308,7 +308,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "Count minutes in our room. Approx. 6 learners. From ₹999/mo, inclusive of taxes.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],
@@ -365,7 +365,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "If free is enough, we will say so. If it is not, the consultation is still free.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],
@@ -483,7 +483,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "cta",
         text: "IT English is a standup you can finish. Approx. 6 learners. From ₹999/mo.",
-        course: "/book-free-demo",
+        course: "/free-consultation",
         label: "Get Free Consultation",
       },
     ],

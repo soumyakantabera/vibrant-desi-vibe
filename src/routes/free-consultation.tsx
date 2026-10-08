@@ -21,9 +21,9 @@ import {
   PROOF_CARD_CLASS,
 } from "@/lib/consultation";
 
-export const Route = createFileRoute("/book-free-demo")({
+export const Route = createFileRoute("/free-consultation")({
   component: Page,
-  head: () => pageHead("/book-free-demo"),
+  head: () => pageHead("/free-consultation"),
 });
 
 function Page() {
@@ -316,7 +316,7 @@ function Page() {
       </section>
 
       <FaqSection
-        faqs={PAGES["/book-free-demo"].faqs ?? []}
+        faqs={PAGES["/free-consultation"].faqs ?? []}
         eyebrow="Before You Book"
         title="Questions about the consultation"
         subtitle="Message anytime. We reply 09:00–12:00 IST."

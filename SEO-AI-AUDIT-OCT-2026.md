@@ -29,6 +29,24 @@ The problems are now in **what the pages say and how much noise surrounds it**:
 
 Items 1–3 and most of 5 are fixed in this change. Item 4 needs an owner decision.
 
+## Round 2 — recommendations applied (8 October 2026)
+
+| Recommendation | What changed |
+|---|---|
+| P0 city pages | **Kept** Kolkata, Delhi NCR, Mumbai, Bengaluru, Hyderabad. The four metros each gained ~500 words of city-specific content (the actual work situations there, an honest note on which languages the teacher can bridge in, timing advice) and two city-specific FAQs. **Retired** Pune, Chennai, Ahmedabad, Nagpur, Surat, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati — they now redirect to `/best-online-spoken-english-classes-india`. Overlap between the remaining metro pages fell from ~0.70 to ~0.44 (the remainder is shared page chrome such as the competitor table). |
+| P1-1 consultation vs demo | `/book-free-demo` → **`/free-consultation`**. Every internal link, `openapi.json`, `llms.txt`/`llms.json` and the GPT instructions use the new URL. The old URL redirects, and its `.md` mirror still serves the page text so existing Custom GPTs do not break. |
+| P1-2 cannibalisation | `/workplace-english-course-online-india` is now an informational guide ("Workplace English Guide: Meetings, Calls, Emails"; H1 "English at work: meetings, calls, updates and emails") with non-price keywords. Price intent stays with `/course-business-english`. |
+| P1-3 `llms-full.txt` | Split by type: `llms-full.txt` (core: offer, courses, fees, consultation, about — 140 kB), `llms-guides.txt`, `llms-blog.txt`, `llms-policies.txt`, all listed in `llms.txt`, `llms.json`, `robots.txt`. The fee paragraph is no longer repeated in every section. |
+| P1-4 speed | Removed the unused React Query provider from the bundle (entry JS 211 → 204 kB gzip). Hero image srcset was **not** changed: on phones the hero box is 412×1133 px with `object-fit: cover`, so the 1600 px source is already being scaled up and a smaller file would blur. The boot veil was left as designed. |
+| P2 Hindi / Bengali | New pages **`/spoken-english-in-hindi`** (Hindi) and **`/spoken-english-in-bengali`** (Bengali): realistic timeline, a 15-minute daily routine, a table of common mistakes for each language, when a class helps, fees and FAQs. Correct `hreflang` (`hi-IN` / `bn-IN`), `og:locale`, `inLanguage` and `lang` attributes; heading anchors now work for non-Latin scripts. |
+| P2 descriptions | All 15 descriptions over ~158 characters shortened; the longest is now 157. |
+| P2 homepage H1 | The eyebrow above the H1 now reads "Live online spoken English classes · about 6 a batch · 7 years". The H1 slogan is unchanged. |
+| P2 small items | `Organization.ethicsPolicy` removed; `robots.txt` comments rewritten as facts. The "2,000+ words" vs "1,000+ words" item was not a contradiction (course total vs one module) and is unchanged. |
+
+**Redirects on GitHub Pages.** Pages cannot send HTTP 301s, so each old URL is a small static page with an instant meta refresh and a canonical to the new URL, which Google treats as a permanent redirect. The deploy also submits the old URLs to IndexNow so Bing re-crawls them. Defined in `src/lib/redirects.ts`.
+
+**Watch after deploy:** Search Console → Pages ("Page with redirect" for the 11 old URLs is expected) and Performance for the five city pages and `/free-consultation`. If a retired city had meaningful clicks, it can be restored from git history.
+
 ## Scorecard
 
 | Area | Status | Notes |
@@ -115,7 +133,7 @@ Lighthouse mobile, devtools throttling, homepage: **FCP/LCP 3.9 s → 2.9–3.0 
 
 ## Prioritised recommendations (not done in this change)
 
-### P0 — Decide what to do with the city pages
+### P0 — Decide what to do with the city pages — **done, see Round 2**
 
 Fourteen city pages (`/spoken-english-classes-{mumbai,pune,delhi,…}`) share 68–71% of their text with each other; only Kolkata is distinct (14%). The service is online-only and the offer, price and timings are identical in every city — the pages differ mainly by city name, a neighbourhood and a language. Google's spam policies name exactly this ("multiple pages… targeting specific regions or cities that funnel users to one page") as doorway abuse, and scaled near-duplicates can drag down the whole site.
 
@@ -125,7 +143,7 @@ Options, best first:
 
 Check Search Console → Pages and Performance first: any city page with real clicks should be kept and improved, not removed.
 
-### P0 — Prove the entity exists outside the site
+### P0 — Prove the entity exists outside the site — **owner action**
 
 A brand search during this audit returned no result for the site at all, only unrelated "Smile" businesses (search was not Google India, so treat as a warning, not proof). AI assistants and Google both need corroboration from elsewhere:
 
@@ -135,19 +153,19 @@ A brand search during this audit returned no result for the site at all, only un
 - Move public email from Gmail to `@learnwithsmile.app`.
 - Keep an evidence file for "500+ learners", "7 years" and "5.0★ · 125 Google reviews" — `llms.txt` states the rating; if the GBP number drifts, the site becomes the inconsistent source.
 
-### P1-1 — Fix the consultation / demo naming
+### P1-1 — Fix the consultation / demo naming — **done**
 
 Three things share one idea: the URL `/book-free-demo` (a consultation, "not a class"), the paid `/course-demo-session` (₹199, adjusted on enrolment), and copy written to catch "free demo class" searches. Searchers, Google and assistants all get a mixed message, and the code itself needs long assistant instructions to untangle it. Simplest durable fix: rename the consultation page to `/free-consultation` with a 301 from `/book-free-demo`, and make `/course-demo-session` the only page that targets "demo class" — stating plainly "₹199, ₹0 extra if you enrol within 48 hours".
 
-### P1-2 — Remove Business English cannibalisation
+### P1-2 — Remove Business English cannibalisation — **done**
 
 `/course-business-english` ("Business English Course | ₹1,999/mo") and `/workplace-english-course-online-india` ("Business English Online | ₹1,999/mo, 7 Years", H1 "Business English in India — ₹1,999/mo…") compete for the same query. Four more guides (working professionals, IT professionals, client calls, presentations) also funnel to it, with ~25% shared text between them. Make the workplace page an informational guide ("How to improve English at work: meetings, emails, calls") with a non-price title, and leave price-led commercial intent to the course page.
 
-### P1-3 — Make `llms-full.txt` usable
+### P1-3 — Make `llms-full.txt` usable — **done**
 
 It is 614 kB (it was ~59 kB when introduced). Assistant fetch tools truncate long documents to fit a context window, and the limits are undocumented, so anything past the first portion of the file should be assumed unread. Either cap it at core pages (home, four courses, demo, consultation, fees, comparison, FAQs) under ~100 kB, or split it (`llms-courses.txt`, `llms-guides.txt`, `llms-cities.txt`) and list the parts in `llms.txt`. The per-page `.md` mirrors already cover the long tail.
 
-### P1-4 — Remaining speed work (India is mobile-first)
+### P1-4 — Remaining speed work (India is mobile-first) — **partly done**
 
 - **Boot veil:** `MAX_HOLD = 3000` means a slow phone can wait up to 3 s for a page whose HTML arrived much sooner. Consider showing text immediately with `font-display: swap` and size-adjusted fallbacks, keeping the veil only for the hero.
 - **JS:** one 679 kB entry bundle (211 kB gzip), ~195 kB unused on first load; Total Blocking Time 600–950 ms on mid-range mobile. Code-split routes and keep Radix/Recharts out of the entry chunk.
@@ -155,7 +173,7 @@ It is 614 kB (it was ~59 kB when introduced). Assistant fetch tools truncate lon
 
 Then check real-user Core Web Vitals in Search Console once traffic is enough to report.
 
-### P2 — Content gaps for the Indian market
+### P2 — Content gaps for the Indian market — **Hindi and Bengali pages done**
 
 Validate these clusters in Keyword Planner (India) before writing; ordered by likely fit, not volume:
 

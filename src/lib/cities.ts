@@ -18,8 +18,18 @@ export type CityRecord = {
   localRoom: string;
   title: string;
   description: string;
+  /** City-specific sections, rendered after the short answer. */
+  local: ArticleBody;
+  /** City-specific questions, added after the shared ones. */
+  localFaqs: Faq[];
 };
 
+/**
+ * City pages are kept only where the page can say something specific to that
+ * city. Ten template-only pages (same offer, same text, a different city name)
+ * were retired in October 2026 — that pattern is what Google's doorway-page
+ * policy targets. Their URLs redirect; see RETIRED_CITY_PATHS.
+ */
 export const CITIES: CityRecord[] = [
   {
     slug: "mumbai",
@@ -36,7 +46,42 @@ export const CITIES: CityRecord[] = [
     localRoom: "Dadar, Andheri or Thane classrooms of 25–40",
     title: "Spoken English Mumbai | Live, From ₹999",
     description:
-      "Live Spoken English for Mumbai and Thane. Skip the local. ₹999/month, inclusive of taxes, around 6 learners. IST morning, evening and weekend batches.",
+      "Live online spoken English for Mumbai and Thane: banking, media, BPO and hospitality English. About 6 per batch, ₹999/month incl. taxes, IST batches.",
+    local: [
+      { t: "h2", text: "English at work in Mumbai" },
+      {
+        t: "p",
+        text: "Mumbai English is fast and transactional. A relationship manager confirms a KYC document, a production coordinator chases a shoot schedule, a front desk handles a complaint at 11pm, an agent in Malad or Powai takes a UK or US call. The conversation does not wait while you translate in your head — so the practice has to be speaking at speed, not grammar worksheets.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Banking, insurance and NBFC desks:** explain a product, a charge or a delay in plain English, without hiding behind jargon — and say what happens next.",
+          "**Media, advertising and events:** briefs, call sheets and quick calls where the decision and the owner must be clear by the end.",
+          "**Hospitality and retail:** greet, handle a complaint, and say no politely without sounding rude.",
+          "**International processes (BPO/KPO):** accent is not the test. Clarity, empathy phrases and call control are. See [client-call English](/english-for-client-calls-india).",
+        ],
+      },
+      { t: "h2", text: "Fitting class around a Mumbai day" },
+      {
+        t: "p",
+        text: "A class you travel to competes with the local train for the same hours; an online one does not. Morning batches finish before you leave for the station, evening batches start around 7pm IST after most commutes end, and weekend batches suit retail, hospitality and shift staff. If your shift rotates, say so in the consultation and we place you where the timing holds.",
+      },
+      {
+        t: "p",
+        text: "**Language bridge.** Hindi works well as a bridge for most Mumbai learners: when a concept stalls, the teacher explains it in Hindi and you go straight back to English. Marathi is not used as a bridge — if Marathi is your only comfortable language, mention it in the consultation so we can judge the fit honestly.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "Is there a batch that fits Mumbai local train timings?",
+        a: "Yes. Morning batches finish before most people leave for the station, evening batches start around 7pm IST, and there are weekend batches for retail, hospitality and shift staff. Classes are live online, so there is no second commute for class.",
+      },
+      {
+        q: "I work at a bank in Mumbai. Spoken English or Business English?",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Business English (₹1,999/month, 3 months). If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+      },
+    ],
   },
   {
     slug: "delhi",
@@ -46,14 +91,50 @@ export const CITIES: CityRecord[] = [
     geoRegion: "IN-DL",
     lat: "28.6139",
     lng: "77.2090",
-    neighborhoods: "Delhi, Gurgaon, Noida, Ghaziabad, Faridabad",
+    neighborhoods: "Delhi, Gurugram, Noida, Ghaziabad, Faridabad",
     commute: "60–120 minutes on the ring road or metro, each way",
     industries: "IT, consulting, government-adjacent roles, BPO and startups",
     medium: "Hindi-medium or English-medium schooling",
-    localRoom: "Karol Bagh, Connaught Place or Gurgaon rooms of 25–40",
+    localRoom: "Karol Bagh, Connaught Place or Gurugram rooms of 25–40",
     title: "Spoken English Delhi NCR | Live From ₹999",
     description:
-      "Live Spoken English for Delhi, Gurgaon and Noida. No ring-road commute. ₹999/month, inclusive of taxes, around 6 learners. IST live batches, pan-India.",
+      "Live online spoken English for Delhi, Gurugram and Noida. Hindi-medium welcome; batches for office and shift workers. About 6 per batch, ₹999/month.",
+    local: [
+      { t: "h2", text: "English at work in Delhi NCR" },
+      {
+        t: "p",
+        text: "NCR is three job markets in one. Gurugram runs on MNC offices and international voice and non-voice processes; Noida on IT services, media and product companies; Delhi on government-facing work, legal practice, retail and family business. Each needs a different kind of English, and a single 40-seat classroom rarely separates them.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Gurugram international processes:** call opening, verification, empathy, escalation and a clean close — on a US or UK line.",
+          "**Noida IT and media:** standups, status updates, written tickets and client demos. See [English for IT professionals](/english-for-it-professionals-india).",
+          "**Delhi legal, government-facing and business roles:** formal emails, explaining a proposal clearly, and holding your ground with senior people in a meeting.",
+          "**Job seekers:** HR rounds where “tell me about yourself” decides whether there is a next round. See [Interview Preparation](/course-interview-preparation).",
+        ],
+      },
+      { t: "h2", text: "Hindi-medium in Delhi is the usual starting point" },
+      {
+        t: "p",
+        text: "Many NCR learners studied in Hindi-medium schools and understand far more English than they can say. That gap is exactly what a small live batch closes: you already understand the question, so every class is spent getting your answer out in English. When a grammar point stalls, the teacher explains it in Hindi and you go back to English — the room never turns into a Hindi lecture.",
+      },
+      { t: "h2", text: "Timings for NCR schedules" },
+      {
+        t: "p",
+        text: "Morning batches before office, evening batches from about 7pm IST, and weekend batches. If you work a US shift in Gurugram, a weekend batch usually fits better than a weekday evening; classes are recorded for revision, but the speaking only happens live, so pick a slot you can actually attend.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "I work a night shift in Gurugram. Can I still join?",
+        a: "Usually, yes — most night-shift learners take a weekend batch. Tell us your shift in the free consultation on WhatsApp and we suggest the slot that holds. Recordings help with revision, but speaking practice only happens in the live class.",
+      },
+      {
+        q: "Is the fee different for Gurugram or Noida?",
+        a: "No. Basic Spoken English is ₹999/month inclusive of taxes for every learner in India, whether you join from Delhi, Gurugram, Noida, Ghaziabad or Faridabad. Batches are about 6 learners.",
+      },
+    ],
   },
   {
     slug: "bengaluru",
@@ -70,24 +151,43 @@ export const CITIES: CityRecord[] = [
     localRoom: "Koramangala or Indiranagar classrooms of 25–40",
     title: "Spoken English Bengaluru | Live From ₹999",
     description:
-      "Live Spoken English for Bengaluru / Bangalore. Whitefield to Jayanagar, same ₹999/month batch of around 6. Inclusive of taxes. IST live classes. Kolkata.",
-  },
-  {
-    slug: "pune",
-    path: "/spoken-english-classes-pune",
-    name: "Pune",
-    state: "Maharashtra",
-    geoRegion: "IN-MH",
-    lat: "18.5204",
-    lng: "73.8567",
-    neighborhoods: "Hinjewadi, Baner, Kothrud, Viman Nagar, Hadapsar, Pimpri-Chinchwad",
-    commute: "Hinjewadi traffic that can eat a whole evening",
-    industries: "IT, auto, manufacturing and campus placements",
-    medium: "Marathi, Hindi or English-medium schooling",
-    localRoom: "FC Road or Baner classrooms of 25–40",
-    title: "Spoken English Classes Pune | From ₹999",
-    description:
-      "Live Spoken English for Pune and PCMC. Skip Hinjewadi traffic. ₹999/month, inclusive of taxes, around 6 learners. Morning, evening, weekend IST. Kolkata.",
+      "Live spoken English for Bengaluru IT and GCC teams: standups, client calls and interviews. About 6 per batch, ₹999/month incl. taxes, IST batches.",
+    local: [
+      { t: "h2", text: "English at work in Bengaluru" },
+      {
+        t: "p",
+        text: "In Bengaluru the problem is rarely vocabulary. Engineers, analysts and support staff read and write English all day. The freeze comes in the spoken moments: the daily standup, the demo to a client in another time zone, the one-on-one with a manager, the appraisal conversation where you need to say what you did without underselling it.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Standups:** yesterday, today, blocker — in under a minute, without reading from notes.",
+          "**Client calls with US, UK or European teams:** confirm requirements, push back on scope politely, and summarise next steps before the call ends.",
+          "**GCC roles:** speak up in meetings where the decision-makers are abroad and the call moves fast.",
+          "**Switching jobs:** product companies often add a managerial or culture round where communication is assessed directly. See [Interview Preparation](/course-interview-preparation).",
+        ],
+      },
+      { t: "h2", text: "A note on language for Bengaluru learners" },
+      {
+        t: "p",
+        text: "Bengaluru rooms draw people from every state. When a concept stalls, the teacher can bridge in Hindi or Bengali; Kannada, Tamil, Telugu and Malayalam are not used as bridges. If you are comfortable in neither Hindi nor Bengali, that is often fine for [Interactive Speaking](/course-interactive-speaking) or [Business English](/course-business-english), where you already have the English and the work is fluency — say so in the consultation and we will advise honestly.",
+      },
+      { t: "h2", text: "Timings for tech schedules" },
+      {
+        t: "p",
+        text: "Morning batches before standup, evening batches from about 7pm IST, or weekends. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "I can write English but freeze in standups. Which course?",
+        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,199/month, 3 months) trains speaking on the spot. If the freeze is specifically in meetings and client calls, Business English (₹1,999/month, 3 months). Both live, about 6 learners, inclusive of taxes.",
+      },
+      {
+        q: "I don't speak Hindi. Can I still join from Bengaluru?",
+        a: "Often, yes. Classes run in English; Hindi or Bengali is only used briefly when a concept stalls. If your English is already working-level, Interactive Speaking or Business English rarely needs a bridge. Tell us in the free consultation and we will say honestly whether a batch fits.",
+      },
+    ],
   },
   {
     slug: "hyderabad",
@@ -104,179 +204,71 @@ export const CITIES: CityRecord[] = [
     localRoom: "Ameerpet or Madhapur classrooms of 25–40",
     title: "Spoken English Hyderabad | Live From ₹999",
     description:
-      "Live Spoken English for Hyderabad. HITEC City and Gachibowli join the same ₹999/month batch of around 6. Inclusive of taxes. IST live timings. Kolkata.",
-  },
-  {
-    slug: "chennai",
-    path: "/spoken-english-classes-chennai",
-    name: "Chennai",
-    state: "Tamil Nadu",
-    geoRegion: "IN-TN",
-    lat: "13.0827",
-    lng: "80.2707",
-    neighborhoods: "OMR, Anna Nagar, T. Nagar, Velachery, Tambaram, Adyar",
-    commute: "OMR traffic that makes a twice-a-week class a twice-a-week argument",
-    industries: "IT, auto, manufacturing and BPO",
-    medium: "Tamil-medium or English-medium schooling",
-    localRoom: "T. Nagar or Anna Nagar classrooms of 25–40",
-    title: "Spoken English Chennai | Live From ₹999",
-    description:
-      "Live Spoken English for Chennai. Tamil-medium welcome. ₹999/month, inclusive of taxes, around 6 learners. IST morning, evening and weekend batches. Kolkata.",
-  },
-  {
-    slug: "ahmedabad",
-    path: "/spoken-english-classes-ahmedabad",
-    name: "Ahmedabad",
-    state: "Gujarat",
-    geoRegion: "IN-GJ",
-    lat: "23.0225",
-    lng: "72.5714",
-    neighborhoods: "SG Highway, Navrangpura, Maninagar, Bopal, GIFT City commuters",
-    commute: "an SG Highway crawl for a classroom that still seats 30",
-    industries: "manufacturing, diamond, pharma, IT and GIFT City finance",
-    medium: "Gujarati-medium or English-medium schooling",
-    localRoom: "CG Road or SG Highway classrooms of 25–40",
-    title: "Spoken English Ahmedabad | From ₹999",
-    description:
-      "Live Spoken English for Ahmedabad. Gujarati-medium is not a wall. ₹999/month, inclusive of taxes, around 6 learners. IST live batches, pan-India. Kolkata.",
-  },
-  {
-    slug: "nagpur",
-    path: "/spoken-english-classes-nagpur",
-    name: "Nagpur",
-    state: "Maharashtra",
-    geoRegion: "IN-MH",
-    lat: "21.1458",
-    lng: "79.0882",
-    neighborhoods: "Dharampeth, Sadar, Wardha Road, MIHAN, Civil Lines, Sitabuldi",
-    commute: "a Wardha Road crawl that turns a 60-minute class into a three-hour evening",
-    industries: "IT, logistics, orange trade, education and MIHAN GCCs",
-    medium: "Marathi, Hindi or English-medium schooling",
-    localRoom: "Dharampeth or Sadar classrooms of 25–40",
-    title: "Spoken English Nagpur | Live From ₹999",
-    description:
-      "Live Spoken English for Nagpur and MIHAN. Skip the commute. ₹999/month, inclusive of taxes, around 6 learners. IST morning, evening and weekend batches.",
-  },
-  {
-    slug: "surat",
-    path: "/spoken-english-classes-surat",
-    name: "Surat",
-    state: "Gujarat",
-    geoRegion: "IN-GJ",
-    lat: "21.1702",
-    lng: "72.8311",
-    neighborhoods: "Adajan, Vesu, Varachha, Athwa, Ring Road, Pal",
-    commute: "Ring Road traffic that eats the hour you meant to spend speaking",
-    industries: "textiles, diamonds, trading and a growing IT corridor",
-    medium: "Gujarati-medium or English-medium schooling",
-    localRoom: "Adajan or Vesu classrooms of 25–40",
-    title: "Spoken English Surat | Live From ₹999",
-    description:
-      "Live Spoken English for Surat. Gujarati-medium is welcome. ₹999/month, inclusive of taxes, around 6 live learners. IST live batches. Same fee as Kolkata.",
-  },
-  {
-    slug: "coimbatore",
-    path: "/spoken-english-classes-coimbatore",
-    name: "Coimbatore",
-    state: "Tamil Nadu",
-    geoRegion: "IN-TN",
-    lat: "11.0168",
-    lng: "76.9558",
-    neighborhoods: "RS Puram, Peelamedu, Gandhipuram, Saravanampatti, Saibaba Colony",
-    commute: "an Avinashi Road hop that costs more time than the class",
-    industries: "textiles, manufacturing, education and IT services",
-    medium: "Tamil-medium or English-medium schooling",
-    localRoom: "RS Puram or Peelamedu classrooms of 25–40",
-    title: "Spoken English Coimbatore | From ₹999",
-    description:
-      "Live Spoken English for Coimbatore. Tamil-medium welcome. ₹999/month, inclusive of taxes, around 6 learners. IST morning, evening and weekend batches.",
-  },
-  {
-    slug: "kochi",
-    path: "/spoken-english-classes-kochi",
-    name: "Kochi",
-    state: "Kerala",
-    geoRegion: "IN-KL",
-    lat: "9.9312",
-    lng: "76.2673",
-    neighborhoods: "Kakkanad, Edappally, Panampilly Nagar, Vyttila, Fort Kochi, Infopark",
-    commute: "an Infopark commute that turns twice-a-week class into twice-a-week traffic",
-    industries: "IT, shipbuilding, tourism, healthcare and Infopark GCCs",
-    medium: "Malayalam-medium or English-medium schooling",
-    localRoom: "Kakkanad or Edappally classrooms of 25–40",
-    title: "Spoken English Kochi | Live From ₹999",
-    description:
-      "Live Spoken English for Kochi and Infopark. Skip the commute. ₹999/month, inclusive of taxes, around 6 learners. IST live morning batches. Office in Kolkata.",
-  },
-  {
-    slug: "visakhapatnam",
-    path: "/spoken-english-classes-visakhapatnam",
-    name: "Visakhapatnam",
-    state: "Andhra Pradesh",
-    geoRegion: "IN-AP",
-    lat: "17.6868",
-    lng: "83.2185",
-    neighborhoods: "MVP Colony, Siripuram, Gajuwaka, Madhurawada, Beach Road, Pendurthi",
-    commute: "a Beach Road or Gajuwaka crawl for a 60-minute classroom hour",
-    industries: "port, steel, navy-adjacent, IT and pharma",
-    medium: "Telugu-medium or English-medium schooling",
-    localRoom: "MVP Colony or Siripuram classrooms of 25–40",
-    title: "Spoken English Vizag | Live From ₹999",
-    description:
-      "Live Spoken English for Visakhapatnam / Vizag. Telugu-medium is welcome. ₹999/month, inclusive of taxes, around 6 learners. IST live batches, pan-India.",
-  },
-  {
-    slug: "patna",
-    path: "/spoken-english-classes-patna",
-    name: "Patna",
-    state: "Bihar",
-    geoRegion: "IN-BR",
-    lat: "25.5941",
-    lng: "85.1376",
-    neighborhoods: "Boring Road, Kankarbagh, Patliputra, Bailey Road, Fraser Road",
-    commute: "Bailey Road traffic that costs more than the class fee in time",
-    industries: "government, education, banking, coaching and a growing services floor",
-    medium: "Hindi-medium or English-medium schooling",
-    localRoom: "Boring Road or Kankarbagh classrooms of 25–40",
-    title: "Spoken English Patna | Live From ₹999",
-    description:
-      "Live Spoken English for Patna. Hindi-medium is not a wall. ₹999/month, inclusive of taxes, around 6 learners. IST morning, evening and weekend batches.",
-  },
-  {
-    slug: "guwahati",
-    path: "/spoken-english-classes-guwahati",
-    name: "Guwahati",
-    state: "Assam",
-    geoRegion: "IN-AS",
-    lat: "26.1445",
-    lng: "91.7362",
-    neighborhoods: "GS Road, Dispur, Beltola, Zoo Road, Paltan Bazaar, Six Mile",
-    commute: "a GS Road crawl that turns a 60-minute class into a lost evening",
-    industries: "oil, tea, government, education and a growing services floor",
-    medium: "Assamese, Hindi, Bengali or English-medium schooling",
-    localRoom: "GS Road or Dispur classrooms of 25–40",
-    title: "Spoken English Guwahati | From ₹999",
-    description:
-      "Live Spoken English for Guwahati. Assamese, Hindi and Bengali welcome. ₹999/month, inclusive of taxes, around 6 learners. IST live batches from Kolkata.",
+      "Live spoken English for Hyderabad: HITEC City IT, pharma and support roles. About 6 per batch, ₹999/month inclusive of taxes, IST batches.",
+    local: [
+      { t: "h2", text: "English at work in Hyderabad" },
+      {
+        t: "p",
+        text: "Hyderabad's jobs cluster in a few places — IT services and GCCs around HITEC City, Gachibowli and Madhapur; pharma and life sciences; and large customer-support operations. Each has a recognisable English moment, and most learners arrive knowing exactly which one costs them.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**IT and GCC teams:** standups, client calls and status updates to managers abroad.",
+          "**Pharma and life sciences:** explaining a procedure or a problem clearly to reviewers or clients outside India, then writing it up in plain English.",
+          "**Customer support:** clarity, empathy phrases, and closing a call with a clear next step.",
+          "**Freshers after a technical course:** the skills are there, but the HR round goes silent. See [spoken English for freshers](/spoken-english-for-freshers-india).",
+        ],
+      },
+      { t: "h2", text: "Language bridge in Hyderabad" },
+      {
+        t: "p",
+        text: "Many Hyderabad learners are comfortable in Hindi or Hindustani as well as Telugu, so the short Hindi explanation the teacher uses when a concept stalls often works here. Telugu is not used as a bridge. If Hindi is difficult for you, mention it in the consultation and we will tell you honestly whether a batch fits.",
+      },
+      { t: "h2", text: "Timings for Hyderabad schedules" },
+      {
+        t: "p",
+        text: "Morning batches before office, evening batches from about 7pm IST, and weekend batches. Support and GCC staff on rotational shifts usually do best in a weekend batch — tell us your roster in the consultation.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "I work in pharma in Hyderabad. Which course helps with audits and client calls?",
+        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Business English (₹1,999/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
+      },
+      {
+        q: "Is the Hindi bridge a problem if I mainly speak Telugu?",
+        a: "Not necessarily. Classes run in English and the Hindi explanation is brief. If your English is already working-level, Interactive Speaking or Business English rarely needs it. Tell us in the free consultation and we will say honestly whether a batch fits.",
+      },
+    ],
   },
 ];
+
+/**
+ * Retired city pages → where their URLs now point. scripts/prerender.mjs writes
+ * a static redirect (meta refresh + canonical) at each old path, because GitHub
+ * Pages cannot send a 301. Kept out of ALL_PATHS, the sitemap and llms files.
+ */
+export const RETIRED_CITY_REDIRECT = "/best-online-spoken-english-classes-india";
+export const RETIRED_CITY_PATHS = [
+  "/spoken-english-classes-pune",
+  "/spoken-english-classes-chennai",
+  "/spoken-english-classes-ahmedabad",
+  "/spoken-english-classes-nagpur",
+  "/spoken-english-classes-surat",
+  "/spoken-english-classes-coimbatore",
+  "/spoken-english-classes-kochi",
+  "/spoken-english-classes-visakhapatnam",
+  "/spoken-english-classes-patna",
+  "/spoken-english-classes-guwahati",
+] as const;
 
 export const CITY_PATHS: Record<string, string> = {
   Kolkata: "/spoken-english-classes-kolkata",
   Delhi: "/spoken-english-classes-delhi",
   Mumbai: "/spoken-english-classes-mumbai",
-  Pune: "/spoken-english-classes-pune",
-  Nagpur: "/spoken-english-classes-nagpur",
-  Ahmedabad: "/spoken-english-classes-ahmedabad",
-  Surat: "/spoken-english-classes-surat",
   Bengaluru: "/spoken-english-classes-bengaluru",
   Hyderabad: "/spoken-english-classes-hyderabad",
-  Chennai: "/spoken-english-classes-chennai",
-  Coimbatore: "/spoken-english-classes-coimbatore",
-  Kochi: "/spoken-english-classes-kochi",
-  Visakhapatnam: "/spoken-english-classes-visakhapatnam",
-  Patna: "/spoken-english-classes-patna",
-  Guwahati: "/spoken-english-classes-guwahati",
 };
 
 /** Footer + coverage chips. Kolkata is a custom page, not in CITIES. */
@@ -313,6 +305,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
       q: `Is online better than a coaching centre in ${city.name}?`,
       a: `For speaking minutes, usually yes. ${city.localRoom} cannot give each learner more than a minute or two per class. A live batch of around 6 gives roughly 8–10 minutes. You also save ${city.commute}. What an offline centre does better is peer energy in the same room. We replace that with debates, prompts and a WhatsApp batch group.`,
     },
+    ...city.localFaqs,
   ];
 }
 
@@ -322,6 +315,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "p",
       text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, morning / evening / weekend IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
+    ...city.local,
     { t: "h2", text: `Why ${city.name} learners take this online` },
     {
       t: "p",
@@ -351,21 +345,6 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "p",
       text: `Market bands for ${city.name} offline rooms are in the [India fees guide](/english-class-fees-india). Confirm any other provider on their site before you pay.`,
     },
-    { t: "h2", text: `Who in ${city.name} this is for` },
-    {
-      t: "ul",
-      items: [
-        "Adults 15+ who cannot yet hold a two-minute turn — [beginners](/spoken-english-for-beginners-india).",
-        "Working people who keep the job and still need the mic — [working professionals](/english-for-working-professionals-india).",
-        "IT and GCC staff who freeze in standups — [English for IT](/english-for-it-professionals-india).",
-        "Freshers before campus or an HR screen — [freshers](/spoken-english-for-freshers-india).",
-        "Homemakers who want shops, school meetings and a voice — [homemakers](/spoken-english-for-homemakers-india).",
-      ],
-    },
-    {
-      t: "p",
-      text: `This ${city.name} page is the adult Spoken room (15+), from ₹999/mo. Classes are live online — no walk-in campus.`,
-    },
     { t: "h2", text: "What we do not claim" },
     {
       t: "ul",
@@ -378,7 +357,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     {
       t: "cta",
       text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹999/mo, inclusive of taxes.`,
-      course: "/book-free-demo",
+      course: "/free-consultation",
       label: "Get Free Consultation",
     },
   ];

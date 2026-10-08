@@ -8,7 +8,7 @@
 import type { IconName } from "@/components/Icon";
 import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
-export const CONSULTATION_PATH = "/book-free-demo";
+export const CONSULTATION_PATH = "/free-consultation";
 
 export const CONSULTATION = {
   cta: "Get Free Consultation",
@@ -33,7 +33,7 @@ export const CONSULTATION = {
     "Get a free spoken English consultation. Small batch. Personalised advice. We don't sell the room until you see it. Not a class. WhatsApp +91 96744 79949.",
 } as const;
 
-/** Same three cards on /book-free-demo and the sitewide yellow band. White type, brand colours. */
+/** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
 export const PROOF_CARD_CLASS = {
   coral: "consult-card bg-[#C84D3F] text-white",
   indigo: "consult-card bg-[#3D3DB8] text-white",

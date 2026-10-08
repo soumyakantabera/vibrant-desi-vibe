@@ -1,14 +1,12 @@
-import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { PageSkeleton } from "./components/PageSkeleton";
 
 export const getRouter = () => {
-  const queryClient = new QueryClient();
-
+  // No React Query: nothing on this static site fetches data at runtime, and
+  // the provider alone put ~90 kB of unused code in every page load.
   const router = createRouter({
     routeTree,
-    context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     basepath: import.meta.env.BASE_URL,

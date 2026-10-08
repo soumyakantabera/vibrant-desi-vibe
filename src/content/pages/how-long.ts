@@ -95,7 +95,7 @@ export const body: ArticleBody = [
   {
     t: "cta",
     text: "Join a live batch of around 6 learners. Count how many minutes you spoke.",
-    course: "/book-free-demo",
+    course: "/free-consultation",
     label: "Get Free Consultation",
   },
 
