@@ -72,7 +72,7 @@ export const body: ArticleBody = [
   {
     t: "cta",
     text: "Get a free consultation. We will walk you through the batch of around 6, the speaking minutes, and whether the room fits you.",
-    course: "/book-free-demo",
+    course: "/free-consultation",
     label: "Get Free Consultation",
   },
 

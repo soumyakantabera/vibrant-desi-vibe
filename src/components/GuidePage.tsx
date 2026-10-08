@@ -43,6 +43,7 @@ export function GuidePage({
   ctaTitle,
   ctaBody,
   lastUpdated,
+  lang,
   children,
 }: {
   eyebrow: string;
@@ -60,6 +61,9 @@ export function GuidePage({
   ctaBody: string;
   /** Shown as a visible date on pages whose facts go stale (the fees guide). */
   lastUpdated?: string;
+  /** BCP 47 tag for a page written in another language (hi-IN, bn-IN). The
+   *  site chrome stays English; the hero, article and FAQs carry this tag. */
+  lang?: string;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
@@ -70,7 +74,7 @@ export function GuidePage({
           <SmartImage src={heroImage} alt={heroAlt} fill priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/60" />
         </div>
-        <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
+        <div className="container-x py-12 md:py-20 max-w-3xl text-cream" lang={lang}>
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -103,7 +107,7 @@ export function GuidePage({
         </div>
       </section>
 
-      <article className="section">
+      <article className="section" lang={lang}>
         <div className="container-x max-w-3xl">
           {shortAnswer && (
             <div className="mb-8 rounded-2xl border border-sunshine/40 bg-sunshine/15 p-5">
@@ -113,21 +117,27 @@ export function GuidePage({
               <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
             </div>
           )}
-          <CompareDiff />
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
+          {/* The dated market strip is the same on every guide, so it follows the
+              page's own answer instead of opening it. */}
+          <div lang="en-IN">
+            <CompareDiff />
+          </div>
         </div>
       </article>
 
       {children}
 
-      <FaqSection
-        faqs={faqs}
-        eyebrow="FAQs"
-        title={faqTitle}
-        subtitle="Straight answers. Message anytime; WhatsApp replies 09:00–12:00 IST."
-        waMessage={waMessage}
-      />
+      <div lang={lang}>
+        <FaqSection
+          faqs={faqs}
+          eyebrow="FAQs"
+          title={faqTitle}
+          subtitle="Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day."
+          waMessage={waMessage}
+        />
+      </div>
 
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />

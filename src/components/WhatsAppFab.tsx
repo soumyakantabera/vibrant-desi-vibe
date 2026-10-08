@@ -1,14 +1,22 @@
-import { CHAT_CTA, DEMO_CTA, DEMO_MSG, waLink } from "@/lib/whatsapp";
+import {
+  CHAT_CTA,
+  CHAT_MSG,
+  DEMO_CTA,
+  DEMO_MSG,
+  consultRequest,
+  waLink,
+  withPageTag,
+} from "@/lib/whatsapp";
+import { usePageLabel } from "@/lib/use-page-label";
 import { BrandIcon } from "./BrandIcon";
 import { Icon } from "./Icon";
 
-export function WhatsAppFab({
-  message = "Hi! I want to know more about Learn With Smile courses.",
-}: {
-  message?: string;
-}) {
-  const whatsapp = waLink(message);
-  const consult = waLink(DEMO_MSG);
+export function WhatsAppFab({ message }: { message?: string }) {
+  const page = usePageLabel();
+  // Chat asks a question; the consultation button uses the page's own message
+  // (it usually names the course or city) as a booking-link request.
+  const whatsapp = waLink(withPageTag(CHAT_MSG, page));
+  const consult = waLink(withPageTag(message ? consultRequest(message) : DEMO_MSG, page));
   return (
     <>
       <a

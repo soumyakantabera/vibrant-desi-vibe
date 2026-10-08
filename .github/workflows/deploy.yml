@@ -90,6 +90,9 @@ jobs:
           # files reached dist/ and still carry the facts they exist to serve.
           test -s dist/llms.txt
           test -s dist/llms-full.txt
+          test -s dist/llms-guides.txt
+          test -s dist/llms-blog.txt
+          test -s dist/llms-policies.txt
           test -s dist/llms.json
           test -s dist/openapi.json
           test -s dist/ai-plugin.json
@@ -157,7 +160,9 @@ jobs:
           urls=$(grep -c '<loc>' dist/sitemap.xml)
           # Page mirrors only. chatgpt-actions.md and .well-known copies are
           # GPT instruction files, not sitemap URLs.
-          mirrors=$(find dist -name '*.md' ! -path 'dist/.well-known/*' ! -name 'chatgpt-actions.md' | wc -l)
+          # Moved pages keep an alias mirror at the old .md path (src/lib/redirects.ts).
+          mirrors=$(find dist -name '*.md' ! -path 'dist/.well-known/*' ! -name 'chatgpt-actions.md' \
+            | grep -vxF -f dist-prerender/moved-markdown.txt | wc -l)
           if [ "$urls" -ne "$mirrors" ]; then
             echo "::error::$urls URLs in the sitemap but $mirrors Markdown mirrors"; exit 1
           fi
@@ -207,6 +212,9 @@ jobs:
             "https://www.learnwithsmile.app/llms.txt" \
             "https://www.learnwithsmile.app/llms.json" \
             "https://www.learnwithsmile.app/llms-full.txt" \
+            "https://www.learnwithsmile.app/llms-guides.txt" \
+            "https://www.learnwithsmile.app/llms-blog.txt" \
+            "https://www.learnwithsmile.app/llms-policies.txt" \
             "https://www.learnwithsmile.app/openapi.json" \
             "https://www.learnwithsmile.app/ai-plugin.json" \
             "https://www.learnwithsmile.app/.well-known/llms.txt" \
@@ -214,7 +222,9 @@ jobs:
             "https://www.learnwithsmile.app/.well-known/ai-plugin.json" \
             "https://www.learnwithsmile.app/.well-known/openapi.json" \
             "https://www.learnwithsmile.app/robots.txt")
-          urls=$(printf '%s\n%s\n' "$sitemap_urls" "$extra" | awk 'NF && !seen[$0]++' | jq -R . | jq -s .)
+          # Old URLs that now redirect (scripts/prerender.mjs), so Bing sees the move.
+          redirected=$(cat dist-prerender/redirected-urls.txt 2>/dev/null || true)
+          urls=$(printf '%s\n%s\n%s\n' "$sitemap_urls" "$extra" "$redirected" | awk 'NF && !seen[$0]++' | jq -R . | jq -s .)
           payload=$(jq -n \
             --arg host "www.learnwithsmile.app" \
             --arg key "$key" \

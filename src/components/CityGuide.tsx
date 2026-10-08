@@ -29,7 +29,7 @@ export function cityHead(slug: string) {
       ],
       availableChannel: {
         "@type": "ServiceChannel",
-        serviceUrl: abs("/book-free-demo"),
+        serviceUrl: abs("/free-consultation"),
         availableLanguage: ["en-IN", "hi", "bn"],
       },
     }),
@@ -50,8 +50,8 @@ export function CityGuide({ slug }: { slug: string }) {
           Online, Approx. 6 Learners
         </>
       }
-      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹999/month, inclusive of taxes, approximately 6 learners, IST morning, evening and weekend batches.`}
-      shortAnswer={`No walk-in campus in ${city.name}. Live online, around 6 learners, ₹999/month inclusive of taxes. You skip ${city.commute}.`}
+      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹999/month, inclusive of taxes, approximately 6 learners, IST afternoon, evening and night batches.`}
+      shortAnswer={`No classroom in ${city.name} — live online, around 6 learners, ₹999/month inclusive of taxes. You skip ${city.commute}.`}
       heroImage={IMG.groupClass}
       heroAlt={`${city.name} learners in a live online English class`}
       lastUpdated={page?.dateModified}
@@ -60,7 +60,7 @@ export function CityGuide({ slug }: { slug: string }) {
       faqTitle={`Spoken English in ${city.name} — questions`}
       waMessage={`Hi, I am in ${city.name} and I want a free consultation for Basic Spoken English.`}
       ctaTitle="Get a free consultation for your city"
-      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee as Kolkata, Mumbai or Kochi."
+      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee everywhere in India."
     />
   );
 }

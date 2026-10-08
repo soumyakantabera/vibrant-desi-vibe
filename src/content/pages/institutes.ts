@@ -146,20 +146,20 @@ export const body: ArticleBody = [
       "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, inclusive of taxes.",
       "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
       "The student is a **child** — a kids platform, not an adult batch of around 6.",
-      "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our Kolkata address is an office, not a campus.",
+      "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our classes are online.",
     ],
   },
 
   { t: "h2", text: "Their free session vs ours" },
   {
     t: "p",
-    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling — you pick a 15-minute call. Cambly is a tutor lottery. British Council is a counsellor pitching a CEFR module. A city classroom sits you in 25–40, or pitches. Exam shops pitch IELTS. [Our consultation](/book-free-demo) is a small batch with personalised advice: we name the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
+    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling — you pick a 15-minute call. Cambly is a tutor lottery. British Council is a counsellor pitching a CEFR module. A city classroom sits you in 25–40, or pitches. Exam shops pitch IELTS. [Our consultation](/free-consultation) is a small batch with personalised advice: we name the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
   },
 
   {
     t: "cta",
     text: "Compare us in a consultation, not a packed room. We name the bottleneck, print the cap (≈6), and put the fee in writing. From ₹999/mo, inclusive of taxes. 500+ learners, 7 years.",
-    course: "/book-free-demo",
+    course: "/free-consultation",
     label: "Get Free Consultation",
   },
 ];

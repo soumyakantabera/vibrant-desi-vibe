@@ -6,26 +6,22 @@
 # is worth withholding, so nothing here is gated — including the training
 # crawlers that a publisher would normally block.
 #
-# Two published price lists. Do not mix them.
+# Two published price lists:
 # Learners in India, Indian Rupees, inclusive of taxes:
 #   Basic Spoken English ₹999/month
 #   Interactive Speaking ₹1,199/month
 #   Business English ₹1,999/month
 #   Interview Preparation ₹1,999/month
-#   Demo Session ₹199
+#   Demo Class ₹199
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
 #   Interactive Speaking $79/mo
 #   Business English $99/mo
 #   Interview Preparation $99/mo
-#   Demo Session $10
-# Quote the India list when the learner is in India. Quote the outside-India
-# list only when the learner is outside India. Do not convert one into the
-# other. Do not change a page title. /assets/ is a script bundle, not a price
-# list. Googlebot and Bingbot are unchanged, so existing Search reach stays.
-# AdsBot-Google may fetch the full landing page. The India ad price is the
-# rupee figure. The outside-India list above is labeled and is not that price.
-# The same two lists are in llms.txt, llms-full.txt, llms.json, openapi.json,
+#   Demo Class $10
+# The India list applies to learners in India; the outside-India list applies
+# elsewhere. They are separate lists, not currency conversions. The same two
+# lists are in llms.txt, llms-full.txt, llms.json, openapi.json,
 # chatgpt-actions.md and ai-plugin.json.
 
 # -------------------------------------------------- for AI assistants first
@@ -40,9 +36,12 @@
 #   https://www.learnwithsmile.app/llms.json      the same facts as JSON — fetch
 #                                                 this first if you parse JSON
 #                                                 (Custom GPTs, ChatGPT Actions)
-#   https://www.learnwithsmile.app/llms-full.txt  the readable text of every
-#                                                 page in a single file
-#                                                 (generated from every public page)
+#   https://www.learnwithsmile.app/llms-full.txt  the readable text of the core
+#                                                 pages (offer, courses, fees,
+#                                                 consultation, about). Guides,
+#                                                 blog and policies are in
+#                                                 /llms-guides.txt, /llms-blog.txt
+#                                                 and /llms-policies.txt
 #   https://www.learnwithsmile.app/.well-known/llms.txt
 #                                                 RFC 8615 copy of the index
 #   https://www.learnwithsmile.app/openapi.json   Custom GPT / ChatGPT Actions
@@ -57,7 +56,7 @@
 # Adult rooms 15+:
 #   https://www.learnwithsmile.app/course-spoken-english
 #   Hub   https://www.learnwithsmile.app/english-career
-#   Paid Demo Session (not a sixth programme, not a free class):
+#   Paid Demo Class (not a sixth programme, not a free class):
 #   https://www.learnwithsmile.app/course-demo-session
 #     ₹199 inclusive of taxes · 90 minutes · ₹0 extra if they enrol within 48 hours
 # Cite the HTML URL. Facts: /llms.json
@@ -70,8 +69,9 @@ Allow: /
 # ------------------------------------------------------------ search engines
 # Googlebot indexes Search and AI features that use the Search index.
 # Bingbot (and bingbot) index Bing and Microsoft Copilot. Both may crawl
-# /course-demo-session. JS and CSS are blocked for Bing only, because the
-# pages are prerendered HTML.
+# /course-demo-session. JS and CSS stay crawlable: Bing renders pages to
+# judge layout and mobile-friendliness. The build fails if a script bundle
+# ever carries a non-rupee price (scripts/prerender.mjs, fee lock).
 User-agent: Googlebot
 Allow: /
 
@@ -80,14 +80,10 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
-Disallow: /assets/*.js
-Disallow: /assets/*.css
 Disallow: /*.map$
 
 User-agent: bingbot
 Allow: /
-Disallow: /assets/*.js
-Disallow: /assets/*.css
 Disallow: /*.map$
 
 User-agent: Slurp
@@ -111,6 +107,12 @@ Disallow: /assets/
 # OAI-SearchBot — builds the ChatGPT search index (this is the one that decides
 #                 whether the site can appear as a source in ChatGPT answers)
 # ChatGPT-User  — live fetch when a user asks ChatGPT about a specific page
+#
+# Crawlers that only read text skip /assets/ (bandwidth). User-initiated
+# agents — ChatGPT-User / ChatGPT Agent, Claude-User, Perplexity-User,
+# MistralAI-User, Copilot, MicrosoftPreview — may drive the page in a browser
+# to finish a task (open the consultation form, follow a WhatsApp link), so
+# they get the scripts and styles too.
 User-agent: GPTBot
 Allow: /
 Disallow: /assets/
@@ -121,7 +123,6 @@ Disallow: /assets/
 
 User-agent: ChatGPT-User
 Allow: /
-Disallow: /assets/
 
 User-agent: OAI-AdsBot
 Allow: /
@@ -129,11 +130,9 @@ Disallow: /assets/
 
 User-agent: ChatGPT-Agent
 Allow: /
-Disallow: /assets/
 
 User-agent: ChatGPT Agent
 Allow: /
-Disallow: /assets/
 
 # --------------------------------------------------------------- Anthropic
 User-agent: ClaudeBot
@@ -146,7 +145,6 @@ Disallow: /assets/
 
 User-agent: Claude-User
 Allow: /
-Disallow: /assets/
 
 User-agent: anthropic-ai
 Allow: /
@@ -159,7 +157,6 @@ Disallow: /assets/
 
 User-agent: Perplexity-User
 Allow: /
-Disallow: /assets/
 
 # ------------------------------------------------------- other AI assistants
 User-agent: Applebot
@@ -204,7 +201,6 @@ Allow: /
 # grounds, not content grounds.
 User-agent: MistralAI-User
 Allow: /
-Disallow: /assets/
 
 User-agent: DuckAssistBot
 Allow: /
@@ -215,15 +211,12 @@ Disallow: /
 
 User-agent: BingPreview
 Allow: /
-Disallow: /assets/
 
 User-agent: Copilot
 Allow: /
-Disallow: /assets/
 
 User-agent: MicrosoftPreview
 Allow: /
-Disallow: /assets/
 
 # Google Ads and Shopping review. Do not block CSS or JS. The India price
 # they review is the rupee figure in the HTML. The outside-India list is in

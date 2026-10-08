@@ -77,7 +77,8 @@ export function LegalPage({ path }: { path: LegalDoc["path"] }) {
               Contact
             </h2>
             <p className="text-ink/90 leading-relaxed">
-              WhatsApp {CONTACT.phoneDisplay}. Email {CONTACT.email}. Replies 09:00–12:00 IST.
+              WhatsApp {CONTACT.phoneDisplay}. Email {CONTACT.email}. Replies 10am–midnight IST
+              every day.
             </p>
           </section>
 

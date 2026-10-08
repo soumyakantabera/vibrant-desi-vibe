@@ -18,8 +18,8 @@ export function FaqSection({
   faqs,
   eyebrow = "FAQs",
   title = "Questions People Actually Ask",
-  subtitle = "Straight answers. Message anytime; WhatsApp replies 09:00–12:00 IST.",
-  waMessage = "Hi, I want a free consultation for spoken English.",
+  subtitle = "Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day.",
+  waMessage = "Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link.",
   className = "section bg-cream",
 }: {
   faqs: Faq[];

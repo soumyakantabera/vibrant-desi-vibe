@@ -9,7 +9,6 @@
  */
 import { renderToString } from "react-dom/server";
 import { RouterProvider, createRouter, createMemoryHistory } from "@tanstack/react-router";
-import { QueryClient } from "@tanstack/react-query";
 
 import { routeTree } from "../src/routeTree.gen";
 import { COURSES } from "../src/lib/courses";
@@ -22,12 +21,14 @@ import { ALL_PATHS, PAGES, type HeadResult, blogPostHead, pageHead } from "../sr
 export { ALL_PATHS, PAGES };
 export { COURSE_SEO, SITE_URL, SITE_NAME, abs, markdownPathFor, sitemapUrls } from "../src/lib/seo";
 export { COURSES } from "../src/lib/courses";
+export { REDIRECTS, MOVED_MARKDOWN } from "../src/lib/redirects";
 export { BLOG_POSTS, getPostsSorted } from "../src/lib/blog";
 // The AI-readable layer — llms.txt, llms.json, llms-full.txt and the per-page
 // Markdown mirrors, all built from the same tables the pages themselves render from.
 export {
   buildLlmsTxt,
   buildLlmsFullTxt,
+  LLMS_PART_FILES,
   buildLlmsJson,
   buildOpenApi,
   buildAiPlugin,
@@ -73,7 +74,6 @@ export function headFor(path: string): HeadResult {
 export async function renderPath(path: string): Promise<string> {
   const router = createRouter({
     routeTree,
-    context: { queryClient: new QueryClient() },
     history: createMemoryHistory({ initialEntries: [path] }),
     scrollRestoration: true,
   });

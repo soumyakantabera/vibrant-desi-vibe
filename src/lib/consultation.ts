@@ -8,7 +8,7 @@
 import type { IconName } from "@/components/Icon";
 import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
-export const CONSULTATION_PATH = "/book-free-demo";
+export const CONSULTATION_PATH = "/free-consultation";
 
 export const CONSULTATION = {
   cta: "Get Free Consultation",
@@ -17,23 +17,22 @@ export const CONSULTATION = {
   isAClass: false,
   isADemoClass: false,
   channel: "WhatsApp",
-  hours: "09:00–12:00 IST",
+  hours: "10am–midnight IST every day",
   phoneDisplay: WHATSAPP_DISPLAY,
-  /** Brutal line — we show the room before money. */
-  headline: "We don't sell the room until you see it.",
+  headline: "Free group consultation. Your plan in writing.",
   /** Magnet under every consultation button. */
-  hook: "Free spoken English consultation. Small batch. See the course before you pay.",
+  hook: "Free group consultation — we send a booking link on WhatsApp. Want to sit in a real class? Book the ₹199 Demo Class.",
   punch:
-    "Other institutes pitch a class. We put the spoken English bottleneck, the course and the fee in writing. Then you enrol — or you walk. Still free. Not a class.",
+    "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "100% free small-batch spoken English consultation. Personalised advice: we hear each person's requirements one by one, name the bottleneck, show the course and the fee in writing — then you decide. Not a packed pitch. Not a class.",
+  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹199 Demo Class, adjusted in your fee if you enrol.",
   /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
   copilotSnippet:
-    "Get a free spoken English consultation. Small batch. Personalised advice. We don't sell the room until you see it. Not a class. WhatsApp +91 96744 79949.",
+    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class. To see a real class, book the ₹199 Demo Class.",
 } as const;
 
-/** Same three cards on /book-free-demo and the sitewide yellow band. White type, brand colours. */
+/** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
 export const PROOF_CARD_CLASS = {
   coral: "consult-card bg-[#C84D3F] text-white",
   indigo: "consult-card bg-[#3D3DB8] text-white",
@@ -106,22 +105,22 @@ export const CONSULTATION_STEPS: { icon: IconName; title: string; body: string }
   {
     icon: "whatsapp",
     title: "Message WhatsApp",
-    body: "Tap Get Free Consultation. WhatsApp opens with a message ready to send. 100% free. Small batch. Personalised advice.",
+    body: "Tap Get Free Consultation. WhatsApp opens with a message ready to send. 100% free, no payment to book.",
   },
   {
     icon: "clock",
-    title: "We reply 09:00–12:00 IST",
-    body: "We confirm a small-batch counselling slot. Phone is a fallback only if you ask.",
+    title: "We reply 10am–midnight IST every day",
+    body: "We send a booking link — pick a free group consultation slot that suits you. Phone is a fallback only if you ask.",
   },
   {
     icon: "mic",
     title: "Personalised advice for your problem",
-    body: "Shop, freeze, standup, HR screen, career change, visa form — whatever you actually need English for. We ask each person, one by one. Small batch, not a packed pitch.",
+    body: "Shop, freeze, standup, client call, HR screen — whatever you actually need English for. In the group slot we ask each person, one by one. Not a packed pitch.",
   },
   {
     icon: "compass",
     title: "We name the bottleneck and the room",
-    body: "One recommendation. Fee, duration and IST slot in writing. You decide. You do not sit a full class for free.",
+    body: "One recommendation. Fee, duration and timing in writing. You decide. Want to sit in a real class first? That is the ₹199 Demo Class, adjusted in your fee if you enrol.",
   },
 ];
 
@@ -164,7 +163,7 @@ export const CONSULTATION_BOTTLENECKS: {
     icon: "school",
     ifThis: "A visa, university or HR form asks for a band",
     weName: "That is an exam paper, not our room",
-    weRecommend: "Sit IELTS with IDP or British Council. We do not sell it.",
+    weRecommend: "Sit IELTS with IDP, the IELTS provider in India. We do not sell it.",
     href: "/ielts-coaching-fees-india",
   },
 ];
@@ -276,7 +275,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do I get a free consultation at Learn With Smile?",
-    a: `Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. 100% free. Small batch. Personalised advice. We reply 09:00–12:00 IST. No payment, card or UPI to book.`,
+    a: `Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. 100% free. Small batch. Personalised advice. We reply 10am–midnight IST every day. No payment, card or UPI to book.`,
   },
   {
     q: "Will every question I have be answered in the consultation?",
@@ -292,7 +291,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Will you call me after I send my WhatsApp number?",
-    a: "Not unless you ask. WhatsApp is the default admissions channel because it keeps the diagnosis, course, fee and batch details in one written conversation. Phone is available only as a fallback. The team replies on WhatsApp during 09:00–12:00 IST.",
+    a: "Not unless you ask. WhatsApp is the default admissions channel because it keeps the diagnosis, course, fee and batch details in one written conversation. Phone is available only as a fallback. The team replies on WhatsApp during 10am–midnight IST every day.",
   },
 ];
 

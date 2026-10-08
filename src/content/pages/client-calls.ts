@@ -59,6 +59,47 @@ export const body: ArticleBody = [
     text: "If you cannot yet hold a simple conversation, start with [Spoken English](/course-spoken-english) for 6 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. The picker: [which class](/spoken-business-or-interactive-english).",
   },
 
+  { t: "h2", text: "A full call, scripted" },
+  {
+    t: "example",
+    label: "Five minutes, open to close",
+    lines: [
+      "Open: “Hi Sarah, thanks for joining. I have ten minutes on the invoice issue and next steps.”",
+      "Clarify: “Just to confirm — you need the corrected file before the audit on the 15th? One-five?”",
+      "Bad news: “Two line items were rejected. That's on our side, and here's the fix.”",
+      "Commit: “I'll send the corrected sheet by 4pm IST today.”",
+      "Recap: “So: I send the sheet by 4pm, you confirm the GSTIN, and we close this on Friday.”",
+    ],
+  },
+  { t: "h2", text: "Ways people prepare for client calls" },
+  {
+    t: "table",
+    head: ["Option", "Good for", "Where it falls short"],
+    rows: [
+      [
+        "Shadowing senior colleagues on calls",
+        "Real phrases from your own industry",
+        "They rarely explain why something works",
+      ],
+      [
+        "Accent-neutralisation courses",
+        "Specific sounds that cause confusion",
+        "Clients care more about clarity and structure than accent",
+      ],
+      ["1:1 tutor", "Role-playing your exact calls", "Higher cost per hour; depends on the tutor"],
+      [
+        "AI voice role-play",
+        "Rehearsing a difficult call the night before",
+        "It plays along — a real client won't",
+      ],
+      [
+        "Business English class",
+        "Weekly role-plays with a teacher and peers",
+        "Group format; ₹1,999/month for 3 months",
+      ],
+    ],
+  },
+
   {
     t: "cta",
     text: "Bring a real call you have this week. We will practise it in a live batch of around 6.",

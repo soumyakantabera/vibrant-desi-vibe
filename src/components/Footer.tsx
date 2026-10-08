@@ -5,7 +5,8 @@ import { BrandIcon } from "./BrandIcon";
 import { SmartImage } from "./SmartImage";
 import { PaymentTrust } from "./PaymentTrust";
 import { CountrySelect } from "./CountrySelect";
-import { CALL_LINK, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { CALL_LINK, CHAT_MSG, WHATSAPP_DISPLAY, waLink, withPageTag } from "@/lib/whatsapp";
+import { pageLabel } from "@/lib/use-page-label";
 import { IMG } from "@/lib/images";
 import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
@@ -27,7 +28,7 @@ const COMPANY = [
   { to: "/educator", label: "Educator" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/blog", label: "Blog" },
-  { to: "/book-free-demo", label: "Get Free Consultation" },
+  { to: "/free-consultation", label: "Get Free Consultation" },
 ];
 
 /**
@@ -45,7 +46,7 @@ const POLICY_PATHS = new Set(["/privacy", "/terms", "/refunds", "/child-protecti
 export function Footer({ image }: { image?: string }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const showDeveloper = !POLICY_PATHS.has(pathname);
-  const wa = waLink("Hi, I want a free consultation for spoken English.");
+  const wa = waLink(withPageTag(CHAT_MSG, pageLabel(pathname)));
   return (
     <footer className="bg-ink text-cream pt-16 pb-24 sm:pb-8 mt-10" data-cta-location="footer">
       <div className="container-x">
@@ -101,7 +102,7 @@ export function Footer({ image }: { image?: string }) {
             </span>
             <span className="inline-flex items-center gap-2">
               <Icon name="clock" size={16} />
-              Message anytime · replies 09:00–12:00 IST
+              Message anytime · replies 10am–midnight IST every day
             </span>
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">
@@ -191,9 +192,9 @@ function EnrolmentNote() {
         <>
           Fees shown to a learner outside India are the international list, in {intlUnit()}. These
           published figures are Basic Spoken English {spoken}, Interactive Speaking {interactive},
-          Business English {business}, Interview Preparation {interview}, and a demo session of{" "}
-          {demo}. They are the labeled fee, not a conversion of the India price. The fee confirmed
-          on WhatsApp is the contract price.
+          Business English {business}, Interview Preparation {interview}, and a Demo Class of {demo}
+          . They are the labeled fee, not a conversion of the India price. The fee confirmed on
+          WhatsApp is the contract price.
         </>
       }
     />

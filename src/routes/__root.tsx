@@ -1,8 +1,7 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -11,15 +10,19 @@ import {
 import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
-import iconFont from "../assets/fonts/material-symbols-rounded.woff2?url";
+// The two faces the boot gate waits for (src/lib/boot-script.ts → ask()).
+// Preloaded so they download alongside the stylesheet instead of after it.
+import manrope600 from "@fontsource/manrope/files/manrope-latin-600-normal.woff2?url";
+import sora700 from "@fontsource/sora/files/sora-latin-700-normal.woff2?url";
 import { withBasePath } from "@/lib/site-path";
+import { CHAT_MSG, waLink, withPageTag } from "@/lib/whatsapp";
 import { siteHead } from "@/lib/seo";
 import { RouteProgress } from "@/components/RouteProgress";
 import { BOOT_SCRIPT, BOOT_CSS, FONT_CSS } from "@/lib/boot-script";
 import { markAppReady, prefetchWhenIdle } from "@/lib/boot";
 
 /** Pages a reader is most likely to open next, fetched during idle time. */
-const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/book-free-demo"];
+const LIKELY_NEXT = ["/english-career", "/course-spoken-english", "/free-consultation"];
 
 function NotFoundComponent() {
   return (
@@ -30,13 +33,23 @@ function NotFoundComponent() {
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
           </Link>
+          {/* A dead link should still reach a person. */}
+          <a
+            href={waLink(withPageTag(CHAT_MSG, "a missing (404)"))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+            data-cta-goal="whatsapp_chat"
+          >
+            Ask us on WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -78,7 +91,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => {
     // Site-wide only — no title, description, canonical or page JSON-LD here.
     // Every route supplies those through `pageHead()` / `courseSeo()`.
@@ -93,7 +106,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       links: [
         {
           rel: "preload",
-          href: iconFont,
+          href: manrope600,
+          as: "font",
+          type: "font/woff2",
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          href: sora700,
           as: "font",
           type: "font/woff2",
           crossOrigin: "anonymous",
@@ -152,7 +172,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
   const router = useRouter();
 
   // The page is built and painted: let the boot gate open (once everything
@@ -163,9 +182,9 @@ function RootComponent() {
   }, [router]);
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <RouteProgress />
       <Outlet />
-    </QueryClientProvider>
+    </>
   );
 }

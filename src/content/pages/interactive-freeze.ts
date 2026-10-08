@@ -61,6 +61,54 @@ export const body: ArticleBody = [
     text: "This is not an IELTS speaking lab. Cue cards are an exam format. Interactive is for work and life. If a form later asks for a band, we will say so. Until then, you talk.",
   },
 
+  { t: "h2", text: "Other ways to beat speaking freeze" },
+  {
+    t: "table",
+    head: ["Option", "Good for", "Where it falls short"],
+    rows: [
+      [
+        "Toastmasters",
+        "Standing up and speaking in front of people, regularly",
+        "Mostly prepared speeches; quick-conversation freeze needs unprepared practice too",
+      ],
+      [
+        "Improv or theatre workshops",
+        "Thinking on your feet, playfulness",
+        "Not focused on English accuracy",
+      ],
+      [
+        "AI voice chat",
+        "Private, unlimited speaking with no audience",
+        "No real people — and the freeze is usually about people",
+      ],
+      [
+        "1:1 tutor",
+        "Practice with one patient person",
+        "Freeze often shows up in groups, which 1:1 does not recreate",
+      ],
+      [
+        "Interactive Speaking batch",
+        "Speaking in every block with about 6 people",
+        "Group format, fixed slots, ₹1,199/month",
+      ],
+    ],
+  },
+  { t: "h2", text: "Stall phrases: what fluent speakers say instead of silence" },
+  {
+    t: "ul",
+    items: [
+      "“That's a good question — let me think for a second.”",
+      "“The way I see it…”",
+      "“There are two things here. First…”",
+      "“What I mean is…”",
+      "“Let me put that another way.”",
+    ],
+  },
+  {
+    t: "p",
+    text: "Learn five. Use one every time you feel the inspection start. Silence reads as not knowing; a stall phrase reads as thinking.",
+  },
+
   {
     t: "cta",
     text: "Sit in one Interactive hour. Count how many times you speak.",

@@ -14,12 +14,12 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export const LEGAL_UPDATED = "2026-10-02";
+export const LEGAL_UPDATED = "2026-10-08";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
   paragraphs: [
-    "You may ask us to access, correct, delete, restrict or export personal information we hold, to object to a use that is only in our own interest, to stop enrolment messages, or to reject optional analytics cookies. These requests are open to learners in India and outside India. Message WhatsApp or email. We reply 09:00–12:00 IST and aim to answer within 30 days. Deleting a chat from our devices does not erase the copy on your phone or on WhatsApp/Meta. You may also complain to a data-protection or consumer authority where you live.",
+    "You may ask us to access, correct, delete, restrict or export personal information we hold, to object to a use that is only in our own interest, or to stop enrolment messages. These requests are open to learners in India and outside India. Message WhatsApp or email. We reply 10am–midnight IST every day and aim to answer within 30 days. Deleting a chat from our devices does not erase the copy on your phone or on WhatsApp/Meta. You may also complain to a data-protection or consumer authority where you live.",
   ],
 };
 
@@ -96,7 +96,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Legal basis, in plain terms",
         paragraphs: [
-          "We process information because you asked us for a consultation, a class or a reply (steps before a contract), because we have a contract to teach you after you enrol, because Indian tax law requires us to keep certain payment records, or because we have a legitimate interest in running and securing the website that is not overridden by your rights. Analytics cookies run only if you choose Accept. Where a law that applies to you requires consent for a specific use, we will ask before that use.",
+          "We process information because you asked us for a consultation, a class or a reply (steps before a contract), because we have a contract to teach you after you enrol, because Indian tax law requires us to keep certain payment records, or because we have a legitimate interest in running and securing the website that is not overridden by your rights. Where a law that applies to you requires consent for a specific use, we will ask before that use.",
           "If you live outside India, we use the same grounds. A law such as the EU or UK GDPR, or a US state privacy law, may give those grounds different names. We do not claim a GDPR, UK GDPR or CCPA certificate. We do honour the rights listed on this page for every learner.",
         ],
       },
@@ -118,12 +118,10 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       },
       SCHEDULE_AND_LATENESS,
       {
-        heading: "Cookies and analytics",
+        heading: "Cookies and browser storage",
         paragraphs: [
-          "This website uses cookies and similar technologies in two groups.",
-          "Strictly necessary storage is used to deliver the pages, keep the site available and secure, and remember this notice and similar choices on your device. This group runs whether you choose Accept or Reject.",
-          "Analytics storage, including Google Analytics or a comparable measurement tool, is used only if you choose Accept. It helps us understand how the site is used (for example, which pages are opened) so we can improve it. It is not used to show you advertisements, and we do not sell this information. Google may process measurement data on servers outside India under Google’s terms. WhatsApp links on this site are not tagged with advertising pixels.",
-          "You may Reject optional analytics. Necessary functions still work. You can change your mind later by clearing this site’s data in your browser.",
+          "This website uses no analytics, advertising or tracking cookies, so it does not ask you to accept any. WhatsApp links on this site carry no tracking code — only a plain message that names the page you tapped from.",
+          "It stores one small item in your browser: your country choice, so the page shows the India fee or the fee for a learner outside India. You can remove it at any time by clearing this site’s data in your browser.",
           "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That lookup decides whether this browser shows the India fee or the fee for a learner outside India. We do not send that lookup to an advertising network.",
         ],
       },
@@ -137,15 +135,14 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Razorpay, for fee collection.",
           "WhatsApp / Meta, when you choose to message us there.",
           "Our website host, currently GitHub Pages, which stores the public site files.",
-          "Google, if you Accept analytics, for site measurement (Google Analytics or a similar tool).",
           "Professional advisers or authorities when the law requires it, or to protect learners, staff or the public.",
         ],
       },
       {
         heading: "Where information is processed",
         paragraphs: [
-          "We are established in India. Staff use your information from India. Some providers may process it in other countries when you use them: WhatsApp/Meta if you message us, Razorpay if you pay, GitHub Pages which hosts the public site, and Google if you accept analytics. We do not claim that every country those providers use has been declared adequate by a European or UK authority. We share only what that provider needs for the task.",
-          "You can reject analytics and still use the site. You may email learnwithsmile.in@gmail.com instead of WhatsApp. Class placement and the written fee are still confirmed on WhatsApp before you pay.",
+          "We are established in India. Staff use your information from India. Some providers may process it in other countries when you use them: WhatsApp/Meta if you message us, Razorpay if you pay, and GitHub Pages which hosts the public site. We do not claim that every country those providers use has been declared adequate by a European or UK authority. We share only what that provider needs for the task.",
+          "You may email learnwithsmile.in@gmail.com instead of WhatsApp. Class placement and the written fee are still confirmed on WhatsApp before you pay.",
         ],
       },
       {
@@ -158,7 +155,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Your privacy rights",
         paragraphs: [
           "Wherever you live, you may ask us to see the personal information we hold, correct it, delete it (subject to records we must keep), restrict how we use it while a dispute is open, object to a use that rests only on our legitimate interests, and receive a copy of the notes we wrote down — name, number, course, slot and the bottleneck we named — in a common electronic format.",
-          "You may withdraw consent for analytics cookies by clearing this site’s data in your browser. Withdrawal does not undo measurement that already happened. We do not decide enrolment or fees by solely automated means.",
+          "We do not decide enrolment or fees by solely automated means.",
           "We aim to answer within 30 days. We may ask you to confirm you are the person the information is about. We will not charge a fee unless a request is manifestly unfounded or repeated without reason.",
           "You may complain to a data-protection authority in your country, and to our Grievance Officer in India. Writing to us first is useful. It is not a condition of complaining to an authority.",
         ],
@@ -180,7 +177,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "If you ask us to stop or delete",
         paragraphs: [
-          "Message WhatsApp or email and say you want us to stop, or to delete what we hold. We reply 09:00–12:00 IST. We aim to close a deletion request within 30 days.",
+          "Message WhatsApp or email and say you want us to stop, or to delete what we hold. We reply 10am–midnight IST every day. We aim to close a deletion request within 30 days.",
           "Stopping contact: we will not write to you about enrolment after that, except as needed to finish a paid month already running or a refund already in progress.",
           "Deleting a WhatsApp chat: we delete it from our devices. We cannot delete the copy on your phone, or Meta’s processing of that conversation. If you paid, we still keep the invoice for the tax period above.",
           "Correcting a note: if we named the wrong bottleneck or course in the consultation thread, message us and we will correct our notes and confirm in writing.",
@@ -229,8 +226,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication classes: Spoken English, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. Classes are taught by a real teacher over the internet. There is no physical campus and no walk-in centre.",
-          "We also offer a paid Demo Session: one 90-minute seat in a live batch, at ₹199 inclusive of taxes, for a learner who wants to see a real class before enrolling. It is not a sixth programme and it is not the free consultation. The fee rule for that session is only in the Demo Session section below.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication classes: Spoken English, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. Every class is taught live by a trained teacher over the internet.",
+          "We also offer a paid Demo Class: one 90-minute seat in a live batch, at ₹199 inclusive of taxes, for a learner who wants to see a real class before enrolling. It is not a sixth programme and it is not the free consultation. The fee rule for that session is only in the Demo Class section below.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
       },
@@ -259,11 +256,11 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       },
       {
         id: "demo-session",
-        heading: "Demo Session",
+        heading: "Demo Class",
         paragraphs: [
-          "The Demo Session is a paid seat in a live batch. It lasts 90 minutes. For a learner in India the fee is ₹199, inclusive of taxes. For a learner outside India it is the demo fee shown before payment, confirmed on WhatsApp. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
+          "The Demo Class is a paid seat in a live batch. It lasts 90 minutes. For a learner in India the fee is ₹199, inclusive of taxes. For a learner outside India it is the demo fee shown before payment, confirmed on WhatsApp. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
           "Message us on WhatsApp first (+91 96744 79949). We send the payment link. The session has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
-          "The Demo Session fee is refunded in cash if you cancel before the session is held. After the session has been held, it is not paid back in cash. Within 48 hours after the session, if you take admission in the course you attended, or in any other course we currently offer, that fee is adjusted against the course fee.",
+          "The Demo Class fee is not refunded in cash. Within 48 hours after the session, if you take admission in the course you attended, or in any other course we currently offer, that fee is adjusted against the course fee.",
           "By paying and asking us to schedule within 72 hours, you ask us to perform the session promptly. Missing it, joining late, or changing your mind after it was held does not create a cash refund.",
           "Nothing in this section removes a right that cannot be waived under Indian law or under the law where you live.",
         ],
@@ -361,7 +358,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Cancel on WhatsApp or by email before the first live class of a paid month has been held, and we refund that month in full to the original payment method where the provider allows it.",
           "Once that first class has been held, we do not refund the month because you changed your mind, missed later classes, found the work difficult, or did not obtain a job, visa, band score or other result. Your internet, electricity or device, or a later inability to attend the IST slot you confirmed, is also not a refund of that month.",
           "You may still stop any later month before it is billed. If the law where you live gives a longer withdrawal right that cannot be waived, that right still applies, including where asking us to start the class ends the right only for the teaching already given.",
-          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. The paid Demo Session is refunded in cash only if you cancel before it is held. After it is held, the fee is adjusted against a course only if you take admission within 48 hours. It is not a cash refund after the session.",
+          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. The paid Demo Class fee is not refunded in cash; it is adjusted against a course fee if you take admission within 48 hours of the session.",
         ],
       },
       SCHEDULE_AND_LATENESS,
@@ -393,7 +390,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to ask",
         paragraphs: [
-          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email learnwithsmile.in@gmail.com. We reply during 09:00–12:00 IST. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
+          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email learnwithsmile.in@gmail.com. We reply during 10am–midnight IST every day. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
         ],
       },
       {
@@ -492,7 +489,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to raise a concern",
         paragraphs: [
-          "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Name the learner only as needed, the batch, the date, and what happened. We reply 09:00–12:00 IST. The Grievance Officer is Soumyakanta Bera. The contact block is at the end of this page.",
+          "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Name the learner only as needed, the batch, the date, and what happened. We reply 10am–midnight IST every day. The Grievance Officer is Soumyakanta Bera. The contact block is at the end of this page.",
           "If we reasonably believe a child is at immediate risk of harm, we may contact the parent and, where Indian law requires it, the police or a child-welfare authority, even if you asked us not to. We will not promise secrecy that the law does not allow.",
           "A parent may also approach the National Commission for Protection of Child Rights (NCPCR), a State Commission, or the police. This school is not those bodies.",
         ],

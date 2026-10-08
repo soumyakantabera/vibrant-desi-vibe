@@ -79,13 +79,13 @@ export const body: ArticleBody = [
 
   {
     t: "p",
-    text: "Working nights or weekends? IST morning, evening and weekend batches — [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here — [that guide](/english-hindi-bengali-medium).",
+    text: "Working late or on shifts? IST afternoon, evening and night batches — [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here — [that guide](/english-hindi-bengali-medium).",
   },
 
   { t: "h2", text: "How the free consultation places you — vs a pitch" },
   {
     t: "p",
-    text: "This page is the picker you can run yourself. The [free consultation](/book-free-demo) is the same picker, live, on your actual goal — not a generic table, and not a counsellor pitch for a course you did not ask for.",
+    text: "This page is the picker you can run yourself. The [free consultation](/free-consultation) is the same picker, live, on your actual goal — not a generic table, and not a counsellor pitch for a course you did not ask for.",
   },
   {
     t: "ul",
@@ -131,7 +131,7 @@ export const body: ArticleBody = [
   {
     t: "cta",
     text: "Unsure? Get a free consultation. We diagnose the bottleneck and place you in one room — Spoken, Interactive, Workplace or Interview Preparation — not all of them.",
-    course: "/book-free-demo",
+    course: "/free-consultation",
     label: "Get Free Consultation",
   },
 ];

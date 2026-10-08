@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as BestOnlineSpokenEnglishClassesIndiaRouteImport } from './routes/best-online-spoken-english-classes-india'
-import { Route as BookFreeDemoRouteImport } from './routes/book-free-demo'
 import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
@@ -30,6 +29,7 @@ import { Route as EnglishForWorkingProfessionalsIndiaRouteImport } from './route
 import { Route as EnglishHindiBengaliMediumRouteImport } from './routes/english-hindi-bengali-medium'
 import { Route as EnglishInstituteComparisonIndiaRouteImport } from './routes/english-institute-comparison-india'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as FreeConsultationRouteImport } from './routes/free-consultation'
 import { Route as FreeEnglishSpeakingPracticeVsPaidClassRouteImport } from './routes/free-english-speaking-practice-vs-paid-class'
 import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as HowLongToLearnSpokenEnglishRouteImport } from './routes/how-long-to-learn-spoken-english'
@@ -40,24 +40,16 @@ import { Route as OnlineVsOfflineSpokenEnglishClassesRouteImport } from './route
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RefundsRouteImport } from './routes/refunds'
 import { Route as SpokenBusinessOrInteractiveEnglishRouteImport } from './routes/spoken-business-or-interactive-english'
-import { Route as SpokenEnglishClassesAhmedabadRouteImport } from './routes/spoken-english-classes-ahmedabad'
 import { Route as SpokenEnglishClassesBengaluruRouteImport } from './routes/spoken-english-classes-bengaluru'
-import { Route as SpokenEnglishClassesChennaiRouteImport } from './routes/spoken-english-classes-chennai'
-import { Route as SpokenEnglishClassesCoimbatoreRouteImport } from './routes/spoken-english-classes-coimbatore'
 import { Route as SpokenEnglishClassesDelhiRouteImport } from './routes/spoken-english-classes-delhi'
-import { Route as SpokenEnglishClassesGuwahatiRouteImport } from './routes/spoken-english-classes-guwahati'
 import { Route as SpokenEnglishClassesHyderabadRouteImport } from './routes/spoken-english-classes-hyderabad'
-import { Route as SpokenEnglishClassesKochiRouteImport } from './routes/spoken-english-classes-kochi'
 import { Route as SpokenEnglishClassesKolkataRouteImport } from './routes/spoken-english-classes-kolkata'
 import { Route as SpokenEnglishClassesMumbaiRouteImport } from './routes/spoken-english-classes-mumbai'
-import { Route as SpokenEnglishClassesNagpurRouteImport } from './routes/spoken-english-classes-nagpur'
-import { Route as SpokenEnglishClassesPatnaRouteImport } from './routes/spoken-english-classes-patna'
-import { Route as SpokenEnglishClassesPuneRouteImport } from './routes/spoken-english-classes-pune'
-import { Route as SpokenEnglishClassesSuratRouteImport } from './routes/spoken-english-classes-surat'
-import { Route as SpokenEnglishClassesVisakhapatnamRouteImport } from './routes/spoken-english-classes-visakhapatnam'
 import { Route as SpokenEnglishForBeginnersIndiaRouteImport } from './routes/spoken-english-for-beginners-india'
 import { Route as SpokenEnglishForFreshersIndiaRouteImport } from './routes/spoken-english-for-freshers-india'
 import { Route as SpokenEnglishForHomemakersIndiaRouteImport } from './routes/spoken-english-for-homemakers-india'
+import { Route as SpokenEnglishInBengaliRouteImport } from './routes/spoken-english-in-bengali'
+import { Route as SpokenEnglishInHindiRouteImport } from './routes/spoken-english-in-hindi'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhyUsRouteImport } from './routes/why-us'
@@ -81,11 +73,6 @@ const BestOnlineSpokenEnglishClassesIndiaRoute =
     path: '/best-online-spoken-english-classes-india',
     getParentRoute: () => rootRouteImport,
   } as any)
-const BookFreeDemoRoute = BookFreeDemoRouteImport.update({
-  id: '/book-free-demo',
-  path: '/book-free-demo',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ChildProtectionRoute = ChildProtectionRouteImport.update({
   id: '/child-protection',
   path: '/child-protection',
@@ -179,6 +166,11 @@ const FounderRoute = FounderRouteImport.update({
   path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FreeConsultationRoute = FreeConsultationRouteImport.update({
+  id: '/free-consultation',
+  path: '/free-consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FreeEnglishSpeakingPracticeVsPaidClassRoute =
   FreeEnglishSpeakingPracticeVsPaidClassRouteImport.update({
     id: '/free-english-speaking-practice-vs-paid-class',
@@ -235,28 +227,10 @@ const SpokenBusinessOrInteractiveEnglishRoute =
     path: '/spoken-business-or-interactive-english',
     getParentRoute: () => rootRouteImport,
   } as any)
-const SpokenEnglishClassesAhmedabadRoute =
-  SpokenEnglishClassesAhmedabadRouteImport.update({
-    id: '/spoken-english-classes-ahmedabad',
-    path: '/spoken-english-classes-ahmedabad',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const SpokenEnglishClassesBengaluruRoute =
   SpokenEnglishClassesBengaluruRouteImport.update({
     id: '/spoken-english-classes-bengaluru',
     path: '/spoken-english-classes-bengaluru',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesChennaiRoute =
-  SpokenEnglishClassesChennaiRouteImport.update({
-    id: '/spoken-english-classes-chennai',
-    path: '/spoken-english-classes-chennai',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesCoimbatoreRoute =
-  SpokenEnglishClassesCoimbatoreRouteImport.update({
-    id: '/spoken-english-classes-coimbatore',
-    path: '/spoken-english-classes-coimbatore',
     getParentRoute: () => rootRouteImport,
   } as any)
 const SpokenEnglishClassesDelhiRoute =
@@ -265,22 +239,10 @@ const SpokenEnglishClassesDelhiRoute =
     path: '/spoken-english-classes-delhi',
     getParentRoute: () => rootRouteImport,
   } as any)
-const SpokenEnglishClassesGuwahatiRoute =
-  SpokenEnglishClassesGuwahatiRouteImport.update({
-    id: '/spoken-english-classes-guwahati',
-    path: '/spoken-english-classes-guwahati',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const SpokenEnglishClassesHyderabadRoute =
   SpokenEnglishClassesHyderabadRouteImport.update({
     id: '/spoken-english-classes-hyderabad',
     path: '/spoken-english-classes-hyderabad',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesKochiRoute =
-  SpokenEnglishClassesKochiRouteImport.update({
-    id: '/spoken-english-classes-kochi',
-    path: '/spoken-english-classes-kochi',
     getParentRoute: () => rootRouteImport,
   } as any)
 const SpokenEnglishClassesKolkataRoute =
@@ -293,36 +255,6 @@ const SpokenEnglishClassesMumbaiRoute =
   SpokenEnglishClassesMumbaiRouteImport.update({
     id: '/spoken-english-classes-mumbai',
     path: '/spoken-english-classes-mumbai',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesNagpurRoute =
-  SpokenEnglishClassesNagpurRouteImport.update({
-    id: '/spoken-english-classes-nagpur',
-    path: '/spoken-english-classes-nagpur',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesPatnaRoute =
-  SpokenEnglishClassesPatnaRouteImport.update({
-    id: '/spoken-english-classes-patna',
-    path: '/spoken-english-classes-patna',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesPuneRoute =
-  SpokenEnglishClassesPuneRouteImport.update({
-    id: '/spoken-english-classes-pune',
-    path: '/spoken-english-classes-pune',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesSuratRoute =
-  SpokenEnglishClassesSuratRouteImport.update({
-    id: '/spoken-english-classes-surat',
-    path: '/spoken-english-classes-surat',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SpokenEnglishClassesVisakhapatnamRoute =
-  SpokenEnglishClassesVisakhapatnamRouteImport.update({
-    id: '/spoken-english-classes-visakhapatnam',
-    path: '/spoken-english-classes-visakhapatnam',
     getParentRoute: () => rootRouteImport,
   } as any)
 const SpokenEnglishForBeginnersIndiaRoute =
@@ -343,6 +275,16 @@ const SpokenEnglishForHomemakersIndiaRoute =
     path: '/spoken-english-for-homemakers-india',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SpokenEnglishInBengaliRoute = SpokenEnglishInBengaliRouteImport.update({
+  id: '/spoken-english-in-bengali',
+  path: '/spoken-english-in-bengali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpokenEnglishInHindiRoute = SpokenEnglishInHindiRouteImport.update({
+  id: '/spoken-english-in-hindi',
+  path: '/spoken-english-in-hindi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SuccessStoriesRoute = SuccessStoriesRouteImport.update({
   id: '/success-stories',
   path: '/success-stories',
@@ -379,7 +321,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
-  '/book-free-demo': typeof BookFreeDemoRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -397,6 +338,7 @@ export interface FileRoutesByFullPath {
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/founder': typeof FounderRoute
+  '/free-consultation': typeof FreeConsultationRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
   '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
@@ -407,24 +349,16 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/spoken-business-or-interactive-english': typeof SpokenBusinessOrInteractiveEnglishRoute
-  '/spoken-english-classes-ahmedabad': typeof SpokenEnglishClassesAhmedabadRoute
   '/spoken-english-classes-bengaluru': typeof SpokenEnglishClassesBengaluruRoute
-  '/spoken-english-classes-chennai': typeof SpokenEnglishClassesChennaiRoute
-  '/spoken-english-classes-coimbatore': typeof SpokenEnglishClassesCoimbatoreRoute
   '/spoken-english-classes-delhi': typeof SpokenEnglishClassesDelhiRoute
-  '/spoken-english-classes-guwahati': typeof SpokenEnglishClassesGuwahatiRoute
   '/spoken-english-classes-hyderabad': typeof SpokenEnglishClassesHyderabadRoute
-  '/spoken-english-classes-kochi': typeof SpokenEnglishClassesKochiRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/spoken-english-classes-mumbai': typeof SpokenEnglishClassesMumbaiRoute
-  '/spoken-english-classes-nagpur': typeof SpokenEnglishClassesNagpurRoute
-  '/spoken-english-classes-patna': typeof SpokenEnglishClassesPatnaRoute
-  '/spoken-english-classes-pune': typeof SpokenEnglishClassesPuneRoute
-  '/spoken-english-classes-surat': typeof SpokenEnglishClassesSuratRoute
-  '/spoken-english-classes-visakhapatnam': typeof SpokenEnglishClassesVisakhapatnamRoute
   '/spoken-english-for-beginners-india': typeof SpokenEnglishForBeginnersIndiaRoute
   '/spoken-english-for-freshers-india': typeof SpokenEnglishForFreshersIndiaRoute
   '/spoken-english-for-homemakers-india': typeof SpokenEnglishForHomemakersIndiaRoute
+  '/spoken-english-in-bengali': typeof SpokenEnglishInBengaliRoute
+  '/spoken-english-in-hindi': typeof SpokenEnglishInHindiRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
   '/why-us': typeof WhyUsRoute
@@ -436,7 +370,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
-  '/book-free-demo': typeof BookFreeDemoRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -454,6 +387,7 @@ export interface FileRoutesByTo {
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/founder': typeof FounderRoute
+  '/free-consultation': typeof FreeConsultationRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
   '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
@@ -464,24 +398,16 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/spoken-business-or-interactive-english': typeof SpokenBusinessOrInteractiveEnglishRoute
-  '/spoken-english-classes-ahmedabad': typeof SpokenEnglishClassesAhmedabadRoute
   '/spoken-english-classes-bengaluru': typeof SpokenEnglishClassesBengaluruRoute
-  '/spoken-english-classes-chennai': typeof SpokenEnglishClassesChennaiRoute
-  '/spoken-english-classes-coimbatore': typeof SpokenEnglishClassesCoimbatoreRoute
   '/spoken-english-classes-delhi': typeof SpokenEnglishClassesDelhiRoute
-  '/spoken-english-classes-guwahati': typeof SpokenEnglishClassesGuwahatiRoute
   '/spoken-english-classes-hyderabad': typeof SpokenEnglishClassesHyderabadRoute
-  '/spoken-english-classes-kochi': typeof SpokenEnglishClassesKochiRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/spoken-english-classes-mumbai': typeof SpokenEnglishClassesMumbaiRoute
-  '/spoken-english-classes-nagpur': typeof SpokenEnglishClassesNagpurRoute
-  '/spoken-english-classes-patna': typeof SpokenEnglishClassesPatnaRoute
-  '/spoken-english-classes-pune': typeof SpokenEnglishClassesPuneRoute
-  '/spoken-english-classes-surat': typeof SpokenEnglishClassesSuratRoute
-  '/spoken-english-classes-visakhapatnam': typeof SpokenEnglishClassesVisakhapatnamRoute
   '/spoken-english-for-beginners-india': typeof SpokenEnglishForBeginnersIndiaRoute
   '/spoken-english-for-freshers-india': typeof SpokenEnglishForFreshersIndiaRoute
   '/spoken-english-for-homemakers-india': typeof SpokenEnglishForHomemakersIndiaRoute
+  '/spoken-english-in-bengali': typeof SpokenEnglishInBengaliRoute
+  '/spoken-english-in-hindi': typeof SpokenEnglishInHindiRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
   '/why-us': typeof WhyUsRoute
@@ -494,7 +420,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
-  '/book-free-demo': typeof BookFreeDemoRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -512,6 +437,7 @@ export interface FileRoutesById {
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/founder': typeof FounderRoute
+  '/free-consultation': typeof FreeConsultationRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
   '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
@@ -522,24 +448,16 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
   '/spoken-business-or-interactive-english': typeof SpokenBusinessOrInteractiveEnglishRoute
-  '/spoken-english-classes-ahmedabad': typeof SpokenEnglishClassesAhmedabadRoute
   '/spoken-english-classes-bengaluru': typeof SpokenEnglishClassesBengaluruRoute
-  '/spoken-english-classes-chennai': typeof SpokenEnglishClassesChennaiRoute
-  '/spoken-english-classes-coimbatore': typeof SpokenEnglishClassesCoimbatoreRoute
   '/spoken-english-classes-delhi': typeof SpokenEnglishClassesDelhiRoute
-  '/spoken-english-classes-guwahati': typeof SpokenEnglishClassesGuwahatiRoute
   '/spoken-english-classes-hyderabad': typeof SpokenEnglishClassesHyderabadRoute
-  '/spoken-english-classes-kochi': typeof SpokenEnglishClassesKochiRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
   '/spoken-english-classes-mumbai': typeof SpokenEnglishClassesMumbaiRoute
-  '/spoken-english-classes-nagpur': typeof SpokenEnglishClassesNagpurRoute
-  '/spoken-english-classes-patna': typeof SpokenEnglishClassesPatnaRoute
-  '/spoken-english-classes-pune': typeof SpokenEnglishClassesPuneRoute
-  '/spoken-english-classes-surat': typeof SpokenEnglishClassesSuratRoute
-  '/spoken-english-classes-visakhapatnam': typeof SpokenEnglishClassesVisakhapatnamRoute
   '/spoken-english-for-beginners-india': typeof SpokenEnglishForBeginnersIndiaRoute
   '/spoken-english-for-freshers-india': typeof SpokenEnglishForFreshersIndiaRoute
   '/spoken-english-for-homemakers-india': typeof SpokenEnglishForHomemakersIndiaRoute
+  '/spoken-english-in-bengali': typeof SpokenEnglishInBengaliRoute
+  '/spoken-english-in-hindi': typeof SpokenEnglishInHindiRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
   '/why-us': typeof WhyUsRoute
@@ -553,7 +471,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/best-online-spoken-english-classes-india'
-    | '/book-free-demo'
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -571,6 +488,7 @@ export interface FileRouteTypes {
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
     | '/founder'
+    | '/free-consultation'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
     | '/how-long-to-learn-spoken-english'
@@ -581,24 +499,16 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refunds'
     | '/spoken-business-or-interactive-english'
-    | '/spoken-english-classes-ahmedabad'
     | '/spoken-english-classes-bengaluru'
-    | '/spoken-english-classes-chennai'
-    | '/spoken-english-classes-coimbatore'
     | '/spoken-english-classes-delhi'
-    | '/spoken-english-classes-guwahati'
     | '/spoken-english-classes-hyderabad'
-    | '/spoken-english-classes-kochi'
     | '/spoken-english-classes-kolkata'
     | '/spoken-english-classes-mumbai'
-    | '/spoken-english-classes-nagpur'
-    | '/spoken-english-classes-patna'
-    | '/spoken-english-classes-pune'
-    | '/spoken-english-classes-surat'
-    | '/spoken-english-classes-visakhapatnam'
     | '/spoken-english-for-beginners-india'
     | '/spoken-english-for-freshers-india'
     | '/spoken-english-for-homemakers-india'
+    | '/spoken-english-in-bengali'
+    | '/spoken-english-in-hindi'
     | '/success-stories'
     | '/terms'
     | '/why-us'
@@ -610,7 +520,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/best-online-spoken-english-classes-india'
-    | '/book-free-demo'
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -628,6 +537,7 @@ export interface FileRouteTypes {
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
     | '/founder'
+    | '/free-consultation'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
     | '/how-long-to-learn-spoken-english'
@@ -638,24 +548,16 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refunds'
     | '/spoken-business-or-interactive-english'
-    | '/spoken-english-classes-ahmedabad'
     | '/spoken-english-classes-bengaluru'
-    | '/spoken-english-classes-chennai'
-    | '/spoken-english-classes-coimbatore'
     | '/spoken-english-classes-delhi'
-    | '/spoken-english-classes-guwahati'
     | '/spoken-english-classes-hyderabad'
-    | '/spoken-english-classes-kochi'
     | '/spoken-english-classes-kolkata'
     | '/spoken-english-classes-mumbai'
-    | '/spoken-english-classes-nagpur'
-    | '/spoken-english-classes-patna'
-    | '/spoken-english-classes-pune'
-    | '/spoken-english-classes-surat'
-    | '/spoken-english-classes-visakhapatnam'
     | '/spoken-english-for-beginners-india'
     | '/spoken-english-for-freshers-india'
     | '/spoken-english-for-homemakers-india'
+    | '/spoken-english-in-bengali'
+    | '/spoken-english-in-hindi'
     | '/success-stories'
     | '/terms'
     | '/why-us'
@@ -667,7 +569,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/best-online-spoken-english-classes-india'
-    | '/book-free-demo'
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -685,6 +586,7 @@ export interface FileRouteTypes {
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
     | '/founder'
+    | '/free-consultation'
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
     | '/how-long-to-learn-spoken-english'
@@ -695,24 +597,16 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refunds'
     | '/spoken-business-or-interactive-english'
-    | '/spoken-english-classes-ahmedabad'
     | '/spoken-english-classes-bengaluru'
-    | '/spoken-english-classes-chennai'
-    | '/spoken-english-classes-coimbatore'
     | '/spoken-english-classes-delhi'
-    | '/spoken-english-classes-guwahati'
     | '/spoken-english-classes-hyderabad'
-    | '/spoken-english-classes-kochi'
     | '/spoken-english-classes-kolkata'
     | '/spoken-english-classes-mumbai'
-    | '/spoken-english-classes-nagpur'
-    | '/spoken-english-classes-patna'
-    | '/spoken-english-classes-pune'
-    | '/spoken-english-classes-surat'
-    | '/spoken-english-classes-visakhapatnam'
     | '/spoken-english-for-beginners-india'
     | '/spoken-english-for-freshers-india'
     | '/spoken-english-for-homemakers-india'
+    | '/spoken-english-in-bengali'
+    | '/spoken-english-in-hindi'
     | '/success-stories'
     | '/terms'
     | '/why-us'
@@ -725,7 +619,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
   BestOnlineSpokenEnglishClassesIndiaRoute: typeof BestOnlineSpokenEnglishClassesIndiaRoute
-  BookFreeDemoRoute: typeof BookFreeDemoRoute
   ChildProtectionRoute: typeof ChildProtectionRoute
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
@@ -743,6 +636,7 @@ export interface RootRouteChildren {
   EnglishHindiBengaliMediumRoute: typeof EnglishHindiBengaliMediumRoute
   EnglishInstituteComparisonIndiaRoute: typeof EnglishInstituteComparisonIndiaRoute
   FounderRoute: typeof FounderRoute
+  FreeConsultationRoute: typeof FreeConsultationRoute
   FreeEnglishSpeakingPracticeVsPaidClassRoute: typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   GuidesRoute: typeof GuidesRoute
   HowLongToLearnSpokenEnglishRoute: typeof HowLongToLearnSpokenEnglishRoute
@@ -753,24 +647,16 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RefundsRoute: typeof RefundsRoute
   SpokenBusinessOrInteractiveEnglishRoute: typeof SpokenBusinessOrInteractiveEnglishRoute
-  SpokenEnglishClassesAhmedabadRoute: typeof SpokenEnglishClassesAhmedabadRoute
   SpokenEnglishClassesBengaluruRoute: typeof SpokenEnglishClassesBengaluruRoute
-  SpokenEnglishClassesChennaiRoute: typeof SpokenEnglishClassesChennaiRoute
-  SpokenEnglishClassesCoimbatoreRoute: typeof SpokenEnglishClassesCoimbatoreRoute
   SpokenEnglishClassesDelhiRoute: typeof SpokenEnglishClassesDelhiRoute
-  SpokenEnglishClassesGuwahatiRoute: typeof SpokenEnglishClassesGuwahatiRoute
   SpokenEnglishClassesHyderabadRoute: typeof SpokenEnglishClassesHyderabadRoute
-  SpokenEnglishClassesKochiRoute: typeof SpokenEnglishClassesKochiRoute
   SpokenEnglishClassesKolkataRoute: typeof SpokenEnglishClassesKolkataRoute
   SpokenEnglishClassesMumbaiRoute: typeof SpokenEnglishClassesMumbaiRoute
-  SpokenEnglishClassesNagpurRoute: typeof SpokenEnglishClassesNagpurRoute
-  SpokenEnglishClassesPatnaRoute: typeof SpokenEnglishClassesPatnaRoute
-  SpokenEnglishClassesPuneRoute: typeof SpokenEnglishClassesPuneRoute
-  SpokenEnglishClassesSuratRoute: typeof SpokenEnglishClassesSuratRoute
-  SpokenEnglishClassesVisakhapatnamRoute: typeof SpokenEnglishClassesVisakhapatnamRoute
   SpokenEnglishForBeginnersIndiaRoute: typeof SpokenEnglishForBeginnersIndiaRoute
   SpokenEnglishForFreshersIndiaRoute: typeof SpokenEnglishForFreshersIndiaRoute
   SpokenEnglishForHomemakersIndiaRoute: typeof SpokenEnglishForHomemakersIndiaRoute
+  SpokenEnglishInBengaliRoute: typeof SpokenEnglishInBengaliRoute
+  SpokenEnglishInHindiRoute: typeof SpokenEnglishInHindiRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
   TermsRoute: typeof TermsRoute
   WhyUsRoute: typeof WhyUsRoute
@@ -800,13 +686,6 @@ declare module '@tanstack/react-router' {
       path: '/best-online-spoken-english-classes-india'
       fullPath: '/best-online-spoken-english-classes-india'
       preLoaderRoute: typeof BestOnlineSpokenEnglishClassesIndiaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book-free-demo': {
-      id: '/book-free-demo'
-      path: '/book-free-demo'
-      fullPath: '/book-free-demo'
-      preLoaderRoute: typeof BookFreeDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/child-protection': {
@@ -928,6 +807,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/free-consultation': {
+      id: '/free-consultation'
+      path: '/free-consultation'
+      fullPath: '/free-consultation'
+      preLoaderRoute: typeof FreeConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/free-english-speaking-practice-vs-paid-class': {
       id: '/free-english-speaking-practice-vs-paid-class'
       path: '/free-english-speaking-practice-vs-paid-class'
@@ -998,32 +884,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpokenBusinessOrInteractiveEnglishRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/spoken-english-classes-ahmedabad': {
-      id: '/spoken-english-classes-ahmedabad'
-      path: '/spoken-english-classes-ahmedabad'
-      fullPath: '/spoken-english-classes-ahmedabad'
-      preLoaderRoute: typeof SpokenEnglishClassesAhmedabadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/spoken-english-classes-bengaluru': {
       id: '/spoken-english-classes-bengaluru'
       path: '/spoken-english-classes-bengaluru'
       fullPath: '/spoken-english-classes-bengaluru'
       preLoaderRoute: typeof SpokenEnglishClassesBengaluruRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-chennai': {
-      id: '/spoken-english-classes-chennai'
-      path: '/spoken-english-classes-chennai'
-      fullPath: '/spoken-english-classes-chennai'
-      preLoaderRoute: typeof SpokenEnglishClassesChennaiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-coimbatore': {
-      id: '/spoken-english-classes-coimbatore'
-      path: '/spoken-english-classes-coimbatore'
-      fullPath: '/spoken-english-classes-coimbatore'
-      preLoaderRoute: typeof SpokenEnglishClassesCoimbatoreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/spoken-english-classes-delhi': {
@@ -1033,25 +898,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpokenEnglishClassesDelhiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/spoken-english-classes-guwahati': {
-      id: '/spoken-english-classes-guwahati'
-      path: '/spoken-english-classes-guwahati'
-      fullPath: '/spoken-english-classes-guwahati'
-      preLoaderRoute: typeof SpokenEnglishClassesGuwahatiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/spoken-english-classes-hyderabad': {
       id: '/spoken-english-classes-hyderabad'
       path: '/spoken-english-classes-hyderabad'
       fullPath: '/spoken-english-classes-hyderabad'
       preLoaderRoute: typeof SpokenEnglishClassesHyderabadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-kochi': {
-      id: '/spoken-english-classes-kochi'
-      path: '/spoken-english-classes-kochi'
-      fullPath: '/spoken-english-classes-kochi'
-      preLoaderRoute: typeof SpokenEnglishClassesKochiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/spoken-english-classes-kolkata': {
@@ -1066,41 +917,6 @@ declare module '@tanstack/react-router' {
       path: '/spoken-english-classes-mumbai'
       fullPath: '/spoken-english-classes-mumbai'
       preLoaderRoute: typeof SpokenEnglishClassesMumbaiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-nagpur': {
-      id: '/spoken-english-classes-nagpur'
-      path: '/spoken-english-classes-nagpur'
-      fullPath: '/spoken-english-classes-nagpur'
-      preLoaderRoute: typeof SpokenEnglishClassesNagpurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-patna': {
-      id: '/spoken-english-classes-patna'
-      path: '/spoken-english-classes-patna'
-      fullPath: '/spoken-english-classes-patna'
-      preLoaderRoute: typeof SpokenEnglishClassesPatnaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-pune': {
-      id: '/spoken-english-classes-pune'
-      path: '/spoken-english-classes-pune'
-      fullPath: '/spoken-english-classes-pune'
-      preLoaderRoute: typeof SpokenEnglishClassesPuneRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-surat': {
-      id: '/spoken-english-classes-surat'
-      path: '/spoken-english-classes-surat'
-      fullPath: '/spoken-english-classes-surat'
-      preLoaderRoute: typeof SpokenEnglishClassesSuratRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/spoken-english-classes-visakhapatnam': {
-      id: '/spoken-english-classes-visakhapatnam'
-      path: '/spoken-english-classes-visakhapatnam'
-      fullPath: '/spoken-english-classes-visakhapatnam'
-      preLoaderRoute: typeof SpokenEnglishClassesVisakhapatnamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/spoken-english-for-beginners-india': {
@@ -1122,6 +938,20 @@ declare module '@tanstack/react-router' {
       path: '/spoken-english-for-homemakers-india'
       fullPath: '/spoken-english-for-homemakers-india'
       preLoaderRoute: typeof SpokenEnglishForHomemakersIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-in-bengali': {
+      id: '/spoken-english-in-bengali'
+      path: '/spoken-english-in-bengali'
+      fullPath: '/spoken-english-in-bengali'
+      preLoaderRoute: typeof SpokenEnglishInBengaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-in-hindi': {
+      id: '/spoken-english-in-hindi'
+      path: '/spoken-english-in-hindi'
+      fullPath: '/spoken-english-in-hindi'
+      preLoaderRoute: typeof SpokenEnglishInHindiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/success-stories': {
@@ -1174,7 +1004,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   BestOnlineSpokenEnglishClassesIndiaRoute:
     BestOnlineSpokenEnglishClassesIndiaRoute,
-  BookFreeDemoRoute: BookFreeDemoRoute,
   ChildProtectionRoute: ChildProtectionRoute,
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
@@ -1193,6 +1022,7 @@ const rootRouteChildren: RootRouteChildren = {
   EnglishHindiBengaliMediumRoute: EnglishHindiBengaliMediumRoute,
   EnglishInstituteComparisonIndiaRoute: EnglishInstituteComparisonIndiaRoute,
   FounderRoute: FounderRoute,
+  FreeConsultationRoute: FreeConsultationRoute,
   FreeEnglishSpeakingPracticeVsPaidClassRoute:
     FreeEnglishSpeakingPracticeVsPaidClassRoute,
   GuidesRoute: GuidesRoute,
@@ -1207,25 +1037,16 @@ const rootRouteChildren: RootRouteChildren = {
   RefundsRoute: RefundsRoute,
   SpokenBusinessOrInteractiveEnglishRoute:
     SpokenBusinessOrInteractiveEnglishRoute,
-  SpokenEnglishClassesAhmedabadRoute: SpokenEnglishClassesAhmedabadRoute,
   SpokenEnglishClassesBengaluruRoute: SpokenEnglishClassesBengaluruRoute,
-  SpokenEnglishClassesChennaiRoute: SpokenEnglishClassesChennaiRoute,
-  SpokenEnglishClassesCoimbatoreRoute: SpokenEnglishClassesCoimbatoreRoute,
   SpokenEnglishClassesDelhiRoute: SpokenEnglishClassesDelhiRoute,
-  SpokenEnglishClassesGuwahatiRoute: SpokenEnglishClassesGuwahatiRoute,
   SpokenEnglishClassesHyderabadRoute: SpokenEnglishClassesHyderabadRoute,
-  SpokenEnglishClassesKochiRoute: SpokenEnglishClassesKochiRoute,
   SpokenEnglishClassesKolkataRoute: SpokenEnglishClassesKolkataRoute,
   SpokenEnglishClassesMumbaiRoute: SpokenEnglishClassesMumbaiRoute,
-  SpokenEnglishClassesNagpurRoute: SpokenEnglishClassesNagpurRoute,
-  SpokenEnglishClassesPatnaRoute: SpokenEnglishClassesPatnaRoute,
-  SpokenEnglishClassesPuneRoute: SpokenEnglishClassesPuneRoute,
-  SpokenEnglishClassesSuratRoute: SpokenEnglishClassesSuratRoute,
-  SpokenEnglishClassesVisakhapatnamRoute:
-    SpokenEnglishClassesVisakhapatnamRoute,
   SpokenEnglishForBeginnersIndiaRoute: SpokenEnglishForBeginnersIndiaRoute,
   SpokenEnglishForFreshersIndiaRoute: SpokenEnglishForFreshersIndiaRoute,
   SpokenEnglishForHomemakersIndiaRoute: SpokenEnglishForHomemakersIndiaRoute,
+  SpokenEnglishInBengaliRoute: SpokenEnglishInBengaliRoute,
+  SpokenEnglishInHindiRoute: SpokenEnglishInHindiRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
   TermsRoute: TermsRoute,
   WhyUsRoute: WhyUsRoute,
@@ -1237,13 +1058,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -95,7 +95,7 @@ export const body: ArticleBody = [
   {
     t: "cta",
     text: "Join a live batch of around 6 learners. Count how many minutes you spoke.",
-    course: "/book-free-demo",
+    course: "/free-consultation",
     label: "Get Free Consultation",
   },
 
@@ -103,7 +103,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Need a **recognised exam score** for a visa or university — that is IELTS (or similar). Sit it with IDP or British Council when the form asks. We do not sell IELTS as a course.",
+      "Need a **recognised exam score** for a visa or university — that is IELTS (or similar). Sit it with IDP, the IELTS provider in India, when the form asks. We do not sell IELTS as a course.",
       "Need **daily 1:1 reps** and already speak — EngVarta-style sessions, not a twice-a-week batch.",
       "The learner is **under 14** — PlanetSpark or similar. Adult batches waste a child's time.",
       "Need **Band 7 writing** more than speaking — use a dedicated exam coach or the free [four-paragraph template](/blog/band-7-writing-4-paragraph-template), not Spoken English.",

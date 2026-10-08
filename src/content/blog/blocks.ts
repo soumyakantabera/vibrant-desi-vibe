@@ -35,13 +35,17 @@ export type Block =
 export type ArticleBody = Block[];
 
 export function headingId(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/&/g, " and ")
-    .replace(/[''""]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 70);
+  return (
+    text
+      .toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/[''""]/g, "")
+      // Letters and combining marks in any script, so Hindi and Bengali headings
+      // get real ids too (vowel signs are \p{M}). ASCII-only headings are unchanged.
+      .replace(/[^a-z0-9\p{L}\p{M}\p{N}]+/gu, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 70)
+  );
 }
 
 export function articleToc(body: ArticleBody): { id: string; text: string }[] {

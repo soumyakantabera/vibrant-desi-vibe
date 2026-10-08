@@ -1,5 +1,9 @@
 import { withBasePath } from "@/lib/site-path";
 
+// The logos are lazy: without it React 19's SSR emits a <link rel="preload">
+// for each of the eight, ahead of the hero image, and they delay LCP on
+// mobile. They are small trust badges, never the LCP element, so lazy is
+// harmless even where they sit inside a hero.
 const PAY_METHODS: { src: string; alt: string; height: string }[] = [
   { src: "/payments/upi.svg", alt: "UPI", height: "h-4" },
   { src: "/payments/google-pay.svg", alt: "Google Pay", height: "h-3.5" },
@@ -52,6 +56,7 @@ export function PaymentTrust({
             width={80}
             height={32}
             className="h-8 w-auto"
+            loading="lazy"
             decoding="async"
           />
         </a>
@@ -61,6 +66,7 @@ export function PaymentTrust({
               src={withBasePath(m.src)}
               alt={m.alt}
               className={`${m.height} w-auto max-w-[4.75rem] object-contain`}
+              loading="lazy"
               decoding="async"
             />
           </span>

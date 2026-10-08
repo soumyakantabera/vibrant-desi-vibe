@@ -100,7 +100,7 @@ function Page() {
             </div>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
-              Message anytime. We reply 09:00–12:00 IST.
+              Message anytime. We reply 10am–midnight IST every day.
             </p>
           </div>
           <div className="w-full min-w-0 flex justify-center lg:block">
@@ -137,7 +137,7 @@ function Page() {
                     small: "Fees, slots and recordings",
                   },
                 ]}
-                footer="Message Anytime · Replies 09:00–12:00 IST"
+                footer="Message Anytime · Replies 10am–midnight IST every day"
               />
             </div>
           </div>
@@ -226,7 +226,7 @@ function Page() {
             <div className="min-w-0">
               <p className="eyebrow eyebrow-sun">Not a sixth course · a seat in the real one</p>
               <h2 className="mt-3 text-3xl md:text-4xl text-ink">
-                Demo Session. Serious? Then it costs nothing.
+                Demo Class. Serious? Then it costs nothing.
               </h2>
               <p className="mt-4 text-ink/85 leading-relaxed">
                 Want to see the teacher, in a batch, before you commit? Sit one live class for 90
@@ -251,7 +251,7 @@ function Page() {
               </ul>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link to="/course-demo-session" className="btn btn-sun btn-lg w-full sm:w-auto">
-                  <Icon name="play" size={18} /> See the Demo Session
+                  <Icon name="play" size={18} /> See the Demo Class
                 </Link>
                 <a
                   href={waDirect(DEMO_SESSION.enrolMessage)}
@@ -312,7 +312,7 @@ function Page() {
             <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">
               Tell us the goal — interview, office promotion, daily confidence — we'll recommend the
-              right course during 09:00–12:00 IST on WhatsApp.
+              right course during 10am–midnight IST every day on WhatsApp.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">
