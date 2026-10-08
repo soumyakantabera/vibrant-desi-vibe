@@ -98,7 +98,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/english-for-working-professionals-india",
       title: "English while you work",
-      description: "Morning, evening and weekend IST. Live class; recording is revision.",
+      description: "Afternoon, evening and night IST. Live class; recording is revision.",
     },
     {
       href: "/workplace-english-course-online-india",
@@ -209,7 +209,7 @@ export function CoursePage({ data }: { data: CourseData }) {
           small: data.snapshotBatchSmall ?? "In this live course batch",
         },
       ]}
-      footer="Message Anytime · Replies 09:00–12:00 IST"
+      footer="Message Anytime · Replies 10am–midnight IST every day"
     />
   );
   return (
@@ -270,7 +270,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             </div>
             <p className="mt-3 text-sm text-white/90">
               {shownLive ??
-                "✓ 100% online live · ✓ About 6 in a batch · ✓ Flexible morning · evening · weekend slots · ✓ Kolkata, pan-India, now worldwide"}
+                "✓ 100% online live · ✓ About 6 in a batch · ✓ Flexible afternoon · evening · night slots · ✓ Kolkata, pan-India, now worldwide"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={waPrimary} variant="wa" size="lg">
@@ -466,7 +466,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 align="left"
                 eyebrow="FAQs"
                 title={`${data.title} — Questions & Answers`}
-                subtitle="Anything else? Message anytime — WhatsApp replies during 09:00–12:00 IST."
+                subtitle="Anything else? Message anytime — WhatsApp replies during 10am–midnight IST every day."
               />
               <SmartImage
                 src={data.footerImage}

@@ -134,7 +134,7 @@ export function GuidePage({
           faqs={faqs}
           eyebrow="FAQs"
           title={faqTitle}
-          subtitle="Straight answers. Message anytime; WhatsApp replies 09:00–12:00 IST."
+          subtitle="Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day."
           waMessage={waMessage}
         />
       </div>

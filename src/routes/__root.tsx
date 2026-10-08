@@ -15,6 +15,7 @@ import appCss from "../styles.css?url";
 import manrope600 from "@fontsource/manrope/files/manrope-latin-600-normal.woff2?url";
 import sora700 from "@fontsource/sora/files/sora-latin-700-normal.woff2?url";
 import { withBasePath } from "@/lib/site-path";
+import { CHAT_MSG, waLink, withPageTag } from "@/lib/whatsapp";
 import { siteHead } from "@/lib/seo";
 import { RouteProgress } from "@/components/RouteProgress";
 import { BOOT_SCRIPT, BOOT_CSS, FONT_CSS } from "@/lib/boot-script";
@@ -32,13 +33,23 @@ function NotFoundComponent() {
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
           </Link>
+          {/* A dead link should still reach a person. */}
+          <a
+            href={waLink(withPageTag(CHAT_MSG, "a missing (404)"))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+            data-cta-goal="whatsapp_chat"
+          >
+            Ask us on WhatsApp
+          </a>
         </div>
       </div>
     </div>

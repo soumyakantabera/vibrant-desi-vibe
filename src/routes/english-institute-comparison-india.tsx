@@ -64,7 +64,7 @@ const ROWS = [
     tag: "Exam & CEFR",
     title: "British Council",
     fee: "₹8,800–₹16,000 / module",
-    body: "CEFR groups, often 8–12. Strong classroom if you want that syllabus. When a form needs IELTS, sit it with IDP or British Council. We train the speaking you need for work and interviews.",
+    body: "CEFR groups, often 8–12. Strong classroom if you want that syllabus. When a form needs IELTS, sit it with IDP, the IELTS provider in India. We train the speaking you need for work and interviews.",
   },
   {
     color: "sage" as const,
@@ -220,7 +220,7 @@ function Page() {
         faqs={page.faqs ?? []}
         eyebrow="FAQs"
         title="Institutes — questions people actually ask"
-        subtitle="Straight answers. Message anytime; WhatsApp replies 09:00–12:00 IST."
+        subtitle="Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day."
         waMessage={waMessage}
       />
 

@@ -31,7 +31,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need a visa / university / Band 7",
-        "Sit IELTS with IDP / British Council",
+        "Sit IELTS with IDP, the IELTS provider in India",
         "Market coaching ₹8,000–₹35,000 + exam fee",
         "We do not sell that paper",
       ],

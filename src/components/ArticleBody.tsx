@@ -238,7 +238,7 @@ function BlockView({ block }: { block: Block }) {
               </Link>
             )}
             <WaButton
-              message="Hi, I want a free consultation for spoken English."
+              message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
               variant="wa"
               size="sm"
             >

@@ -3,7 +3,8 @@ import { useEffect, useState, useRef, type ReactNode } from "react";
 import { Logo } from "./Logo";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { CHAT_CTA, CHAT_MSG, waLink } from "@/lib/whatsapp";
+import { CHAT_CTA, CHAT_MSG, waLink, withPageTag } from "@/lib/whatsapp";
+import { pageLabel } from "@/lib/use-page-label";
 import { FeeText } from "@/components/FeeText";
 import type { IntlSlug } from "@/lib/intl-fees";
 
@@ -55,7 +56,7 @@ const ENGLISH_COURSES: {
   },
   {
     to: "/course-demo-session",
-    label: "Demo Session",
+    label: "Demo Class",
     icon: "play",
     slug: "demo-session",
     inr: "₹199 · 90 min · If you join, it costs you nothing.",
@@ -66,7 +67,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
   const { location } = useRouterState();
-  const chat = waLink(CHAT_MSG);
+  const chat = waLink(withPageTag(CHAT_MSG, pageLabel(location.pathname)));
   const dropRef = useRef<HTMLDivElement>(null);
   // Hover opens the Courses menu. A mouse user's click on the same button
   // lands a moment later — without this it toggled the menu straight back shut.
@@ -118,7 +119,7 @@ export function Nav() {
                 Don’t buy the course blind. If you join, it costs you nothing.
               </span>
               <span className="demo-ribbon-cta">
-                <span>Book the Demo Class</span>
+                <span>Book the ₹199 Demo Class</span>
                 <span className="demo-ribbon-price">
                   <FeeText text="₹199" />
                   <span className="demo-ribbon-mins">90 min</span>
@@ -285,7 +286,7 @@ export function Nav() {
                 </a>
               </div>
               <p className="mt-2 text-center text-xs text-cream/85">
-                Message anytime · WhatsApp replies 09:00–12:00 IST
+                Message anytime · WhatsApp replies 10am–midnight IST every day
               </p>
             </div>
 

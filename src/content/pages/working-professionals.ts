@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **morning, evening and weekend** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Business English ₹1,999/mo, Interactive ₹1,199/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **09:00–12:00 IST**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **afternoon, evening and night** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Business English ₹1,999/mo, Interactive ₹1,199/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
   },
   {
     t: "p",
@@ -17,12 +17,16 @@ export const body: ArticleBody = [
     caption: "Typical IST windows. Exact batch times are confirmed on WhatsApp after the consultation.",
     head: ["Slot", "Who it usually fits", "What to pick"],
     rows: [
-      ["Morning", "Before office, teachers, early shifts", "Spoken or Interactive"],
-      ["Evening (~7pm IST)", "Standard office end", "Business English if meetings are the gap"],
       [
-        "Weekend",
-        "Night shifts, Sector V / New Town late finishes, BPO rosters",
-        "Any of the three — most working learners land here",
+        "Afternoon",
+        "Shift workers before a late shift, homemakers, students",
+        "Spoken or Interactive",
+      ],
+      ["Evening", "Standard office end", "Business English if meetings are the gap"],
+      [
+        "Night",
+        "Late finishes, Sector V / New Town shifts, BPO rosters",
+        "Any of the three — timings are flexible, tell us yours",
       ],
     ],
   },
@@ -51,7 +55,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "We reply to WhatsApp 09:00–12:00 IST. You can message at midnight. The human answer arrives in that morning window. No extra steps.",
+    text: "We reply on WhatsApp from 10am to midnight IST, every day, so a message sent after work usually gets an answer the same evening. No extra steps.",
   },
 
   { t: "h2", text: "Options for people who already have a job" },
@@ -77,7 +81,7 @@ export const body: ArticleBody = [
       ],
       [
         "Learn With Smile live batch",
-        "Morning, evening or weekend IST; about 6 learners",
+        "Afternoon, evening or night IST; about 6 learners",
         "Fixed slots; group, not 1:1",
       ],
     ],
@@ -97,7 +101,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Tell us your shift. We will suggest morning, evening or weekend — and Spoken, Interactive or Business.",
+    text: "Tell us your shift. We will suggest afternoon, evening or night — and Spoken, Interactive or Business.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

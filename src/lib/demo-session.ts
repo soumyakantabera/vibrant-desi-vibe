@@ -2,11 +2,11 @@
 export const DEMO_SESSION = {
   slug: "demo-session" as const,
   path: "/course-demo-session" as const,
-  title: "Demo Session",
+  title: "Demo Class",
   minutes: 90,
   price: "₹199",
   scheduleWithinHours: 72,
   adjustWithinHours: 48,
   enrolMessage:
-    "Hi, I want to enrol for the Demo Session — 90 minutes, ₹199 — and schedule my seat in a live batch.",
+    "Hi, I want to book the ₹199 Demo Class (90 minutes in a live batch, adjusted in my fee if I enrol). Please send me the payment and slot details.",
 } as const;

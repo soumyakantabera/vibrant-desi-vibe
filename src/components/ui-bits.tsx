@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { waLink, DEMO_CTA } from "@/lib/whatsapp";
+import { CHAT_MSG, DEMO_CTA, DEMO_MSG, consultRequest, waLink, withPageTag } from "@/lib/whatsapp";
+import { usePageLabel } from "@/lib/use-page-label";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
 import { CITY_PATHS } from "@/lib/cities";
@@ -188,7 +189,7 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
           Kolkata, pan-India, now worldwide.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          About 6 learners in a live batch. Same teacher. Morning, evening and weekend IST.
+          About 6 learners in a live batch. Same teacher. Afternoon, evening and night IST.
           India fees stay the India price. Learners outside India join the same class.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
@@ -249,9 +250,13 @@ export function WaButton({
     children === DEMO_CTA ||
     (Array.isArray(children) && children.some((c) => c === DEMO_CTA));
   const iconSize = size === "sm" ? 16 : size === "lg" ? 18 : 16;
+  const page = usePageLabel();
+  // A chat button never sends the consultation request, and a consultation
+  // button always asks for the booking link. Generic messages carry the page.
+  const text = consult ? consultRequest(message) : message === DEMO_MSG ? CHAT_MSG : message;
   return (
     <a
-      href={waLink(message)}
+      href={waLink(withPageTag(text, page))}
       target="_blank"
       rel="noopener noreferrer"
       className={cls}

@@ -18,21 +18,21 @@ import { admissionCaption } from "@/lib/fees";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "If you have looked for spoken English classes in Kolkata, you have probably found the same two things: coaching centres in Gariahat, Salt Lake and around Rashbehari that run large batches, and online platforms that could be anywhere. This page is about the third option, and about being honest regarding when the first one is the better choice.",
+    text: "If you have looked for spoken English classes in Kolkata, you have probably found the same two things: coaching centres in Gariahat, Salt Lake and around Rashbehari that run large batches, and online platforms that could be anywhere. This page is about a third option — a live online batch of about six, run by a Kolkata-based team — and about being honest regarding when a big centre is the better choice.",
   },
   {
     t: "p",
-    text: "**One thing first, so nobody wastes a trip.** Our registered address at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008 is an office, visitable by appointment. It is not a teaching campus and there is no walk-in coaching centre. Every class is online and live. The teacher is Kolkata-based and the timings are set for IST, but you attend from home.",
+    text: "**How it works.** Every class is live online, in a batch of about six, so you join from home. Our registered office is at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008, and the team is Kolkata-based.",
   },
 
-  { t: "h2", text: "Why Kolkata learners end up choosing online" },
+  { t: "h2", text: "Why Kolkata learners choose online" },
   {
     t: "p",
     text: "It is usually not about the teaching. It is about the commute.",
   },
   {
     t: "p",
-    text: "A spoken English course runs up to two classes a week for three to six months. If you live in Behala or Dum Dum and the centre is in Gariahat or Sector V, you are spending 45 to 90 minutes each way. Twice a week for six months, that is roughly 75 to 155 hours of your life sitting in traffic on the EM Bypass — considerably more time than you will spend in the classroom.",
+    text: "A spoken English course runs up to two classes a week for three to six months. If you live in Behala or Dum Dum and a centre is in Gariahat or Sector V, a trip can take 45 to 90 minutes each way — twice a week for six months, that is roughly 75 to 155 hours on the road, more time than you will spend in class.",
   },
   {
     t: "p",
@@ -44,7 +44,7 @@ export const body: ArticleBody = [
     t: "table",
     caption:
       "Typical figures. Ask any provider — online or in Kolkata — for their actual cap before you ask anything else.",
-    head: ["", "Typical Kolkata coaching centre", "Learn With Smile"],
+    head: ["", "Typical Kolkata coaching centre", "Learn With Smile (online)"],
     rows: [
       ["Students per batch", "25–40", "Approximately 6"],
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
@@ -107,7 +107,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading. We do not sell IELTS as a course. Sit that paper with IDP or British Council when a form asks. Until then, practise speaking in [Spoken English](/course-spoken-english). The free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template) is still useful as structure.",
+    text: "Kolkata sends a lot of students to Canada, Australia and the UK. Writing is almost always the bottleneck, not Listening or Reading. We do not sell IELTS as a course. Sit that paper with IDP, the IELTS provider in India, when a form asks. Until then, practise speaking in [Spoken English](/course-spoken-english). The free [IELTS Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template) is still useful as structure.",
   },
   {
     t: "h3",
@@ -140,18 +140,18 @@ export const body: ArticleBody = [
     text: `All figures are inclusive of taxes. ${admissionCaption()} Chat on WhatsApp to book one.`,
   },
 
-  { t: "h2", text: "Batch timings, on IST" },
+  { t: "h2", text: "Batch timings" },
   {
     t: "ul",
     items: [
-      "**Morning** — before office hours, popular with homemakers and students",
-      "**Evening** — from about 7pm, the default for working professionals",
-      "**Weekend** — the usual choice for Sector V and BPO shifts, where weekday evenings are unreliable",
+      "**Afternoon** — homemakers, students and anyone on a late shift",
+      "**Evening** — after office, the usual choice for working professionals",
+      "**Night** — for Sector V and BPO staff whose shifts run late",
     ],
   },
   {
     t: "p",
-    text: "Every class is recorded, so a missed session because of a release, escalation or shift change does not mean losing the lesson. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
+    text: "Timings are flexible — tell us yours and we will fit a batch around it. Every class is recorded, so a missed session because of a release, escalation or shift change does not mean losing the lesson. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
   },
 
   { t: "h2", text: "When a Kolkata coaching centre is the better choice" },
@@ -162,15 +162,15 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**You want people around you.** A physical classroom gives you peers you actually see, and for some learners that accountability is what keeps them turning up. We substitute live polls, debates and a WhatsApp batch group, and it is not the same thing.",
-      "**Your internet is unreliable.** A speaking class where the audio drops is worse than no class. If your connection cannot hold a video call for an hour, fix that first or go offline.",
+      "**You want people around you.** A physical classroom gives you peers you actually see, and for some learners that is what keeps them turning up. We use live polls, debates and a WhatsApp batch group instead, and it is not the same thing.",
+      "**Your internet is unreliable.** A speaking class where the audio drops is worse than no class. If your connection cannot hold a video call for an hour, fix that first or choose a classroom.",
       "**You need a recognised certificate.** We do not currently issue one. If a visa, a university or an HR checklist requires a credential, go to an established institution and expect to pay considerably more — that fee buys the certificate, not better teaching.",
       "**The learner is a child.** Our classes are built for learners from about 15 upwards. Teaching a nine-year-old is a different profession.",
     ],
   },
   {
     t: "cta",
-    text: "If none of those apply and you want to see what a batch of around six actually feels like, chat on WhatsApp. Meet the teacher, then pick a course.",
+    text: "If none of those apply, chat on WhatsApp — we will suggest the batch that fits your timing. Want to sit in a real class first? Book the ₹199 Demo Class.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

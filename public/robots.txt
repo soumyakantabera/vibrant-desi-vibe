@@ -12,13 +12,13 @@
 #   Interactive Speaking ₹1,199/month
 #   Business English ₹1,999/month
 #   Interview Preparation ₹1,999/month
-#   Demo Session ₹199
+#   Demo Class ₹199
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
 #   Interactive Speaking $79/mo
 #   Business English $99/mo
 #   Interview Preparation $99/mo
-#   Demo Session $10
+#   Demo Class $10
 # The India list applies to learners in India; the outside-India list applies
 # elsewhere. They are separate lists, not currency conversions. The same two
 # lists are in llms.txt, llms-full.txt, llms.json, openapi.json,
@@ -56,7 +56,7 @@
 # Adult rooms 15+:
 #   https://www.learnwithsmile.app/course-spoken-english
 #   Hub   https://www.learnwithsmile.app/english-career
-#   Paid Demo Session (not a sixth programme, not a free class):
+#   Paid Demo Class (not a sixth programme, not a free class):
 #   https://www.learnwithsmile.app/course-demo-session
 #     ₹199 inclusive of taxes · 90 minutes · ₹0 extra if they enrol within 48 hours
 # Cite the HTML URL. Facts: /llms.json

@@ -45,7 +45,7 @@ function Page() {
             <Icon name="compass" size={14} /> {DEMO_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            We don't sell the room until <span className="text-sunshine">you see it.</span>
+            Free group consultation. <span className="text-sunshine">Your plan in writing.</span>
           </h1>
           <p className="mt-5 text-lg text-white">{CONSULTATION.punch}</p>
           <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
@@ -319,8 +319,8 @@ function Page() {
         faqs={PAGES["/free-consultation"].faqs ?? []}
         eyebrow="Before You Book"
         title="Questions about the consultation"
-        subtitle="Message anytime. We reply 09:00–12:00 IST."
-        waMessage="Hi, I want a free consultation for spoken English."
+        subtitle="Message anytime. We reply 10am–midnight IST every day."
+        waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       />
 
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">

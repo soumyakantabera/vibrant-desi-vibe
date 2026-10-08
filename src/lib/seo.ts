@@ -114,6 +114,10 @@ export const RATING = {
   count: 125,
   /** Where the figure comes from. Shown to readers so the number has a source. */
   source: "Google",
+  /** Opens the Google Business Profile, where the reviews can be read. */
+  readUrl: "https://g.page/r/CY5ptQJYQVPVEBM",
+  /** Google's "write a review" form. */
+  writeUrl: "https://g.page/r/CY5ptQJYQVPVEBM/review",
 } as const;
 
 /** "5.0★" — the display form used in stat tiles and stickers. */
@@ -293,12 +297,10 @@ export const CONSULTATION_KEYWORDS = [
   "free consultation for basic spoken english",
   "basic spoken english free consultation",
   "see the course before you enrol",
-  "see before you pay english class india",
   "we don't sell without showing the course",
   "english consultation fee in writing",
   "named bottleneck before enrolment",
   "honest no english consultation india",
-  "show the room before you pay spoken english",
   "spoken english counselling vs demo class",
   "free counselling spoken english kolkata",
   "free consulting spoken english kolkata",
@@ -588,7 +590,7 @@ export const CLUSTER_INTENT = {
     funnel: "decide",
     job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
     land: "/course-demo-session",
-    next: "Book the Demo Class",
+    next: "Book the ₹199 Demo Class",
     mismatch:
       "Do not send a demo-class question to the free consultation. Do not say the class is free to book. ₹199 to enrol. ₹0 extra only if they join a course within 48 hours.",
   },
@@ -597,7 +599,7 @@ export const CLUSTER_INTENT = {
     funnel: "decide",
     job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
     land: "/course-demo-session",
-    next: "Book the Demo Class",
+    next: "Book the ₹199 Demo Class",
     mismatch:
       "Not free consulting. Not a sixth programme. Do not call ₹199 a cash refund.",
   },
@@ -647,10 +649,10 @@ export const CLUSTER_INTENT = {
   geo: {
     intent: "commercial",
     funnel: "consider",
-    job: "Wants a class in their city. We are online-only — same fee, IST, Kolkata teacher.",
+    job: "Wants a class in their city. We teach live online — same fee everywhere, IST timings.",
     land: "/spoken-english-classes-kolkata",
     next: "Get Free Consultation",
-    mismatch: "No walk-in campus. City page must say online, not a local classroom.",
+    mismatch: "City pages must say live online, not a local classroom.",
   },
   aeo: {
     intent: "informational",
@@ -726,9 +728,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
-    dateModified: "2026-09-28",
+    dateModified: "2026-10-08",
     summary:
-      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Session, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
+      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -744,19 +746,19 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are online English classes as effective as offline coaching centres?",
-        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join morning, evening or weekend slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
+        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join afternoon, evening or night slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
       },
       {
         q: "Can I get a free consultation before I enrol?",
-        a: "Yes. 100% free, small batch, personalised advice. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 09:00–12:00 IST.",
+        a: "Yes. 100% free, small batch, personalised advice. Tap Get Free Consultation — it opens WhatsApp. We diagnose your bottleneck, answer every question about courses, fees and batch, and place you in one room — or tell you to stay free. It is counselling, not a full class. Message +91 96744 79949. We reply 10am–midnight IST every day.",
       },
       {
         q: "Can I sit a real class before I buy a course?",
-        a: "Yes. The Demo Session is 90 minutes in a live batch with the teacher. WhatsApp us first, then pay ₹199, inclusive of taxes. If you enrol in that course, or any course we currently offer, within 48 hours of the session, that ₹199 is adjusted and you pay ₹0 extra. It is not a cash refund. We schedule the seat within 72 hours of payment. This is not the free consultation, and it is not a sixth programme.",
+        a: "Yes. The Demo Class is 90 minutes in a live batch with the teacher. WhatsApp us first, then pay ₹199, inclusive of taxes. If you enrol in that course, or any course we currently offer, within 48 hours of the session, that ₹199 is adjusted and you pay ₹0 extra. It is not a cash refund. We schedule the seat within 72 hours of payment. This is not the free consultation, and it is not a sixth programme.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
-        a: "Yes. Classes are 100% live online. Learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — Kolkata, Mumbai, Pune, Ahmedabad, Surat, Nagpur, Bengaluru, Hyderabad, Chennai, Coimbatore, Kochi, Visakhapatnam, Patna, Guwahati and towns nationwide. Same ₹999/month fee inside India. IST morning, evening and weekend slots.",
+        a: "Yes. Every course runs live online, so learners join from West Bengal, Delhi, Maharashtra, Gujarat, Karnataka, Tamil Nadu, Telangana, Kerala, Andhra Pradesh, Bihar and Assam — from metros like Mumbai, Delhi, Bengaluru and Hyderabad to towns nationwide. Our registered office is in Kolkata. Same ₹999/month fee inside India. IST afternoon, evening and night slots.",
       },
       OUTSIDE_INDIA_FEE_FAQ,
       {
@@ -770,7 +772,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Five live programmes from ₹999/month, tax included. Demo Session: ₹199 for 90 minutes, ₹0 extra if you enrol within 48 hours.",
+      "Five live programmes from ₹999/month, tax included. Demo Class: ₹199 for 90 minutes, ₹0 extra if you enrol within 48 hours.",
     shortTitle: "English & Career Courses",
     keywords: [
       ...INTERVIEW_KEYWORDS,
@@ -788,7 +790,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-09-28",
     summary:
-      "Course hub. Five programmes from ₹999/month, inclusive of taxes, plus a paid Demo Session (₹199, 90 minutes) that is not a sixth programme. ₹0 extra if you enrol within 48 hours.",
+      "Course hub. Five programmes from ₹999/month, inclusive of taxes, plus a paid Demo Class (₹199, 90 minutes) that is not a sixth programme. ₹0 extra if you enrol within 48 hours.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken, Interactive, Workplace or Interview Preparation?",
@@ -803,7 +805,7 @@ export const PAGES: Record<string, PageSeo> = {
         a: "Adult learners 15+: working professionals, graduates, freshers and homemakers. Batches are approximately 6 learners. We currently run adult rooms only.",
       },
       {
-        q: "Is the Demo Session one of the courses?",
+        q: "Is the Demo Class one of the courses?",
         a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. WhatsApp us first, then pay. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. We schedule you within 72 hours of payment. The four programmes are unchanged.",
       },
       {
@@ -837,11 +839,11 @@ export const PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How is Learn With Smile different from 1:1 apps and brand-name English groups?",
-        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules at ₹8,800–₹16,000 and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month inclusive of taxes, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, sit that paper with IDP or British Council — we do not sell IELTS as a course.",
+        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules at ₹8,800–₹16,000 and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹999/month inclusive of taxes, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, sit that paper with IDP, the IELTS provider in India — we do not sell IELTS as a course.",
       },
       {
         q: "Are Kolkata offline spoken English classes better than online?",
-        a: "For speaking time, usually no. Typical Kolkata classrooms run 25–40 students, so most learners speak once a week. Public 3-month packages often sit at ₹1,500–₹6,000 plus commute. Online small-batch classes remove the commute, keep morning/evening/weekend IST slots, and give every learner the mic in every hour. Peer energy is the one thing a packed room still does well — we replace that with live polls, debates and a WhatsApp batch group.",
+        a: "For speaking time, usually no. Typical Kolkata classrooms run 25–40 students, so most learners speak once a week. Public 3-month packages often sit at ₹1,500–₹6,000 plus commute. Online small-batch classes remove the commute, keep afternoon, evening and night IST slots, and give every learner the mic in every hour. Peer energy is the one thing a packed room still does well — we replace that with live polls, debates and a WhatsApp batch group.",
       },
       {
         q: "Why is a typical batch size of approximately 6 learners important for learning English?",
@@ -892,10 +894,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/educator": {
     path: "/educator",
-    title: "Sunanda Dey, Spoken English Educator, Kolkata",
+    title: "Sunanda Dey, Founder & Lead Educator, Kolkata",
     description:
-      "Meet Sunanda Dey — educator at Learn With Smile. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India.",
-    shortTitle: "Sunanda Dey — Educator",
+      "Meet Sunanda Dey, founder of Learn With Smile, who leads a team of trained English teachers. 7 years, 500+ learners, live classes from ₹999/month.",
+    shortTitle: "Sunanda Dey — Founder",
     keywords: [
       "sunanda dey english teacher",
       "learn with smile educator",
@@ -905,9 +907,10 @@ export const PAGES: Record<string, PageSeo> = {
     ],
     ogImage: "/og/founder.jpg",
     priority: 0.6,
+    dateModified: "2026-10-08",
     changefreq: "monthly",
     summary:
-      "Educator profile: Sunanda Dey, English and career mentor, 7 years of live online teaching experience.",
+      "Founder profile: Sunanda Dey founded Learn With Smile and leads its team of trained teachers; 7 years of live English teaching. Each batch keeps the same teacher.",
   },
 
   "/success-stories": {
@@ -957,7 +960,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Does Learn With Smile help with career guidance, or only English speaking?",
-        a: "Both, if you need it. The English courses are Spoken, Interactive, Business English and Interview Preparation. We do not offer career counselling. Message us on WhatsApp and we will name the room.",
+        a: "Only English speaking. We do not offer career counselling. The English courses are Spoken, Interactive, Business English and Interview Preparation — and Interview Preparation covers the English of HR rounds. Message us on WhatsApp and we will name the room.",
       },
     ],
   },
@@ -1003,9 +1006,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-10-08",
     summary:
-      "Get Free Consultation: we don't sell the room until you see it. 100% free, small-batch counselling with personalised advice. Bottleneck named, course and fee in writing, then you decide. Not a class. No payment. Replies 09:00–12:00 IST. +91 96744 79949.",
+      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — the ₹199 Demo Class is the real class. No payment. Replies 10am–midnight IST every day. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,
@@ -1051,7 +1054,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How do I ask you to delete my data?",
-        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. You may ask us to access, correct, delete, restrict or export what we hold, or to object to a use that is only in our interest. We reply 09:00–12:00 IST and aim to answer within 30 days. Invoices from a paid course are kept for the Indian tax period. We cannot delete WhatsApp’s copy or yours. You may also complain to a data-protection authority where you live.",
+        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. You may ask us to access, correct, delete, restrict or export what we hold, or to object to a use that is only in our interest. We reply 10am–midnight IST every day and aim to answer within 30 days. Invoices from a paid course are kept for the Indian tax period. We cannot delete WhatsApp’s copy or yours. You may also complain to a data-protection authority where you live.",
       },
       {
         q: "Who is the Grievance Officer?",
@@ -1101,7 +1104,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "Full refund of a paid month if you cancel before its first live class; no refund for a change of mind after it. Demo fee refunded only before the session.",
+      "Full refund of a paid month cancelled before its first live class; none after it for a change of mind. The ₹199 demo fee is adjusted on enrolment, not refunded.",
     shortTitle: "Refunds and Cancellation",
     keywords: [
       "learn with smile refund policy",
@@ -1113,7 +1116,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "yearly",
     dateModified: "2026-10-02",
     summary:
-      "Refunds: cancel a paid month before its first live class for a full refund. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Session is refunded in cash only if cancelled before it is held. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
+      "Refunds: cancel a paid month before its first live class for a full refund. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Class fee is not refunded in cash; it is adjusted against a course fee on admission within 48 hours. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
@@ -1179,12 +1182,13 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/spoken-english-classes-kolkata": {
     path: "/spoken-english-classes-kolkata",
-    title: "Spoken English Kolkata | Live, From ₹999",
+    title: "Spoken English Classes Kolkata | Live Online, ₹999",
     description:
-      "Live Spoken English from a Kolkata teacher. 7 years, ₹999/month. Morning, evening, weekend IST. More speaking time than a 25–40 student room.",
+      "Live online spoken English for Kolkata learners, from a Kolkata-based team. ₹999/month, about 6 per batch, flexible afternoon, evening and night timings.",
     shortTitle: "Spoken English Classes in Kolkata",
     keywords: [
       "spoken english classes kolkata",
+      "spoken english classes near me kolkata",
       "spoken english classes in kolkata online",
       "english speaking course kolkata fees",
       "best spoken english institute kolkata",
@@ -1196,16 +1200,17 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
+    dateModified: "2026-10-08",
     summary:
-      "Kolkata landing page. Live online Spoken English for Kolkata learners — why online beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, batch timings on IST, and the same ₹999/month fee as everywhere else.",
+      "Kolkata page. Live online Spoken English for Kolkata learners — why a small online batch beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, flexible afternoon/evening/night timings, and the same ₹999/month fee as everywhere else.",
     faqs: [
       {
         q: "Where in Kolkata are your spoken English classes held?",
-        a: "They are not held anywhere in Kolkata — every class is online and live. Our registered address at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008 is an office you can visit by appointment, not a teaching campus, and there is no walk-in coaching centre. The teacher is Kolkata-based, the batch timings are set for IST, and classmates are usually a mix of Kolkata learners and learners from elsewhere in India.",
+        a: "Live online — you join from home, in a batch of about 6. Our registered office is at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008, and the team is Kolkata-based. Timings are flexible: afternoon, evening and night.",
       },
       {
         q: "How much do spoken English classes cost in Kolkata?",
-        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes,. The fee is the same for a learner in Kolkata as for one in Guwahati — there is no local pricing.",
+        a: "Offline coaching centres in Kolkata generally charge somewhere between ₹1,500 and ₹6,000 for a 3-month spoken English course, usually in batches of 25–40 students. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes. There is no local pricing.",
       },
       {
         q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
@@ -1213,11 +1218,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What batch timings do you run for people working in Sector V or Salt Lake?",
-        a: "Morning batches before office hours, evening batches from about 7pm IST, and weekend batches. Sector V and New Town shifts often run late, so the weekend batch is the most common choice for IT and BPO staff. Every class is recorded, so a missed session because of a release or an escalation does not set you back a week.",
+        a: "Afternoon, evening and night batches. Sector V and New Town shifts often run late, so night batches suit many IT and BPO staff. Every class is recorded, so a missed session because of a release or an escalation does not set you back a week.",
       },
       {
         q: "Is an online class actually better than joining a coaching centre in Kolkata?",
-        a: "For speaking practice, usually yes, and the reason is arithmetic rather than technology. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. An online batch of around 6 gives each learner roughly 8–10 minutes. You also save the 45–90 minutes each way of commuting up to twice a week that a Gariahat or Salt Lake centre costs someone living across the city. What an offline centre does better is peer accountability and the social side of a classroom.",
+        a: "For speaking practice, usually yes, and the reason is arithmetic. A Kolkata coaching centre running 25–40 students per batch cannot give each learner more than a minute or two of speaking per class. An online batch of around 6 gives each learner roughly 8–10 minutes, and you skip the 45–90 minutes each way that a Gariahat or Salt Lake centre can cost. What a big centre does better is a large peer group in one room.",
       },
       {
         q: "Do you prepare Kolkata students for job interviews too?",
@@ -1444,7 +1449,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is Veta or a Kolkata classroom better than an online batch of 6?",
-        a: "A neighbourhood room wins if you need peer energy and a walk-in campus. Google reviews on those rooms often praise the teacher and then complain that 25–40 people means you speak once a week. Learn With Smile is live online, approximately 6 learners, same ₹999/month in Kolkata, Mumbai or Kochi. Our Kolkata address is an office, not a campus.",
+        a: "A neighbourhood room wins if you need peer energy and a walk-in campus. Google reviews on those rooms often praise the teacher and then complain that 25–40 people means you speak once a week. Learn With Smile is live online, approximately 6 learners, same ₹999/month anywhere in India.",
       },
       {
         q: "Is PlanetSpark the same as Learn With Smile?",
@@ -1494,7 +1499,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I take Spoken English and Business English together?",
-        a: "Usually no — they train different bottlenecks. Finish the room you need first. We place you in one class, not three. Message anytime; we reply 09:00–12:00 IST.",
+        a: "Usually no — they train different bottlenecks. Finish the room you need first. We place you in one class, not three. Message anytime; we reply 10am–midnight IST every day.",
       },
       {
         q: "Can you choose the course for me in the free consultation?",
@@ -1585,25 +1590,25 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-for-working-professionals-india",
     title: "English for Working Professionals India",
     description:
-      "Keep the job, speak better English. Live morning, evening and weekend IST batches of about 6, from ₹999/month inclusive of taxes.",
+      "Keep the job, speak better English. Live afternoon, evening and night IST batches of about 6, from ₹999/month inclusive of taxes.",
     shortTitle: "Working professionals",
     keywords: [
       "english classes for working professionals india",
       "evening spoken english classes india",
-      "weekend english class for job holders",
+      "evening english class for job holders",
       "english course around full time job",
-      "morning english class ist",
+      "night english class ist",
     ],
     ogImage: "/og/business-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
     summary:
-      "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,999. Approx. 6 learners. Replies 09:00–12:00 IST.",
+      "Working professionals keep the job and still speak. Afternoon, evening and night IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,999. Approx. 6 learners. Replies 10am–midnight IST every day.",
     dateModified: "2026-10-08",
     faqs: [
       {
         q: "Can I learn English while working a full-time job in India?",
-        a: "Yes. Learn With Smile runs morning, evening and weekend live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Business English ₹1,999/month. Approx. 6 learners. Aditya did Business English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
+        a: "Yes. Learn With Smile runs afternoon, evening and night live batches on IST. The class is live; the recording is revision if a release or a shift overruns. Spoken English from ₹999/month, Interactive ₹1,199/month, Business English ₹1,999/month. Approx. 6 learners. Aditya did Business English while in a back-office role and moved to BI Analyst. Vikram cleared a bank promotion board in Delhi.",
       },
       {
         q: "What if I miss a live English class because of a work shift?",
@@ -1611,11 +1616,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "When do you reply on WhatsApp if I message after office?",
-        a: "Message anytime. We reply 09:00–12:00 IST. Phone is a fallback.",
+        a: "Message anytime. We reply 10am–midnight IST every day. Phone is a fallback.",
       },
       {
         q: "Can I improve my English while working full time?",
-        a: "Yes, if the plan fits a working week: two live classes and about 15 minutes a day. Learn With Smile runs morning, evening (around 7pm IST) and weekend batches for this reason. Recordings help when a shift overruns, but speaking practice only happens live.",
+        a: "Yes, if the plan fits a working week: two live classes and about 15 minutes a day. Learn With Smile runs afternoon, evening and night batches for this reason. Recordings help when a shift overruns, but speaking practice only happens live.",
       },
     ],
   },
@@ -1786,7 +1791,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
       {
         q: "Is there a Business English course that fits around a full-time job?",
-        a: "Yes. Learn With Smile runs early-morning, evening and weekend batches on IST specifically for working professionals. The three-month course is ₹1,999/month; every class is recorded so a missed session because of a work escalation does not set you back.",
+        a: "Yes. Learn With Smile runs afternoon, evening and night batches on IST specifically for working professionals. The three-month course is ₹1,999/month; every class is recorded so a missed session because of a work escalation does not set you back.",
       },
     ],
   },
@@ -1832,15 +1837,15 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ],
   },
   "demo-session": {
-    title: "Demo Session | ₹199 for 90 min, ₹0 if you enrol",
+    title: "Demo Class | ₹199 for 90 min, ₹0 if you enrol",
     description:
       "Pay ₹199, tax included, for 90 minutes in a live batch. Enrol in any current course within 48 hours and that ₹199 is adjusted — ₹0 extra, not a cash refund.",
-    shortTitle: "Demo Session",
+    shortTitle: "Demo Class",
     keywords: [...PAID_DEMO_KEYWORDS],
     ogImage: "/og/default.jpg",
     dateModified: "2026-09-28",
     summary:
-      "Paid Demo Session. ₹199 inclusive of taxes for 90 minutes in a live batch of about 6. Not a sixth programme and not the free consultation. WhatsApp us first, then pay; we schedule within 72 hours of payment. Enrol in any current course within 48 hours and the ₹199 is adjusted (₹0 extra, not a cash refund). Rule also at /terms#demo-session.",
+      "Paid Demo Class. ₹199 inclusive of taxes for 90 minutes in a live batch of about 6. Not a sixth programme and not the free consultation. WhatsApp us first, then pay; we schedule within 72 hours of payment. Enrol in any current course within 48 hours and the ₹199 is adjusted (₹0 extra, not a cash refund). Rule also at /terms#demo-session.",
     extraFaqs: [],
   },
 };
@@ -1937,8 +1942,8 @@ export function organizationLd() {
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          opens: "09:00",
-          closes: "12:00",
+          opens: "10:00",
+          closes: "23:59",
         },
       },
     ],
@@ -2052,15 +2057,15 @@ export function consultationServiceLd() {
       hoursAvailable: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "09:00",
-        closes: "12:00",
+        opens: "10:00",
+        closes: "23:59",
       },
     },
     hoursAvailable: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "09:00",
-      closes: "12:00",
+      opens: "10:00",
+      closes: "23:59",
     },
     offers: {
       "@type": "Offer",

@@ -122,7 +122,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,199/month). If meetings and calls are the gap, take Business English (₹1,999/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 09:00–12:00 IST.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,199/month). If meetings and calls are the gap, take Business English (₹1,999/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -266,7 +266,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Are there spoken English classes for homemakers in India?",
-        a: "Yes. Learn With Smile runs live IST morning and weekend batches that homemakers actually attend. Basic Spoken English is 6 months, ₹999/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
+        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹999/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
       },
       {
         q: "I have been out of work for years. Is it too late?",
@@ -274,7 +274,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Is it too late to learn spoken English at 40 or 50?",
-        a: "No. Adults can learn to speak a new language at any age; what changes is time and confidence, not ability. Short daily practice and a small batch where mistakes are normal matter more than age. Learn With Smile classes are for adults 15+, with morning and weekend batches.",
+        a: "No. Adults can learn to speak a new language at any age; what changes is time and confidence, not ability. Short daily practice and a small batch where mistakes are normal matter more than age. Learn With Smile classes are for adults 15+, with afternoon and evening batches.",
       },
     ],
   },

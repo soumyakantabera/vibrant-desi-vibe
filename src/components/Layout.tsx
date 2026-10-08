@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { WhatsAppFab } from "./WhatsAppFab";
-import { CookieBar } from "./CookieBar";
 import { ConsultOffer } from "./ConsultOffer";
 import { CONSULTATION } from "@/lib/consultation";
 
@@ -29,7 +28,6 @@ export function Layout({
       </main>
       <ConsultOffer />
       <Footer image={footerImage} />
-      <CookieBar />
       <WhatsAppFab message={waMessage} />
     </div>
   );

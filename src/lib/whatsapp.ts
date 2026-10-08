@@ -5,9 +5,14 @@ export const CALL_LINK = `tel:+${WHATSAPP_PHONE}`;
 /**
  * Primary conversion labels.
  *
- * Programme CTAs say "Get Free Consultation", never "free demo class".
- * The paid Demo Session is a separate page, menu item and homepage ribbon.
- * Do not send its enrol prefill through withConsultAsk — use waDirect.
+ * Two different actions, two different first messages:
+ *  - "Chat on WhatsApp" asks a question, sent as written.
+ *  - "Get Free Consultation" asks for the booking link to a free group
+ *    consultation slot (advice, not a class).
+ * The paid ₹199 Demo Class has its own page and message — use waDirect.
+ *
+ * Until October 2026 every message was rewritten into a consultation request,
+ * so both buttons opened the same chat and some prefills came out garbled.
  *
  * Constant names stay DEMO_* so existing imports do not churn.
  */
@@ -15,48 +20,52 @@ export const DEMO_CTA = "Get Free Consultation";
 /** Same SVG on every Get Free Consultation button — never a letter or ligature. */
 export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
-/** One sentence. Chat and Consult share this when the page has no extra context. */
-export const DEMO_MSG = "Hi, I want a free consultation for spoken English.";
-export const CHAT_MSG = DEMO_MSG;
+/** The consultation request: a free group slot, booked through a link we send. */
+export const DEMO_MSG =
+  "Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link.";
+/** A plain question — the chat button. */
+export const CHAT_MSG = "Hi, I have a question about your spoken English classes.";
 
-/** Page-specific one-liner. Always includes “free consultation” and English. */
+function sentence(message: string): string {
+  const t = message.trim().replace(/\s+/g, " ");
+  return /[.?!)]$/.test(t) ? t : `${t}.`;
+}
+
+/** Page-specific consultation request, e.g. waConsult("Business English"). */
 export function waConsult(forWhat?: string): string {
   if (!forWhat?.trim()) return DEMO_MSG;
-  return withConsultAsk(`Hi, I want a free consultation for ${forWhat.trim()}`);
-}
-
-function ensureSpokenEnglish(sentence: string): string {
-  const t = sentence.replace(/[.?!]+$/, "");
-  if (/english/i.test(t)) return `${t}.`;
-  // Only tack it on when the line still ends on “free consultation”.
-  if (/free consultation$/i.test(t)) return `${t} for spoken English.`;
-  return `${t}.`;
-}
-
-/** Safety net: every WhatsApp prefill has “free consultation” and “spoken English”. */
-export function withConsultAsk(message: string): string {
-  let t = message.trim().replace(/\s*Free consultation please\.?$/i, "").replace(/[.?!]+$/, "");
-  if (!/free consultation/i.test(t)) {
-    const rest = t.replace(/^Hi,?\s*/i, "");
-    t = rest ? `Hi, I want a free consultation for ${rest}` : "Hi, I want a free consultation";
-  }
-  return ensureSpokenEnglish(t);
+  return `Hi, I'd like to book a free group consultation for ${forWhat.trim()}. Please send me the booking link.`;
 }
 
 /**
- * A plain WhatsApp deep link. No lead ID, campaign code, referrer or landing
- * page is appended to the learner's message.
+ * Turns any page message into a consultation request. A message that already
+ * talks about a consultation keeps its own words (it usually names the course
+ * or city) and gains the booking-link ask; anything else becomes DEMO_MSG.
  */
+export function consultRequest(message: string): string {
+  const t = sentence(message);
+  if (/booking link/i.test(t)) return t;
+  if (/consultation/i.test(t)) return `${t} Please send me the booking link.`;
+  return DEMO_MSG;
+}
+
+/**
+ * Generic first messages carry the page they were sent from, so every chat
+ * shows its source on the first line — no tracking code, no lead ID.
+ */
+export function withPageTag(message: string, pageLabel?: string): string {
+  const t = sentence(message);
+  if (!pageLabel) return t;
+  if (t !== sentence(CHAT_MSG) && t !== sentence(DEMO_MSG)) return t;
+  return `${t} (From the ${pageLabel} page.)`;
+}
+
+/** A plain WhatsApp deep link. The message is sent as written. */
 export function waLink(message: string) {
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(withConsultAsk(message))}`;
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(sentence(message))}`;
 }
 
-/**
- * A WhatsApp link that is sent as written.
- * Use this for the paid Demo Session. `waLink` rewrites every message into a
- * free-consultation prefill, which is the wrong ask for someone enrolling.
- */
+/** Kept for the paid Demo Class enrol link; identical to waLink now. */
 export function waDirect(message: string) {
-  const text = message.trim().replace(/[.?!]+$/, "");
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(`${text}.`)}`;
+  return waLink(message);
 }

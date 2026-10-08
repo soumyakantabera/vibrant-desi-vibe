@@ -79,7 +79,7 @@ export const body: ArticleBody = [
 
   {
     t: "p",
-    text: "Working nights or weekends? IST morning, evening and weekend batches — [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here — [that guide](/english-hindi-bengali-medium).",
+    text: "Working late or on shifts? IST afternoon, evening and night batches — [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here — [that guide](/english-hindi-bengali-medium).",
   },
 
   { t: "h2", text: "How the free consultation places you — vs a pitch" },

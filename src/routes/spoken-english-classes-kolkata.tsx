@@ -23,8 +23,7 @@ export const Route = createFileRoute("/spoken-english-classes-kolkata")({
       { name: "geo.position", content: "22.4924;88.3125" },
       { name: "ICBM", content: "22.4924, 88.3125" },
     );
-    // A Service entity ties the online offering to the Kolkata audience without
-    // claiming that the registered office is a walk-in teaching campus.
+    // A Service entity ties the online offering to the Kolkata audience.
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -32,7 +31,7 @@ export const Route = createFileRoute("/spoken-english-classes-kolkata")({
         "@type": "Service",
         "@id": `${abs(PATH)}#service`,
         serviceType: "Spoken English Classes",
-        name: "Live Spoken English for Kolkata — Approx. 6 learners, ₹999/mo, inclusive of taxes",
+        name: "Live online Spoken English for Kolkata — approx. 6 learners, ₹999/mo, inclusive of taxes",
         url: abs(PATH),
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: [
@@ -63,15 +62,15 @@ function Page() {
           Approx. 6 Learners per Batch
         </>
       }
-      standfirst="Taught live from Kolkata, attended from home. ₹999/month, inclusive of taxes, approximately 6 learners per batch, and morning, evening and weekend batches on IST."
+      standfirst="Live online classes from a Kolkata-based team, attended from home. ₹999/month, inclusive of taxes, approximately 6 learners per batch, flexible afternoon, evening and night timings."
       heroImage={IMG.groupClass}
       heroAlt="Kolkata learners in a live online English class"
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="Spoken English in Kolkata — Questions & Answers"
       waMessage="Hi, I am in Kolkata and I want a free consultation for Basic Spoken English."
-      ctaTitle="See a batch of around six for yourself"
-      ctaBody="Message us on WhatsApp and we'll put you in the next available slot."
+      ctaTitle="Tell us your timing"
+      ctaBody="Message us on WhatsApp. We will suggest the online batch that fits your schedule."
     />
   );
 }

@@ -65,7 +65,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Fitting class around a Mumbai day" },
       {
         t: "p",
-        text: "A class you travel to competes with the local train for the same hours; an online one does not. Morning batches finish before you leave for the station, evening batches start around 7pm IST after most commutes end, and weekend batches suit retail, hospitality and shift staff. If your shift rotates, say so in the consultation and we place you where the timing holds.",
+        text: "A class you travel to competes with the local train for the same hours; an online one does not. Evening batches start after most commutes end, night batches suit late finishes, and afternoon batches suit retail, hospitality and shift staff. If your shift rotates, say so in the consultation and we place you where the timing holds.",
       },
       {
         t: "p",
@@ -75,7 +75,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "Is there a batch that fits Mumbai local train timings?",
-        a: "Yes. Morning batches finish before most people leave for the station, evening batches start around 7pm IST, and there are weekend batches for retail, hospitality and shift staff. Classes are live online, so there is no second commute for class.",
+        a: "Yes. Evening batches start after most commutes end, night batches suit late finishes, and afternoon batches suit retail, hospitality and shift staff. Classes are live online, so there is no second commute for class.",
       },
       {
         q: "I work at a bank in Mumbai. Spoken English or Business English?",
@@ -122,13 +122,13 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for NCR schedules" },
       {
         t: "p",
-        text: "Morning batches before office, evening batches from about 7pm IST, and weekend batches. If you work a US shift in Gurugram, a weekend batch usually fits better than a weekday evening; classes are recorded for revision, but the speaking only happens live, so pick a slot you can actually attend.",
+        text: "Afternoon, evening and night batches, arranged around your schedule. If you work a US shift in Gurugram, an afternoon batch before the shift usually fits best; classes are recorded for revision, but the speaking only happens live, so pick a slot you can actually attend.",
       },
     ],
     localFaqs: [
       {
         q: "I work a night shift in Gurugram. Can I still join?",
-        a: "Usually, yes — most night-shift learners take a weekend batch. Tell us your shift in the free consultation on WhatsApp and we suggest the slot that holds. Recordings help with revision, but speaking practice only happens in the live class.",
+        a: "Usually, yes — night-shift learners usually take an afternoon batch before the shift. Tell us your shift in the free consultation on WhatsApp and we suggest the slot that holds. Recordings help with revision, but speaking practice only happens in the live class.",
       },
       {
         q: "Is the fee different for Gurugram or Noida?",
@@ -175,7 +175,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for tech schedules" },
       {
         t: "p",
-        text: "Morning batches before standup, evening batches from about 7pm IST, or weekends. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
+        text: "Afternoon, evening or night batches — pick the one that misses your standups and client calls. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
       },
     ],
     localFaqs: [
@@ -228,7 +228,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for Hyderabad schedules" },
       {
         t: "p",
-        text: "Morning batches before office, evening batches from about 7pm IST, and weekend batches. Support and GCC staff on rotational shifts usually do best in a weekend batch — tell us your roster in the consultation.",
+        text: "Afternoon, evening and night batches. Support and GCC staff on rotational shifts can pick the slot that fits the roster — tell us your roster in the consultation.",
       },
     ],
     localFaqs: [
@@ -287,7 +287,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
   return [
     {
       q: `Where in ${city.name} are your spoken English classes held?`,
-      a: `They are not held in a ${city.name} classroom. Every class is live online. Our registered address is an office in Kolkata you can visit by appointment, not a teaching campus. Learners join from ${city.neighborhoods}. The teacher is Kolkata-based; batch timings are IST.`,
+      a: `Not in a ${city.name} classroom — every class for ${city.name} learners is live online. Our registered office is in Kolkata. Learners join from ${city.neighborhoods}; batch timings are IST and flexible.`,
     },
     {
       q: `How much do spoken English classes cost in ${city.name}?`,
@@ -299,7 +299,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
     },
     {
       q: `What batch timings work with a ${city.name} job?`,
-      a: `Morning batches before office hours, evening batches from about 7pm IST, and weekend batches. Every class is recorded, so a missed session because of a release or a shift does not wipe the week. Message anytime; we reply 09:00–12:00 IST.`,
+      a: `Afternoon, evening and night batches (IST), arranged around your working hours. Every class is recorded, so a missed session because of a release or a shift does not wipe the week. Message anytime; we reply 10am–midnight IST every day.`,
     },
     {
       q: `Is online better than a coaching centre in ${city.name}?`,
@@ -313,7 +313,7 @@ export function cityBody(city: CityRecord): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, morning / evening / weekend IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
+      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
     ...city.local,
     { t: "h2", text: `Why ${city.name} learners take this online` },
@@ -349,7 +349,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     {
       t: "ul",
       items: [
-        "No walk-in campus in " + city.name + ".",
+        "No classroom in " + city.name + " — every class is live online.",
         "No certificate. Indian interviews hear you. Visas read an exam board score — sit IELTS with the test board when a form asks; we do not sell that paper.",
         "No 30-day fluency from zero. Everyday conversation is about 6 months of live practice. [How long it takes](/how-long-to-learn-spoken-english).",
       ],

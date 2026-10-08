@@ -181,7 +181,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "If an exam form asks for IELTS, sit that paper with IDP or British Council — we do not sell IELTS as a course. The free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template) is still useful as structure. If you cannot yet hold a conversation, start with Spoken English.",
+    text: "If an exam form asks for IELTS, sit that paper with IDP, the IELTS provider in India — we do not sell IELTS as a course. The free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template) is still useful as structure. If you cannot yet hold a conversation, start with Spoken English.",
   },
   {
     t: "p",

@@ -26,7 +26,7 @@ import {
   type CourseSlug,
 } from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
-import { waLink, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { FeePair, FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
@@ -37,7 +37,7 @@ const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "play",
     title: "Real teachers",
-    body: "A teacher who knows your name. Live, every hour.",
+    body: "A trained teacher who knows your name. Every class is live.",
   },
   {
     icon: "users",
@@ -115,7 +115,7 @@ function Home() {
 
   return (
     <Layout
-      waMessage="Hi, I want a free consultation for spoken English."
+      waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -162,7 +162,7 @@ function Home() {
               data-cta-location="hero"
             >
               <WaButton
-                message={DEMO_MSG}
+                message={CHAT_MSG}
                 size="lg"
                 className="w-full sm:w-auto justify-center"
                 goal="whatsapp_chat"
@@ -183,9 +183,16 @@ function Home() {
               Tell us your goal. We reply with the right course and the fee — no pressure, no
               payment to book.
             </p>
+            <p className="mt-2 text-sm text-white">
+              Want to sit in a real class first?{" "}
+              <Link to="/course-demo-session" className="font-bold underline">
+                Book the ₹199 Demo Class
+              </Link>{" "}
+              — adjusted in your fee if you enrol.
+            </p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
-              Message anytime. We reply 09:00–12:00 IST.
+              Message anytime. We reply 10am–midnight IST every day.
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
@@ -335,7 +342,7 @@ function Home() {
               </strong>
               <p className="text-white text-sm mt-1">
                 Message your goal anytime — we recommend the best-fit course when admissions replies
-                during 09:00–12:00 IST.
+                during 10am–midnight IST every day.
               </p>
             </div>
             <WaButton
@@ -388,7 +395,7 @@ function Home() {
             {[
               { n: 1, lbl: "Choose Course", sub: "4 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
-              { n: 3, lbl: "WhatsApp Us", sub: "Replies 09:00–12:00 IST", c: "wa" },
+              { n: 3, lbl: "WhatsApp Us", sub: "Replies 10am–midnight IST every day", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
             ].map((s) => (
               <div key={s.n} className="text-center">
@@ -413,7 +420,11 @@ function Home() {
             ))}
           </Reveal>
           <div className="text-center mt-10">
-            <WaButton message="Hi, I want a free consultation for spoken English." variant="sun" size="lg">
+            <WaButton
+              message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+              variant="sun"
+              size="lg"
+            >
               {DEMO_CTA}
             </WaButton>
           </div>
@@ -447,7 +458,7 @@ function Home() {
               Real-time activities that improve participation and check understanding.
             </FeatureCard>
             <FeatureCard icon="clock" color="brand" title="Flexible & Adaptable">
-              Morning, evening, weekend batches — we fit around your life, not the other way round.
+              Afternoon, evening, night batches — we fit around your life, not the other way round.
             </FeatureCard>
           </Reveal>
           <div className="text-center mt-10">
@@ -470,13 +481,13 @@ function Home() {
         </div>
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
           <div className="md:pr-4">
-            <Stat num="7" label="Years, same teacher" />
+            <Stat num="7" label="Years teaching live" />
           </div>
           <div className="md:px-4">
             <Stat num="500+" label="People who spoke here" />
           </div>
           <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="8" label="In the room. You speak." />
+            <Stat num="~6" label="In a batch. You speak." />
           </div>
           {/* One rating, one source. This tile used to read 4.9★ while the
               location card below read 5.0★ — the same page stating two numbers.
@@ -555,7 +566,7 @@ function Home() {
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Flexible morning · evening · weekend slots
+                  Flexible afternoon · evening · night slots
                 </li>
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-brand" />
@@ -665,18 +676,18 @@ function Home() {
                 Chat on WhatsApp
               </h3>
               <p className="text-white/95 leading-relaxed mb-6">
-                Tell us your goal in one message. We reply 09:00–12:00 IST and help you pick a
-                course.
+                Tell us your goal in one message. We reply 10am–midnight IST every day and help you
+                pick a course.
               </p>
-              <WaButton message={DEMO_MSG} size="lg">
+              <WaButton message={CHAT_MSG} size="lg">
                 {CHAT_CTA}
               </WaButton>
               <p className="text-xs text-white/80 mt-4">
-                Message anytime · Replies 09:00–12:00 IST · Phone is a fallback
+                Message anytime · Replies 10am–midnight IST every day · Phone is a fallback
               </p>
             </div>
             <a
-              href={waLink(DEMO_MSG)}
+              href={waLink(withPageTag(DEMO_MSG, "home"))}
               target="_blank"
               rel="noopener noreferrer"
               className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
@@ -695,8 +706,8 @@ function Home() {
                   <Icon name="compass" size={22} /> {DEMO_CTA}
                 </h3>
                 <p className="text-cream/95 mb-4">
-                  Ready when you are. Message us your goal — we reply 09:00–12:00 IST with the
-                  course and fee that actually fit.
+                  Ready when you are. Message us your goal — we reply 10am–midnight IST every day
+                  with the course and fee that actually fit.
                 </p>
                 <span className="btn btn-sun btn-sm">
                   <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
@@ -714,7 +725,7 @@ function Home() {
         eyebrow="Common Questions"
         title="Your Questions, Answered Plainly"
         subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-        waMessage="Hi, I want a free consultation for spoken English."
+        waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       />
 
       {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
@@ -723,7 +734,7 @@ function Home() {
           <div className="rounded-2xl overflow-hidden border border-border shadow-md bg-white grid md:grid-cols-[1fr_1.1fr]">
             <div className="relative h-56 md:h-auto min-h-[220px] bg-brand-soft">
               <iframe
-                title="Learn With Smile — Kolkata office (by appointment)"
+                title="Learn With Smile — registered office, Kolkata"
                 src="https://www.google.com/maps?q=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008&output=embed"
                 className="absolute inset-0 w-full h-full"
                 loading="lazy"
@@ -732,7 +743,7 @@ function Home() {
             </div>
             <div className="p-5 md:p-6 flex flex-col justify-center">
               <span className="eyebrow eyebrow-indigo w-fit">
-                <Icon name="globe" size={12} /> 11 States · Office in Kolkata
+                <Icon name="globe" size={12} /> Live online across India · Office in Kolkata
               </span>
               <div className="font-display font-extrabold text-ink text-base mt-2 flex items-center gap-2">
                 LEARN WITH SMILE
@@ -743,7 +754,7 @@ function Home() {
                 <span className="text-sunshine font-bold">
                   {RATING_DISPLAY} ({RATING.count} {RATING.source} reviews)
                 </span>{" "}
-                · By appointment only
+                · Registered office
               </p>
               <div className="flex flex-wrap gap-2 mt-3">
                 <a
@@ -755,12 +766,20 @@ function Home() {
                   <Icon name="target" size={14} /> Directions
                 </a>
                 <a
-                  href="https://g.page/r/CY5ptQJYQVPVEBM/review"
+                  href={RATING.readUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-sun btn-sm"
                 >
-                  <Icon name="star" size={14} /> Review
+                  <Icon name="star" size={14} /> Read our Google reviews
+                </a>
+                <a
+                  href={RATING.writeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline btn-sm"
+                >
+                  Write a review
                 </a>
               </div>
             </div>

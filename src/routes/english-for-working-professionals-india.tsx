@@ -51,16 +51,16 @@ function Page() {
           Office by day. <span className="text-sunshine">Live English at night.</span>
         </>
       }
-      standfirst="Morning, evening and weekend IST batches. Live class; recording is revision. From ₹999/mo, inclusive of taxes. Message anytime. We reply 09:00–12:00 IST."
+      standfirst="Afternoon, evening and night IST batches. Live class; recording is revision. From ₹999/mo, inclusive of taxes. Message anytime. We reply 10am–midnight IST every day."
       heroImage={IMG.studentLaptop}
       heroAlt="Working professional in an evening live English class"
       lastUpdated={UPDATED}
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="English while you work"
-      waMessage="Hi, I work and I want a free consultation for morning or evening English."
+      waMessage="Hi, I work and I want a free consultation for evening or night English."
       ctaTitle="Tell us your shift"
-      ctaBody="We suggest morning, evening or weekend — and Spoken, Interactive or Business."
+      ctaBody="We suggest afternoon, evening or night — and Spoken, Interactive or Business."
     />
   );
 }

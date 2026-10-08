@@ -172,7 +172,7 @@ function Page() {
                     small: "A group of around 6 — not the back row",
                   },
                 ]}
-                footer={`${RATING_DISPLAY} ${RATING.source} · 11 states · 09:00–12:00 IST`}
+                footer={`${RATING_DISPLAY} ${RATING.source} · 11 states · 10am–midnight IST every day`}
               />
             </div>
           </div>
@@ -209,7 +209,16 @@ function Page() {
           <p className="mx-auto mt-5 max-w-3xl text-center text-sm text-ink/70">
             Figures are typical public ranges in 2026, not a ranking. Brand scores are their own
             published ratings. Ours is the Google Business Profile figure we actually have:{" "}
-            {RATING_DISPLAY} from {RATING.count} reviews.
+            {RATING_DISPLAY} from {RATING.count} reviews —{" "}
+            <a
+              href={RATING.readUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              read them on Google
+            </a>
+            .
           </p>
         </div>
       </section>
@@ -230,7 +239,7 @@ function Page() {
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.
           </FeatureCard>
           <FeatureCard icon="clock" color="indigo" title="Working-India slots">
-            Morning, evening, weekend IST. Same-week move if a seat is free.
+            Afternoon, evening, night IST. Same-week move if a seat is free.
           </FeatureCard>
           <FeatureCard icon="gamepad" color="sage" title="Gamified every class">
             Flashcards, polls, quizzes, debates — so you speak, not spectate.

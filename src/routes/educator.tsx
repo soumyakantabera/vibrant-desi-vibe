@@ -151,11 +151,11 @@ function Page() {
             <Icon name="heart" size={14} /> Meet the Educator
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            One mentor. <span className="text-sunshine">One mission.</span>
+            One founder. <span className="text-sunshine">A team of trained teachers.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey — educator. 100% live. From ₹999/mo, inclusive of taxes.
-            Kolkata-based. About 6 in a batch. Pan-India, and now worldwide.
+            Sunanda Dey founded Learn With Smile and leads its team of trained teachers. Every batch
+            keeps the same teacher. About 6 in a batch, from ₹999/mo, inclusive of taxes.
           </p>
         </div>
       </section>
@@ -164,7 +164,7 @@ function Page() {
         <div className="container-x">
           <EducatorCard
             name="Sunanda Dey"
-            title="Educator · English & Career Mentor"
+            title="Founder & Lead Educator"
             image={IMG.founder}
             intro="Over 7+ years, Sunanda has dedicated herself to teaching English and empowering students to build meaningful careers — from school students and homemakers to working professionals. Her lived experience on a global platform has immersed her in diverse international environments, bringing real-world perspective into every classroom. Having personally navigated the journey of learning French and Italian, she understands the struggle firsthand — and that fuels her passion for turning the complexity of communication into something natural, confident, and achievable."
             credentials={[

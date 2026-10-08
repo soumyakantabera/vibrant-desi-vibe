@@ -342,14 +342,14 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for homemakers",
     h1Accent: "A voice for shops, school, yourself",
     standfirst:
-      "Daytime and weekend IST batches. 6 months, ₹999/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
+      "Afternoon and evening IST batches. 6 months, ₹999/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
     shortAnswer:
-      "Homemakers join the same Spoken English room as everyone else — morning and weekend IST, around 6 learners, ₹999/month inclusive of taxes. School medium and a career gap are not a wall.",
+      "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹999/month inclusive of taxes. School medium and a career gap are not a wall.",
     image: IMG.girlReading,
     alt: "Homemaker practising spoken English at home on a laptop",
     waMessage: "Hi, I am a homemaker and I want a free consultation for daytime Basic Spoken English.",
-    ctaTitle: "Join a daytime or weekend batch",
-    ctaBody: "Tell us your window. We reply 09:00–12:00 IST. The consultation is free.",
+    ctaTitle: "Join an afternoon or evening batch",
+    ctaBody: "Tell us your window. We reply 10am–midnight IST every day. The consultation is free.",
     faqTitle: "Homemakers — questions",
     body: [
       {
@@ -373,7 +373,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "Timings that actually fit" },
       {
         t: "p",
-        text: "Morning batches before the house wakes, and weekend batches. Every class is recorded, so a missed hour is revision, not a lost week. The class is live — the recording is not the class. [Working professionals](/english-for-working-professionals-india) use the evening slot; homemakers usually take morning.",
+        text: "Afternoon batches while the house is quiet, and evening batches. Every class is recorded, so a missed hour is revision, not a lost week. The class is live — the recording is not the class. [Working professionals](/english-for-working-professionals-india) use the evening slot; homemakers usually take morning.",
       },
       { t: "h2", text: "School medium, career gap, age" },
       {
@@ -438,7 +438,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ],
           [
             "Learn With Smile Spoken English",
-            "Morning or weekend live batch of about 6; explanations in Hindi or Bengali when needed",
+            "Afternoon or evening live batch of about 6; explanations in Hindi or Bengali when needed",
             "6 months, ₹999/month; needs a phone or laptop and a quiet hour",
           ],
         ],
@@ -482,7 +482,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ["Commute", "45–120 min each way", "None"],
           ["Fee band", "₹1,500–₹6,000 / 3 months, GST extra often", "₹999/mo Spoken, inclusive of taxes"],
           ["Peer energy", "Same room", "Debates, prompts, WhatsApp group"],
-          ["Campus", "Walk-in centre", "Kolkata office by appointment, not a campus"],
+          ["Campus", "Walk-in centre", "Online — join from home"],
         ],
       },
       { t: "h2", text: "When offline is still the right buy" },
@@ -491,7 +491,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         items: [
           "You will not open a laptop twice a week unless someone is waiting in a building.",
           "You want neighbours in the same batch more than you want minutes.",
-          "A parent is paying for a place they can visit. Our Kolkata address is an office, not a teaching floor.",
+          "A parent is paying for a place they can visit. Our classes are online.",
         ],
       },
       { t: "h2", text: "When online is the cheaper hour" },
@@ -793,7 +793,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "Shifts, on-call, IST" },
       {
         t: "p",
-        text: "Morning, evening and weekend live batches. Recording is revision when a release overruns. A same-week reschedule only if a seat exists. [Working professionals](/english-for-working-professionals-india).",
+        text: "Afternoon, evening and night live batches. Recording is revision when a release overruns. A same-week reschedule only if a seat exists. [Working professionals](/english-for-working-professionals-india).",
       },
       {
         t: "p",

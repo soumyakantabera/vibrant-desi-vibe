@@ -146,7 +146,7 @@ export const body: ArticleBody = [
       "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, inclusive of taxes.",
       "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
       "The student is a **child** — a kids platform, not an adult batch of around 6.",
-      "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our Kolkata address is an office, not a campus.",
+      "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our classes are online.",
     ],
   },
 

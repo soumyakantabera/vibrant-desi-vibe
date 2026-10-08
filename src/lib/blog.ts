@@ -237,7 +237,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "5-speaking-habits-that-killed-my-hesitation",
-    title: "5 Speaking Habits That Killed My Hesitation in 30 Days",
+    title: "5 Speaking Habits That Killed My Hesitation",
     seoTitle: "5 Speaking Habits That Beat English Hesitation",
     description:
       "Five small daily speaking habits that remove hesitation in about a month. No apps, no expensive course — just the drills we give our own beginner students.",

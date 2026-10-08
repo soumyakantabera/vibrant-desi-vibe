@@ -59,7 +59,7 @@ function Page() {
       body={body}
       faqs={page.faqs ?? []}
       faqTitle="প্রায়ই জিজ্ঞাসা করা প্রশ্ন"
-      waMessage="Hi, I want a free consultation for spoken English. Ami Banglay kotha bolte pari."
+      waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link. Ami Banglay kotha bolte pari."
       ctaTitle="WhatsApp-এ বাংলায় কথা বলুন"
       ctaBody="আমরা আপনার সমস্যা বুঝে সঠিক কোর্স আর ফি লিখে জানাব। ₹999/মাস থেকে, ট্যাক্স সহ।"
     />

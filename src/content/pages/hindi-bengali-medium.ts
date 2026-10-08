@@ -56,7 +56,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Working a shift? Morning, evening and weekend IST batches — [English for working professionals](/english-for-working-professionals-india). Freeze after you already have the words? [Interactive](/interactive-english-class-hesitation).",
+    text: "Working a shift? Afternoon, evening and night IST batches — [English for working professionals](/english-for-working-professionals-india). Freeze after you already have the words? [Interactive](/interactive-english-class-hesitation).",
   },
 
   { t: "h2", text: "How the bilingual bridge works in class" },

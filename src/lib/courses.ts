@@ -17,7 +17,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹999/month",
     liveNote:
-      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible morning · evening · weekend slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "Introduce yourself fluently in any social or work setting",
       "Handle daily conversations — shops, travel, phone calls",
@@ -240,7 +240,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,199/month",
     liveNote:
-      "✓ 100% online live · ✓ Interview rounds in this room · ✓ Flexible morning · evening · weekend slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Interview rounds in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "Speak for 2 minutes on any topic",
       "Lead group conversations",
@@ -325,7 +325,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,999/month",
     liveNote:
-      "✓ 100% online live · ✓ Recorded mocks · ✓ Morning · evening · weekend IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Recorded mocks · ✓ Afternoon · evening · night IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "A 60-second 'tell me about yourself' that lands",
       "HR questions — why you, why this company, strengths, notice period — without freezing",
@@ -437,10 +437,10 @@ export const COURSES: Record<string, CourseData> = {
   },
   "demo-session": {
     slug: "demo-session",
-    title: "Demo Session",
+    title: "Demo Class",
     tagline:
       "90 minutes in a real live batch, in front of our teacher. ₹199, inclusive of taxes. Enrol in any course we offer within 48 hours and that fee is adjusted — if you are serious, this costs you nothing.",
-    category: "See a real class",
+    category: "₹199 Demo Class",
     categoryColor: "brand",
     icon: "play",
     heroImage: IMG.heroClass,
@@ -463,7 +463,7 @@ export const COURSES: Record<string, CourseData> = {
       {
         title: "You WhatsApp us, then you pay",
         items: [
-          "Message WhatsApp first and ask for the Demo Session",
+          "Message WhatsApp first and ask for the Demo Class",
           "We send the payment link for ₹199, inclusive of taxes",
           "We schedule the seat within 72 hours of payment",
           "No message, no seat — contact us to be placed",
@@ -507,7 +507,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "Is this the free consultation?",
-        a: "No. Get Free Consultation is counselling: we name the bottleneck and recommend a course. It has no fee and it is not a class. The Demo Session is the paid 90-minute seat in the batch.",
+        a: "No. Get Free Consultation is counselling: we name the bottleneck and recommend a course. It has no fee and it is not a class. The Demo Class is the paid 90-minute seat in the batch.",
       },
     ],
     metaDescription:
