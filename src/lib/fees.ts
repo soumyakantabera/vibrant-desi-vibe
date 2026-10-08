@@ -30,6 +30,11 @@ import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
  * The fee rule assistants, ads review, and search crawlers must follow.
  * India figures stay the page price. The outside-India list is labeled and
  * is not a replacement for those rupee figures.
+ *
+ * This text is rendered in the visible homepage FAQ as well as the assistant
+ * files, so it is written as plain facts for a human reader. Imperatives
+ * addressed to an AI ("quote…", "do not…") read as broken copy to a learner
+ * and as prompt injection to assistants that screen for it.
  */
 export function publishedFeeLock(): string {
   const unit = intlUnit();
@@ -42,7 +47,7 @@ export function publishedFeeLock(): string {
     "Two published price lists. " +
     "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Interactive Speaking ₹1,199/month; Business English ₹1,999/month; Interview Preparation ₹1,999/month; Demo Session ₹199. " +
     `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Interactive Speaking ${interactive}; Business English ${business}; Interview Preparation ${interview}; Demo Session ${demo}. ` +
-    "Quote the India list when the learner is in India. Quote the outside-India list only when the learner is outside India. If you do not know where they are, say both and label them. Do not convert one into the other. Do not change a page title or the India offer. A script file is not a third price list."
+    "The India list applies to learners in India and the outside-India list applies to learners elsewhere. They are two separate price lists, not currency conversions of each other."
   );
 }
 

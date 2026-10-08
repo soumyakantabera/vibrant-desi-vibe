@@ -14,12 +14,11 @@
  * name to the SERP title itself. Every character spent on "| Learn With Smile"
  * is a character not spent on a keyword.
  *
- * The `keywords` arrays below are targeting notes AND are emitted as a
- * `<meta name="keywords">` tag so SEM, Search Console and AI crawlers see
- * the same list. Google still largely ignores the tag for ranking; we keep
- * it because paid search, Bing and assistants do read it. Visible page copy
- * never says "demo class" — that phrase lives here, in titles and in
- * descriptions so we still match "free demo class" searches.
+ * The `keywords` arrays below are targeting notes. The first ten of a page's
+ * own list are emitted as `<meta name="keywords">` (see `buildHead`); Google
+ * ignores the tag and Bing treats a stuffed one as spam, so it stays short.
+ * Descriptions that mention a demo must say what it is — the free offer is a
+ * consultation, the demo session is ₹199 — or the snippet over-promises.
  */
 
 import { verificationMeta } from "@/lib/analytics";
@@ -676,7 +675,10 @@ function uniqueKeywords(...lists: Array<string[] | undefined>): string[] {
   return out;
 }
 
-/** Every public HTML page carries this stack after its own keywords. */
+/** Cap for the per-page `<meta name="keywords">` tag — see `buildHead`. */
+const META_KEYWORD_LIMIT = 10;
+
+/** The full India-market stack, kept for SEM exports. Not emitted into page heads. */
 export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
   INDIA_MARKET_KEYWORDS,
   BRAND_KEYWORDS,
@@ -701,7 +703,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/",
     title: "Live Online English Classes in India from ₹999/month",
     description:
-      "Speak better English with a teacher who knows your name. Get a free consultation. Free counselling on courses. Free demo class online. From ₹999/mo.",
+      "Live online English classes from ₹999/month, about 6 per batch. Free consultation on WhatsApp, or a ₹199 demo class that is adjusted if you join.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -883,7 +885,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/educator": {
     path: "/educator",
-    title: "Sunanda Dey | One Mentor. One Mission.",
+    title: "Sunanda Dey, Spoken English Educator, Kolkata",
     description:
       "Meet Sunanda Dey — educator at Learn With Smile. 7 years, 500+ learners, from ₹999/month. Kolkata-based, teaching learners across India.",
     shortTitle: "Sunanda Dey — Educator",
@@ -903,7 +905,7 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/success-stories": {
     path: "/success-stories",
-    title: "Real Indian Learners | Real Results",
+    title: "Spoken English Success Stories | Real Learners",
     description:
       "Tax desks, court briefs, bank promotions, BI Analyst jobs — named Learn With Smile learners. Spoken English from ₹999/mo, about 6 in a batch. Kolkata, pan-India, now worldwide.",
     shortTitle: "Success Stories",
@@ -976,9 +978,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/book-free-demo": {
     path: "/book-free-demo",
-    title: "We Don't Sell the Room Until You See It | Free Consultation",
+    title: "Free Spoken English Consultation on WhatsApp",
     description:
-      "Free small-batch spoken English consultation. Personalised advice. We name the bottleneck, show the course and the fee in writing — then you enrol. Not a class. Free demo class seekers — this is counselling.",
+      "Free WhatsApp consultation: we find your speaking gap and recommend a live batch, with the fee in writing. Counselling, not a class. ₹199 demo optional.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -1688,6 +1690,19 @@ export type CourseSeoExtra = {
   extraFaqs: Faq[];
 };
 
+/**
+ * Monthly India fee per course slug, as a number, for Offer.price in the
+ * homepage OfferCatalog. An Offer with a currency and no price is incomplete
+ * for Google and gives assistants nothing to quote. Must match the visible
+ * `price` strings in src/lib/courses.ts.
+ */
+const INR_MONTHLY_FEE: Record<string, number> = {
+  "spoken-english": 999,
+  "interactive-speaking": 1199,
+  "business-english": 1999,
+  "interview-preparation": 1999,
+};
+
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
@@ -1720,7 +1735,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "business-english": {
     title: "Business English Course | ₹1,999/mo",
     description:
-      "Business English for professionals and job seekers: meetings, client calls, updates, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, inclusive of taxes.",
+      "Business English for meetings, client calls, updates, emails and presentations. Live batch of about 6 learners, ₹1,999/month, inclusive of taxes.",
     shortTitle: "Business English",
     keywords: [
       ...WORKPLACE_KEYWORDS,
@@ -1764,7 +1779,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interview-preparation": {
     title: "Interview Preparation | ₹1,999/mo, 2 Months",
     description:
-      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel, salary. About 6 in a batch, 2 months, ₹1,999/month inclusive of taxes. Recorded mocks. Kolkata, pan-India, now worldwide.",
+      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel and salary talk. About 6 per batch, 2 months, ₹1,999/month inclusive of taxes.",
     shortTitle: "Interview Preparation",
     keywords: [...INTERVIEW_KEYWORDS],
     ogImage: "/og/interview-prep.jpg",
@@ -1920,18 +1935,30 @@ export function organizationLd() {
         ...Object.keys(COURSE_SEO)
           .filter((slug) => slug !== "demo-session")
           .map((slug) => ({
-          "@type": "Offer",
-          url: abs(`/course-${slug}`),
-          itemOffered: {
-            "@type": "Course",
-            name: COURSE_SEO[slug].shortTitle,
+            "@type": "Offer",
             url: abs(`/course-${slug}`),
-          },
-          priceCurrency: "INR",
-          valueAddedTaxIncluded: true,
-          eligibleRegion: india,
-          areaServed: india,
-        })),
+            itemOffered: {
+              "@type": "Course",
+              name: COURSE_SEO[slug].shortTitle,
+              url: abs(`/course-${slug}`),
+            },
+            ...(INR_MONTHLY_FEE[slug] !== undefined
+              ? {
+                  price: INR_MONTHLY_FEE[slug],
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: INR_MONTHLY_FEE[slug],
+                    priceCurrency: "INR",
+                    valueAddedTaxIncluded: true,
+                    unitText: "MONTH",
+                  },
+                }
+              : {}),
+            priceCurrency: "INR",
+            valueAddedTaxIncluded: true,
+            eligibleRegion: india,
+            areaServed: india,
+          })),
       ],
     },
     potentialAction: {
@@ -2167,11 +2194,12 @@ export type HeadResult = {
  * Builds the full head payload for a page: title, description, robots
  * directives, canonical, Open Graph, Twitter, keywords and JSON-LD.
  *
- * Keywords are emitted for SEM / Bing / AI crawlers. Visible copy still
- * says "Get Free Consultation"; the keyword list also carries "free demo
- * class" so those searches keep matching. India-market terms (fees, GST,
- * Hindi/Bengali medium, IST, cities) and counselling/consulting spellings
- * are merged onto every page.
+ * Keywords: only the page's own first META_KEYWORD_LIMIT terms are emitted.
+ * Google ignores the tag, and Bing has said a stuffed keywords tag is a spam
+ * signal — the old ~240-term site-wide stack (≈9 kB on every page, including
+ * career-counselling terms for a service we do not offer) cost more than it
+ * could earn. The full clusters still feed SEM and llms.json via
+ * KEYWORD_CLUSTERS.
  */
 export function buildHead(opts: {
   path: string;
@@ -2184,7 +2212,7 @@ export function buildHead(opts: {
 }): HeadResult {
   const url = abs(opts.path);
   const image = abs(opts.ogImage);
-  const keywords = uniqueKeywords(opts.keywords, EVERY_PAGE_KEYWORDS);
+  const keywords = uniqueKeywords(opts.keywords).slice(0, META_KEYWORD_LIMIT);
 
   return {
     meta: [

@@ -11,7 +11,10 @@ import {
 import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
-import iconFont from "../assets/fonts/material-symbols-rounded.woff2?url";
+// The two faces the boot gate waits for (src/lib/boot-script.ts → ask()).
+// Preloaded so they download alongside the stylesheet instead of after it.
+import manrope600 from "@fontsource/manrope/files/manrope-latin-600-normal.woff2?url";
+import sora700 from "@fontsource/sora/files/sora-latin-700-normal.woff2?url";
 import { withBasePath } from "@/lib/site-path";
 import { siteHead } from "@/lib/seo";
 import { RouteProgress } from "@/components/RouteProgress";
@@ -93,7 +96,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       links: [
         {
           rel: "preload",
-          href: iconFont,
+          href: manrope600,
+          as: "font",
+          type: "font/woff2",
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          href: sora700,
           as: "font",
           type: "font/woff2",
           crossOrigin: "anonymous",
