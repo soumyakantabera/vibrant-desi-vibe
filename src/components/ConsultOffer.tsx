@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { FeeText } from "@/components/FeeText";
 import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
 import { CONSULTATION, CONSULTATION_PROOF, PROOF_CARD_CLASS } from "@/lib/consultation";
@@ -37,7 +38,7 @@ export function ConsultOffer({
         <p
           className={`font-display text-xs uppercase tracking-[0.16em] font-extrabold ${sun ? "text-ink/70" : "text-sunshine"}`}
         >
-          {CONSULTATION.hook}
+          <FeeText text={CONSULTATION.hook} />
         </p>
         <h2
           className={`mt-3 font-display font-extrabold leading-[1.08] text-3xl md:text-5xl ${sun ? "text-ink" : "text-cream"}`}

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { FeeText } from "@/components/FeeText";
 import { PAGES, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
@@ -48,7 +49,9 @@ function Page() {
             Free group consultation. <span className="text-sunshine">Your plan in writing.</span>
           </h1>
           <p className="mt-5 text-lg text-white">{CONSULTATION.punch}</p>
-          <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
+          <p className="mt-3 text-sm font-semibold text-sunshine">
+            <FeeText text={CONSULTATION.hook} />
+          </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (
               <span
@@ -128,7 +131,9 @@ function Page() {
                   </span>
                   <div>
                     <h3 className="font-display font-bold text-ink">{step.title}</h3>
-                    <p className="mt-1 text-sm text-ink/80 leading-relaxed">{step.body}</p>
+                    <p className="mt-1 text-sm text-ink/80 leading-relaxed">
+                      <FeeText text={step.body} />
+                    </p>
                   </div>
                 </li>
               ))}

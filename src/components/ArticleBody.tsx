@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import { FeeText } from "@/components/FeeText";
 import { Link } from "@tanstack/react-router";
 
 import type { ArticleBody as ArticleBodyBlocks, Block } from "@/content/blog/blocks";
@@ -76,7 +77,9 @@ export function WaStrip({ message }: { message: string }) {
     >
       <p className="font-display font-extrabold text-ink">{CONSULTATION.headline}</p>
       <p className="mt-1 text-sm text-ink/80 leading-relaxed">{CONSULTATION.punch}</p>
-      <p className="mt-1 text-xs font-semibold text-brand-deep">{CONSULTATION.hook}</p>
+      <p className="mt-1 text-xs font-semibold text-brand-deep">
+        <FeeText text={CONSULTATION.hook} />
+      </p>
       <div className="mt-4 flex flex-wrap gap-2">
         <WaButton message={message} variant="sun" size="sm">
           {DEMO_CTA}

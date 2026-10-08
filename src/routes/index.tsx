@@ -186,7 +186,7 @@ function Home() {
             <p className="mt-2 text-sm text-white">
               Want to sit in a real class first?{" "}
               <Link to="/course-demo-session" className="font-bold underline">
-                Book the ₹199 Demo Class
+                <FeeText text="Book the ₹199 Demo Class" />
               </Link>{" "}
               — adjusted in your fee if you enrol.
             </p>
@@ -622,8 +622,12 @@ function Home() {
                 </span>
                 <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
               </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">See it. Then pay.</p>
-              <p className="mt-1 text-sm text-ink/75">{CONSULTATION.hook}</p>
+              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
+                See it. Then pay.
+              </p>
+              <p className="mt-1 text-sm text-ink/75">
+                <FeeText text={CONSULTATION.hook} />
+              </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
                   <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />

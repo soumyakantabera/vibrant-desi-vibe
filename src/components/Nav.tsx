@@ -119,7 +119,9 @@ export function Nav() {
                 Don’t buy the course blind. If you join, it costs you nothing.
               </span>
               <span className="demo-ribbon-cta">
-                <span>Book the ₹199 Demo Class</span>
+                <span>
+                  <FeeText text="Book the ₹199 Demo Class" />
+                </span>
                 <span className="demo-ribbon-price">
                   <FeeText text="₹199" />
                   <span className="demo-ribbon-mins">90 min</span>

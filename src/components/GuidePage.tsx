@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { FeeText } from "@/components/FeeText";
 import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
@@ -144,7 +145,9 @@ export function GuidePage({
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
           <p className="mt-3 text-white">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
+          <p className="mt-2 text-sm font-semibold text-sunshine">
+            <FeeText text={CONSULTATION.hook} />
+          </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waMessage} variant="wa" size="lg">
               {CHAT_CTA}
