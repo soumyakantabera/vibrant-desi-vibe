@@ -6,7 +6,8 @@ import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/hindi-bengali-medium";
 
 const PATH = "/english-hindi-bengali-medium";
-const UPDATED = "2026-09-02";
+const PUBLISHED = "2026-09-02";
+const UPDATED = "2026-10-08";
 
 export const Route = createFileRoute("/english-hindi-bengali-medium")({
   component: Page,
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/english-hindi-bengali-medium")({
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
         inLanguage: "en-IN",
-        datePublished: UPDATED,
+        datePublished: PUBLISHED,
         dateModified: UPDATED,
         author: {
           "@type": "Person",

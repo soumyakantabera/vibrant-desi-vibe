@@ -162,7 +162,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How much does IELTS coaching cost in India?",
-    a: "Typical coaching ₹8,000–₹35,000 plus the official exam fee to IDP or British Council. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English at ₹999/month. Sit the exam with the test board when a form asks.",
+    a: "Typical coaching ₹8,000–₹35,000 plus the exam fee (₹19,000 since April 2026, paid to IDP, the IELTS provider in India). Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English at ₹999/month. Sit the exam with the test board when a form asks.",
     source: "/ielts-coaching-fees-india",
   },
   {

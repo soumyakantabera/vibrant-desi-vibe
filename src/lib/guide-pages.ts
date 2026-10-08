@@ -144,7 +144,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.85,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Beginners", path: "/spoken-english-for-beginners-india" },
@@ -164,6 +164,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
         q: "What will I be able to do after 6 months?",
         a: "Everyday conversation from zero: introduce yourself, shops, a phone call, two minutes on a topic. Workplace meetings are a later room, not this one. Exam bands are a different paper. Results vary with how often you actually speak.",
       },
+      {
+        q: "Should a beginner start with an app or a live class?",
+        a: "Either can start the habit. Apps are good for vocabulary and a daily routine but rarely make you speak in full sentences. If after a month you can read simple English but cannot say it without notes, a small live class is the next step — a beginner needs someone to hear the sentence and correct it.",
+      },
     ],
   },
   "/how-to-speak-english-fluently": {
@@ -180,7 +184,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.85,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Speak fluently", path: "/how-to-speak-english-fluently" },
@@ -195,6 +199,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Can I become fluent in English without a class?",
         a: "Yes, if you already have discipline: a daily 10-minute voice note, one conversation partner, and honest recordings. A paid class buys a syllabus, a teacher who remembers your errors, and a seat you show up to. If you already have those three, spend nothing.",
+      },
+      {
+        q: "Which app is best to speak English fluently?",
+        a: "No single app makes you fluent. Duolingo-style apps build a vocabulary habit, ELSA-style apps help pronunciation, and AI voice chat gives unlimited speaking practice. Fluency needs months of speaking with correction; apps work best as practice between live conversations, not as a replacement for them.",
       },
     ],
   },
@@ -212,7 +220,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/interview-prep.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Freshers", path: "/spoken-english-for-freshers-india" },
@@ -227,6 +235,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Do I need IELTS for campus placements in India?",
         a: "Almost never. Indian interviews hear a 60-second intro. Sit IELTS when a university, visa or a specific HR form asks for the band.",
+      },
+      {
+        q: "Is the college placement cell's training enough for interviews?",
+        a: "For many freshers it is a good start — it is free and covers aptitude, group discussion and company patterns. What it rarely gives is repeated speaking practice with someone correcting your answers. If your HR round still collapses after placement training, a small live batch with mock interviews fills that gap.",
       },
     ],
   },
@@ -244,7 +256,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Homemakers", path: "/spoken-english-for-homemakers-india" },
@@ -259,6 +271,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "I have been out of work for years. Is it too late?",
         a: "No. School medium and a career gap decide how much English you heard, not whether you can take a school meeting or a shop conversation in 6 months of live practice. We do not promise a job at the end.",
+      },
+      {
+        q: "Is it too late to learn spoken English at 40 or 50?",
+        a: "No. Adults can learn to speak a new language at any age; what changes is time and confidence, not ability. Short daily practice and a small batch where mistakes are normal matter more than age. Learn With Smile classes are for adults 15+, with morning and weekend batches.",
       },
     ],
   },
@@ -276,7 +292,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Online vs offline", path: "/online-vs-offline-spoken-english-classes" },
@@ -287,6 +303,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Are online spoken English classes better than offline coaching centres?",
         a: "For speaking minutes, a live batch of around 6 is usually better than a 25–40 student classroom. You also skip the commute. Offline still wins on peer energy in the same room. Price is not the tell — ask the cap before you ask the fee.",
+      },
+      {
+        q: "Which is cheaper, online or offline spoken English classes?",
+        a: "On the brochure, offline centres often look cheaper — ₹1,500–₹6,000 for three months in a city classroom of 25–40. Add commute time and the minutes you actually speak (1–2 an hour in a big room, 8–10 in a batch of about 6) and an online small batch usually costs less per minute of speaking. Learn With Smile Spoken English is ₹999/month, inclusive of taxes.",
       },
     ],
   },
@@ -304,7 +324,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Free vs paid", path: "/free-english-speaking-practice-vs-paid-class" },
@@ -315,6 +335,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Can I learn spoken English for free in India?",
         a: "Yes. A language-exchange partner, a daily podcast, and speaking to one person in English every day costs nothing and works if you are disciplined. A paid class buys a fixed syllabus, someone who corrects the same mistake, and a schedule you are accountable to. If you already have those, spend nothing.",
+      },
+      {
+        q: "Can I learn spoken English with AI like ChatGPT for free?",
+        a: "AI voice chat is genuinely useful for practice: it is free or cheap, always available and never judges you. What it does not do well is notice your repeated mistakes unless you ask, keep you accountable, or give you a syllabus. Use it between classes or as a free start; if you are still freezing after a month, add a human who corrects you.",
       },
     ],
   },
@@ -332,7 +356,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/ielts.jpg",
     priority: 0.85,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "IELTS fees", path: "/ielts-coaching-fees-india" },
@@ -342,11 +366,15 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much does IELTS coaching cost in India in 2026?",
-        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate and paid to IDP or British Council. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
+        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate — ₹19,000 since April 2026, paid to IDP, the IELTS provider in India. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
       },
       {
         q: "Does IELTS coaching guarantee Band 7?",
         a: "No ethical course can. Writing is usually the bottleneck. The test board issues the score. Learn With Smile does not sell IELTS. If you cannot yet hold a conversation, start with Spoken English, not an exam shop.",
+      },
+      {
+        q: "What is the IELTS exam fee in India in 2026?",
+        a: "₹19,000 for IELTS Academic or General Training, from 1 April 2026 (₹19,250 for IELTS for UKVI). In India the test is run by IDP; check the current fee on IDP's site before booking. Coaching, if you buy it, is separate. Learn With Smile does not sell IELTS coaching.",
       },
     ],
   },
@@ -364,7 +392,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/business-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-08",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "IT professionals", path: "/english-for-it-professionals-india" },
@@ -375,6 +403,10 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Which English course is best for IT professionals in India?",
         a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Business English (₹1,999/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
+      },
+      {
+        q: "Is Toastmasters or a course better for IT professionals?",
+        a: "They do different jobs. Toastmasters is good for prepared speaking — presentations and confidence in front of a group — with feedback from fellow members. A Business English course drills unprepared work English — standups, client calls, clarifying and pushing back — with a teacher correcting the same errors every week. Many people do both. If calls and standups are the problem, start with the course.",
       },
     ],
   },

@@ -78,6 +78,28 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "No job or salary outcome. Clearer speech removes one barrier. It is not a placement cell.",
         ],
       },
+      { t: "h2", text: "Your first sentences" },
+      {
+        t: "example",
+        label: "Weeks 1–2: sentences you will use immediately",
+        lines: [
+          "My name is … I live in … I work as … / I study …",
+          "Could you say that again, please?",
+          "How much is this?",
+          "Sorry, I don't understand. Could you speak slowly?",
+          "Can I call you back in ten minutes?",
+        ],
+      },
+      { t: "h2", text: "If you want to start free" },
+      {
+        t: "ul",
+        items: [
+          "**Duolingo-style apps** are fine for a daily vocabulary habit in the first month.",
+          "**YouTube teachers in Hindi or Bengali** explain basic grammar well, for free.",
+          "**AI voice chat** lets you say your first sentences to something that answers back.",
+          "**Move to a live class** when you can read simple sentences but cannot say them without notes — that gap needs someone to hear you and correct you.",
+        ],
+      },
       {
         t: "cta",
         text: "Beginners sit in the Spoken English room. Approx. 6 learners. ₹999/mo, inclusive of taxes.",
@@ -136,6 +158,58 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹1,999/month.",
         ],
       },
+      { t: "h2", text: "Fluency tools compared" },
+      {
+        t: "table",
+        head: ["Tool", "Best use", "Limit"],
+        rows: [
+          [
+            "Duolingo-style apps",
+            "A daily vocabulary habit",
+            "Short tapped answers, not conversation",
+          ],
+          [
+            "ELSA and other pronunciation apps",
+            "Individual sounds and word stress",
+            "Pronunciation is not fluency — you still need conversation",
+          ],
+          [
+            "AI voice chat (ChatGPT, Gemini)",
+            "Unlimited speaking practice at any hour",
+            "It keeps talking even when your English is wrong",
+          ],
+          [
+            "1:1 tutors (Cambly, italki, Preply)",
+            "Lots of talk time with one person",
+            "No shared syllabus; you choose and manage the tutor",
+          ],
+          [
+            "Toastmasters",
+            "Prepared speeches and confidence in front of people",
+            "Peer feedback; not grammar teaching",
+          ],
+          [
+            "Small live batch (Learn With Smile)",
+            "Correction, a map, and people to talk to",
+            "Fixed slots; about 6 months at ₹999/month from zero",
+          ],
+        ],
+      },
+      { t: "h2", text: "The 4-3-2 drill" },
+      {
+        t: "p",
+        text: "A classic fluency exercise from language-teaching research: tell the same short story three times — in 4 minutes, then 3, then 2. The content stays the same, so your brain stops inventing and starts retrieving. Speed and smoothness go up within one session. Do it alone with a timer, or with a partner who just listens.",
+      },
+      {
+        t: "example",
+        label: "Try it today",
+        lines: [
+          "Topic: “A day something went wrong at work or college.”",
+          "4 minutes: everything you remember.",
+          "3 minutes: the same story, without the details nobody needed.",
+          "2 minutes: just the problem, what you did, and how it ended.",
+        ],
+      },
       {
         t: "cta",
         text: "Fluency is a room you speak in, not a poster. Approx. 6 learners. From ₹999/mo.",
@@ -151,9 +225,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for freshers in India",
     h1Accent: "The 60-second chair",
     standfirst:
-      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet. Interactive Speaking ₹1,199/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
+      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet; Interview Preparation ₹1,999/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
     shortAnswer:
-      "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still bomb HR, take Interactive Speaking — interview English is practised there. IELTS is for forms, not most Indian campus drives, and we do not sell it.",
+      "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still freeze in HR rounds, take Interview Preparation (2 months). If the freeze is everywhere, not just interviews, Interactive Speaking. IELTS is for forms, not most Indian campus drives, and we do not sell it.",
     image: IMG.interview,
     alt: "Fresher practising a job interview in English on a video call",
     waMessage: "Hi, I am a fresher and I want a free consultation for Interview Preparation.",
@@ -196,9 +270,66 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "A career gap or a back-paper is a fact. We practise how you say it; we do not erase it.",
         ],
       },
+      { t: "h2", text: "Your options before placement season" },
+      {
+        t: "table",
+        head: ["Option", "Good for", "Where it falls short"],
+        rows: [
+          [
+            "College training and placement cell",
+            "Free; aptitude, group discussion and company-specific prep",
+            "Large groups; little one-to-one correction of how you speak",
+          ],
+          [
+            "YouTube interview videos",
+            "Seeing sample answers",
+            "Memorised answers sound memorised; you never practise out loud with feedback",
+          ],
+          [
+            "Friends doing mock interviews",
+            "Free, realistic nerves",
+            "Friends rarely correct structure or grammar",
+          ],
+          [
+            "AI mock interviews (ChatGPT voice and similar)",
+            "Unlimited practice of common questions",
+            "Accepts weak answers; no sense of how you come across",
+          ],
+          [
+            "Learn With Smile Interview Preparation",
+            "Live mocks in a batch of about 6, recorded, same teacher",
+            "2 months, ₹1,999/month; we do not place you anywhere",
+          ],
+        ],
+      },
+      { t: "h2", text: "A 60-second fresher answer" },
+      {
+        t: "example",
+        label: "Tell me about yourself — illustrative B.Com fresher",
+        lines: [
+          "I'm Priya, a B.Com graduate from Kolkata, applying for the accounts executive role.",
+          "In my final year I handled GST invoices for a family business — about 40 a month — and learned Tally on the job.",
+          "I also managed the budget for our college fest with a team of four and finished under plan.",
+          "I'm looking for a role where I can build on that accounting work, which is why this position fits.",
+        ],
+      },
+      {
+        t: "p",
+        text: "Present, proof, proof, fit. No birthplace, no list of hobbies. Full template: [the 60-second answer](/blog/tell-me-about-yourself-in-60-seconds).",
+      },
+      { t: "h2", text: "Group discussion: four lines that get you in" },
+      {
+        t: "ul",
+        items: [
+          "**Opening:** “I'd like to start by defining the problem…”",
+          "**Adding:** “Building on Rahul's point…”",
+          "**Disagreeing:** “I see it differently, because…”",
+          "**Summarising:** “So far we agree on two things…”",
+        ],
+      },
       {
         t: "cta",
-        text: "Freshers sit in Spoken or Interactive — one room, not both. Message us.",
+        text: "Freshers sit in one room — Spoken, Interview Preparation or Interactive — not three. Message us.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -248,6 +379,69 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "p",
         text: "Hindi-medium, Bengali-medium, a decade at home: none of these is a wall. They are the starting point. We explain in Hindi or Bengali when a concept stalls, then go back to English. Adults 15+. Under-14s need a children’s platform — we will say so.",
+      },
+      { t: "h2", text: "Sentences for this week, not a textbook" },
+      {
+        t: "example",
+        label: "Parent–teacher meeting",
+        lines: [
+          "Good morning, ma'am. I'm Aarav's mother.",
+          "Could you tell me how he is doing in maths?",
+          "What can I practise with him at home?",
+          "Thank you. May I message you if I have a question?",
+        ],
+      },
+      {
+        t: "example",
+        label: "At the doctor's",
+        lines: [
+          "My daughter has had a fever since last night.",
+          "It's about 101 degrees, and she's eating less.",
+          "How many times a day should she take this?",
+          "Should we come back if it doesn't go down?",
+        ],
+      },
+      {
+        t: "example",
+        label: "Bank or customer-care call",
+        lines: [
+          "I'm calling about my account ending 4521.",
+          "₹2,000 was deducted twice on Monday.",
+          "Could you tell me when it will be refunded?",
+          "Can I have a reference number, please?",
+        ],
+      },
+      { t: "h2", text: "Options homemakers usually consider" },
+      {
+        t: "table",
+        head: ["Option", "Good for", "Where it falls short"],
+        rows: [
+          [
+            "Duolingo-style apps",
+            "A daily habit, vocabulary",
+            "Very little real speaking; easy to drop",
+          ],
+          [
+            "YouTube teachers in Hindi or Bengali",
+            "Clear explanations in your language, free",
+            "You listen, but you don't speak back",
+          ],
+          [
+            "Neighbourhood spoken English centre",
+            "Getting out, meeting people",
+            "Fixed timings, travel, often large batches",
+          ],
+          [
+            "1:1 online tutor",
+            "Flexible timing",
+            "Higher cost per hour; quality depends on the tutor",
+          ],
+          [
+            "Learn With Smile Spoken English",
+            "Morning or weekend live batch of about 6; explanations in Hindi or Bengali when needed",
+            "6 months, ₹999/month; needs a phone or laptop and a quiet hour",
+          ],
+        ],
       },
       {
         t: "cta",
@@ -304,6 +498,42 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "p",
         text: "If your constraint is speaking time, a live batch of around 6 beats a crowded room even if the crowded room is cheaper on the brochure. Cost per speaking minute is in the [fees guide](/english-class-fees-india).",
+      },
+      { t: "h2", text: "The commute arithmetic" },
+      {
+        t: "example",
+        label: "Two classes a week for three months",
+        lines: [
+          "Offline: a 60-minute class plus 45 minutes each way = 2.5 hours per class.",
+          "26 classes × 2.5 hours = 65 hours, of which 26 are class.",
+          "Online: 26 classes × 1 hour = 26 hours.",
+          "Difference: about 39 hours — roughly a full working week.",
+        ],
+      },
+      { t: "h2", text: "Questions to ask any centre, online or offline" },
+      {
+        t: "ol",
+        items: [
+          "What is the maximum batch size — in writing?",
+          "How many minutes will I speak in a 60-minute class?",
+          "Is GST included in the fee?",
+          "Who is the teacher, and will it be the same person every class?",
+          "What happens if I miss a class?",
+          "Can I talk to someone or sit in before I pay?",
+        ],
+      },
+      {
+        t: "p",
+        text: "Any provider — including us — should answer all six before you pay. Vague answers to the first two are the most common warning sign.",
+      },
+      { t: "h2", text: "Formats people combine" },
+      {
+        t: "ul",
+        items: [
+          "**Offline centre + free online practice** — the building for discipline, AI or exchange apps for extra speaking minutes.",
+          "**Online class + a local club** — the class for correction, a Toastmasters or college club for speaking in front of people.",
+          "**1:1 tutor for a deadline** — two or three weeks of 1:1 before a specific interview can be worth it; it gets expensive as a six-month habit.",
+        ],
       },
       {
         t: "cta",
@@ -362,6 +592,69 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "p",
         text: "Run the free stack for two weeks. If you skipped more than four days, or you cannot name what improved, a live seat is probably cheaper than another year of podcasts. Get a free consultation and count your own minutes before you pay.",
       },
+      { t: "h2", text: "Free and low-cost options, honestly rated" },
+      {
+        t: "table",
+        head: ["Option", "What it does well", "What it can't do"],
+        rows: [
+          [
+            "YouTube and podcasts",
+            "Listening, pronunciation models, material to shadow",
+            "You never speak back",
+          ],
+          [
+            "Language-exchange apps (HelloTalk, Tandem)",
+            "Real people, text and voice, free tiers",
+            "Partners come and go; nobody tracks your errors",
+          ],
+          [
+            "AI voice chat (ChatGPT, Gemini voice modes)",
+            "Unlimited, low-pressure speaking practice",
+            "Corrects you only if you ask; nobody notices when you skip a week",
+          ],
+          [
+            "Duolingo and similar apps",
+            "A daily habit, vocabulary, basic sentences",
+            "Very little free speaking — tapping is not talking",
+          ],
+          [
+            "Toastmasters (low cost, not free)",
+            "Speaking in front of people with peer feedback",
+            "Dues in US dollars every six months plus club dues; quality varies by club",
+          ],
+        ],
+      },
+      { t: "h2", text: "A 4-week free plan you can test yourself with" },
+      {
+        t: "table",
+        head: ["Week", "Daily, 15 minutes", "Weekly check"],
+        rows: [
+          [
+            "1",
+            "A 60-second voice note on your day; five sentences you will reuse",
+            "Play Monday's and Sunday's notes back to back",
+          ],
+          [
+            "2",
+            "Shadow one minute of a clear video; one AI or exchange-partner chat",
+            "Can you talk for 90 seconds without stopping?",
+          ],
+          [
+            "3",
+            "Week 1's topics again, with no notes",
+            "Count the pauses longer than three seconds",
+          ],
+          [
+            "4",
+            "One real conversation a day — shop, office, phone",
+            "Fewer pauses than week 1? Free is working. Stay free.",
+          ],
+        ],
+      },
+      {
+        t: "p",
+        text: "If week 4 sounds like week 1, the missing piece is usually **correction and accountability**, not more content. That is the part worth paying for — and the only part we would ask you to pay for.",
+      },
       {
         t: "cta",
         text: "If free is enough, we will say so. If it is not, the consultation is still free.",
@@ -377,9 +670,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "IELTS coaching fees in India, 2026",
     h1Accent: "Market fees, not our product",
     standfirst:
-      "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room, plus the official exam fee to IDP or British Council. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English.",
+      "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room, plus the exam fee — ₹19,000 from April 2026, paid to IDP. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English.",
     shortAnswer:
-      "Budget ₹8,000–₹35,000 for coaching plus the official exam fee to IDP or British Council. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first — start with Spoken English at ₹999/month.",
+      "Budget ₹8,000–₹35,000 for coaching plus the exam fee — ₹19,000 for Academic or General Training since 1 April 2026, paid to IDP. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first — start with Spoken English at ₹999/month.",
     image: IMG.ielts,
     alt: "IELTS candidate preparing Writing Task 2 with a teacher",
     waMessage: "Hi, I want a free consultation for IELTS or Basic Spoken English.",
@@ -389,7 +682,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     body: [
       {
         t: "p",
-        text: "Two invoices get mixed up. **Coaching** is what we charge. **The exam** is what IDP or British Council charge, and it is not included anywhere honest. Confirm the current exam fee on their sites before you sit.",
+        text: "Two invoices get mixed up. **Coaching** is what an institute charges. **The exam** is what IDP charges — ₹19,000 for IELTS Academic or General Training in India since 1 April 2026, ₹19,250 for IELTS for UKVI. IDP has been the only IELTS provider in India since 2021. No honest coaching price includes it; check the current fee on IDP's site before you book.",
       },
       { t: "h2", text: "What coaching costs in India in 2026" },
       {
@@ -411,7 +704,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "The official exam fee, paid to IDP or British Council — confirm on their sites.",
+          "The exam fee — ₹19,000 since April 2026, paid to IDP. Check before booking.",
           "A guaranteed band. No ethical coach can promise Band 7.",
           "A school certificate from Learn With Smile. We do not issue one, and we do not sell IELTS.",
           "Speaking ability. If you cannot hold a conversation, cue-card drills will not build the sentence.",
@@ -421,6 +714,32 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "p",
         text: "Band 5.5 because you cannot talk is a speaking problem. Cue-card drills will not build the sentence. Take [beginner Spoken English](/spoken-english-for-beginners-india) first. The picker: [Spoken or IELTS](/blog/spoken-english-or-ielts). Free structure: [Band 7 four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
+      },
+      { t: "h2", text: "Total cost, worked out" },
+      {
+        t: "table",
+        caption:
+          "Exam fee for IELTS Academic or General Training in India from 1 April 2026. Check IDP's site before booking.",
+        head: ["Route", "Coaching", "Exam", "Total"],
+        rows: [
+          ["Self-study with official free practice tests", "₹0", "₹19,000", "₹19,000"],
+          ["Online 1:1 tutor, 10 sessions at about ₹1,000", "₹10,000", "₹19,000", "About ₹29,000"],
+          ["Large institute package", "₹15,000–₹35,000", "₹19,000", "₹34,000–₹54,000"],
+          ["Any route + one retake", "—", "+₹19,000", "Often the biggest hidden cost"],
+        ],
+      },
+      { t: "h2", text: "Free official preparation" },
+      {
+        t: "ul",
+        items: [
+          "The IELTS, IDP and British Council websites all publish free practice tests and sample answers — start there before paying anyone.",
+          "Take one full practice test under timed conditions. The weakest of the four skills tells you what, if anything, to pay for.",
+          "Writing Task 2 rewards a fixed structure: [the four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
+        ],
+      },
+      {
+        t: "p",
+        text: "If the weak skill is **Speaking** because you cannot yet hold a conversation, that is not an IELTS problem. It is a spoken English problem, and it is cheaper to fix first.",
       },
       {
         t: "cta",
@@ -479,6 +798,87 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "p",
         text: "We do not guarantee a promotion, an onsite, or a CTC jump. Clearer communication removes one barrier. Performance reviews still weigh the rest.",
+      },
+      { t: "h2", text: "Options for IT staff, compared" },
+      {
+        t: "table",
+        caption: "Fair summary of what each format is built for. Many people combine two.",
+        head: ["Option", "Good for", "Where it falls short"],
+        rows: [
+          [
+            "Company L&D or soft-skills workshop",
+            "Free to you; matches company norms",
+            "Usually one-off or large groups — little repeated speaking with feedback",
+          ],
+          [
+            "Self-paced video courses (LinkedIn Learning, Coursera)",
+            "Frameworks for emails, meetings and presenting; any time",
+            "Nobody hears you speak — you can finish the course and still freeze",
+          ],
+          [
+            "Toastmasters club",
+            "Regular prepared speeches with peer evaluation; many Indian cities and companies host clubs",
+            "Peer feedback, not a teacher; little focus on call language or grammar",
+          ],
+          [
+            "1:1 tutor apps (Cambly, italki, Preply, EngVarta)",
+            "Flexible timing, plenty of talk time",
+            "Quality depends on the tutor you pick; usually no syllabus that tracks your errors",
+          ],
+          [
+            "AI voice practice (ChatGPT, Gemini voice modes)",
+            "Rehearsing tomorrow's standup at midnight, privately",
+            "No accountability; it rarely stops you on a repeated error unless you ask",
+          ],
+          [
+            "Learn With Smile Business English",
+            "Live batch of about 6, same teacher, work scenarios every class",
+            "Fixed IST slots; group, not 1:1; ₹1,999/month for 3 months",
+          ],
+        ],
+      },
+      { t: "h2", text: "A standup, before and after" },
+      {
+        t: "example",
+        label: "Before — what goes silent",
+        lines: [
+          "“Actually yesterday I was working on that ticket only, the API one, and there were some issues, so I was checking…”",
+          "(pause)",
+          "“…so today I will try to complete.”",
+        ],
+      },
+      {
+        t: "example",
+        label: "After — 60 seconds, three beats",
+        lines: [
+          "Yesterday: I fixed the login timeout on the payments API. It's in review.",
+          "Today: I'll finish the retry logic and update the ticket by 3pm IST.",
+          "Blocker: I need staging access from DevOps — Arjun, can you check after this call?",
+        ],
+      },
+      {
+        t: "p",
+        text: "Same English level. The second version names the outcome, the time and the owner. That shape is what class drills until it comes out without thinking.",
+      },
+      { t: "h2", text: "Phrases for the moments that freeze IT calls" },
+      {
+        t: "table",
+        head: ["Moment", "Say"],
+        rows: [
+          [
+            "You didn't catch it",
+            "“Sorry, could you repeat the last part? I want to get the number right.”",
+          ],
+          ["You don't know yet", "“I don't have that yet — I'll confirm by 4pm IST.”"],
+          [
+            "Pushing back on scope",
+            "“We can do that, but it moves the release to Thursday. Which matters more?”",
+          ],
+          [
+            "Closing the call",
+            "“To recap: I'll fix the timeout, you'll send the logs, we check again on Friday.”",
+          ],
+        ],
       },
       {
         t: "cta",

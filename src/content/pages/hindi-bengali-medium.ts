@@ -59,6 +59,48 @@ export const body: ArticleBody = [
     text: "Working a shift? Morning, evening and weekend IST batches — [English for working professionals](/english-for-working-professionals-india). Freeze after you already have the words? [Interactive](/interactive-english-class-hesitation).",
   },
 
+  { t: "h2", text: "How the bilingual bridge works in class" },
+  {
+    t: "example",
+    label: "A stalled concept — explained in Hindi, practised in English",
+    lines: [
+      "Learner: “Yesterday I am going to market.”",
+      "Teacher (Hindi): “कल की बात है, तो ‘went’ — बीते समय वाला रूप।”",
+      "Teacher (English): “Yesterday I went to the market. Your turn — what did you do yesterday?”",
+      "Learner: “Yesterday I went to office.” Teacher: “To the office. Once more?”",
+    ],
+  },
+  {
+    t: "p",
+    text: "The explanation takes ten seconds. Everything else stays in English. That is the difference between a bridge and a Hindi lecture.",
+  },
+  { t: "h2", text: "English-only platforms vs a bilingual bridge" },
+  {
+    t: "table",
+    head: ["Format", "Good for", "Hard for a Hindi- or Bengali-medium beginner"],
+    rows: [
+      [
+        "English-only 1:1 apps (Cambly, native tutors)",
+        "Learners who already follow most spoken English",
+        "Miss the explanation and you miss the whole correction",
+      ],
+      [
+        "YouTube teachers in Hindi or Bengali",
+        "Clear explanations in your language, free",
+        "Mostly explanation; very little of you speaking",
+      ],
+      [
+        "Learn With Smile live batch",
+        "Practice in English; Hindi or Bengali only when a concept stalls",
+        "The bridge is Hindi or Bengali only, not other Indian languages",
+      ],
+    ],
+  },
+  {
+    t: "p",
+    text: "Prefer to read in your own language? [हिंदी में गाइड](/spoken-english-in-hindi) · [বাংলায় গাইড](/spoken-english-in-bengali).",
+  },
+
   {
     t: "cta",
     text: "Message in Hindi, Bengali or English. We will place you in a live Spoken batch.",

@@ -57,6 +57,54 @@ export const body: ArticleBody = [
     text: "Working a shift? [English for working professionals](/english-for-working-professionals-india). Calls more than decks? [Client-call English](/english-for-client-calls-india).",
   },
 
+  { t: "h2", text: "Ways to practise presenting, compared" },
+  {
+    t: "table",
+    head: ["Option", "Good for", "Where it falls short"],
+    rows: [
+      [
+        "Toastmasters",
+        "Regular prepared speeches with evaluation; clubs in many Indian cities and companies",
+        "Dues in US dollars every six months plus club dues; peer feedback, not teaching",
+      ],
+      [
+        "Recording yourself",
+        "Free; shows filler words and pace",
+        "Nobody tells you what to change",
+      ],
+      [
+        "YouTube or TED-style courses",
+        "Structure and delivery ideas",
+        "Watching is not presenting",
+      ],
+      [
+        "Company presentation training",
+        "Free to you, in your company's context",
+        "Usually one-off",
+      ],
+      [
+        "Business English class",
+        "Real work updates rehearsed weekly with a teacher",
+        "Group format, fixed slots, ₹1,999/month",
+      ],
+    ],
+  },
+  { t: "h2", text: "Signposting phrases that keep the room with you" },
+  {
+    t: "table",
+    head: ["To", "Say"],
+    rows: [
+      ["Open", "“I'll cover three things: what changed, why, and what I need from you.”"],
+      ["Move on", "“That's the problem. Now, the fix.”"],
+      ["Point at data", "“The number that matters is the drop from 48 hours to 12.”"],
+      [
+        "Handle a question you can't answer",
+        "“Good question — I'll check and send it by end of day.”",
+      ],
+      ["Close", "“So the ask is: approve the form for Pune this week.”"],
+    ],
+  },
+
   {
     t: "cta",
     text: "Bring one real update from this week. We will run it in a live group of around 6.",

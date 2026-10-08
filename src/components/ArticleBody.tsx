@@ -138,15 +138,20 @@ function BlockView({ block }: { block: Block }) {
       );
 
     case "table":
+      // Below 640px each row stacks into a card: the first cell is its title and
+      // every other cell is labelled with its column via CSS, so three wordy
+      // columns never scroll sideways on a phone. The explicit roles keep the
+      // table semantics that `display: block` would otherwise drop.
       return (
         <figure className="mt-6">
           <div className="overflow-x-auto rounded-2xl border border-border bg-white">
-            <table className="w-full text-sm text-left border-collapse">
-              <thead>
-                <tr className="bg-brand-soft/60">
+            <table role="table" className="w-full text-sm text-left border-collapse">
+              <thead className="max-sm:sr-only">
+                <tr role="row" className="bg-brand-soft/60">
                   {block.head.map((h) => (
                     <th
                       key={h}
+                      role="columnheader"
                       scope="col"
                       className="px-4 py-3 font-display font-bold text-ink whitespace-nowrap"
                     >
@@ -155,11 +160,24 @@ function BlockView({ block }: { block: Block }) {
                   ))}
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="max-sm:block">
                 {block.rows.map((row) => (
-                  <tr key={row.join("|")} className="border-t border-border align-top">
+                  <tr
+                    key={row.join("|")}
+                    role="row"
+                    className="border-t border-border align-top max-sm:block max-sm:py-3 max-sm:first:border-t-0"
+                  >
                     {row.map((cell, i) => (
-                      <td key={i} className="px-4 py-3 text-ink/90">
+                      <td
+                        key={i}
+                        role="cell"
+                        data-label={block.head[i] || undefined}
+                        className={`px-4 py-3 text-ink/90 max-sm:block max-sm:py-1 ${
+                          i === 0
+                            ? "max-sm:font-display max-sm:font-bold max-sm:text-ink"
+                            : "max-sm:before:block max-sm:before:text-[11px] max-sm:before:font-display max-sm:before:font-bold max-sm:before:uppercase max-sm:before:tracking-wider max-sm:before:text-ink/60 max-sm:before:content-[attr(data-label)]"
+                        }`}
+                      >
                         {inline(cell)}
                       </td>
                     ))}

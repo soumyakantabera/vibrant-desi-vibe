@@ -47,6 +47,52 @@ Items 1–3 and most of 5 are fixed in this change. Item 4 needs an owner decisi
 
 **Watch after deploy:** Search Console → Pages ("Page with redirect" for the 11 old URLs is expected) and Performance for the five city pages and `/free-consultation`. If a retired city had meaningful clicks, it can be restored from git history.
 
+## Round 3 — guide pages: audit, smoke test, competitive and qualitative content (8 October 2026)
+
+### Smoke test
+
+Every guide (28 URLs, including `/guides`, `/free-consultation` and the city pages) was loaded in Chromium at 1280 px and 390 px, scrolled to load lazy images, and checked for: HTTP 200, exactly one H1, the boot veil lifting, horizontal overflow, broken images, dead in-page anchors, malformed WhatsApp links, unrendered Markdown or `undefined` in the text, duplicate ids, the first FAQ toggling, and the header menu responding. Then every card on `/guides` was clicked to test client-side navigation. **Final run: 57/57 checks clean, 28/28 navigations clean.**
+
+What the test found and what was done:
+
+| Finding | Fix |
+|---|---|
+| Desktop "Courses" menu closed itself on a normal mouse click — hover opened it, the click that followed toggled it shut | A click within 600 ms of the hover-open keeps it open (`src/components/Nav.tsx`) |
+| Three-column comparison tables scrolled sideways on phones, cutting off the third column | Below 640 px each row now stacks into a labelled card; table semantics kept with explicit roles (`src/components/ArticleBody.tsx`) |
+| Every page calls `ipwho.is` and `get.geojs.io` to pick INR vs USD pricing | Disclosed in the privacy policy and intentional (handles VPNs and travellers). Optional: check the timezone first and skip the IP call for `Asia/Kolkata` visitors, which saves two third-party requests for most Indian visitors |
+
+### Content audit
+
+Measured each guide's **own** text (excluding the shared competitor strip, which is identical on every guide):
+
+- 13 guides had only 326–510 words of their own: IT professionals, free vs paid practice, online vs offline, freshers, homemakers, IELTS fees, how to speak fluently, presentations, client calls, working professionals, beginners, Hindi/Bengali medium, interactive hesitation.
+- **The shared "Us vs PlanetSpark, EngVarta, Cambly…" block was the first H2 on every guide** — above the page's own answer, and in English on the Hindi and Bengali pages. It now follows the guide's content, marked `lang="en-IN"`.
+- **IELTS facts were wrong:** six places said the exam fee is paid "to IDP or British Council". IDP has been the only IELTS provider in India since 2021, and the fee is ₹19,000 for Academic/General Training since 1 April 2026 (₹19,250 for UKVI). Corrected in the guide, its FAQs, `seo.ts`, `guide-pages.ts` and `llms.ts`.
+- **Freshers guide contradicted itself:** the intro sent HR-round freezers to Interactive Speaking (₹1,199), the table on the same page to Interview Preparation (₹1,999). Now consistent: Interview Preparation for interview freeze, Interactive only if the freeze is everywhere.
+- Five route files used one constant for both `datePublished` and `dateModified`, so editing a page would have moved its publish date. They now keep the original publish date.
+
+### Content added to the 13 thin guides
+
+Each now has 570–730 words of its own content, every one opening with its own topic. All 13 got an **options-compared table** written as "who each option suits and where it falls short", not as attack copy, and a new competitive **FAQ** (FAQ JSON-LD updated). Prices appear only where verified: the site's existing dated competitor bands, the ₹19,000 IELTS fee, and Toastmasters dues described without a figure.
+
+| Guide | Competitive section | Qualitative additions | New FAQ |
+|---|---|---|---|
+| IT professionals | L&D, LinkedIn Learning/Coursera, Toastmasters, 1:1 apps, AI voice, us | Standup before/after; phrases for call moments | Toastmasters or a course? |
+| Free vs paid practice | YouTube, HelloTalk/Tandem, AI voice, Duolingo, Toastmasters | 4-week free self-test plan | Can I learn with ChatGPT for free? |
+| Online vs offline | Hybrid formats people combine | Commute arithmetic; six questions to ask any centre | Which is cheaper? |
+| Freshers | Placement cell, YouTube, friends' mocks, AI mocks, us | Illustrative 60-second answer; group-discussion lines | Is placement training enough? |
+| Homemakers | Apps, Hindi/Bengali YouTube, local centre, 1:1, us | Parent–teacher, doctor and bank-call scripts | Too late at 40 or 50? |
+| IELTS fees | Total cost by route, including retakes | Free official preparation path | IELTS fee in India 2026 |
+| How to speak fluently | Duolingo, ELSA, AI voice, 1:1 tutors, Toastmasters, us | The 4-3-2 fluency drill | Which app is best? |
+| Presentations | Toastmasters, self-recording, YouTube/TED, company training, us | Signposting phrase table | Is Toastmasters good for presentations? |
+| Client calls | Shadowing, accent courses, 1:1, AI role-play, us | A full five-minute call script | Do I need accent training? |
+| Working professionals | L&D, weekend institute, video courses, 1:1 apps, us | 15-minute weekday routine | Can I improve while working full time? |
+| Beginners | Free starting options and when to move to a class | First sentences to use in weeks 1–2 | App or live class first? |
+| Hindi/Bengali medium | English-only apps vs bilingual YouTube vs us | How the Hindi bridge works in a real exchange | English-only vs Hindi explanation? |
+| Interactive hesitation | Toastmasters, improv, AI voice, 1:1, us | Stall phrases instead of silence | How do I stop freezing? |
+
+**Before publishing:** the illustrative examples (Priya's fresher answer, the homemaker scripts, the Hindi bridge exchange) are labelled as examples, not learner testimonials. Please check the Toastmasters and IELTS wording once more against the official pages close to deploy, as fees change.
+
 ## Scorecard
 
 | Area | Status | Notes |

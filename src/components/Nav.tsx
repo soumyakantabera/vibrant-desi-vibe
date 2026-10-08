@@ -68,6 +68,9 @@ export function Nav() {
   const { location } = useRouterState();
   const chat = waLink(CHAT_MSG);
   const dropRef = useRef<HTMLDivElement>(null);
+  // Hover opens the Courses menu. A mouse user's click on the same button
+  // lands a moment later — without this it toggled the menu straight back shut.
+  const hoverOpenedAt = useRef(0);
 
   // close on route change & body lock
   useEffect(() => {
@@ -152,8 +155,13 @@ export function Nav() {
             {/* Courses dropdown */}
             <div ref={dropRef} className="relative">
               <button
-                onClick={() => setCoursesOpen((v) => !v)}
-                onMouseEnter={() => setCoursesOpen(true)}
+                onClick={() =>
+                  setCoursesOpen((v) => (v && Date.now() - hoverOpenedAt.current < 600 ? true : !v))
+                }
+                onMouseEnter={() => {
+                  if (!coursesOpen) hoverOpenedAt.current = Date.now();
+                  setCoursesOpen(true);
+                }}
                 aria-expanded={coursesOpen}
                 aria-haspopup="true"
                 className={`px-3.5 py-2 rounded-full text-sm font-display font-semibold transition inline-flex items-center gap-1.5 ${

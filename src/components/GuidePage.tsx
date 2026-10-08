@@ -117,9 +117,13 @@ export function GuidePage({
               <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
             </div>
           )}
-          <CompareDiff />
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
+          {/* The dated market strip is the same on every guide, so it follows the
+              page's own answer instead of opening it. */}
+          <div lang="en-IN">
+            <CompareDiff />
+          </div>
         </div>
       </article>
 

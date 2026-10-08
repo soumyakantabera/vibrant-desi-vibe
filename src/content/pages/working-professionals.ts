@@ -54,6 +54,47 @@ export const body: ArticleBody = [
     text: "We reply to WhatsApp 09:00–12:00 IST. You can message at midnight. The human answer arrives in that morning window. No extra steps.",
   },
 
+  { t: "h2", text: "Options for people who already have a job" },
+  {
+    t: "table",
+    head: ["Option", "Good for", "Where it falls short"],
+    rows: [
+      [
+        "Company L&D programme",
+        "Free, sometimes in work hours",
+        "Often one-off or generic; may not match your gap",
+      ],
+      [
+        "Weekend offline institute",
+        "A fixed routine outside home",
+        "Travel on your one free day; large rooms",
+      ],
+      ["Self-paced video courses", "Any time; frameworks and phrases", "Nobody hears you speak"],
+      [
+        "1:1 tutor apps",
+        "Timing around shifts",
+        "Costly as a regular habit; you build your own plan",
+      ],
+      [
+        "Learn With Smile live batch",
+        "Morning, evening or weekend IST; about 6 learners",
+        "Fixed slots; group, not 1:1",
+      ],
+    ],
+  },
+  { t: "h2", text: "A 15-minute weekday routine" },
+  {
+    t: "table",
+    head: ["When", "What", "Minutes"],
+    rows: [
+      ["Commute or morning tea", "Shadow one minute of a clear podcast", "3"],
+      ["Before standup", "Say your update out loud once", "2"],
+      ["Lunch", "Use one phrase from class in a real email", "2"],
+      ["Evening", "A 60-second voice note about your day", "5"],
+      ["Before sleep", "Listen to yesterday's voice note", "3"],
+    ],
+  },
+
   {
     t: "cta",
     text: "Tell us your shift. We will suggest morning, evening or weekend — and Spoken, Interactive or Business.",

@@ -1269,7 +1269,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How much does IELTS coaching cost in India?",
-        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. The IELTS exam fee itself is separate and paid directly to IDP or British Council — budget for it on top of any coaching. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
+        a: "Full IELTS courses in India typically run ₹8,000–₹35,000, with large-institute classroom batches at the higher end and often 20–40 students per batch. The IELTS exam fee itself is separate — ₹19,000 since April 2026, paid to IDP, the IELTS provider in India — so budget for it on top of any coaching. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
       },
     ],
   },
@@ -1521,6 +1521,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "monthly",
     summary:
       "Freeze is a habit, not a vocabulary hole. Interactive Speaking is 3 months, ₹1,199/month, approx. 6 learners: games, debates, 1-minute prompts so you talk every hour. Spoken English first if you still cannot form a sentence.",
+    dateModified: "2026-10-08",
     faqs: [
       {
         q: "I know English but freeze when I speak. Which class should I take?",
@@ -1533,6 +1534,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Should a complete beginner take Interactive Speaking?",
         a: "No. Interactive assumes there is language to retrieve. A beginner still needs sounds, sentences and 1,000+ words — that is Spoken English, 6 months, ₹999/month. Interactive is the next room after the words exist.",
+      },
+      {
+        q: "How do I stop freezing when I speak English?",
+        a: "Practise short, unprepared speaking turns often — one-minute talks, quick debates — in a group where mistakes are expected, and learn a few stall phrases (“let me think for a second”) to use instead of going silent. The freeze is usually a habit of checking every sentence before saying it; it fades with repetition, not more grammar.",
       },
     ],
   },
@@ -1555,6 +1560,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "monthly",
     summary:
       "Hindi-medium and Bengali-medium schooling is not a wall. Spoken English is 6 months from ₹999/month in a live batch of around 6. When a concept stalls, the teacher explains in Hindi or Bengali, then you go back to English.",
+    dateModified: "2026-10-08",
     faqs: [
       {
         q: "Can Hindi-medium or Bengali-medium students learn spoken English?",
@@ -1567,6 +1573,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "How long does spoken English take if I studied in Hindi or Bengali medium?",
         a: "About 6 months live from zero, up to 2 classes a week plus 10–15 minutes a day. Business English is typically a further 3 months if meetings are the next job. 30-day fluency from zero is marketing.",
+      },
+      {
+        q: "Is an English-only class better than one that explains in Hindi?",
+        a: "For learners who already understand spoken English, English-only works well. For beginners from Hindi- or Bengali-medium schools, a short explanation in their own language when a concept stalls usually speeds things up — then all practice happens in English. The risk is a class that slips into Hindi for the whole hour; ours does not.",
       },
     ],
   },
@@ -1589,6 +1599,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "monthly",
     summary:
       "Working professionals keep the job and still speak. Morning, evening and weekend IST live batches. Recording is revision if a shift overruns. Spoken from ₹999/month, Interactive ₹1,199, Workplace ₹1,999. Approx. 6 learners. Replies 09:00–12:00 IST.",
+    dateModified: "2026-10-08",
     faqs: [
       {
         q: "Can I learn English while working a full-time job in India?",
@@ -1601,6 +1612,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "When do you reply on WhatsApp if I message after office?",
         a: "Message anytime. We reply 09:00–12:00 IST. Phone is a fallback.",
+      },
+      {
+        q: "Can I improve my English while working full time?",
+        a: "Yes, if the plan fits a working week: two live classes and about 15 minutes a day. Learn With Smile runs morning, evening (around 7pm IST) and weekend batches for this reason. Recordings help when a shift overruns, but speaking practice only happens live.",
       },
     ],
   },
@@ -1623,6 +1638,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "monthly",
     summary:
       "Client-call English is names, numbers and the next step — not a fake accent. Business English practises that live, 3 months, ₹1,999/month, approx. 6 learners. Neha now takes the Mumbai client call herself.",
+    dateModified: "2026-10-08",
     faqs: [
       {
         q: "How do I speak English on client calls without freezing?",
@@ -1635,6 +1651,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Is Spoken English enough for client-facing work?",
         a: "If you cannot yet hold a simple conversation, start with Spoken English for 6 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. If chat is already fine, Business English is the room.",
+      },
+      {
+        q: "Do I need accent training for client calls?",
+        a: "Usually not. Clients in the US, UK or Australia deal with many accents every day; what breaks calls is unclear structure — numbers said once, no recap, no next step. Fix individual sounds that cause real confusion (fifteen and fifty, for example), but spend most of your practice on clarity: names, numbers, next step.",
       },
     ],
   },
@@ -1657,6 +1677,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "monthly",
     summary:
       "Explaining your work in English is three beats: one outcome, three points, one ask. Business English and Interactive Speaking both drill this live. Ananya now speaks the dashboard in Monday standups.",
+    dateModified: "2026-10-08",
     faqs: [
       {
         q: "How do I explain my work in English in 3 minutes?",
@@ -1669,6 +1690,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Which English course helps with presentations at work?",
         a: "If you can already chat and the deck is the problem — Business English, 3 months, ₹1,999/month. If you freeze before slide one — Interactive, 3 months, ₹1,199/month. If daily English is still the gap — Spoken, 6 months, ₹999/month, then come back to decks.",
+      },
+      {
+        q: "Is Toastmasters good for improving presentation English?",
+        a: "Yes, for confidence and prepared speeches — members give regular speeches and are evaluated by other members. It is less suited to fixing grammar or the unprepared English of meetings and client calls, because feedback comes from peers rather than a teacher. Toastmasters charges international dues in US dollars every six months plus club dues; check with the local club.",
       },
     ],
   },

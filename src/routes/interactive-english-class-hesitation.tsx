@@ -6,7 +6,8 @@ import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/interactive-freeze";
 
 const PATH = "/interactive-english-class-hesitation";
-const UPDATED = "2026-09-02";
+const PUBLISHED = "2026-09-02";
+const UPDATED = "2026-10-08";
 
 export const Route = createFileRoute("/interactive-english-class-hesitation")({
   component: Page,
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/interactive-english-class-hesitation")({
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
         inLanguage: "en-IN",
-        datePublished: UPDATED,
+        datePublished: PUBLISHED,
         dateModified: UPDATED,
         author: {
           "@type": "Person",
