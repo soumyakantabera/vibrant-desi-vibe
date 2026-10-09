@@ -460,9 +460,7 @@ for (const rel of bothLists) {
   }
 }
 if (leaks.length) {
-  throw new Error(
-    `prerender: fee lists failed the check:\n${leaks.join("\n")}`,
-  );
+  throw new Error(`prerender: fee lists failed the check:\n${leaks.join("\n")}`);
 }
 
 /* -------------------------------------------------------------------- log */

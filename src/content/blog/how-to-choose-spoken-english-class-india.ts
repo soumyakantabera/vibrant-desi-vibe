@@ -26,7 +26,10 @@ export const body: ArticleBody = [
     head: ["If they fail…", "You are usually looking at"],
     rows: [
       ["No printed cap", "City classroom / franchise (Veta-style, local rooms of 25–40)"],
-      ["Trial is only a counsellor pitch", "Exam shop (EEC-style visa stack, spoken add-on ~₹7,500)"],
+      [
+        "Trial is only a counsellor pitch",
+        "Exam shop (EEC-style visa stack, spoken add-on ~₹7,500)",
+      ],
       ["₹8k–₹16k per module, CEFR levels", "British Council English Online — buy for the badge"],
       ["₹100–₹400 per 1:1, no syllabus", "EngVarta-style daily practice"],
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { FeeText } from "@/components/FeeText";
 import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
@@ -99,9 +100,8 @@ export function GuidePage({
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
-              Last updated{" "}
-              <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>
-              . Fees and institute bands checked against public 2026 prices.
+              Last updated <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>. Fees
+              and institute bands checked against public 2026 prices.
             </p>
           )}
         </div>
@@ -144,7 +144,9 @@ export function GuidePage({
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
           <p className="mt-3 text-white">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
+          <p className="mt-2 text-sm font-semibold text-sunshine">
+            <FeeText text={CONSULTATION.hook} />
+          </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waMessage} variant="wa" size="lg">
               {CHAT_CTA}

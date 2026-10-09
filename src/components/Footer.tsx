@@ -58,7 +58,9 @@ export function Footer({ image }: { image?: string }) {
                 <div className="font-display font-extrabold text-xl">
                   Learn With <span className="text-sunshine">Smile</span>
                 </div>
-                <div className="text-xs text-white/85">7 years · about 6 a batch · now worldwide</div>
+                <div className="text-xs text-white/85">
+                  7 years · about 6 a batch · now worldwide
+                </div>
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">

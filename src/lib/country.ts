@@ -12,6 +12,7 @@ export const COUNTRY_EVENT = "lws:country";
 export const DEFAULT_COUNTRY = "IN";
 
 /** ISO 3166-1 alpha-2. Names come from Intl.DisplayNames. */
+// prettier-ignore
 export const COUNTRY_CODES = [
   "AF", "AL", "DZ", "AD", "AO", "AG", "AR", "AM", "AU", "AT", "AZ", "BS", "BH",
   "BD", "BB", "BY", "BE", "BZ", "BJ", "BT", "BO", "BA", "BW", "BR", "BN", "BG",
@@ -124,9 +125,10 @@ export function readStoredCountry(): CountryChoice | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<CountryChoice>;
     if (!parsed.iso2 || !isCountryCode(parsed.iso2)) return null;
-    const source: CountrySource = parsed.source === "manual" || parsed.source === "ip" || parsed.source === "timezone"
-      ? parsed.source
-      : "manual";
+    const source: CountrySource =
+      parsed.source === "manual" || parsed.source === "ip" || parsed.source === "timezone"
+        ? parsed.source
+        : "manual";
     return choice(parsed.iso2, source);
   } catch {
     return null;

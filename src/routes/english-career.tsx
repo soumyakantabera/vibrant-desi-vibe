@@ -70,8 +70,8 @@ function Page() {
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
               Four live programmes. Spoken, Interactive Speaking, Business English and Interview
-              Preparation. Interview Preparation is the room when the HR
-              screen is the bottleneck. <FeeText text="From ₹999/month, inclusive of taxes." />
+              Preparation. Interview Preparation is the room when the HR screen is the bottleneck.{" "}
+              <FeeText text="From ₹999/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -148,7 +148,9 @@ function Page() {
         <div className="container-x">
           <SectionHeader
             eyebrow="Clear Categories"
-            title={<FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />}
+            title={
+              <FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
+            }
             subtitle="Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
@@ -231,9 +233,9 @@ function Page() {
               <p className="mt-4 text-ink/85 leading-relaxed">
                 Want to see the teacher, in a batch, before you commit? Sit one live class for 90
                 minutes. <FeeText text="₹199" />
-                <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> Take admission within 48 hours — in that
-                course, or any course we currently offer — and the <FeeText text="₹199" /> is adjusted against your
-                fee.
+                <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> Take admission
+                within 48 hours — in that course, or any course we currently offer — and the{" "}
+                <FeeText text="₹199" /> is adjusted against your fee.
               </p>
               <ul className="mt-4 grid gap-2 text-sm text-ink/85">
                 <li className="flex gap-2">
@@ -260,7 +262,8 @@ function Page() {
                   className="btn btn-wa btn-lg w-full sm:w-auto"
                   data-cta-goal="whatsapp_demo"
                 >
-                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for <FeeText text="₹199" />
+                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for{" "}
+                  <FeeText text="₹199" />
                 </a>
               </div>
             </div>

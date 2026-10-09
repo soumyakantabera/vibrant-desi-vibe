@@ -98,10 +98,7 @@ const MARKET = [
 function Page() {
   const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
-    <Layout
-      waMessage={wa}
-      footerImage={IMG.liveClass}
-    >
+    <Layout waMessage={wa} footerImage={IMG.liveClass}>
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
@@ -124,7 +121,8 @@ function Page() {
             </h1>
             <p className="mt-5 text-base text-white md:text-lg">
               A teacher who knows your name. 500+ learners, 7 years, about 6 in a batch. You speak
-              every class. Kolkata, pan-India, now worldwide. <FeeText text="From ₹999/mo, inclusive of taxes." />
+              every class. Kolkata, pan-India, now worldwide.{" "}
+              <FeeText text="From ₹999/mo, inclusive of taxes." />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">
@@ -233,7 +231,10 @@ function Page() {
             color="sunshine"
             title={<FeeText text="From ₹999/mo, inclusive of taxes" />}
           >
-            <MarketCopy inr="No material fee. Monthly UPI." usd={`No material fee. Billed monthly in ${intlUnit()}.`} />
+            <MarketCopy
+              inr="No material fee. Monthly UPI."
+              usd={`No material fee. Billed monthly in ${intlUnit()}.`}
+            />
           </FeatureCard>
           <FeatureCard icon="star" color="coral" title={`${RATING_DISPLAY} ${RATING.source}`}>
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.

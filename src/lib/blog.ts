@@ -98,7 +98,8 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     howTo: {
       name: "How to choose a spoken English class in India",
-      description: "Seven public checks you can run on any Indian English class in one week, including Learn With Smile.",
+      description:
+        "Seven public checks you can run on any Indian English class in one week, including Learn With Smile.",
       totalTime: "P7D",
       steps: [
         "Ask for the usual headcount, not the phrase small batch.",
@@ -197,10 +198,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readingTime: 6,
     wordCount: 950,
     relatedCourses: ["/course-business-english"],
-    keywords: [
-      "english for office meetings india",
-      "meeting phrases for indian professionals",
-    ],
+    keywords: ["english for office meetings india", "meeting phrases for indian professionals"],
     shortAnswer:
       "Enter, update, clarify, disagree, close. Twelve ordinary sentences beat corporate vocabulary you cannot retrieve when three people are waiting.",
     howTo: {
@@ -330,7 +328,11 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-09-22",
     readingTime: 8,
     wordCount: 1584,
-    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking", "/course-interview-preparation"],
+    relatedCourses: [
+      "/course-spoken-english",
+      "/course-interactive-speaking",
+      "/course-interview-preparation",
+    ],
     keywords: [
       "tell me about yourself in 60 seconds",
       "interview english india",

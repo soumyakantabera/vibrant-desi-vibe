@@ -33,7 +33,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     alt: "Beginner adult practising spoken English in a small live online class",
     waMessage: "Hi, I am a beginner and I want a free consultation for Basic Spoken English.",
     ctaTitle: "Get a free consultation first",
-    ctaBody: "We will tell you if you are a beginner — including when Interactive would be the wrong buy. Counselling, not a class.",
+    ctaBody:
+      "We will tell you if you are a beginner — including when Interactive would be the wrong buy. Counselling, not a class.",
     faqTitle: "Beginner Spoken English — questions",
     body: [
       {
@@ -58,10 +59,19 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "table",
         head: ["Format", "What a beginner actually gets"],
         rows: [
-          ["1:1 app (EngVarta, Cambly)", "Minutes, no 6-month map. Nothing to practise if you cannot form a sentence."],
+          [
+            "1:1 app (EngVarta, Cambly)",
+            "Minutes, no 6-month map. Nothing to practise if you cannot form a sentence.",
+          ],
           ["25–40 student classroom", "1–2 minutes a week. Silence looks like attending."],
-          ["Recorded video / AI chat", "You talk to a screen that does not remember last Tuesday's v/w."],
-          ["Learn With Smile, ~6 learners", "8–10 minutes an hour, a named teacher, ₹999/mo inclusive of taxes."],
+          [
+            "Recorded video / AI chat",
+            "You talk to a screen that does not remember last Tuesday's v/w.",
+          ],
+          [
+            "Learn With Smile, ~6 learners",
+            "8–10 minutes an hour, a named teacher, ₹999/mo inclusive of taxes.",
+          ],
         ],
       },
       { t: "h2", text: "Hindi-medium and Bengali-medium" },
@@ -122,7 +132,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     alt: "Adult learner speaking English aloud during a live class",
     waMessage: "Hi, I want a free consultation to speak English fluently.",
     ctaTitle: "Practise fluency in a live room",
-    ctaBody: "If you already have a partner and a map, stay free. If you need a teacher who remembers your errors, get a free consultation.",
+    ctaBody:
+      "If you already have a partner and a map, stay free. If you need a teacher who remembers your errors, get a free consultation.",
     faqTitle: "Fluency — straight answers",
     body: [
       {
@@ -244,8 +255,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "table",
         head: ["If this is true", "Take", "Fee"],
         rows: [
-          ["You cannot finish a sentence on a phone call", "Basic Spoken English, 6 months, ~6 learners", "₹999/month"],
-          ["You can chat, HR screens still collapse", "Interview Preparation, 2 months", "₹1,999/month"],
+          [
+            "You cannot finish a sentence on a phone call",
+            "Basic Spoken English, 6 months, ~6 learners",
+            "₹999/month",
+          ],
+          [
+            "You can chat, HR screens still collapse",
+            "Interview Preparation, 2 months",
+            "₹1,999/month",
+          ],
         ],
       },
       {
@@ -347,7 +366,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹999/month inclusive of taxes. School medium and a career gap are not a wall.",
     image: IMG.girlReading,
     alt: "Homemaker practising spoken English at home on a laptop",
-    waMessage: "Hi, I am a homemaker and I want a free consultation for daytime Basic Spoken English.",
+    waMessage:
+      "Hi, I am a homemaker and I want a free consultation for daytime Basic Spoken English.",
     ctaTitle: "Join an afternoon or evening batch",
     ctaBody: "Tell us your window. We reply 10am–midnight IST every day. The consultation is free.",
     faqTitle: "Homemakers — questions",
@@ -465,7 +485,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     alt: "Learner comparing an online English class with a local coaching centre",
     waMessage: "Hi, I want a free consultation to choose online or offline spoken English.",
     ctaTitle: "Count minutes in their room. Diagnose yours with us.",
-    ctaBody: "Our consultation is counselling, not a class. If a neighbourhood room fits you better, we will say so.",
+    ctaBody:
+      "Our consultation is counselling, not a class. If a neighbourhood room fits you better, we will say so.",
     faqTitle: "Online vs offline — questions",
     body: [
       {
@@ -480,7 +501,11 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ["Headcount", "25–40", "Approximately 6"],
           ["Your mic in 60 min", "1–2 min, sometimes weekly", "8–10 min, every class"],
           ["Commute", "45–120 min each way", "None"],
-          ["Fee band", "₹1,500–₹6,000 / 3 months, GST extra often", "₹999/mo Spoken, inclusive of taxes"],
+          [
+            "Fee band",
+            "₹1,500–₹6,000 / 3 months, GST extra often",
+            "₹999/mo Spoken, inclusive of taxes",
+          ],
           ["Peer energy", "Same room", "Debates, prompts, WhatsApp group"],
           ["Campus", "Walk-in centre", "Online — join from home"],
         ],
@@ -687,13 +712,18 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "What coaching costs in India in 2026" },
       {
         t: "table",
-        caption: "Public bands. Confirm on the provider's site. Learn With Smile does not sell an IELTS row.",
+        caption:
+          "Public bands. Confirm on the provider's site. Learn With Smile does not sell an IELTS row.",
         head: ["Format", "Typical fee", "Room"],
         rows: [
           ["Large institute classroom", "₹15,000–₹35,000 package", "20–40 learners"],
           ["British Council-style module", "Often ₹8,800–₹16,000", "Brand syllabus / certificate"],
           ["1:1 online tutor", "₹500–₹2,000 / session", "Minutes, variable marking"],
-          ["Learn With Smile", "Does not sell IELTS — Spoken English from ₹999/month", "~6 learners, live speaking"],
+          [
+            "Learn With Smile",
+            "Does not sell IELTS — Spoken English from ₹999/month",
+            "~6 learners, live speaking",
+          ],
         ],
       },
       {
@@ -761,7 +791,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Business English — 3 months, ₹1,999/month, around 6 learners. No promotion guarantee.",
     image: IMG.businessEnglish,
     alt: "IT professional speaking in an English standup on a video call",
-    waMessage: "Hi, I work in IT, I freeze on calls, and I want a free consultation for spoken English.",
+    waMessage:
+      "Hi, I work in IT, I freeze on calls, and I want a free consultation for spoken English.",
     ctaTitle: "Practise the standup live",
     ctaBody: "Bring a real ticket. We will not rewrite your career. We will put you on the mic.",
     faqTitle: "IT English — questions",
@@ -776,8 +807,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         head: ["If this is true", "Take", "Fee"],
         rows: [
           ["You cannot hold a simple conversation", "Spoken English, 6 months", "₹999/month"],
-          ["You know the words and freeze on the standup", "Interactive Speaking, 3 months", "₹1,199/month"],
-          ["Chat is fine; meetings, tickets, clients are not", "Business English, 3 months", "₹1,999/month"],
+          [
+            "You know the words and freeze on the standup",
+            "Interactive Speaking, 3 months",
+            "₹1,199/month",
+          ],
+          [
+            "Chat is fine; meetings, tickets, clients are not",
+            "Business English, 3 months",
+            "₹1,999/month",
+          ],
         ],
       },
       { t: "h2", text: "What Business English drills for IT" },

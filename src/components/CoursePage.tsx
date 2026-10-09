@@ -175,8 +175,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   const shownTagline = <FeeText text={data.tagline} />;
   const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
   const teacherNote = TEACHER_NOTE[data.slug];
-  const waPrimary =
-    data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
+  const waPrimary = data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
   const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
   const faqs = courseFaqs(data);
   const snapshot = (
@@ -280,7 +279,9 @@ export function CoursePage({ data }: { data: CourseData }) {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <p className="mt-3 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
+            <p className="mt-3 text-sm font-semibold text-sunshine">
+              <FeeText text={CONSULTATION.hook} />
+            </p>
             <PaymentTrust tone="dark" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">
@@ -502,7 +503,9 @@ export function CoursePage({ data }: { data: CourseData }) {
         <div className="container-x text-center text-cream">
           <h2 className="text-cream text-3xl md:text-4xl">{CONSULTATION.headline}</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">{CONSULTATION.hook}</p>
+          <p className="mt-2 text-sm font-semibold text-sunshine">
+            <FeeText text={CONSULTATION.hook} />
+          </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={waPrimary} variant="sun" size="lg">
               {DEMO_CTA}
@@ -595,8 +598,7 @@ export function courseSeo(d: CourseData) {
       price,
       priceCurrency: "INR",
       valueAddedTaxIncluded: true,
-      unitText:
-        d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
+      unitText: d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
     };
   }
 

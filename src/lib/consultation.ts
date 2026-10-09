@@ -229,38 +229,49 @@ export const CONSULTATION_VS_MARKET: {
   {
     icon: "spark",
     them: "PlanetSpark-style kids 1:1",
-    theirSession: "A free demo class for a child (typically 4–13). Public speaking packages often ₹13,000–₹65,000 per course.",
-    weDoInstead: "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹999/mo.",
+    theirSession:
+      "A free demo class for a child (typically 4–13). Public speaking packages often ₹13,000–₹65,000 per course.",
+    weDoInstead:
+      "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹999/mo.",
   },
   {
     icon: "headset",
     them: "EngVarta-style 1:1 apps",
-    theirSession: "No counselling. You pick a 15-minute call and talk. Useful after you can already speak.",
-    weDoInstead: "We name the bottleneck first. Beginners who cannot form a sentence should not buy 1:1 minutes yet.",
+    theirSession:
+      "No counselling. You pick a 15-minute call and talk. Useful after you can already speak.",
+    weDoInstead:
+      "We name the bottleneck first. Beginners who cannot form a sentence should not buy 1:1 minutes yet.",
   },
   {
     icon: "globe",
     them: "Cambly / native-speaker apps",
     theirSession: "Tutor lottery. Accent and idiom. ₹8,000–₹15,000/month if daily. No 6-month map.",
-    weDoInstead: "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
+    weDoInstead:
+      "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
   },
   {
     icon: "school",
     them: "British Council English Online",
-    theirSession: "Counsellor pitch for a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
-    weDoInstead: "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
+    theirSession:
+      "Counsellor pitch for a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
+    weDoInstead:
+      "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
   },
   {
     icon: "users",
     them: "Veta-style / city classrooms",
-    theirSession: "Walk-in. Sit in 25–40, or a pitch that still will not print the cap. Commute on top.",
-    weDoInstead: "Cap is approximately 6, printed. Consultation is a small batch with personalised advice, not a packed room you sample.",
+    theirSession:
+      "Walk-in. Sit in 25–40, or a pitch that still will not print the cap. Commute on top.",
+    weDoInstead:
+      "Cap is approximately 6, printed. Consultation is a small batch with personalised advice, not a packed room you sample.",
   },
   {
     icon: "trophy",
     them: "Exam shops (EEC-style visa stack)",
-    theirSession: "The free session sells IELTS/PTE. Spoken is an add-on. Fine if the visa is the goal.",
-    weDoInstead: "If no form asked for a band, we will tell you IELTS is the wrong buy. We do not sell that paper.",
+    theirSession:
+      "The free session sells IELTS/PTE. Spoken is an add-on. Fine if the visa is the goal.",
+    weDoInstead:
+      "If no form asked for a band, we will tell you IELTS is the wrong buy. We do not sell that paper.",
   },
 ];
 

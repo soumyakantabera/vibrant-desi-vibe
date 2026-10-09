@@ -19,8 +19,7 @@ const FREE_CONSULT = /free\s+(?:consult(?:ation|ing)|counsell?ing)/i;
 const CONSULT_WORD = /\b(?:consult(?:ation|ing)|counsell?ing)\b/i;
 const CAREER = /career\s+counsell?ing/i;
 const IELTS = /\bielts\b/i;
-const CHILD =
-  /\b(?:kid|kids|child|children)\b|\b(?:[1-9]|1[0-4])\s*(?:year|yr)s?\s*old\b/i;
+const CHILD = /\b(?:kid|kids|child|children)\b|\b(?:[1-9]|1[0-4])\s*(?:year|yr)s?\s*old\b/i;
 
 export function routeAsk(input: string): AskRoute {
   const q = input.trim();

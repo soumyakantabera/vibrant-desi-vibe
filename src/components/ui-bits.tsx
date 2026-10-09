@@ -189,8 +189,8 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
           Kolkata, pan-India, now worldwide.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          About 6 learners in a live batch. Same teacher. Afternoon, evening and night IST.
-          India fees stay the India price. Learners outside India join the same class.
+          About 6 learners in a live batch. Same teacher. Afternoon, evening and night IST. India
+          fees stay the India price. Learners outside India join the same class.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           States
