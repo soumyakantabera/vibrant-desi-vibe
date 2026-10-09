@@ -197,7 +197,11 @@ function Page() {
             Tell us your goal — we’ll reply on WhatsApp.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message="Hi, I want a free consultation with Sunanda for spoken English." variant="wa" size="lg">
+            <WaButton
+              message="Hi, I want a free consultation with Sunanda for spoken English."
+              variant="wa"
+              size="lg"
+            >
               {CHAT_CTA}
             </WaButton>
             <WaButton message={DEMO_MSG} variant="sun" size="lg">

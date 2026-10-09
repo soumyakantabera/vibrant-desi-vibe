@@ -100,9 +100,8 @@ export function GuidePage({
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
-              Last updated{" "}
-              <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>
-              . Fees and institute bands checked against public 2026 prices.
+              Last updated <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>. Fees
+              and institute bands checked against public 2026 prices.
             </p>
           )}
         </div>

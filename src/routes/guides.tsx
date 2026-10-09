@@ -72,12 +72,12 @@ function Page() {
             English class guides — <span className="text-sunshine">fees, fit, cities</span>
           </h1>
           <p className="mt-5 text-lg text-white/95">
-            Honest pages for the questions people actually ask before they message WhatsApp.
-            What the free consultation actually is, which class you need, fees, beginners, IT,
-            freshers, homemakers, exam-fee context, online vs a city classroom, and live batches
-            in Kolkata, Mumbai, Delhi, Bengaluru, Pune, Hyderabad, Chennai, Ahmedabad, Nagpur,
-            Surat, Coimbatore, Kochi, Vizag, Patna and Guwahati. From ₹999/mo, inclusive of taxes.
-            Batches of around 6.
+            Honest pages for the questions people actually ask before they message WhatsApp. What
+            the free consultation actually is, which class you need, fees, beginners, IT, freshers,
+            homemakers, exam-fee context, online vs a city classroom, and live batches in Kolkata,
+            Mumbai, Delhi, Bengaluru, Pune, Hyderabad, Chennai, Ahmedabad, Nagpur, Surat,
+            Coimbatore, Kochi, Vizag, Patna and Guwahati. From ₹999/mo, inclusive of taxes. Batches
+            of around 6.
           </p>
         </div>
       </section>
@@ -118,14 +118,22 @@ function Page() {
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">Still not sure which room?</h2>
           <p className="mt-3 text-white">
-            Get a free consultation. We diagnose the bottleneck, answer every query, and place
-            you in one course — or tell you to stay free. Not a class.
+            Get a free consultation. We diagnose the bottleneck, answer every query, and place you
+            in one course — or tell you to stay free. Not a class.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message="Hi, I read your guides and I want a free consultation for spoken English." variant="wa" size="lg">
+            <WaButton
+              message="Hi, I read your guides and I want a free consultation for spoken English."
+              variant="wa"
+              size="lg"
+            >
               {CHAT_CTA}
             </WaButton>
-            <WaButton message="Hi, I read your guides and I want a free consultation for spoken English." variant="sun" size="lg">
+            <WaButton
+              message="Hi, I read your guides and I want a free consultation for spoken English."
+              variant="sun"
+              size="lg"
+            >
               {DEMO_CTA}
             </WaButton>
           </div>

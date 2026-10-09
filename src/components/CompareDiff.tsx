@@ -15,7 +15,10 @@ const TONE: Record<(typeof MARKET_COMPARE)[number]["tone"], string> = {
  */
 export function CompareDiff() {
   return (
-    <aside className="mt-10 rounded-3xl border border-ink/10 bg-cream p-5 md:p-6" data-compare="2026-online">
+    <aside
+      className="mt-10 rounded-3xl border border-ink/10 bg-cream p-5 md:p-6"
+      data-compare="2026-online"
+    >
       <p className="text-xs font-display font-extrabold uppercase tracking-[0.14em] text-ink/55">
         Online institutes, 2026 · <time dateTime={COMPARE_REVISED}>{COMPARE_BLURB}</time>
       </p>
@@ -32,7 +35,11 @@ export function CompareDiff() {
       </p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {MARKET_COMPARE.map((row) => (
-          <div key={row.name} className={`rounded-2xl p-4 ${TONE[row.tone]}`} data-ink={row.us ? "0" : "1"}>
+          <div
+            key={row.name}
+            className={`rounded-2xl p-4 ${TONE[row.tone]}`}
+            data-ink={row.us ? "0" : "1"}
+          >
             <p className="text-[11px] font-display font-extrabold uppercase tracking-[0.12em] opacity-80">
               {row.us ? "Us · adults 15+" : "Online"}
             </p>

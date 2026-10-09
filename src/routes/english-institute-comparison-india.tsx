@@ -168,12 +168,12 @@ function Page() {
             <span className="text-sunshine">₹999 live vs apps and institutes</span>
           </h1>
           <p className="mt-5 text-lg text-white/95">
-            Learn With Smile vs PlanetSpark, EngVarta, Cambly, italki, British Council. We sell
-            the adult small-batch row. PlanetSpark is kids 4–13. 500+ learners, 7 years.
+            Learn With Smile vs PlanetSpark, EngVarta, Cambly, italki, British Council. We sell the
+            adult small-batch row. PlanetSpark is kids 4–13. 500+ learners, 7 years.
           </p>
           <p className="mt-4 text-sm text-white/80">
-            Last updated <time dateTime={UPDATED}>{formatIsoDate(UPDATED)}</time>. Public 2026
-            fee bands.
+            Last updated <time dateTime={UPDATED}>{formatIsoDate(UPDATED)}</time>. Public 2026 fee
+            bands.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <WaButton message={waMessage} variant="wa" size="lg">
@@ -195,8 +195,8 @@ function Page() {
           <p className="eyebrow mt-10">Online 2026. Named brands.</p>
           <h2 className="mt-2 max-w-3xl">Who each online institute is actually for</h2>
           <p className="mt-3 max-w-3xl text-ink/80">
-            Not a ranking. Public 2026 bands. PlanetSpark is children. We are adults 15+. Confirm
-            on their site before you pay.
+            Not a ranking. Public 2026 bands. PlanetSpark is children. We are adults 15+. Confirm on
+            their site before you pay.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {ROWS.map((row) => (
@@ -229,7 +229,8 @@ function Page() {
         <div className="container-x max-w-2xl text-center text-cream">
           <h2 className="text-2xl text-cream md:text-3xl">Compare in a class.</h2>
           <p className="mt-3 text-white">
-            Approximately 6 learners. From ₹999/mo, inclusive of taxes. Spoken, Interactive, Workplace and Interview Preparation.
+            Approximately 6 learners. From ₹999/mo, inclusive of taxes. Spoken, Interactive,
+            Workplace and Interview Preparation.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <WaButton message={waMessage} variant="wa" size="lg">

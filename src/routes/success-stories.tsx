@@ -39,7 +39,8 @@ const STORIES = [
       "SQL was easy. The Monday standup was not. I speak the dashboard now — no translating in my head.",
     name: "Ananya Iyer",
     detail: "Interactive Speaking · Data Analyst, Bengaluru",
-    waMessage: "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking Class.",
+    waMessage:
+      "Hi, I saw Ananya's story and I want a free consultation for Interactive Speaking Class.",
   },
   {
     quote:

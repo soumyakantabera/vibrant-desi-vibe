@@ -28,9 +28,7 @@ export function PaymentTrust({
       ? "inline-flex h-7 items-center rounded bg-white px-1.5"
       : "inline-flex h-7 items-center rounded bg-white px-1.5 border border-black/10";
   return (
-    <div
-      className={`${align === "center" ? "text-center" : ""} ${className}`.trim()}
-    >
+    <div className={`${align === "center" ? "text-center" : ""} ${className}`.trim()}>
       <p
         className={`text-[10px] uppercase tracking-[0.14em] font-display font-bold mb-2 ${
           tone === "dark" ? "text-white/75" : "text-ink/55"

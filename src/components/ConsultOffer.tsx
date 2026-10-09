@@ -77,7 +77,12 @@ export function ConsultOffer({
           </div>
         )}
         <div className="mt-7 flex flex-wrap gap-3 justify-center">
-          <WaButton message={DEMO_MSG} variant={sun ? "coral" : "sun"} size="lg" goal="free_consultation">
+          <WaButton
+            message={DEMO_MSG}
+            variant={sun ? "coral" : "sun"}
+            size="lg"
+            goal="free_consultation"
+          >
             {DEMO_CTA}
           </WaButton>
           <Link

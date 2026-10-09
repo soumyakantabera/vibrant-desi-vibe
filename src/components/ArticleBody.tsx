@@ -227,12 +227,7 @@ function BlockView({ block }: { block: Block }) {
           <p className="text-white/95 leading-relaxed">{inline(block.text)}</p>
           <div className="mt-4 flex flex-wrap gap-3">
             {block.course === "/free-consultation" ? (
-              <WaButton
-                message={DEMO_MSG}
-                variant="sun"
-                size="sm"
-                goal="free_consultation"
-              >
+              <WaButton message={DEMO_MSG} variant="sun" size="sm" goal="free_consultation">
                 {block.label}
               </WaButton>
             ) : (
@@ -253,14 +248,10 @@ function BlockView({ block }: { block: Block }) {
   }
 }
 
-export function ArticleBody({
-  body,
-  waMessage,
-}: {
-  body: ArticleBodyBlocks;
-  waMessage?: string;
-}) {
-  const secondH2 = body.findIndex((b, i) => i > 0 && b.t === "h2" && body.slice(0, i).some((x) => x.t === "h2"));
+export function ArticleBody({ body, waMessage }: { body: ArticleBodyBlocks; waMessage?: string }) {
+  const secondH2 = body.findIndex(
+    (b, i) => i > 0 && b.t === "h2" && body.slice(0, i).some((x) => x.t === "h2"),
+  );
   const insertAt = secondH2 > 0 ? secondH2 : -1;
 
   return (
@@ -275,11 +266,7 @@ export function ArticleBody({
   );
 }
 
-export function ArticleToc({
-  items,
-}: {
-  items: { id: string; text: string }[];
-}) {
+export function ArticleToc({ items }: { items: { id: string; text: string }[] }) {
   if (items.length < 3) return null;
   return (
     <nav aria-label="On this page" className="mb-10 rounded-2xl border border-border bg-white p-5">

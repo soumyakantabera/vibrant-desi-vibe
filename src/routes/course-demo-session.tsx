@@ -123,9 +123,9 @@ function DemoSessionPage() {
               Serious about a course? This session is free.
             </h2>
             <p className="mt-4 text-ink/85 leading-relaxed">
-              The {fee("₹199")} only stays if you look and leave. Join the course you just sat, or any
-              course we currently offer, within 48 hours of the class, and we take {fee("₹199")} off
-              that fee. You saw the teacher. You saw the batch. You did not pay extra for the
+              The {fee("₹199")} only stays if you look and leave. Join the course you just sat, or
+              any course we currently offer, within 48 hours of the class, and we take {fee("₹199")}{" "}
+              off that fee. You saw the teacher. You saw the batch. You did not pay extra for the
               privilege.
             </p>
             <p className="mt-3 text-sm text-ink/70">
@@ -228,7 +228,8 @@ function DemoSessionPage() {
         <div className="container-x relative text-center text-cream">
           <h2 className="text-3xl md:text-4xl text-cream">See the class. Then decide.</h2>
           <p className="mx-auto mt-3 max-w-xl text-white">
-            {fee("₹199")} for 90 minutes with the teacher. Nothing extra if you enrol within 48 hours.
+            {fee("₹199")} for 90 minutes with the teacher. Nothing extra if you enrol within 48
+            hours.
           </p>
           <a
             href={enrol}

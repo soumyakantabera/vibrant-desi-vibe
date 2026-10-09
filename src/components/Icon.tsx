@@ -142,7 +142,10 @@ export function Icon({
   style?: CSSProperties;
 }) {
   const Cmp = MAP[name as IconName];
-  if (!Cmp) return <span aria-hidden className={className} style={{ width: size, height: size, ...style }} />;
+  if (!Cmp)
+    return (
+      <span aria-hidden className={className} style={{ width: size, height: size, ...style }} />
+    );
   const key = name as IconName;
   return (
     <Cmp

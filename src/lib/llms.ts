@@ -119,8 +119,7 @@ function officeLine(): string {
 }
 
 function groupFeeLine(): string {
-  const monthly = COURSE_SLUGS
-    .filter((slug) => isMonthly(COURSES[slug].price))
+  const monthly = COURSE_SLUGS.filter((slug) => isMonthly(COURSES[slug].price))
     .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
     .join(" · ");
   return `Group English fees (INR, ${admissionShort()}): ${monthly}. Range ${monthlyFeeRange()}/mo. We do not offer career counselling.`;
@@ -622,11 +621,12 @@ export function buildLlmsTxt(updated: string): string {
     "",
     `- Trading name: ${SITE_NAME}. Founder and lead educator: Sunanda Dey, with a team of trained teachers; each batch keeps the same teacher. ${RATING.value}★ · ${RATING.count} ${RATING.source} reviews.`,
     `- Audience: Adult rooms 15+. Hindi- and Bengali-medium backgrounds welcome. Not affiliated with British Council, EngVarta, Cambly or Veta.`,
-    `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${COURSE_SLUGS
-      .filter((slug) => isMonthly(COURSES[slug].price))
+    `- Group English (live, ≈6 learners, up to 2 classes/week, inclusive of taxes): ${COURSE_SLUGS.filter(
+      (slug) => isMonthly(COURSES[slug].price),
+    )
       .map((slug) => `${COURSES[slug].title} ${COURSES[slug].price}`)
       .join(" · ")}.`,
-    `- Outside India, same rooms: ${COURSE_SLUGS.filter((slug) => isIntlSlug(slug) && slug !== "demo-session")
+    `- Outside India, same rooms: ${COURSE_SLUGS.filter((slug) => isIntlSlug(slug))
       .map((slug) => `${COURSES[slug].title} ${INTL_FEE[slug].display}`)
       .join(" · ")}. Demo Class ${INTL_FEE["demo-session"].display}.`,
     "- We do not offer career counselling.",
@@ -668,9 +668,7 @@ export function buildLlmsTxt(updated: string): string {
     "",
     ...Object.entries(KEYWORD_CLUSTERS).map(([name, terms]) => {
       const intent = CLUSTER_INTENT[name as keyof typeof CLUSTER_INTENT];
-      const head = intent
-        ? `${name} [${intent.intent} / ${intent.funnel}] → ${intent.land}`
-        : name;
+      const head = intent ? `${name} [${intent.intent} / ${intent.funnel}] → ${intent.land}` : name;
       return `- ${head}: ${(terms as readonly string[]).slice(0, 8).join("; ")}.`;
     }),
     "",
@@ -920,10 +918,7 @@ export function buildLlmsJson(updated: string): string {
     years_teaching: yearsTeaching(),
     learners: "500+",
     audience: "Adult learners 15+ in India.",
-    not_for: [
-      "walk-in campus learners",
-      "a school certificate",
-    ],
+    not_for: ["walk-in campus learners", "a school certificate"],
     description:
       "Live online English. Adult rooms 15+ from ₹999/mo. Demo class: it costs nothing if you join, pay ₹199 to enrol. Free consulting: it is free, book on WhatsApp.",
     answer_routes: {
@@ -1231,13 +1226,24 @@ export function buildOpenApi(): string {
       },
       servers: [{ url: SITE_URL, description: "Production — static prerendered files" }],
       externalDocs: {
-        description: "Paste into a Custom GPT Instructions field after importing this OpenAPI (Auth: None).",
+        description:
+          "Paste into a Custom GPT Instructions field after importing this OpenAPI (Auth: None).",
         url: abs("/chatgpt-actions.md"),
       },
       tags: [
-        { name: "Facts", description: "Start here. JSON identity, fees, placement, search intent." },
-        { name: "Consultation", description: "Free group consultation slot, booked via a WhatsApp link — advice, not a class." },
-        { name: "Courses", description: "Five adult rooms 15+ as Markdown, plus the paid Demo Class." },
+        {
+          name: "Facts",
+          description: "Start here. JSON identity, fees, placement, search intent.",
+        },
+        {
+          name: "Consultation",
+          description:
+            "Free group consultation slot, booked via a WhatsApp link — advice, not a class.",
+        },
+        {
+          name: "Courses",
+          description: "Five adult rooms 15+ as Markdown, plus the paid Demo Class.",
+        },
         { name: "Policy", description: "Child protection, adults-only catalogue." },
       ],
       security: [],
@@ -1282,7 +1288,9 @@ export function buildOpenApi(): string {
           get: {
             operationId: "getCatalogue",
             tags: ["Courses"],
-            summary: clipDesc("All 4 adult rooms as Markdown — Spoken through Interview Preparation"),
+            summary: clipDesc(
+              "All 4 adult rooms as Markdown — Spoken through Interview Preparation",
+            ),
             description: clipDesc(
               `Hub for the four adult rooms. Fees from ${monthlyFeeRange()}/mo, tax incl. Cite ${abs("/english-career")}. Prefer getSiteFacts if you only need prices.`,
             ),
@@ -1386,7 +1394,8 @@ export function buildOpenApi(): string {
               whatsapp: { type: "string" },
               whatsapp_prefill: {
                 type: "string",
-                description: "One-line WhatsApp prefill. Always includes free consultation and spoken English.",
+                description:
+                  "One-line WhatsApp prefill. Always includes free consultation and spoken English.",
               },
               url: { type: "string", format: "uri" },
               markdown: { type: "string", format: "uri" },
@@ -1394,7 +1403,8 @@ export function buildOpenApi(): string {
           },
           CourseFact: {
             type: "object",
-            description: "One of four adult rooms. price is the India fee. outside_india_price is only for a learner outside India.",
+            description:
+              "One of four adult rooms. price is the India fee. outside_india_price is only for a learner outside India.",
             properties: {
               slug: { type: "string" },
               title: { type: "string" },
@@ -1409,7 +1419,8 @@ export function buildOpenApi(): string {
           },
           SiteFacts: {
             type: "object",
-            description: "Canonical facts. India fees and the labeled outside-India list. Cite HTML urls, not this JSON.",
+            description:
+              "Canonical facts. India fees and the labeled outside-India list. Cite HTML urls, not this JSON.",
             required: ["published_fees", "name", "url", "consultation", "courses"],
             properties: {
               published_fees: {
@@ -1462,7 +1473,8 @@ export function buildOpenApi(): string {
               notes_for_assistants: { type: "array", items: { type: "string" } },
               skeleton: {
                 type: "object",
-                description: "Site map. Cite HTML paths. Consultation is /free-consultation, not a class.",
+                description:
+                  "Site map. Cite HTML paths. Consultation is /free-consultation, not a class.",
                 properties: {
                   cta: { type: "string" },
                   whatsapp: { type: "string" },
@@ -1586,4 +1598,3 @@ export function buildGptInstructions(): string {
     "",
   ].join("\n");
 }
-

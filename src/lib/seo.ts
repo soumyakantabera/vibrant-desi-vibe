@@ -26,7 +26,12 @@ import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { publishedFeeLock } from "@/lib/fees";
 import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
-import { CONSULTATION, CONSULTATION_FAQS, CONSULTATION_HOWTO, CONSULTATION_PATH } from "@/lib/consultation";
+import {
+  CONSULTATION,
+  CONSULTATION_FAQS,
+  CONSULTATION_HOWTO,
+  CONSULTATION_PATH,
+} from "@/lib/consultation";
 
 export const SITE_URL = "https://www.learnwithsmile.app";
 export const SITE_NAME = "Learn With Smile";
@@ -600,8 +605,7 @@ export const CLUSTER_INTENT = {
     job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
     land: "/course-demo-session",
     next: "Book the ₹199 Demo Class",
-    mismatch:
-      "Not free consulting. Not a sixth programme. Do not call ₹199 a cash refund.",
+    mismatch: "Not free consulting. Not a sixth programme. Do not call ₹199 a cash refund.",
   },
   spoken: {
     intent: "commercial",
@@ -2078,10 +2082,10 @@ export function consultationServiceLd() {
     isRelatedTo: Object.keys(COURSE_SEO)
       .filter((slug) => slug !== "demo-session")
       .map((slug) => ({
-      "@type": "Course",
-      name: COURSE_SEO[slug].shortTitle,
-      url: abs(`/course-${slug}`),
-    })),
+        "@type": "Course",
+        name: COURSE_SEO[slug].shortTitle,
+        url: abs(`/course-${slug}`),
+      })),
   };
 }
 
@@ -2103,8 +2107,18 @@ export function webSiteLd() {
       target: CONTACT.whatsapp,
     },
     hasPart: [
-      { "@type": "WebPage", "@id": `${abs("/privacy")}#webpage`, url: abs("/privacy"), name: "Privacy Policy" },
-      { "@type": "WebPage", "@id": `${abs("/terms")}#webpage`, url: abs("/terms"), name: "Terms of Use" },
+      {
+        "@type": "WebPage",
+        "@id": `${abs("/privacy")}#webpage`,
+        url: abs("/privacy"),
+        name: "Privacy Policy",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${abs("/terms")}#webpage`,
+        url: abs("/terms"),
+        name: "Terms of Use",
+      },
       {
         "@type": "WebPage",
         "@id": `${abs("/refunds")}#webpage`,
@@ -2268,7 +2282,10 @@ export function buildHead(opts: {
         name: "robots",
         content: "index, follow",
       },
-      { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      {
+        name: "googlebot",
+        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
       { name: "bingbot", content: "index, follow" },
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
@@ -2361,7 +2378,9 @@ export function pageHead(path: string): HeadResult {
     throw new Error(`No SEO entry for path "${path}" — add it to PAGES in src/lib/seo.ts`);
   }
 
-  const jsonLd: unknown[] = [webPageLd({ ...page, dateModified: page.dateModified ?? CONTENT_REVISED })];
+  const jsonLd: unknown[] = [
+    webPageLd({ ...page, dateModified: page.dateModified ?? CONTENT_REVISED }),
+  ];
 
   if (path !== "/") {
     jsonLd.push(

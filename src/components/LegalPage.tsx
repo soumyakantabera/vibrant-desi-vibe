@@ -48,9 +48,9 @@ export function LegalPage({ path }: { path: LegalDoc["path"] }) {
       <article className="section">
         <div className="container-x max-w-3xl">
           <p className="text-sm text-ink/70 mb-10">
-            These pages describe how Learn With Smile runs. They are not legal advice.
-            A right that cannot be waived still applies — under Indian law, and under a consumer,
-            privacy or child-protection law where you live.
+            These pages describe how Learn With Smile runs. They are not legal advice. A right that
+            cannot be waived still applies — under Indian law, and under a consumer, privacy or
+            child-protection law where you live.
           </p>
           {doc.sections.map((s) => (
             <section key={s.heading} id={s.id} className="mb-9 scroll-mt-28">

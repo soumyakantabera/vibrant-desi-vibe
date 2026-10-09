@@ -13,10 +13,26 @@ export type GuideCard = {
 
 export const GUIDE_GROUPS: { id: GuideGroup; title: string; blurb: string }[] = [
   { id: "choose", title: "Which class", blurb: "Pick the bottleneck. Do not buy three rooms." },
-  { id: "money", title: "Fees & time", blurb: "What it costs, how long it takes, who each option fits." },
-  { id: "work", title: "Work English", blurb: "Calls, meetings, decks — clarity, not a fake accent." },
-  { id: "audience", title: "Who it is for", blurb: "Beginners, freshers, homemakers, Hindi- or Bengali-medium, IT." },
-  { id: "city", title: "Cities", blurb: "Same live online batch. Local commute math. IST timings." },
+  {
+    id: "money",
+    title: "Fees & time",
+    blurb: "What it costs, how long it takes, who each option fits.",
+  },
+  {
+    id: "work",
+    title: "Work English",
+    blurb: "Calls, meetings, decks — clarity, not a fake accent.",
+  },
+  {
+    id: "audience",
+    title: "Who it is for",
+    blurb: "Beginners, freshers, homemakers, Hindi- or Bengali-medium, IT.",
+  },
+  {
+    id: "city",
+    title: "Cities",
+    blurb: "Same live online batch. Local commute math. IST timings.",
+  },
 ];
 
 export const GUIDE_CARDS: GuideCard[] = [

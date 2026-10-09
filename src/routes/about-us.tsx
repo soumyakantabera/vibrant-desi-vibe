@@ -84,7 +84,10 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
 
 function Page() {
   return (
-    <Layout waMessage="Hi, I read About Us and I want a free consultation for spoken English." footerImage={IMG.team}>
+    <Layout
+      waMessage="Hi, I read About Us and I want a free consultation for spoken English."
+      footerImage={IMG.team}
+    >
       <section className="relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.team} alt="Indian learners community" fill priority sizes="100vw" />
@@ -193,7 +196,11 @@ function Page() {
             >
               Get Free Consultation
             </WaButton>
-            <WaButton message="Hi, I want a free consultation to choose my spoken English course." variant="wa" size="lg">
+            <WaButton
+              message="Hi, I want a free consultation to choose my spoken English course."
+              variant="wa"
+              size="lg"
+            >
               Chat on WhatsApp
             </WaButton>
           </div>

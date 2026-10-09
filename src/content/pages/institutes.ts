@@ -21,8 +21,7 @@ export const body: ArticleBody = [
   { t: "h2", text: `Named comparison — online 2026 (updated ${COMPARE_REVISED_LABEL})` },
   {
     t: "table",
-    caption:
-      `Public online ranges checked ${COMPARE_REVISED_LABEL}. Confirm on their site. ${admissionCaption()}`,
+    caption: `Public online ranges checked ${COMPARE_REVISED_LABEL}. Confirm on their site. ${admissionCaption()}`,
     head: ["Institute", "From fee", "Who it is for", "Free session"],
     rows: [
       [

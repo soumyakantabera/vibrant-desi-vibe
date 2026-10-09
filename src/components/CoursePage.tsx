@@ -175,8 +175,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   const shownTagline = <FeeText text={data.tagline} />;
   const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
   const teacherNote = TEACHER_NOTE[data.slug];
-  const waPrimary =
-    data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
+  const waPrimary = data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
   const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
   const faqs = courseFaqs(data);
   const snapshot = (
@@ -599,8 +598,7 @@ export function courseSeo(d: CourseData) {
       price,
       priceCurrency: "INR",
       valueAddedTaxIncluded: true,
-      unitText:
-        d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
+      unitText: d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
     };
   }
 

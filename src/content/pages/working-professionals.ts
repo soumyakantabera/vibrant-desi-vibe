@@ -14,7 +14,8 @@ export const body: ArticleBody = [
   { t: "h2", text: "The three slots" },
   {
     t: "table",
-    caption: "Typical IST windows. Exact batch times are confirmed on WhatsApp after the consultation.",
+    caption:
+      "Typical IST windows. Exact batch times are confirmed on WhatsApp after the consultation.",
     head: ["Slot", "Who it usually fits", "What to pick"],
     rows: [
       [

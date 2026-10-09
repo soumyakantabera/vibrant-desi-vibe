@@ -29,14 +29,19 @@ export function CountrySelect() {
     if (stored?.source === "manual") {
       setChoice(stored);
     } else if (bootIso && isCountryCode(bootIso)) {
-      setChoice({ iso2: bootIso, name: countryName(bootIso), source: stored?.source ?? "timezone" });
+      setChoice({
+        iso2: bootIso,
+        name: countryName(bootIso),
+        source: stored?.source ?? "timezone",
+      });
     } else if (stored) {
       setChoice(stored);
     }
     document.documentElement.classList.add("lws-market-live");
-    if (stored?.source === "manual") return () => {
-      cancelled = true;
-    };
+    if (stored?.source === "manual")
+      return () => {
+        cancelled = true;
+      };
     void detectCountry().then((detected) => {
       if (cancelled) return;
       const latest = readStoredCountry();

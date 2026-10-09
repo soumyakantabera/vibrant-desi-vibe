@@ -92,16 +92,14 @@ function Home() {
         "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
       name: "Neha Patel",
       detail: "Business English · Tax Analyst, Ahmedabad",
-      waMessage:
-        "Hi, I saw Neha's story and I want a free consultation for Business English.",
+      waMessage: "Hi, I saw Neha's story and I want a free consultation for Business English.",
     },
     {
       quote:
         "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
       name: "Kavya Reddy",
       detail: "Spoken English · Advocate, Hyderabad",
-      waMessage:
-        "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
+      waMessage: "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
     },
     {
       quote:
@@ -154,8 +152,8 @@ function Home() {
               <strong className="text-sunshine">
                 <FeeText text="₹999/mo" />
               </strong>
-              <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> For everyone: adults, professionals
-              and graduates.
+              <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> For everyone:
+              adults, professionals and graduates.
             </p>
             <div
               className="mt-5 flex flex-col sm:flex-row flex-wrap gap-3"
@@ -330,7 +328,10 @@ function Home() {
             title="Choose the Goal You Need Now"
             subtitle="Spoken English, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
           />
-          <Reveal stagger className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4">
+          <Reveal
+            stagger
+            className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4"
+          >
             {COURSE_CATEGORIES.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -393,7 +394,12 @@ function Home() {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { n: 1, lbl: "Choose Course", sub: "4 programmes · from ₹999/mo, inclusive of taxes", c: "sunshine" },
+              {
+                n: 1,
+                lbl: "Choose Course",
+                sub: "4 programmes · from ₹999/mo, inclusive of taxes",
+                c: "sunshine",
+              },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
               { n: 3, lbl: "WhatsApp Us", sub: "Replies 10am–midnight IST every day", c: "wa" },
               { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
@@ -533,9 +539,7 @@ function Home() {
       <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
         <div className="container-x">
           <SectionHeader
-            eyebrow={
-              <MarketCopy inr="Simple, India-Friendly Pricing" usd="Simple pricing" />
-            }
+            eyebrow={<MarketCopy inr="Simple, India-Friendly Pricing" usd="Simple pricing" />}
             eyebrowTone="indigo"
             title={<FeeText text="From ₹999/mo · inclusive of taxes" />}
             subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
@@ -557,7 +561,10 @@ function Home() {
                 </span>
               </p>
               <p className="mt-1 text-sm text-ink/75">
-                <MarketCopy inr="Inclusive of taxes · billed monthly" usd={`${intlUnit()} · billed monthly`} />
+                <MarketCopy
+                  inr="Inclusive of taxes · billed monthly"
+                  usd={`${intlUnit()} · billed monthly`}
+                />
               </p>
               <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
                 <li className="flex gap-2.5">
@@ -581,9 +588,7 @@ function Home() {
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#E7E7FF] text-indigo-pop">
                     <WorkplaceIcon />
                   </span>
-                  <h3 className="font-display text-lg font-extrabold text-ink">
-                    Business English
-                  </h3>
+                  <h3 className="font-display text-lg font-extrabold text-ink">Business English</h3>
                 </div>
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
@@ -714,8 +719,7 @@ function Home() {
                   with the course and fee that actually fit.
                 </p>
                 <span className="btn btn-sun btn-sm">
-                  <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
-                  <Icon name="arrow-right" size={14} />
+                  <Icon name="compass" size={14} /> {DEMO_CTA} <Icon name="arrow-right" size={14} />
                 </span>
               </div>
             </a>
@@ -897,7 +901,9 @@ function CategoryCard({ category }: { category: CourseCategory }) {
           </h3>
         </div>
 
-        <p className="mt-1.5 line-clamp-2 text-[13px] leading-snug text-ink/80">{category.description}</p>
+        <p className="mt-1.5 line-clamp-2 text-[13px] leading-snug text-ink/80">
+          {category.description}
+        </p>
 
         <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
           {category.slugs.map((slug) => {

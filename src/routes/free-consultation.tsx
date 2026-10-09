@@ -90,10 +90,7 @@ function Page() {
           />
           <div className="grid gap-3 sm:grid-cols-3 mb-8">
             {CONSULTATION_PROOF.map((card) => (
-              <div
-                key={card.kicker}
-                className={`rounded-2xl p-5 ${PROOF_CARD_CLASS[card.tone]}`}
-              >
+              <div key={card.kicker} className={`rounded-2xl p-5 ${PROOF_CARD_CLASS[card.tone]}`}>
                 <p className="flex items-center gap-2 text-xs font-display font-extrabold uppercase tracking-[0.14em] opacity-90">
                   <Icon name={card.icon} size={14} /> {card.kicker}
                 </p>
@@ -117,7 +114,8 @@ function Page() {
           <div>
             <h2 className="text-2xl md:text-3xl mb-2">How the session works</h2>
             <p className="text-ink/80 mb-6">
-              No payment to book. 100% free. Small batch. Personalised advice. Replies {CONSULTATION.hours}.
+              No payment to book. 100% free. Small batch. Personalised advice. Replies{" "}
+              {CONSULTATION.hours}.
             </p>
             <ol className="space-y-4">
               {CONSULTATION_STEPS.map((step) => (
@@ -195,7 +193,10 @@ function Page() {
                       </td>
                       <td className="px-4 py-3 text-ink/90">{row.weName}</td>
                       <td className="px-4 py-3 text-ink/90">
-                        <Link to={row.href} className="font-display font-bold text-brand-deep hover:underline">
+                        <Link
+                          to={row.href}
+                          className="font-display font-bold text-brand-deep hover:underline"
+                        >
                           {row.weRecommend}
                         </Link>
                       </td>
@@ -220,8 +221,8 @@ function Page() {
           <div>
             <h2 className="text-2xl md:text-3xl mb-3">Queries we resolve in the same session</h2>
             <p className="text-ink/80 mb-5">
-              Everyone’s question about our courses, fees, batch and whether they belong here gets an
-              answer. If we cannot answer it live, we say so and send it in writing.
+              Everyone’s question about our courses, fees, batch and whether they belong here gets
+              an answer. If we cannot answer it live, we say so and send it in writing.
             </p>
             <ul className="space-y-2">
               {CONSULTATION_QUERIES.map((q) => (
@@ -235,7 +236,9 @@ function Page() {
             </ul>
           </div>
           <div className="rounded-2xl border border-coral/25 bg-[#FFF4F1] p-6">
-            <h2 className="text-xl font-display font-extrabold text-[#8E2A1E] mb-3">What this is not</h2>
+            <h2 className="text-xl font-display font-extrabold text-[#8E2A1E] mb-3">
+              What this is not
+            </h2>
             <ul className="space-y-3">
               {CONSULTATION_NOT_THIS.map((item) => (
                 <li key={item.text} className="flex gap-3 text-sm text-ink/90 leading-relaxed">
@@ -331,11 +334,13 @@ function Page() {
       <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">Bring the problem. Leave with one room.</h2>
+          <h2 className="text-cream text-2xl md:text-3xl">
+            Bring the problem. Leave with one room.
+          </h2>
           <p className="mt-3 text-white">
-            Get Free Consultation — 100% free, small batch, personalised advice. We diagnose the bottleneck, answer
-            your queries, and place you in Spoken, Interactive, Workplace, Interview Preparation or
-            counselling — or tell you to stay free.
+            Get Free Consultation — 100% free, small batch, personalised advice. We diagnose the
+            bottleneck, answer your queries, and place you in Spoken, Interactive, Workplace,
+            Interview Preparation or counselling — or tell you to stay free.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton message={DEMO_MSG} variant="wa" size="lg">
