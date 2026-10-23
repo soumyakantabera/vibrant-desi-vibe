@@ -18,7 +18,7 @@ export const Route = createFileRoute("/educator")({
         "@type": "Person",
         "@id": `${abs("/educator")}#person`,
         name: "Sunanda Dey",
-        jobTitle: "Educator",
+        jobTitle: "Lead Educator",
         description:
           "English and career educator with 7 years of live online teaching. About 6 learners in a batch. Kolkata, across India, and now worldwide.",
         image: abs("/og/founder.jpg"),
@@ -151,10 +151,10 @@ function Page() {
             <Icon name="heart" size={14} /> Meet the Educator
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            One founder. <span className="text-sunshine">A team of trained teachers.</span>
+            One lead educator. <span className="text-sunshine">A team of trained teachers.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey founded Learn With Smile and leads its team of trained teachers. Every batch
+            Sunanda Dey is the lead educator at Learn With Smile and leads its team of trained teachers. Every batch
             keeps the same teacher. About 6 in a batch, from ₹999/mo, inclusive of taxes.
           </p>
         </div>
@@ -164,7 +164,7 @@ function Page() {
         <div className="container-x">
           <EducatorCard
             name="Sunanda Dey"
-            title="Founder & Lead Educator"
+            title="Lead Educator"
             image={IMG.founder}
             intro="Over 7+ years, Sunanda has dedicated herself to teaching English and empowering students to build meaningful careers — from school students and homemakers to working professionals. Her lived experience on a global platform has immersed her in diverse international environments, bringing real-world perspective into every classroom. Having personally navigated the journey of learning French and Italian, she understands the struggle firsthand — and that fuels her passion for turning the complexity of communication into something natural, confident, and achievable."
             credentials={[

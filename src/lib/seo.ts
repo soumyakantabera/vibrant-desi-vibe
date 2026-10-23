@@ -898,10 +898,10 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/educator": {
     path: "/educator",
-    title: "Sunanda Dey, Founder & Lead Educator, Kolkata",
+    title: "Sunanda Dey, Lead Educator, Kolkata",
     description:
-      "Meet Sunanda Dey, founder of Learn With Smile, who leads a team of trained English teachers. 7 years, 500+ learners, live classes from ₹999/month.",
-    shortTitle: "Sunanda Dey — Founder",
+      "Meet Sunanda Dey, lead educator at Learn With Smile, who leads a team of trained English teachers. 7 years, 500+ learners, live classes from ₹999/month.",
+    shortTitle: "Sunanda Dey — Lead Educator",
     keywords: [
       "sunanda dey english teacher",
       "learn with smile educator",
@@ -914,7 +914,7 @@ export const PAGES: Record<string, PageSeo> = {
     dateModified: "2026-10-08",
     changefreq: "monthly",
     summary:
-      "Founder profile: Sunanda Dey founded Learn With Smile and leads its team of trained teachers; 7 years of live English teaching. Each batch keeps the same teacher.",
+      "Lead educator profile: Sunanda Dey leads Learn With Smile's team of trained teachers; 7 years of live English teaching. Each batch keeps the same teacher.",
   },
 
   "/success-stories": {
@@ -1907,7 +1907,7 @@ export function organizationLd() {
       "@type": "Person",
       "@id": `${abs("/educator")}#person`,
       name: "Sunanda Dey",
-      jobTitle: "Educator",
+      jobTitle: "Lead Educator",
       url: abs("/educator"),
     },
     publishingPrinciples: abs("/terms"),

@@ -13,7 +13,7 @@ Based on: [`reports/Lead growth audit for Learn With Smile.md`](./reports/Lead%2
 | Replies | **10am to midnight IST, every day**; WhatsApp Business AI will also be tried |
 | Free consultation | A **group slot**; the scheduler link is sent once someone messages on WhatsApp |
 | Demo | **₹199 Demo Class** — an actual class. **No refund**; the fee is adjusted against the course fee on admission (within 48 hours) |
-| Teachers | A **team of trained teachers led by founder Sunanda Dey**; a batch keeps the same teacher |
+| Teachers | A **team of trained teachers led by lead educator Sunanda Dey**; a batch keeps the same teacher |
 | Batches | About 6 learners; flexible **afternoon, evening and night** timings; capacity is not a constraint (freelance teachers) |
 | Measurement | **No click counting** — attribution comes from page-named WhatsApp messages and "how did you hear about us" |
 | Acquisition | **Organic only** — no paid ads for now |
@@ -40,7 +40,7 @@ With organic only, the ceiling is set by search and AI visibility, not by the si
 |---|---|
 | Reply hours **10am–midnight IST every day** everywhere (46 places), schema opening hours 10:00–23:59, all 7 days | site-wide, `src/lib/seo.ts` |
 | **Afternoon, evening and night** batches replace every "morning" promise (~45 places) | site-wide |
-| **Team of trained teachers led by founder Sunanda Dey**; same teacher per batch | `/educator`, llms files, schema descriptions |
+| **Team of trained teachers led by lead educator Sunanda Dey**; same teacher per batch | `/educator`, llms files, schema descriptions |
 | Online-only wording; "registered office in Kolkata" instead of "not a campus" | site-wide, terms |
 | **Two different WhatsApp actions**: "Chat on WhatsApp" sends a question; "Get Free Consultation" asks for the group-consultation booking link. Before, both sent the same message | `src/lib/whatsapp.ts`, `WaButton`, nav, dock, floating button, footer |
 | **Every generic WhatsApp message names its page** — e.g. "(From the Business English page.)" — the source of every chat without tracking code | `src/lib/use-page-label.ts` |
