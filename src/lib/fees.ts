@@ -102,7 +102,6 @@ export const COURSE_FEE: Record<
 
 export const DEMO_FEE = { inr: 199, display: "₹199" } as const;
 
-
 /**
  * Launch offer for new learners. Shown until the end of the last day, IST.
  * The build hides it once the date has passed, and the browser hides it too,
