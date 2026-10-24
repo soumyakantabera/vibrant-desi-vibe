@@ -43,6 +43,7 @@ export function GuidePage({
   ctaBody,
   lastUpdated,
   lang,
+  packageBand = true,
   children,
 }: {
   eyebrow: string;
@@ -63,6 +64,8 @@ export function GuidePage({
   /** BCP 47 tag for a page written in another language (hi-IN, bn-IN). The
    *  site chrome stays English; the hero, article and FAQs carry this tag. */
   lang?: string;
+  /** Off on pages that already show the full pricing grid. */
+  packageBand?: boolean;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
@@ -125,7 +128,7 @@ export function GuidePage({
         </div>
       </article>
 
-      <PackageBand />
+      {packageBand && <PackageBand />}
 
       {children}
 

@@ -54,6 +54,7 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
+      packageBand={false}
       eyebrow="Fees Guide"
       breadcrumb="Online English Class Fees in India"
       h1={
