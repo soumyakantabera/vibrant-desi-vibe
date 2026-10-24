@@ -380,13 +380,10 @@ function GapVenn() {
           </text>
         </g>
         <g className="viz-dot" style={d(900)}>
-          <rect x="112" y="170" width="196" height="48" rx="24" fill="var(--tile-green)" />
-          <g transform="translate(116 172)">
-            <Logo size={44} />
+          <circle cx="210" cy="194" r="34" fill="#ffffff" />
+          <g transform="translate(180 164)">
+            <Logo size={60} />
           </g>
-          <text x="232" y="199" fontSize="15" fontWeight="800" textAnchor="middle" fill="#fff">
-            Learn With Smile
-          </text>
         </g>
       </svg>
     </VizIn>
