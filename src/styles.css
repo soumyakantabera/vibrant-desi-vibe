@@ -1659,3 +1659,55 @@ html.js [data-viz="in"] .viz-arc {
     transition: none;
   }
 }
+
+/* Snapshot card motion: rise, pop, slide (first-screen, so it plays on load). */
+@keyframes snap-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes snap-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes snap-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-14deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1) rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.snap-rise {
+  animation: snap-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.snap-slide {
+  animation: snap-slide 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.snap-pop {
+  animation: snap-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .snap-rise,
+  .snap-slide,
+  .snap-pop {
+    animation: none;
+  }
+}

@@ -1,5 +1,6 @@
 import { type CSSProperties, type ReactNode } from "react";
 import { Icon, type IconName } from "@/components/Icon";
+import { Logo } from "@/components/Logo";
 import { FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { INTL_FEE } from "@/lib/intl-fees";
@@ -258,8 +259,17 @@ function PositionChart() {
               {z > 20000 && (
                 <path d={`M${x2 + 9},${cy - 7} l9,7 l-9,7 z`} fill={color} className="viz-fade" />
               )}
+              {b.us && (
+                <g
+                  transform={`translate(${x2 + 12} ${cy - 15})`}
+                  className="viz-fade"
+                  style={d(500)}
+                >
+                  <Logo size={30} />
+                </g>
+              )}
               <text
-                x={Math.min(x2 + (z > 20000 ? 32 : 14), W - R + 34)}
+                x={b.us ? x2 + 48 : Math.min(x2 + (z > 20000 ? 32 : 14), W - R + 34)}
                 y={cy + 5}
                 fontSize={b.us ? 17 : 15}
                 fontWeight={b.us ? 800 : 700}
@@ -267,7 +277,7 @@ function PositionChart() {
                 className="viz-fade"
                 style={d(500 + i * 140)}
               >
-                {b.short} · {SCORE[i]}/8
+                {b.us ? "Learn With Smile" : b.short} · {SCORE[i]}/8
               </text>
             </g>
           );
@@ -370,8 +380,11 @@ function GapVenn() {
           </text>
         </g>
         <g className="viz-dot" style={d(900)}>
-          <rect x="128" y="172" width="164" height="44" rx="22" fill="var(--tile-green)" />
-          <text x="210" y="200" fontSize="15" fontWeight="800" textAnchor="middle" fill="#fff">
+          <rect x="112" y="170" width="196" height="48" rx="24" fill="var(--tile-green)" />
+          <g transform="translate(116 172)">
+            <Logo size={44} />
+          </g>
+          <text x="232" y="199" fontSize="15" fontWeight="800" textAnchor="middle" fill="#fff">
             Learn With Smile
           </text>
         </g>
@@ -433,9 +446,15 @@ export function MarketGap() {
               className={`viz-pop flex flex-col gap-3 rounded-3xl p-6 text-white shadow-[0_22px_44px_-30px_rgba(19,33,47,.7)] ${DEEP[t.tone].bg} ${t.tone === "green" ? "ring-4 ring-tile-green/25" : ""}`}
               style={d(i * 110)}
             >
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/15">
-                <Icon name={t.icon} size={26} />
-              </span>
+              {t.tone === "green" ? (
+                <span className="w-fit rounded-[16px] ring-2 ring-white/40">
+                  <Logo size={48} />
+                </span>
+              ) : (
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/15">
+                  <Icon name={t.icon} size={26} />
+                </span>
+              )}
               <h3 className="text-xl font-extrabold text-white">{t.who}</h3>
               <p className="flex items-start gap-2 font-semibold text-white">
                 <Icon name="check" size={20} className="mt-0.5 shrink-0" />
@@ -484,7 +503,16 @@ export function MarketGap() {
                     scope="col"
                     className={`p-4 text-sm font-extrabold ${b.us ? "bg-tile-green text-white" : "text-ink"}`}
                   >
-                    {b.name}
+                    {b.us ? (
+                      <span className="flex items-center gap-2.5">
+                        <span className="shrink-0 rounded-[14px] ring-2 ring-white/40">
+                          <Logo size={36} />
+                        </span>
+                        {b.name}
+                      </span>
+                    ) : (
+                      b.name
+                    )}
                   </th>
                 ))}
               </tr>

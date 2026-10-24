@@ -198,18 +198,23 @@ export function CoursePage({ data }: { data: CourseData }) {
         </>
       }
       rows={[
-        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+        {
+          tone: "brand",
+          icon: SnapIcons.people,
+          big: data.snapshotBatchBig ?? "Approx. 6 learners",
+          small: "in a live batch · up to 2 classes a week, 90 min",
+        },
         {
           tone: "indigo",
           icon: SnapIcons.calendar,
-          big: "7 yrs",
-          small: "Live teaching experience",
+          big: "Daily",
+          small: "grammar, vocab, reading & speaking exercises",
         },
         {
-          tone: "coral",
-          icon: SnapIcons.people,
-          big: data.snapshotBatchBig ?? "Approx. 6 learners",
-          small: data.snapshotBatchSmall ?? "In this live course batch",
+          tone: "violet",
+          icon: SnapIcons.cap,
+          big: "Weekly",
+          small: "teacher review of your reading & speaking",
         },
       ]}
       footer="Message Anytime · Replies 10am–midnight IST every day"
@@ -288,22 +293,14 @@ export function CoursePage({ data }: { data: CourseData }) {
             </p>
             <PaymentTrust tone="light" className="mt-4" />
           </div>
-          <div className="hidden lg:block relative">
-            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
-            {snapshot}
-          </div>
+          <div className="hidden lg:block relative">{snapshot}</div>
         </div>
       </section>
 
       {/* Mobile snapshot card */}
       <section className="hero-light lg:hidden bg-paper py-8">
         <div className="container-x flex justify-center">
-          <div className="relative w-full max-w-[320px]">
-            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
-            {snapshot}
-          </div>
+          <div className="relative w-full max-w-[28rem]">{snapshot}</div>
         </div>
       </section>
 

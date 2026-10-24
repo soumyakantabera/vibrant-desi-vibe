@@ -137,9 +137,7 @@ function Page() {
             </div>
           </div>
           <div className="flex w-full min-w-0 justify-center lg:block">
-            <div className="relative w-full max-w-[320px] lg:max-w-none">
-              <div className="absolute -left-4 -top-4 h-32 w-32 rounded-full bg-sunshine/30 blur-3xl" />
-              <div className="absolute -bottom-4 -right-4 h-32 w-32 rounded-full bg-coral/30 blur-3xl" />
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"

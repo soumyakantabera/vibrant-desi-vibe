@@ -248,3 +248,87 @@ export function EditorialStat({
     </div>
   );
 }
+
+/* -------------------------------------------- shared package week (A) */
+
+export const PACKAGE_WEEK: WeekSeg[] = [
+  { day: "M", color: "var(--tile-blue)", what: "Grammar and vocabulary exercises" },
+  { day: "T", color: "var(--tile-green)", what: "Live class" },
+  { day: "W", color: "var(--tile-blue)", what: "Reading practice" },
+  { day: "T", color: "var(--tile-blue)", what: "Speaking practice" },
+  { day: "F", color: "var(--tile-green)", what: "Live class" },
+  { day: "S", color: "var(--tile-violet)", what: "Teacher review" },
+  { day: "S", color: "var(--tile-saffron)", what: "Video library" },
+];
+
+export const PACKAGE_WEEK_LEGEND = [
+  { color: "var(--tile-green)", label: "Live class" },
+  { color: "var(--tile-blue)", label: "Daily exercises" },
+  { color: "var(--tile-violet)", label: "Teacher review" },
+  { color: "var(--tile-saffron)", label: "Videos" },
+];
+
+/** The week smile on its own, for embedding inside other cards. */
+export function MiniWeekArc({
+  days = PACKAGE_WEEK,
+  delay = 300,
+}: {
+  days?: WeekSeg[];
+  delay?: number;
+}) {
+  const gap = 0.014;
+  const n = days.length;
+  return (
+    <svg
+      viewBox="0 0 340 190"
+      className="h-auto w-full"
+      role="img"
+      aria-label={`A week of English: ${days.map((x) => `${x.day} ${x.what}`).join(", ")}.`}
+    >
+      {days.map((day, i) => {
+        const t0 = i / n + gap;
+        const t1 = (i + 1) / n - gap;
+        const mid = arcPoint(170, 174, 140, (t0 + t1) / 2);
+        return (
+          <g key={i}>
+            <path
+              d={arcPath(170, 174, 140, t0, t1)}
+              fill="none"
+              stroke={day.color}
+              strokeWidth="30"
+              pathLength={100}
+              strokeDasharray="100 100"
+              className="viz-arc"
+              style={d(delay + i * 120)}
+            />
+            <text
+              x={mid.x}
+              y={mid.y + 5}
+              textAnchor="middle"
+              fontSize="15"
+              fontWeight="800"
+              fill="#fff"
+              className="viz-fade"
+              style={d(delay + 300 + i * 120)}
+            >
+              {day.day}
+            </text>
+          </g>
+        );
+      })}
+      <text x="170" y="160" textAnchor="middle" fontSize="84" fontWeight="800" fill="var(--ink)">
+        {n}
+      </text>
+      <text
+        x="170"
+        y="186"
+        textAnchor="middle"
+        fontSize="17"
+        fontWeight="700"
+        fill="var(--muted-foreground)"
+      >
+        days a week
+      </text>
+    </svg>
+  );
+}

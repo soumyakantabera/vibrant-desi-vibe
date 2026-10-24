@@ -42,7 +42,7 @@ import {
   VideoLibrary,
   WeekStrip,
 } from "@/components/package/PackageSections";
-import { GoogleProof, HeroPackageViz, MarketGap } from "@/components/package/MarketSections";
+import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -204,9 +204,7 @@ function Home() {
             </div>
           </div>
           <div className="w-full min-w-0 flex justify-center lg:block">
-            <div className="relative w-full max-w-[320px] lg:max-w-none">
-              <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 eyebrow="Complete package from"
                 headline={feeHeadline("₹1,499/month", "spoken-english")}
@@ -230,14 +228,13 @@ function Home() {
                     small: "Grammar, vocab, reading & speaking exercises",
                   },
                   {
-                    tone: "coral",
+                    tone: "violet",
                     icon: SnapIcons.people,
                     big: "Weekly",
                     small: "Teacher review of your reading & speaking",
                   },
                 ]}
               />
-              <HeroPackageViz />
             </div>
           </div>
         </div>

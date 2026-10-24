@@ -1,7 +1,9 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { VizIn } from "@/components/viz/Viz";
+import { MiniWeekArc, PACKAGE_WEEK_LEGEND } from "@/components/viz/Signature";
 import { RATING_DISPLAY } from "@/lib/seo";
 
-export type SnapshotTone = "brand" | "indigo" | "coral" | "sage";
+export type SnapshotTone = "brand" | "indigo" | "coral" | "sage" | "violet";
 
 export type SnapshotRow = {
   tone: SnapshotTone;
@@ -18,16 +20,29 @@ export type SnapshotCardProps = {
   rows: SnapshotRow[];
   footer?: string;
   sticker?: { top: string; bottom: string };
+  /** Show the package week as a smile beside the price (default on). */
+  week?: boolean;
   className?: string;
 };
 
+/** Solid, vibrant icon tiles — same colours as the rest of the visual system. */
 const TONE: Record<SnapshotTone, string> = {
-  brand: "bg-brand/10 text-brand",
-  indigo: "bg-indigo-pop/10 text-indigo-pop",
-  coral: "bg-coral/15 text-coral",
-  sage: "bg-sage/20 text-brand-deep",
+  brand: "bg-tile-green text-white",
+  indigo: "bg-tile-blue text-white",
+  coral: "bg-tile-red text-white",
+  sage: "bg-tile-teal text-white",
+  violet: "bg-tile-violet text-white",
 };
 
+const delay = (ms: number) => ({ animationDelay: `${ms}ms` }) as CSSProperties;
+
+/**
+ * The one snapshot card used in every hero (home, course pages, English &
+ * Career, Why Us). Price, the week drawn as a smile, the package rows and the
+ * rating live in a single card. Motion on load: the card rises, the rating
+ * pops, the week arc draws day by day, rows slide in one after another.
+ * Everything is in the prerendered HTML; motion stops under reduced motion.
+ */
 export function SnapshotCard({
   badge = "Live · Enrolling Now",
   eyebrow,
@@ -35,76 +50,116 @@ export function SnapshotCard({
   subnote,
   rows,
   footer = "Message Anytime · Replies 10am–midnight IST every day",
-  // One rating, one source, sitewide — see RATING in src/lib/seo.ts. This
-  // sticker renders on the homepage hero and on all four course pages, which
-  // is why a hardcoded figure here contradicted the rest of the site
-  // everywhere at once.
-  sticker = { top: RATING_DISPLAY, bottom: "Rated" },
+  // One rating, one source, sitewide — see RATING in src/lib/seo.ts.
+  sticker = { top: RATING_DISPLAY, bottom: "Google" },
+  week = true,
   className = "",
 }: SnapshotCardProps) {
   return (
-    <div className={`relative animate-float ${className}`}>
-      {sticker && (
-        <div className="absolute -top-4 -right-4 z-20 rotate-12 bg-sunshine text-ink rounded-full h-14 w-14 sm:h-16 sm:w-16 flex flex-col items-center justify-center font-display font-extrabold shadow-xl border-4 border-cream">
-          <span className="text-base sm:text-lg leading-none">{sticker.top}</span>
-          <span className="text-[9px] uppercase tracking-wider mt-0.5">{sticker.bottom}</span>
-        </div>
-      )}
+    <div className={`snap-rise relative ${className}`}>
+      <VizIn
+        eager
+        className="relative overflow-hidden rounded-[1.75rem] border border-border bg-white shadow-[0_34px_70px_-40px_rgba(20,33,61,.55)]"
+      >
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-brand-soft"
+        />
+        <div className="relative p-5 sm:p-6">
+          <div className="flex items-center justify-between gap-3">
+            {badge && (
+              <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-deep">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-wa opacity-70" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-wa" />
+                </span>
+                {badge}
+              </span>
+            )}
+            {sticker && (
+              <span
+                className="snap-pop inline-flex items-center gap-1.5 rounded-full bg-sunshine px-3 py-1.5 text-sm font-extrabold text-ink shadow-[0_10px_22px_-12px_rgba(242,164,15,.9)]"
+                style={delay(500)}
+              >
+                {sticker.top}
+                <span className="text-[10px] font-bold uppercase tracking-wider">
+                  {sticker.bottom}
+                </span>
+              </span>
+            )}
+          </div>
 
-      <div className="relative -rotate-2 rounded-3xl bg-cream shadow-2xl border-4 border-cream/40 p-4 sm:p-5 overflow-hidden">
-        <div className="absolute -top-10 -left-10 w-28 h-28 rounded-full bg-sage/20" />
-        <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-coral/15" />
+          <div className={`mt-4 grid items-center gap-4 ${week ? "sm:grid-cols-[1fr_auto]" : ""}`}>
+            {(eyebrow || headline || subnote) && (
+              <div className="snap-rise" style={delay(150)}>
+                {eyebrow && (
+                  <p className="text-xs font-bold uppercase tracking-wider text-ink/70">
+                    {eyebrow}
+                  </p>
+                )}
+                {headline && (
+                  <p className="mt-1 whitespace-nowrap font-extrabold leading-none text-ink">
+                    <span className="text-[2.6rem] tracking-tight sm:text-5xl">{headline.big}</span>
+                    {headline.suffix && (
+                      <span className="text-lg text-ink/70">{headline.suffix}</span>
+                    )}
+                  </p>
+                )}
+                {subnote && <p className="mt-2 text-sm text-ink/70">{subnote}</p>}
+              </div>
+            )}
+            {week && (
+              <div className="mx-auto w-48 sm:w-44 lg:w-52">
+                <MiniWeekArc delay={350} />
+              </div>
+            )}
+          </div>
 
-        <div className="relative">
-          {badge && (
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-wa/15 text-brand-deep font-display font-bold text-[11px] uppercase tracking-widest">
-              <span className="h-2 w-2 rounded-full bg-wa animate-pulse" /> {badge}
-            </span>
-          )}
-
-          {(eyebrow || headline || subnote) && (
-            <div className="mt-3">
-              {eyebrow && (
-                <p className="text-ink/85 font-display font-bold text-xs uppercase tracking-wider">
-                  {eyebrow}
-                </p>
-              )}
-              {headline && (
-                <p className="font-display font-extrabold text-ink leading-none mt-1">
-                  <span className="text-4xl">{headline.big}</span>
-                  {headline.suffix && (
-                    <span className="text-lg text-ink/85">{headline.suffix}</span>
-                  )}
-                </p>
-              )}
-              {subnote && <p className="text-xs text-ink/85 mt-1">{subnote}</p>}
-            </div>
-          )}
-
-          <div className="mt-4 space-y-2.5">
+          <ul className="mt-5 grid gap-2.5 border-t border-border pt-4">
             {rows.map((r, i) => (
-              <div key={i} className="flex items-center gap-3">
+              <li
+                key={i}
+                className="snap-slide flex items-center gap-3"
+                style={delay(450 + i * 140)}
+              >
                 <span
-                  className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${TONE[r.tone]}`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${TONE[r.tone]}`}
                 >
                   {r.icon}
                 </span>
-                <div className="min-w-0">
-                  <p className="font-display font-extrabold text-ink leading-tight">
-                    {r.big} <span className="font-bold text-ink/90 text-sm">{r.small}</span>
-                  </p>
-                </div>
-              </div>
+                <p className="min-w-0 font-extrabold leading-tight text-ink">
+                  {r.big} <span className="text-sm font-semibold text-ink/75">{r.small}</span>
+                </p>
+              </li>
             ))}
-          </div>
+          </ul>
 
-          {footer && (
-            <div className="mt-4 -mx-4 sm:-mx-5 -mb-4 sm:-mb-5 px-4 sm:px-5 py-2.5 bg-brand-deep text-cream text-center text-[12px] font-display font-bold tracking-wide">
-              {footer}
-            </div>
+          {week && (
+            <ul className="mt-4 flex flex-wrap gap-x-3.5 gap-y-1.5 text-xs font-semibold text-ink/70">
+              {PACKAGE_WEEK_LEGEND.map((l, i) => (
+                <li
+                  key={l.label}
+                  className="snap-slide inline-flex items-center gap-1.5"
+                  style={delay(900 + i * 90)}
+                >
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ background: l.color }}
+                    aria-hidden="true"
+                  />
+                  {l.label}
+                </li>
+              ))}
+            </ul>
           )}
         </div>
-      </div>
+
+        {footer && (
+          <div className="relative bg-brand px-5 py-2.5 text-center text-[12px] font-bold tracking-wide text-white">
+            {footer}
+          </div>
+        )}
+      </VizIn>
     </div>
   );
 }
