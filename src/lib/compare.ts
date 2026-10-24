@@ -42,7 +42,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
   {
     name: "Learn With Smile",
     us: true,
-    fee: "From ₹999/mo, tax incl.",
+    fee: "From ₹1,499/mo, tax incl.",
     extra: "Named teacher. No material fee.",
     batch: "≈6 live · adults 15+",
     session: "Free consultation. Not a class.",

@@ -50,7 +50,7 @@ function Page() {
           <span className="text-sunshine">meetings, calls, updates and emails</span>
         </>
       }
-      standfirst="What to say in the moments that decide how you come across at work — and how to tell whether you need a course or just practice. If you need a course, Business English is ₹1,999/mo, inclusive of taxes."
+      standfirst="What to say in the moments that decide how you come across at work — and how to tell whether you need a course or just practice. If you need a course, Business English is ₹2,499/mo, inclusive of taxes."
       heroImage={IMG.businessEnglish}
       heroAlt="Indian professional practising English for an online workplace meeting"
       lastUpdated={UPDATED}

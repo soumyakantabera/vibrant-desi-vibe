@@ -34,9 +34,9 @@ export const CONSULTATION = {
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
 export const PROOF_CARD_CLASS = {
-  coral: "consult-card bg-[#C84D3F] text-white",
-  indigo: "consult-card bg-[#3D3DB8] text-white",
-  sun: "consult-card bg-[#0E7C5A] text-white",
+  coral: "consult-card bg-[#A9503D] text-white",
+  indigo: "consult-card bg-[#34507A] text-white",
+  sun: "consult-card bg-[#0C6B4E] text-white",
 } as const;
 
 export const CONSULTATION_PROOF: {
@@ -135,28 +135,28 @@ export const CONSULTATION_BOTTLENECKS: {
     icon: "mic",
     ifThis: "Cannot finish a sentence in a shop or on a phone call",
     weName: "Spoken English is the gap",
-    weRecommend: "Spoken English — 6 months, ₹999/mo, ≈6 learners",
+    weRecommend: "Spoken English — 6 months, ₹1,499/mo, ≈6 learners",
     href: "/course-spoken-english",
   },
   {
     icon: "record_voice_over",
     ifThis: "You know the words. You freeze when you speak.",
     weName: "Freeze is the gap, not grammar",
-    weRecommend: "Interactive Speaking — 3 months, ₹1,199/mo",
+    weRecommend: "Interactive Speaking — 3 months, ₹1,799/mo",
     href: "/course-interactive-speaking",
   },
   {
     icon: "headset",
     ifThis: "Chat is fine. Meetings, calls or emails are not.",
     weName: "Business English is the gap",
-    weRecommend: "Business English — 3 months, ₹1,999/mo",
+    weRecommend: "Business English — 3 months, ₹2,499/mo",
     href: "/course-business-english",
   },
   {
     icon: "clipboard",
     ifThis: "Interviews fail on the 60-second intro, not the CV",
     weName: "Interview English is the gap",
-    weRecommend: "Interview Preparation — 2 months, ₹1,999/mo, recorded mocks",
+    weRecommend: "Interview Preparation — 2 months, ₹2,499/mo, recorded mocks",
     href: "/course-interview-preparation",
   },
   {
@@ -232,7 +232,7 @@ export const CONSULTATION_VS_MARKET: {
     theirSession:
       "A free demo class for a child (typically 4–13). Public speaking packages often ₹13,000–₹65,000 per course.",
     weDoInstead:
-      "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹999/mo.",
+      "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹1,499/mo.",
   },
   {
     icon: "headset",
@@ -247,7 +247,7 @@ export const CONSULTATION_VS_MARKET: {
     them: "Cambly / native-speaker apps",
     theirSession: "Tutor lottery. Accent and idiom. ₹8,000–₹15,000/month if daily. No 6-month map.",
     weDoInstead:
-      "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
+      "A named teacher, a syllabus, ≈6 learners, from ₹1,499/mo. Native chat is a later buy.",
   },
   {
     icon: "school",
@@ -282,7 +282,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How is your free consultation different from other institutes’ free sessions?",
-    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling entirely — you just talk. Brand-name groups pitch a CEFR module. Exam shops pitch IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
+    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling entirely — you just talk. Brand-name groups pitch a CEFR module. Exam shops pitch IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹1,499/month inclusive of taxes.",
   },
   {
     q: "How do I get a free consultation at Learn With Smile?",
@@ -294,7 +294,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,199/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹1,999/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹1,999/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹1,499/month, approximately 6 learners). Know the words and freeze → Interactive Speaking (3 months, ₹1,799/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹2,499/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Is the free consultation a full English class?",

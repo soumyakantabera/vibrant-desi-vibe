@@ -87,7 +87,7 @@ export const body: ArticleBody = [
     lines: [
       "25 minutes ÷ 6 students ≈ **4–5 minutes** of speaking per class",
       "× 8 classes a month ≈ **~33 minutes** a month",
-      "₹999 ÷ 33 ≈ **₹30 per minute of your own speech**",
+      "₹1,499 ÷ 33 ≈ **₹30 per minute of your own speech**",
     ],
   },
   {
@@ -173,10 +173,10 @@ export const body: ArticleBody = [
     caption: admissionCaption(),
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
-      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,199/month"],
-      ["Business English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,999/month"],
+      ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹1,499/month"],
+      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,799/month"],
+      ["Business English", "3 months", "Live batch, approx. 6 learners", "₹2,499/month"],
+      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹2,499/month"],
     ],
   },
   {

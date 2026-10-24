@@ -11,7 +11,7 @@ import { COMPARE_BLURB, COMPARE_REVISED_LABEL } from "@/lib/compare";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: `**We sell one of the rows.** Learn With Smile is a live online English school from ₹999/month, inclusive of taxes. **${COMPARE_BLURB}** This page is a fit-guide, not a ranking.`,
+    text: `**We sell one of the rows.** Learn With Smile is a live online English school from ₹1,499/month, inclusive of taxes. **${COMPARE_BLURB}** This page is a fit-guide, not a ranking.`,
   },
   {
     t: "p",
@@ -26,7 +26,7 @@ export const body: ArticleBody = [
     rows: [
       [
         "Learn With Smile (us)",
-        "₹999–₹1,999/mo inclusive of taxes",
+        "₹1,499–₹2,499/mo inclusive of taxes",
         "Adults 15+. Live ≈6. Named teacher. No material fee.",
         "Free consultation. Not a class.",
       ],
@@ -85,10 +85,10 @@ export const body: ArticleBody = [
     caption: admissionCaption(),
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months", "₹999/month"],
-      ["Interactive Speaking", "3 months", "₹1,199/month"],
-      ["Business English", "3 months", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "₹1,999/month"],
+      ["Basic Spoken English", "6 months", "₹1,499/month"],
+      ["Interactive Speaking", "3 months", "₹1,799/month"],
+      ["Business English", "3 months", "₹2,499/month"],
+      ["Interview Preparation", "2 months", "₹2,499/month"],
     ],
   },
   {
@@ -142,7 +142,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We do not sell IELTS as a course. Sit the paper when the form asks.",
-      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, inclusive of taxes.",
+      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹1,499/month, inclusive of taxes.",
       "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
       "The student is a **child** — a kids platform, not an adult batch of around 6.",
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our classes are online.",
@@ -157,7 +157,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Compare us in a consultation, not a packed room. We name the bottleneck, print the cap (≈6), and put the fee in writing. From ₹999/mo, inclusive of taxes. 500+ learners, 7 years.",
+    text: "Compare us in a consultation, not a packed room. We name the bottleneck, print the cap (≈6), and put the fee in writing. From ₹1,499/mo, inclusive of taxes. 500+ learners, 7 years.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

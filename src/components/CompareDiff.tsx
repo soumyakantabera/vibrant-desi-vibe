@@ -3,8 +3,8 @@ import { COMPARE_BLURB, COMPARE_REVISED, MARKET_COMPARE } from "@/lib/compare";
 
 const TONE: Record<(typeof MARKET_COMPARE)[number]["tone"], string> = {
   us: "compare-card bg-sunshine",
-  indigo: "compare-card bg-[#3D3DB8]",
-  coral: "compare-card bg-[#C84D3F]",
+  indigo: "compare-card bg-[#34507A]",
+  coral: "compare-card bg-[#A9503D]",
   sun: "compare-card bg-[#1B7A4E]",
   ink: "compare-card bg-[#1E4D8C]",
   play: "compare-card bg-[#6B3FA0]",
@@ -27,7 +27,8 @@ export function CompareDiff() {
       </h2>
       <p className="mt-2 text-sm text-ink/80 leading-relaxed">
         PlanetSpark is live 1:1 for <strong>kids 4–13</strong> (₹13,000–₹65,000/course, a free demo
-        class). We are live small-batch for <strong>adults 15+</strong> from ₹999/month. Full table:{" "}
+        class). We are live small-batch for <strong>adults 15+</strong> from ₹1,499/month. Full
+        table:{" "}
         <Link to="/english-institute-comparison-india" className="font-semibold underline">
           compare institutes, 2026
         </Link>

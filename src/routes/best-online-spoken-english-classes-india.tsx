@@ -53,10 +53,10 @@ function Page() {
       h1={
         <>
           Best Online Spoken English in India — Live,{" "}
-          <span className="text-sunshine">Approx. 6 learners, From ₹999, inclusive of taxes</span>
+          <span className="text-sunshine">Approx. 6 learners, From ₹1,499, inclusive of taxes</span>
         </>
       }
-      standfirst="Written by one of the providers. Organised by who each option suits — not a ranking. Learn With Smile: live teacher, approx. 6 learners, 6-month syllabus, ₹999/mo, inclusive of taxes."
+      standfirst="Written by one of the providers. Organised by who each option suits — not a ranking. Learn With Smile: live teacher, approx. 6 learners, 6-month syllabus, ₹1,499/mo, inclusive of taxes."
       heroImage={IMG.speaking}
       heroAlt="Indian learners comparing online English class options"
       lastUpdated={UPDATED}

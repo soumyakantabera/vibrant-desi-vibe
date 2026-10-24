@@ -9,7 +9,7 @@ export const Route = createFileRoute("/course-career-counselling")({
       path: "/course-career-counselling",
       title: "Career counselling is not offered | Learn With Smile",
       description:
-        "We do not offer career counselling. Live English courses for adults 15+ start at ₹999/month, inclusive of taxes.",
+        "We do not offer career counselling. Live English courses for adults 15+ start at ₹1,499/month, inclusive of taxes.",
       ogImage: "/og/default.jpg",
     });
     for (const meta of head.meta) {
@@ -29,7 +29,7 @@ function Retired() {
           <h1 className="text-3xl text-ink md:text-5xl">We do not offer career counselling.</h1>
           <p className="mt-4 text-lg leading-relaxed text-ink/85">
             The live rooms are Spoken English, Interactive Speaking, Business English and Interview
-            Preparation. From ₹999/month, inclusive of taxes.
+            Preparation. From ₹1,499/month, inclusive of taxes.
           </p>
           <Link to="/english-career" className="btn btn-primary mt-6">
             See the courses

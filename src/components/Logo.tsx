@@ -21,13 +21,13 @@ export function Logo({ size = 40 }: { size?: number }) {
     >
       <defs>
         <linearGradient id={bg} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0E7C5A" />
+          <stop offset="0%" stopColor="#0C6B4E" />
           <stop offset="55%" stopColor="#0A5B43" />
           <stop offset="100%" stopColor="#1A2E20" />
         </linearGradient>
         <linearGradient id={accent} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#F5B700" />
-          <stop offset="100%" stopColor="#FFD96B" />
+          <stop offset="0%" stopColor="#D9A23A" />
+          <stop offset="100%" stopColor="#E9C27A" />
         </linearGradient>
       </defs>
       <rect x="3" y="3" width="50" height="50" rx="14" fill={`url(#${bg})`} />
@@ -50,9 +50,9 @@ export function Logo({ size = 40 }: { size?: number }) {
         strokeLinecap="round"
         fill="none"
       />
-      <circle cx="46" cy="10" r="3" fill="#F5B700" />
-      <circle cx="10" cy="46" r="2" fill="#FF6B5B" />
-      <circle cx="48" cy="44" r="1.6" fill="#5B5BD6" />
+      <circle cx="46" cy="10" r="3" fill="#D9A23A" />
+      <circle cx="10" cy="46" r="2" fill="#D7775E" />
+      <circle cx="48" cy="44" r="1.6" fill="#3E5C86" />
     </svg>
   );
 }

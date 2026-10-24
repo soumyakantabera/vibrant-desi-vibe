@@ -210,7 +210,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "We do not sell IELTS as a course. If speaking is the actual gap, Spoken English is the room — approximately 6 learners, ₹999/month, inclusive of taxes. Use this template with a dedicated exam marker if a form asked for the band.",
+    text: "We do not sell IELTS as a course. If speaking is the actual gap, Spoken English is the room — approximately 6 learners, ₹1,499/month, inclusive of taxes. Use this template with a dedicated exam marker if a form asked for the band.",
     course: "/course-spoken-english",
     label: "See Spoken English",
   },

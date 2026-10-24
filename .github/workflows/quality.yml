@@ -126,7 +126,7 @@ jobs:
             exit 1
           fi
           for f in dist/llms.txt dist/llms-full.txt dist/llms.json dist/openapi.json dist/chatgpt-actions.md dist/ai-plugin.json dist/robots.txt dist/index.html dist/course-spoken-english.html; do
-            if ! grep -q '₹999' "$f" || ! grep -q '\$49' "$f" || ! grep -q 'outside India' "$f"; then
+            if ! grep -q '₹1,499' "$f" || ! grep -q '\$49' "$f" || ! grep -q 'outside India' "$f"; then
               echo "::error::$f is missing a labeled India or outside-India price"
               exit 1
             fi

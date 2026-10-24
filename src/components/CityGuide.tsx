@@ -19,7 +19,7 @@ export function cityHead(slug: string) {
       "@type": "Service",
       "@id": `${abs(city.path)}#service`,
       serviceType: "Spoken English Classes",
-      name: `Live Spoken English for ${city.name} — Approx. 6 learners, ₹999/mo, inclusive of taxes`,
+      name: `Live Spoken English for ${city.name} — Approx. 6 learners, ₹1,499/mo, inclusive of taxes`,
       url: abs(city.path),
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: [
@@ -50,8 +50,8 @@ export function CityGuide({ slug }: { slug: string }) {
           Online, Approx. 6 Learners
         </>
       }
-      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹999/month, inclusive of taxes, approximately 6 learners, IST afternoon, evening and night batches.`}
-      shortAnswer={`No classroom in ${city.name} — live online, around 6 learners, ₹999/month inclusive of taxes. You skip ${city.commute}.`}
+      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹1,499/month, inclusive of taxes, approximately 6 learners, IST afternoon, evening and night batches.`}
+      shortAnswer={`No classroom in ${city.name} — live online, around 6 learners, ₹1,499/month inclusive of taxes. You skip ${city.commute}.`}
       heroImage={IMG.groupClass}
       heroAlt={`${city.name} learners in a live online English class`}
       lastUpdated={page?.dateModified}

@@ -51,7 +51,7 @@ function Page() {
           <span className="text-sunshine">Spoken, Business or Interactive</span>
         </>
       }
-      standfirst="Conversation → Spoken. Freeze → Interactive. Meetings and calls → Business. An exam course only if a form asks. From ₹999/mo, inclusive of taxes."
+      standfirst="Conversation → Spoken. Freeze → Interactive. Meetings and calls → Business. An exam course only if a form asks. From ₹1,499/mo, inclusive of taxes."
       heroImage={IMG.spokenEnglish}
       heroAlt="Indian adult choosing a live English class on a laptop"
       lastUpdated={UPDATED}

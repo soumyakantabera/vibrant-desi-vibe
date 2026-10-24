@@ -45,7 +45,7 @@ export function publishedFeeLock(): string {
   const demo = INTL_FEE["demo-session"].display;
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Interactive Speaking ₹1,199/month; Business English ₹1,999/month; Interview Preparation ₹1,999/month; Demo Class ₹199. " +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹1,499/month; Interactive Speaking ₹1,799/month; Business English ₹2,499/month; Interview Preparation ₹2,499/month; Demo Class ₹199. " +
     `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Interactive Speaking ${interactive}; Business English ${business}; Interview Preparation ${interview}; Demo Class ${demo}. ` +
     "The India list applies to learners in India and the outside-India list applies to learners elsewhere. They are two separate price lists, not currency conversions of each other."
   );
@@ -53,4 +53,78 @@ export function publishedFeeLock(): string {
 
 export function admissionVersus(): string {
   return "No material fee. Confirm the full fee in writing in the free consultation before you pay.";
+}
+
+/**
+ * Monthly course fees, India list, in one place for the package sections,
+ * the per-day figure and structured data. Prose elsewhere states the same
+ * rupee strings; FeeText swaps them for the outside-India list.
+ */
+export type FeeSlug =
+  | "spoken-english"
+  | "interactive-speaking"
+  | "business-english"
+  | "interview-preparation";
+
+export const COURSE_FEE: Record<
+  FeeSlug,
+  { name: string; inr: number; display: string; monthly: string; months: number }
+> = {
+  "spoken-english": {
+    name: "Basic Spoken English",
+    inr: 1499,
+    display: "₹1,499",
+    monthly: "₹1,499/month",
+    months: 6,
+  },
+  "interactive-speaking": {
+    name: "Interactive Speaking",
+    inr: 1799,
+    display: "₹1,799",
+    monthly: "₹1,799/month",
+    months: 3,
+  },
+  "business-english": {
+    name: "Business English",
+    inr: 2499,
+    display: "₹2,499",
+    monthly: "₹2,499/month",
+    months: 3,
+  },
+  "interview-preparation": {
+    name: "Interview Preparation",
+    inr: 2499,
+    display: "₹2,499",
+    monthly: "₹2,499/month",
+    months: 2,
+  },
+};
+
+export const DEMO_FEE = { inr: 199, display: "₹199" } as const;
+
+/** Rounded rupees per day on a 30-day month — live classes, portal and videos together. */
+export function perDay(slug: FeeSlug): string {
+  return `₹${Math.round(COURSE_FEE[slug].inr / 30)}`;
+}
+
+/**
+ * Launch offer for new learners. Shown until the end of the last day, IST.
+ * The build hides it once the date has passed, and the browser hides it too,
+ * so a stale prerender never shows an expired offer to a visitor.
+ */
+export const LAUNCH_OFFER = {
+  endsAt: "2026-11-30T23:59:59+05:30",
+  endsLabel: "30 November 2026",
+  headline: "Launch offer: one extra month of portal + videos, free",
+  short: "+1 month of portal & videos free",
+  detail:
+    "New learners who enrol by 30 November 2026 get one extra month of learner-portal and video-library access after their course, at no cost. The course fee does not change.",
+} as const;
+
+export function launchOfferActive(now: number = Date.now()): boolean {
+  return now <= new Date(LAUNCH_OFFER.endsAt).getTime();
+}
+
+export function launchOfferDaysLeft(now: number = Date.now()): number {
+  return Math.max(0, Math.ceil((new Date(LAUNCH_OFFER.endsAt).getTime() - now) / 86_400_000));
 }

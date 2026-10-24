@@ -28,28 +28,22 @@ import {
 import { COURSES } from "@/lib/courses";
 import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
-import { FeePair, FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
-import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
+import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
+import { intlUnit } from "@/lib/intl-fees";
+import {
+  BeforeNow,
+  DemoStrip,
+  LaunchOfferBand,
+  MarketCompare,
+  PackageBento,
+  PackageStrip,
+  PortalShowcase,
+  PricingGrid,
+  VideoLibrary,
+  WeekStrip,
+} from "@/components/package/PackageSections";
 
 const heroSources = imageSources(IMG.heroClass);
-
-const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
-  {
-    icon: "play",
-    title: "Real teachers",
-    body: "A trained teacher who knows your name. Every class is live.",
-  },
-  {
-    icon: "users",
-    title: "Small batches",
-    body: "Every learner gets the mic. Approx. 6 learners. From ₹999/mo, inclusive of taxes.",
-  },
-  {
-    icon: "gamepad",
-    title: "Gamified live classes",
-    body: "Polls, debates, games — designed for the demands of today's market.",
-  },
-];
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -142,15 +136,15 @@ function Home() {
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.
               <br />
-              <span className="text-sunshine">Master In-Demand Skills.</span>
+              <span className="text-sunshine">Live Twice a Week.</span>
               <br />
-              Build Future Together.
+              Practise Every Day.
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Real teachers. Small batches. Gamified, interactive live English classes — designed
-              for the demands of today's market. From{" "}
+              Real teachers. Small batches. Live classes up to twice a week — plus a learner portal
+              and a recorded video library for the days in between. The complete package from{" "}
               <strong className="text-sunshine">
-                <FeeText text="₹999/mo" />
+                <FeeText text="₹1,499/mo" />
               </strong>
               <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> For everyone:
               adults, professionals and graduates.
@@ -195,9 +189,9 @@ function Home() {
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
                 "7 years · about 6 a batch · pan-India & now worldwide",
-                "From ₹999/month, inclusive of taxes",
+                "From ₹1,499/month, inclusive of taxes",
                 "500+ Learners",
-                "Small batches — approx. 6 learners",
+                "Portal + video library included",
               ].map((s) => (
                 <span
                   key={s}
@@ -214,11 +208,11 @@ function Home() {
               <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
               <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
               <SnapshotCard
-                eyebrow="Course fees start at"
-                headline={feeHeadline("₹999/month", "spoken-english")}
+                eyebrow="Complete package from"
+                headline={feeHeadline("₹1,499/month", "spoken-english")}
                 subnote={
                   <MarketCopy
-                    inr="Monthly billing · inclusive of taxes · UPI accepted"
+                    inr="About ₹50 a day · inclusive of taxes · UPI accepted"
                     usd={`${intlUnit()} · billed monthly`}
                   />
                 }
@@ -226,20 +220,20 @@ function Home() {
                   {
                     tone: "brand",
                     icon: SnapIcons.cap,
-                    big: "500+",
-                    small: "Learners who actually spoke",
+                    big: "Up to 8",
+                    small: "Live classes a month, 90 min each",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
-                    big: "7 yrs",
-                    small: "Same teacher, still live",
+                    big: "5 days",
+                    small: "A week of portal practice + videos",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "You speak",
-                    small: "A group of around 6 — not the back row",
+                    big: "~6",
+                    small: "Learners, same teacher — not the back row",
                   },
                 ]}
               />
@@ -248,23 +242,8 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-sunshine text-ink border-y border-ink/10">
-        <div className="container-x py-5 grid sm:grid-cols-3 gap-3 sm:gap-6 text-sm">
-          {DIFFERENTIATORS.map(({ icon, title, body }) => (
-            <div key={title} className="flex items-start gap-3">
-              <span className="h-9 w-9 rounded-full bg-ink text-sunshine grid place-items-center shrink-0">
-                <Icon name={icon} size={17} className="text-sunshine" />
-              </span>
-              <p>
-                <strong className="font-display block">{title}</strong>
-                <span className="text-ink/80">
-                  <FeeText text={body} />
-                </span>
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <LaunchOfferBand />
+      <PackageStrip />
 
       <CoverageStrip />
 
@@ -320,6 +299,10 @@ function Home() {
         </div>
       </section>
 
+      {/* THE WEEK + THE PACKAGE */}
+      <WeekStrip />
+      <PackageBento />
+
       {/* COURSE CATEGORIES */}
       <section className="section">
         <div className="container-x">
@@ -357,6 +340,10 @@ function Home() {
         </div>
       </section>
 
+      {/* PORTAL + VIDEOS */}
+      <PortalShowcase />
+      <VideoLibrary />
+
       <GuidesStrip />
 
       {/* HOW IT WORKS */}
@@ -382,7 +369,7 @@ function Home() {
             <GlassCard
               icon="users"
               title="Small Live Batches"
-              pricing={<FeeText text="Approx. 6 learners · From ₹999/mo, inclusive of taxes" />}
+              pricing={<FeeText text="Approx. 6 learners · From ₹1,499/mo, inclusive of taxes" />}
             >
               Scheduled English cohorts usually have around 6 learners. You practise with
               classmates, speak in every class and receive corrections during the lesson.
@@ -397,7 +384,7 @@ function Home() {
               {
                 n: 1,
                 lbl: "Choose Course",
-                sub: "4 programmes · from ₹999/mo, inclusive of taxes",
+                sub: "4 programmes · from ₹1,499/mo, inclusive of taxes",
                 c: "sunshine",
               },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
@@ -444,7 +431,7 @@ function Home() {
             eyebrow="What We Offer"
             title="Why Our Teaching Works"
             subtitle={
-              <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners." />
+              <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹1,499/mo, inclusive of taxes. 7 years, 500+ learners." />
             }
           />
           <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -513,6 +500,10 @@ function Home() {
         </div>
       </section>
 
+      {/* MARKET + WHAT CHANGED */}
+      <MarketCompare />
+      <BeforeNow />
+
       {/* TESTIMONIALS */}
       <section className="section">
         <div className="container-x">
@@ -539,116 +530,15 @@ function Home() {
       <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
         <div className="container-x">
           <SectionHeader
-            eyebrow={<MarketCopy inr="Simple, India-Friendly Pricing" usd="Simple pricing" />}
+            eyebrow={
+              <MarketCopy inr="Affordable. Premium. Everything included." usd="Simple pricing" />
+            }
             eyebrowTone="indigo"
-            title={<FeeText text="From ₹999/mo · inclusive of taxes" />}
-            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
+            title={<FeeText text="From ₹1,499/mo · live classes, portal and videos included" />}
+            subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus the learner portal and the recorded video library. Same-week reschedule if a slot is free."
           />
-          <Reveal stagger className="grid gap-5 lg:grid-cols-3">
-            <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand-deep">
-                  <BatchIcon />
-                </span>
-                <h3 className="font-display text-lg font-extrabold text-ink">
-                  Small Batch (Approx. 6 learners)
-                </h3>
-              </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                <FeePair inr="₹999" usd={INTL_FEE["spoken-english"].big} />
-                <span className="text-base font-bold text-ink/75">
-                  <FeePair inr="/month" usd={INTL_FEE["spoken-english"].suffix} />
-                </span>
-              </p>
-              <p className="mt-1 text-sm text-ink/75">
-                <MarketCopy
-                  inr="Inclusive of taxes · billed monthly"
-                  usd={`${intlUnit()} · billed monthly`}
-                />
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Live, interactive online classes
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Flexible afternoon · evening · night slots
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Recordings & worksheets included
-                </li>
-              </ul>
-            </article>
-
-            <article className="order-1 flex h-full flex-col overflow-hidden rounded-3xl border-2 border-indigo-pop bg-gradient-to-b from-[#F5F5FF] to-white p-5 shadow-[0_18px_48px_-28px_rgba(91,91,214,.5)] transition hover:-translate-y-1 hover:shadow-[0_24px_54px_-26px_rgba(91,91,214,.55)] sm:p-6 lg:order-none">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex min-w-0 items-center gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#E7E7FF] text-indigo-pop">
-                    <WorkplaceIcon />
-                  </span>
-                  <h3 className="font-display text-lg font-extrabold text-ink">Business English</h3>
-                </div>
-                <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
-              </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                <FeePair inr="₹1,999" usd={INTL_FEE["business-english"].big} />
-                <span className="text-base font-bold text-ink/75">
-                  <FeePair inr="/month" usd={INTL_FEE["business-english"].suffix} />
-                </span>
-              </p>
-              <p className="mt-1 text-sm text-ink/75">
-                <MarketCopy
-                  inr="Inclusive of taxes · 3 months · up to 2 classes/week"
-                  usd={`${intlUnit()} · 3 months · up to 2 classes/week`}
-                />
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Meetings, client calls and status updates
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Emails, workplace messages and presentations
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Live batch of approximately 6 learners
-                </li>
-              </ul>
-            </article>
-
-            <article className="order-3 flex h-full flex-col overflow-hidden rounded-3xl border border-[#E8DFDC] border-t-4 border-t-[#C84D3F] bg-white p-5 shadow-[0_16px_40px_-30px_rgba(165,61,50,.4)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(165,61,50,.45)] sm:p-6 lg:order-none">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFF0ED] text-[#A53D32]">
-                  <Icon name="compass" size={22} />
-                </span>
-                <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
-              </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                See it. Then pay.
-              </p>
-              <p className="mt-1 text-sm text-ink/75">
-                <FeeText text={CONSULTATION.hook} />
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Bottleneck named — not a pitch
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  One course + fee in writing
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Enrol, or walk. Still free. Not a class
-                </li>
-              </ul>
-            </article>
-          </Reveal>
+          <PricingGrid />
+          <DemoStrip />
           <div className="mt-7 text-center">
             <p className="text-sm text-ink/75">
               <MarketCopy
@@ -839,23 +729,23 @@ const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: s
   },
   indigo: {
     bar: "bg-indigo-pop",
-    icon: "bg-[#E7E7FF] text-indigo-pop",
-    badge: "border-indigo-pop/25 bg-[#F1F1FF] text-[#4141A8]",
+    icon: "bg-[#E3E9F1] text-indigo-pop",
+    badge: "border-indigo-pop/25 bg-[#F2F5F9] text-[#4141A8]",
   },
   sun: {
-    bar: "bg-[#D39A00]",
-    icon: "bg-[#FFF3C4] text-[#6B4A00]",
-    badge: "border-sunshine/45 bg-[#FFF8DE] text-[#6B4A00]",
+    bar: "bg-[#B98A2E]",
+    icon: "bg-[#F5ECD6] text-[#6A4A10]",
+    badge: "border-sunshine/45 bg-[#FBF5E6] text-[#6A4A10]",
   },
   coral: {
-    bar: "bg-[#C84D3F]",
-    icon: "bg-[#FFF0ED] text-[#A53D32]",
-    badge: "border-coral/35 bg-[#FFF4F1] text-[#8B321F]",
+    bar: "bg-[#A9503D]",
+    icon: "bg-[#F8EEEA] text-[#9A402E]",
+    badge: "border-coral/35 bg-[#FAF2EF] text-[#8B321F]",
   },
   play: {
-    bar: "bg-gradient-to-r from-sunshine via-[#F6C453] to-coral",
-    icon: "bg-[#FFF3C4] text-[#6B4A00]",
-    badge: "border-sunshine/50 bg-[#FFF8DE] text-[#6B4A00]",
+    bar: "bg-gradient-to-r from-sunshine via-[#DDB061] to-coral",
+    icon: "bg-[#F5ECD6] text-[#6A4A10]",
+    badge: "border-sunshine/50 bg-[#FBF5E6] text-[#6A4A10]",
   },
 };
 
@@ -979,46 +869,7 @@ function IconFrame({ children, size = 24 }: { children: React.ReactNode; size?: 
 }
 
 // Small Batch — three figures clustered together
-function BatchIcon() {
-  return (
-    <IconFrame>
-      <circle cx="8" cy="8" r="2.4" />
-      <circle cx="16" cy="8" r="2.4" />
-      <circle cx="12" cy="6.5" r="2.4" />
-      <path d="M3.5 18c.6-2.6 2.7-4 4.5-4s2.6.7 3.2 1.8" />
-      <path d="M20.5 18c-.6-2.6-2.7-4-4.5-4s-2.6.7-3.2 1.8" />
-      <path d="M7.5 19.5c.7-2.6 2.5-4 4.5-4s3.8 1.4 4.5 4" />
-    </IconFrame>
-  );
-}
 
 // Business English — one speaker presenting an idea clearly
-function WorkplaceIcon() {
-  return (
-    <IconFrame>
-      <circle cx="12" cy="8.5" r="2.8" />
-      <path d="M6.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5" />
-      <path d="M12 2.5v1.6M4.4 5.4l1.1 1.1M19.6 5.4l-1.1 1.1M2.5 11.5h1.6M19.9 11.5h1.6" />
-    </IconFrame>
-  );
-}
 
 // Small check used in feature lists
-function CheckIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M5 12.5l4.2 4.2L19 7" />
-    </svg>
-  );
-}

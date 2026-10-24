@@ -6,7 +6,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, interview English (HR, tell-me-about-yourself), up to 2 classes/week.",
+      "6 months, ₹1,499/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, interview English (HR, tell-me-about-yourself), up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -15,7 +15,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.studentLaptop2,
     duration: "6 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
-    price: "₹999/month",
+    price: "₹1,499/month",
     liveNote:
       "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
@@ -94,7 +94,7 @@ export const COURSES: Record<string, CourseData> = {
     faqs: [
       {
         q: "Do you cover job interviews?",
-        a: "Yes. In this Spoken English room you practise the 90-second introduction, HR-style questions and STAR answers live in the batch of about 6. If you already speak and the interview is the only freeze, take Interview Preparation — 2 months, ₹1,999/month.",
+        a: "Yes. In this Spoken English room you practise the 90-second introduction, HR-style questions and STAR answers live in the batch of about 6. If you already speak and the interview is the only freeze, take Interview Preparation — 2 months, ₹2,499/month.",
       },
       {
         q: "I can barely speak. Will this work for me?",
@@ -136,13 +136,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹1,499/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
   },
   "business-english": {
     slug: "business-english",
     title: "Business English",
     tagline:
-      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹1,999/month, inclusive of taxes. For professionals, freshers and job seekers.",
+      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹2,499/month, inclusive of taxes. For professionals, freshers and job seekers.",
     category: "Work & Career",
     categoryColor: "brand",
     icon: "headset",
@@ -152,7 +152,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,999/month",
+    price: "₹2,499/month",
     outcomes: [
       "Give clear status updates without memorising a script",
       "Speak more confidently in team and client meetings",
@@ -223,13 +223,13 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Business English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live batch of approximately 6 learners, ₹1,999/month, inclusive of taxes.",
+      "Business English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live batch of approximately 6 learners, ₹2,499/month, inclusive of taxes.",
   },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays, interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,199/month, inclusive of taxes. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — games, debates, role-plays, interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,799/month, inclusive of taxes. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -239,7 +239,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     durationQualifier: "Your pace, your progress. Start where you shine.",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,199/month",
+    price: "₹1,799/month",
     liveNote:
       "✓ 100% online live · ✓ Interview rounds in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
@@ -305,17 +305,17 @@ export const COURSES: Record<string, CourseData> = {
     faqs: [
       {
         q: "Do you cover job interviews?",
-        a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. If the interview is the only gap and you already talk, take Interview Preparation — 2 months, ₹1,999/month.",
+        a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. If the interview is the only gap and you already talk, take Interview Preparation — 2 months, ₹2,499/month.",
       },
     ],
     metaDescription:
-      "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,199/month, inclusive of taxes.",
+      "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,799/month, inclusive of taxes.",
   },
   "interview-preparation": {
     slug: "interview-preparation",
     title: "Interview Preparation",
     tagline:
-      "2 months of live HR screens, 60-second intros, STAR stories and mocks. Approx. 6 learners, up to 2 classes/week, ₹1,999/month, inclusive of taxes. For people who can already talk — and still fail the interview.",
+      "2 months of live HR screens, 60-second intros, STAR stories and mocks. Approx. 6 learners, up to 2 classes/week, ₹2,499/month, inclusive of taxes. For people who can already talk — and still fail the interview.",
     category: "Work & Career",
     categoryColor: "indigo",
     icon: "clipboard",
@@ -325,7 +325,7 @@ export const COURSES: Record<string, CourseData> = {
     duration: "2 months · 1 hr 30 min · up to 2 classes/week",
     durationQualifier: "The interview is a room. Rehearse it before the real one.",
     format: "Live batch · approximately 6 learners",
-    price: "₹1,999/month",
+    price: "₹2,499/month",
     liveNote:
       "✓ 100% online live · ✓ Recorded mocks · ✓ Afternoon · evening · night IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
@@ -399,7 +399,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "How is this different from Spoken English or Interactive Speaking?",
-        a: "Spoken English builds the sentence from zero. Interactive builds freeze-free talk. Interview Preparation assumes you can already talk and drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. If you cannot yet form a sentence, start with Spoken English at ₹999/month.",
+        a: "Spoken English builds the sentence from zero. Interactive builds freeze-free talk. Interview Preparation assumes you can already talk and drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. If you cannot yet form a sentence, start with Spoken English at ₹1,499/month.",
       },
       {
         q: "Is there a separate career course?",
@@ -411,7 +411,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "What's the batch size?",
-        a: "Approximately 6 learners, so every mock is heard. 1 hr 30 min, up to 2 classes a week, 2 months, ₹1,999/month inclusive of taxes.",
+        a: "Approximately 6 learners, so every mock is heard. 1 hr 30 min, up to 2 classes a week, 2 months, ₹2,499/month inclusive of taxes.",
       },
       {
         q: "How do I start?",
@@ -437,7 +437,7 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     metaDescription:
-      "Interview Preparation in English: 2 months, about 6 in a batch, ₹1,999/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Kolkata, pan-India, now worldwide.",
+      "Interview Preparation in English: 2 months, about 6 in a batch, ₹2,499/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Kolkata, pan-India, now worldwide.",
   },
   "demo-session": {
     slug: "demo-session",

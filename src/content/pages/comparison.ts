@@ -51,7 +51,7 @@ export const body: ArticleBody = [
       ],
       [
         "A parent looking for a child 6–11 or a teen 12–17",
-        "A dedicated kids platform, or a 1:1 kids brand. Not the adult ₹999 batch.",
+        "A dedicated kids platform, or a 1:1 kids brand. Not the adult ₹1,499 batch.",
       ],
       [
         "Someone who needs a certificate for a visa or HR",
@@ -152,7 +152,7 @@ export const body: ArticleBody = [
     items: [
       "**A fixed syllabus** — you want somebody to decide what you study next, in what order.",
       "**Real speaking time** — approximately 6 learners per batch, so you speak in every class and get corrected by name.",
-      "**An Indian budget** — ₹999–₹1,999 a month, inclusive of taxes, billed monthly with no lock-in.",
+      "**An Indian budget** — ₹1,499–₹2,499 a month, inclusive of taxes, billed monthly with no lock-in.",
     ],
   },
   {

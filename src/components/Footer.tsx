@@ -64,7 +64,7 @@ export function Footer({ image }: { image?: string }) {
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              <FeeText text="500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹999/mo, inclusive of taxes. Kolkata, pan-India, now worldwide." />
+              <FeeText text="500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹1,499/mo, inclusive of taxes. Kolkata, pan-India, now worldwide." />
             </p>
             <SmartImage
               src={image || IMG_DEFAULT}

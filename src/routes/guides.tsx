@@ -76,8 +76,8 @@ function Page() {
             the free consultation actually is, which class you need, fees, beginners, IT, freshers,
             homemakers, exam-fee context, online vs a city classroom, and live batches in Kolkata,
             Mumbai, Delhi, Bengaluru, Pune, Hyderabad, Chennai, Ahmedabad, Nagpur, Surat,
-            Coimbatore, Kochi, Vizag, Patna and Guwahati. From ₹999/mo, inclusive of taxes. Batches
-            of around 6.
+            Coimbatore, Kochi, Vizag, Patna and Guwahati. From ₹1,499/mo, inclusive of taxes.
+            Batches of around 6.
           </p>
         </div>
       </section>

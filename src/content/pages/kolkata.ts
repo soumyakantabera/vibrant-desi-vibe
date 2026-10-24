@@ -50,7 +50,7 @@ export const body: ArticleBody = [
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
       ["Commute, up to twice a week", "45–90 min each way", "None"],
       ["Class recordings", "Rarely", "Every class"],
-      ["Fee", "₹1,500–₹6,000 for 3 months", "₹999/month, inclusive of taxes"],
+      ["Fee", "₹1,500–₹6,000 for 3 months", "₹1,499/month, inclusive of taxes"],
     ],
   },
   {
@@ -129,10 +129,10 @@ export const body: ArticleBody = [
       "Same fees for a learner in Kolkata as anywhere else in India. There is no local pricing.",
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
-      ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,199/month"],
-      ["Business English", "3 months · up to 2 classes/week", "₹1,999/month"],
-      ["Interview Preparation", "2 months · up to 2 classes/week", "₹1,999/month"],
+      ["Basic Spoken English", "6 months · up to 2 classes/week", "₹1,499/month"],
+      ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,799/month"],
+      ["Business English", "3 months · up to 2 classes/week", "₹2,499/month"],
+      ["Interview Preparation", "2 months · up to 2 classes/week", "₹2,499/month"],
     ],
   },
   {

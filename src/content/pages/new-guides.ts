@@ -26,9 +26,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for beginners in India",
     h1Accent: "Zero to a 2-minute turn",
     standfirst:
-      "Sounds, sentences, then a two-minute turn. 6 months, approximately 6 learners, ₹999/month inclusive of taxes. Live IST. No 30-day fluency ads.",
+      "Sounds, sentences, then a two-minute turn. 6 months, approximately 6 learners, ₹1,499/month inclusive of taxes. Live IST. No 30-day fluency ads.",
     shortAnswer:
-      "If you cannot finish a sentence yet, this is the room — not IELTS, not a 1:1 app, not a 30-student classroom. 6 months, ₹999/month, around 6 learners, inclusive of taxes.",
+      "If you cannot finish a sentence yet, this is the room — not IELTS, not a 1:1 app, not a 30-student classroom. 6 months, ₹1,499/month, around 6 learners, inclusive of taxes.",
     image: IMG.spokenEnglish,
     alt: "Beginner adult practising spoken English in a small live online class",
     waMessage: "Hi, I am a beginner and I want a free consultation for Basic Spoken English.",
@@ -70,7 +70,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ],
           [
             "Learn With Smile, ~6 learners",
-            "8–10 minutes an hour, a named teacher, ₹999/mo inclusive of taxes.",
+            "8–10 minutes an hour, a named teacher, ₹1,499/mo inclusive of taxes.",
           ],
         ],
       },
@@ -112,7 +112,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Beginners sit in the Spoken English room. Approx. 6 learners. ₹999/mo, inclusive of taxes.",
+        text: "Beginners sit in the Spoken English room. Approx. 6 learners. ₹1,499/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -125,7 +125,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "How to speak English fluently",
     h1Accent: "Minutes, not 30-day ads",
     standfirst:
-      "Fluency is the minutes you spoke, corrected, and spoke again. From zero, everyday conversation is about 6 months of live practice — ₹999/month, around 6 learners, inclusive of taxes.",
+      "Fluency is the minutes you spoke, corrected, and spoke again. From zero, everyday conversation is about 6 months of live practice — ₹1,499/month, around 6 learners, inclusive of taxes.",
     shortAnswer:
       "Speak every day in short turns, get the same errors corrected, and follow a map. From zero that is about 6 months live — not 30 days. A batch of around 6 beats a room of 30. Free drills below; pay only if you need a seat.",
     image: IMG.speaking,
@@ -159,14 +159,14 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "When a paid class is the cheaper path" },
       {
         t: "p",
-        text: "Free fails when you do not know what to practise next, when nobody names the error, or when you skip days. A live batch of around 6 at ₹999/month inclusive of taxes buys those three things. If you already have them, [stay free](/free-english-speaking-practice-vs-paid-class).",
+        text: "Free fails when you do not know what to practise next, when nobody names the error, or when you skip days. A live batch of around 6 at ₹1,499/month inclusive of taxes buys those three things. If you already have them, [stay free](/free-english-speaking-practice-vs-paid-class).",
       },
       {
         t: "ul",
         items: [
           "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
-          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,199/month.",
-          "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹1,999/month.",
+          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,799/month.",
+          "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹2,499/month.",
         ],
       },
       { t: "h2", text: "Fluency tools compared" },
@@ -202,7 +202,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Small live batch (Learn With Smile)",
             "Correction, a map, and people to talk to",
-            "Fixed slots; about 6 months at ₹999/month from zero",
+            "Fixed slots; about 6 months at ₹1,499/month from zero",
           ],
         ],
       },
@@ -223,7 +223,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Fluency is a room you speak in, not a poster. Approx. 6 learners. From ₹999/mo.",
+        text: "Fluency is a room you speak in, not a poster. Approx. 6 learners. From ₹1,499/mo.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -236,7 +236,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for freshers in India",
     h1Accent: "The 60-second chair",
     standfirst:
-      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet; Interview Preparation ₹1,999/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
+      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹1,499/month if you cannot chat yet; Interview Preparation ₹2,499/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
     shortAnswer:
       "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still freeze in HR rounds, take Interview Preparation (2 months). If the freeze is everywhere, not just interviews, Interactive Speaking. IELTS is for forms, not most Indian campus drives, and we do not sell it.",
     image: IMG.interview,
@@ -258,12 +258,12 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "You cannot finish a sentence on a phone call",
             "Basic Spoken English, 6 months, ~6 learners",
-            "₹999/month",
+            "₹1,499/month",
           ],
           [
             "You can chat, HR screens still collapse",
             "Interview Preparation, 2 months",
-            "₹1,999/month",
+            "₹2,499/month",
           ],
         ],
       },
@@ -317,7 +317,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Learn With Smile Interview Preparation",
             "Live mocks in a batch of about 6, recorded, same teacher",
-            "2 months, ₹1,999/month; we do not place you anywhere",
+            "2 months, ₹2,499/month; we do not place you anywhere",
           ],
         ],
       },
@@ -361,9 +361,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for homemakers",
     h1Accent: "A voice for shops, school, yourself",
     standfirst:
-      "Afternoon and evening IST batches. 6 months, ₹999/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
+      "Afternoon and evening IST batches. 6 months, ₹1,499/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
     shortAnswer:
-      "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹999/month inclusive of taxes. School medium and a career gap are not a wall.",
+      "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹1,499/month inclusive of taxes. School medium and a career gap are not a wall.",
     image: IMG.girlReading,
     alt: "Homemaker practising spoken English at home on a laptop",
     waMessage:
@@ -459,13 +459,13 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Learn With Smile Spoken English",
             "Afternoon or evening live batch of about 6; explanations in Hindi or Bengali when needed",
-            "6 months, ₹999/month; needs a phone or laptop and a quiet hour",
+            "6 months, ₹1,499/month; needs a phone or laptop and a quiet hour",
           ],
         ],
       },
       {
         t: "cta",
-        text: "Daytime Spoken English. Approx. 6 learners. ₹999/mo, inclusive of taxes.",
+        text: "Daytime Spoken English. Approx. 6 learners. ₹1,499/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -478,7 +478,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Online vs offline spoken English classes",
     h1Accent: "Count the minutes, not the whiteboard",
     standfirst:
-      "A 25–40 student room plus a commute is a different product from a live batch of around 6 at ₹999/month inclusive of taxes. We sell the online row and say so.",
+      "A 25–40 student room plus a commute is a different product from a live batch of around 6 at ₹1,499/month inclusive of taxes. We sell the online row and say so.",
     shortAnswer:
       "Online small-batch usually wins on speaking minutes and commute. Offline still wins on sitting in the same room as peers. Ask the cap before you ask the fee. Kids need a children’s platform either way.",
     image: IMG.studentLaptop,
@@ -504,7 +504,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Fee band",
             "₹1,500–₹6,000 / 3 months, GST extra often",
-            "₹999/mo Spoken, inclusive of taxes",
+            "₹1,499/mo Spoken, inclusive of taxes",
           ],
           ["Peer energy", "Same room", "Debates, prompts, WhatsApp group"],
           ["Campus", "Walk-in centre", "Online — join from home"],
@@ -562,7 +562,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Count minutes in our room. Approx. 6 learners. From ₹999/mo, inclusive of taxes.",
+        text: "Count minutes in our room. Approx. 6 learners. From ₹1,499/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -575,7 +575,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Free English practice vs a paid live class",
     h1Accent: "Pay only for what free cannot do",
     standfirst:
-      "Podcasts, YouTube and a language-exchange partner are free and they work if you show up. A paid live class buys a syllabus, a correction and a seat. From ₹999/month inclusive of taxes.",
+      "Podcasts, YouTube and a language-exchange partner are free and they work if you show up. A paid live class buys a syllabus, a correction and a seat. From ₹1,499/month inclusive of taxes.",
     shortAnswer:
       "If you already practise daily with a human and know what to study next, spend nothing. Pay for a live batch of around 6 when you skip days, cannot name the next skill, or nobody corrects the same error twice.",
     image: IMG.blogDesk,
@@ -599,7 +599,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "The [five speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation) we give beginners.",
         ],
       },
-      { t: "h2", text: "What ₹999/month is buying" },
+      { t: "h2", text: "What ₹1,499/month is buying" },
       {
         t: "ul",
         items: [
@@ -697,7 +697,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     standfirst:
       "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room, plus the exam fee — ₹19,000 from April 2026, paid to IDP. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English.",
     shortAnswer:
-      "Budget ₹8,000–₹35,000 for coaching plus the exam fee — ₹19,000 for Academic or General Training since 1 April 2026, paid to IDP. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first — start with Spoken English at ₹999/month.",
+      "Budget ₹8,000–₹35,000 for coaching plus the exam fee — ₹19,000 for Academic or General Training since 1 April 2026, paid to IDP. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first — start with Spoken English at ₹1,499/month.",
     image: IMG.ielts,
     alt: "IELTS candidate preparing Writing Task 2 with a teacher",
     waMessage: "Hi, I want a free consultation for IELTS or Basic Spoken English.",
@@ -721,7 +721,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ["1:1 online tutor", "₹500–₹2,000 / session", "Minutes, variable marking"],
           [
             "Learn With Smile",
-            "Does not sell IELTS — Spoken English from ₹999/month",
+            "Does not sell IELTS — Spoken English from ₹1,499/month",
             "~6 learners, live speaking",
           ],
         ],
@@ -773,7 +773,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "If speaking is the gap, start here. ₹999/mo, approx. 6 learners. Inclusive of taxes.",
+        text: "If speaking is the gap, start here. ₹1,499/mo, approx. 6 learners. Inclusive of taxes.",
         course: "/course-spoken-english",
         label: "See Spoken English",
       },
@@ -786,9 +786,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for IT professionals in India",
     h1Accent: "Standups, tickets, client calls",
     standfirst:
-      "You can write the ticket. The standup still goes silent. Business English ₹1,999/month, or Spoken ₹999/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
+      "You can write the ticket. The standup still goes silent. Business English ₹2,499/month, or Spoken ₹1,499/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
     shortAnswer:
-      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Business English — 3 months, ₹1,999/month, around 6 learners. No promotion guarantee.",
+      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Business English — 3 months, ₹2,499/month, around 6 learners. No promotion guarantee.",
     image: IMG.businessEnglish,
     alt: "IT professional speaking in an English standup on a video call",
     waMessage:
@@ -806,16 +806,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "table",
         head: ["If this is true", "Take", "Fee"],
         rows: [
-          ["You cannot hold a simple conversation", "Spoken English, 6 months", "₹999/month"],
+          ["You cannot hold a simple conversation", "Spoken English, 6 months", "₹1,499/month"],
           [
             "You know the words and freeze on the standup",
             "Interactive Speaking, 3 months",
-            "₹1,199/month",
+            "₹1,799/month",
           ],
           [
             "Chat is fine; meetings, tickets, clients are not",
             "Business English, 3 months",
-            "₹1,999/month",
+            "₹2,499/month",
           ],
         ],
       },
@@ -872,7 +872,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Learn With Smile Business English",
             "Live batch of about 6, same teacher, work scenarios every class",
-            "Fixed IST slots; group, not 1:1; ₹1,999/month for 3 months",
+            "Fixed IST slots; group, not 1:1; ₹2,499/month for 3 months",
           ],
         ],
       },
@@ -921,7 +921,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "IT English is a standup you can finish. Approx. 6 learners. From ₹999/mo.",
+        text: "IT English is a standup you can finish. Approx. 6 learners. From ₹1,499/mo.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },

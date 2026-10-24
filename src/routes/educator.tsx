@@ -154,8 +154,9 @@ function Page() {
             One lead educator. <span className="text-sunshine">A team of trained teachers.</span>
           </h1>
           <p className="mt-4 text-lg text-white">
-            Sunanda Dey is the lead educator at Learn With Smile and leads its team of trained teachers. Every batch
-            keeps the same teacher. About 6 in a batch, from ₹999/mo, inclusive of taxes.
+            Sunanda Dey is the lead educator at Learn With Smile and leads its team of trained
+            teachers. Every batch keeps the same teacher. About 6 in a batch, from ₹1,499/mo,
+            inclusive of taxes.
           </p>
         </div>
       </section>

@@ -7,7 +7,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,199/mo). If the problem is meetings, calls and emails, take [Business English](/course-business-english) (3 months, ₹1,999/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹1,999/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹1,499/mo, inclusive of taxes). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,799/mo). If the problem is meetings, calls and emails, take [Business English](/course-business-english) (3 months, ₹2,499/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
@@ -24,25 +24,25 @@ export const body: ArticleBody = [
       [
         "Cannot form a full sentence",
         "Spoken English",
-        "6 months · ₹999/mo, inclusive of taxes",
+        "6 months · ₹1,499/mo, inclusive of taxes",
         "Introduce yourself, shops, phone, 2 minutes on a topic",
       ],
       [
         "You know the words. You freeze.",
         "Interactive Speaking",
-        "3 months · ₹1,199/mo",
+        "3 months · ₹1,799/mo",
         "You talk every class. Standups, debates, 1-minute prompts",
       ],
       [
         "Chat is fine. Meetings are not.",
         "Workplace / Business English",
-        "3 months · ₹1,999/mo",
+        "3 months · ₹2,499/mo",
         "Updates, client calls, emails, a 5-minute explanation of your work",
       ],
       [
         "HR screens, tell-me-about-yourself, STAR",
         "Interview Preparation",
-        "2 months · ₹1,999/mo",
+        "2 months · ₹2,499/mo",
         "60-second intro, live mocks, salary line",
       ],
     ],
@@ -73,7 +73,7 @@ export const body: ArticleBody = [
       "Do not buy IELTS because a cousin went abroad. Sit it with the test board when a **form** asks — we do not sell that paper.",
       "Do not buy 1:1 chat apps if you cannot form a sentence yet — there is nothing to practise.",
       "Do not buy a 30-day fluency pack. Everyday talk is about 6 months live.",
-      "Interview Preparation is for people who already speak and now fail the job conversation — 2 months, ₹1,999/mo. Sneha’s story is that lane. If you cannot form a sentence yet, start with Spoken English.",
+      "Interview Preparation is for people who already speak and now fail the job conversation — 2 months, ₹2,499/mo. Sneha’s story is that lane. If you cannot form a sentence yet, start with Spoken English.",
     ],
   },
 

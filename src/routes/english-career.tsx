@@ -58,7 +58,7 @@ function Page() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/85 to-[#8F332A]/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/85 to-[#8A3626]/80" />
         </div>
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
@@ -71,7 +71,7 @@ function Page() {
             <p className="mt-5 text-base md:text-lg text-white">
               Four live programmes. Spoken, Interactive Speaking, Business English and Interview
               Preparation. Interview Preparation is the room when the HR screen is the bottleneck.{" "}
-              <FeeText text="From ₹999/month, inclusive of taxes." />
+              <FeeText text="From ₹1,499/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -110,10 +110,10 @@ function Page() {
               <SnapshotCard
                 badge="Live · English Track"
                 eyebrow="Whole track from"
-                headline={feeHeadline("₹999/month", "spoken-english")}
+                headline={feeHeadline("₹1,499/month", "spoken-english")}
                 subnote={
                   <MarketCopy
-                    inr="₹999–₹1,999/month · inclusive of taxes · Razorpay"
+                    inr="₹1,499–₹2,499/month · inclusive of taxes · Razorpay"
                     usd={`${intlUnit()} · ${INTL_FEE["spoken-english"].display} to ${INTL_FEE["interview-preparation"].display}`}
                   />
                 }
@@ -149,7 +149,7 @@ function Page() {
           <SectionHeader
             eyebrow="Clear Categories"
             title={
-              <FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
+              <FeeText text="4 Programmes · Small live rooms · From ₹1,499/month, inclusive of taxes" />
             }
             subtitle="Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
@@ -200,7 +200,7 @@ function Page() {
                           <span className="h-9 w-9 rounded-xl flex items-center justify-center bg-brand-soft text-brand-deep">
                             <Icon name={c.icon} size={20} />
                           </span>
-                          <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
+                          <span className="pill bg-sunshine/15 text-[#6A4A10] border-sunshine/40">
                             <FeeText text={c.price} />
                           </span>
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>

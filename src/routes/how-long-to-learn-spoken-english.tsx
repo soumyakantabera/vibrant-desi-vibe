@@ -51,7 +51,7 @@ function Page() {
           <span className="text-sunshine">6 Months from Zero, Not 30 Days</span>
         </>
       }
-      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹999/mo, inclusive of taxes, approx. 6 learners."
+      standfirst="Everyday chat ~6 months live. Work communication ~3 months if you already speak. Speaking minutes, not brochure months. From ₹1,499/mo, inclusive of taxes, approx. 6 learners."
       heroImage={IMG.spokenEnglish}
       heroAlt="Indian adult practising spoken English in a live online class"
       lastUpdated={UPDATED}

@@ -51,7 +51,7 @@ function Page() {
           Hindi- or Bengali-medium. <span className="text-sunshine">You can still speak.</span>
         </>
       }
-      standfirst="Live batch of around 6. Explain in Hindi or Bengali when a concept stalls, then back to English. 6 months from ₹999/mo, inclusive of taxes."
+      standfirst="Live batch of around 6. Explain in Hindi or Bengali when a concept stalls, then back to English. 6 months from ₹1,499/mo, inclusive of taxes."
       heroImage={IMG.speaking}
       heroAlt="Indian adult learner speaking English in a live online class"
       lastUpdated={UPDATED}
@@ -60,7 +60,7 @@ function Page() {
       faqTitle="Medium of school, medium of career"
       waMessage="Hi, I studied in Hindi or Bengali medium and I want a free consultation for Basic Spoken English."
       ctaTitle="Message in Hindi, Bengali or English"
-      ctaBody="We will place you in a live Spoken batch. From ₹999/mo, inclusive of taxes."
+      ctaBody="We will place you in a live Spoken batch. From ₹1,499/mo, inclusive of taxes."
     />
   );
 }

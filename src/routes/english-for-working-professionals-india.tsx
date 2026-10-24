@@ -51,7 +51,7 @@ function Page() {
           Office by day. <span className="text-sunshine">Live English at night.</span>
         </>
       }
-      standfirst="Afternoon, evening and night IST batches. Live class; recording is revision. From ₹999/mo, inclusive of taxes. Message anytime. We reply 10am–midnight IST every day."
+      standfirst="Afternoon, evening and night IST batches. Live class; recording is revision. From ₹1,499/mo, inclusive of taxes. Message anytime. We reply 10am–midnight IST every day."
       heroImage={IMG.studentLaptop}
       heroAlt="Working professional in an evening live English class"
       lastUpdated={UPDATED}

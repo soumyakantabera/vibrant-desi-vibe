@@ -6,6 +6,10 @@ import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSli
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { CourseIncluded } from "@/components/package/PackageSections";
+import { COURSE_FEE, type FeeSlug } from "@/lib/fees";
+
+const isPackageSlug = (slug: string): slug is FeeSlug => slug in COURSE_FEE;
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
@@ -61,7 +65,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/spoken-english-for-beginners-india",
       title: "Spoken English for beginners",
-      description: "Zero to a 2-minute turn. 6 months, ₹999/mo, around 6 learners.",
+      description: "Zero to a 2-minute turn. 6 months, ₹1,499/mo, around 6 learners.",
     },
     {
       href: "/how-to-speak-english-fluently",
@@ -342,6 +346,9 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
+      {/* COMPLETE PACKAGE — live + portal + videos + same teacher */}
+      {isPackageSlug(data.slug) && <CourseIncluded slug={data.slug} />}
+
       {/* CURRICULUM */}
       <section className="section bg-brand-soft/40">
         <div className="container-x">
@@ -585,7 +592,7 @@ export function courseSeo(d: CourseData) {
     availability: "https://schema.org/InStock",
     category: d.format.includes("1:1") ? "Online 1:1 course" : "Online batch course",
     url,
-    validFrom: "2026-01-01",
+    validFrom: "2026-10-25",
     valueAddedTaxIncluded: true,
     eligibleRegion: { "@type": "Country", name: "India", identifier: "IN" },
     areaServed: { "@type": "Country", name: "India", identifier: "IN" },
@@ -635,6 +642,30 @@ export function courseSeo(d: CourseData) {
       },
       offers,
       hasCourseInstance: courseInstance,
+      // The complete package: every paid course includes the learner portal and
+      // the recorded video library alongside the live classes.
+      ...(d.slug !== "demo-session"
+        ? {
+            hasPart: [
+              {
+                "@type": "LearningResource",
+                name: "Learner portal practice",
+                learningResourceType: "Interactive practice",
+                description:
+                  "Whole-conversation practice, word and phrase brush-ups, reading fluency, grammar in real texts and interactive grammar practice between live classes.",
+                isAccessibleForFree: false,
+              },
+              {
+                "@type": "LearningResource",
+                name: "Recorded video library",
+                learningResourceType: "Video lessons",
+                description:
+                  "Recorded lessons on grammar, speaking and fluency, thinking in English, fixing mind blanks and small natural phrases, chosen for the course.",
+                isAccessibleForFree: false,
+              },
+            ],
+          }
+        : {}),
       syllabusSections: d.modules.map((m, i) => ({
         "@type": "Syllabus",
         position: i + 1,

@@ -55,7 +55,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-for-beginners-india",
     title: "Spoken English for beginners",
-    sub: "From zero: sounds, sentences, a 2-minute turn. 6 months, ₹999/mo.",
+    sub: "From zero: sounds, sentences, a 2-minute turn. 6 months, ₹1,499/mo.",
     icon: "mic",
     color: "sunshine",
     group: "choose",
@@ -79,7 +79,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-class-fees-india",
     title: "Fees in India",
-    sub: "From ₹999/mo inclusive of taxes. What ₹800 vs ₹8,000/month actually buys.",
+    sub: "From ₹1,499/mo inclusive of taxes. What ₹800 vs ₹8,000/month actually buys.",
     icon: "rupee",
     color: "sunshine",
     group: "money",
@@ -87,7 +87,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/ielts-coaching-fees-india",
     title: "IELTS coaching fees",
-    sub: "₹8,000–₹35,000 in the market. We do not sell IELTS. Spoken from ₹999/mo.",
+    sub: "₹8,000–₹35,000 in the market. We do not sell IELTS. Spoken from ₹1,499/mo.",
     icon: "trophy",
     color: "brand",
     group: "money",
@@ -111,7 +111,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-institute-comparison-india",
     title: "Compare institutes, 2026",
-    sub: "₹999 live vs PlanetSpark (kids), EngVarta, Cambly, italki. Fees dated 22 Sep 2026.",
+    sub: "₹1,499 live vs PlanetSpark (kids), EngVarta, Cambly, italki. Fees dated 22 Sep 2026.",
     icon: "chart",
     color: "coral",
     group: "money",
@@ -151,7 +151,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-for-it-professionals-india",
     title: "English for IT professionals",
-    sub: "Standups, tickets, client calls. Same IST batches. Workplace ₹1,999/mo.",
+    sub: "Standups, tickets, client calls. Same IST batches. Workplace ₹2,499/mo.",
     icon: "computer",
     color: "brand",
     group: "work",
@@ -183,7 +183,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-for-homemakers-india",
     title: "Spoken English for homemakers",
-    sub: "Daytime IST batches. From shops to school meetings. ₹999/mo.",
+    sub: "Daytime IST batches. From shops to school meetings. ₹1,499/mo.",
     icon: "diversity_3",
     color: "coral",
     group: "audience",
@@ -223,7 +223,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-classes-mumbai",
     title: "Mumbai",
-    sub: "Skip the local. Same ₹999/mo live batch. Andheri, Thane, Navi Mumbai.",
+    sub: "Skip the local. Same ₹1,499/mo live batch. Andheri, Thane, Navi Mumbai.",
     icon: "location_on",
     color: "brand",
     group: "city",

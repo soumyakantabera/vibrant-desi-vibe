@@ -61,23 +61,23 @@ export function FeatureCard({
 }) {
   const ringMap = {
     brand: "bg-brand-soft text-brand-deep",
-    sunshine: "bg-[#FFEFC1] text-[#6B4A00]",
-    coral: "bg-[#FFE0DC] text-[#8E2A1E]",
-    indigo: "bg-[#E2E2FB] text-[#2E2E8A]",
-    sage: "bg-[#E2F2E7] text-brand-deep",
+    sunshine: "bg-[#F6EBD3] text-[#6A4A10]",
+    coral: "bg-[#F3E2DC] text-[#8A3626]",
+    indigo: "bg-[#E3E9F1] text-[#263F63]",
+    sage: "bg-[#E6F0EA] text-brand-deep",
   } as const;
   const cardMap = {
     brand: "border-brand/20 bg-[#F3F8F4]",
-    sunshine: "border-sunshine/40 bg-[#FFF8E6]",
-    coral: "border-coral/25 bg-[#FFF4F1]",
-    indigo: "border-indigo-pop/25 bg-[#F4F4FF]",
+    sunshine: "border-sunshine/40 bg-[#FBF6EA]",
+    coral: "border-coral/25 bg-[#FAF2EF]",
+    indigo: "border-indigo-pop/25 bg-[#F2F5F9]",
     sage: "border-brand/15 bg-[#EEF6F1]",
   } as const;
   const titleMap = {
     brand: "text-brand-deep",
-    sunshine: "text-[#6B4A00]",
-    coral: "text-[#8E2A1E]",
-    indigo: "text-[#2E2E8A]",
+    sunshine: "text-[#6A4A10]",
+    coral: "text-[#8A3626]",
+    indigo: "text-[#263F63]",
     sage: "text-brand-deep",
   } as const;
   return (
@@ -113,19 +113,19 @@ export function GuidesStrip({
       title: "text-brand-deep",
     },
     sunshine: {
-      card: "border-sunshine/40 bg-[#FFF8E6]",
-      icon: "bg-[#FFEFC1] text-[#6B4A00]",
-      title: "text-[#6B4A00]",
+      card: "border-sunshine/40 bg-[#FBF6EA]",
+      icon: "bg-[#F6EBD3] text-[#6A4A10]",
+      title: "text-[#6A4A10]",
     },
     coral: {
-      card: "border-coral/25 bg-[#FFF4F1]",
-      icon: "bg-[#FFE0DC] text-[#8E2A1E]",
-      title: "text-[#8E2A1E]",
+      card: "border-coral/25 bg-[#FAF2EF]",
+      icon: "bg-[#F3E2DC] text-[#8A3626]",
+      title: "text-[#8A3626]",
     },
     indigo: {
-      card: "border-indigo-pop/25 bg-[#F4F4FF]",
-      icon: "bg-[#E2E2FB] text-[#2E2E8A]",
-      title: "text-[#2E2E8A]",
+      card: "border-indigo-pop/25 bg-[#F2F5F9]",
+      icon: "bg-[#E3E9F1] text-[#263F63]",
+      title: "text-[#263F63]",
     },
   } as const;
 
@@ -168,9 +168,9 @@ export function GuidesStrip({
 
 const CITY_TONES = [
   "border-brand/25 bg-[#F3F8F4] text-brand-deep",
-  "border-sunshine/40 bg-[#FFF8E6] text-[#6B4A00]",
-  "border-coral/25 bg-[#FFF4F1] text-[#8E2A1E]",
-  "border-indigo-pop/25 bg-[#F4F4FF] text-[#2E2E8A]",
+  "border-sunshine/40 bg-[#FBF6EA] text-[#6A4A10]",
+  "border-coral/25 bg-[#FAF2EF] text-[#8A3626]",
+  "border-indigo-pop/25 bg-[#F2F5F9] text-[#263F63]",
 ] as const;
 
 export function CoverageStrip({ invert = false }: { invert?: boolean }) {
@@ -286,7 +286,7 @@ export function Stat({ num, label }: { num: string; label: string }) {
 
 export function MottoBand({ children }: { children: ReactNode }) {
   return (
-    <div className="bg-gradient-to-r from-brand-deep via-indigo-pop to-[#A53D32] py-8 md:py-10">
+    <div className="bg-gradient-to-r from-brand-deep via-indigo-pop to-[#9A402E] py-8 md:py-10">
       <div className="container-x">
         <blockquote className="font-display text-xl md:text-3xl font-extrabold text-white text-center leading-tight">
           {children}

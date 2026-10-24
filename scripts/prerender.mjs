@@ -455,7 +455,7 @@ const bothLists = [
 ];
 for (const rel of bothLists) {
   const text = fs.readFileSync(path.join(DIST, rel), "utf8");
-  if (!text.includes("₹999") || !text.includes("$49") || !/outside India/i.test(text)) {
+  if (!text.includes("₹1,499") || !text.includes("$49") || !/outside India/i.test(text)) {
     leaks.push(`${rel} missing a labeled price list`);
   }
 }

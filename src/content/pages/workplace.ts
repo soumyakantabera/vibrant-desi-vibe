@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need interview answers rather than day-to-day office communication",
-        "Take Interview Preparation — 2 months, ₹1,999/month. HR screens, STAR and recorded mocks. Business English is meetings after you have the job.",
+        "Take Interview Preparation — 2 months, ₹2,499/month. HR screens, STAR and recorded mocks. Business English is meetings after you have the job.",
       ],
     ],
   },
@@ -109,7 +109,7 @@ export const body: ArticleBody = [
       ["Frequency", "Up to 2 class days per week"],
       ["Format", "100% live online batch"],
       ["Batch size", "approximately 6 learners"],
-      ["Fee", "₹1,999/month, inclusive of taxes"],
+      ["Fee", "₹2,499/month, inclusive of taxes"],
       ["Consult", "Chat on WhatsApp"],
       ["Certificate", "Not currently issued"],
       ["Rescheduling", "Request within the same week, subject to teacher and slot availability"],

@@ -57,7 +57,7 @@ function DemoSessionPage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/80 to-[#8F332A]/75" />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/80 to-[#8A3626]/75" />
         </div>
         <div className="container-x py-10 sm:py-16 md:py-24">
           <div className="text-cream max-w-3xl">

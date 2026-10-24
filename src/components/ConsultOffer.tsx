@@ -6,9 +6,9 @@ import { CONSULTATION, CONSULTATION_PROOF, PROOF_CARD_CLASS } from "@/lib/consul
 import { DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 const PILL_CLASS = [
-  "bg-[#C84D3F] text-white",
-  "bg-[#3D3DB8] text-white",
-  "bg-[#0E7C5A] text-white",
+  "bg-[#A9503D] text-white",
+  "bg-[#34507A] text-white",
+  "bg-[#0C6B4E] text-white",
   "bg-ink text-sunshine",
 ] as const;
 
@@ -30,7 +30,7 @@ export function ConsultOffer({
       className={
         sun
           ? "bg-sunshine py-8 md:py-12"
-          : "bg-gradient-to-r from-brand-deep via-indigo-pop to-[#C84D3F] py-8 md:py-12"
+          : "bg-gradient-to-r from-brand-deep via-indigo-pop to-[#A9503D] py-8 md:py-12"
       }
       data-cta-location="consult_offer"
     >

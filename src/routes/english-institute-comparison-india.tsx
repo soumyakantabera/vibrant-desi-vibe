@@ -23,7 +23,7 @@ const ROWS = [
     icon: "smile" as const,
     tag: "Us",
     title: "Learn With Smile",
-    fee: "From ₹999/mo, tax incl.",
+    fee: "From ₹1,499/mo, tax incl.",
     body: "Named live teacher. About 6 in a batch. 6-month map. 500+ learners, 7 years. Kolkata, pan-India, now worldwide. Free consultation — not a class.",
   },
   {
@@ -165,7 +165,7 @@ function Page() {
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl text-cream leading-[1.1]">
             Compare English classes in India —{" "}
-            <span className="text-sunshine">₹999 live vs apps and institutes</span>
+            <span className="text-sunshine">₹1,499 live vs apps and institutes</span>
           </h1>
           <p className="mt-5 text-lg text-white/95">
             Learn With Smile vs PlanetSpark, EngVarta, Cambly, italki, British Council. We sell the
@@ -229,7 +229,7 @@ function Page() {
         <div className="container-x max-w-2xl text-center text-cream">
           <h2 className="text-2xl text-cream md:text-3xl">Compare in a class.</h2>
           <p className="mt-3 text-white">
-            Approximately 6 learners. From ₹999/mo, inclusive of taxes. Spoken, Interactive,
+            Approximately 6 learners. From ₹1,499/mo, inclusive of taxes. Spoken, Interactive,
             Workplace and Interview Preparation.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">

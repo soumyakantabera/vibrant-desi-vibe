@@ -35,7 +35,7 @@ export const body: ArticleBody = [
       ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
       ["Parent app, games, under-14", "PlanetSpark-style 1:1. Never our adult batch."],
       [
-        "₹999/mo, approximately 6 learners, inclusive of taxes",
+        "₹1,499/mo, approximately 6 learners, inclusive of taxes",
         "Us. 7 years, 500+ learners, 11 states.",
       ],
     ],
@@ -71,7 +71,7 @@ export const body: ArticleBody = [
       ["Walk-in, 25–40 in the room", "Veta-style / city classroom"],
       ["Visa stack, IELTS add-on", "Exam shop. Fine if the form asked."],
       [
-        "Small-batch consultation, personalised advice, bottleneck named, cap printed ≈6, ₹999/mo inclusive of taxes",
+        "Small-batch consultation, personalised advice, bottleneck named, cap printed ≈6, ₹1,499/mo inclusive of taxes",
         "Us. 7 years, 500+ learners, 11 states.",
       ],
     ],
@@ -86,7 +86,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**“Is ₹999 too cheap to be real?”** Inclusive of taxes, batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
+      "**“Is ₹1,499 too cheap to be real?”** Inclusive of taxes, batch of around 6, up to 2 live classes a week. You are paying for a seat and a named teacher, not a mall and a certificate wall.",
       "**“Can I start next week?”** Usually yes. Message for the next IST slot. Get a free consultation first — we diagnose the room before we seat you.",
       "**“Do you issue a certificate?”** No. Indian interviews hear you. Visas read an exam-board score — sit IELTS with the test board; we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
     ],
@@ -98,7 +98,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Get a free consultation. We name the bottleneck, answer your queries, and place you in one room — or tell you to stay free. Approx. 6 learners. From ₹999/mo.",
+    text: "Get a free consultation. We name the bottleneck, answer your queries, and place you in one room — or tell you to stay free. Approx. 6 learners. From ₹1,499/mo.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

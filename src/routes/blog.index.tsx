@@ -90,7 +90,7 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white">
             Practical, hype-free articles on English and career building — written by teachers who
-            run live classes from ₹999/mo, inclusive of taxes.
+            run live classes from ₹1,499/mo, inclusive of taxes.
           </p>
         </div>
       </section>
