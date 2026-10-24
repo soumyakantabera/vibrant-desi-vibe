@@ -225,7 +225,39 @@ export function LaunchOfferBand() {
 
 /* ------------------------------------------------------ five-part strip */
 
-export function PackageStrip() {
+/**
+ * The package strip with its own heading, for pages that do not carry the
+ * homepage story above it: guides, city pages and blog articles.
+ */
+export function PackageBand({ title }: { title?: string }) {
+  return (
+    <section className="border-y border-border bg-paper pt-12 md:pt-14" data-package="band">
+      <div className="container-x mb-6 flex flex-wrap items-end justify-between gap-4">
+        <div className="max-w-2xl">
+          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-brand-deep">
+            One fee · the complete package
+          </p>
+          <h2 className="mt-2 text-2xl font-extrabold leading-tight text-ink md:text-[2rem]">
+            {title ?? (
+              <>
+                Every course includes all five, from <FeeText text="₹1,499/month" />.
+              </>
+            )}
+          </h2>
+        </div>
+        <Link
+          to="/english-class-fees-india"
+          className="inline-flex items-center gap-2 font-bold text-brand-deep hover:underline"
+        >
+          See every fee <Icon name="arrow-right" size={18} />
+        </Link>
+      </div>
+      <PackageStrip bare />
+    </section>
+  );
+}
+
+export function PackageStrip({ bare = false }: { bare?: boolean }) {
   const items: { key: PartKey; body: string }[] = [
     { key: "live", body: "Up to 2 a week · 90 min · approx. 6 learners." },
     { key: "portal", body: "Daily grammar, vocabulary, reading and speaking." },
@@ -234,7 +266,7 @@ export function PackageStrip() {
     { key: "teacher", body: "Real teachers. One teacher for your batch." },
   ];
   return (
-    <section className="bg-white pb-8">
+    <section className={bare ? "pb-12 md:pb-14" : "bg-white pb-8"}>
       <VizIn className="container-x grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {items.map(({ key, body }, i) => {
           const tone = PART[key].tone;

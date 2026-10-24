@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { RATING, RATING_DISPLAY, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
-import { SectionHeader, FeatureCard, WaButton, Stat, MottoBand } from "@/components/ui-bits";
+import { SectionHeader, FeatureCard, WaButton, MottoBand } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
@@ -166,21 +166,25 @@ function Page() {
         "Speak today. <em className="text-sunshine">Lead tomorrow.</em> Build your future with us."
       </MottoBand>
 
-      <section className="relative py-16">
-        <div className="absolute inset-0 z-0">
-          <SmartImage
-            src={IMG.graduation}
-            alt="Learn With Smile students in a live online session"
-            fill
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-brand-deep/90" />
-        </div>
-        <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Stat num="7" label="Years Teaching" />
-          <Stat num="500+" label="Learners" />
-          <Stat num="95%" label="Completion" />
-          <Stat num={RATING_DISPLAY} label={`${RATING.source} Rating · ${RATING.count} Reviews`} />
+      <section className="bg-white py-14 md:py-16">
+        <div className="container-x grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          {[
+            { num: "7", label: "Years teaching", tone: "bg-tile-green" },
+            { num: "500+", label: "Learners", tone: "bg-tile-blue" },
+            { num: "95%", label: "Completion", tone: "bg-tile-violet" },
+            {
+              num: RATING_DISPLAY,
+              label: `${RATING.source} rating · ${RATING.count} reviews`,
+              tone: "bg-tile-saffron",
+            },
+          ].map((s) => (
+            <div key={s.label} className={`${s.tone} rounded-2xl p-5 text-white md:p-6`}>
+              <p className="font-display text-4xl font-extrabold leading-none text-white md:text-5xl">
+                {s.num}
+              </p>
+              <p className="mt-2 text-sm font-semibold text-white/90 md:text-base">{s.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 

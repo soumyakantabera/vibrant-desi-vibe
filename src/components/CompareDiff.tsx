@@ -1,13 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { COMPARE_BLURB, COMPARE_REVISED, MARKET_COMPARE } from "@/lib/compare";
 
+/** Learn With Smile is the one solid tile; every other brand is a white card
+ *  with a coloured top rule, so the eye lands on us first. */
 const TONE: Record<(typeof MARKET_COMPARE)[number]["tone"], string> = {
-  us: "compare-card bg-sunshine",
-  indigo: "compare-card bg-[#34507A]",
-  coral: "compare-card bg-[#A9503D]",
-  sun: "compare-card bg-[#1B7A4E]",
-  ink: "compare-card bg-[#1E4D8C]",
-  play: "compare-card bg-[#6B3FA0]",
+  us: "compare-card bg-brand shadow-[0_18px_36px_-24px_rgba(4,129,91,.8)]",
+  indigo: "compare-card border border-border border-t-4 border-t-tile-blue bg-white",
+  coral: "compare-card border border-border border-t-4 border-t-tile-red bg-white",
+  sun: "compare-card border border-border border-t-4 border-t-tile-teal bg-white",
+  ink: "compare-card border border-border border-t-4 border-t-tile-violet bg-white",
+  play: "compare-card border border-border border-t-4 border-t-tile-saffron bg-white",
 };
 
 /**
@@ -16,7 +18,7 @@ const TONE: Record<(typeof MARKET_COMPARE)[number]["tone"], string> = {
 export function CompareDiff() {
   return (
     <aside
-      className="mt-10 rounded-3xl border border-ink/10 bg-cream p-5 md:p-6"
+      className="mt-10 rounded-3xl border border-border bg-paper p-5 md:p-6"
       data-compare="2026-online"
     >
       <p className="text-xs font-display font-extrabold uppercase tracking-[0.14em] text-ink/55">
@@ -39,7 +41,7 @@ export function CompareDiff() {
           <div
             key={row.name}
             className={`rounded-2xl p-4 ${TONE[row.tone]}`}
-            data-ink={row.us ? "0" : "1"}
+            data-ink={row.us ? "1" : "0"}
           >
             <p className="text-[11px] font-display font-extrabold uppercase tracking-[0.12em] opacity-80">
               {row.us ? "Us · adults 15+" : "Online"}

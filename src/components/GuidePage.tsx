@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { FeeText } from "@/components/FeeText";
 import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
@@ -7,13 +6,12 @@ import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
-import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
-import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
-import { CONSULTATION } from "@/lib/consultation";
+import { CHAT_MSG } from "@/lib/whatsapp";
 import { formatIsoDate } from "@/lib/compare";
+import { PackageBand } from "@/components/package/PackageSections";
 import { CompareDiff } from "@/components/CompareDiff";
 
 /**
@@ -110,7 +108,7 @@ export function GuidePage({
       <article className="section" lang={lang}>
         <div className="container-x max-w-3xl">
           {shortAnswer && (
-            <div className="mb-8 rounded-2xl border border-sunshine/40 bg-sunshine/15 p-5">
+            <div className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5">
               <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
                 Short answer
               </p>
@@ -127,6 +125,8 @@ export function GuidePage({
         </div>
       </article>
 
+      <PackageBand />
+
       {children}
 
       <div lang={lang}>
@@ -138,32 +138,6 @@ export function GuidePage({
           waMessage={waMessage}
         />
       </div>
-
-      <section
-        className="hero-light relative py-14 md:py-16 overflow-hidden"
-        data-cta-location="final_cta"
-      >
-        <div className="absolute inset-0 z-0 cta-wash" />
-        <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
-          <p className="mt-3 text-white">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">
-            <FeeText text={CONSULTATION.hook} />
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={waMessage} variant="wa" size="lg">
-              {CHAT_CTA}
-            </WaButton>
-            <WaButton message={waMessage} variant="sun" size="lg">
-              {DEMO_CTA}
-            </WaButton>
-            <Link to="/english-career" className="btn btn-white btn-lg">
-              See all courses
-            </Link>
-          </div>
-          <PaymentTrust tone="light" align="center" className="mt-8" />
-        </div>
-      </section>
     </Layout>
   );
 }

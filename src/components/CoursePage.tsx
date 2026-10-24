@@ -405,7 +405,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               {data.projects.map((p, i) => (
                 <article
                   key={p.title}
-                  className="card-soft bg-gradient-to-br from-white to-sunshine/10 border-sunshine/30"
+                  className="card-soft bg-gradient-to-br from-white to-brand-soft border-brand/20"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="h-10 w-10 rounded-xl bg-sunshine text-ink font-display font-extrabold flex items-center justify-center">
@@ -500,30 +500,6 @@ export function CoursePage({ data }: { data: CourseData }) {
           </div>
         </section>
       )}
-
-      {/* FINAL CTA */}
-      <section
-        className="hero-light relative py-16 md:py-20 overflow-hidden"
-        data-cta-location="final_cta"
-      >
-        <div className="absolute inset-0 z-0 cta-wash" />
-        <div className="container-x text-center text-cream">
-          <h2 className="text-cream text-3xl md:text-4xl">{CONSULTATION.headline}</h2>
-          <p className="mt-3 text-white max-w-xl mx-auto">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">
-            <FeeText text={CONSULTATION.hook} />
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={waPrimary} variant="sun" size="lg">
-              {DEMO_CTA}
-            </WaButton>
-            <WaButton message={waPrimary} variant="wa" size="lg">
-              {CHAT_CTA}
-            </WaButton>
-          </div>
-          <PaymentTrust tone="light" align="center" className="mt-5" />
-        </div>
-      </section>
     </Layout>
   );
 }

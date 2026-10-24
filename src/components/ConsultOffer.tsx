@@ -20,23 +20,26 @@ const PILL_CLASS = [
 export function ConsultOffer({
   tone = "sun",
   compact,
+  message,
 }: {
   tone?: "sun" | "deep";
   compact?: boolean;
+  /** Page-specific WhatsApp message, so the lead says which page it came from. */
+  message?: string;
 }) {
   const sun = tone === "sun";
   return (
     <section
       className={
         sun
-          ? "border-y border-[#EAD9B6] bg-amber-soft py-8 md:py-12"
+          ? "border-y border-border bg-paper py-10 md:py-14"
           : "hero-light cta-wash border-y border-border py-8 md:py-12"
       }
       data-cta-location="consult_offer"
     >
       <div className="container-x max-w-5xl mx-auto text-center">
         <p
-          className={`font-display text-xs uppercase tracking-[0.16em] font-extrabold ${sun ? "text-ink/70" : "text-sunshine"}`}
+          className={`font-display text-xs uppercase tracking-[0.16em] font-extrabold ${sun ? "text-brand-deep" : "text-sunshine"}`}
         >
           <FeeText text={CONSULTATION.hook} />
         </p>
@@ -68,21 +71,16 @@ export function ConsultOffer({
                 className={`rounded-2xl p-4 md:p-5 ${PROOF_CARD_CLASS[card.tone]}`}
               >
                 <p className="flex items-center gap-2 text-xs font-display font-extrabold uppercase tracking-[0.14em] opacity-90">
-                  <Icon name={card.icon} size={14} /> {card.kicker}
+                  <Icon name={card.icon} size={16} /> {card.kicker}
                 </p>
-                <p className="mt-2 font-display text-xl font-extrabold">{card.title}</p>
-                <p className="mt-1 text-sm leading-relaxed opacity-95">{card.body}</p>
+                <p className="mt-2 font-display text-xl font-extrabold text-white">{card.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-white/90">{card.body}</p>
               </div>
             ))}
           </div>
         )}
         <div className="mt-7 flex flex-wrap gap-3 justify-center">
-          <WaButton
-            message={DEMO_MSG}
-            variant={sun ? "coral" : "sun"}
-            size="lg"
-            goal="free_consultation"
-          >
+          <WaButton message={message ?? DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
             {DEMO_CTA}
           </WaButton>
           <Link

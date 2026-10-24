@@ -173,10 +173,7 @@ function Page() {
                     <p className="mt-1 text-ink/80">{group.description}</p>
                   </div>
                 </div>
-                <Reveal
-                  stagger
-                  className="grid max-w-5xl items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3 md:gap-5"
-                >
+                <Reveal stagger className="grid items-stretch gap-4 sm:grid-cols-2 md:gap-6">
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
@@ -189,16 +186,16 @@ function Page() {
                           src={c.heroImage}
                           alt={c.title}
                           className="mb-3 w-full rounded-xl"
-                          ratio="4/3"
+                          ratio="16/9"
                           imgClassName="group-hover:scale-105 transition duration-500"
                           position="center 22%"
-                          sizes="(min-width: 1280px) 30vw, (min-width: 640px) 45vw, 100vw"
+                          sizes="(min-width: 640px) 45vw, 100vw"
                         />
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           <span className="h-9 w-9 rounded-xl flex items-center justify-center bg-brand-soft text-brand-deep">
                             <Icon name={c.icon} size={20} />
                           </span>
-                          <span className="pill bg-sunshine/15 text-[#6A4A10] border-sunshine/40">
+                          <span className="pill bg-slate-soft text-[#1F3D63] border-indigo-pop/25">
                             <FeeText text={c.price} />
                           </span>
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
@@ -220,9 +217,9 @@ function Page() {
         </div>
       </section>
 
-      <section className="section bg-sunshine/25" id="demo-session">
+      <section className="section bg-paper" id="demo-session">
         <div className="container-x">
-          <div className="grid items-center gap-8 rounded-[28px] border border-sunshine/50 bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
+          <div className="grid items-center gap-8 rounded-[28px] border border-border bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
             <div className="min-w-0">
               <p className="eyebrow eyebrow-sun">Not a sixth course · a seat in the real one</p>
               <h2 className="mt-3 text-3xl md:text-4xl text-ink">

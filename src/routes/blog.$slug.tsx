@@ -1,12 +1,11 @@
+import { PackageBand } from "@/components/package/PackageSections";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { FeeText } from "@/components/FeeText";
 
 import { Layout } from "@/components/Layout";
 import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
-import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { COURSES } from "@/lib/courses";
@@ -14,8 +13,7 @@ import { getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { ARTICLE_BODIES } from "@/content/blog";
 import { articleToc } from "@/content/blog/blocks";
 import { blogPostHead } from "@/lib/seo";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA } from "@/lib/whatsapp";
-import { CONSULTATION } from "@/lib/consultation";
+import { CHAT_MSG } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -95,7 +93,7 @@ function BlogPostPage() {
       <article className="section">
         <div className="container-x max-w-3xl">
           {post.shortAnswer && (
-            <div className="mb-8 rounded-2xl border border-sunshine/40 bg-sunshine/15 p-5">
+            <div className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5">
               <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
                 Short answer
               </p>
@@ -112,6 +110,8 @@ function BlogPostPage() {
           )}
         </div>
       </article>
+
+      <PackageBand />
 
       {post.relatedCourses.length > 0 && (
         <section className="section bg-brand-soft/40 pt-0">
@@ -179,32 +179,6 @@ function BlogPostPage() {
         title="Questions this article answers"
         waMessage={waMessage}
       />
-
-      <section
-        className="hero-light relative py-14 md:py-16 overflow-hidden"
-        data-cta-location="final_cta"
-      >
-        <div className="absolute inset-0 z-0 cta-wash" />
-        <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
-          <p className="mt-3 text-white">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">
-            <FeeText text={CONSULTATION.hook} />
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={waMessage} variant="wa" size="lg">
-              {CHAT_CTA}
-            </WaButton>
-            <WaButton message={waMessage} variant="sun" size="lg">
-              {DEMO_CTA}
-            </WaButton>
-            <Link to="/english-career" className="btn btn-white btn-lg">
-              See all courses
-            </Link>
-          </div>
-          <PaymentTrust tone="light" align="center" className="mt-8" />
-        </div>
-      </section>
     </Layout>
   );
 }

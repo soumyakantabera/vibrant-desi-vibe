@@ -34,9 +34,9 @@ export const CONSULTATION = {
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
 export const PROOF_CARD_CLASS = {
-  coral: "consult-card bg-terra-soft text-[#8A3626]",
-  indigo: "consult-card bg-slate-soft text-[#1F3D63]",
-  sun: "consult-card bg-brand-soft text-brand-deep",
+  coral: "consult-card bg-tile-blue text-white",
+  indigo: "consult-card bg-tile-violet text-white",
+  sun: "consult-card bg-tile-green text-white",
 } as const;
 
 export const CONSULTATION_PROOF: {

@@ -90,7 +90,7 @@ function EducatorCard({
               ))}
             </ul>
           </div>
-          <div className="card-soft bg-sunshine/10">
+          <div className="card-soft bg-plum-soft">
             <h3 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
               <Icon name="book" size={16} className="text-coral" /> Teaches
             </h3>
@@ -191,8 +191,9 @@ function Page() {
         </div>
       </section>
 
-      <section className="section bg-brand text-cream">
-        <div className="container-x text-center">
+      <section className="hero-light section relative overflow-hidden">
+        <div className="absolute inset-0 z-0 cta-wash" />
+        <div className="container-x relative text-center">
           <h2 className="text-cream text-3xl md:text-4xl">Talk to the educator directly.</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
             Tell us your goal — we’ll reply on WhatsApp.
