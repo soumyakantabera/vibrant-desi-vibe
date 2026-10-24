@@ -21,12 +21,12 @@ export function Logo({ size = 40 }: { size?: number }) {
     >
       <defs>
         <linearGradient id={bg} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0C6B4E" />
+          <stop offset="0%" stopColor="#04815B" />
           <stop offset="55%" stopColor="#0A5B43" />
           <stop offset="100%" stopColor="#1A2E20" />
         </linearGradient>
         <linearGradient id={accent} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#CC9A3D" />
+          <stop offset="0%" stopColor="#F2A40F" />
           <stop offset="100%" stopColor="#E9C27A" />
         </linearGradient>
       </defs>
@@ -50,7 +50,7 @@ export function Logo({ size = 40 }: { size?: number }) {
         strokeLinecap="round"
         fill="none"
       />
-      <circle cx="46" cy="10" r="3" fill="#CC9A3D" />
+      <circle cx="46" cy="10" r="3" fill="#F2A40F" />
       <circle cx="10" cy="46" r="2" fill="#D2775F" />
       <circle cx="48" cy="44" r="1.6" fill="#2F5A8A" />
     </svg>

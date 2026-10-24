@@ -102,10 +102,6 @@ export const COURSE_FEE: Record<
 
 export const DEMO_FEE = { inr: 199, display: "₹199" } as const;
 
-/** Rounded rupees per day on a 30-day month — live classes, portal and videos together. */
-export function perDay(slug: FeeSlug): string {
-  return `₹${Math.round(COURSE_FEE[slug].inr / 30)}`;
-}
 
 /**
  * Launch offer for new learners. Shown until the end of the last day, IST.

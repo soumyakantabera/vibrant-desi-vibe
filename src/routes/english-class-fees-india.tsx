@@ -4,7 +4,8 @@ import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/fees";
-import { DemoStrip, MarketCompare, PricingGrid } from "@/components/package/PackageSections";
+import { DemoStrip, PricingGrid } from "@/components/package/PackageSections";
+import { MarketGap } from "@/components/package/MarketSections";
 
 const PATH = "/english-class-fees-india";
 
@@ -83,7 +84,7 @@ function Page() {
           <DemoStrip />
         </div>
       </section>
-      <MarketCompare />
+      <MarketGap />
     </GuidePage>
   );
 }

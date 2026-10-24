@@ -5,7 +5,6 @@ import {
   SectionHeader,
   FeatureCard,
   WaButton,
-  Stat,
   MottoBand,
   GuidesStrip,
   CoverageStrip,
@@ -34,7 +33,6 @@ import {
   BeforeNow,
   DemoStrip,
   LaunchOfferBand,
-  MarketCompare,
   PackageSlides,
   ReviewLoop,
   TipsTiles,
@@ -44,6 +42,7 @@ import {
   VideoLibrary,
   WeekStrip,
 } from "@/components/package/PackageSections";
+import { GoogleProof, HeroPackageViz, MarketGap } from "@/components/package/MarketSections";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -143,9 +142,7 @@ function Home() {
               Practise Every Day.
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Real teachers. Small batches. Live classes up to twice a week, daily grammar,
-              vocabulary, reading and speaking exercises, a recorded video library — and a weekly
-              teacher review of your reading and speaking. The complete package from{" "}
+              Real teachers. Small batches. The complete package from{" "}
               <strong className="text-sunshine">
                 <FeeText text="₹1,499/mo" />
               </strong>
@@ -215,7 +212,7 @@ function Home() {
                 headline={feeHeadline("₹1,499/month", "spoken-english")}
                 subnote={
                   <MarketCopy
-                    inr="About ₹50 a day · inclusive of taxes · UPI accepted"
+                    inr="Monthly billing · inclusive of taxes · UPI accepted"
                     usd={`${intlUnit()} · billed monthly`}
                   />
                 }
@@ -240,6 +237,7 @@ function Home() {
                   },
                 ]}
               />
+              <HeroPackageViz />
             </div>
           </div>
         </div>
@@ -471,42 +469,11 @@ function Home() {
         "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
       </MottoBand>
 
-      {/* NUMBERS */}
-      <section className="hero-light relative py-12 md:py-16">
-        <div className="absolute inset-0 z-0">
-          <SmartImage src={IMG.graduation} alt="Indian graduates" fill sizes="100vw" />
-          <div className="absolute inset-0 hero-veil" />
-        </div>
-        <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
-          <div className="md:pr-4">
-            <Stat num="7" label="Years teaching live" />
-          </div>
-          <div className="md:px-4">
-            <Stat num="500+" label="People who spoke here" />
-          </div>
-          <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="~6" label="In a batch. You speak." />
-          </div>
-          {/* One rating, one source. This tile used to read 4.9★ while the
-              location card below read 5.0★ — the same page stating two numbers.
-              That matters more here than on most sites: llms.txt and the .md
-              twins make this site unusually easy for an assistant to quote
-              verbatim, so an inconsistency propagates straight into AI answers.
-              The Google Business Profile figure is the one that wins.
-              Deliberately NOT mirrored into JSON-LD as aggregateRating —
-              self-serving review markup on LocalBusiness is disregarded by
-              Google and carries a manual-action risk. */}
-          <div className="md:pl-4 pt-8 md:pt-0">
-            <Stat
-              num={RATING_DISPLAY}
-              label={`${RATING.source} Rating · ${RATING.count} Reviews`}
-            />
-          </div>
-        </div>
-      </section>
+      {/* GOOGLE RATING + PROOF */}
+      <GoogleProof />
 
       {/* MARKET + WHAT CHANGED */}
-      <MarketCompare />
+      <MarketGap />
       <BeforeNow />
 
       {/* TESTIMONIALS */}

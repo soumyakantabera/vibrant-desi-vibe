@@ -42,17 +42,31 @@ function observeOnce(el: HTMLElement, onEnter: () => void): (() => void) | false
 export function VizIn({
   as: Tag = "div" as ElementType,
   className = "",
+  eager = false,
   children,
   ...rest
 }: {
   as?: ElementType;
   className?: string;
+  /** Animate on load even when already on screen (first-screen visuals). */
+  eager?: boolean;
   children: ReactNode;
 } & Record<string, unknown>) {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (eager) {
+      if (prefersReducedMotion()) {
+        el.dataset.viz = "in";
+        return;
+      }
+      el.dataset.viz = "out";
+      const t = window.setTimeout(() => {
+        el.dataset.viz = "in";
+      }, 120);
+      return () => window.clearTimeout(t);
+    }
     const stop = observeOnce(el, () => {
       el.dataset.viz = "in";
     });
@@ -62,7 +76,7 @@ export function VizIn({
     }
     el.dataset.viz = "out";
     return stop;
-  }, []);
+  }, [eager]);
   return (
     <Tag ref={ref} className={className} {...rest}>
       {children}
@@ -175,8 +189,9 @@ export function LineDuo({
         <path
           d={path(b)}
           fill="none"
-          stroke="var(--coral-deep)"
+          stroke="var(--gold)"
           strokeWidth="3"
+          strokeDasharray="6 6"
           strokeLinecap="round"
           pathLength={1}
           className="viz-draw"
@@ -203,7 +218,7 @@ export function LineDuo({
           cx={x(b.length - 1)}
           cy={y(b[b.length - 1])}
           r="5"
-          fill="var(--coral-deep)"
+          fill="var(--gold)"
           className="viz-dot"
           style={{ "--d": "1500ms" } as React.CSSProperties}
         />
@@ -226,7 +241,7 @@ export function LineDuo({
           {aLabel}: <strong className="text-ink">{aEnd}</strong>
         </span>
         <span className="inline-flex items-center gap-2">
-          <span className="h-1.5 w-6 rounded-full bg-coral-deep" aria-hidden="true" />
+          <span className="h-1.5 w-6 rounded-full bg-gold" aria-hidden="true" />
           {bLabel}: <strong className="text-ink">{bEnd}</strong>
         </span>
       </figcaption>

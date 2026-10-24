@@ -11,7 +11,6 @@ import {
   LAUNCH_OFFER,
   launchOfferActive,
   launchOfferDaysLeft,
-  perDay,
   type FeeSlug,
 } from "@/lib/fees";
 import {
@@ -36,48 +35,57 @@ const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 /** Six serious tile colours. `solid` carries white text except amber and terra. */
 type Tone = "green" | "blue" | "amber" | "plum" | "teal" | "terra";
-const T: Record<Tone, { soft: string; solid: string; text: string; icon: string; bar: string }> = {
+const T: Record<
+  Tone,
+  { soft: string; solid: string; deep: string; text: string; icon: string; bar: string }
+> = {
   green: {
     soft: "bg-brand-soft",
+    deep: "bg-tile-green",
     solid: "bg-brand",
     text: "text-brand-deep",
     icon: "text-white",
-    bar: "bg-brand",
+    bar: "bg-tile-green",
   },
   blue: {
     soft: "bg-slate-soft",
+    deep: "bg-tile-blue",
     solid: "bg-indigo-pop",
     text: "text-[#1F3D63]",
     icon: "text-white",
-    bar: "bg-indigo-pop",
+    bar: "bg-tile-blue",
   },
   amber: {
     soft: "bg-amber-soft",
+    deep: "bg-tile-saffron",
     solid: "bg-sunshine",
     text: "text-[#6A4A10]",
     icon: "text-ink",
-    bar: "bg-sunshine",
+    bar: "bg-tile-saffron",
   },
   plum: {
     soft: "bg-plum-soft",
+    deep: "bg-tile-violet",
     solid: "bg-plum",
     text: "text-[#4E3470]",
     icon: "text-white",
-    bar: "bg-plum",
+    bar: "bg-tile-violet",
   },
   teal: {
     soft: "bg-teal-soft",
+    deep: "bg-tile-teal",
     solid: "bg-teal",
     text: "text-[#145A5F]",
     icon: "text-white",
-    bar: "bg-teal",
+    bar: "bg-tile-teal",
   },
   terra: {
     soft: "bg-terra-soft",
+    deep: "bg-tile-red",
     solid: "bg-coral",
     text: "text-[#8A3626]",
     icon: "text-ink",
-    bar: "bg-coral",
+    bar: "bg-tile-red",
   },
 };
 
@@ -106,7 +114,9 @@ function Chip({
         : "h-11 w-11 rounded-2xl";
   const px = size === "lg" ? 28 : size === "sm" ? 18 : 22;
   return (
-    <span className={`grid shrink-0 place-items-center ${box} ${T[tone].solid} ${T[tone].icon}`}>
+    <span
+      className={`grid shrink-0 place-items-center text-white ring-1 ring-white/25 ${box} ${T[tone].deep}`}
+    >
       <Icon name={icon} size={px} />
     </span>
   );
@@ -231,15 +241,15 @@ export function PackageStrip() {
           return (
             <div
               key={key}
-              className={`viz-pop flex items-start gap-3 rounded-2xl p-4 ${T[tone].soft}`}
+              className={`viz-pop flex items-start gap-3 rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
               style={d(i * 80)}
             >
               <Chip tone={tone} icon={PART[key].icon} size="sm" />
               <p className="text-sm">
-                <strong className={`block font-bold ${T[tone].text}`}>
+                <strong className="block font-bold text-white">
                   {key === "portal" ? "Daily exercises" : PART_TONE[key].label}
                 </strong>
-                <span className="text-ink/75">{body}</span>
+                <span className="text-white/85">{body}</span>
               </p>
             </div>
           );
@@ -375,7 +385,7 @@ export function WeekStrip() {
                           <td key={w.day} className="p-0">
                             <span
                               style={d(ri * 90 + ci * 35)}
-                              className={`viz-dot block h-6 rounded-md ${on ? T[row.tone].solid : "bg-muted"}`}
+                              className={`viz-dot block h-6 rounded-md ${on ? T[row.tone].deep : "bg-muted"}`}
                             >
                               <span className="sr-only">{on ? "Yes" : "No"}</span>
                             </span>
@@ -558,20 +568,18 @@ export function PackageSlides() {
                   className={`[grid-area:1/1] grid overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_30px_60px_-45px_rgba(19,33,47,.5)] transition-all duration-500 md:grid-cols-[0.9fr_1.1fr] ${on ? "visible translate-x-0 opacity-100" : "invisible translate-x-6 opacity-0"}`}
                 >
                   <div
-                    className={`relative flex flex-col justify-between gap-6 overflow-hidden p-7 md:p-9 ${T[tone].soft}`}
+                    className={`relative flex flex-col justify-between gap-6 overflow-hidden p-7 text-white md:p-9 ${T[tone].deep}`}
                   >
                     <Chip tone={tone} icon={PART[s.key].icon} size="lg" />
                     <div className="relative">
-                      <p
-                        className={`text-6xl font-extrabold leading-none tracking-tight md:text-7xl ${T[tone].text}`}
-                      >
+                      <p className="text-6xl font-extrabold leading-none tracking-tight text-white md:text-7xl">
                         {s.big}
                       </p>
-                      <p className={`mt-2 font-semibold ${T[tone].text}`}>{s.bigLabel}</p>
+                      <p className="mt-2 text-lg font-semibold text-white/90">{s.bigLabel}</p>
                     </div>
                     <span
                       aria-hidden="true"
-                      className={`pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full opacity-20 ${T[tone].solid}`}
+                      className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 rounded-full bg-white/10"
                     />
                   </div>
                   <div className="flex flex-col gap-4 p-7 md:p-9">
@@ -995,19 +1003,17 @@ export function TipsTiles() {
                   className={`flip-inner relative block h-full w-full ${flipped ? "is-flipped" : ""}`}
                 >
                   <span
-                    className={`flip-face absolute inset-0 flex flex-col justify-between rounded-3xl p-6 ${T[tip.tone].soft}`}
+                    className={`flip-face absolute inset-0 flex flex-col justify-between rounded-3xl p-6 text-white ${T[tip.tone].deep}`}
                   >
                     <span className="flex items-center justify-between">
                       <Chip tone={tip.tone} icon={tip.icon} />
-                      <span className={`text-4xl font-extrabold opacity-30 ${T[tip.tone].text}`}>
-                        0{n + 1}
-                      </span>
+                      <span className="text-4xl font-extrabold text-white/35">0{n + 1}</span>
                     </span>
                     <span>
-                      <span className={`block text-xl font-bold leading-snug ${T[tip.tone].text}`}>
+                      <span className="block text-xl font-bold leading-snug text-white">
                         {tip.title}
                       </span>
-                      <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-ink/60">
+                      <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-white/80">
                         Tap for the trick <Icon name="arrow-right" size={14} />
                       </span>
                     </span>
@@ -1126,14 +1132,14 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
                 className="slide-in flex w-[17.5rem] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border border-border bg-white transition hover:-translate-y-1 hover:shadow-[0_22px_44px_-32px_rgba(19,33,47,.5)] sm:w-[19rem]"
                 style={{ animationDelay: `${n * 50}ms` }}
               >
-                <div className={`relative grid h-36 place-items-center ${T[tone].soft}`}>
+                <div className={`relative grid h-36 place-items-center ${T[tone].deep}`}>
                   <span
                     className={`absolute left-4 top-4 rounded-full bg-white px-2.5 py-1 text-xs font-bold ${T[tone].text}`}
                   >
                     {v.cat}
                   </span>
                   <span
-                    className={`grid h-14 w-14 place-items-center rounded-full ${T[tone].solid} ${T[tone].icon} shadow-[0_12px_28px_-14px_rgba(19,33,47,.6)]`}
+                    className={`grid h-14 w-14 place-items-center rounded-full bg-white shadow-[0_12px_28px_-14px_rgba(0,0,0,.6)] ${T[tone].text}`}
                   >
                     <Icon name="play" size={28} />
                   </span>
@@ -1399,7 +1405,7 @@ export function BeforeNow() {
                 <td className="p-4 text-ink/65">Classes and worksheets</td>
                 <td className="bg-brand-soft/60 p-4 font-bold text-brand-deep">
                   <MarketCopy
-                    inr={`Everything above — from ${COURSE_FEE["spoken-english"].display}, about ${perDay("spoken-english")} a day`}
+                    inr={`Everything above — from ${COURSE_FEE["spoken-english"].display}/month, inclusive of taxes`}
                     usd={`Everything above — from ${INTL_FEE["spoken-english"].display}`}
                   />
                 </td>
@@ -1477,13 +1483,13 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
             className={`viz-pop flex h-full flex-col overflow-hidden rounded-3xl border bg-white transition hover:-translate-y-1 ${copy.popular ? "border-2 border-indigo-pop shadow-[0_22px_50px_-30px_rgba(47,90,138,.55)]" : "border-border shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)]"}`}
           >
             <div
-              className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 sm:px-6 ${T[copy.tone].soft}`}
+              className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 text-white sm:px-6 ${T[copy.tone].deep}`}
             >
-              <span className={`text-xs font-bold ${T[copy.tone].text}`}>
+              <span className="text-xs font-bold text-white">
                 {fee.months} months · up to 2 classes/week
               </span>
               {copy.popular && (
-                <span className="whitespace-nowrap rounded-full bg-indigo-pop px-2.5 py-1 text-xs font-bold text-white">
+                <span className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1F3D63]">
                   Most popular
                 </span>
               )}
@@ -1507,9 +1513,6 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
                   usd={`${intlUnit()} · billed monthly`}
                 />
               </p>
-              <span className="lws-inr self-start rounded-full bg-brand-soft px-3 py-1 text-xs font-bold text-brand-deep">
-                ≈ {perDay(slug)} a day for everything
-              </span>
               <ul className="mt-1 flex flex-col gap-2.5 border-t border-border pt-4 text-sm text-ink/85">
                 {PLAN_INCLUDES.map((p) => (
                   <li key={p.text} className="flex items-center gap-2.5">
@@ -1621,7 +1624,7 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
           title={`${fee.name}: the complete package`}
           sub={
             <MarketCopy
-              inr={`${fee.monthly}, inclusive of taxes — about ${perDay(slug)} a day for live classes, daily exercises, the video library and a weekly teacher review.`}
+              inr={`${fee.monthly}, inclusive of taxes — live classes, daily exercises, the video library and a weekly teacher review, all included.`}
               usd={`${INTL_FEE[slug].display} for live classes, daily exercises, the video library and a weekly teacher review.`}
             />
           }
@@ -1645,13 +1648,15 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
               <article
                 key={key}
                 style={d(i * 90)}
-                className={`viz-pop flex flex-col gap-3 rounded-3xl p-6 ${T[tone].soft} ${i < 2 ? "lg:col-span-3" : "lg:col-span-2"}`}
+                className={`viz-pop flex flex-col gap-3 rounded-3xl p-6 ${i < 2 ? `${T[tone].deep} text-white lg:col-span-3` : `${T[tone].soft} lg:col-span-2`}`}
               >
                 <div className="flex items-center gap-3">
                   <Chip tone={tone} icon={PART[key].icon} />
-                  <h3 className={`text-lg font-bold ${T[tone].text}`}>{label}</h3>
+                  <h3 className={`text-lg font-bold ${i < 2 ? "text-white" : T[tone].text}`}>
+                    {label}
+                  </h3>
                 </div>
-                <p className="text-ink/85">{body}</p>
+                <p className={i < 2 ? "text-white/90" : "text-ink/85"}>{body}</p>
               </article>
             );
           })}

@@ -784,7 +784,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Why is Learn With Smile not the cheapest option?",
-        a: "Because the fee pays for a live teacher and a batch of about 6, where you speak in every class — plus daily exercises, videos and a weekly teacher review in between. AI apps cost less but have no people in the room; 1:1 tutor apps give a person but no course or classmates; large classrooms cost little per month but leave you 1–2 minutes of speaking an hour. We aim for affordable, not cheap: about ₹50 a day for Basic Spoken English.",
+        a: "Because the fee pays for a live teacher and a batch of about 6, where you speak in every class — plus daily exercises, videos and a weekly teacher review in between. AI apps cost less but have no people in the room; 1:1 tutor apps give a person but no course or classmates; large classrooms cost little per month but leave you 1–2 minutes of speaking an hour. We aim for affordable, not cheap — premium teaching at a fair monthly fee.",
       },
       {
         q: "Is there a launch offer right now?",
@@ -2328,7 +2328,7 @@ export function buildHead(opts: {
       { name: "bingbot", content: "index, follow" },
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
-      { name: "theme-color", content: "#0C6B4E" },
+      { name: "theme-color", content: "#04815B" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: opts.title },
       { property: "og:description", content: opts.description },
@@ -2379,7 +2379,7 @@ export function siteHead(): HeadResult {
       ...verificationMeta(),
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
-      { name: "theme-color", content: "#0C6B4E" },
+      { name: "theme-color", content: "#04815B" },
     ],
     // Site-wide discovery for AI assistants (llmstxt.org v2):
     //   describedby → the llms.txt that covers this page
