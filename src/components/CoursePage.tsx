@@ -218,10 +218,10 @@ export function CoursePage({ data }: { data: CourseData }) {
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/55" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream">
@@ -286,7 +286,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />
             </p>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">
             <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
@@ -297,7 +297,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       </section>
 
       {/* Mobile snapshot card */}
-      <section className="lg:hidden bg-brand-deep/95 py-8">
+      <section className="hero-light lg:hidden bg-paper py-8">
         <div className="container-x flex justify-center">
           <div className="relative w-full max-w-[320px]">
             <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
@@ -505,8 +505,11 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {/* FINAL CTA */}
-      <section className="relative py-16 md:py-20 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section
+        className="hero-light relative py-16 md:py-20 overflow-hidden"
+        data-cta-location="final_cta"
+      >
+        <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream">
           <h2 className="text-cream text-3xl md:text-4xl">{CONSULTATION.headline}</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">{CONSULTATION.punch}</p>
@@ -521,7 +524,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               {CHAT_CTA}
             </WaButton>
           </div>
-          <PaymentTrust tone="dark" align="center" className="mt-5" />
+          <PaymentTrust tone="light" align="center" className="mt-5" />
         </div>
       </section>
     </Layout>

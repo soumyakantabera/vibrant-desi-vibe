@@ -1,144 +1,171 @@
 import type { CSSProperties } from "react";
-import type { LucideIcon } from "lucide-react";
+import type { Icon as PhosphorIcon, IconWeight } from "@phosphor-icons/react";
 import {
-  ArrowRight,
-  AudioLines,
-  Ban,
-  BarChart3,
-  BookOpen,
-  Briefcase,
-  Calendar,
-  Camera,
-  CheckCircle2,
-  CircleX,
-  ClipboardList,
-  Clock,
-  Code,
-  Compass,
-  Gamepad2,
-  Globe,
-  GraduationCap,
-  Headphones,
-  Heart,
-  Home,
-  IndianRupee,
-  Languages,
-  Laptop,
-  Lightbulb,
-  Mail,
-  MapPin,
-  Menu,
-  MessageCircle,
-  MessagesSquare,
-  Mic,
-  MonitorPlay,
-  Phone,
-  PiggyBank,
-  PlayCircle,
-  Presentation,
-  Puzzle,
-  Quote,
-  RefreshCw,
-  Rocket,
-  ShieldCheck,
-  Smile,
-  Sparkles,
-  Star,
-  Target,
-  ThumbsUp,
-  Trophy,
-  TrendingUp,
-  User,
-  Users,
-  X,
-} from "lucide-react";
+  ArrowRightIcon,
+  ArrowsClockwiseIcon,
+  BookOpenIcon,
+  BookOpenTextIcon,
+  BrainIcon,
+  BriefcaseIcon,
+  CalendarBlankIcon,
+  CameraIcon,
+  CaretLeftIcon,
+  CaretRightIcon,
+  ChalkboardTeacherIcon,
+  ChartBarIcon,
+  ChatCircleIcon,
+  ChatsCircleIcon,
+  ChatTeardropTextIcon,
+  CheckCircleIcon,
+  ClipboardTextIcon,
+  ClockIcon,
+  CodeIcon,
+  CompassIcon,
+  CurrencyInrIcon,
+  EnvelopeSimpleIcon,
+  GameControllerIcon,
+  GlobeIcon,
+  GraduationCapIcon,
+  HeadsetIcon,
+  HeartIcon,
+  HouseIcon,
+  LaptopIcon,
+  LightbulbIcon,
+  LightningIcon,
+  ListChecksIcon,
+  ListIcon,
+  MapPinIcon,
+  MicrophoneIcon,
+  MonitorPlayIcon,
+  NotePencilIcon,
+  PhoneIcon,
+  PiggyBankIcon,
+  PlayCircleIcon,
+  PresentationIcon,
+  ProhibitIcon,
+  PuzzlePieceIcon,
+  QuotesIcon,
+  RocketLaunchIcon,
+  SealCheckIcon,
+  ShieldCheckIcon,
+  SmileyIcon,
+  SparkleIcon,
+  StarIcon,
+  TargetIcon,
+  TextAaIcon,
+  ThumbsUpIcon,
+  TranslateIcon,
+  TrendUpIcon,
+  TrophyIcon,
+  UserIcon,
+  UsersThreeIcon,
+  VideoCameraIcon,
+  WaveformIcon,
+  XCircleIcon,
+  XIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 /**
- * SVG icon set (lucide). Names stay the old semantic keys so every
- * `<Icon name="check" />` call site keeps working — but we never paint
- * Material Symbols ligature *characters* ("arrow_forward", "record_voice_over")
- * when a font is late or the glyph is missing from the subset.
+ * Site iconography — Phosphor, duotone by default (October 2026).
+ *
+ * Duotone draws a solid outline plus a soft 20% fill in the same colour, so an
+ * icon reads as a small coloured shape inside the tinted tiles rather than a
+ * thin line. Names stay the old semantic keys so every `<Icon name="…" />`
+ * call site keeps working. SVG only — no icon font to arrive late.
  */
 const MAP = {
-  spark: Sparkles,
-  book: BookOpen,
-  mic: Mic,
-  chart: BarChart3,
-  code: Code,
-  bulb: Lightbulb,
-  trophy: Trophy,
-  target: Target,
-  calendar: Calendar,
-  clock: Clock,
-  users: Users,
-  user: User,
-  play: PlayCircle,
-  check: CheckCircle2,
-  "arrow-right": ArrowRight,
-  globe: Globe,
-  headset: Headphones,
-  rupee: IndianRupee,
-  rocket: Rocket,
-  star: Star,
-  heart: Heart,
-  puzzle: Puzzle,
-  shield: ShieldCheck,
-  trend: TrendingUp,
-  compass: Compass,
-  refresh: RefreshCw,
-  whatsapp: MessageCircle,
-  menu: Menu,
-  close: X,
-  phone: Phone,
-  mail: Mail,
-  instagram: Camera,
-  facebook: ThumbsUp,
-  linkedin: Briefcase,
-  youtube: MonitorPlay,
-  quote: Quote,
-  smile: Smile,
-  gamepad: Gamepad2,
-  location_on: MapPin,
-  ban: Ban,
-  "x-circle": CircleX,
-  clipboard: ClipboardList,
-  messages: MessagesSquare,
-  languages: Languages,
-  record_voice_over: AudioLines,
-  home: Home,
-  savings: PiggyBank,
-  computer: Laptop,
-  present_to_all: Presentation,
-  school: GraduationCap,
-  diversity_3: Users,
-  translate: Languages,
-} as const satisfies Record<string, LucideIcon>;
+  spark: SparkleIcon,
+  book: BookOpenIcon,
+  mic: MicrophoneIcon,
+  chart: ChartBarIcon,
+  code: CodeIcon,
+  bulb: LightbulbIcon,
+  trophy: TrophyIcon,
+  target: TargetIcon,
+  calendar: CalendarBlankIcon,
+  clock: ClockIcon,
+  users: UsersThreeIcon,
+  user: UserIcon,
+  play: PlayCircleIcon,
+  check: CheckCircleIcon,
+  "arrow-right": ArrowRightIcon,
+  "caret-left": CaretLeftIcon,
+  "caret-right": CaretRightIcon,
+  globe: GlobeIcon,
+  headset: HeadsetIcon,
+  rupee: CurrencyInrIcon,
+  rocket: RocketLaunchIcon,
+  star: StarIcon,
+  heart: HeartIcon,
+  puzzle: PuzzlePieceIcon,
+  shield: ShieldCheckIcon,
+  trend: TrendUpIcon,
+  compass: CompassIcon,
+  refresh: ArrowsClockwiseIcon,
+  whatsapp: ChatCircleIcon,
+  menu: ListIcon,
+  close: XIcon,
+  phone: PhoneIcon,
+  mail: EnvelopeSimpleIcon,
+  instagram: CameraIcon,
+  facebook: ThumbsUpIcon,
+  linkedin: BriefcaseIcon,
+  youtube: MonitorPlayIcon,
+  quote: QuotesIcon,
+  smile: SmileyIcon,
+  gamepad: GameControllerIcon,
+  location_on: MapPinIcon,
+  ban: ProhibitIcon,
+  "x-circle": XCircleIcon,
+  clipboard: ClipboardTextIcon,
+  messages: ChatsCircleIcon,
+  languages: TranslateIcon,
+  record_voice_over: WaveformIcon,
+  home: HouseIcon,
+  savings: PiggyBankIcon,
+  computer: LaptopIcon,
+  present_to_all: PresentationIcon,
+  school: GraduationCapIcon,
+  diversity_3: UsersThreeIcon,
+  translate: TranslateIcon,
+  // Complete-package practice types
+  brain: BrainIcon,
+  pen: NotePencilIcon,
+  video: VideoCameraIcon,
+  review: SealCheckIcon,
+  read: BookOpenTextIcon,
+  vocab: TextAaIcon,
+  grammar: ListChecksIcon,
+  bolt: LightningIcon,
+  teacher: ChalkboardTeacherIcon,
+  speak: ChatTeardropTextIcon,
+  wave: WaveformIcon,
+} as const satisfies Record<string, PhosphorIcon>;
 
 export type IconName = keyof typeof MAP;
 
+/** Shapes that look right solid when `filled` is on. */
 const FILLABLE = new Set<IconName>(["star", "heart", "spark"]);
 
-const WEIGHT_STROKE: Record<number, number> = {
-  300: 1.5,
-  400: 1.75,
-  500: 2,
-  600: 2.25,
-  700: 2.5,
-};
+/** Plain UI chrome stays a clean bold line; everything else is duotone. */
+const CHROME = new Set<IconName>(["menu", "close", "arrow-right", "caret-left", "caret-right"]);
 
 export function Icon({
   name,
   size = 22,
   className = "",
   filled = true,
-  weight = 500,
+  weight,
+  variant,
   style,
 }: {
   name: IconName | string;
   size?: number;
   className?: string;
   filled?: boolean;
+  /** Kept for old call sites; ≥600 renders the bold line weight. */
   weight?: 300 | 400 | 500 | 600 | 700;
+  variant?: IconWeight;
   style?: CSSProperties;
 }) {
   const Cmp = MAP[name as IconName];
@@ -147,18 +174,20 @@ export function Icon({
       <span aria-hidden className={className} style={{ width: size, height: size, ...style }} />
     );
   const key = name as IconName;
+  const resolved: IconWeight =
+    variant ??
+    (filled && FILLABLE.has(key)
+      ? "fill"
+      : CHROME.has(key) || (weight !== undefined && weight >= 600)
+        ? "bold"
+        : "duotone");
   return (
     <Cmp
       aria-hidden
-      width={size}
-      height={size}
       size={size}
-      strokeWidth={WEIGHT_STROKE[weight] ?? 2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      fill={filled && FILLABLE.has(key) ? "currentColor" : "none"}
+      weight={resolved}
       className={`lws-icon inline-flex shrink-0 ${className}`}
-      data-filled={filled && FILLABLE.has(key) ? "true" : undefined}
+      data-filled={resolved === "fill" ? "true" : undefined}
       style={style}
     />
   );

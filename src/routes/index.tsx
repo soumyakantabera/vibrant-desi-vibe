@@ -35,7 +35,9 @@ import {
   DemoStrip,
   LaunchOfferBand,
   MarketCompare,
-  PackageBento,
+  PackageSlides,
+  ReviewLoop,
+  TipsTiles,
   PackageStrip,
   PortalShowcase,
   PricingGrid,
@@ -111,7 +113,7 @@ function Home() {
       footerImage={IMG.graduation}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           {/* The one image that is part of the first screen — fetched at high
               priority; everything else on the page loads lazily. */}
@@ -122,7 +124,7 @@ function Home() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
           <div className="text-cream min-w-0 w-full">
@@ -141,8 +143,9 @@ function Home() {
               Practise Every Day.
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Real teachers. Small batches. Live classes up to twice a week — plus a learner portal
-              and a recorded video library for the days in between. The complete package from{" "}
+              Real teachers. Small batches. Live classes up to twice a week, daily grammar,
+              vocabulary, reading and speaking exercises, a recorded video library — and a weekly
+              teacher review of your reading and speaking. The complete package from{" "}
               <strong className="text-sunshine">
                 <FeeText text="₹1,499/mo" />
               </strong>
@@ -182,7 +185,7 @@ function Home() {
               </Link>{" "}
               — adjusted in your fee if you enrol.
             </p>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>
@@ -191,7 +194,7 @@ function Home() {
                 "7 years · about 6 a batch · pan-India & now worldwide",
                 "From ₹1,499/month, inclusive of taxes",
                 "500+ Learners",
-                "Portal + video library included",
+                "Daily exercises + weekly teacher review",
               ].map((s) => (
                 <span
                   key={s}
@@ -226,14 +229,14 @@ function Home() {
                   {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
-                    big: "5 days",
-                    small: "A week of portal practice + videos",
+                    big: "Daily",
+                    small: "Grammar, vocab, reading & speaking exercises",
                   },
                   {
                     tone: "coral",
                     icon: SnapIcons.people,
-                    big: "~6",
-                    small: "Learners, same teacher — not the back row",
+                    big: "Weekly",
+                    small: "Teacher review of your reading & speaking",
                   },
                 ]}
               />
@@ -248,7 +251,7 @@ function Home() {
       <CoverageStrip />
 
       {/* STORY BAND */}
-      <section className="bg-brand-deep py-10 md:py-14">
+      <section className="hero-light bg-white py-10 md:py-14">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider">
@@ -283,16 +286,16 @@ function Home() {
             </Link>
           </div>
           <Reveal stagger className="grid grid-cols-2 gap-3">
-            <StoryTile icon="gamepad" tone="sun" title="Gamified Learning">
+            <StoryTile icon="gamepad" tone="amber" title="Gamified Learning">
               Flashcards, matching games & live quizzes every session.
             </StoryTile>
-            <StoryTile icon="users" tone="glass" title="Batch of Around 6">
+            <StoryTile icon="users" tone="green" title="Batch of Around 6">
               Named teacher. Small batches of approximately 6 learners. You still speak.
             </StoryTile>
-            <StoryTile icon="heart" tone="glass" title="Collaborative">
+            <StoryTile icon="heart" tone="plum" title="Collaborative">
               Group discussions and community building every class.
             </StoryTile>
-            <StoryTile icon="target" tone="sun" title="Live Polls & Quizzes">
+            <StoryTile icon="target" tone="blue" title="Live Polls & Quizzes">
               Real-time interactive activities every session.
             </StoryTile>
           </Reveal>
@@ -301,7 +304,7 @@ function Home() {
 
       {/* THE WEEK + THE PACKAGE */}
       <WeekStrip />
-      <PackageBento />
+      <PackageSlides />
 
       {/* COURSE CATEGORIES */}
       <section className="section">
@@ -342,15 +345,17 @@ function Home() {
 
       {/* PORTAL + VIDEOS */}
       <PortalShowcase />
+      <ReviewLoop />
       <VideoLibrary />
+      <TipsTiles />
 
       <GuidesStrip />
 
       {/* HOW IT WORKS */}
-      <section className="relative section overflow-hidden">
+      <section className="hero-light relative section overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.liveClass} alt="Live online class in India" fill sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 to-brand-deep/85" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x">
           <SectionHeader
@@ -467,10 +472,10 @@ function Home() {
       </MottoBand>
 
       {/* NUMBERS */}
-      <section className="relative py-12 md:py-16">
+      <section className="hero-light relative py-12 md:py-16">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.graduation} alt="Indian graduates" fill sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/90 to-ink/85" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
           <div className="md:pr-4">
@@ -688,6 +693,13 @@ function Home() {
   );
 }
 
+const STORY_TONE = {
+  amber: { box: "bg-amber-soft", chip: "bg-sunshine text-ink", title: "text-[#6A4A10]" },
+  green: { box: "bg-brand-soft", chip: "bg-brand text-white", title: "text-brand-deep" },
+  plum: { box: "bg-plum-soft", chip: "bg-plum text-white", title: "text-[#4E3470]" },
+  blue: { box: "bg-slate-soft", chip: "bg-indigo-pop text-white", title: "text-[#1F3D63]" },
+} as const;
+
 function StoryTile({
   icon,
   title,
@@ -696,27 +708,17 @@ function StoryTile({
 }: {
   icon: IconName;
   title: string;
-  tone: "sun" | "glass";
+  tone: keyof typeof STORY_TONE;
   children: React.ReactNode;
 }) {
-  if (tone === "sun") {
-    return (
-      <div className="rounded-2xl p-5 bg-sunshine text-ink">
-        <div className="h-10 w-10 rounded-xl bg-ink/15 text-ink flex items-center justify-center mb-2">
-          <Icon name={icon} size={20} />
-        </div>
-        <strong className="text-ink font-display block">{title}</strong>
-        <p className="text-ink text-sm mt-1 leading-snug">{children}</p>
-      </div>
-    );
-  }
+  const t = STORY_TONE[tone];
   return (
-    <div className="rounded-2xl p-5 bg-white/10 border border-cream/15 backdrop-blur">
-      <div className="h-10 w-10 rounded-xl bg-cream/15 text-sunshine flex items-center justify-center mb-2">
-        <Icon name={icon} size={20} />
+    <div className={`rounded-2xl p-5 ${t.box}`}>
+      <div className={`mb-3 grid h-11 w-11 place-items-center rounded-xl ${t.chip}`}>
+        <Icon name={icon} size={22} />
       </div>
-      <strong className="text-cream font-display block">{title}</strong>
-      <p className="text-white/90 text-sm mt-1">{children}</p>
+      <strong className={`block font-bold ${t.title}`}>{title}</strong>
+      <span className="mt-1 block text-sm leading-snug text-ink/80">{children}</span>
     </div>
   );
 }
@@ -739,7 +741,7 @@ const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: s
   },
   coral: {
     bar: "bg-[#A9503D]",
-    icon: "bg-[#F8EEEA] text-[#9A402E]",
+    icon: "bg-[#F8EEEA] text-[#8E3B2A]",
     badge: "border-coral/35 bg-[#FAF2EF] text-[#8B321F]",
   },
   play: {

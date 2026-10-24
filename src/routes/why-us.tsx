@@ -99,7 +99,7 @@ function Page() {
   const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
     <Layout waMessage={wa} footerImage={IMG.liveClass}>
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.liveClass}
@@ -108,7 +108,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-coral/40" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div className="min-w-0 w-full text-cream">
@@ -277,7 +277,7 @@ function Page() {
         waMessage="Hi, I want a free consultation to know how your spoken English classes work."
       />
 
-      <section className="section bg-brand-deep">
+      <section className="hero-light section bg-paper">
         <div className="container-x grid items-center gap-10 lg:grid-cols-[1fr_1.2fr]">
           <SmartImage
             src={IMG.womanLaptop}

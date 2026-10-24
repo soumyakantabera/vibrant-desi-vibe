@@ -48,7 +48,7 @@ function DemoSessionPage() {
 
   return (
     <Layout footerImage={d.footerImage}>
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={d.heroImage}
@@ -57,7 +57,7 @@ function DemoSessionPage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/80 to-[#8A3626]/75" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-10 sm:py-16 md:py-24">
           <div className="text-cream max-w-3xl">
@@ -111,7 +111,7 @@ function DemoSessionPage() {
           <p className="mt-3 max-w-xl text-sm font-semibold text-white/95">
             WhatsApp us, then pay. We place you within 72 hours of payment.
           </p>
-          <PaymentTrust tone="dark" className="mt-4" />
+          <PaymentTrust tone="light" className="mt-4" />
         </div>
       </section>
 
@@ -223,8 +223,8 @@ function DemoSessionPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-16 md:py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section className="hero-light relative overflow-hidden py-16 md:py-20">
+        <div className="absolute inset-0 hero-veil" />
         <div className="container-x relative text-center text-cream">
           <h2 className="text-3xl md:text-4xl text-cream">See the class. Then decide.</h2>
           <p className="mx-auto mt-3 max-w-xl text-white">
@@ -240,7 +240,7 @@ function DemoSessionPage() {
           >
             <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for {fee("₹199")}
           </a>
-          <PaymentTrust tone="dark" align="center" className="mt-5" />
+          <PaymentTrust tone="light" align="center" className="mt-5" />
         </div>
       </section>
     </Layout>

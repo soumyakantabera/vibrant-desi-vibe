@@ -48,7 +48,10 @@ export function Footer({ image }: { image?: string }) {
   const showDeveloper = !POLICY_PATHS.has(pathname);
   const wa = waLink(withPageTag(CHAT_MSG, pageLabel(pathname)));
   return (
-    <footer className="bg-ink text-cream pt-16 pb-24 sm:pb-8 mt-10" data-cta-location="footer">
+    <footer
+      className="hero-light border-t border-border bg-paper text-ink pt-16 pb-24 sm:pb-8 mt-10"
+      data-cta-location="footer"
+    >
       <div className="container-x">
         <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 mb-12">
           <div>
@@ -116,7 +119,7 @@ export function Footer({ image }: { image?: string }) {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-cream/15">
-          <PaymentTrust tone="dark" />
+          <PaymentTrust tone="light" />
         </div>
         <div className="mt-8 pt-6 border-t border-cream/15 text-xs leading-relaxed text-white/80 space-y-3">
           <p className="text-cream/95 font-semibold">

@@ -26,7 +26,7 @@ export function Logo({ size = 40 }: { size?: number }) {
           <stop offset="100%" stopColor="#1A2E20" />
         </linearGradient>
         <linearGradient id={accent} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#D9A23A" />
+          <stop offset="0%" stopColor="#CC9A3D" />
           <stop offset="100%" stopColor="#E9C27A" />
         </linearGradient>
       </defs>
@@ -35,7 +35,7 @@ export function Logo({ size = 40 }: { size?: number }) {
         x="28"
         y="33"
         textAnchor="middle"
-        fontFamily="Sora, system-ui, sans-serif"
+        fontFamily="DM Sans, system-ui, sans-serif"
         fontSize="17"
         fontWeight="800"
         fill="#FFFFFF"
@@ -50,9 +50,9 @@ export function Logo({ size = 40 }: { size?: number }) {
         strokeLinecap="round"
         fill="none"
       />
-      <circle cx="46" cy="10" r="3" fill="#D9A23A" />
-      <circle cx="10" cy="46" r="2" fill="#D7775E" />
-      <circle cx="48" cy="44" r="1.6" fill="#3E5C86" />
+      <circle cx="46" cy="10" r="3" fill="#CC9A3D" />
+      <circle cx="10" cy="46" r="2" fill="#D2775F" />
+      <circle cx="48" cy="44" r="1.6" fill="#2F5A8A" />
     </svg>
   );
 }

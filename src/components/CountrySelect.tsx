@@ -70,11 +70,11 @@ export function CountrySelect() {
   };
 
   return (
-    <label className="inline-flex items-center gap-1 text-[11px] text-white/80">
+    <label className="inline-flex items-center gap-1 text-[11px] text-ink/70">
       <Icon name="globe" size={13} />
       <span className="sr-only">Country</span>
       <select
-        className="lws-country max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-0.5 pr-4 text-[11px] font-medium text-cream underline decoration-cream/35 underline-offset-2 focus:outline-none"
+        className="lws-country max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-0.5 pr-4 text-[11px] font-medium text-ink underline decoration-ink/30 underline-offset-2 focus:outline-none"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%23F6EFE4' d='M0 0l5 6 5-6z'/></svg>\")",

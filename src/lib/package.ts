@@ -8,7 +8,7 @@
  */
 import type { FeeSlug } from "@/lib/fees";
 
-export type PartKey = "live" | "portal" | "videos" | "teacher";
+export type PartKey = "live" | "portal" | "videos" | "review" | "teacher";
 
 /** Package colour code — the same four colours on every page. */
 export const PART_TONE: Record<
@@ -36,6 +36,13 @@ export const PART_TONE: Record<
     ring: "border-sunshine",
     label: "Video library",
   },
+  review: {
+    fill: "bg-plum",
+    soft: "bg-plum-soft",
+    text: "text-[#4E3470]",
+    ring: "border-plum",
+    label: "Weekly teacher review",
+  },
   teacher: {
     fill: "bg-coral",
     soft: "bg-terra-soft",
@@ -46,21 +53,24 @@ export const PART_TONE: Record<
 };
 
 export const PACKAGE_ONE_LINE =
-  "Every course includes live classes, the learner portal, the recorded video library and the same teacher — in one monthly fee.";
+  "Every course includes live classes, daily exercises in the learner portal, the recorded video library and a weekly teacher review of your reading and speaking — with the same teacher, in one monthly fee.";
 
-export const PORTAL_MODULES: { title: string; sub: string; sample: string[] }[] = [
+export const PORTAL_MODULES: {
+  title: string;
+  sub: string;
+  icon: "grammar" | "vocab" | "read" | "speak" | "review";
+  sample: string[];
+}[] = [
   {
-    title: "Whole-conversation practice",
-    sub: "A full talk, start to finish",
-    sample: [
-      "Open: “Hi, I’m Riya — I’ve just joined the support team.”",
-      "Keep it going: ask one question back.",
-      "Close: “Great talking to you — see you at the stand-up.”",
-    ],
+    title: "Daily grammar exercises",
+    sub: "Tap an answer, get instant feedback",
+    icon: "grammar",
+    sample: [],
   },
   {
-    title: "Word & phrase brush-ups",
-    sub: "Small words that make you sound natural",
+    title: "Daily vocabulary exercises",
+    sub: "Words and phrases you will actually use",
+    icon: "vocab",
     sample: [
       "Instead of “very good” → “excellent”, “spot on”.",
       "Buy time: “Let me think about that for a second.”",
@@ -68,33 +78,40 @@ export const PORTAL_MODULES: { title: string; sub: string; sample: string[] }[] 
     ],
   },
   {
-    title: "Reading fluency",
-    sub: "Read aloud with rhythm and stress",
+    title: "Reading practice",
+    sub: "Read aloud, then find the grammar in the text",
+    icon: "read",
     sample: [
-      "Read a short passage aloud.",
-      "Mark the stressed words: last WEEK · FI-nally.",
-      "Read it again, smoother and at a steady pace.",
+      "Read a short passage aloud with steady rhythm.",
+      "Spot the rule inside it: “I have worked here for two years.”",
+      "Write two lines of your own using the same rule.",
     ],
   },
   {
-    title: "Grammar in real texts",
-    sub: "Spot the rule inside a passage",
+    title: "Speaking practice",
+    sub: "A whole conversation, start to finish",
+    icon: "speak",
     sample: [
-      "Text: “I have worked here for two years.”",
-      "Rule: have + past participle → started then, still true now.",
-      "Your turn: write two lines about your own work.",
+      "Open: “Hi, I’m Riya — I’ve just joined the support team.”",
+      "Keep it going: ask one question back.",
+      "Record your answer and submit it for review.",
     ],
   },
   {
-    title: "Interactive grammar practice",
-    sub: "Tap an answer, get instant feedback",
-    sample: [],
+    title: "Weekly teacher review",
+    sub: "Your reading and speaking, checked every week",
+    icon: "review",
+    sample: [
+      "Your teacher reviews the reading and speaking you submitted that week.",
+      "You get notes on the mistakes that repeat — not every small slip.",
+      "The next live class picks up from that feedback.",
+    ],
   },
 ];
 
 export const WEEK: {
   day: string;
-  kind: "Live class" | "Portal" | "Videos";
+  kind: "Live class" | "Portal" | "Review";
   title: string;
   detail: string;
   video?: boolean;
@@ -102,9 +119,9 @@ export const WEEK: {
   {
     day: "Mon",
     kind: "Portal",
-    title: "Word & phrase brush-up",
+    title: "Grammar + vocabulary exercises",
     detail:
-      "Learn a small set of everyday words and phrases and use them in your own sentences. A short video adds natural connectors.",
+      "Daily grammar and vocabulary exercises in the portal, plus a short video with a tip to start speaking.",
     video: true,
   },
   {
@@ -117,15 +134,16 @@ export const WEEK: {
   {
     day: "Wed",
     kind: "Portal",
-    title: "Reading fluency + grammar in text",
+    title: "Reading practice",
     detail:
-      "Read a short passage aloud for fluency, then review the grammar inside that text — so the rule sticks.",
+      "Daily grammar and vocabulary, then read a short passage aloud and find the grammar inside the text.",
   },
   {
     day: "Thu",
     kind: "Portal",
-    title: "Interactive grammar practice",
-    detail: "Tap-and-answer grammar practice with instant feedback, plus a short grammar video.",
+    title: "Speaking practice",
+    detail:
+      "Daily grammar and vocabulary, then a whole conversation from start to finish — recorded for your teacher.",
     video: true,
   },
   {
@@ -133,22 +151,21 @@ export const WEEK: {
     kind: "Live class",
     title: "Role-plays + real talk",
     detail:
-      "Your second live class of the week: conversations, role-plays and course-specific practice — interviews, meetings or daily talk.",
+      "Your second live class: conversations, role-plays and course-specific practice — interviews, meetings or daily talk.",
   },
   {
     day: "Sat",
-    kind: "Portal",
-    title: "Whole-conversation practice",
+    kind: "Review",
+    title: "Teacher reviews your week",
     detail:
-      "Practise a full conversation from start to finish. A video on mind blanks shows what to say when the words suddenly go.",
-    video: true,
+      "Your teacher reviews the reading and speaking you submitted this week and sends notes on what to fix next.",
   },
   {
     day: "Sun",
-    kind: "Videos",
-    title: "Catch up at your pace",
+    kind: "Portal",
+    title: "Catch up + videos",
     detail:
-      "Watch from the recorded library — grammar, fluency, thinking in English — or revise anything from the week.",
+      "Daily grammar and vocabulary at your pace, and anything from the video library — tips, grammar, fluency.",
     video: true,
   },
 ];
@@ -160,6 +177,12 @@ export type VideoCourse =
   | "Interview Prep";
 
 export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: VideoCourse[] }[] = [
+  {
+    cat: "Tips & tricks",
+    title: "Tips and tricks to start speaking",
+    blurb: "Simple ways to say your first sentences out loud — and keep going.",
+    tags: ["Spoken English", "Interactive Speaking", "Business English", "Interview Prep"],
+  },
   {
     cat: "Grammar",
     title: "Grammar you actually use",
@@ -222,7 +245,16 @@ export const BEFORE_NOW: { row: string; before: string; now: string }[] = [
     before: "Up to 2 a week, about 6 learners",
     now: "Up to 2 a week, about 6 learners — unchanged",
   },
-  { row: "Between classes", before: "Worksheets", now: "Learner portal practice, 5 days a week" },
+  {
+    row: "Between classes",
+    before: "Worksheets",
+    now: "Daily grammar, vocabulary, reading and speaking exercises",
+  },
+  {
+    row: "Feedback",
+    before: "In class",
+    now: "In class + a weekly teacher review of your reading and speaking",
+  },
   { row: "Conversation", before: "In class", now: "In class + whole-conversation practice online" },
   {
     row: "Grammar",
@@ -244,13 +276,22 @@ export const BEFORE_NOW: { row: string; before: string; now: string }[] = [
 /** Per-course emphasis inside the same four parts. */
 export const COURSE_PACKAGE: Record<
   FeeSlug,
-  { live: string; portal: string; videos: string; teacher: string; videoTag: VideoCourse }
+  {
+    live: string;
+    portal: string;
+    videos: string;
+    review: string;
+    teacher: string;
+    videoTag: VideoCourse;
+  }
 > = {
   "spoken-english": {
     live: "Build sentences from zero, speak in every round and get corrected live — including interview English.",
     portal:
       "Daily conversations, word and phrase brush-ups, reading aloud and grammar inside simple texts.",
     videos: "Grammar basics, thinking in English, what to say when your mind goes blank.",
+    review:
+      "Every week your teacher reviews your reading aloud and recorded speaking, and points out the mistakes that repeat.",
     teacher: "One teacher for the whole 6 months, so your mistakes are remembered and fixed.",
     videoTag: "Spoken English",
   },
@@ -259,6 +300,8 @@ export const COURSE_PACKAGE: Record<
     portal:
       "Whole-conversation practice, phrase brush-ups and reading for rhythm between sessions.",
     videos: "Fluency drills, small talk without freezing and mind-blank fixes.",
+    review:
+      "Every week your teacher reviews your recorded conversations and reading, focusing on where the freeze starts.",
     teacher: "The same teacher every class, who notices when the freeze starts and why.",
     videoTag: "Interactive Speaking",
   },
@@ -267,6 +310,8 @@ export const COURSE_PACKAGE: Record<
     portal:
       "Meeting conversations, office phrase brush-ups, reading emails aloud and grammar in business texts.",
     videos: "Meeting, email and call phrases; how to buy time when you lose a word mid-call.",
+    review:
+      "Every week your teacher reviews your recorded updates, call answers and reading, with workplace-specific notes.",
     teacher: "One teacher who knows your role, your team and the calls you dread.",
     videoTag: "Business English",
   },
@@ -274,6 +319,8 @@ export const COURSE_PACKAGE: Record<
     live: "HR screens, 60-second introductions, STAR answers and mock interviews in front of the batch.",
     portal: "Full interview conversations, answer phrases and grammar inside sample answers.",
     videos: "Tell me about yourself, STAR stories and what to do when you blank on a question.",
+    review:
+      "Every week your teacher reviews your recorded answers and reading, so each mock starts from last week’s notes.",
     teacher: "The same teacher across every mock, so feedback builds week to week.",
     videoTag: "Interview Prep",
   },
@@ -305,6 +352,7 @@ export const MARKET_ROWS: { label: string; marks: [Mark, Mark, Mark, Mark]; note
   { label: "Speak with real people under real pressure", marks: ["no", "part", "part", "yes"] },
   { label: "Enough speaking time for you", marks: ["yes", "yes", "no", "yes"] },
   { label: "Practice every day between classes", marks: ["yes", "part", "no", "yes"] },
+  { label: "A teacher reviews your practice every week", marks: ["no", "part", "no", "yes"] },
   { label: "Structured course with a map", marks: ["part", "part", "yes", "yes"] },
   { label: "Recorded video lessons to revise", marks: ["part", "no", "part", "yes"] },
   { label: "Same teacher who remembers your mistakes", marks: ["no", "part", "part", "yes"] },

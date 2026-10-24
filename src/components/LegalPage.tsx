@@ -16,7 +16,7 @@ export function LegalPage({ path }: { path: LegalDoc["path"] }) {
   const seo = PAGES[path];
   return (
     <Layout>
-      <section className="relative overflow-hidden bg-brand-deep">
+      <section className="hero-light relative overflow-hidden bg-paper">
         <div className="container-x py-12 md:py-16 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
             <ol className="flex flex-wrap items-center gap-2">

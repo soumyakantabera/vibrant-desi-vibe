@@ -135,7 +135,7 @@ function Page() {
       waMessage="Hi, I want a free consultation with Sunanda for spoken English."
       footerImage={IMG.teacherWoman}
     >
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.teacherWoman}
@@ -144,7 +144,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/80 to-indigo-pop/55" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">

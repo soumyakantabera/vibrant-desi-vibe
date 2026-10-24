@@ -30,7 +30,7 @@ export const Route = createFileRoute("/free-consultation")({
 function Page() {
   return (
     <Layout waMessage={DEMO_MSG} footerImage={IMG.womanLaptop}>
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.womanLaptop}
@@ -39,7 +39,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-sunshine/35" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
@@ -331,8 +331,11 @@ function Page() {
         waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       />
 
-      <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section
+        className="hero-light relative py-14 md:py-16 overflow-hidden"
+        data-cta-location="final_cta"
+      >
+        <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">
             Bring the problem. Leave with one room.
@@ -350,7 +353,7 @@ function Page() {
               {DEMO_CTA}
             </WaButton>
           </div>
-          <PaymentTrust tone="dark" align="center" className="mt-8" />
+          <PaymentTrust tone="light" align="center" className="mt-8" />
         </div>
       </section>
     </Layout>

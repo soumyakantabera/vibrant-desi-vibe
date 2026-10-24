@@ -47,10 +47,10 @@ function BlogPostPage() {
 
   return (
     <Layout waMessage={waMessage} footerImage={heroImage}>
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={heroImage} alt={post.imgAlt} fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-indigo-pop/70 to-brand-deep/70" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
@@ -180,8 +180,11 @@ function BlogPostPage() {
         waMessage={waMessage}
       />
 
-      <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section
+        className="hero-light relative py-14 md:py-16 overflow-hidden"
+        data-cta-location="final_cta"
+      >
+        <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
           <p className="mt-3 text-white">{CONSULTATION.punch}</p>
@@ -199,7 +202,7 @@ function BlogPostPage() {
               See all courses
             </Link>
           </div>
-          <PaymentTrust tone="dark" align="center" className="mt-8" />
+          <PaymentTrust tone="light" align="center" className="mt-8" />
         </div>
       </section>
     </Layout>

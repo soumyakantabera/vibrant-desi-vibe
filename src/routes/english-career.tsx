@@ -55,10 +55,10 @@ function Page() {
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/85 to-[#8A3626]/80" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
@@ -98,7 +98,7 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>
@@ -303,7 +303,7 @@ function Page() {
         waMessage="Hi, I want a free consultation to choose my spoken English course."
       />
 
-      <section className="section bg-brand-deep">
+      <section className="hero-light section bg-paper">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
           <SmartImage
             src={IMG.womanOffice}
@@ -325,7 +325,7 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="dark" className="mt-5" />
+            <PaymentTrust tone="light" className="mt-5" />
           </div>
         </div>
       </section>

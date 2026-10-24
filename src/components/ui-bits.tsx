@@ -274,21 +274,17 @@ export function WaButton({
 export function Stat({ num, label }: { num: string; label: string }) {
   return (
     <div className="text-center">
-      <div className="font-display text-4xl md:text-6xl font-extrabold text-sunshine drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
-        {num}
-      </div>
-      <div className="text-sm md:text-base text-cream mt-2 font-bold tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-        {label}
-      </div>
+      <div className="font-display text-4xl md:text-5xl font-extrabold text-brand-deep">{num}</div>
+      <div className="text-sm md:text-base text-ink/75 mt-2 font-semibold">{label}</div>
     </div>
   );
 }
 
 export function MottoBand({ children }: { children: ReactNode }) {
   return (
-    <div className="bg-gradient-to-r from-brand-deep via-indigo-pop to-[#9A402E] py-8 md:py-10">
+    <div className="hero-light border-y border-border bg-paper py-8 md:py-10">
       <div className="container-x">
-        <blockquote className="font-display text-xl md:text-3xl font-extrabold text-white text-center leading-tight">
+        <blockquote className="font-display text-xl md:text-3xl font-extrabold text-ink text-center leading-tight">
           {children}
         </blockquote>
       </div>

@@ -42,7 +42,7 @@ function Page() {
       waMessage="Hi, I read your guides and I want a free consultation for spoken English."
       footerImage={IMG.blogDesk}
     >
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.blogDesk}
@@ -51,7 +51,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/60" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
@@ -113,8 +113,11 @@ function Page() {
         );
       })}
 
-      <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section
+        className="hero-light relative py-14 md:py-16 overflow-hidden"
+        data-cta-location="final_cta"
+      >
+        <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">Still not sure which room?</h2>
           <p className="mt-3 text-white">
@@ -137,7 +140,7 @@ function Page() {
               {DEMO_CTA}
             </WaButton>
           </div>
-          <PaymentTrust tone="dark" align="center" className="mt-8" />
+          <PaymentTrust tone="light" align="center" className="mt-8" />
         </div>
       </section>
     </Layout>

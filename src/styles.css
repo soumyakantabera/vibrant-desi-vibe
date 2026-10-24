@@ -1,31 +1,16 @@
 @import "tailwindcss" source(none);
 
-/* Self-hosted text faces — Manrope for body, Sora for display.
+/* Self-hosted text face — DM Sans for body and display (October 2026).
  *
- * These used to be fetched from fonts.googleapis.com by the boot gate. Serving
- * them from our own origin removes two third-party connections (DNS + TLS +
- * request, on a connection where that is often the slowest part of the load in
- * India), removes a dependency on a CDN that can be slow or blocked, and lets
- * the faces arrive with the app stylesheet the gate already waits for rather
- * than as a separate request it has to poll for.
+ * Served from our own origin (no fonts.googleapis.com connection), Latin
+ * subset only, and only the weights the design uses: 400/500/600/700/800.
  *
- * Latin subsets only, and only the weights the design actually uses — the
- * design tokens below declare 400/500/600/700/800 for Manrope and 500/600/700/800
- * for Sora. Importing the packages' index.css instead would pull in Cyrillic,
- * Greek and Vietnamese subsets nobody on this site renders.
- *
- * Icons are lucide SVG paths (src/components/Icon.tsx). The old Material
- * Symbols font is not loaded — a late or missing icon font used to flash
- * ligature names ("arrow_forward") or hide the whole glyph. */
-@import "@fontsource/manrope/latin-400.css";
-@import "@fontsource/manrope/latin-500.css";
-@import "@fontsource/manrope/latin-600.css";
-@import "@fontsource/manrope/latin-700.css";
-@import "@fontsource/manrope/latin-800.css";
-@import "@fontsource/sora/latin-500.css";
-@import "@fontsource/sora/latin-600.css";
-@import "@fontsource/sora/latin-700.css";
-@import "@fontsource/sora/latin-800.css";
+ * Icons are Phosphor duotone SVG (src/components/Icon.tsx), not a font. */
+@import "@fontsource/dm-sans/latin-400.css";
+@import "@fontsource/dm-sans/latin-500.css";
+@import "@fontsource/dm-sans/latin-600.css";
+@import "@fontsource/dm-sans/latin-700.css";
+@import "@fontsource/dm-sans/latin-800.css";
 @source "../src";
 @import "tw-animate-css";
 
@@ -39,8 +24,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -79,6 +64,10 @@
   --color-amber-soft: var(--amber-soft);
   --color-terra-soft: var(--terra-soft);
   --color-graphite: var(--graphite);
+  --color-plum: var(--plum);
+  --color-plum-soft: var(--plum-soft);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
   --color-wa-deep: var(--wa-deep);
 }
 
@@ -90,40 +79,44 @@
 
   --radius: 1rem;
   --background: #ffffff;
-  --foreground: #0b1f14;
+  --foreground: #13212f;
   --card: #ffffff;
-  --card-foreground: #0b1f14;
+  --card-foreground: #13212f;
   --primary: #0c6b4e;
   --primary-foreground: #ffffff;
-  --secondary: #d9a23a;
-  --secondary-foreground: #0b1f14;
-  --muted: #f1f4f2;
-  --muted-foreground: #2c3a31;
-  --accent: #f3e6c8;
-  --accent-foreground: #0b1f14;
-  --border: #e5eae6;
-  --input: #e5eae6;
+  --secondary: #cc9a3d;
+  --secondary-foreground: #13212f;
+  --muted: #f2f4f6;
+  --muted-foreground: #44515f;
+  --accent: #f6eedd;
+  --accent-foreground: #13212f;
+  --border: #e3e7ec;
+  --input: #e3e7ec;
   --ring: #0c6b4e;
 
   --brand: #0c6b4e;
-  --brand-deep: #083d2e;
-  --brand-soft: #e2efe8;
-  --sunshine: #d9a23a;
-  --coral: #d7775e;
-  --coral-deep: #9a402e;
-  --indigo-pop: #3e5c86;
-  --sage: #a9cbb7;
+  --brand-deep: #0a4a37;
+  --brand-soft: #e4f1ea;
+  --sunshine: #cc9a3d;
+  --coral: #d2775f;
+  --coral-deep: #8e3b2a;
+  --indigo-pop: #2f5a8a;
+  --sage: #a7c9b6;
   --cream: #ffffff;
-  --ink: #0b1f14;
+  --ink: #13212f;
   --wa: #25d366;
   --wa-deep: #128c7e;
 
   /* Complete-package palette (Oct 2026): calm tints for the four parts. */
-  --paper: #f7f6f1;
-  --slate-soft: #e3e9f1;
-  --amber-soft: #f6ebd3;
-  --terra-soft: #f3e2dc;
-  --graphite: #2c3a31;
+  --paper: #f7f9fa;
+  --slate-soft: #e6edf6;
+  --amber-soft: #f6eedd;
+  --terra-soft: #f6e6e0;
+  --graphite: #44515f;
+  --plum: #6a4c8c;
+  --plum-soft: #efe9f5;
+  --teal: #1f7a80;
+  --teal-soft: #e1f0f0;
 }
 
 .dark {
@@ -337,7 +330,7 @@ section > .container-x {
 
 /* --- Light backgrounds: keep body copy at strong contrast --- */
 .text-muted-foreground {
-  color: #2c3a31 !important;
+  color: #44515f !important;
 }
 .text-foreground\/60,
 .text-foreground\/70,
@@ -364,7 +357,7 @@ section > .container-x {
 [class*="to-cream"],
 [class*="from-brand-soft"],
 [class*="to-brand-soft"] {
-  color: #0b1f14;
+  color: #13212f;
 }
 .bg-brand-soft p,
 .bg-sage p,
@@ -431,33 +424,31 @@ section > .container-x {
   -webkit-text-fill-color: #fff !important;
 }
 
-/* Nested colour cards inside the yellow consult band keep their own type. */
-.consult-card,
+/* Consultation proof cards are soft tinted tiles: children inherit the card's
+   own deep text colour wherever the band sits. */
 .consult-card p,
 .consult-card li,
 .consult-card strong,
-.consult-card svg,
-.bg-sunshine .consult-card,
-.bg-sunshine .consult-card p,
-.bg-sunshine .consult-card li,
-.bg-sunshine .consult-card strong,
-.bg-sunshine .consult-card svg {
-  color: #fff !important;
+.consult-card svg {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
 }
-.bg-sunshine .consult-card svg.lucide,
-.bg-sunshine .consult-card svg.lws-icon {
+.bg-sunshine .consult-card svg.lucide {
   stroke: currentColor;
   fill: none !important;
 }
 .bg-sunshine span.bg-ink,
 .bg-sunshine .bg-ink {
-  color: #d9a23a !important;
+  color: #cc9a3d !important;
 }
-.bg-sunshine span.bg-ink svg.lucide,
-.bg-sunshine span.bg-ink svg.lws-icon {
-  color: #d9a23a !important;
+.bg-sunshine span.bg-ink svg.lucide {
+  color: #cc9a3d !important;
   stroke: currentColor;
   fill: none !important;
+}
+.bg-sunshine span.bg-ink svg.lws-icon {
+  color: #cc9a3d !important;
+  fill: currentColor !important;
 }
 
 /* Sunshine TEXT on dark backgrounds — keep the bright yellow */
@@ -468,7 +459,7 @@ section > .container-x {
 [class*="from-ink"] .text-sunshine,
 [class*="from-brand-deep"] .text-sunshine,
 [class*="via-indigo-pop"] .text-sunshine {
-  color: #d9a23a !important;
+  color: #cc9a3d !important;
 }
 
 /* Sunshine TEXT only reads on dark; on light surfaces darken to amber */
@@ -488,10 +479,10 @@ section > .container-x {
 }
 .bg-wa.text-white,
 .bg-wa .text-white {
-  color: #0b1f14 !important;
+  color: #13212f !important;
 }
 .text-wa {
-  color: #083d2e;
+  color: #0a4a37;
 }
 
 /* Links default to inherit; force white on dark sections + dark gradients.
@@ -519,7 +510,7 @@ section > .container-x {
 }
 
 /* Course-card "View Full Syllabus" pill — UNLAYERED so it beats the contrast
-   safety-net (.bg-brand-soft { color: #0B1F14 }). Rest = mint + deep-green
+   safety-net (.bg-brand-soft { color: #13212F }). Rest = mint + deep-green
    label. Hover / active / focus / tap fill brand green with a WHITE label,
    including text-selection on PC and long-press on touch. */
 .syllabus-cta {
@@ -538,29 +529,30 @@ section > .container-x {
 }
 .syllabus-cta::selection,
 .syllabus-cta *::selection {
-  background: #083d2e !important;
+  background: #0a4a37 !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
 .syllabus-cta::-moz-selection,
 .syllabus-cta *::-moz-selection {
-  background: #083d2e !important;
+  background: #0a4a37 !important;
   color: #ffffff !important;
 }
 
 /* Homepage header ribbon — peach into teal. Thin bar, price still the loudest chip. */
 .demo-ribbon {
-  --ribbon-ink: #0b1f14;
-  --ribbon-chip: #14200a;
-  --ribbon-price: #d9a23a;
+  --ribbon-ink: #13212f;
+  --ribbon-chip: #13212f;
+  --ribbon-price: #cc9a3d;
   display: block;
-  background: linear-gradient(90deg, #ffc4a8 0%, #f7d0be 42%, #7ed9cc 100%);
+  background: var(--amber-soft);
+  border-bottom: 1px solid #ead9b6;
   color: var(--ribbon-ink);
   font-family: var(--font-display);
   text-decoration: none;
 }
 .demo-ribbon:hover {
-  background: linear-gradient(90deg, #ffb89a 0%, #f3c4ae 42%, #6dcec0 100%);
+  background: #f1e5cc;
 }
 .demo-ribbon:focus-visible {
   outline: 2px solid var(--ribbon-chip);
@@ -896,11 +888,14 @@ button.btn.btn-wa svg:not(.lucide):not(.lws-icon) {
   fill: #053b1e;
 }
 a.btn.btn-wa svg.lucide,
-a.btn.btn-wa svg.lws-icon,
-button.btn.btn-wa svg.lucide,
-button.btn.btn-wa svg.lws-icon {
+button.btn.btn-wa svg.lucide {
   fill: none !important;
   stroke: currentColor;
+  color: #053b1e !important;
+}
+a.btn.btn-wa svg.lws-icon,
+button.btn.btn-wa svg.lws-icon {
+  fill: currentColor !important;
   color: #053b1e !important;
 }
 
@@ -1009,7 +1004,9 @@ button.btn.btn-wa svg.lws-icon {
    ========================================================================== */
 
 /* ---------------------------------------------------------- icons ---
-   Lucide SVGs. Never hide them behind a font-face gate. */
+   Phosphor SVGs (duotone): drawn with fills in currentColor, so never set
+   fill: none on them. Lucide (shadcn ui/ components) keeps its stroke style.
+   Never hidden behind a font-face gate. */
 svg.lws-icon,
 svg.lucide {
   display: inline-block;
@@ -1017,7 +1014,9 @@ svg.lucide {
   overflow: visible;
   vertical-align: middle;
 }
-svg.lws-icon:not([data-filled="true"]),
+svg.lws-icon {
+  fill: currentColor;
+}
 svg.lucide:not([data-filled="true"]) {
   fill: none;
 }
@@ -1355,5 +1354,210 @@ html.js [data-viz="in"] .viz-draw {
   }
   html.js [data-viz] * {
     transition: none !important;
+  }
+}
+
+/* ------------------------------------------- light heroes & bands (Oct 2026)
+   Every page background is light. Heroes keep their photo, under a white
+   veil that clears toward the right so the picture still shows. `.hero-light`
+   scopes the text back to ink wherever old markup asked for white or cream. */
+.hero-veil {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.95) 45%,
+    rgba(255, 255, 255, 0.74) 70%,
+    rgba(255, 255, 255, 0.38) 100%
+  );
+}
+@media (max-width: 1023px) {
+  .hero-veil {
+    background: rgba(255, 255, 255, 0.94);
+  }
+}
+.hero-light {
+  color: var(--ink);
+}
+.hero-light
+  :is(h1, h2, h3, h4, h5):not(
+    :where(
+        [class*="bg-brand"],
+        [class*="bg-ink"],
+        [class*="bg-indigo"],
+        .bg-coral,
+        .bg-plum,
+        .bg-teal
+      )
+      *
+  ) {
+  color: var(--ink) !important;
+}
+.hero-light
+  :is(.text-cream, .text-white, p, li, blockquote):not(.btn, .btn *, [class*="bg-"]):not(
+    :where(
+        [class*="bg-brand"],
+        [class*="bg-ink"],
+        [class*="bg-indigo"],
+        .bg-coral,
+        .bg-plum,
+        .bg-teal,
+        .btn
+      )
+      *
+  ) {
+  color: var(--ink) !important;
+}
+.hero-light
+  :is([class*="text-white/"], [class*="text-cream/"]):not(.btn, .btn *):not(
+    :where(
+        [class*="bg-brand"],
+        [class*="bg-ink"],
+        [class*="bg-indigo"],
+        .bg-coral,
+        .bg-plum,
+        .bg-teal,
+        .btn
+      )
+      *
+  ) {
+  color: var(--muted-foreground) !important;
+}
+.hero-light
+  :is(.text-sunshine, .text-sage):not(
+    :where(
+        [class*="bg-brand"],
+        [class*="bg-ink"],
+        [class*="bg-indigo"],
+        .bg-coral,
+        .bg-plum,
+        .bg-teal
+      )
+      *
+  ) {
+  color: var(--brand) !important;
+}
+.hero-light .eyebrow-white {
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  border-color: color-mix(in oklab, var(--brand) 25%, transparent);
+}
+.hero-light :is([class*="bg-cream/"], [class*="bg-white/1"], [class*="bg-white/2"]) {
+  background-color: #ffffff !important;
+  border-color: var(--border) !important;
+  color: var(--ink) !important;
+}
+.hero-light :is([class*="border-cream/"], [class*="border-white/"]) {
+  border-color: var(--border) !important;
+}
+.hero-light [class*="divide-cream"] > * {
+  border-color: var(--border) !important;
+}
+.hero-light .btn-ghost-white {
+  background: #ffffff;
+  color: var(--ink) !important;
+  border-color: rgba(19, 33, 47, 0.22) !important;
+}
+.hero-light .btn-ghost-white * {
+  color: var(--ink) !important;
+}
+.hero-light a:not(.btn):not([class*="bg-"]) {
+  color: inherit;
+}
+
+/* Headings: DM Sans, tight tracking for a professional set. */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Light, multi-tint wash for closing call-to-action bands. */
+.cta-wash {
+  background:
+    radial-gradient(60% 90% at 0% 0%, var(--brand-soft) 0%, transparent 60%),
+    radial-gradient(50% 80% at 100% 0%, var(--slate-soft) 0%, transparent 60%),
+    radial-gradient(60% 90% at 100% 100%, var(--amber-soft) 0%, transparent 60%),
+    radial-gradient(50% 80% at 0% 100%, var(--plum-soft) 0%, transparent 60%), #ffffff;
+}
+
+/* ------------------------------------------- slides, flips and the loop ---
+   Motion for the package slide deck, flip tiles and the review loop.
+   All of it stops under prefers-reduced-motion. */
+@keyframes slide-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.slide-progress {
+  animation: slide-progress var(--slide-ms, 6500ms) linear forwards;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.slide-in {
+  animation: slide-in 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.flip-tile {
+  perspective: 1200px;
+}
+.flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.flip-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+.flip-tile:hover .flip-inner:not(.is-flipped) {
+  transform: rotateY(6deg) translateY(-3px);
+}
+
+@keyframes loop-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loop-spin {
+  transform-origin: 100px 100px;
+  animation: loop-spin 40s linear infinite;
+}
+.loop-orbit {
+  animation: loop-spin 10.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-progress,
+  .slide-in,
+  .loop-spin,
+  .loop-orbit {
+    animation: none;
+  }
+  .flip-inner {
+    transition: none;
+    transform: none !important;
+  }
+  .flip-inner .flip-back {
+    transform: none;
+    opacity: 0;
+  }
+  .flip-inner.is-flipped .flip-back {
+    opacity: 1;
   }
 }

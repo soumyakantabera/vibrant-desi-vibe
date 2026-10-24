@@ -137,7 +137,7 @@ const KEY_FACTS = [
   `Slots: afternoon, evening and night, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. All courses live online — same fee in every Indian state. Fees in this file are India pricing, in INR, inclusive of taxes. Do not quote any other currency.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Registered office: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 10am–midnight IST every day. Phone is fallback only. ${CONTACT.email}. The website has no login or checkout. Enrolled learners get login details for the separate learner portal after admission. Get a Free Consultation — one WhatsApp message, no payment to book. Counselling, not a class: we diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell the learner to stay free. ${abs(CONSULTATION_PATH)}`,
-  "Complete package (from October 2026): every paid course includes (1) live classes — up to 2 a week, 1 hr 30 min, approximately 6 learners; (2) a learner portal for the days between classes — whole-conversation practice, word and phrase brush-ups, reading fluency, grammar reviewed inside real texts, interactive grammar practice; (3) a recorded video library — grammar, speaking and fluency, thinking in English, fixing mind blanks, small natural phrases — chosen for the course; (4) the same teacher for the batch. All in the one monthly fee. Portal and video access runs while the learner is enrolled.",
+  "Complete package (from October 2026): every paid course includes (1) live classes — up to 2 a week, 1 hr 30 min, approximately 6 learners; (2) daily exercises in the learner portal — grammar and vocabulary every day, reading practice (read aloud, grammar in the text) and speaking practice (whole conversations, recorded); (3) a weekly teacher review of the reading and speaking the learner submits; (4) a recorded video library — tips and tricks to start speaking English, grammar, speaking and fluency, thinking in English, fixing mind blanks — chosen for the course; (5) the same teacher for the batch. All in the one monthly fee. Portal and video access runs while the learner is enrolled.",
   `Launch offer: new learners who enrol by ${LAUNCH_OFFER.endsLabel} get one extra month of learner-portal and video-library access after their course, free. The course fee does not change. After that date the offer has ended.`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
   `Refunds: full refund of a paid month if the learner cancels before the first live class of that month is held. After that class, no refund of that month for a change of mind. Later unbilled months can be stopped. The Demo Class fee (${DEMO_SESSION.price}) is not refunded in cash; it is adjusted against a course fee if the learner takes admission within ${DEMO_SESSION.adjustWithinHours} hours of the session. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. A consumer right that cannot be waived, in India or where the learner lives, still applies. ${abs("/refunds")} ${abs("/terms")}#demo-session`,
@@ -173,12 +173,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What is included in the Learn With Smile course fee?",
-    a: "Live classes (up to 2 a week, 1 hr 30 min, approximately 6 learners, same teacher), a learner portal for daily practice between classes, and a recorded video library chosen for the course — all in one monthly fee, inclusive of taxes: Spoken English ₹1,499/month, Interactive Speaking ₹1,799, Business English ₹2,499, Interview Preparation ₹2,499. No material fee.",
+    a: "Live classes (up to 2 a week, 1 hr 30 min, approximately 6 learners, same teacher), daily grammar, vocabulary, reading and speaking exercises in the learner portal, a weekly teacher review of reading and speaking, and a recorded video library chosen for the course — all in one monthly fee, inclusive of taxes: Spoken English ₹1,499/month, Interactive Speaking ₹1,799, Business English ₹2,499, Interview Preparation ₹2,499. No material fee.",
     source: "/",
   },
   {
     q: "What do learners do between live classes?",
-    a: "They use the learner portal: whole-conversation practice, word and phrase brush-ups, reading fluency, grammar reviewed inside real texts and interactive grammar practice — plus recorded videos on grammar, fluency, thinking in English and what to say when the mind goes blank.",
+    a: "Daily exercises in the learner portal: grammar and vocabulary every day, reading practice and speaking practice. Every week the teacher reviews the reading and speaking they submit. The recorded video library adds tips and tricks to start speaking English, grammar, fluency, thinking in English and what to say when the mind goes blank.",
     source: "/",
   },
   {
@@ -888,14 +888,16 @@ export function buildLlmsJson(updated: string): string {
       summary:
         "Every paid course includes live classes, a learner portal, a recorded video library and the same teacher, in one monthly fee.",
       live_classes: "Up to 2 a week, 1 hr 30 min, approximately 6 learners, same teacher.",
-      learner_portal: [
-        "Whole-conversation practice",
-        "Word and phrase brush-ups",
-        "Reading fluency",
-        "Grammar reviewed inside real texts",
-        "Interactive grammar practice",
+      daily_exercises: [
+        "Grammar (every day)",
+        "Vocabulary (every day)",
+        "Reading practice",
+        "Speaking practice",
       ],
+      weekly_teacher_review:
+        "The teacher reviews the learner's submitted reading and speaking every week.",
       video_library: [
+        "Tips and tricks to start speaking English",
         "Grammar",
         "Speaking and fluency",
         "Thinking in English",
