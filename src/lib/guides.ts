@@ -151,7 +151,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-for-it-professionals-india",
     title: "English for IT professionals",
-    sub: "Standups, tickets, client calls. Same IST batches. Workplace ₹1,999/mo.",
+    sub: "Standups, tickets, client calls. Same IST batches. Workplace ₹2,499/mo.",
     icon: "computer",
     color: "brand",
     group: "work",

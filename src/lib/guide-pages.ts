@@ -44,7 +44,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile की फ़ीस कितनी है?",
-        a: "Basic Spoken English ₹999/माह (6 महीने), Interactive Speaking ₹1,199/माह, Business English ₹1,999/माह, Interview Preparation ₹1,999/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
+        a: "Basic Spoken English ₹999/माह (6 महीने), Interactive Speaking ₹1,999/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
       },
       {
         q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
@@ -88,7 +88,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile-এর ফি কত?",
-        a: "Basic Spoken English ₹999/মাস (6 মাস), Interactive Speaking ₹1,199/মাস, Business English ₹1,999/মাস, Interview Preparation ₹1,999/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
+        a: "Basic Spoken English ₹999/মাস (6 মাস), Interactive Speaking ₹1,999/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
       },
       {
         q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",
@@ -122,7 +122,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,199/month). If meetings and calls are the gap, take Business English (₹1,999/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,999/month). If meetings and calls are the gap, take Business English (₹2,499/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -210,7 +210,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/spoken-english-for-freshers-india",
     title: "Spoken English for Freshers | Interview Ready",
     description:
-      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interactive ₹1,199/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
+      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interactive ₹1,999/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
     shortTitle: "Freshers",
     keywords: [
       "spoken english for freshers",
@@ -226,11 +226,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Freshers", path: "/spoken-english-for-freshers-india" },
     ],
     summary:
-      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interview Preparation — 2 months, ₹1,999/month. No placement guarantee.",
+      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interview Preparation — 2 months, ₹2,499/month. No placement guarantee.",
     faqs: [
       {
         q: "Which English course should a fresher take in India?",
-        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹1,999/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
+        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
       },
       {
         q: "Do I need IELTS for campus placements in India?",
@@ -382,7 +382,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/english-for-it-professionals-india",
     title: "Spoken English for IT Professionals India",
     description:
-      "Standups, tickets, client calls for Indian IT. Business English ₹1,999/mo or Spoken ₹999/mo, around 6 learners, inclusive of taxes. IST live batches.",
+      "Standups, tickets, client calls for Indian IT. Business English ₹2,499/mo or Spoken ₹999/mo, around 6 learners, inclusive of taxes. IST live batches.",
     shortTitle: "IT professionals",
     keywords: [
       "english for it professionals india",
@@ -402,7 +402,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course is best for IT professionals in India?",
-        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Business English (₹1,999/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
+        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Business English (₹2,499/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
       },
       {
         q: "Is Toastmasters or a course better for IT professionals?",

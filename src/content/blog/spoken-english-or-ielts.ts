@@ -20,13 +20,13 @@ export const body: ArticleBody = [
       [
         "You can chat, but meetings, emails, clients go silent",
         "Business English",
-        "₹1,999/mo, 3 months, approx. 6 learners",
+        "₹2,499/mo, 3 months, approx. 6 learners",
         "Work talk in ~3 months",
       ],
       [
         "You freeze only when speaking, grammar is fine",
         "Interactive Speaking",
-        "₹1,199/mo, 3 months, approx. 6 learners",
+        "₹1,999/mo, 3 months, approx. 6 learners",
         "Hesitation, not knowledge",
       ],
       [

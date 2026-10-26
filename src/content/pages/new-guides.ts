@@ -165,8 +165,8 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "ul",
         items: [
           "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
-          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,199/month.",
-          "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹1,999/month.",
+          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,999/month.",
+          "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹2,499/month.",
         ],
       },
       { t: "h2", text: "Fluency tools compared" },
@@ -236,7 +236,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for freshers in India",
     h1Accent: "The 60-second chair",
     standfirst:
-      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet; Interview Preparation ₹1,999/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
+      "Campus intro, HR screen, tell-me-about-yourself. Spoken English from ₹999/month if you cannot chat yet; Interview Preparation ₹2,499/month if you can chat but freeze in HR. Inclusive of taxes. No placement promise.",
     shortAnswer:
       "If you cannot hold a two-minute conversation, take Spoken English first. If you can chat and still freeze in HR rounds, take Interview Preparation (2 months). If the freeze is everywhere, not just interviews, Interactive Speaking. IELTS is for forms, not most Indian campus drives, and we do not sell it.",
     image: IMG.interview,
@@ -263,7 +263,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "You can chat, HR screens still collapse",
             "Interview Preparation, 2 months",
-            "₹1,999/month",
+            "₹2,499/month",
           ],
         ],
       },
@@ -317,7 +317,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Learn With Smile Interview Preparation",
             "Live mocks in a batch of about 6, recorded, same teacher",
-            "2 months, ₹1,999/month; we do not place you anywhere",
+            "2 months, ₹2,499/month; we do not place you anywhere",
           ],
         ],
       },
@@ -786,9 +786,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for IT professionals in India",
     h1Accent: "Standups, tickets, client calls",
     standfirst:
-      "You can write the ticket. The standup still goes silent. Business English ₹1,999/month, or Spoken ₹999/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
+      "You can write the ticket. The standup still goes silent. Business English ₹2,499/month, or Spoken ₹999/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
     shortAnswer:
-      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Business English — 3 months, ₹1,999/month, around 6 learners. No promotion guarantee.",
+      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Business English — 3 months, ₹2,499/month, around 6 learners. No promotion guarantee.",
     image: IMG.businessEnglish,
     alt: "IT professional speaking in an English standup on a video call",
     waMessage:
@@ -810,12 +810,12 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "You know the words and freeze on the standup",
             "Interactive Speaking, 3 months",
-            "₹1,199/month",
+            "₹1,999/month",
           ],
           [
             "Chat is fine; meetings, tickets, clients are not",
             "Business English, 3 months",
-            "₹1,999/month",
+            "₹2,499/month",
           ],
         ],
       },
@@ -872,7 +872,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Learn With Smile Business English",
             "Live batch of about 6, same teacher, work scenarios every class",
-            "Fixed IST slots; group, not 1:1; ₹1,999/month for 3 months",
+            "Fixed IST slots; group, not 1:1; ₹2,499/month for 3 months",
           ],
         ],
       },

@@ -113,7 +113,7 @@ function Page() {
                 headline={feeHeadline("₹999/month", "spoken-english")}
                 subnote={
                   <MarketCopy
-                    inr="₹999–₹1,999/month · inclusive of taxes · Razorpay"
+                    inr="₹999–₹2,499/month · inclusive of taxes · Razorpay"
                     usd={`${intlUnit()} · ${INTL_FEE["spoken-english"].display} to ${INTL_FEE["interview-preparation"].display}`}
                   />
                 }

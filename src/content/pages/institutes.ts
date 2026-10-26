@@ -26,7 +26,7 @@ export const body: ArticleBody = [
     rows: [
       [
         "Learn With Smile (us)",
-        "₹999–₹1,999/mo inclusive of taxes",
+        "₹999–₹2,499/mo inclusive of taxes",
         "Adults 15+. Live ≈6. Named teacher. No material fee.",
         "Free consultation. Not a class.",
       ],
@@ -86,9 +86,9 @@ export const body: ArticleBody = [
     head: ["Course", "Duration", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "₹999/month"],
-      ["Interactive Speaking", "3 months", "₹1,199/month"],
-      ["Business English", "3 months", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "₹1,999/month"],
+      ["Interactive Speaking", "3 months", "₹1,999/month"],
+      ["Business English", "3 months", "₹2,499/month"],
+      ["Interview Preparation", "2 months", "₹2,499/month"],
     ],
   },
   {

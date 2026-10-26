@@ -593,7 +593,7 @@ function Home() {
                 <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
               </div>
               <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                <FeePair inr="₹1,999" usd={INTL_FEE["business-english"].big} />
+                <FeePair inr="₹2,499" usd={INTL_FEE["business-english"].big} />
                 <span className="text-base font-bold text-ink/75">
                   <FeePair inr="/month" usd={INTL_FEE["business-english"].suffix} />
                 </span>

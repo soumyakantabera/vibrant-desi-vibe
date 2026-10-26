@@ -79,7 +79,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "I work at a bank in Mumbai. Spoken English or Business English?",
-        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Business English (₹1,999/month, 3 months). If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Business English (₹2,499/month, 3 months). If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I can write English but freeze in standups. Which course?",
-        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,199/month, 3 months) trains speaking on the spot. If the freeze is specifically in meetings and client calls, Business English (₹1,999/month, 3 months). Both live, about 6 learners, inclusive of taxes.",
+        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,999/month, 3 months) trains speaking on the spot. If the freeze is specifically in meetings and client calls, Business English (₹2,499/month, 3 months). Both live, about 6 learners, inclusive of taxes.",
       },
       {
         q: "I don't speak Hindi. Can I still join from Bengaluru?",
@@ -234,7 +234,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I work in pharma in Hyderabad. Which course helps with audits and client calls?",
-        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Business English (₹1,999/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
+        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Business English (₹2,499/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
       },
       {
         q: "Is the Hindi bridge a problem if I mainly speak Telugu?",
@@ -336,9 +336,9 @@ export function cityBody(city: CityRecord): ArticleBody {
       head: ["Course", "Duration", "Fee"],
       rows: [
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
-        ["Interactive Speaking", "3 months", "₹1,199/month"],
-        ["Business English", "3 months", "₹1,999/month"],
-        ["Interview Preparation", "2 months, ~6 learners", "₹1,999/month"],
+        ["Interactive Speaking", "3 months", "₹1,999/month"],
+        ["Business English", "3 months", "₹2,499/month"],
+        ["Interview Preparation", "2 months, ~6 learners", "₹2,499/month"],
       ],
     },
     {

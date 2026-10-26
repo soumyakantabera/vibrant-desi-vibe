@@ -174,9 +174,9 @@ export const body: ArticleBody = [
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
-      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,199/month"],
-      ["Business English", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
-      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹1,999/month"],
+      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,999/month"],
+      ["Business English", "3 months", "Live batch, approx. 6 learners", "₹2,499/month"],
+      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹2,499/month"],
     ],
   },
   {

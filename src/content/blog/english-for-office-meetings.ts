@@ -173,7 +173,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Business English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹1,999/month inclusive of taxes.",
+    text: "Business English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹2,499/month inclusive of taxes.",
     course: "/course-business-english",
     label: "See the Business English syllabus",
   },

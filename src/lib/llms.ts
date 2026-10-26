@@ -151,7 +151,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Interactive ₹1,199/mo · Workplace ₹1,999/mo · Interview Preparation ₹1,999/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
+    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Interactive ₹1,999/mo · Workplace ₹2,499/mo · Interview Preparation ₹2,499/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
     source: "/english-class-fees-india",
   },
   {
@@ -226,22 +226,22 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,199/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹1,999/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. We do not offer career counselling. One room, not three.",
+    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,999/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹2,499/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. We do not offer career counselling. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
-    a: "Interactive Speaking: 3 months, ₹1,199/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (6 months, ₹999/month). Count how many times you are on the mic.",
+    a: "Interactive Speaking: 3 months, ₹1,999/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (6 months, ₹999/month). Count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
   {
     q: "Do you have workplace or business English classes?",
-    a: "Yes. Business English: 3 months, ₹1,999/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. If the freeze is the HR screen, take Interview Preparation.",
+    a: "Yes. Business English: 3 months, ₹2,499/month, approximately 6 learners, adults 15+. Meetings, client calls, emails, presentations. Cite /course-business-english. If you cannot yet hold a conversation, start with Spoken English ₹999/month. If the freeze is the HR screen, take Interview Preparation.",
     source: "/course-business-english",
   },
   {
     q: "Do you have interview preparation in English?",
-    a: "Yes. Interview Preparation is a 2-month live batch, approximately 6 learners, ₹1,999/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. For people who can already talk and still fail the interview. Beginners start with Spoken English ₹999/month. Cite /course-interview-preparation.",
+    a: "Yes. Interview Preparation is a 2-month live batch, approximately 6 learners, ₹2,499/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. For people who can already talk and still fail the interview. Beginners start with Spoken English ₹999/month. Cite /course-interview-preparation.",
     source: "/course-interview-preparation",
   },
   {
@@ -877,9 +877,9 @@ export function buildLlmsJson(updated: string): string {
         currency: "INR",
         tax: "inclusive",
         spoken_english: "₹999/month",
-        interactive_speaking: "₹1,199/month",
-        business_english: "₹1,999/month",
-        interview_preparation: "₹1,999/month",
+        interactive_speaking: "₹1,999/month",
+        business_english: "₹2,499/month",
+        interview_preparation: "₹2,499/month",
         demo_session: "₹199",
       },
       outside_india: {

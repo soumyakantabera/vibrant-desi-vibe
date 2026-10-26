@@ -21,9 +21,9 @@ export const COURSE_CATEGORIES = [
   },
   {
     id: "work-and-career",
-    title: "Work & Career · from ₹1,999/month, inclusive of taxes",
+    title: "Work & Career · from ₹2,499/month, inclusive of taxes",
     description:
-      "Business English ₹1,999/month and Interview Preparation ₹1,999/month. Meetings, HR screens and mocks. Live quality teaching. Batches of approximately 6 learners.",
+      "Business English ₹2,499/month and Interview Preparation ₹2,499/month. Meetings, HR screens and mocks. Live quality teaching. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "business-english",

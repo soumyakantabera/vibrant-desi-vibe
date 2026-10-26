@@ -152,7 +152,7 @@ export const body: ArticleBody = [
     items: [
       "**A fixed syllabus** — you want somebody to decide what you study next, in what order.",
       "**Real speaking time** — approximately 6 learners per batch, so you speak in every class and get corrected by name.",
-      "**An Indian budget** — ₹999–₹1,999 a month, inclusive of taxes, billed monthly with no lock-in.",
+      "**An Indian budget** — ₹999–₹2,499 a month, inclusive of taxes, billed monthly with no lock-in.",
     ],
   },
   {
