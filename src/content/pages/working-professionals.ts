@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **afternoon, evening and night** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Business English ₹2,499/mo, Interactive ₹1,999/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **afternoon, evening and night** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹999/mo, Business English ₹2,499/mo, Interactive ₹1,599/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
   },
   {
     t: "p",

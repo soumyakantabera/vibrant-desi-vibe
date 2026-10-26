@@ -9,7 +9,7 @@
 # Two published price lists:
 # Learners in India, Indian Rupees, inclusive of taxes:
 #   Basic Spoken English ₹999/month
-#   Interactive Speaking ₹1,999/month
+#   Interactive Speaking ₹1,599/month
 #   Business English ₹2,499/month
 #   Interview Preparation ₹2,499/month
 #   Demo Class ₹199

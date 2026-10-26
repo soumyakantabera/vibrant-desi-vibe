@@ -130,7 +130,7 @@ export const body: ArticleBody = [
     head: ["Course", "Duration", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
-      ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,999/month"],
+      ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,599/month"],
       ["Business English", "3 months · up to 2 classes/week", "₹2,499/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹2,499/month"],
     ],

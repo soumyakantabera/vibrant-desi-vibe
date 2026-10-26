@@ -38,7 +38,7 @@ const ENGLISH_COURSES: {
     label: "Interactive Speaking",
     icon: "headset",
     slug: "interactive-speaking",
-    inr: "3 months · ₹1,999/month, inclusive of taxes",
+    inr: "3 months · ₹1,599/month, inclusive of taxes",
   },
   {
     to: "/course-business-english",

@@ -44,7 +44,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile की फ़ीस कितनी है?",
-        a: "Basic Spoken English ₹999/माह (6 महीने), Interactive Speaking ₹1,999/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
+        a: "Basic Spoken English ₹999/माह (6 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
       },
       {
         q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
@@ -88,7 +88,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile-এর ফি কত?",
-        a: "Basic Spoken English ₹999/মাস (6 মাস), Interactive Speaking ₹1,999/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
+        a: "Basic Spoken English ₹999/মাস (6 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
       },
       {
         q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",
@@ -122,7 +122,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,999/month). If meetings and calls are the gap, take Business English (₹2,499/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,599/month). If meetings and calls are the gap, take Business English (₹2,499/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -210,7 +210,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/spoken-english-for-freshers-india",
     title: "Spoken English for Freshers | Interview Ready",
     description:
-      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interactive ₹1,999/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
+      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interactive ₹1,599/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
     shortTitle: "Freshers",
     keywords: [
       "spoken english for freshers",

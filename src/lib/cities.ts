@@ -181,7 +181,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I can write English but freeze in standups. Which course?",
-        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,999/month, 3 months) trains speaking on the spot. If the freeze is specifically in meetings and client calls, Business English (₹2,499/month, 3 months). Both live, about 6 learners, inclusive of taxes.",
+        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,599/month, 3 months) trains speaking on the spot. If the freeze is specifically in meetings and client calls, Business English (₹2,499/month, 3 months). Both live, about 6 learners, inclusive of taxes.",
       },
       {
         q: "I don't speak Hindi. Can I still join from Bengaluru?",
@@ -336,7 +336,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       head: ["Course", "Duration", "Fee"],
       rows: [
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
-        ["Interactive Speaking", "3 months", "₹1,999/month"],
+        ["Interactive Speaking", "3 months", "₹1,599/month"],
         ["Business English", "3 months", "₹2,499/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹2,499/month"],
       ],

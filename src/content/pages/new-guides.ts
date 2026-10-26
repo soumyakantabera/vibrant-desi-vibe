@@ -165,7 +165,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "ul",
         items: [
           "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
-          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,999/month.",
+          "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,599/month.",
           "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹2,499/month.",
         ],
       },
@@ -810,7 +810,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "You know the words and freeze on the standup",
             "Interactive Speaking, 3 months",
-            "₹1,999/month",
+            "₹1,599/month",
           ],
           [
             "Chat is fine; meetings, tickets, clients are not",
