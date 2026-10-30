@@ -1,0 +1,56 @@
+name: Push URLs to IndexNow
+
+# Re-notify Bing, Yandex and every IndexNow engine without redeploying —
+# after a content edit that went out with another deploy, or to push one
+# new page hard. Leave `urls` empty to submit every URL in the live sitemap.
+#
+# Google does not take IndexNow and retired its sitemap ping. For Google,
+# use Search Console → URL Inspection → Request indexing on the new URL.
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Full URLs, space- or newline-separated (empty = whole live sitemap)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit to IndexNow
+        env:
+          URLS: ${{ inputs.urls }}
+        run: |
+          set -euo pipefail
+          site="https://www.learnwithsmile.app"
+          key="learnwithsmile-indexnow-2026"
+          # The key file must be live, or every engine rejects the batch.
+          curl --fail -sS "$site/$key.txt" | grep -q "$key"
+          if [ -n "${URLS// /}" ]; then
+            list=$(printf '%s\n' $URLS)
+          else
+            list=$(curl --fail -sS "$site/sitemap.xml" | grep -oE '<loc>[^<]+' | sed 's#<loc>##')
+          fi
+          # Only this host's URLs are valid for this key.
+          list=$(printf '%s\n' "$list" | grep -E "^$site/" | awk 'NF && !seen[$0]++')
+          count=$(printf '%s\n' "$list" | grep -c . || true)
+          if [ "$count" -eq 0 ]; then
+            echo "::error::No $site URLs to submit"; exit 1
+          fi
+          payload=$(printf '%s\n' "$list" | jq -R . | jq -s \
+            --arg host "www.learnwithsmile.app" \
+            --arg key "$key" \
+            --arg keyLocation "$site/$key.txt" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: .}')
+          echo "Submitting $count URLs"
+          for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow https://yandex.com/indexnow; do
+            echo "POST $endpoint"
+            curl --fail-with-body --retry 2 -sS -o /dev/null -w '%{http_code}\n' \
+              -H 'Content-Type: application/json; charset=utf-8' \
+              -d "$payload" "$endpoint" || echo "::warning::$endpoint did not accept the batch"
+          done

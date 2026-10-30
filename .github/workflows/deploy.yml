@@ -232,7 +232,9 @@ jobs:
             --argjson urlList "$urls" \
             '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
           echo "Submitting $(echo "$urls" | jq 'length') URLs to IndexNow"
-          for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow; do
+          # api.indexnow.org shares with every participating engine; Bing and
+          # Yandex are also called directly so one slow relay cannot drop the push.
+          for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow https://yandex.com/indexnow; do
             echo "POST $endpoint"
             curl --fail-with-body --retry 2 -sS \
               -H 'Content-Type: application/json; charset=utf-8' \
@@ -240,9 +242,6 @@ jobs:
               "$endpoint"
             echo
           done
-          echo
-          echo "Ping Google sitemap (best-effort; Google prefers Search Console + lastmod)"
-          curl --retry 2 -sS \
-            "https://www.google.com/ping?sitemap=https://www.learnwithsmile.app/sitemap.xml" \
-            || true
-          echo
+          # Google retired the sitemap ping endpoint in 2023 (it returns 404) and
+          # does not take IndexNow. Google recrawls from sitemap.xml lastmod and
+          # robots.txt; request indexing for a brand-new URL in Search Console.
