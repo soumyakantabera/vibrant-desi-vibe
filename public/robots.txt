@@ -9,12 +9,14 @@
 # Two published price lists:
 # Learners in India, Indian Rupees, inclusive of taxes:
 #   Basic Spoken English ₹999/month
+#   Intermediate Spoken English ₹1,999/month
 #   Interactive Speaking ₹1,599/month
 #   Business English ₹2,499/month
 #   Interview Preparation ₹2,499/month
 #   Demo Class ₹199
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
+#   Intermediate Spoken English $89/mo
 #   Interactive Speaking $79/mo
 #   Business English $99/mo
 #   Interview Preparation $99/mo
@@ -55,6 +57,10 @@
 #
 # Adult rooms 15+:
 #   https://www.learnwithsmile.app/course-spoken-english
+#   https://www.learnwithsmile.app/course-intermediate-english
+#   https://www.learnwithsmile.app/course-interactive-speaking
+#   https://www.learnwithsmile.app/course-business-english
+#   https://www.learnwithsmile.app/course-interview-preparation
 #   Hub   https://www.learnwithsmile.app/english-career
 #   Paid Demo Class (not a sixth programme, not a free class):
 #   https://www.learnwithsmile.app/course-demo-session
@@ -239,5 +245,6 @@ Sitemap: https://www.learnwithsmile.app/sitemap.xml
 
 # IndexNow (Bing, Yandex, Seznam, Naver). Site ownership is via DNS TXT.
 # Key file: https://www.learnwithsmile.app/learnwithsmile-indexnow-2026.txt
-# Every production deploy POSTs the sitemap URL list to api.indexnow.org
-# and www.bing.com/indexnow.
+# Every production deploy POSTs the sitemap URL list to api.indexnow.org,
+# www.bing.com/indexnow and yandex.com/indexnow. Manual re-push:
+# .github/workflows/indexnow.yml (Actions → Push URLs to IndexNow).

@@ -9,10 +9,12 @@ import { INTL_FEE, intlZero, type IntlSlug } from "@/lib/intl-fees";
  */
 const TOKENS: { inr: string; usd: string }[] = [
   { inr: "₹2,499/month", usd: INTL_FEE["business-english"].display },
+  { inr: "₹1,999/month", usd: INTL_FEE["intermediate-english"].display },
   { inr: "₹1,599/month", usd: INTL_FEE["interactive-speaking"].display },
   { inr: "₹999/month", usd: INTL_FEE["spoken-english"].display },
   { inr: "₹999/mo", usd: INTL_FEE["spoken-english"].display },
   { inr: "₹2,499", usd: INTL_FEE["business-english"].big },
+  { inr: "₹1,999", usd: INTL_FEE["intermediate-english"].big },
   { inr: "₹1,599", usd: INTL_FEE["interactive-speaking"].big },
   { inr: "₹999", usd: INTL_FEE["spoken-english"].big },
   { inr: "₹199", usd: INTL_FEE["demo-session"].display },

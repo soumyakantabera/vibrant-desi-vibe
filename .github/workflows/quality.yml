@@ -91,7 +91,6 @@ jobs:
           grep -q 'Choose the Goal You Need Now' dist/index.html
           grep -q 'Speak Confidently' dist/index.html
           grep -q 'Work &amp; Career' dist/index.html
-          grep -q 'Career Guidance' dist/index.html
           grep -q 'Real teachers. Small batches' dist/index.html
           grep -q 'View all courses' src/components/Nav.tsx
           grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
@@ -104,10 +103,10 @@ jobs:
           grep -q 'Explore both programmes' src/routes/index.tsx
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
-          grep -q '4 Programmes' dist/english-career.html
-          grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
-          grep -q '09:00–12:00 IST' dist/course-spoken-english.html
-          grep -q 'Workplace English' dist/course-business-english.html
+          grep -q '5 Programmes' dist/english-career.html
+          grep -q '6 months · 1 hr 30 min · up to 2 classes/week' dist/course-spoken-english.html
+          grep -q 'afternoon · evening · night' dist/course-spoken-english.html
+          grep -q 'Meetings, Updates &amp; Client Calls' dist/course-business-english.html
           grep -q 'Workplace English' dist/workplace-english-course-online-india.html
           grep -q 'workplace-english-course-online-india' dist/sitemap.xml
           grep -q 'spoken-business-or-interactive-english' dist/sitemap.xml

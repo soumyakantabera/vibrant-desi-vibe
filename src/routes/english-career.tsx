@@ -10,6 +10,7 @@ import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
+import { CourseLadder } from "@/components/CourseVisuals";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, DEMO_CTA, waDirect } from "@/lib/whatsapp";
@@ -69,9 +70,9 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Four live programmes. Spoken, Interactive Speaking, Business English and Interview
-              Preparation. Interview Preparation is the room when the HR screen is the bottleneck.{" "}
-              <FeeText text="From ₹999/month, inclusive of taxes." />
+              Five live programmes. Basic Spoken, Intermediate Spoken, Interactive Speaking,
+              Business English and Interview Preparation. Interview Preparation is the room when the
+              HR screen is the bottleneck. <FeeText text="From ₹999/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -121,7 +122,7 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "4 programmes",
+                    big: "5 programmes",
                     small: "Adults 15+ · live rooms",
                   },
                   {
@@ -149,9 +150,9 @@ function Page() {
           <SectionHeader
             eyebrow="Clear Categories"
             title={
-              <FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
+              <FeeText text="5 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
             }
-            subtitle="Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
+            subtitle="Basic Spoken, Intermediate Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
           <div className="space-y-10">
             {COURSE_CATEGORIES.map((group) => (
@@ -221,6 +222,8 @@ function Page() {
           </div>
         </div>
       </section>
+
+      <CourseLadder />
 
       <section className="section bg-sunshine/25" id="demo-session">
         <div className="container-x">
@@ -299,7 +302,7 @@ function Page() {
         faqs={PAGES["/english-career"].faqs ?? []}
         eyebrow="Course FAQs"
         title="Choosing Between Our Courses"
-        subtitle="Spoken, Interactive, Workplace or Interview Preparation? Start here."
+        subtitle="Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation? Start here."
         waMessage="Hi, I want a free consultation to choose my spoken English course."
       />
 

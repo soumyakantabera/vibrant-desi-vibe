@@ -39,14 +39,15 @@ import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 export function publishedFeeLock(): string {
   const unit = intlUnit();
   const spoken = INTL_FEE["spoken-english"].display;
+  const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
   const business = INTL_FEE["business-english"].display;
   const interview = INTL_FEE["interview-preparation"].display;
   const demo = INTL_FEE["demo-session"].display;
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Interactive Speaking ₹1,599/month; Business English ₹2,499/month; Interview Preparation ₹2,499/month; Demo Class ₹199. " +
-    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Interactive Speaking ${interactive}; Business English ${business}; Interview Preparation ${interview}; Demo Class ${demo}. ` +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Business English ₹2,499/month; Interview Preparation ₹2,499/month; Demo Class ₹199. " +
+    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Business English ${business}; Interview Preparation ${interview}; Demo Class ${demo}. ` +
     "The India list applies to learners in India and the outside-India list applies to learners elsewhere. They are two separate price lists, not currency conversions of each other."
   );
 }

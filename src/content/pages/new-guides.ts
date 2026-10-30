@@ -118,6 +118,147 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
     ],
   },
+  "/intermediate-spoken-english-course-india": {
+    path: "/intermediate-spoken-english-course-india",
+    eyebrow: "Intermediate",
+    breadcrumb: "Intermediate spoken English",
+    h1: "Intermediate spoken English in India",
+    h1Accent: "From basic sentences to fluent talk",
+    standfirst:
+      "You can say the sentence. It just comes out with the wrong tense, three ums and no link to the next idea. That is intermediate — and it is a different problem from being a beginner.",
+    shortAnswer:
+      "If simple sentences work but accuracy and flow do not, you need grammar and speaking in the same class — not a beginner course, not a speaking club. Our Intermediate Spoken English is 4 months, ₹1,999/month inclusive of taxes, about 6 learners, 30 min grammar + 1 hour communication every class.",
+    image: IMG.speaking,
+    alt: "Adult learner with headphones in a live intermediate spoken English class",
+    waMessage: "Hi, I want a free consultation for Intermediate Spoken English.",
+    ctaTitle: "Not sure you are intermediate?",
+    ctaBody:
+      "Send one voice note introducing yourself. In the free consultation we tell you honestly — Basic, Intermediate or Interactive. Counselling, not a class.",
+    faqTitle: "Intermediate spoken English — questions",
+    body: [
+      {
+        t: "p",
+        text: "Most Indian learners who search for \u201cadvanced spoken English\u201d are not beginners and not advanced. They studied English for twelve years, they can read a news article, and they can introduce themselves. What breaks is **speed and accuracy together**: the moment they talk faster, \u201che go\u201d, \u201cI am knowing\u201d and \u201cyesterday I have gone\u201d come back, the fillers start, and the idea that needed three linked sentences comes out as six short ones.",
+      },
+      { t: "h2", text: "A 60-second self-test" },
+      {
+        t: "ol",
+        items: [
+          "Set a timer for 60 seconds. Talk about the last film or match you watched. Record it.",
+          "Play it back. Count every um, ah, like and basically.",
+          "Count the tense mistakes — especially past simple vs present perfect.",
+          "Count how many times you used because, although, so, however, if.",
+        ],
+      },
+      {
+        t: "table",
+        caption: "What your recording says about the right room.",
+        head: ["What you heard", "Your level", "The room"],
+        rows: [
+          [
+            "You could not finish 60 seconds, or stopped to translate every sentence",
+            "Beginner",
+            "[Basic Spoken English](/course-spoken-english) — 6 months, ₹999/month",
+          ],
+          [
+            "You finished, but with 8+ fillers, tense slips and almost no connectors",
+            "Intermediate",
+            "[Intermediate Spoken English](/course-intermediate-english) — 4 months, ₹1,999/month",
+          ],
+          [
+            "Clean grammar on the recording, but you freeze in front of people",
+            "Freeze, not grammar",
+            "[Interactive Speaking](/course-interactive-speaking) — 3 months, ₹1,599/month",
+          ],
+          [
+            "Fine in chat, lost in meetings and client calls",
+            "Workplace",
+            "[Business English](/course-business-english) — 3 months, ₹2,499/month",
+          ],
+        ],
+      },
+      { t: "h2", text: "What 4 months actually cover" },
+      {
+        t: "p",
+        text: "Every 90-minute class has the same rhythm: **30 minutes of grammar, then one hour of communication** — speaking, writing, active listening and reading. The grammar from the first half goes straight into a timed turn, a role-play or a discussion in the second.",
+      },
+      {
+        t: "table",
+        caption: "Month spans are the plan for a typical batch. The course is extendable.",
+        head: ["When", "Phase", "Grammar", "Speaking & listening"],
+        rows: [
+          [
+            "Months 1–2",
+            "Foundation",
+            "All 8 parts of speech, tenses & articles, subject-verb agreement, Wh- and Yes/No questions",
+            "LSRW loop, vowels/consonants/stress, 60–90 second timed turns, filler drills",
+          ],
+          [
+            "Month 3",
+            "Expanding & Connecting",
+            "Connectors & modals",
+            "Declining invitations, summarising, describing experiences, negotiation, podcasts/news/TED-style listening",
+          ],
+          [
+            "Month 4",
+            "Fluency & Confidence",
+            "Conditionals — zero, first, second",
+            "Debates, polite interrupting, decision-making language, 2–3 minute presentations + Q&A, role-play, storytelling",
+          ],
+        ],
+      },
+      {
+        t: "p",
+        text: "Vocabulary runs underneath all four months: news & current events, work & career, idioms, collocations and phrasal verbs. The full month-by-month roadmap and coverage map are on the [course page](/course-intermediate-english).",
+      },
+      { t: "h2", text: "Why intermediate learners stall" },
+      {
+        t: "ul",
+        items: [
+          "**More grammar books.** You already know the rule. You need to use it at speaking speed, with someone who hears the slip.",
+          "**Only a speaking club.** Talking more with the same errors makes the errors faster. Practice without correction is rehearsal of mistakes.",
+          "**Only an app.** Good for vocabulary and listening. It rarely makes you argue, interrupt politely or answer a question after a presentation.",
+          "**A beginner batch.** Too slow — you stop attending by week three.",
+        ],
+      },
+      { t: "h2", text: "Five drills you can start free today" },
+      {
+        t: "ol",
+        items: [
+          "**Shadow speaking.** Play 30 seconds of a podcast or news clip, pause, repeat it with the same rhythm. Ten minutes a day.",
+          "**The filler count.** One 60-second recording a day. Write the filler count on a calendar. Watch the number fall.",
+          "**Connector swap.** Retell your day using because, although, so, however and if at least once each.",
+          "**Conditional chain.** \u201cIf I wake up early, I will… If I had a car, I would…\u201d — five lines, out loud.",
+          "**Retell, don't summarise.** Listen to a 2-minute clip and retell it in your own words in 60 seconds.",
+        ],
+      },
+      {
+        t: "example",
+        label: "Same idea — beginner vs intermediate target",
+        lines: [
+          "Before: I went office. Traffic was there. I was late. Boss was angry.",
+          "After:  I was late to the office because the traffic was terrible, so my manager was a little upset.",
+          "Before: If I will get leave, I go to Goa.",
+          "After:  If I get leave next month, I will go to Goa.",
+        ],
+      },
+      { t: "h2", text: "What we will not promise" },
+      {
+        t: "ul",
+        items: [
+          "Not native-level English in 4 months. Connected, more accurate speech — yes.",
+          "No certificate or band score. Exam English is a separate paper; we do not sell IELTS.",
+          "No job outcome. Clearer English removes one barrier; it is not a placement.",
+        ],
+      },
+      {
+        t: "cta",
+        text: "Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, about 6 learners, live.",
+        course: "/course-intermediate-english",
+        label: "See the 4-month roadmap",
+      },
+    ],
+  },
   "/how-to-speak-english-fluently": {
     path: "/how-to-speak-english-fluently",
     eyebrow: "Fluency",
@@ -165,6 +306,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "ul",
         items: [
           "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
+          "Simple sentences work, flow does not → [Intermediate Spoken English](/course-intermediate-english), 4 months, ₹1,999/month.",
           "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,599/month.",
           "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹2,499/month.",
         ],

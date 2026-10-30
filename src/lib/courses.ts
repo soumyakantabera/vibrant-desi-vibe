@@ -135,8 +135,339 @@ export const COURSES: Record<string, CourseData> = {
         waMessage: "Hi, I want a free consultation for Basic Spoken English.",
       },
     ],
+    prerequisites: "None. For adults 15+ who cannot yet finish a sentence out loud in English.",
+    visuals: {
+      classBlocks: [
+        {
+          label: "Grammar",
+          minutes: 30,
+          detail:
+            "One structure at a time — to be, nouns, pronouns, present simple — taught through sentences you will say today.",
+          tone: "coral",
+        },
+        {
+          label: "Communication",
+          minutes: 60,
+          detail:
+            "Reading, speaking and listening. You use the grammar out loud, with the teacher correcting the same error until it goes.",
+          tone: "indigo",
+        },
+      ],
+      skills: [
+        { label: "Reading", icon: "book" },
+        { label: "Speaking", icon: "record_voice_over" },
+        { label: "Listening", icon: "headset" },
+      ],
+      medium: ["Hindi to English", "English to English"],
+      facts: ["Up to 2 classes a week", "About 6 learners", "Extendable", "Flexible schedule"],
+      roadmap: [
+        {
+          from: 1,
+          to: 2,
+          title: "Build the Base",
+          goal: "From single words to full sentences you can say without notes.",
+          tone: "coral",
+          tracks: [
+            {
+              skill: "Grammar",
+              items: [
+                "To be: am, is, are",
+                "Sentence construction",
+                "Nouns & articles",
+                "Pronouns & possessives",
+                "This, that, these, those",
+              ],
+            },
+            {
+              skill: "Pronunciation",
+              items: ["English sounds & pronunciation drill", "Stress, rhythm, intonation"],
+            },
+            {
+              skill: "Speaking",
+              items: ["Daily 10-minute speaking warm-ups", "Self-introduction"],
+            },
+          ],
+        },
+        {
+          from: 3,
+          to: 4,
+          title: "Daily Life English",
+          goal: "Talk about your day, your routine and your plans in the present tense.",
+          tone: "indigo",
+          tracks: [
+            {
+              skill: "Grammar",
+              items: ["Present simple tense", "Always, usually, never", "Prepositions: in, on, at"],
+            },
+            {
+              skill: "Vocabulary",
+              items: [
+                "Common verbs: go, have, do",
+                "Common phrasal verbs",
+                "1,000+ everyday words & phrases",
+              ],
+            },
+            { skill: "Speaking", items: ["Speak your opinion in 60 seconds"] },
+          ],
+        },
+        {
+          from: 5,
+          to: 6,
+          title: "Real Conversations",
+          goal: "Handle the conversations of a normal week — shop, phone, directions, interview.",
+          tone: "brand",
+          tracks: [
+            {
+              skill: "Speaking",
+              items: [
+                "Family, friends & home",
+                "Shopping & prices",
+                "Asking directions",
+                "Requests: can / could",
+                "Weather & feelings",
+                "Phone etiquette",
+              ],
+            },
+            {
+              skill: "Interview",
+              items: ["The 90-second 'tell me about yourself'", "HR questions, said out loud"],
+            },
+          ],
+        },
+      ],
+      roadmapNote:
+        "Month spans are the plan for a typical batch. The course is extendable — if a phase needs longer, your teacher holds it.",
+    },
     metaDescription:
       "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
+  },
+  "intermediate-english": {
+    slug: "intermediate-english",
+    title: "Intermediate Spoken English",
+    tagline:
+      "4 months, ₹1,999/month, inclusive of taxes, approx. 6 learners. Every class: 30 min grammar + 1 hour communication — speaking, writing, active listening and reading. For learners who can make basic sentences and now want them correct, connected and fluent.",
+    category: "Speak Confidently",
+    categoryColor: "brand",
+    icon: "trend",
+    heroImage: IMG.speaking,
+    midImage: IMG.girlReading,
+    footerImage: IMG.teacherWoman,
+    duration: "4 months · 1 hr 30 min · up to 2 classes/week",
+    durationQualifier: "Extendable — stay longer in a phase if you need it.",
+    format: "Live batch · approximately 6 learners",
+    price: "₹1,999/month",
+    liveNote:
+      "✓ 100% online live · ✓ English to English · ✓ 30 min grammar + 1 hr communication · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+    prerequisites:
+      "You can already make simple English sentences (roughly CEFR A2). If you cannot yet finish a sentence out loud, start with Basic Spoken English.",
+    outcomes: [
+      "Use all 8 parts of speech, tenses and articles correctly while you talk",
+      "Speak for 60–90 seconds on a random topic with fewer fillers (um, ah, like)",
+      "Link ideas with connectors and modals instead of short broken sentences",
+      "Follow podcasts, news clips and simplified TED-style talks — then discuss them",
+      "Agree, disagree and interrupt politely in a debate or decision meeting",
+      "Give a 2–3 minute presentation and handle the Q&A",
+    ],
+    modules: [
+      {
+        title: "Grammar Foundation",
+        items: [
+          "Parts of speech — all 8",
+          "Tenses & articles",
+          "Subject-verb agreement",
+          "Wh- and Yes/No questions",
+        ],
+      },
+      {
+        title: "Sound & Fluency Drills",
+        items: [
+          "The LSRW communication loop — listen, speak, read, write",
+          "Vowels, consonants and word stress",
+          "Timed speaking challenges: 60–90 seconds on random topics",
+          "Fluency drills that cut fillers — um, ah, like",
+        ],
+      },
+      {
+        title: "Expanding & Connecting",
+        items: [
+          "Connectors & modals",
+          "Declining invitations & summarising points",
+          "Describing experiences",
+          "Negotiation skills",
+        ],
+      },
+      {
+        title: "Listening to Real English",
+        items: [
+          "Simplified TED-style talks",
+          "Podcasts and news clips",
+          "Comprehension tasks after every clip",
+          "Discussion on what you heard",
+        ],
+      },
+      {
+        title: "Fluency & Confidence",
+        items: [
+          "Conditionals — zero, first, second",
+          "Debates, discussion, problem-solving and decision-making language",
+          "Agreeing, disagreeing and interrupting politely",
+          "2–3 minute presentations + Q&A, situational role-play, storytelling",
+        ],
+      },
+      {
+        title: "Vocabulary & Daily Practice",
+        items: [
+          "News & current events, work & career",
+          "Idioms, collocations, phrasal verbs",
+          "Daily recordings and shadow speaking",
+          "Flashcards and podcasts between classes",
+        ],
+      },
+    ],
+    visuals: {
+      classBlocks: [
+        {
+          label: "Grammar",
+          minutes: 30,
+          detail:
+            "Parts of speech, tenses, agreement, connectors, modals, conditionals — one structure per class, used in a sentence before the block ends.",
+          tone: "coral",
+        },
+        {
+          label: "Communication",
+          minutes: 60,
+          detail:
+            "Speaking, writing, active listening and reading. The grammar from the first half goes straight into a timed turn, a role-play or a discussion.",
+          tone: "indigo",
+        },
+      ],
+      skills: [
+        { label: "Speaking", icon: "record_voice_over" },
+        { label: "Writing", icon: "clipboard" },
+        { label: "Active listening", icon: "headset" },
+        { label: "Reading", icon: "book" },
+      ],
+      medium: ["English to English"],
+      facts: ["Up to 2 classes a week", "About 6 learners", "Extendable", "Flexible schedule"],
+      roadmap: [
+        {
+          from: 1,
+          to: 2,
+          title: "Foundation",
+          goal: "Fix the grammar under your sentences and train the mouth to say them cleanly.",
+          tone: "coral",
+          tracks: [
+            {
+              skill: "Grammar",
+              items: [
+                "Parts of speech — all 8",
+                "Tenses & articles",
+                "Subject-verb agreement",
+                "Wh- and Yes/No questions",
+              ],
+            },
+            {
+              skill: "Speaking",
+              items: [
+                "LSRW communication loop",
+                "Timed speaking challenges (60–90 seconds, random topics)",
+                "Fluency drills that cut fillers (um, ah, like)",
+              ],
+            },
+            { skill: "Pronunciation", items: ["Vowels, consonants & word stress"] },
+          ],
+        },
+        {
+          from: 3,
+          to: 3,
+          title: "Expanding & Connecting",
+          goal: "Join short sentences into connected speech, and understand real English at real speed.",
+          tone: "brand",
+          tracks: [
+            { skill: "Grammar", items: ["Connectors & modals"] },
+            {
+              skill: "Speaking",
+              items: [
+                "Declining invitations & summarising points",
+                "Describing experiences",
+                "Negotiation skills",
+              ],
+            },
+            {
+              skill: "Listening",
+              items: [
+                "Authentic material — simplified TED-style talks, podcasts, news clips — with comprehension and discussion tasks",
+              ],
+            },
+          ],
+        },
+        {
+          from: 4,
+          to: 4,
+          title: "Fluency & Confidence",
+          goal: "Think, argue, present and tell a story in English without rehearsing it first.",
+          tone: "indigo",
+          tracks: [
+            { skill: "Grammar", items: ["Conditionals — zero, first, second"] },
+            {
+              skill: "Speaking",
+              items: [
+                "Debates, discussion & problem-solving",
+                "Decision-making language: agreeing, disagreeing, interrupting politely",
+                "Situational role-play",
+                "Storytelling with emotion, detail and natural sequencing",
+              ],
+            },
+            { skill: "Presentation", items: ["2–3 minute presentations + Q&A"] },
+          ],
+        },
+      ],
+      roadmapNote:
+        "Month spans are the plan for a typical batch. The course is extendable — if a phase needs longer, your teacher holds it, and the extension is confirmed in writing on WhatsApp.",
+      vocabulary: [
+        "News & current events",
+        "Work & career",
+        "Idioms",
+        "Collocations",
+        "Phrasal verbs",
+      ],
+      practice: [
+        "Role-plays",
+        "Storytelling",
+        "Daily recordings",
+        "Shadow speaking",
+        "Flashcards",
+        "Podcasts",
+      ],
+    },
+    faqs: [
+      {
+        q: "Should I take Intermediate or Basic Spoken English?",
+        a: "One test: can you finish a simple sentence out loud — “I work in a bank and I live in Pune”? If yes, and the problem is wrong tenses, broken flow and fillers, take Intermediate Spoken English (4 months, ₹1,999/month). If you cannot finish that sentence yet, start with Basic Spoken English (₹999/month). The free consultation decides it in one conversation.",
+      },
+      {
+        q: "How is Intermediate different from Interactive Speaking?",
+        a: "Intermediate keeps a 30-minute grammar block in every class and covers all four skills — speaking, writing, active listening and reading. Interactive Speaking (3 months, ₹1,599/month) has no grammar block: it is 90 minutes of speaking reps for people whose grammar is fine and who freeze anyway.",
+      },
+      {
+        q: "What happens in one class?",
+        a: "90 minutes, live, about 6 learners. The first 30 minutes are grammar — one structure, used in a sentence. The next hour is communication: timed turns, role-plays, listening tasks, discussion and short writing, using what you just learned.",
+      },
+      {
+        q: "Is the class taught in Hindi?",
+        a: "Intermediate is English to English — teaching and practice in English, because at this level hearing English is part of the training. If a concept truly stalls, the teacher can bridge briefly in Hindi or Bengali, then you go back to English.",
+      },
+      {
+        q: "Can I extend the course?",
+        a: "Yes. The course is extendable. If a phase needs more time, say so on WhatsApp and we confirm the extension and the fee in writing before you pay.",
+      },
+      {
+        q: "What if I miss a class?",
+        a: "Every class is recorded and shared. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
+      },
+    ],
+    metaDescription:
+      "Intermediate Spoken English online: 4 months, 30 min grammar + 1 hr communication per class, about 6 learners. ₹1,999/month, inclusive of taxes.",
   },
   "business-english": {
     slug: "business-english",
@@ -308,6 +639,75 @@ export const COURSES: Record<string, CourseData> = {
         a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. If the interview is the only gap and you already talk, take Interview Preparation — 2 months, ₹2,499/month.",
       },
     ],
+    visuals: {
+      classBlocks: [
+        {
+          label: "Communication",
+          minutes: 90,
+          detail:
+            "The whole class is speaking reps — no grammar lecture. Reading, public speaking and listening, with you on the mic every block.",
+          tone: "indigo",
+        },
+      ],
+      skills: [
+        { label: "Reading", icon: "book" },
+        { label: "Public speaking", icon: "present_to_all" },
+        { label: "Listening", icon: "headset" },
+      ],
+      medium: ["English to English"],
+      facts: ["Up to 2 classes a week", "About 6 learners", "Flexible schedule"],
+      roadmap: [
+        {
+          from: 1,
+          to: 1,
+          title: "Confident Conversations",
+          goal: "Start talking before the inner editor stops you.",
+          tone: "indigo",
+          tracks: [
+            {
+              skill: "Speaking",
+              items: [
+                "Icebreakers & small talk",
+                "Overcoming hesitation",
+                "Daily speaking routine",
+              ],
+            },
+            { skill: "Listening", items: ["Active listening"] },
+            { skill: "Pronunciation", items: ["Pronunciation & rhythm"] },
+          ],
+        },
+        {
+          from: 2,
+          to: 2,
+          title: "Expanding Expression",
+          goal: "Hold an opinion, tell a story and keep the floor in a group.",
+          tone: "coral",
+          tracks: [
+            {
+              skill: "Speaking",
+              items: ["Opinions & polite debate", "Group discussions", "Handling interruptions"],
+            },
+            { skill: "Storytelling", items: ["Storytelling techniques"] },
+            { skill: "Vocabulary", items: ["Idioms & role-plays"] },
+          ],
+        },
+        {
+          from: 3,
+          to: 3,
+          title: "Spontaneous Speaking",
+          goal: "Speak with no preparation — to a room, a stranger or an interviewer.",
+          tone: "brand",
+          tracks: [
+            {
+              skill: "Speaking",
+              items: ["Impromptu speaking", "Thinking on your feet", "Networking simulations"],
+            },
+            { skill: "Public speaking", items: ["Public speaking basics", "Final presentation"] },
+            { skill: "Interview", items: ["90-second pitch, HR and STAR answers out loud"] },
+          ],
+        },
+      ],
+    },
     metaDescription:
       "Interactive English speaking classes online. Games, debates, stories and interview rounds. 3 months · approximately 6 learners · ₹1,599/month, inclusive of taxes.",
   },

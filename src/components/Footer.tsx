@@ -17,6 +17,7 @@ const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
 const ENGLISH = [
   { to: "/course-spoken-english", label: "Spoken English" },
+  { to: "/course-intermediate-english", label: "Intermediate English" },
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
   { to: "/course-business-english", label: "Business English" },
   { to: "/course-interview-preparation", label: "Interview Preparation" },
@@ -183,6 +184,7 @@ export function Footer({ image }: { image?: string }) {
 
 function EnrolmentNote() {
   const spoken = INTL_FEE["spoken-english"].display;
+  const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
   const business = INTL_FEE["business-english"].display;
   const interview = INTL_FEE["interview-preparation"].display;
@@ -193,10 +195,10 @@ function EnrolmentNote() {
       usd={
         <>
           Fees shown to a learner outside India are the international list, in {intlUnit()}. These
-          published figures are Basic Spoken English {spoken}, Interactive Speaking {interactive},
-          Business English {business}, Interview Preparation {interview}, and a Demo Class of {demo}
-          . They are the labeled fee, not a conversion of the India price. The fee confirmed on
-          WhatsApp is the contract price.
+          published figures are Basic Spoken English {spoken}, Intermediate Spoken English{" "}
+          {intermediate}, Interactive Speaking {interactive}, Business English {business}, Interview
+          Preparation {interview}, and a Demo Class of {demo}. They are the labeled fee, not a
+          conversion of the India price. The fee confirmed on WhatsApp is the contract price.
         </>
       }
     />

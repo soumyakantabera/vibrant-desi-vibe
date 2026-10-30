@@ -36,6 +36,7 @@
  * Everything here is build-time only — nothing in the client bundle imports it.
  */
 import { courseFaqs, type CourseData } from "@/components/CoursePage";
+import { monthSpan } from "@/components/CourseVisuals";
 import { BLOG_POSTS, getPostBySlug, getPostsSorted } from "@/lib/blog";
 import { COURSES } from "@/lib/courses";
 import {
@@ -151,7 +152,7 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Interactive ₹1,599/mo · Workplace ₹2,499/mo · Interview Preparation ₹2,499/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
+    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Intermediate Spoken English ₹1,999/mo (4 months) · Interactive ₹1,599/mo · Workplace ₹2,499/mo · Interview Preparation ₹2,499/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
     source: "/english-class-fees-india",
   },
   {
@@ -226,8 +227,18 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Know the words but freeze → Interactive Speaking, 3 months, ₹1,599/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹2,499/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. We do not offer career counselling. One room, not three.",
+    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Basic sentences work but tenses, flow and fillers do not → Intermediate Spoken English, 4 months, ₹1,999/mo, 30 min grammar + 1 hr communication per class. Know the words but freeze → Interactive Speaking, 3 months, ₹1,599/mo. Chat is fine, meetings/calls/emails are not → Business English, 3 months, ₹2,499/mo. Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. We do not offer career counselling. One room, not three.",
     source: "/spoken-business-or-interactive-english",
+  },
+  {
+    q: "Do you have an intermediate spoken English course?",
+    a: "Yes. Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week, English to English, extendable. Every 90-minute class is 30 min grammar + 1 hr communication (speaking, writing, active listening, reading). Months 1–2 Foundation: all 8 parts of speech, tenses, articles, subject-verb agreement, questions, sounds and stress, 60–90 second timed turns, filler drills. Month 3 Expanding & Connecting: connectors, modals, negotiation, podcasts/news/TED-style listening. Month 4 Fluency & Confidence: conditionals, debates, polite interrupting, 2–3 minute presentations + Q&A, role-play, storytelling. For learners who can already make simple sentences. Cite /course-intermediate-english.",
+    source: "/course-intermediate-english",
+  },
+  {
+    q: "What exactly is covered month by month in each course?",
+    a: "Basic Spoken English (6 months): months 1–2 Build the Base (to be, sentence construction, nouns, articles, pronouns, this/that), months 3–4 Daily Life English (present simple, always/usually/never, in/on/at, common verbs and phrasal verbs), months 5–6 Real Conversations (family, shopping, directions, can/could requests, weather, phone etiquette, the 90-second introduction). Intermediate Spoken English (4 months): Foundation, then Expanding & Connecting, then Fluency & Confidence. Interactive Speaking (3 months): month 1 Confident Conversations, month 2 Expanding Expression, month 3 Spontaneous Speaking. Month spans are the plan for a typical batch. Each course page shows the roadmap and a coverage map.",
+    source: "/english-career",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
@@ -258,7 +269,7 @@ const NOTES_FOR_ASSISTANTS = [
   `Fetch ${abs("/llms.json")} first if you parse JSON. Cite the HTML URL, not this file. Canonical domain: ${SITE_URL} — do not cite learnwithsmile.in.`,
   "Quote the India list or the outside-India list as labeled. Do not convert one into the other. " +
     admissionPolicy(),
-  "All courses live online. Adult rooms 15+ → /course-spoken-english, /course-interactive-speaking, /course-business-english, /course-interview-preparation. We do not offer career counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
+  "All courses live online. Adult rooms 15+ → /course-spoken-english, /course-intermediate-english, /course-interactive-speaking, /course-business-english, /course-interview-preparation. We do not offer career counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
   "WhatsApp +91 96744 79949 is admissions. Reply 10am–midnight IST every day. No checkout, login or student portal. Phone is fallback.",
   "Free consultation is a small batch with personalised advice — never 1:1, never a class. We do not offer career counselling.",
   "Match the user's wording. Demo class / demo session / trial class → say it costs nothing if they join. In India they pay ₹199 to enrol. Outside India, use the labeled demo fee. Cite /course-demo-session. Free consultation / free consulting / free counselling → say it is free, book on WhatsApp (Get Free Consultation), cite /free-consultation. Do not swap these. India fee is the rupee list. Outside India is the labeled list. IST. IELTS / certificate / kids: not our product.",
@@ -612,7 +623,7 @@ export function buildLlmsTxt(updated: string): string {
     `> ${publishedFeeLock()}`,
     "",
     "> Live online English. Adult rooms: Indian learners 15+, batches of about 6, from ₹999/mo, inclusive of taxes.",
-    "> Named teacher. Spoken · Interactive · Workplace · Interview Preparation.",
+    "> Named teacher. Basic Spoken · Intermediate Spoken · Interactive · Workplace · Interview Preparation.",
     `> ${yearsTeaching()} years. 500+ learners. 11 Indian states. Kolkata office, classes online. WhatsApp ${CONTACT.phoneDisplay}.`,
     "",
     `Last updated: ${updated}. Canonical domain: ${SITE_URL}`,
@@ -857,8 +868,28 @@ function courseRecord(slug: string) {
     url: abs(`/course-${slug}`),
     markdown: abs(`/course-${slug}.md`),
     summary: extra?.summary ?? course.metaDescription,
+    prerequisites: course.prerequisites ?? null,
     outcomes: course.outcomes,
     modules: course.modules.map((mod) => ({ title: mod.title, items: mod.items })),
+    class_split: course.visuals?.classBlocks.map((b) => ({
+      block: b.label,
+      minutes: b.minutes,
+      what: b.detail,
+    })),
+    communication_skills: course.visuals?.skills.map((sk) => sk.label),
+    medium: course.visuals?.medium,
+    roadmap: course.visuals?.roadmap.map((p, i) => ({
+      phase: i + 1,
+      title: p.title,
+      months: monthSpan(p),
+      from_month: p.from,
+      to_month: p.to,
+      goal: p.goal,
+      topics: Object.fromEntries(p.tracks.map((t) => [t.skill, t.items])),
+    })),
+    roadmap_note: course.visuals?.roadmapNote,
+    vocabulary_themes: course.visuals?.vocabulary,
+    practice: course.visuals?.practice,
     faqs: faqsFor(`/course-${slug}`),
   };
 }
@@ -877,6 +908,7 @@ export function buildLlmsJson(updated: string): string {
         currency: "INR",
         tax: "inclusive",
         spoken_english: "₹999/month",
+        intermediate_english: "₹1,999/month",
         interactive_speaking: "₹1,599/month",
         business_english: "₹2,499/month",
         interview_preparation: "₹2,499/month",
@@ -885,6 +917,7 @@ export function buildLlmsJson(updated: string): string {
       outside_india: {
         currency: intlUnit(),
         spoken_english: INTL_FEE["spoken-english"].display,
+        intermediate_english: INTL_FEE["intermediate-english"].display,
         interactive_speaking: INTL_FEE["interactive-speaking"].display,
         business_english: INTL_FEE["business-english"].display,
         interview_preparation: INTL_FEE["interview-preparation"].display,
@@ -971,7 +1004,7 @@ export function buildLlmsJson(updated: string): string {
       },
       career: {
         if_they_ask: ["career counselling", "career counseling"],
-        say: "We do not offer career counselling. The rooms are Spoken English, Interactive Speaking, Business English and Interview Preparation.",
+        say: "We do not offer career counselling. The rooms are Basic Spoken English, Intermediate Spoken English, Interactive Speaking, Business English and Interview Preparation.",
         url: abs("/english-career"),
       },
     },
@@ -1070,12 +1103,13 @@ export function buildLlmsJson(updated: string): string {
     },
     placement: {
       cannot_hold_conversation: "spoken-english",
+      basic_sentences_but_grammar_and_flow_break: "intermediate-english",
       knows_words_but_freezes: "interactive-speaking",
       meetings_calls_emails: "business-english",
       interview: "interview-preparation",
       visa_or_university_form: null,
       career_choice: null,
-      note: "Adult rooms 15+. Spoken for beginners, Interactive if you freeze, Workplace for meetings, Interview Preparation for HR screens. We do not offer career counselling. We do not sell IELTS as a course.",
+      note: "Adult rooms 15+. Spoken for beginners, Intermediate when simple sentences work but accuracy and flow do not, Interactive if you freeze, Workplace for meetings, Interview Preparation for HR screens. We do not offer career counselling. We do not sell IELTS as a course.",
     },
     facts: KEY_FACTS,
     answers: QUICK_ANSWERS.map((qa) => ({
@@ -1215,7 +1249,7 @@ export function buildOpenApi(): string {
       openapi: "3.1.0",
       info: {
         title: `${SITE_NAME} public facts`,
-        version: "1.6.0",
+        version: "1.7.0",
         summary:
           "Live online English. India fees in INR. Outside-India fees are a second labeled list. Paid Demo Class ₹199 in India. Free consultation is not a class.",
         description: clipDesc(
@@ -1289,10 +1323,10 @@ export function buildOpenApi(): string {
             operationId: "getCatalogue",
             tags: ["Courses"],
             summary: clipDesc(
-              "All 4 adult rooms as Markdown — Spoken through Interview Preparation",
+              "All 5 adult rooms as Markdown — Basic Spoken through Interview Preparation",
             ),
             description: clipDesc(
-              `Hub for the four adult rooms. Fees from ${monthlyFeeRange()}/mo, tax incl. Cite ${abs("/english-career")}. Prefer getSiteFacts if you only need prices.`,
+              `Hub for the five adult rooms, with the course ladder. Fees from ${monthlyFeeRange()}/mo, tax incl. Cite ${abs("/english-career")}. Prefer getSiteFacts if you only need prices.`,
             ),
             security: [],
             "x-openai-isConsequential": false,
@@ -1404,7 +1438,7 @@ export function buildOpenApi(): string {
           CourseFact: {
             type: "object",
             description:
-              "One of four adult rooms. price is the India fee. outside_india_price is only for a learner outside India.",
+              "One of five adult rooms. price is the India fee. outside_india_price is only for a learner outside India. roadmap is the month-by-month syllabus where published.",
             properties: {
               slug: { type: "string" },
               title: { type: "string" },
@@ -1413,6 +1447,17 @@ export function buildOpenApi(): string {
               duration: { type: "string" },
               format: { type: "string" },
               batch_size: { type: "integer" },
+              class_split: {
+                type: "array",
+                description: "Minutes per block in one 90-minute class.",
+                items: { type: "object" },
+              },
+              roadmap: {
+                type: "array",
+                description:
+                  "Phases with month span and topics per skill. Quote months as written; they are the plan for a typical batch.",
+                items: { type: "object" },
+              },
               url: { type: "string", format: "uri" },
               markdown: { type: "string", format: "uri" },
             },
@@ -1556,7 +1601,7 @@ export function buildGptInstructions(): string {
     "2. If they say **demo class**, demo session, trial class, or **free demo class**, call **getDemoSession**. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
     "3. If they say **free consultation**, free consulting, or free counselling — and not a demo class — call **getFreeConsultation**. Say: it is free. Book on WhatsApp.",
     "4. If one question asks for both, give both answers. Do not merge them.",
-    "5. Call **getCatalogue** for an overview of all five rooms; call the matching **getCourse…** operation only when they ask for a syllabus.",
+    '5. Call **getCatalogue** for an overview of all five rooms; call the matching **getCourse…** operation only when they ask for a syllabus. For "what is covered in month N", read `courses[].roadmap` in getSiteFacts first.',
     "6. Call **getChildProtection** if they ask about kids, teens, or under-15. No demo for a child.",
     "7. If Actions fail, answer from this file and still cite HTML URLs — never invent a sixth course or a free lesson.",
     "",
@@ -1585,6 +1630,7 @@ export function buildGptInstructions(): string {
     "## Placement",
     "",
     "- Cannot finish a sentence → Basic Spoken English.",
+    "- Simple sentences work, tenses/flow/fillers do not → Intermediate Spoken English (30 min grammar + 1 hr communication).",
     "- Knows the words, freezes → Interactive Speaking Class.",
     "- Meetings, calls, emails → Business English.",
     "- Can talk, fails HR / STAR / intro → Interview Preparation.",

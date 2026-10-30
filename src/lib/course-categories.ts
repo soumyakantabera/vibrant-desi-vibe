@@ -1,5 +1,6 @@
 export const COURSE_SLUGS = [
   "spoken-english",
+  "intermediate-english",
   "interactive-speaking",
   "business-english",
   "interview-preparation",
@@ -13,11 +14,11 @@ export const COURSE_CATEGORIES = [
     id: "speak-confidently",
     title: "Speak Confidently · From ₹999/month, inclusive of taxes",
     description:
-      "Quality live English from ₹999/month, inclusive of taxes. 6-month Spoken English or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English is also a dedicated room when the HR screen is the bottleneck. Batches of approximately 6 learners.",
+      "Quality live English from ₹999/month, inclusive of taxes. 6-month Basic Spoken English, 4-month Intermediate Spoken English (₹1,999/month) or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English is also a dedicated room when the HR screen is the bottleneck. Batches of approximately 6 learners.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
-    slugs: ["spoken-english", "interactive-speaking"],
+    slugs: ["spoken-english", "intermediate-english", "interactive-speaking"],
   },
   {
     id: "work-and-career",
