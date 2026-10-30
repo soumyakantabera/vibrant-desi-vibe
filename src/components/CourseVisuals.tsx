@@ -129,11 +129,11 @@ export function ClassSplit({ title, visuals }: { title: string; visuals: CourseV
           <h3 className="mt-8 text-center font-display font-bold text-ink">
             The communication block covers
           </h3>
-          <ul className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <ul className="mt-3 flex flex-wrap justify-center gap-3">
             {visuals.skills.map((s) => (
               <li
                 key={s.label}
-                className="flex flex-col items-center gap-2 rounded-xl border border-indigo-pop/20 bg-[#F4F4FF] px-3 py-4 text-center"
+                className="flex w-[calc(50%-0.375rem)] flex-col items-center gap-2 md:w-[calc(25%-0.5625rem)] rounded-xl border border-indigo-pop/20 bg-[#F4F4FF] px-3 py-4 text-center"
               >
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-indigo-pop text-white">
                   <Icon name={s.icon} size={20} />
