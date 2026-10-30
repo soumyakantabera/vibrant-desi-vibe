@@ -842,7 +842,7 @@ export const PAGES: Record<string, PageSeo> = {
       "Course hub. Five programmes from ₹999/month, inclusive of taxes, plus a paid Demo Class (₹199, 90 minutes) that is not a sixth programme. ₹0 extra if you enrol within 48 hours.",
     faqs: [
       {
-        q: "Which English course should I choose — Spoken, Interactive, Workplace or Interview Preparation?",
+        q: "Which English course should I choose — Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation?",
         a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Intermediate Spoken English (₹1,999/month, 4 months) if basic sentences work but grammar, flow and fillers do not. Choose Interactive Speaking (₹1,599/month, 3 months) if you know the words and freeze. Choose Business English (₹2,499/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹2,499/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
       },
       {
@@ -855,7 +855,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is the Demo Class one of the courses?",
-        a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. WhatsApp us first, then pay. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. We schedule you within 72 hours of payment. The four programmes are unchanged.",
+        a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. WhatsApp us first, then pay. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. We schedule you within 72 hours of payment. The five programmes are unchanged.",
       },
       {
         q: "Can I take two courses at the same time?",

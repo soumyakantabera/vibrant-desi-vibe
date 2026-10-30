@@ -98,7 +98,7 @@ export const body: ArticleBody = [
     items: [
       "**You describe the problem.** Shop, freeze, standup, HR screen, career change, visa form.",
       "**We name the bottleneck.** One sentence. Not three rooms.",
-      "**You leave with one recommendation** — Spoken, Interactive, Workplace, Interview Preparation, sit IELTS with the test board, or stay free — plus fee, duration and IST slot in writing.",
+      "**You leave with one recommendation** — Basic Spoken, Intermediate, Interactive, Workplace, Interview Preparation, sit IELTS with the test board, or stay free — plus fee, duration and IST slot in writing.",
       "**Every question you brought gets an answer.** Fees, GST, recordings, certificate, kids, refunds. If we cannot answer it, we say so.",
     ],
   },
@@ -136,7 +136,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Unsure? Get a free consultation. We diagnose the bottleneck and place you in one room — Spoken, Interactive, Workplace or Interview Preparation — not all of them.",
+    text: "Unsure? Get a free consultation. We diagnose the bottleneck and place you in one room — Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation — not all of them.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

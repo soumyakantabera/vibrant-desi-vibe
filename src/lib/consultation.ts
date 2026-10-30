@@ -85,7 +85,7 @@ export const CONSULTATION_WALK_AWAY: {
     icon: "check",
     color: "sunshine",
     title: "One course, not three",
-    body: "Spoken, Interactive, Workplace or Interview Preparation — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
+    body: "Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
   },
   {
     icon: "book",
