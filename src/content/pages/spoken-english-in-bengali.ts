@@ -59,6 +59,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "**Basic Spoken English** — 6 মাস, ₹999/মাস (ট্যাক্স সহ), সপ্তাহে সর্বোচ্চ 2টো লাইভ ক্লাস, প্রায় 6 জনের ব্যাচ। [কোর্স দেখুন](/course-spoken-english)।",
+      "**Intermediate Spoken English** — ছোট বাক্য বলতে পারেন, কিন্তু tense, flow আর um-ah সমস্যা: 4 মাস, ₹1,999/মাস, প্রতি ক্লাসে 30 মিনিট grammar + 1 ঘণ্টা কথা বলা। [কোর্স দেখুন](/course-intermediate-english)।",
       "**Interactive Speaking** — শব্দ জানেন কিন্তু বলতে গেলে জমে যান: 3 মাস, ₹1,599/মাস। [কোর্স দেখুন](/course-interactive-speaking)।",
       "**Business English** — মিটিং, কল আর ইমেল: 3 মাস, ₹2,499/মাস। [কোর্স দেখুন](/course-business-english)।",
     ],

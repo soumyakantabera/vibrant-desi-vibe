@@ -34,6 +34,13 @@ const ENGLISH_COURSES: {
     inr: "6 months · ₹999/month, inclusive of taxes",
   },
   {
+    to: "/course-intermediate-english",
+    label: "Intermediate Spoken English",
+    icon: "trend",
+    slug: "intermediate-english",
+    inr: "4 months · ₹1,999/month, inclusive of taxes",
+  },
+  {
     to: "/course-interactive-speaking",
     label: "Interactive Speaking",
     icon: "headset",

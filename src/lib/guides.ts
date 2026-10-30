@@ -47,7 +47,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-business-or-interactive-english",
     title: "Which class you need",
-    sub: "Spoken, Interactive, Workplace or Interview Preparation. Exam only if a form asks.",
+    sub: "Basic, Intermediate, Interactive, Workplace or Interview Preparation. Exam only if a form asks.",
     icon: "compass",
     color: "brand",
     group: "choose",
@@ -58,6 +58,14 @@ export const GUIDE_CARDS: GuideCard[] = [
     sub: "From zero: sounds, sentences, a 2-minute turn. 6 months, ₹999/mo.",
     icon: "mic",
     color: "sunshine",
+    group: "choose",
+  },
+  {
+    to: "/intermediate-spoken-english-course-india",
+    title: "Intermediate spoken English",
+    sub: "Basic sentences work, flow does not. 4 months, grammar + talk, ₹1,999/mo.",
+    icon: "trend",
+    color: "indigo",
     group: "choose",
   },
   {
@@ -254,13 +262,14 @@ export const GUIDE_CARDS: GuideCard[] = [
   },
 ];
 
-/** Homepage strip — the converting nine, not the whole catalogue. */
+/** Homepage strip — the converting ten, not the whole catalogue. */
 export const FEATURED_GUIDE_PATHS = [
   "/free-consultation",
   "/spoken-business-or-interactive-english",
   "/english-class-fees-india",
   "/how-long-to-learn-spoken-english",
   "/spoken-english-for-beginners-india",
+  "/intermediate-spoken-english-course-india",
   "/interactive-english-class-hesitation",
   "/english-for-working-professionals-india",
   "/best-online-spoken-english-classes-india",
@@ -278,6 +287,7 @@ export const FOOTER_GUIDES = [
   { to: "/english-class-fees-india", label: "English class fees in India" },
   { to: "/how-long-to-learn-spoken-english", label: "How long spoken English takes" },
   { to: "/spoken-english-for-beginners-india", label: "Beginners" },
+  { to: "/intermediate-spoken-english-course-india", label: "Intermediate" },
   { to: "/spoken-english-for-freshers-india", label: "Freshers" },
   { to: "/english-institute-comparison-india", label: "Compare institutes, 2026" },
 ];

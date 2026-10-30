@@ -104,7 +104,7 @@ jobs:
           grep -q 'Explore both programmes' src/routes/index.tsx
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
-          grep -q '4 Programmes' dist/english-career.html
+          grep -q '5 Programmes' dist/english-career.html
           grep -q '6 months · up to 2 classes/week' dist/course-spoken-english.html
           grep -q '09:00–12:00 IST' dist/course-spoken-english.html
           grep -q 'Workplace English' dist/course-business-english.html

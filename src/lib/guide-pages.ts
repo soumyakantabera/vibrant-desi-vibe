@@ -2,8 +2,8 @@ import type { PageSeo } from "@/lib/seo";
 import { CITIES, cityFaqs } from "@/lib/cities";
 
 const UPDATED = "2026-09-22";
-/** City pages were rewritten with city-specific sections on this date. */
-const CITY_UPDATED = "2026-10-08";
+/** City pages (and the Hindi/Bengali guides) last changed — the shared fee table gained Intermediate. */
+const CITY_UPDATED = "2026-10-30";
 
 const NEW_GUIDES: Record<string, PageSeo> = {
   // Written in Hindi and Bengali for learners who search in their own language.
@@ -44,7 +44,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile की फ़ीस कितनी है?",
-        a: "Basic Spoken English ₹999/माह (6 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
+        a: "Basic Spoken English ₹999/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
       },
       {
         q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
@@ -88,7 +88,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile-এর ফি কত?",
-        a: "Basic Spoken English ₹999/মাস (6 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
+        a: "Basic Spoken English ₹999/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
       },
       {
         q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",
@@ -116,13 +116,13 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: UPDATED,
+    dateModified: "2026-10-30",
     summary:
       "Hub for every long-form English class guide: fees, fit, time, audience, cities, and what the free consultation actually delivers. From ₹999/month inclusive of taxes, batches of around 6.",
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If you freeze with words you already have, take Interactive Speaking (₹1,599/month). If meetings and calls are the gap, take Business English (₹2,499/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, take Interactive Speaking (₹1,599/month). If meetings and calls are the gap, take Business English (₹2,499/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -170,6 +170,50 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
     ],
   },
+  "/intermediate-spoken-english-course-india": {
+    path: "/intermediate-spoken-english-course-india",
+    title: "Intermediate Spoken English Course in India",
+    description:
+      "Basic sentences work, flow does not? A 4-month intermediate plan: grammar + fluency every class, debates, presentations. ₹1,999/mo, about 6 per batch.",
+    shortTitle: "Intermediate spoken English",
+    keywords: [
+      "intermediate spoken english course online india",
+      "spoken english course after basic level",
+      "how to improve english from basic to fluent",
+      "english grammar mistakes while speaking",
+      "how to stop saying um and ah in english",
+      "lsrw skills english course online",
+      "advanced spoken english course online india",
+    ],
+    ogImage: "/og/intermediate-english.jpg",
+    priority: 0.85,
+    changefreq: "monthly",
+    dateModified: "2026-10-30",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Intermediate spoken English", path: "/intermediate-spoken-english-course-india" },
+    ],
+    summary:
+      "Intermediate spoken English guide: who is intermediate (simple sentences work, accuracy and flow do not), a self-test, what 4 months cover month by month, free drills (shadowing, 60-second turns, filler counting), and when a class helps. Course: ₹1,999/month, 4 months, approx. 6 learners, 30 min grammar + 1 hr communication.",
+    faqs: [
+      {
+        q: "How do I know if I am an intermediate English speaker?",
+        a: "You can introduce yourself, order food and answer simple questions in English, but tenses slip when you talk fast, you fill gaps with um and like, and longer ideas come out as short broken sentences. Roughly CEFR A2–B1. If you cannot yet finish a simple sentence aloud, you are a beginner — start with Basic Spoken English.",
+      },
+      {
+        q: "How can I improve my English from intermediate to fluent?",
+        a: "Three things together: fix the few grammar patterns you repeat wrongly (usually tenses, articles and agreement), speak in timed 60–90 second turns every day, and listen to real English — podcasts, news, talks — then retell it. Record yourself and count fillers. A live class adds a teacher who hears the same error and a group to debate and present to.",
+      },
+      {
+        q: "What is the fee for the intermediate course at Learn With Smile?",
+        a: "Intermediate Spoken English is ₹1,999 per month, inclusive of taxes, for 4 months — up to 2 live classes a week of 90 minutes, approximately 6 learners. Each class is 30 minutes of grammar and 1 hour of communication. The course is extendable.",
+      },
+      {
+        q: "Is an intermediate course the same as an advanced spoken English course?",
+        a: "Many Indian institutes call the step after basic “advanced”. Here it is called Intermediate: grammar accuracy plus connected speech, debates and presentations. Workplace English — meetings, client calls, emails — is a separate room, Business English.",
+      },
+    ],
+  },
   "/how-to-speak-english-fluently": {
     path: "/how-to-speak-english-fluently",
     title: "How to Speak English Fluently in India",
@@ -184,7 +228,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.85,
     changefreq: "monthly",
-    dateModified: "2026-10-08",
+    dateModified: "2026-10-30",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Speak fluently", path: "/how-to-speak-english-fluently" },

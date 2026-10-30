@@ -7,6 +7,14 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
+import {
+  ClassSplit,
+  CourseLadder,
+  CoverageMap,
+  Roadmap,
+  monthSpan,
+  type CourseVisuals,
+} from "@/components/CourseVisuals";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
@@ -53,6 +61,10 @@ export type CourseData = {
   projects?: Project[];
   faqs?: { q: string; a: string }[];
   testimonials?: Testimonial[];
+  /** Class split, month-by-month roadmap and coverage map. */
+  visuals?: CourseVisuals;
+  /** Who should already be able to do what before joining (Course.coursePrerequisites). */
+  prerequisites?: string;
   metaDescription: string;
 };
 
@@ -126,6 +138,30 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "A practical communication and career progression plan.",
     },
   ],
+  "intermediate-english": [
+    {
+      href: "/intermediate-spoken-english-course-india",
+      title: "Intermediate spoken English, explained",
+      description:
+        "Basic sentences work, flow does not. What the 4 months fix — and what they do not.",
+    },
+    {
+      href: "/spoken-business-or-interactive-english",
+      title: "Basic, Intermediate or Interactive?",
+      description: "One test: can you finish a sentence, and does it come out right?",
+    },
+    {
+      href: "/how-to-speak-english-fluently",
+      title: "How to speak English fluently",
+      description:
+        "Free drills for the days between classes — shadowing, recordings, 60-second turns.",
+    },
+    {
+      href: "/blog/5-speaking-habits-that-killed-my-hesitation",
+      title: "5 speaking habits that reduce hesitation",
+      description: "Cut the um, ah, like — the same filler drills used in the Foundation phase.",
+    },
+  ],
   "interactive-speaking": [
     {
       href: "/interactive-english-class-hesitation",
@@ -166,6 +202,8 @@ const TEACHER_NOTE: Record<string, string> = {
   "spoken-english": "Same teacher every class. They hear you speak — and they remember your words.",
   "business-english":
     "The same teacher on every workplace hour. They learn how you sound on a client call.",
+  "intermediate-english":
+    "Same teacher for all 4 months. They hear your tense slip in month 1 and check it is gone by month 4.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
   "interview-preparation":
     "The same teacher on every mock. They hear the freeze on the 60-second intro — and they mark it until it stops.",
@@ -342,6 +380,14 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
+      {data.visuals && (
+        <>
+          <ClassSplit title={data.title} visuals={data.visuals} />
+          <Roadmap title={data.title} visuals={data.visuals} />
+          <CoverageMap title={data.title} visuals={data.visuals} />
+        </>
+      )}
+
       {/* CURRICULUM */}
       <section className="section bg-brand-soft/40">
         <div className="container-x">
@@ -387,6 +433,8 @@ export function CoursePage({ data }: { data: CourseData }) {
           </div>
         </div>
       </section>
+
+      {data.slug !== "demo-session" && <CourseLadder highlight={data.slug} />}
 
       {data.projects && data.projects.length > 0 && (
         <section className="section">
@@ -621,6 +669,7 @@ export function courseSeo(d: CourseData) {
       image: [abs(ogImage)],
       inLanguage: "en-IN",
       educationalLevel: d.slug === "spoken-english" ? "Beginner" : "Intermediate",
+      ...(d.prerequisites ? { coursePrerequisites: d.prerequisites } : {}),
       typicalAgeRange: "15+",
       teaches: d.outcomes,
       timeRequired: workload,
@@ -635,12 +684,21 @@ export function courseSeo(d: CourseData) {
       },
       offers,
       hasCourseInstance: courseInstance,
-      syllabusSections: d.modules.map((m, i) => ({
-        "@type": "Syllabus",
-        position: i + 1,
-        name: m.title,
-        description: m.items.join(". "),
-      })),
+      // The month-by-month roadmap is the more exact syllabus when a course has
+      // one: each section names its month span, which is what learners ask.
+      syllabusSections: d.visuals
+        ? d.visuals.roadmap.map((p, i) => ({
+            "@type": "Syllabus",
+            position: i + 1,
+            name: `${monthSpan(p)}: ${p.title}`,
+            description: p.tracks.map((t) => `${t.skill}: ${t.items.join("; ")}`).join(". "),
+          }))
+        : d.modules.map((m, i) => ({
+            "@type": "Syllabus",
+            position: i + 1,
+            name: m.title,
+            description: m.items.join(". "),
+          })),
     },
     breadcrumbLd([
       { name: "Home", path: "/" },

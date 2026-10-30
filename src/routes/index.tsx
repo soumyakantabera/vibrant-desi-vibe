@@ -17,6 +17,7 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
+import { CourseLadder } from "@/components/CourseVisuals";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import {
@@ -326,7 +327,7 @@ function Home() {
           <SectionHeader
             eyebrow="What We Teach"
             title="Choose the Goal You Need Now"
-            subtitle="Spoken English, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
+            subtitle="Basic Spoken, Intermediate Spoken, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
           />
           <Reveal
             stagger
@@ -356,6 +357,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <CourseLadder />
 
       <GuidesStrip />
 
@@ -397,7 +400,7 @@ function Home() {
               {
                 n: 1,
                 lbl: "Choose Course",
-                sub: "4 programmes · from ₹999/mo, inclusive of taxes",
+                sub: "5 programmes · from ₹999/mo, inclusive of taxes",
                 c: "sunshine",
               },
               { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },

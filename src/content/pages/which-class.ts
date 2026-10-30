@@ -7,7 +7,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo). If the problem is meetings, calls and emails, take [Business English](/course-business-english) (3 months, ₹2,499/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If basic sentences work but tenses, flow and fillers do not, take [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo). If the problem is meetings, calls and emails, take [Business English](/course-business-english) (3 months, ₹2,499/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
@@ -26,6 +26,12 @@ export const body: ArticleBody = [
         "Spoken English",
         "6 months · ₹999/mo, inclusive of taxes",
         "Introduce yourself, shops, phone, 2 minutes on a topic",
+      ],
+      [
+        "Simple sentences work. Grammar and flow do not.",
+        "Intermediate Spoken English",
+        "4 months · ₹1,999/mo",
+        "Connected speech, 60–90 second turns, 2–3 minute presentation + Q&A",
       ],
       [
         "You know the words. You freeze.",

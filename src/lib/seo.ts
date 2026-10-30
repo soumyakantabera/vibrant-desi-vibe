@@ -337,6 +337,39 @@ export const SPOKEN_KEYWORDS = [
   "english speaking classes under 1000 rupees india",
 ];
 
+/**
+ * Product — Intermediate Spoken English (₹1,999 / 4 months / grammar + talk).
+ *
+ * Research, October 2026 (research_notes/india-market-seo-sem-llm-2026.md):
+ * Indian searchers rarely type "B1". They type the level word ("intermediate",
+ * "advanced", "next level"), the problem ("grammar mistakes while speaking",
+ * "fillers um ah"), or school vocabulary ("LSRW"). Level-based intermediate
+ * listings elsewhere sit around ₹4,500–₹7,000/month 1:1, so the price-qualified
+ * long tail ("under 2000") is winnable. Generic "spoken english" heads stay
+ * with the beginner page — this cluster must not cannibalise it.
+ */
+export const INTERMEDIATE_KEYWORDS = [
+  "intermediate spoken english course online india",
+  "intermediate english speaking course",
+  "intermediate level english course india",
+  "intermediate english course online live",
+  "spoken english course after basic level",
+  "next level spoken english course",
+  "advanced spoken english course online india",
+  "english grammar and speaking course together",
+  "english grammar mistakes while speaking course",
+  "improve english fluency and grammar online india",
+  "how to stop saying um and ah in english",
+  "lsrw skills english course online",
+  "listening speaking reading writing english course india",
+  "b1 b2 english speaking course online india",
+  "english to english spoken course",
+  "4 month spoken english course india",
+  "english speaking course under 2000 per month",
+  "english debate and presentation practice class",
+  "conditionals connectors modals spoken english",
+];
+
 /** Product — Interactive Speaking (freeze / hesitation). */
 export const INTERACTIVE_KEYWORDS = [
   "english speaking practice online india",
@@ -541,6 +574,7 @@ export const KEYWORD_CLUSTERS = {
   demo_class_hidden: CONSULTATION_KEYWORDS.filter((k) => /demo/i.test(k)),
   paid_demo: PAID_DEMO_KEYWORDS,
   spoken: SPOKEN_KEYWORDS,
+  intermediate: INTERMEDIATE_KEYWORDS,
   interactive: INTERACTIVE_KEYWORDS,
   workplace: WORKPLACE_KEYWORDS,
   interview: INTERVIEW_KEYWORDS,
@@ -613,6 +647,15 @@ export const CLUSTER_INTENT = {
     job: "Cannot finish a sentence. Wants beginners, ₹999, 6 months, live teacher.",
     land: "/course-spoken-english",
     next: "Get Free Consultation",
+  },
+  intermediate: {
+    intent: "commercial",
+    funnel: "consider",
+    job: "Can make basic sentences. Tenses slip, fillers pile up, ideas do not connect. Wants grammar and fluency together — ₹1,999, 4 months.",
+    land: "/course-intermediate-english",
+    next: "Get Free Consultation",
+    mismatch:
+      "Not for someone who cannot finish a sentence (Basic Spoken English) or whose grammar is fine and only freezes (Interactive Speaking).",
   },
   interactive: {
     intent: "commercial",
@@ -697,6 +740,7 @@ export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
   BRAND_KEYWORDS,
   CONSULTATION_KEYWORDS,
   SPOKEN_KEYWORDS,
+  INTERMEDIATE_KEYWORDS,
   INTERACTIVE_KEYWORDS,
   WORKPLACE_KEYWORDS,
   INTERVIEW_KEYWORDS,
@@ -732,13 +776,13 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
-    dateModified: "2026-10-08",
+    dateModified: "2026-10-30",
     summary:
       "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
-        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Interactive Speaking is ₹1,599/month, Business English ₹2,499/month and Interview Preparation ₹2,499/month. All prices are inclusive of taxes. No material fee. We do not offer career counselling. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
+        a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Intermediate Spoken English is ₹1,999/month, Interactive Speaking ₹1,599/month, Business English ₹2,499/month and Interview Preparation ₹2,499/month. All prices are inclusive of taxes. No material fee. We do not offer career counselling. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
       },
       {
         q: "Which is the best online spoken English class in India for a small batch?",
@@ -782,6 +826,7 @@ export const PAGES: Record<string, PageSeo> = {
       ...INTERVIEW_KEYWORDS,
       ...WORKPLACE_KEYWORDS,
       ...SPOKEN_KEYWORDS,
+      ...INTERMEDIATE_KEYWORDS,
       "online english course list india",
       "english course fees comparison india",
       "which english course should i take",
@@ -792,17 +837,17 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-09-28",
+    dateModified: "2026-10-30",
     summary:
       "Course hub. Five programmes from ₹999/month, inclusive of taxes, plus a paid Demo Class (₹199, 90 minutes) that is not a sixth programme. ₹0 extra if you enrol within 48 hours.",
     faqs: [
       {
         q: "Which English course should I choose — Spoken, Interactive, Workplace or Interview Preparation?",
-        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Interactive Speaking (₹1,599/month, 3 months) if you know the words and freeze. Choose Business English (₹2,499/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹2,499/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
+        a: "Choose Basic Spoken English (₹999/month, 6 months) if you cannot yet hold a conversation. Choose Intermediate Spoken English (₹1,999/month, 4 months) if basic sentences work but grammar, flow and fillers do not. Choose Interactive Speaking (₹1,599/month, 3 months) if you know the words and freeze. Choose Business English (₹2,499/month, 3 months) if meetings, calls and emails are the gap. Choose Interview Preparation (₹2,499/month, 2 months) if you can already talk and still fail the HR screen. Rooms are for adult learners 15+.",
       },
       {
         q: "What is the cheapest course at Learn With Smile?",
-        a: "Basic Spoken English is ₹999 per month, Interactive Speaking ₹1,599 per month, Business English ₹2,499 per month and Interview Preparation ₹2,499 per month. All fees are inclusive of taxes. We do not offer career counselling and we do not sell IELTS as a course.",
+        a: "Basic Spoken English is ₹999 per month, Intermediate Spoken English ₹1,999 per month, Interactive Speaking ₹1,599 per month, Business English ₹2,499 per month and Interview Preparation ₹2,499 per month. All fees are inclusive of taxes. We do not offer career counselling and we do not sell IELTS as a course.",
       },
       {
         q: "Who can join?",
@@ -1010,7 +1055,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-10-08",
+    dateModified: "2026-10-30",
     summary:
       "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — the ₹199 Demo Class is the real class. No payment. Replies 10am–midnight IST every day. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
@@ -1252,6 +1297,7 @@ export const PAGES: Record<string, PageSeo> = {
     ],
     ogImage: "/og/default.jpg",
     priority: 0.8,
+    dateModified: "2026-10-30",
     changefreq: "monthly",
     summary:
       "Fees guide. What online English classes actually cost in India — ₹800–₹3,000/month for group classes, ₹100–₹2,000 per 1:1 session, ₹300–₹800/month for apps — what drives the price, the cost-per-speaking-minute calculation, and five hidden costs to check with any provider.",
@@ -1394,6 +1440,7 @@ export const PAGES: Record<string, PageSeo> = {
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
+    dateModified: "2026-10-30",
     changefreq: "monthly",
     summary:
       "Time-to-fluency guide. Everyday conversation ~6 months from zero with live classes; workplace ~3 months. Speaking minutes matter more than calendar months. ₹999/mo, batch of around 6.",
@@ -1408,7 +1455,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How long is the Learn With Smile Spoken English course?",
-        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Interactive Speaking is 3 months at ₹1,599/month. Business English is 3 months at ₹2,499/month. Interview Preparation is 2 months at ₹2,499/month. We do not offer career counselling.",
+        a: "6 months, up to 2 live classes per week, approximately 6 learners, ₹999 per month inclusive of taxes. Intermediate Spoken English is 4 months at ₹1,999/month. Interactive Speaking is 3 months at ₹1,599/month. Business English is 3 months at ₹2,499/month. Interview Preparation is 2 months at ₹2,499/month. We do not offer career counselling.",
       },
     ],
   },
@@ -1435,7 +1482,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: "2026-09-22",
+    dateModified: "2026-10-30",
     summary:
       "Named 2026 comparison: Learn With Smile from ₹999/month (approx. 6 learners, 500+, 7 years) vs EngVarta (₹2,700 / 25 calls), Cambly (₹8k–₹15k/mo if daily), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months). Written by one of the providers.",
     faqs: [
@@ -1474,13 +1521,15 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/spoken-business-or-interactive-english",
     title: "Which English Class | Spoken vs Business",
     description:
-      "Conversation → Spoken. Freeze → Interactive. Meetings → Business. We diagnose the gap in a free consultation. From ₹999/mo, ≈6 learners.",
+      "Conversation → Basic Spoken. Grammar and flow → Intermediate. Freeze → Interactive. Meetings → Business. Free consultation names the gap. From ₹999/mo.",
     shortTitle: "Which English class",
     keywords: [
       "spoken vs business vs interactive english",
       "which english class do i need india",
       "spoken english or business english course",
       "interactive speaking vs spoken english",
+      "basic or intermediate spoken english course",
+      "intermediate vs interactive english class",
       "english course picker india",
       "which english course consultation",
       "help choose spoken english course india",
@@ -1490,12 +1539,12 @@ export const PAGES: Record<string, PageSeo> = {
     priority: 0.85,
     changefreq: "monthly",
     summary:
-      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Interactive if you freeze (3 months, ₹1,599/mo). Workplace if meetings are the gap (3 months, ₹2,499/mo). Interview Preparation if the HR screen is the freeze (2 months, ₹2,499/mo). Free consultation diagnoses the bottleneck live.",
-    dateModified: "2026-09-21",
+      "Picker: Spoken English if you cannot hold a conversation (6 months, ₹999/mo). Intermediate if basic sentences work but grammar and flow do not (4 months, ₹1,999/mo). Interactive if you freeze (3 months, ₹1,599/mo). Workplace if meetings are the gap (3 months, ₹2,499/mo). Interview Preparation if the HR screen is the freeze (2 months, ₹2,499/mo). Free consultation diagnoses the bottleneck live.",
+    dateModified: "2026-10-30",
     faqs: [
       {
         q: "Which English class do I need — spoken, business or interactive?",
-        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,599/month. If chat is fine and meetings, calls or emails are not, take Business English — 3 months, ₹2,499/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹2,499/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
+        a: "If you cannot hold a conversation yet, start with Spoken English — 6 months, ₹999/month, approx. 6 learners. If you can make basic sentences but tenses, flow and fillers let you down, take Intermediate Spoken English — 4 months, ₹1,999/month, 30 min grammar + 1 hr communication per class. If you know the words and still freeze, take Interactive Speaking — 3 months, ₹1,599/month. If chat is fine and meetings, calls or emails are not, take Business English — 3 months, ₹2,499/month. If you can talk and still fail the HR screen, take Interview Preparation — 2 months, ₹2,499/month. Sit an exam course only when a form, university or visa asks for the exam. Unsure? Get a free consultation — we name the bottleneck and place you in one room.",
       },
       {
         q: "Should I take IELTS first to get a better job in India?",
@@ -1741,6 +1790,7 @@ export type CourseSeoExtra = {
  */
 const INR_MONTHLY_FEE: Record<string, number> = {
   "spoken-english": 999,
+  "intermediate-english": 1999,
   "interactive-speaking": 1599,
   "business-english": 2499,
   "interview-preparation": 2499,
@@ -1758,6 +1808,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "spoken english classes kolkata online",
     ],
     ogImage: "/og/spoken-english.jpg",
+    dateModified: "2026-10-30",
     summary:
       "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month, inclusive of taxes. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
@@ -1775,6 +1826,31 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
+  "intermediate-english": {
+    title: "Intermediate Spoken English | ₹1,999/mo, 4 Months",
+    description:
+      "Intermediate spoken English online: grammar + fluency in every class, debates and presentations. 4 months, about 6 per batch, ₹1,999/month incl. taxes.",
+    shortTitle: "Intermediate Spoken English",
+    keywords: [...INTERMEDIATE_KEYWORDS, "spoken english classes online india"],
+    ogImage: "/og/intermediate-english.jpg",
+    dateModified: "2026-10-30",
+    summary:
+      "Intermediate Spoken English — 4 months, ₹1,999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. Every 90-minute class is 30 min grammar + 1 hr communication (speaking, writing, active listening, reading). Months 1–2 Foundation (parts of speech, tenses, articles, subject-verb agreement, questions, sounds, 60–90 s timed turns, filler drills). Month 3 Expanding & Connecting (connectors, modals, negotiation, authentic listening). Month 4 Fluency & Confidence (conditionals, debates, polite interrupting, 2–3 min presentations + Q&A, role-play, storytelling). English to English. Extendable.",
+    extraFaqs: [
+      {
+        q: "What is the fee for an intermediate spoken English course in India?",
+        a: "Learn With Smile charges ₹1,999 per month for Intermediate Spoken English — 4 months, up to 2 live classes a week, approximately 6 learners per batch, inclusive of taxes. Level-based intermediate courses from other Indian providers were listed at roughly ₹4,500–₹7,000 a month for 1:1 formats in October 2026; check each provider's current page.",
+      },
+      {
+        q: "What does an intermediate English course cover?",
+        a: "Here: months 1–2 fix the grammar under your sentences (all 8 parts of speech, tenses, articles, subject-verb agreement, Wh- and Yes/No questions) and train sounds, 60–90 second timed turns and filler-free speech. Month 3 adds connectors, modals, negotiation and real listening — podcasts, news clips, simplified TED-style talks. Month 4 is conditionals, debates, polite disagreement, 2–3 minute presentations with Q&A, role-play and storytelling. Vocabulary runs throughout: news, work, idioms, collocations, phrasal verbs.",
+      },
+      {
+        q: "Is 4 months enough to go from basic to fluent English?",
+        a: "Four months moves someone who can already make simple sentences to longer, connected and more accurate speech — a 2–3 minute talk, a debate, a polite disagreement. It does not produce native-like English. Results depend on attending, the daily recordings and shadow speaking between classes. The course is extendable if a phase needs longer.",
+      },
+    ],
+  },
   "business-english": {
     title: "Business English Course | ₹2,499/mo",
     description:
@@ -1786,6 +1862,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "business english course for working professionals india",
     ],
     ogImage: "/og/business-english.jpg",
+    dateModified: "2026-10-30",
     summary:
       "Business English — ₹2,499/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations.",
     extraFaqs: [
@@ -1806,6 +1883,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     shortTitle: "Interactive Speaking",
     keywords: [...INTERACTIVE_KEYWORDS],
     ogImage: "/og/interactive-speaking.jpg",
+    dateModified: "2026-10-30",
     summary:
       "Interactive Speaking — ₹1,599/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
     extraFaqs: [
@@ -1826,7 +1904,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     shortTitle: "Interview Preparation",
     keywords: [...INTERVIEW_KEYWORDS],
     ogImage: "/og/interview-prep.jpg",
-    dateModified: "2026-09-22",
+    dateModified: "2026-10-30",
     summary:
       "Interview Preparation — ₹2,499/month · 2 months in a live batch of approximately 6 learners. HR screens, 60-second intro, STAR stories, panel, salary, recorded mocks. For people who can already talk and still fail the interview.",
     extraFaqs: [
