@@ -45,7 +45,7 @@ export const CONTACT = {
   phone: "+919674479949",
   phoneDisplay: "+91 96744 79949",
   whatsapp: "https://wa.me/919674479949",
-  email: "learnwithsmile.in@gmail.com",
+  email: "info@learnwithsmile.app",
   street: "75/2/4, Raja Ram Mohan Roy Road",
   locality: "Kolkata",
   region: "West Bengal",
@@ -1103,11 +1103,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "How do I ask you to delete my data?",
-        a: "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. You may ask us to access, correct, delete, restrict or export what we hold, or to object to a use that is only in our interest. We reply 10am–midnight IST every day and aim to answer within 30 days. Invoices from a paid course are kept for the Indian tax period. We cannot delete WhatsApp’s copy or yours. You may also complain to a data-protection authority where you live.",
+        a: "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. You may ask us to access, correct, delete, restrict or export what we hold, or to object to a use that is only in our interest. We reply 10am–midnight IST every day and aim to answer within 30 days. Invoices from a paid course are kept for the Indian tax period. We cannot delete WhatsApp’s copy or yours. You may also complain to a data-protection authority where you live.",
       },
       {
         q: "Who is the Grievance Officer?",
-        a: "Soumyakanta Bera, Grievance Officer, Learn With Smile. Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India. Email learnwithsmile.in@gmail.com. Phone and WhatsApp +91 96744 79949. We acknowledge a complaint within 48 hours and aim to resolve it within 30 days.",
+        a: "Soumyakanta Bera, Grievance Officer, Learn With Smile. Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India. Email info@learnwithsmile.app. Phone and WhatsApp +91 96744 79949. We acknowledge a complaint within 48 hours and aim to resolve it within 30 days.",
       },
     ],
   },
@@ -1144,7 +1144,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Who is the Grievance Officer?",
-        a: "Soumyakanta Bera. Complaints about this website, a consultation, enrolment, a fee or a refund go to the Grievance Officer at learnwithsmile.in@gmail.com or WhatsApp +91 96744 79949. Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India. We acknowledge within 48 hours.",
+        a: "Soumyakanta Bera. Complaints about this website, a consultation, enrolment, a fee or a refund go to the Grievance Officer at info@learnwithsmile.app or WhatsApp +91 96744 79949. Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India. We acknowledge within 48 hours.",
       },
     ],
   },

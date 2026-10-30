@@ -32,7 +32,7 @@ const GRIEVANCE_OFFICER: LegalSection = {
   bullets: [
     "Name: Soumyakanta Bera",
     "Address: 108 Shri Krishna Nagar, Kolkata 700056, West Bengal, India",
-    "Email: learnwithsmile.in@gmail.com",
+    "Email: info@learnwithsmile.app",
     "Phone / WhatsApp: +91 96744 79949",
   ],
 };
@@ -62,7 +62,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Who we are",
         paragraphs: [
           "Learn With Smile provides live online English classes. The business is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, at 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. We teach from Kolkata. Learners in India and learners outside India may use this site and enrol in the same live online batch.",
-          "For privacy questions, message us on WhatsApp at +91 96744 79949 or email learnwithsmile.in@gmail.com. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
+          "For privacy questions, message us on WhatsApp at +91 96744 79949 or email info@learnwithsmile.app. Office address: 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008, West Bengal, India. The office is not a walk-in campus.",
           "The Grievance Officer for this policy is Soumyakanta Bera. Name, address, email and phone are in the Grievance Officer section below.",
         ],
       },
@@ -142,7 +142,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Where information is processed",
         paragraphs: [
           "We are established in India. Staff use your information from India. Some providers may process it in other countries when you use them: WhatsApp/Meta if you message us, Razorpay if you pay, and GitHub Pages which hosts the public site. We do not claim that every country those providers use has been declared adequate by a European or UK authority. We share only what that provider needs for the task.",
-          "You may email learnwithsmile.in@gmail.com instead of WhatsApp. Class placement and the written fee are still confirmed on WhatsApp before you pay.",
+          "You may email info@learnwithsmile.app instead of WhatsApp. Class placement and the written fee are still confirmed on WhatsApp before you pay.",
         ],
       },
       {
@@ -390,7 +390,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to ask",
         paragraphs: [
-          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email learnwithsmile.in@gmail.com. We reply during 10am–midnight IST every day. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
+          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 10am–midnight IST every day. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
         ],
       },
       {
@@ -489,7 +489,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to raise a concern",
         paragraphs: [
-          "Message +91 96744 79949 on WhatsApp or email learnwithsmile.in@gmail.com. Name the learner only as needed, the batch, the date, and what happened. We reply 10am–midnight IST every day. The Grievance Officer is Soumyakanta Bera. The contact block is at the end of this page.",
+          "Message +91 96744 79949 on WhatsApp or email info@learnwithsmile.app. Name the learner only as needed, the batch, the date, and what happened. We reply 10am–midnight IST every day. The Grievance Officer is Soumyakanta Bera. The contact block is at the end of this page.",
           "If we reasonably believe a child is at immediate risk of harm, we may contact the parent and, where Indian law requires it, the police or a child-welfare authority, even if you asked us not to. We will not promise secrecy that the law does not allow.",
           "A parent may also approach the National Commission for Protection of Child Rights (NCPCR), a State Commission, or the police. This school is not those bodies.",
         ],
