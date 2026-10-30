@@ -45,7 +45,7 @@ export function intlZero(): string {
 
 export const INTL_FEE: Record<IntlSlug, IntlFee> = {
   "spoken-english": { display: money("49", "/mo"), big: money("49"), suffix: "/mo" },
-  "intermediate-english": { display: money("89", "/mo"), big: money("89"), suffix: "/mo" },
+  "intermediate-english": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
   "interactive-speaking": { display: money("79", "/mo"), big: money("79"), suffix: "/mo" },
   "business-english": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
   "interview-preparation": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
