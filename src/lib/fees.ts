@@ -55,3 +55,80 @@ export function publishedFeeLock(): string {
 export function admissionVersus(): string {
   return "No material fee. Confirm the full fee in writing in the free consultation before you pay.";
 }
+
+/**
+ * Monthly course fees, India list, in one place for the package sections,
+ * the per-day figure and structured data. Prose elsewhere states the same
+ * rupee strings; FeeText swaps them for the outside-India list.
+ */
+export type FeeSlug =
+  | "spoken-english"
+  | "intermediate-english"
+  | "interactive-speaking"
+  | "business-english"
+  | "interview-preparation";
+
+export const COURSE_FEE: Record<
+  FeeSlug,
+  { name: string; inr: number; display: string; monthly: string; months: number }
+> = {
+  "spoken-english": {
+    name: "Basic Spoken English",
+    inr: 999,
+    display: "₹999",
+    monthly: "₹999/month",
+    months: 6,
+  },
+  "intermediate-english": {
+    name: "Intermediate Spoken English",
+    inr: 1999,
+    display: "₹1,999",
+    monthly: "₹1,999/month",
+    months: 4,
+  },
+  "interactive-speaking": {
+    name: "Interactive Speaking",
+    inr: 1599,
+    display: "₹1,599",
+    monthly: "₹1,599/month",
+    months: 3,
+  },
+  "business-english": {
+    name: "Business English",
+    inr: 2499,
+    display: "₹2,499",
+    monthly: "₹2,499/month",
+    months: 3,
+  },
+  "interview-preparation": {
+    name: "Interview Preparation",
+    inr: 2499,
+    display: "₹2,499",
+    monthly: "₹2,499/month",
+    months: 2,
+  },
+};
+
+export const DEMO_FEE = { inr: 199, display: "₹199" } as const;
+
+/**
+ * Launch offer for new learners. Shown until the end of the last day, IST.
+ * The build hides it once the date has passed, and the browser hides it too,
+ * so a stale prerender never shows an expired offer to a visitor.
+ */
+export const LAUNCH_OFFER = {
+  endsAt: "2026-11-30T23:59:59+05:30",
+  endsLabel: "30 November 2026",
+  headline: "Launch offer: one extra month of Bolo, free",
+  short: "+1 month of Bolo free",
+  detail:
+    "New learners who enrol by 30 November 2026 get one extra month of Bolo — the practice app with daily exercises, video lessons and teacher review — after their course, at no cost. The course fee does not change.",
+} as const;
+
+export function launchOfferActive(now: number = Date.now()): boolean {
+  return now <= new Date(LAUNCH_OFFER.endsAt).getTime();
+}
+
+export function launchOfferDaysLeft(now: number = Date.now()): number {
+  return Math.max(0, Math.ceil((new Date(LAUNCH_OFFER.endsAt).getTime() - now) / 86_400_000));
+}

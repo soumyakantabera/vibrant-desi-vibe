@@ -8,14 +8,22 @@ import { pageLabel } from "@/lib/use-page-label";
 import { FeeText } from "@/components/FeeText";
 import type { IntlSlug } from "@/lib/intl-fees";
 
-type NavItem = { to: string; label: string; icon?: IconName; desc?: ReactNode };
+type NavItem = {
+  to: string;
+  label: string;
+  icon?: IconName;
+  desc?: ReactNode;
+  /** Desktop bar only from xl up — keeps the 1024px header on one line. */
+  wideOnly?: boolean;
+};
 
 const MAIN: NavItem[] = [
   { to: "/", label: "Home" },
   { to: "/why-us", label: "Why Us" },
+  { to: "/bolo", label: "Bolo app" },
   { to: "/guides", label: "Guides" },
   { to: "/success-stories", label: "Stories" },
-  { to: "/educator", label: "Educator" },
+  { to: "/educator", label: "Educator", wideOnly: true },
   { to: "/blog", label: "Blog" },
 ];
 
@@ -32,6 +40,20 @@ const ENGLISH_COURSES: {
     icon: "mic",
     slug: "spoken-english",
     inr: "6 months · ₹999/month, inclusive of taxes",
+  },
+  {
+    to: "/course-spoken-english-hindi",
+    label: "Basic Spoken English — Hindi to English",
+    icon: "translate",
+    slug: "spoken-english",
+    inr: "Hindi-speaking teacher · ₹999/month",
+  },
+  {
+    to: "/course-spoken-english-marathi",
+    label: "Basic Spoken English — Marathi to English",
+    icon: "translate",
+    slug: "spoken-english",
+    inr: "Marathi-speaking teacher · ₹999/month",
   },
   {
     to: "/course-intermediate-english",
@@ -174,7 +196,7 @@ export function Nav() {
                 }}
                 aria-expanded={coursesOpen}
                 aria-haspopup="true"
-                className={`px-3.5 py-2 rounded-full text-sm font-display font-semibold transition inline-flex items-center gap-1.5 ${
+                className={`px-2.5 xl:px-3.5 py-2 rounded-full text-sm font-display font-semibold transition inline-flex items-center gap-1.5 ${
                   coursesActive || coursesOpen
                     ? "bg-brand-soft text-brand-deep"
                     : "text-ink/90 hover:text-brand-deep hover:bg-brand-soft/60"
@@ -217,7 +239,12 @@ export function Nav() {
             </div>
 
             {MAIN.slice(1).map((l) => (
-              <NavLinkPill key={l.to} to={l.to} active={isActive(l.to)}>
+              <NavLinkPill
+                key={l.to}
+                to={l.to}
+                active={isActive(l.to)}
+                className={l.wideOnly ? "hidden xl:inline-flex" : ""}
+              >
                 {l.label}
               </NavLinkPill>
             ))}
@@ -233,8 +260,8 @@ export function Nav() {
               data-cta-goal="whatsapp_chat"
             >
               <BrandIcon name="whatsapp" size={17} color="#053b1e" />
-              <span className="hidden md:inline">{CHAT_CTA}</span>
-              <span className="md:hidden">WhatsApp</span>
+              <span className="hidden md:inline lg:hidden xl:inline">{CHAT_CTA}</span>
+              <span className="md:hidden lg:inline xl:hidden">WhatsApp</span>
             </a>
             <button
               type="button"
@@ -360,15 +387,17 @@ function NavLinkPill({
   to,
   active,
   children,
+  className = "",
 }: {
   to: string;
   active: boolean;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <Link
       to={to}
-      className={`relative px-3.5 py-2 rounded-full text-sm font-display font-semibold transition whitespace-nowrap ${
+      className={`relative px-2.5 xl:px-3.5 py-2 rounded-full text-sm font-display font-semibold transition whitespace-nowrap ${className} ${
         active
           ? "bg-brand-soft text-brand-deep"
           : "text-ink/90 hover:text-brand-deep hover:bg-brand-soft/60"
@@ -393,9 +422,9 @@ function CourseColumn({
   onPick: () => void;
 }) {
   const headBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E3E9F1] text-indigo-pop";
   const iconBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E3E9F1] text-indigo-pop";
   return (
     <div className="p-3">
       <Link
@@ -475,7 +504,7 @@ function MobileCourseLink({
   onClick: () => void;
 }) {
   const iconBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E3E9F1] text-indigo-pop";
   return (
     <Link
       to={item.to}

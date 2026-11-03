@@ -1,19 +1,18 @@
 import type { ReactNode } from "react";
-import { FeeText } from "@/components/FeeText";
 import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
+import { WhyDifferent } from "@/components/WhyDifferent";
 import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
-import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
-import { DEMO_CTA, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
-import { CONSULTATION } from "@/lib/consultation";
+import { CHAT_MSG } from "@/lib/whatsapp";
 import { formatIsoDate } from "@/lib/compare";
+import { PackageBand } from "@/components/package/PackageSections";
 import { CompareDiff } from "@/components/CompareDiff";
 
 /**
@@ -45,6 +44,7 @@ export function GuidePage({
   ctaBody,
   lastUpdated,
   lang,
+  packageBand = true,
   children,
 }: {
   eyebrow: string;
@@ -65,15 +65,17 @@ export function GuidePage({
   /** BCP 47 tag for a page written in another language (hi-IN, bn-IN). The
    *  site chrome stays English; the hero, article and FAQs carry this tag. */
   lang?: string;
+  /** Off on pages that already show the full pricing grid. */
+  packageBand?: boolean;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
   return (
     <Layout waMessage={waMessage} footerImage={heroImage}>
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={heroImage} alt={heroAlt} fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/60" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-12 md:py-20 max-w-3xl text-cream" lang={lang}>
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
@@ -110,7 +112,7 @@ export function GuidePage({
       <article className="section" lang={lang}>
         <div className="container-x max-w-3xl">
           {shortAnswer && (
-            <div className="mb-8 rounded-2xl border border-sunshine/40 bg-sunshine/15 p-5">
+            <div className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5">
               <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
                 Short answer
               </p>
@@ -127,6 +129,12 @@ export function GuidePage({
         </div>
       </article>
 
+      <div lang="en-IN">
+        <WhyDifferent compact visuals={false} />
+      </div>
+
+      {packageBand && <PackageBand />}
+
       {children}
 
       <div lang={lang}>
@@ -138,29 +146,6 @@ export function GuidePage({
           waMessage={waMessage}
         />
       </div>
-
-      <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
-        <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">{CONSULTATION.headline}</h2>
-          <p className="mt-3 text-white">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">
-            <FeeText text={CONSULTATION.hook} />
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={waMessage} variant="wa" size="lg">
-              {CHAT_CTA}
-            </WaButton>
-            <WaButton message={waMessage} variant="sun" size="lg">
-              {DEMO_CTA}
-            </WaButton>
-            <Link to="/english-career" className="btn btn-white btn-lg">
-              See all courses
-            </Link>
-          </div>
-          <PaymentTrust tone="dark" align="center" className="mt-8" />
-        </div>
-      </section>
     </Layout>
   );
 }

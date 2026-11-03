@@ -15,6 +15,8 @@ export type LegalDoc = {
 };
 
 export const LEGAL_UPDATED = "2026-10-08";
+/** Terms and Refunds: billing promises added 3 Nov 2026. */
+export const BILLING_UPDATED = "2026-11-03";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
@@ -213,7 +215,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     h1: "Terms of Use",
     standfirst:
       "These terms govern use of this website, the free consultation, and enrolment in Learn With Smile live online classes. Please read them before you pay a fee. A complaint about the site, a consultation, a fee or a class goes to the Grievance Officer named on this page.",
-    updated: LEGAL_UPDATED,
+    updated: BILLING_UPDATED,
     sections: [
       {
         heading: "Agreement",
@@ -283,7 +285,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Cancelling before the first class",
         paragraphs: [
-          "You may cancel a paid course month and receive a full refund of that month if you tell us on WhatsApp or by email before the first live class of that month has been held. The refund goes back to the original payment method where the provider allows it.",
+          "You may cancel a paid course month and receive a full refund of that month if you tell us on WhatsApp or by email before the first live class of that month has been held. We start the refund within 2 working days, to the original payment method where the provider allows it.",
+          "We bill one month at a time, with no auto-debit, no saved card or UPI mandate, and no loan, EMI or finance plan. We never ask for several months upfront, and we never ask anyone to remove or change a review.",
           "If you ask us to hold that first class, the month is treated as started once the class has been held. We do not then refund that month because you changed your mind, missed later classes, found the work difficult, or did not get a job, visa, exam score or other result. You may still cancel any later month that has not been billed.",
           "If the law where you live gives you a longer right to withdraw from a distance contract, and that right cannot be waived, the longer right still applies. Asking us to start teaching can end that right for teaching already performed. We will confirm the position in writing if you cancel inside such a window.",
         ],
@@ -337,7 +340,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     h1: "Refunds and Cancellation",
     standfirst:
       "Please read this before you pay. The free consultation is counselling, not a class. You may cancel a paid month for a full refund before its first live class is held. After that class, that month is not refunded for a change of mind. A right that cannot be waived, in India or where you live, still applies.",
-    updated: LEGAL_UPDATED,
+    updated: BILLING_UPDATED,
     sections: [
       {
         heading: "Please get a free consultation first",
@@ -347,9 +350,20 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         ],
       },
       {
+        heading: "Our billing promises",
+        paragraphs: ["These apply to every course, in India and outside India:"],
+        bullets: [
+          "One month at a time. We never ask for 3, 6 or 12 months upfront.",
+          "No auto-debit. No saved card, no UPI mandate, no automatic renewal. Each month is a fresh payment link that you choose to pay.",
+          "No loans or EMIs. We never offer or arrange a loan, EMI or finance plan for a course fee.",
+          "Refunds started within 2 working days of an approved request.",
+          "Reviews are yours. We never ask anyone to remove or change a review, and a refund never depends on one.",
+        ],
+      },
+      {
         heading: "How fees work",
         paragraphs: [
-          "For a learner in India, English course fees are charged in Indian Rupees, inclusive of taxes, usually by the month in advance, as confirmed on WhatsApp. For a learner outside India, the fee is the price shown for them before they pay, and the same figure confirmed in writing on WhatsApp. A live seat is reserved when you pay.",
+          "For a learner in India, English course fees are charged in Indian Rupees, inclusive of taxes, by the month in advance, as confirmed on WhatsApp. For a learner outside India, the fee is the price shown for them before they pay, and the same figure confirmed in writing on WhatsApp. A live seat is reserved when you pay.",
         ],
       },
       {
@@ -377,7 +391,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Cancelling future months",
         paragraphs: [
-          "To stop a later month, message us on WhatsApp before that month is billed. We do not run an automatic card subscription on this website. If you have arranged a repeat payment with us, we will confirm how to stop it in writing on WhatsApp.",
+          "There is nothing to switch off: we do not auto-debit, save a card or set up a UPI mandate. Each month is a new payment link. To stop, do not pay the next link, or tell us on WhatsApp so we can free your seat.",
           "Unused time in a month that has already started is not carried forward as a cash refund, unless we agree otherwise in writing for one of the good-faith cases above.",
         ],
       },
@@ -390,7 +404,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "How to ask",
         paragraphs: [
-          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 10am–midnight IST every day. Approved refunds, if any, go back to the original payment method where the provider allows it, and can take several working days after we confirm.",
+          "Send one WhatsApp message to +91 96744 79949 with your name, the course, the payment date and the reason. You may also email info@learnwithsmile.app. We reply during 10am–midnight IST every day. We start an approved refund within 2 working days. It goes back to the original payment method where the provider allows it; Razorpay usually takes 2–7 days for UPI and 5–10 days for cards to reach you.",
         ],
       },
       {

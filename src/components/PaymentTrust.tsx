@@ -1,3 +1,6 @@
+import { Link } from "@tanstack/react-router";
+
+import { BEFORE_YOU_PAY_PATH, FAIR_BILLING_SHORT } from "@/lib/fair-fees";
 import { withBasePath } from "@/lib/site-path";
 
 // The logos are lazy: without it React 19's SSR emits a <link rel="preload">
@@ -70,6 +73,16 @@ export function PaymentTrust({
           </span>
         ))}
       </div>
+      <p
+        className={`mt-2 text-xs font-semibold ${tone === "dark" ? "text-white/85" : "text-ink/70"}`}
+      >
+        <Link
+          to={BEFORE_YOU_PAY_PATH}
+          className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+        >
+          {FAIR_BILLING_SHORT}
+        </Link>
+      </p>
     </div>
   );
 }

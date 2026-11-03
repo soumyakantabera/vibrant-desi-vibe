@@ -1,5 +1,6 @@
 import type { CourseData } from "@/components/CoursePage";
 import { IMG } from "@/lib/images";
+import { mediumCourse } from "@/lib/medium-courses";
 
 export const COURSES: Record<string, CourseData> = {
   "spoken-english": {
@@ -918,3 +919,8 @@ export const COURSES: Record<string, CourseData> = {
       "Sit in a real live batch for 90 minutes with our teacher. ₹199, inclusive of taxes. Enrol in any current course within 48 hours and that fee is adjusted.",
   },
 };
+
+// Basic Spoken English taught through Hindi or Marathi — same course and fee,
+// a teacher who speaks the learner's language (see src/lib/medium-courses.ts).
+COURSES["spoken-english-hindi"] = mediumCourse(COURSES["spoken-english"], "hi");
+COURSES["spoken-english-marathi"] = mediumCourse(COURSES["spoken-english"], "mr");

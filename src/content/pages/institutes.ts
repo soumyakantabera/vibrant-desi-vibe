@@ -40,7 +40,7 @@ export const body: ArticleBody = [
         "Cambly",
         "~₹8,000–₹15,000/mo if daily",
         "Fluent adults who want native chat and accent.",
-        "Tutor lottery.",
+        "Book any available tutor.",
       ],
       [
         "italki / Preply",
@@ -58,7 +58,7 @@ export const body: ArticleBody = [
         "British Council English Online",
         "₹8,800–₹16,000 / 6-class module",
         "Adults who want a CEFR classroom or a brand badge.",
-        "Counsellor pitches a module.",
+        "Sold by CEFR module.",
       ],
       [
         "ELSA / Duolingo / Speak",
@@ -70,7 +70,7 @@ export const body: ArticleBody = [
         "IELTS / Leap-style exam shops",
         "₹8,000–₹35,000 per course",
         "A visa or university form that asked for a band. Not fluency for work.",
-        "Pitch for IELTS/PTE.",
+        "Exam-focused (IELTS/PTE).",
       ],
     ],
   },
@@ -107,7 +107,7 @@ export const body: ArticleBody = [
     items: [
       "**Veta-style / local Kolkata rooms:** praise for energy and a nice teacher; complaints cluster on **batch size**, **too little speaking**, and extra material/GST fees. Veta Barrackpore lists **4.7★ from 273** reviews — more volume than us.",
       "**British Council:** praise for **curriculum** and **brand**; complaints on **module cost** and limited talking in the group slot. Centres in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, Ahmedabad, Bengaluru.",
-      "**Cambly:** praise for **convenience** and **native chat**; complaints on **tutor lottery** and cost if you practise daily.",
+      "**Cambly:** praise for **convenience** and **native chat**; complaints that **the tutor changes from lesson to lesson** and on cost if you practise daily.",
       "**EngVarta:** praise for **price per session** and **daily habit**; complaints on **no syllabus** and variable tutor quality. They also publish the “best course 2026” listicles — treat those as marketing, not a referee.",
       "**Us:** 5.0★ on Google from 125 reviews. Small sample next to Play-store apps. Treat it as named outcomes — not a 9,000-review dataset.",
     ],
@@ -153,7 +153,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Their free session vs ours" },
   {
     t: "p",
-    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling — you pick a 15-minute call. Cambly is a tutor lottery. British Council is a counsellor pitching a CEFR module. A city classroom sits you in 25–40, or pitches. Exam shops pitch IELTS. [Our consultation](/free-consultation) is a small batch with personalised advice: we name the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
+    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling — you pick a 15-minute call. Cambly matches you with an available tutor. British Council sells a CEFR module. A city classroom seats you in 25–40. Exam shops focus on IELTS. [Our consultation](/free-consultation) is a small batch with personalised advice: we name the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
   },
 
   {

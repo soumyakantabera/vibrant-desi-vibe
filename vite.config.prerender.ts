@@ -7,9 +7,11 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 
+import { phosphorWeightsPlugin } from "./vite/phosphor-weights-plugin";
+
 export default defineConfig({
   base: process.env.BASE_PATH ?? "/",
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  plugins: [phosphorWeightsPlugin(), react(), tailwindcss(), tsconfigPaths()],
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

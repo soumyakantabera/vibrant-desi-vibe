@@ -96,7 +96,7 @@ export const CITIES: CityRecord[] = [
     industries: "IT, consulting, government-adjacent roles, BPO and startups",
     medium: "Hindi-medium or English-medium schooling",
     localRoom: "Karol Bagh, Connaught Place or Gurugram rooms of 25–40",
-    title: "Spoken English Delhi NCR | Live From ₹999",
+    title: "Spoken English Classes Delhi | Live From ₹999",
     description:
       "Live online spoken English for Delhi, Gurugram and Noida. Hindi-medium welcome; batches for office and shift workers. About 6 per batch, ₹999/month.",
     local: [
@@ -250,6 +250,19 @@ export const CITIES: CityRecord[] = [
  * Pages cannot send a 301. Kept out of ALL_PATHS, the sitemap and llms files.
  */
 export const RETIRED_CITY_REDIRECT = "/best-online-spoken-english-classes-india";
+
+/**
+ * Retired cities that now sit inside a state page go there instead of the
+ * national page: someone searching "spoken english classes pune" lands on the
+ * Maharashtra page that names Pune, its localities and the Marathi medium.
+ */
+export const RETIRED_CITY_TARGET: Partial<Record<(typeof RETIRED_CITY_PATHS)[number], string>> = {
+  "/spoken-english-classes-pune": "/spoken-english-classes-maharashtra",
+  "/spoken-english-classes-nagpur": "/spoken-english-classes-maharashtra",
+  "/spoken-english-classes-patna": "/spoken-english-classes-bihar",
+  "/spoken-english-classes-ahmedabad": "/spoken-english-classes-gujarat",
+  "/spoken-english-classes-surat": "/spoken-english-classes-gujarat",
+};
 export const RETIRED_CITY_PATHS = [
   "/spoken-english-classes-pune",
   "/spoken-english-classes-chennai",
@@ -309,12 +322,42 @@ export function cityFaqs(city: CityRecord): Faq[] {
   ];
 }
 
+/** City → its state page, so the two pages point at each other instead of competing. */
+const MARATHI = {
+  lang: "Marathi",
+  label: "Basic Spoken English — Marathi to English",
+  path: "/course-spoken-english-marathi",
+};
+const HINDI = {
+  lang: "Hindi",
+  label: "Basic Spoken English — Hindi to English",
+  path: "/course-spoken-english-hindi",
+};
+const STATE_PAGE: Record<
+  string,
+  { name: string; path: string; medium?: { lang: string; label: string; path: string } }
+> = {
+  mumbai: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra", medium: MARATHI },
+  delhi: { name: "Delhi NCR", path: "/spoken-english-classes-delhi-ncr", medium: HINDI },
+  bengaluru: { name: "Karnataka", path: "/spoken-english-classes-karnataka" },
+  hyderabad: { name: "Telangana", path: "/spoken-english-classes-telangana" },
+};
+
 export function cityBody(city: CityRecord): ArticleBody {
+  const st = STATE_PAGE[city.slug];
   return [
     {
       t: "p",
       text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
+    ...(st
+      ? [
+          {
+            t: "p" as const,
+            text: `Not in ${city.name} itself? The [${st.name} page](${st.path}) covers the other cities and towns of ${st.name}, with the same live classes and fee.${st.medium ? ` Think in ${st.medium.lang}? [${st.medium.label}](${st.medium.path}) is the same course and fee, explained by a ${st.medium.lang}-speaking teacher.` : ""}`,
+          },
+        ]
+      : []),
     ...city.local,
     { t: "h2", text: `Why ${city.name} learners take this online` },
     {
@@ -344,7 +387,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     },
     {
       t: "p",
-      text: `Market bands for ${city.name} offline rooms are in the [India fees guide](/english-class-fees-india). Confirm any other provider on their site before you pay.`,
+      text: `Market bands for ${city.name} offline rooms are in the [India fees guide](/english-class-fees-india). Confirm any other provider on their site before you pay, and run the [10 checks before you pay](/before-you-pay-spoken-english-course) on anyone, us included. We bill one month at a time: no auto-debit, no loans or EMIs.`,
     },
     { t: "h2", text: "What we do not claim" },
     {

@@ -131,7 +131,7 @@ function Page() {
     "Hi, I am comparing institutes and I want a free consultation for spoken English.";
   return (
     <Layout waMessage={waMessage} footerImage={IMG.speaking}>
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.speaking}
@@ -140,7 +140,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/60" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
@@ -224,8 +224,11 @@ function Page() {
         waMessage={waMessage}
       />
 
-      <section className="relative overflow-hidden py-14 md:py-16" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section
+        className="hero-light relative overflow-hidden py-14 md:py-16"
+        data-cta-location="final_cta"
+      >
+        <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x max-w-2xl text-center text-cream">
           <h2 className="text-2xl text-cream md:text-3xl">Compare in a class.</h2>
           <p className="mt-3 text-white">

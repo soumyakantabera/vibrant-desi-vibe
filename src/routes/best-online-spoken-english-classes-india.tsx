@@ -29,6 +29,7 @@ export const Route = createFileRoute("/best-online-spoken-english-classes-india"
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
         inLanguage: "en-IN",
+        datePublished: "2026-09-28",
         dateModified: UPDATED,
         author: {
           "@type": "Person",

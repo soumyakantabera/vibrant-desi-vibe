@@ -34,9 +34,9 @@ export const CONSULTATION = {
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
 export const PROOF_CARD_CLASS = {
-  coral: "consult-card bg-[#C84D3F] text-white",
-  indigo: "consult-card bg-[#3D3DB8] text-white",
-  sun: "consult-card bg-[#0E7C5A] text-white",
+  coral: "consult-card bg-tile-blue text-white",
+  indigo: "consult-card bg-tile-violet text-white",
+  sun: "consult-card bg-tile-green text-white",
 } as const;
 
 export const CONSULTATION_PROOF: {
@@ -252,7 +252,8 @@ export const CONSULTATION_VS_MARKET: {
   {
     icon: "globe",
     them: "Cambly / native-speaker apps",
-    theirSession: "Tutor lottery. Accent and idiom. ₹8,000–₹15,000/month if daily. No 6-month map.",
+    theirSession:
+      "Any available native-speaker tutor. Accent and idiom. ₹8,000–₹15,000/month if daily. No fixed 6-month plan.",
     weDoInstead:
       "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
   },
@@ -260,7 +261,7 @@ export const CONSULTATION_VS_MARKET: {
     icon: "school",
     them: "British Council English Online",
     theirSession:
-      "Counsellor pitch for a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
+      "A counsellor recommends a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
     weDoInstead:
       "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
   },
@@ -289,7 +290,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How is your free consultation different from other institutes’ free sessions?",
-    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling entirely — you just talk. Brand-name groups pitch a CEFR module. Exam shops pitch IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
+    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling — you start with a call. Brand-name groups sell a CEFR module. Exam shops focus on IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
   },
   {
     q: "How do I get a free consultation at Learn With Smile?",

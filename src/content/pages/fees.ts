@@ -110,7 +110,7 @@ export const body: ArticleBody = [
     text: "Ask any provider their batch size. If they will not give you a number, that is the number.",
   },
 
-  { t: "h2", text: "Five hidden costs worth asking about" },
+  { t: "h2", text: "Eight things to ask before you pay" },
   {
     t: "table",
     head: ["Ask", "Why it matters", "Our answer"],
@@ -128,7 +128,22 @@ export const body: ArticleBody = [
       [
         "Is there a lock-in?",
         "Quarterly or annual prepayment that cannot be cancelled is a much bigger commitment than a monthly fee.",
-        "Monthly. You can stop at the end of any month.",
+        "One month at a time. We never ask for 3, 6 or 12 months upfront.",
+      ],
+      [
+        "Is any of this a loan or EMI?",
+        "An EMI signed in a counselling call keeps charging you for a year, whether or not the class works.",
+        "No loans, no EMIs, no finance partner.",
+      ],
+      [
+        "Will it renew by itself?",
+        "Saved cards and UPI mandates are how subscriptions keep charging after you stop using them.",
+        "No auto-debit. Each month is a fresh payment link you choose to pay.",
+      ],
+      [
+        "What is refundable, in writing?",
+        "A refund promised only in a sales call is the one most often disputed later.",
+        "Full refund of a month cancelled before its first live class, started within 2 working days.",
       ],
       [
         "What happens if I miss a class?",
@@ -141,6 +156,10 @@ export const body: ArticleBody = [
         "Usually around 6 learners. Check the live class before enrolling.",
       ],
     ],
+  },
+  {
+    t: "p",
+    text: "The full list, with warning signs and what India's 2023 dark-pattern rules say, is on [Before you pay: 10 checks](/before-you-pay-spoken-english-course).",
   },
 
   { t: "h2", text: "Does expensive mean better?" },

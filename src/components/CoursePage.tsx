@@ -6,39 +6,47 @@ import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSli
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { CourseIncluded } from "@/components/package/PackageSections";
+import { WhyDifferent } from "@/components/WhyDifferent";
+import { levelForCourse } from "@/lib/bolo-levels";
+import { COURSE_FEE, type FeeSlug } from "@/lib/fees";
+
+const isPackageSlug = (slug: string): slug is FeeSlug => slug in COURSE_FEE;
 import { PaymentTrust } from "@/components/PaymentTrust";
 import {
   ClassSplit,
   CourseLadder,
   CoverageMap,
   Roadmap,
-  monthSpan,
   type CourseVisuals,
 } from "@/components/CourseVisuals";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
-import {
-  CONTACT,
-  CONTENT_REVISED,
-  CONSULTATION_KEYWORDS,
-  COURSE_SEO,
-  OUTSIDE_INDIA_FEE_FAQ,
-  SITE_NAME,
-  SITE_URL,
-  abs,
-  breadcrumbLd,
-  buildHead,
-  faqLd,
-  webPageLd,
-} from "@/lib/seo";
+import { courseFaqs } from "@/lib/course-seo";
 
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
 
+/** A short block in the learner's own language (Hindi / Marathi courses). */
+export type NativeSection = {
+  lang: "hi" | "mr";
+  label: string;
+  heading: string;
+  intro: string;
+  points: string[];
+  faqs: { q: string; a: string }[];
+  cta: string;
+  waMessage: string;
+};
+
 export type CourseData = {
   slug: string;
+  /** Fee and package this course shares, when it is a variant of another course. */
+  feeSlug?: FeeSlug;
+  /** Native-language block; the page stays English-primary. */
+  native?: NativeSection;
   title: string;
   tagline: string;
   category: string;
@@ -69,6 +77,60 @@ export type CourseData = {
 };
 
 const RELATED_GUIDES: Record<string, { href: string; title: string; description: string }[]> = {
+  "spoken-english-hindi": [
+    {
+      href: "/spoken-english-in-hindi",
+      title: "हिंदी में स्पोकन इंग्लिश गाइड",
+      description: "Hindi-language guide: fees, batch, how classes work.",
+    },
+    {
+      href: "/english-hindi-bengali-medium",
+      title: "Hindi- or Bengali-medium? You still belong here",
+      description: "Explain in your language when a concept stalls, then back to English.",
+    },
+    {
+      href: "/spoken-english-for-homemakers-india",
+      title: "Spoken English for homemakers",
+      description: "Learn from home around family time: slots, fee and what a class looks like.",
+    },
+    {
+      href: "/online-vs-offline-spoken-english-classes",
+      title: "Online vs offline spoken English classes",
+      description: "Commute, batch size and speaking time compared, with fees.",
+    },
+    {
+      href: "/bolo",
+      title: "Bolo — daily practice app",
+      description: "Practice, Watch, Review: the daily part of every course.",
+    },
+  ],
+  "spoken-english-marathi": [
+    {
+      href: "/english-hindi-bengali-medium",
+      title: "From a regional-medium school? You still belong here",
+      description: "Explain in your language when a concept stalls, then back to English.",
+    },
+    {
+      href: "/spoken-english-classes-maharashtra",
+      title: "Spoken English in Maharashtra",
+      description: "Pune, Mumbai, Nagpur, Nashik — live online, Marathi-speaking teacher.",
+    },
+    {
+      href: "/spoken-english-for-homemakers-india",
+      title: "Spoken English for homemakers",
+      description: "Learn from home around family time: slots, fee and what a class looks like.",
+    },
+    {
+      href: "/online-vs-offline-spoken-english-classes",
+      title: "Online vs offline spoken English classes",
+      description: "Commute, batch size and speaking time compared, with fees.",
+    },
+    {
+      href: "/bolo",
+      title: "Bolo — daily practice app",
+      description: "Practice, Watch, Review: the daily part of every course.",
+    },
+  ],
   "spoken-english": [
     {
       href: "/spoken-english-for-beginners-india",
@@ -209,10 +271,64 @@ const TEACHER_NOTE: Record<string, string> = {
     "The same teacher on every mock. They hear the freeze on the 60-second intro — and they mark it until it stops.",
 };
 
+/** The learner's-language block: short, real text, marked with its own lang. */
+function NativeBlock({ native }: { native: NativeSection }) {
+  return (
+    <section
+      className="section bg-bolo-mint/50"
+      lang={native.lang}
+      aria-labelledby="native-heading"
+      id={native.lang === "hi" ? "hindi" : "marathi"}
+    >
+      <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+        <div>
+          <span className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-extrabold text-bolo-teal">
+            {native.label}
+          </span>
+          <h2
+            id="native-heading"
+            className="mt-3 text-3xl font-bold leading-tight text-ink md:text-4xl"
+          >
+            {native.heading}
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-ink/85">{native.intro}</p>
+          <ul className="mt-5 flex flex-col gap-2.5">
+            {native.points.map((p) => (
+              <li key={p} className="flex items-start gap-2.5 text-ink/85">
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bolo-teal" />
+                {p}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6">
+            <WaButton
+              message={native.waMessage}
+              variant="wa"
+              size="lg"
+              goal={`native_${native.lang}`}
+            >
+              {native.cta}
+            </WaButton>
+          </div>
+        </div>
+        <dl className="flex flex-col gap-3">
+          {native.faqs.map((f) => (
+            <div key={f.q} className="rounded-2xl border border-[#BFE6E0] bg-white p-5">
+              <dt className="font-bold text-ink">{f.q}</dt>
+              <dd className="mt-1.5 text-ink/80">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
 export function CoursePage({ data }: { data: CourseData }) {
   const shownTagline = <FeeText text={data.tagline} />;
   const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
-  const teacherNote = TEACHER_NOTE[data.slug];
+  const feeKey = data.feeSlug ?? data.slug;
+  const teacherNote = TEACHER_NOTE[data.slug] ?? TEACHER_NOTE[feeKey];
   const waPrimary = data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
   const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
   const faqs = courseFaqs(data);
@@ -220,11 +336,11 @@ export function CoursePage({ data }: { data: CourseData }) {
     <SnapshotCard
       badge={`Live · ${data.format}`}
       eyebrow="Course fee starts at"
-      headline={isIntlSlug(data.slug) ? feeHeadline(data.price, data.slug) : { big: data.price }}
+      headline={isIntlSlug(feeKey) ? feeHeadline(data.price, feeKey) : { big: data.price }}
       subnote={
         <>
           {data.duration} ·{" "}
-          {isIntlSlug(data.slug) ? (
+          {isIntlSlug(feeKey) ? (
             <FeePair inr="inclusive of taxes" usd={intlUnit()} />
           ) : (
             "inclusive of taxes"
@@ -232,18 +348,23 @@ export function CoursePage({ data }: { data: CourseData }) {
         </>
       }
       rows={[
-        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+        {
+          tone: "brand",
+          icon: SnapIcons.people,
+          big: data.snapshotBatchBig ?? "Approx. 6 learners",
+          small: "in a live batch · up to 2 classes a week, 90 min",
+        },
         {
           tone: "indigo",
           icon: SnapIcons.calendar,
-          big: "7 yrs",
-          small: "Live teaching experience",
+          big: "Daily",
+          small: "practice in the Bolo app, with a streak",
         },
         {
-          tone: "coral",
-          icon: SnapIcons.people,
-          big: data.snapshotBatchBig ?? "Approx. 6 learners",
-          small: data.snapshotBatchSmall ?? "In this live course batch",
+          tone: "violet",
+          icon: SnapIcons.cap,
+          big: "Weekly",
+          small: "teacher review of your reading & speaking",
         },
       ]}
       footer="Message Anytime · Replies 10am–midnight IST every day"
@@ -252,10 +373,10 @@ export function CoursePage({ data }: { data: CourseData }) {
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/55" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream">
@@ -320,26 +441,49 @@ export function CoursePage({ data }: { data: CourseData }) {
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />
             </p>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
           </div>
-          <div className="hidden lg:block relative">
-            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
-            {snapshot}
-          </div>
+          <div className="hidden lg:block relative">{snapshot}</div>
         </div>
       </section>
 
       {/* Mobile snapshot card */}
-      <section className="lg:hidden bg-brand-deep/95 py-8">
+      <section className="hero-light lg:hidden bg-paper py-8">
         <div className="container-x flex justify-center">
-          <div className="relative w-full max-w-[320px]">
-            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
-            {snapshot}
-          </div>
+          <div className="relative w-full max-w-[28rem]">{snapshot}</div>
         </div>
       </section>
+
+      {data.native && <NativeBlock native={data.native} />}
+
+      {data.slug === "spoken-english" && (
+        <section
+          className="border-b border-border bg-bolo-mint/40 py-5"
+          aria-label="Also taught in Hindi or Marathi"
+        >
+          <div className="container-x flex flex-wrap items-center gap-3 text-sm md:text-base">
+            <span className="font-bold text-ink">Prefer help in your own language?</span>
+            <Link
+              to="/course-spoken-english-hindi"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
+            >
+              Hindi to English <Icon name="arrow-right" size={16} />
+            </Link>
+            <Link
+              to="/course-spoken-english-marathi"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
+            >
+              Marathi to English <Icon name="arrow-right" size={16} />
+            </Link>
+            <span className="text-ink/70">
+              Same course and fee — a teacher who speaks your language.
+            </span>
+          </div>
+        </section>
+      )}
+
+      {/* WHY WE'RE DIFFERENT — all-in-one at a low cost */}
+      {data.slug !== "demo-session" && <WhyDifferent compact level={levelForCourse(feeKey)} />}
 
       {/* OUTCOMES */}
       <section className="section">
@@ -388,6 +532,9 @@ export function CoursePage({ data }: { data: CourseData }) {
         </>
       )}
 
+      {/* COMPLETE PACKAGE — live classes + Bolo + same teacher */}
+      {isPackageSlug(feeKey) && <CourseIncluded slug={feeKey} />}
+
       {/* CURRICULUM */}
       <section className="section bg-brand-soft/40">
         <div className="container-x">
@@ -434,7 +581,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
-      {data.slug !== "demo-session" && <CourseLadder highlight={data.slug} />}
+      {data.slug !== "demo-session" && <CourseLadder highlight={feeKey} />}
 
       {data.projects && data.projects.length > 0 && (
         <section className="section">
@@ -449,7 +596,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               {data.projects.map((p, i) => (
                 <article
                   key={p.title}
-                  className="card-soft bg-gradient-to-br from-white to-sunshine/10 border-sunshine/30"
+                  className="card-soft bg-gradient-to-br from-white to-brand-soft border-brand/20"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="h-10 w-10 rounded-xl bg-sunshine text-ink font-display font-extrabold flex items-center justify-center">
@@ -544,186 +691,6 @@ export function CoursePage({ data }: { data: CourseData }) {
           </div>
         </section>
       )}
-
-      {/* FINAL CTA */}
-      <section className="relative py-16 md:py-20 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
-        <div className="container-x text-center text-cream">
-          <h2 className="text-cream text-3xl md:text-4xl">{CONSULTATION.headline}</h2>
-          <p className="mt-3 text-white max-w-xl mx-auto">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">
-            <FeeText text={CONSULTATION.hook} />
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={waPrimary} variant="sun" size="lg">
-              {DEMO_CTA}
-            </WaButton>
-            <WaButton message={waPrimary} variant="wa" size="lg">
-              {CHAT_CTA}
-            </WaButton>
-          </div>
-          <PaymentTrust tone="dark" align="center" className="mt-5" />
-        </div>
-      </section>
     </Layout>
   );
-}
-
-function parsePrice(p: string): number | null {
-  const m = p.replace(/[, ]/g, "").match(/\u20b9(\d+)/);
-  return m ? Number(m[1]) : null;
-}
-
-function workloadISO(d: string): string | undefined {
-  // Rough mapping to Google's courseWorkload (ISO 8601 duration).
-  const months = d.match(/(\d+)\s*month/i);
-  const weeks = d.match(/(\d+)\s*week/i);
-  if (months) return `P${months[1]}M`;
-  if (weeks) return `P${weeks[1]}W`;
-  if (/session/i.test(d)) return "PT3H";
-  return undefined;
-}
-
-/**
- * FAQs shown on the page and fed to FAQPage schema: the course author's own
- * questions plus the AI-assistant-phrased ones from src/lib/seo.ts. Both the
- * visible accordion and the JSON-LD must render the same list, or Google flags
- * the structured data as not matching the page.
- */
-export function courseFaqs(d: CourseData) {
-  return [...(d.faqs ?? []), ...(COURSE_SEO[d.slug]?.extraFaqs ?? []), OUTSIDE_INDIA_FEE_FAQ];
-}
-
-export function courseSeo(d: CourseData) {
-  const path = `/course-${d.slug}`;
-  const url = abs(path);
-  const extra = COURSE_SEO[d.slug];
-  const price = parsePrice(d.price);
-  const workload = workloadISO(d.duration);
-  const faqs = courseFaqs(d);
-  const ogImage = extra?.ogImage ?? "/og/default.jpg";
-
-  // Batch days and total sessions vary. Do not turn the visible maximum of two
-  // classes per week into an exact repeatCount or invent a future batch date.
-  // Course list markup does not require a made-up recurring schedule.
-  const courseInstance: Record<string, unknown> = {
-    "@type": "CourseInstance",
-    courseMode: "Online",
-    inLanguage: "en-IN",
-    location: { "@type": "VirtualLocation", url },
-    maximumAttendeeCapacity: 6,
-    instructor: {
-      "@type": "Person",
-      "@id": `${abs("/educator")}#person`,
-      name: "Sunanda Dey",
-      // Links to the Person entity described on /educator, rather than leaving a
-      // bare name string that resolves to nothing.
-      url: abs("/educator"),
-      worksFor: {
-        "@type": "EducationalOrganization",
-        "@id": `${SITE_URL}/#organization`,
-        name: SITE_NAME,
-      },
-    },
-  };
-
-  const offers: Record<string, unknown> = {
-    "@type": "Offer",
-    priceCurrency: "INR",
-    availability: "https://schema.org/InStock",
-    category: d.format.includes("1:1") ? "Online 1:1 course" : "Online batch course",
-    url,
-    validFrom: "2026-01-01",
-    valueAddedTaxIncluded: true,
-    eligibleRegion: { "@type": "Country", name: "India", identifier: "IN" },
-    areaServed: { "@type": "Country", name: "India", identifier: "IN" },
-    seller: { "@id": `${SITE_URL}/#organization` },
-  };
-  if (price !== null) {
-    offers.price = price;
-    offers.priceSpecification = {
-      "@type": "UnitPriceSpecification",
-      price,
-      priceCurrency: "INR",
-      valueAddedTaxIncluded: true,
-      unitText: d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
-    };
-  }
-
-  const jsonLd: unknown[] = [
-    webPageLd({
-      path,
-      title: extra?.title ?? d.title,
-      description: extra?.description ?? d.metaDescription,
-      dateModified: extra?.dateModified ?? CONTENT_REVISED,
-      ogImage,
-    }),
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "@id": `${url}#course`,
-      name: d.title,
-      alternateName: extra?.title,
-      description: extra?.description ?? d.metaDescription,
-      url,
-      image: [abs(ogImage)],
-      inLanguage: "en-IN",
-      educationalLevel: d.slug === "spoken-english" ? "Beginner" : "Intermediate",
-      ...(d.prerequisites ? { coursePrerequisites: d.prerequisites } : {}),
-      typicalAgeRange: "15+",
-      teaches: d.outcomes,
-      timeRequired: workload,
-      isAccessibleForFree: false,
-      provider: {
-        "@type": "EducationalOrganization",
-        "@id": `${SITE_URL}/#organization`,
-        name: SITE_NAME,
-        legalName: CONTACT.legalName,
-        taxID: CONTACT.gstin,
-        url: SITE_URL,
-      },
-      offers,
-      hasCourseInstance: courseInstance,
-      // The month-by-month roadmap is the more exact syllabus when a course has
-      // one: each section names its month span, which is what learners ask.
-      syllabusSections: d.visuals
-        ? d.visuals.roadmap.map((p, i) => ({
-            "@type": "Syllabus",
-            position: i + 1,
-            name: `${monthSpan(p)}: ${p.title}`,
-            description: p.tracks.map((t) => `${t.skill}: ${t.items.join("; ")}`).join(". "),
-          }))
-        : d.modules.map((m, i) => ({
-            "@type": "Syllabus",
-            position: i + 1,
-            name: m.title,
-            description: m.items.join(". "),
-          })),
-    },
-    breadcrumbLd([
-      { name: "Home", path: "/" },
-      { name: "English & Career Courses", path: "/english-career" },
-      { name: extra?.shortTitle ?? d.title, path },
-    ]),
-  ];
-
-  if (faqs.length) jsonLd.push(faqLd(faqs));
-
-  const revised = extra?.dateModified ?? CONTENT_REVISED;
-  const head = buildHead({
-    path,
-    // Hand-written in COURSE_SEO rather than assembled here: the generated
-    // "<title> Online \u2014 <price>, Approx. 6 Learners per Batch | Learn With Smile" form ran
-    // to 70\u201387 characters and truncated in the SERP on all four courses.
-    title: extra?.title ?? d.title,
-    description: extra?.description ?? d.metaDescription,
-    ogImage,
-    jsonLd,
-    keywords: extra?.keywords ?? CONSULTATION_KEYWORDS,
-  });
-  head.meta.push(
-    { name: "revised", content: revised },
-    { property: "og:updated_time", content: revised },
-  );
-  return head;
 }

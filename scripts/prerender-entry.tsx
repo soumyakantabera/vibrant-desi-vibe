@@ -12,7 +12,7 @@ import { RouterProvider, createRouter, createMemoryHistory } from "@tanstack/rea
 
 import { routeTree } from "../src/routeTree.gen";
 import { COURSES } from "../src/lib/courses";
-import { courseSeo } from "../src/components/CoursePage";
+import { courseSeo } from "../src/lib/course-seo";
 import { getPostBySlug } from "../src/lib/blog";
 import { ARTICLE_BODIES } from "../src/content/blog";
 import { countWords } from "../src/content/blog/blocks";

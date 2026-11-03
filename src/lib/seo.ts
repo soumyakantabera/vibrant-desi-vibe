@@ -24,8 +24,13 @@
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { publishedFeeLock } from "@/lib/fees";
+import { BOLO_FAQ } from "@/lib/bolo";
+import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
+import { FAIR_BILLING } from "@/lib/fair-fees";
+import { LEVELS, levelForCourse } from "@/lib/bolo-levels";
 import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
+import { REGIONAL_PAGES } from "@/lib/regional-seo";
 import {
   CONSULTATION,
   CONSULTATION_FAQS,
@@ -39,7 +44,7 @@ export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
 /** Last content revision used when a page has no page-specific date. */
-export const CONTENT_REVISED = "2026-09-22";
+export const CONTENT_REVISED = "2026-10-24";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -325,6 +330,27 @@ export const CONSULTATION_KEYWORDS = [
   "free demo class spoken english india",
 ];
 
+/** The complete package — live classes + the Bolo practice app. */
+export const PACKAGE_KEYWORDS = [
+  "spoken english course with daily practice",
+  "online english classes with practice portal",
+  "spoken english course with recorded videos",
+  "live english classes and daily practice india",
+  "complete spoken english course online india",
+  "affordable premium spoken english course india",
+  "interactive english grammar practice online",
+  "english reading fluency practice online",
+  "how to stop mind going blank while speaking english",
+  "english phrases to sound natural while speaking",
+  "think in english not translate course",
+  "english speaking practice between classes",
+  "daily english grammar exercises online",
+  "daily english vocabulary exercises",
+  "spoken english course with teacher feedback",
+  "tips and tricks to start speaking english",
+  "english reading and speaking practice reviewed by teacher",
+];
+
 /** Product — Spoken English (beginner / ₹999 / 6 months). */
 export const SPOKEN_KEYWORDS = [
   "basic spoken english course for beginners",
@@ -334,7 +360,7 @@ export const SPOKEN_KEYWORDS = [
   "how to speak english fluently from zero",
   "spoken english classes online with live teacher",
   "spoken english course fees in india 2026",
-  "english speaking classes under 1000 rupees india",
+  "affordable live spoken english classes india",
 ];
 
 /**
@@ -758,9 +784,9 @@ export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Live Online English Classes in India from ₹999/month",
+    title: "Online English Classes India: Live + Daily Practice, ₹999",
     description:
-      "Live online English classes from ₹999/month, about 6 per batch. Free consultation on WhatsApp, or a ₹199 demo class that is adjusted if you join.",
+      "Live English classes (about 6 per batch), daily exercises, a video library and a weekly teacher review. From ₹999/month incl. taxes.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -768,6 +794,7 @@ export const PAGES: Record<string, PageSeo> = {
       ...INTERVIEW_KEYWORDS,
       ...WORKPLACE_KEYWORDS,
       ...AEO_KEYWORDS,
+      ...PACKAGE_KEYWORDS,
       "best online spoken english classes in india",
       "english class fees per month in india",
       "career counselling online india",
@@ -778,8 +805,9 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
+      "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), the Bolo practice app (daily grammar, vocabulary, reading and speaking with a streak, video lessons including tips and tricks to start speaking, and a weekly teacher review of reading and speaking), with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
     faqs: [
+      ...WHY_WE_WIN_FAQ,
       {
         q: "How much do online spoken English classes cost in India?",
         a: "At Learn With Smile, live online Spoken English (adults 15+) starts at ₹999 per month for a batch of approximately 6 learners, with up to 2 classes per week. Intermediate Spoken English is ₹1,999/month, Interactive Speaking ₹1,599/month, Business English ₹2,499/month and Interview Preparation ₹2,499/month. All prices are inclusive of taxes. No material fee. We do not offer career counselling. Across the wider Indian market, group online English classes typically run ₹800–₹3,000 per month and 1:1 native-speaker platforms run ₹300–₹2,200 per session.",
@@ -794,7 +822,23 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are online English classes as effective as offline coaching centres?",
-        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join afternoon, evening or night slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
+        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join afternoon, evening or night slots, and — at Learn With Smile — adds daily exercises, a recorded video library and a weekly teacher review of your reading and speaking. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
+      },
+      {
+        q: "What do I do between live classes?",
+        a: "Every course includes Bolo, our practice app: grammar and vocabulary every day with a streak, reading practice (read aloud, then find the grammar in the text) and speaking practice (whole conversations, recorded). Every week your teacher reviews the reading and speaking you send in Bolo. Bolo also holds video lessons — tips and tricks to start speaking English, grammar, fluency, thinking in English and what to say when your mind goes blank — chosen for your course. So a week has up to 2 live classes plus practice every day.",
+      },
+      {
+        q: "Are the daily exercises, videos and teacher review included in the fee?",
+        a: "Yes. The monthly fee covers the live classes, the Bolo practice app (daily practice, video lessons and a weekly teacher review of your reading and speaking), and the same teacher for your batch: ₹999/month for Basic Spoken English, ₹1,999 for Intermediate Spoken English, ₹1,599 for Interactive Speaking, ₹2,499 for Business English and ₹2,499 for Interview Preparation, inclusive of taxes. Bolo access runs while you are enrolled. There is no separate app or material fee.",
+      },
+      {
+        q: "Why is Learn With Smile not the cheapest option?",
+        a: "Because the fee pays for a live teacher and a batch of about 6, where you speak in every class — plus daily exercises, videos and a weekly teacher review in between. AI apps cost less but have no people in the room; 1:1 tutor apps give a person but no course or classmates; large classrooms cost little per month but leave you 1–2 minutes of speaking an hour. We aim for affordable, not cheap — premium teaching at a fair monthly fee.",
+      },
+      {
+        q: "Is there a launch offer right now?",
+        a: "Yes, until 30 November 2026: new learners who enrol by that date get one extra month of Bolo, the practice app, after their course, free. The course fee does not change.",
       },
       {
         q: "Can I get a free consultation before I enrol?",
@@ -862,6 +906,31 @@ export const PAGES: Record<string, PageSeo> = {
         a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit. Message us on WhatsApp so we can check the available schedules.",
       },
     ],
+  },
+
+  "/bolo": {
+    path: "/bolo",
+    title: "Bolo App | Daily English Practice With a Streak",
+    description:
+      "Bolo, the Learn With Smile practice app: daily grammar, vocabulary, reading and speaking with a streak, video lessons and weekly teacher review. In every course fee.",
+    shortTitle: "Bolo app",
+    keywords: [
+      "bolo english practice app",
+      "learn with smile bolo app",
+      "daily english practice app with teacher feedback",
+      "english speaking practice app india with live classes",
+      "spoken english app with streak",
+      "english learner portal with video lessons",
+      "english practice between classes",
+      "app where teacher reviews my english speaking",
+    ],
+    ogImage: "/og/bolo.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    dateModified: "2026-11-03",
+    summary:
+      "Bolo is the Learn With Smile practice app (our learner portal app; Bolo means “speak!” in Hindi). Three tabs: Practice — daily grammar, vocabulary, reading and recorded speaking with a daily streak; Watch — video lessons picked for the course; Review — a weekly teacher review of the reading and speaking the learner sends. Only our teachers hear the recordings. Included in every course fee from ₹999/month, inclusive of taxes; login details come on WhatsApp after admission. Mascots: Bolo, a rose-ringed parakeet, and Mithu, a scarlet macaw.",
+    faqs: BOLO_FAQ,
   },
 
   "/why-us": {
@@ -1126,9 +1195,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-10-02",
+    dateModified: "2026-11-03",
     summary:
-      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class. After that class, that month is not refunded for a change of mind. Indian law and Kolkata courts, without removing a mandatory right where you live. The Grievance Officer is Soumyakanta Bera.",
+      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class; we start the refund within 2 working days. After that class, that month is not refunded for a change of mind. Billing is one month at a time with no auto-debit, no loans or EMIs and no multi-month prepayment. Indian law and Kolkata courts, without removing a mandatory right where you live. The Grievance Officer is Soumyakanta Bera.",
     faqs: [
       {
         q: "Is the free consultation a class I can sit for free?",
@@ -1153,7 +1222,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "Full refund of a paid month cancelled before its first live class; none after it for a change of mind. The ₹199 demo fee is adjusted on enrolment, not refunded.",
+      "Pay one month at a time, no auto-debit or loans. Cancel before a month's first class for a full refund, started in 2 working days. ₹199 demo fee adjusted.",
     shortTitle: "Refunds and Cancellation",
     keywords: [
       "learn with smile refund policy",
@@ -1163,9 +1232,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-10-02",
+    dateModified: "2026-11-03",
     summary:
-      "Refunds: cancel a paid month before its first live class for a full refund. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Class fee is not refunded in cash; it is adjusted against a course fee on admission within 48 hours. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
+      "Refunds: cancel a paid month before its first live class for a full refund, started within 2 working days. Billing is one month at a time: no auto-debit, no UPI mandate, no loans or EMIs, never several months upfront, and no refund ever depends on a review. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Class fee is not refunded in cash; it is adjusted against a course fee on admission within 48 hours. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
@@ -1756,6 +1825,7 @@ export const PAGES: Record<string, PageSeo> = {
     ],
   },
   ...EXTRA_PAGES,
+  ...REGIONAL_PAGES,
 };
 
 /* --------------------------------------------------------------------------
@@ -1794,27 +1864,31 @@ const INR_MONTHLY_FEE: Record<string, number> = {
   "interactive-speaking": 1599,
   "business-english": 2499,
   "interview-preparation": 2499,
+  // Same course and fee, taught through Hindi / Marathi.
+  "spoken-english-hindi": 999,
+  "spoken-english-marathi": 999,
 };
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
-      "Practical spoken English for beginners: 6 months, up to 2 live classes a week, about 6 in a batch. ₹999/month, inclusive of taxes.",
+      "Spoken English from zero: 6 months, up to 2 live classes a week, about 6 per batch, daily Bolo app practice, weekly review. ₹999/month incl. taxes.",
     shortTitle: "Basic Spoken English",
     keywords: [
       ...SPOKEN_KEYWORDS,
+      ...PACKAGE_KEYWORDS.slice(0, 6),
       "spoken english classes online india",
       "spoken english classes kolkata online",
     ],
     ogImage: "/og/spoken-english.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month, inclusive of taxes. Designed for absolute beginners who cannot yet form a full sentence.",
+      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month, inclusive of taxes. Includes daily exercises, the recorded video library and a weekly teacher review. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
-        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, inclusive of taxes. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
+        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, inclusive of taxes. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video-only courses cost less but give you no live speaking practice, and 1:1 native-tutor platforms cost considerably more per hour. Our fee includes the live classes and Bolo, our practice app — daily practice with a streak, video lessons and a weekly teacher review.",
       },
       {
         q: "How long does it take to learn spoken English from zero?",
@@ -1826,10 +1900,70 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
+  "spoken-english-hindi": {
+    title: "Spoken English in Hindi | Hindi to English, ₹999/mo",
+    description:
+      "Learn English through Hindi: a Hindi-speaking teacher, live batch of about 6, daily Bolo practice and weekly review. 6 months, ₹999/month incl. taxes.",
+    shortTitle: "Basic Spoken English — Hindi to English",
+    keywords: [
+      "hindi to english speaking course",
+      "english speaking course in hindi",
+      "spoken english class hindi medium online",
+      "hindi se english bolna sikhe online class",
+      "english bolna seekhe live class",
+      "basic english speaking course in hindi for beginners",
+      "हिंदी से इंग्लिश बोलना सीखें",
+      "live english class taught in hindi",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    dateModified: "2026-11-03",
+    summary:
+      "Basic Spoken English — Hindi to English: the same 6-month Basic Spoken English course (₹999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week, Bolo app included) taught by a Hindi-speaking teacher. Hard ideas are explained in Hindi; speaking practice is in English, and the share of English grows month by month. For Hindi-speaking adults 15+ in UP, Bihar, Delhi NCR, MP, Rajasthan, Jharkhand and anywhere else.",
+    extraFaqs: [
+      {
+        q: "Is there a live spoken English course taught in Hindi?",
+        a: "Yes. Learn With Smile's Basic Spoken English — Hindi to English is taught live by a Hindi-speaking teacher in a batch of about 6. Hard grammar and vocabulary are explained in Hindi; you practise speaking in English every class. 6 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Message us on WhatsApp to book a free consultation.",
+      },
+      {
+        q: "What is the fee for a Hindi-medium spoken English course?",
+        a: "₹999 per month, inclusive of taxes, for 6 months — the same fee as Basic Spoken English. It includes up to 2 live classes a week (1 hr 30 min, about 6 learners), the Bolo practice app and a weekly teacher review. No material fee.",
+      },
+    ],
+  },
+  "spoken-english-marathi": {
+    title: "Spoken English in Marathi | Marathi to English ₹999/mo",
+    description:
+      "Learn English through Marathi: a Marathi-speaking teacher, live batch of about 6, daily Bolo practice, weekly review. 6 months, ₹999/month incl. taxes.",
+    shortTitle: "Basic Spoken English — Marathi to English",
+    keywords: [
+      "marathi to english speaking course",
+      "english speaking course in marathi",
+      "spoken english class marathi medium online",
+      "english bolayla shika online class",
+      "इंग्रजी बोलायला शिका",
+      "marathi medium english speaking class pune",
+      "spoken english classes maharashtra online",
+      "live english class taught in marathi",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    dateModified: "2026-11-03",
+    summary:
+      "Basic Spoken English — Marathi to English: the same 6-month Basic Spoken English course (₹999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week, Bolo app included) taught by a Marathi-speaking teacher. Hard ideas are explained in Marathi; speaking practice is in English. For Marathi-medium students, graduates and working people in Pune, Mumbai, Nagpur, Nashik and across Maharashtra.",
+    extraFaqs: [
+      {
+        q: "Is there a live spoken English course taught in Marathi?",
+        a: "Yes. Learn With Smile's Basic Spoken English — Marathi to English is taught live by a Marathi-speaking teacher in a batch of about 6. Hard ideas are explained in Marathi; you practise speaking in English every class. 6 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Message us on WhatsApp to book a free consultation.",
+      },
+      {
+        q: "I studied in a Marathi-medium school. Which English course should I take?",
+        a: "If you cannot yet finish a sentence out loud in English, take Basic Spoken English — Marathi to English: a Marathi-speaking teacher explains what does not land, and you speak English in every class. If basic sentences already work, Intermediate Spoken English (₹1,999/month) builds grammar and flow. A free consultation on WhatsApp places you.",
+      },
+    ],
+  },
   "intermediate-english": {
     title: "Intermediate Spoken English | ₹1,999/mo, 4 Months",
     description:
-      "Intermediate spoken English online: grammar + fluency in every class, debates and presentations. 4 months, about 6 per batch, ₹1,999/month incl. taxes.",
+      "Intermediate spoken English: grammar + fluency every class, debates, 90-second talks, daily Bolo app practice. 4 months, about 6 per batch, ₹1,999/month.",
     shortTitle: "Intermediate Spoken English",
     keywords: [...INTERMEDIATE_KEYWORDS, "spoken english classes online india"],
     ogImage: "/og/intermediate-english.jpg",
@@ -1854,7 +1988,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "business-english": {
     title: "Business English Course | ₹2,499/mo",
     description:
-      "Business English for meetings, client calls, updates, emails and presentations. Live batch of about 6 learners, ₹2,499/month, inclusive of taxes.",
+      "Business English for meetings, calls, emails and presentations. Live batch of about 6, daily Bolo app practice, weekly review. ₹2,499/month incl. taxes.",
     shortTitle: "Business English",
     keywords: [
       ...WORKPLACE_KEYWORDS,
@@ -1864,7 +1998,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ogImage: "/og/business-english.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Business English — ₹2,499/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations.",
+      "Business English — ₹2,499/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [
       {
         q: "What is the difference between Spoken English and Business English?",
@@ -1879,13 +2013,13 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interactive-speaking": {
     title: "Interactive Speaking | ₹1,599/mo, 3 Months",
     description:
-      "Live speaking — games, debates, role-plays. 3 months, up to 2 classes/week, ~6 learners. ₹1,599/month, inclusive of taxes. Fluency, not grammar lectures.",
+      "Stop freezing: live games, debates and role-plays (about 6 per batch), daily Bolo app practice, weekly review. 3 months, ₹1,599/month incl. taxes.",
     shortTitle: "Interactive Speaking",
-    keywords: [...INTERACTIVE_KEYWORDS],
+    keywords: [...INTERACTIVE_KEYWORDS, ...PACKAGE_KEYWORDS.slice(8)],
     ogImage: "/og/interactive-speaking.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Interactive Speaking — ₹1,599/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
+      "Interactive Speaking — ₹1,599/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",
@@ -1900,13 +2034,13 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interview-preparation": {
     title: "Interview Preparation | ₹2,499/mo, 2 Months",
     description:
-      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel and salary talk. About 6 per batch, 2 months, ₹2,499/month inclusive of taxes.",
+      "Interview English: HR screens, 60-second intro, STAR, mocks. Batch of about 6, daily Bolo practice, weekly review. 2 months, ₹2,499/month incl. taxes.",
     shortTitle: "Interview Preparation",
     keywords: [...INTERVIEW_KEYWORDS],
     ogImage: "/og/interview-prep.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Interview Preparation — ₹2,499/month · 2 months in a live batch of approximately 6 learners. HR screens, 60-second intro, STAR stories, panel, salary, recorded mocks. For people who can already talk and still fail the interview.",
+      "Interview Preparation — ₹2,499/month · 2 months in a live batch of approximately 6 learners. HR screens, 60-second intro, STAR stories, panel, salary, recorded mocks. For people who can already talk and still fail the interview. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [
       {
         q: "Do you have a separate interview preparation course?",
@@ -1931,6 +2065,37 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     extraFaqs: [],
   },
 };
+
+/*
+ * Every paid course gets the same three additions, generated so they never
+ * drift: the Bolo practice it includes *at its level*, the all-in-one line,
+ * and a "what daily practice do I get?" FAQ (rendered + FAQPage JSON-LD).
+ */
+for (const [slug, seo] of Object.entries(COURSE_SEO)) {
+  if (slug === "demo-session" || slug === "career-counselling") continue;
+  const L = LEVELS[levelForCourse(slug)];
+  const path = L.nodes.map((n) => n.label.toLowerCase()).join(", ");
+  const videos = L.videos.map((v) => v.title).join("; ");
+  seo.summary = `${seo.summary} Bolo practice app at ${L.badge} level: daily ${path}; video lessons (${videos}); weekly teacher review (${L.review.tipLabel.toLowerCase()}). ${ALL_IN_ONE}`;
+  seo.keywords = [
+    ...seo.keywords,
+    `${seo.shortTitle.toLowerCase()} with daily practice app`,
+    "spoken english course with practice app and teacher review",
+    "all in one english course low fee india",
+  ];
+  seo.extraFaqs = [
+    ...(seo.extraFaqs ?? []),
+    {
+      q: `What daily practice comes with ${seo.shortTitle}?`,
+      a: `Bolo, the Learn With Smile practice app, at ${L.badge} level: ${path} with a daily streak; short video lessons such as ${videos}; and a weekly teacher review of the reading and speaking you send (this level focuses on ${L.review.tipLabel.toLowerCase()}). It is included in the course fee — ${ALL_IN_ONE.split(": ")[1] ?? ""}`,
+    },
+    {
+      q: `How do I pay for ${seo.shortTitle} — monthly, or upfront? Is there a refund?`,
+      a: FAIR_BILLING,
+    },
+  ];
+  seo.summary = `${seo.summary} ${FAIR_BILLING}`;
+}
 
 /* --------------------------------------------------------------------------
  * JSON-LD builders
@@ -1969,8 +2134,7 @@ export function organizationLd() {
       height: 180,
     },
     image: abs("/og/default.jpg"),
-    description:
-      "Live online English school. India fees from ₹999/month, inclusive of taxes. Learners outside India pay the labeled fee, not the rupee figure. Spoken, Interactive, Workplace and Interview Preparation for adults 15+.",
+    description: `${ALL_IN_ONE} India fees inclusive of taxes; learners outside India pay the labeled fee, not the rupee figure. Basic Spoken English (also taught Hindi to English and Marathi to English), Intermediate, Interactive Speaking, Business English and Interview Preparation for adults 15+. The Bolo practice app is included in every course.`,
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],
@@ -2050,6 +2214,8 @@ export function organizationLd() {
             url: abs(CONSULTATION_PATH),
             serviceType: "Spoken English consultation",
             description: CONSULTATION.what,
+            provider: { "@id": `${SITE_URL}/#organization` },
+            areaServed: india,
           },
         },
         ...Object.keys(COURSE_SEO)
@@ -2060,7 +2226,9 @@ export function organizationLd() {
             itemOffered: {
               "@type": "Course",
               name: COURSE_SEO[slug].shortTitle,
+              description: COURSE_SEO[slug].description,
               url: abs(`/course-${slug}`),
+              provider: { "@id": `${SITE_URL}/#organization` },
             },
             ...(INR_MONTHLY_FEE[slug] !== undefined
               ? {
@@ -2160,7 +2328,9 @@ export function consultationServiceLd() {
     isRelatedTo: Object.keys(COURSE_SEO)
       .filter((slug) => slug !== "demo-session")
       .map((slug) => ({
+        // Pointer to the full Course entity on its own page.
         "@type": "Course",
+        "@id": `${abs(`/course-${slug}`)}#course`,
         name: COURSE_SEO[slug].shortTitle,
         url: abs(`/course-${slug}`),
       })),
@@ -2367,7 +2537,7 @@ export function buildHead(opts: {
       { name: "bingbot", content: "index, follow" },
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
-      { name: "theme-color", content: "#0E7C5A" },
+      { name: "theme-color", content: "#04815B" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: opts.title },
       { property: "og:description", content: opts.description },
@@ -2418,7 +2588,7 @@ export function siteHead(): HeadResult {
       ...verificationMeta(),
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
-      { name: "theme-color", content: "#0E7C5A" },
+      { name: "theme-color", content: "#04815B" },
     ],
     // Site-wide discovery for AI assistants (llmstxt.org v2):
     //   describedby → the llms.txt that covers this page

@@ -4,6 +4,8 @@ import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/fees";
+import { DemoStrip, PricingGrid } from "@/components/package/PackageSections";
+import { MarketGap } from "@/components/package/MarketSections";
 
 const PATH = "/english-class-fees-india";
 
@@ -12,7 +14,7 @@ const PATH = "/english-class-fees-india";
  * This is a content revision date, not the build date: rebuilding unchanged
  * code must not claim that the research was reviewed again.
  */
-const UPDATED = "2026-09-22";
+const UPDATED = "2026-10-24";
 
 // The literal, not PATH: @tanstack/router-plugin statically analyses this
 // call to generate the route tree and cannot follow a constant. With a
@@ -33,6 +35,7 @@ export const Route = createFileRoute("/english-class-fees-india")({
         url: abs(PATH),
         mainEntityOfPage: { "@type": "WebPage", "@id": abs(PATH) },
         inLanguage: "en-IN",
+        datePublished: "2026-09-28",
         dateModified: UPDATED,
         author: {
           "@type": "Person",
@@ -52,6 +55,7 @@ function Page() {
   const page = PAGES[PATH];
   return (
     <GuidePage
+      packageBand={false}
       eyebrow="Fees Guide"
       breadcrumb="Online English Class Fees in India"
       h1={
@@ -60,7 +64,7 @@ function Page() {
           <span className="text-sunshine">₹999/mo, inclusive of taxes · Approx. 6 learners</span>
         </>
       }
-      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, approx. 6 learners, inclusive of taxes."
+      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, approx. 6 learners, inclusive of taxes — with the Bolo practice app included."
       heroImage={IMG.studentLaptop}
       heroAlt="Indian learner comparing online English class fees on a laptop"
       lastUpdated={UPDATED}
@@ -70,6 +74,19 @@ function Page() {
       waMessage="Hi, I want a free consultation for spoken English and the fees."
       ctaTitle="Want a quote for your specific goal?"
       ctaBody="Tell us what you need on WhatsApp and we'll tell you which course fits and what it costs — including when the answer is that you don't need us."
-    />
+    >
+      <section className="section bg-paper" id="fees">
+        <div className="container-x">
+          <h2 className="mb-2 text-2xl md:text-[2rem]">Learn With Smile fees, side by side</h2>
+          <p className="mb-6 max-w-3xl text-ink/80">
+            Every fee includes live classes, the Bolo practice app — daily practice, video lessons
+            and a weekly teacher review — and the same teacher.
+          </p>
+          <PricingGrid />
+          <DemoStrip />
+        </div>
+      </section>
+      <MarketGap />
+    </GuidePage>
   );
 }

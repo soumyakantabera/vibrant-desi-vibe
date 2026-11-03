@@ -1,11 +1,60 @@
 import type { PageSeo } from "@/lib/seo";
 import { CITIES, cityFaqs } from "@/lib/cities";
+import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
 
 const UPDATED = "2026-09-22";
 /** City pages (and the Hindi/Bengali guides) last changed — the shared fee table gained Intermediate. */
 const CITY_UPDATED = "2026-10-30";
 
 const NEW_GUIDES: Record<string, PageSeo> = {
+  [BEFORE_YOU_PAY_PATH]: {
+    path: BEFORE_YOU_PAY_PATH,
+    title: "Before You Pay for a Spoken English Course | 10 Checks",
+    description:
+      "Refunds, loans, EMIs, auto-renewal, hidden charges: 10 checks to run on any spoken English course in India before you pay — and how we answer each.",
+    shortTitle: "Before you pay for an English course",
+    keywords: [
+      "spoken english course refund policy",
+      "english course refund india",
+      "english speaking course emi",
+      "is online english course safe to pay",
+      "english course without loan",
+      "english app auto renewal cancel",
+      "spoken english course monthly payment",
+      "english course complaint india",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.7,
+    changefreq: "monthly",
+    dateModified: "2026-11-03",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Before you pay", path: BEFORE_YOU_PAY_PATH },
+    ],
+    summary: `A 10-point checklist for paying for any spoken English course in India: months paid upfront, loans and EMIs, auto-renewal, written refund terms, tax-inclusive price, real deadlines, batch size and teacher, complaint handling, review patterns, and whether the trial is a class. Common complaint patterns (upfront yearly fees, refunds not paid, auto-renewing app plans, rotating tutors). Indian rules: CCPA Dark Patterns Guidelines 2023, Ministry of Education coaching guidelines 2024, National Consumer Helpline 1915. ${FAIR_BILLING}`,
+    faqs: [
+      {
+        q: "Is it safe to pay for an online spoken English course in advance?",
+        a: "Pay for one month at a time, never a year, and get the refund rule in writing before you pay. Avoid any plan that needs a loan, an EMI or a saved card. Learn With Smile bills one month at a time with no auto-debit, and refunds a month in full if you cancel before its first class.",
+      },
+      {
+        q: "Can I get a refund on a spoken English course in India?",
+        a: "It depends on the provider's written policy, so ask for it before paying. Some refund only a trial; some refund nothing once you start. At Learn With Smile, cancel a month before its first live class for a full refund, which we start within 2 working days. After that class, that month is not refunded for a change of mind.",
+      },
+      {
+        q: "Should I take a loan or EMI to pay for an English course?",
+        a: "Usually not. A spoken English course is a monthly habit, not a one-off purchase; a loan locks you into a year whether or not the class works for you. Learn With Smile never offers or arranges a loan or EMI — fees start at ₹999 a month, inclusive of taxes.",
+      },
+      {
+        q: "How do I stop an English app subscription from renewing?",
+        a: "Cancel it in the store, not by deleting the app: Google Play → Payments & subscriptions → Subscriptions, or iPhone Settings → your name → Subscriptions. Learn With Smile has nothing to cancel: there is no auto-debit, and each month is a fresh payment link.",
+      },
+      {
+        q: "What is a dark pattern in online course selling?",
+        a: "A design or sales trick that pushes you to pay. India's 2023 dark-pattern guidelines name 13, including false urgency (fake countdowns or 'last 2 seats'), the subscription trap (hard-to-cancel plans, trials that auto-debit) and drip pricing (charges revealed in stages).",
+      },
+    ],
+  },
   // Written in Hindi and Bengali for learners who search in their own language.
   // `lang` sets hreflang, og:locale and inLanguage for these two only.
   "/spoken-english-in-hindi": {
@@ -13,7 +62,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "hi-IN",
     title: "Spoken English in Hindi | English Bolna Kaise Sikhe",
     description:
-      "English बोलना कैसे सीखें: रोज़ 15 मिनट का अभ्यास, हिंदी बोलने वालों की आम गलतियाँ और 6 महीने का सच्चा प्लान। लाइव क्लास ₹999/माह से।",
+      "English बोलना कैसे सीखें: रोज़ 15 मिनट की प्रैक्टिस, हिंदी बोलने वालों की आम गलतियाँ और 6 महीने का असली प्लान। लाइव क्लास ₹999/माह से।",
     shortTitle: "Spoken English in Hindi",
     keywords: [
       "spoken english in hindi",
@@ -36,7 +85,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "English बोलना सीखने में कितना समय लगता है?",
-        a: "शून्य से रोज़मर्रा की बातचीत तक आम तौर पर करीब 6 महीने, अगर हफ़्ते में 2 लाइव क्लास हों और रोज़ थोड़ा अभ्यास। ऑफ़िस की English अक्सर 3 महीने और। 30 दिन में फ़्लुएंसी का दावा विज्ञापन है।",
+        a: "बिल्कुल शुरू से रोज़मर्रा की बातचीत तक आम तौर पर करीब 6 महीने लगते हैं — अगर हफ़्ते में 2 लाइव क्लास हों और रोज़ थोड़ी प्रैक्टिस। ऑफ़िस की English अक्सर 3 महीने और। 30 दिन में फ़्लुएंसी का दावा विज्ञापन है।",
       },
       {
         q: "क्या हिंदी-मीडियम से पढ़े लोग English बोलना सीख सकते हैं?",
@@ -44,11 +93,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile की फ़ीस कितनी है?",
-        a: "Basic Spoken English ₹999/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। मुफ़्त सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
+        a: "Basic Spoken English ₹999/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। फ़्री सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
       },
       {
         q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
-        a: "शुरुआत हाँ — रोज़ ज़ोर से बोलना, रिकॉर्ड करना और शैडोइंग बहुत मदद करते हैं। पर अपनी गलतियाँ खुद पकड़ना मुश्किल है, और असली बातचीत का दबाव अकेले नहीं बनता। अगर 3–4 हफ़्ते बाद भी अटकते हैं, तो छोटा लाइव बैच मदद करता है।",
+        a: "शुरुआत तो हाँ — रोज़ ज़ोर से बोलना, रिकॉर्ड करना और शैडोइंग बहुत मदद करते हैं। पर अपनी गलतियाँ खुद पकड़ना मुश्किल है, और असली बातचीत का दबाव अकेले नहीं बनता। अगर 3–4 हफ़्ते बाद भी अटकते हैं, तो छोटा लाइव बैच मदद करता है।",
       },
     ],
   },
@@ -57,7 +106,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "bn-IN",
     title: "Spoken English in Bengali | English Bolte Shikhun",
     description:
-      "ইংরেজি বলতে শিখুন: রোজ 15 মিনিটের অভ্যাস, বাঙালিদের সাধারণ ভুল আর 6 মাসের সত্যি পরিকল্পনা। কলকাতা থেকে লাইভ ক্লাস, ₹999/মাস থেকে।",
+      "ইংরেজি বলতে শিখুন: রোজ 15 মিনিটের প্র্যাকটিস, বাঙালিদের কমন ভুল আর 6 মাসের সত্যিকারের প্ল্যান। কলকাতা থেকে লাইভ ক্লাস, ₹999/মাস থেকে।",
     shortTitle: "Spoken English in Bengali",
     keywords: [
       "spoken english in bengali",
@@ -80,7 +129,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "ইংরেজি বলতে শিখতে কত সময় লাগে?",
-        a: "শূন্য থেকে রোজকার কথাবার্তা পর্যন্ত সাধারণত প্রায় 6 মাস, যদি সপ্তাহে 2টো লাইভ ক্লাস আর রোজ একটু অভ্যাস থাকে। অফিসের ইংরেজির জন্য প্রায়ই আরও 3 মাস। 30 দিনে ফ্লুয়েন্সির দাবি বিজ্ঞাপন।",
+        a: "একদম গোড়া থেকে রোজকার কথাবার্তা পর্যন্ত সাধারণত প্রায় 6 মাস লাগে — যদি সপ্তাহে 2টো লাইভ ক্লাস আর রোজ একটু প্র্যাকটিস থাকে। অফিসের ইংরেজির জন্য প্রায়ই আরও 3 মাস। 30 দিনে ফ্লুয়েন্সির দাবিটা শুধুই বিজ্ঞাপন।",
       },
       {
         q: "বাংলা মিডিয়ামে পড়লে কি ইংরেজি বলা শেখা যায়?",
@@ -88,7 +137,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile-এর ফি কত?",
-        a: "Basic Spoken English ₹999/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। বিনামূল্যে পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
+        a: "Basic Spoken English ₹999/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। ফ্রি পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
       },
       {
         q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",
