@@ -13,18 +13,11 @@
 @import "@fontsource/dm-sans/latin-800.css";
 /* Indian scripts. DM Sans has no Devanagari or Bengali glyphs, so Hindi,
    Marathi and Bengali text fell back to whatever the phone had. Hind
-   (Devanagari) and Hind Siliguri (Bengali) are one screen-first family that
-   sits well beside DM Sans. Only the script subsets are imported: each
-   @font-face carries a unicode-range, so a page with no Devanagari or
-   Bengali text never downloads them. */
-@import "@fontsource/hind/devanagari-400.css";
-@import "@fontsource/hind/devanagari-500.css";
-@import "@fontsource/hind/devanagari-600.css";
-@import "@fontsource/hind/devanagari-700.css";
-@import "@fontsource/hind-siliguri/bengali-400.css";
-@import "@fontsource/hind-siliguri/bengali-500.css";
-@import "@fontsource/hind-siliguri/bengali-600.css";
-@import "@fontsource/hind-siliguri/bengali-700.css";
+   (Devanagari) and Hind Siliguri (Bengali), Indian Type Foundry, SIL OFL 1.1
+   (src/assets/fonts/HIND-OFL-LICENSE.txt), self-hosted. The unicode-range is
+   the script's own range WITHOUT ₹ (U+20B9) and ₨: DM Sans has no ₹ either,
+   and including it would make every English page download Hind just to draw
+   the rupee sign. Pages without Devanagari or Bengali text load neither. */
 @source "../src";
 @import "tw-animate-css";
 @import "./styles/mascots.css";
@@ -37,6 +30,86 @@
 }
 
 @custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Hind";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/hind-devanagari-400-normal.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+
+@font-face {
+  font-family: "Hind";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/hind-devanagari-500-normal.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+
+@font-face {
+  font-family: "Hind";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/hind-devanagari-600-normal.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+
+@font-face {
+  font-family: "Hind";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/hind-devanagari-700-normal.woff2") format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/hind-siliguri-bengali-400-normal.woff2") format("woff2");
+  unicode-range:
+    U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA,
+    U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+25CC, U+A8F1;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/hind-siliguri-bengali-500-normal.woff2") format("woff2");
+  unicode-range:
+    U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA,
+    U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+25CC, U+A8F1;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/hind-siliguri-bengali-600-normal.woff2") format("woff2");
+  unicode-range:
+    U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA,
+    U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+25CC, U+A8F1;
+}
+
+@font-face {
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/hind-siliguri-bengali-700-normal.woff2") format("woff2");
+  unicode-range:
+    U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA,
+    U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+25CC, U+A8F1;
+}
 
 @theme inline {
   --font-sans:
