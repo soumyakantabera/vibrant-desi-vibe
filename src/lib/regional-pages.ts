@@ -88,6 +88,21 @@ export function stateBody(st: StateInfo): ArticleBody {
       t: "p",
       text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${CITY_PAGE[st.slug] ? ` In ${CITY_PAGE[st.slug].name}? Read the [${CITY_PAGE[st.slug].name} city guide](${CITY_PAGE[st.slug].path}).` : ""}`,
     },
+    { t: "h2", text: "Before you choose a class" },
+    {
+      t: "ul",
+      items: [
+        `Local classroom or online batch? [Online vs offline spoken English classes](/online-vs-offline-spoken-english-classes) compares commute, batch size and speaking time.`,
+        `Practising free on apps and YouTube? [Free practice vs a paid live class](/free-english-speaking-practice-vs-paid-class) says when free is enough.`,
+        `Just out of college in ${st.name}? [Spoken English for freshers](/spoken-english-for-freshers-india) covers interviews and the first job.`,
+        `Learning at home around family work? [Spoken English for homemakers](/spoken-english-for-homemakers-india).`,
+        ...(st.languages.includes("Bengali")
+          ? [
+              `Think in Bengali? [Spoken English in Bengali](/spoken-english-in-bengali) — a guide written in Bengali.`,
+            ]
+          : []),
+      ],
+    },
   ];
 }
 
@@ -106,6 +121,19 @@ export function needBody(n: Need): ArticleBody {
         `[Spoken English in ${s.name}](${s.path})`,
       ]),
     },
+    { t: "p", text: NEED_NEXT[n.key] },
     { t: "p", text: ALL_IN_ONE },
   ];
 }
+
+/** One related guide per need, so the IT and fresher guides are reachable from the job pages. */
+const NEED_NEXT: Record<Need["key"], string> = {
+  bpo: "Applying straight after college? Read [spoken English for freshers](/spoken-english-for-freshers-india) too.",
+  it: "Already in the job? [English for IT professionals](/english-for-it-professionals-india) covers standups, client calls and appraisals.",
+  analyst:
+    "Working in a tech team? [English for IT professionals](/english-for-it-professionals-india) covers standups and client calls.",
+  bank: "Interviewing straight after graduation? Read [spoken English for freshers](/spoken-english-for-freshers-india) too.",
+  govt: "Preparing straight after graduation? Read [spoken English for freshers](/spoken-english-for-freshers-india) too.",
+  campus:
+    "After placement season: [spoken English for freshers](/spoken-english-for-freshers-india) covers the first job and the first client call.",
+};

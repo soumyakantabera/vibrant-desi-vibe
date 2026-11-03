@@ -89,6 +89,16 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "Explain in your language when a concept stalls, then back to English.",
     },
     {
+      href: "/spoken-english-for-homemakers-india",
+      title: "Spoken English for homemakers",
+      description: "Learn from home around family time: slots, fee and what a class looks like.",
+    },
+    {
+      href: "/online-vs-offline-spoken-english-classes",
+      title: "Online vs offline spoken English classes",
+      description: "Commute, batch size and speaking time compared, with fees.",
+    },
+    {
       href: "/bolo",
       title: "Bolo — daily practice app",
       description: "Practice, Watch, Review: the daily part of every course.",
@@ -104,6 +114,16 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       href: "/spoken-english-classes-maharashtra",
       title: "Spoken English in Maharashtra",
       description: "Pune, Mumbai, Nagpur, Nashik — live online, Marathi-speaking teacher.",
+    },
+    {
+      href: "/spoken-english-for-homemakers-india",
+      title: "Spoken English for homemakers",
+      description: "Learn from home around family time: slots, fee and what a class looks like.",
+    },
+    {
+      href: "/online-vs-offline-spoken-english-classes",
+      title: "Online vs offline spoken English classes",
+      description: "Commute, batch size and speaking time compared, with fees.",
     },
     {
       href: "/bolo",

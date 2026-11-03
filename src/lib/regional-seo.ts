@@ -31,6 +31,41 @@ export const MEDIUM_COURSE: Record<
   },
 };
 
+/** Cities with their own page; local FAQs on state pages lead with the others. */
+const OWN_CITY_PAGE = new Set(["Mumbai", "Delhi", "Bengaluru", "Hyderabad"]);
+
+/**
+ * Four questions people in the state actually ask, answered from that state's
+ * own data (localities, local prices, medium), so no two state pages carry the
+ * same answers. Shown on the page and in FAQPage schema from the same list.
+ */
+export function stateLocalFaqs(st: StateInfo): { q: string; a: string }[] {
+  const mc = MEDIUM_COURSE[st.medium];
+  const loc = st.localities.find((l) => !OWN_CITY_PAGE.has(l.city)) ?? st.localities[0];
+  const others = st.cities.filter((c) => c !== loc.city).slice(0, 4);
+  return [
+    {
+      q: `Is there a spoken English class near ${loc.areas[0]}, ${loc.city}?`,
+      a: `Learn With Smile has no classroom in ${loc.city}; our only office is in Kolkata. Learners from ${loc.areas.join(", ")} join the live online batch instead: about 6 learners, a real teacher, ₹999/month inclusive of taxes. No commute, and you keep the same teacher if you move.`,
+    },
+    {
+      q: `How much do spoken English classes cost in ${st.name}?`,
+      a: `Public listings in ${st.name} (November 2026): ${st.prices.map((x) => `${x.what}: ${x.range}`).join("; ")}. Learn With Smile's ${mc.label} is ₹999/month inclusive of taxes, with live classes, the Bolo practice app, video lessons and a weekly teacher review in the same fee.`,
+    },
+    {
+      q: `What are the class timings for learners in ${st.name}?`,
+      a: `Batches run in afternoon, evening and night slots (IST), so you can join after college or work from ${others.join(", ")} or anywhere else in ${st.name}. Basic Spoken English is 6 months, 1 hr 30 min a class, up to 2 classes a week, with daily practice in the Bolo app between classes.`,
+    },
+    {
+      q: `Which language does the teacher explain in, for ${st.name}?`,
+      a:
+        st.medium === "english"
+          ? `${mc.label}: ${mc.line}. Explanations are in English or Hindi only. Tell us on WhatsApp which language you think in and we will say honestly whether a batch fits.`
+          : `Yes. ${mc.label}: ${mc.line}. The ${st.medium === "hindi" ? "Hindi" : "Marathi"} explanations are short and only where something does not land; the speaking is in English.`,
+    },
+  ];
+}
+
 function stateSeo(st: StateInfo): PageSeo {
   const mc = MEDIUM_COURSE[st.medium];
   return {
@@ -59,7 +94,7 @@ function stateSeo(st: StateInfo): PageSeo {
       { name: `Spoken English in ${st.name}`, path: st.path },
     ],
     summary: `Spoken English for ${st.name} (${st.cities.slice(0, 4).join(", ")}): live online, about 6 learners per batch, ${mc.label} at ₹999/month inclusive of taxes, Bolo practice app and weekly teacher review included. Local needs: ${st.hubs.map((h) => NEEDS[h.need].label).join(", ")}. Local options seen Nov 2026: ${st.prices.map((p) => `${p.what} ${p.range}`).join("; ")}. Learners join online from ${st.localities.map((l) => `${l.city} (${l.areas.join(", ")})`).join("; ")} — no branch or classroom there; live online instead. ${ALL_IN_ONE}`,
-    faqs: [...st.faqs, WHY_WE_WIN_FAQ[0]],
+    faqs: [...st.faqs, ...stateLocalFaqs(st), WHY_WE_WIN_FAQ[0]],
   };
 }
 

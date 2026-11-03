@@ -1,4 +1,4 @@
-import { RETIRED_CITY_PATHS, RETIRED_CITY_REDIRECT } from "@/lib/cities";
+import { RETIRED_CITY_PATHS, RETIRED_CITY_REDIRECT, RETIRED_CITY_TARGET } from "@/lib/cities";
 
 /**
  * Old URL → new URL. GitHub Pages cannot send a 301, so `scripts/prerender.mjs`
@@ -10,7 +10,9 @@ export const REDIRECTS: Record<string, string> = {
   // The free consultation is counselling, not a class; the URL said "demo".
   // Moved October 2026 so only /course-demo-session targets demo-class searches.
   "/book-free-demo": "/free-consultation",
-  ...Object.fromEntries(RETIRED_CITY_PATHS.map((from) => [from, RETIRED_CITY_REDIRECT])),
+  ...Object.fromEntries(
+    RETIRED_CITY_PATHS.map((from) => [from, RETIRED_CITY_TARGET[from] ?? RETIRED_CITY_REDIRECT]),
+  ),
 };
 
 /**

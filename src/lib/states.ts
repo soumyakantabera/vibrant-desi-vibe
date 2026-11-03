@@ -111,11 +111,11 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Maharashtra | Marathi Medium",
     description:
-      "Live online spoken English for Pune, Mumbai, Nagpur and all of Maharashtra — taught by a Marathi-speaking teacher, about 6 per batch, ₹999/month incl. taxes.",
+      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra — taught by a Marathi-speaking teacher, about 6 per batch, ₹999/month incl. taxes.",
     keywords: [
       "spoken english classes maharashtra",
       "spoken english classes pune online",
-      "english speaking course mumbai online",
+      "english speaking course nashik online",
       "marathi medium english speaking class",
       "english speaking class nagpur online",
     ],
@@ -288,14 +288,14 @@ export const STATES: StateInfo[] = [
         a: "Yes — Basic Spoken English — Hindi to English, taught live online by a Hindi-speaking teacher, ₹999/month inclusive of taxes. You attend from anywhere in NCR; no commute.",
       },
     ],
-    title: "Spoken English Classes in Delhi NCR | Live Online",
+    title: "Spoken English Classes in Noida, Gurugram & NCR",
     description:
-      "Live online spoken English for Delhi, Noida, Gurugram and Ghaziabad — Hindi-speaking teacher option, night slots, about 6 per batch, from ₹999/month incl. taxes.",
+      "Live online spoken English for Noida, Gurugram, Ghaziabad and Faridabad — Hindi-speaking teacher, night slots, about 6 per batch, ₹999/month incl. taxes.",
     keywords: [
-      "spoken english classes delhi online",
-      "english speaking course gurugram",
       "spoken english classes noida",
-      "english classes for working professionals delhi",
+      "english speaking course gurugram",
+      "spoken english classes ghaziabad online",
+      "english speaking class faridabad",
     ],
   },
   {
@@ -456,14 +456,14 @@ export const STATES: StateInfo[] = [
         a: "Yes — Basic Spoken English — Hindi to English, taught by a Hindi-speaking teacher, ₹999/month inclusive of taxes.",
       },
     ],
-    title: "Spoken English Classes in Bengaluru & Karnataka",
+    title: "Spoken English Classes in Karnataka | Mysuru & Mangaluru",
     description:
-      "Live online spoken and workplace English for Bengaluru, Mysuru and Mangaluru — GCC interviews, standups, client calls. About 6 per batch, from ₹999/month incl. taxes.",
+      "Live online spoken English across Karnataka — Mysuru, Mangaluru, Hubballi, Belagavi. Interviews and client calls, about 6 per batch, ₹999/month incl. taxes.",
     keywords: [
-      "spoken english classes bangalore online",
-      "business english course bengaluru",
-      "english for gcc interview bangalore",
       "spoken english classes karnataka",
+      "spoken english classes mysore online",
+      "english speaking course mangalore",
+      "english speaking class hubli online",
     ],
   },
   {
@@ -513,14 +513,14 @@ export const STATES: StateInfo[] = [
         a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Business English (₹2,499/month). Starting from zero, Basic Spoken English (₹999/month) — also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
       },
     ],
-    title: "Spoken English Classes in Hyderabad & Telangana",
+    title: "Spoken English Classes in Telangana | Warangal & Karimnagar",
     description:
-      "Live online spoken and workplace English for Hyderabad and Telangana — GCC interviews, standups, Hindi-medium option. About 6 per batch, from ₹999/month incl. taxes.",
+      "Live online spoken English across Telangana — Warangal, Karimnagar, Secunderabad and beyond. Hindi-medium option, about 6 per batch, ₹999/month incl. taxes.",
     keywords: [
-      "spoken english classes hyderabad online",
-      "english speaking course hyderabad",
       "spoken english classes telangana",
-      "english for it jobs hyderabad",
+      "english speaking course warangal online",
+      "spoken english classes karimnagar",
+      "english for it jobs telangana",
     ],
   },
   {
