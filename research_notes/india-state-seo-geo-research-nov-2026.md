@@ -811,3 +811,57 @@ locality made 131 queries fail, so the checks do catch regressions. Full
 results: `research_notes/smoke-search-1000-nov-2026.csv`. Limit: this tests
 our own site's readiness for each query (what Google/AI can find and quote),
 not live rankings, which need Search Console / Keyword Planner data.
+
+## 9. Reviews of other providers and search-trend data (3 Nov 2026, follow-up)
+
+Asked: did we use real learner reviews of other institutions and Google
+search-trend data? Partly. Sections 1–8 cover demand, local competitors and
+their public fees. This round looked for learner reviews and trend numbers.
+
+### What learners complain about elsewhere (public complaint sites)
+Individual, unverified reports — patterns, not findings. Do not quote names
+on the site; use the themes.
+- **Refunds after enrolment.** PlanetSpark (children's communication): many
+  refund complaints on Voxya (~43 listed, ~42% resolved as of Nov 2026) and
+  consumercomplaints.in, incl. one alleging a partial refund conditional on
+  removing public reviews. Trustpilot shows its rating as unavailable "due to
+  a breach of our guidelines". https://voxya.com/company/planet-spark-complaints/1245734
+  https://www.consumercomplaints.in/planetspark-planetspark-refund-not-processed-and-refund-linked-to-removal-of-public-reviews-c3544129
+  https://www.trustpilot.com/review/planetspark.in?page=2
+- **Paying a year upfront / loans.** Same complaints describe a full year
+  charged upfront in counselling. Sector-wide: Byju's loan-linked selling
+  (Scroll, The Ken, Thomson Reuters), education = 33% of ASCI complaints in
+  FY21-22, 147 edtech complaints to Consumer Affairs in 2022.
+  https://scroll.in/article/1039797 https://www.medianama.com/2022/07/223-consumer-affairs-department-taking-a-grim-view-of-ed-tech-advertisement-practices/
+- **No refund on regular plans; random teacher each call; 15-minute cut-offs.**
+  EngVarta App Store reviews (small US sample, 53 reviews, ~21% negative);
+  developer says refunds only on the trial plan.
+  https://appshunter.io/ios/app/engvarta-english-speaking-app/id1221875549/reviews
+- **Auto-renewing subscriptions, trial charged early.** Common in AI English
+  apps (ELSA, Speak, 10 Minute English) per Trustpilot / App Store summaries.
+  https://unstar.app/blog/is-speak-elsa-talkpal-loora-learna-ai-english-apps-legit-2026
+- **Tutors without teaching training; support tickets closed.** Cambly
+  Trustpilot; ~$52/month for one 30-min lesson a week (2023-era figure).
+  https://ca.trustpilot.com/review/cambly.com
+- **Local institutes:** "no refund policy" or "remaining fees not refunded"
+  stated on listings (Trivandrum, Nashik); British School of Languages refund
+  refusal (Voxya, 2022).
+- **Hesitation is the core problem:** 78% of students in a 2026 Indian
+  school study reported anxiety about speaking English (single study).
+  https://arxiv.org/pdf/2601.19304
+
+How our published policy answers these (src/content/legal.ts): monthly
+billing, no lock-in; full refund of a month cancelled before its first live
+class; ₹199 demo adjusted against the fee; grievance officer, 48-hour
+acknowledgement. Same teacher, batch of about 6.
+
+### Search-trend data
+- Google Trends is not reachable from this session (trends.google.com blocked
+  by the network policy) and no published state-level "spoken english" trend
+  data was found. Google's India Year in Search 2025 lists no English-learning
+  query. https://blog.google/intl/en-in/products/explore-communicate/indias-year-in-search-2025/
+- No public India search volume for "spoken english classes" was found; US
+  tools only. Needs Google Keyword Planner or Search Console (owner access).
+- State priorities in section 6 rest on population, language and job-hub
+  data, not on measured search volume. Re-check them against Trends and
+  Search Console once available.
