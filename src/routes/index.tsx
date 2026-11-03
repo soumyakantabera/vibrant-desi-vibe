@@ -5,7 +5,6 @@ import {
   SectionHeader,
   FeatureCard,
   WaButton,
-  Stat,
   MottoBand,
   GuidesStrip,
   CoverageStrip,
@@ -29,28 +28,24 @@ import {
 import { COURSES } from "@/lib/courses";
 import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
-import { FeePair, FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
-import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
+import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
+import { intlUnit } from "@/lib/intl-fees";
+import {
+  BeforeNow,
+  DemoStrip,
+  LaunchOfferBand,
+  PackageSlides,
+  ReviewLoop,
+  TipsTiles,
+  PackageStrip,
+  PortalShowcase,
+  PricingGrid,
+  VideoLibrary,
+  WeekStrip,
+} from "@/components/package/PackageSections";
+import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
 
 const heroSources = imageSources(IMG.heroClass);
-
-const DIFFERENTIATORS: { icon: IconName; title: string; body: string }[] = [
-  {
-    icon: "play",
-    title: "Real teachers",
-    body: "A trained teacher who knows your name. Every class is live.",
-  },
-  {
-    icon: "users",
-    title: "Small batches",
-    body: "Every learner gets the mic. Approx. 6 learners. From ₹999/mo, inclusive of taxes.",
-  },
-  {
-    icon: "gamepad",
-    title: "Gamified live classes",
-    body: "Polls, debates, games — designed for the demands of today's market.",
-  },
-];
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -118,7 +113,7 @@ function Home() {
       footerImage={IMG.graduation}
     >
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           {/* The one image that is part of the first screen — fetched at high
               priority; everything else on the page loads lazily. */}
@@ -129,7 +124,7 @@ function Home() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/70 to-indigo-pop/60" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
           <div className="text-cream min-w-0 w-full">
@@ -143,13 +138,12 @@ function Home() {
             <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
               Speak Better English.
               <br />
-              <span className="text-sunshine">Master In-Demand Skills.</span>
+              <span className="text-sunshine">Live Twice a Week.</span>
               <br />
-              Build Future Together.
+              Practise Every Day.
             </h1>
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
-              Real teachers. Small batches. Gamified, interactive live English classes — designed
-              for the demands of today's market. From{" "}
+              Real teachers. Small batches. The complete package from{" "}
               <strong className="text-sunshine">
                 <FeeText text="₹999/mo" />
               </strong>
@@ -189,7 +183,7 @@ function Home() {
               </Link>{" "}
               — adjusted in your fee if you enrol.
             </p>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>
@@ -198,7 +192,7 @@ function Home() {
                 "7 years · about 6 a batch · pan-India & now worldwide",
                 "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
-                "Small batches — approx. 6 learners",
+                "Daily exercises + weekly teacher review",
               ].map((s) => (
                 <span
                   key={s}
@@ -211,11 +205,9 @@ function Home() {
             </div>
           </div>
           <div className="w-full min-w-0 flex justify-center lg:block">
-            <div className="relative w-full max-w-[320px] lg:max-w-none">
-              <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
-                eyebrow="Course fees start at"
+                eyebrow="Complete package from"
                 headline={feeHeadline("₹999/month", "spoken-english")}
                 subnote={
                   <MarketCopy
@@ -227,20 +219,20 @@ function Home() {
                   {
                     tone: "brand",
                     icon: SnapIcons.cap,
-                    big: "500+",
-                    small: "Learners who actually spoke",
+                    big: "Up to 8",
+                    small: "Live classes a month, 90 min each",
                   },
                   {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
-                    big: "7 yrs",
-                    small: "Same teacher, still live",
+                    big: "Daily",
+                    small: "Grammar, vocab, reading & speaking exercises",
                   },
                   {
-                    tone: "coral",
+                    tone: "violet",
                     icon: SnapIcons.people,
-                    big: "You speak",
-                    small: "A group of around 6 — not the back row",
+                    big: "Weekly",
+                    small: "Teacher review of your reading & speaking",
                   },
                 ]}
               />
@@ -249,28 +241,13 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-sunshine text-ink border-y border-ink/10">
-        <div className="container-x py-5 grid sm:grid-cols-3 gap-3 sm:gap-6 text-sm">
-          {DIFFERENTIATORS.map(({ icon, title, body }) => (
-            <div key={title} className="flex items-start gap-3">
-              <span className="h-9 w-9 rounded-full bg-ink text-sunshine grid place-items-center shrink-0">
-                <Icon name={icon} size={17} className="text-sunshine" />
-              </span>
-              <p>
-                <strong className="font-display block">{title}</strong>
-                <span className="text-ink/80">
-                  <FeeText text={body} />
-                </span>
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <LaunchOfferBand />
+      <PackageStrip />
 
       <CoverageStrip />
 
       {/* STORY BAND */}
-      <section className="bg-brand-deep py-10 md:py-14">
+      <section className="hero-light bg-white py-10 md:py-14">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider">
@@ -305,21 +282,25 @@ function Home() {
             </Link>
           </div>
           <Reveal stagger className="grid grid-cols-2 gap-3">
-            <StoryTile icon="gamepad" tone="sun" title="Gamified Learning">
+            <StoryTile icon="gamepad" tone="amber" title="Gamified Learning">
               Flashcards, matching games & live quizzes every session.
             </StoryTile>
-            <StoryTile icon="users" tone="glass" title="Batch of Around 6">
+            <StoryTile icon="users" tone="green" title="Batch of Around 6">
               Named teacher. Small batches of approximately 6 learners. You still speak.
             </StoryTile>
-            <StoryTile icon="heart" tone="glass" title="Collaborative">
+            <StoryTile icon="heart" tone="plum" title="Collaborative">
               Group discussions and community building every class.
             </StoryTile>
-            <StoryTile icon="target" tone="sun" title="Live Polls & Quizzes">
+            <StoryTile icon="target" tone="blue" title="Live Polls & Quizzes">
               Real-time interactive activities every session.
             </StoryTile>
           </Reveal>
         </div>
       </section>
+
+      {/* THE WEEK + THE PACKAGE */}
+      <WeekStrip />
+      <PackageSlides />
 
       {/* COURSE CATEGORIES */}
       <section className="section">
@@ -359,14 +340,19 @@ function Home() {
       </section>
 
       <CourseLadder />
+      {/* PORTAL + VIDEOS */}
+      <PortalShowcase />
+      <ReviewLoop />
+      <VideoLibrary />
+      <TipsTiles />
 
       <GuidesStrip />
 
       {/* HOW IT WORKS */}
-      <section className="relative section overflow-hidden">
+      <section className="hero-light relative section overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.liveClass} alt="Live online class in India" fill sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 to-brand-deep/85" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x">
           <SectionHeader
@@ -482,39 +468,12 @@ function Home() {
         "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
       </MottoBand>
 
-      {/* NUMBERS */}
-      <section className="relative py-12 md:py-16">
-        <div className="absolute inset-0 z-0">
-          <SmartImage src={IMG.graduation} alt="Indian graduates" fill sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/90 to-ink/85" />
-        </div>
-        <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-8 divide-y divide-cream/10 md:divide-y-0 md:divide-x">
-          <div className="md:pr-4">
-            <Stat num="7" label="Years teaching live" />
-          </div>
-          <div className="md:px-4">
-            <Stat num="500+" label="People who spoke here" />
-          </div>
-          <div className="md:px-4 pt-8 md:pt-0">
-            <Stat num="~6" label="In a batch. You speak." />
-          </div>
-          {/* One rating, one source. This tile used to read 4.9★ while the
-              location card below read 5.0★ — the same page stating two numbers.
-              That matters more here than on most sites: llms.txt and the .md
-              twins make this site unusually easy for an assistant to quote
-              verbatim, so an inconsistency propagates straight into AI answers.
-              The Google Business Profile figure is the one that wins.
-              Deliberately NOT mirrored into JSON-LD as aggregateRating —
-              self-serving review markup on LocalBusiness is disregarded by
-              Google and carries a manual-action risk. */}
-          <div className="md:pl-4 pt-8 md:pt-0">
-            <Stat
-              num={RATING_DISPLAY}
-              label={`${RATING.source} Rating · ${RATING.count} Reviews`}
-            />
-          </div>
-        </div>
-      </section>
+      {/* GOOGLE RATING + PROOF */}
+      <GoogleProof />
+
+      {/* MARKET + WHAT CHANGED */}
+      <MarketGap />
+      <BeforeNow />
 
       {/* TESTIMONIALS */}
       <section className="section">
@@ -542,116 +501,15 @@ function Home() {
       <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
         <div className="container-x">
           <SectionHeader
-            eyebrow={<MarketCopy inr="Simple, India-Friendly Pricing" usd="Simple pricing" />}
+            eyebrow={
+              <MarketCopy inr="Affordable. Premium. Everything included." usd="Simple pricing" />
+            }
             eyebrowTone="indigo"
-            title={<FeeText text="From ₹999/mo · inclusive of taxes" />}
-            subtitle="Pay per month. Up to 2 live classes/week. Same-week reschedule if a slot is free. Batches have approximately 6 learners."
+            title={<FeeText text="From ₹999/mo · live classes, portal and videos included" />}
+            subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus the learner portal and the recorded video library. Same-week reschedule if a slot is free."
           />
-          <Reveal stagger className="grid gap-5 lg:grid-cols-3">
-            <article className="order-2 flex h-full flex-col overflow-hidden rounded-3xl border border-[#DDE6DF] border-t-4 border-t-brand bg-white p-5 shadow-[0_16px_40px_-30px_rgba(8,70,51,.45)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(8,70,51,.5)] sm:p-6 lg:order-none">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft text-brand-deep">
-                  <BatchIcon />
-                </span>
-                <h3 className="font-display text-lg font-extrabold text-ink">
-                  Small Batch (Approx. 6 learners)
-                </h3>
-              </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                <FeePair inr="₹999" usd={INTL_FEE["spoken-english"].big} />
-                <span className="text-base font-bold text-ink/75">
-                  <FeePair inr="/month" usd={INTL_FEE["spoken-english"].suffix} />
-                </span>
-              </p>
-              <p className="mt-1 text-sm text-ink/75">
-                <MarketCopy
-                  inr="Inclusive of taxes · billed monthly"
-                  usd={`${intlUnit()} · billed monthly`}
-                />
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Live, interactive online classes
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Flexible afternoon · evening · night slots
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-brand" />
-                  Recordings & worksheets included
-                </li>
-              </ul>
-            </article>
-
-            <article className="order-1 flex h-full flex-col overflow-hidden rounded-3xl border-2 border-indigo-pop bg-gradient-to-b from-[#F5F5FF] to-white p-5 shadow-[0_18px_48px_-28px_rgba(91,91,214,.5)] transition hover:-translate-y-1 hover:shadow-[0_24px_54px_-26px_rgba(91,91,214,.55)] sm:p-6 lg:order-none">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex min-w-0 items-center gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#E7E7FF] text-indigo-pop">
-                    <WorkplaceIcon />
-                  </span>
-                  <h3 className="font-display text-lg font-extrabold text-ink">Business English</h3>
-                </div>
-                <span className="pill border-none bg-indigo-pop text-white">Most Popular</span>
-              </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                <FeePair inr="₹2,499" usd={INTL_FEE["business-english"].big} />
-                <span className="text-base font-bold text-ink/75">
-                  <FeePair inr="/month" usd={INTL_FEE["business-english"].suffix} />
-                </span>
-              </p>
-              <p className="mt-1 text-sm text-ink/75">
-                <MarketCopy
-                  inr="Inclusive of taxes · 3 months · up to 2 classes/week"
-                  usd={`${intlUnit()} · 3 months · up to 2 classes/week`}
-                />
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Meetings, client calls and status updates
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Emails, workplace messages and presentations
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-indigo-pop" />
-                  Live batch of approximately 6 learners
-                </li>
-              </ul>
-            </article>
-
-            <article className="order-3 flex h-full flex-col overflow-hidden rounded-3xl border border-[#E8DFDC] border-t-4 border-t-[#C84D3F] bg-white p-5 shadow-[0_16px_40px_-30px_rgba(165,61,50,.4)] transition hover:-translate-y-1 hover:shadow-[0_22px_48px_-28px_rgba(165,61,50,.45)] sm:p-6 lg:order-none">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFF0ED] text-[#A53D32]">
-                  <Icon name="compass" size={22} />
-                </span>
-                <h3 className="font-display text-lg font-extrabold text-ink">{DEMO_CTA}</h3>
-              </div>
-              <p className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-                See it. Then pay.
-              </p>
-              <p className="mt-1 text-sm text-ink/75">
-                <FeeText text={CONSULTATION.hook} />
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-ink/85">
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Bottleneck named — not a pitch
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  One course + fee in writing
-                </li>
-                <li className="flex gap-2.5">
-                  <CheckIcon className="mt-0.5 shrink-0 text-[#A53D32]" />
-                  Enrol, or walk. Still free. Not a class
-                </li>
-              </ul>
-            </article>
-          </Reveal>
+          <PricingGrid />
+          <DemoStrip />
           <div className="mt-7 text-center">
             <p className="text-sm text-ink/75">
               <MarketCopy
@@ -801,6 +659,13 @@ function Home() {
   );
 }
 
+const STORY_TONE = {
+  amber: { box: "bg-amber-soft", chip: "bg-sunshine text-ink", title: "text-[#6A4A10]" },
+  green: { box: "bg-brand-soft", chip: "bg-brand text-white", title: "text-brand-deep" },
+  plum: { box: "bg-plum-soft", chip: "bg-plum text-white", title: "text-[#4E3470]" },
+  blue: { box: "bg-slate-soft", chip: "bg-indigo-pop text-white", title: "text-[#1F3D63]" },
+} as const;
+
 function StoryTile({
   icon,
   title,
@@ -809,27 +674,17 @@ function StoryTile({
 }: {
   icon: IconName;
   title: string;
-  tone: "sun" | "glass";
+  tone: keyof typeof STORY_TONE;
   children: React.ReactNode;
 }) {
-  if (tone === "sun") {
-    return (
-      <div className="rounded-2xl p-5 bg-sunshine text-ink">
-        <div className="h-10 w-10 rounded-xl bg-ink/15 text-ink flex items-center justify-center mb-2">
-          <Icon name={icon} size={20} />
-        </div>
-        <strong className="text-ink font-display block">{title}</strong>
-        <p className="text-ink text-sm mt-1 leading-snug">{children}</p>
-      </div>
-    );
-  }
+  const t = STORY_TONE[tone];
   return (
-    <div className="rounded-2xl p-5 bg-white/10 border border-cream/15 backdrop-blur">
-      <div className="h-10 w-10 rounded-xl bg-cream/15 text-sunshine flex items-center justify-center mb-2">
-        <Icon name={icon} size={20} />
+    <div className={`rounded-2xl p-5 ${t.box}`}>
+      <div className={`mb-3 grid h-11 w-11 place-items-center rounded-xl ${t.chip}`}>
+        <Icon name={icon} size={22} />
       </div>
-      <strong className="text-cream font-display block">{title}</strong>
-      <p className="text-white/90 text-sm mt-1">{children}</p>
+      <strong className={`block font-bold ${t.title}`}>{title}</strong>
+      <span className="mt-1 block text-sm leading-snug text-ink/80">{children}</span>
     </div>
   );
 }
@@ -842,23 +697,23 @@ const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: s
   },
   indigo: {
     bar: "bg-indigo-pop",
-    icon: "bg-[#E7E7FF] text-indigo-pop",
-    badge: "border-indigo-pop/25 bg-[#F1F1FF] text-[#4141A8]",
+    icon: "bg-[#E3E9F1] text-indigo-pop",
+    badge: "border-indigo-pop/25 bg-[#F2F5F9] text-[#4141A8]",
   },
   sun: {
-    bar: "bg-[#D39A00]",
-    icon: "bg-[#FFF3C4] text-[#6B4A00]",
-    badge: "border-sunshine/45 bg-[#FFF8DE] text-[#6B4A00]",
+    bar: "bg-[#B98A2E]",
+    icon: "bg-[#F5ECD6] text-[#6A4A10]",
+    badge: "border-sunshine/45 bg-[#FBF5E6] text-[#6A4A10]",
   },
   coral: {
-    bar: "bg-[#C84D3F]",
-    icon: "bg-[#FFF0ED] text-[#A53D32]",
-    badge: "border-coral/35 bg-[#FFF4F1] text-[#8B321F]",
+    bar: "bg-[#A9503D]",
+    icon: "bg-[#F8EEEA] text-[#8E3B2A]",
+    badge: "border-coral/35 bg-[#FAF2EF] text-[#8B321F]",
   },
   play: {
-    bar: "bg-gradient-to-r from-sunshine via-[#F6C453] to-coral",
-    icon: "bg-[#FFF3C4] text-[#6B4A00]",
-    badge: "border-sunshine/50 bg-[#FFF8DE] text-[#6B4A00]",
+    bar: "bg-gradient-to-r from-sunshine via-[#DDB061] to-coral",
+    icon: "bg-[#F5ECD6] text-[#6A4A10]",
+    badge: "border-sunshine/50 bg-[#FBF5E6] text-[#6A4A10]",
   },
 };
 
@@ -982,46 +837,7 @@ function IconFrame({ children, size = 24 }: { children: React.ReactNode; size?: 
 }
 
 // Small Batch — three figures clustered together
-function BatchIcon() {
-  return (
-    <IconFrame>
-      <circle cx="8" cy="8" r="2.4" />
-      <circle cx="16" cy="8" r="2.4" />
-      <circle cx="12" cy="6.5" r="2.4" />
-      <path d="M3.5 18c.6-2.6 2.7-4 4.5-4s2.6.7 3.2 1.8" />
-      <path d="M20.5 18c-.6-2.6-2.7-4-4.5-4s-2.6.7-3.2 1.8" />
-      <path d="M7.5 19.5c.7-2.6 2.5-4 4.5-4s3.8 1.4 4.5 4" />
-    </IconFrame>
-  );
-}
 
 // Business English — one speaker presenting an idea clearly
-function WorkplaceIcon() {
-  return (
-    <IconFrame>
-      <circle cx="12" cy="8.5" r="2.8" />
-      <path d="M6.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5" />
-      <path d="M12 2.5v1.6M4.4 5.4l1.1 1.1M19.6 5.4l-1.1 1.1M2.5 11.5h1.6M19.9 11.5h1.6" />
-    </IconFrame>
-  );
-}
 
 // Small check used in feature lists
-function CheckIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M5 12.5l4.2 4.2L19 7" />
-    </svg>
-  );
-}

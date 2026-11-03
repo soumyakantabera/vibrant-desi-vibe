@@ -197,7 +197,7 @@ function BlockView({ block }: { block: Block }) {
 
     case "quote":
       return (
-        <blockquote className="mt-6 border-l-4 border-sunshine bg-sunshine/10 rounded-r-2xl px-5 py-4 text-ink font-display font-semibold leading-relaxed">
+        <blockquote className="mt-6 border-l-4 border-brand bg-brand-soft rounded-r-2xl px-5 py-4 text-ink font-display font-semibold leading-relaxed">
           {inline(block.text)}
         </blockquote>
       );

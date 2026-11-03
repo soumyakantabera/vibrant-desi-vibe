@@ -393,9 +393,9 @@ function CourseColumn({
   onPick: () => void;
 }) {
   const headBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E3E9F1] text-indigo-pop";
   const iconBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E3E9F1] text-indigo-pop";
   return (
     <div className="p-3">
       <Link
@@ -475,7 +475,7 @@ function MobileCourseLink({
   onClick: () => void;
 }) {
   const iconBg =
-    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E2E2FB] text-indigo-pop";
+    tone === "brand" ? "bg-brand-soft text-brand-deep" : "bg-[#E3E9F1] text-indigo-pop";
   return (
     <Link
       to={item.to}

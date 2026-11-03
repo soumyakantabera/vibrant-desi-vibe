@@ -99,7 +99,7 @@ function Page() {
   const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
     <Layout waMessage={wa} footerImage={IMG.liveClass}>
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.liveClass}
@@ -108,7 +108,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-coral/40" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
           <div className="min-w-0 w-full text-cream">
@@ -137,9 +137,7 @@ function Page() {
             </div>
           </div>
           <div className="flex w-full min-w-0 justify-center lg:block">
-            <div className="relative w-full max-w-[320px] lg:max-w-none">
-              <div className="absolute -left-4 -top-4 h-32 w-32 rounded-full bg-sunshine/30 blur-3xl" />
-              <div className="absolute -bottom-4 -right-4 h-32 w-32 rounded-full bg-coral/30 blur-3xl" />
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
@@ -277,7 +275,7 @@ function Page() {
         waMessage="Hi, I want a free consultation to know how your spoken English classes work."
       />
 
-      <section className="section bg-brand-deep">
+      <section className="hero-light section bg-paper">
         <div className="container-x grid items-center gap-10 lg:grid-cols-[1fr_1.2fr]">
           <SmartImage
             src={IMG.womanLaptop}

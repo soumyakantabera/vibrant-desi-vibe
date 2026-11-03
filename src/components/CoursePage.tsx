@@ -6,6 +6,10 @@ import { TestimonialSlider, type Testimonial } from "@/components/TestimonialSli
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
+import { CourseIncluded } from "@/components/package/PackageSections";
+import { COURSE_FEE, type FeeSlug } from "@/lib/fees";
+
+const isPackageSlug = (slug: string): slug is FeeSlug => slug in COURSE_FEE;
 import { PaymentTrust } from "@/components/PaymentTrust";
 import {
   ClassSplit,
@@ -232,18 +236,23 @@ export function CoursePage({ data }: { data: CourseData }) {
         </>
       }
       rows={[
-        { tone: "brand", icon: SnapIcons.cap, big: "500+", small: "Learners taught across India" },
+        {
+          tone: "brand",
+          icon: SnapIcons.people,
+          big: data.snapshotBatchBig ?? "Approx. 6 learners",
+          small: "in a live batch · up to 2 classes a week, 90 min",
+        },
         {
           tone: "indigo",
           icon: SnapIcons.calendar,
-          big: "7 yrs",
-          small: "Live teaching experience",
+          big: "Daily",
+          small: "grammar, vocab, reading & speaking exercises",
         },
         {
-          tone: "coral",
-          icon: SnapIcons.people,
-          big: data.snapshotBatchBig ?? "Approx. 6 learners",
-          small: data.snapshotBatchSmall ?? "In this live course batch",
+          tone: "violet",
+          icon: SnapIcons.cap,
+          big: "Weekly",
+          small: "teacher review of your reading & speaking",
         },
       ]}
       footer="Message Anytime · Replies 10am–midnight IST every day"
@@ -252,10 +261,10 @@ export function CoursePage({ data }: { data: CourseData }) {
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/88 via-brand-deep/75 to-indigo-pop/55" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream">
@@ -320,24 +329,16 @@ export function CoursePage({ data }: { data: CourseData }) {
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />
             </p>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
           </div>
-          <div className="hidden lg:block relative">
-            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
-            {snapshot}
-          </div>
+          <div className="hidden lg:block relative">{snapshot}</div>
         </div>
       </section>
 
       {/* Mobile snapshot card */}
-      <section className="lg:hidden bg-brand-deep/95 py-8">
+      <section className="hero-light lg:hidden bg-paper py-8">
         <div className="container-x flex justify-center">
-          <div className="relative w-full max-w-[320px]">
-            <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
-            {snapshot}
-          </div>
+          <div className="relative w-full max-w-[28rem]">{snapshot}</div>
         </div>
       </section>
 
@@ -387,6 +388,9 @@ export function CoursePage({ data }: { data: CourseData }) {
           <CoverageMap title={data.title} visuals={data.visuals} />
         </>
       )}
+
+      {/* COMPLETE PACKAGE — live + portal + videos + same teacher */}
+      {isPackageSlug(data.slug) && <CourseIncluded slug={data.slug} />}
 
       {/* CURRICULUM */}
       <section className="section bg-brand-soft/40">
@@ -449,7 +453,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               {data.projects.map((p, i) => (
                 <article
                   key={p.title}
-                  className="card-soft bg-gradient-to-br from-white to-sunshine/10 border-sunshine/30"
+                  className="card-soft bg-gradient-to-br from-white to-brand-soft border-brand/20"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="h-10 w-10 rounded-xl bg-sunshine text-ink font-display font-extrabold flex items-center justify-center">
@@ -544,27 +548,6 @@ export function CoursePage({ data }: { data: CourseData }) {
           </div>
         </section>
       )}
-
-      {/* FINAL CTA */}
-      <section className="relative py-16 md:py-20 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
-        <div className="container-x text-center text-cream">
-          <h2 className="text-cream text-3xl md:text-4xl">{CONSULTATION.headline}</h2>
-          <p className="mt-3 text-white max-w-xl mx-auto">{CONSULTATION.punch}</p>
-          <p className="mt-2 text-sm font-semibold text-sunshine">
-            <FeeText text={CONSULTATION.hook} />
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={waPrimary} variant="sun" size="lg">
-              {DEMO_CTA}
-            </WaButton>
-            <WaButton message={waPrimary} variant="wa" size="lg">
-              {CHAT_CTA}
-            </WaButton>
-          </div>
-          <PaymentTrust tone="dark" align="center" className="mt-5" />
-        </div>
-      </section>
     </Layout>
   );
 }
@@ -633,7 +616,7 @@ export function courseSeo(d: CourseData) {
     availability: "https://schema.org/InStock",
     category: d.format.includes("1:1") ? "Online 1:1 course" : "Online batch course",
     url,
-    validFrom: "2026-01-01",
+    validFrom: "2026-10-25",
     valueAddedTaxIncluded: true,
     eligibleRegion: { "@type": "Country", name: "India", identifier: "IN" },
     areaServed: { "@type": "Country", name: "India", identifier: "IN" },
@@ -684,6 +667,30 @@ export function courseSeo(d: CourseData) {
       },
       offers,
       hasCourseInstance: courseInstance,
+      // The complete package: every paid course includes the learner portal and
+      // the recorded video library alongside the live classes.
+      ...(d.slug !== "demo-session"
+        ? {
+            hasPart: [
+              {
+                "@type": "LearningResource",
+                name: "Learner portal practice",
+                learningResourceType: "Interactive practice",
+                description:
+                  "Whole-conversation practice, word and phrase brush-ups, reading fluency, grammar in real texts and interactive grammar practice between live classes.",
+                isAccessibleForFree: false,
+              },
+              {
+                "@type": "LearningResource",
+                name: "Recorded video library",
+                learningResourceType: "Video lessons",
+                description:
+                  "Recorded lessons on grammar, speaking and fluency, thinking in English, fixing mind blanks and small natural phrases, chosen for the course.",
+                isAccessibleForFree: false,
+              },
+            ],
+          }
+        : {}),
       // The month-by-month roadmap is the more exact syllabus when a course has
       // one: each section names its month span, which is what learners ask.
       syllabusSections: d.visuals

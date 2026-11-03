@@ -26,7 +26,7 @@ export function Layout({
       <main id="main-content" className="flex-1" data-snippet={CONSULTATION.copilotSnippet}>
         {children}
       </main>
-      <ConsultOffer />
+      <ConsultOffer message={waMessage} />
       <Footer image={footerImage} />
       <WhatsAppFab message={waMessage} />
     </div>

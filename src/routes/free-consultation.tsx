@@ -30,7 +30,7 @@ export const Route = createFileRoute("/free-consultation")({
 function Page() {
   return (
     <Layout waMessage={DEMO_MSG} footerImage={IMG.womanLaptop}>
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.womanLaptop}
@@ -39,7 +39,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-brand-deep/80 to-sunshine/35" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
@@ -58,9 +58,9 @@ function Page() {
                 key={pill}
                 className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs font-display font-extrabold ${
                   i === 0
-                    ? "bg-[#C84D3F] text-white"
+                    ? "bg-[#A9503D] text-white"
                     : i === 1
-                      ? "bg-[#3D3DB8] text-white"
+                      ? "bg-[#34507A] text-white"
                       : i === 2
                         ? "bg-sunshine text-ink"
                         : "bg-ink text-sunshine"
@@ -235,14 +235,14 @@ function Page() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-coral/25 bg-[#FFF4F1] p-6">
-            <h2 className="text-xl font-display font-extrabold text-[#8E2A1E] mb-3">
+          <div className="rounded-2xl border border-coral/25 bg-[#FAF2EF] p-6">
+            <h2 className="text-xl font-display font-extrabold text-[#8A3626] mb-3">
               What this is not
             </h2>
             <ul className="space-y-3">
               {CONSULTATION_NOT_THIS.map((item) => (
                 <li key={item.text} className="flex gap-3 text-sm text-ink/90 leading-relaxed">
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#FFE0DC] text-[#8E2A1E]">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#F3E2DC] text-[#8A3626]">
                     <Icon name={item.icon} size={16} />
                   </span>
                   <span className="pt-1">{item.text}</span>
@@ -289,7 +289,7 @@ function Page() {
                       </td>
                       <td className="px-4 py-3 text-ink/90">
                         <span className="flex gap-2">
-                          <Icon name="ban" size={14} className="text-[#8E2A1E] shrink-0 mt-0.5" />
+                          <Icon name="ban" size={14} className="text-[#8A3626] shrink-0 mt-0.5" />
                           <span>{row.theirSession}</span>
                         </span>
                       </td>
@@ -331,8 +331,11 @@ function Page() {
         waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       />
 
-      <section className="relative py-14 md:py-16 overflow-hidden" data-cta-location="final_cta">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-deep via-indigo-pop to-coral" />
+      <section
+        className="hero-light relative py-14 md:py-16 overflow-hidden"
+        data-cta-location="final_cta"
+      >
+        <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
           <h2 className="text-cream text-2xl md:text-3xl">
             Bring the problem. Leave with one room.
@@ -350,7 +353,7 @@ function Page() {
               {DEMO_CTA}
             </WaButton>
           </div>
-          <PaymentTrust tone="dark" align="center" className="mt-8" />
+          <PaymentTrust tone="light" align="center" className="mt-8" />
         </div>
       </section>
     </Layout>

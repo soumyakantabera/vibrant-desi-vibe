@@ -12,8 +12,8 @@ import { useEffect } from "react";
 import appCss from "../styles.css?url";
 // The two faces the boot gate waits for (src/lib/boot-script.ts → ask()).
 // Preloaded so they download alongside the stylesheet instead of after it.
-import manrope600 from "@fontsource/manrope/files/manrope-latin-600-normal.woff2?url";
-import sora700 from "@fontsource/sora/files/sora-latin-700-normal.woff2?url";
+import dmSans500 from "@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2?url";
+import dmSans700 from "@fontsource/dm-sans/files/dm-sans-latin-700-normal.woff2?url";
 import { withBasePath } from "@/lib/site-path";
 import { CHAT_MSG, waLink, withPageTag } from "@/lib/whatsapp";
 import { siteHead } from "@/lib/seo";
@@ -106,14 +106,14 @@ export const Route = createRootRoute({
       links: [
         {
           rel: "preload",
-          href: manrope600,
+          href: dmSans500,
           as: "font",
           type: "font/woff2",
           crossOrigin: "anonymous",
         },
         {
           rel: "preload",
-          href: sora700,
+          href: dmSans700,
           as: "font",
           type: "font/woff2",
           crossOrigin: "anonymous",

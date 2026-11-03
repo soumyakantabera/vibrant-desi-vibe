@@ -56,10 +56,10 @@ function Page() {
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
-      <section className="relative overflow-hidden">
+      <section className="hero-light relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-brand-deep/85 to-[#8F332A]/80" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
           <div className="text-cream min-w-0 w-full">
@@ -99,15 +99,13 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="dark" className="mt-4" />
+            <PaymentTrust tone="light" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>
           </div>
           <div className="w-full min-w-0 flex justify-center lg:block">
-            <div className="relative w-full max-w-[320px] lg:max-w-none">
-              <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-sunshine/30 blur-3xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-coral/30 blur-3xl" />
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 badge="Live · English Track"
                 eyebrow="Whole track from"
@@ -176,10 +174,7 @@ function Page() {
                     <p className="mt-1 text-ink/80">{group.description}</p>
                   </div>
                 </div>
-                <Reveal
-                  stagger
-                  className="grid max-w-5xl items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3 md:gap-5"
-                >
+                <Reveal stagger className="grid items-stretch gap-4 sm:grid-cols-2 md:gap-6">
                   {group.slugs.map((s) => {
                     const c = COURSES[s];
                     return (
@@ -192,16 +187,16 @@ function Page() {
                           src={c.heroImage}
                           alt={c.title}
                           className="mb-3 w-full rounded-xl"
-                          ratio="4/3"
+                          ratio="16/9"
                           imgClassName="group-hover:scale-105 transition duration-500"
                           position="center 22%"
-                          sizes="(min-width: 1280px) 30vw, (min-width: 640px) 45vw, 100vw"
+                          sizes="(min-width: 640px) 45vw, 100vw"
                         />
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           <span className="h-9 w-9 rounded-xl flex items-center justify-center bg-brand-soft text-brand-deep">
                             <Icon name={c.icon} size={20} />
                           </span>
-                          <span className="pill bg-sunshine/15 text-[#6B4A00] border-sunshine/40">
+                          <span className="pill bg-slate-soft text-[#1F3D63] border-indigo-pop/25">
                             <FeeText text={c.price} />
                           </span>
                           <span className="pill bg-brand-soft text-brand-deep">{c.duration}</span>
@@ -225,9 +220,9 @@ function Page() {
 
       <CourseLadder />
 
-      <section className="section bg-sunshine/25" id="demo-session">
+      <section className="section bg-paper" id="demo-session">
         <div className="container-x">
-          <div className="grid items-center gap-8 rounded-[28px] border border-sunshine/50 bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
+          <div className="grid items-center gap-8 rounded-[28px] border border-border bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
             <div className="min-w-0">
               <p className="eyebrow eyebrow-sun">Not a sixth course · a seat in the real one</p>
               <h2 className="mt-3 text-3xl md:text-4xl text-ink">
@@ -306,7 +301,7 @@ function Page() {
         waMessage="Hi, I want a free consultation to choose my spoken English course."
       />
 
-      <section className="section bg-brand-deep">
+      <section className="hero-light section bg-paper">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
           <SmartImage
             src={IMG.womanOffice}
@@ -328,7 +323,7 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="dark" className="mt-5" />
+            <PaymentTrust tone="light" className="mt-5" />
           </div>
         </div>
       </section>

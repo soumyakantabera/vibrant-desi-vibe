@@ -70,7 +70,7 @@ function Page() {
       waMessage="Hi, I read the blog and I want a free consultation for spoken English."
       footerImage={IMG.blogDesk}
     >
-      <section className="relative">
+      <section className="hero-light relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.blogDesk}
@@ -79,7 +79,7 @@ function Page() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-indigo-pop/70 to-brand-deep/65" />
+          <div className="absolute inset-0 hero-veil" />
         </div>
         <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">

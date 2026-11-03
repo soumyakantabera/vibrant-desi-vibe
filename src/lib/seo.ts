@@ -39,7 +39,7 @@ export const SITE_LOCALE = "en_IN";
 /** Used by the Organization schema and by llms.txt, so "N years" is derived. */
 export const FOUNDING_YEAR = 2019;
 /** Last content revision used when a page has no page-specific date. */
-export const CONTENT_REVISED = "2026-09-22";
+export const CONTENT_REVISED = "2026-10-24";
 
 export const CONTACT = {
   phone: "+919674479949",
@@ -325,6 +325,27 @@ export const CONSULTATION_KEYWORDS = [
   "free demo class spoken english india",
 ];
 
+/** The complete package — live classes + portal practice + recorded videos. */
+export const PACKAGE_KEYWORDS = [
+  "spoken english course with daily practice",
+  "online english classes with practice portal",
+  "spoken english course with recorded videos",
+  "live english classes and daily practice india",
+  "complete spoken english course online india",
+  "affordable premium spoken english course india",
+  "interactive english grammar practice online",
+  "english reading fluency practice online",
+  "how to stop mind going blank while speaking english",
+  "english phrases to sound natural while speaking",
+  "think in english not translate course",
+  "english speaking practice between classes",
+  "daily english grammar exercises online",
+  "daily english vocabulary exercises",
+  "spoken english course with teacher feedback",
+  "tips and tricks to start speaking english",
+  "english reading and speaking practice reviewed by teacher",
+];
+
 /** Product — Spoken English (beginner / ₹999 / 6 months). */
 export const SPOKEN_KEYWORDS = [
   "basic spoken english course for beginners",
@@ -334,7 +355,7 @@ export const SPOKEN_KEYWORDS = [
   "how to speak english fluently from zero",
   "spoken english classes online with live teacher",
   "spoken english course fees in india 2026",
-  "english speaking classes under 1000 rupees india",
+  "affordable live spoken english classes india",
 ];
 
 /**
@@ -758,9 +779,9 @@ export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
 export const PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
-    title: "Live Online English Classes in India from ₹999/month",
+    title: "Online English Classes India: Live + Daily Practice, ₹999",
     description:
-      "Live online English classes from ₹999/month, about 6 per batch. Free consultation on WhatsApp, or a ₹199 demo class that is adjusted if you join.",
+      "Live English classes (about 6 per batch), daily exercises, a video library and a weekly teacher review. From ₹999/month incl. taxes.",
     shortTitle: "Home",
     keywords: [
       ...CORE_KEYWORDS,
@@ -768,6 +789,7 @@ export const PAGES: Record<string, PageSeo> = {
       ...INTERVIEW_KEYWORDS,
       ...WORKPLACE_KEYWORDS,
       ...AEO_KEYWORDS,
+      ...PACKAGE_KEYWORDS,
       "best online spoken english classes in india",
       "english class fees per month in india",
       "career counselling online india",
@@ -778,7 +800,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Homepage. Live spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
+      "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), daily grammar, vocabulary, reading and speaking exercises in the learner portal, a recorded video library (including tips and tricks to start speaking) and a weekly teacher review of reading and speaking, with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -794,7 +816,23 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Are online English classes as effective as offline coaching centres?",
-        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join afternoon, evening or night slots, and gives you class recordings to revise. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
+        a: "For speaking practice, online small-batch classes are usually better. In a batch of around 6, every learner speaks in every class; in a 30-student offline classroom most learners speak once a week. Online also removes commute time, lets you join afternoon, evening or night slots, and — at Learn With Smile — adds daily exercises, a recorded video library and a weekly teacher review of your reading and speaking. The one thing offline does better is peer accountability, which we replace with live polls, debates and a WhatsApp batch group.",
+      },
+      {
+        q: "What do I do between live classes?",
+        a: "Every course includes daily exercises in the learner portal: grammar and vocabulary every day, reading practice (read aloud, then find the grammar in the text) and speaking practice (whole conversations, recorded). Every week your teacher reviews the reading and speaking you submit. There is also a recorded video library — tips and tricks to start speaking English, grammar, fluency, thinking in English and what to say when your mind goes blank — chosen for your course. So a week has up to 2 live classes plus practice every day.",
+      },
+      {
+        q: "Are the daily exercises, videos and teacher review included in the fee?",
+        a: "Yes. The monthly fee covers the live classes, daily exercises in the learner portal, the recorded video library, a weekly teacher review of your reading and speaking, and the same teacher for your batch: ₹999/month for Basic Spoken English, ₹1,599 for Interactive Speaking, ₹2,499 for Business English and ₹2,499 for Interview Preparation, inclusive of taxes. Portal and video access runs while you are enrolled. There is no separate app or material fee.",
+      },
+      {
+        q: "Why is Learn With Smile not the cheapest option?",
+        a: "Because the fee pays for a live teacher and a batch of about 6, where you speak in every class — plus daily exercises, videos and a weekly teacher review in between. AI apps cost less but have no people in the room; 1:1 tutor apps give a person but no course or classmates; large classrooms cost little per month but leave you 1–2 minutes of speaking an hour. We aim for affordable, not cheap — premium teaching at a fair monthly fee.",
+      },
+      {
+        q: "Is there a launch offer right now?",
+        a: "Yes, until 30 November 2026: new learners who enrol by that date get one extra month of learner-portal and video-library access after their course, free. The course fee does not change.",
       },
       {
         q: "Can I get a free consultation before I enrol?",
@@ -1800,21 +1838,22 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "spoken-english": {
     title: "Spoken English Course | ₹999/mo, 6 Months",
     description:
-      "Practical spoken English for beginners: 6 months, up to 2 live classes a week, about 6 in a batch. ₹999/month, inclusive of taxes.",
+      "Spoken English from zero: 6 months, up to 2 live classes a week, about 6 per batch, daily exercises and weekly review. ₹999/month incl. taxes.",
     shortTitle: "Basic Spoken English",
     keywords: [
       ...SPOKEN_KEYWORDS,
+      ...PACKAGE_KEYWORDS.slice(0, 6),
       "spoken english classes online india",
       "spoken english classes kolkata online",
     ],
     ogImage: "/og/spoken-english.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month, inclusive of taxes. Designed for absolute beginners who cannot yet form a full sentence.",
+      "Basic Spoken English — 6 months, up to 2 live classes a week, approximately 6 learners, ₹999/month, inclusive of taxes. Includes daily exercises, the recorded video library and a weekly teacher review. Designed for absolute beginners who cannot yet form a full sentence.",
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
-        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, inclusive of taxes. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video courses are cheaper but give you no speaking practice, and 1:1 native-tutor platforms cost considerably more per hour.",
+        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, inclusive of taxes. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video-only courses cost less but give you no live speaking practice, and 1:1 native-tutor platforms cost considerably more per hour. Our fee includes the live classes, a learner portal for daily practice and a recorded video library.",
       },
       {
         q: "How long does it take to learn spoken English from zero?",
@@ -1854,7 +1893,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "business-english": {
     title: "Business English Course | ₹2,499/mo",
     description:
-      "Business English for meetings, client calls, updates, emails and presentations. Live batch of about 6 learners, ₹2,499/month, inclusive of taxes.",
+      "Business English for meetings, calls, emails and presentations. Live batch of about 6, daily exercises, weekly review. ₹2,499/month incl. taxes.",
     shortTitle: "Business English",
     keywords: [
       ...WORKPLACE_KEYWORDS,
@@ -1864,7 +1903,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     ogImage: "/og/business-english.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Business English — ₹2,499/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations.",
+      "Business English — ₹2,499/month · 3 months in a live batch of approximately 6 learners. Meetings, calls, updates, emails and presentations. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [
       {
         q: "What is the difference between Spoken English and Business English?",
@@ -1879,13 +1918,13 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interactive-speaking": {
     title: "Interactive Speaking | ₹1,599/mo, 3 Months",
     description:
-      "Live speaking — games, debates, role-plays. 3 months, up to 2 classes/week, ~6 learners. ₹1,599/month, inclusive of taxes. Fluency, not grammar lectures.",
+      "Stop freezing: live games, debates and role-plays (about 6 per batch), daily exercises, weekly review. 3 months, ₹1,599/month incl. taxes.",
     shortTitle: "Interactive Speaking",
-    keywords: [...INTERACTIVE_KEYWORDS],
+    keywords: [...INTERACTIVE_KEYWORDS, ...PACKAGE_KEYWORDS.slice(8)],
     ogImage: "/og/interactive-speaking.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Interactive Speaking — ₹1,599/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling.",
+      "Interactive Speaking — ₹1,599/month · 3 months in a live batch of approximately 6 learners. Games, debates, role-plays and storytelling. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [
       {
         q: "How do I stop hesitating and freezing when I speak English?",
@@ -1900,13 +1939,13 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
   "interview-preparation": {
     title: "Interview Preparation | ₹2,499/mo, 2 Months",
     description:
-      "Interview Preparation in English: HR screens, 60-second intro, STAR, panel and salary talk. About 6 per batch, 2 months, ₹2,499/month inclusive of taxes.",
+      "Interview English: HR screens, 60-second intro, STAR, mocks. Batch of about 6, daily exercises, weekly review. 2 months, ₹2,499/month incl. taxes.",
     shortTitle: "Interview Preparation",
     keywords: [...INTERVIEW_KEYWORDS],
     ogImage: "/og/interview-prep.jpg",
     dateModified: "2026-10-30",
     summary:
-      "Interview Preparation — ₹2,499/month · 2 months in a live batch of approximately 6 learners. HR screens, 60-second intro, STAR stories, panel, salary, recorded mocks. For people who can already talk and still fail the interview.",
+      "Interview Preparation — ₹2,499/month · 2 months in a live batch of approximately 6 learners. HR screens, 60-second intro, STAR stories, panel, salary, recorded mocks. For people who can already talk and still fail the interview. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [
       {
         q: "Do you have a separate interview preparation course?",
@@ -2367,7 +2406,7 @@ export function buildHead(opts: {
       { name: "bingbot", content: "index, follow" },
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
-      { name: "theme-color", content: "#0E7C5A" },
+      { name: "theme-color", content: "#04815B" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: opts.title },
       { property: "og:description", content: opts.description },
@@ -2418,7 +2457,7 @@ export function siteHead(): HeadResult {
       ...verificationMeta(),
       { name: "author", content: SITE_NAME },
       { name: "publisher", content: SITE_NAME },
-      { name: "theme-color", content: "#0E7C5A" },
+      { name: "theme-color", content: "#04815B" },
     ],
     // Site-wide discovery for AI assistants (llmstxt.org v2):
     //   describedby → the llms.txt that covers this page

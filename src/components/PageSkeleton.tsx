@@ -17,7 +17,7 @@ export function PageSkeleton() {
         <span className="sr-only">Loading page…</span>
 
         {/* Hero band */}
-        <section className="bg-brand-deep">
+        <section className="bg-paper">
           <div className="container-x py-14 md:py-20 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
             <div className="w-full">
               <span className="skeleton skeleton-on-dark block h-6 w-40 rounded-full" />

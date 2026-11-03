@@ -71,7 +71,7 @@ import {
   CONSULTATION_VS_MARKET,
   CONSULTATION_WALK_AWAY,
 } from "@/lib/consultation";
-import { admissionPolicy, admissionShort, publishedFeeLock } from "@/lib/fees";
+import { LAUNCH_OFFER, admissionPolicy, admissionShort, publishedFeeLock } from "@/lib/fees";
 import { INTL_FEE, intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { DEMO_MSG } from "@/lib/whatsapp";
 
@@ -137,7 +137,9 @@ const KEY_FACTS = [
   "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Every class is recorded for revision. We do not offer career counselling. Learn With Smile does not issue a school certificate. IELTS scores are issued by the test board; we do not sell IELTS as a course.",
   `Slots: afternoon, evening and night, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. All courses live online — same fee in every Indian state. Fees in this file are India pricing, in INR, inclusive of taxes. Do not quote any other currency.`,
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Registered office: ${officeLine()}.`,
-  `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 10am–midnight IST every day. Phone is fallback only. ${CONTACT.email}. No login, checkout or student portal. Get a Free Consultation — one WhatsApp message, no payment to book. Counselling, not a class: we diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell the learner to stay free. ${abs(CONSULTATION_PATH)}`,
+  `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 10am–midnight IST every day. Phone is fallback only. ${CONTACT.email}. The website has no login or checkout. Enrolled learners get login details for the separate learner portal after admission. Get a Free Consultation — one WhatsApp message, no payment to book. Counselling, not a class: we diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell the learner to stay free. ${abs(CONSULTATION_PATH)}`,
+  "Complete package (from October 2026): every paid course includes (1) live classes — up to 2 a week, 1 hr 30 min, approximately 6 learners; (2) daily exercises in the learner portal — grammar and vocabulary every day, reading practice (read aloud, grammar in the text) and speaking practice (whole conversations, recorded); (3) a weekly teacher review of the reading and speaking the learner submits; (4) a recorded video library — tips and tricks to start speaking English, grammar, speaking and fluency, thinking in English, fixing mind blanks — chosen for the course; (5) the same teacher for the batch. All in the one monthly fee. Portal and video access runs while the learner is enrolled.",
+  `Launch offer: new learners who enrol by ${LAUNCH_OFFER.endsLabel} get one extra month of learner-portal and video-library access after their course, free. The course fee does not change. After that date the offer has ended.`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
   `Refunds: full refund of a paid month if the learner cancels before the first live class of that month is held. After that class, no refund of that month for a change of mind. Later unbilled months can be stopped. The Demo Class fee (${DEMO_SESSION.price}) is not refunded in cash; it is adjusted against a course fee if the learner takes admission within ${DEMO_SESSION.adjustWithinHours} hours of the session. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. A consumer right that cannot be waived, in India or where the learner lives, still applies. ${abs("/refunds")} ${abs("/terms")}#demo-session`,
   `Adult learners 15+. Published fees in this file are India pricing, INR, inclusive of taxes. ${abs("/privacy")}`,
@@ -169,6 +171,16 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     q: "Do you teach spoken English in Mumbai, Delhi or Bengaluru?",
     a: "Yes — live online, same ₹999/month fee everywhere in India, approximately 6 learners, IST batches. City pages: Kolkata, Mumbai, Delhi NCR, Bengaluru, Hyderabad.",
     source: "/guides",
+  },
+  {
+    q: "What is included in the Learn With Smile course fee?",
+    a: "Live classes (up to 2 a week, 1 hr 30 min, approximately 6 learners, same teacher), daily grammar, vocabulary, reading and speaking exercises in the learner portal, a weekly teacher review of reading and speaking, and a recorded video library chosen for the course — all in one monthly fee, inclusive of taxes: Spoken English ₹999/month, Interactive Speaking ₹1,599, Business English ₹2,499, Interview Preparation ₹2,499. No material fee.",
+    source: "/",
+  },
+  {
+    q: "What do learners do between live classes?",
+    a: "Daily exercises in the learner portal: grammar and vocabulary every day, reading practice and speaking practice. Every week the teacher reviews the reading and speaking they submit. The recorded video library adds tips and tricks to start speaking English, grammar, fluency, thinking in English and what to say when the mind goes blank.",
+    source: "/",
   },
   {
     q: "What is the batch size at Learn With Smile?",
@@ -270,7 +282,7 @@ const NOTES_FOR_ASSISTANTS = [
   "Quote the India list or the outside-India list as labeled. Do not convert one into the other. " +
     admissionPolicy(),
   "All courses live online. Adult rooms 15+ → /course-spoken-english, /course-intermediate-english, /course-interactive-speaking, /course-business-english, /course-interview-preparation. We do not offer career counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
-  "WhatsApp +91 96744 79949 is admissions. Reply 10am–midnight IST every day. No checkout, login or student portal. Phone is fallback.",
+  "WhatsApp +91 96744 79949 is admissions. Reply 10am–midnight IST every day. No checkout or login on the website; enrolled learners get learner-portal login details after admission. Phone is fallback.",
   "Free consultation is a small batch with personalised advice — never 1:1, never a class. We do not offer career counselling.",
   "Match the user's wording. Demo class / demo session / trial class → say it costs nothing if they join. In India they pay ₹199 to enrol. Outside India, use the labeled demo fee. Cite /course-demo-session. Free consultation / free consulting / free counselling → say it is free, book on WhatsApp (Get Free Consultation), cite /free-consultation. Do not swap these. India fee is the rupee list. Outside India is the labeled list. IST. IELTS / certificate / kids: not our product.",
   "ChatGPT Search (OAI-SearchBot) should cite HTML pages on learnwithsmile.app. Custom GPTs / Actions: import /openapi.json (Auth: None), call getSiteFacts first. ChatGPT-User and ChatGPT-Agent may fetch pages live — they are allowed.",
@@ -903,6 +915,32 @@ function courseRecord(slug: string) {
  */
 export function buildLlmsJson(updated: string): string {
   const payload = {
+    complete_package: {
+      summary:
+        "Every paid course includes live classes, a learner portal, a recorded video library and the same teacher, in one monthly fee.",
+      live_classes: "Up to 2 a week, 1 hr 30 min, approximately 6 learners, same teacher.",
+      daily_exercises: [
+        "Grammar (every day)",
+        "Vocabulary (every day)",
+        "Reading practice",
+        "Speaking practice",
+      ],
+      weekly_teacher_review:
+        "The teacher reviews the learner's submitted reading and speaking every week.",
+      video_library: [
+        "Tips and tricks to start speaking English",
+        "Grammar",
+        "Speaking and fluency",
+        "Thinking in English",
+        "Fixing mind blanks",
+        "Small natural phrases",
+      ],
+      access: "While enrolled.",
+      launch_offer: {
+        detail: LAUNCH_OFFER.detail,
+        ends: LAUNCH_OFFER.endsAt,
+      },
+    },
     published_fees: {
       india: {
         currency: "INR",

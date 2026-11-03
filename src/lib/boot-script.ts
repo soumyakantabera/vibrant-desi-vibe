@@ -17,7 +17,7 @@ import { BOT_UA } from "./intl-fees";
  * -----------------
  *   css    the app stylesheet has applied (detected through the `--app-css`
  *          sentinel it defines, so this is a fact rather than a guess)
- *   fonts  Manrope and Sora. Icons are SVG (lucide), not a symbol font.
+ *   fonts  DM Sans. Icons are SVG (Phosphor), not a symbol font.
  *   media  every image marked `data-boot-hold` — the hero already in the
  *          prerendered HTML — has finished decoding
  *
@@ -221,8 +221,8 @@ const BOOT_SCRIPT_SOURCE = `(function () {
   // the rules exist, one of them starts the download.
   var ask = function () {
     try {
-      d.fonts.load("600 1rem Manrope");
-      d.fonts.load("700 1rem Sora");
+      d.fonts.load("500 1rem DM Sans");
+      d.fonts.load("700 1rem DM Sans");
     } catch (e) {}
   };
   var fontsReady = function () {
@@ -231,7 +231,7 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     if (!d.fonts || !d.fonts.forEach || !d.fonts.load) { raise("fonts-ready"); return true; }
     try {
       ask();
-      var text = face("Manrope") && face("Sora");
+      var text = face("DM Sans");
       if (text) raise("fonts-ready");
       return !!text;
     } catch (e) { return true; }
