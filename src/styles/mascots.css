@@ -1,0 +1,317 @@
+/* ------------------------------------------------ Bolo + Mithu motion ---
+   Tier 2 motion: only for the Bolo app mock-ups and the two mascots. The rest
+   of the site uses the calm --ease-pro curve with no overshoot and no loops.
+
+   Contract
+   - Mascot loops only run when the SVG has .is-animated AND a parent sets
+     data-motion="on" (useInView: on screen, tab visible, motion allowed).
+     The prerendered HTML is the still pose.
+   - Only transform and opacity move.
+   - prefers-reduced-motion: every mascot and app animation stops.        */
+
+.mascot {
+  overflow: visible;
+}
+.mascot g {
+  transform-box: view-box;
+}
+
+/* idle loops ---------------------------------------------------------- */
+[data-motion="on"] .mascot.is-animated .m-eye {
+  animation: m-blink 5.2s infinite;
+}
+[data-motion="on"] .mascot-mithu.is-animated .m-eye {
+  animation-duration: 6.4s;
+  animation-delay: 1.3s;
+}
+[data-motion="on"] .mascot.is-animated .m-body {
+  animation: m-breathe 3.2s ease-in-out infinite;
+}
+[data-motion="on"] .mascot.is-animated .m-tail {
+  animation: m-sway 4s ease-in-out infinite;
+}
+
+/* pose motion ---------------------------------------------------------- */
+[data-motion="on"] .mascot.is-animated.pose-wave .m-wing-far {
+  animation: m-wave 0.9s ease-in-out 3;
+}
+.mascot.pose-wave:hover .m-wing-far {
+  animation: m-wave 0.9s ease-in-out 2;
+}
+[data-motion="on"] .mascot.is-animated.pose-talk .m-beak-lo,
+[data-motion="on"] .mascot.is-animated.pose-mic .m-beak-lo {
+  animation: m-talk 0.28s ease-in-out infinite alternate;
+}
+[data-motion="on"] .mascot.is-animated.pose-cheer .m-body,
+[data-motion="on"] .mascot.is-animated.pose-clap .m-body {
+  animation: m-hop 0.9s var(--ease-play) infinite;
+}
+[data-motion="on"] .mascot.is-animated.pose-cheer .m-confetti,
+[data-motion="on"] .mascot.is-animated.pose-clap .m-confetti {
+  animation: m-confetti 1.8s ease-out infinite;
+}
+[data-motion="on"] .mascot.is-animated.pose-oops .m-head {
+  animation: m-shake 0.4s ease-in-out 2;
+}
+[data-motion="on"] .mascot.is-animated.pose-think .m-extra,
+[data-motion="on"] .mascot.is-animated.pose-sleep .m-extra {
+  animation: m-float 2.6s ease-in-out infinite;
+}
+[data-motion="on"] .mascot.is-animated.pose-nod .m-head {
+  animation: m-nod 1.6s ease-in-out infinite;
+}
+[data-motion="on"] .mascot.is-animated.pose-listen .m-head {
+  animation: m-bob 1.1s ease-in-out infinite;
+}
+[data-motion="on"] .mascot.is-animated.pose-sleep .m-body {
+  animation: m-breathe 4.4s ease-in-out infinite;
+}
+
+/* one-shot reactions, re-triggered by a React key ---------------------- */
+.m-pop {
+  animation: m-pop 0.45s var(--ease-play) both;
+}
+.bubble-in {
+  animation: m-bubble 0.24s var(--ease-play) both;
+  transform-origin: 12% 50%;
+}
+.peek-up {
+  animation: m-peek 0.5s var(--ease-play) both;
+}
+
+/* Bolo app mock-up ----------------------------------------------------- */
+.bolo-screen {
+  animation: m-screen 0.28s var(--ease-pro) both;
+}
+.bolo-press {
+  box-shadow: 0 4px 0 0 var(--bolo-teal-deep);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+.bolo-press:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 var(--bolo-teal-deep);
+}
+.bolo-press-soft {
+  box-shadow: 0 3px 0 0 #d5e3e6;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+.bolo-press-soft:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #d5e3e6;
+}
+.bolo-node-now {
+  animation: m-ring 1.6s ease-out infinite;
+}
+.bolo-flame {
+  animation: m-flame 1.4s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+.bolo-shake {
+  animation: m-shake-x 0.38s ease-in-out;
+}
+
+@keyframes m-blink {
+  0%,
+  94%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes m-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.018);
+  }
+}
+@keyframes m-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+@keyframes m-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-22deg);
+  }
+}
+@keyframes m-talk {
+  from {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(24deg);
+  }
+}
+@keyframes m-hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+}
+@keyframes m-confetti {
+  0% {
+    transform: translateY(6px) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-8px) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes m-shake {
+  0%,
+  100% {
+    transform: rotate(6deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes m-float {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+}
+@keyframes m-nod {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(7deg);
+  }
+  40% {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes m-bob {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+@keyframes m-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes m-bubble {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes m-peek {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes m-screen {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes m-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(10, 124, 115, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(10, 124, 115, 0);
+  }
+}
+@keyframes m-flame {
+  0%,
+  100% {
+    transform: scale(1) rotate(-3deg);
+  }
+  50% {
+    transform: scale(1.08) rotate(3deg);
+  }
+}
+@keyframes m-shake-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot *,
+  .bubble-in,
+  .peek-up,
+  .m-pop,
+  .bolo-screen,
+  .bolo-node-now,
+  .bolo-flame,
+  .bolo-shake {
+    animation: none !important;
+  }
+  .bolo-press,
+  .bolo-press-soft {
+    transition: none;
+  }
+}
