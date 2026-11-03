@@ -94,7 +94,7 @@ function stateSeo(st: StateInfo): PageSeo {
       { name: `Spoken English in ${st.name}`, path: st.path },
     ],
     summary: `Spoken English for ${st.name} (${st.cities.slice(0, 4).join(", ")}): live online, about 6 learners per batch, ${mc.label} at ₹999/month inclusive of taxes, Bolo practice app and weekly teacher review included. Local needs: ${st.hubs.map((h) => NEEDS[h.need].label).join(", ")}. Local options seen Nov 2026: ${st.prices.map((p) => `${p.what} ${p.range}`).join("; ")}. Learners join online from ${st.localities.map((l) => `${l.city} (${l.areas.join(", ")})`).join("; ")} — no branch or classroom there; live online instead. ${ALL_IN_ONE}`,
-    faqs: [...st.faqs, ...stateLocalFaqs(st), WHY_WE_WIN_FAQ[0]],
+    faqs: [...st.faqs, ...stateLocalFaqs(st), WHY_WE_WIN_FAQ[0], WHY_WE_WIN_FAQ[2]],
   };
 }
 
@@ -114,7 +114,7 @@ function needSeo(n: Need): PageSeo {
       { name: n.h1, path: n.path },
     ],
     summary: n.summary,
-    faqs: [...n.faqs, WHY_WE_WIN_FAQ[1]],
+    faqs: [...n.faqs, WHY_WE_WIN_FAQ[1], WHY_WE_WIN_FAQ[2]],
   };
 }
 

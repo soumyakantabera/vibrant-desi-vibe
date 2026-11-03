@@ -1,11 +1,60 @@
 import type { PageSeo } from "@/lib/seo";
 import { CITIES, cityFaqs } from "@/lib/cities";
+import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
 
 const UPDATED = "2026-09-22";
 /** City pages (and the Hindi/Bengali guides) last changed — the shared fee table gained Intermediate. */
 const CITY_UPDATED = "2026-10-30";
 
 const NEW_GUIDES: Record<string, PageSeo> = {
+  [BEFORE_YOU_PAY_PATH]: {
+    path: BEFORE_YOU_PAY_PATH,
+    title: "Before You Pay for a Spoken English Course | 10 Checks",
+    description:
+      "Refunds, loans, EMIs, auto-renewal, hidden charges: 10 checks to run on any spoken English course in India before you pay — and how we answer each.",
+    shortTitle: "Before you pay for an English course",
+    keywords: [
+      "spoken english course refund policy",
+      "english course refund india",
+      "english speaking course emi",
+      "is online english course safe to pay",
+      "english course without loan",
+      "english app auto renewal cancel",
+      "spoken english course monthly payment",
+      "english course complaint india",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.7,
+    changefreq: "monthly",
+    dateModified: "2026-11-03",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Before you pay", path: BEFORE_YOU_PAY_PATH },
+    ],
+    summary: `A 10-point checklist for paying for any spoken English course in India: months paid upfront, loans and EMIs, auto-renewal, written refund terms, tax-inclusive price, real deadlines, batch size and teacher, complaint handling, review patterns, and whether the trial is a class. Common complaint patterns (upfront yearly fees, refunds not paid, auto-renewing app plans, rotating tutors). Indian rules: CCPA Dark Patterns Guidelines 2023, Ministry of Education coaching guidelines 2024, National Consumer Helpline 1915. ${FAIR_BILLING}`,
+    faqs: [
+      {
+        q: "Is it safe to pay for an online spoken English course in advance?",
+        a: "Pay for one month at a time, never a year, and get the refund rule in writing before you pay. Avoid any plan that needs a loan, an EMI or a saved card. Learn With Smile bills one month at a time with no auto-debit, and refunds a month in full if you cancel before its first class.",
+      },
+      {
+        q: "Can I get a refund on a spoken English course in India?",
+        a: "It depends on the provider's written policy, so ask for it before paying. Some refund only a trial; some refund nothing once you start. At Learn With Smile, cancel a month before its first live class for a full refund, which we start within 2 working days. After that class, that month is not refunded for a change of mind.",
+      },
+      {
+        q: "Should I take a loan or EMI to pay for an English course?",
+        a: "Usually not. A spoken English course is a monthly habit, not a one-off purchase; a loan locks you into a year whether or not the class works for you. Learn With Smile never offers or arranges a loan or EMI — fees start at ₹999 a month, inclusive of taxes.",
+      },
+      {
+        q: "How do I stop an English app subscription from renewing?",
+        a: "Cancel it in the store, not by deleting the app: Google Play → Payments & subscriptions → Subscriptions, or iPhone Settings → your name → Subscriptions. Learn With Smile has nothing to cancel: there is no auto-debit, and each month is a fresh payment link.",
+      },
+      {
+        q: "What is a dark pattern in online course selling?",
+        a: "A design or sales trick that pushes you to pay. India's 2023 dark-pattern guidelines name 13, including false urgency (fake countdowns or 'last 2 seats'), the subscription trap (hard-to-cancel plans, trials that auto-debit) and drip pricing (charges revealed in stages).",
+      },
+    ],
+  },
   // Written in Hindi and Bengali for learners who search in their own language.
   // `lang` sets hreflang, og:locale and inLanguage for these two only.
   "/spoken-english-in-hindi": {

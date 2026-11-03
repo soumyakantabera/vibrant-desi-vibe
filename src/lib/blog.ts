@@ -57,20 +57,20 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "how-to-choose-spoken-english-class-india",
-    title: "How to Choose a Spoken English Class in India: 7 Checks",
-    seoTitle: "Choose a Spoken English Class | 7 Checks",
+    title: "How to Choose a Spoken English Class in India: 10 Checks",
+    seoTitle: "Choose a Spoken English Class | 10 Checks",
     description:
-      "Seven checks before you pay for an English class in India: batch size, speaking minutes, GST, a named teacher, what the free session is, and reviews.",
+      "Ten checks before you pay for an English class in India: batch size, speaking minutes, GST, named teacher, months upfront, loans, auto-debit and refunds.",
     excerpt:
-      "Cap, minutes, GST, named teacher, what their free session is, review patterns, certificate. Run them on us too.",
+      "Cap, minutes, GST, named teacher, free session, reviews, certificate, months upfront, loans and auto-debit, refund in writing. Run them on us too.",
     tag: "Guides",
     img: "speaking",
     imgAlt: "Adult learner comparing online English class options on a laptop",
     author: "Sunanda Dey",
     datePublished: "2026-09-02",
-    dateModified: "2026-09-21",
+    dateModified: "2026-11-03",
     readingTime: 8,
-    wordCount: 872,
+    wordCount: 969,
     relatedCourses: ["/course-spoken-english"],
     keywords: [
       "how to choose spoken english class india",

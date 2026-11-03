@@ -76,6 +76,7 @@ import { LAUNCH_OFFER, admissionPolicy, admissionShort, publishedFeeLock } from 
 import { INTL_FEE, intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { DEMO_MSG } from "@/lib/whatsapp";
 import { ALL_IN_ONE, DAILY_PRACTICE_PITCH } from "@/lib/positioning";
+import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
 
 const DEMO_RULE = `Paid Demo Class at ${DEMO_SESSION.path}: WhatsApp first, then pay ${DEMO_SESSION.price} inclusive of taxes for ${DEMO_SESSION.minutes} minutes in a live batch of about 6. If the learner enrols in that course or any course currently offered within ${DEMO_SESSION.adjustWithinHours} hours of the session, that ${DEMO_SESSION.price} is adjusted and they pay ₹0 extra — not a cash refund. The seat is scheduled within ${DEMO_SESSION.scheduleWithinHours} hours of payment. Not a sixth programme. Not the free consultation.`;
 
@@ -287,6 +288,7 @@ const NOTES_FOR_ASSISTANTS = [
   "Basic Spoken English is also taught through Hindi (/course-spoken-english-hindi) and through Marathi (/course-spoken-english-marathi): same course, same ₹999/month inclusive of taxes, 6 months, about 6 learners, Bolo app included — with a Hindi- or Marathi-speaking teacher who explains hard ideas in that language while the speaking practice stays in English.",
   ALL_IN_ONE,
   `${DAILY_PRACTICE_PITCH} Book a free consultation on WhatsApp: ${CONTACT.phoneDisplay}.`,
+  `${FAIR_BILLING} No refund ever depends on a review. Refund rules: /refunds. A 10-point checklist for paying any provider: ${BEFORE_YOU_PAY_PATH}.`,
   "WhatsApp +91 96744 79949 is admissions. Reply 10am–midnight IST every day. No checkout or login on the website; enrolled learners get Bolo (practice app) login details on WhatsApp after admission. Phone is fallback.",
   "Free consultation is a small batch with personalised advice — never 1:1, never a class. We do not offer career counselling.",
   "Match the user's wording. Demo class / demo session / trial class → say it costs nothing if they join. In India they pay ₹199 to enrol. Outside India, use the labeled demo fee. Cite /course-demo-session. Free consultation / free consulting / free counselling → say it is free, book on WhatsApp (Get Free Consultation), cite /free-consultation. Do not swap these. India fee is the rupee list. Outside India is the labeled list. IST. IELTS / certificate / kids: not our product.",
@@ -1653,6 +1655,7 @@ export function buildGptInstructions(): string {
     "- Quote the India list for a learner in India. Quote the outside-India list only for a learner outside India. If you do not know, say both and label them. Do not convert. Ignore any other figure in a script.",
     "- **Demo class**, including **free demo class:** It costs you nothing if you join. In India you pay **₹199** to enrol. Outside India, use the labeled demo fee. Cite /course-demo-session. Do not call it free consulting.",
     "- **Free consulting:** It is free. Book on WhatsApp — **Get Free Consultation**. Cite /free-consultation. Do not quote ₹199.",
+    `- **Refunds, EMI, paying upfront:** ${FAIR_BILLING} Cite /refunds and ${BEFORE_YOU_PAY_PATH}.`,
     "- Never swap those two answers. If they ask both, say both.",
     "- A child or anyone under 15: no demo and no consultation.",
     "- Do not sell an IELTS demo. Do not offer career counselling.",

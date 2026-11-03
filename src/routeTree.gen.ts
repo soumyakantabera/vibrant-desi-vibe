@@ -73,6 +73,7 @@ import { Route as CourseBusinessEnglishRouteImport } from './routes/course-busin
 import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as BoloRouteImport } from './routes/bolo'
 import { Route as BestOnlineSpokenEnglishClassesIndiaRouteImport } from './routes/best-online-spoken-english-classes-india'
+import { Route as BeforeYouPaySpokenEnglishCourseRouteImport } from './routes/before-you-pay-spoken-english-course'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -441,6 +442,12 @@ const BestOnlineSpokenEnglishClassesIndiaRoute =
     path: '/best-online-spoken-english-classes-india',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BeforeYouPaySpokenEnglishCourseRoute =
+  BeforeYouPaySpokenEnglishCourseRouteImport.update({
+    id: '/before-you-pay-spoken-english-course',
+    path: '/before-you-pay-spoken-english-course',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutUsRoute = AboutUsRouteImport.update({
   id: '/about-us',
   path: '/about-us',
@@ -465,6 +472,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/before-you-pay-spoken-english-course': typeof BeforeYouPaySpokenEnglishCourseRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
@@ -535,6 +543,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/before-you-pay-spoken-english-course': typeof BeforeYouPaySpokenEnglishCourseRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
@@ -606,6 +615,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/before-you-pay-spoken-english-course': typeof BeforeYouPaySpokenEnglishCourseRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
@@ -678,6 +688,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-us'
+    | '/before-you-pay-spoken-english-course'
     | '/best-online-spoken-english-classes-india'
     | '/bolo'
     | '/child-protection'
@@ -748,6 +759,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-us'
+    | '/before-you-pay-spoken-english-course'
     | '/best-online-spoken-english-classes-india'
     | '/bolo'
     | '/child-protection'
@@ -818,6 +830,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-us'
+    | '/before-you-pay-spoken-english-course'
     | '/best-online-spoken-english-classes-india'
     | '/bolo'
     | '/child-protection'
@@ -889,6 +902,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
+  BeforeYouPaySpokenEnglishCourseRoute: typeof BeforeYouPaySpokenEnglishCourseRoute
   BestOnlineSpokenEnglishClassesIndiaRoute: typeof BestOnlineSpokenEnglishClassesIndiaRoute
   BoloRoute: typeof BoloRoute
   ChildProtectionRoute: typeof ChildProtectionRoute
@@ -1407,6 +1421,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BestOnlineSpokenEnglishClassesIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/before-you-pay-spoken-english-course': {
+      id: '/before-you-pay-spoken-english-course'
+      path: '/before-you-pay-spoken-english-course'
+      fullPath: '/before-you-pay-spoken-english-course'
+      preLoaderRoute: typeof BeforeYouPaySpokenEnglishCourseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about-us': {
       id: '/about-us'
       path: '/about-us'
@@ -1441,6 +1462,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
+  BeforeYouPaySpokenEnglishCourseRoute: BeforeYouPaySpokenEnglishCourseRoute,
   BestOnlineSpokenEnglishClassesIndiaRoute:
     BestOnlineSpokenEnglishClassesIndiaRoute,
   BoloRoute: BoloRoute,

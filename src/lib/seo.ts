@@ -26,6 +26,7 @@ import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { publishedFeeLock } from "@/lib/fees";
 import { BOLO_FAQ } from "@/lib/bolo";
 import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
+import { FAIR_BILLING } from "@/lib/fair-fees";
 import { LEVELS, levelForCourse } from "@/lib/bolo-levels";
 import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
@@ -1194,9 +1195,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-10-02",
+    dateModified: "2026-11-03",
     summary:
-      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class. After that class, that month is not refunded for a change of mind. Indian law and Kolkata courts, without removing a mandatory right where you live. The Grievance Officer is Soumyakanta Bera.",
+      "Terms of Use: enrolment is open in India and outside India. The fee confirmed on WhatsApp is the contract price. Published rupee prices are India pricing. Cancel a paid month for a full refund before its first live class; we start the refund within 2 working days. After that class, that month is not refunded for a change of mind. Billing is one month at a time with no auto-debit, no loans or EMIs and no multi-month prepayment. Indian law and Kolkata courts, without removing a mandatory right where you live. The Grievance Officer is Soumyakanta Bera.",
     faqs: [
       {
         q: "Is the free consultation a class I can sit for free?",
@@ -1221,7 +1222,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "Full refund of a paid month cancelled before its first live class; none after it for a change of mind. The ₹199 demo fee is adjusted on enrolment, not refunded.",
+      "Pay one month at a time, no auto-debit or loans. Cancel before a month's first class for a full refund, started in 2 working days. ₹199 demo fee adjusted.",
     shortTitle: "Refunds and Cancellation",
     keywords: [
       "learn with smile refund policy",
@@ -1231,9 +1232,9 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.3,
     changefreq: "yearly",
-    dateModified: "2026-10-02",
+    dateModified: "2026-11-03",
     summary:
-      "Refunds: cancel a paid month before its first live class for a full refund. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Class fee is not refunded in cash; it is adjusted against a course fee on admission within 48 hours. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
+      "Refunds: cancel a paid month before its first live class for a full refund, started within 2 working days. Billing is one month at a time: no auto-debit, no UPI mandate, no loans or EMIs, never several months upfront, and no refund ever depends on a review. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Class fee is not refunded in cash; it is adjusted against a course fee on admission within 48 hours. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
@@ -2085,7 +2086,12 @@ for (const [slug, seo] of Object.entries(COURSE_SEO)) {
       q: `What daily practice comes with ${seo.shortTitle}?`,
       a: `Bolo, the Learn With Smile practice app, at ${L.badge} level: ${path} with a daily streak; short video lessons such as ${videos}; and a weekly teacher review of the reading and speaking you send (this level focuses on ${L.review.tipLabel.toLowerCase()}). It is included in the course fee — ${ALL_IN_ONE.split(": ")[1] ?? ""}`,
     },
+    {
+      q: `How do I pay for ${seo.shortTitle} — monthly, or upfront? Is there a refund?`,
+      a: FAIR_BILLING,
+    },
   ];
+  seo.summary = `${seo.summary} ${FAIR_BILLING}`;
 }
 
 /* --------------------------------------------------------------------------

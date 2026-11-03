@@ -3,10 +3,10 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most “best institute” pages in India are written by the institute. This is a **7-check** you can run on anyone — us included — in one week, using public numbers: fees, batch cap, Google review *patterns*, and a consultation you can count.",
+    text: "Most “best institute” pages in India are written by the institute. This is a **10-check** you can run on anyone — us included — in one week, using public numbers: fees, batch cap, Google review *patterns*, and a consultation you can count.",
   },
 
-  { t: "h2", text: "The 7 checks" },
+  { t: "h2", text: "The 10 checks" },
   {
     t: "ol",
     items: [
@@ -17,6 +17,9 @@ export const body: ArticleBody = [
       "**What the free session actually is.** A class you speak in, a counsellor pitch, or counselling that names your bottleneck. If they only pitch, leave. Ours is a small-batch consultation with personalised advice — [what you get](/free-consultation).",
       "**Google reviews as patterns, not stars.** Read the 3-star comments. They name batch size, fees, and “I never spoke”. 5-star walls with no specifics are ads.",
       "**Certificate vs speaking.** Visa/university → British Council or similar. Job interview in India → they will judge you in 60 seconds, not your PDF. We do not issue a certificate; we say so.",
+      "**Months paid today.** One month, not a year. If the discount needs 6–12 months upfront, the discount is the trap. We bill one month at a time.",
+      "**Loans, EMIs and auto-debit.** No EMI form, no saved card, no UPI mandate. A subscription you did not switch on keeps charging after you stop. We have none of these.",
+      "**Refund rule in writing.** Ask for it on WhatsApp before you pay. Ours: a month cancelled before its first class is refunded in full, started within 2 working days. More in [Before you pay](/before-you-pay-spoken-english-course).",
     ],
   },
 

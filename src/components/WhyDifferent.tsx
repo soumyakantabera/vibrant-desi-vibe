@@ -184,7 +184,7 @@ export function WhyDifferent({
         {visuals && <Visuals level={level} />}
 
         {/* desktop table */}
-        <VizIn className="hidden overflow-hidden rounded-3xl border border-border md:block">
+        <VizIn className="hidden overflow-hidden rounded-3xl border border-border lg:block">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">
               How the main ways to learn spoken English in India compare
@@ -202,6 +202,9 @@ export function WhyDifferent({
                 </th>
                 <th scope="col" className="px-5 py-3">
                   Taught in your language
+                </th>
+                <th scope="col" className="px-5 py-3">
+                  Pay one month at a time
                 </th>
                 <th scope="col" className="px-5 py-3">
                   Typical price
@@ -231,6 +234,9 @@ export function WhyDifferent({
                   <td className="px-5 py-4 text-ink/85">
                     <Cell mark={r.language} note={r.languageNote} />
                   </td>
+                  <td className="px-5 py-4 text-ink/85">
+                    <Cell mark={r.billing} note={r.billingNote} />
+                  </td>
                   <td className="px-5 py-4 font-bold text-ink">
                     <FeeText text={r.price} />
                   </td>
@@ -241,7 +247,7 @@ export function WhyDifferent({
         </VizIn>
 
         {/* mobile cards */}
-        <ul className="flex flex-col gap-3 md:hidden">
+        <ul className="grid gap-3 md:grid-cols-2 lg:hidden">
           {DIFFERENT_ROWS.map((r) => (
             <li
               key={r.what}
@@ -258,13 +264,14 @@ export function WhyDifferent({
                 <Cell mark={r.daily} note={`Daily practice: ${r.dailyNote}`} />
                 <Cell mark={r.teacher} note={`Teacher: ${r.teacherNote}`} />
                 <Cell mark={r.language} note={`Your language: ${r.languageNote}`} />
+                <Cell mark={r.billing} note={`How you pay: ${r.billingNote}`} />
               </div>
             </li>
           ))}
         </ul>
         <p className="mt-3 text-xs text-ink/60">
-          Typical price ranges from public listings in India, November 2026. Check each provider's
-          current fee.
+          Typical price ranges from public listings in India, November 2026; billing patterns from
+          public reviews and complaints. Check each provider's current fee and refund terms.
         </p>
 
         {!compact && (

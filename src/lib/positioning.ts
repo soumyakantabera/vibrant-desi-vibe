@@ -8,6 +8,8 @@
  * rival's exact current price.
  */
 
+import { FAIR_BILLING } from "@/lib/fair-fees";
+
 export const ALL_IN_ONE =
   "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher — all in one monthly fee from ₹999, taught in English, Hindi or Marathi.";
 
@@ -28,6 +30,9 @@ export type CompareRow = {
   teacherNote: string;
   language: Mark;
   languageNote: string;
+  /** Pay one month at a time — no prepaid year, auto-renewal or loan. */
+  billing: Mark;
+  billingNote: string;
   price: string;
   ours?: boolean;
 };
@@ -42,6 +47,8 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     teacherNote: "No live teacher",
     language: "yes",
     languageNote: "Yes, recorded",
+    billing: "part",
+    billingNote: "Subscriptions that often auto-renew",
     price: "Free–₹1,000/month",
   },
   {
@@ -53,6 +60,8 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     teacherNote: "Yes",
     language: "part",
     languageNote: "Rarely",
+    billing: "part",
+    billingNote: "Prepaid session packs or auto-renewing plans",
     price: "₹2,700–₹8,500+/month",
   },
   {
@@ -64,6 +73,8 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     teacherNote: "Yes, in rooms of 25–40",
     language: "part",
     languageNote: "Rarely",
+    billing: "part",
+    billingNote: "Often several months paid upfront",
     price: "₹2,000–₹10,000/month",
   },
   {
@@ -75,6 +86,8 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     teacherNote: "Yes — about 6 learners, same teacher",
     language: "yes",
     languageNote: "Hindi, Marathi or English",
+    billing: "yes",
+    billingNote: "Yes — no auto-debit, no loans, refund in writing",
     price: "From ₹999/month",
     ours: true,
   },
@@ -97,5 +110,9 @@ export const WHY_WE_WIN_FAQ: { q: string; a: string }[] = [
   {
     q: "Is there a spoken English course with daily practice at an affordable price?",
     a: `Yes. ${DAILY_PRACTICE_PITCH} Every course includes the Bolo app for daily practice — grammar, vocabulary, reading aloud and recorded speaking — plus live classes in a batch of about 6 and a weekly teacher review. Basic Spoken English is ₹999/month, inclusive of taxes. Message us on WhatsApp to start.`,
+  },
+  {
+    q: "Do I pay monthly, or several months upfront? Is there a loan or EMI?",
+    a: `${FAIR_BILLING} The 10 checks to run on any provider, us included, are on our Before You Pay page.`,
   },
 ];

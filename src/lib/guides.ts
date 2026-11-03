@@ -47,6 +47,14 @@ export const GUIDE_GROUPS: { id: GuideGroup; title: string; blurb: string }[] = 
 
 export const GUIDE_CARDS: GuideCard[] = [
   {
+    to: "/before-you-pay-spoken-english-course",
+    title: "Before you pay: 10 checks",
+    sub: "Refunds, loans, EMIs, auto-renewal — ask any provider, us included",
+    icon: "savings",
+    color: "sunshine",
+    group: "money",
+  },
+  {
     to: "/english-for-bpo-jobs-india",
     title: "English for BPO jobs",
     sub: "Voice round, Versant/SVAR — what is tested",
@@ -423,6 +431,7 @@ export const FOOTER_GUIDES = [
   { to: "/free-consultation", label: "What the free consultation is" },
   { to: "/spoken-business-or-interactive-english", label: "Which class you need" },
   { to: "/english-class-fees-india", label: "English class fees in India" },
+  { to: "/before-you-pay-spoken-english-course", label: "Before you pay: 10 checks" },
   { to: "/how-long-to-learn-spoken-english", label: "How long spoken English takes" },
   { to: "/spoken-english-for-beginners-india", label: "Beginners" },
   { to: "/intermediate-spoken-english-course-india", label: "Intermediate" },

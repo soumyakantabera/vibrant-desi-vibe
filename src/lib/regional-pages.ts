@@ -96,6 +96,7 @@ export function stateBody(st: StateInfo): ArticleBody {
         `Practising free on apps and YouTube? [Free practice vs a paid live class](/free-english-speaking-practice-vs-paid-class) says when free is enough.`,
         `Just out of college in ${st.name}? [Spoken English for freshers](/spoken-english-for-freshers-india) covers interviews and the first job.`,
         `Learning at home around family work? [Spoken English for homemakers](/spoken-english-for-homemakers-india).`,
+        `About to pay anyone? Run the [10 checks before you pay](/before-you-pay-spoken-english-course): months upfront, loans, auto-debit, refund in writing.`,
         ...(st.languages.includes("Bengali")
           ? [
               `Think in Bengali? [Spoken English in Bengali](/spoken-english-in-bengali) — a guide written in Bengali.`,

@@ -140,6 +140,11 @@ NATIONAL = [
     ("free spoken english consultation whatsapp", "/free-consultation", "consultation", None),
     ("english class demo 199", "/course-demo-session", "199", None),
     ("spoken english classes kolkata", "/spoken-english-classes-kolkata", "kolkata", "₹999"),
+    ("spoken english course refund policy india", "/before-you-pay-spoken-english-course", "refund", None),
+    ("english speaking course emi loan", "/before-you-pay-spoken-english-course", "emi", None),
+    ("english course monthly payment no auto debit", "/before-you-pay-spoken-english-course", "auto-debit", None),
+    ("english app subscription auto renew cancel", "/before-you-pay-spoken-english-course", "auto-renew", None),
+    ("learn with smile refund", "/refunds", "2 working days", None),
 ]
 for t, path, ent, fee in NATIONAL:
     q(t, path, ent, "national", fee)

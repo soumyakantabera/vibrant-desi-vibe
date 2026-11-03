@@ -387,7 +387,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     },
     {
       t: "p",
-      text: `Market bands for ${city.name} offline rooms are in the [India fees guide](/english-class-fees-india). Confirm any other provider on their site before you pay.`,
+      text: `Market bands for ${city.name} offline rooms are in the [India fees guide](/english-class-fees-india). Confirm any other provider on their site before you pay, and run the [10 checks before you pay](/before-you-pay-spoken-english-course) on anyone, us included. We bill one month at a time: no auto-debit, no loans or EMIs.`,
     },
     { t: "h2", text: "What we do not claim" },
     {
