@@ -10,6 +10,7 @@ import { MithuMacaw } from "@/components/mascots/MithuMacaw";
 import { BoloAppIcon } from "@/components/mascots/BoloAppIcon";
 import { SpeechBubble } from "@/components/mascots/SpeechBubble";
 import { useInView } from "@/components/mascots/useInView";
+import { LEVELS, type BoloLevel } from "@/lib/bolo-levels";
 import { COURSE_FEE, type FeeSlug } from "@/lib/fees";
 import {
   BOLO,
@@ -301,6 +302,76 @@ export function BoloTryIt() {
               </li>
             ))}
           </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const LEVEL_TABS: { level: BoloLevel; label: string; course: string }[] = [
+  { level: "basic", label: "Basic", course: "Basic Spoken English (also Hindi / Marathi medium)" },
+  { level: "intermediate", label: "Intermediate", course: "Intermediate Spoken English" },
+  { level: "interactive", label: "Interactive", course: "Interactive Speaking" },
+  { level: "business", label: "Business", course: "Business English" },
+  { level: "interview", label: "Interview", course: "Interview Preparation" },
+];
+
+/** One phone, five levels: what Bolo looks like in each course. */
+export function BoloLevels() {
+  const [level, setLevel] = useState<BoloLevel>("intermediate");
+  const L = LEVELS[level];
+  const tab = LEVEL_TABS.find((t) => t.level === level)!;
+  return (
+    <section className="section bg-paper" id="levels">
+      <div className="container-x grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
+        <div>
+          <Head
+            tone="teal"
+            eyebrow="Bolo at your level"
+            title="Same app — practice set for your course"
+            sub="Basic learners build sentences; Intermediate works on conditionals and 90-second talks; Interactive keeps conversations going; Business and Interview practise the real lines you need."
+          />
+          <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label="Choose a level">
+            {LEVEL_TABS.map((t) => (
+              <button
+                key={t.level}
+                type="button"
+                aria-pressed={level === t.level}
+                onClick={() => setLevel(t.level)}
+                className={`min-h-11 rounded-full border-2 px-4 text-sm font-bold transition ${level === t.level ? "border-bolo-teal bg-bolo-teal text-white" : "border-border bg-white text-ink hover:border-bolo-teal/50"}`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <div className="rounded-3xl border border-border bg-white p-5" aria-live="polite">
+            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-bolo-teal">
+              {tab.course}
+            </p>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              <li className="text-sm text-ink/85">
+                <strong className="block text-ink">Today's path</strong>
+                {L.nodes.map((n) => n.label).join(" → ")}
+              </li>
+              <li className="text-sm text-ink/85">
+                <strong className="block text-ink">Practice question</strong>
+                {L.quiz.kind}: {L.quiz.before} {L.quiz.layout === "blank" ? "____" : ""}{" "}
+                {L.quiz.after}
+              </li>
+              <li className="text-sm text-ink/85">
+                <strong className="block text-ink">Videos</strong>
+                {L.videos.map((v) => v.title).join(" · ")}
+              </li>
+              <li className="text-sm text-ink/85">
+                <strong className="block text-ink">Teacher review ({L.review.tipLabel})</strong>
+                {L.review.tip}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <BoloPhone key={level} level={level} label={`Bolo app preview — ${tab.label} level`} />
+          <Illustration>{`Illustration with sample content for the ${tab.label} level.`}</Illustration>
         </div>
       </div>
     </section>

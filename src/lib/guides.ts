@@ -1,6 +1,6 @@
 import type { IconName } from "@/components/Icon";
 
-export type GuideGroup = "choose" | "money" | "work" | "audience" | "city";
+export type GuideGroup = "choose" | "money" | "work" | "jobs" | "audience" | "state" | "city";
 
 export type GuideCard = {
   to: string;
@@ -29,6 +29,16 @@ export const GUIDE_GROUPS: { id: GuideGroup; title: string; blurb: string }[] = 
     blurb: "Beginners, freshers, homemakers, Hindi- or Bengali-medium, IT.",
   },
   {
+    id: "jobs",
+    title: "Jobs & interviews",
+    blurb: "BPO, IT, analyst, bank PO, government interviews, placements — what gets tested.",
+  },
+  {
+    id: "state",
+    title: "States",
+    blurb: "Local jobs, local prices, your language — live online from anywhere.",
+  },
+  {
     id: "city",
     title: "Cities",
     blurb: "Same live online batch. Local commute math. IST timings.",
@@ -36,6 +46,134 @@ export const GUIDE_GROUPS: { id: GuideGroup; title: string; blurb: string }[] = 
 ];
 
 export const GUIDE_CARDS: GuideCard[] = [
+  {
+    to: "/english-for-bpo-jobs-india",
+    title: "English for BPO jobs",
+    sub: "Voice round, Versant/SVAR — what is tested",
+    icon: "headset",
+    color: "indigo",
+    group: "jobs",
+  },
+  {
+    to: "/english-for-software-engineers-india",
+    title: "English for software engineers",
+    sub: "Explain your project, standups, GCC rounds",
+    icon: "computer",
+    color: "indigo",
+    group: "jobs",
+  },
+  {
+    to: "/english-for-data-analysts-india",
+    title: "English for data analysts",
+    sub: "One insight, four beats",
+    icon: "chart",
+    color: "indigo",
+    group: "jobs",
+  },
+  {
+    to: "/english-for-bank-po-interview",
+    title: "Bank PO interview English",
+    sub: "If you choose English: three answers to practise",
+    icon: "savings",
+    color: "indigo",
+    group: "jobs",
+  },
+  {
+    to: "/english-for-government-job-interview",
+    title: "Government job interviews",
+    sub: "UPSC lets you choose the language — then speak calmly",
+    icon: "shield",
+    color: "indigo",
+    group: "jobs",
+  },
+  {
+    to: "/english-for-campus-placements-india",
+    title: "Campus placements & admissions",
+    sub: "GD, HR round, admission interview",
+    icon: "school",
+    color: "indigo",
+    group: "jobs",
+  },
+  {
+    to: "/spoken-english-classes-maharashtra",
+    title: "Spoken English in Maharashtra",
+    sub: "Marathi-speaking teacher · Pune, Mumbai, Nagpur",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-uttar-pradesh",
+    title: "Spoken English in Uttar Pradesh",
+    sub: "Hindi-speaking teacher · Lucknow, Noida, Kanpur",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-bihar",
+    title: "Spoken English in Bihar",
+    sub: "Hindi-speaking teacher · Patna, Gaya",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-delhi-ncr",
+    title: "Spoken English in Delhi NCR",
+    sub: "Night slots · Delhi, Noida, Gurugram",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-madhya-pradesh",
+    title: "Spoken English in Madhya Pradesh",
+    sub: "Speaking, not just grammar · Indore, Bhopal",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-rajasthan",
+    title: "Spoken English in Rajasthan",
+    sub: "Hindi-speaking teacher · Jaipur, Kota",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-karnataka",
+    title: "Spoken English in Karnataka",
+    sub: "GCC interviews · Bengaluru, Mysuru",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-telangana",
+    title: "Spoken English in Telangana",
+    sub: "IT & GCC · Hyderabad",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-jharkhand",
+    title: "Spoken English in Jharkhand",
+    sub: "Hindi-speaking teacher · Ranchi, Jamshedpur",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-gujarat",
+    title: "Spoken English in Gujarat",
+    sub: "Live online · Ahmedabad, Surat",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
   {
     to: "/free-consultation",
     title: "What the free consultation is",
@@ -290,4 +428,9 @@ export const FOOTER_GUIDES = [
   { to: "/intermediate-spoken-english-course-india", label: "Intermediate" },
   { to: "/spoken-english-for-freshers-india", label: "Freshers" },
   { to: "/english-institute-comparison-india", label: "Compare institutes, 2026" },
+  { to: "/english-for-bpo-jobs-india", label: "English for BPO jobs" },
+  { to: "/english-for-software-engineers-india", label: "English for IT jobs" },
+  { to: "/english-for-bank-po-interview", label: "Bank PO interview English" },
+  { to: "/spoken-english-classes-maharashtra", label: "Maharashtra (Marathi medium)" },
+  { to: "/spoken-english-classes-uttar-pradesh", label: "Uttar Pradesh (Hindi medium)" },
 ];

@@ -7,6 +7,8 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { CourseIncluded } from "@/components/package/PackageSections";
+import { WhyDifferent } from "@/components/WhyDifferent";
+import { levelForCourse } from "@/lib/bolo-levels";
 import { COURSE_FEE, type FeeSlug } from "@/lib/fees";
 
 const isPackageSlug = (slug: string): slug is FeeSlug => slug in COURSE_FEE;
@@ -41,8 +43,24 @@ import {
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
 
+/** A short block in the learner's own language (Hindi / Marathi courses). */
+export type NativeSection = {
+  lang: "hi" | "mr";
+  label: string;
+  heading: string;
+  intro: string;
+  points: string[];
+  faqs: { q: string; a: string }[];
+  cta: string;
+  waMessage: string;
+};
+
 export type CourseData = {
   slug: string;
+  /** Fee and package this course shares, when it is a variant of another course. */
+  feeSlug?: FeeSlug;
+  /** Native-language block; the page stays English-primary. */
+  native?: NativeSection;
   title: string;
   tagline: string;
   category: string;
@@ -73,6 +91,40 @@ export type CourseData = {
 };
 
 const RELATED_GUIDES: Record<string, { href: string; title: string; description: string }[]> = {
+  "spoken-english-hindi": [
+    {
+      href: "/spoken-english-in-hindi",
+      title: "हिंदी में स्पोकन इंग्लिश गाइड",
+      description: "Hindi-language guide: fees, batch, how classes work.",
+    },
+    {
+      href: "/english-hindi-bengali-medium",
+      title: "Hindi- or Bengali-medium? You still belong here",
+      description: "Explain in your language when a concept stalls, then back to English.",
+    },
+    {
+      href: "/bolo",
+      title: "Bolo — daily practice app",
+      description: "Practice, Watch, Review: the daily part of every course.",
+    },
+  ],
+  "spoken-english-marathi": [
+    {
+      href: "/english-hindi-bengali-medium",
+      title: "From a regional-medium school? You still belong here",
+      description: "Explain in your language when a concept stalls, then back to English.",
+    },
+    {
+      href: "/spoken-english-classes-maharashtra",
+      title: "Spoken English in Maharashtra",
+      description: "Pune, Mumbai, Nagpur, Nashik — live online, Marathi-speaking teacher.",
+    },
+    {
+      href: "/bolo",
+      title: "Bolo — daily practice app",
+      description: "Practice, Watch, Review: the daily part of every course.",
+    },
+  ],
   "spoken-english": [
     {
       href: "/spoken-english-for-beginners-india",
@@ -213,10 +265,64 @@ const TEACHER_NOTE: Record<string, string> = {
     "The same teacher on every mock. They hear the freeze on the 60-second intro — and they mark it until it stops.",
 };
 
+/** The learner's-language block: short, real text, marked with its own lang. */
+function NativeBlock({ native }: { native: NativeSection }) {
+  return (
+    <section
+      className="section bg-bolo-mint/50"
+      lang={native.lang}
+      aria-labelledby="native-heading"
+      id={native.lang === "hi" ? "hindi" : "marathi"}
+    >
+      <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+        <div>
+          <span className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-extrabold text-bolo-teal">
+            {native.label}
+          </span>
+          <h2
+            id="native-heading"
+            className="mt-3 text-3xl font-bold leading-tight text-ink md:text-4xl"
+          >
+            {native.heading}
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-ink/85">{native.intro}</p>
+          <ul className="mt-5 flex flex-col gap-2.5">
+            {native.points.map((p) => (
+              <li key={p} className="flex items-start gap-2.5 text-ink/85">
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bolo-teal" />
+                {p}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6">
+            <WaButton
+              message={native.waMessage}
+              variant="wa"
+              size="lg"
+              goal={`native_${native.lang}`}
+            >
+              {native.cta}
+            </WaButton>
+          </div>
+        </div>
+        <dl className="flex flex-col gap-3">
+          {native.faqs.map((f) => (
+            <div key={f.q} className="rounded-2xl border border-[#BFE6E0] bg-white p-5">
+              <dt className="font-bold text-ink">{f.q}</dt>
+              <dd className="mt-1.5 text-ink/80">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+}
+
 export function CoursePage({ data }: { data: CourseData }) {
   const shownTagline = <FeeText text={data.tagline} />;
   const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
-  const teacherNote = TEACHER_NOTE[data.slug];
+  const feeKey = data.feeSlug ?? data.slug;
+  const teacherNote = TEACHER_NOTE[data.slug] ?? TEACHER_NOTE[feeKey];
   const waPrimary = data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
   const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
   const faqs = courseFaqs(data);
@@ -224,11 +330,11 @@ export function CoursePage({ data }: { data: CourseData }) {
     <SnapshotCard
       badge={`Live · ${data.format}`}
       eyebrow="Course fee starts at"
-      headline={isIntlSlug(data.slug) ? feeHeadline(data.price, data.slug) : { big: data.price }}
+      headline={isIntlSlug(feeKey) ? feeHeadline(data.price, feeKey) : { big: data.price }}
       subnote={
         <>
           {data.duration} ·{" "}
-          {isIntlSlug(data.slug) ? (
+          {isIntlSlug(feeKey) ? (
             <FeePair inr="inclusive of taxes" usd={intlUnit()} />
           ) : (
             "inclusive of taxes"
@@ -342,6 +448,37 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
+      {data.native && <NativeBlock native={data.native} />}
+
+      {data.slug === "spoken-english" && (
+        <section
+          className="border-b border-border bg-bolo-mint/40 py-5"
+          aria-label="Also taught in Hindi or Marathi"
+        >
+          <div className="container-x flex flex-wrap items-center gap-3 text-sm md:text-base">
+            <span className="font-bold text-ink">Prefer help in your own language?</span>
+            <Link
+              to="/course-spoken-english-hindi"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
+            >
+              Hindi to English <Icon name="arrow-right" size={16} />
+            </Link>
+            <Link
+              to="/course-spoken-english-marathi"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
+            >
+              Marathi to English <Icon name="arrow-right" size={16} />
+            </Link>
+            <span className="text-ink/70">
+              Same course and fee — a teacher who speaks your language.
+            </span>
+          </div>
+        </section>
+      )}
+
+      {/* WHY WE'RE DIFFERENT — all-in-one at a low cost */}
+      {data.slug !== "demo-session" && <WhyDifferent compact level={levelForCourse(feeKey)} />}
+
       {/* OUTCOMES */}
       <section className="section">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
@@ -390,7 +527,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {/* COMPLETE PACKAGE — live classes + Bolo + same teacher */}
-      {isPackageSlug(data.slug) && <CourseIncluded slug={data.slug} />}
+      {isPackageSlug(feeKey) && <CourseIncluded slug={feeKey} />}
 
       {/* CURRICULUM */}
       <section className="section bg-brand-soft/40">
@@ -438,7 +575,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
-      {data.slug !== "demo-session" && <CourseLadder highlight={data.slug} />}
+      {data.slug !== "demo-session" && <CourseLadder highlight={feeKey} />}
 
       {data.projects && data.projects.length > 0 && (
         <section className="section">
@@ -650,8 +787,11 @@ export function courseSeo(d: CourseData) {
       description: extra?.description ?? d.metaDescription,
       url,
       image: [abs(ogImage)],
-      inLanguage: "en-IN",
-      educationalLevel: d.slug === "spoken-english" ? "Beginner" : "Intermediate",
+      // The teaching language: Hindi/Marathi-medium courses are taught in that
+      // language with English practice; the page itself stays en-IN.
+      inLanguage: d.native ? `${d.native.lang}-IN` : "en-IN",
+      ...(d.native ? { availableLanguage: [`${d.native.lang}-IN`, "en-IN"] } : {}),
+      educationalLevel: (d.feeSlug ?? d.slug) === "spoken-english" ? "Beginner" : "Intermediate",
       ...(d.prerequisites ? { coursePrerequisites: d.prerequisites } : {}),
       typicalAgeRange: "15+",
       teaches: d.outcomes,

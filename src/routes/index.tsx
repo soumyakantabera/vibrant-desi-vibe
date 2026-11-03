@@ -18,6 +18,7 @@ import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { CourseLadder } from "@/components/CourseVisuals";
 import { BoloSection } from "@/components/bolo/BoloSections";
+import { WhyDifferent } from "@/components/WhyDifferent";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import {
@@ -339,6 +340,9 @@ function Home() {
       <CourseLadder />
       {/* THE BOLO APP — practice, video lessons, weekly review */}
       <BoloSection />
+
+      {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
+      <WhyDifferent />
 
       <GuidesStrip />
 

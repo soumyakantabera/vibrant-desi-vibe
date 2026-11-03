@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
+import { WhyDifferent } from "@/components/WhyDifferent";
 import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
@@ -127,6 +128,10 @@ export function GuidePage({
           </div>
         </div>
       </article>
+
+      <div lang="en-IN">
+        <WhyDifferent compact visuals={false} />
+      </div>
 
       {packageBand && <PackageBand />}
 

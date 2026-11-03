@@ -1,4 +1,5 @@
-import { useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { LEVELS, type BoloLevel, type LevelContent } from "@/lib/bolo-levels";
 import { Icon } from "@/components/Icon";
 import { BoloParrot } from "@/components/mascots/BoloParrot";
 import { MithuMacaw } from "@/components/mascots/MithuMacaw";
@@ -15,13 +16,7 @@ import { BOLO_LINES, type BoloTabKey } from "@/lib/bolo";
  * video titles are examples, and the caption under every use says so.
  */
 
-const QUIZ = {
-  before: "She",
-  after: "to the office every day.",
-  opts: ["go", "goes", "going"],
-  answer: "goes",
-  why: "With she, he or it, the present simple adds -s: “She goes”.",
-};
+const LevelCtx = createContext<LevelContent>(LEVELS.basic);
 
 const DAYS = ["M", "T", "W", "T", "F", "S", "S"];
 
@@ -32,9 +27,15 @@ export function BoloPhone({
   tab: controlled,
   onTab,
   interactive = true,
+  autoplay = false,
+  level = "basic",
   className = "",
   label = "Bolo app preview",
 }: {
+  /** Play a scripted demo on a loop (the "app reel"): tap, answer, streak, tabs. */
+  autoplay?: boolean;
+  /** Course level the screens show (Basic, Intermediate, Interactive…). */
+  level?: BoloLevel;
   initial?: BoloTabKey;
   /** Controlled tab, for sections that switch the phone from outside. */
   tab?: BoloTabKey;
@@ -53,6 +54,29 @@ export function BoloPhone({
   const [streak, setStreak] = useState(12);
   const [grammarDone, setGrammarDone] = useState(false);
   const [ref, motion] = useInView<HTMLDivElement>();
+  const [paused, setPaused] = useState(false);
+  const [step, setStep] = useState(0);
+  const [quizPick, setQuizPick] = useState<string | null>(null);
+  const [quizChecked, setQuizChecked] = useState(false);
+  const reel = autoplay && motion && !paused;
+
+  // The reel: one state per step, then a pause before the next.
+  useEffect(() => {
+    if (!reel) return;
+    const s = REEL[step];
+    s.apply({
+      answer: LEVELS[level].quiz.answer,
+      setTab: setInner,
+      setView,
+      setStreak,
+      setGrammarDone,
+      setQuizPick,
+      setQuizChecked,
+    });
+    const t = window.setTimeout(() => setStep((n) => (n + 1) % REEL.length), s.ms);
+    return () => window.clearTimeout(t);
+  }, [reel, step, level]);
+  const finger = autoplay && motion ? REEL[step].finger : null;
 
   const finishQuiz = (correct: boolean) => {
     if (correct && !grammarDone) {
@@ -69,6 +93,8 @@ export function BoloPhone({
       className={`relative mx-auto w-[300px] shrink-0 rounded-[2.75rem] bg-[#14213D] p-[10px] shadow-[0_40px_80px_-40px_rgba(10,124,115,.55),0_18px_40px_-24px_rgba(20,33,61,.6)] ${className}`}
       role="group"
       aria-label={label}
+      onMouseEnter={autoplay ? () => setPaused(true) : undefined}
+      onMouseLeave={autoplay ? () => setPaused(false) : undefined}
     >
       <div className="relative flex h-[610px] flex-col overflow-hidden rounded-[2.1rem] bg-white text-ink">
         {/* status bar + notch */}
@@ -95,6 +121,9 @@ export function BoloPhone({
           <span className="flex items-center gap-2">
             <BoloAppIcon size={28} />
             <span className="text-lg font-extrabold tracking-tight text-bolo-teal">Bolo</span>
+            <span className="rounded-md bg-bolo-mint px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase tracking-wider text-bolo-teal">
+              {LEVELS[level].badge}
+            </span>
           </span>
           <span
             className="flex items-center gap-1.5 rounded-full bg-[#FFF4E0] px-2.5 py-1 text-sm font-extrabold text-[#9A4F00]"
@@ -108,20 +137,40 @@ export function BoloPhone({
         </div>
 
         {/* screens */}
-        <div className="relative min-h-0 flex-1 overflow-hidden">
-          {tab === "practice" && view === "home" && (
-            <PracticeHome
-              streak={streak}
-              grammarDone={grammarDone}
-              onStart={() => interactive && setView("quiz")}
+        <LevelCtx.Provider value={LEVELS[level]}>
+          <div className="relative min-h-0 flex-1 overflow-hidden">
+            {tab === "practice" && view === "home" && (
+              <PracticeHome
+                streak={streak}
+                grammarDone={grammarDone}
+                onStart={() => interactive && setView("quiz")}
+              />
+            )}
+            {tab === "practice" && view === "quiz" && (
+              <QuizScreen
+                onClose={() => setView("home")}
+                onDone={finishQuiz}
+                {...(autoplay ? { ctlPick: quizPick, ctlChecked: quizChecked } : {})}
+              />
+            )}
+            {tab === "watch" && <WatchScreen />}
+            {tab === "review" && <ReviewScreen />}
+          </div>
+        </LevelCtx.Provider>
+
+        {/* reel finger: where the demo "taps" next */}
+        {finger && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute z-20 h-9 w-9 -translate-x-1/2 -translate-y-1/2 transition-[left,top] duration-500 ease-out"
+            style={{ left: `${finger.x}%`, top: `${finger.y}%` }}
+          >
+            <span
+              key={step}
+              className="reel-tap relative block h-9 w-9 rounded-full border-[3px] border-white bg-ink/25 shadow-[0_6px_16px_-6px_rgba(0,0,0,.6)]"
             />
-          )}
-          {tab === "practice" && view === "quiz" && (
-            <QuizScreen onClose={() => setView("home")} onDone={finishQuiz} />
-          )}
-          {tab === "watch" && <WatchScreen />}
-          {tab === "review" && <ReviewScreen />}
-        </div>
+          </span>
+        )}
 
         {/* tab bar */}
         <nav
@@ -166,6 +215,53 @@ export function BoloPhone({
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ reel */
+
+type ReelSetters = {
+  answer: string;
+  setTab: (t: BoloTabKey) => void;
+  setView: (v: Practice) => void;
+  setStreak: (n: number) => void;
+  setGrammarDone: (b: boolean) => void;
+  setQuizPick: (p: string | null) => void;
+  setQuizChecked: (b: boolean) => void;
+};
+
+/**
+ * The scripted demo. Each step sets the screen, then shows where the finger
+ * goes next. Positions are percentages of the phone screen.
+ */
+const REEL: { ms: number; finger: { x: number; y: number }; apply: (s: ReelSetters) => void }[] = [
+  {
+    ms: 2200,
+    finger: { x: 50, y: 85 },
+    apply: (s) => {
+      s.setTab("practice");
+      s.setView("home");
+      s.setStreak(12);
+      s.setGrammarDone(false);
+      s.setQuizPick(null);
+      s.setQuizChecked(false);
+    },
+  },
+  { ms: 1600, finger: { x: 50, y: 60 }, apply: (s) => s.setView("quiz") },
+  { ms: 1300, finger: { x: 50, y: 86 }, apply: (s) => s.setQuizPick(s.answer) },
+  { ms: 2000, finger: { x: 50, y: 90 }, apply: (s) => s.setQuizChecked(true) },
+  {
+    ms: 2400,
+    finger: { x: 50, y: 95 },
+    apply: (s) => {
+      s.setView("home");
+      s.setGrammarDone(true);
+      s.setStreak(13);
+      s.setQuizPick(null);
+      s.setQuizChecked(false);
+    },
+  },
+  { ms: 2800, finger: { x: 83, y: 95 }, apply: (s) => s.setTab("watch") },
+  { ms: 3200, finger: { x: 17, y: 95 }, apply: (s) => s.setTab("review") },
+];
 
 /* --------------------------------------------------------------- pieces */
 
@@ -217,22 +313,29 @@ function PracticeHome({
   grammarDone: boolean;
   onStart: () => void;
 }) {
-  const nodes: { label: string; icon: string; state: "done" | "now" | "next"; x: string }[] = [
-    { label: "Vocabulary", icon: "vocab", state: "done", x: "translate-x-[-34px]" },
-    {
-      label: "Grammar",
-      icon: "grammar",
-      state: grammarDone ? "done" : "now",
-      x: "translate-x-[20px]",
-    },
-    {
-      label: "Reading",
-      icon: "read",
-      state: grammarDone ? "now" : "next",
-      x: "translate-x-[42px]",
-    },
-    { label: "Speaking", icon: "mic", state: "next", x: "translate-x-[-6px]" },
+  const L = useContext(LevelCtx);
+  const xs = [
+    "translate-x-[-34px]",
+    "translate-x-[20px]",
+    "translate-x-[42px]",
+    "translate-x-[-6px]",
   ];
+  const nodes: { label: string; icon: string; state: "done" | "now" | "next"; x: string }[] =
+    L.nodes.map((n, i) => ({
+      ...n,
+      x: xs[i],
+      state:
+        i === 0
+          ? "done"
+          : i === 1
+            ? grammarDone
+              ? "done"
+              : "now"
+            : i === 2 && grammarDone
+              ? "now"
+              : "next",
+    }));
+
   const doneToday = grammarDone ? 6 : 5;
   return (
     <Screen>
@@ -245,7 +348,7 @@ function PracticeHome({
           animated
         />
         <div className="pt-1">
-          <Bubble>{grammarDone ? BOLO_LINES.streak : "Aaj ka practice ready hai!"}</Bubble>
+          <Bubble>{grammarDone ? BOLO_LINES.streak : L.greet}</Bubble>
         </div>
       </div>
 
@@ -327,7 +430,7 @@ function PracticeHome({
         onClick={onStart}
         className="bolo-press mt-auto w-full rounded-2xl bg-bolo-teal py-2.5 text-[15px] font-extrabold uppercase tracking-wide text-white"
       >
-        {grammarDone ? "Try grammar again" : "Start grammar"}
+        {grammarDone ? "Practise again" : L.start}
       </button>
     </Screen>
   );
@@ -336,12 +439,21 @@ function PracticeHome({
 function QuizScreen({
   onClose,
   onDone,
+  ctlPick,
+  ctlChecked,
 }: {
   onClose: () => void;
   onDone: (correct: boolean) => void;
+  /** Driven by the reel instead of taps. */
+  ctlPick?: string | null;
+  ctlChecked?: boolean;
 }) {
-  const [pick, setPick] = useState<string | null>(null);
-  const [checked, setChecked] = useState(false);
+  const [ownPick, setPick] = useState<string | null>(null);
+  const [ownChecked, setChecked] = useState(false);
+  const pick = ctlPick !== undefined ? ctlPick : ownPick;
+  const checked = ctlChecked !== undefined ? ctlChecked : ownChecked;
+  const L = useContext(LevelCtx);
+  const QUIZ = L.quiz;
   const correct = pick === QUIZ.answer;
   return (
     <Screen className="gap-4">
@@ -371,23 +483,31 @@ function QuizScreen({
           decorative
           animated
         />
-        <Bubble>Which word fits?</Bubble>
+        <Bubble>{QUIZ.ask}</Bubble>
       </div>
 
       <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-ink/55">
-        Fill in the blank
+        {QUIZ.kind}
       </p>
-      <p className="text-[19px] font-extrabold leading-snug text-ink">
-        {QUIZ.before}{" "}
-        <span
-          className={`inline-block min-w-16 rounded-lg border-b-[3px] px-2 text-center ${pick ? "border-bolo-teal bg-bolo-mint text-bolo-teal" : "border-ink/30 text-transparent"}`}
-        >
-          {pick ?? "____"}
-        </span>{" "}
-        {QUIZ.after}
-      </p>
+      {QUIZ.layout === "blank" ? (
+        <p className="text-[19px] font-extrabold leading-snug text-ink">
+          {QUIZ.before}{" "}
+          <span
+            className={`inline-block min-w-16 rounded-lg border-b-[3px] px-2 text-center ${pick ? "border-bolo-teal bg-bolo-mint text-bolo-teal" : "border-ink/30 text-transparent"}`}
+          >
+            {pick ?? "____"}
+          </span>{" "}
+          {QUIZ.after}
+        </p>
+      ) : (
+        <p className="rounded-2xl bg-[#F4F7F8] px-3 py-2.5 text-[15px] font-extrabold leading-snug text-ink">
+          {QUIZ.before}
+        </p>
+      )}
 
-      <div className={`grid grid-cols-3 gap-2 ${checked && !correct ? "bolo-shake" : ""}`}>
+      <div
+        className={`${QUIZ.layout === "blank" ? "grid grid-cols-3" : "flex flex-col"} gap-2 ${checked && !correct ? "bolo-shake" : ""}`}
+      >
         {QUIZ.opts.map((o) => {
           const on = pick === o;
           return (
@@ -397,7 +517,7 @@ function QuizScreen({
               disabled={checked}
               onClick={() => setPick(o)}
               aria-pressed={on}
-              className={`bolo-press-soft rounded-2xl border-2 py-3 text-[15px] font-extrabold transition ${on ? "border-bolo-teal bg-bolo-mint text-bolo-teal" : "border-[#D5E3E6] bg-white text-ink"}`}
+              className={`bolo-press-soft rounded-2xl border-2 ${QUIZ.layout === "blank" ? "py-3 text-[15px]" : "px-3 py-2 text-left text-[12.5px] leading-snug"} font-extrabold transition ${on ? "border-bolo-teal bg-bolo-mint text-bolo-teal" : "border-[#D5E3E6] bg-white text-ink"}`}
             >
               {o}
             </button>
@@ -440,14 +560,11 @@ function QuizScreen({
 
 /* ---------------------------------------------------------------- watch */
 
-const PHONE_VIDEOS = [
-  { title: "Tips and tricks to start speaking", cat: "Tips", tone: "bg-bolo-teal" },
-  { title: "Grammar you actually use", cat: "Grammar", tone: "bg-[#2F5BEA]" },
-  { title: "When your mind goes blank", cat: "Mind blank", tone: "bg-[#7A5AF0]" },
-  { title: "Stop translating in your head", cat: "Thinking", tone: "bg-[#B35F00]" },
-];
+const VIDEO_TONES = ["bg-bolo-teal", "bg-[#2F5BEA]", "bg-[#7A5AF0]", "bg-[#B35F00]"];
 
 function WatchScreen() {
+  const L = useContext(LevelCtx);
+  const PHONE_VIDEOS = L.videos.map((v, i) => ({ ...v, tone: VIDEO_TONES[i] }));
   const [chip, setChip] = useState("For you");
   return (
     <Screen>
@@ -489,9 +606,7 @@ function WatchScreen() {
           </span>
         </div>
         <div className="p-3">
-          <p className="text-[13.5px] font-extrabold leading-snug">
-            Tips and tricks to start speaking
-          </p>
+          <p className="text-[13.5px] font-extrabold leading-snug">{PHONE_VIDEOS[0].title}</p>
           <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-[#E9EFF1]">
             <span className="block h-full w-3/5 rounded-full bg-bolo-flame" />
           </span>
@@ -525,6 +640,7 @@ function WatchScreen() {
 const BARS = [6, 12, 18, 10, 22, 16, 8, 20, 26, 14, 9, 18, 24, 12, 7, 16, 21, 11, 6, 14, 19, 9];
 
 function ReviewScreen() {
+  const L = useContext(LevelCtx);
   return (
     <Screen>
       <div className="flex items-start gap-2">
@@ -568,19 +684,15 @@ function ReviewScreen() {
             Fix this one
           </span>
           <p className="mt-1 text-[12.5px] font-semibold text-ink/55 line-through decoration-coral-deep/60">
-            I am working here since two years.
+            {L.review.wrong}
           </p>
-          <p className="text-[13px] font-extrabold text-brand-deep">
-            I have been working here for two years.
-          </p>
+          <p className="text-[13px] font-extrabold text-brand-deep">{L.review.right}</p>
         </li>
         <li className="rounded-2xl border-2 border-[#EEF3F4] p-2.5">
           <span className="text-[10.5px] font-extrabold uppercase tracking-wider text-[#4E3470]">
-            Sound
+            {L.review.tipLabel}
           </span>
-          <p className="mt-1 text-[12.5px] font-semibold text-ink/80">
-            “Three”, not “tree” — tongue between your teeth for <strong>th</strong>.
-          </p>
+          <p className="mt-1 text-[12.5px] font-semibold text-ink/80">{L.review.tip}</p>
         </li>
       </ul>
 

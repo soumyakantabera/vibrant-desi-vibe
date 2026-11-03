@@ -18,10 +18,20 @@ import { Route as SpokenEnglishInBengaliRouteImport } from './routes/spoken-engl
 import { Route as SpokenEnglishForHomemakersIndiaRouteImport } from './routes/spoken-english-for-homemakers-india'
 import { Route as SpokenEnglishForFreshersIndiaRouteImport } from './routes/spoken-english-for-freshers-india'
 import { Route as SpokenEnglishForBeginnersIndiaRouteImport } from './routes/spoken-english-for-beginners-india'
+import { Route as SpokenEnglishClassesUttarPradeshRouteImport } from './routes/spoken-english-classes-uttar-pradesh'
+import { Route as SpokenEnglishClassesTelanganaRouteImport } from './routes/spoken-english-classes-telangana'
+import { Route as SpokenEnglishClassesRajasthanRouteImport } from './routes/spoken-english-classes-rajasthan'
 import { Route as SpokenEnglishClassesMumbaiRouteImport } from './routes/spoken-english-classes-mumbai'
+import { Route as SpokenEnglishClassesMaharashtraRouteImport } from './routes/spoken-english-classes-maharashtra'
+import { Route as SpokenEnglishClassesMadhyaPradeshRouteImport } from './routes/spoken-english-classes-madhya-pradesh'
 import { Route as SpokenEnglishClassesKolkataRouteImport } from './routes/spoken-english-classes-kolkata'
+import { Route as SpokenEnglishClassesKarnatakaRouteImport } from './routes/spoken-english-classes-karnataka'
+import { Route as SpokenEnglishClassesJharkhandRouteImport } from './routes/spoken-english-classes-jharkhand'
 import { Route as SpokenEnglishClassesHyderabadRouteImport } from './routes/spoken-english-classes-hyderabad'
+import { Route as SpokenEnglishClassesGujaratRouteImport } from './routes/spoken-english-classes-gujarat'
+import { Route as SpokenEnglishClassesDelhiNcrRouteImport } from './routes/spoken-english-classes-delhi-ncr'
 import { Route as SpokenEnglishClassesDelhiRouteImport } from './routes/spoken-english-classes-delhi'
+import { Route as SpokenEnglishClassesBiharRouteImport } from './routes/spoken-english-classes-bihar'
 import { Route as SpokenEnglishClassesBengaluruRouteImport } from './routes/spoken-english-classes-bengaluru'
 import { Route as SpokenBusinessOrInteractiveEnglishRouteImport } from './routes/spoken-business-or-interactive-english'
 import { Route as RefundsRouteImport } from './routes/refunds'
@@ -39,12 +49,20 @@ import { Route as FounderRouteImport } from './routes/founder'
 import { Route as EnglishInstituteComparisonIndiaRouteImport } from './routes/english-institute-comparison-india'
 import { Route as EnglishHindiBengaliMediumRouteImport } from './routes/english-hindi-bengali-medium'
 import { Route as EnglishForWorkingProfessionalsIndiaRouteImport } from './routes/english-for-working-professionals-india'
+import { Route as EnglishForSoftwareEngineersIndiaRouteImport } from './routes/english-for-software-engineers-india'
 import { Route as EnglishForPresentationsIndiaRouteImport } from './routes/english-for-presentations-india'
 import { Route as EnglishForItProfessionalsIndiaRouteImport } from './routes/english-for-it-professionals-india'
+import { Route as EnglishForGovernmentJobInterviewRouteImport } from './routes/english-for-government-job-interview'
+import { Route as EnglishForDataAnalystsIndiaRouteImport } from './routes/english-for-data-analysts-india'
 import { Route as EnglishForClientCallsIndiaRouteImport } from './routes/english-for-client-calls-india'
+import { Route as EnglishForCampusPlacementsIndiaRouteImport } from './routes/english-for-campus-placements-india'
+import { Route as EnglishForBpoJobsIndiaRouteImport } from './routes/english-for-bpo-jobs-india'
+import { Route as EnglishForBankPoInterviewRouteImport } from './routes/english-for-bank-po-interview'
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EducatorRouteImport } from './routes/educator'
+import { Route as CourseSpokenEnglishMarathiRouteImport } from './routes/course-spoken-english-marathi'
+import { Route as CourseSpokenEnglishHindiRouteImport } from './routes/course-spoken-english-hindi'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as CourseInterviewPreparationRouteImport } from './routes/course-interview-preparation'
 import { Route as CourseIntermediateEnglishRouteImport } from './routes/course-intermediate-english'
@@ -109,10 +127,40 @@ const SpokenEnglishForBeginnersIndiaRoute =
     path: '/spoken-english-for-beginners-india',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SpokenEnglishClassesUttarPradeshRoute =
+  SpokenEnglishClassesUttarPradeshRouteImport.update({
+    id: '/spoken-english-classes-uttar-pradesh',
+    path: '/spoken-english-classes-uttar-pradesh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesTelanganaRoute =
+  SpokenEnglishClassesTelanganaRouteImport.update({
+    id: '/spoken-english-classes-telangana',
+    path: '/spoken-english-classes-telangana',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesRajasthanRoute =
+  SpokenEnglishClassesRajasthanRouteImport.update({
+    id: '/spoken-english-classes-rajasthan',
+    path: '/spoken-english-classes-rajasthan',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SpokenEnglishClassesMumbaiRoute =
   SpokenEnglishClassesMumbaiRouteImport.update({
     id: '/spoken-english-classes-mumbai',
     path: '/spoken-english-classes-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesMaharashtraRoute =
+  SpokenEnglishClassesMaharashtraRouteImport.update({
+    id: '/spoken-english-classes-maharashtra',
+    path: '/spoken-english-classes-maharashtra',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesMadhyaPradeshRoute =
+  SpokenEnglishClassesMadhyaPradeshRouteImport.update({
+    id: '/spoken-english-classes-madhya-pradesh',
+    path: '/spoken-english-classes-madhya-pradesh',
     getParentRoute: () => rootRouteImport,
   } as any)
 const SpokenEnglishClassesKolkataRoute =
@@ -121,16 +169,46 @@ const SpokenEnglishClassesKolkataRoute =
     path: '/spoken-english-classes-kolkata',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SpokenEnglishClassesKarnatakaRoute =
+  SpokenEnglishClassesKarnatakaRouteImport.update({
+    id: '/spoken-english-classes-karnataka',
+    path: '/spoken-english-classes-karnataka',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesJharkhandRoute =
+  SpokenEnglishClassesJharkhandRouteImport.update({
+    id: '/spoken-english-classes-jharkhand',
+    path: '/spoken-english-classes-jharkhand',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SpokenEnglishClassesHyderabadRoute =
   SpokenEnglishClassesHyderabadRouteImport.update({
     id: '/spoken-english-classes-hyderabad',
     path: '/spoken-english-classes-hyderabad',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SpokenEnglishClassesGujaratRoute =
+  SpokenEnglishClassesGujaratRouteImport.update({
+    id: '/spoken-english-classes-gujarat',
+    path: '/spoken-english-classes-gujarat',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesDelhiNcrRoute =
+  SpokenEnglishClassesDelhiNcrRouteImport.update({
+    id: '/spoken-english-classes-delhi-ncr',
+    path: '/spoken-english-classes-delhi-ncr',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SpokenEnglishClassesDelhiRoute =
   SpokenEnglishClassesDelhiRouteImport.update({
     id: '/spoken-english-classes-delhi',
     path: '/spoken-english-classes-delhi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SpokenEnglishClassesBiharRoute =
+  SpokenEnglishClassesBiharRouteImport.update({
+    id: '/spoken-english-classes-bihar',
+    path: '/spoken-english-classes-bihar',
     getParentRoute: () => rootRouteImport,
   } as any)
 const SpokenEnglishClassesBengaluruRoute =
@@ -229,6 +307,12 @@ const EnglishForWorkingProfessionalsIndiaRoute =
     path: '/english-for-working-professionals-india',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EnglishForSoftwareEngineersIndiaRoute =
+  EnglishForSoftwareEngineersIndiaRouteImport.update({
+    id: '/english-for-software-engineers-india',
+    path: '/english-for-software-engineers-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EnglishForPresentationsIndiaRoute =
   EnglishForPresentationsIndiaRouteImport.update({
     id: '/english-for-presentations-india',
@@ -241,10 +325,39 @@ const EnglishForItProfessionalsIndiaRoute =
     path: '/english-for-it-professionals-india',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EnglishForGovernmentJobInterviewRoute =
+  EnglishForGovernmentJobInterviewRouteImport.update({
+    id: '/english-for-government-job-interview',
+    path: '/english-for-government-job-interview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EnglishForDataAnalystsIndiaRoute =
+  EnglishForDataAnalystsIndiaRouteImport.update({
+    id: '/english-for-data-analysts-india',
+    path: '/english-for-data-analysts-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EnglishForClientCallsIndiaRoute =
   EnglishForClientCallsIndiaRouteImport.update({
     id: '/english-for-client-calls-india',
     path: '/english-for-client-calls-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EnglishForCampusPlacementsIndiaRoute =
+  EnglishForCampusPlacementsIndiaRouteImport.update({
+    id: '/english-for-campus-placements-india',
+    path: '/english-for-campus-placements-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EnglishForBpoJobsIndiaRoute = EnglishForBpoJobsIndiaRouteImport.update({
+  id: '/english-for-bpo-jobs-india',
+  path: '/english-for-bpo-jobs-india',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnglishForBankPoInterviewRoute =
+  EnglishForBankPoInterviewRouteImport.update({
+    id: '/english-for-bank-po-interview',
+    path: '/english-for-bank-po-interview',
     getParentRoute: () => rootRouteImport,
   } as any)
 const EnglishClassFeesIndiaRoute = EnglishClassFeesIndiaRouteImport.update({
@@ -262,6 +375,18 @@ const EducatorRoute = EducatorRouteImport.update({
   path: '/educator',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CourseSpokenEnglishMarathiRoute =
+  CourseSpokenEnglishMarathiRouteImport.update({
+    id: '/course-spoken-english-marathi',
+    path: '/course-spoken-english-marathi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CourseSpokenEnglishHindiRoute =
+  CourseSpokenEnglishHindiRouteImport.update({
+    id: '/course-spoken-english-hindi',
+    path: '/course-spoken-english-hindi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
   id: '/course-spoken-english',
   path: '/course-spoken-english',
@@ -350,12 +475,20 @@ export interface FileRoutesByFullPath {
   '/course-intermediate-english': typeof CourseIntermediateEnglishRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
+  '/course-spoken-english-hindi': typeof CourseSpokenEnglishHindiRoute
+  '/course-spoken-english-marathi': typeof CourseSpokenEnglishMarathiRoute
   '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
+  '/english-for-bank-po-interview': typeof EnglishForBankPoInterviewRoute
+  '/english-for-bpo-jobs-india': typeof EnglishForBpoJobsIndiaRoute
+  '/english-for-campus-placements-india': typeof EnglishForCampusPlacementsIndiaRoute
   '/english-for-client-calls-india': typeof EnglishForClientCallsIndiaRoute
+  '/english-for-data-analysts-india': typeof EnglishForDataAnalystsIndiaRoute
+  '/english-for-government-job-interview': typeof EnglishForGovernmentJobInterviewRoute
   '/english-for-it-professionals-india': typeof EnglishForItProfessionalsIndiaRoute
   '/english-for-presentations-india': typeof EnglishForPresentationsIndiaRoute
+  '/english-for-software-engineers-india': typeof EnglishForSoftwareEngineersIndiaRoute
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
@@ -373,10 +506,20 @@ export interface FileRoutesByFullPath {
   '/refunds': typeof RefundsRoute
   '/spoken-business-or-interactive-english': typeof SpokenBusinessOrInteractiveEnglishRoute
   '/spoken-english-classes-bengaluru': typeof SpokenEnglishClassesBengaluruRoute
+  '/spoken-english-classes-bihar': typeof SpokenEnglishClassesBiharRoute
   '/spoken-english-classes-delhi': typeof SpokenEnglishClassesDelhiRoute
+  '/spoken-english-classes-delhi-ncr': typeof SpokenEnglishClassesDelhiNcrRoute
+  '/spoken-english-classes-gujarat': typeof SpokenEnglishClassesGujaratRoute
   '/spoken-english-classes-hyderabad': typeof SpokenEnglishClassesHyderabadRoute
+  '/spoken-english-classes-jharkhand': typeof SpokenEnglishClassesJharkhandRoute
+  '/spoken-english-classes-karnataka': typeof SpokenEnglishClassesKarnatakaRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
+  '/spoken-english-classes-madhya-pradesh': typeof SpokenEnglishClassesMadhyaPradeshRoute
+  '/spoken-english-classes-maharashtra': typeof SpokenEnglishClassesMaharashtraRoute
   '/spoken-english-classes-mumbai': typeof SpokenEnglishClassesMumbaiRoute
+  '/spoken-english-classes-rajasthan': typeof SpokenEnglishClassesRajasthanRoute
+  '/spoken-english-classes-telangana': typeof SpokenEnglishClassesTelanganaRoute
+  '/spoken-english-classes-uttar-pradesh': typeof SpokenEnglishClassesUttarPradeshRoute
   '/spoken-english-for-beginners-india': typeof SpokenEnglishForBeginnersIndiaRoute
   '/spoken-english-for-freshers-india': typeof SpokenEnglishForFreshersIndiaRoute
   '/spoken-english-for-homemakers-india': typeof SpokenEnglishForHomemakersIndiaRoute
@@ -402,12 +545,20 @@ export interface FileRoutesByTo {
   '/course-intermediate-english': typeof CourseIntermediateEnglishRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
+  '/course-spoken-english-hindi': typeof CourseSpokenEnglishHindiRoute
+  '/course-spoken-english-marathi': typeof CourseSpokenEnglishMarathiRoute
   '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
+  '/english-for-bank-po-interview': typeof EnglishForBankPoInterviewRoute
+  '/english-for-bpo-jobs-india': typeof EnglishForBpoJobsIndiaRoute
+  '/english-for-campus-placements-india': typeof EnglishForCampusPlacementsIndiaRoute
   '/english-for-client-calls-india': typeof EnglishForClientCallsIndiaRoute
+  '/english-for-data-analysts-india': typeof EnglishForDataAnalystsIndiaRoute
+  '/english-for-government-job-interview': typeof EnglishForGovernmentJobInterviewRoute
   '/english-for-it-professionals-india': typeof EnglishForItProfessionalsIndiaRoute
   '/english-for-presentations-india': typeof EnglishForPresentationsIndiaRoute
+  '/english-for-software-engineers-india': typeof EnglishForSoftwareEngineersIndiaRoute
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
@@ -425,10 +576,20 @@ export interface FileRoutesByTo {
   '/refunds': typeof RefundsRoute
   '/spoken-business-or-interactive-english': typeof SpokenBusinessOrInteractiveEnglishRoute
   '/spoken-english-classes-bengaluru': typeof SpokenEnglishClassesBengaluruRoute
+  '/spoken-english-classes-bihar': typeof SpokenEnglishClassesBiharRoute
   '/spoken-english-classes-delhi': typeof SpokenEnglishClassesDelhiRoute
+  '/spoken-english-classes-delhi-ncr': typeof SpokenEnglishClassesDelhiNcrRoute
+  '/spoken-english-classes-gujarat': typeof SpokenEnglishClassesGujaratRoute
   '/spoken-english-classes-hyderabad': typeof SpokenEnglishClassesHyderabadRoute
+  '/spoken-english-classes-jharkhand': typeof SpokenEnglishClassesJharkhandRoute
+  '/spoken-english-classes-karnataka': typeof SpokenEnglishClassesKarnatakaRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
+  '/spoken-english-classes-madhya-pradesh': typeof SpokenEnglishClassesMadhyaPradeshRoute
+  '/spoken-english-classes-maharashtra': typeof SpokenEnglishClassesMaharashtraRoute
   '/spoken-english-classes-mumbai': typeof SpokenEnglishClassesMumbaiRoute
+  '/spoken-english-classes-rajasthan': typeof SpokenEnglishClassesRajasthanRoute
+  '/spoken-english-classes-telangana': typeof SpokenEnglishClassesTelanganaRoute
+  '/spoken-english-classes-uttar-pradesh': typeof SpokenEnglishClassesUttarPradeshRoute
   '/spoken-english-for-beginners-india': typeof SpokenEnglishForBeginnersIndiaRoute
   '/spoken-english-for-freshers-india': typeof SpokenEnglishForFreshersIndiaRoute
   '/spoken-english-for-homemakers-india': typeof SpokenEnglishForHomemakersIndiaRoute
@@ -455,12 +616,20 @@ export interface FileRoutesById {
   '/course-intermediate-english': typeof CourseIntermediateEnglishRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
+  '/course-spoken-english-hindi': typeof CourseSpokenEnglishHindiRoute
+  '/course-spoken-english-marathi': typeof CourseSpokenEnglishMarathiRoute
   '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
+  '/english-for-bank-po-interview': typeof EnglishForBankPoInterviewRoute
+  '/english-for-bpo-jobs-india': typeof EnglishForBpoJobsIndiaRoute
+  '/english-for-campus-placements-india': typeof EnglishForCampusPlacementsIndiaRoute
   '/english-for-client-calls-india': typeof EnglishForClientCallsIndiaRoute
+  '/english-for-data-analysts-india': typeof EnglishForDataAnalystsIndiaRoute
+  '/english-for-government-job-interview': typeof EnglishForGovernmentJobInterviewRoute
   '/english-for-it-professionals-india': typeof EnglishForItProfessionalsIndiaRoute
   '/english-for-presentations-india': typeof EnglishForPresentationsIndiaRoute
+  '/english-for-software-engineers-india': typeof EnglishForSoftwareEngineersIndiaRoute
   '/english-for-working-professionals-india': typeof EnglishForWorkingProfessionalsIndiaRoute
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
@@ -478,10 +647,20 @@ export interface FileRoutesById {
   '/refunds': typeof RefundsRoute
   '/spoken-business-or-interactive-english': typeof SpokenBusinessOrInteractiveEnglishRoute
   '/spoken-english-classes-bengaluru': typeof SpokenEnglishClassesBengaluruRoute
+  '/spoken-english-classes-bihar': typeof SpokenEnglishClassesBiharRoute
   '/spoken-english-classes-delhi': typeof SpokenEnglishClassesDelhiRoute
+  '/spoken-english-classes-delhi-ncr': typeof SpokenEnglishClassesDelhiNcrRoute
+  '/spoken-english-classes-gujarat': typeof SpokenEnglishClassesGujaratRoute
   '/spoken-english-classes-hyderabad': typeof SpokenEnglishClassesHyderabadRoute
+  '/spoken-english-classes-jharkhand': typeof SpokenEnglishClassesJharkhandRoute
+  '/spoken-english-classes-karnataka': typeof SpokenEnglishClassesKarnatakaRoute
   '/spoken-english-classes-kolkata': typeof SpokenEnglishClassesKolkataRoute
+  '/spoken-english-classes-madhya-pradesh': typeof SpokenEnglishClassesMadhyaPradeshRoute
+  '/spoken-english-classes-maharashtra': typeof SpokenEnglishClassesMaharashtraRoute
   '/spoken-english-classes-mumbai': typeof SpokenEnglishClassesMumbaiRoute
+  '/spoken-english-classes-rajasthan': typeof SpokenEnglishClassesRajasthanRoute
+  '/spoken-english-classes-telangana': typeof SpokenEnglishClassesTelanganaRoute
+  '/spoken-english-classes-uttar-pradesh': typeof SpokenEnglishClassesUttarPradeshRoute
   '/spoken-english-for-beginners-india': typeof SpokenEnglishForBeginnersIndiaRoute
   '/spoken-english-for-freshers-india': typeof SpokenEnglishForFreshersIndiaRoute
   '/spoken-english-for-homemakers-india': typeof SpokenEnglishForHomemakersIndiaRoute
@@ -509,12 +688,20 @@ export interface FileRouteTypes {
     | '/course-intermediate-english'
     | '/course-interview-preparation'
     | '/course-spoken-english'
+    | '/course-spoken-english-hindi'
+    | '/course-spoken-english-marathi'
     | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
+    | '/english-for-bank-po-interview'
+    | '/english-for-bpo-jobs-india'
+    | '/english-for-campus-placements-india'
     | '/english-for-client-calls-india'
+    | '/english-for-data-analysts-india'
+    | '/english-for-government-job-interview'
     | '/english-for-it-professionals-india'
     | '/english-for-presentations-india'
+    | '/english-for-software-engineers-india'
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
@@ -532,10 +719,20 @@ export interface FileRouteTypes {
     | '/refunds'
     | '/spoken-business-or-interactive-english'
     | '/spoken-english-classes-bengaluru'
+    | '/spoken-english-classes-bihar'
     | '/spoken-english-classes-delhi'
+    | '/spoken-english-classes-delhi-ncr'
+    | '/spoken-english-classes-gujarat'
     | '/spoken-english-classes-hyderabad'
+    | '/spoken-english-classes-jharkhand'
+    | '/spoken-english-classes-karnataka'
     | '/spoken-english-classes-kolkata'
+    | '/spoken-english-classes-madhya-pradesh'
+    | '/spoken-english-classes-maharashtra'
     | '/spoken-english-classes-mumbai'
+    | '/spoken-english-classes-rajasthan'
+    | '/spoken-english-classes-telangana'
+    | '/spoken-english-classes-uttar-pradesh'
     | '/spoken-english-for-beginners-india'
     | '/spoken-english-for-freshers-india'
     | '/spoken-english-for-homemakers-india'
@@ -561,12 +758,20 @@ export interface FileRouteTypes {
     | '/course-intermediate-english'
     | '/course-interview-preparation'
     | '/course-spoken-english'
+    | '/course-spoken-english-hindi'
+    | '/course-spoken-english-marathi'
     | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
+    | '/english-for-bank-po-interview'
+    | '/english-for-bpo-jobs-india'
+    | '/english-for-campus-placements-india'
     | '/english-for-client-calls-india'
+    | '/english-for-data-analysts-india'
+    | '/english-for-government-job-interview'
     | '/english-for-it-professionals-india'
     | '/english-for-presentations-india'
+    | '/english-for-software-engineers-india'
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
@@ -584,10 +789,20 @@ export interface FileRouteTypes {
     | '/refunds'
     | '/spoken-business-or-interactive-english'
     | '/spoken-english-classes-bengaluru'
+    | '/spoken-english-classes-bihar'
     | '/spoken-english-classes-delhi'
+    | '/spoken-english-classes-delhi-ncr'
+    | '/spoken-english-classes-gujarat'
     | '/spoken-english-classes-hyderabad'
+    | '/spoken-english-classes-jharkhand'
+    | '/spoken-english-classes-karnataka'
     | '/spoken-english-classes-kolkata'
+    | '/spoken-english-classes-madhya-pradesh'
+    | '/spoken-english-classes-maharashtra'
     | '/spoken-english-classes-mumbai'
+    | '/spoken-english-classes-rajasthan'
+    | '/spoken-english-classes-telangana'
+    | '/spoken-english-classes-uttar-pradesh'
     | '/spoken-english-for-beginners-india'
     | '/spoken-english-for-freshers-india'
     | '/spoken-english-for-homemakers-india'
@@ -613,12 +828,20 @@ export interface FileRouteTypes {
     | '/course-intermediate-english'
     | '/course-interview-preparation'
     | '/course-spoken-english'
+    | '/course-spoken-english-hindi'
+    | '/course-spoken-english-marathi'
     | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
+    | '/english-for-bank-po-interview'
+    | '/english-for-bpo-jobs-india'
+    | '/english-for-campus-placements-india'
     | '/english-for-client-calls-india'
+    | '/english-for-data-analysts-india'
+    | '/english-for-government-job-interview'
     | '/english-for-it-professionals-india'
     | '/english-for-presentations-india'
+    | '/english-for-software-engineers-india'
     | '/english-for-working-professionals-india'
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
@@ -636,10 +859,20 @@ export interface FileRouteTypes {
     | '/refunds'
     | '/spoken-business-or-interactive-english'
     | '/spoken-english-classes-bengaluru'
+    | '/spoken-english-classes-bihar'
     | '/spoken-english-classes-delhi'
+    | '/spoken-english-classes-delhi-ncr'
+    | '/spoken-english-classes-gujarat'
     | '/spoken-english-classes-hyderabad'
+    | '/spoken-english-classes-jharkhand'
+    | '/spoken-english-classes-karnataka'
     | '/spoken-english-classes-kolkata'
+    | '/spoken-english-classes-madhya-pradesh'
+    | '/spoken-english-classes-maharashtra'
     | '/spoken-english-classes-mumbai'
+    | '/spoken-english-classes-rajasthan'
+    | '/spoken-english-classes-telangana'
+    | '/spoken-english-classes-uttar-pradesh'
     | '/spoken-english-for-beginners-india'
     | '/spoken-english-for-freshers-india'
     | '/spoken-english-for-homemakers-india'
@@ -666,12 +899,20 @@ export interface RootRouteChildren {
   CourseIntermediateEnglishRoute: typeof CourseIntermediateEnglishRoute
   CourseInterviewPreparationRoute: typeof CourseInterviewPreparationRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
+  CourseSpokenEnglishHindiRoute: typeof CourseSpokenEnglishHindiRoute
+  CourseSpokenEnglishMarathiRoute: typeof CourseSpokenEnglishMarathiRoute
   EducatorRoute: typeof EducatorRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
   EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
+  EnglishForBankPoInterviewRoute: typeof EnglishForBankPoInterviewRoute
+  EnglishForBpoJobsIndiaRoute: typeof EnglishForBpoJobsIndiaRoute
+  EnglishForCampusPlacementsIndiaRoute: typeof EnglishForCampusPlacementsIndiaRoute
   EnglishForClientCallsIndiaRoute: typeof EnglishForClientCallsIndiaRoute
+  EnglishForDataAnalystsIndiaRoute: typeof EnglishForDataAnalystsIndiaRoute
+  EnglishForGovernmentJobInterviewRoute: typeof EnglishForGovernmentJobInterviewRoute
   EnglishForItProfessionalsIndiaRoute: typeof EnglishForItProfessionalsIndiaRoute
   EnglishForPresentationsIndiaRoute: typeof EnglishForPresentationsIndiaRoute
+  EnglishForSoftwareEngineersIndiaRoute: typeof EnglishForSoftwareEngineersIndiaRoute
   EnglishForWorkingProfessionalsIndiaRoute: typeof EnglishForWorkingProfessionalsIndiaRoute
   EnglishHindiBengaliMediumRoute: typeof EnglishHindiBengaliMediumRoute
   EnglishInstituteComparisonIndiaRoute: typeof EnglishInstituteComparisonIndiaRoute
@@ -689,10 +930,20 @@ export interface RootRouteChildren {
   RefundsRoute: typeof RefundsRoute
   SpokenBusinessOrInteractiveEnglishRoute: typeof SpokenBusinessOrInteractiveEnglishRoute
   SpokenEnglishClassesBengaluruRoute: typeof SpokenEnglishClassesBengaluruRoute
+  SpokenEnglishClassesBiharRoute: typeof SpokenEnglishClassesBiharRoute
   SpokenEnglishClassesDelhiRoute: typeof SpokenEnglishClassesDelhiRoute
+  SpokenEnglishClassesDelhiNcrRoute: typeof SpokenEnglishClassesDelhiNcrRoute
+  SpokenEnglishClassesGujaratRoute: typeof SpokenEnglishClassesGujaratRoute
   SpokenEnglishClassesHyderabadRoute: typeof SpokenEnglishClassesHyderabadRoute
+  SpokenEnglishClassesJharkhandRoute: typeof SpokenEnglishClassesJharkhandRoute
+  SpokenEnglishClassesKarnatakaRoute: typeof SpokenEnglishClassesKarnatakaRoute
   SpokenEnglishClassesKolkataRoute: typeof SpokenEnglishClassesKolkataRoute
+  SpokenEnglishClassesMadhyaPradeshRoute: typeof SpokenEnglishClassesMadhyaPradeshRoute
+  SpokenEnglishClassesMaharashtraRoute: typeof SpokenEnglishClassesMaharashtraRoute
   SpokenEnglishClassesMumbaiRoute: typeof SpokenEnglishClassesMumbaiRoute
+  SpokenEnglishClassesRajasthanRoute: typeof SpokenEnglishClassesRajasthanRoute
+  SpokenEnglishClassesTelanganaRoute: typeof SpokenEnglishClassesTelanganaRoute
+  SpokenEnglishClassesUttarPradeshRoute: typeof SpokenEnglishClassesUttarPradeshRoute
   SpokenEnglishForBeginnersIndiaRoute: typeof SpokenEnglishForBeginnersIndiaRoute
   SpokenEnglishForFreshersIndiaRoute: typeof SpokenEnglishForFreshersIndiaRoute
   SpokenEnglishForHomemakersIndiaRoute: typeof SpokenEnglishForHomemakersIndiaRoute
@@ -771,11 +1022,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpokenEnglishForBeginnersIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/spoken-english-classes-uttar-pradesh': {
+      id: '/spoken-english-classes-uttar-pradesh'
+      path: '/spoken-english-classes-uttar-pradesh'
+      fullPath: '/spoken-english-classes-uttar-pradesh'
+      preLoaderRoute: typeof SpokenEnglishClassesUttarPradeshRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-telangana': {
+      id: '/spoken-english-classes-telangana'
+      path: '/spoken-english-classes-telangana'
+      fullPath: '/spoken-english-classes-telangana'
+      preLoaderRoute: typeof SpokenEnglishClassesTelanganaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-rajasthan': {
+      id: '/spoken-english-classes-rajasthan'
+      path: '/spoken-english-classes-rajasthan'
+      fullPath: '/spoken-english-classes-rajasthan'
+      preLoaderRoute: typeof SpokenEnglishClassesRajasthanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/spoken-english-classes-mumbai': {
       id: '/spoken-english-classes-mumbai'
       path: '/spoken-english-classes-mumbai'
       fullPath: '/spoken-english-classes-mumbai'
       preLoaderRoute: typeof SpokenEnglishClassesMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-maharashtra': {
+      id: '/spoken-english-classes-maharashtra'
+      path: '/spoken-english-classes-maharashtra'
+      fullPath: '/spoken-english-classes-maharashtra'
+      preLoaderRoute: typeof SpokenEnglishClassesMaharashtraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-madhya-pradesh': {
+      id: '/spoken-english-classes-madhya-pradesh'
+      path: '/spoken-english-classes-madhya-pradesh'
+      fullPath: '/spoken-english-classes-madhya-pradesh'
+      preLoaderRoute: typeof SpokenEnglishClassesMadhyaPradeshRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/spoken-english-classes-kolkata': {
@@ -785,6 +1071,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpokenEnglishClassesKolkataRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/spoken-english-classes-karnataka': {
+      id: '/spoken-english-classes-karnataka'
+      path: '/spoken-english-classes-karnataka'
+      fullPath: '/spoken-english-classes-karnataka'
+      preLoaderRoute: typeof SpokenEnglishClassesKarnatakaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-jharkhand': {
+      id: '/spoken-english-classes-jharkhand'
+      path: '/spoken-english-classes-jharkhand'
+      fullPath: '/spoken-english-classes-jharkhand'
+      preLoaderRoute: typeof SpokenEnglishClassesJharkhandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/spoken-english-classes-hyderabad': {
       id: '/spoken-english-classes-hyderabad'
       path: '/spoken-english-classes-hyderabad'
@@ -792,11 +1092,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpokenEnglishClassesHyderabadRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/spoken-english-classes-gujarat': {
+      id: '/spoken-english-classes-gujarat'
+      path: '/spoken-english-classes-gujarat'
+      fullPath: '/spoken-english-classes-gujarat'
+      preLoaderRoute: typeof SpokenEnglishClassesGujaratRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-delhi-ncr': {
+      id: '/spoken-english-classes-delhi-ncr'
+      path: '/spoken-english-classes-delhi-ncr'
+      fullPath: '/spoken-english-classes-delhi-ncr'
+      preLoaderRoute: typeof SpokenEnglishClassesDelhiNcrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/spoken-english-classes-delhi': {
       id: '/spoken-english-classes-delhi'
       path: '/spoken-english-classes-delhi'
       fullPath: '/spoken-english-classes-delhi'
       preLoaderRoute: typeof SpokenEnglishClassesDelhiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spoken-english-classes-bihar': {
+      id: '/spoken-english-classes-bihar'
+      path: '/spoken-english-classes-bihar'
+      fullPath: '/spoken-english-classes-bihar'
+      preLoaderRoute: typeof SpokenEnglishClassesBiharRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/spoken-english-classes-bengaluru': {
@@ -918,6 +1239,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnglishForWorkingProfessionalsIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/english-for-software-engineers-india': {
+      id: '/english-for-software-engineers-india'
+      path: '/english-for-software-engineers-india'
+      fullPath: '/english-for-software-engineers-india'
+      preLoaderRoute: typeof EnglishForSoftwareEngineersIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/english-for-presentations-india': {
       id: '/english-for-presentations-india'
       path: '/english-for-presentations-india'
@@ -932,11 +1260,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnglishForItProfessionalsIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/english-for-government-job-interview': {
+      id: '/english-for-government-job-interview'
+      path: '/english-for-government-job-interview'
+      fullPath: '/english-for-government-job-interview'
+      preLoaderRoute: typeof EnglishForGovernmentJobInterviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english-for-data-analysts-india': {
+      id: '/english-for-data-analysts-india'
+      path: '/english-for-data-analysts-india'
+      fullPath: '/english-for-data-analysts-india'
+      preLoaderRoute: typeof EnglishForDataAnalystsIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/english-for-client-calls-india': {
       id: '/english-for-client-calls-india'
       path: '/english-for-client-calls-india'
       fullPath: '/english-for-client-calls-india'
       preLoaderRoute: typeof EnglishForClientCallsIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english-for-campus-placements-india': {
+      id: '/english-for-campus-placements-india'
+      path: '/english-for-campus-placements-india'
+      fullPath: '/english-for-campus-placements-india'
+      preLoaderRoute: typeof EnglishForCampusPlacementsIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english-for-bpo-jobs-india': {
+      id: '/english-for-bpo-jobs-india'
+      path: '/english-for-bpo-jobs-india'
+      fullPath: '/english-for-bpo-jobs-india'
+      preLoaderRoute: typeof EnglishForBpoJobsIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english-for-bank-po-interview': {
+      id: '/english-for-bank-po-interview'
+      path: '/english-for-bank-po-interview'
+      fullPath: '/english-for-bank-po-interview'
+      preLoaderRoute: typeof EnglishForBankPoInterviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/english-class-fees-india': {
@@ -958,6 +1321,20 @@ declare module '@tanstack/react-router' {
       path: '/educator'
       fullPath: '/educator'
       preLoaderRoute: typeof EducatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-spoken-english-marathi': {
+      id: '/course-spoken-english-marathi'
+      path: '/course-spoken-english-marathi'
+      fullPath: '/course-spoken-english-marathi'
+      preLoaderRoute: typeof CourseSpokenEnglishMarathiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-spoken-english-hindi': {
+      id: '/course-spoken-english-hindi'
+      path: '/course-spoken-english-hindi'
+      fullPath: '/course-spoken-english-hindi'
+      preLoaderRoute: typeof CourseSpokenEnglishHindiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-spoken-english': {
@@ -1075,12 +1452,20 @@ const rootRouteChildren: RootRouteChildren = {
   CourseIntermediateEnglishRoute: CourseIntermediateEnglishRoute,
   CourseInterviewPreparationRoute: CourseInterviewPreparationRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
+  CourseSpokenEnglishHindiRoute: CourseSpokenEnglishHindiRoute,
+  CourseSpokenEnglishMarathiRoute: CourseSpokenEnglishMarathiRoute,
   EducatorRoute: EducatorRoute,
   EnglishCareerRoute: EnglishCareerRoute,
   EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,
+  EnglishForBankPoInterviewRoute: EnglishForBankPoInterviewRoute,
+  EnglishForBpoJobsIndiaRoute: EnglishForBpoJobsIndiaRoute,
+  EnglishForCampusPlacementsIndiaRoute: EnglishForCampusPlacementsIndiaRoute,
   EnglishForClientCallsIndiaRoute: EnglishForClientCallsIndiaRoute,
+  EnglishForDataAnalystsIndiaRoute: EnglishForDataAnalystsIndiaRoute,
+  EnglishForGovernmentJobInterviewRoute: EnglishForGovernmentJobInterviewRoute,
   EnglishForItProfessionalsIndiaRoute: EnglishForItProfessionalsIndiaRoute,
   EnglishForPresentationsIndiaRoute: EnglishForPresentationsIndiaRoute,
+  EnglishForSoftwareEngineersIndiaRoute: EnglishForSoftwareEngineersIndiaRoute,
   EnglishForWorkingProfessionalsIndiaRoute:
     EnglishForWorkingProfessionalsIndiaRoute,
   EnglishHindiBengaliMediumRoute: EnglishHindiBengaliMediumRoute,
@@ -1104,10 +1489,21 @@ const rootRouteChildren: RootRouteChildren = {
   SpokenBusinessOrInteractiveEnglishRoute:
     SpokenBusinessOrInteractiveEnglishRoute,
   SpokenEnglishClassesBengaluruRoute: SpokenEnglishClassesBengaluruRoute,
+  SpokenEnglishClassesBiharRoute: SpokenEnglishClassesBiharRoute,
   SpokenEnglishClassesDelhiRoute: SpokenEnglishClassesDelhiRoute,
+  SpokenEnglishClassesDelhiNcrRoute: SpokenEnglishClassesDelhiNcrRoute,
+  SpokenEnglishClassesGujaratRoute: SpokenEnglishClassesGujaratRoute,
   SpokenEnglishClassesHyderabadRoute: SpokenEnglishClassesHyderabadRoute,
+  SpokenEnglishClassesJharkhandRoute: SpokenEnglishClassesJharkhandRoute,
+  SpokenEnglishClassesKarnatakaRoute: SpokenEnglishClassesKarnatakaRoute,
   SpokenEnglishClassesKolkataRoute: SpokenEnglishClassesKolkataRoute,
+  SpokenEnglishClassesMadhyaPradeshRoute:
+    SpokenEnglishClassesMadhyaPradeshRoute,
+  SpokenEnglishClassesMaharashtraRoute: SpokenEnglishClassesMaharashtraRoute,
   SpokenEnglishClassesMumbaiRoute: SpokenEnglishClassesMumbaiRoute,
+  SpokenEnglishClassesRajasthanRoute: SpokenEnglishClassesRajasthanRoute,
+  SpokenEnglishClassesTelanganaRoute: SpokenEnglishClassesTelanganaRoute,
+  SpokenEnglishClassesUttarPradeshRoute: SpokenEnglishClassesUttarPradeshRoute,
   SpokenEnglishForBeginnersIndiaRoute: SpokenEnglishForBeginnersIndiaRoute,
   SpokenEnglishForFreshersIndiaRoute: SpokenEnglishForFreshersIndiaRoute,
   SpokenEnglishForHomemakersIndiaRoute: SpokenEnglishForHomemakersIndiaRoute,

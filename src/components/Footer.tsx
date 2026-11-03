@@ -17,6 +17,8 @@ const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
 const ENGLISH = [
   { to: "/course-spoken-english", label: "Spoken English" },
+  { to: "/course-spoken-english-hindi", label: "Spoken English — Hindi to English" },
+  { to: "/course-spoken-english-marathi", label: "Spoken English — Marathi to English" },
   { to: "/course-intermediate-english", label: "Intermediate English" },
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
   { to: "/course-business-english", label: "Business English" },

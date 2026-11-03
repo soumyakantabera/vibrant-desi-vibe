@@ -7,6 +7,7 @@ import {
   BOLO_WA,
   BoloForCourses,
   BoloHero,
+  BoloLevels,
   BoloSteps,
   BoloThreeTabs,
   BoloTryIt,
@@ -36,6 +37,7 @@ function BoloPage() {
       <VideoLibrary />
       <TipsTiles />
       <ReviewLoop />
+      <BoloLevels />
       <BoloForCourses />
       <MeetMascots />
       <BoloSteps />

@@ -35,6 +35,20 @@ const ENGLISH_COURSES: {
     inr: "6 months · ₹999/month, inclusive of taxes",
   },
   {
+    to: "/course-spoken-english-hindi",
+    label: "Basic Spoken English — Hindi to English",
+    icon: "translate",
+    slug: "spoken-english",
+    inr: "Hindi-speaking teacher · ₹999/month",
+  },
+  {
+    to: "/course-spoken-english-marathi",
+    label: "Basic Spoken English — Marathi to English",
+    icon: "translate",
+    slug: "spoken-english",
+    inr: "Marathi-speaking teacher · ₹999/month",
+  },
+  {
     to: "/course-intermediate-english",
     label: "Intermediate Spoken English",
     icon: "trend",

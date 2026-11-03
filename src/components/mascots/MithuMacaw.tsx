@@ -229,43 +229,55 @@ export function MithuMacaw({
             />
           </g>
 
+          {/* clap: both wings swept forward, tips meeting in front of the chest */}
           {clap && (
-            <>
-              <g className="m-wing-far up" style={ORIGIN.farWing}>
+            <g className="m-clap">
+              <g className="m-clap-far" style={{ transformOrigin: "130px 116px" }}>
                 <path
-                  d="M128 120 C140 98 156 76 178 60 C182 68 180 76 176 82 C184 80 188 86 186 92 C178 94 172 98 168 102 C174 104 176 110 172 114 C160 116 148 120 138 128 Z"
-                  fill={C.red}
+                  d="M128 118 C140 108 152 102 166 104 C172 106 174 112 170 118 C164 122 156 124 148 126 Z"
+                  fill={C.redDeep}
                 />
                 <path
-                  d="M140 104 C148 94 158 84 168 76 L174 84 C164 92 154 102 146 112 Z"
+                  d="M156 104 C162 103 168 104 172 108 C172 114 168 118 164 120 C160 116 158 110 156 104 Z"
+                  fill={C.blue}
+                />
+              </g>
+              <g className="m-clap-near" style={{ transformOrigin: "92px 120px" }}>
+                <path
+                  d="M90 112 C104 112 128 116 150 120 C158 121 164 124 166 128 C160 132 152 134 144 134 C150 138 150 142 144 144 C130 146 108 144 94 140 C86 132 86 120 90 112 Z"
+                  fill={C.red}
+                  stroke={C.redDeep}
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M102 118 C112 118 122 119 132 121 L130 138 C120 138 110 137 100 135 Z"
                   fill={C.yellow}
                 />
                 <path
-                  d="M160 74 C166 68 172 64 178 60 M168 94 C176 92 182 92 186 92 M166 108 C170 108 172 110 172 114"
-                  stroke={C.blue}
-                  strokeWidth="5"
+                  d="M100 135 C110 137 120 138 130 138 L130 141 C120 141 110 140 100 138 Z"
+                  fill={C.green}
+                />
+                <path
+                  d="M136 122 C146 122 158 124 166 128 C160 132 152 134 144 134 C150 138 150 142 144 144 C140 136 138 128 136 122 Z"
+                  fill={C.blue}
+                />
+                <path
+                  d="M146 128 C152 128 158 129 162 130"
+                  stroke={C.blueLight}
+                  strokeWidth="2"
                   strokeLinecap="round"
                   fill="none"
                 />
               </g>
-              <g className="m-wing-near up" style={ORIGIN.nearWing}>
-                <path
-                  d="M100 116 C86 98 72 80 50 66 C46 74 48 82 52 88 C44 86 40 92 42 98 C50 100 56 104 60 108 C54 110 52 116 56 120 C70 122 84 124 94 130 Z"
-                  fill={C.red}
-                />
-                <path
-                  d="M86 102 C78 94 68 86 58 80 L54 88 C64 94 74 102 80 110 Z"
-                  fill={C.yellow}
-                />
-                <path
-                  d="M54 72 C50 70 48 68 50 66 M44 96 C46 98 50 100 54 100 M56 118 C58 120 60 120 62 120"
-                  stroke={C.blue}
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </g>
-            </>
+              <path
+                className="m-clap-burst"
+                d="M178 98 l6 -7 M184 114 h10 M178 130 l6 7"
+                stroke={C.yellowDeep}
+                strokeWidth="3.5"
+                strokeLinecap="round"
+              />
+            </g>
           )}
 
           {/* ------------------------------------------------------ head */}
@@ -295,7 +307,15 @@ export function MithuMacaw({
 
             {/* eye */}
             <g className="m-eye" style={ORIGIN.eye}>
-              {closed ? (
+              {clap ? (
+                <path
+                  d="M113 70 Q122 59 131 70"
+                  stroke={C.ink}
+                  strokeWidth="3.5"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              ) : closed ? (
                 <path
                   d="M114 68 Q122 74 130 68"
                   stroke={C.ink}
