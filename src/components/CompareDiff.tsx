@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { COMPARE_BLURB, COMPARE_REVISED, MARKET_COMPARE } from "@/lib/compare";
+import { TrademarkNotice } from "@/components/ProviderMark";
 
 /** Learn With Smile is the one solid tile; every other brand is a white card
  *  with a coloured top rule, so the eye lands on us first. */
@@ -54,6 +55,7 @@ export function CompareDiff() {
           </div>
         ))}
       </div>
+      <TrademarkNotice className="mt-3" />
     </aside>
   );
 }

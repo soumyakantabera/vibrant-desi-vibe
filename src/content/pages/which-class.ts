@@ -109,12 +109,12 @@ export const body: ArticleBody = [
     rows: [
       [
         "EngVarta / Cambly",
-        "You talk. No diagnosis. No syllabus.",
+        "You start with a call. No diagnosis or fixed syllabus.",
         "We name the room first. Beginners should not buy 1:1 minutes yet.",
       ],
       [
         "British Council counsellor",
-        "A CEFR module pitch, often ₹8,800–₹16,000",
+        "A recommended CEFR module, often ₹8,800–₹16,000",
         "We say if you need that badge. Speaking for work in India is a smaller, cheaper room.",
       ],
       [

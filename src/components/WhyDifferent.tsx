@@ -3,6 +3,7 @@ import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
 import { VizIn } from "@/components/viz/Viz";
 import { BoloAppIcon } from "@/components/mascots/BoloAppIcon";
+import { ProviderMark, TrademarkNotice } from "@/components/ProviderMark";
 import { FeeText } from "@/components/FeeText";
 import { LazyBoloPhone, LazyLiveClassView } from "@/components/bolo/LazyBolo";
 import type { BoloLevel } from "@/lib/bolo-levels";
@@ -11,6 +12,7 @@ import {
   DAILY_MATERIALS,
   DAILY_PRACTICE_PITCH,
   DIFFERENT_ROWS,
+  PROVIDERS_CHECKED,
   type Mark,
 } from "@/lib/positioning";
 
@@ -138,6 +140,8 @@ function Cell({ mark, note }: { mark: Mark; note: string }) {
       <Icon name="check" size={18} className="shrink-0 text-brand" />
     ) : mark === "part" ? (
       <span className="mt-1 h-3 w-3 shrink-0 rounded-full border-2 border-sunshine bg-[linear-gradient(90deg,var(--sunshine)_50%,transparent_50%)]" />
+    ) : mark === "unknown" ? (
+      <span className="mt-1 h-3 w-3 shrink-0 rounded-full border-2 border-dashed border-ink/35" />
     ) : (
       <Icon name="x-circle" size={18} className="shrink-0 text-ink/35" />
     );
@@ -221,6 +225,9 @@ export function WhyDifferent({
                   <th scope="row" className="px-5 py-4">
                     <span className="flex items-center gap-2 font-bold text-ink">
                       {r.ours && <BoloAppIcon size={22} />}
+                      {r.logos?.map((l) => (
+                        <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                      ))}
                       {r.what}
                     </span>
                     <span className="text-xs font-normal text-ink/60">{r.examples}</span>
@@ -255,6 +262,9 @@ export function WhyDifferent({
             >
               <p className="flex items-center gap-2 font-bold text-ink">
                 {r.ours && <BoloAppIcon size={22} />}
+                {r.logos?.map((l) => (
+                  <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                ))}
                 {r.what}
                 <span className="ml-auto text-sm">
                   <FeeText text={r.price} />
@@ -270,9 +280,24 @@ export function WhyDifferent({
           ))}
         </ul>
         <p className="mt-3 text-xs text-ink/60">
-          Typical price ranges from public listings in India, November 2026; billing patterns from
-          public reviews and complaints. Check each provider's current fee and refund terms.
+          Checked {PROVIDERS_CHECKED} against each provider's public pages:{" "}
+          {DIFFERENT_ROWS.filter((r) => r.source).map((r, i, all) => (
+            <span key={r.what}>
+              <a
+                href={r.source!.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="underline decoration-dotted underline-offset-2"
+              >
+                {r.what}
+              </a>
+              {i < all.length - 1 ? ", " : "."}
+            </span>
+          ))}{" "}
+          Prices are typical 2026 bands in India. City classrooms: local listings. PlanetSpark
+          teaches children, so it is not compared with these adult courses.
         </p>
+        <TrademarkNotice className="mt-2" />
 
         {!compact && (
           <div className="mt-8 grid gap-6 rounded-3xl bg-paper p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">

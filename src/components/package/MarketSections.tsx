@@ -1,6 +1,7 @@
 import { type CSSProperties, type ReactNode } from "react";
 import { Icon, type IconName } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
+import { ProviderMark, TrademarkNotice } from "@/components/ProviderMark";
 import { FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { INTL_FEE } from "@/lib/intl-fees";
@@ -84,7 +85,14 @@ export function HeroPackageViz() {
 /* ---------------------------------------------------------- market gap */
 
 type M = "y" | "p" | "n";
-type Brand = { name: string; short: string; tone: Deep; fee: string; us?: boolean };
+type Brand = {
+  name: string;
+  short: string;
+  tone: Deep;
+  fee: string;
+  us?: boolean;
+  logos?: { slug: string; name: string }[];
+};
 
 /** Fee strings match MARKET_COMPARE in src/lib/compare.ts (dated public bands). */
 const BRANDS: Brand[] = [
@@ -95,20 +103,46 @@ const BRANDS: Brand[] = [
     fee: "₹999–₹2,499/mo, tax incl.",
     us: true,
   },
-  { name: "EngVarta", short: "EngVarta", tone: "blue", fee: "₹2,700 / 25 × 15-min" },
-  { name: "Cambly", short: "Cambly", tone: "red", fee: "₹8,000–₹15,000/mo if daily" },
-  { name: "italki / Preply", short: "italki/Preply", tone: "saffron", fee: "₹250–₹4,000 / lesson" },
+  {
+    name: "EngVarta",
+    short: "EngVarta",
+    tone: "blue",
+    fee: "₹2,700 / 25 × 15-min",
+    logos: [{ slug: "engvarta", name: "EngVarta" }],
+  },
+  {
+    name: "Cambly",
+    short: "Cambly",
+    tone: "red",
+    fee: "₹8,000–₹15,000/mo if daily",
+    logos: [{ slug: "cambly", name: "Cambly" }],
+  },
+  {
+    name: "italki / Preply",
+    short: "italki/Preply",
+    tone: "saffron",
+    fee: "₹250–₹4,000 / lesson",
+    logos: [
+      { slug: "italki", name: "italki" },
+      { slug: "preply", name: "Preply" },
+    ],
+  },
   {
     name: "British Council Online",
     short: "British Council",
     tone: "violet",
     fee: "₹8,800–₹16,000 / module",
+    logos: [{ slug: "british-council", name: "British Council" }],
   },
   {
     name: "AI apps (ELSA, Duolingo, Speak)",
     short: "AI apps",
     tone: "slate",
     fee: "₹300–₹1,200/mo",
+    logos: [
+      { slug: "duolingo", name: "Duolingo" },
+      { slug: "elsa-speak", name: "ELSA Speak" },
+    ],
   },
 ];
 
@@ -120,7 +154,7 @@ const FEATURES: { label: string; marks: [M, M, M, M, M, M] }[] = [
   { label: "Teacher reviews your practice every week", marks: ["y", "p", "n", "p", "p", "n"] },
   { label: "Recorded video lessons included", marks: ["y", "n", "n", "n", "p", "p"] },
   { label: "Same teacher from start to finish", marks: ["y", "p", "p", "y", "p", "n"] },
-  { label: "Indian learner context, Hindi/Bengali help", marks: ["y", "y", "n", "p", "p", "p"] },
+  { label: "Indian learner context, Hindi/Bengali help", marks: ["y", "p", "n", "p", "p", "p"] },
 ];
 
 const SCORE = BRANDS.map((_, bi) =>
@@ -508,7 +542,14 @@ export function MarketGap() {
                         {b.name}
                       </span>
                     ) : (
-                      b.name
+                      <span className="flex flex-col items-start gap-1.5">
+                        <span className="flex gap-1">
+                          {b.logos?.map((l) => (
+                            <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                          ))}
+                        </span>
+                        {b.name}
+                      </span>
                     )}
                   </th>
                 ))}
@@ -581,6 +622,7 @@ export function MarketGap() {
           (children 4–13) and IELTS shops (exam prep) are left out because they solve a different
           problem.
         </p>
+        <TrademarkNotice className="mt-2" />
 
         <div className="mt-6 grid gap-5 lg:grid-cols-2">
           <VizIn className="rounded-3xl border border-border bg-paper p-6 md:p-7">

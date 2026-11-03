@@ -69,7 +69,7 @@ export const body: ArticleBody = [
     head: ["If their free session is…", "You are usually looking at"],
     rows: [
       ["15 minutes of talk, no diagnosis", "EngVarta-style 1:1. Fine after you can already speak."],
-      ["Native video, tutor lottery", "Cambly. Accent, not a 6-month map."],
+      ["Native video, any available tutor", "Cambly. Accent, not a 6-month plan."],
       ["Counsellor + CEFR levels, ₹8k–₹16k", "British Council English Online — buy for the badge"],
       ["Walk-in, 25–40 in the room", "Veta-style / city classroom"],
       ["Visa stack, IELTS add-on", "Exam shop. Fine if the form asked."],

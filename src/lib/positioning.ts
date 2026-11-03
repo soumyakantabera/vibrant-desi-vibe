@@ -19,7 +19,8 @@ export const ALL_IN_ONE_SHORT =
 export const DAILY_PRACTICE_PITCH =
   "If you want to practise English every day at an affordable price — and have a real teacher check it — take a Learn With Smile course.";
 
-export type Mark = "yes" | "no" | "part";
+/** "unknown": the provider does not publish it — we say so rather than guess. */
+export type Mark = "yes" | "no" | "part" | "unknown";
 
 export type CompareRow = {
   what: string;
@@ -35,34 +36,161 @@ export type CompareRow = {
   billingNote: string;
   price: string;
   ours?: boolean;
+  /** Logo slugs (src/assets/logos/<slug>.svg|png|webp); a neutral name badge until a file exists. */
+  logos?: { slug: string; name: string }[];
+  /** Where the facts come from — the provider's own page wherever we could reach one. */
+  source?: { label: string; url: string };
 };
 
+/** When the named rows were last checked against each provider's public pages. */
+export const PROVIDERS_CHECKED = "3 November 2026";
+
+/**
+ * Named providers, compared on what each sells — facts from their own help
+ * pages and app listings, never complaints or opinions. Price figures are the
+ * public 2026 bands also used in src/lib/compare.ts. PlanetSpark is left out:
+ * it teaches children, and every course here is for adults.
+ */
 export const DIFFERENT_ROWS: CompareRow[] = [
   {
-    what: "Practice apps",
-    examples: "self-study apps and recorded courses",
+    what: "Learn With Smile",
+    examples: "live batch of about 6 + Bolo app",
+    daily: "yes",
+    dailyNote: "Yes — the Bolo app, every day, with a streak",
+    teacher: "yes",
+    teacherNote: "Yes — about 6 learners, same teacher",
+    language: "yes",
+    languageNote: "Hindi, Marathi or English",
+    billing: "yes",
+    billingNote: "Yes — no auto-debit, no loans, refund in writing",
+    price: "From ₹999/month",
+    ours: true,
+  },
+  {
+    what: "Josh Skills",
+    examples: "recorded course app, Josh Talks",
+    daily: "part",
+    dailyNote: "Recorded video lessons",
+    teacher: "part",
+    teacherNote: "Optional live group sessions",
+    language: "yes",
+    languageNote: "Explained in 7 Indian languages",
+    billing: "unknown",
+    billingNote: "Terms not stated on the page we checked",
+    price: "From ₹58/month (their page)",
+    logos: [{ slug: "josh-skills", name: "Josh Skills" }],
+    source: {
+      label: "Josh Talks — English speaking app",
+      url: "https://www.joshtalks.com/english-speaking/best-english-speaking-app",
+    },
+  },
+  {
+    what: "EngVarta",
+    examples: "1:1 audio practice calls",
+    daily: "part",
+    dailyNote: "Only the calls you buy",
+    teacher: "yes",
+    teacherNote: "Yes — 1:1 calls of about 15 minutes",
+    language: "part",
+    languageNote: "Guides for Hindi and Marathi speakers; calls in English",
+    billing: "part",
+    billingNote: "Prepaid session plans; trial plan refundable (developer reply)",
+    price: "₹2,700 for 25 sessions",
+    logos: [{ slug: "engvarta", name: "EngVarta" }],
+    source: {
+      label: "EngVarta app reviews and developer replies",
+      url: "https://appshunter.io/ios/app/engvarta-english-speaking-app/id1221875549/reviews",
+    },
+  },
+  {
+    what: "Cambly",
+    examples: "1:1 video with native-speaker tutors",
+    daily: "part",
+    dailyNote: "Only the lessons you book",
+    teacher: "yes",
+    teacherNote: "Yes — 1:1, tutor of your choice",
+    language: "no",
+    languageNote: "English only",
+    billing: "part",
+    billingNote: "Plans auto-renew until you turn renewal off",
+    price: "₹8,000–₹15,000/month if daily",
+    logos: [{ slug: "cambly", name: "Cambly" }],
+    source: {
+      label: "Cambly Help — Renewal",
+      url: "https://studentsupport.cambly.com/hc/en-us/articles/360050272511-Renewal",
+    },
+  },
+  {
+    what: "Preply",
+    examples: "1:1 tutor marketplace",
+    daily: "part",
+    dailyNote: "Only the lessons you book",
+    teacher: "yes",
+    teacherNote: "Yes — 1:1, tutor you choose",
+    language: "part",
+    languageNote: "Depends on the tutor",
+    billing: "part",
+    billingNote: "28-day plan that renews on your saved card; no lock-in",
+    price: "₹250–₹4,000 per lesson",
+    logos: [{ slug: "preply", name: "Preply" }],
+    source: {
+      label: "Preply Help — How subscriptions work",
+      url: "https://help.preply.com/en/articles/4966680-how-subscriptions-work",
+    },
+  },
+  {
+    what: "italki",
+    examples: "1:1 tutor marketplace",
+    daily: "part",
+    dailyNote: "Only the lessons you book",
+    teacher: "yes",
+    teacherNote: "Yes — 1:1, tutor you choose",
+    language: "part",
+    languageNote: "Depends on the tutor",
+    billing: "yes",
+    billingNote: "Pay per lesson with credits; refunds as credits",
+    price: "₹250–₹4,000 per lesson",
+    logos: [{ slug: "italki", name: "italki" }],
+    source: { label: "italki — pricing", url: "https://www.italki.com/en/blog/italki-price" },
+  },
+  {
+    what: "British Council",
+    examples: "live online group courses",
+    daily: "part",
+    dailyNote: "Self-study material alongside classes",
+    teacher: "yes",
+    teacherNote: "Yes — live group classes",
+    language: "no",
+    languageNote: "English only",
+    billing: "part",
+    billingNote: "Paid per module, upfront",
+    price: "₹8,800–₹16,000 per module",
+    logos: [{ slug: "british-council", name: "British Council" }],
+    source: {
+      label: "British Council India — English",
+      url: "https://www.britishcouncil.in/english",
+    },
+  },
+  {
+    what: "Duolingo · ELSA Speak",
+    examples: "AI practice apps",
     daily: "yes",
     dailyNote: "Yes",
     teacher: "no",
     teacherNote: "No live teacher",
-    language: "yes",
-    languageNote: "Yes, recorded",
-    billing: "part",
-    billingNote: "Subscriptions that often auto-renew",
-    price: "Free–₹1,000/month",
-  },
-  {
-    what: "1:1 practice and tutors",
-    examples: "per-session call apps, tutor marketplaces",
-    daily: "part",
-    dailyNote: "Only if you pay per session",
-    teacher: "yes",
-    teacherNote: "Yes",
     language: "part",
-    languageNote: "Rarely",
+    languageNote: "Duolingo teaches English from Hindi",
     billing: "part",
-    billingNote: "Prepaid session packs or auto-renewing plans",
-    price: "₹2,700–₹8,500+/month",
+    billingNote: "Free tier, or a subscription that auto-renews",
+    price: "₹300–₹1,200/month",
+    logos: [
+      { slug: "duolingo", name: "Duolingo" },
+      { slug: "elsa-speak", name: "ELSA Speak" },
+    ],
+    source: {
+      label: "ELSA Help — Subscriptions and cancellation",
+      url: "https://elsanow.freshdesk.com/en/support/solutions/articles/31000177556-understanding-subscriptions-and-cancellation",
+    },
   },
   {
     what: "City classrooms and chains",
@@ -76,20 +204,6 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     billing: "part",
     billingNote: "Often several months paid upfront",
     price: "₹2,000–₹10,000/month",
-  },
-  {
-    what: "Learn With Smile",
-    examples: "live batch + Bolo app",
-    daily: "yes",
-    dailyNote: "Yes — the Bolo app, every day, with a streak",
-    teacher: "yes",
-    teacherNote: "Yes — about 6 learners, same teacher",
-    language: "yes",
-    languageNote: "Hindi, Marathi or English",
-    billing: "yes",
-    billingNote: "Yes — no auto-debit, no loans, refund in writing",
-    price: "From ₹999/month",
-    ours: true,
   },
 ];
 

@@ -53,15 +53,15 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     fee: "₹2,700 / 25 × 15-min",
     extra: "No 6-month syllabus",
     batch: "1:1 audio, on demand",
-    session: "No counselling — you talk",
+    session: "No counselling; you start with a call",
     tone: "indigo",
   },
   {
     name: "Cambly",
     fee: "₹8,000–₹15,000/mo if daily",
-    extra: "Tutor lottery",
+    extra: "Book any available tutor",
     batch: "1:1 native video",
-    session: "Tutor lottery. No map.",
+    session: "Book a tutor. No fixed course plan.",
     tone: "coral",
   },
   {
@@ -85,7 +85,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     fee: "₹8,800–₹16,000 / module",
     extra: "CEFR classroom / badge",
     batch: "Often 8–12",
-    session: "Counsellor pitches a module",
+    session: "Sold by CEFR module",
     tone: "ink",
   },
   {
@@ -101,7 +101,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     fee: "₹8,000–₹35,000 / course",
     extra: "Exam paper. Not fluency.",
     batch: "Exam batch",
-    session: "Pitch for IELTS/PTE",
+    session: "Exam-focused (IELTS/PTE)",
     tone: "coral",
   },
 ] as const;
