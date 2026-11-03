@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
 import { VizIn } from "@/components/viz/Viz";
 import { Chip, Head, T, type Tone } from "@/components/package/PackageSections";
-import { BoloPhone } from "@/components/bolo/BoloPhone";
+import { LazyBoloPhone } from "@/components/bolo/LazyBolo";
 import { BoloParrot, type BoloPose } from "@/components/mascots/BoloParrot";
 import { MithuMacaw } from "@/components/mascots/MithuMacaw";
 import { BoloAppIcon } from "@/components/mascots/BoloAppIcon";
@@ -117,7 +117,11 @@ export function BoloSection() {
           </div>
         </div>
         <div>
-          <BoloPhone tab={tab} onTab={setTab} label="Bolo app preview — try the grammar question" />
+          <LazyBoloPhone
+            tab={tab}
+            onTab={setTab}
+            label="Bolo app preview — try the grammar question"
+          />
           <Illustration>
             Illustration of Bolo with sample content. Tap the tabs to explore.
           </Illustration>
@@ -183,7 +187,7 @@ export function BoloHero() {
           </div>
         </div>
         <div>
-          <BoloPhone label="Bolo app preview" />
+          <LazyBoloPhone label="Bolo app preview" />
           <Illustration>Illustration with sample content. Try the grammar question.</Illustration>
         </div>
       </div>
@@ -268,7 +272,7 @@ export function BoloTryIt() {
     <section className="section bg-bolo-mint/60" id="try">
       <div className="container-x grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
         <div className="order-2 lg:order-1">
-          <BoloPhone initial="practice" label="Bolo practice — try one question" />
+          <LazyBoloPhone initial="practice" label="Bolo practice — try one question" />
           <Illustration>Sample question. Real practice is set for your course.</Illustration>
         </div>
         <div className="order-1 lg:order-2">
@@ -370,7 +374,11 @@ export function BoloLevels() {
           </div>
         </div>
         <div>
-          <BoloPhone key={level} level={level} label={`Bolo app preview — ${tab.label} level`} />
+          <LazyBoloPhone
+            key={level}
+            level={level}
+            label={`Bolo app preview — ${tab.label} level`}
+          />
           <Illustration>{`Illustration with sample content for the ${tab.label} level.`}</Illustration>
         </div>
       </div>

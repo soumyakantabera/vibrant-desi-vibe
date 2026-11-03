@@ -68,6 +68,15 @@ MED_PATH = {
     "english": "/course-spoken-english",
 }
 
+# Cities that already have their own page: city queries belong there, and the
+# state page links to it (state ↔ city cross-links, no competing pages).
+CITY_PAGE = {
+    "Mumbai": "/spoken-english-classes-mumbai",
+    "Delhi": "/spoken-english-classes-delhi",
+    "Bengaluru": "/spoken-english-classes-bengaluru",
+    "Hyderabad": "/spoken-english-classes-hyderabad",
+}
+
 for st in STATES:
     sp, name = st["path"], st["name"]
     # state-level intents
@@ -88,7 +97,7 @@ for st in STATES:
             f"english speaking course {city} online",
             f"spoken english class {city} fees",
         ]:
-            q(t, sp, city, "city", "₹999" if "fees" in t else None)
+            q(t, CITY_PAGE.get(city, sp), city, "city", "₹999" if "fees" in t else None)
     # locality-level ("near me" offline searchers)
     for loc in st["localities"]:
         for area in loc["areas"]:
@@ -149,7 +158,7 @@ variants = cycle(
 st_cycle = cycle([(st, c) for st in STATES for c in st["cities"]])
 while len(queries) < 1000:
     (st, city), (tpl, fee) = next(st_cycle), next(variants)
-    q(tpl.format(city=city), st["path"], city, "variant", "₹999" if fee else None)
+    q(tpl.format(city=city), CITY_PAGE.get(city, st["path"]), city, "variant", "₹999" if fee else None)
 queries = queries[:1000]
 
 # ------------------------------------------------------------ checks

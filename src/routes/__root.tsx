@@ -7,10 +7,14 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
-import { useEffect } from "react";
-import { MithuMacaw } from "@/components/mascots/MithuMacaw";
+import { lazy, Suspense, useEffect } from "react";
 import { SpeechBubble } from "@/components/mascots/SpeechBubble";
 import { BOLO_LINES } from "@/lib/bolo";
+
+// Only the 404 page shows Mithu, so his drawing loads with it, not with every page.
+const MithuMacaw = lazy(() =>
+  import("@/components/mascots/MithuMacaw").then((m) => ({ default: m.MithuMacaw })),
+);
 
 import appCss from "../styles.css?url";
 // The two faces the boot gate waits for (src/lib/boot-script.ts → ask()).
@@ -32,7 +36,9 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <div className="mx-auto flex w-fit flex-col items-center gap-1 sm:flex-row sm:items-end">
-          <MithuMacaw pose="lost" size={150} title="Mithu the macaw, holding a map upside down" />
+          <Suspense fallback={<div style={{ width: 150, height: 150 }} aria-hidden />}>
+            <MithuMacaw pose="lost" size={150} title="Mithu the macaw, holding a map upside down" />
+          </Suspense>
           <SpeechBubble tail="left" tone="mithu" className="text-left sm:mb-24">
             {BOLO_LINES.lost}
           </SpeechBubble>

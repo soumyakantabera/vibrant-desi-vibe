@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { ConfiguredGuide, guideHead } from "@/components/ConfiguredGuide";
+import { ConfiguredGuide } from "@/components/ConfiguredGuide";
+import { guideHead } from "@/lib/guide-head";
 
 export const Route = createFileRoute("/spoken-english-for-beginners-india")({
   component: () => <ConfiguredGuide path="/spoken-english-for-beginners-india" />,

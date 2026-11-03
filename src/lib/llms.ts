@@ -35,7 +35,8 @@
  *
  * Everything here is build-time only — nothing in the client bundle imports it.
  */
-import { courseFaqs, type CourseData } from "@/components/CoursePage";
+import type { CourseData } from "@/components/CoursePage";
+import { courseFaqs } from "@/lib/course-seo";
 import { monthSpan } from "@/components/CourseVisuals";
 import { BLOG_POSTS, getPostBySlug, getPostsSorted } from "@/lib/blog";
 import { COURSES } from "@/lib/courses";

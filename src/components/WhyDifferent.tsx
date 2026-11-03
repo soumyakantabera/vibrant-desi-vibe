@@ -4,8 +4,7 @@ import { WaButton } from "@/components/ui-bits";
 import { VizIn } from "@/components/viz/Viz";
 import { BoloAppIcon } from "@/components/mascots/BoloAppIcon";
 import { FeeText } from "@/components/FeeText";
-import { BoloPhone } from "@/components/bolo/BoloPhone";
-import { LiveClassView } from "@/components/bolo/LiveClassView";
+import { LazyBoloPhone, LazyLiveClassView } from "@/components/bolo/LazyBolo";
 import type { BoloLevel } from "@/lib/bolo-levels";
 import {
   ALL_IN_ONE,
@@ -78,13 +77,13 @@ function Visuals({ level }: { level: BoloLevel }) {
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-ink/60">
           In class · everyone speaks
         </p>
-        <LiveClassView course={COURSE_NAME[level]} />
+        <LazyLiveClassView course={COURSE_NAME[level]} />
       </div>
       <div className="flex flex-col items-center">
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-ink/60">
           Between classes · the Bolo app
         </p>
-        <BoloPhone
+        <LazyBoloPhone
           autoplay
           interactive={false}
           level={level}

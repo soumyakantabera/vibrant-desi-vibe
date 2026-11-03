@@ -1,32 +1,20 @@
 /**
- * Page bodies + SEO entries for the state pages and the needs guides.
- * Kept apart from needs.ts / states.ts so each data file stays import-free
- * of the other (the two cross-link only here).
+ * Page bodies for the state pages and the needs guides — imported only by
+ * their routes, so this text ships in route chunks, not the shared bundle.
  */
 import type { ArticleBody } from "@/content/blog/blocks";
-import type { PageSeo } from "@/lib/seo";
-import { NEEDS, NEED_KEYS, type Need } from "@/lib/needs";
+import { NEEDS, type Need } from "@/lib/needs";
+import { NEED_BODIES } from "@/lib/needs-bodies";
 import { STATES, type StateInfo } from "@/lib/states";
-import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
+import { ALL_IN_ONE } from "@/lib/positioning";
+import { MEDIUM_COURSE } from "@/lib/regional-seo";
 
-const UPDATED = "2026-11-03";
-
-const MEDIUM_COURSE: Record<StateInfo["medium"], { path: string; label: string; line: string }> = {
-  hindi: {
-    path: "/course-spoken-english-hindi",
-    label: "Basic Spoken English — Hindi to English",
-    line: "a Hindi-speaking teacher explains what does not land in Hindi, and you speak English in every class",
-  },
-  marathi: {
-    path: "/course-spoken-english-marathi",
-    label: "Basic Spoken English — Marathi to English",
-    line: "a Marathi-speaking teacher explains what does not land in Marathi, and you speak English in every class",
-  },
-  english: {
-    path: "/course-spoken-english",
-    label: "Basic Spoken English",
-    line: "English-to-English teaching, with a Hindi-medium batch available if you think in Hindi",
-  },
+/** States whose biggest city already has its own city page. */
+const CITY_PAGE: Record<string, { name: string; path: string }> = {
+  maharashtra: { name: "Mumbai", path: "/spoken-english-classes-mumbai" },
+  "delhi-ncr": { name: "Delhi", path: "/spoken-english-classes-delhi" },
+  karnataka: { name: "Bengaluru", path: "/spoken-english-classes-bengaluru" },
+  telangana: { name: "Hyderabad", path: "/spoken-english-classes-hyderabad" },
 };
 
 export function stateBody(st: StateInfo): ArticleBody {
@@ -98,7 +86,7 @@ export function stateBody(st: StateInfo): ArticleBody {
     { t: "h2", text: "Cities our learners join from" },
     {
       t: "p",
-      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.`,
+      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${CITY_PAGE[st.slug] ? ` In ${CITY_PAGE[st.slug].name}? Read the [${CITY_PAGE[st.slug].name} city guide](${CITY_PAGE[st.slug].path}).` : ""}`,
     },
   ];
 }
@@ -106,7 +94,7 @@ export function stateBody(st: StateInfo): ArticleBody {
 export function needBody(n: Need): ArticleBody {
   const where = STATES.filter((s) => s.hubs.some((h) => h.need === n.key));
   return [
-    ...n.body,
+    ...NEED_BODIES[n.key],
     { t: "h2", text: "Where these jobs and studies are" },
     {
       t: "table",
@@ -121,60 +109,3 @@ export function needBody(n: Need): ArticleBody {
     { t: "p", text: ALL_IN_ONE },
   ];
 }
-
-function stateSeo(st: StateInfo): PageSeo {
-  const mc = MEDIUM_COURSE[st.medium];
-  return {
-    path: st.path,
-    title: st.title,
-    description: st.description,
-    shortTitle: `Spoken English in ${st.name}`,
-    keywords: [
-      ...st.keywords,
-      ...st.localities
-        .flatMap((l) =>
-          l.areas
-            .slice(0, 2)
-            .map((a) => `spoken english classes near ${a.toLowerCase()} ${l.city.toLowerCase()}`),
-        )
-        .slice(0, 10),
-      `spoken english classes near me ${st.name.toLowerCase()}`,
-      `online spoken english class ${st.name.toLowerCase()}`,
-    ],
-    ogImage: "/og/default.jpg",
-    priority: 0.7,
-    changefreq: "monthly",
-    dateModified: UPDATED,
-    breadcrumb: [
-      { name: "Guides", path: "/guides" },
-      { name: `Spoken English in ${st.name}`, path: st.path },
-    ],
-    summary: `Spoken English for ${st.name} (${st.cities.slice(0, 4).join(", ")}): live online, about 6 learners per batch, ${mc.label} at ₹999/month inclusive of taxes, Bolo practice app and weekly teacher review included. Local needs: ${st.hubs.map((h) => NEEDS[h.need].label).join(", ")}. Local options seen Nov 2026: ${st.prices.map((p) => `${p.what} ${p.range}`).join("; ")}. Learners join online from ${st.localities.map((l) => `${l.city} (${l.areas.join(", ")})`).join("; ")} — no branch or classroom there; live online instead. ${ALL_IN_ONE}`,
-    faqs: [...st.faqs, WHY_WE_WIN_FAQ[0]],
-  };
-}
-
-function needSeo(n: Need): PageSeo {
-  return {
-    path: n.path,
-    title: n.title,
-    description: n.description,
-    shortTitle: n.h1,
-    keywords: n.keywords,
-    ogImage: "/og/default.jpg",
-    priority: 0.7,
-    changefreq: "monthly",
-    dateModified: UPDATED,
-    breadcrumb: [
-      { name: "Guides", path: "/guides" },
-      { name: n.h1, path: n.path },
-    ],
-    summary: n.summary,
-    faqs: [...n.faqs, WHY_WE_WIN_FAQ[1]],
-  };
-}
-
-export const REGIONAL_PAGES: Record<string, PageSeo> = Object.fromEntries([
-  ...STATES.map((s) => [s.path, stateSeo(s)] as const),
-  ...NEED_KEYS.map((k) => [NEEDS[k].path, needSeo(NEEDS[k])] as const),
-]);

@@ -309,12 +309,29 @@ export function cityFaqs(city: CityRecord): Faq[] {
   ];
 }
 
+/** City → its state page, so the two pages point at each other instead of competing. */
+const STATE_PAGE: Record<string, { name: string; path: string }> = {
+  mumbai: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra" },
+  delhi: { name: "Delhi NCR", path: "/spoken-english-classes-delhi-ncr" },
+  bengaluru: { name: "Karnataka", path: "/spoken-english-classes-karnataka" },
+  hyderabad: { name: "Telangana", path: "/spoken-english-classes-telangana" },
+};
+
 export function cityBody(city: CityRecord): ArticleBody {
+  const st = STATE_PAGE[city.slug];
   return [
     {
       t: "p",
       text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
+    ...(st
+      ? [
+          {
+            t: "p" as const,
+            text: `Not in ${city.name} itself? The [${st.name} page](${st.path}) covers the other cities and towns of ${st.name}, with the same live classes and fee.`,
+          },
+        ]
+      : []),
     ...city.local,
     { t: "h2", text: `Why ${city.name} learners take this online` },
     {

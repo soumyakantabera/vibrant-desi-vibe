@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
 import { SmartImage } from "@/components/SmartImage";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { courseFaqs, courseSeo } from "@/components/CoursePage";
+import { courseFaqs, courseSeo } from "@/lib/course-seo";
 import { COURSES } from "@/lib/courses";
 import { DEMO_SESSION } from "@/lib/demo-session";
 import { waDirect } from "@/lib/whatsapp";

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CoursePage, courseSeo } from "@/components/CoursePage";
+import { CoursePage } from "@/components/CoursePage";
+import { courseSeo } from "@/lib/course-seo";
 import { COURSES } from "@/lib/courses";
 const d = COURSES["spoken-english-marathi"];
 export const Route = createFileRoute("/course-spoken-english-marathi")({

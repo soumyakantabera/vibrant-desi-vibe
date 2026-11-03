@@ -801,6 +801,10 @@ section > .container-x {
   }
   .section {
     @apply py-12 md:py-14 lg:py-16;
+    /* Off-screen sections skip style/layout until scrolled near; the
+       remembered size keeps the scrollbar and anchors stable. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
   }
   .eyebrow {
     display: inline-flex;

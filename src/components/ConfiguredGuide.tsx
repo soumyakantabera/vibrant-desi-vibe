@@ -2,39 +2,7 @@ import { createElement } from "react";
 
 import { GuidePage } from "@/components/GuidePage";
 import { NEW_GUIDE_VIEWS } from "@/content/pages/new-guides";
-import { PAGES, abs, pageHead } from "@/lib/seo";
-
-export function guideHead(path: string) {
-  const page = PAGES[path];
-  const view = NEW_GUIDE_VIEWS[path];
-  const head = pageHead(path);
-  if (!page || !view) return head;
-  head.scripts.push({
-    type: "application/ld+json",
-    children: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "@id": `${abs(path)}#article`,
-      headline: page.title,
-      description: page.description,
-      url: abs(path),
-      mainEntityOfPage: { "@type": "WebPage", "@id": abs(path) },
-      inLanguage: "en-IN",
-      dateModified: page.dateModified ?? "2026-09-11",
-      author: {
-        "@type": "Person",
-        "@id": `${abs("/educator")}#person`,
-        name: "Sunanda Dey",
-        url: abs("/educator"),
-      },
-      publisher: { "@id": `${abs("/")}#organization` },
-    }),
-  });
-  if (page.dateModified) {
-    head.meta.push({ property: "article:modified_time", content: page.dateModified });
-  }
-  return head;
-}
+import { PAGES } from "@/lib/seo";
 
 export function ConfiguredGuide({ path }: { path: string }) {
   const page = PAGES[path];

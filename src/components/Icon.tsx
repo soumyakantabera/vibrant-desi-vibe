@@ -1,5 +1,8 @@
 import type { CSSProperties } from "react";
-import type { Icon as PhosphorIcon, IconWeight } from "@phosphor-icons/react";
+import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
+
+/** The only weights shipped: vite/phosphor-weights-plugin.ts strips the rest. */
+type IconWeight = "bold" | "fill" | "duotone";
 import {
   ArrowRightIcon,
   ArrowsClockwiseIcon,

@@ -6,11 +6,13 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import path from "node:path";
 
 import { bootScriptPlugin } from "./vite/boot-script-plugin";
+import { phosphorWeightsPlugin } from "./vite/phosphor-weights-plugin";
 
 export default defineConfig({
   base: "/",
   plugins: [
     bootScriptPlugin(),
+    phosphorWeightsPlugin(),
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,

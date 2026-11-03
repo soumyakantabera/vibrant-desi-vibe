@@ -29,7 +29,7 @@ import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
 import { LEVELS, levelForCourse } from "@/lib/bolo-levels";
 import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
-import { REGIONAL_PAGES } from "@/lib/regional-pages";
+import { REGIONAL_PAGES } from "@/lib/regional-seo";
 import {
   CONSULTATION,
   CONSULTATION_FAQS,
