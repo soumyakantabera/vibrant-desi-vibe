@@ -5,6 +5,7 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
+import { BoloMention } from "@/components/bolo/BoloSections";
 import { COURSES } from "@/lib/courses";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
@@ -138,6 +139,7 @@ function Page() {
                 ]}
                 footer="Message Anytime · Replies 10am–midnight IST every day"
               />
+              <BoloMention />
             </div>
           </div>
         </div>

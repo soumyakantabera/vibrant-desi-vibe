@@ -1,10 +1,11 @@
 /**
- * The complete package (October 2026): every paid course = live classes +
- * learner portal + recorded video library + the same teacher.
+ * The complete package (November 2026): every paid course = live classes +
+ * the Bolo app (daily practice, video lessons, weekly teacher review) + the
+ * same teacher. Bolo copy and FAQs live in src/lib/bolo.ts.
  *
  * One source for the homepage sections, course pages, FAQs and the assistant
  * files, so the claims never drift apart. Keep every line factual: no video
- * counts, no durations for portal tasks, nothing the LMS does not do today.
+ * counts, no durations for Bolo tasks, nothing Bolo does not do today.
  */
 import type { FeeSlug } from "@/lib/fees";
 
@@ -27,21 +28,21 @@ export const PART_TONE: Record<
     soft: "bg-slate-soft",
     text: "text-[#263F63]",
     ring: "border-indigo-pop",
-    label: "Learner portal",
+    label: "Bolo · Practice",
   },
   videos: {
     fill: "bg-sunshine",
     soft: "bg-amber-soft",
     text: "text-[#6A4A10]",
     ring: "border-sunshine",
-    label: "Video library",
+    label: "Bolo · Watch",
   },
   review: {
     fill: "bg-plum",
     soft: "bg-plum-soft",
     text: "text-[#4E3470]",
     ring: "border-plum",
-    label: "Weekly teacher review",
+    label: "Bolo · Review",
   },
   teacher: {
     fill: "bg-coral",
@@ -53,75 +54,24 @@ export const PART_TONE: Record<
 };
 
 export const PACKAGE_ONE_LINE =
-  "Every course includes live classes, daily exercises in the learner portal, the recorded video library and a weekly teacher review of your reading and speaking — with the same teacher, in one monthly fee.";
-
-export const PORTAL_MODULES: {
-  title: string;
-  sub: string;
-  icon: "grammar" | "vocab" | "read" | "speak" | "review";
-  sample: string[];
-}[] = [
-  {
-    title: "Daily grammar exercises",
-    sub: "Tap an answer, get instant feedback",
-    icon: "grammar",
-    sample: [],
-  },
-  {
-    title: "Daily vocabulary exercises",
-    sub: "Words and phrases you will actually use",
-    icon: "vocab",
-    sample: [
-      "Instead of “very good” → “excellent”, “spot on”.",
-      "Buy time: “Let me think about that for a second.”",
-      "Connect: “To be honest…”, “On the other hand…”",
-    ],
-  },
-  {
-    title: "Reading practice",
-    sub: "Read aloud, then find the grammar in the text",
-    icon: "read",
-    sample: [
-      "Read a short passage aloud with steady rhythm.",
-      "Spot the rule inside it: “I have worked here for two years.”",
-      "Write two lines of your own using the same rule.",
-    ],
-  },
-  {
-    title: "Speaking practice",
-    sub: "A whole conversation, start to finish",
-    icon: "speak",
-    sample: [
-      "Open: “Hi, I’m Riya — I’ve just joined the support team.”",
-      "Keep it going: ask one question back.",
-      "Record your answer and submit it for review.",
-    ],
-  },
-  {
-    title: "Weekly teacher review",
-    sub: "Your reading and speaking, checked every week",
-    icon: "review",
-    sample: [
-      "Your teacher reviews the reading and speaking you submitted that week.",
-      "You get notes on the mistakes that repeat — not every small slip.",
-      "The next live class picks up from that feedback.",
-    ],
-  },
-];
+  "Every course includes live classes, the Bolo app — daily practice with a streak, video lessons and a weekly teacher review of your reading and speaking — and the same teacher, in one monthly fee.";
 
 export const WEEK: {
   day: string;
-  kind: "Live class" | "Portal" | "Review";
+  kind: "Live class" | "Bolo";
+  /** Which Bolo tab the day lives in. */
+  tab?: "Practice" | "Watch" | "Review";
   title: string;
   detail: string;
   video?: boolean;
 }[] = [
   {
     day: "Mon",
-    kind: "Portal",
-    title: "Grammar + vocabulary exercises",
+    kind: "Bolo",
+    tab: "Practice",
+    title: "Grammar + vocabulary in Bolo",
     detail:
-      "Daily grammar and vocabulary exercises in the portal, plus a short video with a tip to start speaking.",
+      "Daily grammar and vocabulary in Bolo, plus a short video with a tip to start speaking. Your streak starts here.",
     video: true,
   },
   {
@@ -133,14 +83,16 @@ export const WEEK: {
   },
   {
     day: "Wed",
-    kind: "Portal",
+    kind: "Bolo",
+    tab: "Practice",
     title: "Reading practice",
     detail:
       "Daily grammar and vocabulary, then read a short passage aloud and find the grammar inside the text.",
   },
   {
     day: "Thu",
-    kind: "Portal",
+    kind: "Bolo",
+    tab: "Practice",
     title: "Speaking practice",
     detail:
       "Daily grammar and vocabulary, then a whole conversation from start to finish — recorded for your teacher.",
@@ -155,17 +107,19 @@ export const WEEK: {
   },
   {
     day: "Sat",
-    kind: "Review",
+    kind: "Bolo",
+    tab: "Review",
     title: "Teacher reviews your week",
     detail:
       "Your teacher reviews the reading and speaking you submitted this week and sends notes on what to fix next.",
   },
   {
     day: "Sun",
-    kind: "Portal",
+    kind: "Bolo",
+    tab: "Watch",
     title: "Catch up + videos",
     detail:
-      "Daily grammar and vocabulary at your pace, and anything from the video library — tips, grammar, fluency.",
+      "Daily grammar and vocabulary at your pace, and any video lesson in Bolo — tips, grammar, fluency.",
     video: true,
   },
 ];
@@ -267,14 +221,18 @@ export const BEFORE_NOW: { row: string; before: string; now: string }[] = [
   {
     row: "Between classes",
     before: "Worksheets",
-    now: "Daily grammar, vocabulary, reading and speaking exercises",
+    now: "Daily grammar, vocabulary, reading and speaking in Bolo, with a streak",
   },
   {
     row: "Feedback",
     before: "In class",
-    now: "In class + a weekly teacher review of your reading and speaking",
+    now: "In class + a weekly teacher review in Bolo of your reading and speaking",
   },
-  { row: "Conversation", before: "In class", now: "In class + whole-conversation practice online" },
+  {
+    row: "Conversation",
+    before: "In class",
+    now: "In class + whole conversations you record in Bolo",
+  },
   {
     row: "Grammar",
     before: "Corrected while you speak",
@@ -288,7 +246,7 @@ export const BEFORE_NOW: { row: string; before: string; now: string }[] = [
   {
     row: "Revision",
     before: "Class recordings",
-    now: "Recorded video library chosen for your course",
+    now: "Video lessons in Bolo, chosen for your course",
   },
 ];
 

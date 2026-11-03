@@ -21,6 +21,7 @@ const ENGLISH = [
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
   { to: "/course-business-english", label: "Business English" },
   { to: "/course-interview-preparation", label: "Interview Preparation" },
+  { to: "/bolo", label: "Bolo practice app" },
 ];
 
 const COMPANY = [

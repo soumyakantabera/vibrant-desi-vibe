@@ -63,7 +63,7 @@ function Page() {
           <span className="text-sunshine">₹999/mo, inclusive of taxes · Approx. 6 learners</span>
         </>
       }
-      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, approx. 6 learners, inclusive of taxes — with the learner portal and video library included."
+      standfirst="Group classes ₹800–₹3,000/mo, 1:1 ₹100–₹2,000/session, apps ₹300–₹800/mo — priced honestly. Learn With Smile Spoken English: ₹999/mo, approx. 6 learners, inclusive of taxes — with the Bolo practice app included."
       heroImage={IMG.studentLaptop}
       heroAlt="Indian learner comparing online English class fees on a laptop"
       lastUpdated={UPDATED}
@@ -78,8 +78,8 @@ function Page() {
         <div className="container-x">
           <h2 className="mb-2 text-2xl md:text-[2rem]">Learn With Smile fees, side by side</h2>
           <p className="mb-6 max-w-3xl text-ink/80">
-            Every fee includes live classes, the learner portal, the recorded video library and the
-            same teacher.
+            Every fee includes live classes, the Bolo practice app — daily practice, video lessons
+            and a weekly teacher review — and the same teacher.
           </p>
           <PricingGrid />
           <DemoStrip />

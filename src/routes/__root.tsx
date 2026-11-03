@@ -8,6 +8,9 @@ import {
 } from "@tanstack/react-router";
 
 import { useEffect } from "react";
+import { MithuMacaw } from "@/components/mascots/MithuMacaw";
+import { SpeechBubble } from "@/components/mascots/SpeechBubble";
+import { BOLO_LINES } from "@/lib/bolo";
 
 import appCss from "../styles.css?url";
 // The two faces the boot gate waits for (src/lib/boot-script.ts → ask()).
@@ -28,8 +31,14 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <div className="mx-auto flex w-fit flex-col items-center gap-1 sm:flex-row sm:items-end">
+          <MithuMacaw pose="lost" size={150} title="Mithu the macaw, holding a map upside down" />
+          <SpeechBubble tail="left" tone="mithu" className="text-left sm:mb-24">
+            {BOLO_LINES.lost}
+          </SpeechBubble>
+        </div>
+        <h1 className="mt-4 text-6xl font-bold text-foreground">404</h1>
+        <h2 className="mt-3 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
@@ -50,6 +59,12 @@ function NotFoundComponent() {
           >
             Ask us on WhatsApp
           </a>
+          <Link
+            to="/bolo"
+            className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+          >
+            Meet Bolo
+          </Link>
         </div>
       </div>
     </div>

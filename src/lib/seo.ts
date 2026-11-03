@@ -24,6 +24,7 @@
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { publishedFeeLock } from "@/lib/fees";
+import { BOLO_FAQ } from "@/lib/bolo";
 import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
 import {
@@ -325,7 +326,7 @@ export const CONSULTATION_KEYWORDS = [
   "free demo class spoken english india",
 ];
 
-/** The complete package — live classes + portal practice + recorded videos. */
+/** The complete package — live classes + the Bolo practice app. */
 export const PACKAGE_KEYWORDS = [
   "spoken english course with daily practice",
   "online english classes with practice portal",
@@ -800,7 +801,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), daily grammar, vocabulary, reading and speaking exercises in the learner portal, a recorded video library (including tips and tricks to start speaking) and a weekly teacher review of reading and speaking, with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
+      "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), the Bolo practice app (daily grammar, vocabulary, reading and speaking with a streak, video lessons including tips and tricks to start speaking, and a weekly teacher review of reading and speaking), with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
     faqs: [
       {
         q: "How much do online spoken English classes cost in India?",
@@ -820,11 +821,11 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "What do I do between live classes?",
-        a: "Every course includes daily exercises in the learner portal: grammar and vocabulary every day, reading practice (read aloud, then find the grammar in the text) and speaking practice (whole conversations, recorded). Every week your teacher reviews the reading and speaking you submit. There is also a recorded video library — tips and tricks to start speaking English, grammar, fluency, thinking in English and what to say when your mind goes blank — chosen for your course. So a week has up to 2 live classes plus practice every day.",
+        a: "Every course includes Bolo, our practice app: grammar and vocabulary every day with a streak, reading practice (read aloud, then find the grammar in the text) and speaking practice (whole conversations, recorded). Every week your teacher reviews the reading and speaking you send in Bolo. Bolo also holds video lessons — tips and tricks to start speaking English, grammar, fluency, thinking in English and what to say when your mind goes blank — chosen for your course. So a week has up to 2 live classes plus practice every day.",
       },
       {
         q: "Are the daily exercises, videos and teacher review included in the fee?",
-        a: "Yes. The monthly fee covers the live classes, daily exercises in the learner portal, the recorded video library, a weekly teacher review of your reading and speaking, and the same teacher for your batch: ₹999/month for Basic Spoken English, ₹1,599 for Interactive Speaking, ₹2,499 for Business English and ₹2,499 for Interview Preparation, inclusive of taxes. Portal and video access runs while you are enrolled. There is no separate app or material fee.",
+        a: "Yes. The monthly fee covers the live classes, the Bolo practice app (daily practice, video lessons and a weekly teacher review of your reading and speaking), and the same teacher for your batch: ₹999/month for Basic Spoken English, ₹1,999 for Intermediate Spoken English, ₹1,599 for Interactive Speaking, ₹2,499 for Business English and ₹2,499 for Interview Preparation, inclusive of taxes. Bolo access runs while you are enrolled. There is no separate app or material fee.",
       },
       {
         q: "Why is Learn With Smile not the cheapest option?",
@@ -832,7 +833,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is there a launch offer right now?",
-        a: "Yes, until 30 November 2026: new learners who enrol by that date get one extra month of learner-portal and video-library access after their course, free. The course fee does not change.",
+        a: "Yes, until 30 November 2026: new learners who enrol by that date get one extra month of Bolo, the practice app, after their course, free. The course fee does not change.",
       },
       {
         q: "Can I get a free consultation before I enrol?",
@@ -900,6 +901,31 @@ export const PAGES: Record<string, PageSeo> = {
         a: "We place you in one room first. Two rooms only when the foundation is already there and the IST slots fit. Message us on WhatsApp so we can check the available schedules.",
       },
     ],
+  },
+
+  "/bolo": {
+    path: "/bolo",
+    title: "Bolo App | Daily English Practice With a Streak",
+    description:
+      "Bolo, the Learn With Smile practice app: daily grammar, vocabulary, reading and speaking with a streak, video lessons and weekly teacher review. In every course fee.",
+    shortTitle: "Bolo app",
+    keywords: [
+      "bolo english practice app",
+      "learn with smile bolo app",
+      "daily english practice app with teacher feedback",
+      "english speaking practice app india with live classes",
+      "spoken english app with streak",
+      "english learner portal with video lessons",
+      "english practice between classes",
+      "app where teacher reviews my english speaking",
+    ],
+    ogImage: "/og/bolo.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    dateModified: "2026-11-03",
+    summary:
+      "Bolo is the Learn With Smile practice app (our learner portal app; Bolo means “speak!” in Hindi). Three tabs: Practice — daily grammar, vocabulary, reading and recorded speaking with a daily streak; Watch — video lessons picked for the course; Review — a weekly teacher review of the reading and speaking the learner sends. Only our teachers hear the recordings. Included in every course fee from ₹999/month, inclusive of taxes; login details come on WhatsApp after admission. Mascots: Bolo, a rose-ringed parakeet, and Mithu, a scarlet macaw.",
+    faqs: BOLO_FAQ,
   },
 
   "/why-us": {
@@ -1853,7 +1879,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
     extraFaqs: [
       {
         q: "What is the fee for a basic spoken English course in India?",
-        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, inclusive of taxes. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video-only courses cost less but give you no live speaking practice, and 1:1 native-tutor platforms cost considerably more per hour. Our fee includes the live classes, a learner portal for daily practice and a recorded video library.",
+        a: "Learn With Smile charges ₹999 per month for Basic Spoken English — 6 months, up to 2 live classes per week, approximately 6 learners per batch, inclusive of taxes. Comparable live group courses in India generally run ₹800–₹3,000 per month; recorded-video-only courses cost less but give you no live speaking practice, and 1:1 native-tutor platforms cost considerably more per hour. Our fee includes the live classes and Bolo, our practice app — daily practice with a streak, video lessons and a weekly teacher review.",
       },
       {
         q: "How long does it take to learn spoken English from zero?",

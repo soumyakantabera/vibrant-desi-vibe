@@ -246,7 +246,7 @@ export function CoursePage({ data }: { data: CourseData }) {
           tone: "indigo",
           icon: SnapIcons.calendar,
           big: "Daily",
-          small: "grammar, vocab, reading & speaking exercises",
+          small: "practice in the Bolo app, with a streak",
         },
         {
           tone: "violet",
@@ -389,7 +389,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </>
       )}
 
-      {/* COMPLETE PACKAGE — live + portal + videos + same teacher */}
+      {/* COMPLETE PACKAGE — live classes + Bolo + same teacher */}
       {isPackageSlug(data.slug) && <CourseIncluded slug={data.slug} />}
 
       {/* CURRICULUM */}
@@ -667,14 +667,14 @@ export function courseSeo(d: CourseData) {
       },
       offers,
       hasCourseInstance: courseInstance,
-      // The complete package: every paid course includes the learner portal and
-      // the recorded video library alongside the live classes.
+      // The complete package: every paid course includes Bolo, the practice app
+      // (daily practice and video lessons) alongside the live classes.
       ...(d.slug !== "demo-session"
         ? {
             hasPart: [
               {
                 "@type": "LearningResource",
-                name: "Learner portal practice",
+                name: "Bolo practice app — daily practice",
                 learningResourceType: "Interactive practice",
                 description:
                   "Whole-conversation practice, word and phrase brush-ups, reading fluency, grammar in real texts and interactive grammar practice between live classes.",
@@ -682,7 +682,7 @@ export function courseSeo(d: CourseData) {
               },
               {
                 "@type": "LearningResource",
-                name: "Recorded video library",
+                name: "Bolo practice app — video lessons",
                 learningResourceType: "Video lessons",
                 description:
                   "Recorded lessons on grammar, speaking and fluency, thinking in English, fixing mind blanks and small natural phrases, chosen for the course.",

@@ -119,10 +119,10 @@ export const DEMO_FEE = { inr: 199, display: "₹199" } as const;
 export const LAUNCH_OFFER = {
   endsAt: "2026-11-30T23:59:59+05:30",
   endsLabel: "30 November 2026",
-  headline: "Launch offer: one extra month of portal + videos, free",
-  short: "+1 month of portal & videos free",
+  headline: "Launch offer: one extra month of Bolo, free",
+  short: "+1 month of Bolo free",
   detail:
-    "New learners who enrol by 30 November 2026 get one extra month of learner-portal and video-library access after their course, at no cost. The course fee does not change.",
+    "New learners who enrol by 30 November 2026 get one extra month of Bolo — the practice app with daily exercises, video lessons and teacher review — after their course, at no cost. The course fee does not change.",
 } as const;
 
 export function launchOfferActive(now: number = Date.now()): boolean {

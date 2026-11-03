@@ -36,12 +36,12 @@ function Eyebrow({ children, tone }: { children: ReactNode; tone: Deep }) {
 
 const HERO_TILES: { tone: Deep; icon: IconName; big: string; label: string }[] = [
   { tone: "green", icon: "users", big: "2×", label: "live classes a week" },
-  { tone: "blue", icon: "pen", big: "4", label: "daily exercises" },
-  { tone: "saffron", icon: "video", big: "▶", label: "video library + tips" },
+  { tone: "blue", icon: "pen", big: "7", label: "days of Bolo practice" },
+  { tone: "saffron", icon: "video", big: "▶", label: "Bolo video lessons + tips" },
   { tone: "violet", icon: "review", big: "1×", label: "teacher review a week" },
 ];
 const HERO_WEEK: { d: string; tone: Deep; what: string }[] = [
-  { d: "M", tone: "blue", what: "Exercises" },
+  { d: "M", tone: "blue", what: "Bolo practice" },
   { d: "T", tone: "green", what: "Live class" },
   { d: "W", tone: "blue", what: "Reading" },
   { d: "T", tone: "blue", what: "Speaking" },
@@ -53,26 +53,26 @@ const HERO_WEEK: { d: string; tone: Deep; what: string }[] = [
 /** Hero signature: the week drawn as a smile (style A). */
 export function HeroPackageViz() {
   const live = "var(--tile-green)";
-  const ex = "var(--tile-blue)";
+  const ex = "var(--bolo-teal)";
   const rev = "var(--tile-violet)";
   const vid = "var(--tile-saffron)";
   return (
     <div className="mt-4 w-full">
       <WeekArc
         title="English every day, not just class days"
-        sub="2 live classes · daily exercises · a weekly teacher review"
+        sub="2 live classes · daily Bolo practice · a weekly teacher review"
         days={[
-          { day: "M", color: ex, what: "Grammar and vocabulary exercises" },
+          { day: "M", color: ex, what: "Bolo: grammar and vocabulary" },
           { day: "T", color: live, what: "Live class" },
-          { day: "W", color: ex, what: "Reading practice" },
-          { day: "T", color: ex, what: "Speaking practice" },
+          { day: "W", color: ex, what: "Bolo: reading practice" },
+          { day: "T", color: ex, what: "Bolo: speaking practice" },
           { day: "F", color: live, what: "Live class" },
-          { day: "S", color: rev, what: "Teacher review" },
-          { day: "S", color: vid, what: "Video library" },
+          { day: "S", color: rev, what: "Bolo: teacher review" },
+          { day: "S", color: vid, what: "Bolo: video lessons" },
         ]}
         legend={[
           { color: live, label: "Live class" },
-          { color: ex, label: "Daily exercises" },
+          { color: ex, label: "Bolo practice" },
           { color: rev, label: "Teacher review" },
           { color: vid, label: "Videos" },
         ]}
@@ -116,7 +116,7 @@ const FEATURES: { label: string; marks: [M, M, M, M, M, M] }[] = [
   { label: "Live human teacher", marks: ["y", "y", "y", "y", "y", "n"] },
   { label: "Small live batch — you speak with peers", marks: ["y", "n", "n", "n", "p", "n"] },
   { label: "Fixed course map (syllabus)", marks: ["y", "n", "n", "p", "y", "p"] },
-  { label: "Daily exercises included", marks: ["y", "n", "n", "n", "p", "y"] },
+  { label: "Daily practice app included", marks: ["y", "n", "n", "n", "p", "y"] },
   { label: "Teacher reviews your practice every week", marks: ["y", "p", "n", "p", "p", "n"] },
   { label: "Recorded video lessons included", marks: ["y", "n", "n", "n", "p", "p"] },
   { label: "Same teacher from start to finish", marks: ["y", "p", "p", "y", "p", "n"] },
@@ -417,7 +417,7 @@ const GAP_TILES: { tone: Deep; icon: IconName; who: string; gets: string; misses
     icon: "trophy",
     who: "Learn With Smile",
     gets: "All of it, in one fee",
-    misses: "Live batch of ~6 + daily exercises + weekly review + videos",
+    misses: "Live batch of ~6 + the Bolo app: daily practice, weekly review, videos",
   },
 ];
 
@@ -618,7 +618,7 @@ export function MarketGap() {
           <div className="rounded-3xl border border-border bg-paper p-6 md:p-7">
             <h3 className="text-xl font-extrabold">Hours you actually speak, over 6 months</h3>
             <p className="mb-4 mt-1 text-ink/70">
-              Up to 2 classes a week. Daily exercises come on top of this.
+              Up to 2 classes a week. Daily Bolo practice comes on top of this.
             </p>
             <LineDuo
               title="Cumulative speaking hours over six months: about 7.5 in a batch of about 6, about 1.25 in a 30-learner room."
@@ -649,7 +649,7 @@ const PROOF: { tone: Deep; icon: IconName; value: number; suffix: string; label:
 export function GoogleProof() {
   return (
     <section className="section bg-paper" id="reviews">
-      <div className="container-x grid items-stretch gap-5 lg:grid-cols-[1fr_1.3fr]">
+      <div className="container-x grid grid-cols-[minmax(0,1fr)] items-stretch gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
         <VizIn className="flex flex-col justify-between gap-6 rounded-[2rem] bg-white p-7 shadow-[0_30px_60px_-45px_rgba(19,33,47,.55)] md:p-9">
           <div className="flex flex-col gap-3">
             <Eyebrow tone="saffron">Google reviews</Eyebrow>
@@ -657,8 +657,8 @@ export function GoogleProof() {
               What learners say on Google
             </h2>
           </div>
-          <div className="flex items-center gap-5">
-            <div className="w-56 shrink-0">
+          <div className="flex flex-wrap items-center gap-5">
+            <div className="w-48 shrink-0 sm:w-56">
               <SmileGauge
                 value={5}
                 max={5}

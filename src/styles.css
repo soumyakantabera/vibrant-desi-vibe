@@ -13,6 +13,7 @@
 @import "@fontsource/dm-sans/latin-800.css";
 @source "../src";
 @import "tw-animate-css";
+@import "./styles/mascots.css";
 
 @layer base {
   button:not(:disabled),
@@ -75,6 +76,12 @@
   --color-tile-teal: var(--tile-teal);
   --color-tile-red: var(--tile-red);
   --color-gold: var(--gold);
+  --color-bolo-teal: var(--bolo-teal);
+  --color-bolo-teal-deep: var(--bolo-teal-deep);
+  --color-bolo-mint: var(--bolo-mint);
+  --color-bolo-leaf: var(--bolo-leaf);
+  --color-bolo-flame: var(--bolo-flame);
+  --color-mithu: var(--mithu);
 
   /* Type scale (Oct 2026): 18px body, everything one step larger. */
   --text-xs: 0.875rem;
@@ -155,6 +162,22 @@
   --tile-teal: #0b7f73;
   --tile-red: #cc3a55;
   --gold: #d4a23c;
+
+  /* Bolo app (Nov 2026): teal app chrome on white, parrot green, streak flame.
+     White on teal 5.07:1, white on teal-deep 6.46:1, teal on mint 4.52:1. */
+  --bolo-teal: #0a7c73;
+  --bolo-teal-deep: #086a62;
+  --bolo-mint: #e3f6f3;
+  --bolo-leaf: #3baa4e;
+  --bolo-flame: #f2a40f;
+  --mithu: #d8312b;
+
+  /* Motion. Site = calm (no overshoot). Bolo app + mascots = playful. */
+  --ease-pro: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-play: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-hover: 180ms;
+  --dur-enter: 320ms;
+  --dur-chart: 600ms;
 }
 
 .dark {
@@ -1163,11 +1186,11 @@ html.js [data-reveal-stagger="out"] > * {
   opacity: 0;
 }
 html.js [data-reveal="in"] {
-  animation: reveal-in 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: reveal-in 0.6s var(--ease-pro) both;
   animation-delay: var(--reveal-delay, 0ms);
 }
 html.js [data-reveal-stagger="in"] > * {
-  animation: reveal-in 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: reveal-in 0.55s var(--ease-pro) both;
 }
 html.js [data-reveal-stagger="in"] > *:nth-child(1) {
   animation-delay: 0ms;
@@ -1319,12 +1342,12 @@ html.js [data-viz="out"] .viz-draw {
 }
 html.js [data-viz="in"] .viz-bar,
 html.js [data-viz="in"] .viz-col {
-  transition: transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0ms);
+  transition: transform 1.1s var(--ease-pro) var(--d, 0ms);
 }
 html.js [data-viz="in"] .viz-pop {
   transition:
     opacity 0.6s ease var(--d, 0ms),
-    transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0ms);
+    transform 0.6s var(--ease-pro) var(--d, 0ms);
 }
 html.js [data-viz="in"] .viz-fade {
   transition: opacity 0.9s ease var(--d, 0ms);
@@ -1332,12 +1355,12 @@ html.js [data-viz="in"] .viz-fade {
 html.js [data-viz="in"] .viz-dot {
   transform-box: fill-box;
   transform-origin: center;
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0ms);
+  transition: transform 0.45s var(--ease-pro) var(--d, 0ms);
 }
 html.js [data-viz="in"] .viz-draw {
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0ms);
+  transition: stroke-dashoffset 1.5s var(--ease-pro) var(--d, 0ms);
 }
 .viz-dot {
   transform-box: fill-box;
@@ -1557,7 +1580,7 @@ h3 {
   }
 }
 .slide-in {
-  animation: slide-in 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: slide-in 0.45s var(--ease-pro) both;
 }
 
 .flip-tile {
@@ -1565,7 +1588,7 @@ h3 {
 }
 .flip-inner {
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 0.6s var(--ease-pro);
 }
 .flip-inner.is-flipped {
   transform: rotateY(180deg);
@@ -1637,7 +1660,7 @@ html.js [data-viz="out"] .viz-reveal {
 }
 html.js [data-viz="in"] .viz-reveal {
   clip-path: inset(0 0 0 0);
-  transition: clip-path 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0ms);
+  transition: clip-path 1.2s var(--ease-pro) var(--d, 0ms);
 }
 @media (prefers-reduced-motion: reduce) {
   html.js [data-viz] .viz-reveal {
@@ -1651,7 +1674,7 @@ html.js [data-viz="out"] .viz-arc {
   stroke-dasharray: 0 100;
 }
 html.js [data-viz="in"] .viz-arc {
-  transition: stroke-dasharray 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0ms);
+  transition: stroke-dasharray 1.1s var(--ease-pro) var(--d, 0ms);
 }
 @media (prefers-reduced-motion: reduce) {
   html.js [data-viz] .viz-arc {
@@ -1696,13 +1719,13 @@ html.js [data-viz="in"] .viz-arc {
   }
 }
 .snap-rise {
-  animation: snap-rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: snap-rise 0.7s var(--ease-pro) both;
 }
 .snap-slide {
-  animation: snap-slide 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: snap-slide 0.55s var(--ease-pro) both;
 }
 .snap-pop {
-  animation: snap-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: snap-pop 0.6s var(--ease-pro) both;
 }
 @media (prefers-reduced-motion: reduce) {
   .snap-rise,

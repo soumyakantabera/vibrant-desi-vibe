@@ -53,6 +53,7 @@ import { Route as CourseDemoSessionRouteImport } from './routes/course-demo-sess
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
 import { Route as CourseBusinessEnglishRouteImport } from './routes/course-business-english'
 import { Route as ChildProtectionRouteImport } from './routes/child-protection'
+import { Route as BoloRouteImport } from './routes/bolo'
 import { Route as BestOnlineSpokenEnglishClassesIndiaRouteImport } from './routes/best-online-spoken-english-classes-india'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
@@ -304,6 +305,11 @@ const ChildProtectionRoute = ChildProtectionRouteImport.update({
   path: '/child-protection',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BoloRoute = BoloRouteImport.update({
+  id: '/bolo',
+  path: '/bolo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BestOnlineSpokenEnglishClassesIndiaRoute =
   BestOnlineSpokenEnglishClassesIndiaRouteImport.update({
     id: '/best-online-spoken-english-classes-india',
@@ -335,6 +341,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
+  '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -386,6 +393,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
+  '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -438,6 +446,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
+  '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-business-english': typeof CourseBusinessEnglishRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
@@ -491,6 +500,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/best-online-spoken-english-classes-india'
+    | '/bolo'
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -542,6 +552,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/best-online-spoken-english-classes-india'
+    | '/bolo'
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -593,6 +604,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/best-online-spoken-english-classes-india'
+    | '/bolo'
     | '/child-protection'
     | '/course-business-english'
     | '/course-career-counselling'
@@ -645,6 +657,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
   BestOnlineSpokenEnglishClassesIndiaRoute: typeof BestOnlineSpokenEnglishClassesIndiaRoute
+  BoloRoute: typeof BoloRoute
   ChildProtectionRoute: typeof ChildProtectionRoute
   CourseBusinessEnglishRoute: typeof CourseBusinessEnglishRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
@@ -1003,6 +1016,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChildProtectionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bolo': {
+      id: '/bolo'
+      path: '/bolo'
+      fullPath: '/bolo'
+      preLoaderRoute: typeof BoloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/best-online-spoken-english-classes-india': {
       id: '/best-online-spoken-english-classes-india'
       path: '/best-online-spoken-english-classes-india'
@@ -1046,6 +1066,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   BestOnlineSpokenEnglishClassesIndiaRoute:
     BestOnlineSpokenEnglishClassesIndiaRoute,
+  BoloRoute: BoloRoute,
   ChildProtectionRoute: ChildProtectionRoute,
   CourseBusinessEnglishRoute: CourseBusinessEnglishRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,

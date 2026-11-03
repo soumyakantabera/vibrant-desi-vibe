@@ -252,20 +252,20 @@ export function EditorialStat({
 /* -------------------------------------------- shared package week (A) */
 
 export const PACKAGE_WEEK: WeekSeg[] = [
-  { day: "M", color: "var(--tile-blue)", what: "Grammar and vocabulary exercises" },
+  { day: "M", color: "var(--bolo-teal)", what: "Bolo: grammar and vocabulary" },
   { day: "T", color: "var(--tile-green)", what: "Live class" },
-  { day: "W", color: "var(--tile-blue)", what: "Reading practice" },
-  { day: "T", color: "var(--tile-blue)", what: "Speaking practice" },
+  { day: "W", color: "var(--bolo-teal)", what: "Bolo: reading practice" },
+  { day: "T", color: "var(--bolo-teal)", what: "Bolo: speaking practice" },
   { day: "F", color: "var(--tile-green)", what: "Live class" },
-  { day: "S", color: "var(--tile-violet)", what: "Teacher review" },
-  { day: "S", color: "var(--tile-saffron)", what: "Video library" },
+  { day: "S", color: "var(--tile-violet)", what: "Bolo: teacher review" },
+  { day: "S", color: "var(--tile-saffron)", what: "Bolo: video lessons" },
 ];
 
 export const PACKAGE_WEEK_LEGEND = [
   { color: "var(--tile-green)", label: "Live class" },
-  { color: "var(--tile-blue)", label: "Daily exercises" },
-  { color: "var(--tile-violet)", label: "Teacher review" },
-  { color: "var(--tile-saffron)", label: "Videos" },
+  { color: "var(--bolo-teal)", label: "Bolo practice" },
+  { color: "var(--tile-violet)", label: "Bolo review" },
+  { color: "var(--tile-saffron)", label: "Bolo videos" },
 ];
 
 /** The week smile on its own, for embedding inside other cards. */

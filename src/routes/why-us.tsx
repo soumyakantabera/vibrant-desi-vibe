@@ -11,6 +11,7 @@ import {
 } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
+import { BoloMention } from "@/components/bolo/BoloSections";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
@@ -170,6 +171,7 @@ function Page() {
                 ]}
                 footer={`${RATING_DISPLAY} ${RATING.source} · 11 states · 10am–midnight IST every day`}
               />
+              <BoloMention />
             </div>
           </div>
         </div>

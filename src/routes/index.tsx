@@ -17,6 +17,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { CourseLadder } from "@/components/CourseVisuals";
+import { BoloSection } from "@/components/bolo/BoloSections";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import {
@@ -35,12 +36,8 @@ import {
   DemoStrip,
   LaunchOfferBand,
   PackageSlides,
-  ReviewLoop,
-  TipsTiles,
   PackageStrip,
-  PortalShowcase,
   PricingGrid,
-  VideoLibrary,
   WeekStrip,
 } from "@/components/package/PackageSections";
 import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
@@ -192,7 +189,7 @@ function Home() {
                 "7 years · about 6 a batch · pan-India & now worldwide",
                 "From ₹999/month, inclusive of taxes",
                 "500+ Learners",
-                "Daily exercises + weekly teacher review",
+                "Bolo app: daily practice + weekly teacher review",
               ].map((s) => (
                 <span
                   key={s}
@@ -226,7 +223,7 @@ function Home() {
                     tone: "indigo",
                     icon: SnapIcons.calendar,
                     big: "Daily",
-                    small: "Grammar, vocab, reading & speaking exercises",
+                    small: "Practice in the Bolo app, with a streak",
                   },
                   {
                     tone: "violet",
@@ -340,11 +337,8 @@ function Home() {
       </section>
 
       <CourseLadder />
-      {/* PORTAL + VIDEOS */}
-      <PortalShowcase />
-      <ReviewLoop />
-      <VideoLibrary />
-      <TipsTiles />
+      {/* THE BOLO APP — practice, video lessons, weekly review */}
+      <BoloSection />
 
       <GuidesStrip />
 
@@ -505,8 +499,8 @@ function Home() {
               <MarketCopy inr="Affordable. Premium. Everything included." usd="Simple pricing" />
             }
             eyebrowTone="indigo"
-            title={<FeeText text="From ₹999/mo · live classes, portal and videos included" />}
-            subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus the learner portal and the recorded video library. Same-week reschedule if a slot is free."
+            title={<FeeText text="From ₹999/mo · live classes and the Bolo app included" />}
+            subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus Bolo, the practice app with daily exercises, video lessons and a weekly teacher review. Same-week reschedule if a slot is free."
           />
           <PricingGrid />
           <DemoStrip />

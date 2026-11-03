@@ -13,6 +13,7 @@ type NavItem = { to: string; label: string; icon?: IconName; desc?: ReactNode };
 const MAIN: NavItem[] = [
   { to: "/", label: "Home" },
   { to: "/why-us", label: "Why Us" },
+  { to: "/bolo", label: "Bolo app" },
   { to: "/guides", label: "Guides" },
   { to: "/success-stories", label: "Stories" },
   { to: "/educator", label: "Educator" },

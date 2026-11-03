@@ -4,6 +4,13 @@ import { Icon, type IconName } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
 import { FeePair, FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
+import { BoloParrot } from "@/components/mascots/BoloParrot";
+import { MithuMacaw } from "@/components/mascots/MithuMacaw";
+import { BoloAppIcon } from "@/components/mascots/BoloAppIcon";
+import { SpeechBubble } from "@/components/mascots/SpeechBubble";
+import { useInView } from "@/components/mascots/useInView";
+import { BoloCourseCard } from "@/components/bolo/BoloSections";
+import { BOLO_LINES } from "@/lib/bolo";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 import {
   COURSE_FEE,
@@ -20,7 +27,6 @@ import {
   MARKET_PRICE,
   MARKET_ROWS,
   PART_TONE,
-  PORTAL_MODULES,
   TALK_TIME,
   VIDEO_TOPICS,
   WEEK,
@@ -34,8 +40,8 @@ import {
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
 /** Six serious tile colours. `solid` carries white text except amber and terra. */
-type Tone = "green" | "blue" | "amber" | "plum" | "teal" | "terra";
-const T: Record<
+export type Tone = "green" | "blue" | "amber" | "plum" | "teal" | "terra";
+export const T: Record<
   Tone,
   { soft: string; solid: string; deep: string; text: string; icon: string; bar: string }
 > = {
@@ -91,13 +97,13 @@ const T: Record<
 
 const PART: Record<PartKey, { tone: Tone; icon: IconName }> = {
   live: { tone: "green", icon: "users" },
-  portal: { tone: "blue", icon: "pen" },
+  portal: { tone: "teal", icon: "pen" },
   videos: { tone: "amber", icon: "video" },
   review: { tone: "plum", icon: "review" },
   teacher: { tone: "terra", icon: "teacher" },
 };
 
-function Chip({
+export function Chip({
   tone,
   icon,
   size = "md",
@@ -122,7 +128,7 @@ function Chip({
   );
 }
 
-function Eyebrow({ children, tone = "green" }: { children: ReactNode; tone?: Tone }) {
+export function Eyebrow({ children, tone = "green" }: { children: ReactNode; tone?: Tone }) {
   return (
     <span
       className={`inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] ${T[tone].soft} ${T[tone].text}`}
@@ -132,7 +138,7 @@ function Eyebrow({ children, tone = "green" }: { children: ReactNode; tone?: Ton
   );
 }
 
-function Head({
+export function Head({
   eyebrow,
   tone,
   title,
@@ -191,7 +197,12 @@ export function LaunchOfferBand() {
       <div className="container-x">
         <div className="flex flex-col gap-4 rounded-3xl border border-[#EAD9B6] bg-amber-soft p-4 md:flex-row md:items-center md:justify-between md:px-6">
           <div className="flex items-start gap-4">
-            <Chip tone="amber" icon="spark" />
+            <span className="peek-up -mb-4 -mt-8 hidden shrink-0 sm:block" aria-hidden="true">
+              <BoloParrot pose="cheer" size={64} perch={false} decorative />
+            </span>
+            <span className="sm:hidden">
+              <Chip tone="amber" icon="spark" />
+            </span>
             <p className="text-sm text-ink/80 md:text-base">
               <strong className="block text-base font-bold text-ink md:text-lg">
                 {LAUNCH_OFFER.headline}
@@ -209,7 +220,7 @@ export function LaunchOfferBand() {
               </span>
             </span>
             <WaButton
-              message="Hi, I want to join with the launch offer (extra month of portal and videos). Please share the next batch."
+              message="Hi, I want to join with the launch offer (one extra month of the Bolo app). Please share the next batch."
               variant="primary"
               size="sm"
               goal="launch_offer"
@@ -240,7 +251,8 @@ export function PackageBand({ title }: { title?: string }) {
           <h2 className="mt-2 text-2xl font-extrabold leading-tight text-ink md:text-[2rem]">
             {title ?? (
               <>
-                Every course includes all five, from <FeeText text="₹999/month" />.
+                Live classes, the Bolo app and the same teacher — from <FeeText text="₹999/month" />
+                .
               </>
             )}
           </h2>
@@ -258,35 +270,60 @@ export function PackageBand({ title }: { title?: string }) {
 }
 
 export function PackageStrip({ bare = false }: { bare?: boolean }) {
-  const items: { key: PartKey; body: string }[] = [
-    { key: "live", body: "Up to 2 a week · 90 min · approx. 6 learners." },
-    { key: "portal", body: "Daily grammar, vocabulary, reading and speaking." },
-    { key: "videos", body: "Tips to start speaking, grammar, fluency." },
-    { key: "review", body: "Your reading and speaking, checked every week." },
-    { key: "teacher", body: "Real teachers. One teacher for your batch." },
+  const items: { key: PartKey; title: string; body: string }[] = [
+    { key: "live", title: "Live classes", body: "Up to 2 a week · 90 min · approx. 6 learners." },
+    {
+      key: "portal",
+      title: "Practice",
+      body: "Daily grammar, vocabulary, reading, speaking — with a streak.",
+    },
+    {
+      key: "videos",
+      title: "Watch",
+      body: "Video lessons: tips to start speaking, grammar, fluency.",
+    },
+    {
+      key: "review",
+      title: "Review",
+      body: "Your teacher checks your reading and speaking every week.",
+    },
+    { key: "teacher", title: "Same teacher", body: "Real teachers. One teacher for your batch." },
   ];
+  const inBolo = (k: PartKey) => k === "portal" || k === "videos" || k === "review";
   return (
     <section className={bare ? "pb-12 md:pb-14" : "bg-white pb-8"}>
-      <VizIn className="container-x grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-        {items.map(({ key, body }, i) => {
-          const tone = PART[key].tone;
-          return (
-            <div
-              key={key}
-              className={`viz-pop flex items-start gap-3 rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
-              style={d(i * 80)}
-            >
-              <Chip tone={tone} icon={PART[key].icon} size="sm" />
-              <p className="text-sm">
-                <strong className="block font-bold text-white">
-                  {key === "portal" ? "Daily exercises" : PART_TONE[key].label}
-                </strong>
-                <span className="text-white/85">{body}</span>
-              </p>
-            </div>
-          );
-        })}
-      </VizIn>
+      <div className="container-x">
+        <div className="mb-2 hidden grid-cols-5 gap-3 lg:grid" aria-hidden="true">
+          <div className="col-span-3 col-start-2 flex items-center gap-3">
+            <span className="h-3 flex-1 rounded-tl-xl border-l-2 border-t-2 border-bolo-teal/50" />
+            <span className="inline-flex items-center gap-2 rounded-full bg-bolo-mint px-3 py-1 text-sm font-extrabold text-bolo-teal">
+              <BoloAppIcon size={20} /> All in the Bolo app
+            </span>
+            <span className="h-3 flex-1 rounded-tr-xl border-r-2 border-t-2 border-bolo-teal/50" />
+          </div>
+        </div>
+        <VizIn className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {items.map(({ key, title, body }, i) => {
+            const tone = PART[key].tone;
+            const bolo = inBolo(key);
+            return (
+              <div
+                key={key}
+                className={`viz-pop flex items-start gap-3 rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
+                style={d(i * 80)}
+              >
+                <Chip tone={tone} icon={PART[key].icon} size="sm" />
+                <p className="text-sm">
+                  <strong className="block font-bold text-white">
+                    {bolo ? `Bolo · ${title}` : title}
+                  </strong>
+                  <span className="text-white/85">{body}</span>
+                </p>
+              </div>
+            );
+          })}
+        </VizIn>
+      </div>
     </section>
   );
 }
@@ -295,9 +332,15 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
 
 const KIND: Record<(typeof WEEK)[number]["kind"], Tone> = {
   "Live class": "green",
-  Portal: "blue",
-  Review: "plum",
+  Bolo: "teal",
 };
+const TAB_ICON: Record<"Practice" | "Watch" | "Review", IconName> = {
+  Practice: "pen",
+  Watch: "play",
+  Review: "review",
+};
+const dayTone = (day: (typeof WEEK)[number]): Tone =>
+  day.tab === "Review" ? "plum" : day.tab === "Watch" ? "amber" : KIND[day.kind];
 
 const MATRIX: { label: string; tone: Tone; days: number[] }[] = [
   { label: "Live class", tone: "green", days: [1, 4] },
@@ -321,7 +364,7 @@ export function WeekStrip() {
               Not “just 2 classes”. <span className="text-brand">English every day.</span>
             </>
           }
-          sub="Two live classes build the habit. Daily exercises keep it going, and every week your teacher reviews your reading and speaking — so nothing fades between classes."
+          sub="Two live classes build the habit. Bolo keeps it going every day with a streak, and every week your teacher reviews your reading and speaking — so nothing fades between classes."
         />
         <VizIn
           className="grid gap-2.5 lg:grid-cols-7 lg:gap-3"
@@ -329,7 +372,7 @@ export function WeekStrip() {
           aria-label="Example week"
         >
           {WEEK.map((day, i) => {
-            const tone = KIND[day.kind];
+            const tone = dayTone(day);
             const on = picked === i;
             return (
               <button
@@ -344,11 +387,7 @@ export function WeekStrip() {
                   {day.day}
                 </span>
                 <span className="hidden lg:block">
-                  <Chip
-                    tone={tone}
-                    icon={tone === "green" ? "users" : tone === "plum" ? "review" : "pen"}
-                    size="sm"
-                  />
+                  <Chip tone={tone} icon={day.tab ? TAB_ICON[day.tab] : "users"} size="sm" />
                 </span>
                 <span
                   className={`h-2.5 w-2.5 shrink-0 rounded-sm lg:hidden ${T[tone].solid}`}
@@ -368,12 +407,12 @@ export function WeekStrip() {
           })}
         </VizIn>
 
-        <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_1.15fr]">
+        <div className="mt-5 grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-7" aria-live="polite">
             <span
-              className={`text-xs font-bold uppercase tracking-[0.14em] ${T[KIND[sel.kind]].text}`}
+              className={`text-xs font-bold uppercase tracking-[0.14em] ${T[dayTone(sel)].text}`}
             >
-              {sel.day} · {sel.kind}
+              {sel.day} · {sel.tab ? `Bolo · ${sel.tab}` : sel.kind}
             </span>
             <h3 className="mt-2 text-xl font-bold md:text-2xl">{sel.title}</h3>
             <p className="mt-2 text-ink/80 md:text-lg">{sel.detail}</p>
@@ -432,7 +471,7 @@ export function WeekStrip() {
             <div className="mt-4 grid grid-cols-3 gap-3 border-t border-border pt-4">
               {[
                 { n: 2, l: "live classes", c: "text-brand-deep" },
-                { n: 4, l: "daily exercise types", c: "text-[#1F3D63]" },
+                { n: 7, l: "days of Bolo practice", c: "text-bolo-teal" },
                 { n: 1, l: "teacher review", c: "text-[#4E3470]" },
               ].map((s) => (
                 <p key={s.l}>
@@ -472,22 +511,22 @@ const SLIDES: {
   },
   {
     key: "portal",
-    label: "Daily exercises",
-    big: "4",
-    bigLabel: "exercise types, every day",
-    title: "Daily exercises in the learner portal",
+    label: "Bolo · Practice",
+    big: "7",
+    bigLabel: "days a week, with a streak",
+    title: "Daily practice in the Bolo app",
     points: [
-      "Grammar and vocabulary exercises every day",
+      "Grammar and vocabulary every day — keep your streak going",
       "Reading practice: read aloud, find the grammar in the text",
       "Speaking practice: whole conversations, recorded",
     ],
   },
   {
     key: "videos",
-    label: "Video library",
+    label: "Bolo · Watch",
     big: "24/7",
-    bigLabel: "recorded lessons, any time",
-    title: "A video library to revise anytime",
+    bigLabel: "video lessons, any time",
+    title: "Video lessons in Bolo, any time",
     points: [
       "Tips and tricks to start speaking English",
       "Grammar, fluency and thinking in English",
@@ -496,12 +535,12 @@ const SLIDES: {
   },
   {
     key: "review",
-    label: "Weekly review",
+    label: "Bolo · Review",
     big: "Weekly",
     bigLabel: "feedback from your teacher",
     title: "Your teacher reviews your reading and speaking",
     points: [
-      "Submit your reading and speaking practice in the portal",
+      "Send your reading and speaking practice in Bolo",
       "Your teacher reviews it every week",
       "The next live class picks up from that feedback",
     ],
@@ -544,7 +583,7 @@ export function PackageSlides() {
           tone="blue"
           eyebrow="The complete package"
           title="Everything you need to speak — in one monthly fee"
-          sub="Live classes, daily exercises, a video library and a weekly teacher review. Every course includes all of it."
+          sub="Live classes, the Bolo app — daily practice, video lessons and a weekly teacher review — and the same teacher. Every course includes all of it."
         />
         <div
           className="mx-auto max-w-6xl"
@@ -587,7 +626,7 @@ export function PackageSlides() {
             })}
           </div>
 
-          <div className="grid">
+          <div className="grid overflow-hidden rounded-[2rem]">
             {SLIDES.map((s, n) => {
               const tone = PART[s.key].tone;
               const on = n === i;
@@ -673,169 +712,6 @@ export function PackageSlides() {
   );
 }
 
-/* ------------------------------------------------------- daily exercises */
-
-const MODULE_TONE: Record<(typeof PORTAL_MODULES)[number]["icon"], Tone> = {
-  grammar: "blue",
-  vocab: "teal",
-  read: "amber",
-  speak: "terra",
-  review: "plum",
-};
-
-const QUIZ = { q: "She ____ to the office every day.", opts: ["go", "goes", "going"], a: "goes" };
-
-export function PortalShowcase() {
-  const [picked, setPicked] = useState(0);
-  const [answer, setAnswer] = useState<string | null>(null);
-  const mod = PORTAL_MODULES[picked];
-  const tone = MODULE_TONE[mod.icon];
-  const isQuiz = mod.icon === "grammar";
-  return (
-    <section className="section grid-texture-light bg-paper" id="portal">
-      <div className="container-x">
-        <Head
-          tone="blue"
-          eyebrow="Daily exercises · learner portal"
-          title={
-            <>
-              Grammar, vocabulary, reading, speaking.{" "}
-              <span className="text-indigo-pop">Every day.</span>
-            </>
-          }
-          sub="Short daily exercises that match your course — and every week your teacher reviews the reading and speaking you submit."
-        />
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,25rem)_1fr]">
-          <div className="flex flex-col gap-2.5" role="group" aria-label="Exercise types">
-            {PORTAL_MODULES.map((m, i) => {
-              const on = picked === i;
-              const t = MODULE_TONE[m.icon];
-              return (
-                <button
-                  key={m.title}
-                  type="button"
-                  aria-pressed={on}
-                  onClick={() => {
-                    setPicked(i);
-                    setAnswer(null);
-                  }}
-                  className={`flex min-h-[4.5rem] items-center gap-4 rounded-2xl border-2 bg-white px-4 py-3 text-left transition ${on ? `border-current ${T[t].text} shadow-[0_16px_34px_-24px_rgba(19,33,47,.5)]` : "border-transparent hover:border-border"}`}
-                >
-                  <Chip tone={t} icon={m.icon} size="sm" />
-                  <span>
-                    <span className="block font-bold text-ink">{m.title}</span>
-                    <span className="text-sm text-ink/65">{m.sub}</span>
-                  </span>
-                  <Icon
-                    name="caret-right"
-                    size={16}
-                    className={`ml-auto ${on ? "" : "text-ink/30"}`}
-                  />
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_30px_60px_-45px_rgba(19,33,47,.55)]">
-            <div className={`flex items-center gap-3 px-6 py-4 ${T[tone].soft}`}>
-              <Chip tone={tone} icon={mod.icon} size="sm" />
-              <span className={`font-bold ${T[tone].text}`}>{mod.title}</span>
-              <span className="ml-auto rounded-full bg-white px-2.5 py-1 text-xs font-bold text-ink/70">
-                Learner portal
-              </span>
-            </div>
-            <div
-              key={picked}
-              className="slide-in flex min-h-[22rem] flex-col gap-4 p-6 md:p-8"
-              aria-live="polite"
-            >
-              {isQuiz ? (
-                <>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-ink/55">
-                    Try one
-                  </p>
-                  <p className="text-xl font-semibold text-ink md:text-2xl">{QUIZ.q}</p>
-                  <div className="flex flex-wrap gap-3">
-                    {QUIZ.opts.map((o) => {
-                      const chosen = answer === o;
-                      const right = o === QUIZ.a;
-                      const cls = chosen
-                        ? right
-                          ? "border-brand bg-brand-soft text-brand-deep"
-                          : "border-coral-deep bg-terra-soft text-coral-deep"
-                        : "border-border bg-white text-ink hover:border-indigo-pop";
-                      return (
-                        <button
-                          key={o}
-                          type="button"
-                          onClick={() => setAnswer(o)}
-                          className={`min-h-12 min-w-28 rounded-2xl border-2 px-5 text-lg font-bold transition ${cls}`}
-                        >
-                          {o}
-                        </button>
-                      );
-                    })}
-                  </div>
-                  {answer && (
-                    <p
-                      className={`slide-in rounded-2xl px-4 py-3 font-semibold ${answer === QUIZ.a ? "bg-brand-soft text-brand-deep" : "bg-terra-soft text-coral-deep"}`}
-                    >
-                      {answer === QUIZ.a
-                        ? "Correct — with “she”, the present simple takes goes."
-                        : "Not quite — with she, he or it, add -s: “She goes”."}
-                    </p>
-                  )}
-                </>
-              ) : (
-                <ol className="flex flex-col gap-3">
-                  {mod.sample.map((line, i) => (
-                    <li
-                      key={line}
-                      className={`flex items-start gap-3 rounded-2xl px-4 py-3.5 text-ink ${T[tone].soft}`}
-                    >
-                      <span
-                        className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-white text-sm font-bold ${T[tone].text}`}
-                      >
-                        {i + 1}
-                      </span>
-                      {line}
-                    </li>
-                  ))}
-                </ol>
-              )}
-              <div className="mt-auto grid grid-cols-4 gap-2" aria-hidden="true">
-                {(["grammar", "vocab", "read", "speak"] as const).map((k) => (
-                  <span key={k} className="flex flex-col gap-1.5">
-                    <span className="viz-sweep h-2 rounded-full bg-muted">
-                      <span
-                        className={`block h-full rounded-full ${T[MODULE_TONE[k]].bar}`}
-                        style={{ width: k === "grammar" || k === "vocab" ? "85%" : "45%" }}
-                      />
-                    </span>
-                    <span className="text-[0.7rem] font-semibold text-ink/60">
-                      {k === "vocab"
-                        ? "Vocabulary"
-                        : k === "read"
-                          ? "Reading"
-                          : k === "speak"
-                            ? "Speaking"
-                            : "Grammar"}
-                    </span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <p className="mt-4 text-sm text-ink/60">
-          Sample exercises for illustration. Enrolled learners get portal login details after
-          admission; access runs while you are enrolled.
-        </p>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------------------------------------------------- review loop */
 
 const LOOP: { tone: Tone; icon: IconName; title: string; body: string }[] = [
@@ -846,16 +722,16 @@ const LOOP: { tone: Tone; icon: IconName; title: string; body: string }[] = [
     body: "Your teacher introduces and drills it in a live class of about 6.",
   },
   {
-    tone: "blue",
+    tone: "teal",
     icon: "pen",
     title: "Practise daily",
-    body: "Grammar and vocabulary exercises every day in the portal.",
+    body: "Grammar and vocabulary every day in Bolo — keep the streak.",
   },
   {
     tone: "amber",
     icon: "speak",
     title: "Submit reading & speaking",
-    body: "Read aloud and record a conversation — submitted in the portal.",
+    body: "Read aloud and record a conversation — sent from Bolo.",
   },
   {
     tone: "plum",
@@ -866,6 +742,7 @@ const LOOP: { tone: Tone; icon: IconName; title: string; body: string }[] = [
 ];
 
 export function ReviewLoop() {
+  const [mref, motion] = useInView<HTMLDivElement>();
   const [step, setStep] = useState(0);
   const [hold, setHold] = useState(false);
   const reduced = usePrefersReducedMotion();
@@ -887,14 +764,24 @@ export function ReviewLoop() {
         <div>
           <Head
             tone="plum"
-            eyebrow="The weekly review loop"
+            eyebrow="Bolo · Review — the weekly loop"
             title={
               <>
                 Practice that a teacher <span className="text-plum">actually checks.</span>
               </>
             }
-            sub="Apps give you exercises. Here, every week your teacher reviews your reading and speaking, so practice turns into progress."
+            sub="Apps give you exercises. In Bolo, every week your teacher reviews your reading and speaking, so practice turns into progress."
           />
+          <div
+            ref={mref}
+            data-motion={motion ? "on" : "off"}
+            className="-mt-2 mb-5 flex items-end gap-2"
+          >
+            <MithuMacaw pose="explain" size={96} decorative animated />
+            <SpeechBubble tail="left" tone="mithu" className="mb-10">
+              {BOLO_LINES.review}
+            </SpeechBubble>
+          </div>
           <ol className="flex flex-col gap-2.5">
             {LOOP.map((s, n) => (
               <li key={s.title}>
@@ -1015,9 +902,9 @@ export function TipsTiles() {
       <div className="container-x">
         <Head
           tone="amber"
-          eyebrow="Tips & tricks to start speaking"
+          eyebrow="Bolo · Watch — tips to start speaking"
           title="Small tricks that get you talking"
-          sub="The video library includes tips and tricks to start speaking English. Here is a taste — tap a tile to flip it."
+          sub="Bolo’s video lessons include tips and tricks to start speaking English. Here is a taste — tap a tile to flip it."
         />
         <VizIn className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TIPS.map((tip, n) => {
@@ -1111,7 +998,7 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
       <div className="container-x">
         <Head
           tone="amber"
-          eyebrow="Recorded video library"
+          eyebrow="Bolo · Watch — video lessons"
           title="Watch it again whenever you need it"
           sub="Tips and tricks to start speaking, grammar, fluency, thinking in English and what to do when your mind goes blank — chosen for your course."
           aside={
@@ -1157,6 +1044,7 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
           onScroll={measure}
           className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:-mx-7 sm:px-7 lg:-mx-10 lg:px-10"
         >
+          {shown.length === 0 && <BoloEmpty />}
           {shown.map((v, n) => {
             const tone = CAT_TONE[n % CAT_TONE.length];
             return (
@@ -1500,9 +1388,9 @@ const PLAN_COPY: Record<
 
 const PLAN_INCLUDES: { tone: Tone; icon: IconName; text: string }[] = [
   { tone: "green", icon: "users", text: "Live classes · approx. 6 learners" },
-  { tone: "blue", icon: "pen", text: "Daily grammar, vocab, reading & speaking" },
-  { tone: "amber", icon: "video", text: "Video library incl. speaking tips" },
-  { tone: "plum", icon: "review", text: "Weekly teacher review" },
+  { tone: "teal", icon: "pen", text: "Bolo app: daily practice + streak" },
+  { tone: "amber", icon: "video", text: "Bolo: video lessons incl. speaking tips" },
+  { tone: "plum", icon: "review", text: "Bolo: weekly teacher review" },
   { tone: "terra", icon: "teacher", text: "Same teacher, all course" },
 ];
 
@@ -1622,6 +1510,12 @@ function CourseGuideLink({ slug }: { slug: FeeSlug }) {
         How to speak English fluently — the guide
       </Link>
     );
+  if (slug === "intermediate-english")
+    return (
+      <Link to="/intermediate-spoken-english-course-india" className={cls}>
+        Intermediate spoken English — the guide
+      </Link>
+    );
   if (slug === "interactive-speaking")
     return (
       <Link to="/interactive-english-class-hesitation" className={cls}>
@@ -1645,17 +1539,20 @@ function CourseGuideLink({ slug }: { slug: FeeSlug }) {
   );
 }
 
+/** Empty shelf: Mithu asleep. Used when a filter returns nothing. */
+export function BoloEmpty() {
+  return (
+    <div className="flex w-full shrink-0 flex-col items-center gap-2 rounded-3xl border border-dashed border-border bg-paper px-6 py-8 text-center">
+      <MithuMacaw pose="sleep" size={110} decorative />
+      <p className="font-bold text-ink">{BOLO_LINES.empty}</p>
+    </div>
+  );
+}
+
 export function CourseIncluded({ slug }: { slug: FeeSlug }) {
   const pkg = COURSE_PACKAGE[slug];
   const fee = COURSE_FEE[slug];
   const topics = VIDEO_TOPICS.filter((v) => v.tags.includes(pkg.videoTag)).slice(0, 4);
-  const tiles: { key: PartKey; label: string; body: string }[] = [
-    { key: "live", label: "Live classes", body: pkg.live },
-    { key: "portal", label: "Daily exercises", body: pkg.portal },
-    { key: "videos", label: "Video library", body: pkg.videos },
-    { key: "review", label: "Weekly teacher review", body: pkg.review },
-    { key: "teacher", label: "Same teacher", body: pkg.teacher },
-  ];
   return (
     <section className="section bg-paper" id="included">
       <div className="container-x">
@@ -1664,8 +1561,8 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
           title={`${fee.name}: the complete package`}
           sub={
             <MarketCopy
-              inr={`${fee.monthly}, inclusive of taxes — live classes, daily exercises, the video library and a weekly teacher review, all included.`}
-              usd={`${INTL_FEE[slug].display} for live classes, daily exercises, the video library and a weekly teacher review.`}
+              inr={`${fee.monthly}, inclusive of taxes — live classes, the Bolo practice app and the same teacher, all included.`}
+              usd={`${INTL_FEE[slug].display} for live classes, the Bolo practice app and the same teacher.`}
             />
           }
         />
@@ -1674,39 +1571,47 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
             `${fee.months} months · up to 2 classes/week`,
             "1 hr 30 min per class",
             "Approx. 6 learners",
-            "Daily exercises + weekly review",
+            "Bolo: daily practice + weekly review",
           ].map((f) => (
             <li key={f} className="rounded-full border border-border bg-white px-3 py-1.5">
               {f}
             </li>
           ))}
         </ul>
-        <VizIn className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-          {tiles.map(({ key, label, body }, i) => {
+        <VizIn className="grid gap-4 md:grid-cols-2">
+          {(
+            [
+              { key: "live", label: "Live classes", body: pkg.live },
+              { key: "teacher", label: "Same teacher", body: pkg.teacher },
+            ] as const
+          ).map(({ key, label, body }, i) => {
             const tone = PART[key].tone;
             return (
               <article
                 key={key}
                 style={d(i * 90)}
-                className={`viz-pop flex flex-col gap-3 rounded-3xl p-6 ${i < 2 ? `${T[tone].deep} text-white lg:col-span-3` : `${T[tone].soft} lg:col-span-2`}`}
+                className={`viz-pop flex flex-col gap-3 rounded-3xl p-6 ${i === 0 ? `${T[tone].deep} text-white` : T[tone].soft}`}
               >
                 <div className="flex items-center gap-3">
                   <Chip tone={tone} icon={PART[key].icon} />
-                  <h3 className={`text-lg font-bold ${i < 2 ? "text-white" : T[tone].text}`}>
+                  <h3 className={`text-lg font-bold ${i === 0 ? "text-white" : T[tone].text}`}>
                     {label}
                   </h3>
                 </div>
-                <p className={i < 2 ? "text-white/90" : "text-ink/85"}>{body}</p>
+                <p className={i === 0 ? "text-white/90" : "text-ink/85"}>{body}</p>
               </article>
             );
           })}
         </VizIn>
+        <div className="mt-4">
+          <BoloCourseCard slug={slug} />
+        </div>
         <p className="mt-5 text-sm text-ink/75">
           Before you join, read: <CourseGuideLink slug={slug} />
         </p>
         <div className="mt-5 rounded-3xl border border-border bg-white p-5 md:p-6">
           <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#6A4A10]">
-            Videos picked for this course
+            In Bolo · Watch — videos picked for this course
           </p>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {topics.map((t, n) => {
