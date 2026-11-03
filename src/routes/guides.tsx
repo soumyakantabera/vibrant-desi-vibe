@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
+import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { PaymentTrust } from "@/components/PaymentTrust";
 import { Icon } from "@/components/Icon";
@@ -143,6 +144,7 @@ function Page() {
           <PaymentTrust tone="light" align="center" className="mt-8" />
         </div>
       </section>
+      <FaqSection faqs={PAGES["/guides"].faqs ?? []} title="Before you pick a guide" />
     </Layout>
   );
 }

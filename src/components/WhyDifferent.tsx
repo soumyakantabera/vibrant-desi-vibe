@@ -303,7 +303,8 @@ export function WhyDifferent({
             </span>
           ))}{" "}
           Prices are typical 2026 bands in India. City classrooms: local listings. PlanetSpark
-          teaches children, so it is not compared with these adult courses.
+          teaches children 4–13 and is shown as the luxury end of the market; every Learn With Smile
+          course is for adults 15+.
         </p>
         <TrademarkNotice className="mt-2" />
 

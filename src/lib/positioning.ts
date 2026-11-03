@@ -48,8 +48,9 @@ export const PROVIDERS_CHECKED = "3 November 2026";
 /**
  * Named providers, compared on what each sells — facts from their own help
  * pages and app listings, never complaints or opinions. Price figures are the
- * public 2026 bands also used in src/lib/compare.ts. PlanetSpark is left out:
- * it teaches children, and every course here is for adults.
+ * public 2026 bands also used in src/lib/compare.ts. PlanetSpark is shown as
+ * the luxury end of the market and labelled for children 4–13, because every
+ * Learn With Smile course is for adults 15+ (owner's decision, 3 Nov 2026).
  */
 export const DIFFERENT_ROWS: CompareRow[] = [
   {
@@ -190,6 +191,24 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     source: {
       label: "ELSA Help — Subscriptions and cancellation",
       url: "https://elsanow.freshdesk.com/en/support/solutions/articles/31000177556-understanding-subscriptions-and-cancellation",
+    },
+  },
+  {
+    what: "PlanetSpark",
+    examples: "luxury 1:1 for children 4–13",
+    daily: "unknown",
+    dailyNote: "Not stated on the page we checked",
+    teacher: "yes",
+    teacherNote: "Yes — live 1:1 classes",
+    language: "unknown",
+    languageNote: "Not stated on the page we checked",
+    billing: "part",
+    billingNote: "Course packages; unused classes refundable on request (their reply)",
+    price: "₹13,000–₹65,000 per course",
+    logos: [{ slug: "planetspark", name: "PlanetSpark" }],
+    source: {
+      label: "PlanetSpark on Trustpilot",
+      url: "https://www.trustpilot.com/review/planetspark.in",
     },
   },
   {

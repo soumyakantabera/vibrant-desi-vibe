@@ -124,7 +124,7 @@ export const NEEDS: Record<NeedKey, Need> = {
     label: "Data / business analyst",
     title: "English for Data Analysts | Explain Insights Clearly",
     description:
-      "Analysts are judged on explaining a number to people who don't read dashboards. A simple structure for insights, client calls and interviews — live, about 6 per batch.",
+      "Analysts are judged on explaining a number to people who don't read dashboards. A structure for insights, client calls and interviews — live, about 6 per batch.",
     h1: "English for data and business analysts",
     eyebrow: "Jobs · analyst",
     standfirst:

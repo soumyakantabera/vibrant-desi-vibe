@@ -4,7 +4,7 @@ Files here are shown next to a provider's name in the comparison tables
 (`src/components/ProviderMark.tsx`). Name each file by the slug used in
 `DIFFERENT_ROWS` (`src/lib/positioning.ts`):
 
-    josh-skills  engvarta  cambly  preply  italki  british-council  duolingo  elsa-speak
+    josh-skills  engvarta  cambly  preply  italki  british-council  duolingo  elsa-speak  planetspark
 
 Accepted: `.svg`, `.png`, `.webp`. Until a file exists, a neutral name badge is
 shown instead — never a redrawn or imitated logo.

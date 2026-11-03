@@ -40,6 +40,11 @@ export function cityHead(slug: string) {
   return head;
 }
 
+/** First published (git history of each route). */
+const GUIDE_PUBLISHED: Record<string, string> = {
+  "/intermediate-spoken-english-course-india": "2026-10-30",
+};
+
 export function guideHead(path: string) {
   const page = PAGES[path];
   const head = pageHead(path);
@@ -55,7 +60,8 @@ export function guideHead(path: string) {
       url: abs(path),
       mainEntityOfPage: { "@type": "WebPage", "@id": abs(path) },
       inLanguage: "en-IN",
-      dateModified: page.dateModified ?? "2026-09-11",
+      datePublished: GUIDE_PUBLISHED[path] ?? "2026-09-28",
+      dateModified: page.dateModified ?? GUIDE_PUBLISHED[path] ?? "2026-09-28",
       author: {
         "@type": "Person",
         "@id": `${abs("/educator")}#person`,

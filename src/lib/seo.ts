@@ -1864,6 +1864,9 @@ const INR_MONTHLY_FEE: Record<string, number> = {
   "interactive-speaking": 1599,
   "business-english": 2499,
   "interview-preparation": 2499,
+  // Same course and fee, taught through Hindi / Marathi.
+  "spoken-english-hindi": 999,
+  "spoken-english-marathi": 999,
 };
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
@@ -2211,6 +2214,8 @@ export function organizationLd() {
             url: abs(CONSULTATION_PATH),
             serviceType: "Spoken English consultation",
             description: CONSULTATION.what,
+            provider: { "@id": `${SITE_URL}/#organization` },
+            areaServed: india,
           },
         },
         ...Object.keys(COURSE_SEO)
@@ -2221,7 +2226,9 @@ export function organizationLd() {
             itemOffered: {
               "@type": "Course",
               name: COURSE_SEO[slug].shortTitle,
+              description: COURSE_SEO[slug].description,
               url: abs(`/course-${slug}`),
+              provider: { "@id": `${SITE_URL}/#organization` },
             },
             ...(INR_MONTHLY_FEE[slug] !== undefined
               ? {
@@ -2321,7 +2328,9 @@ export function consultationServiceLd() {
     isRelatedTo: Object.keys(COURSE_SEO)
       .filter((slug) => slug !== "demo-session")
       .map((slug) => ({
+        // Pointer to the full Course entity on its own page.
         "@type": "Course",
+        "@id": `${abs(`/course-${slug}`)}#course`,
         name: COURSE_SEO[slug].shortTitle,
         url: abs(`/course-${slug}`),
       })),

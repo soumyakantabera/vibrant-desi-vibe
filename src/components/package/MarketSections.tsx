@@ -618,9 +618,9 @@ export function MarketGap() {
         <p className="mt-3 text-xs leading-relaxed text-ink/60">
           Our reading of each provider’s public pages and published price bands, updated{" "}
           {COMPARE_REVISED_LABEL}. “Partly” means it depends on the plan, tutor or level. Not
-          affiliated with any provider; confirm on their site before you decide. PlanetSpark
-          (children 4–13) and IELTS shops (exam prep) are left out because they solve a different
-          problem.
+          affiliated with any provider; confirm on their site before you decide. PlanetSpark (luxury
+          1:1 for children 4–13) is in the all-in-one comparison above; IELTS shops (exam prep) are
+          left out because they solve a different problem.
         </p>
         <TrademarkNotice className="mt-2" />
 
