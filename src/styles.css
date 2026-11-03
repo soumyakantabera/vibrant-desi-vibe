@@ -11,6 +11,20 @@
 @import "@fontsource/dm-sans/latin-600.css";
 @import "@fontsource/dm-sans/latin-700.css";
 @import "@fontsource/dm-sans/latin-800.css";
+/* Indian scripts. DM Sans has no Devanagari or Bengali glyphs, so Hindi,
+   Marathi and Bengali text fell back to whatever the phone had. Hind
+   (Devanagari) and Hind Siliguri (Bengali) are one screen-first family that
+   sits well beside DM Sans. Only the script subsets are imported: each
+   @font-face carries a unicode-range, so a page with no Devanagari or
+   Bengali text never downloads them. */
+@import "@fontsource/hind/devanagari-400.css";
+@import "@fontsource/hind/devanagari-500.css";
+@import "@fontsource/hind/devanagari-600.css";
+@import "@fontsource/hind/devanagari-700.css";
+@import "@fontsource/hind-siliguri/bengali-400.css";
+@import "@fontsource/hind-siliguri/bengali-500.css";
+@import "@fontsource/hind-siliguri/bengali-600.css";
+@import "@fontsource/hind-siliguri/bengali-700.css";
 @source "../src";
 @import "tw-animate-css";
 @import "./styles/mascots.css";
@@ -25,8 +39,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    "DM Sans", "Hind", "Hind Siliguri", "Noto Sans Devanagari", "Noto Sans Bengali", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-display:
+    "DM Sans", "Hind", "Hind Siliguri", "Noto Sans Devanagari", "Noto Sans Bengali", ui-sans-serif,
+    system-ui, sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -1733,4 +1751,24 @@ html.js [data-viz="in"] .viz-arc {
   .snap-pop {
     animation: none;
   }
+}
+
+/* ------------------------------------------- Devanagari & Bengali text ---
+   Matras and conjuncts sit above and below the Latin x-height, so the tight
+   Latin leading clips them. Give Indian-script text room to breathe. */
+:lang(hi),
+:lang(mr),
+:lang(bn) {
+  line-height: 1.75;
+}
+:lang(hi) :is(h1, h2, h3, h4),
+:lang(mr) :is(h1, h2, h3, h4),
+:lang(bn) :is(h1, h2, h3, h4) {
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+:lang(hi) :is(p, li, dd, dt),
+:lang(mr) :is(p, li, dd, dt),
+:lang(bn) :is(p, li, dd, dt) {
+  line-height: 1.75;
 }
