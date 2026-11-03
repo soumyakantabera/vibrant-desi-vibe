@@ -277,10 +277,6 @@ function PositionChart() {
           const color = DEEP[b.tone].hex;
           const x1 = x(a);
           const x2 = Math.max(x(z), x1 + 14);
-          const tied = BRANDS.some((_, j) => j !== i && SCORE[j] === SCORE[i]);
-          const labelAbove = tied && a > 1500;
-          const labelX = b.us ? x2 + 48 : Math.min(x2 + (z > 20000 ? 32 : 14), W - R + 34);
-          const labelY = b.us ? cy + 5 : labelAbove ? cy - 16 : tied ? cy + 22 : cy + 5;
           return (
             <g key={b.name} style={d(250 + i * 140)}>
               <rect
@@ -307,8 +303,8 @@ function PositionChart() {
                 </g>
               )}
               <text
-                x={labelX}
-                y={labelY}
+                x={b.us ? x2 + 48 : Math.min(x2 + (z > 20000 ? 32 : 14), W - R + 34)}
+                y={cy + 5}
                 fontSize={b.us ? 17 : 15}
                 fontWeight={b.us ? 800 : 700}
                 fill={color}

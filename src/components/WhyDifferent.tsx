@@ -156,7 +156,6 @@ function Cell({ mark, note }: { mark: Mark; note: string }) {
 export function WhyDifferent({
   compact = false,
   visuals = true,
-  table = true,
   level = "basic",
 }: {
   /** Which Bolo level the app reel plays (course pages pass their own). */
@@ -164,8 +163,6 @@ export function WhyDifferent({
   compact?: boolean;
   /** The live-class view, the app reel and the fee stack. Off on guides. */
   visuals?: boolean;
-  /** The provider table. Off on the homepage, which already has the scored comparison. */
-  table?: boolean;
 }) {
   return (
     <section className="section bg-white" id="why-different" aria-labelledby="why-different-title">
@@ -190,8 +187,6 @@ export function WhyDifferent({
 
         {visuals && <Visuals level={level} />}
 
-        {table && (
-          <>
         {/* desktop table */}
         <VizIn className="hidden overflow-hidden rounded-3xl border border-border lg:block">
           <table className="w-full text-left text-sm">
@@ -312,8 +307,6 @@ export function WhyDifferent({
           course is for adults 15+.
         </p>
         <TrademarkNotice className="mt-2" />
-          </>
-        )}
 
         {!compact && (
           <div className="mt-8 grid gap-6 rounded-3xl bg-paper p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">

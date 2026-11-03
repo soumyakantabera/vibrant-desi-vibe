@@ -309,15 +309,11 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
             return (
               <div
                 key={key}
-                className={`viz-pop relative min-h-40 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
+                className={`viz-pop flex items-start gap-3 rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
                 style={d(i * 80)}
               >
-                <Icon
-                  name={PART[key].icon}
-                  size={152}
-                  className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/30"
-                />
-                <p className="relative text-sm">
+                <Chip tone={tone} icon={PART[key].icon} size="sm" />
+                <p className="text-sm">
                   <strong className="block font-bold text-white">
                     {bolo ? `Bolo · ${title}` : title}
                   </strong>

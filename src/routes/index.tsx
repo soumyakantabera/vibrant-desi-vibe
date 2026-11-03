@@ -350,7 +350,7 @@ function Home() {
 
       <Deferred id="home-different">
         {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
-        <WhyDifferent table={false} />
+        <WhyDifferent />
 
         <GuidesStrip />
       </Deferred>
