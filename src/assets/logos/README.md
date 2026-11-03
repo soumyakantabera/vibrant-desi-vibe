@@ -17,3 +17,19 @@ Rules:
 - Shown small (about 20–24 px tall), only to identify the provider in a factual
   comparison, with the trademark notice (`TrademarkNotice`) under every table.
 - Remove a file promptly if its owner asks (info@learnwithsmile.app).
+
+## Files in this folder
+
+| File             | Provider    | Source                                 |
+| ---------------- | ----------- | -------------------------------------- |
+| josh-skills.webp | Josh Skills | Supplied by the site owner, 3 Nov 2026 |
+| engvarta.webp    | EngVarta    | Supplied by the site owner, 3 Nov 2026 |
+| cambly.webp      | Cambly      | Supplied by the site owner, 3 Nov 2026 |
+| preply.webp      | Preply      | Supplied by the site owner, 3 Nov 2026 |
+| italki.webp      | italki      | Supplied by the site owner, 3 Nov 2026 |
+
+Processing (artwork unchanged), done by `scripts/polish-logos.py`: empty
+margins trimmed, a plain white background made transparent by exact unmatting
+(no halo), resized to 96 px tall for sharp display at 24 px, saved as WebP.
+
+    python3 -I scripts/polish-logos.py path/to/logo.png british-council

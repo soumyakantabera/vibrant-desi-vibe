@@ -17,15 +17,21 @@ const LOGO_URL: Record<string, string> = Object.fromEntries(
   ]),
 );
 
+/**
+ * Decorative: the provider's name is always written next to the mark, so the
+ * image carries no alt text of its own (a screen reader would read it twice).
+ */
 export function ProviderMark({ slug, name }: { slug: string; name: string }) {
   const url = LOGO_URL[slug];
   if (url)
     return (
       <img
         src={url}
-        alt={`${name} logo`}
-        height={22}
-        className="h-[22px] w-auto max-w-[6.5rem] shrink-0 object-contain"
+        alt=""
+        aria-hidden
+        title={name}
+        height={24}
+        className="h-6 w-auto max-w-[6.5rem] shrink-0 object-contain object-left"
         loading="lazy"
         decoding="async"
       />
@@ -33,7 +39,7 @@ export function ProviderMark({ slug, name }: { slug: string; name: string }) {
   return (
     <span
       aria-hidden
-      className="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-md bg-ink/8 text-[11px] font-bold text-ink/70 ring-1 ring-ink/10"
+      className="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-ink/8 text-[11px] font-bold text-ink/70 ring-1 ring-ink/10"
     >
       {name.charAt(0).toUpperCase()}
     </span>

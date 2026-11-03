@@ -223,11 +223,15 @@ export function WhyDifferent({
                   className={`viz-fade border-t border-border align-top ${r.ours ? "bg-brand-soft/60 font-semibold" : ""}`}
                 >
                   <th scope="row" className="px-5 py-4">
+                    {r.logos && (
+                      <span className="mb-1.5 flex items-center gap-2">
+                        {r.logos.map((l) => (
+                          <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                        ))}
+                      </span>
+                    )}
                     <span className="flex items-center gap-2 font-bold text-ink">
                       {r.ours && <BoloAppIcon size={22} />}
-                      {r.logos?.map((l) => (
-                        <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
-                      ))}
                       {r.what}
                     </span>
                     <span className="text-xs font-normal text-ink/60">{r.examples}</span>
@@ -260,11 +264,15 @@ export function WhyDifferent({
               key={r.what}
               className={`rounded-2xl border p-4 ${r.ours ? "border-brand bg-brand-soft/60" : "border-border bg-white"}`}
             >
+              {r.logos && (
+                <span className="mb-1.5 flex items-center gap-2">
+                  {r.logos.map((l) => (
+                    <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                  ))}
+                </span>
+              )}
               <p className="flex items-center gap-2 font-bold text-ink">
                 {r.ours && <BoloAppIcon size={22} />}
-                {r.logos?.map((l) => (
-                  <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
-                ))}
                 {r.what}
                 <span className="ml-auto text-sm">
                   <FeeText text={r.price} />

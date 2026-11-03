@@ -543,7 +543,7 @@ export function MarketGap() {
                       </span>
                     ) : (
                       <span className="flex flex-col items-start gap-1.5">
-                        <span className="flex gap-1">
+                        <span className="flex h-6 items-center gap-2">
                           {b.logos?.map((l) => (
                             <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
                           ))}
