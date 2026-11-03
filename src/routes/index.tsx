@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import { Deferred } from "@/components/Deferred";
 import { FaqSection } from "@/components/FaqSection";
 import {
   SectionHeader,
@@ -296,363 +297,382 @@ function Home() {
         </div>
       </section>
 
-      {/* THE WEEK + THE PACKAGE */}
-      <WeekStrip />
-      <PackageSlides />
+      <Deferred id="home-week">
+        {/* THE WEEK + THE PACKAGE */}
+        <WeekStrip />
+        <PackageSlides />
+      </Deferred>
 
-      {/* COURSE CATEGORIES */}
-      <section className="section">
-        <div className="container-x">
-          <SectionHeader
-            eyebrow="What We Teach"
-            title="Choose the Goal You Need Now"
-            subtitle="Basic Spoken, Intermediate Spoken, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
-          />
-          <Reveal
-            stagger
-            className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4"
-          >
-            {COURSE_CATEGORIES.map((category) => (
-              <CategoryCard key={category.id} category={category} />
-            ))}
-          </Reveal>
-          <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <strong className="text-cream block text-lg">
-                Not sure which course is right for you?
-              </strong>
-              <p className="text-white text-sm mt-1">
-                Message your goal anytime — we recommend the best-fit course when admissions replies
-                during 10am–midnight IST every day.
-              </p>
-            </div>
-            <WaButton
-              message="Hi, I want a free consultation to choose my spoken English course."
-              variant="wa"
-              size="md"
+      <Deferred id="home-courses">
+        {/* COURSE CATEGORIES */}
+        <section className="section">
+          <div className="container-x">
+            <SectionHeader
+              eyebrow="What We Teach"
+              title="Choose the Goal You Need Now"
+              subtitle="Basic Spoken, Intermediate Spoken, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
+            />
+            <Reveal
+              stagger
+              className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4"
             >
-              {CHAT_CTA}
-            </WaButton>
-          </div>
-        </div>
-      </section>
-
-      <CourseLadder />
-      {/* THE BOLO APP — practice, video lessons, weekly review */}
-      <BoloSection />
-
-      {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
-      <WhyDifferent />
-
-      <GuidesStrip />
-
-      {/* HOW IT WORKS */}
-      <section className="hero-light relative section overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <SmartImage src={IMG.liveClass} alt="Live online class in India" fill sizes="100vw" />
-          <div className="absolute inset-0 hero-veil" />
-        </div>
-        <div className="container-x">
-          <SectionHeader
-            eyebrowTone="white"
-            eyebrow="The Process"
-            title={<span className="text-cream">How Live Classes Work</span>}
-            invert
-            subtitle={
-              <span className="text-white/90">
-                One named teacher. Up to 2 classes a week. Every session live — never a recording as
-                the class. Batches of approximately 6 learners mean you still get the mic.
-              </span>
-            }
-          />
-          <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
-            <GlassCard
-              icon="users"
-              title="Small Live Batches"
-              pricing={<FeeText text="Approx. 6 learners · From ₹999/mo, inclusive of taxes" />}
-            >
-              Scheduled English cohorts usually have around 6 learners. You practise with
-              classmates, speak in every class and receive corrections during the lesson.
-            </GlassCard>
-            <GlassCard icon="user" title="Direct Teacher Support" pricing="When Genuinely Needed">
-              Questions are answered during class. Outside class, a learner can contact the teacher
-              directly when genuine help is needed; this is not a scheduled 1:1 feedback session.
-            </GlassCard>
-          </Reveal>
-          <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              {
-                n: 1,
-                lbl: "Choose Course",
-                sub: "5 programmes · from ₹999/mo, inclusive of taxes",
-                c: "sunshine",
-              },
-              { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
-              { n: 3, lbl: "WhatsApp Us", sub: "Replies 10am–midnight IST every day", c: "wa" },
-              { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
-            ].map((s) => (
-              <div key={s.n} className="text-center">
-                <div
-                  className={`mx-auto h-12 w-12 rounded-full flex items-center justify-center font-display font-extrabold text-lg ${
-                    s.c === "wa"
-                      ? "bg-wa text-ink"
-                      : s.c === "sunshine"
-                        ? "bg-sunshine text-ink"
-                        : s.c === "coral"
-                          ? "bg-coral text-ink"
-                          : "bg-sage text-ink"
-                  }`}
-                >
-                  {s.n}
-                </div>
-                <div className="text-cream font-display font-bold mt-3">{s.lbl}</div>
-                <div className="text-white/85 text-xs mt-1">
-                  <FeeText text={s.sub} />
-                </div>
+              {COURSE_CATEGORIES.map((category) => (
+                <CategoryCard key={category.id} category={category} />
+              ))}
+            </Reveal>
+            <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <strong className="text-cream block text-lg">
+                  Not sure which course is right for you?
+                </strong>
+                <p className="text-white text-sm mt-1">
+                  Message your goal anytime — we recommend the best-fit course when admissions
+                  replies during 10am–midnight IST every day.
+                </p>
               </div>
-            ))}
-          </Reveal>
-          <div className="text-center mt-10">
-            <WaButton
-              message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
-              variant="sun"
-              size="lg"
-            >
-              {DEMO_CTA}
-            </WaButton>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT WE OFFER */}
-      <section className="section bg-brand-soft/40">
-        <div className="container-x">
-          <SectionHeader
-            eyebrow="What We Offer"
-            title="Why Our Teaching Works"
-            subtitle={
-              <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners." />
-            }
-          />
-          <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
-              Engaging live sessions with direct teacher support — real interaction every class.
-            </FeatureCard>
-            <FeatureCard icon="gamepad" color="sunshine" title="Gamified Learning">
-              Flashcards, matching games, live polls & quizzes — learning that actually sticks.
-            </FeatureCard>
-            <FeatureCard icon="heart" color="coral" title="Collaborative Learning">
-              Group discussions, debates, and teamwork that build confidence together.
-            </FeatureCard>
-            <FeatureCard icon="target" color="indigo" title="Student-Centred Design">
-              Classes designed around each student's needs, goals, and learning style.
-            </FeatureCard>
-            <FeatureCard icon="trend" color="sage" title="Live Polls & Quizzes">
-              Real-time activities that improve participation and check understanding.
-            </FeatureCard>
-            <FeatureCard icon="clock" color="brand" title="Flexible & Adaptable">
-              Afternoon, evening, night batches — we fit around your life, not the other way round.
-            </FeatureCard>
-          </Reveal>
-          <div className="text-center mt-10">
-            <Link to="/about-us" className="btn btn-outline">
-              See All 11 Learning Features <Icon name="arrow-right" size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <MottoBand>
-        "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
-      </MottoBand>
-
-      {/* GOOGLE RATING + PROOF */}
-      <GoogleProof />
-
-      {/* MARKET + WHAT CHANGED */}
-      <MarketGap />
-      <BeforeNow />
-
-      {/* TESTIMONIALS */}
-      <section className="section">
-        <div className="container-x">
-          <SectionHeader
-            eyebrowTone="coral"
-            eyebrow="Student Stories"
-            title="Real Results from Real Learners"
-            subtitle="Selected named outcomes. Progress depends on attendance and practice — no score, job or salary is guaranteed."
-          />
-          <TestimonialSlider items={TESTIMONIALS} />
-          <p className="text-center text-sm text-ink/75 mt-5 max-w-2xl mx-auto">
-            These are selected individual learner outcomes. Progress depends on starting level,
-            attendance and practice; no score, job or salary result is guaranteed.
-          </p>
-          <div className="text-center mt-10">
-            <Link to="/success-stories" className="btn btn-outline">
-              Read All Success Stories <Icon name="arrow-right" size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
-      <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
-        <div className="container-x">
-          <SectionHeader
-            eyebrow={
-              <MarketCopy inr="Affordable. Premium. Everything included." usd="Simple pricing" />
-            }
-            eyebrowTone="indigo"
-            title={<FeeText text="From ₹999/mo · live classes and the Bolo app included" />}
-            subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus Bolo, the practice app with daily exercises, video lessons and a weekly teacher review. Same-week reschedule if a slot is free."
-          />
-          <PricingGrid />
-          <DemoStrip />
-          <div className="mt-7 text-center">
-            <p className="text-sm text-ink/75">
-              <MarketCopy
-                inr="All prices are in INR and inclusive of taxes."
-                usd={`These published figures are the international fee, in ${intlUnit()}, for learners outside India. They are the labeled fee, not a conversion of the India price.`}
-              />
-            </p>
-            <div className="mt-3">
               <WaButton
-                message="Hi, I want a free consultation for spoken English, the fees and the next slot."
+                message="Hi, I want a free consultation to choose my spoken English course."
                 variant="wa"
-                size="sm"
+                size="md"
               >
                 {CHAT_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="light" align="center" className="mt-5" />
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* START TODAY */}
-      <section className="section bg-gradient-to-b from-cream to-brand-soft/40">
-        <div className="container-x">
-          <SectionHeader eyebrow="Enroll Today" title="Two Ways to Begin" />
+        <CourseLadder />
+      </Deferred>
+      <Deferred id="home-bolo">
+        {/* THE BOLO APP — practice, video lessons, weekly review */}
+        <BoloSection />
+      </Deferred>
 
-          <Reveal stagger className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-3xl p-8 md:p-10 bg-brand-deep text-cream relative overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-wa/20 rounded-full blur-3xl" />
-              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-white mb-4 shadow-md overflow-hidden">
-                <BrandIcon name="whatsapp" size={36} />
-              </div>
-              <h3 className="text-cream text-2xl font-display font-extrabold mb-3">
-                Chat on WhatsApp
-              </h3>
-              <p className="text-white/95 leading-relaxed mb-6">
-                Tell us your goal in one message. We reply 10am–midnight IST every day and help you
-                pick a course.
-              </p>
-              <WaButton message={CHAT_MSG} size="lg">
-                {CHAT_CTA}
-              </WaButton>
-              <p className="text-xs text-white/80 mt-4">
-                Message anytime · Replies 10am–midnight IST every day · Phone is a fallback
-              </p>
-            </div>
-            <a
-              href={waLink(withPageTag(DEMO_MSG, "home"))}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
-              data-cta-goal="free_consultation"
-            >
-              <SmartImage
-                src={IMG.womanLaptop}
-                alt="Indian woman booking a class"
-                fill
-                imgClassName="transition duration-500 group-hover:scale-105"
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20" />
-              <div className="relative p-7 text-cream">
-                <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
-                  <Icon name="compass" size={22} /> {DEMO_CTA}
-                </h3>
-                <p className="text-cream/95 mb-4">
-                  Ready when you are. Message us your goal — we reply 10am–midnight IST every day
-                  with the course and fee that actually fit.
-                </p>
-                <span className="btn btn-sun btn-sm">
-                  <Icon name="compass" size={14} /> {DEMO_CTA} <Icon name="arrow-right" size={14} />
+      <Deferred id="home-different">
+        {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
+        <WhyDifferent />
+
+        <GuidesStrip />
+      </Deferred>
+
+      <Deferred id="home-how">
+        {/* HOW IT WORKS */}
+        <section className="hero-light relative section overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <SmartImage src={IMG.liveClass} alt="Live online class in India" fill sizes="100vw" />
+            <div className="absolute inset-0 hero-veil" />
+          </div>
+          <div className="container-x">
+            <SectionHeader
+              eyebrowTone="white"
+              eyebrow="The Process"
+              title={<span className="text-cream">How Live Classes Work</span>}
+              invert
+              subtitle={
+                <span className="text-white/90">
+                  One named teacher. Up to 2 classes a week. Every session live — never a recording
+                  as the class. Batches of approximately 6 learners mean you still get the mic.
                 </span>
-              </div>
-            </a>
-          </Reveal>
-          <PaymentTrust tone="light" align="center" className="mt-8" />
-        </div>
-      </section>
-
-      <FaqSection
-        faqs={PAGES["/"].faqs ?? []}
-        eyebrow="Common Questions"
-        title="Your Questions, Answered Plainly"
-        subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-        waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
-      />
-
-      {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
-      <section className="py-12 pb-24 sm:pb-12 bg-white">
-        <div className="container-x max-w-4xl">
-          <div className="rounded-2xl overflow-hidden border border-border shadow-md bg-white grid md:grid-cols-[1fr_1.1fr]">
-            <div className="relative h-56 md:h-auto min-h-[220px] bg-brand-soft">
-              <iframe
-                title="Learn With Smile — registered office, Kolkata"
-                src="https://www.google.com/maps?q=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008&output=embed"
-                className="absolute inset-0 w-full h-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              }
+            />
+            <Reveal stagger className="grid md:grid-cols-2 gap-5 mb-12">
+              <GlassCard
+                icon="users"
+                title="Small Live Batches"
+                pricing={<FeeText text="Approx. 6 learners · From ₹999/mo, inclusive of taxes" />}
+              >
+                Scheduled English cohorts usually have around 6 learners. You practise with
+                classmates, speak in every class and receive corrections during the lesson.
+              </GlassCard>
+              <GlassCard icon="user" title="Direct Teacher Support" pricing="When Genuinely Needed">
+                Questions are answered during class. Outside class, a learner can contact the
+                teacher directly when genuine help is needed; this is not a scheduled 1:1 feedback
+                session.
+              </GlassCard>
+            </Reveal>
+            <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                {
+                  n: 1,
+                  lbl: "Choose Course",
+                  sub: "5 programmes · from ₹999/mo, inclusive of taxes",
+                  c: "sunshine",
+                },
+                { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
+                { n: 3, lbl: "WhatsApp Us", sub: "Replies 10am–midnight IST every day", c: "wa" },
+                { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
+              ].map((s) => (
+                <div key={s.n} className="text-center">
+                  <div
+                    className={`mx-auto h-12 w-12 rounded-full flex items-center justify-center font-display font-extrabold text-lg ${
+                      s.c === "wa"
+                        ? "bg-wa text-ink"
+                        : s.c === "sunshine"
+                          ? "bg-sunshine text-ink"
+                          : s.c === "coral"
+                            ? "bg-coral text-ink"
+                            : "bg-sage text-ink"
+                    }`}
+                  >
+                    {s.n}
+                  </div>
+                  <div className="text-cream font-display font-bold mt-3">{s.lbl}</div>
+                  <div className="text-white/85 text-xs mt-1">
+                    <FeeText text={s.sub} />
+                  </div>
+                </div>
+              ))}
+            </Reveal>
+            <div className="text-center mt-10">
+              <WaButton
+                message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+                variant="sun"
+                size="lg"
+              >
+                {DEMO_CTA}
+              </WaButton>
             </div>
-            <div className="p-5 md:p-6 flex flex-col justify-center">
-              <span className="eyebrow eyebrow-indigo w-fit">
-                <Icon name="globe" size={12} /> Live online across India · Office in Kolkata
-              </span>
-              <div className="font-display font-extrabold text-ink text-base mt-2 flex items-center gap-2">
-                LEARN WITH SMILE
-              </div>
-              <p className="text-ink/85 text-sm mt-1">
-                75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008
-                <br />
-                <span className="text-sunshine font-bold">
-                  {RATING_DISPLAY} ({RATING.count} {RATING.source} reviews)
-                </span>{" "}
-                · Registered office
+          </div>
+        </section>
+
+        {/* WHAT WE OFFER */}
+        <section className="section bg-brand-soft/40">
+          <div className="container-x">
+            <SectionHeader
+              eyebrow="What We Offer"
+              title="Why Our Teaching Works"
+              subtitle={
+                <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners." />
+              }
+            />
+            <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
+                Engaging live sessions with direct teacher support — real interaction every class.
+              </FeatureCard>
+              <FeatureCard icon="gamepad" color="sunshine" title="Gamified Learning">
+                Flashcards, matching games, live polls & quizzes — learning that actually sticks.
+              </FeatureCard>
+              <FeatureCard icon="heart" color="coral" title="Collaborative Learning">
+                Group discussions, debates, and teamwork that build confidence together.
+              </FeatureCard>
+              <FeatureCard icon="target" color="indigo" title="Student-Centred Design">
+                Classes designed around each student's needs, goals, and learning style.
+              </FeatureCard>
+              <FeatureCard icon="trend" color="sage" title="Live Polls & Quizzes">
+                Real-time activities that improve participation and check understanding.
+              </FeatureCard>
+              <FeatureCard icon="clock" color="brand" title="Flexible & Adaptable">
+                Afternoon, evening, night batches — we fit around your life, not the other way
+                round.
+              </FeatureCard>
+            </Reveal>
+            <div className="text-center mt-10">
+              <Link to="/about-us" className="btn btn-outline">
+                See All 11 Learning Features <Icon name="arrow-right" size={16} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <MottoBand>
+          "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
+        </MottoBand>
+      </Deferred>
+
+      <Deferred id="home-market">
+        {/* GOOGLE RATING + PROOF */}
+        <GoogleProof />
+
+        {/* MARKET + WHAT CHANGED */}
+        <MarketGap />
+        <BeforeNow />
+      </Deferred>
+
+      <Deferred id="home-pricing">
+        {/* TESTIMONIALS */}
+        <section className="section">
+          <div className="container-x">
+            <SectionHeader
+              eyebrowTone="coral"
+              eyebrow="Student Stories"
+              title="Real Results from Real Learners"
+              subtitle="Selected named outcomes. Progress depends on attendance and practice — no score, job or salary is guaranteed."
+            />
+            <TestimonialSlider items={TESTIMONIALS} />
+            <p className="text-center text-sm text-ink/75 mt-5 max-w-2xl mx-auto">
+              These are selected individual learner outcomes. Progress depends on starting level,
+              attendance and practice; no score, job or salary result is guaranteed.
+            </p>
+            <div className="text-center mt-10">
+              <Link to="/success-stories" className="btn btn-outline">
+                Read All Success Stories <Icon name="arrow-right" size={16} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
+        <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
+          <div className="container-x">
+            <SectionHeader
+              eyebrow={
+                <MarketCopy inr="Affordable. Premium. Everything included." usd="Simple pricing" />
+              }
+              eyebrowTone="indigo"
+              title={<FeeText text="From ₹999/mo · live classes and the Bolo app included" />}
+              subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus Bolo, the practice app with daily exercises, video lessons and a weekly teacher review. Same-week reschedule if a slot is free."
+            />
+            <PricingGrid />
+            <DemoStrip />
+            <div className="mt-7 text-center">
+              <p className="text-sm text-ink/75">
+                <MarketCopy
+                  inr="All prices are in INR and inclusive of taxes."
+                  usd={`These published figures are the international fee, in ${intlUnit()}, for learners outside India. They are the labeled fee, not a conversion of the India price.`}
+                />
               </p>
-              <div className="flex flex-wrap gap-2 mt-3">
-                <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008+India"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-sm"
+              <div className="mt-3">
+                <WaButton
+                  message="Hi, I want a free consultation for spoken English, the fees and the next slot."
+                  variant="wa"
+                  size="sm"
                 >
-                  <Icon name="target" size={14} /> Directions
-                </a>
-                <a
-                  href={RATING.readUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-sun btn-sm"
-                >
-                  <Icon name="star" size={14} /> Read our Google reviews
-                </a>
-                <a
-                  href={RATING.writeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline btn-sm"
-                >
-                  Write a review
-                </a>
+                  {CHAT_CTA}
+                </WaButton>
+              </div>
+              <PaymentTrust tone="light" align="center" className="mt-5" />
+            </div>
+          </div>
+        </section>
+      </Deferred>
+
+      <Deferred id="home-end">
+        {/* START TODAY */}
+        <section className="section bg-gradient-to-b from-cream to-brand-soft/40">
+          <div className="container-x">
+            <SectionHeader eyebrow="Enroll Today" title="Two Ways to Begin" />
+
+            <Reveal stagger className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-3xl p-8 md:p-10 bg-brand-deep text-cream relative overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-wa/20 rounded-full blur-3xl" />
+                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-white mb-4 shadow-md overflow-hidden">
+                  <BrandIcon name="whatsapp" size={36} />
+                </div>
+                <h3 className="text-cream text-2xl font-display font-extrabold mb-3">
+                  Chat on WhatsApp
+                </h3>
+                <p className="text-white/95 leading-relaxed mb-6">
+                  Tell us your goal in one message. We reply 10am–midnight IST every day and help
+                  you pick a course.
+                </p>
+                <WaButton message={CHAT_MSG} size="lg">
+                  {CHAT_CTA}
+                </WaButton>
+                <p className="text-xs text-white/80 mt-4">
+                  Message anytime · Replies 10am–midnight IST every day · Phone is a fallback
+                </p>
+              </div>
+              <a
+                href={waLink(withPageTag(DEMO_MSG, "home"))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
+                data-cta-goal="free_consultation"
+              >
+                <SmartImage
+                  src={IMG.womanLaptop}
+                  alt="Indian woman booking a class"
+                  fill
+                  imgClassName="transition duration-500 group-hover:scale-105"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20" />
+                <div className="relative p-7 text-cream">
+                  <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
+                    <Icon name="compass" size={22} /> {DEMO_CTA}
+                  </h3>
+                  <p className="text-cream/95 mb-4">
+                    Ready when you are. Message us your goal — we reply 10am–midnight IST every day
+                    with the course and fee that actually fit.
+                  </p>
+                  <span className="btn btn-sun btn-sm">
+                    <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
+                    <Icon name="arrow-right" size={14} />
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+            <PaymentTrust tone="light" align="center" className="mt-8" />
+          </div>
+        </section>
+
+        <FaqSection
+          faqs={PAGES["/"].faqs ?? []}
+          eyebrow="Common Questions"
+          title="Your Questions, Answered Plainly"
+          subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
+          waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+        />
+
+        {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}
+        <section className="py-12 pb-24 sm:pb-12 bg-white">
+          <div className="container-x max-w-4xl">
+            <div className="rounded-2xl overflow-hidden border border-border shadow-md bg-white grid md:grid-cols-[1fr_1.1fr]">
+              <div className="relative h-56 md:h-auto min-h-[220px] bg-brand-soft">
+                <iframe
+                  title="Learn With Smile — registered office, Kolkata"
+                  src="https://www.google.com/maps?q=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008&output=embed"
+                  className="absolute inset-0 w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <div className="p-5 md:p-6 flex flex-col justify-center">
+                <span className="eyebrow eyebrow-indigo w-fit">
+                  <Icon name="globe" size={12} /> Live online across India · Office in Kolkata
+                </span>
+                <div className="font-display font-extrabold text-ink text-base mt-2 flex items-center gap-2">
+                  LEARN WITH SMILE
+                </div>
+                <p className="text-ink/85 text-sm mt-1">
+                  75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008
+                  <br />
+                  <span className="text-sunshine font-bold">
+                    {RATING_DISPLAY} ({RATING.count} {RATING.source} reviews)
+                  </span>{" "}
+                  · Registered office
+                </p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=75%2F2%2F4+Raja+Ram+Mohan+Roy+Road+Kolkata+700008+India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-sm"
+                  >
+                    <Icon name="target" size={14} /> Directions
+                  </a>
+                  <a
+                    href={RATING.readUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-sun btn-sm"
+                  >
+                    <Icon name="star" size={14} /> Read our Google reviews
+                  </a>
+                  <a
+                    href={RATING.writeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline btn-sm"
+                  >
+                    Write a review
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Deferred>
     </Layout>
   );
 }

@@ -4,6 +4,7 @@ import { RouterProvider } from "@tanstack/react-router";
 
 import { getRouter } from "./router";
 import { recordPaintedImages } from "./lib/painted-images";
+import { captureDeferred } from "./components/Deferred";
 import "./styles.css";
 
 /**
@@ -66,6 +67,10 @@ async function start() {
   // Note which photos the reader can already see, so re-creating the DOM does
   // not blink them back to their placeholders.
   recordPaintedImages();
+
+  // Keep the prerendered HTML of below-the-fold blocks so React can show it
+  // as-is and build those blocks only when they scroll near (Deferred.tsx).
+  captureDeferred();
 
   createRoot(document.getElementById("root")!).render(
     <StrictMode>
