@@ -11,6 +11,10 @@ import { usePageLabel } from "@/lib/use-page-label";
 import { BrandIcon } from "./BrandIcon";
 import { Icon } from "./Icon";
 
+/** Phone bottom bar: each label stays on one line (type scales 10.5–12px with the
+ * screen, so it fits down to 320px wide); the 40px tap height is kept. */
+const BAR_BTN = "justify-center gap-1 whitespace-nowrap px-1.5 text-[clamp(10.5px,3.2vw,12px)]";
+
 export function WhatsAppFab({ message }: { message?: string }) {
   const page = usePageLabel();
   // Chat asks a question; the consultation button uses the page's own message
@@ -36,7 +40,7 @@ export function WhatsAppFab({ message }: { message?: string }) {
       </a>
 
       <div
-        className="sm:hidden fixed bottom-3 inset-x-3 z-50 grid grid-cols-2 gap-2 rounded-2xl bg-white/95 backdrop-blur p-2 shadow-2xl ring-1 ring-ink/10"
+        className="sm:hidden fixed bottom-3 inset-x-2 z-50 grid grid-cols-2 gap-1.5 rounded-2xl bg-white/95 backdrop-blur p-1.5 shadow-2xl ring-1 ring-ink/10"
         data-cta-location="sticky"
         aria-label="Contact Learn With Smile"
       >
@@ -44,19 +48,19 @@ export function WhatsAppFab({ message }: { message?: string }) {
           href={whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-wa btn-sm justify-center px-2"
+          className={`btn btn-wa btn-sm ${BAR_BTN}`}
           data-cta-goal="whatsapp_chat"
         >
-          <BrandIcon name="whatsapp" size={16} color="#053b1e" /> {CHAT_CTA}
+          <BrandIcon name="whatsapp" size={14} color="#053b1e" /> {CHAT_CTA}
         </a>
         <a
           href={consult}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-sun btn-sm justify-center px-2"
+          className={`btn btn-sun btn-sm ${BAR_BTN}`}
           data-cta-goal="free_consultation"
         >
-          <Icon name="compass" size={16} /> {DEMO_CTA}
+          <Icon name="compass" size={14} /> {DEMO_CTA}
         </a>
       </div>
     </>
