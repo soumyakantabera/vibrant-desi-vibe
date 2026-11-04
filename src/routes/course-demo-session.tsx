@@ -48,7 +48,7 @@ function DemoSessionPage() {
 
   return (
     <Layout footerImage={d.footerImage}>
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={d.heroImage}
@@ -111,7 +111,7 @@ function DemoSessionPage() {
           <p className="mt-3 max-w-xl text-sm font-semibold text-white/95">
             WhatsApp us, then pay. We place you within 72 hours of payment.
           </p>
-          <PaymentTrust tone="light" className="mt-4" />
+          <PaymentTrust tone="dark" className="mt-4" />
         </div>
       </section>
 

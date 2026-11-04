@@ -70,7 +70,7 @@ function Page() {
       waMessage="Hi, I read the blog and I want a free consultation for spoken English."
       footerImage={IMG.blogDesk}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.blogDesk}

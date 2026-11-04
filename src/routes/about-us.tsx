@@ -88,7 +88,7 @@ function Page() {
       waMessage="Hi, I read About Us and I want a free consultation for spoken English."
       footerImage={IMG.team}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.team} alt="Indian learners community" fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />

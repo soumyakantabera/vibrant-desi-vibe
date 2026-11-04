@@ -100,7 +100,7 @@ function Page() {
   const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
     <Layout waMessage={wa} footerImage={IMG.liveClass}>
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.liveClass}

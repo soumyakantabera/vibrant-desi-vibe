@@ -507,7 +507,7 @@ export function MarketGap() {
           </p>
         </div>
 
-        <VizIn className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <VizIn className="phone-swipe grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {GAP_TILES.map((t, i) => (
             <article
               key={t.who}

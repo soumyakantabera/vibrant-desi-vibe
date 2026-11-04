@@ -57,7 +57,7 @@ function Page() {
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
@@ -100,7 +100,7 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="light" className="mt-4" />
+            <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>

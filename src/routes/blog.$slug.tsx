@@ -45,7 +45,7 @@ function BlogPostPage() {
 
   return (
     <Layout waMessage={waMessage} footerImage={heroImage}>
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={heroImage} alt={post.imgAlt} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />

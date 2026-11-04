@@ -371,7 +371,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
@@ -439,7 +439,7 @@ export function CoursePage({ data }: { data: CourseData }) {
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />
             </p>
-            <PaymentTrust tone="light" className="mt-4" />
+            <PaymentTrust tone="dark" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">{snapshot}</div>
         </div>

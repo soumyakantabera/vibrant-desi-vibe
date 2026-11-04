@@ -131,7 +131,7 @@ export function GuidesStrip({
     <section className="section">
       <div className="container-x">
         <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="phone-swipe grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {SITE_GUIDES.map((g) => {
             const tone = tones[g.color];
             return (

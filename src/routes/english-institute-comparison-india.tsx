@@ -131,7 +131,7 @@ function Page() {
     "Hi, I am comparing institutes and I want a free consultation for spoken English.";
   return (
     <Layout waMessage={waMessage} footerImage={IMG.speaking}>
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.speaking}

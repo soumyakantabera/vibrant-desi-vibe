@@ -4,7 +4,6 @@ import { Deferred } from "@/components/Deferred";
 import { FaqSection } from "@/components/FaqSection";
 import {
   SectionHeader,
-  FeatureCard,
   WaButton,
   MottoBand,
   GuidesStrip,
@@ -12,7 +11,6 @@ import {
 } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
-import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
@@ -30,17 +28,13 @@ import {
 } from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
 import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
-import { CONSULTATION } from "@/lib/consultation";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
 import {
-  BeforeNow,
   DemoStrip,
   LaunchOfferBand,
-  PackageSlides,
   PackageStrip,
   PricingGrid,
-  WeekStrip,
 } from "@/components/package/PackageSections";
 import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
 
@@ -81,38 +75,13 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const TESTIMONIALS = [
-    {
-      quote:
-        "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
-      name: "Neha Patel",
-      detail: "Business English · Tax Analyst, Ahmedabad",
-      waMessage: "Hi, I saw Neha's story and I want a free consultation for Business English.",
-    },
-    {
-      quote:
-        "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
-      name: "Kavya Reddy",
-      detail: "Spoken English · Advocate, Hyderabad",
-      waMessage: "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
-    },
-    {
-      quote:
-        "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
-      name: "Vikram Singh",
-      detail: "Spoken English · Bank Asst. Manager, Delhi",
-      waMessage:
-        "Hi, I saw Vikram's story and I want a free consultation for Basic Spoken English.",
-    },
-  ];
-
   return (
     <Layout
       waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           {/* The one image that is part of the first screen — fetched at high
               priority; everything else on the page loads lazily. */}
@@ -190,7 +159,7 @@ function Home() {
               </Link>{" "}
               — adjusted in your fee if you enrol.
             </p>
-            <PaymentTrust tone="light" className="mt-4" />
+            <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>
@@ -252,64 +221,6 @@ function Home() {
       <PackageStrip />
 
       <CoverageStrip />
-
-      {/* STORY BAND */}
-      <section className="hero-light bg-white py-16 md:py-20 lg:py-24">
-        <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider">
-              <Icon name="book" size={14} /> Our Story
-            </span>
-            <h2 className="mt-4 text-cream section-title">
-              We Noticed a Gap.
-              <br />
-              <span className="text-sage">We Built the Bridge.</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-white leading-relaxed">
-              <p>
-                For the past seven years, we have been teaching students and helping them build
-                confidence in learning. During this journey, we noticed a common gap — many students
-                struggle to understand concepts because learning is often made{" "}
-                <strong className="text-cream">too complex</strong>.
-              </p>
-              <p>
-                Our mission has always been to bridge this gap through simple teaching methods and
-                by understanding each student's learning needs. We believe education should be{" "}
-                <strong className="text-cream">easy to understand, practical, and enjoyable</strong>
-                .
-              </p>
-              <p>
-                With the rapid growth of AI and technology, we have designed live classes with small
-                batch sizes to ensure better attention, better interaction, and better learning
-                outcomes.
-              </p>
-            </div>
-            <Link to="/about-us" className="btn btn-ghost-white mt-6">
-              <Icon name="arrow-right" size={16} /> Read Our Full Story
-            </Link>
-          </div>
-          <Reveal stagger className="grid grid-cols-2 gap-3">
-            <StoryTile icon="gamepad" tone="amber" title="Gamified Learning">
-              Flashcards, matching games & live quizzes every session.
-            </StoryTile>
-            <StoryTile icon="users" tone="green" title="Batch of Around 6">
-              Named teacher. Small batches of approximately 6 learners. You still speak.
-            </StoryTile>
-            <StoryTile icon="heart" tone="plum" title="Collaborative">
-              Group discussions and community building every class.
-            </StoryTile>
-            <StoryTile icon="target" tone="blue" title="Live Polls & Quizzes">
-              Real-time interactive activities every session.
-            </StoryTile>
-          </Reveal>
-        </div>
-      </section>
-
-      <Deferred id="home-week">
-        {/* THE WEEK + THE PACKAGE */}
-        <WeekStrip />
-        <PackageSlides />
-      </Deferred>
 
       <Deferred id="home-courses">
         {/* COURSE CATEGORIES */}
@@ -444,45 +355,6 @@ function Home() {
           </div>
         </section>
 
-        {/* WHAT WE OFFER */}
-        <section className="section bg-brand-soft/40">
-          <div className="container-x">
-            <SectionHeader
-              eyebrow="What We Offer"
-              title="Why Our Teaching Works"
-              subtitle={
-                <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners." />
-              }
-            />
-            <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
-                Engaging live sessions with direct teacher support — real interaction every class.
-              </FeatureCard>
-              <FeatureCard icon="gamepad" color="sunshine" title="Gamified Learning">
-                Flashcards, matching games, live polls & quizzes — learning that actually sticks.
-              </FeatureCard>
-              <FeatureCard icon="heart" color="coral" title="Collaborative Learning">
-                Group discussions, debates, and teamwork that build confidence together.
-              </FeatureCard>
-              <FeatureCard icon="target" color="indigo" title="Student-Centred Design">
-                Classes designed around each student's needs, goals, and learning style.
-              </FeatureCard>
-              <FeatureCard icon="trend" color="sage" title="Live Polls & Quizzes">
-                Real-time activities that improve participation and check understanding.
-              </FeatureCard>
-              <FeatureCard icon="clock" color="brand" title="Flexible & Adaptable">
-                Afternoon, evening, night batches — we fit around your life, not the other way
-                round.
-              </FeatureCard>
-            </Reveal>
-            <div className="text-center mt-10">
-              <Link to="/about-us" className="btn btn-outline">
-                See All 11 Learning Features <Icon name="arrow-right" size={16} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <MottoBand>
           "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
         </MottoBand>
@@ -492,34 +364,11 @@ function Home() {
         {/* GOOGLE RATING + PROOF */}
         <GoogleProof />
 
-        {/* MARKET + WHAT CHANGED */}
+        {/* MARKET */}
         <MarketGap />
-        <BeforeNow />
       </Deferred>
 
       <Deferred id="home-pricing">
-        {/* TESTIMONIALS */}
-        <section className="section">
-          <div className="container-x">
-            <SectionHeader
-              eyebrowTone="coral"
-              eyebrow="Student Stories"
-              title="Real Results from Real Learners"
-              subtitle="Selected named outcomes. Progress depends on attendance and practice — no score, job or salary is guaranteed."
-            />
-            <TestimonialSlider items={TESTIMONIALS} />
-            <p className="text-center text-sm text-ink/75 mt-5 max-w-2xl mx-auto">
-              These are selected individual learner outcomes. Progress depends on starting level,
-              attendance and practice; no score, job or salary result is guaranteed.
-            </p>
-            <div className="text-center mt-10">
-              <Link to="/success-stories" className="btn btn-outline">
-                Read All Success Stories <Icon name="arrow-right" size={16} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
         <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
           <div className="container-x">
@@ -692,29 +541,6 @@ const STORY_TONE = {
   plum: { box: "bg-plum-soft", chip: "bg-plum text-white", title: "text-[#4E3470]" },
   blue: { box: "bg-slate-soft", chip: "bg-indigo-pop text-white", title: "text-[#1F3D63]" },
 } as const;
-
-function StoryTile({
-  icon,
-  title,
-  tone,
-  children,
-}: {
-  icon: IconName;
-  title: string;
-  tone: keyof typeof STORY_TONE;
-  children: React.ReactNode;
-}) {
-  const t = STORY_TONE[tone];
-  return (
-    <div className={`rounded-2xl p-5 ${t.box}`}>
-      <div className={`mb-3 grid h-11 w-11 place-items-center rounded-xl ${t.chip}`}>
-        <Icon name={icon} size={22} />
-      </div>
-      <strong className={`block font-bold ${t.title}`}>{title}</strong>
-      <span className="mt-1 block text-sm leading-snug text-ink/80">{children}</span>
-    </div>
-  );
-}
 
 const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: string }> = {
   brand: {

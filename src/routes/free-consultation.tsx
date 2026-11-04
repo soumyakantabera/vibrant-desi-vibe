@@ -30,7 +30,7 @@ export const Route = createFileRoute("/free-consultation")({
 function Page() {
   return (
     <Layout waMessage={DEMO_MSG} footerImage={IMG.womanLaptop}>
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.womanLaptop}
