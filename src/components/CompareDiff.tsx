@@ -25,7 +25,7 @@ export function CompareDiff() {
       <p className="text-xs font-display font-extrabold uppercase tracking-[0.14em] text-ink/55">
         Online institutes, 2026 · <time dateTime={COMPARE_REVISED}>{COMPARE_BLURB}</time>
       </p>
-      <h2 className="mt-2 font-display text-2xl font-extrabold text-ink">
+      <h2 className="section-title mt-2 font-display font-extrabold text-ink">
         Us vs PlanetSpark, EngVarta, Cambly and the rest
       </h2>
       <p className="mt-2 text-sm text-ink/80 leading-relaxed">
@@ -43,7 +43,7 @@ export function CompareDiff() {
             className={`rounded-2xl p-4 ${TONE[row.tone]}`}
             data-ink={row.us ? "1" : "0"}
           >
-            <p className="text-[11px] font-display font-extrabold uppercase tracking-[0.12em] opacity-80">
+            <p className="text-xs font-display font-extrabold uppercase tracking-[0.12em] opacity-80">
               {row.us ? "Us · adults 15+" : "Online"}
             </p>
             <p className="mt-1 font-display text-base font-extrabold leading-snug">{row.name}</p>

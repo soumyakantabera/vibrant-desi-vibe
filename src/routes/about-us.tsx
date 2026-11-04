@@ -88,12 +88,12 @@ function Page() {
       waMessage="Hi, I read About Us and I want a free consultation for spoken English."
       footerImage={IMG.team}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.team} alt="Indian learners community" fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
+        <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
             <Icon name="smile" size={14} /> About Us
           </span>
@@ -190,7 +190,7 @@ function Page() {
 
       <section className="section">
         <div className="container-x text-center">
-          <h2 className="text-3xl md:text-4xl">Ready to learn the smile way?</h2>
+          <h2 className="section-title">Ready to learn the smile way?</h2>
           <p className="mt-3 text-ink/85 max-w-xl mx-auto">Chat on WhatsApp.</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton

@@ -268,6 +268,8 @@ export const COURSES: Record<string, CourseData> = {
       "Follow podcasts, news clips and simplified TED-style talks — then discuss them",
       "Agree, disagree and interrupt politely in a debate or decision meeting",
       "Give a 2–3 minute presentation and handle the Q&A",
+      "Write clear workplace emails, updates and follow-ups in the right tone",
+      "Say no, ask for more time and give feedback politely at work",
     ],
     modules: [
       {
@@ -322,6 +324,24 @@ export const COURSES: Record<string, CourseData> = {
           "Idioms, collocations, phrasal verbs",
           "Daily recordings and shadow speaking",
           "Flashcards and podcasts between classes",
+        ],
+      },
+      {
+        title: "Workplace Messages & Emails",
+        items: [
+          "Clear subject lines and action requests",
+          "Formal, neutral and friendly tone",
+          "Updates, follow-ups and escalation messages",
+          "Common Indian-English phrases: when to keep or replace them",
+        ],
+      },
+      {
+        title: "Professional Tone at Work",
+        items: [
+          "Polite disagreement with colleagues and seniors",
+          "Saying no or requesting more time",
+          "Giving and receiving practical feedback",
+          "Grammar that makes a message sound sure, not rude",
         ],
       },
     ],
@@ -420,6 +440,10 @@ export const COURSES: Record<string, CourseData> = {
               ],
             },
             { skill: "Presentation", items: ["2–3 minute presentations + Q&A"] },
+            {
+              skill: "Workplace writing",
+              items: ["Emails, updates and follow-ups", "Polite no, feedback and asking for time"],
+            },
           ],
         },
       ],
@@ -442,6 +466,10 @@ export const COURSES: Record<string, CourseData> = {
       ],
     },
     faqs: [
+      {
+        q: "Does Intermediate cover business emails and workplace English?",
+        a: "Yes. Business English is now part of two courses. Intermediate Spoken English (4 months, ₹1,999/month, inclusive of taxes) covers workplace emails, updates and follow-ups, professional tone, polite disagreement and saying no — with the grammar that makes them sound right. For meetings, client calls, standups and presentations, take Interactive Speaking (3 months, ₹1,599/month).",
+      },
       {
         q: "Should I take Intermediate or Basic Spoken English?",
         a: "One test: can you finish a simple sentence out loud — “I work in a bank and I live in Pune”? If yes, and the problem is wrong tenses, broken flow and fillers, take Intermediate Spoken English (4 months, ₹1,999/month). If you cannot finish that sentence yet, start with Basic Spoken English (₹999/month). The free consultation decides it in one conversation.",
@@ -470,98 +498,11 @@ export const COURSES: Record<string, CourseData> = {
     metaDescription:
       "Intermediate Spoken English online: 4 months, 30 min grammar + 1 hr communication per class, about 6 learners. ₹1,999/month, inclusive of taxes.",
   },
-  "business-english": {
-    slug: "business-english",
-    title: "Business English",
-    tagline:
-      "Meetings, client calls, emails and presentations — 3 months, approx. 6 learners, up to 2 live classes/week, ₹2,499/month, inclusive of taxes. For professionals, freshers and job seekers.",
-    category: "Work & Career",
-    categoryColor: "brand",
-    icon: "headset",
-    heroImage: IMG.businessEnglish,
-    midImage: IMG.womanOffice,
-    footerImage: IMG.presentation,
-    duration: "3 months · 1 hr 30 min · up to 2 classes/week",
-    durationQualifier: "Your pace, your progress. Start where you shine.",
-    format: "Live batch · approximately 6 learners",
-    price: "₹2,499/month",
-    outcomes: [
-      "Give clear status updates without memorising a script",
-      "Speak more confidently in team and client meetings",
-      "Write concise emails and workplace messages",
-      "Handle calls, questions and misunderstandings calmly",
-      "Present an idea with a clear beginning, middle and action",
-      "Agree, disagree and ask for clarification professionally",
-    ],
-    modules: [
-      {
-        title: "Workplace Messages & Emails",
-        items: [
-          "Clear subject lines and action requests",
-          "Formal, neutral and friendly tone",
-          "Updates, follow-ups and escalation messages",
-          "Common Indian-English phrases: when to keep or replace them",
-        ],
-      },
-      {
-        title: "Meetings, Updates & Client Calls",
-        items: [
-          "Joining, opening and closing a discussion",
-          "Giving a short status update",
-          "Clarifying requirements and checking understanding",
-          "Handling an unexpected question without freezing",
-        ],
-      },
-      {
-        title: "Presentations & Explaining Work",
-        items: [
-          "Explaining a process in simple English",
-          "Structuring a recommendation or proposal",
-          "Voice, pace and signposting",
-          "Responding to Q&A and saying when you need to check",
-        ],
-      },
-      {
-        title: "Professional Confidence",
-        items: [
-          "Polite disagreement with colleagues and seniors",
-          "Saying no or requesting more time",
-          "Giving and receiving practical feedback",
-          "Live workplace role-plays with class feedback",
-        ],
-      },
-    ],
-    testimonials: [
-      {
-        quote:
-          "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
-        name: "Neha Patel",
-        detail: "Business English · Tax Analyst, Ahmedabad",
-        waMessage: "Hi, I saw Neha's story and I want a free consultation for Business English.",
-      },
-      {
-        quote:
-          "Partners asked me to walk the working papers in English. A batch of around six meant I rehearsed every week. I present now.",
-        name: "Rohan Deshpande",
-        detail: "Business English · Chartered Accountant, Mumbai",
-        waMessage: "Hi, I saw Rohan's story and I want a free consultation for Business English.",
-      },
-      {
-        quote:
-          "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
-        name: "Aditya Nair",
-        detail: "Business English · BI Analyst, Pune",
-        waMessage: "Hi, I saw Aditya's story and I want a free consultation for Business English.",
-      },
-    ],
-    metaDescription:
-      "Business English classes for professionals and job seekers in India. Meetings, calls, emails and presentations. Live batch of approximately 6 learners, ₹2,499/month, inclusive of taxes.",
-  },
   "interactive-speaking": {
     slug: "interactive-speaking",
     title: "Interactive Speaking Class",
     tagline:
-      "3 months of live speaking — games, debates, role-plays, interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,599/month, inclusive of taxes. Built for fluency, not grammar lectures.",
+      "3 months of live speaking — debates, role-plays, meetings, client calls, presentations and interview rounds. Approx. 6 learners, up to 2 classes/week, ₹1,599/month, inclusive of taxes. Built for fluency, not grammar lectures.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "headset",
@@ -573,7 +514,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,599/month",
     liveNote:
-      "✓ 100% online live · ✓ Interview rounds in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Meetings, client calls & interview rounds in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "Speak for 2 minutes on any topic",
       "Lead group conversations",
@@ -581,6 +522,9 @@ export const COURSES: Record<string, CourseData> = {
       "Answer 'tell me about yourself' without freezing",
       "Practise HR and STAR answers out loud",
       "Think in English, not translate",
+      "Give a clear status update in a standup or team meeting",
+      "Handle client calls, questions and misunderstandings calmly",
+      "Present an idea with a clear beginning, middle and action",
     ],
     modules: [
       {
@@ -615,6 +559,24 @@ export const COURSES: Record<string, CourseData> = {
         items: ["Travel & hotel", "Customer service", "Doctor & patient", "Job networking events"],
       },
       {
+        title: "Meetings, Updates & Client Calls",
+        items: [
+          "Joining, opening and closing a discussion",
+          "Giving a short status update",
+          "Clarifying requirements and checking understanding",
+          "Handling an unexpected question without freezing",
+        ],
+      },
+      {
+        title: "Presentations & Explaining Work",
+        items: [
+          "Explaining a process in simple English",
+          "Structuring a recommendation or proposal",
+          "Voice, pace and signposting",
+          "Responding to Q&A and saying when you need to check",
+        ],
+      },
+      {
         title: "Interview rounds",
         items: [
           "90-second pitch, live, on the mic",
@@ -635,6 +597,10 @@ export const COURSES: Record<string, CourseData> = {
       },
     ],
     faqs: [
+      {
+        q: "Is this a Business English course?",
+        a: "It covers the speaking side of Business English. Interactive Speaking (3 months, ₹1,599/month, inclusive of taxes, about 6 learners) now includes team meetings, status updates, client calls, clarifying requirements and presentations with Q&A, as live role-plays. Workplace emails and professional tone are in Intermediate Spoken English (4 months, ₹1,999/month).",
+      },
       {
         q: "Do you cover job interviews?",
         a: "Yes. Interactive Speaking includes live interview rounds: the 90-second pitch, HR questions and STAR answers, in a batch of about 6. If the interview is the only gap and you already talk, take Interview Preparation — 2 months, ₹2,499/month.",
@@ -686,7 +652,12 @@ export const COURSES: Record<string, CourseData> = {
           tracks: [
             {
               skill: "Speaking",
-              items: ["Opinions & polite debate", "Group discussions", "Handling interruptions"],
+              items: [
+                "Opinions & polite debate",
+                "Group discussions",
+                "Handling interruptions",
+                "Team meetings & status updates",
+              ],
             },
             { skill: "Storytelling", items: ["Storytelling techniques"] },
             { skill: "Vocabulary", items: ["Idioms & role-plays"] },
@@ -701,7 +672,12 @@ export const COURSES: Record<string, CourseData> = {
           tracks: [
             {
               skill: "Speaking",
-              items: ["Impromptu speaking", "Thinking on your feet", "Networking simulations"],
+              items: [
+                "Impromptu speaking",
+                "Thinking on your feet",
+                "Networking simulations",
+                "Client calls & clarifying requirements",
+              ],
             },
             { skill: "Public speaking", items: ["Public speaking basics", "Final presentation"] },
             { skill: "Interview", items: ["90-second pitch, HR and STAR answers out loud"] },
@@ -839,84 +815,6 @@ export const COURSES: Record<string, CourseData> = {
     ],
     metaDescription:
       "Interview Preparation in English: 2 months, about 6 in a batch, ₹2,499/month inclusive of taxes. HR screens, 60-second intro, STAR, panel, salary, recorded mocks. Kolkata, pan-India, now worldwide.",
-  },
-  "demo-session": {
-    slug: "demo-session",
-    title: "Demo Class",
-    tagline:
-      "90 minutes in a real live batch, in front of our teacher. ₹199, inclusive of taxes. Enrol in any course we offer within 48 hours and that fee is adjusted — if you are serious, this costs you nothing.",
-    category: "₹199 Demo Class",
-    categoryColor: "brand",
-    icon: "play",
-    heroImage: IMG.heroClass,
-    midImage: IMG.groupClass,
-    footerImage: IMG.teacherWoman,
-    duration: "90 minutes",
-    durationQualifier: "One live class · not a sales call",
-    format: "Live batch · approximately 6 learners",
-    price: "₹199",
-    liveNote:
-      "✓ WhatsApp us first · ✓ Then pay ₹199 · ✓ We schedule within 72 hours · ✓ Fee adjusted if you enrol within 48 hours",
-    outcomes: [
-      "Sit in a real batch, not a private pitch",
-      "See how the teacher corrects, live",
-      "Hear what a class of about 6 actually sounds like",
-      "Decide the room with your own ears",
-      "The ₹199 comes off the course fee if you enrol within 48 hours",
-    ],
-    modules: [
-      {
-        title: "You WhatsApp us, then you pay",
-        items: [
-          "Message WhatsApp first and ask for the Demo Class",
-          "We send the payment link for ₹199, inclusive of taxes",
-          "We schedule the seat within 72 hours of payment",
-          "No message, no seat — contact us to be placed",
-        ],
-      },
-      {
-        title: "You sit the real hour",
-        items: [
-          "90 minutes with the batch and the teacher",
-          "The class runs as it does for enrolled learners",
-          "You see speaking time, correction and pace",
-          "About 6 learners — not a hall, not a recording",
-        ],
-      },
-      {
-        title: "Serious learners pay nothing extra",
-        items: [
-          "Take admission within 48 hours after the session",
-          "That course, or any course we currently offer",
-          "The ₹199 is adjusted against the course fee",
-          "The written rule is in our Terms",
-        ],
-      },
-    ],
-    faqs: [
-      {
-        q: "What do I actually sit in?",
-        a: "A real live class. 90 minutes, with our teacher, in a batch of about 6. It is the session enrolled learners attend — not a counselling call and not a recording.",
-      },
-      {
-        q: "Who should pay for this?",
-        a: "Someone who is serious about seeing the teaching before a longer course. If you already know you want a room, message us for a free consultation and enrol directly. This seat is for the person who wants to watch the class happen.",
-      },
-      {
-        q: "Does it cost anything if I join a course?",
-        a: "₹199, inclusive of taxes, holds the seat. Take admission within 48 hours after the session — in the course you attended, or in any other course we currently offer — and that ₹199 is adjusted against the course fee. If you are serious, the session costs you nothing. The written rule is at https://www.learnwithsmile.app/terms#demo-session.",
-      },
-      {
-        q: "When is the class?",
-        a: "WhatsApp us first. We send the ₹199 payment link. After you pay, we schedule the session within 72 hours. We cannot place you if you do not write.",
-      },
-      {
-        q: "Is this the free consultation?",
-        a: "No. Get Free Consultation is counselling: we name the bottleneck and recommend a course. It has no fee and it is not a class. The Demo Class is the paid 90-minute seat in the batch.",
-      },
-    ],
-    metaDescription:
-      "Sit in a real live batch for 90 minutes with our teacher. ₹199, inclusive of taxes. Enrol in any current course within 48 hours and that fee is adjusted.",
   },
 };
 

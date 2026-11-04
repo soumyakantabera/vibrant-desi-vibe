@@ -152,7 +152,7 @@ export const body: ArticleBody = [
   { t: "h2", text: 'A note on "kindly", "sir" and "respected"' },
   {
     t: "p",
-    text: 'These three come up in every Business English batch, and they deserve a more careful answer than "stop using them", because the honest answer depends on who is reading.',
+    text: 'These three come up in every workplace batch, and they deserve a more careful answer than "stop using them", because the honest answer depends on who is reading.',
   },
   {
     t: "table",
@@ -208,8 +208,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Business English offers 3 months of practical meetings, calls, updates, emails and presentation practice in a live batch of approximately 6 learners. It runs up to twice a week in afternoon, evening or night IST slots, costs ₹2,499/month inclusive of taxes, and recorded classes are available for revision.",
-    course: "/course-business-english",
-    label: "See the Business English course",
+    text: "Workplace emails — subject lines, action requests, tone, follow-ups and escalation messages — are part of Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, a live batch of approximately 6 learners, up to twice a week in afternoon, evening or night IST slots. Recorded classes are available for revision.",
+    course: "/course-intermediate-english",
+    label: "See Intermediate Spoken English",
   },
 ];

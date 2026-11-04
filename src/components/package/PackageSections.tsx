@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "@/components/Icon";
-import { WaButton } from "@/components/ui-bits";
+import { SwipeHint, WaButton } from "@/components/ui-bits";
 import { FeePair, FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { BoloParrot } from "@/components/mascots/BoloParrot";
@@ -14,19 +14,16 @@ import { BOLO_LINES } from "@/lib/bolo";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 import {
   COURSE_FEE,
-  DEMO_FEE,
   LAUNCH_OFFER,
   launchOfferActive,
   launchOfferDaysLeft,
   type FeeSlug,
 } from "@/lib/fees";
 import {
-  BEFORE_NOW,
   COURSE_PACKAGE,
   MARKET_COLUMNS,
   MARKET_PRICE,
   MARKET_ROWS,
-  PART_TONE,
   TALK_TIME,
   VIDEO_TOPICS,
   WEEK,
@@ -131,7 +128,7 @@ export function Chip({
 export function Eyebrow({ children, tone = "green" }: { children: ReactNode; tone?: Tone }) {
   return (
     <span
-      className={`inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] ${T[tone].soft} ${T[tone].text}`}
+      className={`inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] ${T[tone].soft} ${T[tone].text}`}
     >
       {children}
     </span>
@@ -161,9 +158,7 @@ export function Head({
         className={`flex max-w-3xl flex-col gap-3 ${align === "center" ? "items-center" : "items-start"}`}
       >
         <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
-        <h2 className="text-[1.65rem] font-bold leading-[1.12] text-ink md:text-[2.35rem]">
-          {title}
-        </h2>
+        <h2 className="section-title font-bold text-ink">{title}</h2>
         {sub && <p className="text-base text-ink/75 md:text-lg">{sub}</p>}
       </div>
       {aside}
@@ -248,7 +243,7 @@ export function PackageBand({ title }: { title?: string }) {
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-brand-deep">
             One fee · the complete package
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold leading-tight text-ink md:text-[2rem]">
+          <h2 className="mt-2 font-extrabold text-ink section-title">
             {title ?? (
               <>
                 Live classes, the Bolo app and the same teacher — from <FeeText text="₹999/month" />
@@ -291,7 +286,7 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
   ];
   const inBolo = (k: PartKey) => k === "portal" || k === "videos" || k === "review";
   return (
-    <section className={bare ? "pb-12 md:pb-14" : "bg-white pb-8"}>
+    <section className={bare ? "pb-14 md:pb-16" : "bg-white pt-6 pb-14 md:pt-8 md:pb-16"}>
       <div className="container-x">
         <div className="mb-2 hidden grid-cols-5 gap-3 lg:grid" aria-hidden="true">
           <div className="col-span-3 col-start-2 flex items-center gap-3">
@@ -309,15 +304,23 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
             return (
               <div
                 key={key}
-                className={`viz-pop flex items-start gap-3 rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
+                className={`lift-card viz-pop relative isolate min-h-36 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] sm:min-h-40 lg:min-h-44 ${T[tone].deep}`}
                 style={d(i * 80)}
               >
-                <Chip tone={tone} icon={PART[key].icon} size="sm" />
-                <p className="text-sm">
+                {/* One large watermark, centred by the grid: its middle is the
+                    card's middle, horizontally and vertically. No offsets. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -z-10 grid place-items-center text-white/30"
+                  data-watermark
+                >
+                  <Icon name={PART[key].icon} size={112} />
+                </span>
+                <p className="text-sm [text-shadow:0_1px_2px_rgba(0,0,0,.28)]">
                   <strong className="block font-bold text-white">
                     {bolo ? `Bolo · ${title}` : title}
                   </strong>
-                  <span className="text-white/85">{body}</span>
+                  <span className="text-white/90">{body}</span>
                 </p>
               </div>
             );
@@ -482,231 +485,6 @@ export function WeekStrip() {
             </div>
           </VizIn>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------- package slides */
-
-const SLIDES: {
-  key: PartKey;
-  label: string;
-  big: string;
-  bigLabel: string;
-  title: string;
-  points: string[];
-}[] = [
-  {
-    key: "live",
-    label: "Live classes",
-    big: "~6",
-    bigLabel: "learners in your batch",
-    title: "Live classes where you actually speak",
-    points: [
-      "Up to 2 live classes a week, 90 minutes each",
-      "You speak in every round and get corrected on the spot",
-      "Afternoon, evening and night slots, IST",
-    ],
-  },
-  {
-    key: "portal",
-    label: "Bolo · Practice",
-    big: "7",
-    bigLabel: "days a week, with a streak",
-    title: "Daily practice in the Bolo app",
-    points: [
-      "Grammar and vocabulary every day — keep your streak going",
-      "Reading practice: read aloud, find the grammar in the text",
-      "Speaking practice: whole conversations, recorded",
-    ],
-  },
-  {
-    key: "videos",
-    label: "Bolo · Watch",
-    big: "24/7",
-    bigLabel: "video lessons, any time",
-    title: "Video lessons in Bolo, any time",
-    points: [
-      "Tips and tricks to start speaking English",
-      "Grammar, fluency and thinking in English",
-      "What to say when your mind goes blank",
-    ],
-  },
-  {
-    key: "review",
-    label: "Bolo · Review",
-    big: "Weekly",
-    bigLabel: "feedback from your teacher",
-    title: "Your teacher reviews your reading and speaking",
-    points: [
-      "Send your reading and speaking practice in Bolo",
-      "Your teacher reviews it every week",
-      "The next live class picks up from that feedback",
-    ],
-  },
-  {
-    key: "teacher",
-    label: "Same teacher",
-    big: "1",
-    bigLabel: "teacher for your whole course",
-    title: "The same teacher, start to finish",
-    points: [
-      "Your batch keeps one teacher for the whole course",
-      "The same teacher runs your classes and your weekly review",
-      "A trained team led by lead educator Sunanda Dey",
-    ],
-  },
-];
-
-const SLIDE_MS = 6500;
-
-export function PackageSlides() {
-  const [i, setI] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const reduced = usePrefersReducedMotion();
-  const auto = !reduced && !paused;
-
-  useEffect(() => {
-    if (!auto) return;
-    const t = window.setTimeout(() => setI((n) => (n + 1) % SLIDES.length), SLIDE_MS);
-    return () => window.clearTimeout(t);
-  }, [i, auto]);
-
-  const go = (n: number) => setI((n + SLIDES.length) % SLIDES.length);
-
-  return (
-    <section className="section bg-white" id="package">
-      <div className="container-x">
-        <Head
-          align="center"
-          tone="blue"
-          eyebrow="The complete package"
-          title="Everything you need to speak — in one monthly fee"
-          sub="Live classes, the Bolo app — daily practice, video lessons and a weekly teacher review — and the same teacher. Every course includes all of it."
-        />
-        <div
-          className="mx-auto max-w-6xl"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
-          role="region"
-          aria-roledescription="carousel"
-          aria-label="What the package includes"
-        >
-          <div className="mb-4 grid grid-cols-5 gap-2" role="tablist" aria-label="Choose a part">
-            {SLIDES.map((s, n) => {
-              const tone = PART[s.key].tone;
-              return (
-                <button
-                  key={s.key}
-                  type="button"
-                  role="tab"
-                  aria-selected={n === i}
-                  aria-controls={`pkg-slide-${s.key}`}
-                  aria-label={s.label}
-                  onClick={() => go(n)}
-                  className="group flex min-h-11 flex-col justify-center gap-2 text-left"
-                >
-                  <span className="relative block h-1.5 overflow-hidden rounded-full bg-muted">
-                    <span
-                      key={n === i ? `${i}-${auto}` : "idle"}
-                      className={`absolute inset-y-0 left-0 rounded-full ${T[tone].bar} ${n < i ? "w-full" : n === i ? (auto ? "slide-progress" : "w-full") : "w-0"}`}
-                      style={{ "--slide-ms": `${SLIDE_MS}ms` } as CSSProperties}
-                    />
-                  </span>
-                  <span
-                    className={`hidden text-xs font-bold sm:block ${n === i ? T[tone].text : "text-ink/55 group-hover:text-ink/80"}`}
-                  >
-                    {s.label}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="grid overflow-hidden rounded-[2rem]">
-            {SLIDES.map((s, n) => {
-              const tone = PART[s.key].tone;
-              const on = n === i;
-              return (
-                <article
-                  key={s.key}
-                  id={`pkg-slide-${s.key}`}
-                  role="tabpanel"
-                  aria-hidden={!on}
-                  className={`[grid-area:1/1] grid overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_30px_60px_-45px_rgba(19,33,47,.5)] transition-all duration-500 md:grid-cols-[0.9fr_1.1fr] ${on ? "visible translate-x-0 opacity-100" : "invisible translate-x-6 opacity-0"}`}
-                >
-                  <div
-                    className={`relative flex flex-col justify-between gap-6 overflow-hidden p-7 text-white md:p-9 ${T[tone].deep}`}
-                  >
-                    <Chip tone={tone} icon={PART[s.key].icon} size="lg" />
-                    <div className="relative">
-                      <p className="text-6xl font-extrabold leading-none tracking-tight text-white md:text-7xl">
-                        {s.big}
-                      </p>
-                      <p className="mt-2 text-lg font-semibold text-white/90">{s.bigLabel}</p>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 rounded-full bg-white/10"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-4 p-7 md:p-9">
-                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-ink/55">
-                      {n + 1} / {SLIDES.length} · {s.label}
-                    </span>
-                    <h3 className="text-2xl font-bold leading-tight md:text-3xl">{s.title}</h3>
-                    <ul className="flex flex-col gap-3">
-                      {s.points.map((pt) => (
-                        <li key={pt} className="flex items-start gap-3 text-ink/85 md:text-lg">
-                          <Icon name="check" size={22} className={`mt-0.5 ${T[tone].text}`} />
-                          {pt}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-auto flex items-center gap-2 pt-2">
-                      <button
-                        type="button"
-                        onClick={() => go(i - 1)}
-                        className="grid h-11 w-11 place-items-center rounded-full border border-border bg-white text-ink transition hover:bg-paper"
-                        aria-label="Previous"
-                        tabIndex={on ? 0 : -1}
-                      >
-                        <Icon name="caret-left" size={18} />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => go(i + 1)}
-                        className="grid h-11 w-11 place-items-center rounded-full bg-ink text-white transition hover:bg-ink/85"
-                        aria-label="Next"
-                        tabIndex={on ? 0 : -1}
-                      >
-                        <Icon name="caret-right" size={18} />
-                      </button>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-        <ul className="mx-auto mt-6 flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-ink">
-          <li className="text-brand-deep">Also in every fee:</li>
-          {[
-            "Inclusive of taxes",
-            "No material fee",
-            "Free consultation",
-            "WhatsApp 10am–midnight IST",
-            "Monthly billing · UPI",
-          ].map((t) => (
-            <li key={t} className="inline-flex items-center gap-2">
-              <Icon name="check" size={16} className="text-brand" />
-              {t}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
@@ -966,7 +744,6 @@ const VIDEO_TABS: ("All" | VideoCourse)[] = [
   "Spoken English",
   "Intermediate",
   "Interactive Speaking",
-  "Business English",
   "Interview Prep",
 ];
 const CAT_TONE: Tone[] = ["amber", "blue", "teal", "plum", "green", "terra"];
@@ -1251,101 +1028,12 @@ export function MarketCompare() {
   );
 }
 
-/* ------------------------------------------------------------ before/now */
-
-export function BeforeNow() {
-  return (
-    <section className="section bg-white" id="what-changed">
-      <div className="container-x">
-        <Head
-          eyebrow="What changed"
-          title={
-            <>
-              You asked for more practice. <span className="text-brand">We built it in.</span>
-            </>
-          }
-          aside={
-            <VizIn className="flex items-center gap-5 rounded-2xl border border-border bg-paper px-5 py-4">
-              <div className="flex flex-col gap-1.5" aria-hidden="true">
-                <div className="flex gap-1">
-                  {[1, 0, 0, 1, 0, 0, 0].map((on, i) => (
-                    <span key={i} className={`h-4 w-4 rounded ${on ? "bg-brand" : "bg-muted"}`} />
-                  ))}
-                </div>
-                <div className="flex gap-1">
-                  {["p", "l", "p", "p", "l", "r", "p"].map((k, i) => (
-                    <span
-                      key={i}
-                      style={d(200 + i * 90)}
-                      className={`viz-dot h-4 w-4 rounded ${k === "l" ? "bg-brand" : k === "r" ? "bg-plum" : "bg-indigo-pop"}`}
-                    />
-                  ))}
-                </div>
-              </div>
-              <p className="font-extrabold text-ink">
-                <span className="text-3xl text-ink/45">2</span>
-                <Icon name="arrow-right" size={18} className="mx-2 inline text-brand" />
-                <span className="text-4xl text-brand">7</span>
-                <span className="block text-xs font-bold uppercase tracking-wider text-ink/60">
-                  days a week with English
-                </span>
-              </p>
-            </VizIn>
-          }
-        />
-        <div className="overflow-x-auto rounded-3xl border border-border">
-          <table className="w-full min-w-[40rem] border-collapse text-left">
-            <caption className="sr-only">
-              What each course included before and what it includes now
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col" className="w-48 p-4" />
-                <th scope="col" className="p-4 font-semibold text-ink/60">
-                  Before
-                </th>
-                <th scope="col" className="bg-brand p-4 font-bold text-white">
-                  Now · the complete package
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {BEFORE_NOW.map((r) => (
-                <tr key={r.row} className="border-t border-border">
-                  <th scope="row" className="p-4 text-sm font-bold text-ink">
-                    {r.row}
-                  </th>
-                  <td className="p-4 text-ink/65">{r.before}</td>
-                  <td className="bg-brand-soft/60 p-4 font-semibold text-ink">{r.now}</td>
-                </tr>
-              ))}
-              <tr className="border-t border-border">
-                <th scope="row" className="p-4 text-sm font-bold text-ink">
-                  What the fee covers
-                </th>
-                <td className="p-4 text-ink/65">Classes and worksheets</td>
-                <td className="bg-brand-soft/60 p-4 font-bold text-brand-deep">
-                  <MarketCopy
-                    inr={`Everything above — from ${COURSE_FEE["spoken-english"].display}/month, inclusive of taxes`}
-                    usd={`Everything above — from ${INTL_FEE["spoken-english"].display}`}
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* --------------------------------------------------------------- pricing */
 
 const PLAN_ORDER: FeeSlug[] = [
   "spoken-english",
   "intermediate-english",
   "interactive-speaking",
-  "business-english",
   "interview-preparation",
 ];
 
@@ -1360,23 +1048,16 @@ const PLAN_COPY: Record<
     tone: "green",
   },
   "intermediate-english": {
-    for: "Basic sentences work — now make them correct and connected.",
-    focus: "30 min grammar + 1 hr talk, every class",
+    for: "Basic sentences work — now make them correct, connected and work-ready.",
+    focus: "30 min grammar + 1 hr talk; workplace emails",
     path: "/course-intermediate-english",
     tone: "amber",
   },
   "interactive-speaking": {
-    for: "You know English but freeze when you talk.",
-    focus: "Games, debates, role-plays",
+    for: "You know English but freeze — in a chat, a meeting or a client call.",
+    focus: "Role-plays, meetings, client calls",
     path: "/course-interactive-speaking",
     tone: "teal",
-  },
-  "business-english": {
-    for: "Meetings, client calls, emails, presentations.",
-    focus: "Live workplace role-plays",
-    path: "/course-business-english",
-    popular: true,
-    tone: "blue",
   },
   "interview-preparation": {
     for: "You can talk — the interview is the gap.",
@@ -1400,102 +1081,109 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
     if (!launchOfferActive()) setOffer(false);
   }, []);
   return (
-    <VizIn className="flex flex-wrap justify-center gap-4">
-      {PLAN_ORDER.map((slug, i) => {
-        const fee = COURSE_FEE[slug];
-        const copy = PLAN_COPY[slug];
-        return (
-          <article
-            key={slug}
-            style={d(i * 90)}
-            className={`viz-pop flex w-full flex-col overflow-hidden rounded-3xl border bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.7rem)] transition hover:-translate-y-1 ${copy.popular ? "border-2 border-indigo-pop shadow-[0_22px_50px_-30px_rgba(47,90,138,.55)]" : "border-border shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)]"}`}
-          >
-            <div
-              className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 text-white sm:px-6 ${T[copy.tone].deep}`}
+    <>
+      <VizIn className="phone-swipe flex flex-wrap justify-center gap-4">
+        {PLAN_ORDER.map((slug, i) => {
+          const fee = COURSE_FEE[slug];
+          const copy = PLAN_COPY[slug];
+          return (
+            <article
+              key={slug}
+              style={d(i * 90)}
+              className={`viz-pop flex w-full flex-col overflow-hidden rounded-3xl border bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.7rem)] transition hover:-translate-y-1 ${copy.popular ? "border-2 border-indigo-pop shadow-[0_22px_50px_-30px_rgba(47,90,138,.55)]" : "border-border shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)]"}`}
             >
-              <span className="text-xs font-bold text-white">
-                {fee.months} months · up to 2 classes/week
-              </span>
-              {copy.popular && (
-                <span className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1F3D63]">
-                  Most popular
-                </span>
-              )}
-            </div>
-            <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
-              <h3 className="text-xl font-bold leading-tight">
-                <Link to={copy.path} className="hover:underline">
-                  {fee.name}
-                </Link>
-              </h3>
-              <p className="min-h-10 text-sm text-ink/70">{copy.for}</p>
-              <p className="text-4xl font-extrabold tracking-tight text-ink">
-                <FeePair inr={fee.display} usd={INTL_FEE[slug].big} />
-                <span className="text-base font-semibold text-ink/60">
-                  <FeePair inr="/month" usd={INTL_FEE[slug].suffix} />
-                </span>
-              </p>
-              <p className="-mt-1 text-xs text-ink/60">
-                <MarketCopy
-                  inr="Inclusive of taxes · billed monthly"
-                  usd={`${intlUnit()} · billed monthly`}
-                />
-              </p>
-              <ul className="mt-1 flex flex-col gap-2.5 border-t border-border pt-4 text-sm text-ink/85">
-                {PLAN_INCLUDES.map((p) => (
-                  <li key={p.text} className="flex items-center gap-2.5">
-                    <span
-                      className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${T[p.tone].soft} ${T[p.tone].text}`}
-                    >
-                      <Icon name={p.icon} size={16} />
-                    </span>
-                    {p.text}
-                  </li>
-                ))}
-                <li className="flex items-center gap-2.5 font-bold text-ink">
-                  <Icon name="check" size={20} className="ml-1 shrink-0 text-brand" />
-                  {copy.focus}
-                </li>
-              </ul>
-              {offer && (
-                <span className="rounded-xl bg-amber-soft px-3 py-2 text-xs font-bold text-[#6A4A10]">
-                  {LAUNCH_OFFER.short} · enrol by 30 Nov
-                </span>
-              )}
-              <WaButton
-                message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
-                variant={copy.popular ? "primary" : "outline"}
-                size="sm"
-                className="mt-auto w-full justify-center"
-                goal="pricing_card"
+              <div
+                className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 text-white sm:px-6 ${T[copy.tone].deep}`}
               >
-                Ask on WhatsApp
-              </WaButton>
-            </div>
-          </article>
-        );
-      })}
-    </VizIn>
+                <span className="text-xs font-bold text-white">
+                  {fee.months} months · up to 2 classes/week
+                </span>
+                {copy.popular && (
+                  <span className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1F3D63]">
+                    Most popular
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
+                <h3 className="text-xl font-bold leading-tight">
+                  <Link to={copy.path} className="hover:underline">
+                    {fee.name}
+                  </Link>
+                </h3>
+                <p className="min-h-10 text-sm text-ink/70">{copy.for}</p>
+                <p className="text-4xl font-extrabold tracking-tight text-ink">
+                  <FeePair inr={fee.display} usd={INTL_FEE[slug].big} />
+                  <span className="text-base font-semibold text-ink/60">
+                    <FeePair inr="/month" usd={INTL_FEE[slug].suffix} />
+                  </span>
+                </p>
+                <p className="-mt-1 text-xs text-ink/60">
+                  <MarketCopy
+                    inr="Inclusive of taxes · billed monthly"
+                    usd={`${intlUnit()} · billed monthly`}
+                  />
+                </p>
+                <ul className="mt-1 flex flex-col gap-2.5 border-t border-border pt-4 text-sm text-ink/85">
+                  {PLAN_INCLUDES.map((p) => (
+                    <li key={p.text} className="flex items-center gap-2.5">
+                      <span
+                        className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${T[p.tone].soft} ${T[p.tone].text}`}
+                      >
+                        <Icon name={p.icon} size={16} />
+                      </span>
+                      {p.text}
+                    </li>
+                  ))}
+                  <li className="flex items-center gap-2.5 font-bold text-ink">
+                    <Icon name="check" size={20} className="ml-1 shrink-0 text-brand" />
+                    {copy.focus}
+                  </li>
+                </ul>
+                {offer && (
+                  <span className="rounded-xl bg-amber-soft px-3 py-2 text-xs font-bold text-[#6A4A10]">
+                    {LAUNCH_OFFER.short} · enrol by 30 Nov
+                  </span>
+                )}
+                <WaButton
+                  message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
+                  variant={copy.popular ? "primary" : "outline"}
+                  size="sm"
+                  className="mt-auto w-full justify-center"
+                  goal="pricing_card"
+                >
+                  Ask on WhatsApp
+                </WaButton>
+              </div>
+            </article>
+          );
+        })}
+      </VizIn>
+      <SwipeHint label="Swipe to compare courses" />
+    </>
   );
 }
 
-export function DemoStrip() {
+/** Undecided path under the price cards: the free consultation (not a class). */
+export function ConsultStrip() {
   return (
     <div className="mt-5 flex flex-col gap-4 rounded-3xl border border-border bg-terra-soft p-6 md:flex-row md:items-center md:justify-between md:p-7">
       <div className="flex items-start gap-4">
         <Chip tone="terra" icon="compass" />
         <p className="text-ink/80">
           <strong className="block text-lg font-bold text-ink md:text-xl">
-            Not sure yet? Sit in a real class first.
+            Not sure which course? Start with a free consultation.
           </strong>
-          <FeeText
-            text={`90-minute Demo Class in a live batch — ${DEMO_FEE.display}, inclusive of taxes. Adjusted in your fee if you enrol within 48 hours.`}
-          />
+          No payment. We hear your goal, name the gap and put the course and fee in writing on
+          WhatsApp. Advice, not a class — then you decide.
         </p>
       </div>
-      <Link to="/course-demo-session" className="btn btn-primary shrink-0">
-        <FeeText text={`Book the ${DEMO_FEE.display} Demo Class`} />
-      </Link>
+      <WaButton
+        message="Hi, I want a free consultation to choose my spoken English course."
+        variant="primary"
+        className="shrink-0"
+      >
+        Get Free Consultation
+      </WaButton>
     </div>
   );
 }
@@ -1520,12 +1208,6 @@ function CourseGuideLink({ slug }: { slug: FeeSlug }) {
     return (
       <Link to="/interactive-english-class-hesitation" className={cls}>
         Why you freeze when you speak — the guide
-      </Link>
-    );
-  if (slug === "business-english")
-    return (
-      <Link to="/workplace-english-course-online-india" className={cls}>
-        Workplace English guide: meetings, calls, emails
       </Link>
     );
   return (

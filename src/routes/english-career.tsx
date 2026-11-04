@@ -3,7 +3,6 @@ import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
-import { BrandIcon } from "@/components/BrandIcon";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { BoloMention } from "@/components/bolo/BoloSections";
 import { COURSES } from "@/lib/courses";
@@ -14,8 +13,7 @@ import { PaymentTrust } from "@/components/PaymentTrust";
 import { CourseLadder } from "@/components/CourseVisuals";
 import { PAGES, abs, pageHead, COURSE_SEO } from "@/lib/seo";
 import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
-import { CHAT_CTA, DEMO_CTA, waDirect } from "@/lib/whatsapp";
-import { DEMO_SESSION } from "@/lib/demo-session";
+import { CHAT_CTA, DEMO_CTA } from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 
@@ -28,7 +26,7 @@ export const Route = createFileRoute("/english-career")({
     const head = pageHead("/english-career");
     // Course hub: an ItemList of every live programme gives Google (and AI
     // answer engines) the whole catalogue with prices from a single fetch.
-    const hubSlugs = [...COURSE_CATEGORIES.flatMap((g) => [...g.slugs]), DEMO_SESSION.slug];
+    const hubSlugs = [...COURSE_CATEGORIES.flatMap((g) => [...g.slugs])];
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -57,13 +55,13 @@ function Page() {
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
-          <div className="text-cream min-w-0 w-full">
+        <div className="container-x pt-6 pb-14 md:pt-8 md:pb-20 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
+          <div className="hero-bob text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
               <Icon name="mic" size={14} /> English & Career
             </span>
@@ -71,9 +69,11 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Five live programmes. Basic Spoken, Intermediate Spoken, Interactive Speaking,
-              Business English and Interview Preparation. Interview Preparation is the room when the
-              HR screen is the bottleneck. <FeeText text="From ₹999/month, inclusive of taxes." />
+              Four live programmes. Basic Spoken (also taught in Hindi or Marathi), Intermediate
+              Spoken, Interactive Speaking and Interview Preparation. Business English — meetings,
+              calls and emails — is taught inside Interactive Speaking and Intermediate. Interview
+              Preparation is the room when the HR screen is the bottleneck.{" "}
+              <FeeText text="From ₹999/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -100,7 +100,7 @@ function Page() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <PaymentTrust tone="light" className="mt-4" />
+            <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
             </p>
@@ -121,7 +121,7 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "5 programmes",
+                    big: "4 programmes",
                     small: "Adults 15+ · live rooms",
                   },
                   {
@@ -150,7 +150,7 @@ function Page() {
           <SectionHeader
             eyebrow="Clear Categories"
             title={
-              <FeeText text="5 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
+              <FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
             }
             subtitle="Basic Spoken, Intermediate Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
@@ -169,7 +169,7 @@ function Page() {
                   <div>
                     <h2
                       id={`${group.id}-title`}
-                      className="text-2xl font-display font-extrabold text-ink"
+                      className="font-display font-extrabold text-ink section-title"
                     >
                       {group.title}
                     </h2>
@@ -222,79 +222,6 @@ function Page() {
 
       <CourseLadder />
 
-      <section className="section bg-paper" id="demo-session">
-        <div className="container-x">
-          <div className="grid items-center gap-8 rounded-[28px] border border-border bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
-            <div className="min-w-0">
-              <p className="eyebrow eyebrow-sun">Not a sixth course · a seat in the real one</p>
-              <h2 className="mt-3 text-3xl md:text-4xl text-ink">
-                Demo Class. Serious? Then it costs nothing.
-              </h2>
-              <p className="mt-4 text-ink/85 leading-relaxed">
-                Want to see the teacher, in a batch, before you commit? Sit one live class for 90
-                minutes. <FeeText text="₹199" />
-                <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> Take admission
-                within 48 hours — in that course, or any course we currently offer — and the{" "}
-                <FeeText text="₹199" /> is adjusted against your fee.
-              </p>
-              <ul className="mt-4 grid gap-2 text-sm text-ink/85">
-                <li className="flex gap-2">
-                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />A real batch
-                  of about 6. Not a sales call.
-                </li>
-                <li className="flex gap-2">
-                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
-                  WhatsApp us first, then pay. We schedule you within 72 hours of payment.
-                </li>
-                <li className="flex gap-2">
-                  <Icon name="check" size={16} className="mt-0.5 shrink-0 text-brand" />
-                  If you enrol in time, you did not pay extra to look.
-                </li>
-              </ul>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link to="/course-demo-session" className="btn btn-sun btn-lg w-full sm:w-auto">
-                  <Icon name="play" size={18} /> See the Demo Class
-                </Link>
-                <a
-                  href={waDirect(DEMO_SESSION.enrolMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-wa btn-lg w-full sm:w-auto"
-                  data-cta-goal="whatsapp_demo"
-                >
-                  <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Enrol for{" "}
-                  <FeeText text="₹199" />
-                </a>
-              </div>
-            </div>
-            <div className="rounded-3xl bg-ink px-4 py-5 text-cream sm:px-6 sm:py-8">
-              <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-4 text-center min-[420px]:gap-3">
-                <div>
-                  <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/70">
-                    Pay now
-                  </p>
-                  <p className="mt-2 font-display text-4xl font-extrabold text-sunshine sm:text-5xl">
-                    <FeeText text="₹199" />
-                  </p>
-                  <p className="mt-1 text-xs text-white/80">
-                    <MarketCopy inr="90 min · tax included" usd={`90 min · ${intlUnit()}`} />
-                  </p>
-                </div>
-                <div className="border-t border-white/15 pt-4 min-[420px]:border-t-0 min-[420px]:border-l min-[420px]:pt-0">
-                  <p className="text-[11px] font-display font-bold uppercase leading-tight tracking-[0.12em] text-white/70">
-                    If you enrol
-                  </p>
-                  <p className="mt-2 font-display text-4xl font-extrabold text-white sm:text-5xl">
-                    <FeeText text="₹0" />
-                  </p>
-                  <p className="mt-1 text-xs text-white/80">within 48 hours</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <FaqSection
         faqs={PAGES["/english-career"].faqs ?? []}
         eyebrow="Course FAQs"
@@ -312,7 +239,7 @@ function Page() {
             sizes="(min-width: 1024px) 45vw, 100vw"
           />
           <div className="text-cream">
-            <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
+            <h2 className="text-cream section-title">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">
               Tell us the goal — interview, office promotion, daily confidence — we'll recommend the
               right course during 10am–midnight IST every day on WhatsApp.

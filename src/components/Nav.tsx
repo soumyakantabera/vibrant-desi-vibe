@@ -67,14 +67,7 @@ const ENGLISH_COURSES: {
     label: "Interactive Speaking",
     icon: "headset",
     slug: "interactive-speaking",
-    inr: "3 months · ₹1,599/month, inclusive of taxes",
-  },
-  {
-    to: "/course-business-english",
-    label: "Business English",
-    icon: "headset",
-    slug: "business-english",
-    inr: "3 months · ₹2,499/month, inclusive of taxes",
+    inr: "3 months · ₹1,599/month · meetings & client calls too",
   },
   {
     to: "/course-interview-preparation",
@@ -82,13 +75,6 @@ const ENGLISH_COURSES: {
     icon: "clipboard",
     slug: "interview-preparation",
     inr: "2 months · ₹2,499/month, inclusive of taxes",
-  },
-  {
-    to: "/course-demo-session",
-    label: "Demo Class",
-    icon: "play",
-    slug: "demo-session",
-    inr: "₹199 · 90 min · If you join, it costs you nothing.",
   },
 ];
 
@@ -136,33 +122,9 @@ export function Nav() {
     desc: <FeeText text={c.inr} />,
   }));
 
-  const isHome = location.pathname === "/";
-
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
-        {isHome && (
-          <Link to="/course-demo-session" className="demo-ribbon">
-            <span className="demo-ribbon-inner container-x">
-              <span className="demo-ribbon-line">
-                Don’t buy the course blind. If you join, it costs you nothing.
-              </span>
-              <span className="demo-ribbon-cta">
-                <span>
-                  <FeeText text="Book the ₹199 Demo Class" />
-                </span>
-                <span className="demo-ribbon-price">
-                  <FeeText text="₹199" />
-                  <span className="demo-ribbon-mins">90 min</span>
-                </span>
-                <span className="demo-ribbon-zero">
-                  <FeeText text="₹0" />
-                  <span>if you enrol · 48 hrs</span>
-                </span>
-              </span>
-            </span>
-          </Link>
-        )}
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
           {/* Brand */}
           <Link

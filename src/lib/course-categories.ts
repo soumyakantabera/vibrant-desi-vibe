@@ -2,7 +2,6 @@ export const COURSE_SLUGS = [
   "spoken-english",
   "intermediate-english",
   "interactive-speaking",
-  "business-english",
   "interview-preparation",
 ] as const;
 
@@ -24,11 +23,11 @@ export const COURSE_CATEGORIES = [
     id: "work-and-career",
     title: "Work & Career · from ₹2,499/month, inclusive of taxes",
     description:
-      "Business English ₹2,499/month and Interview Preparation ₹2,499/month. Meetings, HR screens and mocks. Live quality teaching. Batches of approximately 6 learners.",
+      "Interview Preparation ₹2,499/month: HR screens, the 60-second intro, STAR answers and recorded mocks. Meetings, client calls and workplace emails are now inside Interactive Speaking and Intermediate. Batches of approximately 6 learners.",
     icon: "headset",
     tone: "indigo",
-    featuredSlug: "business-english",
-    slugs: ["business-english", "interview-preparation"],
+    featuredSlug: "interview-preparation",
+    slugs: ["interview-preparation"],
   },
 ] as const satisfies ReadonlyArray<{
   id: string;

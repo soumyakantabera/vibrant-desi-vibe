@@ -40,7 +40,6 @@ export const COURSE_POSE: Record<FeeSlug, BoloPose> = {
   "spoken-english": "talk",
   "intermediate-english": "read",
   "interactive-speaking": "cheer",
-  "business-english": "listen",
   "interview-preparation": "mic",
 };
 
@@ -48,7 +47,6 @@ const PLAN_PATH: Record<FeeSlug, string> = {
   "spoken-english": "/course-spoken-english",
   "intermediate-english": "/course-intermediate-english",
   "interactive-speaking": "/course-interactive-speaking",
-  "business-english": "/course-business-english",
   "interview-preparation": "/course-interview-preparation",
 };
 
@@ -141,8 +139,8 @@ export function BoloHero() {
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-bolo-teal/10"
       />
-      <div className="container-x relative grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_auto] lg:gap-14">
-        <div ref={ref} data-motion={motion ? "on" : "off"}>
+      <div className="container-x relative grid items-center gap-10 pt-8 pb-12 md:py-20 lg:grid-cols-[1.1fr_auto] lg:gap-14">
+        <div ref={ref} data-motion={motion ? "on" : "off"} className="hero-bob">
           <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-bolo-teal shadow-[0_6px_18px_-12px_rgba(10,124,115,.6)]">
             <BoloAppIcon size={20} /> The Learn With Smile practice app
           </p>
@@ -316,11 +314,10 @@ const LEVEL_TABS: { level: BoloLevel; label: string; course: string }[] = [
   { level: "basic", label: "Basic", course: "Basic Spoken English (also Hindi / Marathi medium)" },
   { level: "intermediate", label: "Intermediate", course: "Intermediate Spoken English" },
   { level: "interactive", label: "Interactive", course: "Interactive Speaking" },
-  { level: "business", label: "Business", course: "Business English" },
   { level: "interview", label: "Interview", course: "Interview Preparation" },
 ];
 
-/** One phone, five levels: what Bolo looks like in each course. */
+/** One phone, four levels: what Bolo looks like in each course. */
 export function BoloLevels() {
   const [level, setLevel] = useState<BoloLevel>("intermediate");
   const L = LEVELS[level];

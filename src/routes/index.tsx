@@ -4,43 +4,40 @@ import { Deferred } from "@/components/Deferred";
 import { FaqSection } from "@/components/FaqSection";
 import {
   SectionHeader,
-  FeatureCard,
   WaButton,
   MottoBand,
   GuidesStrip,
   CoverageStrip,
+  SwipeHint,
 } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
-import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { CourseLadder } from "@/components/CourseVisuals";
+import { CourseLadder, LADDER } from "@/components/CourseVisuals";
 import { BoloSection } from "@/components/bolo/BoloSections";
 import { WhyDifferent } from "@/components/WhyDifferent";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
-import {
-  COURSE_CATEGORIES,
-  type CategoryTone,
-  type CourseCategory,
-  type CourseSlug,
-} from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
-import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
-import { CONSULTATION } from "@/lib/consultation";
+import {
+  waLink,
+  withPageTag,
+  DEMO_CTA,
+  DEMO_MSG,
+  CHAT_CTA,
+  CHAT_MSG,
+  WHATSAPP_DISPLAY,
+} from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
 import {
-  BeforeNow,
-  DemoStrip,
+  ConsultStrip,
   LaunchOfferBand,
-  PackageSlides,
   PackageStrip,
   PricingGrid,
-  WeekStrip,
 } from "@/components/package/PackageSections";
 import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
 
@@ -81,38 +78,13 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const TESTIMONIALS = [
-    {
-      quote:
-        "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
-      name: "Neha Patel",
-      detail: "Business English · Tax Analyst, Ahmedabad",
-      waMessage: "Hi, I saw Neha's story and I want a free consultation for Business English.",
-    },
-    {
-      quote:
-        "I knew the argument in Telugu. Bengaluru clients wanted it in English. Three months later I brief in both.",
-      name: "Kavya Reddy",
-      detail: "Spoken English · Advocate, Hyderabad",
-      waMessage: "Hi, I saw Kavya's story and I want a free consultation for Basic Spoken English.",
-    },
-    {
-      quote:
-        "The promotion board was in English. Mock interviews, live, around six learners. I got the Assistant Manager seat.",
-      name: "Vikram Singh",
-      detail: "Spoken English · Bank Asst. Manager, Delhi",
-      waMessage:
-        "Hi, I saw Vikram's story and I want a free consultation for Basic Spoken English.",
-    },
-  ];
-
   return (
     <Layout
       waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           {/* The one image that is part of the first screen — fetched at high
               priority; everything else on the page loads lazily. */}
@@ -125,22 +97,34 @@ function Home() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
-          <div className="text-cream min-w-0 w-full">
-            <span className="eyebrow eyebrow-white">
+        {/*
+          Three grid items in reading order: headline, the rest of the copy,
+          then the pricing card. Phones show them in that order (card below
+          the copy, as before); on desktop the copy shares the left column and
+          the card sits a little below the top of the right one, so it is
+          centred on the right of the first screen.
+        */}
+        <div className="container-x grid grid-cols-1 items-start pt-10 pb-10 md:pt-12 md:pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-x-10 lg:pt-14 lg:pb-14">
+          <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-1">
+            <span className="eyebrow eyebrow-white hero-eyebrow">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Live online spoken English classes · about 6 a batch · 7 years
+              <span>
+                Live online<span className="hidden sm:inline"> spoken English classes</span> · about
+                6 a batch · 7 years
+              </span>
             </span>
-            <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
+            <h1 className="mt-3 font-extrabold text-cream">
               Speak Better English.
               <br />
               <span className="text-sunshine">Live Twice a Week.</span>
               <br />
               Practise Every Day.
             </h1>
+          </div>
+          <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-2">
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Real teachers. Small batches. The complete package from{" "}
               <strong className="text-sunshine">
@@ -175,16 +159,18 @@ function Home() {
               Tell us your goal. We reply with the right course and the fee — no pressure, no
               payment to book.
             </p>
-            <p className="mt-2 text-sm text-white">
-              Want to sit in a real class first?{" "}
-              <Link to="/course-demo-session" className="font-bold underline">
-                <FeeText text="Book the ₹199 Demo Class" />
-              </Link>{" "}
-              — adjusted in your fee if you enrol.
-            </p>
-            <PaymentTrust tone="light" className="mt-4" />
+            <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
-              Message anytime. We reply 10am–midnight IST every day.
+              WhatsApp{" "}
+              <a
+                href={waLink(withPageTag(CHAT_MSG, "Home"))}
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {WHATSAPP_DISPLAY}
+              </a>{" "}
+              — message anytime. We reply 10am–midnight IST every day.
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
@@ -203,14 +189,14 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="w-full min-w-0 flex justify-center lg:block">
+          <div className="mt-7 w-full min-w-0 flex justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-12 lg:block lg:self-start">
             <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 eyebrow="Complete package from"
                 headline={feeHeadline("₹999/month", "spoken-english")}
                 subnote={
                   <MarketCopy
-                    inr="Monthly billing · inclusive of taxes · UPI accepted"
+                    inr="Billed monthly · inclusive of taxes · no auto-debit"
                     usd={`${intlUnit()} · billed monthly`}
                   />
                 }
@@ -245,64 +231,6 @@ function Home() {
 
       <CoverageStrip />
 
-      {/* STORY BAND */}
-      <section className="hero-light bg-white py-10 md:py-14">
-        <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider">
-              <Icon name="book" size={14} /> Our Story
-            </span>
-            <h2 className="mt-4 text-cream text-3xl md:text-5xl leading-[1.1]">
-              We Noticed a Gap.
-              <br />
-              <span className="text-sage">We Built the Bridge.</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-white leading-relaxed">
-              <p>
-                For the past seven years, we have been teaching students and helping them build
-                confidence in learning. During this journey, we noticed a common gap — many students
-                struggle to understand concepts because learning is often made{" "}
-                <strong className="text-cream">too complex</strong>.
-              </p>
-              <p>
-                Our mission has always been to bridge this gap through simple teaching methods and
-                by understanding each student's learning needs. We believe education should be{" "}
-                <strong className="text-cream">easy to understand, practical, and enjoyable</strong>
-                .
-              </p>
-              <p>
-                With the rapid growth of AI and technology, we have designed live classes with small
-                batch sizes to ensure better attention, better interaction, and better learning
-                outcomes.
-              </p>
-            </div>
-            <Link to="/about-us" className="btn btn-ghost-white mt-6">
-              <Icon name="arrow-right" size={16} /> Read Our Full Story
-            </Link>
-          </div>
-          <Reveal stagger className="grid grid-cols-2 gap-3">
-            <StoryTile icon="gamepad" tone="amber" title="Gamified Learning">
-              Flashcards, matching games & live quizzes every session.
-            </StoryTile>
-            <StoryTile icon="users" tone="green" title="Batch of Around 6">
-              Named teacher. Small batches of approximately 6 learners. You still speak.
-            </StoryTile>
-            <StoryTile icon="heart" tone="plum" title="Collaborative">
-              Group discussions and community building every class.
-            </StoryTile>
-            <StoryTile icon="target" tone="blue" title="Live Polls & Quizzes">
-              Real-time interactive activities every session.
-            </StoryTile>
-          </Reveal>
-        </div>
-      </section>
-
-      <Deferred id="home-week">
-        {/* THE WEEK + THE PACKAGE */}
-        <WeekStrip />
-        <PackageSlides />
-      </Deferred>
-
       <Deferred id="home-courses">
         {/* COURSE CATEGORIES */}
         <section className="section">
@@ -310,16 +238,14 @@ function Home() {
             <SectionHeader
               eyebrow="What We Teach"
               title="Choose the Goal You Need Now"
-              subtitle="Basic Spoken, Intermediate Spoken, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
+              subtitle="Six live courses for adults 15+, about 6 learners each — including Basic Spoken English taught in Hindi or Marathi, and Business English inside Interactive Speaking. Pick the result you need; every fee is inclusive of taxes."
             />
-            <Reveal
-              stagger
-              className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4"
-            >
-              {COURSE_CATEGORIES.map((category) => (
-                <CategoryCard key={category.id} category={category} />
+            <div id="all-courses" className="phone-swipe flex flex-wrap justify-center gap-4">
+              {HOME_COURSES.map((c) => (
+                <CourseCard key={c.slug} {...c} />
               ))}
-            </Reveal>
+            </div>
+            <SwipeHint label="Swipe for all 6 courses" />
             <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <strong className="text-cream block text-lg">
@@ -350,7 +276,8 @@ function Home() {
 
       <Deferred id="home-different">
         {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
-        <WhyDifferent />
+        {/* The scored matrix in MarketGap below is the homepage comparison. */}
+        <WhyDifferent table={false} />
 
         <GuidesStrip />
       </Deferred>
@@ -395,7 +322,7 @@ function Home() {
                 {
                   n: 1,
                   lbl: "Choose Course",
-                  sub: "5 programmes · from ₹999/mo, inclusive of taxes",
+                  sub: "4 programmes · from ₹999/mo, inclusive of taxes",
                   c: "sunshine",
                 },
                 { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
@@ -435,45 +362,6 @@ function Home() {
           </div>
         </section>
 
-        {/* WHAT WE OFFER */}
-        <section className="section bg-brand-soft/40">
-          <div className="container-x">
-            <SectionHeader
-              eyebrow="What We Offer"
-              title="Why Our Teaching Works"
-              subtitle={
-                <FeeText text="Spoken, business and interactive English — live, practical, about 6 in a batch, from ₹999/mo, inclusive of taxes. 7 years, 500+ learners." />
-              }
-            />
-            <Reveal stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <FeatureCard icon="play" color="brand" title="Interactive Live Classes">
-                Engaging live sessions with direct teacher support — real interaction every class.
-              </FeatureCard>
-              <FeatureCard icon="gamepad" color="sunshine" title="Gamified Learning">
-                Flashcards, matching games, live polls & quizzes — learning that actually sticks.
-              </FeatureCard>
-              <FeatureCard icon="heart" color="coral" title="Collaborative Learning">
-                Group discussions, debates, and teamwork that build confidence together.
-              </FeatureCard>
-              <FeatureCard icon="target" color="indigo" title="Student-Centred Design">
-                Classes designed around each student's needs, goals, and learning style.
-              </FeatureCard>
-              <FeatureCard icon="trend" color="sage" title="Live Polls & Quizzes">
-                Real-time activities that improve participation and check understanding.
-              </FeatureCard>
-              <FeatureCard icon="clock" color="brand" title="Flexible & Adaptable">
-                Afternoon, evening, night batches — we fit around your life, not the other way
-                round.
-              </FeatureCard>
-            </Reveal>
-            <div className="text-center mt-10">
-              <Link to="/about-us" className="btn btn-outline">
-                See All 11 Learning Features <Icon name="arrow-right" size={16} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <MottoBand>
           "Speak Better English. <em className="text-sunshine">Build Future Together.</em>"
         </MottoBand>
@@ -483,34 +371,11 @@ function Home() {
         {/* GOOGLE RATING + PROOF */}
         <GoogleProof />
 
-        {/* MARKET + WHAT CHANGED */}
+        {/* MARKET */}
         <MarketGap />
-        <BeforeNow />
       </Deferred>
 
       <Deferred id="home-pricing">
-        {/* TESTIMONIALS */}
-        <section className="section">
-          <div className="container-x">
-            <SectionHeader
-              eyebrowTone="coral"
-              eyebrow="Student Stories"
-              title="Real Results from Real Learners"
-              subtitle="Selected named outcomes. Progress depends on attendance and practice — no score, job or salary is guaranteed."
-            />
-            <TestimonialSlider items={TESTIMONIALS} />
-            <p className="text-center text-sm text-ink/75 mt-5 max-w-2xl mx-auto">
-              These are selected individual learner outcomes. Progress depends on starting level,
-              attendance and practice; no score, job or salary result is guaranteed.
-            </p>
-            <div className="text-center mt-10">
-              <Link to="/success-stories" className="btn btn-outline">
-                Read All Success Stories <Icon name="arrow-right" size={16} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
         <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
           <div className="container-x">
@@ -523,7 +388,7 @@ function Home() {
               subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus Bolo, the practice app with daily exercises, video lessons and a weekly teacher review. Same-week reschedule if a slot is free."
             />
             <PricingGrid />
-            <DemoStrip />
+            <ConsultStrip />
             <div className="mt-7 text-center">
               <p className="text-sm text-ink/75">
                 <MarketCopy
@@ -677,135 +542,79 @@ function Home() {
   );
 }
 
-const STORY_TONE = {
-  amber: { box: "bg-amber-soft", chip: "bg-sunshine text-ink", title: "text-[#6A4A10]" },
-  green: { box: "bg-brand-soft", chip: "bg-brand text-white", title: "text-brand-deep" },
-  plum: { box: "bg-plum-soft", chip: "bg-plum text-white", title: "text-[#4E3470]" },
-  blue: { box: "bg-slate-soft", chip: "bg-indigo-pop text-white", title: "text-[#1F3D63]" },
-} as const;
+/** Every course, one flat list: the ladder order, then the two taught-in-your-language rooms. */
+const HOME_COURSES: { slug: string; step: string; who: string; photo?: "mid" | "footer" }[] = [
+  ...LADDER,
+  {
+    slug: "spoken-english-hindi",
+    step: "Start here · in Hindi",
+    who: "Basic Spoken English, explained by a Hindi-speaking teacher",
+    photo: "mid",
+  },
+  {
+    slug: "spoken-english-marathi",
+    step: "Start here · in Marathi",
+    who: "Basic Spoken English, explained by a Marathi-speaking teacher",
+    photo: "footer",
+  },
+];
 
-function StoryTile({
-  icon,
-  title,
-  tone,
-  children,
+function CourseCard({
+  slug,
+  step,
+  who,
+  photo,
 }: {
-  icon: IconName;
-  title: string;
-  tone: keyof typeof STORY_TONE;
-  children: React.ReactNode;
+  slug: string;
+  step: string;
+  who: string;
+  photo?: "mid" | "footer";
 }) {
-  const t = STORY_TONE[tone];
+  const course = COURSES[slug];
+  if (!course) return null;
+  const months = course.duration.split("·")[0].trim();
   return (
-    <div className={`rounded-2xl p-5 ${t.box}`}>
-      <div className={`mb-3 grid h-11 w-11 place-items-center rounded-xl ${t.chip}`}>
-        <Icon name={icon} size={22} />
-      </div>
-      <strong className={`block font-bold ${t.title}`}>{title}</strong>
-      <span className="mt-1 block text-sm leading-snug text-ink/80">{children}</span>
-    </div>
-  );
-}
-
-const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: string }> = {
-  brand: {
-    bar: "bg-brand",
-    icon: "bg-brand-soft text-brand-deep",
-    badge: "border-brand/25 bg-brand-soft text-brand-deep",
-  },
-  indigo: {
-    bar: "bg-indigo-pop",
-    icon: "bg-[#E3E9F1] text-indigo-pop",
-    badge: "border-indigo-pop/25 bg-[#F2F5F9] text-[#4141A8]",
-  },
-  sun: {
-    bar: "bg-[#B98A2E]",
-    icon: "bg-[#F5ECD6] text-[#6A4A10]",
-    badge: "border-sunshine/45 bg-[#FBF5E6] text-[#6A4A10]",
-  },
-  coral: {
-    bar: "bg-[#A9503D]",
-    icon: "bg-[#F8EEEA] text-[#8E3B2A]",
-    badge: "border-coral/35 bg-[#FAF2EF] text-[#8B321F]",
-  },
-  play: {
-    bar: "bg-gradient-to-r from-sunshine via-[#DDB061] to-coral",
-    icon: "bg-[#F5ECD6] text-[#6A4A10]",
-    badge: "border-sunshine/50 bg-[#FBF5E6] text-[#6A4A10]",
-  },
-};
-
-function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
-  return `/course-${slug}`;
-}
-
-function CategoryCard({ category }: { category: CourseCategory }) {
-  const visual = COURSES[category.featuredSlug];
-  const tone = CATEGORY_TONES[category.tone];
-  const destination = "/english-career" as const;
-  const cta =
-    category.slugs.length === 2
-      ? "Explore both programmes"
-      : `Explore ${category.slugs.length} programmes`;
-  const pill = `${category.slugs.length} programmes`;
-
-  return (
-    <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
-      <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[16/9]">
+    <Link
+      to={`/course-${slug}` as "/course-spoken-english"}
+      className="group flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]"
+    >
+      <div className="relative aspect-[16/9] overflow-hidden">
         <SmartImage
-          src={visual.heroImage}
-          alt={`${category.title} online courses in India`}
+          src={
+            (photo === "mid" ? course.midImage : photo === "footer" ? course.footerImage : null) ??
+            course.heroImage
+          }
+          alt={`${course.title} — live online class in India`}
           fill
           position="center 22%"
           imgClassName="transition duration-700 group-hover:scale-105"
-          sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 84vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
-        <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur">
-          {pill}
+        <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md">
+          {step}
         </span>
       </div>
-      <div className={`h-1 ${tone.bar}`} />
-
-      <div className="flex min-w-0 flex-col p-3 sm:p-3.5">
+      <div className="flex min-w-0 flex-1 flex-col p-4">
         <div className="flex items-center gap-2">
-          <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
-            <Icon name={category.icon as IconName} size={16} />
+          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-deep">
+            <Icon name={course.icon} size={16} />
           </span>
-          <h3 className="font-display text-sm font-extrabold leading-tight text-ink lg:text-[15px]">
-            {category.title}
+          <h3 className="font-display text-base font-extrabold leading-tight text-ink">
+            {course.title}
           </h3>
         </div>
-
-        <p className="mt-1.5 line-clamp-2 text-[13px] leading-snug text-ink/80">
-          {category.description}
+        <p className="mt-2 flex-1 text-sm leading-snug text-ink/80">{who}</p>
+        <p className="mt-3 text-sm text-ink/75">
+          {months} ·{" "}
+          <strong className="font-display text-ink">
+            <FeeText text={course.price} />
+          </strong>
         </p>
-
-        <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
-          {category.slugs.map((slug) => {
-            const course = COURSES[slug];
-            return (
-              <Link
-                key={slug}
-                to={coursePath(slug)}
-                className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
-              >
-                <Icon name={course.icon} size={13} /> {course.title}
-              </Link>
-            );
-          })}
-        </div>
-
-        <Link
-          to={destination}
-          hash={category.id}
-          className="mt-3 inline-flex min-h-9 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-1.5 text-center text-[13px] font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
-        >
-          {cta}
-          <Icon name="arrow-right" size={14} />
-        </Link>
+        <span className="mt-3 inline-flex items-center gap-1 text-sm font-display font-bold text-brand-deep">
+          See the course <Icon name="arrow-right" size={14} />
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }
 
@@ -856,6 +665,6 @@ function IconFrame({ children, size = 24 }: { children: React.ReactNode; size?: 
 
 // Small Batch — three figures clustered together
 
-// Business English — one speaker presenting an idea clearly
+// Workplace English — one speaker presenting an idea clearly
 
 // Small check used in feature lists

@@ -98,7 +98,7 @@ function BlockView({ block }: { block: Block }) {
       return (
         <h2
           id={headingId(block.text)}
-          className="mt-12 mb-4 text-2xl md:text-3xl font-display font-extrabold text-ink leading-tight scroll-mt-24"
+          className="mt-12 mb-4 font-display font-extrabold text-ink scroll-mt-24 section-title"
         >
           {block.text}
         </h2>
@@ -273,12 +273,12 @@ export function ArticleToc({ items }: { items: { id: string; text: string }[] })
       <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
         On this page
       </p>
-      <ol className="mt-3 space-y-1.5">
+      <ol className="mt-3 space-y-0.5 sm:space-y-1.5">
         {items.map((item, i) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="text-sm text-brand-deep font-display font-semibold hover:underline"
+              className="inline-block py-2 text-sm text-brand-deep font-display font-semibold hover:underline sm:py-0"
             >
               {i + 1}. {item.text}
             </a>

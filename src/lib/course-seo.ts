@@ -101,7 +101,7 @@ export function courseSeo(d: CourseData) {
       price,
       priceCurrency: "INR",
       valueAddedTaxIncluded: true,
-      unitText: d.slug === "demo-session" ? "SESSION" : /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
+      unitText: /\/mo/i.test(d.price) ? "MONTH" : "PACKAGE",
     };
   }
 
@@ -144,28 +144,24 @@ export function courseSeo(d: CourseData) {
       hasCourseInstance: courseInstance,
       // The complete package: every paid course includes Bolo, the practice app
       // (daily practice and video lessons) alongside the live classes.
-      ...(d.slug !== "demo-session"
-        ? {
-            hasPart: [
-              {
-                "@type": "LearningResource",
-                name: "Bolo practice app — daily practice",
-                learningResourceType: "Interactive practice",
-                description:
-                  "Whole-conversation practice, word and phrase brush-ups, reading fluency, grammar in real texts and interactive grammar practice between live classes.",
-                isAccessibleForFree: false,
-              },
-              {
-                "@type": "LearningResource",
-                name: "Bolo practice app — video lessons",
-                learningResourceType: "Video lessons",
-                description:
-                  "Recorded lessons on grammar, speaking and fluency, thinking in English, fixing mind blanks and small natural phrases, chosen for the course.",
-                isAccessibleForFree: false,
-              },
-            ],
-          }
-        : {}),
+      hasPart: [
+        {
+          "@type": "LearningResource",
+          name: "Bolo practice app — daily practice",
+          learningResourceType: "Interactive practice",
+          description:
+            "Whole-conversation practice, word and phrase brush-ups, reading fluency, grammar in real texts and interactive grammar practice between live classes.",
+          isAccessibleForFree: false,
+        },
+        {
+          "@type": "LearningResource",
+          name: "Bolo practice app — video lessons",
+          learningResourceType: "Video lessons",
+          description:
+            "Recorded lessons on grammar, speaking and fluency, thinking in English, fixing mind blanks and small natural phrases, chosen for the course.",
+          isAccessibleForFree: false,
+        },
+      ],
       // The month-by-month roadmap is the more exact syllabus when a course has
       // one: each section names its month span, which is what learners ask.
       syllabusSections: d.visuals

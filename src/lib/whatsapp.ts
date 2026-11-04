@@ -9,7 +9,6 @@ export const CALL_LINK = `tel:+${WHATSAPP_PHONE}`;
  *  - "Chat on WhatsApp" asks a question, sent as written.
  *  - "Get Free Consultation" asks for the booking link to a free group
  *    consultation slot (advice, not a class).
- * The paid ₹199 Demo Class has its own page and message — use waDirect.
  *
  * Until October 2026 every message was rewritten into a consultation request,
  * so both buttons opened the same chat and some prefills came out garbled.
@@ -65,7 +64,7 @@ export function waLink(message: string) {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(sentence(message))}`;
 }
 
-/** Kept for the paid Demo Class enrol link; identical to waLink now. */
+/** Identical to waLink; kept for existing imports. */
 export function waDirect(message: string) {
   return waLink(message);
 }

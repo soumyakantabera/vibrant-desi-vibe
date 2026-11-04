@@ -30,7 +30,7 @@ export const Route = createFileRoute("/free-consultation")({
 function Page() {
   return (
     <Layout waMessage={DEMO_MSG} footerImage={IMG.womanLaptop}>
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.womanLaptop}
@@ -41,7 +41,7 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
+        <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
             <Icon name="compass" size={14} /> {DEMO_CTA}
           </span>
@@ -49,8 +49,12 @@ function Page() {
             Free group consultation. <span className="text-sunshine">Your plan in writing.</span>
           </h1>
           <p className="mt-5 text-lg text-white">{CONSULTATION.punch}</p>
-          <p className="mt-3 text-sm font-semibold text-sunshine">
+          <p className="mt-3 text-sm font-semibold text-white">
             <FeeText text={CONSULTATION.hook} />
+          </p>
+          <p className="mt-3 text-sm text-white/90">
+            Looking for a demo class? We do not run a separate one — this free consultation is where
+            you start, with the course and fee in writing before you pay anything.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (
@@ -112,7 +116,7 @@ function Page() {
       <section className="section pt-0">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl mb-2">How the session works</h2>
+            <h2 className="mb-2 section-title">How the session works</h2>
             <p className="text-ink/80 mb-6">
               No payment to book. 100% free. Small batch. Personalised advice. Replies{" "}
               {CONSULTATION.hours}.
@@ -219,7 +223,7 @@ function Page() {
       <section className="section pt-0">
         <div className="container-x grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl mb-3">Queries we resolve in the same session</h2>
+            <h2 className="mb-3 section-title">Queries we resolve in the same session</h2>
             <p className="text-ink/80 mb-5">
               Everyone’s question about our courses, fees, batch and whether they belong here gets
               an answer. If we cannot answer it live, we say so and send it in writing.
@@ -337,9 +341,7 @@ function Page() {
       >
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">
-            Bring the problem. Leave with one room.
-          </h2>
+          <h2 className="text-cream section-title">Bring the problem. Leave with one room.</h2>
           <p className="mt-3 text-white">
             Get Free Consultation — 100% free, small batch, personalised advice. We diagnose the
             bottleneck, answer your queries, and place you in Spoken, Interactive, Workplace,

@@ -12,7 +12,6 @@ const cases: Array<[string, AskRoute]> = [
   ["book free demo class", "demo_class"],
   ["english class free demo whatsapp", "demo_class"],
   ["is the demo free?", "demo_class"],
-  ["refund my ₹199 demo", "demo_class"],
   ["demo class chahiye", "demo_class"],
   ["free consultation", "free_consulting"],
   ["free consulting", "free_consulting"],
@@ -39,9 +38,10 @@ let failed = 0;
 for (const [input, want] of cases) {
   const got = routeAsk(input);
   const answer = answerFor(got);
+  // Demo questions land on the free consultation; nobody is quoted a demo fee.
   const badSwap =
-    (want === "demo_class" && answer.startsWith("It is free. Book on WhatsApp")) ||
-    (want === "free_consulting" && answer.startsWith("It costs you nothing"));
+    /₹199|\$10\b/.test(answer) ||
+    ((want === "demo_class" || want === "both") && !answer.includes("/free-consultation"));
   if (got !== want || badSwap) {
     failed += 1;
     console.error(`FAIL ${JSON.stringify(input)}\n  want ${want}\n  got  ${got}\n  ${answer}`);

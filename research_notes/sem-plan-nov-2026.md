@@ -19,7 +19,7 @@ until conversion data exists). Location: India. Schedule: 9am–11:30pm IST
 | Marathi medium | spoken english in marathi · marathi to english speaking course · english bolayla shika | /course-spoken-english-marathi |
 | Intermediate | intermediate spoken english course · english fluency course intermediate | /course-intermediate-english |
 | Freeze / confidence | english speaking confidence course · stop hesitation english speaking · interactive english speaking class | /course-interactive-speaking |
-| Work English | business english course online india · english for working professionals · corporate english course | /course-business-english |
+| Work English | business english course online india · english for working professionals · corporate english course | /course-interactive-speaking (Business English folded in, Nov 2026) |
 | Interviews | english for job interview · interview english course online | /course-interview-preparation |
 | Price intent | spoken english course fees · english speaking course fees · cheap spoken english classes online | /english-class-fees-india |
 | Trust / refund | spoken english course monthly payment · english course no emi | /before-you-pay-spoken-english-course |
@@ -38,7 +38,9 @@ job vacancy · teacher job · tutor job · salary · meaning · in tamil · in t
 
 - Prices in rupees, "inclusive of taxes", exactly as on the page:
   ₹999/month (Basic, also Hindi and Marathi medium), ₹1,999, ₹1,599, ₹2,499,
-  ₹2,499; Demo Class ₹199. Ads to users outside India use the labeled list.
+  ₹2,499. Ads to users outside India use the labeled list. There is no demo
+  class (retired 4 Nov 2026): "demo class" / "trial class" keywords go to
+  /free-consultation, and the ad must not promise a free class.
 - Allowed proof points: live batch of about 6 · same teacher · Bolo daily
   practice app · weekly teacher review · taught in Hindi or Marathi · one
   month at a time, no auto-debit, no loans · free consultation on WhatsApp.

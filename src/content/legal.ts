@@ -16,7 +16,9 @@ export type LegalDoc = {
 
 export const LEGAL_UPDATED = "2026-10-08";
 /** Terms and Refunds: billing promises added 3 Nov 2026. */
-export const BILLING_UPDATED = "2026-11-03";
+export const BILLING_UPDATED = "2026-11-04";
+/** Privacy: AI-assistant note in WhatsApp messages (4 Nov 2026). */
+export const PRIVACY_UPDATED = "2026-11-04";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
@@ -58,7 +60,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     h1: "Privacy Policy",
     standfirst:
       "This page explains what personal information Learn With Smile collects, why we collect it, and how you can ask us to correct or delete it. Complaints go to the Grievance Officer named on this page.",
-    updated: LEGAL_UPDATED,
+    updated: PRIVACY_UPDATED,
     sections: [
       {
         heading: "Who we are",
@@ -122,8 +124,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Cookies and browser storage",
         paragraphs: [
-          "This website uses no analytics, advertising or tracking cookies, so it does not ask you to accept any. WhatsApp links on this site carry no tracking code — only a plain message that names the page you tapped from.",
-          "It stores one small item in your browser: your country choice, so the page shows the India fee or the fee for a learner outside India. You can remove it at any time by clearing this site’s data in your browser.",
+          "This website uses no analytics, advertising or tracking cookies, so it does not ask you to accept any. WhatsApp links on this site carry no tracking code — only a plain message that names the page you tapped from. If you arrive from an AI assistant such as ChatGPT or Copilot, that message also says so in plain words (for example “I found you through ChatGPT.”); you see it, and can edit it, before you send it.",
+          "It stores one small item in your browser: your country choice, so the page shows the India fee or the fee for a learner outside India. If you arrived from an AI assistant, it also keeps that assistant’s name in this browser tab only (session storage, gone when you close the tab). Nothing is sent to us or anyone else until you send a WhatsApp message yourself. You can remove both by clearing this site’s data in your browser.",
           "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That lookup decides whether this browser shows the India fee or the fee for a learner outside India. We do not send that lookup to an advertising network.",
         ],
       },
@@ -228,8 +230,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Who we are and what we offer",
         paragraphs: [
-          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication classes: Spoken English, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. Every class is taught live by a trained teacher over the internet.",
-          "We also offer a paid Demo Class: one 90-minute seat in a live batch, at ₹199 inclusive of taxes, for a learner who wants to see a real class before enrolling. It is not a sixth programme and it is not the free consultation. The fee rule for that session is only in the Demo Class section below.",
+          "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication classes: Spoken English, Interactive Speaking and Interview Preparation. We do not offer career counselling. Every class is taught live by a trained teacher over the internet.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
       },
@@ -258,12 +259,10 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       },
       {
         id: "demo-session",
-        heading: "Demo Class",
+        heading: "Demo Class (no longer offered)",
         paragraphs: [
-          "The Demo Class is a paid seat in a live batch. It lasts 90 minutes. For a learner in India the fee is ₹199, inclusive of taxes. For a learner outside India it is the demo fee shown before payment, confirmed on WhatsApp. It is for a person who wants to seriously see a session taught by our teacher, in a batch, before taking admission. It is not the free consultation, and it is not a free class.",
-          "Message us on WhatsApp first (+91 96744 79949). We send the payment link. The session has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
-          "The Demo Class fee is not refunded in cash. Within 48 hours after the session, if you take admission in the course you attended, or in any other course we currently offer, that fee is adjusted against the course fee.",
-          "By paying and asking us to schedule within 72 hours, you ask us to perform the session promptly. Missing it, joining late, or changing your mind after it was held does not create a cash refund.",
+          "We no longer sell the paid Demo Class; it was retired on 4 November 2026. Anyone who wants to see whether a course fits is offered the free consultation instead, which is advice, not a class.",
+          "A Demo Class paid for before 4 November 2026 is honoured on the terms that applied when it was paid: the session is held as booked, the fee is not refunded in cash, and it is adjusted against a course fee if you take admission within 48 hours after the session.",
           "Nothing in this section removes a right that cannot be waived under Indian law or under the law where you live.",
         ],
       },
@@ -372,7 +371,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Cancel on WhatsApp or by email before the first live class of a paid month has been held, and we refund that month in full to the original payment method where the provider allows it.",
           "Once that first class has been held, we do not refund the month because you changed your mind, missed later classes, found the work difficult, or did not obtain a job, visa, band score or other result. Your internet, electricity or device, or a later inability to attend the IST slot you confirmed, is also not a refund of that month.",
           "You may still stop any later month before it is billed. If the law where you live gives a longer withdrawal right that cannot be waived, that right still applies, including where asking us to start the class ends the right only for the teaching already given.",
-          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. The paid Demo Class fee is not refunded in cash; it is adjusted against a course fee if you take admission within 48 hours of the session.",
+          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. A Demo Class paid before 4 November 2026 follows the Demo Class section of the Terms.",
         ],
       },
       SCHEDULE_AND_LATENESS,
@@ -398,7 +397,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Career counselling",
         paragraphs: [
-          "We do not offer career counselling. The live rooms are Spoken English, Interactive Speaking, Business English and Interview Preparation.",
+          "We do not offer career counselling. The live rooms are Spoken English, Interactive Speaking and Interview Preparation.",
         ],
       },
       {
@@ -441,7 +440,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Adult rooms only",
         paragraphs: [
-          "The live catalogue is Spoken English, Interactive Speaking, Business English and Interview Preparation. We do not offer career counselling. All of those rooms are for learners 15+.",
+          "The live catalogue is Spoken English, Interactive Speaking and Interview Preparation. We do not offer career counselling. All of those rooms are for learners 15+.",
           "We do not currently run Spoken English for Kids or Spoken English for Teens. A child under 15 is not placed in an adult batch. For children, look at a dedicated kids platform.",
         ],
       },

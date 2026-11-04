@@ -70,7 +70,7 @@ function Page() {
       waMessage="Hi, I read the blog and I want a free consultation for spoken English."
       footerImage={IMG.blogDesk}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.blogDesk}
@@ -81,7 +81,7 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
+        <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
             <Icon name="book" size={14} /> Blog
           </span>

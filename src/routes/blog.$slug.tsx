@@ -45,12 +45,12 @@ function BlogPostPage() {
 
   return (
     <Layout waMessage={waMessage} footerImage={heroImage}>
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage src={heroImage} alt={post.imgAlt} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
+        <div className="hero-bob container-x pt-8 pb-10 md:py-20 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -116,7 +116,7 @@ function BlogPostPage() {
       {post.relatedCourses.length > 0 && (
         <section className="section bg-brand-soft/40 pt-0">
           <div className="container-x max-w-3xl">
-            <h2 className="text-2xl font-display font-extrabold text-ink">
+            <h2 className="font-display font-extrabold text-ink section-title">
               Courses that cover this
             </h2>
             <div className="mt-5 grid sm:grid-cols-2 gap-4">
@@ -148,7 +148,7 @@ function BlogPostPage() {
       {related.length > 0 && (
         <section className="section">
           <div className="container-x max-w-3xl">
-            <h2 className="text-2xl font-display font-extrabold text-ink">Read next</h2>
+            <h2 className="font-display font-extrabold text-ink section-title">Read next</h2>
             <div className="mt-5 grid sm:grid-cols-2 gap-4">
               {related.map((other) => (
                 <Link

@@ -18,14 +18,16 @@ const STORIES = [
       "Quarter-close used to mean I typed in the chat while someone else spoke. Now I take the Mumbai call myself — names, numbers, next step.",
     name: "Neha Patel",
     detail: "Business English · Tax Analyst, Ahmedabad",
-    waMessage: "Hi, I saw Neha's story and I want a free consultation for Business English.",
+    waMessage:
+      "Hi, I saw Neha's story and I want a free consultation for meetings and client-call English.",
   },
   {
     quote:
       "Partners asked me to walk the working papers in English. A batch of around six meant I rehearsed every week. I present now.",
     name: "Rohan Deshpande",
     detail: "Business English · Chartered Accountant, Mumbai",
-    waMessage: "Hi, I saw Rohan's story and I want a free consultation for Business English.",
+    waMessage:
+      "Hi, I saw Rohan's story and I want a free consultation for meetings and client-call English.",
   },
   {
     quote:
@@ -54,7 +56,8 @@ const STORIES = [
       "Back office to BI Analyst. Salary moved. The English I use is client reviews and Monday standups — this room is built for that.",
     name: "Aditya Nair",
     detail: "Business English · BI Analyst, Pune",
-    waMessage: "Hi, I saw Aditya's story and I want a free consultation for Business English.",
+    waMessage:
+      "Hi, I saw Aditya's story and I want a free consultation for meetings and client-call English.",
   },
 ];
 
@@ -64,7 +67,7 @@ function Page() {
       waMessage="Hi, I read the success stories and I want a free consultation for spoken English."
       footerImage={IMG.graduation}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.graduation}
@@ -75,7 +78,7 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
+        <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">★ Real Outcomes</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
             Real Indian Learners. <span className="text-sunshine">Real Results.</span>
@@ -109,7 +112,7 @@ function Page() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-x text-center">
-          <h2 className="text-3xl md:text-4xl">Want to be the next story?</h2>
+          <h2 className="section-title">Want to be the next story?</h2>
           <p className="mt-3 text-ink/85 max-w-xl mx-auto">
             Tell us your goal — we'll match you to the right course.
           </p>

@@ -150,8 +150,6 @@ export const BOLO_FOR_COURSE: Record<FeeSlug, string> = {
     "Grammar you just learnt inside real sentences, connectors and modals, reading for rhythm and recorded 60–90 second turns.",
   "interactive-speaking":
     "Whole-conversation practice, phrase brush-ups and reading for rhythm between sessions.",
-  "business-english":
-    "Meeting conversations, office phrases, reading emails aloud and grammar in business texts.",
   "interview-preparation":
     "Full interview conversations, answer phrases and grammar inside sample answers.",
 };

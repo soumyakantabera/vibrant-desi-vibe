@@ -132,7 +132,7 @@ export function LiveClassView({
           <Icon name="phone" size={17} />
         </span>
       </div>
-      <p className="pb-3 text-center text-[11px] text-white/55">
+      <p className="pb-3 text-center text-xs text-white/70">
         Illustration of a live class. Names and lines are examples.
       </p>
     </figure>

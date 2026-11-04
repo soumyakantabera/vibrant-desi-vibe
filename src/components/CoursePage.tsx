@@ -22,7 +22,7 @@ import {
 } from "@/components/CourseVisuals";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
-import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
+import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 
@@ -158,48 +158,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "Practical exercises for building retrieval speed and speaking confidence.",
     },
   ],
-  "business-english": [
-    {
-      href: "/english-for-client-calls-india",
-      title: "English for client calls",
-      description: "Names, numbers, next step — clarity, not a fake accent.",
-    },
-    {
-      href: "/english-for-presentations-india",
-      title: "Explain your work in 3 minutes",
-      description: "One outcome, three beats, one ask. Standups and client decks.",
-    },
-    {
-      href: "/english-for-working-professionals-india",
-      title: "English while you work",
-      description: "Afternoon, evening and night IST. Live class; recording is revision.",
-    },
-    {
-      href: "/workplace-english-course-online-india",
-      title: "Business English course guide",
-      description: "Who needs workplace training, what to practise and when not to buy a course.",
-    },
-    {
-      href: "/blog/english-for-office-meetings",
-      title: "English for office meetings",
-      description: "Practical phrases for updates, clarification, disagreement and decisions.",
-    },
-    {
-      href: "/blog/english-for-bpo-customer-support",
-      title: "English for BPO and customer support",
-      description: "Call handling, complaint language, recovery phrases and clear next steps.",
-    },
-    {
-      href: "/blog/5-email-phrases-that-sound-more-professional",
-      title: "5 email phrases that sound more professional",
-      description: "Clearer business English without inflated or outdated wording.",
-    },
-    {
-      href: "/blog/bpo-to-client-facing-role-roadmap",
-      title: "BPO to client-facing role roadmap",
-      description: "A practical communication and career progression plan.",
-    },
-  ],
   "intermediate-english": [
     {
       href: "/intermediate-spoken-english-course-india",
@@ -240,6 +198,46 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       title: "5 speaking habits that reduce hesitation",
       description: "Low-stakes practice ideas you can use between live classes.",
     },
+    {
+      href: "/english-for-client-calls-india",
+      title: "English for client calls",
+      description: "Names, numbers, next step — clarity, not a fake accent.",
+    },
+    {
+      href: "/english-for-presentations-india",
+      title: "Explain your work in 3 minutes",
+      description: "One outcome, three beats, one ask. Standups and client decks.",
+    },
+    {
+      href: "/english-for-working-professionals-india",
+      title: "English while you work",
+      description: "Afternoon, evening and night IST. Live class; recording is revision.",
+    },
+    {
+      href: "/workplace-english-course-online-india",
+      title: "Workplace English guide",
+      description: "Who needs workplace training, what to practise and when not to buy a course.",
+    },
+    {
+      href: "/blog/english-for-office-meetings",
+      title: "English for office meetings",
+      description: "Practical phrases for updates, clarification, disagreement and decisions.",
+    },
+    {
+      href: "/blog/english-for-bpo-customer-support",
+      title: "English for BPO and customer support",
+      description: "Call handling, complaint language, recovery phrases and clear next steps.",
+    },
+    {
+      href: "/blog/5-email-phrases-that-sound-more-professional",
+      title: "5 email phrases that sound more professional",
+      description: "Clearer business English without inflated or outdated wording.",
+    },
+    {
+      href: "/blog/bpo-to-client-facing-role-roadmap",
+      title: "BPO to client-facing role roadmap",
+      description: "A practical communication and career progression plan.",
+    },
   ],
   "interview-preparation": [
     {
@@ -262,8 +260,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
 
 const TEACHER_NOTE: Record<string, string> = {
   "spoken-english": "Same teacher every class. They hear you speak — and they remember your words.",
-  "business-english":
-    "The same teacher on every workplace hour. They learn how you sound on a client call.",
   "intermediate-english":
     "Same teacher for all 4 months. They hear your tense slip in month 1 and check it is gone by month 4.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
@@ -285,10 +281,7 @@ function NativeBlock({ native }: { native: NativeSection }) {
           <span className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-extrabold text-bolo-teal">
             {native.label}
           </span>
-          <h2
-            id="native-heading"
-            className="mt-3 text-3xl font-bold leading-tight text-ink md:text-4xl"
-          >
+          <h2 id="native-heading" className="mt-3 font-bold text-ink section-title">
             {native.heading}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink/85">{native.intro}</p>
@@ -334,7 +327,8 @@ export function CoursePage({ data }: { data: CourseData }) {
   const faqs = courseFaqs(data);
   const snapshot = (
     <SnapshotCard
-      badge={`Live · ${data.format}`}
+      // Same one-line badge as the homepage; the batch detail is the first row.
+      badge="Live · Enrolling Now"
       eyebrow="Course fee starts at"
       headline={isIntlSlug(feeKey) ? feeHeadline(data.price, feeKey) : { big: data.price }}
       subnote={
@@ -373,13 +367,13 @@ export function CoursePage({ data }: { data: CourseData }) {
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
-      <section className="hero-light relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
-          <div className="text-cream">
+        <div className="container-x pt-6 pb-14 md:pt-8 md:pb-20 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
+          <div className="hero-bob text-cream">
             <Link
               to="/english-career"
               className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline"
@@ -441,7 +435,19 @@ export function CoursePage({ data }: { data: CourseData }) {
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />
             </p>
-            <PaymentTrust tone="light" className="mt-4" />
+            <p className="mt-2 text-sm text-white/95">
+              WhatsApp{" "}
+              <a
+                href={waLink(waPrimary)}
+                className="font-semibold underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {WHATSAPP_DISPLAY}
+              </a>{" "}
+              — we reply 10am–midnight IST every day.
+            </p>
+            <PaymentTrust tone="dark" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">{snapshot}</div>
         </div>
@@ -483,7 +489,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {/* WHY WE'RE DIFFERENT — all-in-one at a low cost */}
-      {data.slug !== "demo-session" && <WhyDifferent compact level={levelForCourse(feeKey)} />}
+      <WhyDifferent compact level={levelForCourse(feeKey)} />
 
       {/* OUTCOMES */}
       <section className="section">
@@ -581,7 +587,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
-      {data.slug !== "demo-session" && <CourseLadder highlight={feeKey} />}
+      <CourseLadder highlight={feeKey} />
 
       {data.projects && data.projects.length > 0 && (
         <section className="section">

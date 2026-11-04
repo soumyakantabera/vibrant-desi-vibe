@@ -21,7 +21,6 @@ const ENGLISH = [
   { to: "/course-spoken-english-marathi", label: "Spoken English — Marathi to English" },
   { to: "/course-intermediate-english", label: "Intermediate English" },
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
-  { to: "/course-business-english", label: "Business English" },
   { to: "/course-interview-preparation", label: "Interview Preparation" },
   { to: "/bolo", label: "Bolo practice app" },
 ];
@@ -52,10 +51,7 @@ export function Footer({ image }: { image?: string }) {
   const showDeveloper = !POLICY_PATHS.has(pathname);
   const wa = waLink(withPageTag(CHAT_MSG, pageLabel(pathname)));
   return (
-    <footer
-      className="hero-light border-t border-border bg-paper text-ink pt-16 pb-24 sm:pb-8 mt-10"
-      data-cta-location="footer"
-    >
+    <footer className="hero-light bg-paper text-ink pt-16 pb-24 sm:pb-8" data-cta-location="footer">
       <div className="container-x">
         <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 mb-12">
           <div>
@@ -94,13 +90,16 @@ export function Footer({ image }: { image?: string }) {
         </div>
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
-            <a href={CALL_LINK} className="inline-flex items-center gap-2 hover:text-sunshine">
+            <a
+              href={CALL_LINK}
+              className="inline-flex items-center gap-2 py-2 hover:text-sunshine sm:py-0"
+            >
               <Icon name="phone" size={16} />
               Call fallback: {WHATSAPP_DISPLAY}
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="inline-flex items-center gap-2 hover:text-sunshine"
+              className="inline-flex items-center gap-2 py-2 hover:text-sunshine sm:py-0"
             >
               <Icon name="mail" size={16} />
               {CONTACT.email}
@@ -116,7 +115,11 @@ export function Footer({ image }: { image?: string }) {
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">
             {COMPANY.map((c) => (
-              <Link key={c.to} to={c.to} className="text-sm text-white/90 hover:text-sunshine">
+              <Link
+                key={c.to}
+                to={c.to}
+                className="inline-block py-2.5 text-sm text-white/90 hover:text-sunshine sm:py-0"
+              >
                 {c.label}
               </Link>
             ))}
@@ -192,9 +195,7 @@ function EnrolmentNote() {
   const spoken = INTL_FEE["spoken-english"].display;
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
-  const business = INTL_FEE["business-english"].display;
   const interview = INTL_FEE["interview-preparation"].display;
-  const demo = INTL_FEE["demo-session"].display;
   return (
     <MarketCopy
       inr="Fees on this site are India pricing, in Indian Rupees, inclusive of taxes. These published figures are for learners in India."
@@ -202,9 +203,9 @@ function EnrolmentNote() {
         <>
           Fees shown to a learner outside India are the international list, in {intlUnit()}. These
           published figures are Basic Spoken English {spoken}, Intermediate Spoken English{" "}
-          {intermediate}, Interactive Speaking {interactive}, Business English {business}, Interview
-          Preparation {interview}, and a Demo Class of {demo}. They are the labeled fee, not a
-          conversion of the India price. The fee confirmed on WhatsApp is the contract price.
+          {intermediate}, Interactive Speaking {interactive} and Interview Preparation {interview}.
+          They are the labeled fee, not a conversion of the India price. The fee confirmed on
+          WhatsApp is the contract price.
         </>
       }
     />
@@ -217,10 +218,14 @@ function FooterCol({ title, items }: { title: string; items: { to: string; label
       <div className="font-display font-bold text-cream text-sm uppercase tracking-wider mb-4">
         {title}
       </div>
-      <ul className="space-y-2.5">
+      <ul className="sm:space-y-2.5">
         {items.map((i) => (
           <li key={i.to}>
-            <Link to={i.to} className="text-sm text-white/90 hover:text-sunshine">
+            {/* Phones: a ~40px touch row per link; desktop spacing unchanged. */}
+            <Link
+              to={i.to}
+              className="inline-block py-2.5 text-sm text-white/90 hover:text-sunshine sm:py-0"
+            >
               {i.label}
             </Link>
           </li>

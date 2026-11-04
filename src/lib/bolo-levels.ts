@@ -208,7 +208,6 @@ export const LEVELS: Record<BoloLevel, LevelContent> = {
 export function levelForCourse(slug: string): BoloLevel {
   if (slug === "intermediate-english") return "intermediate";
   if (slug === "interactive-speaking") return "interactive";
-  if (slug === "business-english") return "business";
   if (slug === "interview-preparation") return "interview";
   return "basic";
 }

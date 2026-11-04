@@ -78,8 +78,8 @@ export const CITIES: CityRecord[] = [
         a: "Yes. Evening batches start after most commutes end, night batches suit late finishes, and afternoon batches suit retail, hospitality and shift staff. Classes are live online, so there is no second commute for class.",
       },
       {
-        q: "I work at a bank in Mumbai. Spoken English or Business English?",
-        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Business English (₹2,499/month, 3 months). If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+        q: "I work at a bank in Mumbai. Spoken English or a Business English course?",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
       },
     ],
   },
@@ -170,7 +170,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "A note on language for Bengaluru learners" },
       {
         t: "p",
-        text: "Bengaluru rooms draw people from every state. When a concept stalls, the teacher can bridge in Hindi or Bengali; Kannada, Tamil, Telugu and Malayalam are not used as bridges. If you are comfortable in neither Hindi nor Bengali, that is often fine for [Interactive Speaking](/course-interactive-speaking) or [Business English](/course-business-english), where you already have the English and the work is fluency — say so in the consultation and we will advise honestly.",
+        text: "Bengaluru rooms draw people from every state. When a concept stalls, the teacher can bridge in Hindi or Bengali; Kannada, Tamil, Telugu and Malayalam are not used as bridges. If you are comfortable in neither Hindi nor Bengali, that is often fine for [Interactive Speaking](/course-interactive-speaking), where you already have the English and the work is fluency — say so in the consultation and we will advise honestly.",
       },
       { t: "h2", text: "Timings for tech schedules" },
       {
@@ -181,7 +181,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I can write English but freeze in standups. Which course?",
-        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,599/month, 3 months) trains speaking on the spot. If the freeze is specifically in meetings and client calls, Business English (₹2,499/month, 3 months). Both live, about 6 learners, inclusive of taxes.",
+        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,599/month, 3 months) trains speaking on the spot — including meetings and client calls. Live, about 6 learners, inclusive of taxes.",
       },
       {
         q: "I don't speak Hindi. Can I still join from Bengaluru?",
@@ -234,7 +234,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I work in pharma in Hyderabad. Which course helps with audits and client calls?",
-        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Business English (₹2,499/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
+        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Interactive Speaking (₹1,599/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
       },
       {
         q: "Is the Hindi bridge a problem if I mainly speak Telugu?",
@@ -381,7 +381,6 @@ export function cityBody(city: CityRecord): ArticleBody {
         ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
         ["Intermediate Spoken English", "4 months", "₹1,999/month"],
         ["Interactive Speaking", "3 months", "₹1,599/month"],
-        ["Business English", "3 months", "₹2,499/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹2,499/month"],
       ],
     },

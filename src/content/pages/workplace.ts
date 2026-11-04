@@ -3,7 +3,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most people who want better English at work do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. This guide covers those moments — and, if you need live practice, what our [Business English course](/course-business-english) does. Not an MBA module.",
+    text: "Most people who want better English at work do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. This guide covers those moments — and, if you need live practice, what our [Business English course](/course-interactive-speaking) does. Not an MBA module.",
   },
   {
     t: "p",
@@ -21,7 +21,7 @@ export const body: ArticleBody = [
       ],
       [
         "You speak socially but freeze in meetings, calls or presentations",
-        "Business English is the intended fit.",
+        "Interactive Speaking is the intended fit (emails and tone: Intermediate).",
       ],
       [
         "You communicate well but want a more international accent",
@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need interview answers rather than day-to-day office communication",
-        "Take Interview Preparation — 2 months, ₹2,499/month. HR screens, STAR and recorded mocks. Business English is meetings after you have the job.",
+        "Take Interview Preparation — 2 months, ₹2,499/month. HR screens, STAR and recorded mocks. Interactive Speaking covers meetings after you have the job.",
       ],
     ],
   },
@@ -100,16 +100,20 @@ export const body: ArticleBody = [
     text: "Trial classes are common across the market. Do not judge a provider because the first class is free. Count your own speaking minutes, notice whether the teacher corrects useful patterns, and ask what the **actual** batch size is. Those answers are harder to fake than a polished sales page.",
   },
 
-  { t: "h2", text: "How Learn With Smile delivers Business English" },
+  { t: "h2", text: "How Learn With Smile teaches Business English" },
   {
     t: "table",
     head: ["Item", "Current offer"],
     rows: [
+      [
+        "Course",
+        "Interactive Speaking (meetings, calls, presentations); emails and tone in Intermediate Spoken English",
+      ],
       ["Duration", "3 months"],
       ["Frequency", "Up to 2 class days per week"],
       ["Format", "100% live online batch"],
       ["Batch size", "approximately 6 learners"],
-      ["Fee", "₹2,499/month, inclusive of taxes"],
+      ["Fee", "₹1,599/month, inclusive of taxes (Intermediate: ₹1,999/month, 4 months)"],
       ["Consult", "Chat on WhatsApp"],
       ["Certificate", "Not currently issued"],
       ["Rescheduling", "Request within the same week, subject to teacher and slot availability"],
@@ -142,8 +146,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If meetings, client calls, updates, emails or presentations are the problem, attend a real Business English class before deciding. The consultation is free. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
-    course: "/course-business-english",
-    label: "See Business English course details",
+    text: "If meetings, client calls, updates, emails or presentations are the problem, get the free consultation before deciding. We will tell you whether Interactive Speaking or Intermediate fits. Batches usually have around 6 learners. Booking starts with a WhatsApp message.",
+    course: "/course-interactive-speaking",
+    label: "See Interactive Speaking course details",
   },
 ];

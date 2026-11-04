@@ -43,7 +43,7 @@ function Page() {
       waMessage="Hi, I read your guides and I want a free consultation for spoken English."
       footerImage={IMG.blogDesk}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.blogDesk}
@@ -54,7 +54,7 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
+        <div className="hero-bob container-x pt-8 pb-10 md:py-20 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -99,9 +99,9 @@ function Page() {
                     <span className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-soft text-brand-deep">
                       <Icon name={g.icon} size={18} />
                     </span>
-                    <h2 className="font-display text-base font-extrabold leading-tight text-ink">
+                    <h3 className="font-display text-lg font-extrabold leading-tight text-ink">
                       {g.title}
-                    </h2>
+                    </h3>
                     <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/80">{g.sub}</p>
                     <span className="mt-3 inline-flex items-center gap-1 text-sm font-display font-bold text-brand-deep">
                       Read guide <Icon name="arrow-right" size={14} />
@@ -120,7 +120,7 @@ function Page() {
       >
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">Still not sure which room?</h2>
+          <h2 className="text-cream section-title">Still not sure which room?</h2>
           <p className="mt-3 text-white">
             Get a free consultation. We diagnose the bottleneck, answer every query, and place you
             in one course — or tell you to stay free. Not a class.

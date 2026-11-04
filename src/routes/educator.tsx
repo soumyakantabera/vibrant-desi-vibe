@@ -73,7 +73,7 @@ function EducatorCard({
         <span className="eyebrow eyebrow-indigo">
           <Icon name="spark" size={12} /> {title}
         </span>
-        <h2 className="mt-3 text-3xl md:text-5xl text-ink leading-[1.05]">{name}</h2>
+        <h2 className="mt-3 text-ink section-title">{name}</h2>
         <p className="mt-4 text-ink/85 leading-relaxed">{intro}</p>
 
         <div className="mt-5 grid sm:grid-cols-2 gap-3">
@@ -106,8 +106,9 @@ function EducatorCard({
         </div>
 
         <div className="mt-4 card-soft bg-gradient-to-br from-brand-soft to-cream">
-          <h3 className="font-display font-bold text-ink mb-2 flex items-center gap-2">
-            <Icon name="heart" size={16} className="text-coral" /> What I promise every learner
+          <h3 className="font-display font-bold text-ink mb-2 flex items-start gap-2">
+            <Icon name="heart" size={16} className="mt-1 shrink-0 text-coral" />
+            <span>What I promise every learner</span>
           </h3>
           <ul className="space-y-2 text-sm text-ink/85">
             {promises.map((p) => (
@@ -135,7 +136,7 @@ function Page() {
       waMessage="Hi, I want a free consultation with Sunanda for spoken English."
       footerImage={IMG.teacherWoman}
     >
-      <section className="hero-light relative">
+      <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
             src={IMG.teacherWoman}
@@ -146,7 +147,7 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
+        <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
             <Icon name="heart" size={14} /> Meet the Educator
           </span>
@@ -177,7 +178,7 @@ function Page() {
             teaches={[
               "Basic & Interactive Spoken English",
               "Interview English inside Spoken and Interactive rooms",
-              "Business English for professionals",
+              "Business English inside Interactive and Intermediate",
               "Interview Preparation for HR screens",
             ]}
             promises={[
@@ -194,7 +195,7 @@ function Page() {
       <section className="hero-light section relative overflow-hidden">
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x relative text-center">
-          <h2 className="text-cream text-3xl md:text-4xl">Talk to the educator directly.</h2>
+          <h2 className="text-cream section-title">Talk to the educator directly.</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
             Tell us your goal — we’ll reply on WhatsApp.
           </p>

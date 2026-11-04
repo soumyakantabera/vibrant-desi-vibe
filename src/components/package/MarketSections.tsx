@@ -4,6 +4,7 @@ import { Logo } from "@/components/Logo";
 import { ProviderMark, TrademarkNotice } from "@/components/ProviderMark";
 import { FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
+import { SwipeHint } from "@/components/ui-bits";
 import { INTL_FEE } from "@/lib/intl-fees";
 import { COMPARE_REVISED_LABEL } from "@/lib/compare";
 import { RATING } from "@/lib/seo";
@@ -194,6 +195,19 @@ function MarkCell({ m, us }: { m: M; us?: boolean }) {
   );
 }
 
+/**
+ * Label placement on the price chart. EngVarta and the AI apps both score
+ * 2.5/8, so their bars sit on one line: AI apps is labelled under its bar,
+ * EngVarta above its bar. italki / Preply runs to the right edge, so its label
+ * sits above the end of its bar instead of past it. Everything else: right of
+ * the bar.
+ */
+const LABEL_PLACE: Record<string, "right" | "above" | "below" | "above-end"> = {
+  "AI apps": "below",
+  EngVarta: "above",
+  "italki/Preply": "above-end",
+};
+
 function PositionChart() {
   const W = 760;
   const H = 400;
@@ -225,7 +239,14 @@ function PositionChart() {
           opacity="0.1"
           className="viz-fade"
         />
-        <text x={L + 12} y={y(8) + 22} fontSize="15" fontWeight="800" fill="var(--tile-green)">
+        <text
+          x={L + 12}
+          y={y(8) + 36}
+          fontSize="15"
+          fontWeight="800"
+          fill="var(--tile-green)"
+          data-chart-label
+        >
           THE GAP · complete + affordable
         </text>
         {[0, 2, 4, 6, 8].map((s) => (
@@ -277,6 +298,21 @@ function PositionChart() {
           const color = DEEP[b.tone].hex;
           const x1 = x(a);
           const x2 = Math.max(x(z), x1 + 14);
+          // Where the label goes. Bars that share a score, or that run to the
+          // right edge, get their label centred above or below the bar so no
+          // label touches another label, a bar or the edge of the chart.
+          const place = LABEL_PLACE[b.short] ?? "right";
+          const mid = (x1 + x2) / 2;
+          const lx =
+            place === "right"
+              ? b.us
+                ? x2 + 48
+                : x2 + (z > 20000 ? 32 : 14)
+              : place === "above-end"
+                ? x2 - 150
+                : mid;
+          const ly = place === "below" ? cy + 26 : place === "right" ? cy + 5 : cy - 14;
+          const anchor = place === "below" || place === "above" ? "middle" : "start";
           return (
             <g key={b.name} style={d(250 + i * 140)}>
               <rect
@@ -303,8 +339,10 @@ function PositionChart() {
                 </g>
               )}
               <text
-                x={b.us ? x2 + 48 : Math.min(x2 + (z > 20000 ? 32 : 14), W - R + 34)}
-                y={cy + 5}
+                x={lx}
+                y={ly}
+                textAnchor={anchor}
+                data-chart-label
                 fontSize={b.us ? 17 : 15}
                 fontWeight={b.us ? 800 : 700}
                 fill={color}
@@ -461,7 +499,7 @@ export function MarketGap() {
       <div className="container-x">
         <div className="mb-10 flex max-w-3xl flex-col gap-3">
           <Eyebrow tone="teal">Market analysis · {COMPARE_REVISED_LABEL}</Eyebrow>
-          <h2 className="text-3xl leading-[1.08] text-ink md:text-5xl">
+          <h2 className="text-ink section-title">
             Everyone sells one piece. <span className="text-tile-green">We fill the gap.</span>
           </h2>
           <p className="text-lg text-ink/75">
@@ -470,7 +508,7 @@ export function MarketGap() {
           </p>
         </div>
 
-        <VizIn className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <VizIn className="phone-swipe grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {GAP_TILES.map((t, i) => (
             <article
               key={t.who}
@@ -491,7 +529,8 @@ export function MarketGap() {
                 <Icon name="check" size={20} className="mt-0.5 shrink-0" />
                 {t.gets}
               </p>
-              <p className="flex items-start gap-2 text-white/85">
+              {/* Pure white: the theme's tinted white is 4.36:1 on the violet tile. */}
+              <p className="flex items-start gap-2 text-[#ffffff]">
                 <Icon
                   name={t.tone === "green" ? "spark" : "x-circle"}
                   size={20}
@@ -502,6 +541,7 @@ export function MarketGap() {
             </article>
           ))}
         </VizIn>
+        <SwipeHint />
 
         <div className="mt-6 grid gap-5 lg:grid-cols-[1.45fr_1fr]">
           <div className="rounded-3xl border border-border bg-paper p-5 md:p-7">
@@ -695,9 +735,7 @@ export function GoogleProof() {
         <VizIn className="flex flex-col justify-between gap-6 rounded-[2rem] bg-white p-7 shadow-[0_30px_60px_-45px_rgba(19,33,47,.55)] md:p-9">
           <div className="flex flex-col gap-3">
             <Eyebrow tone="saffron">Google reviews</Eyebrow>
-            <h2 className="text-3xl leading-tight text-ink md:text-4xl">
-              What learners say on Google
-            </h2>
+            <h2 className="text-ink section-title">What learners say on Google</h2>
           </div>
           <div className="flex flex-wrap items-center gap-5">
             <div className="w-48 shrink-0 sm:w-56">
@@ -755,7 +793,7 @@ export function GoogleProof() {
                 <Icon name={p.icon} size={26} />
               </span>
               <p>
-                <span className="block text-5xl font-extrabold leading-none text-white md:text-6xl">
+                <span className="block text-4xl font-extrabold leading-none text-white sm:text-5xl md:text-6xl">
                   {p.value === 6 ? "~" : ""}
                   <CountUp value={p.value} suffix={p.suffix} />
                 </span>

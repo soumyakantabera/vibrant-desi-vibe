@@ -91,7 +91,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "The technical interview is usually not the problem. The problem is the client call six months in, where you understand every word and cannot get a sentence out. That is business English rather than general fluency — meetings, status updates and disagreeing with a senior politely — which is covered in [Business English](/course-business-english).",
+    text: "The technical interview is usually not the problem. The problem is the client call six months in, where you understand every word and cannot get a sentence out. That is business English rather than general fluency — meetings, status updates and disagreeing with a senior politely — which is covered in [Interactive Speaking](/course-interactive-speaking).",
   },
   {
     t: "h3",
@@ -132,7 +132,6 @@ export const body: ArticleBody = [
       ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
       ["Intermediate Spoken English", "4 months · up to 2 classes/week", "₹1,999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,599/month"],
-      ["Business English", "3 months · up to 2 classes/week", "₹2,499/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹2,499/month"],
     ],
   },
@@ -171,7 +170,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If none of those apply, chat on WhatsApp — we will suggest the batch that fits your timing. Want to sit in a real class first? Book the ₹199 Demo Class.",
+    text: "If none of those apply, chat on WhatsApp — we will suggest the batch that fits your timing. Not sure yet? Get a free consultation first.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

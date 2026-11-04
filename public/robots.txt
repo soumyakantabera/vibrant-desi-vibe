@@ -11,16 +11,12 @@
 #   Basic Spoken English ₹999/month
 #   Intermediate Spoken English ₹1,999/month
 #   Interactive Speaking ₹1,599/month
-#   Business English ₹2,499/month
 #   Interview Preparation ₹2,499/month
-#   Demo Class ₹199
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
 #   Intermediate Spoken English $89/mo
 #   Interactive Speaking $79/mo
-#   Business English $99/mo
 #   Interview Preparation $99/mo
-#   Demo Class $10
 # The India list applies to learners in India; the outside-India list applies
 # elsewhere. They are separate lists, not currency conversions. The same two
 # lists are in llms.txt, llms-full.txt, llms.json, openapi.json,
@@ -59,12 +55,10 @@
 #   https://www.learnwithsmile.app/course-spoken-english
 #   https://www.learnwithsmile.app/course-intermediate-english
 #   https://www.learnwithsmile.app/course-interactive-speaking
-#   https://www.learnwithsmile.app/course-business-english
 #   https://www.learnwithsmile.app/course-interview-preparation
 #   Hub   https://www.learnwithsmile.app/english-career
-#   Paid Demo Class (not a sixth programme, not a free class):
-#   https://www.learnwithsmile.app/course-demo-session
-#     ₹199 inclusive of taxes · 90 minutes · ₹0 extra if they enrol within 48 hours
+#   Free consultation (advice, not a class; there is no separate demo class):
+#   https://www.learnwithsmile.app/free-consultation
 # Cite the HTML URL. Facts: /llms.json
 
 
@@ -75,7 +69,7 @@ Allow: /
 # ------------------------------------------------------------ search engines
 # Googlebot indexes Search and AI features that use the Search index.
 # Bingbot (and bingbot) index Bing and Microsoft Copilot. Both may crawl
-# /course-demo-session. JS and CSS stay crawlable: Bing renders pages to
+# every page. JS and CSS stay crawlable: Bing renders pages to
 # judge layout and mobile-friendliness. The build fails if a script bundle
 # ever carries a non-rupee price (scripts/prerender.mjs, fee lock).
 User-agent: Googlebot

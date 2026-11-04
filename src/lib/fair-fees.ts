@@ -137,7 +137,7 @@ export const BEFORE_YOU_PAY: { check: string; ask: string; warning: string; ours
     check: "Did you speak in the trial?",
     ask: "Is the free session a class, or a sales pitch?",
     warning: "A 'free demo' that is a counsellor and a payment link.",
-    ours: "Free consultation is counselling; the ₹199 Demo Class is a real class, adjusted if you join.",
+    ours: "Free consultation is counselling and we say so. Not a class, no payment link pushed.",
   },
 ];
 

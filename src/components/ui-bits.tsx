@@ -8,6 +8,25 @@ import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
 import { CITY_PATHS } from "@/lib/cities";
 
+/** Phones only: "Swipe for more" under a `.phone-swipe` row (place it right after the row). */
+export function SwipeHint({ label = "Swipe for more" }: { label?: string }) {
+  return (
+    <div className="swipe-hint" aria-hidden="true">
+      <span className="swipe-hint-pill">
+        {label}
+        <span className="swipe-hint-dots">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span className="swipe-hint-hand">
+          <Icon name="arrow-right" size={14} />
+        </span>
+      </span>
+    </div>
+  );
+}
+
 export function SectionHeader({
   eyebrow,
   eyebrowTone = "default",
@@ -36,9 +55,7 @@ export function SectionHeader({
   return (
     <div className={`${align === "center" ? "text-center mx-auto" : ""} max-w-3xl mb-6 md:mb-8`}>
       {eyebrow && <span className={ebClass}>{eyebrow}</span>}
-      <h2 className={`mt-3 text-2xl md:text-[2rem] leading-[1.12] ${invert ? "text-cream" : ""}`}>
-        {title}
-      </h2>
+      <h2 className={`section-title mt-3 ${invert ? "text-cream" : ""}`}>{title}</h2>
       {subtitle && (
         <p className={`mt-3 text-sm md:text-base ${invert ? "text-white/95" : "text-ink/85"}`}>
           {subtitle}
@@ -133,7 +150,7 @@ export function GuidesStrip({
     <section className="section">
       <div className="container-x">
         <SectionHeader eyebrow={eyebrow} title={title} subtitle={subtitle} />
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="phone-swipe grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {SITE_GUIDES.map((g) => {
             const tone = tones[g.color];
             return (
@@ -156,6 +173,7 @@ export function GuidesStrip({
             );
           })}
         </div>
+        <SwipeHint label="Swipe for more guides" />
         <div className="mt-8 text-center">
           <Link to="/guides" className="btn btn-outline btn-sm">
             All English class guides <Icon name="arrow-right" size={14} />
@@ -178,14 +196,12 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
   const heading = invert ? "text-cream" : "text-ink";
   const body = invert ? "text-white/90" : "text-ink/75";
   return (
-    <section className={invert ? "bg-brand-deep py-8 md:py-10" : "bg-[#F7F4EE] py-8 md:py-10"}>
+    <section className={invert ? "bg-brand-deep py-12 md:py-14" : "bg-[#F7F4EE] py-12 md:py-14"}>
       <div className="container-x">
         <p className={`font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           From Kolkata
         </p>
-        <h2
-          className={`mt-2 max-w-3xl font-display text-xl font-extrabold leading-tight md:text-2xl ${heading}`}
-        >
+        <h2 className={`section-title mt-2 max-w-3xl font-display font-extrabold ${heading}`}>
           Kolkata, pan-India, now worldwide.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>

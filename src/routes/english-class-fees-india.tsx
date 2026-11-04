@@ -4,7 +4,7 @@ import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/fees";
-import { DemoStrip, PricingGrid } from "@/components/package/PackageSections";
+import { ConsultStrip, PricingGrid } from "@/components/package/PackageSections";
 import { MarketGap } from "@/components/package/MarketSections";
 
 const PATH = "/english-class-fees-india";
@@ -77,13 +77,13 @@ function Page() {
     >
       <section className="section bg-paper" id="fees">
         <div className="container-x">
-          <h2 className="mb-2 text-2xl md:text-[2rem]">Learn With Smile fees, side by side</h2>
+          <h2 className="mb-2 section-title">Learn With Smile fees, side by side</h2>
           <p className="mb-6 max-w-3xl text-ink/80">
             Every fee includes live classes, the Bolo practice app — daily practice, video lessons
             and a weekly teacher review — and the same teacher.
           </p>
           <PricingGrid />
-          <DemoStrip />
+          <ConsultStrip />
         </div>
       </section>
       <MarketGap />

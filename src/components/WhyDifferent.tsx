@@ -156,8 +156,15 @@ function Cell({ mark, note }: { mark: Mark; note: string }) {
 export function WhyDifferent({
   compact = false,
   visuals = true,
+  table = true,
   level = "basic",
 }: {
+  /**
+   * The named-provider table and its mobile cards. Off on the homepage, which
+   * already tells the same story in the scored "What you get" matrix
+   * (MarketGap). Course and guide pages keep it: the matrix is not on them.
+   */
+  table?: boolean;
   /** Which Bolo level the app reel plays (course pages pass their own). */
   level?: BoloLevel;
   compact?: boolean;
@@ -168,13 +175,10 @@ export function WhyDifferent({
     <section className="section bg-white" id="why-different" aria-labelledby="why-different-title">
       <div className="container-x">
         <div className="mb-8 max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-brand-deep">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-deep">
             Why we're different
           </span>
-          <h2
-            id="why-different-title"
-            className="mt-3 text-[1.65rem] font-bold leading-[1.12] text-ink md:text-[2.35rem]"
-          >
+          <h2 id="why-different-title" className="section-title mt-3 font-bold text-ink">
             Daily practice, a live teacher and your own language —{" "}
             <span className="text-brand">
               <FeeText text="from ₹999/month" />
@@ -187,126 +191,130 @@ export function WhyDifferent({
 
         {visuals && <Visuals level={level} />}
 
-        {/* desktop table */}
-        <VizIn className="hidden overflow-hidden rounded-3xl border border-border lg:block">
-          <table className="w-full text-left text-sm">
-            <caption className="sr-only">
-              How the main ways to learn spoken English in India compare
-            </caption>
-            <thead className="bg-paper text-xs font-bold uppercase tracking-[0.1em] text-ink/60">
-              <tr>
-                <th scope="col" className="px-5 py-3">
-                  What you can buy
-                </th>
-                <th scope="col" className="px-5 py-3">
-                  Daily practice
-                </th>
-                <th scope="col" className="px-5 py-3">
-                  Live teacher who corrects you
-                </th>
-                <th scope="col" className="px-5 py-3">
-                  Taught in your language
-                </th>
-                <th scope="col" className="px-5 py-3">
-                  Pay one month at a time
-                </th>
-                <th scope="col" className="px-5 py-3">
-                  Typical price
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {DIFFERENT_ROWS.map((r, i) => (
-                <tr
-                  key={r.what}
-                  style={{ "--d": `${i * 70}ms` } as CSSProperties}
-                  className={`viz-fade border-t border-border align-top ${r.ours ? "bg-brand-soft/60 font-semibold" : ""}`}
-                >
-                  <th scope="row" className="px-5 py-4">
-                    {r.logos && (
-                      <span className="mb-1.5 flex items-center gap-2">
-                        {r.logos.map((l) => (
-                          <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
-                        ))}
-                      </span>
-                    )}
-                    <span className="flex items-center gap-2 font-bold text-ink">
-                      {r.ours && <BoloAppIcon size={22} />}
-                      {r.what}
-                    </span>
-                    <span className="text-xs font-normal text-ink/60">{r.examples}</span>
-                  </th>
-                  <td className="px-5 py-4 text-ink/85">
-                    <Cell mark={r.daily} note={r.dailyNote} />
-                  </td>
-                  <td className="px-5 py-4 text-ink/85">
-                    <Cell mark={r.teacher} note={r.teacherNote} />
-                  </td>
-                  <td className="px-5 py-4 text-ink/85">
-                    <Cell mark={r.language} note={r.languageNote} />
-                  </td>
-                  <td className="px-5 py-4 text-ink/85">
-                    <Cell mark={r.billing} note={r.billingNote} />
-                  </td>
-                  <td className="px-5 py-4 font-bold text-ink">
-                    <FeeText text={r.price} />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </VizIn>
-
-        {/* mobile cards */}
-        <ul className="grid gap-3 md:grid-cols-2 lg:hidden">
-          {DIFFERENT_ROWS.map((r) => (
-            <li
-              key={r.what}
-              className={`rounded-2xl border p-4 ${r.ours ? "border-brand bg-brand-soft/60" : "border-border bg-white"}`}
-            >
-              {r.logos && (
-                <span className="mb-1.5 flex items-center gap-2">
-                  {r.logos.map((l) => (
-                    <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+        {table && (
+          <>
+            {/* desktop table */}
+            <VizIn className="hidden overflow-hidden rounded-3xl border border-border lg:block">
+              <table className="w-full text-left text-sm">
+                <caption className="sr-only">
+                  How the main ways to learn spoken English in India compare
+                </caption>
+                <thead className="bg-paper text-xs font-bold uppercase tracking-[0.1em] text-ink/60">
+                  <tr>
+                    <th scope="col" className="px-5 py-3">
+                      What you can buy
+                    </th>
+                    <th scope="col" className="px-5 py-3">
+                      Daily practice
+                    </th>
+                    <th scope="col" className="px-5 py-3">
+                      Live teacher who corrects you
+                    </th>
+                    <th scope="col" className="px-5 py-3">
+                      Taught in your language
+                    </th>
+                    <th scope="col" className="px-5 py-3">
+                      Pay one month at a time
+                    </th>
+                    <th scope="col" className="px-5 py-3">
+                      Typical price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DIFFERENT_ROWS.map((r, i) => (
+                    <tr
+                      key={r.what}
+                      style={{ "--d": `${i * 70}ms` } as CSSProperties}
+                      className={`viz-fade border-t border-border align-top ${r.ours ? "bg-brand-soft/60 font-semibold" : ""}`}
+                    >
+                      <th scope="row" className="px-5 py-4">
+                        {r.logos && (
+                          <span className="mb-1.5 flex items-center gap-2">
+                            {r.logos.map((l) => (
+                              <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                            ))}
+                          </span>
+                        )}
+                        <span className="flex items-center gap-2 font-bold text-ink">
+                          {r.ours && <BoloAppIcon size={22} />}
+                          {r.what}
+                        </span>
+                        <span className="text-xs font-normal text-ink/60">{r.examples}</span>
+                      </th>
+                      <td className="px-5 py-4 text-ink/85">
+                        <Cell mark={r.daily} note={r.dailyNote} />
+                      </td>
+                      <td className="px-5 py-4 text-ink/85">
+                        <Cell mark={r.teacher} note={r.teacherNote} />
+                      </td>
+                      <td className="px-5 py-4 text-ink/85">
+                        <Cell mark={r.language} note={r.languageNote} />
+                      </td>
+                      <td className="px-5 py-4 text-ink/85">
+                        <Cell mark={r.billing} note={r.billingNote} />
+                      </td>
+                      <td className="px-5 py-4 font-bold text-ink">
+                        <FeeText text={r.price} />
+                      </td>
+                    </tr>
                   ))}
+                </tbody>
+              </table>
+            </VizIn>
+
+            {/* mobile cards */}
+            <ul className="grid gap-3 md:grid-cols-2 lg:hidden">
+              {DIFFERENT_ROWS.map((r) => (
+                <li
+                  key={r.what}
+                  className={`rounded-2xl border p-4 ${r.ours ? "border-brand bg-brand-soft/60" : "border-border bg-white"}`}
+                >
+                  {r.logos && (
+                    <span className="mb-1.5 flex items-center gap-2">
+                      {r.logos.map((l) => (
+                        <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                      ))}
+                    </span>
+                  )}
+                  <p className="flex items-center gap-2 font-bold text-ink">
+                    {r.ours && <BoloAppIcon size={22} />}
+                    {r.what}
+                    <span className="ml-auto text-sm">
+                      <FeeText text={r.price} />
+                    </span>
+                  </p>
+                  <div className="mt-2 grid gap-1.5 text-sm text-ink/80">
+                    <Cell mark={r.daily} note={`Daily practice: ${r.dailyNote}`} />
+                    <Cell mark={r.teacher} note={`Teacher: ${r.teacherNote}`} />
+                    <Cell mark={r.language} note={`Your language: ${r.languageNote}`} />
+                    <Cell mark={r.billing} note={`How you pay: ${r.billingNote}`} />
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs text-ink/60">
+              Checked {PROVIDERS_CHECKED} against each provider's public pages:{" "}
+              {DIFFERENT_ROWS.filter((r) => r.source).map((r, i, all) => (
+                <span key={r.what}>
+                  <a
+                    href={r.source!.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="underline decoration-dotted underline-offset-2"
+                  >
+                    {r.what}
+                  </a>
+                  {i < all.length - 1 ? ", " : "."}
                 </span>
-              )}
-              <p className="flex items-center gap-2 font-bold text-ink">
-                {r.ours && <BoloAppIcon size={22} />}
-                {r.what}
-                <span className="ml-auto text-sm">
-                  <FeeText text={r.price} />
-                </span>
-              </p>
-              <div className="mt-2 grid gap-1.5 text-sm text-ink/80">
-                <Cell mark={r.daily} note={`Daily practice: ${r.dailyNote}`} />
-                <Cell mark={r.teacher} note={`Teacher: ${r.teacherNote}`} />
-                <Cell mark={r.language} note={`Your language: ${r.languageNote}`} />
-                <Cell mark={r.billing} note={`How you pay: ${r.billingNote}`} />
-              </div>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-3 text-xs text-ink/60">
-          Checked {PROVIDERS_CHECKED} against each provider's public pages:{" "}
-          {DIFFERENT_ROWS.filter((r) => r.source).map((r, i, all) => (
-            <span key={r.what}>
-              <a
-                href={r.source!.url}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                className="underline decoration-dotted underline-offset-2"
-              >
-                {r.what}
-              </a>
-              {i < all.length - 1 ? ", " : "."}
-            </span>
-          ))}{" "}
-          Prices are typical 2026 bands in India. City classrooms: local listings. PlanetSpark
-          teaches children 4–13 and is shown as the luxury end of the market; every Learn With Smile
-          course is for adults 15+.
-        </p>
-        <TrademarkNotice className="mt-2" />
+              ))}{" "}
+              Prices are typical 2026 bands in India. City classrooms: local listings. PlanetSpark
+              teaches children 4–13 and is shown as the luxury end of the market; every Learn With
+              Smile course is for adults 15+.
+            </p>
+            <TrademarkNotice className="mt-2" />
+          </>
+        )}
 
         {!compact && (
           <div className="mt-8 grid gap-6 rounded-3xl bg-paper p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">
