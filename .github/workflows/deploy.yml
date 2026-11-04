@@ -10,13 +10,19 @@ permissions:
   pages: write
   id-token: write
 
+# One deploy at a time. A run that is already publishing is never cancelled
+# halfway (GitHub's Pages starter does the same); runs queued behind it are
+# collapsed to the newest, so the latest commit still goes out next.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    # The whole job takes about a minute. Without a cap a hung step holds the
+    # pages concurrency slot (and Actions minutes) for the 6-hour default.
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -117,6 +123,10 @@ jobs:
           fi
           if ! grep -q 'child-protection' dist/llms.json; then
             echo "::error::llms.json is missing child-protection"; exit 1
+          fi
+          if ! grep -q '"if_user_wants_to_connect"' dist/llms.json \
+             || ! grep -q 'give the WhatsApp link, not the website' dist/llms.txt; then
+            echo "::error::llms files lost the WhatsApp-first contact rule"; exit 1
           fi
           if ! grep -q 'g.page' dist/index.html; then
             echo "::error::index.html is missing Google Business sameAs"; exit 1
@@ -234,14 +244,25 @@ jobs:
           echo "Submitting $(echo "$urls" | jq 'length') URLs to IndexNow"
           # api.indexnow.org shares with every participating engine; Bing and
           # Yandex are also called directly so one slow relay cannot drop the push.
+          # Each endpoint is tried on its own: under `set -e` a failed relay used
+          # to end the loop before Bing and Yandex were ever called.
+          ok=0
           for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow https://yandex.com/indexnow; do
             echo "POST $endpoint"
-            curl --fail-with-body --retry 2 -sS \
+            if curl --fail-with-body --retry 2 --max-time 30 -sS \
               -H 'Content-Type: application/json; charset=utf-8' \
               -d "$payload" \
-              "$endpoint"
+              "$endpoint"; then
+              ok=$((ok + 1))
+            else
+              echo "::warning::IndexNow push to $endpoint failed"
+            fi
             echo
           done
+          echo "IndexNow accepted by $ok of 3 endpoints"
+          if [ "$ok" -eq 0 ]; then
+            echo "::warning::No IndexNow endpoint accepted the push — run the IndexNow workflow by hand"
+          fi
           # Google retired the sitemap ping endpoint in 2023 (it returns 404) and
           # does not take IndexNow. Google recrawls from sitemap.xml lastmod and
           # robots.txt; request indexing for a brand-new URL in Search Console.
