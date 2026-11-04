@@ -1,7 +1,7 @@
 /**
  * Basic Spoken English, taught through Hindi or Marathi (November 2026).
  *
- * Same course as Basic Spoken English — 6 months, ₹999/month inclusive of
+ * Same course as Basic Spoken English — 3 months, ₹999/month inclusive of
  * taxes, about 6 learners, up to 2 live classes a week, Bolo included — with
  * a teacher who speaks the learner's language. Hard concepts are explained in
  * Hindi or Marathi; the speaking practice is in English, and the share of
@@ -119,7 +119,7 @@ export function mediumCourse(base: CourseData, lang: MediumLang): CourseData {
     slug: m.slug,
     feeSlug: "spoken-english",
     title: m.title,
-    tagline: `6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Taught by a ${m.name}-speaking teacher: hard ideas explained in ${m.name}, practice in English — plus daily practice in the Bolo app.`,
+    tagline: `3 months, ₹999/month, inclusive of taxes, approx. 6 learners. Taught by a ${m.name}-speaking teacher: hard ideas explained in ${m.name}, practice in English — plus daily practice in the Bolo app.`,
     liveNote: `✓ 100% online live · ✓ ${m.name}-speaking teacher · ✓ Practice in English, help in ${m.name} · ✓ Daily practice in Bolo · ✓ About 6 in a batch · ✓ Afternoon · evening · night slots`,
     prerequisites: `None. For ${m.who}, who cannot yet finish a sentence out loud in English.`,
     waDemo: m.waDemo,
@@ -136,7 +136,7 @@ export function mediumCourse(base: CourseData, lang: MediumLang): CourseData {
       },
       {
         q: `How is this different from the regular Basic Spoken English course?`,
-        a: `Same course, same fee (₹999/month), same 6 months, same batch size of about 6 and the same Bolo app. The only difference is the medium: here the teacher can explain in ${m.name}. If you are comfortable with English-only explanations, the regular course works too.`,
+        a: `Same course, same fee (₹999/month), same 3 months, same batch size of about 6 and the same Bolo app. The only difference is the medium: here the teacher can explain in ${m.name}. If you are comfortable with English-only explanations, the regular course works too.`,
       },
       {
         q: "What daily practice do I get?",
@@ -148,6 +148,6 @@ export function mediumCourse(base: CourseData, lang: MediumLang): CourseData {
       },
       ...(base.faqs ?? []),
     ],
-    metaDescription: `Basic Spoken English taught through ${m.name}: a ${m.name}-speaking teacher, live batch of about 6, daily practice in the Bolo app, weekly review. 6 months, ₹999/month incl. taxes.`,
+    metaDescription: `Basic Spoken English taught through ${m.name}: a ${m.name}-speaking teacher, live batch of about 6, daily practice in the Bolo app, weekly review. 3 months, ₹999/month incl. taxes.`,
   };
 }

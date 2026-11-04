@@ -1142,14 +1142,14 @@ type PlanCopy = {
 
 const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
   "spoken-english": {
-    tag: "Start here",
+    tag: "Zero to confident",
     icon: "mic",
     image: IMG.spokenEnglish,
-    for: "Cannot finish a sentence yet? Speak from zero — daily talk first.",
+    for: "Cannot finish a sentence yet? Three months to speak up in everyday English.",
     highlights: [
-      "2,000+ everyday words, corrected live",
-      "Introduce yourself and answer HR questions out loud",
-      "30 min grammar + 1 hr speaking, every class",
+      "Speaking out loud from class 1, corrected live",
+      "1,000+ everyday words and a confident self-intro",
+      "A 2-minute talk to the batch by month 3",
     ],
     path: "/course-spoken-english",
     tone: "green",

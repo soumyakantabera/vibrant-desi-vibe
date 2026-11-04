@@ -136,7 +136,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/spoken-english-for-beginners-india",
       title: "Spoken English for beginners",
-      description: "Zero to a 2-minute turn. 6 months, ₹999/mo, around 6 learners.",
+      description: "Zero to a 2-minute turn. 3 months, ₹999/mo, around 6 learners.",
     },
     {
       href: "/how-to-speak-english-fluently",

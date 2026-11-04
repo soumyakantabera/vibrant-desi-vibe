@@ -54,7 +54,7 @@ export function stateLocalFaqs(st: StateInfo): { q: string; a: string }[] {
     },
     {
       q: `What are the class timings for learners in ${st.name}?`,
-      a: `Batches run in afternoon, evening and night slots (IST), so you can join after college or work from ${others.join(", ")} or anywhere else in ${st.name}. Basic Spoken English is 6 months, 1 hr 30 min a class, up to 2 classes a week, with daily practice in the Bolo app between classes.`,
+      a: `Batches run in afternoon, evening and night slots (IST), so you can join after college or work from ${others.join(", ")} or anywhere else in ${st.name}. Basic Spoken English is 3 months, 1 hr 30 min a class, up to 2 classes a week, with daily practice in the Bolo app between classes.`,
     },
     {
       q: `Which language does the teacher explain in, for ${st.name}?`,

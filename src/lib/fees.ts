@@ -74,7 +74,7 @@ export const COURSE_FEE: Record<
     inr: 999,
     display: "₹999",
     monthly: "₹999/month",
-    months: 6,
+    months: 3,
   },
   "intermediate-english": {
     name: "Intermediate Spoken English",

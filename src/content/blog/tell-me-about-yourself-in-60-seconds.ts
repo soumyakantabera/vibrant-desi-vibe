@@ -212,7 +212,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Interview English is a module in Spoken English and Interactive Speaking. If the interview is the only freeze and you already talk, [Interview Preparation](/course-interview-preparation) is the 2-month room — HR screens, STAR, recorded mocks, batch of about 6.",
+    text: "Interview English is a block in Interactive Speaking; Basic Spoken English stops at a confident self-introduction. If the interview is the only freeze and you already talk, [Interview Preparation](/course-interview-preparation) is the 2-month room — HR screens, STAR, recorded mocks, batch of about 6.",
     course: "/course-spoken-english",
     label: "See Spoken English",
   },

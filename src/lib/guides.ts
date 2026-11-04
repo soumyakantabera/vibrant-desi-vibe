@@ -217,7 +217,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-for-beginners-india",
     title: "Spoken English for beginners",
-    sub: "From zero: sounds, sentences, a 2-minute turn. 6 months, ₹999/mo.",
+    sub: "From zero: sounds, sentences, a 2-minute turn. 3 months, ₹999/mo.",
     icon: "mic",
     color: "sunshine",
     group: "choose",
@@ -233,7 +233,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/how-to-speak-english-fluently",
     title: "How to speak English fluently",
-    sub: "Fluency is speaking minutes, not 30-day ads. A 6-month map from zero.",
+    sub: "Fluency is speaking minutes, not 30-day ads. A 3-month start from zero.",
     icon: "record_voice_over",
     color: "indigo",
     group: "choose",
@@ -265,7 +265,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/how-long-to-learn-spoken-english",
     title: "How long it takes",
-    sub: "6 months from zero. 3 months workplace. 9–12 for Band 7+. Not 30 days.",
+    sub: "3 months zero to confident. ~7 to fluent. 3 months workplace. Not 30 days.",
     icon: "clock",
     color: "indigo",
     group: "money",
@@ -345,7 +345,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-for-freshers-india",
     title: "Spoken English for freshers",
-    sub: "Campus intro, HR screen, 60-second chair. Interview English in Spoken and Interactive.",
+    sub: "Campus intro, HR screen, 60-second chair. Interview Preparation, and a block in Interactive.",
     icon: "school",
     color: "brand",
     group: "audience",

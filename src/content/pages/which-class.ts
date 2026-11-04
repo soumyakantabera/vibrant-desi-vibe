@@ -7,7 +7,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If basic sentences work but tenses, flow and fillers do not, take [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo). Meetings and calls are practised in the same room; work emails are in [Intermediate](/course-intermediate-english). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (3 months, ₹999/mo, inclusive of taxes). If basic sentences work but tenses, flow and fillers do not, take [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo). Meetings and calls are practised in the same room; work emails are in [Intermediate](/course-intermediate-english). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
@@ -24,7 +24,7 @@ export const body: ArticleBody = [
       [
         "Cannot form a full sentence",
         "Spoken English",
-        "6 months · ₹999/mo, inclusive of taxes",
+        "3 months · ₹999/mo, inclusive of taxes",
         "Introduce yourself, shops, phone, 2 minutes on a topic",
       ],
       [
@@ -57,7 +57,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Spoken English — when daily life is the gap" },
   {
     t: "p",
-    text: "Spoken English is the 6-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of around 6. See [how long it takes](/how-long-to-learn-spoken-english) and Kavya’s story on [real results](/success-stories).",
+    text: "Spoken English is the 3-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of around 6. See [how long it takes](/how-long-to-learn-spoken-english) and Kavya’s story on [real results](/success-stories).",
   },
 
   { t: "h2", text: "Interactive English — when freeze is the gap" },
@@ -78,7 +78,7 @@ export const body: ArticleBody = [
     items: [
       "Do not buy IELTS because a cousin went abroad. Sit it with the test board when a **form** asks — we do not sell that paper.",
       "Do not buy 1:1 chat apps if you cannot form a sentence yet — there is nothing to practise.",
-      "Do not buy a 30-day fluency pack. Everyday talk is about 6 months live.",
+      "Do not buy a 30-day fluency pack. Confident everyday talk is about 3 months live; fluent, correct English about 7.",
       "Interview Preparation is for people who already speak and now fail the job conversation — 2 months, ₹2,499/mo. Sneha’s story is that lane. If you cannot form a sentence yet, start with Spoken English.",
     ],
   },

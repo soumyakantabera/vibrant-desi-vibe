@@ -7,25 +7,25 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, interview English (HR, tell-me-about-yourself), up to 2 classes/week.",
+      "3 months, ₹999/month, inclusive of taxes, approx. 6 learners. Zero to confident: speak up in simple everyday English — 1,000+ words, live correction every class, a 2-minute talk by month 3. Up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
     heroImage: IMG.spokenEnglish,
     midImage: IMG.womanLaptop,
     footerImage: IMG.studentLaptop2,
-    duration: "6 months · 1 hr 30 min · up to 2 classes/week",
+    duration: "3 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
     price: "₹999/month",
     liveNote:
-      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Zero to confident in 3 months · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
-      "Introduce yourself fluently in any social or work setting",
-      "Handle daily conversations — shops, travel, phone calls",
-      "Build a 2,000+ word everyday vocabulary",
-      "Speak with correct grammar, tense and pronunciation",
-      "Answer 'tell me about yourself' in 90 seconds",
-      "Practise HR-style questions live in the batch",
+      "Introduce yourself with confidence — at work, in class, with new people",
+      "Handle daily conversations — shops, travel, directions, phone calls",
+      "Build a 1,000+ word everyday vocabulary",
+      "Speak in correct simple sentences — present and past",
+      "Speak for 60 seconds on a topic without freezing",
+      "Give a 2-minute talk to the batch — ready for Intermediate or Interactive Speaking",
     ],
     modules: [
       {
@@ -38,11 +38,11 @@ export const COURSES: Record<string, CourseData> = {
         ],
       },
       {
-        title: "Grammar Without Pain",
+        title: "Grammar for Speaking",
         items: [
-          "Tenses through real conversations",
-          "Articles, prepositions, modals",
-          "Sentence patterns that work everywhere",
+          "To be, present simple and simple past — said out loud",
+          "Articles, pronouns and prepositions",
+          "Questions: what, where, when — and requests with can / could",
           "Live error-correction games",
         ],
       },
@@ -51,8 +51,8 @@ export const COURSES: Record<string, CourseData> = {
         items: [
           "1,000+ everyday words & phrases",
           "Flashcard game sessions",
-          "Phrasal verbs & collocations",
-          "Synonyms for word-power",
+          "Common phrasal verbs",
+          "Words for home, work, money and feelings",
         ],
       },
       {
@@ -65,37 +65,27 @@ export const COURSES: Record<string, CourseData> = {
         ],
       },
       {
-        title: "Group Discussions & Debates",
-        items: [
-          "Speak your opinion in 60 seconds",
-          "Active listening exercises",
-          "Disagreeing politely in English",
-          "Live polls & class debates",
-        ],
-      },
-      {
-        title: "Confidence & Presentation",
+        title: "Confidence & Speaking Up",
         items: [
           "Self-introduction mastery",
-          "Storytelling techniques",
+          "Speak your opinion in 60 seconds",
           "Eye contact, body language, voice",
-          "Final live presentation with feedback",
-        ],
-      },
-      {
-        title: "Interview English",
-        items: [
-          "The 90-second 'tell me about yourself'",
-          "HR questions: why you, strengths, weaknesses",
-          "STAR — situation, task, action, result",
-          "Notice period and salary, said calmly",
+          "Final 2-minute talk to the batch, with feedback",
         ],
       },
     ],
     faqs: [
       {
+        q: "Is 3 months enough?",
+        a: "Three months takes you from zero to speaking up with confidence in simple everyday English — introductions, daily conversations, a 2-minute talk. That is roughly CEFR A2, exactly where Intermediate Spoken English starts. For correct, fluent English with connected ideas and work emails, continue with Intermediate (4 months, ₹1,999/month). The course is extendable if a phase needs longer.",
+      },
+      {
+        q: "What comes after Basic Spoken English?",
+        a: "Pick the next room by goal. Correct, fluent English and workplace emails → Intermediate Spoken English (4 months, ₹1,999/month). Meetings, client calls and freezing at work → Interactive Speaking (3 months, ₹1,599/month). An interview coming up → Interview Preparation (2 months, ₹2,499/month).",
+      },
+      {
         q: "Do you cover job interviews?",
-        a: "Yes. In this Spoken English room you practise the 90-second introduction, HR-style questions and STAR answers live in the batch of about 6. If you already speak and the interview is the only freeze, take Interview Preparation — 2 months, ₹2,499/month.",
+        a: "Basic Spoken English gives you a confident self-introduction — the first minute of any interview. HR questions, STAR answers and mock rounds are taught in Interview Preparation (2 months, ₹2,499/month); Interactive Speaking also has an interview block.",
       },
       {
         q: "I can barely speak. Will this work for me?",
@@ -164,7 +154,7 @@ export const COURSES: Record<string, CourseData> = {
       roadmap: [
         {
           from: 1,
-          to: 2,
+          to: 1,
           title: "Build the Base",
           goal: "From single words to full sentences you can say without notes.",
           tone: "coral",
@@ -176,7 +166,6 @@ export const COURSES: Record<string, CourseData> = {
                 "Sentence construction",
                 "Nouns & articles",
                 "Pronouns & possessives",
-                "This, that, these, those",
               ],
             },
             {
@@ -185,20 +174,25 @@ export const COURSES: Record<string, CourseData> = {
             },
             {
               skill: "Speaking",
-              items: ["Daily 10-minute speaking warm-ups", "Self-introduction"],
+              items: ["Daily 10-minute speaking warm-ups", "30-second self-introduction"],
             },
           ],
         },
         {
-          from: 3,
-          to: 4,
+          from: 2,
+          to: 2,
           title: "Daily Life English",
-          goal: "Talk about your day, your routine and your plans in the present tense.",
+          goal: "Talk about your day, your routine and what happened yesterday.",
           tone: "indigo",
           tracks: [
             {
               skill: "Grammar",
-              items: ["Present simple tense", "Always, usually, never", "Prepositions: in, on, at"],
+              items: [
+                "Present simple tense",
+                "Simple past for your own story",
+                "Always, usually, never",
+                "Prepositions: in, on, at",
+              ],
             },
             {
               skill: "Vocabulary",
@@ -212,10 +206,10 @@ export const COURSES: Record<string, CourseData> = {
           ],
         },
         {
-          from: 5,
-          to: 6,
-          title: "Real Conversations",
-          goal: "Handle the conversations of a normal week — shop, phone, directions, interview.",
+          from: 3,
+          to: 3,
+          title: "Speak Up",
+          goal: "Handle the conversations of a normal week — and speak up without freezing.",
           tone: "brand",
           tracks: [
             {
@@ -225,22 +219,24 @@ export const COURSES: Record<string, CourseData> = {
                 "Shopping & prices",
                 "Asking directions",
                 "Requests: can / could",
-                "Weather & feelings",
                 "Phone etiquette",
               ],
             },
             {
-              skill: "Interview",
-              items: ["The 90-second 'tell me about yourself'", "HR questions, said out loud"],
+              skill: "Confidence",
+              items: [
+                "A confident self-introduction",
+                "Final 2-minute talk to the batch, with feedback",
+              ],
             },
           ],
         },
       ],
       roadmapNote:
-        "Month spans are the plan for a typical batch. The course is extendable — if a phase needs longer, your teacher holds it.",
+        "Month spans are the plan for a typical batch. The course is extendable — if a phase needs longer, your teacher holds it. Next: Intermediate Spoken English (correct, fluent, work-ready) or Interactive Speaking (meetings and calls).",
     },
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
+      "Live online Basic Spoken English for Indian learners: zero to confident in 3 months. Up to 2 classes/week, approximately 6 learners per batch, ₹999/month inclusive of taxes. Self-introduction, daily conversations, a 2-minute talk.",
   },
   "intermediate-english": {
     slug: "intermediate-english",
@@ -260,7 +256,7 @@ export const COURSES: Record<string, CourseData> = {
     liveNote:
       "✓ 100% online live · ✓ English to English · ✓ 30 min grammar + 1 hr communication · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     prerequisites:
-      "You can already make simple English sentences (roughly CEFR A2). If you cannot yet finish a sentence out loud, start with Basic Spoken English.",
+      "You can already make simple English sentences (roughly CEFR A2) — where the 3-month Basic Spoken English course finishes. If you cannot yet finish a sentence out loud, start with Basic Spoken English.",
     outcomes: [
       "Use all 8 parts of speech, tenses and articles correctly while you talk",
       "Speak for 60–90 seconds on a random topic with fewer fillers (um, ah, like)",

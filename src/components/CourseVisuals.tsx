@@ -399,84 +399,178 @@ function ChipBand({
 }
 
 /**
- * The adult catalogue as a ladder: where to start, how long each room runs.
- * Bar length is the course's own month count, read from the course record.
+ * The adult catalogue as a path, not a bar chart: one start step, a fork by
+ * goal, then Interview Preparation. Each room starts where the one before it
+ * ends, so the card says where you start and where you leave. Months and fees
+ * are read from the course records.
  */
-export const LADDER: { slug: string; step: string; who: string }[] = [
-  { slug: "spoken-english", step: "Start here", who: "Cannot finish a sentence yet" },
+type LadderStep = {
+  slug: string;
+  step: string;
+  icon: IconName;
+  start: string;
+  finish: string;
+  /** Tailwind classes: solid tile, soft wash, text on the soft wash. */
+  tone: { tile: string; soft: string; text: string; pip: string };
+};
+
+export const LADDER: LadderStep[] = [
+  {
+    slug: "spoken-english",
+    step: "Zero to confident",
+    icon: "mic",
+    start: "Cannot finish a sentence yet",
+    finish: "Speak up in everyday English — self-intro, shops, calls, a 2-minute talk",
+    tone: {
+      tile: "bg-tile-green",
+      soft: "bg-brand-soft",
+      text: "text-brand-deep",
+      pip: "bg-brand",
+    },
+  },
   {
     slug: "intermediate-english",
     step: "Level up",
-    who: "Basic sentences work — grammar, flow and work emails do not",
+    icon: "trend",
+    start: "Simple sentences work (about A2)",
+    finish: "Correct, connected English — tenses, 2–3 minute talks, work emails",
+    tone: {
+      tile: "bg-tile-saffron",
+      soft: "bg-amber-soft",
+      text: "text-[#6A4A10]",
+      pip: "bg-sunshine",
+    },
   },
   {
     slug: "interactive-speaking",
     step: "Unfreeze",
-    who: "Freezes on the mic, in meetings or on client calls",
+    icon: "messages",
+    start: "Know the words, freeze in meetings or calls",
+    finish: "Speak up in standups, client calls and group talk",
+    tone: { tile: "bg-tile-teal", soft: "bg-teal-soft", text: "text-[#145A5F]", pip: "bg-teal" },
   },
-  { slug: "interview-preparation", step: "Get hired", who: "Can talk, fails the HR screen" },
+  {
+    slug: "interview-preparation",
+    step: "Get hired",
+    icon: "clipboard",
+    start: "Can talk, the interview is the gap",
+    finish: "60-second intro, HR and STAR answers, rehearsed mocks",
+    tone: { tile: "bg-tile-violet", soft: "bg-plum-soft", text: "text-[#4E3470]", pip: "bg-plum" },
+  },
 ];
 
 function monthsOf(duration: string): number {
   return Number(duration.match(/(\d+)\s*month/i)?.[1] ?? 0);
 }
 
+function LadderCard({ r, n, on }: { r: LadderStep; n: number; on: boolean }) {
+  const course = COURSES[r.slug];
+  if (!course) return null;
+  const m = monthsOf(course.duration);
+  return (
+    <Link
+      to={`/course-${r.slug}` as "/course-spoken-english"}
+      aria-current={on ? "page" : undefined}
+      className={`group flex h-full flex-col overflow-hidden rounded-3xl border bg-white shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)] transition hover:-translate-y-1 hover:shadow-[0_24px_50px_-30px_rgba(19,33,47,.5)] ${
+        on ? "border-indigo-pop ring-2 ring-indigo-pop/30" : "border-border"
+      }`}
+    >
+      <div className="flex items-center gap-3 p-4 pb-3">
+        <span
+          className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl text-white ${r.tone.tile}`}
+        >
+          <Icon name={r.icon} size={22} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className={`text-xs font-extrabold uppercase tracking-[0.12em] ${r.tone.text}`}>
+            Step {n} · {r.step}
+            {on ? " · you are here" : ""}
+          </div>
+          <div className="font-display text-lg font-extrabold leading-tight text-ink group-hover:text-brand-deep">
+            {course.title}
+          </div>
+        </div>
+      </div>
+
+      <dl className={`mx-4 grid gap-2 rounded-2xl p-3 text-sm ${r.tone.soft}`}>
+        <div className="flex gap-2">
+          <dt className="w-14 shrink-0 font-bold text-ink/70">Start</dt>
+          <dd className="text-ink">{r.start}</dd>
+        </div>
+        <div className="flex gap-2">
+          <dt className="w-14 shrink-0 font-bold text-ink/70">Leave</dt>
+          <dd className="font-semibold text-ink">{r.finish}</dd>
+        </div>
+      </dl>
+
+      <div className="mt-auto flex items-center justify-between gap-3 p-4">
+        <div className="flex items-center gap-2" aria-label={`${m} months`}>
+          <span className="flex gap-1" aria-hidden="true">
+            {Array.from({ length: m }, (_, k) => (
+              <i key={k} className={`h-2.5 w-5 rounded-full ${r.tone.pip}`} />
+            ))}
+          </span>
+          <span className="font-display text-sm font-bold text-ink">{m} months</span>
+        </div>
+        <span className="font-display text-base font-extrabold text-ink">
+          <FeeText text={course.price} />
+        </span>
+      </div>
+    </Link>
+  );
+}
+
+/** Small "then" connector between ladder rows. */
+function LadderThen({ label }: { label: string }) {
+  return (
+    <div className="flex items-center justify-center gap-3 py-2" aria-hidden="true">
+      <span className="h-px w-10 bg-ink/15" />
+      <span className="rounded-full border border-border bg-white px-3 py-1 font-display text-xs font-bold uppercase tracking-[0.12em] text-ink/70">
+        {label}
+      </span>
+      <span className="h-px w-10 bg-ink/15" />
+    </div>
+  );
+}
+
 export function CourseLadder({ highlight }: { highlight?: string }) {
-  const rows = LADDER.map((r) => ({ ...r, course: COURSES[r.slug] })).filter((r) => r.course);
-  const longest = Math.max(...rows.map((r) => monthsOf(r.course.duration)));
+  const [start, intermediate, interactive, interview] = LADDER;
+  const total =
+    monthsOf(COURSES[start.slug]?.duration ?? "") +
+    monthsOf(COURSES[intermediate.slug]?.duration ?? "");
   return (
     <section className="section bg-brand-soft/30" aria-labelledby="ladder-title">
       <div className="container-x">
         <SectionHeader
           eyebrow="The English Ladder"
           eyebrowTone="indigo"
-          title={<span id="ladder-title">Find your step — then the duration and fee</span>}
-          subtitle="Four live rooms for adults 15+, about 6 learners each. Bar length is the course length in months."
+          title={<span id="ladder-title">Start at zero. Climb one step at a time.</span>}
+          subtitle="Four live rooms for adults 15+, about 6 learners each. Each room starts where the one before it ends, so the lessons do not repeat."
         />
-        <ol className="max-w-4xl mx-auto space-y-3">
-          {rows.map((r, i) => {
-            const m = monthsOf(r.course.duration);
-            const on = highlight === r.slug;
-            return (
-              <li key={r.slug}>
-                <Link
-                  to={`/course-${r.slug}` as "/course-spoken-english"}
-                  className={`group grid grid-cols-[2.5rem_1fr] gap-3 rounded-2xl border bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-lg md:grid-cols-[2.5rem_minmax(0,14rem)_1fr] md:items-center ${
-                    on ? "border-indigo-pop ring-2 ring-indigo-pop/30" : "border-border"
-                  }`}
-                  aria-current={on ? "page" : undefined}
-                >
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-ink font-display font-extrabold text-cream">
-                    {i + 1}
-                  </span>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold uppercase tracking-wider text-indigo-pop">
-                      {r.step}
-                      {on ? " · you are here" : ""}
-                    </div>
-                    <div className="font-display font-bold text-ink group-hover:text-brand">
-                      {r.course.title}
-                    </div>
-                    <div className="text-xs text-ink/75">{r.who}</div>
-                  </div>
-                  <div className="col-span-2 md:col-span-1">
-                    <div className="h-8 w-full rounded-full bg-brand-soft/60">
-                      <div
-                        className="flex h-8 items-center justify-end rounded-full bg-gradient-to-r from-brand to-indigo-pop px-3 text-xs font-display font-bold text-white"
-                        style={{ width: `${Math.max(28, (m / longest) * 100)}%` }}
-                      >
-                        {m} months
-                      </div>
-                    </div>
-                    <div className="mt-1 text-right text-sm font-display font-bold text-ink">
-                      <FeeText text={r.course.price} />
-                    </div>
-                  </div>
-                </Link>
+        <ol className="mx-auto max-w-4xl" aria-label="Course path">
+          <li>
+            <LadderCard r={start} n={1} on={highlight === start.slug} />
+          </li>
+          <li>
+            <LadderThen label="Then pick by goal" />
+            <ol className="grid gap-4 md:grid-cols-2">
+              <li>
+                <LadderCard r={intermediate} n={2} on={highlight === intermediate.slug} />
               </li>
-            );
-          })}
+              <li>
+                <LadderCard r={interactive} n={2} on={highlight === interactive.slug} />
+              </li>
+            </ol>
+          </li>
+          <li>
+            <LadderThen label="When the interview comes" />
+            <LadderCard r={interview} n={3} on={highlight === interview.slug} />
+          </li>
         </ol>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-ink/75">
+          From zero: about 3 months to speak up with confidence, about {total} to correct, fluent
+          English. Billed one month at a time, no auto-debit.
+        </p>
       </div>
     </section>
   );

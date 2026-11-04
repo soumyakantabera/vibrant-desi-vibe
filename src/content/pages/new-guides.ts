@@ -27,9 +27,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for beginners in India",
     h1Accent: "Zero to a 2-minute turn",
     standfirst:
-      "Sounds, sentences, then a two-minute turn. 6 months, approximately 6 learners, ₹999/month inclusive of taxes. Live IST. No 30-day fluency ads.",
+      "Sounds, sentences, then a two-minute turn. 3 months, approximately 6 learners, ₹999/month inclusive of taxes. Live IST. No 30-day fluency ads.",
     shortAnswer:
-      "If you cannot finish a sentence yet, this is the room — not IELTS, not a 1:1 app, not a 30-student classroom. 6 months, ₹999/month, around 6 learners, inclusive of taxes.",
+      "If you cannot finish a sentence yet, this is the room — not IELTS, not a 1:1 app, not a 30-student classroom. 3 months, ₹999/month, around 6 learners, inclusive of taxes.",
     image: IMG.spokenEnglish,
     alt: "Beginner adult practising spoken English in a small live online class",
     waMessage: "Hi, I am a beginner and I want a free consultation for Basic Spoken English.",
@@ -42,7 +42,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "p",
         text: "A beginner is someone who **cannot yet finish a sentence out loud**. You may read English. You may write WhatsApp messages with help. You freeze in a shop, a phone call, or a two-minute turn. That is this course. If you already have the words and freeze anyway, go to [Interactive](/interactive-english-class-hesitation). If a form asks for a band, sit IELTS with the test board — we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
       },
-      { t: "h2", text: "What 6 months actually covers" },
+      { t: "h2", text: "What 3 months actually covers" },
       {
         t: "ol",
         items: [
@@ -53,7 +53,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "Everyday conversation is the finish line — not a client deck, not Band 7. Those are later rooms. Time ranges: [how long spoken English takes](/how-long-to-learn-spoken-english).",
+        text: "Confident everyday English is the finish line — not a client deck, not Band 7. Those are later rooms: Intermediate for correct, fluent English, Interactive Speaking for meetings. Time ranges: [how long spoken English takes](/how-long-to-learn-spoken-english).",
       },
       { t: "h2", text: "Why apps and 30-student rooms fail beginners" },
       {
@@ -62,7 +62,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         rows: [
           [
             "1:1 app (EngVarta, Cambly)",
-            "Minutes, no 6-month map. Nothing to practise if you cannot form a sentence.",
+            "Minutes, no course map. Nothing to practise if you cannot form a sentence.",
           ],
           ["25–40 student classroom", "1–2 minutes a week. Silence looks like attending."],
           [
@@ -159,7 +159,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "You could not finish 60 seconds, or stopped to translate every sentence",
             "Beginner",
-            "[Basic Spoken English](/course-spoken-english) — 6 months, ₹999/month",
+            "[Basic Spoken English](/course-spoken-english) — 3 months, ₹999/month",
           ],
           [
             "You finished, but with 8+ fillers, tense slips and almost no connectors",
@@ -267,9 +267,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "How to speak English fluently",
     h1Accent: "Minutes, not 30-day ads",
     standfirst:
-      "Fluency is the minutes you spoke, corrected, and spoke again. From zero, everyday conversation is about 6 months of live practice — ₹999/month, around 6 learners, inclusive of taxes.",
+      "Fluency is the minutes you spoke, corrected, and spoke again. From zero, confident everyday English is about 3 months of live practice — ₹999/month, around 6 learners, inclusive of taxes.",
     shortAnswer:
-      "Speak every day in short turns, get the same errors corrected, and follow a map. From zero that is about 6 months live — not 30 days. A batch of around 6 beats a room of 30. Free drills below; pay only if you need a seat.",
+      "Speak every day in short turns, get the same errors corrected, and follow a map. From zero that is about 3 months live to speak up with confidence — not 30 days. A batch of around 6 beats a room of 30. Free drills below; pay only if you need a seat.",
     image: IMG.speaking,
     alt: "Adult learner speaking English aloud during a live class",
     waMessage: "Hi, I want a free consultation to speak English fluently.",
@@ -306,7 +306,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
+          "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 3 months.",
           "Simple sentences work, flow does not → [Intermediate Spoken English](/course-intermediate-english), 4 months, ₹1,999/month.",
           "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,599/month.",
           "Meetings and calls → [Interactive Speaking](/course-interactive-speaking), 3 months, ₹1,599/month. Work emails → [Intermediate](/course-intermediate-english).",
@@ -345,7 +345,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Small live batch (Learn With Smile)",
             "Correction, a map, and people to talk to",
-            "Fixed slots; about 6 months at ₹999/month from zero",
+            "Fixed slots; about 3 months at ₹999/month from zero",
           ],
         ],
       },
@@ -400,7 +400,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         rows: [
           [
             "You cannot finish a sentence on a phone call",
-            "Basic Spoken English, 6 months, ~6 learners",
+            "Basic Spoken English, 3 months, ~6 learners",
             "₹999/month",
           ],
           [
@@ -504,7 +504,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for homemakers",
     h1Accent: "A voice for shops, school, yourself",
     standfirst:
-      "Afternoon and evening IST batches. 6 months, ₹999/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
+      "Afternoon and evening IST batches. 3 months, ₹999/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
     shortAnswer:
       "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹999/month inclusive of taxes. School medium and a career gap are not a wall.",
     image: IMG.girlReading,
@@ -519,7 +519,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "p",
         text: "The search is often “spoken English for housewives”. The need is ordinary: a shop, a school meeting, a bank call, a relative who switched to English. You do not need a corporate deck. You need **sentences you will say this week**.",
       },
-      { t: "h2", text: "What the 6 months is for" },
+      { t: "h2", text: "What the 3 months is for" },
       {
         t: "ul",
         items: [
@@ -602,7 +602,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Learn With Smile Spoken English",
             "Afternoon or evening live batch of about 6; explanations in Hindi or Bengali when needed",
-            "6 months, ₹999/month; needs a phone or laptop and a quiet hour",
+            "3 months, ₹999/month; needs a phone or laptop and a quiet hour",
           ],
         ],
       },
@@ -765,7 +765,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "6 months, ₹999/month inclusive of taxes. Also taught [Hindi to English](/course-spoken-english-hindi) and [Marathi to English](/course-spoken-english-marathi). [Course page](/course-spoken-english).",
+        text: "3 months, ₹999/month inclusive of taxes. Also taught [Hindi to English](/course-spoken-english-hindi) and [Marathi to English](/course-spoken-english-marathi). [Course page](/course-spoken-english).",
       },
       { t: "h2", text: "Intermediate Spoken English — 30 + 60" },
       {
@@ -941,7 +941,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "**A map.** 6-month Spoken English, 3-month Interactive or Workplace — you are not guessing.",
+          "**A map.** 3-month Spoken English, 3-month Interactive or Workplace — you are not guessing.",
           "**A named teacher** who heard last Tuesday’s error.",
           "**A seat** in a batch of around 6, so you cannot hide. Inclusive of taxes. No material fee.",
         ],
@@ -1144,7 +1144,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "table",
         head: ["If this is true", "Take", "Fee"],
         rows: [
-          ["You cannot hold a simple conversation", "Spoken English, 6 months", "₹999/month"],
+          ["You cannot hold a simple conversation", "Spoken English, 3 months", "₹999/month"],
           [
             "You know the words and freeze on the standup",
             "Interactive Speaking, 3 months",

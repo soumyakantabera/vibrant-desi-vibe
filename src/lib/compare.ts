@@ -51,7 +51,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
   {
     name: "EngVarta",
     fee: "₹2,700 / 25 × 15-min",
-    extra: "No 6-month syllabus",
+    extra: "No fixed syllabus",
     batch: "1:1 audio, on demand",
     session: "No counselling; you start with a call",
     tone: "indigo",

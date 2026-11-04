@@ -9,7 +9,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice — up to 2 classes a week plus 10–15 minutes a day. Business English — meetings, calls, updates — is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
+    text: "**Short answer.** From zero, **about 3 months** of live practice — up to 2 classes a week plus 10–15 minutes a day — gets you speaking up with confidence in simple everyday English. Correct, fluent English with connected ideas is a further **4 months**, about **7 months** in all. Workplace speaking — meetings, calls, updates — is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
   },
   {
     t: "p",
@@ -23,10 +23,16 @@ export const body: ArticleBody = [
     head: ["Goal", "Starting point", "Typical time", "What “done” looks like"],
     rows: [
       [
-        "Everyday conversation",
+        "Confident everyday English (Basic Spoken English)",
         "Cannot form a full sentence",
-        "6 months",
-        "Introduce yourself, shops, phone calls, 2 minutes on a topic",
+        "3 months",
+        "Introduce yourself, shops, phone calls, a 2-minute talk",
+      ],
+      [
+        "Correct, fluent English (Intermediate Spoken English)",
+        "Simple sentences work (about CEFR A2)",
+        "4 more months — about 7 from zero",
+        "Tenses and connectors right, 2–3 minute talks, work emails",
       ],
       [
         "Workplace speaking (Interactive Speaking)",
@@ -37,14 +43,14 @@ export const body: ArticleBody = [
       [
         "Interview English",
         "Can chat, still freeze in HR",
-        "Practised inside Spoken and Interactive rooms",
+        "Interview Preparation (2 months), or inside Interactive Speaking",
         "60-second intro, STAR answers, salary talk without freezing",
       ],
     ],
   },
   {
     t: "p",
-    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 6 months**, Intermediate Spoken English **₹1,999/month for 4 months**, Interactive **₹1,599/month for 3 months**, Workplace **₹2,499/month for 3 months**, Interview Preparation **₹2,499/month for 2 months**. Inclusive of taxes. Batch of around 6.",
+    text: "Learn With Smile prices those clocks as: Spoken English **₹999/month for 3 months**, Intermediate Spoken English **₹1,999/month for 4 months**, Interactive **₹1,599/month for 3 months**, Workplace **₹2,499/month for 3 months**, Interview Preparation **₹2,499/month for 2 months**. Inclusive of taxes. Batch of around 6.",
   },
 
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },
@@ -76,20 +82,21 @@ export const body: ArticleBody = [
   { t: "h2", text: "Offline institutes vs live online — same months, different minutes" },
   {
     t: "p",
-    text: "A Kolkata or Pune classroom of 25–40 for a 3-month package (often ₹1,500–₹7,500) still runs on the same six-month clock for a genuine beginner — because you do not get enough turns. Franchise brands (Veta-style 2–4 month courses in the ₹3,500–₹10,000 band) and exam shops (EEC-style spoken English around ₹7,500 plus IELTS/PTE) are built for volume. The month count on the brochure is not the speaking-minute count.",
+    text: "A Kolkata or Pune classroom of 25–40 for a 3-month package (often ₹1,500–₹7,500) rarely gets a genuine beginner speaking in that time — because you do not get enough turns. Franchise brands (Veta-style 2–4 month courses in the ₹3,500–₹10,000 band) and exam shops (EEC-style spoken English around ₹7,500 plus IELTS/PTE) are built for volume. The month count on the brochure is not the speaking-minute count.",
   },
   {
     t: "p",
-    text: "Online 1:1 (EngVarta from about ₹108/session, Cambly around $10/hour) can move hesitation faster *if you already have language*. They do not give a 6-month syllabus. You practise what you can already say. That is why beginners stall on them.",
+    text: "Online 1:1 (EngVarta from about ₹108/session, Cambly around $10/hour) can move hesitation faster *if you already have language*. They do not give a 3-month syllabus. You practise what you can already say. That is why beginners stall on them.",
   },
 
-  { t: "h2", text: "A 6-month map you can actually follow" },
+  { t: "h2", text: "A 3-month map you can actually follow" },
   {
     t: "ol",
     items: [
-      "**Months 1–2:** sounds, present/past, 500 words, 30-second self-intro. Goal: finish a sentence.",
-      "**Months 3–4:** questions, daily role-play, 1,200 words, 90-second topic. Goal: hold a phone call.",
-      "**Months 5–6:** group discussion, 2-minute talk, error log of *your* five habits. Goal: speak without translating in your head.",
+      "**Month 1:** sounds, to be, full sentences, 30-second self-intro. Goal: finish a sentence out loud.",
+      "**Month 2:** present and past, daily routine, 1,000+ words, 60 seconds on a topic. Goal: hold a simple phone call.",
+      "**Month 3:** shops, directions, requests, phone calls, then a 2-minute talk to the batch. Goal: speak up without freezing.",
+      "**Then:** Intermediate (4 months) for correct, connected, work-ready English — or Interactive Speaking (3 months) for meetings and calls.",
     ],
   },
   {

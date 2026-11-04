@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Hindi-medium or Bengali-medium schooling is not a wall. Most Learn With Smile learners started there. You join a live batch of around 6. When a concept does not land, the teacher explains in Hindi or Bengali, then you go back to English. Everyday conversation is about **6 months** live, from ₹999/mo, inclusive of taxes. [Spoken English](/course-spoken-english).",
+    text: "**Short answer.** Hindi-medium or Bengali-medium schooling is not a wall. Most Learn With Smile learners started there. You join a live batch of around 6. When a concept does not land, the teacher explains in Hindi or Bengali, then you go back to English. Confident everyday English is about **3 months** live, from ₹999/mo, inclusive of taxes. [Spoken English](/course-spoken-english).",
   },
   {
     t: "p",
@@ -52,7 +52,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "What we will not promise" },
   {
     t: "p",
-    text: "We will not promise that six months turns you into a news-anchor. Everyday conversation: introduce yourself, handle a phone call, speak for two minutes, join a simple meeting. That is the 6-month finish line from zero. Work English is often a further [3 months](/course-interactive-speaking) if meetings are the next job. [How long it takes](/how-long-to-learn-spoken-english).",
+    text: "We will not promise that three months turns you into a news-anchor. Confident everyday English: introduce yourself, handle a phone call, give a two-minute talk. That is the 3-month finish line from zero. Correct, fluent English is a further [4 months](/course-intermediate-english); work meetings a further [3 months](/course-interactive-speaking). [How long it takes](/how-long-to-learn-spoken-english).",
   },
   {
     t: "p",

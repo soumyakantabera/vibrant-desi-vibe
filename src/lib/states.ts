@@ -105,7 +105,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a spoken English class in Maharashtra taught in Marathi?",
-        a: "Yes. Learn With Smile's Basic Spoken English — Marathi to English is taught live online by a Marathi-speaking teacher, in a batch of about 6: hard ideas explained in Marathi, speaking practice in English. 6 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app. Attend from Pune, Mumbai, Nagpur, Nashik or anywhere. Message us on WhatsApp.",
+        a: "Yes. Learn With Smile's Basic Spoken English — Marathi to English is taught live online by a Marathi-speaking teacher, in a batch of about 6: hard ideas explained in Marathi, speaking practice in English. 3 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app. Attend from Pune, Mumbai, Nagpur, Nashik or anywhere. Message us on WhatsApp.",
       },
       {
         q: "What do spoken English classes cost in Pune or Mumbai?",
@@ -165,7 +165,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a live spoken English class in Hindi for UP learners?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher, about 6 learners per batch, 6 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app. Learners join from Lucknow, Noida, Kanpur, Varanasi, Prayagraj and across UP. Message us on WhatsApp.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher, about 6 learners per batch, 3 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app. Learners join from Lucknow, Noida, Kanpur, Varanasi, Prayagraj and across UP. Message us on WhatsApp.",
       },
       {
         q: "Which English course helps for Noida BPO jobs?",
@@ -218,7 +218,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a spoken English class in Hindi for Bihar students?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, 6 months, ₹999/month inclusive of taxes, with daily Bolo practice and a weekly teacher review. Join from Patna, Gaya, Muzaffarpur or wherever you work. Message us on WhatsApp.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, 3 months, ₹999/month inclusive of taxes, with daily Bolo practice and a weekly teacher review. Join from Patna, Gaya, Muzaffarpur or wherever you work. Message us on WhatsApp.",
       },
       {
         q: "I'm moving from Bihar to Delhi or Bengaluru for work. Which course?",

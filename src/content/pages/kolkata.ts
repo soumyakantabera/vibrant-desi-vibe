@@ -115,7 +115,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Group discussion and HR rounds fail more candidates than aptitude tests do, and both are speaking problems. Interview English — 60-second intro, STAR, salary talk — is practised inside [Spoken English](/course-spoken-english) and [Interactive Speaking](/course-interactive-speaking).",
+    text: "Group discussion and HR rounds fail more candidates than aptitude tests do, and both are speaking problems. Interview English — 60-second intro, STAR, salary talk — is practised in [Interview Preparation](/course-interview-preparation) and inside [Interactive Speaking](/course-interactive-speaking).",
   },
   {
     t: "p",
@@ -129,7 +129,7 @@ export const body: ArticleBody = [
       "Same fees for a learner in Kolkata as anywhere else in India. There is no local pricing.",
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
+      ["Basic Spoken English", "3 months · up to 2 classes/week", "₹999/month"],
       ["Intermediate Spoken English", "4 months · up to 2 classes/week", "₹1,999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,599/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹2,499/month"],

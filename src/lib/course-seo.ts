@@ -8,6 +8,7 @@ import type { CourseData } from "@/components/CoursePage";
 import {
   CONTACT,
   CONTENT_REVISED,
+  revisedOn,
   CONSULTATION_KEYWORDS,
   COURSE_SEO,
   OUTSIDE_INDIA_FEE_FAQ,
@@ -110,7 +111,7 @@ export function courseSeo(d: CourseData) {
       path,
       title: extra?.title ?? d.title,
       description: extra?.description ?? d.metaDescription,
-      dateModified: extra?.dateModified ?? CONTENT_REVISED,
+      dateModified: revisedOn(path, extra?.dateModified ?? CONTENT_REVISED),
       ogImage,
     }),
     {
@@ -187,7 +188,7 @@ export function courseSeo(d: CourseData) {
 
   if (faqs.length) jsonLd.push(faqLd(faqs));
 
-  const revised = extra?.dateModified ?? CONTENT_REVISED;
+  const revised = revisedOn(path, extra?.dateModified ?? CONTENT_REVISED);
   const head = buildHead({
     path,
     // Hand-written in COURSE_SEO rather than assembled here: the generated

@@ -250,7 +250,7 @@ export const COURSE_PACKAGE: Record<
     videos: "Grammar basics, thinking in English, what to say when your mind goes blank.",
     review:
       "Every week your teacher reviews your reading aloud and recorded speaking, and points out the mistakes that repeat.",
-    teacher: "One teacher for the whole 6 months, so your mistakes are remembered and fixed.",
+    teacher: "One teacher for the whole course, so your mistakes are remembered and fixed.",
     videoTag: "Spoken English",
   },
   "intermediate-english": {

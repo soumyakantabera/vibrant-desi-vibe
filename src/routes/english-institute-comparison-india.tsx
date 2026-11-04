@@ -24,7 +24,7 @@ const ROWS = [
     tag: "Us",
     title: "Learn With Smile",
     fee: "From ₹999/mo, tax incl.",
-    body: "Named live teacher. About 6 in a batch. 6-month map. 500+ learners, 7 years. Kolkata, pan-India, now worldwide. Free consultation — not a class.",
+    body: "Named live teacher. About 6 in a batch. A fixed course map. 500+ learners, 7 years. Kolkata, pan-India, now worldwide. Free consultation — not a class.",
   },
   {
     color: "indigo" as const,
@@ -32,7 +32,7 @@ const ROWS = [
     tag: "1:1 app",
     title: "EngVarta",
     fee: "₹2,700 / 25 calls",
-    body: "15-minute audio 1:1 with Indian tutors. Strong on daily reps. No 6-month syllabus. They also write the “best of 2026” listicles.",
+    body: "15-minute audio 1:1 with Indian tutors. Strong on daily reps. No fixed syllabus. They also write the “best of 2026” listicles.",
   },
   {
     color: "coral" as const,
@@ -48,7 +48,7 @@ const ROWS = [
     tag: "Marketplace",
     title: "italki / Preply",
     fee: "₹250–₹4,000 / lesson",
-    body: "You pick the tutor. Good if you already know what to study. No 6-month map unless you build it.",
+    body: "You pick the tutor. Good if you already know what to study. No course map unless you build it.",
   },
   {
     color: "sunshine" as const,

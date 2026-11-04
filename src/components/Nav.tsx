@@ -39,7 +39,7 @@ const ENGLISH_COURSES: {
     label: "Basic Spoken English",
     icon: "mic",
     slug: "spoken-english",
-    inr: "6 months · ₹999/month, inclusive of taxes",
+    inr: "3 months · ₹999/month, inclusive of taxes",
   },
   {
     to: "/course-spoken-english-hindi",

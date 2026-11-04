@@ -82,7 +82,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Spoken English in Hindi", path: "/spoken-english-in-hindi" },
     ],
     summary:
-      "Hindi-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Hindi speakers make, and when a live class helps. Classes from ₹999/month inclusive of taxes.",
+      "Hindi-language guide to learning spoken English: realistic timeline (about 3 months from zero to confident), a 15-minute daily routine, common mistakes Hindi speakers make, and when a live class helps. Classes from ₹999/month inclusive of taxes.",
     faqs: [
       {
         q: "English बोलना सीखने में कितना समय लगता है?",
@@ -126,7 +126,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Spoken English in Bengali", path: "/spoken-english-in-bengali" },
     ],
     summary:
-      "Bengali-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Bengali speakers make (he/she, v/bh, s/sh), and when a live class helps. Taught from Kolkata, from ₹999/month inclusive of taxes.",
+      "Bengali-language guide to learning spoken English: realistic timeline (about 3 months from zero to confident), a 15-minute daily routine, common mistakes Bengali speakers make (he/she, v/bh, s/sh), and when a live class helps. Taught from Kolkata, from ₹999/month inclusive of taxes.",
     faqs: [
       {
         q: "ইংরেজি বলতে শিখতে কত সময় লাগে?",
@@ -172,7 +172,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, or meetings and calls are the gap, take Interactive Speaking (₹1,599/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (3 months, ₹999/month, approx. 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, or meetings and calls are the gap, take Interactive Speaking (₹1,599/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -184,7 +184,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/spoken-english-for-beginners-india",
     title: "Spoken English for Beginners | From ₹999",
     description:
-      "Zero to a 2-minute turn: 6 months, around 6 learners, ₹999/month inclusive of taxes. Hindi and Bengali support. Live IST batches. No 30-day fluency ads.",
+      "Zero to a 2-minute turn: 3 months, around 6 learners, ₹999/month inclusive of taxes. Hindi and Bengali support. Live IST batches. No 30-day fluency ads.",
     shortTitle: "Beginners",
     keywords: [
       "spoken english for beginners in india",
@@ -200,19 +200,19 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Beginners", path: "/spoken-english-for-beginners-india" },
     ],
     summary:
-      "Beginner Spoken English: sounds, sentences, a 2-minute turn in 6 months. ₹999/month, approx. 6 learners, inclusive of taxes. Live, not recorded-as-class.",
+      "Beginner Spoken English: sounds, sentences, a 2-minute turn in 3 months. ₹999/month, approx. 6 learners, inclusive of taxes. Live, not recorded-as-class.",
     faqs: [
       {
         q: "Can a complete beginner learn spoken English online in India?",
-        a: "Yes, if the room is small enough that you speak every hour and someone corrects the same error until it goes. Learn With Smile Basic Spoken English is 6 months, ₹999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. 30-day fluency from zero is marketing.",
+        a: "Yes, if the room is small enough that you speak every hour and someone corrects the same error until it goes. Learn With Smile Basic Spoken English is 3 months, ₹999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. 30-day fluency from zero is marketing.",
       },
       {
         q: "I studied in Hindi or Bengali medium. Can I still join a beginner class?",
         a: "Yes. Most of our learners did. The class is English; when a concept stalls the teacher explains in Hindi or Bengali, then you go back to English. An English-only room for a genuine beginner produces silence.",
       },
       {
-        q: "What will I be able to do after 6 months?",
-        a: "Everyday conversation from zero: introduce yourself, shops, a phone call, two minutes on a topic. Workplace meetings are a later room, not this one. Exam bands are a different paper. Results vary with how often you actually speak.",
+        q: "What will I be able to do after 3 months?",
+        a: "Confident everyday English from zero: introduce yourself, shops, a phone call, a two-minute talk. Correct, fluent English (Intermediate) and workplace meetings (Interactive Speaking) are the next rooms, not this one. Exam bands are a different paper. Results vary with how often you actually speak.",
       },
       {
         q: "Should a beginner start with an app or a live class?",
@@ -268,7 +268,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/how-to-speak-english-fluently",
     title: "How to Speak English Fluently in India",
     description:
-      "Fluency is minutes you spoke, not 30-day ads. From zero: about 6 months live, around 6 learners, ₹999/mo inclusive of taxes. Drills you can start today.",
+      "Fluency is minutes you spoke, not 30-day ads. From zero: about 3 months live to confident, around 6 learners, ₹999/mo inclusive of taxes. Drills you can start today.",
     shortTitle: "Speak fluently",
     keywords: [
       "how to speak english fluently",
@@ -284,11 +284,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Speak fluently", path: "/how-to-speak-english-fluently" },
     ],
     summary:
-      "How to speak English fluently: speaking minutes, a 6-month map from zero, and five drills that cost nothing. Paid class only if you need a syllabus and a seat.",
+      "How to speak English fluently: speaking minutes, a 3-month start from zero, and five drills that cost nothing. Paid class only if you need a syllabus and a seat.",
     faqs: [
       {
         q: "How can I speak English fluently?",
-        a: "Speak every day in short turns, get the same errors corrected, and keep a map so you are not guessing. From zero, everyday conversation usually takes about 6 months of live practice — not 30 days. A batch of around 6 gives 8–10 minutes per hour; a room of 30 often gives 1–2.",
+        a: "Speak every day in short turns, get the same errors corrected, and keep a map so you are not guessing. From zero, speaking up with confidence usually takes about 3 months of live practice, and fluent, correct English about 7 — not 30 days. A batch of around 6 gives 8–10 minutes per hour; a room of 30 often gives 1–2.",
       },
       {
         q: "Can I become fluent in English without a class?",
@@ -324,7 +324,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should a fresher take in India?",
-        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
+        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (3 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
       },
       {
         q: "Do I need IELTS for campus placements in India?",
@@ -340,7 +340,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/spoken-english-for-homemakers-india",
     title: "Spoken English for Homemakers | From ₹999",
     description:
-      "Daytime IST batches for homemakers: shops, school meetings, a voice of your own. 6 months, ₹999/month inclusive of taxes, around 6 learners. Live. Kolkata.",
+      "Daytime IST batches for homemakers: shops, school meetings, a voice of your own. 3 months, ₹999/month inclusive of taxes, around 6 learners. Live. Kolkata.",
     shortTitle: "Homemakers",
     keywords: [
       "spoken english for housewives india",
@@ -360,11 +360,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Are there spoken English classes for homemakers in India?",
-        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹999/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
+        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 3 months, ₹999/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
       },
       {
         q: "I have been out of work for years. Is it too late?",
-        a: "No. School medium and a career gap decide how much English you heard, not whether you can take a school meeting or a shop conversation in 6 months of live practice. We do not promise a job at the end.",
+        a: "No. School medium and a career gap decide how much English you heard, not whether you can take a school meeting or a shop conversation in 3 months of live practice. We do not promise a job at the end.",
       },
       {
         q: "Is it too late to learn spoken English at 40 or 50?",
@@ -640,7 +640,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course is best for IT professionals in India?",
-        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Interactive Speaking (₹1,599/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
+        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 3 months). If chat is fine and standups, tickets or clients go silent, Interactive Speaking (₹1,599/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
       },
       {
         q: "Is Toastmasters or a course better for IT professionals?",

@@ -42,7 +42,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Daily talk still shaky → [Spoken English](/course-spoken-english), 6 months, ₹999/mo.",
+      "Daily talk still shaky → [Spoken English](/course-spoken-english), 3 months, ₹999/mo.",
       "You freeze on calls you could write → [Interactive](/course-interactive-speaking), 3 months.",
       "Meetings, clients, emails, updates → [Interactive Speaking](/course-interactive-speaking), 3 months, ₹1,599/mo (emails: [Intermediate](/course-intermediate-english)). Then [client calls](/english-for-client-calls-india) and [presentations](/english-for-presentations-india).",
       "Hindi- or Bengali-medium start → [that guide](/english-hindi-bengali-medium).",
@@ -52,7 +52,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "What a working week can look like" },
   {
     t: "p",
-    text: "Two live hours. Ten to fifteen minutes a day: one voice note, one status update said out loud, one sentence reused from class. That is enough. More than that and people quit. [How long fluency takes](/how-long-to-learn-spoken-english) if you want the 6-month clock.",
+    text: "Two live hours. Ten to fifteen minutes a day: one voice note, one status update said out loud, one sentence reused from class. That is enough. More than that and people quit. [How long fluency takes](/how-long-to-learn-spoken-english) if you want the timeline.",
   },
   {
     t: "p",

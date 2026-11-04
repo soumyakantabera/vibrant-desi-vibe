@@ -79,7 +79,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "I work at a bank in Mumbai. Spoken English or a Business English course?",
-        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 3 months). Both are live, about 6 learners, inclusive of taxes.",
       },
     ],
   },
@@ -414,7 +414,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       caption: `Same pan-India fees. ${admissionCaption()} ${city.name} is not a different price list.`,
       head: ["Course", "Duration", "Fee"],
       rows: [
-        ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
+        ["Basic Spoken English", "3 months, ~6 learners", "₹999/month"],
         ["Intermediate Spoken English", "4 months", "₹1,999/month"],
         ["Interactive Speaking", "3 months", "₹1,599/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹2,499/month"],
@@ -430,7 +430,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       items: [
         "No classroom in " + city.name + " — every class is live online.",
         "No certificate. Indian interviews hear you. Visas read an exam board score — sit IELTS with the test board when a form asks; we do not sell that paper.",
-        "No 30-day fluency from zero. Everyday conversation is about 6 months of live practice. [How long it takes](/how-long-to-learn-spoken-english).",
+        "No 30-day fluency from zero. Confident everyday English is about 3 months of live practice. [How long it takes](/how-long-to-learn-spoken-english).",
       ],
     },
     {

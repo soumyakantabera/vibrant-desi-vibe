@@ -14,8 +14,8 @@ export const body: ArticleBody = [
       [
         "You cannot finish a sentence / freeze in shops and calls",
         "Basic Spoken English",
-        "₹999/mo, 6 months, approx. 6 learners",
-        "Everyday chat in ~6 months",
+        "₹999/mo, 3 months, approx. 6 learners",
+        "Confident everyday chat in ~3 months",
       ],
       [
         "You can chat, but meetings and client calls go silent",
@@ -37,7 +37,7 @@ export const body: ArticleBody = [
       ],
       [
         "You fail interviews you are qualified for",
-        "Spoken or Interactive",
+        "Interview Preparation or Interactive",
         "Interview English in those rooms",
         "60-sec intro + STAR in the batch",
       ],

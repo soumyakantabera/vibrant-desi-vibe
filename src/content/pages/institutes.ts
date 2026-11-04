@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       [
         "EngVarta",
         "₹2,700 / 25 × 15-min (~₹108)",
-        "Adults who already speak and need daily 1:1 reps. No 6-month map.",
+        "Adults who already speak and need daily 1:1 reps. No course map.",
         "You talk. No counselling.",
       ],
       [
@@ -85,7 +85,7 @@ export const body: ArticleBody = [
     caption: admissionCaption(),
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months", "₹999/month"],
+      ["Basic Spoken English", "3 months", "₹999/month"],
       ["Intermediate Spoken English", "4 months", "₹1,999/month"],
       ["Interactive Speaking", "3 months", "₹1,599/month"],
       ["Interview Preparation", "2 months", "₹2,499/month"],
@@ -120,7 +120,7 @@ export const body: ArticleBody = [
       ["Typical offline franchise / city classroom", "25–40", "1–2 minutes"],
       ["British Council-style group", "8–12", "4–6 minutes"],
       ["Learn With Smile English batch", "Approximately 6 learners", "About 8–10 minutes"],
-      ["EngVarta / Cambly 1:1", "1", "15–50 minutes, no 6-month map"],
+      ["EngVarta / Cambly 1:1", "1", "15–50 minutes, no course map"],
     ],
   },
   {
@@ -143,7 +143,7 @@ export const body: ArticleBody = [
     items: [
       "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We do not sell IELTS as a course. Sit the paper when the form asks.",
       "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹999/month, inclusive of taxes.",
-      "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
+      "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the map.",
       "The student is a **child** — a kids platform, not an adult batch of around 6.",
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our classes are online.",
     ],

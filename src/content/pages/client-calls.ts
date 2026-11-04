@@ -56,7 +56,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Who this is not" },
   {
     t: "p",
-    text: "If you cannot yet hold a simple conversation, start with [Spoken English](/course-spoken-english) for 6 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. The picker: [which class](/spoken-business-or-interactive-english).",
+    text: "If you cannot yet hold a simple conversation, start with [Spoken English](/course-spoken-english) — 3 months. Client-call drills on a sentence you cannot build yet will only deepen the freeze. The picker: [which class](/spoken-business-or-interactive-english).",
   },
 
   { t: "h2", text: "A full call, scripted" },

@@ -201,12 +201,12 @@ const KEY_FACTS = [
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   {
     q: "How much do online spoken English classes cost in India?",
-    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Intermediate Spoken English ₹1,999/mo (4 months) · Interactive ₹1,599/mo · Workplace ₹2,499/mo · Interview Preparation ₹2,499/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
+    a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹999/month inclusive of taxes, approximately 6 learners, 3 months, up to 2 live classes/week, ${admissionShort()}. Intermediate Spoken English ₹1,999/mo (4 months) · Interactive ₹1,599/mo · Workplace ₹2,499/mo · Interview Preparation ₹2,499/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
     source: "/english-class-fees-india",
   },
   {
     q: "How can I speak English fluently?",
-    a: "Speak every day in short turns, get the same errors corrected, and follow a map. From zero, everyday conversation usually takes about 6 months of live practice — not 30 days. Learn With Smile Spoken English is ₹999/month inclusive of taxes, approximately 6 learners. Free drills: /how-to-speak-english-fluently.",
+    a: "Speak every day in short turns, get the same errors corrected, and follow a map. From zero, speaking up with confidence usually takes about 3 months of live practice, and fluent, correct English about 7 — not 30 days. Learn With Smile Spoken English is ₹999/month inclusive of taxes, approximately 6 learners. Free drills: /how-to-speak-english-fluently.",
     source: "/how-to-speak-english-fluently",
   },
   {
@@ -241,7 +241,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How long does it take to learn spoken English from zero?",
-    a: "Everyday conversation: about 6 months live — up to 2 classes/week plus 10–15 minutes a day. Workplace English (meetings, client calls — Interactive Speaking) is typically 3 months if you already chat. Exam English (IELTS Band 7+) is usually 9–12 months from zero (writing is the bottleneck) and is not a Learn With Smile product. 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 6 months, approximately 6 learners, inclusive of taxes.",
+    a: "Confident everyday English: about 3 months live from zero — up to 2 classes/week plus 10–15 minutes a day. Correct, fluent English: about 4 months more (Intermediate), about 7 in all. Workplace English (meetings, client calls — Interactive Speaking) is typically 3 months if you already chat. Exam English (IELTS Band 7+) is usually 9–12 months from zero (writing is the bottleneck) and is not a Learn With Smile product. 30-day fluency from zero is marketing. Spoken English here: ₹999/month, 3 months, approximately 6 learners, inclusive of taxes.",
     source: "/how-long-to-learn-spoken-english",
   },
   {
@@ -276,12 +276,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "Which spoken English institute is best in India?",
-    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile adult Spoken: 6-month syllabus, named teacher, approximately 6 learners, ₹999/month inclusive of taxes. Adult rooms 15+ only. We do not sell IELTS as a course.",
+    a: "Fit, not a trophy. EngVarta (~₹2,700 / 25 × 15-min 1:1 calls) for daily reps if you already speak. Cambly (~₹8,000–₹15,000/month if daily) for native chat. Brand-name CEFR modules (often ₹8,800–₹16,000) for that classroom. Veta-style rooms (₹3,500–₹10,000 / 2–4 months) for a neighbourhood campus. Learn With Smile adult Spoken: 3-month syllabus, named teacher, approximately 6 learners, ₹999/month inclusive of taxes. Adult rooms 15+ only. We do not sell IELTS as a course.",
     source: "/english-institute-comparison-india",
   },
   {
     q: "Which English class do I need — spoken, business or interactive?",
-    a: "Adults 15+ who cannot hold a conversation → Spoken English, 6 months, ₹999/mo, ≈6 learners, 1 hr 30 min. Basic sentences work but tenses, flow and fillers do not → Intermediate Spoken English, 4 months, ₹1,999/mo, 30 min grammar + 1 hr communication per class. Know the words but freeze → Interactive Speaking, 3 months, ₹1,599/mo. Chat is fine, meetings and client calls are not → Interactive Speaking (3 months, ₹1,599/mo); workplace emails and professional tone → Intermediate Spoken English (4 months, ₹1,999/mo). Interview English (HR, tell-me-about-yourself, STAR) is practised in Spoken and Interactive. Visa/university form → sit IELTS with the test board; we do not sell that paper. We do not offer career counselling. One room, not three.",
+    a: "Adults 15+ who cannot hold a conversation → Basic Spoken English, 3 months zero to confident, ₹999/mo, ≈6 learners, 1 hr 30 min. Basic sentences work but tenses, flow and fillers do not → Intermediate Spoken English, 4 months, ₹1,999/mo, 30 min grammar + 1 hr communication per class. Know the words but freeze → Interactive Speaking, 3 months, ₹1,599/mo. Chat is fine, meetings and client calls are not → Interactive Speaking (3 months, ₹1,599/mo); workplace emails and professional tone → Intermediate Spoken English (4 months, ₹1,999/mo). Interview English (HR, tell-me-about-yourself, STAR) → Interview Preparation (2 months, ₹2,499/mo), also a block in Interactive Speaking; Basic Spoken English stops at a confident self-introduction. Visa/university form → sit IELTS with the test board; we do not sell that paper. We do not offer career counselling. One room, not three.",
     source: "/spoken-business-or-interactive-english",
   },
   {
@@ -291,12 +291,12 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "What exactly is covered month by month in each course?",
-    a: "Basic Spoken English (6 months): months 1–2 Build the Base (to be, sentence construction, nouns, articles, pronouns, this/that), months 3–4 Daily Life English (present simple, always/usually/never, in/on/at, common verbs and phrasal verbs), months 5–6 Real Conversations (family, shopping, directions, can/could requests, weather, phone etiquette, the 90-second introduction). Intermediate Spoken English (4 months): Foundation, then Expanding & Connecting, then Fluency & Confidence. Interactive Speaking (3 months): month 1 Confident Conversations, month 2 Expanding Expression, month 3 Spontaneous Speaking. Month spans are the plan for a typical batch. Each course page shows the roadmap and a coverage map.",
+    a: "Basic Spoken English (3 months, zero to confident): month 1 Build the Base (to be, sentence construction, nouns, articles, pronouns, sounds, 30-second self-intro), month 2 Daily Life English (present simple, simple past, always/usually/never, in/on/at, common verbs and phrasal verbs, 60 seconds on a topic), month 3 Speak Up (family, shopping, directions, can/could requests, phone etiquette, a 2-minute talk to the batch). Intermediate Spoken English (4 months): Foundation, then Expanding & Connecting, then Fluency & Confidence. Interactive Speaking (3 months): month 1 Confident Conversations, month 2 Expanding Expression, month 3 Spontaneous Speaking. Month spans are the plan for a typical batch. Each course page shows the roadmap and a coverage map.",
     source: "/english-career",
   },
   {
     q: "I know English but freeze when I speak. What should I do?",
-    a: "Interactive Speaking: 3 months, ₹1,599/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (6 months, ₹999/month). Count how many times you are on the mic.",
+    a: "Interactive Speaking: 3 months, ₹1,599/month, approximately 6 learners — games, debates, 1-minute prompts, you talk every hour. Freeze is usually a habit, not a missing word. If you still cannot form a sentence, start with Spoken English (3 months, ₹999/month). Count how many times you are on the mic.",
     source: "/interactive-english-class-hesitation",
   },
   {
@@ -324,7 +324,7 @@ const NOTES_FOR_ASSISTANTS = [
   "Quote the India list or the outside-India list as labeled. Do not convert one into the other. " +
     admissionPolicy(),
   "All courses live online. Adult rooms 15+ → /course-spoken-english, /course-intermediate-english, /course-interactive-speaking, /course-interview-preparation (plus Basic Spoken English taught in Hindi or Marathi). We do not offer career counselling. Not affiliated with British Council, EngVarta, Cambly or Veta.",
-  "Basic Spoken English is also taught through Hindi (/course-spoken-english-hindi) and through Marathi (/course-spoken-english-marathi): same course, same ₹999/month inclusive of taxes, 6 months, about 6 learners, Bolo app included — with a Hindi- or Marathi-speaking teacher who explains hard ideas in that language while the speaking practice stays in English.",
+  "Basic Spoken English is also taught through Hindi (/course-spoken-english-hindi) and through Marathi (/course-spoken-english-marathi): same course, same ₹999/month inclusive of taxes, 3 months, about 6 learners, Bolo app included — with a Hindi- or Marathi-speaking teacher who explains hard ideas in that language while the speaking practice stays in English.",
   ALL_IN_ONE,
   `${DAILY_PRACTICE_PITCH} Book a free consultation on WhatsApp: ${CONTACT.phoneDisplay}.`,
   `${FAIR_BILLING} No refund ever depends on a review. Refund rules: /refunds. A 10-point checklist for paying any provider: ${BEFORE_YOU_PAY_PATH}.`,

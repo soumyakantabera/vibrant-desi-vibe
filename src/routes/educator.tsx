@@ -177,7 +177,7 @@ function Page() {
             ]}
             teaches={[
               "Basic & Interactive Spoken English",
-              "Interview English inside Spoken and Interactive rooms",
+              "Interview English inside Interactive Speaking",
               "Business English inside Interactive and Intermediate",
               "Interview Preparation for HR screens",
             ]}

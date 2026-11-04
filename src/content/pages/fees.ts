@@ -173,7 +173,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "And no fee changes the timeline. Everyday conversational fluency from a genuine beginner takes about six months of consistent live practice; professional or exam-level fluency takes another three to six on top. Paying three times more does not compress that. Anyone promising fluency in 30 days is selling you something, at any price.",
+    text: "And no fee changes the timeline. A genuine beginner needs about three months of consistent live practice to speak up with confidence, and about seven to reach correct, fluent everyday English; professional or exam-level fluency takes longer still. Paying three times more does not compress that. Anyone promising fluency in 30 days is selling you something, at any price.",
   },
 
   { t: "h2", text: "Where free actually wins" },
@@ -192,7 +192,7 @@ export const body: ArticleBody = [
     caption: admissionCaption(),
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹999/month"],
+      ["Basic Spoken English", "3 months", "Live batch, approx. 6 learners", "₹999/month"],
       ["Intermediate Spoken English", "4 months", "Live batch, approx. 6 learners", "₹1,999/month"],
       ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,599/month"],
       ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹2,499/month"],

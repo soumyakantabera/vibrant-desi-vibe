@@ -35,7 +35,7 @@ export const body: ArticleBody = [
       ],
       ["₹8k–₹16k per module, CEFR levels", "British Council English Online — buy for the badge"],
       ["₹100–₹400 per 1:1, no syllabus", "EngVarta-style daily practice"],
-      ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
+      ["~$10/hour native video", "Cambly — accent, not a course map"],
       ["Parent app, games, under-14", "PlanetSpark-style 1:1. Never our adult batch."],
       [
         "₹999/mo, approximately 6 learners, inclusive of taxes",
@@ -69,7 +69,7 @@ export const body: ArticleBody = [
     head: ["If their free session is…", "You are usually looking at"],
     rows: [
       ["15 minutes of talk, no diagnosis", "EngVarta-style 1:1. Fine after you can already speak."],
-      ["Native video, any available tutor", "Cambly. Accent, not a 6-month plan."],
+      ["Native video, any available tutor", "Cambly. Accent, not a course plan."],
       ["Counsellor + CEFR levels, ₹8k–₹16k", "British Council English Online — buy for the badge"],
       ["Walk-in, 25–40 in the room", "Veta-style / city classroom"],
       ["Visa stack, IELTS add-on", "Exam shop. Fine if the form asked."],

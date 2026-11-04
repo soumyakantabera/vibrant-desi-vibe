@@ -117,7 +117,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Spoken English or IELTS? Which Course Fits in 2 Minutes",
     seoTitle: "Spoken English or IELTS? Pick in 2 Minutes",
     description:
-      "Spoken English ₹999/mo, 6 months. Workplace ₹2,499/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
+      "Spoken English ₹999/mo, 3 months. Workplace ₹2,499/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
     excerpt: "Different clocks, different fees. Buy the course that matches the bottleneck.",
     tag: "Spoken English",
     img: "ielts",
@@ -139,7 +139,7 @@ export const BLOG_POSTS: BlogPost[] = [
     faqs: [
       {
         q: "Should I take Spoken English or IELTS first?",
-        a: "If you cannot finish a sentence on a phone call, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If a university, visa or HR form asks for a band, sit IELTS with the test board — we do not sell that paper. Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
+        a: "If you cannot finish a sentence on a phone call, start with Spoken English (3 months, ₹999/month, approx. 6 learners). If a university, visa or HR form asks for a band, sit IELTS with the test board — we do not sell that paper. Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
       },
       {
         q: "Is IELTS useful for a job in India?",
@@ -177,7 +177,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         q: "Are 1:1 apps better for speaking minutes?",
-        a: "Yes, on minutes per day — EngVarta-style 15-minute calls win that unit. They do not replace a 6-month map if you cannot yet form a sentence. Minutes plus a syllabus is a different product from minutes alone.",
+        a: "Yes, on minutes per day — EngVarta-style 15-minute calls win that unit. They do not replace a course map if you cannot yet form a sentence. Minutes plus a syllabus is a different product from minutes alone.",
       },
     ],
   },
