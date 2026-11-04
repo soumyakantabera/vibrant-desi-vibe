@@ -1497,6 +1497,11 @@ html.js [data-viz="in"] .viz-draw {
   color: #ffffff;
   background: #034a38;
 }
+/* Photo bands with centred copy (e.g. "How live classes work"): one even
+   teal veil, since text and cards run edge to edge. */
+.band-veil {
+  background: rgba(2, 52, 40, 0.86);
+}
 /* The homepage "Live online…" pill: a quiet label, not a second headline. */
 .hero-eyebrow {
   font-size: 0.6875rem;
