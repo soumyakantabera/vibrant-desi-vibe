@@ -1350,7 +1350,7 @@ export const PAGES: Record<string, PageSeo> = {
     ],
     ogImage: "/og/default.jpg",
     priority: 0.8,
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-04",
     changefreq: "monthly",
     summary:
       "Fees guide. What online English classes actually cost in India — ₹800–₹3,000/month for group classes, ₹100–₹2,000 per 1:1 session, ₹300–₹800/month for apps — what drives the price, the cost-per-speaking-minute calculation, and five hidden costs to check with any provider.",
