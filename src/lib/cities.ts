@@ -262,6 +262,42 @@ export const RETIRED_CITY_TARGET: Partial<Record<(typeof RETIRED_CITY_PATHS)[num
   "/spoken-english-classes-patna": "/spoken-english-classes-bihar",
   "/spoken-english-classes-ahmedabad": "/spoken-english-classes-gujarat",
   "/spoken-english-classes-surat": "/spoken-english-classes-gujarat",
+  "/spoken-english-classes-chennai": "/spoken-english-classes-tamil-nadu",
+  "/spoken-english-classes-coimbatore": "/spoken-english-classes-tamil-nadu",
+  "/spoken-english-classes-guwahati": "/spoken-english-classes-assam",
+};
+
+/** Coverage-strip state chips → their page. Delhi is the Delhi NCR page. */
+export const STATE_PAGE_PATHS: Record<string, string> = {
+  "West Bengal": "/spoken-english-classes-kolkata",
+  Delhi: "/spoken-english-classes-delhi-ncr",
+  Maharashtra: "/spoken-english-classes-maharashtra",
+  "Uttar Pradesh": "/spoken-english-classes-uttar-pradesh",
+  Bihar: "/spoken-english-classes-bihar",
+  Jharkhand: "/spoken-english-classes-jharkhand",
+  "Madhya Pradesh": "/spoken-english-classes-madhya-pradesh",
+  Rajasthan: "/spoken-english-classes-rajasthan",
+  Gujarat: "/spoken-english-classes-gujarat",
+  Karnataka: "/spoken-english-classes-karnataka",
+  Telangana: "/spoken-english-classes-telangana",
+  "Tamil Nadu": "/spoken-english-classes-tamil-nadu",
+  Assam: "/spoken-english-classes-assam",
+};
+
+/** States with a page that are not in COVERAGE_STATES (where learners already
+ *  join from) — shown as extra chips so every state page is linked. */
+export const EXTRA_STATE_CHIPS = ["Uttar Pradesh", "Rajasthan", "Madhya Pradesh", "Jharkhand"];
+
+/** Cities without their own page link to the state page that names them. */
+export const CITY_STATE_PATHS: Record<string, string> = {
+  Pune: "/spoken-english-classes-maharashtra",
+  Nagpur: "/spoken-english-classes-maharashtra",
+  Ahmedabad: "/spoken-english-classes-gujarat",
+  Surat: "/spoken-english-classes-gujarat",
+  Patna: "/spoken-english-classes-bihar",
+  Chennai: "/spoken-english-classes-tamil-nadu",
+  Coimbatore: "/spoken-english-classes-tamil-nadu",
+  Guwahati: "/spoken-english-classes-assam",
 };
 export const RETIRED_CITY_PATHS = [
   "/spoken-english-classes-pune",

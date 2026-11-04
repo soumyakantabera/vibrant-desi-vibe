@@ -183,6 +183,22 @@ export const GUIDE_CARDS: GuideCard[] = [
     group: "state",
   },
   {
+    to: "/spoken-english-classes-tamil-nadu",
+    title: "Spoken English in Tamil Nadu",
+    sub: "Live online · Chennai, Coimbatore, IT speaking",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
+    to: "/spoken-english-classes-assam",
+    title: "Spoken English in Assam & North-East",
+    sub: "Live online · Guwahati, Silchar, Agartala",
+    icon: "globe",
+    color: "brand",
+    group: "state",
+  },
+  {
     to: "/free-consultation",
     title: "What the free consultation is",
     sub: "We diagnose your bottleneck, answer every query, and place you in one course. Not a class.",

@@ -6,7 +6,7 @@ import { CHAT_MSG, DEMO_CTA, DEMO_MSG, consultRequest, waLink, withPageTag } fro
 import { usePageLabel } from "@/lib/use-page-label";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
-import { CITY_PATHS } from "@/lib/cities";
+import { CITY_PATHS, CITY_STATE_PATHS, EXTRA_STATE_CHIPS, STATE_PAGE_PATHS } from "@/lib/cities";
 
 /** Phones only: "Swipe for more" under a `.phone-swipe` row (place it right after the row). */
 export function SwipeHint({ label = "Swipe for more" }: { label?: string }) {
@@ -212,21 +212,26 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
           States
         </p>
         <div className="mt-2 flex flex-wrap gap-2">
-          {COVERAGE_STATES.map((state, i) => (
-            <span
-              key={state}
-              className={`inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[i % CITY_TONES.length]}`}
-            >
-              {state}
-            </span>
-          ))}
+          {[...COVERAGE_STATES, ...EXTRA_STATE_CHIPS].map((state, i) => {
+            const href = STATE_PAGE_PATHS[state];
+            const cls = `inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[i % CITY_TONES.length]}`;
+            return href ? (
+              <Link key={state} to={href} className={`${cls} hover:underline`}>
+                {state}
+              </Link>
+            ) : (
+              <span key={state} className={cls}>
+                {state}
+              </span>
+            );
+          })}
         </div>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           Cities
         </p>
         <div className="mt-2 flex flex-wrap gap-2">
           {COVERAGE_CITIES.map((city, i) => {
-            const href = CITY_PATHS[city];
+            const href = CITY_PATHS[city] ?? CITY_STATE_PATHS[city];
             const cls = `inline-flex rounded-full border px-3 py-1.5 font-display text-xs font-bold md:text-sm ${CITY_TONES[(i + 1) % CITY_TONES.length]}`;
             return href ? (
               <Link key={city} to={href} className={`${cls} hover:underline`}>

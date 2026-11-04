@@ -88,7 +88,7 @@ function stateSeo(st: StateInfo): PageSeo {
     ogImage: "/og/default.jpg",
     priority: 0.7,
     changefreq: "monthly",
-    dateModified: UPDATED,
+    dateModified: st.updated ?? UPDATED,
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: `Spoken English in ${st.name}`, path: st.path },
