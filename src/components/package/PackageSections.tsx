@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "@/components/Icon";
 import { SwipeHint, WaButton } from "@/components/ui-bits";
+import { VideoArt } from "@/components/package/VideoArt";
 import { FeePair, FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { BoloParrot } from "@/components/mascots/BoloParrot";
@@ -818,6 +819,15 @@ const VIDEO_TABS: ("All" | VideoCourse)[] = [
   "Interview Prep",
 ];
 const CAT_TONE: Tone[] = ["amber", "blue", "teal", "plum", "green", "terra"];
+/** The card colours as hex, for small fills inside the white cartoon props. */
+const TONE_HEX: Record<Tone, string> = {
+  green: "#04815b",
+  blue: "#2f5bea",
+  amber: "#b35f00",
+  plum: "#7a5af0",
+  teal: "#0b7f73",
+  terra: "#cc3a55",
+};
 
 export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCourse }) {
   const [course, setCourse] = useState<"All" | VideoCourse>(initial);
@@ -901,16 +911,17 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
                 className="slide-in flex w-[17.5rem] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border border-border bg-white transition hover:-translate-y-1 hover:shadow-[0_22px_44px_-32px_rgba(19,33,47,.5)] sm:w-[19rem]"
                 style={{ animationDelay: `${n * 50}ms` }}
               >
-                <div className={`relative grid h-36 place-items-center ${T[tone].deep}`}>
+                <div className={`relative h-40 overflow-hidden ${T[tone].deep}`}>
+                  <VideoArt title={v.title} accent={TONE_HEX[tone]} />
                   <span
                     className={`absolute left-4 top-4 rounded-full bg-white px-2.5 py-1 text-xs font-bold ${T[tone].text}`}
                   >
                     {v.cat}
                   </span>
                   <span
-                    className={`grid h-14 w-14 place-items-center rounded-full bg-white shadow-[0_12px_28px_-14px_rgba(0,0,0,.6)] ${T[tone].text}`}
+                    className={`absolute bottom-3 left-4 grid h-11 w-11 place-items-center rounded-full bg-white shadow-[0_12px_28px_-14px_rgba(0,0,0,.6)] ${T[tone].text}`}
                   >
-                    <Icon name="play" size={28} />
+                    <Icon name="play" size={22} />
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col gap-2 p-5">
