@@ -206,8 +206,8 @@ function Home() {
                   {
                     tone: "brand",
                     icon: SnapIcons.cap,
-                    big: "Up to 8",
-                    small: "Live classes a month, 90 min each",
+                    big: "About 6 students",
+                    small: "in each live class, 90 min",
                   },
                   {
                     tone: "indigo",
