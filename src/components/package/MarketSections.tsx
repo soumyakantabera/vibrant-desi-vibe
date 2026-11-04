@@ -560,7 +560,10 @@ export function MarketGap() {
           </div>
         </div>
 
-        <VizIn className="mt-6 overflow-x-auto rounded-3xl border border-border bg-white">
+        <VizIn
+          data-swipe=""
+          className="mt-6 overflow-x-auto rounded-3xl border border-border bg-white"
+        >
           <table className="w-full min-w-[60rem] border-collapse text-left">
             <caption className="sr-only">Learn With Smile compared with named providers</caption>
             <thead>

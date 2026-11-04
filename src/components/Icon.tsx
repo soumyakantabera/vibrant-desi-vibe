@@ -1,153 +1,18 @@
 import type { CSSProperties } from "react";
-import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
+import { ICON_COMPONENTS, type IconName } from "@/components/icon-names";
+import { ICON_SPRITE_VERSION } from "@/lib/icon-sprite";
 
-/** The only weights shipped: vite/phosphor-weights-plugin.ts strips the rest. */
-type IconWeight = "bold" | "fill" | "duotone";
-import {
-  ArrowRightIcon,
-  ArrowsClockwiseIcon,
-  BookOpenIcon,
-  BookOpenTextIcon,
-  BrainIcon,
-  BriefcaseIcon,
-  CalendarBlankIcon,
-  CameraIcon,
-  CaretLeftIcon,
-  CaretRightIcon,
-  ChalkboardTeacherIcon,
-  ChartBarIcon,
-  ChatCircleIcon,
-  ChatsCircleIcon,
-  ChatTeardropTextIcon,
-  CheckCircleIcon,
-  ClipboardTextIcon,
-  ClockIcon,
-  CodeIcon,
-  CompassIcon,
-  CurrencyInrIcon,
-  EnvelopeSimpleIcon,
-  GameControllerIcon,
-  GlobeIcon,
-  GraduationCapIcon,
-  HeadsetIcon,
-  HeartIcon,
-  HouseIcon,
-  LaptopIcon,
-  LightbulbIcon,
-  LightningIcon,
-  ListChecksIcon,
-  ListIcon,
-  MapPinIcon,
-  MicrophoneIcon,
-  MonitorPlayIcon,
-  NotePencilIcon,
-  PhoneIcon,
-  PiggyBankIcon,
-  PauseCircleIcon,
-  PlayCircleIcon,
-  PresentationIcon,
-  ProhibitIcon,
-  PuzzlePieceIcon,
-  QuotesIcon,
-  RocketLaunchIcon,
-  SealCheckIcon,
-  ShieldCheckIcon,
-  SmileyIcon,
-  SparkleIcon,
-  StarIcon,
-  TargetIcon,
-  TextAaIcon,
-  ThumbsUpIcon,
-  TranslateIcon,
-  TrendUpIcon,
-  TrophyIcon,
-  UserIcon,
-  UsersThreeIcon,
-  VideoCameraIcon,
-  WaveformIcon,
-  XCircleIcon,
-  XIcon,
-} from "@phosphor-icons/react/dist/ssr";
+export type { IconName };
 
 /**
- * Site iconography — Phosphor, duotone by default (October 2026).
- *
- * Duotone draws a solid outline plus a soft 20% fill in the same colour, so an
- * icon reads as a small coloured shape inside the tinted tiles rather than a
- * thin line. Names stay the old semantic keys so every `<Icon name="…" />`
- * call site keeps working. SVG only — no icon font to arrive late.
+ * Icons are drawn from one cached sprite (public/icons.svg, built by
+ * scripts/build-icon-sprite.mjs from Phosphor). Each icon on a page is a tiny
+ * <svg><use/></svg> instead of its full path data, and no icon code ships in
+ * the JavaScript bundle. Only these three weights are in the sprite.
  */
-const MAP = {
-  spark: SparkleIcon,
-  book: BookOpenIcon,
-  mic: MicrophoneIcon,
-  chart: ChartBarIcon,
-  code: CodeIcon,
-  bulb: LightbulbIcon,
-  trophy: TrophyIcon,
-  target: TargetIcon,
-  calendar: CalendarBlankIcon,
-  clock: ClockIcon,
-  users: UsersThreeIcon,
-  user: UserIcon,
-  pause: PauseCircleIcon,
-  play: PlayCircleIcon,
-  check: CheckCircleIcon,
-  "arrow-right": ArrowRightIcon,
-  "caret-left": CaretLeftIcon,
-  "caret-right": CaretRightIcon,
-  globe: GlobeIcon,
-  headset: HeadsetIcon,
-  rupee: CurrencyInrIcon,
-  rocket: RocketLaunchIcon,
-  star: StarIcon,
-  heart: HeartIcon,
-  puzzle: PuzzlePieceIcon,
-  shield: ShieldCheckIcon,
-  trend: TrendUpIcon,
-  compass: CompassIcon,
-  refresh: ArrowsClockwiseIcon,
-  whatsapp: ChatCircleIcon,
-  menu: ListIcon,
-  close: XIcon,
-  phone: PhoneIcon,
-  mail: EnvelopeSimpleIcon,
-  instagram: CameraIcon,
-  facebook: ThumbsUpIcon,
-  linkedin: BriefcaseIcon,
-  youtube: MonitorPlayIcon,
-  quote: QuotesIcon,
-  smile: SmileyIcon,
-  gamepad: GameControllerIcon,
-  location_on: MapPinIcon,
-  ban: ProhibitIcon,
-  "x-circle": XCircleIcon,
-  clipboard: ClipboardTextIcon,
-  messages: ChatsCircleIcon,
-  languages: TranslateIcon,
-  record_voice_over: WaveformIcon,
-  home: HouseIcon,
-  savings: PiggyBankIcon,
-  computer: LaptopIcon,
-  present_to_all: PresentationIcon,
-  school: GraduationCapIcon,
-  diversity_3: UsersThreeIcon,
-  translate: TranslateIcon,
-  // Complete-package practice types
-  brain: BrainIcon,
-  pen: NotePencilIcon,
-  video: VideoCameraIcon,
-  review: SealCheckIcon,
-  read: BookOpenTextIcon,
-  vocab: TextAaIcon,
-  grammar: ListChecksIcon,
-  bolt: LightningIcon,
-  teacher: ChalkboardTeacherIcon,
-  speak: ChatTeardropTextIcon,
-  wave: WaveformIcon,
-} as const satisfies Record<string, PhosphorIcon>;
+type IconWeight = "bold" | "fill" | "duotone";
 
-export type IconName = keyof typeof MAP;
+const SPRITE = `${import.meta.env.BASE_URL}icons.svg?v=${ICON_SPRITE_VERSION}`;
 
 /** Shapes that look right solid when `filled` is on. */
 const FILLABLE = new Set<IconName>(["star", "heart", "spark"]);
@@ -173,8 +38,7 @@ export function Icon({
   variant?: IconWeight;
   style?: CSSProperties;
 }) {
-  const Cmp = MAP[name as IconName];
-  if (!Cmp)
+  if (!(name in ICON_COMPONENTS))
     return (
       <span aria-hidden className={className} style={{ width: size, height: size, ...style }} />
     );
@@ -187,13 +51,18 @@ export function Icon({
         ? "bold"
         : "duotone");
   return (
-    <Cmp
-      aria-hidden
-      size={size}
-      weight={resolved}
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width={size}
+      height={size}
+      viewBox="0 0 256 256"
+      fill="currentColor"
       className={`lws-icon inline-flex shrink-0 ${className}`}
       data-filled={resolved === "fill" ? "true" : undefined}
       style={style}
-    />
+    >
+      <use href={`${SPRITE}#${key}--${resolved}`} />
+    </svg>
   );
 }

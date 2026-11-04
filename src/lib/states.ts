@@ -1,5 +1,6 @@
 /**
- * State pages (November 2026): ten states chosen from ~120 live searches —
+ * State pages (November 2026): ten states chosen from ~120 live searches,
+ * plus Tamil Nadu and Assam & the North-East (added 4 Nov 2026) —
  * research_notes/india-state-seo-geo-research-nov-2026.md §6.
  *
  * Each page must only make sense for its own state (the doorway test): real
@@ -34,6 +35,8 @@ export type StateInfo = {
   title: string;
   description: string;
   keywords: string[];
+  /** Page written or last changed on a different day from the original ten. */
+  updated?: string;
 };
 
 const S = (slug: string) => `/spoken-english-classes-${slug}`;
@@ -622,6 +625,127 @@ export const STATES: StateInfo[] = [
       "spoken english classes surat online",
       "english speaking course gujarat",
       "online english class vadodara",
+    ],
+  },
+  {
+    slug: "tamil-nadu",
+    updated: "2026-11-04",
+    path: S("tamil-nadu"),
+    name: "Tamil Nadu",
+    geoRegion: "IN-TN",
+    cities: ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Hosur"],
+    localities: [
+      {
+        city: "Chennai",
+        areas: ["Velachery", "T. Nagar", "Anna Nagar", "Adyar", "Tambaram", "OMR"],
+      },
+      { city: "Coimbatore", areas: ["Gandhipuram", "R.S. Puram", "Peelamedu", "Saravanampatti"] },
+      { city: "Madurai", areas: ["K.K. Nagar", "Anna Nagar"] },
+      { city: "Tiruchirappalli", areas: ["Thillai Nagar", "Srirangam"] },
+    ],
+    languages: "Tamil, English; Hindi and Urdu in some Chennai communities",
+    medium: "english",
+    intro:
+      "Tamil Nadu's spoken-English market is classroom chains and short crash courses in Chennai and Coimbatore. We do not teach in Tamil — explanations are in English, or Hindi for Hindi speakers — so the fit here is people who already read English and freeze when they have to speak it: in IT and support work, interviews and meetings.",
+    hubs: [
+      { need: "it", where: "Chennai's OMR IT corridor and Coimbatore's IT parks" },
+      { need: "bpo", where: "Chennai and Coimbatore support and back-office centres" },
+      {
+        need: "campus",
+        where: "Chennai, Coimbatore and Tiruchirappalli engineering colleges and placement drives",
+      },
+      { need: "analyst", where: "Chennai's GCCs and finance back offices" },
+    ],
+    prices: [
+      { what: "Classroom course, Chennai (ACTE)", range: "₹16,500" },
+      { what: "Classroom course, Velachery (EnglishLabs)", range: "₹8,000" },
+      { what: "One month online (Speak Now, Chennai)", range: "₹5,000" },
+      { what: "Live online chain course, Coimbatore (90 days)", range: "₹7,500" },
+      { what: "Offline classes, Tiruchirappalli", range: "₹3,000–₹6,000 a month" },
+      { what: "1:1 tutor, Coimbatore", range: "from ₹1,000 an hour" },
+    ],
+    facts: [
+      "Tamil is a mother tongue for about 6.9 crore people (Census 2011).",
+      "Tamil-medium spoken English is already offered by other institutes; we do not teach in Tamil, and we say so.",
+      "Even in Chennai an institute sells English taught through Hindi (₹3,800 a month), so Hindi-speaking learners here have a real choice; our Hindi-to-English course is ₹999 a month.",
+    ],
+    faqs: [
+      {
+        q: "Do you teach spoken English in Tamil?",
+        a: "No. Learn With Smile teaches in English, with Hindi explanations in the Hindi-to-English course. If you need concepts explained in Tamil, a Tamil-medium institute will suit you better. If you already read English and freeze when you speak it, our live online batch of about 6 is built for that: ₹999/month inclusive of taxes for Basic Spoken English, ₹1,599/month for Interactive Speaking (meetings, client calls, interviews).",
+      },
+      {
+        q: "Is there an online spoken English class for Chennai or Coimbatore IT jobs?",
+        a: "Yes. Interactive Speaking (3 months, ₹1,599/month) practises standups, status updates, client calls and interview rounds live, in afternoon, evening and night IST slots that fit around shifts on OMR or in Coimbatore. Every class is recorded for revision, and Bolo gives daily practice between classes.",
+      },
+    ],
+    title: "Spoken English Classes in Tamil Nadu | Live Online",
+    description:
+      "Live online spoken English for Chennai, Coimbatore, Madurai and Trichy — batch of about 6, IT and interview speaking, daily Bolo practice, from ₹999/mo.",
+    keywords: [
+      "spoken english classes chennai online",
+      "spoken english classes coimbatore online",
+      "english speaking course tamil nadu",
+      "online english class madurai",
+      "english speaking practice for it jobs chennai",
+    ],
+  },
+  {
+    slug: "assam",
+    updated: "2026-11-04",
+    path: S("assam"),
+    name: "Assam & the North-East",
+    geoRegion: "IN-AS",
+    cities: ["Guwahati", "Dibrugarh", "Jorhat", "Silchar", "Tezpur", "Agartala", "Imphal"],
+    localities: [
+      {
+        city: "Guwahati",
+        areas: ["Dispur", "Zoo Road", "Beltola", "Ganeshguri", "Maligaon", "Paltan Bazaar"],
+      },
+      { city: "Dibrugarh", areas: ["Chowkidinghee", "Mancotta Road"] },
+      { city: "Jorhat", areas: ["Garali", "A.T. Road"] },
+      { city: "Silchar", areas: ["Tarapur", "Ambicapatty"] },
+    ],
+    languages:
+      "Assamese, Bengali, Hindi, Bodo and many other languages; Bengali in the Barak Valley and Tripura",
+    medium: "english",
+    intro:
+      "Our office is in Kolkata, the nearest metro for much of the North-East, and our teachers can bridge briefly in Bengali or Hindi. In Guwahati the choice is mostly classroom coaching or chain pages; Upper Assam, the Barak Valley, Tripura and Manipur have very little live small-batch teaching at all. A live online batch removes the travel.",
+    hubs: [
+      { need: "govt", where: "Guwahati, for state and central government interviews" },
+      { need: "bank", where: "Guwahati, Dibrugarh and Silchar banking aspirants" },
+      { need: "campus", where: "Guwahati, Jorhat, Silchar and Tezpur colleges and universities" },
+      { need: "bpo", where: "Guwahati support and back-office centres" },
+    ],
+    prices: [
+      { what: "Offline classes, Guwahati", range: "₹3,000–₹6,000 a month" },
+      { what: "Live online chain course, Jorhat (90 days)", range: "₹7,500" },
+      { what: "Private tutor, Shillong (average)", range: "₹653–₹748 an hour" },
+    ],
+    facts: [
+      "Bengali is widely spoken in the Barak Valley (Silchar) and in Tripura; our teachers can bridge briefly in Bengali or Hindi.",
+      "In Meghalaya, Mizoram and Nagaland English is already a school and official language, so learners there usually need speaking practice, not a beginners' course.",
+      "Classes run on IST like everywhere in India; afternoon, evening and night slots fit an early North-East working day.",
+    ],
+    faqs: [
+      {
+        q: "Is there an online spoken English class for Guwahati?",
+        a: "Yes. Learn With Smile teaches live online in batches of about 6 — there is no classroom in Guwahati; our only office is in Kolkata. Basic Spoken English is ₹999/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Our teachers can bridge in Bengali or Hindi when a concept does not land.",
+      },
+      {
+        q: "Can learners from Tripura, Manipur or Meghalaya join?",
+        a: "Yes, from anywhere in India: the class is the same live online batch. For Bengali speakers in Tripura and the Barak Valley, the teacher can bridge briefly in Bengali or Hindi when something does not land; the speaking itself is in English. If you already speak English at school or work, Interactive Speaking (3 months, ₹1,599/month) is speaking practice for interviews, meetings and calls rather than a beginners' course.",
+      },
+    ],
+    title: "Spoken English Classes in Assam & North-East | Online",
+    description:
+      "Live online spoken English for Guwahati, Dibrugarh, Silchar, Agartala and Imphal — batch of about 6, Bengali/Hindi help, from ₹999/mo incl. taxes.",
+    keywords: [
+      "spoken english classes guwahati online",
+      "english speaking course assam",
+      "spoken english classes silchar",
+      "online english class agartala",
+      "spoken english classes north east india",
     ],
   },
 ];

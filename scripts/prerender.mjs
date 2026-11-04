@@ -49,6 +49,7 @@ const {
   sitemapUrls,
   REDIRECTS,
   MOVED_MARKDOWN,
+  pageLabel,
 } = mod;
 
 const today = new Date().toISOString().slice(0, 10);
@@ -202,7 +203,14 @@ function buildPage(pathname, ssrHtml) {
 
   let out = stripFallbackHead(template);
   out = out.replace(HTML_TAG, '<html lang="en-IN">');
-  out = out.replace("</head>", `  ${ssrHead}\n  </head>`);
+  // The page's short name for WhatsApp first messages, read by the client
+  // (src/lib/use-page-label.client.ts) so the browser does not need the
+  // whole site's metadata to name the page a visitor tapped from.
+  const label = String(pageLabel(pathname) ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;");
+  const labelMeta = `<meta data-prerender="1" name="lws-page" content="${label}" data-path="${pathname}"/>`;
+  out = out.replace("</head>", `  ${ssrHead}\n  ${labelMeta}\n  </head>`);
   out = out.replace('<div id="root"></div>', `<div id="root">${ssrBody}</div>`);
   return out;
 }
@@ -215,6 +223,52 @@ function writeFile(rel, contents) {
   fs.writeFileSync(dest, contents);
 }
 
+/* ------------------------------------------------------------ deep links */
+// Every answer-shaped anchor on every page (FAQ questions, article headings,
+// course sections, roadmap months, syllabus modules, the "Short answer"
+// box), read from the rendered HTML — so the published list can only name
+// anchors that exist. Written to /llms-anchors.txt and /anchors.json.
+const SKIP_ANCHOR =
+  /^(root|main-content|native-heading|why-different-title|ladder-title|class-split-title|roadmap-title|coverage-title)$|-title$/;
+function stripTags(html) {
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+function anchorsIn(html) {
+  const out = [];
+  const seen = new Set();
+  const re = /<(h2|h3|details|section|article|div|span)\b[^>]*\sid="([^"]+)"[^>]*>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const [, tag, id] = m;
+    if (SKIP_ANCHOR.test(id) || seen.has(id)) continue;
+    const rest = html.slice(re.lastIndex, re.lastIndex + 4000);
+    let label = "";
+    if (tag === "h2" || tag === "h3") {
+      label = stripTags(rest.slice(0, rest.indexOf(`</${tag}>`)));
+    } else if (id === "fees") {
+      label = "Fee and duration";
+    } else if (id === "short-answer") {
+      label = "Short answer";
+    } else {
+      const h = /<(h2|h3)\b[^>]*>([\s\S]*?)<\/\1>/.exec(rest);
+      label = h ? stripTags(h[2]) : "";
+    }
+    if (!label) continue;
+    seen.add(id);
+    out.push({ id, label: label.slice(0, 140) });
+  }
+  return out;
+}
+const pageAnchors = [];
+const SITE_URL = "https://www.learnwithsmile.app";
 const rendered = [];
 /** Markdown mirror of each page, reused below to build llms-full.txt. */
 const docs = [];
@@ -263,6 +317,7 @@ for (const pathname of ALL_PATHS) {
   docs.push(doc);
   writeFile(markdownPathFor(pathname).replace(/^\//, ""), pageMarkdown(doc, today));
 
+  pageAnchors.push({ pathname, title: metaFor(pathname).title, anchors: anchorsIn(ssrHtml) });
   rendered.push({ pathname, bytes: Buffer.byteLength(page) });
   console.log(
     `  prerendered ${pathname.padEnd(32)} ${(Buffer.byteLength(page) / 1024).toFixed(0)} kB` +
@@ -403,6 +458,45 @@ for (const [part, file] of Object.entries(LLMS_PART_FILES)) {
   writeFile(file, buildLlmsFullTxt(docs, today, part));
 }
 writeFile("llms.json", llmsJson);
+{
+  const abs = (p) => `${SITE_URL}${p === "/" ? "" : p}`;
+  const total = pageAnchors.reduce((n, p) => n + p.anchors.length, 0);
+  const lines = [
+    "# Learn With Smile — deep links",
+    "",
+    `> Every answer on ${SITE_URL} has its own link: course sections, month-by-month roadmaps, syllabus modules, every FAQ question and every guide heading. Cite the exact link (page#anchor) so the reader lands on the answer, not the top of the page. ${total} anchors on ${pageAnchors.length} pages. Generated from the rendered pages on ${today}.`,
+    "",
+  ];
+  for (const p of pageAnchors) {
+    if (!p.anchors.length) continue;
+    lines.push(`## ${p.title} — ${abs(p.pathname)}`, "");
+    for (const a of p.anchors) lines.push(`- ${a.label} — ${abs(p.pathname)}#${a.id}`);
+    lines.push("");
+  }
+  writeFile("llms-anchors.txt", lines.join("\n"));
+  writeFile(
+    "anchors.json",
+    `${JSON.stringify(
+      {
+        updated: today,
+        note: "Deep links to every answer. Cite url (page#anchor).",
+        pages: pageAnchors
+          .filter((p) => p.anchors.length)
+          .map((p) => ({
+            url: abs(p.pathname),
+            title: p.title,
+            anchors: p.anchors.map((a) => ({ label: a.label, url: `${abs(p.pathname)}#${a.id}` })),
+          })),
+      },
+      null,
+      2,
+    )}\n`,
+  );
+  writeFile(".well-known/llms-anchors.txt", lines.join("\n"));
+  console.log(
+    `  deep links: ${total} anchors on ${pageAnchors.length} pages → llms-anchors.txt, anchors.json`,
+  );
+}
 writeFile("openapi.json", openapi);
 writeFile("ai-plugin.json", buildAiPlugin());
 writeFile("chatgpt-actions.md", buildGptInstructions());

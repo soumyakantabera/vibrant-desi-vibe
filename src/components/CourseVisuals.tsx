@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { monthAnchor } from "@/lib/anchors";
 import { SectionHeader } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
@@ -82,7 +83,7 @@ export function totalMonths(roadmap: RoadmapPhase[]): number {
 export function ClassSplit({ title, visuals }: { title: string; visuals: CourseVisuals }) {
   const total = visuals.classBlocks.reduce((n, b) => n + b.minutes, 0);
   return (
-    <section className="section" aria-labelledby="class-split-title">
+    <section className="section" id="class-split" aria-labelledby="class-split-title">
       <div className="container-x">
         <SectionHeader
           eyebrow="Inside Every Class"
@@ -167,7 +168,7 @@ export function Roadmap({ title, visuals }: { title: string; visuals: CourseVisu
   const months = totalMonths(visuals.roadmap);
   const cols = { gridTemplateColumns: `repeat(${months}, minmax(0, 1fr))` };
   return (
-    <section className="section bg-cream" aria-labelledby="roadmap-title">
+    <section className="section bg-cream" id="roadmap" aria-labelledby="roadmap-title">
       <div className="container-x">
         <SectionHeader
           eyebrow={`${months}-Month Roadmap`}
@@ -207,6 +208,7 @@ export function Roadmap({ title, visuals }: { title: string; visuals: CourseVisu
             {visuals.roadmap.map((p, i) => (
               <article
                 key={p.title}
+                id={monthAnchor(p.from)}
                 className={`relative rounded-2xl border p-5 ${TONE[p.tone].soft}`}
               >
                 <div className="flex items-center gap-3">
@@ -268,7 +270,7 @@ export function CoverageMap({ title, visuals }: { title: string; visuals: Course
   const max = Math.max(1, ...phases.flatMap((p) => skills.map((s) => count(p, s))));
   const topics = phases.reduce((n, p) => n + p.tracks.reduce((m, t) => m + t.items.length, 0), 0);
   return (
-    <section className="section" aria-labelledby="coverage-title">
+    <section className="section" id="skills" aria-labelledby="coverage-title">
       <div className="container-x">
         <SectionHeader
           eyebrow="Coverage Map"
@@ -276,7 +278,10 @@ export function CoverageMap({ title, visuals }: { title: string; visuals: Course
           title={<span id="coverage-title">{topics} topics, mapped skill by skill</span>}
           subtitle={`Where each skill in ${title} gets its new topics. Darker cells mean more new topics in that phase.`}
         />
-        <div className="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-border bg-white">
+        <div
+          data-swipe=""
+          className="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-border bg-white"
+        >
           <table className="w-full min-w-[480px] text-sm">
             <caption className="sr-only">
               Number of new topics per skill in each phase of {title}

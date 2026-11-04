@@ -70,6 +70,9 @@ jobs:
       - name: SEO, schema and AI-file audit
         run: python3 -I scripts/seo-audit.py dist
 
+      - name: Deep links land on real anchors
+        run: python3 -I scripts/check-answer-anchors.py dist
+
       - name: Verify search and AI outputs
         run: |
           set -euo pipefail
@@ -78,6 +81,10 @@ jobs:
           test -s dist/llms.txt
           test -s dist/llms-full.txt
           test -s dist/llms.json
+          test -s dist/llms-anchors.txt
+          test -s dist/anchors.json
+          grep -q '#q-' dist/llms.txt
+          grep -q '#month-1' dist/llms.txt
           test -s dist/openapi.json
           test -s dist/ai-plugin.json
           test -s dist/.well-known/llms.txt
@@ -93,7 +100,8 @@ jobs:
           grep -q 'Speak Better English' dist/index.html
           grep -q 'Choose the Goal You Need Now' dist/index.html
           grep -q 'id="all-courses"' dist/index.html
-          grep -q 'Basic Spoken English — Hindi to English' dist/index.html
+          grep -q 'href="/course-spoken-english-hindi"' dist/index.html
+          grep -q 'Every course includes, in the one monthly fee' dist/index.html
           grep -q 'Real teachers. Small batches' dist/index.html
           grep -q 'View all courses' src/components/Nav.tsx
           grep -q 'const ENGLISH_COURSES' src/components/Nav.tsx
@@ -146,6 +154,12 @@ jobs:
             exit 1
           fi
           grep -q 'published_fees' dist/llms.json
+          # Contact = the WhatsApp link itself, said first in every AI file.
+          grep -q '"if_user_wants_to_connect"' dist/llms.json
+          grep -q 'give the WhatsApp link, not the website' dist/llms.txt
+          grep -q 'First rule — contact means the WhatsApp link' dist/chatgpt-actions.md
+          grep -q '^whatsapp: "https://wa.me/919674479949' dist/index.md
+          grep -q 'wa.me/919674479949' dist/robots.txt
           grep -q 'Two published price lists' dist/llms.txt
           grep -q 'Two published price lists' dist/llms-full.txt
           grep -q 'Two published price lists' dist/chatgpt-actions.md

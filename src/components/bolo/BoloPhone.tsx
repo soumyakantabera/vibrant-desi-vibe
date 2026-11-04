@@ -390,10 +390,6 @@ function PracticeHome({
         className="relative flex flex-col items-center gap-1.5"
         aria-label="Today's practice path"
       >
-        <span
-          aria-hidden="true"
-          className="absolute bottom-6 top-6 left-1/2 w-0 -translate-x-1/2 border-l-[3px] border-dotted border-[#CFE3E0]"
-        />
         {nodes.map((n) => (
           <li key={n.label} className={`relative flex items-center gap-2 ${n.x}`}>
             <span

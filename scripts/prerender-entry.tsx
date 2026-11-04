@@ -23,6 +23,7 @@ export { COURSE_SEO, SITE_URL, SITE_NAME, abs, markdownPathFor, sitemapUrls } fr
 export { COURSES } from "../src/lib/courses";
 export { REDIRECTS, MOVED_MARKDOWN } from "../src/lib/redirects";
 export { BLOG_POSTS, getPostsSorted } from "../src/lib/blog";
+export { pageLabel } from "../src/lib/use-page-label";
 // The AI-readable layer — llms.txt, llms.json, llms-full.txt and the per-page
 // Markdown mirrors, all built from the same tables the pages themselves render from.
 export {

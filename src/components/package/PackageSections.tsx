@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "@/components/Icon";
+import { SmartImage } from "@/components/SmartImage";
+import { IMG } from "@/lib/images";
 import { SwipeHint, WaButton } from "@/components/ui-bits";
+import { VideoArt } from "@/components/package/VideoArt";
 import { FeePair, FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { BoloParrot } from "@/components/mascots/BoloParrot";
@@ -304,17 +307,17 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
             return (
               <div
                 key={key}
-                className={`lift-card viz-pop relative isolate min-h-36 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] sm:min-h-40 lg:min-h-44 ${T[tone].deep}`}
+                className={`lift-card viz-pop relative isolate min-h-40 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] lg:min-h-48 ${T[tone].deep}`}
                 style={d(i * 80)}
               >
-                {/* One large watermark, centred by the grid: its middle is the
-                    card's middle, horizontally and vertically. No offsets. */}
+                {/* One large watermark in the bottom-left corner, bleeding a
+                    little off the card edge so it stays clear of the text. */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -z-10 grid place-items-center text-white/30"
+                  className="pointer-events-none absolute -bottom-6 -left-3 -z-10 text-white/25"
                   data-watermark
                 >
-                  <Icon name={PART[key].icon} size={112} />
+                  <Icon name={PART[key].icon} size={84} />
                 </span>
                 <p className="text-sm [text-shadow:0_1px_2px_rgba(0,0,0,.28)]">
                   <strong className="block font-bold text-white">
@@ -493,7 +496,7 @@ export function WeekStrip() {
               <h3 className="text-base font-bold md:text-lg">Your practice, day by day</h3>
               <span className="text-xs font-semibold text-ink/60">Example week</span>
             </div>
-            <div className="overflow-x-auto">
+            <div data-swipe="" className="overflow-x-auto">
               <table className="w-full min-w-[26rem] table-fixed border-separate border-spacing-1.5 text-xs">
                 <caption className="sr-only">Which practice happens on which day</caption>
                 <thead>
@@ -818,6 +821,15 @@ const VIDEO_TABS: ("All" | VideoCourse)[] = [
   "Interview Prep",
 ];
 const CAT_TONE: Tone[] = ["amber", "blue", "teal", "plum", "green", "terra"];
+/** The card colours as hex, for small fills inside the white cartoon props. */
+const TONE_HEX: Record<Tone, string> = {
+  green: "#04815b",
+  blue: "#2f5bea",
+  amber: "#b35f00",
+  plum: "#7a5af0",
+  teal: "#0b7f73",
+  terra: "#cc3a55",
+};
 
 export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCourse }) {
   const [course, setCourse] = useState<"All" | VideoCourse>(initial);
@@ -890,6 +902,7 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
         <div
           ref={track}
           onScroll={measure}
+          data-swipe=""
           className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:-mx-7 sm:px-7 lg:-mx-10 lg:px-10"
         >
           {shown.length === 0 && <BoloEmpty />}
@@ -901,16 +914,17 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
                 className="slide-in flex w-[17.5rem] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border border-border bg-white transition hover:-translate-y-1 hover:shadow-[0_22px_44px_-32px_rgba(19,33,47,.5)] sm:w-[19rem]"
                 style={{ animationDelay: `${n * 50}ms` }}
               >
-                <div className={`relative grid h-36 place-items-center ${T[tone].deep}`}>
+                <div className={`relative h-40 overflow-hidden ${T[tone].deep}`}>
+                  <VideoArt title={v.title} accent={TONE_HEX[tone]} />
                   <span
                     className={`absolute left-4 top-4 rounded-full bg-white px-2.5 py-1 text-xs font-bold ${T[tone].text}`}
                   >
                     {v.cat}
                   </span>
                   <span
-                    className={`grid h-14 w-14 place-items-center rounded-full bg-white shadow-[0_12px_28px_-14px_rgba(0,0,0,.6)] ${T[tone].text}`}
+                    className={`absolute bottom-3 left-4 grid h-11 w-11 place-items-center rounded-full bg-white shadow-[0_12px_28px_-14px_rgba(0,0,0,.6)] ${T[tone].text}`}
                   >
-                    <Icon name="play" size={28} />
+                    <Icon name="play" size={22} />
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col gap-2 p-5">
@@ -1033,7 +1047,10 @@ export function MarketCompare() {
           </div>
         </div>
 
-        <VizIn className="mt-5 overflow-x-auto rounded-3xl border border-border bg-white">
+        <VizIn
+          data-swipe=""
+          className="mt-5 overflow-x-auto rounded-3xl border border-border bg-white"
+        >
           <table className="w-full min-w-[46rem] border-collapse text-left text-sm">
             <caption className="sr-only">Learning options compared by category</caption>
             <thead>
@@ -1108,42 +1125,96 @@ const PLAN_ORDER: FeeSlug[] = [
   "interview-preparation",
 ];
 
-const PLAN_COPY: Record<
-  FeeSlug,
-  { for: string; focus: string; path: string; popular?: boolean; tone: Tone }
-> = {
+type PlanCopy = {
+  /** Step on the ladder — the card's headline tag. */
+  tag: string;
+  icon: IconName;
+  image: string;
+  for: string;
+  /** What only this course does. Shared inclusions are shown once, below. */
+  highlights: string[];
+  path: string;
+  popular?: boolean;
+  tone: Tone;
+  /** Same course taught through another language. */
+  mediums?: { label: string; path: string }[];
+};
+
+const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
   "spoken-english": {
-    for: "Speak from zero — daily talk and interview English.",
-    focus: "Builds sentences from zero",
+    tag: "Start here",
+    icon: "mic",
+    image: IMG.spokenEnglish,
+    for: "Cannot finish a sentence yet? Speak from zero — daily talk first.",
+    highlights: [
+      "2,000+ everyday words, corrected live",
+      "Introduce yourself and answer HR questions out loud",
+      "30 min grammar + 1 hr speaking, every class",
+    ],
     path: "/course-spoken-english",
     tone: "green",
+    mediums: [
+      { label: "Hindi", path: "/course-spoken-english-hindi" },
+      { label: "Marathi", path: "/course-spoken-english-marathi" },
+    ],
   },
   "intermediate-english": {
-    for: "Basic sentences work — now make them correct, connected and work-ready.",
-    focus: "30 min grammar + 1 hr talk; workplace emails",
+    tag: "Level up",
+    icon: "trend",
+    image: IMG.speaking,
+    for: "Basic sentences work — make them correct, connected and work-ready.",
+    highlights: [
+      "Tenses, connectors and modals inside real speech",
+      "Debates and 2–3 minute talks with fewer fillers",
+      "Workplace emails and professional tone",
+    ],
     path: "/course-intermediate-english",
     tone: "amber",
   },
   "interactive-speaking": {
-    for: "You know English but freeze — in a chat, a meeting or a client call.",
-    focus: "Role-plays, meetings, client calls",
+    tag: "Unfreeze",
+    icon: "messages",
+    image: IMG.interactiveSpeaking,
+    for: "You know the words but freeze — in a chat, a meeting or a client call.",
+    highlights: [
+      "90 minutes of speaking — no grammar lecture",
+      "Team meetings, status updates, client calls",
+      "Interview rounds: 90-second pitch, HR, STAR",
+    ],
     path: "/course-interactive-speaking",
     tone: "teal",
   },
   "interview-preparation": {
+    tag: "Get hired",
+    icon: "clipboard",
+    image: IMG.interview,
     for: "You can talk — the interview is the gap.",
-    focus: "Recorded mock interviews",
+    highlights: [
+      "60-second intro, HR and STAR answers",
+      "Panel and salary rounds, rehearsed live",
+      "Recorded mock interviews with feedback",
+    ],
     path: "/course-interview-preparation",
     tone: "plum",
   },
 };
 
-const PLAN_INCLUDES: { tone: Tone; icon: IconName; text: string }[] = [
-  { tone: "green", icon: "users", text: "Live classes · approx. 6 learners" },
-  { tone: "teal", icon: "pen", text: "Bolo app: daily practice + streak" },
-  { tone: "amber", icon: "video", text: "Bolo: video lessons incl. speaking tips" },
-  { tone: "plum", icon: "review", text: "Bolo: weekly teacher review" },
-  { tone: "terra", icon: "teacher", text: "Same teacher, all course" },
+const PLAN_INCLUDES: { tone: Tone; icon: IconName; text: string; short: string }[] = [
+  {
+    tone: "green",
+    icon: "users",
+    text: "Live classes · approx. 6 learners",
+    short: "Live · ~6 a batch",
+  },
+  { tone: "teal", icon: "pen", text: "Bolo app: daily practice + streak", short: "Daily practice" },
+  {
+    tone: "amber",
+    icon: "video",
+    text: "Bolo: video lessons incl. speaking tips",
+    short: "Video lessons",
+  },
+  { tone: "plum", icon: "review", text: "Bolo: weekly teacher review", short: "Weekly review" },
+  { tone: "terra", icon: "teacher", text: "Same teacher, all course", short: "Same teacher" },
 ];
 
 export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
@@ -1153,7 +1224,13 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
   }, []);
   return (
     <>
-      <VizIn className="phone-swipe flex flex-wrap justify-center gap-4">
+      {offer && (
+        <p className="mx-auto mb-5 flex w-fit items-center gap-2 rounded-full bg-amber-soft px-3.5 py-1.5 text-xs font-bold text-[#6A4A10] sm:px-4 sm:py-2 sm:text-sm">
+          <Icon name="spark" size={16} />
+          {LAUNCH_OFFER.short} on every course · enrol by 30 Nov
+        </p>
+      )}
+      <VizIn id="all-courses" className="phone-swipe grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {PLAN_ORDER.map((slug, i) => {
           const fee = COURSE_FEE[slug];
           const copy = PLAN_COPY[slug];
@@ -1161,75 +1238,145 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
             <article
               key={slug}
               style={d(i * 90)}
-              className={`viz-pop flex w-full flex-col overflow-hidden rounded-3xl border bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.7rem)] transition hover:-translate-y-1 ${copy.popular ? "border-2 border-indigo-pop shadow-[0_22px_50px_-30px_rgba(47,90,138,.55)]" : "border-border shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)]"}`}
+              className="viz-pop group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)] transition hover:-translate-y-1 hover:shadow-[0_24px_50px_-30px_rgba(19,33,47,.5)]"
             >
+              {/* Header: the course photo at low opacity under the course
+                  colour, its own icon and its step on the ladder. */}
               <div
-                className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 text-white sm:px-6 ${T[copy.tone].deep}`}
+                className={`relative isolate flex min-h-[11rem] flex-col overflow-hidden px-5 pb-5 pt-4 text-white xl:min-h-[12.5rem] ${T[copy.tone].deep}`}
               >
-                <span className="text-xs font-bold text-white">
-                  {fee.months} months · up to 2 classes/week
-                </span>
-                {copy.popular && (
-                  <span className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1F3D63]">
-                    Most popular
+                <SmartImage
+                  src={copy.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 22vw, (min-width: 640px) 45vw, 84vw"
+                  className="!absolute inset-0 -z-10 opacity-25 mix-blend-luminosity transition duration-500 group-hover:opacity-35"
+                />
+                {/* Keeps the white title and duration readable over bright
+                    parts of the photo; the top of the photo stays visible. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-black/45 via-black/20 to-transparent"
+                />
+                <div className="flex items-start justify-between gap-3">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white shadow-[0_10px_24px_-12px_rgba(0,0,0,.55)]">
+                    <Icon name={copy.icon} size={26} className={T[copy.tone].text} />
                   </span>
-                )}
-              </div>
-              <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
-                <h3 className="text-xl font-bold leading-tight">
+                  <span className="rounded-full bg-white/95 px-3 py-1 font-display text-xs font-extrabold uppercase tracking-[0.12em] text-ink">
+                    {copy.tag}
+                  </span>
+                </div>
+                <h3 className="mt-auto pt-4 font-display text-xl font-extrabold leading-tight text-white [text-shadow:0_1px_2px_rgba(0,0,0,.25)]">
                   <Link to={copy.path} className="hover:underline">
                     {fee.name}
                   </Link>
                 </h3>
-                <p className="min-h-10 text-sm text-ink/70">{copy.for}</p>
+                <p className="mt-1 text-xs font-bold text-white/95">
+                  {fee.months} months · up to 2 live classes a week
+                </p>
+              </div>
+
+              <div className="flex flex-1 flex-col gap-3 p-5">
+                <p className="text-sm leading-snug text-ink/80 xl:min-h-[4rem]">{copy.for}</p>
                 <p className="text-4xl font-extrabold tracking-tight text-ink">
                   <FeePair inr={fee.display} usd={INTL_FEE[slug].big} />
                   <span className="text-base font-semibold text-ink/60">
                     <FeePair inr="/month" usd={INTL_FEE[slug].suffix} />
                   </span>
                 </p>
-                <p className="-mt-1 text-xs text-ink/60">
+                <p className="-mt-2 text-xs text-ink/60">
                   <MarketCopy
                     inr="Inclusive of taxes · billed monthly"
                     usd={`${intlUnit()} · billed monthly`}
                   />
                 </p>
-                <ul className="mt-1 flex flex-col gap-2.5 border-t border-border pt-4 text-sm text-ink/85">
-                  {PLAN_INCLUDES.map((p) => (
-                    <li key={p.text} className="flex items-center gap-2.5">
-                      <span
-                        className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${T[p.tone].soft} ${T[p.tone].text}`}
-                      >
-                        <Icon name={p.icon} size={16} />
-                      </span>
-                      {p.text}
+                <ul className="flex flex-col gap-2 border-t border-border pt-3 text-sm text-ink/85">
+                  {copy.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2">
+                      <Icon
+                        name="check"
+                        size={18}
+                        className={`mt-px shrink-0 ${T[copy.tone].text}`}
+                      />
+                      {h}
                     </li>
                   ))}
-                  <li className="flex items-center gap-2.5 font-bold text-ink">
-                    <Icon name="check" size={20} className="ml-1 shrink-0 text-brand" />
-                    {copy.focus}
-                  </li>
                 </ul>
-                {offer && (
-                  <span className="rounded-xl bg-amber-soft px-3 py-2 text-xs font-bold text-[#6A4A10]">
-                    {LAUNCH_OFFER.short} · enrol by 30 Nov
-                  </span>
+                {copy.mediums && (
+                  <div className="flex flex-wrap items-center gap-1.5 text-xs text-ink/70">
+                    <span className="font-semibold">Also taught in</span>
+                    {copy.mediums.map((m) => (
+                      <Link
+                        key={m.path}
+                        to={m.path}
+                        className="inline-flex min-h-8 items-center rounded-full border border-brand/25 bg-brand-soft px-2.5 py-1 text-xs font-bold text-brand-deep transition hover:border-brand/50"
+                      >
+                        {m.label}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-                <WaButton
-                  message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
-                  variant={copy.popular ? "primary" : "outline"}
-                  size="sm"
-                  className="mt-auto w-full justify-center"
-                  goal="pricing_card"
-                >
-                  Ask on WhatsApp
-                </WaButton>
+                <div className="mt-auto flex flex-col gap-2 pt-1">
+                  <WaButton
+                    message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
+                    variant="wa"
+                    size="sm"
+                    className="w-full justify-center"
+                    goal="pricing_card"
+                  >
+                    Ask on WhatsApp
+                  </WaButton>
+                  <Link
+                    to={copy.path}
+                    className="inline-flex min-h-10 items-center justify-center gap-1 text-sm font-display font-bold text-brand-deep hover:underline"
+                  >
+                    See the syllabus <Icon name="arrow-right" size={14} />
+                  </Link>
+                </div>
               </div>
             </article>
           );
         })}
       </VizIn>
       <SwipeHint label="Swipe to compare courses" />
+
+      {/* What every course includes — said once, not four times. */}
+      <div className="mt-6 rounded-3xl border border-border bg-white p-5 md:p-6">
+        <p className="text-center font-display text-sm font-extrabold uppercase tracking-[0.14em] text-ink/70">
+          Every course includes, in the one monthly fee
+        </p>
+        {/* Phones: compact pills. Wider screens: a row of labelled tiles. */}
+        <ul className="mt-3 flex flex-wrap justify-center gap-2 sm:hidden">
+          {PLAN_INCLUDES.map((p) => (
+            <li
+              key={p.text}
+              className={`inline-flex min-h-9 items-center gap-1.5 rounded-full py-1 pl-1 pr-3 text-[13px] font-semibold text-ink ${T[p.tone].soft}`}
+            >
+              <span
+                className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-white ${T[p.tone].solid}`}
+              >
+                <Icon name={p.icon} size={14} />
+              </span>
+              {p.short}
+            </li>
+          ))}
+        </ul>
+        <ul className="mt-4 hidden gap-3 sm:grid sm:grid-cols-3 lg:grid-cols-5">
+          {PLAN_INCLUDES.map((p) => (
+            <li
+              key={p.text}
+              className={`flex items-center gap-2.5 rounded-2xl p-3 text-sm font-semibold text-ink ${T[p.tone].soft}`}
+            >
+              <span
+                className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl text-white ${T[p.tone].solid}`}
+              >
+                <Icon name={p.icon} size={18} />
+              </span>
+              {p.text}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
@@ -1238,7 +1385,7 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
 export function ConsultStrip() {
   return (
     <div className="mt-5 flex flex-col gap-4 rounded-3xl border border-border bg-terra-soft p-6 md:flex-row md:items-center md:justify-between md:p-7">
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
         <Chip tone="terra" icon="compass" />
         <p className="text-ink/80">
           <strong className="block text-lg font-bold text-ink md:text-xl">

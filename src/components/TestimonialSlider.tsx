@@ -35,6 +35,7 @@ export function TestimonialSlider({
     <>
       <div className="-mx-5 lg:mx-0">
         <div
+          data-swipe=""
           className="
             flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 pb-4
             lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0

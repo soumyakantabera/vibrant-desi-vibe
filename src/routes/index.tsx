@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Deferred } from "@/components/Deferred";
 import { FaqSection } from "@/components/FaqSection";
@@ -8,7 +8,6 @@ import {
   MottoBand,
   GuidesStrip,
   CoverageStrip,
-  SwipeHint,
 } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
@@ -16,7 +15,7 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { CourseLadder, LADDER } from "@/components/CourseVisuals";
+import { CourseLadder } from "@/components/CourseVisuals";
 import { BoloSection } from "@/components/bolo/BoloSections";
 import { WhyDifferent } from "@/components/WhyDifferent";
 import { IMG, imageSources } from "@/lib/images";
@@ -160,7 +159,7 @@ function Home() {
               payment to book.
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
-            <p className="mt-3 text-sm font-semibold text-white/95">
+            <p className="mt-3 min-h-[2.5rem] text-sm font-semibold text-white/95 sm:min-h-0">
               WhatsApp{" "}
               <a
                 href={waLink(withPageTag(CHAT_MSG, "Home"))}
@@ -170,9 +169,12 @@ function Home() {
               >
                 {WHATSAPP_DISPLAY}
               </a>{" "}
-              — message anytime. We reply 10am–midnight IST every day.
+              · replies 10am–midnight IST, every day
             </p>
-            <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
+            <div
+              data-swipe=""
+              className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar"
+            >
               {[
                 "7 years · about 6 a batch · pan-India & now worldwide",
                 "From ₹999/month, inclusive of taxes",
@@ -232,37 +234,24 @@ function Home() {
       <CoverageStrip />
 
       <Deferred id="home-courses">
-        {/* COURSE CATEGORIES */}
-        <section className="section">
+        {/* COURSES + FEES — one section: each course once, with its fee */}
+        <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
           <div className="container-x">
             <SectionHeader
-              eyebrow="What We Teach"
+              eyebrow={<MarketCopy inr="What we teach · from ₹999/month" usd="What we teach" />}
               title="Choose the Goal You Need Now"
-              subtitle="Six live courses for adults 15+, about 6 learners each — including Basic Spoken English taught in Hindi or Marathi, and Business English inside Interactive Speaking. Pick the result you need; every fee is inclusive of taxes."
+              subtitle="Four live courses for adults 15+, about 6 learners a batch, billed one month at a time — inclusive of taxes. Basic Spoken English is also taught Hindi to English and Marathi to English."
             />
-            <div id="all-courses" className="phone-swipe flex flex-wrap justify-center gap-4">
-              {HOME_COURSES.map((c) => (
-                <CourseCard key={c.slug} {...c} />
-              ))}
-            </div>
-            <SwipeHint label="Swipe for all 6 courses" />
-            <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <strong className="text-cream block text-lg">
-                  Not sure which course is right for you?
-                </strong>
-                <p className="text-white text-sm mt-1">
-                  Message your goal anytime — we recommend the best-fit course when admissions
-                  replies during 10am–midnight IST every day.
-                </p>
-              </div>
-              <WaButton
-                message="Hi, I want a free consultation to choose my spoken English course."
-                variant="wa"
-                size="md"
-              >
-                {CHAT_CTA}
-              </WaButton>
+            <PricingGrid />
+            <ConsultStrip />
+            <div className="mt-7 text-center">
+              <p className="text-sm text-ink/75">
+                <MarketCopy
+                  inr="All prices are in INR and inclusive of taxes."
+                  usd={`These published figures are the international fee, in ${intlUnit()}, for learners outside India. They are the labeled fee, not a conversion of the India price.`}
+                />
+              </p>
+              <PaymentTrust tone="light" align="center" className="mt-5" />
             </div>
           </div>
         </section>
@@ -373,42 +362,6 @@ function Home() {
 
         {/* MARKET */}
         <MarketGap />
-      </Deferred>
-
-      <Deferred id="home-pricing">
-        {/* PRICING — placed next to the WhatsApp CTA so cost stays crystal clear */}
-        <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
-          <div className="container-x">
-            <SectionHeader
-              eyebrow={
-                <MarketCopy inr="Affordable. Premium. Everything included." usd="Simple pricing" />
-              }
-              eyebrowTone="indigo"
-              title={<FeeText text="From ₹999/mo · live classes and the Bolo app included" />}
-              subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus Bolo, the practice app with daily exercises, video lessons and a weekly teacher review. Same-week reschedule if a slot is free."
-            />
-            <PricingGrid />
-            <ConsultStrip />
-            <div className="mt-7 text-center">
-              <p className="text-sm text-ink/75">
-                <MarketCopy
-                  inr="All prices are in INR and inclusive of taxes."
-                  usd={`These published figures are the international fee, in ${intlUnit()}, for learners outside India. They are the labeled fee, not a conversion of the India price.`}
-                />
-              </p>
-              <div className="mt-3">
-                <WaButton
-                  message="Hi, I want a free consultation for spoken English, the fees and the next slot."
-                  variant="wa"
-                  size="sm"
-                >
-                  {CHAT_CTA}
-                </WaButton>
-              </div>
-              <PaymentTrust tone="light" align="center" className="mt-5" />
-            </div>
-          </div>
-        </section>
       </Deferred>
 
       <Deferred id="home-end">
@@ -542,82 +495,6 @@ function Home() {
   );
 }
 
-/** Every course, one flat list: the ladder order, then the two taught-in-your-language rooms. */
-const HOME_COURSES: { slug: string; step: string; who: string; photo?: "mid" | "footer" }[] = [
-  ...LADDER,
-  {
-    slug: "spoken-english-hindi",
-    step: "Start here · in Hindi",
-    who: "Basic Spoken English, explained by a Hindi-speaking teacher",
-    photo: "mid",
-  },
-  {
-    slug: "spoken-english-marathi",
-    step: "Start here · in Marathi",
-    who: "Basic Spoken English, explained by a Marathi-speaking teacher",
-    photo: "footer",
-  },
-];
-
-function CourseCard({
-  slug,
-  step,
-  who,
-  photo,
-}: {
-  slug: string;
-  step: string;
-  who: string;
-  photo?: "mid" | "footer";
-}) {
-  const course = COURSES[slug];
-  if (!course) return null;
-  const months = course.duration.split("·")[0].trim();
-  return (
-    <Link
-      to={`/course-${slug}` as "/course-spoken-english"}
-      className="group flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]"
-    >
-      <div className="relative aspect-[16/9] overflow-hidden">
-        <SmartImage
-          src={
-            (photo === "mid" ? course.midImage : photo === "footer" ? course.footerImage : null) ??
-            course.heroImage
-          }
-          alt={`${course.title} — live online class in India`}
-          fill
-          position="center 22%"
-          imgClassName="transition duration-700 group-hover:scale-105"
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 84vw"
-        />
-        <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md">
-          {step}
-        </span>
-      </div>
-      <div className="flex min-w-0 flex-1 flex-col p-4">
-        <div className="flex items-center gap-2">
-          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-deep">
-            <Icon name={course.icon} size={16} />
-          </span>
-          <h3 className="font-display text-base font-extrabold leading-tight text-ink">
-            {course.title}
-          </h3>
-        </div>
-        <p className="mt-2 flex-1 text-sm leading-snug text-ink/80">{who}</p>
-        <p className="mt-3 text-sm text-ink/75">
-          {months} ·{" "}
-          <strong className="font-display text-ink">
-            <FeeText text={course.price} />
-          </strong>
-        </p>
-        <span className="mt-3 inline-flex items-center gap-1 text-sm font-display font-bold text-brand-deep">
-          See the course <Icon name="arrow-right" size={14} />
-        </span>
-      </div>
-    </Link>
-  );
-}
-
 function GlassCard({
   icon,
   title,
@@ -630,7 +507,7 @@ function GlassCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl p-6 bg-white/10 backdrop-blur border border-cream/20">
+    <div className="rounded-2xl p-6 bg-white/10 sm:backdrop-blur border border-cream/20">
       <div className="h-12 w-12 rounded-xl bg-cream/15 text-sunshine flex items-center justify-center mb-3">
         <Icon name={icon} size={24} />
       </div>

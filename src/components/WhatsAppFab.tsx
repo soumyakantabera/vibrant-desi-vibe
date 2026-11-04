@@ -40,7 +40,7 @@ export function WhatsAppFab({ message }: { message?: string }) {
       </a>
 
       <div
-        className="sm:hidden fixed bottom-3 inset-x-2 z-50 grid grid-cols-2 gap-1.5 rounded-2xl bg-white/95 backdrop-blur p-1.5 shadow-2xl ring-1 ring-ink/10"
+        className="sm:hidden fixed bottom-3 inset-x-2 z-50 grid grid-cols-2 gap-1.5 rounded-2xl bg-white p-1.5 shadow-2xl ring-1 ring-ink/10"
         data-cta-location="sticky"
         aria-label="Contact Learn With Smile"
       >

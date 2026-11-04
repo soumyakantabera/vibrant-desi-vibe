@@ -7,14 +7,16 @@ import { withBasePath } from "@/lib/site-path";
 // for each of the eight, ahead of the hero image, and they delay LCP on
 // mobile. They are small trust badges, never the LCP element, so lazy is
 // harmless even where they sit inside a hero.
-const PAY_METHODS: { src: string; alt: string; height: string }[] = [
-  { src: "/payments/upi.svg", alt: "UPI", height: "h-4" },
-  { src: "/payments/google-pay.svg", alt: "Google Pay", height: "h-3.5" },
-  { src: "/payments/phonepe.svg", alt: "PhonePe", height: "h-4" },
-  { src: "/payments/paytm.svg", alt: "Paytm", height: "h-3.5" },
-  { src: "/payments/visa.svg", alt: "Visa", height: "h-3" },
-  { src: "/payments/mastercard.svg", alt: "Mastercard", height: "h-5" },
-  { src: "/payments/rupay.svg", alt: "RuPay", height: "h-3.5" },
+/** w/h are each file's natural size: they give the browser the aspect ratio
+ *  before the logo loads, so the row never shifts or re-wraps. */
+const PAY_METHODS: { src: string; alt: string; height: string; w: number; h: number }[] = [
+  { src: "/payments/upi.svg", alt: "UPI", height: "h-4", w: 493, h: 174 },
+  { src: "/payments/google-pay.svg", alt: "Google Pay", height: "h-3.5", w: 41, h: 17 },
+  { src: "/payments/phonepe.svg", alt: "PhonePe", height: "h-4", w: 230, h: 70 },
+  { src: "/payments/paytm.svg", alt: "Paytm", height: "h-3.5", w: 64, h: 20 },
+  { src: "/payments/visa.svg", alt: "Visa", height: "h-3", w: 300, h: 97 },
+  { src: "/payments/mastercard.svg", alt: "Mastercard", height: "h-5", w: 243, h: 150 },
+  { src: "/payments/rupay.svg", alt: "RuPay", height: "h-3.5", w: 272, h: 71 },
 ];
 
 export function PaymentTrust({
@@ -49,7 +51,7 @@ export function PaymentTrust({
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Secured by Razorpay"
-          className="shrink-0"
+          className="inline-flex min-h-11 shrink-0 items-center"
         >
           <img
             src={withBasePath("/payments/razorpay-secured.png")}
@@ -66,6 +68,8 @@ export function PaymentTrust({
             <img
               src={withBasePath(m.src)}
               alt={m.alt}
+              width={m.w}
+              height={m.h}
               className={`${m.height} w-auto max-w-[4.75rem] object-contain`}
               loading="lazy"
               decoding="async"

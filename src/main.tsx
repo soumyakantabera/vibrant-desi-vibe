@@ -55,14 +55,11 @@ async function start() {
     // state. Mount regardless so the reader is never left on a dead page.
   }
 
-  // Static pages ship a fully populated <head> so crawlers that do not run JS
-  // can read the metadata. React re-renders those same tags via <HeadContent/>
-  // and appends rather than replaces, so hand ownership over cleanly: drop the
-  // prerendered copies now, and every subsequent client-side navigation
-  // updates the title, canonical and JSON-LD instead of stacking a second set
-  // on top of a stale one. No-JS crawlers never reach this line and keep the
-  // static head.
-  document.querySelectorAll("[data-prerender]").forEach((el) => el.remove());
+  // Static pages ship a fully populated <head>, and the client build carries
+  // no per-page head code (vite/strip-route-head-plugin.ts), so the
+  // prerendered head stays. <HeadSync> removes the twins of the few site-wide
+  // tags the root route renders itself, and swaps the page-specific head on
+  // navigation.
 
   // Note which photos the reader can already see, so re-creating the DOM does
   // not blink them back to their placeholders.

@@ -1,3 +1,4 @@
+import { HeadSync } from "@/components/HeadSync";
 import {
   Outlet,
   Link,
@@ -23,7 +24,7 @@ import dmSans500 from "@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2?
 import dmSans700 from "@fontsource/dm-sans/files/dm-sans-latin-700-normal.woff2?url";
 import { withBasePath } from "@/lib/site-path";
 import { CHAT_MSG, waLink, withPageTag } from "@/lib/whatsapp";
-import { siteHead } from "@/lib/seo";
+import { siteHead } from "@/lib/site-head";
 import { RouteProgress } from "@/components/RouteProgress";
 import { BOOT_SCRIPT, BOOT_CSS, FONT_CSS } from "@/lib/boot-script";
 import { markAppReady, prefetchWhenIdle } from "@/lib/boot";
@@ -205,6 +206,7 @@ function RootComponent() {
   return (
     <>
       <RouteProgress />
+      <HeadSync />
       <Outlet />
     </>
   );
