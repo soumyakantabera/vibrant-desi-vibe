@@ -77,7 +77,7 @@ function Page() {
     >
       <section className="section bg-paper" id="fees">
         <div className="container-x">
-          <h2 className="mb-2 text-2xl md:text-[2rem]">Learn With Smile fees, side by side</h2>
+          <h2 className="mb-2 section-title">Learn With Smile fees, side by side</h2>
           <p className="mb-6 max-w-3xl text-ink/80">
             Every fee includes live classes, the Bolo practice app — daily practice, video lessons
             and a weekly teacher review — and the same teacher.

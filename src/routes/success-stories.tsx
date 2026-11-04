@@ -109,7 +109,7 @@ function Page() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-x text-center">
-          <h2 className="text-3xl md:text-4xl">Want to be the next story?</h2>
+          <h2 className="section-title">Want to be the next story?</h2>
           <p className="mt-3 text-ink/85 max-w-xl mx-auto">
             Tell us your goal — we'll match you to the right course.
           </p>

@@ -285,10 +285,7 @@ function NativeBlock({ native }: { native: NativeSection }) {
           <span className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-extrabold text-bolo-teal">
             {native.label}
           </span>
-          <h2
-            id="native-heading"
-            className="mt-3 text-3xl font-bold leading-tight text-ink md:text-4xl"
-          >
+          <h2 id="native-heading" className="mt-3 font-bold text-ink section-title">
             {native.heading}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink/85">{native.intro}</p>
@@ -378,8 +375,8 @@ export function CoursePage({ data }: { data: CourseData }) {
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
-          <div className="text-cream">
+        <div className="container-x pt-6 pb-14 md:pt-8 md:pb-20 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
+          <div className="hero-bob text-cream">
             <Link
               to="/english-career"
               className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline"

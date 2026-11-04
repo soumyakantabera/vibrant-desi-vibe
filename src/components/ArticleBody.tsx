@@ -98,7 +98,7 @@ function BlockView({ block }: { block: Block }) {
       return (
         <h2
           id={headingId(block.text)}
-          className="mt-12 mb-4 text-2xl md:text-3xl font-display font-extrabold text-ink leading-tight scroll-mt-24"
+          className="mt-12 mb-4 font-display font-extrabold text-ink scroll-mt-24 section-title"
         >
           {block.text}
         </h2>

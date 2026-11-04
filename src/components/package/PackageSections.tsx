@@ -161,9 +161,7 @@ export function Head({
         className={`flex max-w-3xl flex-col gap-3 ${align === "center" ? "items-center" : "items-start"}`}
       >
         <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
-        <h2 className="text-[1.65rem] font-bold leading-[1.12] text-ink md:text-[2.35rem]">
-          {title}
-        </h2>
+        <h2 className="section-title font-bold text-ink">{title}</h2>
         {sub && <p className="text-base text-ink/75 md:text-lg">{sub}</p>}
       </div>
       {aside}
@@ -248,7 +246,7 @@ export function PackageBand({ title }: { title?: string }) {
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-brand-deep">
             One fee · the complete package
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold leading-tight text-ink md:text-[2rem]">
+          <h2 className="mt-2 font-extrabold text-ink section-title">
             {title ?? (
               <>
                 Live classes, the Bolo app and the same teacher — from <FeeText text="₹999/month" />
@@ -291,7 +289,7 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
   ];
   const inBolo = (k: PartKey) => k === "portal" || k === "videos" || k === "review";
   return (
-    <section className={bare ? "pb-12 md:pb-14" : "bg-white pb-8"}>
+    <section className={bare ? "pb-14 md:pb-16" : "bg-white pt-6 pb-14 md:pt-8 md:pb-16"}>
       <div className="container-x">
         <div className="mb-2 hidden grid-cols-5 gap-3 lg:grid" aria-hidden="true">
           <div className="col-span-3 col-start-2 flex items-center gap-3">
@@ -309,15 +307,23 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
             return (
               <div
                 key={key}
-                className={`viz-pop flex items-start gap-3 rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] ${T[tone].deep}`}
+                className={`lift-card viz-pop relative isolate min-h-36 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] sm:min-h-40 lg:min-h-44 ${T[tone].deep}`}
                 style={d(i * 80)}
               >
-                <Chip tone={tone} icon={PART[key].icon} size="sm" />
-                <p className="text-sm">
+                {/* One large watermark, centred by the grid: its middle is the
+                    card's middle, horizontally and vertically. No offsets. */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -z-10 grid place-items-center text-white/30"
+                  data-watermark
+                >
+                  <Icon name={PART[key].icon} size={112} />
+                </span>
+                <p className="text-sm [text-shadow:0_1px_2px_rgba(0,0,0,.28)]">
                   <strong className="block font-bold text-white">
                     {bolo ? `Bolo · ${title}` : title}
                   </strong>
-                  <span className="text-white/85">{body}</span>
+                  <span className="text-white/90">{body}</span>
                 </p>
               </div>
             );

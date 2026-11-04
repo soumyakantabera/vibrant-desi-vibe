@@ -125,22 +125,65 @@ function Home() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-8 md:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] gap-7 lg:gap-8 items-stretch lg:items-center">
-          <div className="text-cream min-w-0 w-full">
-            <span className="eyebrow eyebrow-white">
+        {/*
+          Three grid items, in reading order: headline, pricing card, the rest.
+          On a phone the card sits right under the headline so it is fully on
+          the first screen; on desktop the copy shares the left column and the
+          card is lifted to the top of the right one.
+        */}
+        <div className="container-x grid grid-cols-1 items-start gap-y-5 pt-4 pb-10 md:pt-6 md:pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-x-10 lg:gap-y-0 lg:pt-7 lg:pb-14">
+          <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-1">
+            {/* Phones: the H1 is the first thing read; these facts repeat in the chips below. */}
+            <span className="eyebrow eyebrow-white hidden sm:inline-flex">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
               Live online spoken English classes · about 6 a batch · 7 years
             </span>
-            <h1 className="mt-3 text-[28px] md:text-5xl font-extrabold leading-[1.1] text-cream">
+            <h1 className="font-extrabold text-cream sm:mt-3">
               Speak Better English.
               <br />
               <span className="text-sunshine">Live Twice a Week.</span>
               <br />
               Practise Every Day.
             </h1>
+          </div>
+          <div className="w-full min-w-0 flex justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:block lg:self-start">
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
+              <SnapshotCard
+                eyebrow="Complete package from"
+                headline={feeHeadline("₹999/month", "spoken-english")}
+                subnote={
+                  <MarketCopy
+                    inr="Billed monthly · inclusive of taxes · no auto-debit"
+                    usd={`${intlUnit()} · billed monthly`}
+                  />
+                }
+                rows={[
+                  {
+                    tone: "brand",
+                    icon: SnapIcons.cap,
+                    big: "Up to 8",
+                    small: "Live classes a month, 90 min each",
+                  },
+                  {
+                    tone: "indigo",
+                    icon: SnapIcons.calendar,
+                    big: "Daily",
+                    small: "Practice in the Bolo app, with a streak",
+                  },
+                  {
+                    tone: "violet",
+                    icon: SnapIcons.people,
+                    big: "Weekly",
+                    small: "Teacher review of your reading & speaking",
+                  },
+                ]}
+              />
+            </div>
+          </div>
+          <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-2">
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Real teachers. Small batches. The complete package from{" "}
               <strong className="text-sunshine">
@@ -203,40 +246,6 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="w-full min-w-0 flex justify-center lg:block">
-            <div className="relative w-full max-w-[28rem] lg:max-w-none">
-              <SnapshotCard
-                eyebrow="Complete package from"
-                headline={feeHeadline("₹999/month", "spoken-english")}
-                subnote={
-                  <MarketCopy
-                    inr="Monthly billing · inclusive of taxes · UPI accepted"
-                    usd={`${intlUnit()} · billed monthly`}
-                  />
-                }
-                rows={[
-                  {
-                    tone: "brand",
-                    icon: SnapIcons.cap,
-                    big: "Up to 8",
-                    small: "Live classes a month, 90 min each",
-                  },
-                  {
-                    tone: "indigo",
-                    icon: SnapIcons.calendar,
-                    big: "Daily",
-                    small: "Practice in the Bolo app, with a streak",
-                  },
-                  {
-                    tone: "violet",
-                    icon: SnapIcons.people,
-                    big: "Weekly",
-                    small: "Teacher review of your reading & speaking",
-                  },
-                ]}
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -246,13 +255,13 @@ function Home() {
       <CoverageStrip />
 
       {/* STORY BAND */}
-      <section className="hero-light bg-white py-10 md:py-14">
+      <section className="hero-light bg-white py-16 md:py-20 lg:py-24">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine/15 text-sunshine font-display font-bold text-xs uppercase tracking-wider">
               <Icon name="book" size={14} /> Our Story
             </span>
-            <h2 className="mt-4 text-cream text-3xl md:text-5xl leading-[1.1]">
+            <h2 className="mt-4 text-cream section-title">
               We Noticed a Gap.
               <br />
               <span className="text-sage">We Built the Bridge.</span>
@@ -350,7 +359,8 @@ function Home() {
 
       <Deferred id="home-different">
         {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
-        <WhyDifferent />
+        {/* The scored matrix in MarketGap below is the homepage comparison. */}
+        <WhyDifferent table={false} />
 
         <GuidesStrip />
       </Deferred>

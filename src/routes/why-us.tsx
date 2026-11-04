@@ -111,8 +111,8 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x grid items-center gap-10 py-14 md:py-24 lg:grid-cols-[1.3fr_1fr]">
-          <div className="min-w-0 w-full text-cream">
+        <div className="container-x grid items-start gap-10 pt-6 pb-14 md:pt-8 md:pb-20 lg:grid-cols-[1.3fr_1fr]">
+          <div className="hero-bob min-w-0 w-full text-cream">
             <span className="eyebrow eyebrow-white">
               <Icon name="shield" size={14} /> Why Us · Quality + Proof
             </span>
@@ -287,7 +287,7 @@ function Page() {
             position="center 22%"
           />
           <div className="text-cream">
-            <h2 className="text-3xl text-cream md:text-4xl">Ready to start?</h2>
+            <h2 className="text-cream section-title">Ready to start?</h2>
             <p className="mt-3 text-white/95">
               <FeeText text="Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes." />
             </p>

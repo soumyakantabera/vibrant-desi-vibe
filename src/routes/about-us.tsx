@@ -190,7 +190,7 @@ function Page() {
 
       <section className="section">
         <div className="container-x text-center">
-          <h2 className="text-3xl md:text-4xl">Ready to learn the smile way?</h2>
+          <h2 className="section-title">Ready to learn the smile way?</h2>
           <p className="mt-3 text-ink/85 max-w-xl mx-auto">Chat on WhatsApp.</p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton

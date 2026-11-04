@@ -73,7 +73,7 @@ function EducatorCard({
         <span className="eyebrow eyebrow-indigo">
           <Icon name="spark" size={12} /> {title}
         </span>
-        <h2 className="mt-3 text-3xl md:text-5xl text-ink leading-[1.05]">{name}</h2>
+        <h2 className="mt-3 text-ink section-title">{name}</h2>
         <p className="mt-4 text-ink/85 leading-relaxed">{intro}</p>
 
         <div className="mt-5 grid sm:grid-cols-2 gap-3">
@@ -194,7 +194,7 @@ function Page() {
       <section className="hero-light section relative overflow-hidden">
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x relative text-center">
-          <h2 className="text-cream text-3xl md:text-4xl">Talk to the educator directly.</h2>
+          <h2 className="text-cream section-title">Talk to the educator directly.</h2>
           <p className="mt-3 text-white max-w-xl mx-auto">
             Tell us your goal — we’ll reply on WhatsApp.
           </p>

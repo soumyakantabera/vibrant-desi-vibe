@@ -52,10 +52,7 @@ export function Footer({ image }: { image?: string }) {
   const showDeveloper = !POLICY_PATHS.has(pathname);
   const wa = waLink(withPageTag(CHAT_MSG, pageLabel(pathname)));
   return (
-    <footer
-      className="hero-light border-t border-border bg-paper text-ink pt-16 pb-24 sm:pb-8 mt-10"
-      data-cta-location="footer"
-    >
+    <footer className="hero-light bg-paper text-ink pt-16 pb-24 sm:pb-8" data-cta-location="footer">
       <div className="container-x">
         <div className="grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 mb-12">
           <div>

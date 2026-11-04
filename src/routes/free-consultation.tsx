@@ -112,7 +112,7 @@ function Page() {
       <section className="section pt-0">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl mb-2">How the session works</h2>
+            <h2 className="mb-2 section-title">How the session works</h2>
             <p className="text-ink/80 mb-6">
               No payment to book. 100% free. Small batch. Personalised advice. Replies{" "}
               {CONSULTATION.hours}.
@@ -219,7 +219,7 @@ function Page() {
       <section className="section pt-0">
         <div className="container-x grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl mb-3">Queries we resolve in the same session</h2>
+            <h2 className="mb-3 section-title">Queries we resolve in the same session</h2>
             <p className="text-ink/80 mb-5">
               Everyone’s question about our courses, fees, batch and whether they belong here gets
               an answer. If we cannot answer it live, we say so and send it in writing.
@@ -337,9 +337,7 @@ function Page() {
       >
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">
-            Bring the problem. Leave with one room.
-          </h2>
+          <h2 className="text-cream section-title">Bring the problem. Leave with one room.</h2>
           <p className="mt-3 text-white">
             Get Free Consultation — 100% free, small batch, personalised advice. We diagnose the
             bottleneck, answer your queries, and place you in Spoken, Interactive, Workplace,

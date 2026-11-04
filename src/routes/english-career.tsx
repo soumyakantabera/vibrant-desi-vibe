@@ -62,8 +62,8 @@ function Page() {
           <SmartImage src={IMG.speaking} alt="English class India" fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-14 md:py-24 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
-          <div className="text-cream min-w-0 w-full">
+        <div className="container-x pt-6 pb-14 md:pt-8 md:pb-20 grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
+          <div className="hero-bob text-cream min-w-0 w-full">
             <span className="eyebrow eyebrow-white">
               <Icon name="mic" size={14} /> English & Career
             </span>
@@ -169,7 +169,7 @@ function Page() {
                   <div>
                     <h2
                       id={`${group.id}-title`}
-                      className="text-2xl font-display font-extrabold text-ink"
+                      className="font-display font-extrabold text-ink section-title"
                     >
                       {group.title}
                     </h2>
@@ -227,7 +227,7 @@ function Page() {
           <div className="grid items-center gap-8 rounded-[28px] border border-border bg-white p-6 shadow-lg md:p-10 lg:grid-cols-[1.3fr_0.7fr]">
             <div className="min-w-0">
               <p className="eyebrow eyebrow-sun">Not a sixth course · a seat in the real one</p>
-              <h2 className="mt-3 text-3xl md:text-4xl text-ink">
+              <h2 className="mt-3 text-ink section-title">
                 Demo Class. Serious? Then it costs nothing.
               </h2>
               <p className="mt-4 text-ink/85 leading-relaxed">
@@ -312,7 +312,7 @@ function Page() {
             sizes="(min-width: 1024px) 45vw, 100vw"
           />
           <div className="text-cream">
-            <h2 className="text-cream text-3xl md:text-4xl">Not sure which course fits?</h2>
+            <h2 className="text-cream section-title">Not sure which course fits?</h2>
             <p className="mt-3 text-white/95">
               Tell us the goal — interview, office promotion, daily confidence — we'll recommend the
               right course during 10am–midnight IST every day on WhatsApp.

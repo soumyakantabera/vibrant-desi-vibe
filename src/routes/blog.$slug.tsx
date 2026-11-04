@@ -116,7 +116,7 @@ function BlogPostPage() {
       {post.relatedCourses.length > 0 && (
         <section className="section bg-brand-soft/40 pt-0">
           <div className="container-x max-w-3xl">
-            <h2 className="text-2xl font-display font-extrabold text-ink">
+            <h2 className="font-display font-extrabold text-ink section-title">
               Courses that cover this
             </h2>
             <div className="mt-5 grid sm:grid-cols-2 gap-4">
@@ -148,7 +148,7 @@ function BlogPostPage() {
       {related.length > 0 && (
         <section className="section">
           <div className="container-x max-w-3xl">
-            <h2 className="text-2xl font-display font-extrabold text-ink">Read next</h2>
+            <h2 className="font-display font-extrabold text-ink section-title">Read next</h2>
             <div className="mt-5 grid sm:grid-cols-2 gap-4">
               {related.map((other) => (
                 <Link

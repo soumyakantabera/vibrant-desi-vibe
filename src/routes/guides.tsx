@@ -120,7 +120,7 @@ function Page() {
       >
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x text-center text-cream max-w-2xl">
-          <h2 className="text-cream text-2xl md:text-3xl">Still not sure which room?</h2>
+          <h2 className="text-cream section-title">Still not sure which room?</h2>
           <p className="mt-3 text-white">
             Get a free consultation. We diagnose the bottleneck, answer every query, and place you
             in one course — or tell you to stay free. Not a class.

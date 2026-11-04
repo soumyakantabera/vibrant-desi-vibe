@@ -1,3 +1,4 @@
+import { SectionRise } from "@/components/SectionRise";
 import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
@@ -26,6 +27,7 @@ export function Layout({
       <main id="main-content" className="flex-1" data-snippet={CONSULTATION.copilotSnippet}>
         {children}
       </main>
+      <SectionRise />
       <ConsultOffer message={waMessage} />
       <Footer image={footerImage} />
       <WhatsAppFab message={waMessage} />

@@ -111,13 +111,61 @@
     U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+25CC, U+A8F1;
 }
 
+/* ----------------------------------------------- DM Sans fallbacks ---
+   Until DM Sans arrives the browser draws with a system font. These faces
+   scale that font to DM Sans's width (size-adjust measured against DM Sans
+   in Chromium on the site's own headline, body and nav copy, Nov 2026) and
+   give it DM Sans's ascent 0.99em / descent 0.31em (override = metric ÷
+   size-adjust), so the swap barely moves anything: no re-wrapping, no
+   taller line boxes, no layout shift.
+   Arial / Helvetica / Liberation Sans cover Windows, macOS, iOS and Linux;
+   Roboto covers Android. */
+@font-face {
+  font-family: "DM Sans Fallback";
+  src: local("Arial"), local("ArialMT"), local("Helvetica"), local("Liberation Sans");
+  font-weight: 100 600;
+  size-adjust: 102.27%;
+  ascent-override: 96.8%;
+  descent-override: 30.31%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback";
+  src:
+    local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"),
+    local("Liberation Sans Bold");
+  font-weight: 700 900;
+  size-adjust: 101.53%;
+  ascent-override: 97.51%;
+  descent-override: 30.53%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback Roboto";
+  src: local("Roboto"), local("Roboto-Regular");
+  font-weight: 100 600;
+  size-adjust: 103.55%;
+  ascent-override: 95.61%;
+  descent-override: 29.94%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "DM Sans Fallback Roboto";
+  src: local("Roboto Bold"), local("Roboto-Bold");
+  font-weight: 700 900;
+  size-adjust: 108.16%;
+  ascent-override: 91.53%;
+  descent-override: 28.66%;
+  line-gap-override: 0%;
+}
+
 @theme inline {
   --font-sans:
-    "DM Sans", "Hind", "Hind Siliguri", "Noto Sans Devanagari", "Noto Sans Bengali", ui-sans-serif,
-    system-ui, sans-serif;
+    "DM Sans", "DM Sans Fallback", "DM Sans Fallback Roboto", "Hind", "Hind Siliguri",
+    "Noto Sans Devanagari", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
   --font-display:
-    "DM Sans", "Hind", "Hind Siliguri", "Noto Sans Devanagari", "Noto Sans Bengali", ui-sans-serif,
-    system-ui, sans-serif;
+    "DM Sans", "DM Sans Fallback", "DM Sans Fallback Roboto", "Hind", "Hind Siliguri",
+    "Noto Sans Devanagari", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -800,7 +848,7 @@ section > .container-x {
     @apply mx-auto w-full max-w-7xl px-5 sm:px-7 lg:px-10;
   }
   .section {
-    @apply py-12 md:py-14 lg:py-16;
+    @apply py-16 md:py-20 lg:py-24;
     /* Off-screen sections skip style/layout until scrolled near; the
        remembered size keeps the scrollbar and anchors stable. */
     content-visibility: auto;
@@ -1848,4 +1896,101 @@ html.js [data-viz="in"] .viz-arc {
 :lang(mr) :is(p, li, dd, dt),
 :lang(bn) :is(p, li, dd, dt) {
   line-height: 1.75;
+}
+
+/* ------------------------------------------------------ heading scale ---
+   One scale for every page H1 and every section title, set here once so no
+   page drifts. Unlayered on purpose: it beats the per-page Tailwind sizes.
+
+   H1: the homepage headline is three short lines that must each stay on one
+   line ("Speak Better English." needs ~10px of width per px of font), so the
+   size tracks the space it has: the full content width on phones and
+   tablets, the 1.3fr hero column from 1024px. ~34px at 390px, ~62px from
+   1340px up (the container stops widening at 1280px). */
+main h1 {
+  font-size: clamp(2rem, calc((100vw - 2.5rem) / 10.2), 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 1024px) {
+  main h1 {
+    /* The container stops at 1280px, so the column (and the H1) stop too. */
+    font-size: clamp(2.75rem, 4.6vw, 3.85rem);
+  }
+}
+/* Section titles: 30px on a phone up to 48px on desktop. */
+.section-title {
+  font-size: clamp(1.875rem, 1.25rem + 2.4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+/* ------------------------------------------------------------- motion ---
+   Slow, small and looping for the hero copy and the card's price; one-time
+   rise for sections further down; a few pixels of lift on cards. All of it
+   is `translate` (not `transform`), so it never fights the entrance
+   animations, and all of it is off under prefers-reduced-motion. */
+@keyframes hero-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bob,
+  .price-bob {
+    animation: hero-bob 6s ease-in-out infinite;
+  }
+  /* The price moves a beat behind the copy so the screen breathes, not jumps. */
+  .price-bob {
+    animation-delay: -1.5s;
+  }
+
+  /* Set by <SectionRise> on sections that start below the first screen. */
+  html.js [data-rise="out"] {
+    opacity: 0;
+    translate: 0 28px;
+  }
+  html.js [data-rise="in"] {
+    opacity: 1;
+    translate: 0 0;
+    transition:
+      opacity 0.7s var(--ease-pro),
+      translate 0.7s var(--ease-pro);
+  }
+}
+
+/* Cards lift a few pixels on hover (pointer devices only). */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :is(.card-soft, .lift-card),
+  main :is(a, article, li).rounded-2xl,
+  main :is(a, article, li).rounded-3xl {
+    transition:
+      translate 0.25s var(--ease-pro),
+      box-shadow 0.25s var(--ease-pro);
+  }
+  :is(.card-soft, .lift-card):hover,
+  main :is(a, article, li).rounded-2xl:hover,
+  main :is(a, article, li).rounded-3xl:hover {
+    translate: 0 -4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-bob,
+  .price-bob {
+    animation: none;
+  }
+  html.js [data-rise] {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+  /* Older per-card hover lifts (Tailwind hover:-translate-y-*) stay still too. */
+  [class*="hover:-translate-y"]:hover,
+  [class*="hover:translate-y"]:hover {
+    translate: none !important;
+  }
 }

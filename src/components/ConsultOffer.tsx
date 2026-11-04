@@ -30,11 +30,7 @@ export function ConsultOffer({
   const sun = tone === "sun";
   return (
     <section
-      className={
-        sun
-          ? "border-y border-border bg-paper py-10 md:py-14"
-          : "hero-light cta-wash border-y border-border py-8 md:py-12"
-      }
+      className={sun ? "bg-paper py-14 md:py-20" : "hero-light cta-wash py-12 md:py-16"}
       data-cta-location="consult_offer"
     >
       <div className="container-x max-w-5xl mx-auto text-center">
@@ -44,7 +40,7 @@ export function ConsultOffer({
           <FeeText text={CONSULTATION.hook} />
         </p>
         <h2
-          className={`mt-3 font-display font-extrabold leading-[1.08] text-3xl md:text-5xl ${sun ? "text-ink" : "text-cream"}`}
+          className={`section-title mt-3 font-display font-extrabold ${sun ? "text-ink" : "text-cream"}`}
         >
           {CONSULTATION.headline}
         </h2>

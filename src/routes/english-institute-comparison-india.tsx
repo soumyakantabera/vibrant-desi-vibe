@@ -193,7 +193,9 @@ function Page() {
         <div className="container-x">
           <CompareDiff />
           <p className="eyebrow mt-10">Online 2026. Named brands.</p>
-          <h2 className="mt-2 max-w-3xl">Who each online institute is actually for</h2>
+          <h2 className="section-title mt-2 max-w-3xl">
+            Who each online institute is actually for
+          </h2>
           <p className="mt-3 max-w-3xl text-ink/80">
             Not a ranking. Public 2026 bands. PlanetSpark is children. We are adults 15+. Confirm on
             their site before you pay.
@@ -230,7 +232,7 @@ function Page() {
       >
         <div className="absolute inset-0 z-0 cta-wash" />
         <div className="container-x max-w-2xl text-center text-cream">
-          <h2 className="text-2xl text-cream md:text-3xl">Compare in a class.</h2>
+          <h2 className="text-cream section-title">Compare in a class.</h2>
           <p className="mt-3 text-white">
             Approximately 6 learners. From ₹999/mo, inclusive of taxes. Spoken, Interactive,
             Workplace and Interview Preparation.

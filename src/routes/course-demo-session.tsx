@@ -119,7 +119,7 @@ function DemoSessionPage() {
         <div className="container-x grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div>
             <p className="eyebrow eyebrow-sun">Why {fee("₹199")} is not the price</p>
-            <h2 className="mt-3 text-3xl md:text-4xl text-ink">
+            <h2 className="mt-3 text-ink section-title">
               Serious about a course? This session is free.
             </h2>
             <p className="mt-4 text-ink/85 leading-relaxed">
@@ -151,7 +151,7 @@ function DemoSessionPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-x">
-          <h2 className="text-2xl md:text-3xl text-ink">How you get the seat</h2>
+          <h2 className="text-ink section-title">How you get the seat</h2>
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {STEPS.map((step) => (
               <article key={step.n} className="card-soft">
@@ -169,7 +169,7 @@ function DemoSessionPage() {
       <section className="section">
         <div className="container-x grid lg:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl md:text-3xl text-ink">What you will see</h2>
+            <h2 className="text-ink section-title">What you will see</h2>
             <ul className="mt-5 grid gap-3">
               {d.outcomes.map((item) => (
                 <li
@@ -209,7 +209,7 @@ function DemoSessionPage() {
 
       <section className="section bg-cream" id="faq">
         <div className="container-x max-w-3xl">
-          <h2 className="text-2xl md:text-3xl text-ink">Before you pay</h2>
+          <h2 className="text-ink section-title">Before you pay</h2>
           <div className="mt-6 grid gap-3">
             {faqs.map((faq) => (
               <details key={faq.q} className="card-soft" open>
@@ -226,7 +226,7 @@ function DemoSessionPage() {
       <section className="hero-light relative overflow-hidden py-16 md:py-20">
         <div className="absolute inset-0 hero-veil" />
         <div className="container-x relative text-center text-cream">
-          <h2 className="text-3xl md:text-4xl text-cream">See the class. Then decide.</h2>
+          <h2 className="text-cream section-title">See the class. Then decide.</h2>
           <p className="mx-auto mt-3 max-w-xl text-white">
             {fee("₹199")} for 90 minutes with the teacher. Nothing extra if you enrol within 48
             hours.
