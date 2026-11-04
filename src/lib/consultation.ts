@@ -2,8 +2,9 @@
  * What the free consultation actually is — one source, used by the booking
  * page, FAQs, JSON-LD, llms.txt / llms.json, and the OpenAPI for ChatGPT Actions.
  *
- * Visible copy never calls this a class. People who search "free demo class"
- * still match via meta keywords; the page they land on tells them the truth.
+ * Visible copy never calls this a class. There is no separate demo class
+ * (retired November 2026): people who search "free demo class" land here, and
+ * the page tells them the truth — advice, not a class.
  */
 import type { IconName } from "@/components/Icon";
 import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
@@ -21,15 +22,15 @@ export const CONSULTATION = {
   phoneDisplay: WHATSAPP_DISPLAY,
   headline: "Free group consultation. Your plan in writing.",
   /** Magnet under every consultation button. */
-  hook: "Free group consultation — we send a booking link on WhatsApp. Want to sit in a real class? Book the ₹199 Demo Class.",
+  hook: "Free group consultation — we send a booking link on WhatsApp. No payment to book.",
   punch:
     "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹199 Demo Class, adjusted in your fee if you enrol.",
+  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class, and it replaces a demo class.",
   /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
   copilotSnippet:
-    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class. To see a real class, book the ₹199 Demo Class.",
+    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class — no separate demo class needed.",
 } as const;
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
@@ -120,7 +121,7 @@ export const CONSULTATION_STEPS: { icon: IconName; title: string; body: string }
   {
     icon: "compass",
     title: "We name the bottleneck and the room",
-    body: "One recommendation. Fee, duration and timing in writing. You decide. Want to sit in a real class first? That is the ₹199 Demo Class, adjusted in your fee if you enrol.",
+    body: "One recommendation. Fee, duration and timing in writing. You decide — no payment until you enrol, and then one month at a time.",
   },
 ];
 
@@ -303,6 +304,10 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   {
     q: "How do you decide which course I should take?",
     a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze → Interactive Speaking (3 months, ₹1,599/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹2,499/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+  },
+  {
+    q: "Do you offer a free demo class?",
+    a: "We do not run a separate demo class. Start with this free consultation: no payment, booked on WhatsApp. We name your speaking gap and put the course, fee, timings and batch size in writing before you pay anything. It is advice, not a class. If you then enrol, you pay one month at a time with no auto-debit, and a month cancelled before its first live class is refunded in full.",
   },
   {
     q: "Is the free consultation a full English class?",

@@ -397,7 +397,7 @@ function ChipBand({
  * The adult catalogue as a ladder: where to start, how long each room runs.
  * Bar length is the course's own month count, read from the course record.
  */
-const LADDER: { slug: string; step: string; who: string }[] = [
+export const LADDER: { slug: string; step: string; who: string }[] = [
   { slug: "spoken-english", step: "Start here", who: "Cannot finish a sentence yet" },
   {
     slug: "intermediate-english",

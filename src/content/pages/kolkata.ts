@@ -171,7 +171,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If none of those apply, chat on WhatsApp — we will suggest the batch that fits your timing. Want to sit in a real class first? Book the ₹199 Demo Class.",
+    text: "If none of those apply, chat on WhatsApp — we will suggest the batch that fits your timing. Not sure yet? Get a free consultation first.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

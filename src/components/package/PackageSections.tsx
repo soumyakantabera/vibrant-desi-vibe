@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "@/components/Icon";
-import { WaButton } from "@/components/ui-bits";
+import { SwipeHint, WaButton } from "@/components/ui-bits";
 import { FeePair, FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { BoloParrot } from "@/components/mascots/BoloParrot";
@@ -14,19 +14,16 @@ import { BOLO_LINES } from "@/lib/bolo";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 import {
   COURSE_FEE,
-  DEMO_FEE,
   LAUNCH_OFFER,
   launchOfferActive,
   launchOfferDaysLeft,
   type FeeSlug,
 } from "@/lib/fees";
 import {
-  BEFORE_NOW,
   COURSE_PACKAGE,
   MARKET_COLUMNS,
   MARKET_PRICE,
   MARKET_ROWS,
-  PART_TONE,
   TALK_TIME,
   VIDEO_TOPICS,
   WEEK,
@@ -1093,102 +1090,109 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
     if (!launchOfferActive()) setOffer(false);
   }, []);
   return (
-    <VizIn className="phone-swipe flex flex-wrap justify-center gap-4">
-      {PLAN_ORDER.map((slug, i) => {
-        const fee = COURSE_FEE[slug];
-        const copy = PLAN_COPY[slug];
-        return (
-          <article
-            key={slug}
-            style={d(i * 90)}
-            className={`viz-pop flex w-full flex-col overflow-hidden rounded-3xl border bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.7rem)] transition hover:-translate-y-1 ${copy.popular ? "border-2 border-indigo-pop shadow-[0_22px_50px_-30px_rgba(47,90,138,.55)]" : "border-border shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)]"}`}
-          >
-            <div
-              className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 text-white sm:px-6 ${T[copy.tone].deep}`}
+    <>
+      <VizIn className="phone-swipe flex flex-wrap justify-center gap-4">
+        {PLAN_ORDER.map((slug, i) => {
+          const fee = COURSE_FEE[slug];
+          const copy = PLAN_COPY[slug];
+          return (
+            <article
+              key={slug}
+              style={d(i * 90)}
+              className={`viz-pop flex w-full flex-col overflow-hidden rounded-3xl border bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.7rem)] transition hover:-translate-y-1 ${copy.popular ? "border-2 border-indigo-pop shadow-[0_22px_50px_-30px_rgba(47,90,138,.55)]" : "border-border shadow-[0_16px_40px_-32px_rgba(19,33,47,.45)]"}`}
             >
-              <span className="text-xs font-bold text-white">
-                {fee.months} months · up to 2 classes/week
-              </span>
-              {copy.popular && (
-                <span className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1F3D63]">
-                  Most popular
-                </span>
-              )}
-            </div>
-            <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
-              <h3 className="text-xl font-bold leading-tight">
-                <Link to={copy.path} className="hover:underline">
-                  {fee.name}
-                </Link>
-              </h3>
-              <p className="min-h-10 text-sm text-ink/70">{copy.for}</p>
-              <p className="text-4xl font-extrabold tracking-tight text-ink">
-                <FeePair inr={fee.display} usd={INTL_FEE[slug].big} />
-                <span className="text-base font-semibold text-ink/60">
-                  <FeePair inr="/month" usd={INTL_FEE[slug].suffix} />
-                </span>
-              </p>
-              <p className="-mt-1 text-xs text-ink/60">
-                <MarketCopy
-                  inr="Inclusive of taxes · billed monthly"
-                  usd={`${intlUnit()} · billed monthly`}
-                />
-              </p>
-              <ul className="mt-1 flex flex-col gap-2.5 border-t border-border pt-4 text-sm text-ink/85">
-                {PLAN_INCLUDES.map((p) => (
-                  <li key={p.text} className="flex items-center gap-2.5">
-                    <span
-                      className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${T[p.tone].soft} ${T[p.tone].text}`}
-                    >
-                      <Icon name={p.icon} size={16} />
-                    </span>
-                    {p.text}
-                  </li>
-                ))}
-                <li className="flex items-center gap-2.5 font-bold text-ink">
-                  <Icon name="check" size={20} className="ml-1 shrink-0 text-brand" />
-                  {copy.focus}
-                </li>
-              </ul>
-              {offer && (
-                <span className="rounded-xl bg-amber-soft px-3 py-2 text-xs font-bold text-[#6A4A10]">
-                  {LAUNCH_OFFER.short} · enrol by 30 Nov
-                </span>
-              )}
-              <WaButton
-                message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
-                variant={copy.popular ? "primary" : "outline"}
-                size="sm"
-                className="mt-auto w-full justify-center"
-                goal="pricing_card"
+              <div
+                className={`flex min-h-12 items-center justify-between gap-2 px-5 py-3 text-white sm:px-6 ${T[copy.tone].deep}`}
               >
-                Ask on WhatsApp
-              </WaButton>
-            </div>
-          </article>
-        );
-      })}
-    </VizIn>
+                <span className="text-xs font-bold text-white">
+                  {fee.months} months · up to 2 classes/week
+                </span>
+                {copy.popular && (
+                  <span className="whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#1F3D63]">
+                    Most popular
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
+                <h3 className="text-xl font-bold leading-tight">
+                  <Link to={copy.path} className="hover:underline">
+                    {fee.name}
+                  </Link>
+                </h3>
+                <p className="min-h-10 text-sm text-ink/70">{copy.for}</p>
+                <p className="text-4xl font-extrabold tracking-tight text-ink">
+                  <FeePair inr={fee.display} usd={INTL_FEE[slug].big} />
+                  <span className="text-base font-semibold text-ink/60">
+                    <FeePair inr="/month" usd={INTL_FEE[slug].suffix} />
+                  </span>
+                </p>
+                <p className="-mt-1 text-xs text-ink/60">
+                  <MarketCopy
+                    inr="Inclusive of taxes · billed monthly"
+                    usd={`${intlUnit()} · billed monthly`}
+                  />
+                </p>
+                <ul className="mt-1 flex flex-col gap-2.5 border-t border-border pt-4 text-sm text-ink/85">
+                  {PLAN_INCLUDES.map((p) => (
+                    <li key={p.text} className="flex items-center gap-2.5">
+                      <span
+                        className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg ${T[p.tone].soft} ${T[p.tone].text}`}
+                      >
+                        <Icon name={p.icon} size={16} />
+                      </span>
+                      {p.text}
+                    </li>
+                  ))}
+                  <li className="flex items-center gap-2.5 font-bold text-ink">
+                    <Icon name="check" size={20} className="ml-1 shrink-0 text-brand" />
+                    {copy.focus}
+                  </li>
+                </ul>
+                {offer && (
+                  <span className="rounded-xl bg-amber-soft px-3 py-2 text-xs font-bold text-[#6A4A10]">
+                    {LAUNCH_OFFER.short} · enrol by 30 Nov
+                  </span>
+                )}
+                <WaButton
+                  message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
+                  variant={copy.popular ? "primary" : "outline"}
+                  size="sm"
+                  className="mt-auto w-full justify-center"
+                  goal="pricing_card"
+                >
+                  Ask on WhatsApp
+                </WaButton>
+              </div>
+            </article>
+          );
+        })}
+      </VizIn>
+      <SwipeHint label="Swipe to compare courses" />
+    </>
   );
 }
 
-export function DemoStrip() {
+/** Undecided path under the price cards: the free consultation (not a class). */
+export function ConsultStrip() {
   return (
     <div className="mt-5 flex flex-col gap-4 rounded-3xl border border-border bg-terra-soft p-6 md:flex-row md:items-center md:justify-between md:p-7">
       <div className="flex items-start gap-4">
         <Chip tone="terra" icon="compass" />
         <p className="text-ink/80">
           <strong className="block text-lg font-bold text-ink md:text-xl">
-            Not sure yet? Sit in a real class first.
+            Not sure which course? Start with a free consultation.
           </strong>
-          <FeeText
-            text={`90-minute Demo Class in a live batch — ${DEMO_FEE.display}, inclusive of taxes. Adjusted in your fee if you enrol within 48 hours.`}
-          />
+          No payment. We hear your goal, name the gap and put the course and fee in writing on
+          WhatsApp. Advice, not a class — then you decide.
         </p>
       </div>
-      <Link to="/course-demo-session" className="btn btn-primary shrink-0">
-        <FeeText text={`Book the ${DEMO_FEE.display} Demo Class`} />
-      </Link>
+      <WaButton
+        message="Hi, I want a free consultation to choose my spoken English course."
+        variant="primary"
+        className="shrink-0"
+      >
+        Get Free Consultation
+      </WaButton>
     </div>
   );
 }

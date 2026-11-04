@@ -8,6 +8,7 @@ import {
   MottoBand,
   GuidesStrip,
   CoverageStrip,
+  SwipeHint,
 } from "@/components/ui-bits";
 import { Icon, type IconName } from "@/components/Icon";
 import { BrandIcon } from "@/components/BrandIcon";
@@ -15,23 +16,17 @@ import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { CourseLadder } from "@/components/CourseVisuals";
+import { CourseLadder, LADDER } from "@/components/CourseVisuals";
 import { BoloSection } from "@/components/bolo/BoloSections";
 import { WhyDifferent } from "@/components/WhyDifferent";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
-import {
-  COURSE_CATEGORIES,
-  type CategoryTone,
-  type CourseCategory,
-  type CourseSlug,
-} from "@/lib/course-categories";
 import { COURSES } from "@/lib/courses";
 import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
 import {
-  DemoStrip,
+  ConsultStrip,
   LaunchOfferBand,
   PackageStrip,
   PricingGrid,
@@ -98,16 +93,20 @@ function Home() {
           Three grid items in reading order: headline, the rest of the copy,
           then the pricing card. Phones show them in that order (card below
           the copy, as before); on desktop the copy shares the left column and
-          the card is lifted to the top of the right one.
+          the card sits a little below the top of the right one, so it is
+          centred on the right of the first screen.
         */}
-        <div className="container-x grid grid-cols-1 items-start pt-6 pb-10 md:pt-8 md:pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-x-10 lg:pt-7 lg:pb-14">
+        <div className="container-x grid grid-cols-1 items-start pt-10 pb-10 md:pt-12 md:pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-x-10 lg:pt-14 lg:pb-14">
           <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-1">
-            <span className="eyebrow eyebrow-white">
+            <span className="eyebrow eyebrow-white hero-eyebrow">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
-              Live online spoken English classes · about 6 a batch · 7 years
+              <span>
+                Live online<span className="hidden sm:inline"> spoken English classes</span> · about
+                6 a batch · 7 years
+              </span>
             </span>
             <h1 className="mt-3 font-extrabold text-cream">
               Speak Better English.
@@ -152,13 +151,6 @@ function Home() {
               Tell us your goal. We reply with the right course and the fee — no pressure, no
               payment to book.
             </p>
-            <p className="mt-2 text-sm text-white">
-              Want to sit in a real class first?{" "}
-              <Link to="/course-demo-session" className="font-bold underline">
-                <FeeText text="Book the ₹199 Demo Class" />
-              </Link>{" "}
-              — adjusted in your fee if you enrol.
-            </p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
               Message anytime. We reply 10am–midnight IST every day.
@@ -180,7 +172,7 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="mt-7 w-full min-w-0 flex justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:block lg:self-start">
+          <div className="mt-7 w-full min-w-0 flex justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-12 lg:block lg:self-start">
             <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 eyebrow="Complete package from"
@@ -229,16 +221,14 @@ function Home() {
             <SectionHeader
               eyebrow="What We Teach"
               title="Choose the Goal You Need Now"
-              subtitle="Basic Spoken, Intermediate Spoken, Interactive Speaking, Business English and Interview Preparation. Start with the result you need — not a confusing course name."
+              subtitle="Seven live courses for adults 15+, about 6 learners each — including Basic Spoken English taught in Hindi or Marathi. Pick the result you need; every fee is inclusive of taxes."
             />
-            <Reveal
-              stagger
-              className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:max-w-3xl lg:gap-4"
-            >
-              {COURSE_CATEGORIES.map((category) => (
-                <CategoryCard key={category.id} category={category} />
+            <div id="all-courses" className="phone-swipe flex flex-wrap justify-center gap-4">
+              {HOME_COURSES.map((c) => (
+                <CourseCard key={c.slug} {...c} />
               ))}
-            </Reveal>
+            </div>
+            <SwipeHint label="Swipe for all 7 courses" />
             <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <strong className="text-cream block text-lg">
@@ -381,7 +371,7 @@ function Home() {
               subtitle="Pay per month, inclusive of taxes. Up to 2 live classes/week in a batch of approximately 6, plus Bolo, the practice app with daily exercises, video lessons and a weekly teacher review. Same-week reschedule if a slot is free."
             />
             <PricingGrid />
-            <DemoStrip />
+            <ConsultStrip />
             <div className="mt-7 text-center">
               <p className="text-sm text-ink/75">
                 <MarketCopy
@@ -535,112 +525,79 @@ function Home() {
   );
 }
 
-const STORY_TONE = {
-  amber: { box: "bg-amber-soft", chip: "bg-sunshine text-ink", title: "text-[#6A4A10]" },
-  green: { box: "bg-brand-soft", chip: "bg-brand text-white", title: "text-brand-deep" },
-  plum: { box: "bg-plum-soft", chip: "bg-plum text-white", title: "text-[#4E3470]" },
-  blue: { box: "bg-slate-soft", chip: "bg-indigo-pop text-white", title: "text-[#1F3D63]" },
-} as const;
+/** Every course, one flat list: the ladder order, then the two taught-in-your-language rooms. */
+const HOME_COURSES: { slug: string; step: string; who: string; photo?: "mid" | "footer" }[] = [
+  ...LADDER,
+  {
+    slug: "spoken-english-hindi",
+    step: "Start here · in Hindi",
+    who: "Basic Spoken English, explained by a Hindi-speaking teacher",
+    photo: "mid",
+  },
+  {
+    slug: "spoken-english-marathi",
+    step: "Start here · in Marathi",
+    who: "Basic Spoken English, explained by a Marathi-speaking teacher",
+    photo: "footer",
+  },
+];
 
-const CATEGORY_TONES: Record<CategoryTone, { bar: string; icon: string; badge: string }> = {
-  brand: {
-    bar: "bg-brand",
-    icon: "bg-brand-soft text-brand-deep",
-    badge: "border-brand/25 bg-brand-soft text-brand-deep",
-  },
-  indigo: {
-    bar: "bg-indigo-pop",
-    icon: "bg-[#E3E9F1] text-indigo-pop",
-    badge: "border-indigo-pop/25 bg-[#F2F5F9] text-[#4141A8]",
-  },
-  sun: {
-    bar: "bg-[#B98A2E]",
-    icon: "bg-[#F5ECD6] text-[#6A4A10]",
-    badge: "border-sunshine/45 bg-[#FBF5E6] text-[#6A4A10]",
-  },
-  coral: {
-    bar: "bg-[#A9503D]",
-    icon: "bg-[#F8EEEA] text-[#8E3B2A]",
-    badge: "border-coral/35 bg-[#FAF2EF] text-[#8B321F]",
-  },
-  play: {
-    bar: "bg-gradient-to-r from-sunshine via-[#DDB061] to-coral",
-    icon: "bg-[#F5ECD6] text-[#6A4A10]",
-    badge: "border-sunshine/50 bg-[#FBF5E6] text-[#6A4A10]",
-  },
-};
-
-function coursePath(slug: CourseSlug): `/course-${CourseSlug}` {
-  return `/course-${slug}`;
-}
-
-function CategoryCard({ category }: { category: CourseCategory }) {
-  const visual = COURSES[category.featuredSlug];
-  const tone = CATEGORY_TONES[category.tone];
-  const destination = "/english-career" as const;
-  const cta =
-    category.slugs.length === 2
-      ? "Explore both programmes"
-      : `Explore ${category.slugs.length} programmes`;
-  const pill = `${category.slugs.length} programmes`;
-
+function CourseCard({
+  slug,
+  step,
+  who,
+  photo,
+}: {
+  slug: string;
+  step: string;
+  who: string;
+  photo?: "mid" | "footer";
+}) {
+  const course = COURSES[slug];
+  if (!course) return null;
+  const months = course.duration.split("·")[0].trim();
   return (
-    <article className="group min-w-0 overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]">
-      <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[16/9]">
+    <Link
+      to={`/course-${slug}` as "/course-spoken-english"}
+      className="group flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#DDE5DF] bg-white sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] shadow-[0_14px_40px_-32px_rgba(8,70,51,.5)] transition duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_50px_-30px_rgba(8,70,51,.55)]"
+    >
+      <div className="relative aspect-[16/9] overflow-hidden">
         <SmartImage
-          src={visual.heroImage}
-          alt={`${category.title} online courses in India`}
+          src={
+            (photo === "mid" ? course.midImage : photo === "footer" ? course.footerImage : null) ??
+            course.heroImage
+          }
+          alt={`${course.title} — live online class in India`}
           fill
           position="center 22%"
           imgClassName="transition duration-700 group-hover:scale-105"
-          sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 84vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
-        <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md backdrop-blur">
-          {pill}
+        <span className="pill absolute left-3 top-3 border-white/80 bg-white/95 text-ink shadow-md">
+          {step}
         </span>
       </div>
-      <div className={`h-1 ${tone.bar}`} />
-
-      <div className="flex min-w-0 flex-col p-3 sm:p-3.5">
+      <div className="flex min-w-0 flex-1 flex-col p-4">
         <div className="flex items-center gap-2">
-          <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl ${tone.icon}`}>
-            <Icon name={category.icon as IconName} size={16} />
+          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-deep">
+            <Icon name={course.icon} size={16} />
           </span>
-          <h3 className="font-display text-sm font-extrabold leading-tight text-ink lg:text-[15px]">
-            {category.title}
+          <h3 className="font-display text-base font-extrabold leading-tight text-ink">
+            {course.title}
           </h3>
         </div>
-
-        <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink/80">
-          {category.description}
+        <p className="mt-2 flex-1 text-sm leading-snug text-ink/80">{who}</p>
+        <p className="mt-3 text-sm text-ink/75">
+          {months} ·{" "}
+          <strong className="font-display text-ink">
+            <FeeText text={course.price} />
+          </strong>
         </p>
-
-        <div className="mt-3 flex min-w-0 flex-wrap gap-1.5">
-          {category.slugs.map((slug) => {
-            const course = COURSES[slug];
-            return (
-              <Link
-                key={slug}
-                to={coursePath(slug)}
-                className={`inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-display font-bold leading-tight transition hover:-translate-y-0.5 hover:shadow-sm ${tone.badge}`}
-              >
-                <Icon name={course.icon} size={13} /> {course.title}
-              </Link>
-            );
-          })}
-        </div>
-
-        <Link
-          to={destination}
-          hash={category.id}
-          className="mt-3 inline-flex min-h-9 w-full max-w-full items-center justify-center gap-1.5 rounded-full bg-brand-deep px-3 py-1.5 text-center text-[13px] font-display font-extrabold leading-tight text-white shadow-[0_10px_24px_-14px_rgba(8,70,51,.8)] transition hover:-translate-y-0.5 hover:bg-brand focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/25"
-        >
-          {cta}
-          <Icon name="arrow-right" size={14} />
-        </Link>
+        <span className="mt-3 inline-flex items-center gap-1 text-sm font-display font-bold text-brand-deep">
+          See the course <Icon name="arrow-right" size={14} />
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }
 

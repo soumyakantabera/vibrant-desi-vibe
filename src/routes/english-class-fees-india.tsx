@@ -4,7 +4,7 @@ import { GuidePage } from "@/components/GuidePage";
 import { IMG } from "@/lib/images";
 import { PAGES, abs, pageHead } from "@/lib/seo";
 import { body } from "@/content/pages/fees";
-import { DemoStrip, PricingGrid } from "@/components/package/PackageSections";
+import { ConsultStrip, PricingGrid } from "@/components/package/PackageSections";
 import { MarketGap } from "@/components/package/MarketSections";
 
 const PATH = "/english-class-fees-india";
@@ -83,7 +83,7 @@ function Page() {
             and a weekly teacher review — and the same teacher.
           </p>
           <PricingGrid />
-          <DemoStrip />
+          <ConsultStrip />
         </div>
       </section>
       <MarketGap />

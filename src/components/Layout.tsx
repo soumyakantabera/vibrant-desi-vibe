@@ -1,4 +1,5 @@
 import { SectionRise } from "@/components/SectionRise";
+import { SwipeNudge } from "@/components/SwipeNudge";
 import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
@@ -28,6 +29,7 @@ export function Layout({
         {children}
       </main>
       <SectionRise />
+      <SwipeNudge />
       <ConsultOffer message={waMessage} />
       <Footer image={footerImage} />
       <WhatsAppFab message={waMessage} />

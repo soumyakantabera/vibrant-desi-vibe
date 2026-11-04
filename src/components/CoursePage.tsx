@@ -481,7 +481,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {/* WHY WE'RE DIFFERENT — all-in-one at a low cost */}
-      {data.slug !== "demo-session" && <WhyDifferent compact level={levelForCourse(feeKey)} />}
+      <WhyDifferent compact level={levelForCourse(feeKey)} />
 
       {/* OUTCOMES */}
       <section className="section">
@@ -579,7 +579,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         </div>
       </section>
 
-      {data.slug !== "demo-session" && <CourseLadder highlight={feeKey} />}
+      <CourseLadder highlight={feeKey} />
 
       {data.projects && data.projects.length > 0 && (
         <section className="section">

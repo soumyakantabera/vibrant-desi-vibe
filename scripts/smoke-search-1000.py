@@ -138,7 +138,7 @@ NATIONAL = [
     ("spoken english course with daily practice affordable", "/", "daily practice", "₹999"),
     ("english class fees india 2026", "/english-class-fees-india", "fee", "₹999"),
     ("free spoken english consultation whatsapp", "/free-consultation", "consultation", None),
-    ("english class demo 199", "/course-demo-session", "199", None),
+    ("spoken english free demo class", "/free-consultation", "demo class", None),
     ("spoken english classes kolkata", "/spoken-english-classes-kolkata", "kolkata", "₹999"),
     ("spoken english course refund policy india", "/before-you-pay-spoken-english-course", "refund", None),
     ("english speaking course emi loan", "/before-you-pay-spoken-english-course", "emi", None),

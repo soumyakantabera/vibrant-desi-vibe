@@ -17,8 +17,9 @@
  * The `keywords` arrays below are targeting notes. The first ten of a page's
  * own list are emitted as `<meta name="keywords">` (see `buildHead`); Google
  * ignores the tag and Bing treats a stuffed one as spam, so it stays short.
- * Descriptions that mention a demo must say what it is — the free offer is a
- * consultation, the demo session is ₹199 — or the snippet over-promises.
+ * There is no demo class (retired November 2026). Demo-class searches land on
+ * the free consultation, and its copy says plainly that it is advice, not a
+ * class — or the snippet over-promises.
  */
 
 import { verificationMeta } from "@/lib/analytics";
@@ -258,8 +259,9 @@ export const INDIA_MARKET_KEYWORDS = [
 
 /**
  * Pushed onto every page's meta keywords, titles and SEM targeting.
- * Visible UI says "Get Free Consultation". Meta still ranks for demo-class
- * searches, and for counselling / consulting / consultation queries.
+ * Visible UI says "Get Free Consultation". Meta also targets demo-class and
+ * trial-class searches (there is no separate demo class), and counselling /
+ * consulting / consultation queries.
  */
 export const CONSULTATION_KEYWORDS = [
   "get free consultation",
@@ -576,15 +578,13 @@ export const SEMANTIC_KEYWORDS = [
   "career counselling for working professionals",
 ];
 
-/** SEM cluster for the paid 90-minute seat. Not merged onto every page. */
-export const PAID_DEMO_KEYWORDS = [
+/** Demo-class searches. All land on /free-consultation (no separate demo class). */
+export const DEMO_CLASS_KEYWORDS = [
   "demo session spoken english",
-  "paid demo class english india",
-  "book demo class 199",
+  "spoken english demo class online",
   "see english class before joining",
-  "sit in a live english batch",
-  "demo class 90 minutes india",
-  "spoken english demo class fee",
+  "english class trial before joining",
+  "spoken english trial class india",
 ] as const;
 
 /**
@@ -597,8 +597,7 @@ export const KEYWORD_CLUSTERS = {
   core: CORE_KEYWORDS,
   india_market: INDIA_MARKET_KEYWORDS,
   consultation: CONSULTATION_KEYWORDS.filter((k) => !/demo/i.test(k)),
-  demo_class_hidden: CONSULTATION_KEYWORDS.filter((k) => /demo/i.test(k)),
-  paid_demo: PAID_DEMO_KEYWORDS,
+  demo_class: [...CONSULTATION_KEYWORDS.filter((k) => /demo/i.test(k)), ...DEMO_CLASS_KEYWORDS],
   spoken: SPOKEN_KEYWORDS,
   intermediate: INTERMEDIATE_KEYWORDS,
   interactive: INTERACTIVE_KEYWORDS,
@@ -613,8 +612,8 @@ export const KEYWORD_CLUSTERS = {
 
 /**
  * Search intent per cluster. Used by llms.json / ChatGPT Actions so an
- * assistant does not send a fee-shopper to a blog, or a "demo class"
- * searcher into a full lesson.
+ * assistant does not send a fee-shopper to a blog, or promise a "demo class"
+ * searcher a free lesson.
  *
  *   navigational  — already looking for us
  *   informational — wants an answer, not a cart
@@ -646,26 +645,18 @@ export const CLUSTER_INTENT = {
   consultation: {
     intent: "transactional",
     funnel: "decide",
-    job: "It is free. Book on WhatsApp — Get Free Consultation. Not a demo class.",
+    job: "It is free. Book on WhatsApp — Get Free Consultation. Advice, not a class.",
     land: "/free-consultation",
     next: "Get Free Consultation",
   },
-  demo_class_hidden: {
+  demo_class: {
     intent: "transactional",
     funnel: "decide",
-    job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
-    land: "/course-demo-session",
-    next: "Book the ₹199 Demo Class",
+    job: "They asked for a demo class. Say: there is no separate demo class — start with the free consultation. It is free, book on WhatsApp.",
+    land: "/free-consultation",
+    next: "Get Free Consultation",
     mismatch:
-      "Do not send a demo-class question to the free consultation. Do not say the class is free to book. ₹199 to enrol. ₹0 extra only if they join a course within 48 hours.",
-  },
-  paid_demo: {
-    intent: "transactional",
-    funnel: "decide",
-    job: "They asked for a demo class. Say: it costs you nothing if you join. You pay ₹199 to enrol.",
-    land: "/course-demo-session",
-    next: "Book the ₹199 Demo Class",
-    mismatch: "Not free consulting. Not a sixth programme. Do not call ₹199 a cash refund.",
+      "Do not promise a free class. Do not quote a demo fee. The consultation is advice, not a class.",
   },
   spoken: {
     intent: "commercial",
@@ -805,7 +796,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), the Bolo practice app (daily grammar, vocabulary, reading and speaking with a streak, video lessons including tips and tricks to start speaking, and a weekly teacher review of reading and speaking), with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes. Header ribbon: paid Demo Class, ₹199 for 90 minutes, ₹0 extra if they enrol within 48 hours. Not a sixth programme.",
+      "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), the Bolo practice app (daily grammar, vocabulary, reading and speaking with a streak, video lessons including tips and tricks to start speaking, and a weekly teacher review of reading and speaking), with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes.",
     faqs: [
       ...WHY_WE_WIN_FAQ,
       {
@@ -846,7 +837,7 @@ export const PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I sit a real class before I buy a course?",
-        a: "Yes. The Demo Class is 90 minutes in a live batch with the teacher. WhatsApp us first, then pay ₹199, inclusive of taxes. If you enrol in that course, or any course we currently offer, within 48 hours of the session, that ₹199 is adjusted and you pay ₹0 extra. It is not a cash refund. We schedule the seat within 72 hours of payment. This is not the free consultation, and it is not a sixth programme.",
+        a: "We do not run a separate demo class. Start with the free consultation on WhatsApp: no payment, and you get the course, fee, timings and batch size in writing. Then you pay one month at a time, with no auto-debit — and a month cancelled before its first live class is refunded in full.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -864,7 +855,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/english-career",
     title: "English & Career | Master In-Demand Skills",
     description:
-      "Five live programmes from ₹999/month, tax included. Demo Class: ₹199 for 90 minutes, ₹0 extra if you enrol within 48 hours.",
+      "Five live programmes from ₹999/month, tax included, billed one month at a time. Not sure which? Get a free consultation on WhatsApp.",
     shortTitle: "English & Career Courses",
     keywords: [
       ...INTERVIEW_KEYWORDS,
@@ -874,7 +865,6 @@ export const PAGES: Record<string, PageSeo> = {
       "online english course list india",
       "english course fees comparison india",
       "which english course should i take",
-      "demo session 199",
       "ielts vs spoken english course",
       ...CORE_KEYWORDS,
     ],
@@ -883,7 +873,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Course hub. Five programmes from ₹999/month, inclusive of taxes, plus a paid Demo Class (₹199, 90 minutes) that is not a sixth programme. ₹0 extra if you enrol within 48 hours.",
+      "Course hub. Five programmes from ₹999/month, inclusive of taxes, billed one month at a time. Free consultation on WhatsApp to choose.",
     faqs: [
       {
         q: "Which English course should I choose — Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation?",
@@ -896,10 +886,6 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Who can join?",
         a: "Adult learners 15+: working professionals, graduates, freshers and homemakers. Batches are approximately 6 learners. We currently run adult rooms only.",
-      },
-      {
-        q: "Is the Demo Class one of the courses?",
-        a: "No. It is one 90-minute seat in a live batch, ₹199 inclusive of taxes. WhatsApp us first, then pay. Enrol in any course we currently offer within 48 hours of that class and the ₹199 is adjusted — you pay ₹0 extra. It is not a cash refund. We schedule you within 72 hours of payment. The five programmes are unchanged.",
       },
       {
         q: "Can I take two courses at the same time?",
@@ -1106,9 +1092,9 @@ export const PAGES: Record<string, PageSeo> = {
 
   "/free-consultation": {
     path: "/free-consultation",
-    title: "Free Spoken English Consultation on WhatsApp",
+    title: "Free Spoken English Consultation (No Demo Class Needed)",
     description:
-      "Free WhatsApp consultation: we find your speaking gap and recommend a live batch, with the fee in writing. Counselling, not a class. ₹199 demo optional.",
+      "Looking for a demo class? Start with a free WhatsApp consultation: we find your speaking gap and recommend a live batch, fee in writing. Advice, not a class.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -1118,6 +1104,7 @@ export const PAGES: Record<string, PageSeo> = {
       "book free demo class online india",
       "free demo class spoken english whatsapp",
       "best free english consultation vs demo class",
+      ...DEMO_CLASS_KEYWORDS,
       "engvarta vs learn with smile consultation",
       "british council counsellor vs free consultation",
     ],
@@ -1126,7 +1113,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — the ₹199 Demo Class is the real class. No payment. Replies 10am–midnight IST every day. +91 96744 79949.",
+      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — there is no separate demo class; this is where demo-class enquiries start. No payment. Replies 10am–midnight IST every day. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,
@@ -1222,7 +1209,7 @@ export const PAGES: Record<string, PageSeo> = {
     path: "/refunds",
     title: "Refunds and Cancellation Policy",
     description:
-      "Pay one month at a time, no auto-debit or loans. Cancel before a month's first class for a full refund, started in 2 working days. ₹199 demo fee adjusted.",
+      "Pay one month at a time, no auto-debit or loans. Cancel before a month's first class for a full refund, started in 2 working days. Duplicate charges reviewed.",
     shortTitle: "Refunds and Cancellation",
     keywords: [
       "learn with smile refund policy",
@@ -1234,7 +1221,7 @@ export const PAGES: Record<string, PageSeo> = {
     changefreq: "yearly",
     dateModified: "2026-11-03",
     summary:
-      "Refunds: cancel a paid month before its first live class for a full refund, started within 2 working days. Billing is one month at a time: no auto-debit, no UPI mandate, no loans or EMIs, never several months upfront, and no refund ever depends on a review. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. The Demo Class fee is not refunded in cash; it is adjusted against a course fee on admission within 48 hours. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
+      "Refunds: cancel a paid month before its first live class for a full refund, started within 2 working days. Billing is one month at a time: no auto-debit, no UPI mandate, no loans or EMIs, never several months upfront, and no refund ever depends on a review. After that class, that month is not refunded for a change of mind. Later unbilled months can be stopped. Duplicate charges and classes we cannot deliver are reviewed. A consumer right that cannot be waived, in India or where you live, still applies.",
     faqs: [
       {
         q: "Can I get a refund after I pay for a month?",
@@ -2052,18 +2039,6 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       },
     ],
   },
-  "demo-session": {
-    title: "Demo Class | ₹199 for 90 min, ₹0 if you enrol",
-    description:
-      "Pay ₹199, tax included, for 90 minutes in a live batch. Enrol in any current course within 48 hours and that ₹199 is adjusted — ₹0 extra, not a cash refund.",
-    shortTitle: "Demo Class",
-    keywords: [...PAID_DEMO_KEYWORDS],
-    ogImage: "/og/default.jpg",
-    dateModified: "2026-09-28",
-    summary:
-      "Paid Demo Class. ₹199 inclusive of taxes for 90 minutes in a live batch of about 6. Not a sixth programme and not the free consultation. WhatsApp us first, then pay; we schedule within 72 hours of payment. Enrol in any current course within 48 hours and the ₹199 is adjusted (₹0 extra, not a cash refund). Rule also at /terms#demo-session.",
-    extraFaqs: [],
-  },
 };
 
 /*
@@ -2072,7 +2047,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
  * and a "what daily practice do I get?" FAQ (rendered + FAQPage JSON-LD).
  */
 for (const [slug, seo] of Object.entries(COURSE_SEO)) {
-  if (slug === "demo-session" || slug === "career-counselling") continue;
+  if (slug === "career-counselling") continue;
   const L = LEVELS[levelForCourse(slug)];
   const path = L.nodes.map((n) => n.label.toLowerCase()).join(", ");
   const videos = L.videos.map((v) => v.title).join("; ");
@@ -2218,35 +2193,33 @@ export function organizationLd() {
             areaServed: india,
           },
         },
-        ...Object.keys(COURSE_SEO)
-          .filter((slug) => slug !== "demo-session")
-          .map((slug) => ({
-            "@type": "Offer",
+        ...Object.keys(COURSE_SEO).map((slug) => ({
+          "@type": "Offer",
+          url: abs(`/course-${slug}`),
+          itemOffered: {
+            "@type": "Course",
+            name: COURSE_SEO[slug].shortTitle,
+            description: COURSE_SEO[slug].description,
             url: abs(`/course-${slug}`),
-            itemOffered: {
-              "@type": "Course",
-              name: COURSE_SEO[slug].shortTitle,
-              description: COURSE_SEO[slug].description,
-              url: abs(`/course-${slug}`),
-              provider: { "@id": `${SITE_URL}/#organization` },
-            },
-            ...(INR_MONTHLY_FEE[slug] !== undefined
-              ? {
+            provider: { "@id": `${SITE_URL}/#organization` },
+          },
+          ...(INR_MONTHLY_FEE[slug] !== undefined
+            ? {
+                price: INR_MONTHLY_FEE[slug],
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
                   price: INR_MONTHLY_FEE[slug],
-                  priceSpecification: {
-                    "@type": "UnitPriceSpecification",
-                    price: INR_MONTHLY_FEE[slug],
-                    priceCurrency: "INR",
-                    valueAddedTaxIncluded: true,
-                    unitText: "MONTH",
-                  },
-                }
-              : {}),
-            priceCurrency: "INR",
-            valueAddedTaxIncluded: true,
-            eligibleRegion: india,
-            areaServed: india,
-          })),
+                  priceCurrency: "INR",
+                  valueAddedTaxIncluded: true,
+                  unitText: "MONTH",
+                },
+              }
+            : {}),
+          priceCurrency: "INR",
+          valueAddedTaxIncluded: true,
+          eligibleRegion: india,
+          areaServed: india,
+        })),
       ],
     },
     potentialAction: {
@@ -2325,15 +2298,13 @@ export function consultationServiceLd() {
       availability: "https://schema.org/InStock",
       eligibleRegion: { "@type": "Country", name: "India" },
     },
-    isRelatedTo: Object.keys(COURSE_SEO)
-      .filter((slug) => slug !== "demo-session")
-      .map((slug) => ({
-        // Pointer to the full Course entity on its own page.
-        "@type": "Course",
-        "@id": `${abs(`/course-${slug}`)}#course`,
-        name: COURSE_SEO[slug].shortTitle,
-        url: abs(`/course-${slug}`),
-      })),
+    isRelatedTo: Object.keys(COURSE_SEO).map((slug) => ({
+      // Pointer to the full Course entity on its own page.
+      "@type": "Course",
+      "@id": `${abs(`/course-${slug}`)}#course`,
+      name: COURSE_SEO[slug].shortTitle,
+      url: abs(`/course-${slug}`),
+    })),
   };
 }
 

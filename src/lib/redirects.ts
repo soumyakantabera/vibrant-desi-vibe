@@ -8,8 +8,11 @@ import { RETIRED_CITY_PATHS, RETIRED_CITY_REDIRECT, RETIRED_CITY_TARGET } from "
  */
 export const REDIRECTS: Record<string, string> = {
   // The free consultation is counselling, not a class; the URL said "demo".
-  // Moved October 2026 so only /course-demo-session targets demo-class searches.
+  // Moved October 2026.
   "/book-free-demo": "/free-consultation",
+  // The paid Demo Class was retired November 2026; demo searches start at the
+  // free consultation.
+  "/course-demo-session": "/free-consultation",
   ...Object.fromEntries(
     RETIRED_CITY_PATHS.map((from) => [from, RETIRED_CITY_TARGET[from] ?? RETIRED_CITY_REDIRECT]),
   ),

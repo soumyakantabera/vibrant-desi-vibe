@@ -4,6 +4,7 @@ import { Logo } from "@/components/Logo";
 import { ProviderMark, TrademarkNotice } from "@/components/ProviderMark";
 import { FeeText, MarketCopy } from "@/components/FeeText";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
+import { SwipeHint } from "@/components/ui-bits";
 import { INTL_FEE } from "@/lib/intl-fees";
 import { COMPARE_REVISED_LABEL } from "@/lib/compare";
 import { RATING } from "@/lib/seo";
@@ -540,6 +541,7 @@ export function MarketGap() {
             </article>
           ))}
         </VizIn>
+        <SwipeHint />
 
         <div className="mt-6 grid gap-5 lg:grid-cols-[1.45fr_1fr]">
           <div className="rounded-3xl border border-border bg-paper p-5 md:p-7">

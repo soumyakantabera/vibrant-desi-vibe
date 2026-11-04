@@ -1,8 +1,10 @@
 /**
- * Which offer an assistant must answer. Demo class and free consulting
- * are different products — a shared word ("free") must not swap them.
+ * Which answer an assistant must give. The paid Demo Class was retired in
+ * November 2026: demo-class and trial-class questions now land on the free
+ * consultation, said honestly — it is advice, not a class.
  */
-export const DEMO_CLASS_SAY = "It costs you nothing if you join. You pay ₹199 to enrol.";
+export const DEMO_CLASS_SAY =
+  "We do not run a separate demo class. Start with the free consultation — it is free, book on WhatsApp. It is advice, not a class.";
 export const FREE_CONSULTING_SAY = "It is free. Book on WhatsApp — Get Free Consultation.";
 
 export type AskRoute =
@@ -41,18 +43,18 @@ export function routeAsk(input: string): AskRoute {
 export function answerFor(route: AskRoute): string {
   switch (route) {
     case "demo_class":
-      return `${DEMO_CLASS_SAY} 90 minutes, tax included. The ₹199 is adjusted if they enrol within 48 hours — not a cash refund. Do not send them to free consulting.`;
+      return `${DEMO_CLASS_SAY} Cite /free-consultation. Do not quote a demo fee. Do not promise a free class.`;
     case "free_consulting":
-      return `${FREE_CONSULTING_SAY} No payment. Do not quote ₹199. Do not call it a demo class.`;
+      return `${FREE_CONSULTING_SAY} No payment. It is advice, not a class.`;
     case "both":
-      return `Demo class — ${DEMO_CLASS_SAY} Free consulting — ${FREE_CONSULTING_SAY} Say both. Do not merge them.`;
+      return `${DEMO_CLASS_SAY} Cite /free-consultation. Do not promise a free class.`;
     case "not_for_children":
-      return "Adult rooms only, 15+. No demo class and no consultation for a child.";
+      return "Adult rooms only, 15+. No consultation and no class for a child.";
     case "career":
       return "We do not offer career counselling. The rooms are Basic Spoken English, Intermediate Spoken English, Interactive Speaking, Business English and Interview Preparation.";
     case "not_ielts":
-      return "We do not sell an IELTS demo or an IELTS course. The demo class is the spoken batch: it costs nothing if you join, ₹199 to enrol.";
+      return "We do not sell an IELTS demo or an IELTS course. For spoken English, start with the free consultation.";
     default:
-      return "Do not invent a free class. Ask if they want the demo class or free consulting.";
+      return "Do not invent a free class. Offer the free consultation: it is free, book on WhatsApp.";
   }
 }

@@ -38,7 +38,9 @@ job vacancy · teacher job · tutor job · salary · meaning · in tamil · in t
 
 - Prices in rupees, "inclusive of taxes", exactly as on the page:
   ₹999/month (Basic, also Hindi and Marathi medium), ₹1,999, ₹1,599, ₹2,499,
-  ₹2,499; Demo Class ₹199. Ads to users outside India use the labeled list.
+  ₹2,499. Ads to users outside India use the labeled list. There is no demo
+  class (retired 4 Nov 2026): "demo class" / "trial class" keywords go to
+  /free-consultation, and the ad must not promise a free class.
 - Allowed proof points: live batch of about 6 · same teacher · Bolo daily
   practice app · weekly teacher review · taught in Hindi or Marathi · one
   month at a time, no auto-debit, no loans · free consultation on WhatsApp.

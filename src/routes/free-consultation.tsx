@@ -49,8 +49,12 @@ function Page() {
             Free group consultation. <span className="text-sunshine">Your plan in writing.</span>
           </h1>
           <p className="mt-5 text-lg text-white">{CONSULTATION.punch}</p>
-          <p className="mt-3 text-sm font-semibold text-sunshine">
+          <p className="mt-3 text-sm font-semibold text-white">
             <FeeText text={CONSULTATION.hook} />
+          </p>
+          <p className="mt-3 text-sm text-white/90">
+            Looking for a demo class? We do not run a separate one — this free consultation is where
+            you start, with the course and fee in writing before you pay anything.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (

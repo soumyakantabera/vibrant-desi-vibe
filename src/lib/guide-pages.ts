@@ -93,7 +93,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile की फ़ीस कितनी है?",
-        a: "Basic Spoken English ₹999/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। फ़्री सलाह WhatsApp पर मिलती है। 90 मिनट का डेमो सेशन ₹199 का है, जो 48 घंटे में दाख़िला लेने पर फ़ीस में एडजस्ट हो जाता है।",
+        a: "Basic Spoken English ₹999/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह, Business English ₹2,499/माह, Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। फ़्री सलाह WhatsApp पर मिलती है — यह क्लास नहीं, सलाह है। फ़ीस हर महीने, कोई ऑटो-डेबिट नहीं।",
       },
       {
         q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
@@ -137,7 +137,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile-এর ফি কত?",
-        a: "Basic Spoken English ₹999/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। ফ্রি পরামর্শ WhatsApp-এ। 90 মিনিটের ডেমো সেশন ₹199, যা 48 ঘণ্টার মধ্যে ভর্তি হলে ফি-তে অ্যাডজাস্ট হয়ে যায়।",
+        a: "Basic Spoken English ₹999/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস, Business English ₹2,499/মাস, Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। ফ্রি পরামর্শ WhatsApp-এ — এটা ক্লাস নয়, পরামর্শ। ফি মাসে মাসে, কোনো অটো-ডেবিট নেই।",
       },
       {
         q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",

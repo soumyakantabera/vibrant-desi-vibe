@@ -8,6 +8,25 @@ import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
 import { CITY_PATHS } from "@/lib/cities";
 
+/** Phones only: "Swipe for more" under a `.phone-swipe` row (place it right after the row). */
+export function SwipeHint({ label = "Swipe for more" }: { label?: string }) {
+  return (
+    <div className="swipe-hint" aria-hidden="true">
+      <span className="swipe-hint-pill">
+        {label}
+        <span className="swipe-hint-dots">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span className="swipe-hint-hand">
+          <Icon name="arrow-right" size={14} />
+        </span>
+      </span>
+    </div>
+  );
+}
+
 export function SectionHeader({
   eyebrow,
   eyebrowTone = "default",
@@ -154,6 +173,7 @@ export function GuidesStrip({
             );
           })}
         </div>
+        <SwipeHint label="Swipe for more guides" />
         <div className="mt-8 text-center">
           <Link to="/guides" className="btn btn-outline btn-sm">
             All English class guides <Icon name="arrow-right" size={14} />

@@ -739,109 +739,6 @@ section > .container-x {
   color: #ffffff !important;
 }
 
-/* Homepage header ribbon — peach into teal. Thin bar, price still the loudest chip. */
-.demo-ribbon {
-  --ribbon-ink: #14213d;
-  --ribbon-chip: #14213d;
-  --ribbon-price: #f2a40f;
-  display: block;
-  background: var(--amber-soft);
-  border-bottom: 1px solid #ead9b6;
-  color: var(--ribbon-ink);
-  font-family: var(--font-display);
-  text-decoration: none;
-}
-.demo-ribbon:hover {
-  background: #f1e5cc;
-}
-.demo-ribbon:focus-visible {
-  outline: 2px solid var(--ribbon-chip);
-  outline-offset: -2px;
-}
-.demo-ribbon-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem 0.55rem;
-  padding: 0.28rem 0.75rem;
-  text-align: center;
-  font-size: 12.5px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-.demo-ribbon-line {
-  color: var(--ribbon-ink);
-}
-.demo-ribbon-cta {
-  display: inline-flex;
-  max-width: 100%;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  border-radius: 999px;
-  background: var(--ribbon-chip);
-  padding: 2px 2px 2px 10px;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
-}
-.demo-ribbon-cta,
-.demo-ribbon-cta > span,
-.demo-ribbon-zero,
-.demo-ribbon-zero span {
-  color: #ffffff;
-}
-.demo-ribbon-price {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.28rem;
-  border-radius: 999px;
-  background: var(--ribbon-price);
-  padding: 3px 8px;
-  color: var(--ribbon-chip);
-}
-.demo-ribbon-price,
-.demo-ribbon-price span {
-  color: var(--ribbon-chip);
-  background: transparent;
-}
-.demo-ribbon-price {
-  background: var(--ribbon-price);
-}
-.demo-ribbon-mins {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  opacity: 0.8;
-}
-.demo-ribbon-zero {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 2px 8px 2px 4px;
-  font-size: 11px;
-  font-weight: 600;
-}
-.demo-ribbon-zero span:first-child {
-  font-weight: 800;
-}
-@media (min-width: 640px) {
-  .demo-ribbon-inner {
-    font-size: 13px;
-    padding-top: 0.32rem;
-    padding-bottom: 0.32rem;
-  }
-}
-@media (max-width: 639px) {
-  .demo-ribbon .container-x {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-}
-
 /* Reusable utilities */
 @layer components {
   .container-x {
@@ -1600,6 +1497,20 @@ html.js [data-viz="in"] .viz-draw {
   color: #ffffff;
   background: #034a38;
 }
+/* The homepage "Live online…" pill: a quiet label, not a second headline. */
+.hero-eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  padding: 0.32rem 0.7rem;
+  gap: 0.35rem;
+  line-height: 1.35;
+}
+@media (max-width: 639px) {
+  .hero-eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+  }
+}
 /* Brand sunshine (#f2a40f) is too dark for small text on teal; heroes use a
    lighter tint of it. */
 .hero-teal .text-sunshine {
@@ -2075,5 +1986,87 @@ main h1 {
     flex: 0 0 84%;
     min-width: 0;
     scroll-snap-align: start;
+  }
+}
+
+/* "Swipe" hint under a phone swipe row: a pill with an arrow that keeps
+   nudging right, plus dots that pulse. Fades once the visitor has swiped the
+   row (data-swiped, set by SwipeNudge). Hidden on wider screens. */
+.swipe-hint {
+  display: none;
+}
+@media (max-width: 639px) {
+  .swipe-hint {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.25rem;
+    transition: opacity 0.4s ease;
+  }
+  .swipe-hint-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: var(--brand-soft);
+    color: var(--brand-deep);
+    border: 1px solid color-mix(in oklab, var(--brand) 22%, transparent);
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+  .swipe-hint-hand {
+    display: inline-block;
+    animation: swipe-hand 1.6s ease-in-out infinite;
+  }
+  .swipe-hint-dots {
+    display: inline-flex;
+    gap: 3px;
+  }
+  .swipe-hint-dots i {
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.3;
+    animation: swipe-dot 1.6s ease-in-out infinite;
+  }
+  .swipe-hint-dots i:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .swipe-hint-dots i:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .phone-swipe[data-swiped] + .swipe-hint,
+  .phone-swipe[data-swiped] ~ .swipe-hint {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .phone-swipe[data-nudging] {
+    scroll-snap-type: none;
+  }
+}
+@keyframes swipe-hand {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+}
+@keyframes swipe-dot {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .swipe-hint-hand,
+  .swipe-hint-dots i {
+    animation: none;
   }
 }

@@ -17,7 +17,6 @@ const TOKENS: { inr: string; usd: string }[] = [
   { inr: "₹1,999", usd: INTL_FEE["intermediate-english"].big },
   { inr: "₹1,599", usd: INTL_FEE["interactive-speaking"].big },
   { inr: "₹999", usd: INTL_FEE["spoken-english"].big },
-  { inr: "₹199", usd: INTL_FEE["demo-session"].display },
   { inr: "₹0", usd: intlZero() },
 ];
 
