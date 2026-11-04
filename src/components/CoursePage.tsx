@@ -22,7 +22,7 @@ import {
 } from "@/components/CourseVisuals";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
-import { DEMO_CTA, CHAT_CTA } from "@/lib/whatsapp";
+import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 
@@ -434,6 +434,18 @@ export function CoursePage({ data }: { data: CourseData }) {
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />
+            </p>
+            <p className="mt-2 text-sm text-white/95">
+              WhatsApp{" "}
+              <a
+                href={waLink(waPrimary)}
+                className="font-semibold underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {WHATSAPP_DISPLAY}
+              </a>{" "}
+              — we reply 10am–midnight IST every day.
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
           </div>

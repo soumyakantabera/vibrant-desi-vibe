@@ -795,7 +795,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 1.0,
     changefreq: "weekly",
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-04",
     summary:
       "Homepage. The complete package: live classes (up to 2 a week, approximately 6 learners), the Bolo practice app (daily grammar, vocabulary, reading and speaking with a streak, video lessons including tips and tricks to start speaking, and a weekly teacher review of reading and speaking), with the same teacher. Spoken English for Indian adults 15+ from ₹999/month, 7 years, 500+ learners, batches of approximately 6. Inclusive of taxes.",
     faqs: [
@@ -831,6 +831,10 @@ export const PAGES: Record<string, PageSeo> = {
       {
         q: "Is there a launch offer right now?",
         a: "Yes, until 30 November 2026: new learners who enrol by that date get one extra month of Bolo, the practice app, after their course, free. The course fee does not change.",
+      },
+      {
+        q: "How do I join Learn With Smile?",
+        a: "Message +91 96744 79949 on WhatsApp (wa.me/919674479949) — admissions reply 10am–midnight IST every day. Tell us your goal; we recommend one course and send the fee, timings and batch size in writing. The consultation is free and there is no payment to book. You pay only when you enrol, one month at a time, inclusive of taxes, with no auto-debit.",
       },
       {
         q: "Can I get a free consultation before I enrol?",
@@ -872,7 +876,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/spoken-english.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-04",
     summary:
       "Course hub. Four programmes (Basic also in Hindi or Marathi) from ₹999/month, inclusive of taxes, billed one month at a time. Free consultation on WhatsApp to choose.",
     faqs: [
@@ -1112,7 +1116,7 @@ export const PAGES: Record<string, PageSeo> = {
     ogImage: "/og/default.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-04",
     summary:
       "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — there is no separate demo class; this is where demo-class enquiries start. No payment. Replies 10am–midnight IST every day. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
@@ -1961,7 +1965,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       "workplace english course india fees",
     ],
     ogImage: "/og/intermediate-english.jpg",
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-04",
     summary:
       "Intermediate Spoken English — 4 months, ₹1,999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. Every 90-minute class is 30 min grammar + 1 hr communication (speaking, writing, active listening, reading). Months 1–2 Foundation (parts of speech, tenses, articles, subject-verb agreement, questions, sounds, 60–90 s timed turns, filler drills). Month 3 Expanding & Connecting (connectors, modals, negotiation, authentic listening). Month 4 Fluency & Confidence (conditionals, debates, polite interrupting, 2–3 min presentations + Q&A, role-play, storytelling). English to English. Extendable.",
     extraFaqs: [
@@ -1996,7 +2000,7 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       ...PACKAGE_KEYWORDS.slice(8),
     ],
     ogImage: "/og/interactive-speaking.jpg",
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-04",
     summary:
       "Interactive Speaking — ₹1,599/month · 3 months in a live batch of approximately 6 learners. Debates, role-plays and storytelling, plus the speaking side of Business English: team meetings, status updates, client calls, clarifying requirements and presentations with Q&A. Includes daily exercises, the recorded video library and a weekly teacher review.",
     extraFaqs: [

@@ -22,7 +22,15 @@ import { WhyDifferent } from "@/components/WhyDifferent";
 import { IMG, imageSources } from "@/lib/images";
 import { RATING, RATING_DISPLAY, pageHead, PAGES } from "@/lib/seo";
 import { COURSES } from "@/lib/courses";
-import { waLink, withPageTag, DEMO_CTA, DEMO_MSG, CHAT_CTA, CHAT_MSG } from "@/lib/whatsapp";
+import {
+  waLink,
+  withPageTag,
+  DEMO_CTA,
+  DEMO_MSG,
+  CHAT_CTA,
+  CHAT_MSG,
+  WHATSAPP_DISPLAY,
+} from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
 import {
@@ -153,7 +161,16 @@ function Home() {
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">
-              Message anytime. We reply 10am–midnight IST every day.
+              WhatsApp{" "}
+              <a
+                href={waLink(withPageTag(CHAT_MSG, "Home"))}
+                className="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {WHATSAPP_DISPLAY}
+              </a>{" "}
+              — message anytime. We reply 10am–midnight IST every day.
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[

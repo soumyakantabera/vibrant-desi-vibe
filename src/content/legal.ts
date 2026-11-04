@@ -17,6 +17,8 @@ export type LegalDoc = {
 export const LEGAL_UPDATED = "2026-10-08";
 /** Terms and Refunds: billing promises added 3 Nov 2026. */
 export const BILLING_UPDATED = "2026-11-04";
+/** Privacy: AI-assistant note in WhatsApp messages (4 Nov 2026). */
+export const PRIVACY_UPDATED = "2026-11-04";
 
 const YOUR_CHOICES: LegalSection = {
   heading: "Your choices",
@@ -58,7 +60,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
     h1: "Privacy Policy",
     standfirst:
       "This page explains what personal information Learn With Smile collects, why we collect it, and how you can ask us to correct or delete it. Complaints go to the Grievance Officer named on this page.",
-    updated: LEGAL_UPDATED,
+    updated: PRIVACY_UPDATED,
     sections: [
       {
         heading: "Who we are",
@@ -122,8 +124,8 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       {
         heading: "Cookies and browser storage",
         paragraphs: [
-          "This website uses no analytics, advertising or tracking cookies, so it does not ask you to accept any. WhatsApp links on this site carry no tracking code — only a plain message that names the page you tapped from.",
-          "It stores one small item in your browser: your country choice, so the page shows the India fee or the fee for a learner outside India. You can remove it at any time by clearing this site’s data in your browser.",
+          "This website uses no analytics, advertising or tracking cookies, so it does not ask you to accept any. WhatsApp links on this site carry no tracking code — only a plain message that names the page you tapped from. If you arrive from an AI assistant such as ChatGPT or Copilot, that message also says so in plain words (for example “I found you through ChatGPT.”); you see it, and can edit it, before you send it.",
+          "It stores one small item in your browser: your country choice, so the page shows the India fee or the fee for a learner outside India. If you arrived from an AI assistant, it also keeps that assistant’s name in this browser tab only (session storage, gone when you close the tab). Nothing is sent to us or anyone else until you send a WhatsApp message yourself. You can remove both by clearing this site’s data in your browser.",
           "The country selector in the footer may look up a coarse country from your IP address or timezone in the browser, and remember your choice on this device. That lookup decides whether this browser shows the India fee or the fee for a learner outside India. We do not send that lookup to an advertising network.",
         ],
       },
