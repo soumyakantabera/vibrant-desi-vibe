@@ -304,17 +304,17 @@ export function PackageStrip({ bare = false }: { bare?: boolean }) {
             return (
               <div
                 key={key}
-                className={`lift-card viz-pop relative isolate min-h-36 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] sm:min-h-40 lg:min-h-44 ${T[tone].deep}`}
+                className={`lift-card viz-pop relative isolate min-h-40 overflow-hidden rounded-2xl p-4 text-white shadow-[0_16px_34px_-24px_rgba(19,33,47,.6)] lg:min-h-48 ${T[tone].deep}`}
                 style={d(i * 80)}
               >
-                {/* One large watermark, centred by the grid: its middle is the
-                    card's middle, horizontally and vertically. No offsets. */}
+                {/* One large watermark in the bottom-left corner, bleeding a
+                    little off the card edge so it stays clear of the text. */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -z-10 grid place-items-center text-white/30"
+                  className="pointer-events-none absolute -bottom-6 -left-3 -z-10 text-white/25"
                   data-watermark
                 >
-                  <Icon name={PART[key].icon} size={112} />
+                  <Icon name={PART[key].icon} size={84} />
                 </span>
                 <p className="text-sm [text-shadow:0_1px_2px_rgba(0,0,0,.28)]">
                   <strong className="block font-bold text-white">
