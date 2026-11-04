@@ -8,7 +8,7 @@
     "dev:replit": "vite --config vite.config.replit.ts",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "build:pages": "vite build --config vite.config.pages.ts && bun run prerender",
+    "build:pages": "node scripts/build-icon-sprite.mjs && vite build --config vite.config.pages.ts && bun run prerender",
     "build:pages:spa": "vite build --config vite.config.pages.ts",
     "prerender": "vite build --config vite.config.prerender.ts && node scripts/prerender.mjs",
     "preview": "vite preview",

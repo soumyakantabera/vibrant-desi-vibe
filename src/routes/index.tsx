@@ -160,7 +160,7 @@ function Home() {
               payment to book.
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
-            <p className="mt-3 text-sm font-semibold text-white/95">
+            <p className="mt-3 min-h-[2.5rem] text-sm font-semibold text-white/95 sm:min-h-0">
               WhatsApp{" "}
               <a
                 href={waLink(withPageTag(CHAT_MSG, "Home"))}
@@ -170,7 +170,7 @@ function Home() {
               >
                 {WHATSAPP_DISPLAY}
               </a>{" "}
-              — message anytime. We reply 10am–midnight IST every day.
+              · replies 10am–midnight IST, every day
             </p>
             <div className="mt-5 -mx-4 sm:mx-0 px-4 sm:px-0 flex sm:flex-wrap flex-nowrap overflow-x-auto sm:overflow-visible snap-x gap-2 sm:gap-3 text-sm text-white/95 no-scrollbar">
               {[
@@ -630,7 +630,7 @@ function GlassCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl p-6 bg-white/10 backdrop-blur border border-cream/20">
+    <div className="rounded-2xl p-6 bg-white/10 sm:backdrop-blur border border-cream/20">
       <div className="h-12 w-12 rounded-xl bg-cream/15 text-sunshine flex items-center justify-center mb-3">
         <Icon name={icon} size={24} />
       </div>

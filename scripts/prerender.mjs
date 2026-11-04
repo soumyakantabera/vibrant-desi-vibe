@@ -49,6 +49,7 @@ const {
   sitemapUrls,
   REDIRECTS,
   MOVED_MARKDOWN,
+  pageLabel,
 } = mod;
 
 const today = new Date().toISOString().slice(0, 10);
@@ -202,7 +203,14 @@ function buildPage(pathname, ssrHtml) {
 
   let out = stripFallbackHead(template);
   out = out.replace(HTML_TAG, '<html lang="en-IN">');
-  out = out.replace("</head>", `  ${ssrHead}\n  </head>`);
+  // The page's short name for WhatsApp first messages, read by the client
+  // (src/lib/use-page-label.client.ts) so the browser does not need the
+  // whole site's metadata to name the page a visitor tapped from.
+  const label = String(pageLabel(pathname) ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;");
+  const labelMeta = `<meta data-prerender="1" name="lws-page" content="${label}" data-path="${pathname}"/>`;
+  out = out.replace("</head>", `  ${ssrHead}\n  ${labelMeta}\n  </head>`);
   out = out.replace('<div id="root"></div>', `<div id="root">${ssrBody}</div>`);
   return out;
 }

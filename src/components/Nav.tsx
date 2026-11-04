@@ -78,6 +78,16 @@ const ENGLISH_COURSES: {
   },
 ];
 
+/** On the home page, the logo and "Home" scroll back to the top instead of doing nothing. */
+function toTopOnHome(e: React.MouseEvent) {
+  if (window.location.pathname !== "/") return;
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+  e.preventDefault();
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: still ? "auto" : "smooth" });
+  if (window.location.hash) window.history.replaceState(null, "", "/");
+}
+
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
@@ -124,11 +134,12 @@ export function Nav() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+      <header className="sticky top-0 z-40 bg-white sm:bg-white/85 sm:backdrop-blur-xl border-b border-border/70 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         <div className="container-x flex items-center justify-between h-16 lg:h-[72px] gap-3">
           {/* Brand */}
           <Link
             to="/"
+            onClick={toTopOnHome}
             className="flex items-center gap-2.5 shrink-0 group"
             aria-label="Learn With Smile home"
           >
@@ -142,7 +153,7 @@ export function Nav() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            <NavLinkPill to="/" active={isActive("/")}>
+            <NavLinkPill to="/" active={isActive("/")} onClick={toTopOnHome}>
               Home
             </NavLinkPill>
 
@@ -350,15 +361,18 @@ function NavLinkPill({
   active,
   children,
   className = "",
+  onClick,
 }: {
   to: string;
   active: boolean;
   children: React.ReactNode;
   className?: string;
+  onClick?: (e: React.MouseEvent) => void;
 }) {
   return (
     <Link
       to={to}
+      onClick={onClick}
       className={`relative px-2.5 xl:px-3.5 py-2 rounded-full text-sm font-display font-semibold transition whitespace-nowrap ${className} ${
         active
           ? "bg-brand-soft text-brand-deep"

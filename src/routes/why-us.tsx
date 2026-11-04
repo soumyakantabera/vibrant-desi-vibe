@@ -221,7 +221,14 @@ function Page() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section pt-4 md:pt-6" id="what-you-get">
+        <div className="container-x">
+          <SectionHeader
+            eyebrow="Why learners choose us"
+            title="What you get in every course"
+            subtitle="Live classes with the same teacher, about 6 learners a batch, a fee you pay one month at a time — and the practice app between classes."
+          />
+        </div>
         <div className="container-x grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <FeatureCard icon="play" color="brand" title="100% Live, Always">
             Real teacher, real time, real Q&A. No passive video sold as a class.

@@ -1432,8 +1432,31 @@ html.js [data-viz="in"] .viz-draw {
     box-shadow: 0 0 0 0 rgba(12, 107, 78, 0);
   }
 }
+/* The "live" dot's pulse is a ring that scales and fades (transform +
+   opacity), so it runs on the compositor instead of repainting a box-shadow
+   every frame. */
 .viz-live {
-  animation: viz-pulse 2.4s ease-out infinite;
+  position: relative;
+}
+.viz-live::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: viz-ring 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes viz-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
 }
 
 /* Light sweep across a progress track. */
@@ -1473,6 +1496,7 @@ html.js [data-viz="in"] .viz-draw {
 
 @media (prefers-reduced-motion: reduce) {
   .viz-live,
+  .viz-live::after,
   .viz-sweep::after {
     animation: none;
   }
@@ -1886,7 +1910,7 @@ main h1 {
     translate: 0 0;
   }
   50% {
-    translate: 0 -10px;
+    translate: 0 -18px;
   }
 }
 @keyframes price-bob {
@@ -1901,14 +1925,19 @@ main h1 {
 @media (prefers-reduced-motion: no-preference) {
   .hero-bob,
   .price-bob {
-    animation: hero-bob 4.5s ease-in-out infinite;
+    animation: hero-bob 3.6s ease-in-out infinite;
   }
   /* The price moves a beat behind the copy so the screen breathes, not jumps,
      and a little less far: it sits in a smaller box next to the gauge. */
   .price-bob {
     animation-duration: 4.5s;
-    animation-delay: -1.1s;
+    /* A positive delay: a negative one stops the compositor running it. */
+    animation-delay: 1.1s;
     animation-name: price-bob;
+  }
+  .hero-bob,
+  .price-bob {
+    will-change: translate;
   }
 
   /* Set by <SectionRise> on sections that start below the first screen. */
