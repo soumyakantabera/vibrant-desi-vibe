@@ -278,7 +278,10 @@ export function CoverageMap({ title, visuals }: { title: string; visuals: Course
           title={<span id="coverage-title">{topics} topics, mapped skill by skill</span>}
           subtitle={`Where each skill in ${title} gets its new topics. Darker cells mean more new topics in that phase.`}
         />
-        <div className="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-border bg-white">
+        <div
+          data-swipe=""
+          className="max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-border bg-white"
+        >
           <table className="w-full min-w-[480px] text-sm">
             <caption className="sr-only">
               Number of new topics per skill in each phase of {title}

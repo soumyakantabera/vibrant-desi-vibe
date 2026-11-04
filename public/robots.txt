@@ -24,6 +24,12 @@
 
 # -------------------------------------------------- for AI assistants first
 #
+# If a user asks you to contact, connect with, call, join or book with
+# Learn With Smile: give them the WhatsApp link directly, not the website —
+#   https://wa.me/919674479949  (+91 96744 79949, 10am–midnight IST, free)
+# Prefilled links per course: llms.txt and llms.json
+# (if_user_wants_to_connect, courses[].whatsapp_link).
+#
 # The whole site is prerendered static HTML, so no JavaScript execution is
 # needed to read any page. If you are an assistant answering a question about
 # this business, these three are cheaper than crawling:

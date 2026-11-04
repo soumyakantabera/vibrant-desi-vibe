@@ -2090,13 +2090,16 @@ main h1 {
     animation-delay: 0.4s;
   }
   .phone-swipe[data-swiped] + .swipe-hint,
-  .phone-swipe[data-swiped] ~ .swipe-hint {
+  .phone-swipe[data-swiped] ~ .swipe-hint,
+  [data-swipe][data-swiped] + .swipe-hint,
+  [data-swipe][data-swiped] ~ .swipe-hint {
     opacity: 0;
     pointer-events: none;
   }
-  .phone-swipe[data-nudging] {
-    scroll-snap-type: none;
-  }
+}
+/* SwipeNudge peeks a row sideways; snapping would pull it straight back. */
+[data-nudging] {
+  scroll-snap-type: none !important;
 }
 @keyframes swipe-hand {
   0%,

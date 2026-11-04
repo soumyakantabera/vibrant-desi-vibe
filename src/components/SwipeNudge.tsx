@@ -1,32 +1,61 @@
 import { useEffect } from "react";
 import { useRouterState } from "@tanstack/react-router";
 
+/** How many times a row peeks before it settles. */
+const PEEKS = 3;
+/** Gap between the start of one peek and the next (ms). */
+const EVERY = 1300;
+/** How long a peek stays out before sliding back (ms). */
+const HOLD = 550;
+
 /**
- * Phones only: each `.phone-swipe` row peeks once when it first comes into
- * view — it slides a card's width part-way and back, so the visitor sees the
- * row moves. Once the visitor scrolls a row themselves it gets
- * `data-swiped`, which hides its "Swipe" hint (CSS: .swipe-hint).
+ * Swipe suggestion for sideways rows: `.phone-swipe` card rows (phones) and
+ * any other scroller marked `data-swipe` (video track, testimonial slider,
+ * wide tables). When a row first comes into view it slides part of a card
+ * sideways and back, three times, so the visitor sees there is more to the
+ * right. The first touch, click or wheel on the row stops it at once. Once the
+ * visitor scrolls a row themselves it gets `data-swiped`, which hides its
+ * "Swipe" hint (CSS: .swipe-hint).
  *
- * No effect on desktop (the rows are grids there), without JavaScript, or
- * under prefers-reduced-motion. Rows that <Deferred> swaps in later are picked
- * up by the MutationObserver.
+ * A row that does not overflow (a `.phone-swipe` grid from 640px up, a table
+ * that fits) never moves. Nothing runs without JavaScript or under
+ * prefers-reduced-motion. Rows that <Deferred> swaps in later are picked up by
+ * the MutationObserver.
  */
+const ROWS = ".phone-swipe, [data-swipe]";
+
 export function SwipeNudge() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
-    const phone = window.matchMedia("(max-width: 639px)");
-    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const main = document.getElementById("main-content");
-    if (!main) return;
-    const timers = new Set<number>();
-    const later = (fn: () => void, ms: number) => {
-      const t = window.setTimeout(() => {
-        timers.delete(t);
-        fn();
-      }, ms);
-      timers.add(t);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Watch the whole body: the route's <main> can be swapped out after the
+    // first render (code-split routes, <Deferred>), which would strand an
+    // observer tied to the first one.
+    const root = document.body;
+    const timers = new Map<HTMLElement, number[]>();
+    const later = (row: HTMLElement, fn: () => void, ms: number) => {
+      const t = window.setTimeout(fn, ms);
+      const list = timers.get(row) ?? [];
+      list.push(t);
+      timers.set(row, list);
+    };
+    const stop = (row: HTMLElement) => {
+      timers.get(row)?.forEach((t) => clearTimeout(t));
+      timers.delete(row);
+      delete row.dataset.nudging;
+    };
+
+    const peek = (row: HTMLElement) => {
+      row.dataset.nudging = "1";
+      const left = Math.round(Math.min(64, row.clientWidth * 0.18));
+      for (let i = 0; i < PEEKS; i++) {
+        const at = 350 + i * EVERY;
+        later(row, () => row.scrollTo({ left, behavior: "smooth" }), at);
+        later(row, () => row.scrollTo({ left: 0, behavior: "smooth" }), at + HOLD);
+      }
+      later(row, () => stop(row), 350 + (PEEKS - 1) * EVERY + HOLD + 650);
     };
 
     const io = new IntersectionObserver(
@@ -35,18 +64,14 @@ export function SwipeNudge() {
           if (!e.isIntersecting) continue;
           const row = e.target as HTMLElement;
           io.unobserve(row);
-          if (!phone.matches || still || row.dataset.swiped) continue;
+          if (row.dataset.swiped) continue;
           if (row.scrollWidth <= row.clientWidth + 8 || row.scrollLeft > 4) continue;
-          row.dataset.nudging = "1";
-          later(
-            () => row.scrollTo({ left: Math.min(72, row.clientWidth * 0.2), behavior: "smooth" }),
-            350,
-          );
-          later(() => row.scrollTo({ left: 0, behavior: "smooth" }), 1050);
-          later(() => delete row.dataset.nudging, 1700);
+          peek(row);
         }
       },
-      { threshold: 0.6 },
+      // Fires when the row crosses the middle half of the screen, so a tall
+      // table (never 60% visible on a phone) still peeks.
+      { rootMargin: "-25% 0px -25% 0px", threshold: 0 },
     );
 
     const onScroll = (ev: Event) => {
@@ -54,13 +79,21 @@ export function SwipeNudge() {
       if (row.dataset.nudging || row.scrollLeft < 24) return;
       row.dataset.swiped = "1";
     };
+    // The visitor took over: stop peeking and leave the row where it is.
+    const onTouch = (ev: Event) => {
+      const row = ev.currentTarget as HTMLElement;
+      if (row.dataset.nudging) stop(row);
+    };
 
-    const seen = new WeakSet<HTMLElement>();
+    const seen = new Set<HTMLElement>();
     const scan = () =>
-      main.querySelectorAll<HTMLElement>(".phone-swipe").forEach((row) => {
+      root.querySelectorAll<HTMLElement>(ROWS).forEach((row) => {
         if (seen.has(row)) return;
         seen.add(row);
         row.addEventListener("scroll", onScroll, { passive: true });
+        row.addEventListener("pointerdown", onTouch, { passive: true });
+        row.addEventListener("touchstart", onTouch, { passive: true });
+        row.addEventListener("wheel", onTouch, { passive: true });
         io.observe(row);
       });
 
@@ -73,15 +106,18 @@ export function SwipeNudge() {
       });
     });
     scan();
-    mo.observe(main, { childList: true, subtree: true });
+    mo.observe(root, { childList: true, subtree: true });
     return () => {
       io.disconnect();
       mo.disconnect();
       if (queued) cancelAnimationFrame(queued);
-      timers.forEach((t) => clearTimeout(t));
-      main
-        .querySelectorAll<HTMLElement>(".phone-swipe")
-        .forEach((row) => row.removeEventListener("scroll", onScroll));
+      seen.forEach((row) => {
+        stop(row);
+        row.removeEventListener("scroll", onScroll);
+        row.removeEventListener("pointerdown", onTouch);
+        row.removeEventListener("touchstart", onTouch);
+        row.removeEventListener("wheel", onTouch);
+      });
     };
   }, [pathname]);
 

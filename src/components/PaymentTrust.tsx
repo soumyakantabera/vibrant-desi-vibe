@@ -51,7 +51,7 @@ export function PaymentTrust({
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Secured by Razorpay"
-          className="shrink-0"
+          className="inline-flex min-h-11 shrink-0 items-center"
         >
           <img
             src={withBasePath("/payments/razorpay-secured.png")}

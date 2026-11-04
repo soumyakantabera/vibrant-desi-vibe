@@ -147,7 +147,7 @@ function BlockView({ block }: { block: Block }) {
       // table semantics that `display: block` would otherwise drop.
       return (
         <figure className="mt-6">
-          <div className="overflow-x-auto rounded-2xl border border-border bg-white">
+          <div data-swipe="" className="overflow-x-auto rounded-2xl border border-border bg-white">
             <table role="table" className="w-full text-sm text-left border-collapse">
               <thead className="max-sm:sr-only">
                 <tr role="row" className="bg-brand-soft/60">

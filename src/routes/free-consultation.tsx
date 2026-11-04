@@ -169,7 +169,10 @@ function Page() {
             subtitle="This is the same picker as the guides — run live, on your actual goal, not a generic table."
           />
           <figure>
-            <div className="overflow-x-auto rounded-2xl border border-border bg-white">
+            <div
+              data-swipe=""
+              className="overflow-x-auto rounded-2xl border border-border bg-white"
+            >
               <table className="w-full text-sm text-left border-collapse">
                 <thead>
                   <tr className="bg-brand-soft/60">
@@ -265,7 +268,10 @@ function Page() {
             subtitle="Fit, not a trophy. Named formats. We sell one of the rows and say so."
           />
           <figure>
-            <div className="overflow-x-auto rounded-2xl border border-border bg-white">
+            <div
+              data-swipe=""
+              className="overflow-x-auto rounded-2xl border border-border bg-white"
+            >
               <table className="w-full text-sm text-left border-collapse">
                 <thead>
                   <tr className="bg-brand-soft/60">
