@@ -284,12 +284,12 @@ function Home() {
 
       <Deferred id="home-how">
         {/* HOW IT WORKS */}
-        <section className="hero-light relative section overflow-hidden">
+        <section className="hero-teal relative section overflow-hidden">
           <div className="absolute inset-0 z-0">
             <SmartImage src={IMG.liveClass} alt="Live online class in India" fill sizes="100vw" />
-            <div className="absolute inset-0 hero-veil" />
+            <div className="absolute inset-0 band-veil" />
           </div>
-          <div className="container-x">
+          <div className="container-x relative">
             <SectionHeader
               eyebrowTone="white"
               eyebrow="The Process"

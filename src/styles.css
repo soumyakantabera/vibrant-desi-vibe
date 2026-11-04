@@ -1408,6 +1408,19 @@ html.js [data-viz="in"] .viz-draw {
 }
 
 /* A quiet pulse for "live" markers. */
+/* Week strip: the active day fills a thin bar while the week plays. */
+@keyframes week-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.week-progress {
+  width: 0;
+  animation: week-progress linear forwards;
+}
 @keyframes viz-pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(12, 107, 78, 0.45);
@@ -1496,6 +1509,11 @@ html.js [data-viz="in"] .viz-draw {
 .hero-teal {
   color: #ffffff;
   background: #034a38;
+}
+/* Photo bands with centred copy (e.g. "How live classes work"): one even
+   teal veil, since text and cards run edge to edge. */
+.band-veil {
+  background: rgba(2, 52, 40, 0.86);
 }
 /* The homepage "Live online…" pill: a quiet label, not a second headline. */
 .hero-eyebrow {
