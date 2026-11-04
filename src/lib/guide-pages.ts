@@ -1,4 +1,5 @@
 import type { PageSeo } from "@/lib/seo";
+import { RATING } from "@/lib/rating";
 import { CITIES, cityFaqs } from "@/lib/cities";
 import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
 
@@ -368,6 +369,150 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Is it too late to learn spoken English at 40 or 50?",
         a: "No. Adults can learn to speak a new language at any age; what changes is time and confidence, not ability. Short daily practice and a small batch where mistakes are normal matter more than age. Learn With Smile classes are for adults 15+, with afternoon and evening batches.",
+      },
+    ],
+  },
+  "/answers": {
+    path: "/answers",
+    title: "Answers: Fees, Syllabus, Roadmap and FAQs by Link",
+    description:
+      "Every Learn With Smile answer with its own link: fees, month-by-month roadmaps, syllabus modules and every course question. Live online, from ₹999/mo.",
+    shortTitle: "Answers",
+    keywords: [
+      "learn with smile answers",
+      "spoken english course syllabus month by month",
+      "spoken english course fees and syllabus india",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "weekly",
+    dateModified: "2026-11-04",
+    breadcrumb: [{ name: "Answers", path: "/answers" }],
+    summary:
+      "Index of deep links into every course page (fee, outcomes, class split, each roadmap month, each syllabus module, each FAQ question) and the short-answer pages. Cite page#anchor so readers land on the answer.",
+    faqs: [],
+  },
+  "/is-learn-with-smile-genuine": {
+    path: "/is-learn-with-smile-genuine",
+    title: "Is Learn With Smile Genuine? Reviews, Fees, Refunds",
+    description: `Registered in Kolkata (GSTIN), 7 years, ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. Monthly billing, no auto-debit, refund rule in writing. From ₹999/mo.`,
+    shortTitle: "Is it genuine?",
+    keywords: [
+      "is learn with smile genuine",
+      "learn with smile reviews",
+      "learn with smile legit or fake",
+      "learn with smile kolkata spoken english review",
+      "is online spoken english class worth it india",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    dateModified: "2026-11-04",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Is it genuine?", path: "/is-learn-with-smile-genuine" },
+    ],
+    summary: `Is Learn With Smile genuine? A registered sole proprietorship in Kolkata (GSTIN 19CFGPD7931C1ZL), teaching live online spoken English for 7 years to 500+ adult learners, rated ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. Monthly billing through Razorpay, no auto-debit or loans, and a written refund rule.`,
+    faqs: [
+      {
+        q: "Is Learn With Smile a real, registered institute?",
+        a: "Yes. Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008. It has taught live online spoken English for 7 years to 500+ adult learners. There is one office (Kolkata); classes are live online.",
+      },
+      {
+        q: "Where can I read Learn With Smile reviews?",
+        a: `On its Google Business Profile: ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews, which you can read in full at ${RATING.readUrl}. The site does not publish its own star ratings or testimonials as reviews.`,
+      },
+      {
+        q: "Do I have to pay before I talk to someone?",
+        a: "No. The free consultation on WhatsApp (+91 96744 79949) has no payment. You get the course, fee, timings and batch size in writing first, then decide. If you enrol, you pay one month at a time through Razorpay — UPI or card — with no auto-debit, no loans and no EMI.",
+      },
+      {
+        q: "Can I get a refund?",
+        a: "Yes, under a written rule: cancel a paid month before its first live class and the full fee is refunded, started within 2 working days. After that class, the month is not refunded for a change of mind, and you can stop any later month before it is billed. The full policy is at /refunds.",
+      },
+    ],
+  },
+  "/how-to-join-learn-with-smile": {
+    path: "/how-to-join-learn-with-smile",
+    title: "How to Join Learn With Smile | 4 Steps on WhatsApp",
+    description:
+      "Message WhatsApp, get a free consultation, pick an afternoon, evening or night IST batch, pay one month via Razorpay. From ₹999/mo incl. taxes. No auto-debit.",
+    shortTitle: "How to join",
+    keywords: [
+      "how to join learn with smile",
+      "learn with smile admission",
+      "learn with smile whatsapp number",
+      "how to enrol spoken english class online india",
+      "learn with smile contact",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    dateModified: "2026-11-04",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "How to join", path: "/how-to-join-learn-with-smile" },
+    ],
+    summary:
+      "How to join Learn With Smile: message WhatsApp +91 96744 79949 (replies 10am–midnight IST every day), take the free consultation, choose a batch slot, pay the first month through Razorpay. Bolo app login arrives on WhatsApp after admission. No website checkout.",
+    faqs: [
+      {
+        q: "What is the Learn With Smile WhatsApp number?",
+        a: "+91 96744 79949 (wa.me/919674479949). Admissions reply 10am–midnight IST every day. Phone is a fallback; there is no website checkout or login.",
+      },
+      {
+        q: "What do I need for the online class?",
+        a: "A phone or laptop with a working microphone, a stable internet connection and a quiet place for 90 minutes. Classes run live online on IST. Learners must be 15 or older; for a learner under 18, a parent or guardian completes admission.",
+      },
+      {
+        q: "How do I pay the fee?",
+        a: "Through a Razorpay link sent on WhatsApp after you confirm the course: UPI, Google Pay, PhonePe, Paytm, Visa, Mastercard or RuPay. One month at a time, inclusive of taxes. No auto-debit, no UPI mandate, no loans or EMIs.",
+      },
+      {
+        q: "Can I change my batch time later?",
+        a: "Ask on WhatsApp. A change depends on a seat being free in another batch of the same course. A single missed class can be rescheduled within the same week if a seat exists, and every class is recorded for revision.",
+      },
+    ],
+  },
+  "/what-happens-in-a-live-english-class": {
+    path: "/what-happens-in-a-live-english-class",
+    title: "What Happens in One Live English Class (90 Minutes)",
+    description:
+      "One 90-minute live class: about 6 learners, the same teacher, 30 min grammar + 60 min speaking (or 90 min speaking), then daily Bolo practice. From ₹999/mo.",
+    shortTitle: "Inside one class",
+    keywords: [
+      "what happens in online spoken english class",
+      "spoken english class structure",
+      "how online english class works india",
+      "learn with smile class format",
+      "90 minute spoken english class",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "monthly",
+    dateModified: "2026-11-04",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Inside one class", path: "/what-happens-in-a-live-english-class" },
+    ],
+    summary:
+      "One Learn With Smile class is 90 minutes, live, about 6 learners, the same teacher every time. Basic and Intermediate: 30 minutes of grammar, then 60 minutes of communication. Interactive Speaking: 90 minutes of speaking. Between classes: daily practice in the Bolo app and a weekly teacher review of your reading and speaking.",
+    faqs: [
+      {
+        q: "How long is one Learn With Smile class?",
+        a: "90 minutes, live, with up to 2 classes a week. Basic Spoken English and Intermediate Spoken English split it into 30 minutes of grammar and 60 minutes of communication; Interactive Speaking is 90 minutes of speaking.",
+      },
+      {
+        q: "How many students are in one class?",
+        a: "About 6. A small batch is the point: everyone speaks in every class and the teacher corrects each person's errors, not a general list.",
+      },
+      {
+        q: "Is the class recorded?",
+        a: "Yes. Every class is recorded and shared for revision. The class itself is live — the recording is not the class.",
+      },
+      {
+        q: "What do I do between classes?",
+        a: "Practise in Bolo, the Learn With Smile app: daily grammar and vocabulary with a streak, reading and speaking practice, and video lessons chosen for your course. Every week your teacher reviews the reading and speaking you send. It is included in the monthly fee.",
       },
     ],
   },

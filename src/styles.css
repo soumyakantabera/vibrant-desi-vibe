@@ -1510,6 +1510,11 @@ html.js [data-viz="in"] .viz-draw {
   color: #ffffff;
   background: #034a38;
 }
+/* Deep links (#q-…, #short-answer, article headings) land below the sticky
+   header instead of under it. */
+main [id] {
+  scroll-margin-top: 6rem;
+}
 /* Photo bands with centred copy (e.g. "How live classes work"): one even
    teal veil, since text and cards run edge to edge. */
 .band-veil {

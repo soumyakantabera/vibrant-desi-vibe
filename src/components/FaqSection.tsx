@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import type { Faq } from "@/lib/seo";
+import { faqAnchor } from "@/lib/anchors";
 
 /**
  * Renders the FAQ list that the page's FAQPage JSON-LD describes.
@@ -42,6 +43,7 @@ export function FaqSection({
             // read as an answer page to a human landing from a search result.
             <details
               key={f.q}
+              id={faqAnchor(f.q)}
               className="card-soft group transition hover:border-brand/30 hover:shadow-lg"
               open={i < 2}
             >

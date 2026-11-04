@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkplaceEnglishCourseOnlineIndiaRouteImport } from './routes/workplace-english-course-online-india'
 import { Route as WhyUsRouteImport } from './routes/why-us'
+import { Route as WhatHappensInALiveEnglishClassRouteImport } from './routes/what-happens-in-a-live-english-class'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SuccessStoriesRouteImport } from './routes/success-stories'
 import { Route as SpokenEnglishInHindiRouteImport } from './routes/spoken-english-in-hindi'
@@ -39,10 +40,12 @@ import { Route as SpokenBusinessOrInteractiveEnglishRouteImport } from './routes
 import { Route as RefundsRouteImport } from './routes/refunds'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnlineVsOfflineSpokenEnglishClassesRouteImport } from './routes/online-vs-offline-spoken-english-classes'
+import { Route as IsLearnWithSmileGenuineRouteImport } from './routes/is-learn-with-smile-genuine'
 import { Route as IntermediateSpokenEnglishCourseIndiaRouteImport } from './routes/intermediate-spoken-english-course-india'
 import { Route as InteractiveEnglishClassHesitationRouteImport } from './routes/interactive-english-class-hesitation'
 import { Route as IeltsCoachingFeesIndiaRouteImport } from './routes/ielts-coaching-fees-india'
 import { Route as HowToSpeakEnglishFluentlyRouteImport } from './routes/how-to-speak-english-fluently'
+import { Route as HowToJoinLearnWithSmileRouteImport } from './routes/how-to-join-learn-with-smile'
 import { Route as HowLongToLearnSpokenEnglishRouteImport } from './routes/how-long-to-learn-spoken-english'
 import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as FreeEnglishSpeakingPracticeVsPaidClassRouteImport } from './routes/free-english-speaking-practice-vs-paid-class'
@@ -74,6 +77,7 @@ import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as BoloRouteImport } from './routes/bolo'
 import { Route as BestOnlineSpokenEnglishClassesIndiaRouteImport } from './routes/best-online-spoken-english-classes-india'
 import { Route as BeforeYouPaySpokenEnglishCourseRouteImport } from './routes/before-you-pay-spoken-english-course'
+import { Route as AnswersRouteImport } from './routes/answers'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -90,6 +94,12 @@ const WhyUsRoute = WhyUsRouteImport.update({
   path: '/why-us',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhatHappensInALiveEnglishClassRoute =
+  WhatHappensInALiveEnglishClassRouteImport.update({
+    id: '/what-happens-in-a-live-english-class',
+    path: '/what-happens-in-a-live-english-class',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -252,6 +262,11 @@ const OnlineVsOfflineSpokenEnglishClassesRoute =
     path: '/online-vs-offline-spoken-english-classes',
     getParentRoute: () => rootRouteImport,
   } as any)
+const IsLearnWithSmileGenuineRoute = IsLearnWithSmileGenuineRouteImport.update({
+  id: '/is-learn-with-smile-genuine',
+  path: '/is-learn-with-smile-genuine',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IntermediateSpokenEnglishCourseIndiaRoute =
   IntermediateSpokenEnglishCourseIndiaRouteImport.update({
     id: '/intermediate-spoken-english-course-india',
@@ -275,6 +290,11 @@ const HowToSpeakEnglishFluentlyRoute =
     path: '/how-to-speak-english-fluently',
     getParentRoute: () => rootRouteImport,
   } as any)
+const HowToJoinLearnWithSmileRoute = HowToJoinLearnWithSmileRouteImport.update({
+  id: '/how-to-join-learn-with-smile',
+  path: '/how-to-join-learn-with-smile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HowLongToLearnSpokenEnglishRoute =
   HowLongToLearnSpokenEnglishRouteImport.update({
     id: '/how-long-to-learn-spoken-english',
@@ -450,6 +470,11 @@ const BeforeYouPaySpokenEnglishCourseRoute =
     path: '/before-you-pay-spoken-english-course',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AnswersRoute = AnswersRouteImport.update({
+  id: '/answers',
+  path: '/answers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutUsRoute = AboutUsRouteImport.update({
   id: '/about-us',
   path: '/about-us',
@@ -474,6 +499,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/answers': typeof AnswersRoute
   '/before-you-pay-spoken-english-course': typeof BeforeYouPaySpokenEnglishCourseRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/bolo': typeof BoloRoute
@@ -505,10 +531,12 @@ export interface FileRoutesByFullPath {
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
   '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
+  '/how-to-join-learn-with-smile': typeof HowToJoinLearnWithSmileRoute
   '/how-to-speak-english-fluently': typeof HowToSpeakEnglishFluentlyRoute
   '/ielts-coaching-fees-india': typeof IeltsCoachingFeesIndiaRoute
   '/interactive-english-class-hesitation': typeof InteractiveEnglishClassHesitationRoute
   '/intermediate-spoken-english-course-india': typeof IntermediateSpokenEnglishCourseIndiaRoute
+  '/is-learn-with-smile-genuine': typeof IsLearnWithSmileGenuineRoute
   '/online-vs-offline-spoken-english-classes': typeof OnlineVsOfflineSpokenEnglishClassesRoute
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
@@ -537,6 +565,7 @@ export interface FileRoutesByFullPath {
   '/spoken-english-in-hindi': typeof SpokenEnglishInHindiRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
+  '/what-happens-in-a-live-english-class': typeof WhatHappensInALiveEnglishClassRoute
   '/why-us': typeof WhyUsRoute
   '/workplace-english-course-online-india': typeof WorkplaceEnglishCourseOnlineIndiaRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -545,6 +574,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/answers': typeof AnswersRoute
   '/before-you-pay-spoken-english-course': typeof BeforeYouPaySpokenEnglishCourseRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/bolo': typeof BoloRoute
@@ -576,10 +606,12 @@ export interface FileRoutesByTo {
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
   '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
+  '/how-to-join-learn-with-smile': typeof HowToJoinLearnWithSmileRoute
   '/how-to-speak-english-fluently': typeof HowToSpeakEnglishFluentlyRoute
   '/ielts-coaching-fees-india': typeof IeltsCoachingFeesIndiaRoute
   '/interactive-english-class-hesitation': typeof InteractiveEnglishClassHesitationRoute
   '/intermediate-spoken-english-course-india': typeof IntermediateSpokenEnglishCourseIndiaRoute
+  '/is-learn-with-smile-genuine': typeof IsLearnWithSmileGenuineRoute
   '/online-vs-offline-spoken-english-classes': typeof OnlineVsOfflineSpokenEnglishClassesRoute
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
@@ -608,6 +640,7 @@ export interface FileRoutesByTo {
   '/spoken-english-in-hindi': typeof SpokenEnglishInHindiRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
+  '/what-happens-in-a-live-english-class': typeof WhatHappensInALiveEnglishClassRoute
   '/why-us': typeof WhyUsRoute
   '/workplace-english-course-online-india': typeof WorkplaceEnglishCourseOnlineIndiaRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -617,6 +650,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/answers': typeof AnswersRoute
   '/before-you-pay-spoken-english-course': typeof BeforeYouPaySpokenEnglishCourseRoute
   '/best-online-spoken-english-classes-india': typeof BestOnlineSpokenEnglishClassesIndiaRoute
   '/bolo': typeof BoloRoute
@@ -648,10 +682,12 @@ export interface FileRoutesById {
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   '/guides': typeof GuidesRoute
   '/how-long-to-learn-spoken-english': typeof HowLongToLearnSpokenEnglishRoute
+  '/how-to-join-learn-with-smile': typeof HowToJoinLearnWithSmileRoute
   '/how-to-speak-english-fluently': typeof HowToSpeakEnglishFluentlyRoute
   '/ielts-coaching-fees-india': typeof IeltsCoachingFeesIndiaRoute
   '/interactive-english-class-hesitation': typeof InteractiveEnglishClassHesitationRoute
   '/intermediate-spoken-english-course-india': typeof IntermediateSpokenEnglishCourseIndiaRoute
+  '/is-learn-with-smile-genuine': typeof IsLearnWithSmileGenuineRoute
   '/online-vs-offline-spoken-english-classes': typeof OnlineVsOfflineSpokenEnglishClassesRoute
   '/privacy': typeof PrivacyRoute
   '/refunds': typeof RefundsRoute
@@ -680,6 +716,7 @@ export interface FileRoutesById {
   '/spoken-english-in-hindi': typeof SpokenEnglishInHindiRoute
   '/success-stories': typeof SuccessStoriesRoute
   '/terms': typeof TermsRoute
+  '/what-happens-in-a-live-english-class': typeof WhatHappensInALiveEnglishClassRoute
   '/why-us': typeof WhyUsRoute
   '/workplace-english-course-online-india': typeof WorkplaceEnglishCourseOnlineIndiaRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -690,6 +727,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-us'
+    | '/answers'
     | '/before-you-pay-spoken-english-course'
     | '/best-online-spoken-english-classes-india'
     | '/bolo'
@@ -721,10 +759,12 @@ export interface FileRouteTypes {
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
     | '/how-long-to-learn-spoken-english'
+    | '/how-to-join-learn-with-smile'
     | '/how-to-speak-english-fluently'
     | '/ielts-coaching-fees-india'
     | '/interactive-english-class-hesitation'
     | '/intermediate-spoken-english-course-india'
+    | '/is-learn-with-smile-genuine'
     | '/online-vs-offline-spoken-english-classes'
     | '/privacy'
     | '/refunds'
@@ -753,6 +793,7 @@ export interface FileRouteTypes {
     | '/spoken-english-in-hindi'
     | '/success-stories'
     | '/terms'
+    | '/what-happens-in-a-live-english-class'
     | '/why-us'
     | '/workplace-english-course-online-india'
     | '/blog/$slug'
@@ -761,6 +802,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-us'
+    | '/answers'
     | '/before-you-pay-spoken-english-course'
     | '/best-online-spoken-english-classes-india'
     | '/bolo'
@@ -792,10 +834,12 @@ export interface FileRouteTypes {
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
     | '/how-long-to-learn-spoken-english'
+    | '/how-to-join-learn-with-smile'
     | '/how-to-speak-english-fluently'
     | '/ielts-coaching-fees-india'
     | '/interactive-english-class-hesitation'
     | '/intermediate-spoken-english-course-india'
+    | '/is-learn-with-smile-genuine'
     | '/online-vs-offline-spoken-english-classes'
     | '/privacy'
     | '/refunds'
@@ -824,6 +868,7 @@ export interface FileRouteTypes {
     | '/spoken-english-in-hindi'
     | '/success-stories'
     | '/terms'
+    | '/what-happens-in-a-live-english-class'
     | '/why-us'
     | '/workplace-english-course-online-india'
     | '/blog/$slug'
@@ -832,6 +877,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-us'
+    | '/answers'
     | '/before-you-pay-spoken-english-course'
     | '/best-online-spoken-english-classes-india'
     | '/bolo'
@@ -863,10 +909,12 @@ export interface FileRouteTypes {
     | '/free-english-speaking-practice-vs-paid-class'
     | '/guides'
     | '/how-long-to-learn-spoken-english'
+    | '/how-to-join-learn-with-smile'
     | '/how-to-speak-english-fluently'
     | '/ielts-coaching-fees-india'
     | '/interactive-english-class-hesitation'
     | '/intermediate-spoken-english-course-india'
+    | '/is-learn-with-smile-genuine'
     | '/online-vs-offline-spoken-english-classes'
     | '/privacy'
     | '/refunds'
@@ -895,6 +943,7 @@ export interface FileRouteTypes {
     | '/spoken-english-in-hindi'
     | '/success-stories'
     | '/terms'
+    | '/what-happens-in-a-live-english-class'
     | '/why-us'
     | '/workplace-english-course-online-india'
     | '/blog/$slug'
@@ -904,6 +953,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
+  AnswersRoute: typeof AnswersRoute
   BeforeYouPaySpokenEnglishCourseRoute: typeof BeforeYouPaySpokenEnglishCourseRoute
   BestOnlineSpokenEnglishClassesIndiaRoute: typeof BestOnlineSpokenEnglishClassesIndiaRoute
   BoloRoute: typeof BoloRoute
@@ -935,10 +985,12 @@ export interface RootRouteChildren {
   FreeEnglishSpeakingPracticeVsPaidClassRoute: typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
   GuidesRoute: typeof GuidesRoute
   HowLongToLearnSpokenEnglishRoute: typeof HowLongToLearnSpokenEnglishRoute
+  HowToJoinLearnWithSmileRoute: typeof HowToJoinLearnWithSmileRoute
   HowToSpeakEnglishFluentlyRoute: typeof HowToSpeakEnglishFluentlyRoute
   IeltsCoachingFeesIndiaRoute: typeof IeltsCoachingFeesIndiaRoute
   InteractiveEnglishClassHesitationRoute: typeof InteractiveEnglishClassHesitationRoute
   IntermediateSpokenEnglishCourseIndiaRoute: typeof IntermediateSpokenEnglishCourseIndiaRoute
+  IsLearnWithSmileGenuineRoute: typeof IsLearnWithSmileGenuineRoute
   OnlineVsOfflineSpokenEnglishClassesRoute: typeof OnlineVsOfflineSpokenEnglishClassesRoute
   PrivacyRoute: typeof PrivacyRoute
   RefundsRoute: typeof RefundsRoute
@@ -967,6 +1019,7 @@ export interface RootRouteChildren {
   SpokenEnglishInHindiRoute: typeof SpokenEnglishInHindiRoute
   SuccessStoriesRoute: typeof SuccessStoriesRoute
   TermsRoute: typeof TermsRoute
+  WhatHappensInALiveEnglishClassRoute: typeof WhatHappensInALiveEnglishClassRoute
   WhyUsRoute: typeof WhyUsRoute
   WorkplaceEnglishCourseOnlineIndiaRoute: typeof WorkplaceEnglishCourseOnlineIndiaRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -987,6 +1040,13 @@ declare module '@tanstack/react-router' {
       path: '/why-us'
       fullPath: '/why-us'
       preLoaderRoute: typeof WhyUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-happens-in-a-live-english-class': {
+      id: '/what-happens-in-a-live-english-class'
+      path: '/what-happens-in-a-live-english-class'
+      fullPath: '/what-happens-in-a-live-english-class'
+      preLoaderRoute: typeof WhatHappensInALiveEnglishClassRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -1185,6 +1245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OnlineVsOfflineSpokenEnglishClassesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/is-learn-with-smile-genuine': {
+      id: '/is-learn-with-smile-genuine'
+      path: '/is-learn-with-smile-genuine'
+      fullPath: '/is-learn-with-smile-genuine'
+      preLoaderRoute: typeof IsLearnWithSmileGenuineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/intermediate-spoken-english-course-india': {
       id: '/intermediate-spoken-english-course-india'
       path: '/intermediate-spoken-english-course-india'
@@ -1211,6 +1278,13 @@ declare module '@tanstack/react-router' {
       path: '/how-to-speak-english-fluently'
       fullPath: '/how-to-speak-english-fluently'
       preLoaderRoute: typeof HowToSpeakEnglishFluentlyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-join-learn-with-smile': {
+      id: '/how-to-join-learn-with-smile'
+      path: '/how-to-join-learn-with-smile'
+      fullPath: '/how-to-join-learn-with-smile'
+      preLoaderRoute: typeof HowToJoinLearnWithSmileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-long-to-learn-spoken-english': {
@@ -1430,6 +1504,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BeforeYouPaySpokenEnglishCourseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/answers': {
+      id: '/answers'
+      path: '/answers'
+      fullPath: '/answers'
+      preLoaderRoute: typeof AnswersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about-us': {
       id: '/about-us'
       path: '/about-us'
@@ -1464,6 +1545,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
+  AnswersRoute: AnswersRoute,
   BeforeYouPaySpokenEnglishCourseRoute: BeforeYouPaySpokenEnglishCourseRoute,
   BestOnlineSpokenEnglishClassesIndiaRoute:
     BestOnlineSpokenEnglishClassesIndiaRoute,
@@ -1498,12 +1580,14 @@ const rootRouteChildren: RootRouteChildren = {
     FreeEnglishSpeakingPracticeVsPaidClassRoute,
   GuidesRoute: GuidesRoute,
   HowLongToLearnSpokenEnglishRoute: HowLongToLearnSpokenEnglishRoute,
+  HowToJoinLearnWithSmileRoute: HowToJoinLearnWithSmileRoute,
   HowToSpeakEnglishFluentlyRoute: HowToSpeakEnglishFluentlyRoute,
   IeltsCoachingFeesIndiaRoute: IeltsCoachingFeesIndiaRoute,
   InteractiveEnglishClassHesitationRoute:
     InteractiveEnglishClassHesitationRoute,
   IntermediateSpokenEnglishCourseIndiaRoute:
     IntermediateSpokenEnglishCourseIndiaRoute,
+  IsLearnWithSmileGenuineRoute: IsLearnWithSmileGenuineRoute,
   OnlineVsOfflineSpokenEnglishClassesRoute:
     OnlineVsOfflineSpokenEnglishClassesRoute,
   PrivacyRoute: PrivacyRoute,
@@ -1535,6 +1619,7 @@ const rootRouteChildren: RootRouteChildren = {
   SpokenEnglishInHindiRoute: SpokenEnglishInHindiRoute,
   SuccessStoriesRoute: SuccessStoriesRoute,
   TermsRoute: TermsRoute,
+  WhatHappensInALiveEnglishClassRoute: WhatHappensInALiveEnglishClassRoute,
   WhyUsRoute: WhyUsRoute,
   WorkplaceEnglishCourseOnlineIndiaRoute:
     WorkplaceEnglishCourseOnlineIndiaRoute,

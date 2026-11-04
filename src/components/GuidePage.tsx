@@ -112,7 +112,10 @@ export function GuidePage({
       <article className="section" lang={lang}>
         <div className="container-x max-w-3xl">
           {shortAnswer && (
-            <div className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5">
+            <div
+              id="short-answer"
+              className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5"
+            >
               <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
                 Short answer
               </p>

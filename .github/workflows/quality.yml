@@ -70,6 +70,9 @@ jobs:
       - name: SEO, schema and AI-file audit
         run: python3 -I scripts/seo-audit.py dist
 
+      - name: Deep links land on real anchors
+        run: python3 -I scripts/check-answer-anchors.py dist
+
       - name: Verify search and AI outputs
         run: |
           set -euo pipefail
@@ -78,6 +81,10 @@ jobs:
           test -s dist/llms.txt
           test -s dist/llms-full.txt
           test -s dist/llms.json
+          test -s dist/llms-anchors.txt
+          test -s dist/anchors.json
+          grep -q '#q-' dist/llms.txt
+          grep -q '#month-1' dist/llms.txt
           test -s dist/openapi.json
           test -s dist/ai-plugin.json
           test -s dist/.well-known/llms.txt

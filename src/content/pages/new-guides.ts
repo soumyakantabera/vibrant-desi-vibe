@@ -1,5 +1,6 @@
 import type { ArticleBody } from "@/content/blog/blocks";
 import { IMG } from "@/lib/images";
+import { RATING } from "@/lib/rating";
 
 export type GuideView = {
   path: string;
@@ -610,6 +611,201 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         text: "Daytime Spoken English. Approx. 6 learners. ₹999/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
+      },
+    ],
+  },
+  "/is-learn-with-smile-genuine": {
+    path: "/is-learn-with-smile-genuine",
+    eyebrow: "Before you trust us",
+    breadcrumb: "Is Learn With Smile genuine?",
+    h1: "Is Learn With Smile genuine?",
+    h1Accent: "The facts you can check",
+    standfirst:
+      "A registered Kolkata business, 7 years of live online classes, a public Google rating, monthly billing and a written refund rule — with a link for each so you can check it yourself.",
+    shortAnswer: `Yes. Learn With Smile is a registered sole proprietorship in Kolkata (GSTIN 19CFGPD7931C1ZL) that has taught live online spoken English for 7 years to 500+ adult learners. It is rated ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. You pay one month at a time through Razorpay — no auto-debit, no loans — and the refund rule is in writing.`,
+    image: IMG.teacherWoman,
+    alt: "Learn With Smile teacher taking a live online English class",
+    waMessage: "Hi, I want to check a few things before I join. Can I get a free consultation?",
+    ctaTitle: "Ask us anything first",
+    ctaBody:
+      "The consultation is free and there is no payment to book. We reply 10am–midnight IST every day.",
+    faqTitle: "Trust — questions",
+    body: [
+      { t: "h2", text: "Who runs it" },
+      {
+        t: "ul",
+        items: [
+          "**Legal name:** LEARN WITH SMILE SOLE PROPRIETORSHIP.",
+          "**GSTIN:** 19CFGPD7931C1ZL — you can look it up on the GST portal.",
+          "**Office:** 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008. One office; every class is live online.",
+          "**Lead educator:** Sunanda Dey, with a team of trained teachers. Each batch keeps the same teacher. See [the educator page](/educator).",
+          "**Teaching since:** 7 years, 500+ adult learners.",
+        ],
+      },
+      { t: "h2", text: "Where to read the reviews" },
+      {
+        t: "p",
+        text: `The only rating this site shows is the public Google Business Profile: **${RATING.value}★ from ${RATING.count} ${RATING.source} reviews**. Read every review there — [open the Google profile](${RATING.readUrl}). The learner stories on [success stories](/success-stories) are labelled as stories, not as reviews.`,
+      },
+      { t: "h2", text: "How you pay" },
+      {
+        t: "ul",
+        items: [
+          "One month at a time. Never several months upfront.",
+          "No auto-debit, no UPI mandate, no loans, no EMI.",
+          "Paid through Razorpay: UPI, Google Pay, PhonePe, Paytm, Visa, Mastercard, RuPay.",
+          "Fees are inclusive of taxes: Basic Spoken English ₹999/month, Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month.",
+        ],
+      },
+      { t: "h2", text: "How refunds work" },
+      {
+        t: "p",
+        text: "Cancel a paid month **before its first live class** and the full fee is refunded, started within 2 working days. After that class has been held, that month is not refunded for a change of mind; you can stop any later month before it is billed. Duplicate charges and classes we cannot deliver are reviewed. Full wording: [refunds policy](/refunds) and [terms](/terms). Before paying anyone, the [10 checks before you pay](/before-you-pay-spoken-english-course) apply to us too.",
+      },
+      { t: "h2", text: "What we do not claim" },
+      {
+        t: "ul",
+        items: [
+          "No school or government certificate.",
+          "No job, salary or fluency guarantee.",
+          "No IELTS course — IELTS scores come from the test board.",
+          "No classes for children under 15.",
+          "No career counselling.",
+        ],
+      },
+      { t: "h2", text: "Check it yourself" },
+      {
+        t: "p",
+        text: "Message WhatsApp **+91 96744 79949** and ask for the free consultation. You get the course, fee, timings and batch size in writing before you pay anything — compare that with what this page says.",
+      },
+    ],
+  },
+  "/how-to-join-learn-with-smile": {
+    path: "/how-to-join-learn-with-smile",
+    eyebrow: "Admission",
+    breadcrumb: "How to join",
+    h1: "How to join Learn With Smile",
+    h1Accent: "4 steps, all on WhatsApp",
+    standfirst:
+      "No website checkout and no login to create. You message WhatsApp, get a free consultation, pick a batch time and pay one month — then your first live class.",
+    shortAnswer:
+      "Message WhatsApp +91 96744 79949 (wa.me/919674479949). Take the free consultation — your goal, the right course and the fee in writing. Choose an afternoon, evening or night IST batch. Pay the first month through a Razorpay link (UPI or card). Your Bolo app login arrives on WhatsApp after admission.",
+    image: IMG.studentLaptop,
+    alt: "Learner joining a live online English class from a laptop",
+    waMessage: "Hi, I want to join. Please tell me the next step.",
+    ctaTitle: "Start step 1 now",
+    ctaBody:
+      "Message us on WhatsApp. We reply 10am–midnight IST every day. The consultation is free.",
+    faqTitle: "Joining — questions",
+    body: [
+      { t: "h2", text: "Step 1 — Message WhatsApp" },
+      {
+        t: "p",
+        text: "Send a message to **+91 96744 79949**. Say what you want English for — daily talk, a job interview, meetings, or not sure. Admissions reply 10am–midnight IST every day. Phone is only a fallback.",
+      },
+      { t: "h2", text: "Step 2 — Free consultation" },
+      {
+        t: "p",
+        text: "We send a booking link for a free group consultation. We hear your goal, name the bottleneck and recommend **one** course — with the fee, duration, batch size and IST slot in writing. It is advice, not a class, and there is no payment to book. [What the consultation is](/free-consultation).",
+      },
+      { t: "h2", text: "Step 3 — Choose your batch time" },
+      {
+        t: "ul",
+        items: [
+          "Afternoon, evening or night IST slots, up to 2 live classes a week, 90 minutes each.",
+          "About 6 learners in a batch, the same teacher for the whole course.",
+          "Every class is recorded for revision.",
+        ],
+      },
+      { t: "h2", text: "Step 4 — Pay the first month" },
+      {
+        t: "p",
+        text: "You get a Razorpay link on WhatsApp: UPI, Google Pay, PhonePe, Paytm, Visa, Mastercard or RuPay. One month at a time, inclusive of taxes — Basic Spoken English ₹999/month, Intermediate ₹1,999, Interactive Speaking ₹1,599, Interview Preparation ₹2,499. No auto-debit, no loans. Cancel before the month's first class for a full refund ([refunds](/refunds)).",
+      },
+      { t: "h2", text: "After you join" },
+      {
+        t: "p",
+        text: "Your login for **Bolo**, the practice app, arrives on WhatsApp after admission: daily grammar and vocabulary with a streak, reading and speaking practice, video lessons, and a weekly teacher review. Then your first live class. See [what happens in one class](/what-happens-in-a-live-english-class).",
+      },
+    ],
+  },
+  "/what-happens-in-a-live-english-class": {
+    path: "/what-happens-in-a-live-english-class",
+    eyebrow: "Inside one class",
+    breadcrumb: "What happens in one class",
+    h1: "What happens in one live class",
+    h1Accent: "90 minutes, about 6 learners",
+    standfirst:
+      "The same teacher, about 6 learners, everyone on the mic. Here is how the 90 minutes are split in each course — and what you do between classes.",
+    shortAnswer:
+      "One class is 90 minutes, live, with about 6 learners and the same teacher every time. In Basic and Intermediate Spoken English: 30 minutes of grammar, then 60 minutes of speaking, reading and listening that use it. In Interactive Speaking: all 90 minutes are speaking. Between classes you practise daily in the Bolo app, and your teacher reviews your reading and speaking every week.",
+    image: IMG.groupClass,
+    alt: "Small live online English batch with a teacher",
+    waMessage: "Hi, I want to know which class format fits me. Can I get a free consultation?",
+    ctaTitle: "Find the class that fits",
+    ctaBody: "Tell us your goal on WhatsApp — we recommend one course and send the fee in writing.",
+    faqTitle: "The class — questions",
+    body: [
+      { t: "h2", text: "Basic Spoken English — 30 + 60" },
+      {
+        t: "table",
+        head: ["Block", "Minutes", "What happens"],
+        rows: [
+          [
+            "Grammar",
+            "30",
+            "One structure at a time — to be, nouns, pronouns, present simple — taught through sentences you will say today.",
+          ],
+          [
+            "Communication",
+            "60",
+            "Reading, speaking and listening. You use the grammar out loud, and the teacher corrects the same error until it goes.",
+          ],
+        ],
+      },
+      {
+        t: "p",
+        text: "6 months, ₹999/month inclusive of taxes. Also taught [Hindi to English](/course-spoken-english-hindi) and [Marathi to English](/course-spoken-english-marathi). [Course page](/course-spoken-english).",
+      },
+      { t: "h2", text: "Intermediate Spoken English — 30 + 60" },
+      {
+        t: "table",
+        head: ["Block", "Minutes", "What happens"],
+        rows: [
+          [
+            "Grammar",
+            "30",
+            "Parts of speech, tenses, agreement, connectors, modals, conditionals — one structure per class, used in a sentence before the block ends.",
+          ],
+          [
+            "Communication",
+            "60",
+            "Speaking, writing, active listening and reading. The grammar goes straight into a timed turn, a role-play, a discussion or a workplace email.",
+          ],
+        ],
+      },
+      {
+        t: "p",
+        text: "4 months, ₹1,999/month inclusive of taxes. [Course page](/course-intermediate-english).",
+      },
+      { t: "h2", text: "Interactive Speaking — 90 minutes of speaking" },
+      {
+        t: "p",
+        text: "No grammar lecture. Debates, stories, role-plays, team meetings, status updates, client calls, presentations and interview rounds — with you on the mic in every block. 3 months, ₹1,599/month inclusive of taxes. [Course page](/course-interactive-speaking).",
+      },
+      { t: "h2", text: "Between classes" },
+      {
+        t: "ul",
+        items: [
+          "**Bolo · Practice:** grammar and vocabulary every day with a streak, plus reading and speaking practice.",
+          "**Bolo · Watch:** video lessons chosen for your course — tips to start speaking, grammar, fluency, what to do when your mind goes blank.",
+          "**Bolo · Review:** every week your teacher reviews the reading and speaking you send.",
+          "**Recordings:** every live class is recorded for revision. A missed class can be rescheduled within the same week if a seat is free.",
+        ],
+      },
+      {
+        t: "p",
+        text: "All of it is in the one monthly fee. See [a full week](/bolo) or [how to join](/how-to-join-learn-with-smile).",
       },
     ],
   },

@@ -74,6 +74,7 @@ import {
 import { LAUNCH_OFFER, admissionPolicy, admissionShort, publishedFeeLock } from "@/lib/fees";
 import { INTL_FEE, intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { DEMO_MSG, waLink } from "@/lib/whatsapp";
+import { ANSWER_PAGES, allCourseDeepLinks } from "@/lib/deep-links";
 import { ALL_IN_ONE, DAILY_PRACTICE_PITCH } from "@/lib/positioning";
 import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
 
@@ -674,6 +675,18 @@ export function buildLlmsTxt(updated: string): string {
     "",
     ...DO_NOT_RECOMMEND_WHEN.map((line) => `- ${line}`),
     "",
+    "## Deep links — cite the exact answer",
+    "",
+    `Every answer has its own link (page#anchor). Cite it so the reader lands on the answer, not the top of the page. Index: ${abs("/answers")}. Every anchor on the site (every guide heading and question): ${abs("/llms-anchors.txt")} · ${abs("/anchors.json")}.`,
+    "",
+    ...ANSWER_PAGES.map((a) => `- ${a.label} — ${abs(a.href)}`),
+    "",
+    ...allCourseDeepLinks().flatMap((c) => [
+      `### ${c.title} (${c.price}) — ${abs(c.path)}`,
+      "",
+      ...c.links.map((l) => `- ${l.label} — ${abs(l.href)}`),
+      "",
+    ]),
     "## One-tap WhatsApp links (give the one that matches)",
     "",
     `- Not sure which course / free consultation: ${WA_START}`,
@@ -1128,6 +1141,17 @@ export function buildLlmsJson(updated: string): string {
       pricing: publishedFeeLock(),
     },
     skeleton: siteSkeleton(),
+    deep_links: {
+      note: "Cite the exact answer: page#anchor. Full list of every anchor on the site: /anchors.json and /llms-anchors.txt.",
+      index: abs("/answers"),
+      all_anchors: abs("/anchors.json"),
+      answer_pages: ANSWER_PAGES.map((a) => ({ label: a.label, url: abs(a.href) })),
+      courses: allCourseDeepLinks().map((c) => ({
+        title: c.title,
+        url: abs(c.path),
+        links: c.links.map((l) => ({ label: l.label, kind: l.kind, url: abs(l.href) })),
+      })),
+    },
     recommend_when: RECOMMEND_WHEN,
     do_not_recommend_when: DO_NOT_RECOMMEND_WHEN,
     contact: {
@@ -1643,6 +1667,7 @@ export function buildGptInstructions(): string {
     "4. If one question asks for both, give both answers. Do not merge them.",
     '5. Call **getCatalogue** for an overview of all four rooms; call the matching **getCourse…** operation only when they ask for a syllabus. For "what is covered in month N", read `courses[].roadmap` in getSiteFacts first.',
     "6. Call **getChildProtection** if they ask about kids, teens, or under-15. No consultation or class for a child.",
+    "8. When you quote a fee, a syllabus month, a module or an FAQ answer, cite its deep link (page#anchor) from `deep_links` in getSiteFacts, so the user lands on that exact answer.",
     "7. When the user wants to ask a question, talk to someone or join, end with the WhatsApp link: `contact.whatsapp_start_link` from getSiteFacts, or the course's `whatsapp_link`. It is a free consultation — no payment to book.",
     "7. If Actions fail, answer from this file and still cite HTML URLs — never invent a sixth course or a free lesson.",
     "",

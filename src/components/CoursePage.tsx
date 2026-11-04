@@ -25,6 +25,7 @@ import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
+import { faqAnchor, moduleAnchor } from "@/lib/anchors";
 
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
@@ -367,7 +368,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   return (
     <Layout waMessage={waPrimary} footerImage={data.footerImage}>
       {/* HERO */}
-      <section className="hero-teal relative overflow-hidden">
+      <section className="hero-teal relative overflow-hidden" id="overview">
         <div className="absolute inset-0 z-0">
           <SmartImage src={data.heroImage} alt={data.title} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
@@ -390,7 +391,10 @@ export function CoursePage({ data }: { data: CourseData }) {
             {teacherNote && <p className="mt-2 text-base text-white/90">{teacherNote}</p>}
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold">
+                <span
+                  id="fees"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sunshine text-ink font-bold"
+                >
                   <Icon name="rupee" size={14} className="lws-inr" />
                   <FeeText text={data.price} />
                 </span>
@@ -492,7 +496,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       <WhyDifferent compact level={levelForCourse(feeKey)} />
 
       {/* OUTCOMES */}
-      <section className="section">
+      <section className="section" id="outcomes">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
           <SmartImage
             src={data.midImage}
@@ -542,7 +546,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       {isPackageSlug(feeKey) && <CourseIncluded slug={feeKey} />}
 
       {/* CURRICULUM */}
-      <section className="section bg-brand-soft/40">
+      <section className="section bg-brand-soft/40" id="syllabus">
         <div className="container-x">
           <SectionHeader
             eyebrow="Curriculum"
@@ -552,7 +556,7 @@ export function CoursePage({ data }: { data: CourseData }) {
           />
           <Reveal stagger className="grid md:grid-cols-2 gap-5">
             {data.modules.map((m, i) => (
-              <article key={m.title} className="card-soft">
+              <article key={m.title} id={moduleAnchor(m.title)} className="card-soft">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="h-9 w-9 rounded-xl bg-indigo-pop/10 text-indigo-pop font-display font-extrabold flex items-center justify-center">
                     {i + 1}
@@ -590,7 +594,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       <CourseLadder highlight={feeKey} />
 
       {data.projects && data.projects.length > 0 && (
-        <section className="section">
+        <section className="section" id="projects">
           <div className="container-x">
             <SectionHeader
               eyebrow="Capstone Projects"
@@ -622,7 +626,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {data.testimonials && data.testimonials.length > 0 && (
-        <section className="section">
+        <section className="section" id="stories">
           <div className="container-x">
             <SectionHeader
               eyebrow="Student Stories"
@@ -635,7 +639,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       )}
 
       {(RELATED_GUIDES[data.slug]?.length ?? 0) > 0 && (
-        <section className="section bg-brand-soft/30">
+        <section className="section bg-brand-soft/30" id="guides">
           <div className="container-x">
             <SectionHeader
               eyebrow="Free Learning Guides"
@@ -681,7 +685,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               {/* Open by default: the answers stay in the DOM either way, but an
                   expanded first answer is what search and AI snippets quote. */}
               {faqs.map((f, i) => (
-                <details key={f.q} className="card-soft group" open={i === 0}>
+                <details key={f.q} id={faqAnchor(f.q)} className="card-soft group" open={i === 0}>
                   <summary className="cursor-pointer list-none flex items-center justify-between gap-3">
                     <h3 className="font-display font-bold text-ink text-base">{f.q}</h3>
                     <Icon

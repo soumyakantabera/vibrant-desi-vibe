@@ -1,6 +1,7 @@
 import { SectionRise } from "@/components/SectionRise";
 import { SwipeNudge } from "@/components/SwipeNudge";
 import { AiArrival } from "@/components/AiArrival";
+import { OpenAnchor } from "@/components/OpenAnchor";
 import type { ReactNode } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
@@ -31,6 +32,7 @@ export function Layout({
       </main>
       <SectionRise />
       <SwipeNudge />
+      <OpenAnchor />
       <ConsultOffer message={waMessage} />
       <Footer image={footerImage} />
       <WhatsAppFab message={waMessage} />

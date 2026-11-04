@@ -120,16 +120,8 @@ export const COVERAGE_CITIES = [
  * self-serving review markup on LocalBusiness and Organization, and it carries
  * a manual-action risk. It is displayed in HTML, where it belongs.
  */
-export const RATING = {
-  value: "5.0",
-  count: 125,
-  /** Where the figure comes from. Shown to readers so the number has a source. */
-  source: "Google",
-  /** Opens the Google Business Profile, where the reviews can be read. */
-  readUrl: "https://g.page/r/CY5ptQJYQVPVEBM",
-  /** Google's "write a review" form. */
-  writeUrl: "https://g.page/r/CY5ptQJYQVPVEBM/review",
-} as const;
+export { RATING } from "@/lib/rating";
+import { RATING } from "@/lib/rating";
 
 /** "5.0★" — the display form used in stat tiles and stickers. */
 export const RATING_DISPLAY = `${RATING.value}★`;
