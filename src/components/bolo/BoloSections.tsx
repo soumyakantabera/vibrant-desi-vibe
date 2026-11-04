@@ -40,7 +40,6 @@ export const COURSE_POSE: Record<FeeSlug, BoloPose> = {
   "spoken-english": "talk",
   "intermediate-english": "read",
   "interactive-speaking": "cheer",
-  "business-english": "listen",
   "interview-preparation": "mic",
 };
 
@@ -48,7 +47,6 @@ const PLAN_PATH: Record<FeeSlug, string> = {
   "spoken-english": "/course-spoken-english",
   "intermediate-english": "/course-intermediate-english",
   "interactive-speaking": "/course-interactive-speaking",
-  "business-english": "/course-business-english",
   "interview-preparation": "/course-interview-preparation",
 };
 
@@ -316,11 +314,10 @@ const LEVEL_TABS: { level: BoloLevel; label: string; course: string }[] = [
   { level: "basic", label: "Basic", course: "Basic Spoken English (also Hindi / Marathi medium)" },
   { level: "intermediate", label: "Intermediate", course: "Intermediate Spoken English" },
   { level: "interactive", label: "Interactive", course: "Interactive Speaking" },
-  { level: "business", label: "Business", course: "Business English" },
   { level: "interview", label: "Interview", course: "Interview Preparation" },
 ];
 
-/** One phone, five levels: what Bolo looks like in each course. */
+/** One phone, four levels: what Bolo looks like in each course. */
 export function BoloLevels() {
   const [level, setLevel] = useState<BoloLevel>("intermediate");
   const L = LEVELS[level];

@@ -13,6 +13,9 @@ export const REDIRECTS: Record<string, string> = {
   // The paid Demo Class was retired November 2026; demo searches start at the
   // free consultation.
   "/course-demo-session": "/free-consultation",
+  // Business English was folded into Interactive Speaking (meetings, calls,
+  // presentations) and Intermediate (emails, tone) in November 2026.
+  "/course-business-english": "/course-interactive-speaking",
   ...Object.fromEntries(
     RETIRED_CITY_PATHS.map((from) => [from, RETIRED_CITY_TARGET[from] ?? RETIRED_CITY_REDIRECT]),
   ),

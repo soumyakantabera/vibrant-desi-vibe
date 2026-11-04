@@ -270,7 +270,7 @@ SEM = {
     "spoken english in marathi": "/course-spoken-english-marathi",
     "intermediate spoken english": "/course-intermediate-english",
     "interactive speaking": "/course-interactive-speaking",
-    "business english": "/course-business-english",
+    "business english": "/course-interactive-speaking",
     "interview preparation": "/course-interview-preparation",
     "english class fees": "/english-class-fees-india",
     "free consultation": "/free-consultation",

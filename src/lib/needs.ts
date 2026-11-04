@@ -88,8 +88,8 @@ export const NEEDS: Record<NeedKey, Need> = {
     standfirst:
       "IT services and global capability centres check English early — in a communication round and in how you explain your own project. Then you use it every day in standups.",
     shortAnswer:
-      "Freshers in IT and GCC drives usually face a communication assessment (often first or alongside aptitude) and an HR round where you explain your work in English. On the job it is standups, demos and client calls. Business English (₹2,499/month, 3 months) practises exactly that; Interview Preparation (₹2,499/month, 2 months) is for the interview itself.",
-    course: { path: "/course-business-english", name: "Business English" },
+      "Freshers in IT and GCC drives usually face a communication assessment (often first or alongside aptitude) and an HR round where you explain your work in English. On the job it is standups, demos and client calls. Interactive Speaking (₹1,599/month, 3 months) practises exactly that; Interview Preparation (₹2,499/month, 2 months) is for the interview itself.",
+    course: { path: "/course-interactive-speaking", name: "Interactive Speaking" },
     keywords: [
       "english for software engineers india",
       "communication round preparation it freshers",
@@ -99,7 +99,7 @@ export const NEEDS: Record<NeedKey, Need> = {
       "english for it professionals online class",
     ],
     summary:
-      "Guide: English for software engineers and IT/GCC freshers in India — communication assessments appear early in campus and lateral drives (some employers add Versant after aptitude), HR rounds ask you to explain your project in English, and the job runs on standups and client calls. Learn With Smile: Business English ₹2,499/month (3 months), Interview Preparation ₹2,499/month (2 months), about 6 per batch.",
+      "Guide: English for software engineers and IT/GCC freshers in India — communication assessments appear early in campus and lateral drives (some employers add Versant after aptitude), HR rounds ask you to explain your project in English, and the job runs on standups and client calls. Learn With Smile: Interactive Speaking ₹1,599/month (3 months), Interview Preparation ₹2,499/month (2 months), about 6 per batch.",
     waMessage:
       "Hi, I am a software engineer / IT fresher. I want to speak better English in interviews and standups.",
     faqs: [
@@ -109,7 +109,7 @@ export const NEEDS: Record<NeedKey, Need> = {
       },
       {
         q: "Which Learn With Smile course is best for software engineers?",
-        a: "Business English (3 months, ₹2,499/month, about 6 learners) for standups, demos and client calls; Interview Preparation (2 months, ₹2,499/month) if the interview is the only gap. Every course includes the Bolo practice app and a weekly teacher review.",
+        a: "Interactive Speaking (3 months, ₹1,599/month, about 6 learners) for standups, demos and client calls; Interview Preparation (2 months, ₹2,499/month) if the interview is the only gap. Every course includes the Bolo practice app and a weekly teacher review.",
       },
       {
         q: "Will this guarantee a placement?",
@@ -130,8 +130,8 @@ export const NEEDS: Record<NeedKey, Need> = {
     standfirst:
       "Your SQL can be perfect. If you cannot explain what the number means in plain English, the meeting moves on without you.",
     shortAnswer:
-      "Analyst roles are judged on turning a chart into one clear sentence for non-technical people — in interviews, reviews and client calls. Use 'what changed, why, so what, next step'. Business English (₹2,499/month, 3 months, about 6 learners) practises exactly this out loud.",
-    course: { path: "/course-business-english", name: "Business English" },
+      "Analyst roles are judged on turning a chart into one clear sentence for non-technical people — in interviews, reviews and client calls. Use 'what changed, why, so what, next step'. Interactive Speaking (₹1,599/month, 3 months, about 6 learners) practises exactly this out loud.",
+    course: { path: "/course-interactive-speaking", name: "Interactive Speaking" },
     keywords: [
       "english for data analysts",
       "how to explain data insights in english",
@@ -140,16 +140,16 @@ export const NEEDS: Record<NeedKey, Need> = {
       "present dashboard to stakeholders english",
     ],
     summary:
-      "Guide: English for data and business analysts in India — explain an insight in one sentence (what changed, why, so what, next step) to non-technical stakeholders, in interviews, reviews and client calls. Learn With Smile Business English: 3 months, ₹2,499/month, about 6 per batch, Bolo practice app included.",
+      "Guide: English for data and business analysts in India — explain an insight in one sentence (what changed, why, so what, next step) to non-technical stakeholders, in interviews, reviews and client calls. Learn With Smile Interactive Speaking: 3 months, ₹1,599/month, about 6 per batch, Bolo practice app included.",
     waMessage:
       "Hi, I work (or want to work) as an analyst. I want to explain my work better in English.",
     faqs: [
       {
         q: "How can a data analyst improve English communication?",
-        a: "Practise turning one chart into one sentence for a non-technical listener: what changed, why, so what, and the next step. Say it out loud, record it, and get feedback. Learn With Smile's Business English (3 months, ₹2,499/month) does this live in a batch of about 6, with weekly teacher review in the Bolo app.",
+        a: "Practise turning one chart into one sentence for a non-technical listener: what changed, why, so what, and the next step. Say it out loud, record it, and get feedback. Learn With Smile's Interactive Speaking (3 months, ₹1,599/month) does this live in a batch of about 6, with weekly teacher review in the Bolo app.",
       },
       {
-        q: "Is Business English useful for analyst interviews?",
+        q: "Is workplace English practice useful for analyst interviews?",
         a: "Yes — interviews ask you to walk through a project and explain a finding. If the interview is your only gap, Interview Preparation (2 months, ₹2,499/month) focuses on that.",
       },
     ],

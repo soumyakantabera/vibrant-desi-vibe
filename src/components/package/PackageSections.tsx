@@ -744,7 +744,6 @@ const VIDEO_TABS: ("All" | VideoCourse)[] = [
   "Spoken English",
   "Intermediate",
   "Interactive Speaking",
-  "Business English",
   "Interview Prep",
 ];
 const CAT_TONE: Tone[] = ["amber", "blue", "teal", "plum", "green", "terra"];
@@ -1035,7 +1034,6 @@ const PLAN_ORDER: FeeSlug[] = [
   "spoken-english",
   "intermediate-english",
   "interactive-speaking",
-  "business-english",
   "interview-preparation",
 ];
 
@@ -1050,23 +1048,16 @@ const PLAN_COPY: Record<
     tone: "green",
   },
   "intermediate-english": {
-    for: "Basic sentences work — now make them correct and connected.",
-    focus: "30 min grammar + 1 hr talk, every class",
+    for: "Basic sentences work — now make them correct, connected and work-ready.",
+    focus: "30 min grammar + 1 hr talk; workplace emails",
     path: "/course-intermediate-english",
     tone: "amber",
   },
   "interactive-speaking": {
-    for: "You know English but freeze when you talk.",
-    focus: "Games, debates, role-plays",
+    for: "You know English but freeze — in a chat, a meeting or a client call.",
+    focus: "Role-plays, meetings, client calls",
     path: "/course-interactive-speaking",
     tone: "teal",
-  },
-  "business-english": {
-    for: "Meetings, client calls, emails, presentations.",
-    focus: "Live workplace role-plays",
-    path: "/course-business-english",
-    popular: true,
-    tone: "blue",
   },
   "interview-preparation": {
     for: "You can talk — the interview is the gap.",
@@ -1217,12 +1208,6 @@ function CourseGuideLink({ slug }: { slug: FeeSlug }) {
     return (
       <Link to="/interactive-english-class-hesitation" className={cls}>
         Why you freeze when you speak — the guide
-      </Link>
-    );
-  if (slug === "business-english")
-    return (
-      <Link to="/workplace-english-course-online-india" className={cls}>
-        Workplace English guide: meetings, calls, emails
       </Link>
     );
   return (

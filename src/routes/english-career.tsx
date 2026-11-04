@@ -69,9 +69,11 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Five live programmes. Basic Spoken, Intermediate Spoken, Interactive Speaking,
-              Business English and Interview Preparation. Interview Preparation is the room when the
-              HR screen is the bottleneck. <FeeText text="From ₹999/month, inclusive of taxes." />
+              Four live programmes. Basic Spoken (also taught in Hindi or Marathi), Intermediate
+              Spoken, Interactive Speaking and Interview Preparation. Business English — meetings,
+              calls and emails — is taught inside Interactive Speaking and Intermediate. Interview
+              Preparation is the room when the HR screen is the bottleneck.{" "}
+              <FeeText text="From ₹999/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -119,7 +121,7 @@ function Page() {
                   {
                     tone: "brand",
                     icon: SnapIcons.book,
-                    big: "5 programmes",
+                    big: "4 programmes",
                     small: "Adults 15+ · live rooms",
                   },
                   {
@@ -148,7 +150,7 @@ function Page() {
           <SectionHeader
             eyebrow="Clear Categories"
             title={
-              <FeeText text="5 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
+              <FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
             }
             subtitle="Basic Spoken, Intermediate Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />

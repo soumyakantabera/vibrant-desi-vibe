@@ -128,7 +128,6 @@ export type VideoCourse =
   | "Spoken English"
   | "Intermediate"
   | "Interactive Speaking"
-  | "Business English"
   | "Interview Prep";
 
 export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: VideoCourse[] }[] = [
@@ -136,25 +135,13 @@ export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: Vi
     cat: "Tips & tricks",
     title: "Tips and tricks to start speaking",
     blurb: "Simple ways to say your first sentences out loud — and keep going.",
-    tags: [
-      "Spoken English",
-      "Intermediate",
-      "Interactive Speaking",
-      "Business English",
-      "Interview Prep",
-    ],
+    tags: ["Spoken English", "Intermediate", "Interactive Speaking", "Interview Prep"],
   },
   {
     cat: "Grammar",
     title: "Grammar you actually use",
     blurb: "Tenses, articles and prepositions through real sentences, not rule lists.",
-    tags: [
-      "Spoken English",
-      "Intermediate",
-      "Interactive Speaking",
-      "Business English",
-      "Interview Prep",
-    ],
+    tags: ["Spoken English", "Intermediate", "Interactive Speaking", "Interview Prep"],
   },
   {
     cat: "Thinking",
@@ -172,13 +159,7 @@ export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: Vi
     cat: "Phrases",
     title: "Small words, big difference",
     blurb: "Connectors and natural fillers that make your speech flow.",
-    tags: [
-      "Spoken English",
-      "Intermediate",
-      "Interactive Speaking",
-      "Business English",
-      "Interview Prep",
-    ],
+    tags: ["Spoken English", "Intermediate", "Interactive Speaking", "Interview Prep"],
   },
   {
     cat: "Fluency",
@@ -190,13 +171,13 @@ export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: Vi
     cat: "Workplace",
     title: "Meetings and email phrases",
     blurb: "Agree, disagree, update and follow up — politely and clearly.",
-    tags: ["Business English"],
+    tags: ["Interactive Speaking"],
   },
   {
     cat: "Workplace",
     title: "Client calls and presentations",
     blurb: "Open, structure and close a call or a short talk with confidence.",
-    tags: ["Business English"],
+    tags: ["Interactive Speaking"],
   },
   {
     cat: "Interview",
@@ -208,7 +189,7 @@ export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: Vi
     cat: "Speaking",
     title: "Small talk without freezing",
     blurb: "Easy openers and follow-up questions for any conversation.",
-    tags: ["Interactive Speaking", "Business English"],
+    tags: ["Interactive Speaking"],
   },
 ];
 
@@ -284,24 +265,15 @@ export const COURSE_PACKAGE: Record<
     videoTag: "Intermediate",
   },
   "interactive-speaking": {
-    live: "Games, debates, stories and role-plays that make you talk before you overthink.",
+    live: "Debates, stories and role-plays — team meetings, status updates, client calls and presentations — that make you talk before you overthink.",
     portal:
       "Whole-conversation practice, phrase brush-ups and reading for rhythm between sessions.",
-    videos: "Fluency drills, small talk without freezing and mind-blank fixes.",
+    videos:
+      "Fluency drills, small talk without freezing, meeting and call phrases, and mind-blank fixes.",
     review:
       "Every week your teacher reviews your recorded conversations and reading, focusing on where the freeze starts.",
     teacher: "The same teacher every class, who notices when the freeze starts and why.",
     videoTag: "Interactive Speaking",
-  },
-  "business-english": {
-    live: "Workplace role-plays: stand-ups, client calls, presentations and feedback, live.",
-    portal:
-      "Meeting conversations, office phrase brush-ups, reading emails aloud and grammar in business texts.",
-    videos: "Meeting, email and call phrases; how to buy time when you lose a word mid-call.",
-    review:
-      "Every week your teacher reviews your recorded updates, call answers and reading, with workplace-specific notes.",
-    teacher: "One teacher who knows your role, your team and the calls you dread.",
-    videoTag: "Business English",
   },
   "interview-preparation": {
     live: "HR screens, 60-second introductions, STAR answers and mock interviews in front of the batch.",

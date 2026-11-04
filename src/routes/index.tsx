@@ -221,14 +221,14 @@ function Home() {
             <SectionHeader
               eyebrow="What We Teach"
               title="Choose the Goal You Need Now"
-              subtitle="Seven live courses for adults 15+, about 6 learners each — including Basic Spoken English taught in Hindi or Marathi. Pick the result you need; every fee is inclusive of taxes."
+              subtitle="Six live courses for adults 15+, about 6 learners each — including Basic Spoken English taught in Hindi or Marathi, and Business English inside Interactive Speaking. Pick the result you need; every fee is inclusive of taxes."
             />
             <div id="all-courses" className="phone-swipe flex flex-wrap justify-center gap-4">
               {HOME_COURSES.map((c) => (
                 <CourseCard key={c.slug} {...c} />
               ))}
             </div>
-            <SwipeHint label="Swipe for all 7 courses" />
+            <SwipeHint label="Swipe for all 6 courses" />
             <div className="mt-5 bg-brand rounded-2xl p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
               <div>
                 <strong className="text-cream block text-lg">
@@ -305,7 +305,7 @@ function Home() {
                 {
                   n: 1,
                   lbl: "Choose Course",
-                  sub: "5 programmes · from ₹999/mo, inclusive of taxes",
+                  sub: "4 programmes · from ₹999/mo, inclusive of taxes",
                   c: "sunshine",
                 },
                 { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
@@ -648,6 +648,6 @@ function IconFrame({ children, size = 24 }: { children: React.ReactNode; size?: 
 
 // Small Batch — three figures clustered together
 
-// Business English — one speaker presenting an idea clearly
+// Workplace English — one speaker presenting an idea clearly
 
 // Small check used in feature lists

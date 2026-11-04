@@ -19,7 +19,7 @@ until conversion data exists). Location: India. Schedule: 9am–11:30pm IST
 | Marathi medium | spoken english in marathi · marathi to english speaking course · english bolayla shika | /course-spoken-english-marathi |
 | Intermediate | intermediate spoken english course · english fluency course intermediate | /course-intermediate-english |
 | Freeze / confidence | english speaking confidence course · stop hesitation english speaking · interactive english speaking class | /course-interactive-speaking |
-| Work English | business english course online india · english for working professionals · corporate english course | /course-business-english |
+| Work English | business english course online india · english for working professionals · corporate english course | /course-interactive-speaking (Business English folded in, Nov 2026) |
 | Interviews | english for job interview · interview english course online | /course-interview-preparation |
 | Price intent | spoken english course fees · english speaking course fees · cheap spoken english classes online | /english-class-fees-india |
 | Trust / refund | spoken english course monthly payment · english course no emi | /before-you-pay-spoken-english-course |

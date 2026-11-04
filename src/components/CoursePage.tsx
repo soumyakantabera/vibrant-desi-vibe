@@ -158,48 +158,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "Practical exercises for building retrieval speed and speaking confidence.",
     },
   ],
-  "business-english": [
-    {
-      href: "/english-for-client-calls-india",
-      title: "English for client calls",
-      description: "Names, numbers, next step — clarity, not a fake accent.",
-    },
-    {
-      href: "/english-for-presentations-india",
-      title: "Explain your work in 3 minutes",
-      description: "One outcome, three beats, one ask. Standups and client decks.",
-    },
-    {
-      href: "/english-for-working-professionals-india",
-      title: "English while you work",
-      description: "Afternoon, evening and night IST. Live class; recording is revision.",
-    },
-    {
-      href: "/workplace-english-course-online-india",
-      title: "Business English course guide",
-      description: "Who needs workplace training, what to practise and when not to buy a course.",
-    },
-    {
-      href: "/blog/english-for-office-meetings",
-      title: "English for office meetings",
-      description: "Practical phrases for updates, clarification, disagreement and decisions.",
-    },
-    {
-      href: "/blog/english-for-bpo-customer-support",
-      title: "English for BPO and customer support",
-      description: "Call handling, complaint language, recovery phrases and clear next steps.",
-    },
-    {
-      href: "/blog/5-email-phrases-that-sound-more-professional",
-      title: "5 email phrases that sound more professional",
-      description: "Clearer business English without inflated or outdated wording.",
-    },
-    {
-      href: "/blog/bpo-to-client-facing-role-roadmap",
-      title: "BPO to client-facing role roadmap",
-      description: "A practical communication and career progression plan.",
-    },
-  ],
   "intermediate-english": [
     {
       href: "/intermediate-spoken-english-course-india",
@@ -240,6 +198,46 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       title: "5 speaking habits that reduce hesitation",
       description: "Low-stakes practice ideas you can use between live classes.",
     },
+    {
+      href: "/english-for-client-calls-india",
+      title: "English for client calls",
+      description: "Names, numbers, next step — clarity, not a fake accent.",
+    },
+    {
+      href: "/english-for-presentations-india",
+      title: "Explain your work in 3 minutes",
+      description: "One outcome, three beats, one ask. Standups and client decks.",
+    },
+    {
+      href: "/english-for-working-professionals-india",
+      title: "English while you work",
+      description: "Afternoon, evening and night IST. Live class; recording is revision.",
+    },
+    {
+      href: "/workplace-english-course-online-india",
+      title: "Workplace English guide",
+      description: "Who needs workplace training, what to practise and when not to buy a course.",
+    },
+    {
+      href: "/blog/english-for-office-meetings",
+      title: "English for office meetings",
+      description: "Practical phrases for updates, clarification, disagreement and decisions.",
+    },
+    {
+      href: "/blog/english-for-bpo-customer-support",
+      title: "English for BPO and customer support",
+      description: "Call handling, complaint language, recovery phrases and clear next steps.",
+    },
+    {
+      href: "/blog/5-email-phrases-that-sound-more-professional",
+      title: "5 email phrases that sound more professional",
+      description: "Clearer business English without inflated or outdated wording.",
+    },
+    {
+      href: "/blog/bpo-to-client-facing-role-roadmap",
+      title: "BPO to client-facing role roadmap",
+      description: "A practical communication and career progression plan.",
+    },
   ],
   "interview-preparation": [
     {
@@ -262,8 +260,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
 
 const TEACHER_NOTE: Record<string, string> = {
   "spoken-english": "Same teacher every class. They hear you speak — and they remember your words.",
-  "business-english":
-    "The same teacher on every workplace hour. They learn how you sound on a client call.",
   "intermediate-english":
     "Same teacher for all 4 months. They hear your tense slip in month 1 and check it is gone by month 4.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",

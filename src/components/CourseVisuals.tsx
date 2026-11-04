@@ -402,10 +402,13 @@ export const LADDER: { slug: string; step: string; who: string }[] = [
   {
     slug: "intermediate-english",
     step: "Level up",
-    who: "Basic sentences work — grammar and flow do not",
+    who: "Basic sentences work — grammar, flow and work emails do not",
   },
-  { slug: "interactive-speaking", step: "Unfreeze", who: "Knows the words, freezes on the mic" },
-  { slug: "business-english", step: "At work", who: "Meetings, calls and emails" },
+  {
+    slug: "interactive-speaking",
+    step: "Unfreeze",
+    who: "Freezes on the mic, in meetings or on client calls",
+  },
   { slug: "interview-preparation", step: "Get hired", who: "Can talk, fails the HR screen" },
 ];
 
@@ -423,7 +426,7 @@ export function CourseLadder({ highlight }: { highlight?: string }) {
           eyebrow="The English Ladder"
           eyebrowTone="indigo"
           title={<span id="ladder-title">Find your step — then the duration and fee</span>}
-          subtitle="Five live rooms for adults 15+, about 6 learners each. Bar length is the course length in months."
+          subtitle="Four live rooms for adults 15+, about 6 learners each. Bar length is the course length in months."
         />
         <ol className="max-w-4xl mx-auto space-y-3">
           {rows.map((r, i) => {

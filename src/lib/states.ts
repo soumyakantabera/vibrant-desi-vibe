@@ -219,7 +219,7 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "I'm moving from Bihar to Delhi or Bengaluru for work. Which course?",
-        a: "Start with Basic Spoken English — Hindi to English if full sentences are hard; Business English (₹2,499/month) if you already speak and need meetings and calls. Classes are online, so you keep the same teacher when you move.",
+        a: "Start with Basic Spoken English — Hindi to English if full sentences are hard; Interactive Speaking (₹1,599/month) if you already speak and need meetings and calls. Classes are online, so you keep the same teacher when you move.",
       },
     ],
     title: "Spoken English Classes in Bihar | Hindi Medium, Live",
@@ -281,7 +281,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Which spoken English class suits working professionals in Delhi NCR?",
-        a: "Learn With Smile runs live online batches of about 6 in afternoon, evening and night IST slots, plus the Bolo app for daily practice between classes. Business English (₹2,499/month) for meetings and calls; Basic Spoken English — Hindi to English (₹999/month) if you are starting out.",
+        a: "Learn With Smile runs live online batches of about 6 in afternoon, evening and night IST slots, plus the Bolo app for daily practice between classes. Interactive Speaking (₹1,599/month) for meetings and calls; Basic Spoken English — Hindi to English (₹999/month) if you are starting out.",
       },
       {
         q: "Is there a Hindi-medium spoken English class in Delhi?",
@@ -449,7 +449,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Which English course helps for Bengaluru GCC and IT interviews?",
-        a: "Business English (3 months, ₹2,499/month) for standups, demos and client calls; Interview Preparation (2 months, ₹2,499/month) for the interview itself. Live online batches of about 6, with the Bolo app for daily practice.",
+        a: "Interactive Speaking (3 months, ₹1,599/month) for standups, demos and client calls; Interview Preparation (2 months, ₹2,499/month) for the interview itself. Live online batches of about 6, with the Bolo app for daily practice.",
       },
       {
         q: "I moved to Bengaluru from a Hindi-speaking state. Is there a Hindi-medium option?",
@@ -510,7 +510,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Which spoken English course is best for Hyderabad IT freshers?",
-        a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Business English (₹2,499/month). Starting from zero, Basic Spoken English (₹999/month) — also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
+        a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Interactive Speaking (₹1,599/month). Starting from zero, Basic Spoken English (₹999/month) — also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
       },
     ],
     title: "Spoken English Classes in Telangana | Warangal & Karimnagar",

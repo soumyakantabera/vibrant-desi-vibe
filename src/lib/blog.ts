@@ -127,7 +127,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-09-21",
     readingTime: 5,
     wordCount: 577,
-    relatedCourses: ["/course-spoken-english", "/course-business-english"],
+    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
     keywords: [
       "spoken english or ielts",
       "ielts vs spoken english course india",
@@ -189,7 +189,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Practical English for entering meetings, giving updates, clarifying, disagreeing and closing with decisions — written for Indian working professionals.",
     excerpt:
       "Useful meeting English for updates, questions and disagreement — without corporate jargon.",
-    tag: "Business English",
+    tag: "Workplace English",
     img: "presentation",
     imgAlt: "Indian professional speaking during an online office meeting",
     author: "Sunanda Dey",
@@ -197,7 +197,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-09-02",
     readingTime: 6,
     wordCount: 950,
-    relatedCourses: ["/course-business-english"],
+    relatedCourses: ["/course-interactive-speaking"],
     keywords: ["english for office meetings india", "meeting phrases for indian professionals"],
     shortAnswer:
       "Enter, update, clarify, disagree, close. Twelve ordinary sentences beat corporate vocabulary you cannot retrieve when three people are waiting.",
@@ -223,7 +223,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A practical guide to English for BPO and customer support calls: clarify problems, handle complaints, explain next steps and close without confusion.",
     excerpt:
       "Clear call handling, complaint language and recovery phrases — no fake accent promises.",
-    tag: "Business English",
+    tag: "Workplace English",
     img: "businessEnglish",
     imgAlt: "Customer support professional speaking with a client online",
     author: "Sunanda Dey",
@@ -231,7 +231,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-09-02",
     readingTime: 6,
     wordCount: 977,
-    relatedCourses: ["/course-business-english", "/course-spoken-english"],
+    relatedCourses: ["/course-interactive-speaking", "/course-spoken-english"],
   },
   {
     slug: "5-speaking-habits-that-killed-my-hesitation",
@@ -289,7 +289,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Five wording swaps that make workplace emails sound confident rather than apologetic, with before-and-after examples from real Indian office correspondence.",
     excerpt: "Small wording swaps that instantly upgrade your workplace emails.",
-    tag: "Business English",
+    tag: "Workplace English",
     img: "businessEnglish",
     imgAlt: "Professional writing a work email on a laptop in an office",
     author: "Sunanda Dey",
@@ -297,7 +297,7 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-22",
     readingTime: 7,
     wordCount: 1476,
-    relatedCourses: ["/course-business-english"],
+    relatedCourses: ["/course-interactive-speaking"],
     shortAnswer:
       "Swap sorry-for-the-delay, do-the-needful, revert, stacked hedges and kindly-find-attached for a verb, an owner and a deadline.",
     howTo: {

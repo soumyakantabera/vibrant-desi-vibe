@@ -21,7 +21,6 @@ const ENGLISH = [
   { to: "/course-spoken-english-marathi", label: "Spoken English — Marathi to English" },
   { to: "/course-intermediate-english", label: "Intermediate English" },
   { to: "/course-interactive-speaking", label: "Interactive Speaking" },
-  { to: "/course-business-english", label: "Business English" },
   { to: "/course-interview-preparation", label: "Interview Preparation" },
   { to: "/bolo", label: "Bolo practice app" },
 ];
@@ -196,7 +195,6 @@ function EnrolmentNote() {
   const spoken = INTL_FEE["spoken-english"].display;
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
-  const business = INTL_FEE["business-english"].display;
   const interview = INTL_FEE["interview-preparation"].display;
   return (
     <MarketCopy
@@ -205,9 +203,9 @@ function EnrolmentNote() {
         <>
           Fees shown to a learner outside India are the international list, in {intlUnit()}. These
           published figures are Basic Spoken English {spoken}, Intermediate Spoken English{" "}
-          {intermediate}, Interactive Speaking {interactive}, Business English {business} and
-          Interview Preparation {interview}. They are the labeled fee, not a conversion of the India
-          price. The fee confirmed on WhatsApp is the contract price.
+          {intermediate}, Interactive Speaking {interactive} and Interview Preparation {interview}.
+          They are the labeled fee, not a conversion of the India price. The fee confirmed on
+          WhatsApp is the contract price.
         </>
       }
     />

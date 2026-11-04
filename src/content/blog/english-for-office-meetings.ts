@@ -161,7 +161,7 @@ export const body: ArticleBody = [
     text: "Repeat that for four weeks and you will improve. A live course becomes useful when you need somebody to create harder situations, catch patterns you cannot hear yourself and make you practise even when work is busy.",
   },
 
-  { t: "h2", text: "When Business English is the wrong course" },
+  { t: "h2", text: "When a meetings course is the wrong course" },
   {
     t: "ul",
     items: [
@@ -173,8 +173,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Business English practises meetings, calls, updates, emails and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹2,499/month inclusive of taxes.",
-    course: "/course-business-english",
-    label: "See the Business English syllabus",
+    text: "Interactive Speaking practises team meetings, status updates, client calls and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹1,599/month inclusive of taxes. Workplace emails are covered in Intermediate Spoken English.",
+    course: "/course-interactive-speaking",
+    label: "See the Interactive Speaking syllabus",
   },
 ];

@@ -7,7 +7,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If basic sentences work but tenses, flow and fillers do not, take [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo). If the problem is meetings, calls and emails, take [Business English](/course-business-english) (3 months, ₹2,499/mo). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
+    text: "**Short answer.** If you cannot hold a conversation yet, start with [Spoken English](/course-spoken-english) (6 months, ₹999/mo, inclusive of taxes). If basic sentences work but tenses, flow and fillers do not, take [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). If you know the words but freeze, take [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo). Meetings and calls are practised in the same room; work emails are in [Intermediate](/course-intermediate-english). If you can talk and still fail the HR screen, take [Interview Preparation](/course-interview-preparation) (2 months, ₹2,499/mo). Sit an exam course only if a form asks for the exam.",
   },
   {
     t: "p",
@@ -34,16 +34,16 @@ export const body: ArticleBody = [
         "Connected speech, 60–90 second turns, 2–3 minute presentation + Q&A",
       ],
       [
-        "You know the words. You freeze.",
-        "Interactive Speaking",
+        "You know the words. You freeze — in chat, meetings or client calls.",
+        "Interactive Speaking (includes Business English speaking)",
         "3 months · ₹1,599/mo",
-        "You talk every class. Standups, debates, 1-minute prompts",
+        "Standups, status updates, client calls, debates, presentations",
       ],
       [
-        "Chat is fine. Meetings are not.",
-        "Workplace / Business English",
-        "3 months · ₹2,499/mo",
-        "Updates, client calls, emails, a 5-minute explanation of your work",
+        "Simple sentences work. Grammar, flow and work emails do not.",
+        "Intermediate Spoken English",
+        "4 months · ₹1,999/mo",
+        "30 min grammar + 1 hr talk; workplace emails and tone",
       ],
       [
         "HR screens, tell-me-about-yourself, STAR",
@@ -69,7 +69,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Business English — when work is the gap" },
   {
     t: "p",
-    text: "Business English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Neha’s tax-desk calls and Aditya’s BI Analyst switch are this room. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
+    text: "Business English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Since November 2026 we teach it inside two rooms: the speaking side — meetings, standups, client calls, presentations — in [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo), and workplace emails and tone in [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). Neha’s tax-desk calls and Aditya’s BI Analyst switch came out of our earlier Business English batches. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
   },
 
   { t: "h2", text: "What not to buy first" },

@@ -161,8 +161,8 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Business English practises calls, clarification, status updates, professional messages and presentations in a live batch of approximately 6 learners. Bring one real support or client scenario and judge the correction for yourself.",
-    course: "/course-business-english",
-    label: "Explore Business English",
+    text: "Interactive Speaking practises calls, clarification, status updates and presentations in a live batch of approximately 6 learners — 3 months, ₹1,599/month inclusive of taxes. Bring one real support or client scenario and judge the correction for yourself.",
+    course: "/course-interactive-speaking",
+    label: "Explore Interactive Speaking",
   },
 ];

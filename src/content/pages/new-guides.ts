@@ -173,7 +173,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Fine in chat, lost in meetings and client calls",
             "Workplace",
-            "[Business English](/course-business-english) — 3 months, ₹2,499/month",
+            "[Interactive Speaking](/course-interactive-speaking) — 3 months, ₹1,599/month",
           ],
         ],
       },
@@ -308,7 +308,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "Cannot form a sentence → [Spoken English for beginners](/spoken-english-for-beginners-india), 6 months.",
           "Simple sentences work, flow does not → [Intermediate Spoken English](/course-intermediate-english), 4 months, ₹1,999/month.",
           "Have the words, freeze anyway → [Interactive](/interactive-english-class-hesitation), 3 months, ₹1,599/month.",
-          "Meetings and calls → [Business English](/workplace-english-course-online-india), 3 months, ₹2,499/month.",
+          "Meetings and calls → [Interactive Speaking](/course-interactive-speaking), 3 months, ₹1,599/month. Work emails → [Intermediate](/course-intermediate-english).",
         ],
       },
       { t: "h2", text: "Fluency tools compared" },
@@ -928,9 +928,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for IT professionals in India",
     h1Accent: "Standups, tickets, client calls",
     standfirst:
-      "You can write the ticket. The standup still goes silent. Business English ₹2,499/month, or Spoken ₹999/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
+      "You can write the ticket. The standup still goes silent. Interactive Speaking ₹1,599/month, or Spoken ₹999/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
     shortAnswer:
-      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Business English — 3 months, ₹2,499/month, around 6 learners. No promotion guarantee.",
+      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Interactive Speaking — 3 months, ₹1,599/month, around 6 learners. No promotion guarantee.",
     image: IMG.businessEnglish,
     alt: "IT professional speaking in an English standup on a video call",
     waMessage:
@@ -956,12 +956,12 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ],
           [
             "Chat is fine; meetings, tickets, clients are not",
-            "Business English, 3 months",
-            "₹2,499/month",
+            "Interactive Speaking, 3 months",
+            "₹1,599/month",
           ],
         ],
       },
-      { t: "h2", text: "What Business English drills for IT" },
+      { t: "h2", text: "What the workplace drills cover for IT" },
       {
         t: "ul",
         items: [
@@ -1012,9 +1012,9 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
             "No accountability; it rarely stops you on a repeated error unless you ask",
           ],
           [
-            "Learn With Smile Business English",
-            "Live batch of about 6, same teacher, work scenarios every class",
-            "Fixed IST slots; group, not 1:1; ₹2,499/month for 3 months",
+            "Learn With Smile Interactive Speaking",
+            "Live batch of about 6, same teacher, standups and client calls as role-plays",
+            "Fixed IST slots; group, not 1:1; ₹1,599/month for 3 months",
           ],
         ],
       },

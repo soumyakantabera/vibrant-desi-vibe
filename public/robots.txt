@@ -11,13 +11,11 @@
 #   Basic Spoken English ₹999/month
 #   Intermediate Spoken English ₹1,999/month
 #   Interactive Speaking ₹1,599/month
-#   Business English ₹2,499/month
 #   Interview Preparation ₹2,499/month
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
 #   Intermediate Spoken English $89/mo
 #   Interactive Speaking $79/mo
-#   Business English $99/mo
 #   Interview Preparation $99/mo
 # The India list applies to learners in India; the outside-India list applies
 # elsewhere. They are separate lists, not currency conversions. The same two
@@ -57,7 +55,6 @@
 #   https://www.learnwithsmile.app/course-spoken-english
 #   https://www.learnwithsmile.app/course-intermediate-english
 #   https://www.learnwithsmile.app/course-interactive-speaking
-#   https://www.learnwithsmile.app/course-business-english
 #   https://www.learnwithsmile.app/course-interview-preparation
 #   Hub   https://www.learnwithsmile.app/english-career
 #   Free consultation (advice, not a class; there is no separate demo class):

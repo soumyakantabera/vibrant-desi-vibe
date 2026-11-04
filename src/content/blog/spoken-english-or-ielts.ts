@@ -18,9 +18,9 @@ export const body: ArticleBody = [
         "Everyday chat in ~6 months",
       ],
       [
-        "You can chat, but meetings, emails, clients go silent",
-        "Business English",
-        "₹2,499/mo, 3 months, approx. 6 learners",
+        "You can chat, but meetings and client calls go silent",
+        "Interactive Speaking (meetings, client calls)",
+        "₹1,599/mo, 3 months, approx. 6 learners",
         "Work talk in ~3 months",
       ],
       [

@@ -128,7 +128,7 @@ NATIONAL = [
     ("intermediate english conditionals practice app", "/course-intermediate-english", "bolo", None),
     ("interactive speaking course stop freezing", "/course-interactive-speaking", "freez", "₹1,599"),
     ("interactive speaking role play practice app", "/course-interactive-speaking", "bolo", None),
-    ("business english course online india", "/course-business-english", "business english", "₹2,499"),
+    ("business english course online india", "/course-interactive-speaking", "business english", "₹1,599"),
     ("interview preparation english course", "/course-interview-preparation", "interview", "₹2,499"),
     ("english practice app with teacher review", "/bolo", "bolo", None),
     ("bolo app learn with smile", "/bolo", "bolo", None),

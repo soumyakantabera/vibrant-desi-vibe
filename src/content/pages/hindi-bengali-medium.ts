@@ -52,7 +52,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "What we will not promise" },
   {
     t: "p",
-    text: "We will not promise that six months turns you into a news-anchor. Everyday conversation: introduce yourself, handle a phone call, speak for two minutes, join a simple meeting. That is the 6-month finish line from zero. Work English is often a further [3 months](/course-business-english) if meetings are the next job. [How long it takes](/how-long-to-learn-spoken-english).",
+    text: "We will not promise that six months turns you into a news-anchor. Everyday conversation: introduce yourself, handle a phone call, speak for two minutes, join a simple meeting. That is the 6-month finish line from zero. Work English is often a further [3 months](/course-interactive-speaking) if meetings are the next job. [How long it takes](/how-long-to-learn-spoken-english).",
   },
   {
     t: "p",

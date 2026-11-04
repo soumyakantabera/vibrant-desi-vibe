@@ -29,7 +29,7 @@ export const body: ArticleBody = [
         "Introduce yourself, shops, phone calls, 2 minutes on a topic",
       ],
       [
-        "Business English",
+        "Workplace speaking (Interactive Speaking)",
         "Can chat, freeze in meetings",
         "3 months on top, or 3 months if you already speak",
         "Updates, client calls, emails, a 5-minute presentation",

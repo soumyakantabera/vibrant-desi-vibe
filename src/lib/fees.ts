@@ -41,12 +41,11 @@ export function publishedFeeLock(): string {
   const spoken = INTL_FEE["spoken-english"].display;
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
-  const business = INTL_FEE["business-english"].display;
   const interview = INTL_FEE["interview-preparation"].display;
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Business English ₹2,499/month; Interview Preparation ₹2,499/month. " +
-    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Business English ${business}; Interview Preparation ${interview}. ` +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month. " +
+    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}. ` +
     "The India list applies to learners in India and the outside-India list applies to learners elsewhere. They are two separate price lists, not currency conversions of each other."
   );
 }
@@ -64,7 +63,6 @@ export type FeeSlug =
   | "spoken-english"
   | "intermediate-english"
   | "interactive-speaking"
-  | "business-english"
   | "interview-preparation";
 
 export const COURSE_FEE: Record<
@@ -90,13 +88,6 @@ export const COURSE_FEE: Record<
     inr: 1599,
     display: "₹1,599",
     monthly: "₹1,599/month",
-    months: 3,
-  },
-  "business-english": {
-    name: "Business English",
-    inr: 2499,
-    display: "₹2,499",
-    monthly: "₹2,499/month",
     months: 3,
   },
   "interview-preparation": {

@@ -112,10 +112,11 @@ jobs:
           fi
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
-          grep -q '5 Programmes' dist/english-career.html
+          grep -q '4 Programmes' dist/english-career.html
           grep -q '6 months · 1 hr 30 min · up to 2 classes/week' dist/course-spoken-english.html
           grep -q 'afternoon · evening · night' dist/course-spoken-english.html
-          grep -q 'Meetings, Updates &amp; Client Calls' dist/course-business-english.html
+          grep -q 'Meetings, Updates &amp; Client Calls' dist/course-interactive-speaking.html
+          grep -q 'Workplace Messages &amp; Emails' dist/course-intermediate-english.html
           grep -q 'Workplace English' dist/workplace-english-course-online-india.html
           grep -q 'workplace-english-course-online-india' dist/sitemap.xml
           grep -q 'spoken-business-or-interactive-english' dist/sitemap.xml

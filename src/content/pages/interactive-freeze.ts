@@ -47,7 +47,7 @@ export const body: ArticleBody = [
       "**For you** if you rehearse answers in your head and then say nothing.",
       "**For you** if you already finished a spoken course and still freeze in meetings.",
       "**Spoken first** if you still translate every sentence from Hindi or Bengali.",
-      "**Business English** if the freeze is only in client calls and status updates — [client-call English](/english-for-client-calls-india).",
+      "**Also for you** if the freeze is only in client calls and status updates — this room now practises them; see [client-call English](/english-for-client-calls-india).",
     ],
   },
 

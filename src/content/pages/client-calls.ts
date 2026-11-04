@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Business English](/course-business-english) practises that live — 3 months, ₹2,499/mo, inclusive of taxes, approx. 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
+    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Interactive Speaking](/course-interactive-speaking) practises that live — 3 months, ₹2,499/mo, inclusive of taxes, approx. 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
   },
   {
     t: "p",
@@ -93,9 +93,9 @@ export const body: ArticleBody = [
         "It plays along — a real client won't",
       ],
       [
-        "Business English class",
+        "Interactive Speaking class",
         "Weekly role-plays with a teacher and peers",
-        "Group format; ₹2,499/month for 3 months",
+        "Group format; ₹1,599/month for 3 months",
       ],
     ],
   },
@@ -103,7 +103,7 @@ export const body: ArticleBody = [
   {
     t: "cta",
     text: "Bring a real call you have this week. We will practise it in a live batch of around 6.",
-    course: "/course-business-english",
-    label: "See Business English",
+    course: "/course-interactive-speaking",
+    label: "See Interactive Speaking",
   },
 ];

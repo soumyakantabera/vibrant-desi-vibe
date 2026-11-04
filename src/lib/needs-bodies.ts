@@ -107,9 +107,9 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Practise standups, demos and client calls in a live batch of about 6 — 3 months, ₹2,499/month.",
-      course: "/course-business-english",
-      label: "Business English",
+      text: "Practise standups, demos and client calls in a live batch of about 6 — Interactive Speaking, 3 months, ₹1,599/month.",
+      course: "/course-interactive-speaking",
+      label: "Interactive Speaking",
     },
     { t: "h2", text: "Who this is not" },
     {
@@ -149,9 +149,9 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Practise explaining your real dashboards in a live batch — 3 months, ₹2,499/month.",
-      course: "/course-business-english",
-      label: "Business English",
+      text: "Practise explaining your real dashboards in a live batch — Interactive Speaking, 3 months, ₹1,599/month.",
+      course: "/course-interactive-speaking",
+      label: "Interactive Speaking",
     },
   ],
   bank: [

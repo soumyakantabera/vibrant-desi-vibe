@@ -51,7 +51,7 @@ export function answerFor(route: AskRoute): string {
     case "not_for_children":
       return "Adult rooms only, 15+. No consultation and no class for a child.";
     case "career":
-      return "We do not offer career counselling. The rooms are Basic Spoken English, Intermediate Spoken English, Interactive Speaking, Business English and Interview Preparation.";
+      return "We do not offer career counselling. The rooms are Basic Spoken English, Intermediate Spoken English, Interactive Speaking and Interview Preparation.";
     case "not_ielts":
       return "We do not sell an IELTS demo or an IELTS course. For spoken English, start with the free consultation.";
     default:

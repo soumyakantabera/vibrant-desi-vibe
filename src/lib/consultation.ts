@@ -156,9 +156,9 @@ export const CONSULTATION_BOTTLENECKS: {
   {
     icon: "headset",
     ifThis: "Chat is fine. Meetings, calls or emails are not.",
-    weName: "Business English is the gap",
-    weRecommend: "Business English — 3 months, ₹2,499/mo",
-    href: "/course-business-english",
+    weName: "Workplace speaking is the gap",
+    weRecommend: "Interactive Speaking — 3 months, ₹1,599/mo",
+    href: "/course-interactive-speaking",
   },
   {
     icon: "clipboard",
@@ -303,7 +303,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze → Interactive Speaking (3 months, ₹1,599/month). Chat is fine, meetings and calls are not → Business English (3 months, ₹2,499/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze, or chat is fine but meetings and calls are not → Interactive Speaking (3 months, ₹1,599/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Do you offer a free demo class?",
