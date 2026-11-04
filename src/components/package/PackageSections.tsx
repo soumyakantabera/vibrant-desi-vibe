@@ -354,11 +354,54 @@ const MATRIX: { label: string; tone: Tone; days: number[] }[] = [
   { label: "Teacher review", tone: "plum", days: [5] },
 ];
 
+/** How long each day stays selected while the week plays on its own. */
+const WEEK_AUTO_MS = 3200;
+
 export function WeekStrip() {
   const [picked, setPicked] = useState(1);
+  // The week plays day by day until the visitor picks a day or presses pause.
+  const [auto, setAuto] = useState(true);
+  const [hold, setHold] = useState(false); // pointer over, or focus inside
+  const [visible, setVisible] = useState(false);
+  const [still, setStill] = useState(false);
+  const ref = useRef<HTMLElement>(null);
   const sel = WEEK[picked];
+
+  useEffect(() => {
+    setStill(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), {
+      threshold: 0.35,
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const running = auto && !hold && visible && !still;
+  useEffect(() => {
+    if (!running) return;
+    const t = window.setInterval(() => setPicked((p) => (p + 1) % WEEK.length), WEEK_AUTO_MS);
+    return () => clearInterval(t);
+  }, [running]);
+
+  const choose = (i: number) => {
+    setPicked(i);
+    setAuto(false);
+  };
+
   return (
-    <section className="section bg-paper" id="week">
+    <section
+      ref={ref}
+      className="section bg-paper"
+      id="week"
+      onMouseEnter={() => setHold(true)}
+      onMouseLeave={() => setHold(false)}
+      onFocus={() => setHold(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setHold(false);
+      }}
+    >
       <div className="container-x">
         <Head
           eyebrow="A week with Learn With Smile"
@@ -369,6 +412,19 @@ export function WeekStrip() {
           }
           sub="Two live classes build the habit. Bolo keeps it going every day with a streak, and every week your teacher reviews your reading and speaking — so nothing fades between classes."
         />
+        {!still && (
+          <div className="mb-3 flex justify-end">
+            <button
+              type="button"
+              onClick={() => setAuto((a) => !a)}
+              aria-pressed={!auto}
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-border bg-white px-3.5 py-1.5 text-sm font-display font-bold text-ink/80 transition hover:border-ink/25 hover:text-ink"
+            >
+              <Icon name={auto ? "pause" : "play"} size={14} />
+              {auto ? "Pause the week" : "Play the week"}
+            </button>
+          </div>
+        )}
         <VizIn
           className="grid gap-2.5 lg:grid-cols-7 lg:gap-3"
           role="group"
@@ -381,10 +437,10 @@ export function WeekStrip() {
               <button
                 key={day.day}
                 type="button"
-                onClick={() => setPicked(i)}
+                onClick={() => choose(i)}
                 aria-pressed={on}
                 style={d(i * 70)}
-                className={`viz-pop flex items-center gap-3 rounded-2xl border-2 p-3.5 text-left transition lg:min-h-[12.5rem] lg:flex-col lg:items-start lg:p-5 ${on ? `${T[tone].soft} border-current ${T[tone].text} -translate-y-1 shadow-[0_18px_40px_-28px_rgba(19,33,47,.45)]` : "border-border bg-white hover:border-ink/25"}`}
+                className={`viz-pop relative flex items-center gap-3 overflow-hidden rounded-2xl border-2 p-3.5 text-left transition lg:min-h-[12.5rem] lg:flex-col lg:items-start lg:p-5 ${on ? `${T[tone].soft} border-current ${T[tone].text} -translate-y-1 shadow-[0_18px_40px_-28px_rgba(19,33,47,.45)]` : "border-border bg-white hover:border-ink/25"}`}
               >
                 <span className="w-10 shrink-0 text-xs font-bold uppercase tracking-[0.12em] text-ink/60 lg:w-auto">
                   {day.day}
@@ -405,6 +461,14 @@ export function WeekStrip() {
                   )}
                   {day.video && <span className="h-1.5 w-6 rounded-full bg-sunshine" />}
                 </span>
+                {on && running && (
+                  <span
+                    key={`p${picked}`}
+                    className={`week-progress absolute bottom-0 left-0 h-1 ${T[tone].solid}`}
+                    style={{ animationDuration: `${WEEK_AUTO_MS}ms` }}
+                    aria-hidden="true"
+                  />
+                )}
               </button>
             );
           })}
@@ -437,8 +501,12 @@ export function WeekStrip() {
                     <th scope="col" className="w-28">
                       <span className="sr-only">Practice</span>
                     </th>
-                    {WEEK.map((w) => (
-                      <th key={w.day} scope="col" className="font-semibold text-ink/60">
+                    {WEEK.map((w, ci) => (
+                      <th
+                        key={w.day}
+                        scope="col"
+                        className={`rounded-md py-0.5 font-semibold transition-colors ${ci === picked ? "bg-ink text-white" : "text-ink/60"}`}
+                      >
                         {w.day}
                       </th>
                     ))}
@@ -456,7 +524,10 @@ export function WeekStrip() {
                       {WEEK.map((w, ci) => {
                         const on = row.days.includes(ci);
                         return (
-                          <td key={w.day} className="p-0">
+                          <td
+                            key={w.day}
+                            className={`p-0 transition-opacity ${ci === picked ? "opacity-100" : "opacity-60"}`}
+                          >
                             <span
                               style={d(ri * 90 + ci * 35)}
                               className={`viz-dot block h-6 rounded-md ${on ? T[row.tone].deep : "bg-muted"}`}

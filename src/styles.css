@@ -1408,6 +1408,19 @@ html.js [data-viz="in"] .viz-draw {
 }
 
 /* A quiet pulse for "live" markers. */
+/* Week strip: the active day fills a thin bar while the week plays. */
+@keyframes week-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.week-progress {
+  width: 0;
+  animation: week-progress linear forwards;
+}
 @keyframes viz-pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(12, 107, 78, 0.45);
