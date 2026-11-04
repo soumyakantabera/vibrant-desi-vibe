@@ -862,7 +862,7 @@ section > .container-x {
     color: var(--brand-deep);
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     padding: 0.45rem 0.8rem;
@@ -1936,17 +1936,29 @@ main h1 {
     translate: 0 0;
   }
   50% {
+    translate: 0 -10px;
+  }
+}
+@keyframes price-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
     translate: 0 -6px;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-bob,
   .price-bob {
-    animation: hero-bob 6s ease-in-out infinite;
+    animation: hero-bob 4.5s ease-in-out infinite;
   }
-  /* The price moves a beat behind the copy so the screen breathes, not jumps. */
+  /* The price moves a beat behind the copy so the screen breathes, not jumps,
+     and a little less far: it sits in a smaller box next to the gauge. */
   .price-bob {
-    animation-delay: -1.5s;
+    animation-duration: 4.5s;
+    animation-delay: -1.1s;
+    animation-name: price-bob;
   }
 
   /* Set by <SectionRise> on sections that start below the first screen. */
@@ -1992,5 +2004,19 @@ main h1 {
   [class*="hover:-translate-y"]:hover,
   [class*="hover:translate-y"]:hover {
     translate: none !important;
+  }
+}
+
+/* --------------------------------------------------------- phone touch ---
+   On phones every FAQ question and every standalone small link or chip is
+   at least 40px tall, so a thumb hits it first time. Desktop is unchanged.
+   (Links inside running text are exempt, as WCAG allows.) */
+@media (max-width: 639px) {
+  main summary {
+    min-height: 2.5rem;
+    padding-block: 0.4rem;
+  }
+  main a.inline-flex:not(.btn) {
+    min-height: 2.5rem;
   }
 }

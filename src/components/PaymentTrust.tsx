@@ -33,7 +33,7 @@ export function PaymentTrust({
   return (
     <div className={`${align === "center" ? "text-center" : ""} ${className}`.trim()}>
       <p
-        className={`text-[10px] uppercase tracking-[0.14em] font-display font-bold mb-2 ${
+        className={`text-xs sm:text-[10px] uppercase tracking-[0.12em] font-display font-bold mb-2 ${
           tone === "dark" ? "text-white/75" : "text-ink/55"
         }`}
       >

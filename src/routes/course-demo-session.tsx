@@ -59,8 +59,8 @@ function DemoSessionPage() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-10 sm:py-16 md:py-24">
-          <div className="text-cream max-w-3xl">
+        <div className="container-x pt-8 pb-10 sm:py-16 md:py-24">
+          <div className="hero-bob text-cream max-w-3xl">
             <Link
               to="/english-career"
               className="text-sunshine font-display font-semibold text-sm inline-flex items-center gap-1 hover:underline"
@@ -210,7 +210,7 @@ function DemoSessionPage() {
       <section className="section bg-cream" id="faq">
         <div className="container-x max-w-3xl">
           <h2 className="text-ink section-title">Before you pay</h2>
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-3">
             {faqs.map((faq) => (
               <details key={faq.q} className="card-soft" open>
                 <summary className="cursor-pointer list-none font-display font-bold text-ink">

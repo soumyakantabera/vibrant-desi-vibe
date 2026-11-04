@@ -75,7 +75,7 @@ function Page() {
           />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-16 md:py-24 text-cream max-w-3xl">
+        <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">★ Real Outcomes</span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
             Real Indian Learners. <span className="text-sunshine">Real Results.</span>

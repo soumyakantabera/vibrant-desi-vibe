@@ -91,13 +91,16 @@ export function Footer({ image }: { image?: string }) {
         </div>
         <div className="grid md:grid-cols-2 gap-6 pt-8 border-t border-cream/15">
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
-            <a href={CALL_LINK} className="inline-flex items-center gap-2 hover:text-sunshine">
+            <a
+              href={CALL_LINK}
+              className="inline-flex items-center gap-2 py-2 hover:text-sunshine sm:py-0"
+            >
               <Icon name="phone" size={16} />
               Call fallback: {WHATSAPP_DISPLAY}
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="inline-flex items-center gap-2 hover:text-sunshine"
+              className="inline-flex items-center gap-2 py-2 hover:text-sunshine sm:py-0"
             >
               <Icon name="mail" size={16} />
               {CONTACT.email}
@@ -113,7 +116,11 @@ export function Footer({ image }: { image?: string }) {
           </div>
           <div className="flex flex-wrap md:justify-end gap-4">
             {COMPANY.map((c) => (
-              <Link key={c.to} to={c.to} className="text-sm text-white/90 hover:text-sunshine">
+              <Link
+                key={c.to}
+                to={c.to}
+                className="inline-block py-2.5 text-sm text-white/90 hover:text-sunshine sm:py-0"
+              >
                 {c.label}
               </Link>
             ))}
@@ -214,10 +221,14 @@ function FooterCol({ title, items }: { title: string; items: { to: string; label
       <div className="font-display font-bold text-cream text-sm uppercase tracking-wider mb-4">
         {title}
       </div>
-      <ul className="space-y-2.5">
+      <ul className="sm:space-y-2.5">
         {items.map((i) => (
           <li key={i.to}>
-            <Link to={i.to} className="text-sm text-white/90 hover:text-sunshine">
+            {/* Phones: a ~40px touch row per link; desktop spacing unchanged. */}
+            <Link
+              to={i.to}
+              className="inline-block py-2.5 text-sm text-white/90 hover:text-sunshine sm:py-0"
+            >
               {i.label}
             </Link>
           </li>

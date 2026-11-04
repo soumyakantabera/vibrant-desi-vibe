@@ -175,7 +175,7 @@ export function WhyDifferent({
     <section className="section bg-white" id="why-different" aria-labelledby="why-different-title">
       <div className="container-x">
         <div className="mb-8 max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-brand-deep">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-deep">
             Why we're different
           </span>
           <h2 id="why-different-title" className="section-title mt-3 font-bold text-ink">

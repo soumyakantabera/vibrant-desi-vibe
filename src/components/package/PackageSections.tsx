@@ -131,7 +131,7 @@ export function Chip({
 export function Eyebrow({ children, tone = "green" }: { children: ReactNode; tone?: Tone }) {
   return (
     <span
-      className={`inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] ${T[tone].soft} ${T[tone].text}`}
+      className={`inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] ${T[tone].soft} ${T[tone].text}`}
     >
       {children}
     </span>

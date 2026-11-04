@@ -331,7 +331,8 @@ export function CoursePage({ data }: { data: CourseData }) {
   const faqs = courseFaqs(data);
   const snapshot = (
     <SnapshotCard
-      badge={`Live · ${data.format}`}
+      // Same one-line badge as the homepage; the batch detail is the first row.
+      badge="Live · Enrolling Now"
       eyebrow="Course fee starts at"
       headline={isIntlSlug(feeKey) ? feeHeadline(data.price, feeKey) : { big: data.price }}
       subnote={

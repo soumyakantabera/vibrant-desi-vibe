@@ -193,7 +193,7 @@ function Page() {
                 className="flex h-full min-w-0 flex-col overflow-hidden rounded-2xl"
               >
                 <FeatureCard icon={m.icon} color={m.color} title={<FeeText text={m.title} />}>
-                  <span className="mb-2 block text-[11px] font-display font-bold uppercase tracking-wider text-ink/55">
+                  <span className="mb-2 block text-xs font-display font-bold uppercase tracking-wider text-ink/60">
                     {m.tag}
                   </span>
                   <FeeText text={m.body} />

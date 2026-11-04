@@ -65,10 +65,12 @@ export function SnapshotCard({
           aria-hidden="true"
           className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-brand-soft"
         />
-        <div className="relative p-4 sm:p-6">
-          <div className="flex items-center justify-between gap-3">
+        <div className="relative p-5 sm:p-6">
+          <div className="flex items-center justify-between gap-2 min-[380px]:gap-3">
             {badge && (
-              <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand-soft px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-deep sm:px-3 sm:text-[11px] sm:tracking-widest">
+              <span
+                className={`inline-flex items-center gap-1.5 rounded-full ${badge.length <= 24 ? "shrink-0 whitespace-nowrap" : "min-w-0"} bg-brand-soft px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wide text-brand-deep min-[380px]:gap-2 min-[380px]:px-3 min-[380px]:text-[11px] min-[380px]:tracking-wider sm:tracking-widest`}
+              >
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-wa opacity-70" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-wa" />
@@ -78,32 +80,30 @@ export function SnapshotCard({
             )}
             {sticker && (
               <span
-                className="snap-pop inline-flex items-center gap-1.5 rounded-full bg-sunshine px-3 py-1.5 text-sm font-extrabold text-ink shadow-[0_10px_22px_-12px_rgba(242,164,15,.9)]"
+                className="snap-pop inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-sunshine px-2.5 py-1.5 text-sm font-extrabold text-ink shadow-[0_10px_22px_-12px_rgba(242,164,15,.9)] min-[380px]:px-3"
                 style={delay(500)}
               >
                 {sticker.top}
-                <span className="text-[10px] font-bold uppercase tracking-wider">
+                <span className="text-[11px] font-bold uppercase tracking-wider">
                   {sticker.bottom}
                 </span>
               </span>
             )}
           </div>
 
-          <div
-            className={`mt-4 grid items-center gap-3 sm:gap-4 ${week ? "grid-cols-[1fr_auto]" : ""}`}
-          >
+          <div className={`mt-4 grid items-center gap-4 ${week ? "sm:grid-cols-[1fr_auto]" : ""}`}>
             {(eyebrow || headline || subnote) && (
-              <div className="snap-rise min-w-0" style={delay(150)}>
-                {/* The price bobs inside its own column, so it never crosses the gauge. */}
+              <div className="snap-rise" style={delay(150)}>
+                {/* The price bobs inside its own block, so it never crosses the gauge. */}
                 <div className="price-bob">
                   {eyebrow && (
-                    <p className="whitespace-nowrap text-[11px] font-bold uppercase tracking-wider text-ink/70 sm:text-xs">
+                    <p className="text-xs font-bold uppercase tracking-wider text-ink/70">
                       {eyebrow}
                     </p>
                   )}
                   {headline && (
                     <p className="mt-1 whitespace-nowrap font-extrabold leading-none text-ink">
-                      <span className="text-[2.1rem] tracking-tight sm:text-5xl">
+                      <span className="text-[2.6rem] tracking-tight sm:text-5xl">
                         {headline.big}
                       </span>
                       {headline.suffix && (
@@ -111,47 +111,38 @@ export function SnapshotCard({
                       )}
                     </p>
                   )}
-                  {subnote && (
-                    <p className="mt-2 text-[13px] leading-snug text-ink/70 sm:text-sm">
-                      {subnote}
-                    </p>
-                  )}
+                  {subnote && <p className="mt-2 text-sm text-ink/70">{subnote}</p>}
                 </div>
               </div>
             )}
             {week && (
-              <div className="w-24 sm:w-44 lg:w-48">
+              <div className="mx-auto w-48 sm:w-44 lg:w-52">
                 <MiniWeekArc delay={350} />
               </div>
             )}
           </div>
 
-          <ul className="mt-4 grid grid-cols-3 gap-2 border-t border-border pt-3 sm:mt-5 sm:grid-cols-1 sm:gap-2.5 sm:pt-4">
+          <ul className="mt-5 grid gap-2.5 border-t border-border pt-4">
             {rows.map((r, i) => (
               <li
                 key={i}
-                className="snap-slide flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-3"
+                className="snap-slide flex items-center gap-3"
                 style={delay(450 + i * 140)}
               >
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl sm:h-10 sm:w-10 ${TONE[r.tone]}`}
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${TONE[r.tone]}`}
                 >
                   {r.icon}
                 </span>
                 <p className="min-w-0 font-extrabold leading-tight text-ink">
-                  <span className="block sm:inline">{r.big}</span>{" "}
-                  {/* Phones: a fixed 4-line label box, so the card is the same height in
-                      the fallback font and in DM Sans (no shift when it loads). */}
-                  <span className="block min-h-[4lh] text-[12px] font-semibold text-ink/75 sm:inline sm:min-h-0 sm:text-sm">
-                    {r.small}
-                  </span>
+                  {r.big} <span className="text-sm font-semibold text-ink/75">{r.small}</span>
                 </p>
               </li>
             ))}
           </ul>
 
           {week && (
-            <ul className="mt-3 flex min-h-[calc(2lh+0.25rem)] flex-wrap content-start gap-x-3 gap-y-1 text-[11px] font-semibold text-ink/70 sm:mt-4 sm:min-h-0 sm:gap-x-3.5 sm:gap-y-1.5 sm:text-xs">
+            <ul className="mt-4 flex flex-wrap gap-x-3.5 gap-y-1.5 text-xs font-semibold text-ink/70">
               {PACKAGE_WEEK_LEGEND.map((l, i) => (
                 <li
                   key={l.label}
@@ -171,7 +162,7 @@ export function SnapshotCard({
         </div>
 
         {footer && (
-          <div className="relative hidden bg-brand px-5 py-2.5 text-center text-[12px] font-bold tracking-wide text-white sm:block">
+          <div className="relative bg-brand px-5 py-2.5 text-center text-[12px] font-bold tracking-wide text-white">
             {footer}
           </div>
         )}

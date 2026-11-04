@@ -126,62 +126,27 @@ function Home() {
           <div className="absolute inset-0 hero-veil" />
         </div>
         {/*
-          Three grid items, in reading order: headline, pricing card, the rest.
-          On a phone the card sits right under the headline so it is fully on
-          the first screen; on desktop the copy shares the left column and the
-          card is lifted to the top of the right one.
+          Three grid items in reading order: headline, the rest of the copy,
+          then the pricing card. Phones show them in that order (card below
+          the copy, as before); on desktop the copy shares the left column and
+          the card is lifted to the top of the right one.
         */}
-        <div className="container-x grid grid-cols-1 items-start gap-y-5 pt-4 pb-10 md:pt-6 md:pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-x-10 lg:gap-y-0 lg:pt-7 lg:pb-14">
+        <div className="container-x grid grid-cols-1 items-start pt-6 pb-10 md:pt-8 md:pb-12 lg:grid-cols-[1.3fr_1fr] lg:gap-x-10 lg:pt-7 lg:pb-14">
           <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-1">
-            {/* Phones: the H1 is the first thing read; these facts repeat in the chips below. */}
-            <span className="eyebrow eyebrow-white hidden sm:inline-flex">
+            <span className="eyebrow eyebrow-white">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-sage opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-sage" />
               </span>{" "}
               Live online spoken English classes · about 6 a batch · 7 years
             </span>
-            <h1 className="font-extrabold text-cream sm:mt-3">
+            <h1 className="mt-3 font-extrabold text-cream">
               Speak Better English.
               <br />
               <span className="text-sunshine">Live Twice a Week.</span>
               <br />
               Practise Every Day.
             </h1>
-          </div>
-          <div className="w-full min-w-0 flex justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:block lg:self-start">
-            <div className="relative w-full max-w-[28rem] lg:max-w-none">
-              <SnapshotCard
-                eyebrow="Complete package from"
-                headline={feeHeadline("₹999/month", "spoken-english")}
-                subnote={
-                  <MarketCopy
-                    inr="Billed monthly · inclusive of taxes · no auto-debit"
-                    usd={`${intlUnit()} · billed monthly`}
-                  />
-                }
-                rows={[
-                  {
-                    tone: "brand",
-                    icon: SnapIcons.cap,
-                    big: "Up to 8",
-                    small: "Live classes a month, 90 min each",
-                  },
-                  {
-                    tone: "indigo",
-                    icon: SnapIcons.calendar,
-                    big: "Daily",
-                    small: "Practice in the Bolo app, with a streak",
-                  },
-                  {
-                    tone: "violet",
-                    icon: SnapIcons.people,
-                    big: "Weekly",
-                    small: "Teacher review of your reading & speaking",
-                  },
-                ]}
-              />
-            </div>
           </div>
           <div className="hero-bob min-w-0 text-cream lg:col-start-1 lg:row-start-2">
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
@@ -244,6 +209,40 @@ function Home() {
                   <FeeText text={s} />
                 </span>
               ))}
+            </div>
+          </div>
+          <div className="mt-7 w-full min-w-0 flex justify-center lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:block lg:self-start">
+            <div className="relative w-full max-w-[28rem] lg:max-w-none">
+              <SnapshotCard
+                eyebrow="Complete package from"
+                headline={feeHeadline("₹999/month", "spoken-english")}
+                subnote={
+                  <MarketCopy
+                    inr="Billed monthly · inclusive of taxes · no auto-debit"
+                    usd={`${intlUnit()} · billed monthly`}
+                  />
+                }
+                rows={[
+                  {
+                    tone: "brand",
+                    icon: SnapIcons.cap,
+                    big: "Up to 8",
+                    small: "Live classes a month, 90 min each",
+                  },
+                  {
+                    tone: "indigo",
+                    icon: SnapIcons.calendar,
+                    big: "Daily",
+                    small: "Practice in the Bolo app, with a streak",
+                  },
+                  {
+                    tone: "violet",
+                    icon: SnapIcons.people,
+                    big: "Weekly",
+                    small: "Teacher review of your reading & speaking",
+                  },
+                ]}
+              />
             </div>
           </div>
         </div>

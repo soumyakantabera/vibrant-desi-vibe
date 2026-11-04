@@ -141,8 +141,8 @@ export function BoloHero() {
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-bolo-teal/10"
       />
-      <div className="container-x relative grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_auto] lg:gap-14">
-        <div ref={ref} data-motion={motion ? "on" : "off"}>
+      <div className="container-x relative grid items-center gap-10 pt-8 pb-12 md:py-20 lg:grid-cols-[1.1fr_auto] lg:gap-14">
+        <div ref={ref} data-motion={motion ? "on" : "off"} className="hero-bob">
           <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-bolo-teal shadow-[0_6px_18px_-12px_rgba(10,124,115,.6)]">
             <BoloAppIcon size={20} /> The Learn With Smile practice app
           </p>

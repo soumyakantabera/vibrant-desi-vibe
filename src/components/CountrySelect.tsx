@@ -74,7 +74,7 @@ export function CountrySelect() {
       <Icon name="globe" size={13} />
       <span className="sr-only">Country</span>
       <select
-        className="lws-country max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-0.5 pr-4 text-[11px] font-medium text-ink underline decoration-ink/30 underline-offset-2 focus:outline-none"
+        className="lws-country max-w-[9.5rem] cursor-pointer appearance-none bg-transparent py-2.5 pr-4 text-xs font-medium sm:py-0.5 sm:text-[11px] text-ink underline decoration-ink/30 underline-offset-2 focus:outline-none"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path fill='%23F6EFE4' d='M0 0l5 6 5-6z'/></svg>\")",

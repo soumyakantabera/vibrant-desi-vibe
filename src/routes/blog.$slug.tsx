@@ -50,7 +50,7 @@ function BlogPostPage() {
           <SmartImage src={heroImage} alt={post.imgAlt} fill priority sizes="100vw" />
           <div className="absolute inset-0 hero-veil" />
         </div>
-        <div className="container-x py-12 md:py-20 max-w-3xl text-cream">
+        <div className="hero-bob container-x pt-8 pb-10 md:py-20 max-w-3xl text-cream">
           <nav aria-label="Breadcrumb" className="text-sm text-white/90">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
