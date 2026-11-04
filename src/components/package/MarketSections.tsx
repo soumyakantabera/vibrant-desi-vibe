@@ -528,7 +528,8 @@ export function MarketGap() {
                 <Icon name="check" size={20} className="mt-0.5 shrink-0" />
                 {t.gets}
               </p>
-              <p className="flex items-start gap-2 text-white/85">
+              {/* Pure white: the theme's tinted white is 4.36:1 on the violet tile. */}
+              <p className="flex items-start gap-2 text-[#ffffff]">
                 <Icon
                   name={t.tone === "green" ? "spark" : "x-circle"}
                   size={20}
@@ -790,7 +791,7 @@ export function GoogleProof() {
                 <Icon name={p.icon} size={26} />
               </span>
               <p>
-                <span className="block text-5xl font-extrabold leading-none text-white md:text-6xl">
+                <span className="block text-4xl font-extrabold leading-none text-white sm:text-5xl md:text-6xl">
                   {p.value === 6 ? "~" : ""}
                   <CountUp value={p.value} suffix={p.suffix} />
                 </span>

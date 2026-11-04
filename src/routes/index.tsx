@@ -786,7 +786,7 @@ function CategoryCard({ category }: { category: CourseCategory }) {
           </h3>
         </div>
 
-        <p className="mt-1.5 line-clamp-2 text-[13px] leading-snug text-ink/80">
+        <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-ink/80">
           {category.description}
         </p>
 

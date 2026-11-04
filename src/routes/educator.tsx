@@ -106,8 +106,9 @@ function EducatorCard({
         </div>
 
         <div className="mt-4 card-soft bg-gradient-to-br from-brand-soft to-cream">
-          <h3 className="font-display font-bold text-ink mb-2 flex items-center gap-2">
-            <Icon name="heart" size={16} className="text-coral" /> What I promise every learner
+          <h3 className="font-display font-bold text-ink mb-2 flex items-start gap-2">
+            <Icon name="heart" size={16} className="mt-1 shrink-0 text-coral" />
+            <span>What I promise every learner</span>
           </h3>
           <ul className="space-y-2 text-sm text-ink/85">
             {promises.map((p) => (

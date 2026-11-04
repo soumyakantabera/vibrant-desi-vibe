@@ -2020,3 +2020,15 @@ main h1 {
     min-height: 2.5rem;
   }
 }
+
+/* ------------------------------------------------------- text wrapping ---
+   Headings balance their lines (no single word left on the last line);
+   body text avoids short last lines and never overflows its box, even for
+   a long URL or price string on a 360px phone. */
+:is(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+:is(p, li, dd, blockquote, figcaption) {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}

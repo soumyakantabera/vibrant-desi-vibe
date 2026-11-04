@@ -99,9 +99,9 @@ function Page() {
                     <span className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-soft text-brand-deep">
                       <Icon name={g.icon} size={18} />
                     </span>
-                    <h2 className="font-display text-base font-extrabold leading-tight text-ink">
+                    <h3 className="font-display text-lg font-extrabold leading-tight text-ink">
                       {g.title}
-                    </h2>
+                    </h3>
                     <p className="mt-1.5 flex-1 text-sm leading-relaxed text-ink/80">{g.sub}</p>
                     <span className="mt-3 inline-flex items-center gap-1 text-sm font-display font-bold text-brand-deep">
                       Read guide <Icon name="arrow-right" size={14} />
