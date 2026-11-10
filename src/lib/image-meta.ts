@@ -65,7 +65,7 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     h: 896,
   },
   "interview.jpg": {
-    blur: "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAAAwBgCdASoYABgAPxF6sFKsJ6QiqA1RgCIJZQDN/zAjpoYet5Bfx3RCiw1Y4quwhY/+C9TrVAiZ1DUAAN5Ngy2Bm04hlJBlh63NxbU4hx8q6QeEM0u8mesGUTw2c6wW+F+GZy802+TIlxUeoikIyxM6YTbz8q7nkOrcrNonj6RctjRtiEw4DePkNUG4uco60SLkrMiZBLum8zrGcceKoFGn73GOZwKYqdustMWcu8XZ8RPrTTEt5/2i2eFeL9D3wrsDnuNJRWFuOiuCFl7odVrLuIW/loZkMAA=",
+    blur: "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAACwBQCdASoYABgAPxF6sFMsJ6QiqA1RgCIJZQDO7Y0McGZAHkXMo78LC0fEADa3PCh+56fVbjQA3kc0eJCDT8qgUTPkBmnym4BrTY4ziqtrPEv5zbfljkjTKBoKlmR8RNOqx7lV+SgMKjD4NQv7IXFc2zPGAhrC52HpVvJh3hI+e6fmz3B+EDp5pXm6XWOM+2SGVpm8zrUqvlF3Mge6B5QagSwMucQljl/lC28HCn7PDMj7h9O3pxjiqaERoBPPY5zO45myIwyaz9BU7Ew3V+5UGIEAAA==",
     w: 1024,
     h: 1024,
   },
