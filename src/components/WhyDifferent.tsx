@@ -122,7 +122,7 @@ function Visuals({ level }: { level: BoloLevel }) {
               All of it, every month
             </span>
             <span className="text-3xl font-extrabold">
-              <FeeText text="₹999/month" />
+              <FeeText text="₹1,199/month" />
             </span>
             <span className="block text-sm text-white/80">
               Basic Spoken English · inclusive of taxes
@@ -181,7 +181,7 @@ export function WhyDifferent({
           <h2 id="why-different-title" className="section-title mt-3 font-bold text-ink">
             Daily practice, a live teacher and your own language —{" "}
             <span className="text-brand">
-              <FeeText text="from ₹999/month" />
+              <FeeText text="from ₹1,199/month" />
             </span>
           </h2>
           <p className="mt-3 text-base text-ink/80 md:text-lg">

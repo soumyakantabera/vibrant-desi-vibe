@@ -44,7 +44,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Should I take a loan or EMI to pay for an English course?",
-        a: "Usually not. A spoken English course is a monthly habit, not a one-off purchase; a loan locks you into a year whether or not the class works for you. Learn With Smile never offers or arranges a loan or EMI — fees start at ₹999 a month, inclusive of taxes.",
+        a: "Usually not. A spoken English course is a monthly habit, not a one-off purchase; a loan locks you into a year whether or not the class works for you. Learn With Smile never offers or arranges a loan or EMI — fees start at ₹1,199 a month, inclusive of taxes.",
       },
       {
         q: "How do I stop an English app subscription from renewing?",
@@ -63,7 +63,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "hi-IN",
     title: "Spoken English in Hindi | English Bolna Kaise Sikhe",
     description:
-      "English बोलना कैसे सीखें: रोज़ 15 मिनट की प्रैक्टिस, हिंदी बोलने वालों की आम गलतियाँ और 6 महीने का असली प्लान। लाइव क्लास ₹999/माह से।",
+      "English बोलना कैसे सीखें: रोज़ 15 मिनट की प्रैक्टिस, हिंदी बोलने वालों की आम गलतियाँ और 6 महीने का असली प्लान। लाइव क्लास ₹1,199/माह से।",
     shortTitle: "Spoken English in Hindi",
     keywords: [
       "spoken english in hindi",
@@ -82,7 +82,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Spoken English in Hindi", path: "/spoken-english-in-hindi" },
     ],
     summary:
-      "Hindi-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Hindi speakers make, and when a live class helps. Classes from ₹999/month inclusive of taxes.",
+      "Hindi-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Hindi speakers make, and when a live class helps. Classes from ₹1,199/month inclusive of taxes.",
     faqs: [
       {
         q: "English बोलना सीखने में कितना समय लगता है?",
@@ -94,7 +94,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile की फ़ीस कितनी है?",
-        a: "Basic Spoken English ₹999/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह (मीटिंग और कॉल भी), Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। फ़्री सलाह WhatsApp पर मिलती है — यह क्लास नहीं, सलाह है। फ़ीस हर महीने, कोई ऑटो-डेबिट नहीं।",
+        a: "Basic Spoken English ₹1,199/माह (6 महीने), Intermediate Spoken English ₹1,999/माह (4 महीने), Interactive Speaking ₹1,599/माह (मीटिंग और कॉल भी), Interview Preparation ₹2,499/माह — सभी टैक्स सहित, करीब 6 लोगों का लाइव बैच। फ़्री सलाह WhatsApp पर मिलती है — यह क्लास नहीं, सलाह है। फ़ीस हर महीने, कोई ऑटो-डेबिट नहीं।",
       },
       {
         q: "क्या घर पर बिना क्लास के English बोलना सीख सकते हैं?",
@@ -107,7 +107,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "bn-IN",
     title: "Spoken English in Bengali | English Bolte Shikhun",
     description:
-      "ইংরেজি বলতে শিখুন: রোজ 15 মিনিটের প্র্যাকটিস, বাঙালিদের কমন ভুল আর 6 মাসের সত্যিকারের প্ল্যান। কলকাতা থেকে লাইভ ক্লাস, ₹999/মাস থেকে।",
+      "ইংরেজি বলতে শিখুন: রোজ 15 মিনিটের প্র্যাকটিস, বাঙালিদের কমন ভুল আর 6 মাসের সত্যিকারের প্ল্যান। কলকাতা থেকে লাইভ ক্লাস, ₹1,199/মাস থেকে।",
     shortTitle: "Spoken English in Bengali",
     keywords: [
       "spoken english in bengali",
@@ -126,7 +126,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Spoken English in Bengali", path: "/spoken-english-in-bengali" },
     ],
     summary:
-      "Bengali-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Bengali speakers make (he/she, v/bh, s/sh), and when a live class helps. Taught from Kolkata, from ₹999/month inclusive of taxes.",
+      "Bengali-language guide to learning spoken English: realistic timeline (about 6 months from zero), a 15-minute daily routine, common mistakes Bengali speakers make (he/she, v/bh, s/sh), and when a live class helps. Taught from Kolkata, from ₹1,199/month inclusive of taxes.",
     faqs: [
       {
         q: "ইংরেজি বলতে শিখতে কত সময় লাগে?",
@@ -138,7 +138,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Learn With Smile-এর ফি কত?",
-        a: "Basic Spoken English ₹999/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস (মিটিং আর কলও), Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। ফ্রি পরামর্শ WhatsApp-এ — এটা ক্লাস নয়, পরামর্শ। ফি মাসে মাসে, কোনো অটো-ডেবিট নেই।",
+        a: "Basic Spoken English ₹1,199/মাস (6 মাস), Intermediate Spoken English ₹1,999/মাস (4 মাস), Interactive Speaking ₹1,599/মাস (মিটিং আর কলও), Interview Preparation ₹2,499/মাস — সবই ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। ফ্রি পরামর্শ WhatsApp-এ — এটা ক্লাস নয়, পরামর্শ। ফি মাসে মাসে, কোনো অটো-ডেবিট নেই।",
       },
       {
         q: "ক্লাস কি কলকাতায় সামনাসামনি হয়?",
@@ -168,11 +168,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-10-30",
     summary:
-      "Hub for every long-form English class guide: fees, fit, time, audience, cities, and what the free consultation actually delivers. From ₹999/month inclusive of taxes, batches of around 6.",
+      "Hub for every long-form English class guide: fees, fit, time, audience, cities, and what the free consultation actually delivers. From ₹1,199/month inclusive of taxes, batches of around 6.",
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹999/month, approx. 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, or meetings and calls are the gap, take Interactive Speaking (₹1,599/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹1,199/month, approx. 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, or meetings and calls are the gap, take Interactive Speaking (₹1,599/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
@@ -182,9 +182,9 @@ const NEW_GUIDES: Record<string, PageSeo> = {
   },
   "/spoken-english-for-beginners-india": {
     path: "/spoken-english-for-beginners-india",
-    title: "Spoken English for Beginners | From ₹999",
+    title: "Spoken English for Beginners | From ₹1,199",
     description:
-      "Zero to a 2-minute turn: 6 months, around 6 learners, ₹999/month inclusive of taxes. Hindi and Bengali support. Live IST batches. No 30-day fluency ads.",
+      "Zero to a 2-minute turn: 6 months, around 6 learners, ₹1,199/month inclusive of taxes. Hindi and Bengali support. Live IST batches. No 30-day fluency ads.",
     shortTitle: "Beginners",
     keywords: [
       "spoken english for beginners in india",
@@ -200,11 +200,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Beginners", path: "/spoken-english-for-beginners-india" },
     ],
     summary:
-      "Beginner Spoken English: sounds, sentences, a 2-minute turn in 6 months. ₹999/month, approx. 6 learners, inclusive of taxes. Live, not recorded-as-class.",
+      "Beginner Spoken English: sounds, sentences, a 2-minute turn in 6 months. ₹1,199/month, approx. 6 learners, inclusive of taxes. Live, not recorded-as-class.",
     faqs: [
       {
         q: "Can a complete beginner learn spoken English online in India?",
-        a: "Yes, if the room is small enough that you speak every hour and someone corrects the same error until it goes. Learn With Smile Basic Spoken English is 6 months, ₹999/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. 30-day fluency from zero is marketing.",
+        a: "Yes, if the room is small enough that you speak every hour and someone corrects the same error until it goes. Learn With Smile Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. 30-day fluency from zero is marketing.",
       },
       {
         q: "I studied in Hindi or Bengali medium. Can I still join a beginner class?",
@@ -268,7 +268,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/how-to-speak-english-fluently",
     title: "How to Speak English Fluently in India",
     description:
-      "Fluency is minutes you spoke, not 30-day ads. From zero: about 6 months live, around 6 learners, ₹999/mo inclusive of taxes. Drills you can start today.",
+      "Fluency is minutes you spoke, not 30-day ads. From zero: about 6 months live, around 6 learners, ₹1,199/mo inclusive of taxes. Drills you can start today.",
     shortTitle: "Speak fluently",
     keywords: [
       "how to speak english fluently",
@@ -304,7 +304,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/spoken-english-for-freshers-india",
     title: "Spoken English for Freshers | Interview Ready",
     description:
-      "Campus intro, HR screen, 60-second chair. Spoken from ₹999/mo or Interactive ₹1,599/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
+      "Campus intro, HR screen, 60-second chair. Spoken from ₹1,199/mo or Interactive ₹1,599/mo, around 6 learners, inclusive of taxes. No job promise. Kolkata.",
     shortTitle: "Freshers",
     keywords: [
       "spoken english for freshers",
@@ -324,7 +324,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course should a fresher take in India?",
-        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹999/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
+        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹1,199/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
       },
       {
         q: "Do I need IELTS for campus placements in India?",
@@ -338,9 +338,9 @@ const NEW_GUIDES: Record<string, PageSeo> = {
   },
   "/spoken-english-for-homemakers-india": {
     path: "/spoken-english-for-homemakers-india",
-    title: "Spoken English for Homemakers | From ₹999",
+    title: "Spoken English for Homemakers | From ₹1,199",
     description:
-      "Daytime IST batches for homemakers: shops, school meetings, a voice of your own. 6 months, ₹999/month inclusive of taxes, around 6 learners. Live. Kolkata.",
+      "Daytime IST batches for homemakers: shops, school meetings, a voice of your own. 6 months, ₹1,199/month inclusive of taxes, around 6 learners. Live. Kolkata.",
     shortTitle: "Homemakers",
     keywords: [
       "spoken english for housewives india",
@@ -356,11 +356,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Homemakers", path: "/spoken-english-for-homemakers-india" },
     ],
     summary:
-      "Homemakers and housewives: live Spoken English in daytime IST batches, around 6 learners, ₹999/month inclusive of taxes. Not a kids class, not a certificate mill.",
+      "Homemakers and housewives: live Spoken English in daytime IST batches, around 6 learners, ₹1,199/month inclusive of taxes. Not a kids class, not a certificate mill.",
     faqs: [
       {
         q: "Are there spoken English classes for homemakers in India?",
-        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹999/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
+        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
       },
       {
         q: "I have been out of work for years. Is it too late?",
@@ -376,7 +376,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/answers",
     title: "Answers: Fees, Syllabus, Roadmap and FAQs by Link",
     description:
-      "Every Learn With Smile answer with its own link: fees, month-by-month roadmaps, syllabus modules and every course question. Live online, from ₹999/mo.",
+      "Every Learn With Smile answer with its own link: fees, month-by-month roadmaps, syllabus modules and every course question. Live online, from ₹1,199/mo.",
     shortTitle: "Answers",
     keywords: [
       "learn with smile answers",
@@ -395,7 +395,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
   "/is-learn-with-smile-genuine": {
     path: "/is-learn-with-smile-genuine",
     title: "Is Learn With Smile Genuine? Reviews, Fees, Refunds",
-    description: `Registered in Kolkata (GSTIN), 7 years, ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. Monthly billing, no auto-debit, refund rule in writing. From ₹999/mo.`,
+    description: `Registered in Kolkata (GSTIN), 7 years, ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. Monthly billing, no auto-debit, refund rule in writing. From ₹1,199/mo.`,
     shortTitle: "Is it genuine?",
     keywords: [
       "is learn with smile genuine",
@@ -436,7 +436,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/how-to-join-learn-with-smile",
     title: "How to Join Learn With Smile | 4 Steps on WhatsApp",
     description:
-      "Message WhatsApp, get a free consultation, pick an afternoon, evening or night IST batch, pay one month via Razorpay. From ₹999/mo incl. taxes. No auto-debit.",
+      "Message WhatsApp, get a free consultation, pick an afternoon, evening or night IST batch, pay one month via Razorpay. From ₹1,199/mo incl. taxes. No auto-debit.",
     shortTitle: "How to join",
     keywords: [
       "how to join learn with smile",
@@ -478,7 +478,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/what-happens-in-a-live-english-class",
     title: "What Happens in One Live English Class (90 Minutes)",
     description:
-      "One 90-minute live class: about 6 learners, the same teacher, 30 min grammar + 60 min speaking (or 90 min speaking), then daily Bolo practice. From ₹999/mo.",
+      "One 90-minute live class: about 6 learners, the same teacher, 30 min grammar + 60 min speaking (or 90 min speaking), then daily Bolo practice. From ₹1,199/mo.",
     shortTitle: "Inside one class",
     keywords: [
       "what happens in online spoken english class",
@@ -520,7 +520,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/online-vs-offline-spoken-english-classes",
     title: "Online vs Offline Spoken English Classes",
     description:
-      "Online small-batch vs a 25–40 student room: commute, mic time, GST. Live from ₹999/mo, around 6 learners, inclusive of taxes. Honest trade-offs for India.",
+      "Online small-batch vs a 25–40 student room: commute, mic time, GST. Live from ₹1,199/mo, around 6 learners, inclusive of taxes. Honest trade-offs for India.",
     shortTitle: "Online vs offline",
     keywords: [
       "online vs offline spoken english classes",
@@ -544,7 +544,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Which is cheaper, online or offline spoken English classes?",
-        a: "On the brochure, offline centres often look cheaper — ₹1,500–₹6,000 for three months in a city classroom of 25–40. Add commute time and the minutes you actually speak (1–2 an hour in a big room, 8–10 in a batch of about 6) and an online small batch usually costs less per minute of speaking. Learn With Smile Spoken English is ₹999/month, inclusive of taxes.",
+        a: "On the brochure, offline centres often look cheaper — ₹1,500–₹6,000 for three months in a city classroom of 25–40. Add commute time and the minutes you actually speak (1–2 an hour in a big room, 8–10 in a batch of about 6) and an online small batch usually costs less per minute of speaking. Learn With Smile Spoken English is ₹1,199/month, inclusive of taxes.",
       },
     ],
   },
@@ -552,7 +552,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/free-english-speaking-practice-vs-paid-class",
     title: "Free English Practice vs a Paid Live Class",
     description:
-      "Podcasts, YouTube and language exchanges are free. A paid live class buys a syllabus, correction and a seat. From ₹999/mo, inclusive of taxes in India.",
+      "Podcasts, YouTube and language exchanges are free. A paid live class buys a syllabus, correction and a seat. From ₹1,199/mo, inclusive of taxes in India.",
     shortTitle: "Free vs paid",
     keywords: [
       "free english speaking practice vs class",
@@ -568,7 +568,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Free vs paid", path: "/free-english-speaking-practice-vs-paid-class" },
     ],
     summary:
-      "When free practice is enough and when a ₹999/month live seat is the cheaper way to actually speak. Written by a provider, and says so.",
+      "When free practice is enough and when a ₹1,199/month live seat is the cheaper way to actually speak. Written by a provider, and says so.",
     faqs: [
       {
         q: "Can I learn spoken English for free in India?",
@@ -584,7 +584,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/ielts-coaching-fees-india",
     title: "IELTS Coaching Fees India 2026 | Market Guide",
     description:
-      "IELTS coaching in India: ₹8,000–₹35,000 typical plus the exam fee. Learn With Smile does not sell IELTS. Spoken English from ₹999/mo if speaking is the gap.",
+      "IELTS coaching in India: ₹8,000–₹35,000 typical plus the exam fee. Learn With Smile does not sell IELTS. Spoken English from ₹1,199/mo if speaking is the gap.",
     shortTitle: "IELTS fees",
     keywords: [
       "ielts coaching fees in india",
@@ -604,7 +604,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much does IELTS coaching cost in India in 2026?",
-        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate — ₹19,000 since April 2026, paid to IDP, the IELTS provider in India. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹999/month.",
+        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate — ₹19,000 since April 2026, paid to IDP, the IELTS provider in India. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹1,199/month.",
       },
       {
         q: "Does IELTS coaching guarantee Band 7?",
@@ -620,7 +620,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/english-for-it-professionals-india",
     title: "Spoken English for IT Professionals India",
     description:
-      "Standups, tickets, client calls for Indian IT. Interactive Speaking ₹1,599/mo or Spoken ₹999/mo, around 6 learners, inclusive of taxes. IST live batches.",
+      "Standups, tickets, client calls for Indian IT. Interactive Speaking ₹1,599/mo or Spoken ₹1,199/mo, around 6 learners, inclusive of taxes. IST live batches.",
     shortTitle: "IT professionals",
     keywords: [
       "english for it professionals india",
@@ -640,7 +640,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course is best for IT professionals in India?",
-        a: "If daily English is still the gap, Basic Spoken English (₹999/month, 6 months). If chat is fine and standups, tickets or clients go silent, Interactive Speaking (₹1,599/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
+        a: "If daily English is still the gap, Basic Spoken English (₹1,199/month, 6 months). If chat is fine and standups, tickets or clients go silent, Interactive Speaking (₹1,599/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
       },
       {
         q: "Is Toastmasters or a course better for IT professionals?",
@@ -686,7 +686,7 @@ function cityPage(city: (typeof CITIES)[number]): PageSeo {
       { name: "Guides", path: "/guides" },
       { name: city.name, path: city.path },
     ],
-    summary: `Live online Spoken English for ${city.name}, ${city.state}. ₹999/month inclusive of taxes, approximately 6 learners, IST batches. Office in Kolkata, not a local campus.`,
+    summary: `Live online Spoken English for ${city.name}, ${city.state}. ₹1,199/month inclusive of taxes, approximately 6 learners, IST batches. Office in Kolkata, not a local campus.`,
     faqs: cityFaqs(city),
   };
 }

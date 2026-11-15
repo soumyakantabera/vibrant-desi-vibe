@@ -20,7 +20,7 @@ export function stateHead(slug: string) {
       "@type": "Service",
       "@id": `${abs(st.path)}#service`,
       serviceType: "Spoken English Classes (live online)",
-      name: `Live online spoken English for ${st.name} — about 6 learners, from ₹999/month, inclusive of taxes`,
+      name: `Live online spoken English for ${st.name} — about 6 learners, from ₹1,199/month, inclusive of taxes`,
       url: abs(st.path),
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: [
@@ -38,7 +38,7 @@ export function stateHead(slug: string) {
       },
       offers: {
         "@type": "Offer",
-        price: 999,
+        price: 1199,
         priceCurrency: "INR",
         valueAddedTaxIncluded: true,
         url: abs("/course-spoken-english"),

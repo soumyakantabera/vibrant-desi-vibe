@@ -56,7 +56,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Start from zero with a teacher who can explain in Hindi or Marathi — ₹999/month, about 6 per batch, daily practice in Bolo.",
+      text: "Start from zero with a teacher who can explain in Hindi or Marathi — ₹1,199/month, about 6 per batch, daily practice in Bolo.",
       course: "/course-spoken-english-hindi",
       label: "Basic Spoken English — Hindi to English",
     },

@@ -89,7 +89,7 @@ for st in STATES:
         f"live english class {name} small batch",
         f"spoken english with daily practice app {name}",
     ]:
-        q(t, sp, name, "state", "₹999" if "fees" in t else None)
+        q(t, sp, name, "state", "₹1,199" if "fees" in t else None)
     # city-level
     for city in st["cities"]:
         for t in [
@@ -97,7 +97,7 @@ for st in STATES:
             f"english speaking course {city} online",
             f"spoken english class {city} fees",
         ]:
-            q(t, CITY_PAGE.get(city, sp), city, "city", "₹999" if "fees" in t else None)
+            q(t, CITY_PAGE.get(city, sp), city, "city", "₹1,199" if "fees" in t else None)
     # locality-level ("near me" offline searchers)
     for loc in st["localities"]:
         for area in loc["areas"]:
@@ -113,16 +113,16 @@ for st in STATES:
     if st["medium"] in ("hindi", "marathi"):
         lang = st["medium"].capitalize()
         q(f"{lang} medium spoken english class {name}", sp, lang, "medium-local")
-        q(f"{lang} to english speaking course online", MED_PATH[st["medium"]], lang, "medium", "₹999")
+        q(f"{lang} to english speaking course online", MED_PATH[st["medium"]], lang, "medium", "₹1,199")
 
 # national / course / app / comparison intents
 NATIONAL = [
-    ("spoken english course online india", "/course-spoken-english", "spoken english", "₹999"),
-    ("basic spoken english course fees", "/course-spoken-english", "basic spoken english", "₹999"),
-    ("hindi to english speaking course", "/course-spoken-english-hindi", "hindi", "₹999"),
-    ("english speaking course in hindi live", "/course-spoken-english-hindi", "hindi", "₹999"),
+    ("spoken english course online india", "/course-spoken-english", "spoken english", "₹1,199"),
+    ("basic spoken english course fees", "/course-spoken-english", "basic spoken english", "₹1,199"),
+    ("hindi to english speaking course", "/course-spoken-english-hindi", "hindi", "₹1,199"),
+    ("english speaking course in hindi live", "/course-spoken-english-hindi", "hindi", "₹1,199"),
     ("हिंदी से इंग्लिश बोलना सीखें", "/course-spoken-english-hindi", "हिंदी", None),
-    ("marathi to english speaking course", "/course-spoken-english-marathi", "marathi", "₹999"),
+    ("marathi to english speaking course", "/course-spoken-english-marathi", "marathi", "₹1,199"),
     ("इंग्रजी बोलायला शिका", "/course-spoken-english-marathi", "मराठी", None),
     ("intermediate spoken english course", "/course-intermediate-english", "intermediate", "₹1,999"),
     ("intermediate english conditionals practice app", "/course-intermediate-english", "bolo", None),
@@ -133,13 +133,13 @@ NATIONAL = [
     ("english practice app with teacher review", "/bolo", "bolo", None),
     ("bolo app learn with smile", "/bolo", "bolo", None),
     ("daily english practice app streak india", "/bolo", "streak", None),
-    ("cheapest live spoken english class india", "/", "₹999", "₹999"),
-    ("all in one spoken english course low fee", "/", "all-in-one", "₹999"),
-    ("spoken english course with daily practice affordable", "/", "daily practice", "₹999"),
-    ("english class fees india 2026", "/english-class-fees-india", "fee", "₹999"),
+    ("cheapest live spoken english class india", "/", "₹1,199", "₹1,199"),
+    ("all in one spoken english course low fee", "/", "all-in-one", "₹1,199"),
+    ("spoken english course with daily practice affordable", "/", "daily practice", "₹1,199"),
+    ("english class fees india 2026", "/english-class-fees-india", "fee", "₹1,199"),
     ("free spoken english consultation whatsapp", "/free-consultation", "consultation", None),
     ("spoken english free demo class", "/free-consultation", "demo class", None),
-    ("spoken english classes kolkata", "/spoken-english-classes-kolkata", "kolkata", "₹999"),
+    ("spoken english classes kolkata", "/spoken-english-classes-kolkata", "kolkata", "₹1,199"),
     ("spoken english course refund policy india", "/before-you-pay-spoken-english-course", "refund", None),
     ("english speaking course emi loan", "/before-you-pay-spoken-english-course", "emi", None),
     ("english course monthly payment no auto debit", "/before-you-pay-spoken-english-course", "auto-debit", None),
@@ -163,7 +163,7 @@ variants = cycle(
 st_cycle = cycle([(st, c) for st in STATES for c in st["cities"]])
 while len(queries) < 1000:
     (st, city), (tpl, fee) = next(st_cycle), next(variants)
-    q(tpl.format(city=city), CITY_PAGE.get(city, st["path"]), city, "variant", "₹999" if fee else None)
+    q(tpl.format(city=city), CITY_PAGE.get(city, st["path"]), city, "variant", "₹1,199" if fee else None)
 queries = queries[:1000]
 
 # ------------------------------------------------------------ checks

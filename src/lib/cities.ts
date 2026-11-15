@@ -44,9 +44,9 @@ export const CITIES: CityRecord[] = [
     industries: "finance, media, BPO, hospitality and startups",
     medium: "Hindi, Marathi or English-medium schooling",
     localRoom: "Dadar, Andheri or Thane classrooms of 25–40",
-    title: "Spoken English Mumbai | Live, From ₹999",
+    title: "Spoken English Mumbai | Live, From ₹1,199",
     description:
-      "Live online spoken English for Mumbai and Thane: banking, media, BPO and hospitality English. About 6 per batch, ₹999/month incl. taxes, IST batches.",
+      "Live online spoken English for Mumbai and Thane: banking, media, BPO and hospitality English. About 6 per batch, ₹1,199/month incl. taxes, IST batches.",
     local: [
       { t: "h2", text: "English at work in Mumbai" },
       {
@@ -79,7 +79,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "I work at a bank in Mumbai. Spoken English or a Business English course?",
-        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹1,199/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
       },
     ],
   },
@@ -96,9 +96,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT, consulting, government-adjacent roles, BPO and startups",
     medium: "Hindi-medium or English-medium schooling",
     localRoom: "Karol Bagh, Connaught Place or Gurugram rooms of 25–40",
-    title: "Spoken English Classes Delhi | Live From ₹999",
+    title: "Spoken English Classes Delhi | Live From ₹1,199",
     description:
-      "Live online spoken English for Delhi, Gurugram and Noida. Hindi-medium welcome; batches for office and shift workers. About 6 per batch, ₹999/month.",
+      "Live online spoken English for Delhi, Gurugram and Noida. Hindi-medium welcome; batches for office and shift workers. About 6 per batch, ₹1,199/month.",
     local: [
       { t: "h2", text: "English at work in Delhi NCR" },
       {
@@ -132,7 +132,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "Is the fee different for Gurugram or Noida?",
-        a: "No. Basic Spoken English is ₹999/month inclusive of taxes for every learner in India, whether you join from Delhi, Gurugram, Noida, Ghaziabad or Faridabad. Batches are about 6 learners.",
+        a: "No. Basic Spoken English is ₹1,199/month inclusive of taxes for every learner in India, whether you join from Delhi, Gurugram, Noida, Ghaziabad or Faridabad. Batches are about 6 learners.",
       },
     ],
   },
@@ -149,9 +149,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT product, services, startups and GCCs",
     medium: "Kannada, Hindi or English-medium schooling",
     localRoom: "Koramangala or Indiranagar classrooms of 25–40",
-    title: "Spoken English Bengaluru | Live From ₹999",
+    title: "Spoken English Bengaluru | Live From ₹1,199",
     description:
-      "Live spoken English for Bengaluru IT and GCC teams: standups, client calls and interviews. About 6 per batch, ₹999/month incl. taxes, IST batches.",
+      "Live spoken English for Bengaluru IT and GCC teams: standups, client calls and interviews. About 6 per batch, ₹1,199/month incl. taxes, IST batches.",
     local: [
       { t: "h2", text: "English at work in Bengaluru" },
       {
@@ -202,9 +202,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT, pharma, GCCs and customer support",
     medium: "Telugu, Hindi, Urdu or English-medium schooling",
     localRoom: "Ameerpet or Madhapur classrooms of 25–40",
-    title: "Spoken English Hyderabad | Live From ₹999",
+    title: "Spoken English Hyderabad | Live From ₹1,199",
     description:
-      "Live spoken English for Hyderabad: HITEC City IT, pharma and support roles. About 6 per batch, ₹999/month inclusive of taxes, IST batches.",
+      "Live spoken English for Hyderabad: HITEC City IT, pharma and support roles. About 6 per batch, ₹1,199/month inclusive of taxes, IST batches.",
     local: [
       { t: "h2", text: "English at work in Hyderabad" },
       {
@@ -234,7 +234,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I work in pharma in Hyderabad. Which course helps with audits and client calls?",
-        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Interactive Speaking (₹1,599/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
+        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Interactive Speaking (₹1,599/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹1,199/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
       },
       {
         q: "Is the Hindi bridge a problem if I mainly speak Telugu?",
@@ -340,7 +340,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
     },
     {
       q: `How much do spoken English classes cost in ${city.name}?`,
-      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
+      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹1,199 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
     },
     {
       q: `Can the teacher explain if I studied in ${city.medium}?`,
@@ -384,7 +384,7 @@ export function cityBody(city: CityRecord): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
+      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹1,199/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
     ...(st
       ? [
@@ -414,7 +414,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       caption: `Same pan-India fees. ${admissionCaption()} ${city.name} is not a different price list.`,
       head: ["Course", "Duration", "Fee"],
       rows: [
-        ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
+        ["Basic Spoken English", "6 months, ~6 learners", "₹1,199/month"],
         ["Intermediate Spoken English", "4 months", "₹1,999/month"],
         ["Interactive Speaking", "3 months", "₹1,599/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹2,499/month"],
@@ -435,7 +435,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     },
     {
       t: "cta",
-      text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹999/mo, inclusive of taxes.`,
+      text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹1,199/mo, inclusive of taxes.`,
       course: "/free-consultation",
       label: "Get Free Consultation",
     },
