@@ -46,11 +46,11 @@ export function stateLocalFaqs(st: StateInfo): { q: string; a: string }[] {
   return [
     {
       q: `Is there a spoken English class near ${loc.areas[0]}, ${loc.city}?`,
-      a: `Learn With Smile has no classroom in ${loc.city}; our only office is in Kolkata. Learners from ${loc.areas.join(", ")} join the live online batch instead: about 6 learners, a real teacher, ₹999/month inclusive of taxes. No commute, and you keep the same teacher if you move.`,
+      a: `Learn With Smile has no classroom in ${loc.city}; our only office is in Kolkata. Learners from ${loc.areas.join(", ")} join the live online batch instead: about 6 learners, a real teacher, ₹1,199/month inclusive of taxes. No commute, and you keep the same teacher if you move.`,
     },
     {
       q: `How much do spoken English classes cost in ${st.name}?`,
-      a: `Public listings in ${st.name} (November 2026): ${st.prices.map((x) => `${x.what}: ${x.range}`).join("; ")}. Learn With Smile's ${mc.label} is ₹999/month inclusive of taxes, with live classes, the Bolo practice app, video lessons and a weekly teacher review in the same fee.`,
+      a: `Public listings in ${st.name} (November 2026): ${st.prices.map((x) => `${x.what}: ${x.range}`).join("; ")}. Learn With Smile's ${mc.label} is ₹1,199/month inclusive of taxes, with live classes, the Bolo practice app, video lessons and a weekly teacher review in the same fee.`,
     },
     {
       q: `What are the class timings for learners in ${st.name}?`,
@@ -93,7 +93,7 @@ function stateSeo(st: StateInfo): PageSeo {
       { name: "Guides", path: "/guides" },
       { name: `Spoken English in ${st.name}`, path: st.path },
     ],
-    summary: `Spoken English for ${st.name} (${st.cities.slice(0, 4).join(", ")}): live online, about 6 learners per batch, ${mc.label} at ₹999/month inclusive of taxes, Bolo practice app and weekly teacher review included. Local needs: ${st.hubs.map((h) => NEEDS[h.need].label).join(", ")}. Local options seen Nov 2026: ${st.prices.map((p) => `${p.what} ${p.range}`).join("; ")}. Learners join online from ${st.localities.map((l) => `${l.city} (${l.areas.join(", ")})`).join("; ")} — no branch or classroom there; live online instead. ${ALL_IN_ONE}`,
+    summary: `Spoken English for ${st.name} (${st.cities.slice(0, 4).join(", ")}): live online, about 6 learners per batch, ${mc.label} at ₹1,199/month inclusive of taxes, Bolo practice app and weekly teacher review included. Local needs: ${st.hubs.map((h) => NEEDS[h.need].label).join(", ")}. Local options seen Nov 2026: ${st.prices.map((p) => `${p.what} ${p.range}`).join("; ")}. Learners join online from ${st.localities.map((l) => `${l.city} (${l.areas.join(", ")})`).join("; ")} — no branch or classroom there; live online instead. ${ALL_IN_ONE}`,
     faqs: [...st.faqs, ...stateLocalFaqs(st), WHY_WE_WIN_FAQ[0], WHY_WE_WIN_FAQ[2]],
   };
 }

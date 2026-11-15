@@ -79,8 +79,8 @@ fi
 if ! grep -q 'g.page' dist/index.html; then
   echo "::error::index.html is missing Google Business sameAs"; exit 1
 fi
-if ! grep -q '₹999' dist/course-spoken-english.html; then
-  echo "::error::spoken english page missing ₹999"; exit 1
+if ! grep -q '₹1,199' dist/course-spoken-english.html; then
+  echo "::error::spoken english page missing ₹1,199"; exit 1
 fi
 # Both lists, labeled. Titles stay on the India price. The script
 # bundle is not a price list. Another company's "$10/hour" stays.
@@ -88,7 +88,7 @@ if grep -E '<title>[^<]*(\$49|\$79|\$99|USD)' dist/*.html; then
   echo "::error::A page title left the India rupee price"; exit 1
 fi
 for f in dist/llms.txt dist/llms-full.txt dist/llms.json dist/openapi.json dist/chatgpt-actions.md dist/ai-plugin.json dist/robots.txt dist/index.html dist/course-spoken-english.html; do
-  if ! grep -q '₹999' "$f" || ! grep -q '\$49' "$f" || ! grep -q 'outside India' "$f"; then
+  if ! grep -q '₹1,199' "$f" || ! grep -q '\$49' "$f" || ! grep -q 'outside India' "$f"; then
     echo "::error::$f is missing a labeled India or outside-India price"; exit 1
   fi
 done
@@ -140,5 +140,22 @@ mods=$(grep -c '<lastmod>' dist/sitemap.xml)
 if [ "$urls" -ne "$mods" ]; then
   echo "::error::sitemap lastmod missing on some URLs ($mods of $urls)"; exit 1
 fi
-echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."
 
+# New November 2026 articles must be prerendered, in the sitemap and in the AI layer.
+for slug in daily-use-english-sentences-with-hindi daily-english-speaking-practice-routine english-conversation-practice-dialogues; do
+  test -s "dist/blog/$slug.html" || { echo "::error::missing dist/blog/$slug.html"; exit 1; }
+  test -s "dist/blog/$slug.md" || { echo "::error::missing dist/blog/$slug.md"; exit 1; }
+  grep -q "/blog/$slug" dist/sitemap.xml || { echo "::error::$slug not in sitemap"; exit 1; }
+  grep -q "/blog/$slug" dist/llms.txt || { echo "::error::$slug not in llms.txt"; exit 1; }
+  grep -q '"FAQPage"' "dist/blog/$slug.html" || { echo "::error::$slug has no FAQPage"; exit 1; }
+done
+grep -q 'daily-english-speaking-practice-routine' dist/llms.json || { echo "::error::quick answer missing from llms.json"; exit 1; }
+
+# ChatGPT GPT Instructions field accepts 8,000 characters.
+gpt_chars=$(python3 -c "import sys;print(len(open('dist/chatgpt-actions.md',encoding='utf8').read()))")
+if [ "$gpt_chars" -gt 8000 ]; then
+  echo "::error::chatgpt-actions.md is $gpt_chars chars (limit 8000)"; exit 1
+fi
+cmp -s dist/chatgpt-actions.md dist/.well-known/chatgpt-actions.md || { echo "::error::.well-known/chatgpt-actions.md out of sync"; exit 1; }
+
+echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."

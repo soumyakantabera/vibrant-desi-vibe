@@ -120,7 +120,7 @@ export function AiArrival() {
       </p>
       <p className="mt-1.5 text-sm leading-relaxed text-ink/80">
         Live online spoken English for adults, about 6 in a batch, same teacher, from{" "}
-        <FeeText text="₹999/month" />
+        <FeeText text="₹1,199/month" />
         <MarketCopy inr=" inclusive of taxes" usd="" /> — billed one month at a time, no auto-debit.
         Not sure which course? Ask us free on WhatsApp.
       </p>
