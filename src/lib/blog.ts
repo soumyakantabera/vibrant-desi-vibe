@@ -56,6 +56,166 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "daily-use-english-sentences-with-hindi",
+    title: "Daily Use English Sentences with Hindi Meaning: 90+ Lines by Situation",
+    seoTitle: "Daily Use English Sentences with Hindi Meaning",
+    description:
+      "90+ daily use English sentences with Hindi meaning, grouped by situation: home, shopping, UPI, phone calls, office, travel, doctor. Plus 6 common mistakes.",
+    excerpt:
+      "Home, shops, UPI, phone calls, office, cabs and the doctor — with the Hindi meaning beside each line, six mistakes to drop and a 10-minute way to practise.",
+    tag: "Spoken English",
+    img: "spokenEnglish",
+    imgAlt: "Learner practising everyday English sentences aloud with a notebook",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-15",
+    dateModified: "2026-11-15",
+    readingTime: 8,
+    wordCount: 1582,
+    relatedCourses: ["/course-spoken-english-hindi", "/course-spoken-english"],
+    keywords: [
+      "daily use english sentences",
+      "daily use english sentences with hindi",
+      "english sentences for daily use",
+      "500 daily use english sentences with hindi",
+      "daily use sentences hindi to english",
+      "simple english sentences for daily use",
+      "english speaking sentences for beginners",
+    ],
+    shortAnswer:
+      "Learn daily English sentences by situation, not by alphabet: one table a day, each line aloud three times, then say the English from the Hindi with the English covered, and use one sentence for real before you sleep.",
+    faqs: [
+      {
+        q: "What are some daily use English sentences?",
+        a: "Common ones are: “How much is this?”, “Can I pay by UPI?”, “Could you repeat that, please?”, “I’ll get back to you by evening.”, “I’m running ten minutes late.”, “Stop here, please.” and “I’ve had a fever since yesterday.” They are most useful grouped by situation — home, shop, phone, office, travel, doctor — so you learn the sentence where you will need it.",
+      },
+      {
+        q: "How can I learn daily use English sentences quickly?",
+        a: "Pick one situation a day, read each sentence aloud three times, then cover the English and produce it from the Hindi meaning. Record a 60-second voice note using five of them, and use one sentence in a real conversation the same day. Saying a sentence in context is what makes it stick; reading a list of 500 does not.",
+      },
+      {
+        q: "Is “What is your good name?” correct English?",
+        a: "It is understood in India but sounds unnatural elsewhere — it is a word-for-word translation of “आपका शुभ नाम”. Say “What is your name?” or, more politely, “May I know your name?”.",
+      },
+      {
+        q: "Is there a spoken English course taught in Hindi?",
+        a: "Yes. Learn With Smile’s Basic Spoken English — Hindi to English has a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. It is 6 months, ₹1,199/month inclusive of taxes, live online in a batch of approximately 6 learners.",
+      },
+    ],
+    howTo: {
+      name: "How to practise daily use English sentences in 10 minutes a day",
+      description: "A five-step daily method to turn a sentence list into sentences you can say.",
+      totalTime: "PT10M",
+      steps: [
+        "Pick one situation table for the day, such as phone calls or office.",
+        "Read each sentence aloud three times: slowly, at normal speed, then without looking.",
+        "Cover the English column and say the English from the Hindi meaning.",
+        "Record a 60-second voice note using five of the sentences in a made-up situation.",
+        "Use one of the sentences in a real conversation before you sleep.",
+      ],
+    },
+  },
+  {
+    slug: "daily-english-speaking-practice-routine",
+    title: "Daily English Speaking Practice: A 15-Minute Routine and 30-Day Plan",
+    seoTitle: "Daily English Speaking Practice: 15-Min Routine",
+    description:
+      "A 15-minute daily English speaking practice routine you can do alone: shadow, retell, the 3-2-1 talk, record, fix one error. Plus a 30-day topic plan.",
+    excerpt:
+      "Shadow, retell, the 3-2-1 talk, record, fix one thing. A routine you can keep for 30 days, a topic plan for each week, and two numbers that show progress.",
+    tag: "Spoken English",
+    img: "speaking",
+    imgAlt: "Adult recording a short English speaking practice on a phone",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-15",
+    dateModified: "2026-11-15",
+    readingTime: 5,
+    wordCount: 889,
+    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+    keywords: [
+      "daily english speaking practice",
+      "english speaking practice",
+      "how to practice english speaking",
+      "english speaking practice alone",
+      "3-2-1 rule of speaking",
+      "30 day english speaking practice plan",
+      "english speaking practice with ai",
+    ],
+    shortAnswer:
+      "Practise 15 minutes a day out loud: 3 minutes shadowing a clip, 4 minutes retelling it, 4 minutes of the 3-2-1 talk on one topic, 2 minutes recording and listening, 2 minutes fixing one broken sentence. Track fillers and your longest unbroken turn.",
+    faqs: [
+      {
+        q: "How can I practise speaking English every day?",
+        a: "Do a short routine out loud rather than watching more videos: shadow 30 seconds of clear English, retell it in your own words, talk on one topic for 3, then 2, then 1 minute, record the last round and fix one sentence that broke. Fifteen minutes a day for 30 days beats occasional long sessions.",
+      },
+      {
+        q: "What is the 3-2-1 rule of speaking?",
+        a: "It is a fluency drill adapted from the classroom 4-3-2 technique: you say the same story or opinion three times, in 3 minutes, then 2, then 1. Because you already know what to say by the second round, your effort goes into how to say it, so pauses and fillers drop and sentences get longer.",
+      },
+      {
+        q: "Can I practise speaking English alone?",
+        a: "Yes. Shadowing, retelling, talking to yourself, narrating what you are doing and recording yourself all work alone. What self-practice cannot give you is a listener who reacts and someone who notices the same mistake every week — that is what a teacher or a small live batch adds.",
+      },
+      {
+        q: "Is AI good for English speaking practice?",
+        a: "AI voice chat is good for unlimited speaking reps at any hour without embarrassment. It often accepts sentences a person would not say and does not track your recurring errors across weeks, so use it for volume and get correction from a teacher or a fluent speaker.",
+      },
+    ],
+    howTo: {
+      name: "15-minute daily English speaking practice routine",
+      description: "A daily routine to build spoken English fluency alone with only a phone.",
+      totalTime: "PT15M",
+      steps: [
+        "Shadow 30 seconds of clear English, repeating each sentence aloud.",
+        "Retell what you heard in your own words for 60 to 90 seconds.",
+        "Talk on one topic for 3 minutes, then 2 minutes, then 1 minute.",
+        "Record the 1-minute round and count your fillers.",
+        "Say one broken sentence correctly five times and add it to a fixes list.",
+      ],
+    },
+  },
+  {
+    slug: "english-conversation-practice-dialogues",
+    title: "English Conversation Practice: 10 Real Dialogues for Indian Adults",
+    seoTitle: "English Conversation Practice: 10 Real Dialogues",
+    description:
+      "10 English conversation practice dialogues for real Indian situations: delivery complaints, customer care, HR screens, leave, doctor, cab, PTM, small talk.",
+    excerpt:
+      "Neighbours, delivery complaints, customer care, an HR screen, asking for leave, the doctor, a cab, a PTM and office small talk — with a “change it” line for each.",
+    tag: "Spoken English",
+    img: "interactiveSpeaking",
+    imgAlt: "Two adults practising an English conversation role-play",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-15",
+    dateModified: "2026-11-15",
+    readingTime: 6,
+    wordCount: 1146,
+    relatedCourses: ["/course-interactive-speaking", "/course-spoken-english"],
+    keywords: [
+      "english conversation practice",
+      "english conversation practice for beginners",
+      "english speaking practice conversation",
+      "daily english conversation",
+      "english dialogues for practice",
+      "english role play conversation",
+    ],
+    shortAnswer:
+      "Practise conversations, not just sentences: read a dialogue with a partner, swap roles, cover one side and react from memory, then change one detail and do it again without writing anything down.",
+    faqs: [
+      {
+        q: "How can I practise English conversation at home?",
+        a: "Read short real-life dialogues aloud with a partner or by recording both parts, swap roles, then cover one side and respond from memory. Finally change one detail — a different problem, a different city — and do it again unscripted. The unscripted round is the real practice.",
+      },
+      {
+        q: "What are good English conversation topics for beginners?",
+        a: "Start with situations you actually face: meeting a neighbour, a food delivery complaint, a customer-care call, asking for leave, the doctor, a cab, a parent-teacher meeting and small talk before a meeting. Real situations give you sentences you will use within a week.",
+      },
+      {
+        q: "Why do I freeze in English conversations even when I know the words?",
+        a: "Usually because you have practised recognising English, not producing it under time pressure while someone waits. Role-plays where you must react, repeated until they feel ordinary, are the fix. Learn With Smile’s Interactive Speaking (3 months, ₹1,599/month, approximately 6 learners) is built around this.",
+      },
+    ],
+  },
+  {
     slug: "how-to-choose-spoken-english-class-india",
     title: "How to Choose a Spoken English Class in India: 10 Checks",
     seoTitle: "Choose a Spoken English Class | 10 Checks",

@@ -145,6 +145,19 @@ NATIONAL = [
     ("english course monthly payment no auto debit", "/before-you-pay-spoken-english-course", "auto-debit", None),
     ("english app subscription auto renew cancel", "/before-you-pay-spoken-english-course", "auto-renew", None),
     ("learn with smile refund", "/refunds", "2 working days", None),
+    # November 2026 high-volume informational demand (OpenRush, India)
+    ("daily use english sentences with hindi", "/blog/daily-use-english-sentences-with-hindi", "hindi meaning", "₹1,199"),
+    ("500 daily use english sentences with hindi", "/blog/daily-use-english-sentences-with-hindi", "upi", None),
+    ("daily use sentences hindi to english", "/blog/daily-use-english-sentences-with-hindi", "क्या", None),
+    ("what is your good name correct english", "/blog/daily-use-english-sentences-with-hindi", "good name", None),
+    ("daily english speaking practice", "/blog/daily-english-speaking-practice-routine", "15-minute", "₹1,199"),
+    ("english speaking practice alone at home", "/blog/daily-english-speaking-practice-routine", "alone", None),
+    ("3-2-1 rule of speaking", "/blog/daily-english-speaking-practice-routine", "3-2-1", None),
+    ("30 day english speaking practice plan", "/blog/daily-english-speaking-practice-routine", "30-day", None),
+    ("english conversation practice for beginners", "/blog/english-conversation-practice-dialogues", "dialogue", None),
+    ("english conversation for hr phone screen", "/blog/english-conversation-practice-dialogues", "hr", None),
+    ("how to speak english fluently", "/how-to-speak-english-fluently", "fluent", "₹1,199"),
+    ("can i learn english in 30 days", "/how-to-speak-english-fluently", "30 days", None),
 ]
 for t, path, ent, fee in NATIONAL:
     q(t, path, ent, "national", fee)

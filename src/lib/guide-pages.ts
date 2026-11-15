@@ -273,12 +273,14 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     keywords: [
       "how to speak english fluently",
       "how to speak english fluently in 6 months",
+      "how to speak english fluently and confidently",
+      "can i learn english in 30 days",
       "english fluency tips india",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.85,
     changefreq: "monthly",
-    dateModified: "2026-10-30",
+    dateModified: "2026-11-15",
     breadcrumb: [
       { name: "Guides", path: "/guides" },
       { name: "Speak fluently", path: "/how-to-speak-english-fluently" },
@@ -297,6 +299,22 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       {
         q: "Which app is best to speak English fluently?",
         a: "No single app makes you fluent. Duolingo-style apps build a vocabulary habit, ELSA-style apps help pronunciation, and AI voice chat gives unlimited speaking practice. Fluency needs months of speaking with correction; apps work best as practice between live conversations, not as a replacement for them.",
+      },
+      {
+        q: "Can I learn to speak English fluently in 30 days?",
+        a: "Not from zero. In 30 days of daily speaking practice a hesitant learner who already knows the words can freeze less and use fewer fillers. A beginner still needs sounds, sentence patterns and around 1,000 everyday words, which usually takes about 6 months of live practice. Treat “fluent in 30 days” as an advert, not a plan.",
+      },
+      {
+        q: "How can I speak English fluently and confidently?",
+        a: "Confidence follows repetition in front of a listener. Speak out loud every day (a 15-minute routine of shadowing, retelling and timed talks works), learn phrases in chunks rather than single words, record yourself and fix one sentence a day, and get regular turns in front of real people — a partner, a group or a small live batch where mistakes are normal.",
+      },
+      {
+        q: "What are the rules for speaking English well?",
+        a: "Seven that matter most: speak out loud daily, learn chunks not single words, think in short sentences, use the past tense for stories, ask a follow-up question instead of going silent, record and listen to yourself, and fix the same mistake until it disappears. Accent matters far less than clarity and pace.",
+      },
+      {
+        q: "How do I practise speaking English every day?",
+        a: "Use a short fixed routine: shadow 30 seconds of clear English, retell it, talk on one topic for 3, 2 and 1 minutes, record the last round and fix one broken sentence. The full routine and a 30-day topic plan: /blog/daily-english-speaking-practice-routine.",
       },
     ],
   },

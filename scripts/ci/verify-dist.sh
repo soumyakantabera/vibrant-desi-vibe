@@ -140,5 +140,22 @@ mods=$(grep -c '<lastmod>' dist/sitemap.xml)
 if [ "$urls" -ne "$mods" ]; then
   echo "::error::sitemap lastmod missing on some URLs ($mods of $urls)"; exit 1
 fi
-echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."
 
+# New November 2026 articles must be prerendered, in the sitemap and in the AI layer.
+for slug in daily-use-english-sentences-with-hindi daily-english-speaking-practice-routine english-conversation-practice-dialogues; do
+  test -s "dist/blog/$slug.html" || { echo "::error::missing dist/blog/$slug.html"; exit 1; }
+  test -s "dist/blog/$slug.md" || { echo "::error::missing dist/blog/$slug.md"; exit 1; }
+  grep -q "/blog/$slug" dist/sitemap.xml || { echo "::error::$slug not in sitemap"; exit 1; }
+  grep -q "/blog/$slug" dist/llms.txt || { echo "::error::$slug not in llms.txt"; exit 1; }
+  grep -q '"FAQPage"' "dist/blog/$slug.html" || { echo "::error::$slug has no FAQPage"; exit 1; }
+done
+grep -q 'daily-english-speaking-practice-routine' dist/llms.json || { echo "::error::quick answer missing from llms.json"; exit 1; }
+
+# ChatGPT GPT Instructions field accepts 8,000 characters.
+gpt_chars=$(python3 -c "import sys;print(len(open('dist/chatgpt-actions.md',encoding='utf8').read()))")
+if [ "$gpt_chars" -gt 8000 ]; then
+  echo "::error::chatgpt-actions.md is $gpt_chars chars (limit 8000)"; exit 1
+fi
+cmp -s dist/chatgpt-actions.md dist/.well-known/chatgpt-actions.md || { echo "::error::.well-known/chatgpt-actions.md out of sync"; exit 1; }
+
+echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."

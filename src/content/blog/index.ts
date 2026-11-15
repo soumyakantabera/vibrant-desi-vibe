@@ -21,6 +21,9 @@ import { body as bpoCustomerSupport } from "./english-for-bpo-customer-support";
 import { body as speakingMinutes } from "./speaking-minutes-in-a-60-minute-class";
 import { body as spokenOrIelts } from "./spoken-english-or-ielts";
 import { body as chooseClass } from "./how-to-choose-spoken-english-class-india";
+import { body as dailySentences } from "./daily-use-english-sentences-with-hindi";
+import { body as dailyPractice } from "./daily-english-speaking-practice-routine";
+import { body as conversationDialogues } from "./english-conversation-practice-dialogues";
 
 export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "5-speaking-habits-that-killed-my-hesitation": speakingHabits,
@@ -33,4 +36,7 @@ export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "speaking-minutes-in-a-60-minute-class": speakingMinutes,
   "spoken-english-or-ielts": spokenOrIelts,
   "how-to-choose-spoken-english-class-india": chooseClass,
+  "daily-use-english-sentences-with-hindi": dailySentences,
+  "daily-english-speaking-practice-routine": dailyPractice,
+  "english-conversation-practice-dialogues": conversationDialogues,
 };
