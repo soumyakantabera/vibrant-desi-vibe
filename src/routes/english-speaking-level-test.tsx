@@ -30,7 +30,6 @@ function Page() {
       heroAlt="Adult learner checking their English speaking level on a laptop"
       lastUpdated={page.dateModified}
       body={body}
-      levelTestPromo={false}
       heroCta={{ href: "#level-test", label: "Start the test" }}
       beforeBody={<LevelTest />}
       faqs={page.faqs ?? []}

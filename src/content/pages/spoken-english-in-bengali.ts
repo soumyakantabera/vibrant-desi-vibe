@@ -2,10 +2,6 @@ import type { ArticleBody } from "@/content/blog/blocks";
 
 /** /spoken-english-in-bengali — written in Bengali for Bengali-first searchers. */
 export const body: ArticleBody = [
-  {
-    t: "p",
-    text: "**আগে নিজের লেভেল জেনে নিন:** [1 মিনিটের ফ্রি English speaking test, বাংলায়](/english-speaking-test-bengali) — মাত্র 4টা সহজ প্রশ্ন, ফলাফল সোজা WhatsApp-এ।",
-  },
   { t: "h2", text: "আগে সত্যিটা: কত সময় লাগে?" },
   {
     t: "p",

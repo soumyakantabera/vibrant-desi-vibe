@@ -32,7 +32,6 @@ function Page() {
       heroAlt="Adult learner checking their English speaking level on a laptop"
       lastUpdated={page.dateModified}
       body={levelTestBody("bn")}
-      levelTestPromo={false}
       heroCta={{ href: "#level-test", label: "টেস্ট শুরু করুন" }}
       beforeBody={<LevelTest lang="bn" />}
       faqs={page.faqs ?? []}

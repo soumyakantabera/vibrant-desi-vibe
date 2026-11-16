@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { FaqSection } from "@/components/FaqSection";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { LevelTestButton } from "@/components/LevelTestPromo";
 import { SnapshotCard, SnapIcons } from "@/components/SnapshotCard";
 import { BoloMention } from "@/components/bolo/BoloSections";
 import { COURSES } from "@/lib/courses";
@@ -99,6 +100,7 @@ function Page() {
               <WaButton message={wa} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
+              <LevelTestButton />
             </div>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 text-sm font-semibold text-white/95">

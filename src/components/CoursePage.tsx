@@ -23,6 +23,7 @@ import {
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { LevelTestButton } from "@/components/LevelTestPromo";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 import { faqAnchor, moduleAnchor } from "@/lib/anchors";
@@ -435,6 +436,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               <WaButton message={waPrimary} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
+              <LevelTestButton />
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
               <FeeText text={CONSULTATION.hook} />

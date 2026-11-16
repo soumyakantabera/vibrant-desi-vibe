@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
 
 import { BrandIcon } from "./BrandIcon";
 import { FeeText, MarketCopy } from "./FeeText";
@@ -10,7 +9,7 @@ import { waLink } from "@/lib/whatsapp";
 /**
  * Visitors who arrive from an AI assistant or Google have already asked their
  * question. This shows them the short answer and one WhatsApp button, once
- * per visit, as a small Bolo card fixed to the bottom of the screen (nothing
+ * per visit, as a small Bolo card (one action: WhatsApp) fixed to the bottom of the screen (nothing
  * on the page shifts).
  *
  * Where they came from is read from document.referrer only. Campaign URL
@@ -194,13 +193,6 @@ export function AiArrival() {
       >
         <BrandIcon name="whatsapp" size={18} color="#053b1e" /> Ask on WhatsApp — it&apos;s free
       </a>
-      <Link
-        to="/english-speaking-level-test"
-        onClick={() => setOpen(false)}
-        className="mt-2 flex min-h-[40px] items-center justify-center gap-1.5 text-sm font-display font-bold text-brand-deep hover:underline"
-      >
-        <Icon name="target" size={16} /> Or find your level in 1 minute
-      </Link>
     </aside>
   );
 }

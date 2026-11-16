@@ -1,6 +1,27 @@
 import { Link } from "@tanstack/react-router";
 import { COMPARE_BLURB, COMPARE_REVISED, MARKET_COMPARE } from "@/lib/compare";
-import { TrademarkNotice } from "@/components/ProviderMark";
+import { ProviderMark, TrademarkNotice } from "@/components/ProviderMark";
+import lwsIcon from "@/assets/brand/lws-icon.svg?url";
+
+/**
+ * Official logos (src/assets/logos, supplied by the site owner) beside each
+ * provider's name. Rows whose providers have no logo file ("Speak", IELTS
+ * shops) keep the plain name — never a redrawn mark.
+ */
+const LOGOS: Record<string, { slug: string; name: string }[]> = {
+  EngVarta: [{ slug: "engvarta", name: "EngVarta" }],
+  Cambly: [{ slug: "cambly", name: "Cambly" }],
+  "italki / Preply": [
+    { slug: "italki", name: "italki" },
+    { slug: "preply", name: "Preply" },
+  ],
+  PlanetSpark: [{ slug: "planetspark", name: "PlanetSpark" }],
+  "British Council Online": [{ slug: "british-council", name: "British Council" }],
+  "ELSA / Duolingo / Speak": [
+    { slug: "elsa-speak", name: "ELSA Speak" },
+    { slug: "duolingo", name: "Duolingo" },
+  ],
+};
 
 /** Learn With Smile is the one solid tile; every other brand is a white card
  *  with a coloured top rule, so the eye lands on us first. */
@@ -47,6 +68,17 @@ export function CompareDiff() {
             <p className="text-xs font-display font-extrabold uppercase tracking-[0.12em] opacity-80">
               {row.us ? "Us · adults 15+" : "Online"}
             </p>
+            {row.us ? (
+              <span className="mt-2 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white p-1 shadow-sm">
+                <img src={lwsIcon} alt="" aria-hidden width={28} height={28} className="h-7 w-7" />
+              </span>
+            ) : LOGOS[row.name] ? (
+              <span className="mt-2 flex min-h-9 flex-wrap items-center gap-2">
+                {LOGOS[row.name].map((l) => (
+                  <ProviderMark key={l.slug} slug={l.slug} name={l.name} />
+                ))}
+              </span>
+            ) : null}
             <p className="mt-1 font-display text-base font-extrabold leading-snug">{row.name}</p>
             <p className="mt-2 text-sm font-semibold">{row.fee}</p>
             <p className="mt-1 text-xs leading-relaxed opacity-95">{row.extra}</p>
