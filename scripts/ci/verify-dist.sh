@@ -142,7 +142,7 @@ if [ "$urls" -ne "$mods" ]; then
 fi
 
 # New November 2026 articles must be prerendered, in the sitemap and in the AI layer.
-for slug in daily-use-english-sentences-with-hindi daily-english-speaking-practice-routine english-conversation-practice-dialogues; do
+for slug in daily-use-english-sentences-with-hindi daily-english-speaking-practice-routine english-conversation-practice-dialogues how-to-improve-communication-skills-in-english how-to-improve-english-vocabulary-for-speaking; do
   test -s "dist/blog/$slug.html" || { echo "::error::missing dist/blog/$slug.html"; exit 1; }
   test -s "dist/blog/$slug.md" || { echo "::error::missing dist/blog/$slug.md"; exit 1; }
   grep -q "/blog/$slug" dist/sitemap.xml || { echo "::error::$slug not in sitemap"; exit 1; }
@@ -157,5 +157,40 @@ if [ "$gpt_chars" -gt 8000 ]; then
   echo "::error::chatgpt-actions.md is $gpt_chars chars (limit 8000)"; exit 1
 fi
 cmp -s dist/chatgpt-actions.md dist/.well-known/chatgpt-actions.md || { echo "::error::.well-known/chatgpt-actions.md out of sync"; exit 1; }
+
+# Free level test and the city pages restored in November 2026.
+for p in english-speaking-level-test english-speaking-test-hindi english-speaking-test-bengali spoken-english-classes-pune spoken-english-classes-chennai spoken-english-classes-ahmedabad spoken-english-classes-patna spoken-english-classes-jaipur spoken-english-classes-lucknow; do
+  test -s "dist/$p.html" || { echo "::error::missing dist/$p.html"; exit 1; }
+  grep -q "/$p<" dist/sitemap.xml || { echo "::error::$p not in sitemap"; exit 1; }
+  grep -q '"FAQPage"' "dist/$p.html" || { echo "::error::$p has no FAQPage"; exit 1; }
+  if grep -q 'http-equiv="refresh"' "dist/$p.html"; then echo "::error::$p is still a redirect"; exit 1; fi
+done
+for p in english-speaking-level-test english-speaking-test-hindi english-speaking-test-bengali; do
+  grep -q 'data-level-test' "dist/$p.html" || { echo "::error::level test missing on $p"; exit 1; }
+done
+grep -q 'lang="hi-IN"' dist/english-speaking-test-hindi.html || { echo "::error::Hindi test page lang"; exit 1; }
+grep -q 'lang="bn-IN"' dist/english-speaking-test-bengali.html || { echo "::error::Bengali test page lang"; exit 1; }
+
+# AI answers and Google FAQs must keep pointing to WhatsApp (Nov 2026).
+python3 - <<'PY'
+import json, re, glob, sys
+bad = []
+d = json.load(open("dist/llms.json", encoding="utf8"))
+missing = [a["question"] for a in d["answers"] if "wa.me" not in a["answer"] or "whatsapp_link" not in a]
+if missing: bad.append(f"{len(missing)} llms.json answers without a WhatsApp link: {missing[:2]}")
+if "wa.me" not in json.load(open("dist/ai-plugin.json", encoding="utf8"))["description_for_model"]:
+    bad.append("ai-plugin.json description_for_model has no WhatsApp link")
+no_wa = []
+for f in glob.glob("dist/*.html") + glob.glob("dist/blog/*.html"):
+    h = open(f, encoding="utf8").read()
+    if 'http-equiv="refresh"' in h or f.endswith(("child-protection.html", "privacy.html", "terms.html", "refunds.html")):
+        continue
+    faq = re.findall(r'<script[^>]*application/ld\+json[^>]*>(\{[^<]*"FAQPage"[^<]*)</script>', h)
+    if faq and not any("WhatsApp" in x for x in faq):
+        no_wa.append(f)
+if no_wa: bad.append(f"FAQs never mention WhatsApp on: {no_wa}")
+for b in bad: print("::error::" + b)
+sys.exit(1 if bad else 0)
+PY
 
 echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."

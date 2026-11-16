@@ -75,6 +75,12 @@ CITY_PAGE = {
     "Delhi": "/spoken-english-classes-delhi",
     "Bengaluru": "/spoken-english-classes-bengaluru",
     "Hyderabad": "/spoken-english-classes-hyderabad",
+    "Pune": "/spoken-english-classes-pune",
+    "Chennai": "/spoken-english-classes-chennai",
+    "Ahmedabad": "/spoken-english-classes-ahmedabad",
+    "Patna": "/spoken-english-classes-patna",
+    "Jaipur": "/spoken-english-classes-jaipur",
+    "Lucknow": "/spoken-english-classes-lucknow",
 }
 
 for st in STATES:
@@ -158,6 +164,24 @@ NATIONAL = [
     ("english conversation for hr phone screen", "/blog/english-conversation-practice-dialogues", "hr", None),
     ("how to speak english fluently", "/how-to-speak-english-fluently", "fluent", "₹1,199"),
     ("can i learn english in 30 days", "/how-to-speak-english-fluently", "30 days", None),
+    ("english speaking test online free", "/english-speaking-level-test", "level", "₹1,199"),
+    ("check my english speaking level", "/english-speaking-level-test", "a1", None),
+    ("english speaking test in hindi", "/english-speaking-test-hindi", "लेवल", "₹1,199"),
+    ("english bolne ka level test", "/english-speaking-test-hindi", "सवाल", None),
+    ("english speaking test in bengali", "/english-speaking-test-bengali", "লেভেল", "₹1,199"),
+    ("ইংরেজি বলার লেভেল টেস্ট", "/english-speaking-test-bengali", "প্রশ্ন", None),
+    ("english spoken classes in pune", "/spoken-english-classes-pune", "hinjewadi", "₹1,199"),
+    ("marathi medium spoken english pune", "/spoken-english-classes-pune", "marathi", None),
+    ("english spoken classes in chennai", "/spoken-english-classes-chennai", "omr", "₹1,199"),
+    ("spoken english classes in chennai tambaram", "/spoken-english-classes-chennai", "tambaram", None),
+    ("top 10 spoken english classes in ahmedabad with fees", "/spoken-english-classes-ahmedabad", "gift city", "₹1,199"),
+    ("spoken english classes in patna", "/spoken-english-classes-patna", "boring road", "₹1,199"),
+    ("best english spoken classes in jaipur", "/spoken-english-classes-jaipur", "sitapura", "₹1,199"),
+    ("english spoken classes in lucknow", "/spoken-english-classes-lucknow", "gomti nagar", "₹1,199"),
+    ("how to improve communication skills in english", "/blog/how-to-improve-communication-skills-in-english", "communication", "₹1,599"),
+    ("how to stop saying umm while speaking english", "/blog/how-to-improve-communication-skills-in-english", "filler", None),
+    ("how to improve english vocabulary for speaking", "/blog/how-to-improve-english-vocabulary-for-speaking", "chunk", "₹1,199"),
+    ("5-5-5 vocabulary method", "/blog/how-to-improve-english-vocabulary-for-speaking", "5-5-5", None),
 ]
 for t, path, ent, fee in NATIONAL:
     q(t, path, ent, "national", fee)

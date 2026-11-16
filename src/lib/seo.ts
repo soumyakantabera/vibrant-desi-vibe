@@ -31,6 +31,7 @@ import { FAIR_BILLING } from "@/lib/fair-fees";
 import { LEVELS, levelForCourse } from "@/lib/bolo-levels";
 import { intlUnit } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
+import { joinKindForPage, withJoinFaq } from "@/lib/join-faq";
 import { REGIONAL_PAGES } from "@/lib/regional-seo";
 import {
   CONSULTATION,
@@ -765,7 +766,7 @@ export const EVERY_PAGE_KEYWORDS = uniqueKeywords(
  * Page metadata
  * ------------------------------------------------------------------------ */
 
-export const PAGES: Record<string, PageSeo> = {
+const RAW_PAGES: Record<string, PageSeo> = {
   "/": {
     path: "/",
     title: "Online English Classes India: Live + Daily Practice, ₹1,199",
@@ -1811,6 +1812,18 @@ export const PAGES: Record<string, PageSeo> = {
   ...EXTRA_PAGES,
   ...REGIONAL_PAGES,
 };
+
+/**
+ * Every page, with a "how do I join?" FAQ answered with WhatsApp added where
+ * the page's own FAQs never say how to get in touch (see src/lib/join-faq.ts).
+ * Hindi and Bengali pages keep their own-language FAQs as written.
+ */
+export const PAGES: Record<string, PageSeo> = Object.fromEntries(
+  Object.entries(RAW_PAGES).map(([path, page]) => {
+    const kind = page.lang && page.lang !== "en-IN" ? null : joinKindForPage(path, page.shortTitle);
+    return [path, kind ? { ...page, faqs: withJoinFaq(page.faqs, kind) } : page];
+  }),
+);
 
 /* --------------------------------------------------------------------------
  * Course pages — SEO copy that the course data files do not carry

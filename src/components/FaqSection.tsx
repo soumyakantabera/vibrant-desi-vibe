@@ -3,6 +3,7 @@ import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import type { Faq } from "@/lib/seo";
 import { faqAnchor } from "@/lib/anchors";
+import { BoloCard, BoloSays } from "@/components/mascots/BoloCard";
 
 /**
  * Renders the FAQ list that the page's FAQPage JSON-LD describes.
@@ -22,6 +23,7 @@ export function FaqSection({
   subtitle = "Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day.",
   waMessage = "Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link.",
   className = "section bg-cream",
+  bolo = false,
 }: {
   faqs: Faq[];
   eyebrow?: string;
@@ -29,6 +31,8 @@ export function FaqSection({
   subtitle?: ReactNode;
   waMessage?: string;
   className?: string;
+  /** Bolo-theme WhatsApp call-out under the questions (guides, cities, blogs). */
+  bolo?: boolean;
 }) {
   if (!faqs.length) return null;
 
@@ -59,11 +63,28 @@ export function FaqSection({
             </details>
           ))}
         </div>
-        <div className="mt-8 text-center" data-cta-location="faq">
-          <WaButton message={waMessage} variant="wa" size="lg">
-            Chat on WhatsApp
-          </WaButton>
-        </div>
+        {bolo ? (
+          <BoloCard className="mx-auto mt-10 max-w-2xl" data-cta-location="faq">
+            <BoloSays pose="listen" size={76}>
+              <p className="font-display font-extrabold leading-snug text-ink">
+                Still have a question?
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-ink/80">
+                Ask on WhatsApp — a real person replies, 10am–midnight IST every day. Free, and no
+                payment to ask.
+              </p>
+            </BoloSays>
+            <WaButton message={waMessage} variant="wa" size="lg" className="btn-chunky mt-3 w-full">
+              Chat on WhatsApp
+            </WaButton>
+          </BoloCard>
+        ) : (
+          <div className="mt-8 text-center" data-cta-location="faq">
+            <WaButton message={waMessage} variant="wa" size="lg">
+              Chat on WhatsApp
+            </WaButton>
+          </div>
+        )}
       </div>
     </section>
   );

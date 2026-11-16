@@ -242,6 +242,293 @@ export const CITIES: CityRecord[] = [
       },
     ],
   },
+  {
+    slug: "pune",
+    path: "/spoken-english-classes-pune",
+    name: "Pune",
+    state: "Maharashtra",
+    geoRegion: "IN-MH",
+    lat: "18.5204",
+    lng: "73.8567",
+    neighborhoods:
+      "Hinjewadi, Kharadi, Wakad, Baner, Kothrud, Karve Nagar, Hadapsar, Pimpri-Chinchwad",
+    commute: "45–75 minutes through Hinjewadi or Kharadi traffic, each way",
+    industries: "IT services, automotive and manufacturing, BFSI back offices and colleges",
+    medium: "Marathi, Hindi or English-medium schooling",
+    localRoom: "Kothrud, Deccan or FC Road classrooms of 25–40",
+    title: "Spoken English Classes Pune | Live, ₹1,199/mo",
+    description:
+      "Spoken English classes for Pune: live online, about 6 per batch, ₹1,199/month incl. taxes. Marathi-medium option, IT and campus interview English.",
+    local: [
+      { t: "h2", text: "English at work and college in Pune" },
+      {
+        t: "p",
+        text: "Pune runs on three kinds of English. Hinjewadi and Kharadi IT teams need standups and client calls. Chakan, Talegaon and Pimpri-Chinchwad plants need supervisors who can report a delay or a quality issue to a visiting auditor. And Pune’s colleges send thousands of students into campus placements every year, where the HR round is the first time many of them speak English under pressure.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**IT services:** status updates, client calls with US or European teams, and the appraisal conversation. See [English for IT professionals](/english-for-it-professionals-india).",
+          "**Automotive and manufacturing:** explain a delay, a defect or a shift handover clearly to a manager or an auditor — short sentences, the right numbers.",
+          "**Students and freshers:** the 60-second introduction and the HR round. See [campus placement English](/english-for-campus-placements-india).",
+        ],
+      },
+      { t: "h2", text: "Marathi medium? There is a course for that" },
+      {
+        t: "p",
+        text: "Many Pune learners studied in Marathi medium and think in Marathi. [Basic Spoken English — Marathi to English](/course-spoken-english-marathi) is the same course and fee (₹1,199/month), taught by a Marathi-speaking teacher who explains a stuck concept in Marathi and moves you straight back to English. Hindi-medium learners can take the [Hindi to English](/course-spoken-english-hindi) version.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "Are there spoken English classes in Pune with fees listed?",
+        a: "Yes. Learn With Smile publishes its fees: Basic Spoken English ₹1,199/month (6 months), Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month — all inclusive of taxes, about 6 learners, live online. Pune learners pay the same as everyone else in India.",
+      },
+      {
+        q: "Is there a Marathi-medium spoken English course for Pune learners?",
+        a: "Yes. Basic Spoken English — Marathi to English has a Marathi-speaking teacher who explains hard ideas in Marathi while all speaking practice stays in English. Same 6 months and ₹1,199/month.",
+      },
+    ],
+  },
+  {
+    slug: "chennai",
+    path: "/spoken-english-classes-chennai",
+    name: "Chennai",
+    state: "Tamil Nadu",
+    geoRegion: "IN-TN",
+    lat: "13.0827",
+    lng: "80.2707",
+    neighborhoods: "T Nagar, Tambaram, Velachery, Anna Nagar, OMR, Porur, Adyar, Guindy",
+    commute: "an hour or more on OMR or GST Road, each way",
+    industries: "IT and GCCs on OMR, automobile plants, healthcare and BPO",
+    medium: "Tamil or English-medium schooling",
+    localRoom: "T Nagar or Tambaram classrooms of 25–40",
+    title: "Spoken English Classes Chennai | Live, ₹1,199",
+    description:
+      "Spoken English classes for Chennai learners: live online, about 6 per batch, ₹1,199/month incl. taxes. OMR IT, BPO and interview English. No commute.",
+    local: [
+      { t: "h2", text: "English at work in Chennai" },
+      {
+        t: "p",
+        text: "Chennai learners often read and write English well — Tamil Nadu’s colleges see to that — and still go quiet when they have to speak it fast. The gap shows up on OMR client calls, in BPO and healthcare process interviews, and in the automobile corridor around Sriperumbudur and Oragadam when a supervisor has to brief a visiting team.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**OMR IT and GCCs:** standups, demos and the one-on-one with a manager abroad.",
+          "**BPO, KPO and healthcare process roles:** call openings, empathy phrases and closing a call cleanly. See [English for BPO jobs](/english-for-bpo-jobs-india).",
+          "**Freshers from engineering and arts colleges:** the HR round and group discussion, where speaking — not grammar — decides the result.",
+        ],
+      },
+      { t: "h2", text: "A straight answer on Tamil" },
+      {
+        t: "p",
+        text: "Our teachers do not use Tamil as a bridge language. For most Chennai learners that is not a problem: if you can read English and follow a class, [Interactive Speaking](/course-interactive-speaking) or [Intermediate Spoken English](/course-intermediate-english) works in English throughout. If you are a complete beginner who needs explanations in Tamil, a local Tamil-medium class may suit you better at the start — we will tell you honestly in the free consultation.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "Do you explain in Tamil?",
+        a: "No. Explanations are in simple English, with Hindi or Bengali as the only bridge languages. Most Chennai learners already read English and need speaking practice, which works fine in English. Complete beginners who need Tamil explanations should say so in the free consultation; we will advise honestly.",
+      },
+      {
+        q: "Which course suits a Chennai IT employee who freezes on calls?",
+        a: "Interactive Speaking: 3 months, ₹1,599/month inclusive of taxes, about 6 learners, live online. It drills meetings, client calls and presentations until speaking under pressure feels routine.",
+      },
+    ],
+  },
+  {
+    slug: "ahmedabad",
+    path: "/spoken-english-classes-ahmedabad",
+    name: "Ahmedabad",
+    state: "Gujarat",
+    geoRegion: "IN-GJ",
+    lat: "23.0225",
+    lng: "72.5714",
+    neighborhoods:
+      "Navrangpura, Satellite, Bopal, Maninagar, Vastrapur, Chandkheda, Gandhinagar and GIFT City",
+    commute: "40–60 minutes across the SG Highway or the old city, each way",
+    industries: "family businesses, textiles, pharma, diamonds and trading, and GIFT City finance",
+    medium: "Gujarati, Hindi or English-medium schooling",
+    localRoom: "Navrangpura or Satellite classrooms of 25–40",
+    title: "Spoken English Classes Ahmedabad | Live ₹1,199",
+    description:
+      "Spoken English classes for Ahmedabad and Gandhinagar: live online, about 6 per batch, ₹1,199/month incl. taxes. Business, export and interview English.",
+    local: [
+      { t: "h2", text: "English for Ahmedabad business" },
+      {
+        t: "p",
+        text: "In Ahmedabad, English is usually a business tool before it is a job requirement. A second-generation owner wants to handle an export buyer on a video call without a relative translating. A pharma sales executive presents to a doctor. A GIFT City analyst sits in calls with Singapore and London. Many learners are fluent in Gujarati and Hindi deal-making and simply need the same confidence in English.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Export and trading:** price, quantity, delivery dates and a polite no to a discount — on a call, not just on email.",
+          "**Pharma and healthcare sales:** a two-minute product explanation that sounds natural, not memorised.",
+          "**GIFT City and finance roles:** meetings with overseas teams. See [English for client calls](/english-for-client-calls-india).",
+        ],
+      },
+      { t: "h2", text: "Gujarati or Hindi medium" },
+      {
+        t: "p",
+        text: "Gujarati is not used as a bridge language. Most Ahmedabad learners are comfortable in Hindi, and the [Hindi to English course](/course-spoken-english-hindi) explains stuck concepts in Hindi before moving you back to English — same ₹1,199/month.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "I run a family business in Ahmedabad. Which course helps with buyer calls?",
+        a: "If basic conversation is fine but calls with buyers feel stiff, Interactive Speaking (3 months, ₹1,599/month) practises calls, negotiation phrases and presentations. If everyday sentences are still hard, start with Basic Spoken English (₹1,199/month). Both live, about 6 learners, inclusive of taxes.",
+      },
+      {
+        q: "Can the teacher explain in Gujarati?",
+        a: "No — Hindi or Bengali are the bridge languages. Most Ahmedabad learners take the Hindi to English version without difficulty. If you are comfortable only in Gujarati, tell us in the free consultation and we will advise honestly.",
+      },
+    ],
+  },
+  {
+    slug: "patna",
+    path: "/spoken-english-classes-patna",
+    name: "Patna",
+    state: "Bihar",
+    geoRegion: "IN-BR",
+    lat: "25.5941",
+    lng: "85.1376",
+    neighborhoods: "Boring Road, Kankarbagh, Rajendra Nagar, Bailey Road, Ashok Rajpath, Danapur",
+    commute: "30–60 minutes through Boring Road or Ashok Rajpath traffic",
+    industries:
+      "government job aspirants, banking, teaching, healthcare and students moving to metros",
+    medium: "Hindi-medium or English-medium schooling",
+    localRoom: "Boring Road or Ashok Rajpath coaching rooms of 30–60",
+    title: "Spoken English Classes Patna | Live Online ₹1,199",
+    description:
+      "Spoken English classes for Patna, taught through Hindi: live online, about 6 per batch, ₹1,199/month incl. taxes. Interview and job English. No coaching rush.",
+    local: [
+      { t: "h2", text: "Why Patna learners want spoken English" },
+      {
+        t: "p",
+        text: "Patna is a city of preparation. Many learners have spent years on competitive exams and know grammar rules better than most graduates elsewhere — and still cannot answer “Tell me about yourself” in English in an interview. Others are about to move to Delhi, Bengaluru or Pune for work and know that English will be the first test in the new city.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Government and bank interviews:** the personal interview round, where the board hears you speak. See [English for bank PO interviews](/english-for-bank-po-interview) and [government job interviews](/english-for-government-job-interview).",
+          "**Moving to a metro for work:** office small talk, calls and meetings in the first month.",
+          "**Teachers and healthcare staff:** explaining clearly to students, patients and parents.",
+        ],
+      },
+      { t: "h2", text: "Taught through Hindi" },
+      {
+        t: "p",
+        text: "Most Patna learners think in Hindi. [Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept stalls, then switches you back to English. Grammar you already know from exam preparation becomes sentences you can say — that is usually the fastest part of the journey.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "I know grammar from exam preparation but cannot speak. Where do I start?",
+        a: "Usually Intermediate Spoken English (4 months, ₹1,999/month) or Interactive Speaking (3 months, ₹1,599/month), because the rules exist and the speaking does not. If even simple sentences are hard to say aloud, start with Basic Spoken English — Hindi to English at ₹1,199/month. The free level test at /english-speaking-level-test suggests one.",
+      },
+      {
+        q: "Is an online class better than a Boring Road coaching centre?",
+        a: "For speaking, usually yes. Big coaching rooms are built for lectures; a batch of about 6 gives each learner roughly 8–10 minutes of speaking per hour. Coaching centres do better at exam syllabus and peer energy. We bill one month at a time with no loans or EMIs.",
+      },
+    ],
+  },
+  {
+    slug: "jaipur",
+    path: "/spoken-english-classes-jaipur",
+    name: "Jaipur",
+    state: "Rajasthan",
+    geoRegion: "IN-RJ",
+    lat: "26.9124",
+    lng: "75.7873",
+    neighborhoods:
+      "Malviya Nagar, Mansarovar, Vaishali Nagar, C-Scheme, Raja Park, Jagatpura, Sitapura",
+    commute: "30–60 minutes through Tonk Road or Ajmer Road traffic",
+    industries:
+      "tourism and hospitality, gems and jewellery, IT in Sitapura and Mahindra SEZ, and students",
+    medium: "Hindi-medium or English-medium schooling",
+    localRoom: "Malviya Nagar or Raja Park classrooms of 25–40",
+    title: "Spoken English Classes Jaipur | Live, ₹1,199/mo",
+    description:
+      "Spoken English classes for Jaipur, taught through Hindi: live online, about 6 per batch, ₹1,199/month incl. taxes. Hospitality, IT and interview English.",
+    local: [
+      { t: "h2", text: "English at work in Jaipur" },
+      {
+        t: "p",
+        text: "Jaipur’s English is face to face. A hotel front desk checks in a foreign family, a guide explains Amber Fort, a jeweller on Johari Bazaar quotes a price to a visiting buyer, and an IT team in Sitapura or Mahindra World City joins a client call. In each case the person usually knows the words — what is missing is the confidence to keep talking when the other person replies.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Hospitality and tourism:** greetings, complaints, directions and saying no politely. Practise with [conversation dialogues](/blog/english-conversation-practice-dialogues).",
+          "**Gems, jewellery and handicraft exports:** price, quality and delivery on a call with a buyer.",
+          "**IT and students:** standups, client calls and the HR round. See [Interview Preparation](/course-interview-preparation).",
+        ],
+      },
+      { t: "h2", text: "Taught through Hindi" },
+      {
+        t: "p",
+        text: "Most Jaipur learners are comfortable in Hindi. [Basic Spoken English — Hindi to English](/course-spoken-english-hindi) explains stuck ideas in Hindi and keeps speaking practice in English, at the same ₹1,199/month.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "I work in a Jaipur hotel. Which English course fits?",
+        a: "If you can manage basic guest conversations but freeze on complaints or long questions, Interactive Speaking (3 months, ₹1,599/month) practises exactly those situations. If guest conversations are still hard, start with Basic Spoken English — Hindi to English (₹1,199/month). Both live online, about 6 learners, inclusive of taxes.",
+      },
+      {
+        q: "Do classes fit around hotel or shop shift timings?",
+        a: "Usually. There are afternoon, evening and night IST batches, and classes are recorded so a missed session during a busy season can be revised. Tell us your shift in the free consultation.",
+      },
+    ],
+  },
+  {
+    slug: "lucknow",
+    path: "/spoken-english-classes-lucknow",
+    name: "Lucknow",
+    state: "Uttar Pradesh",
+    geoRegion: "IN-UP",
+    lat: "26.8467",
+    lng: "80.9462",
+    neighborhoods: "Gomti Nagar, Hazratganj, Aliganj, Indira Nagar, Alambagh, Aminabad",
+    commute: "30–60 minutes across Gomti Nagar, Hazratganj or Alambagh",
+    industries: "government and secretariat jobs, banking, healthcare, teaching and students",
+    medium: "Hindi-medium or English-medium schooling",
+    localRoom: "Hazratganj or Aliganj classrooms of 25–40",
+    title: "Spoken English Classes Lucknow | Live, ₹1,199",
+    description:
+      "Spoken English classes for Lucknow, taught through Hindi: live online, about 6 per batch, ₹1,199/month incl. taxes. Interview, office and daily English.",
+    local: [
+      { t: "h2", text: "Why Lucknow learners want spoken English" },
+      {
+        t: "p",
+        text: "Lucknow learners are often polished speakers in Hindi and Urdu — tehzeeb is not the problem. The problem is that English feels like a performance rather than a conversation. It shows up in bank and government interviews, in private-sector jobs in Gomti Nagar, and for students preparing to move to Noida, Delhi or Bengaluru.",
+      },
+      {
+        t: "ul",
+        items: [
+          "**Interviews:** the personal interview, the HR round, and “Tell me about yourself”. See [tell me about yourself in 60 seconds](/blog/tell-me-about-yourself-in-60-seconds).",
+          "**Office English:** short updates, calls and polite disagreement in meetings.",
+          "**Daily conversation:** with colleagues, at hospitals and banks, and on the phone. Start with [daily use English sentences](/blog/daily-use-english-sentences-with-hindi).",
+        ],
+      },
+      { t: "h2", text: "Taught through Hindi" },
+      {
+        t: "p",
+        text: "[Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept is not landing and then moves you back to English — same course and fee, ₹1,199/month.",
+      },
+    ],
+    localFaqs: [
+      {
+        q: "Is there a Hindi-medium spoken English class for Lucknow learners?",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: 6 months, ₹1,199/month inclusive of taxes, about 6 learners per batch.",
+      },
+      {
+        q: "I have a bank interview coming up. Which course?",
+        a: "If you can already hold a conversation, Interview Preparation (2 months, ₹2,499/month) drills the introduction, situational questions and mock interviews. If conversation itself is hard, start with Basic Spoken English. Take the free level test at /english-speaking-level-test to see where you stand.",
+      },
+    ],
+  },
 ];
 
 /**
@@ -257,12 +544,8 @@ export const RETIRED_CITY_REDIRECT = "/best-online-spoken-english-classes-india"
  * Maharashtra page that names Pune, its localities and the Marathi medium.
  */
 export const RETIRED_CITY_TARGET: Partial<Record<(typeof RETIRED_CITY_PATHS)[number], string>> = {
-  "/spoken-english-classes-pune": "/spoken-english-classes-maharashtra",
   "/spoken-english-classes-nagpur": "/spoken-english-classes-maharashtra",
-  "/spoken-english-classes-patna": "/spoken-english-classes-bihar",
-  "/spoken-english-classes-ahmedabad": "/spoken-english-classes-gujarat",
   "/spoken-english-classes-surat": "/spoken-english-classes-gujarat",
-  "/spoken-english-classes-chennai": "/spoken-english-classes-tamil-nadu",
   "/spoken-english-classes-coimbatore": "/spoken-english-classes-tamil-nadu",
   "/spoken-english-classes-guwahati": "/spoken-english-classes-assam",
 };
@@ -290,25 +573,17 @@ export const EXTRA_STATE_CHIPS = ["Uttar Pradesh", "Rajasthan", "Madhya Pradesh"
 
 /** Cities without their own page link to the state page that names them. */
 export const CITY_STATE_PATHS: Record<string, string> = {
-  Pune: "/spoken-english-classes-maharashtra",
   Nagpur: "/spoken-english-classes-maharashtra",
-  Ahmedabad: "/spoken-english-classes-gujarat",
   Surat: "/spoken-english-classes-gujarat",
-  Patna: "/spoken-english-classes-bihar",
-  Chennai: "/spoken-english-classes-tamil-nadu",
   Coimbatore: "/spoken-english-classes-tamil-nadu",
   Guwahati: "/spoken-english-classes-assam",
 };
 export const RETIRED_CITY_PATHS = [
-  "/spoken-english-classes-pune",
-  "/spoken-english-classes-chennai",
-  "/spoken-english-classes-ahmedabad",
   "/spoken-english-classes-nagpur",
   "/spoken-english-classes-surat",
   "/spoken-english-classes-coimbatore",
   "/spoken-english-classes-kochi",
   "/spoken-english-classes-visakhapatnam",
-  "/spoken-english-classes-patna",
   "/spoken-english-classes-guwahati",
 ] as const;
 
@@ -318,6 +593,12 @@ export const CITY_PATHS: Record<string, string> = {
   Mumbai: "/spoken-english-classes-mumbai",
   Bengaluru: "/spoken-english-classes-bengaluru",
   Hyderabad: "/spoken-english-classes-hyderabad",
+  Pune: "/spoken-english-classes-pune",
+  Chennai: "/spoken-english-classes-chennai",
+  Ahmedabad: "/spoken-english-classes-ahmedabad",
+  Patna: "/spoken-english-classes-patna",
+  Jaipur: "/spoken-english-classes-jaipur",
+  Lucknow: "/spoken-english-classes-lucknow",
 };
 
 /** Footer + coverage chips. Kolkata is a custom page, not in CITIES. */
@@ -377,6 +658,12 @@ const STATE_PAGE: Record<
   delhi: { name: "Delhi NCR", path: "/spoken-english-classes-delhi-ncr", medium: HINDI },
   bengaluru: { name: "Karnataka", path: "/spoken-english-classes-karnataka" },
   hyderabad: { name: "Telangana", path: "/spoken-english-classes-telangana" },
+  pune: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra", medium: MARATHI },
+  chennai: { name: "Tamil Nadu", path: "/spoken-english-classes-tamil-nadu" },
+  ahmedabad: { name: "Gujarat", path: "/spoken-english-classes-gujarat", medium: HINDI },
+  patna: { name: "Bihar", path: "/spoken-english-classes-bihar", medium: HINDI },
+  jaipur: { name: "Rajasthan", path: "/spoken-english-classes-rajasthan", medium: HINDI },
+  lucknow: { name: "Uttar Pradesh", path: "/spoken-english-classes-uttar-pradesh", medium: HINDI },
 };
 
 export function cityBody(city: CityRecord): ArticleBody {

@@ -231,6 +231,14 @@ export const GUIDE_CARDS: GuideCard[] = [
     group: "choose",
   },
   {
+    to: "/english-speaking-level-test",
+    title: "Free English speaking level test",
+    sub: "4 questions, 1 minute. Your level and the one course that fits — in English, Hindi or Bengali.",
+    icon: "target",
+    color: "sunshine",
+    group: "choose",
+  },
+  {
     to: "/how-to-speak-english-fluently",
     title: "How to speak English fluently",
     sub: "Fluency is speaking minutes, not 30-day ads. A 6-month map from zero.",

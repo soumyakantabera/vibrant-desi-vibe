@@ -35,3 +35,25 @@ YouTube videos dominate the SERPs for "daily english speaking practice" and "eng
 3. **Justdial and UrbanPro listings**: both are cited in AI Overviews for this category. Claim or refresh the listings with the ₹1,199/month fee, "online, about 6 per batch" and the site URL.
 4. **Quora**: answer "how to practise English speaking daily" and "daily use English sentences" questions with a real answer and one link to the matching post.
 5. **Instagram / Facebook**: post the tables (one situation per post) as carousels linking to the post.
+
+## Round 2 — 16 November 2026
+
+### City demand (OpenRush, India, monthly; two phrasings combined where both exist)
+
+| City | Volume | Page |
+| --- | ---: | --- |
+| Pune | ~4,800 | /spoken-english-classes-pune (restored) |
+| Chennai | ~2,500 | /spoken-english-classes-chennai (restored) |
+| Jaipur | ~1,500 | /spoken-english-classes-jaipur (new) |
+| Patna | ~1,400 | /spoken-english-classes-patna (restored) |
+| Ahmedabad | ~1,000+ | /spoken-english-classes-ahmedabad (restored) |
+| Lucknow | ~520 | /spoken-english-classes-lucknow (new) |
+| Kerala, Odisha, Punjab, Andhra Pradesh (state-level queries) | 0–140 | none — not worth a page |
+
+Pune, Chennai, Ahmedabad and Patna were retired in October 2026 as template pages. They are back with content written for each city: local industries, localities, the bridge language actually available (no Tamil or Gujarati bridge — said plainly) and city-specific FAQs.
+
+### Communication and vocabulary demand
+
+- "how to improve communication skills" ~9,900/mo; "… in english" variants ~8,100/mo → /blog/how-to-improve-communication-skills-in-english
+- "how to improve english vocabulary" variants ~880–1,000/mo each → /blog/how-to-improve-english-vocabulary-for-speaking
+- "english speaking test" variants ~1,000/mo each → /english-speaking-level-test (free self-check; the result opens WhatsApp with score, level and goal prefilled)

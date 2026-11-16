@@ -3,10 +3,11 @@ import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
 import { WhyDifferent } from "@/components/WhyDifferent";
-import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
+import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
+import { LevelTestPromo } from "@/components/LevelTestPromo";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
@@ -45,6 +46,9 @@ export function GuidePage({
   lastUpdated,
   lang,
   packageBand = true,
+  beforeBody,
+  heroCta,
+  levelTestPromo = true,
   children,
 }: {
   eyebrow: string;
@@ -67,6 +71,12 @@ export function GuidePage({
   lang?: string;
   /** Off on pages that already show the full pricing grid. */
   packageBand?: boolean;
+  /** Interactive block shown first, above the short answer (the level test, city facts). */
+  beforeBody?: ReactNode;
+  /** A jump button in the hero, e.g. straight down to the level test. */
+  heroCta?: { href: string; label: string };
+  /** The "take the free level test" card after the article. Off on the test pages. */
+  levelTestPromo?: boolean;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
@@ -100,6 +110,11 @@ export function GuidePage({
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl text-cream leading-[1.1]">{h1}</h1>
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
+          {heroCta && (
+            <a href={heroCta.href} className="btn btn-sun btn-lg mt-6 inline-flex">
+              {heroCta.label} <Icon name="arrow-right" size={18} className="rotate-90" />
+            </a>
+          )}
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
               Last updated <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>. Fees
@@ -111,17 +126,8 @@ export function GuidePage({
 
       <article className="section" lang={lang}>
         <div className="container-x max-w-3xl">
-          {shortAnswer && (
-            <div
-              id="short-answer"
-              className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5"
-            >
-              <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
-                Short answer
-              </p>
-              <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
-            </div>
-          )}
+          {beforeBody}
+          {shortAnswer && <ShortAnswer id="short-answer" text={shortAnswer} />}
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
           {/* The dated market strip is the same on every guide, so it follows the
@@ -131,6 +137,12 @@ export function GuidePage({
           </div>
         </div>
       </article>
+
+      {levelTestPromo && (
+        <div className="pb-10 md:pb-14" lang="en-IN">
+          <LevelTestPromo />
+        </div>
+      )}
 
       <div lang="en-IN">
         <WhyDifferent compact visuals={false} />
@@ -147,6 +159,7 @@ export function GuidePage({
           title={faqTitle}
           subtitle="Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day."
           waMessage={waMessage}
+          bolo
         />
       </div>
     </Layout>

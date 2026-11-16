@@ -3,6 +3,7 @@ import { SITE_URL, abs, blogPath, pageHead } from "@/lib/seo";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { tagStyle } from "@/lib/tones";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { getPostsSorted } from "@/lib/blog";
@@ -100,7 +101,10 @@ function Page() {
           <SectionHeader eyebrow="Latest Posts" title="Read · Apply · Discuss on WhatsApp" />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {posts.map((p) => (
-              <article key={p.slug} className="card-soft flex flex-col">
+              <article
+                key={p.slug}
+                className={`card-soft flex flex-col border-t-4 ${tagStyle(p.tag).tone.top}`}
+              >
                 {/* The whole card links to the article. This is the bug the blog
                     had: the titles were unlinked <h3> elements, so none of the
                     five posts had a URL a reader or a crawler could reach. */}
@@ -118,8 +122,10 @@ function Page() {
                     position="center 22%"
                     sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
                   />
-                  <span className="pill bg-brand-soft text-brand-deep border-brand/20 mb-2 w-fit">
-                    {p.tag}
+                  <span
+                    className={`pill inline-flex w-fit items-center gap-1.5 ${tagStyle(p.tag).tone.soft} ${tagStyle(p.tag).tone.text} ${tagStyle(p.tag).tone.border} mb-2`}
+                  >
+                    <Icon name={tagStyle(p.tag).icon} size={13} /> {p.tag}
                   </span>
                   <h3 className="font-display font-bold text-ink text-lg group-hover:text-brand transition">
                     {p.title}
