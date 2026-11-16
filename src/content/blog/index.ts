@@ -24,6 +24,8 @@ import { body as chooseClass } from "./how-to-choose-spoken-english-class-india"
 import { body as dailySentences } from "./daily-use-english-sentences-with-hindi";
 import { body as dailyPractice } from "./daily-english-speaking-practice-routine";
 import { body as conversationDialogues } from "./english-conversation-practice-dialogues";
+import { body as communicationSkills } from "./how-to-improve-communication-skills-in-english";
+import { body as vocabulary } from "./how-to-improve-english-vocabulary-for-speaking";
 
 export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "5-speaking-habits-that-killed-my-hesitation": speakingHabits,
@@ -39,4 +41,6 @@ export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "daily-use-english-sentences-with-hindi": dailySentences,
   "daily-english-speaking-practice-routine": dailyPractice,
   "english-conversation-practice-dialogues": conversationDialogues,
+  "how-to-improve-communication-skills-in-english": communicationSkills,
+  "how-to-improve-english-vocabulary-for-speaking": vocabulary,
 };

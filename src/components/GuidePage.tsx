@@ -45,6 +45,7 @@ export function GuidePage({
   lastUpdated,
   lang,
   packageBand = true,
+  beforeBody,
   children,
 }: {
   eyebrow: string;
@@ -67,6 +68,8 @@ export function GuidePage({
   lang?: string;
   /** Off on pages that already show the full pricing grid. */
   packageBand?: boolean;
+  /** Interactive block shown between the short answer and the article (the level test). */
+  beforeBody?: ReactNode;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
@@ -122,6 +125,7 @@ export function GuidePage({
               <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
             </div>
           )}
+          {beforeBody}
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
           {/* The dated market strip is the same on every guide, so it follows the

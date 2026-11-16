@@ -1,4 +1,5 @@
 import type { PageSeo } from "@/lib/seo";
+import { LEVEL_TEST_PATH } from "@/lib/level-test";
 import { RATING } from "@/lib/rating";
 import { CITIES, cityFaqs } from "@/lib/cities";
 import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
@@ -8,6 +9,54 @@ const UPDATED = "2026-09-22";
 const CITY_UPDATED = "2026-10-30";
 
 const NEW_GUIDES: Record<string, PageSeo> = {
+  [LEVEL_TEST_PATH]: {
+    path: LEVEL_TEST_PATH,
+    title: "Free English Speaking Level Test | 2 Minutes",
+    description:
+      "Free 2-minute English speaking level test: 10 can-do questions, your level (A1–B2) and the course that fits, from ₹1,199/mo. Send your result on WhatsApp.",
+    shortTitle: "English speaking level test",
+    keywords: [
+      "english speaking test",
+      "english speaking level test",
+      "english speaking test online free",
+      "check my english speaking level",
+      "english speaking assessment test",
+      "english level test free india",
+      "which spoken english course should i join",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.85,
+    changefreq: "monthly",
+    dateModified: "2026-11-16",
+    breadcrumb: [
+      { name: "Guides", path: "/guides" },
+      { name: "Speaking level test", path: LEVEL_TEST_PATH },
+    ],
+    summary:
+      "Free English speaking level self-check: 10 can-do questions scored 0–2 (out of 20) plus a goal. 0–12 → Basic Spoken English ₹1,199/mo; 13–16 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 17–20 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). Result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate.",
+    faqs: [
+      {
+        q: "How can I test my English speaking level online for free?",
+        a: "Answer ten can-do questions honestly — from introducing yourself to handling an unexpected interview question — scoring 2, 1 or 0 for each. 0–6 is starting out, 7–12 building basics, 13–16 connecting sentences, 17–20 ready to perform. Learn With Smile’s free 2-minute test at /english-speaking-level-test does the scoring and suggests one course; a teacher confirms it in a free consultation.",
+      },
+      {
+        q: "Is this English speaking test a certificate?",
+        a: "No. It is a self-check that points you to the right class. If a university, visa or employer asks for a certified score, sit an exam such as IELTS with the official test board. Most Indian job interviews judge how you speak in the room, not a certificate.",
+      },
+      {
+        q: "What English speaking level do I need for a job in India?",
+        a: "For most office and customer-facing roles, around B1 to B2: you can explain your work, answer follow-up questions and speak in a meeting without freezing. On this test that is roughly 13–20. Below that, start with Basic Spoken English; at 17+ with an interview coming, Interview Preparation.",
+      },
+      {
+        q: "What do A1, A2, B1 and B2 mean?",
+        a: "They are levels on the CEFR, the European scale used worldwide. A1: basic phrases. A2: simple everyday sentences. B1: can talk about familiar topics and give reasons. B2: can speak fluently enough with strangers, at work and in interviews. C1 and C2 are advanced and near-native.",
+      },
+      {
+        q: "What should I do after the test?",
+        a: "Tap “Send my result on WhatsApp”. The message carries your score, level and goal, so a teacher can confirm your level and suggest one room in a free group consultation — advice, not a class. Fees start at ₹1,199/month inclusive of taxes, billed one month at a time.",
+      },
+    ],
+  },
   [BEFORE_YOU_PAY_PATH]: {
     path: BEFORE_YOU_PAY_PATH,
     title: "Before You Pay for a Spoken English Course | 10 Checks",

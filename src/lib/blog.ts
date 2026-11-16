@@ -56,6 +56,106 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "how-to-improve-communication-skills-in-english",
+    title: "How to Improve Communication Skills in English: 12 Habits That Work",
+    seoTitle: "How to Improve Communication Skills in English",
+    description:
+      "12 habits to improve communication skills in English: lead with the point, cut fillers, listen, ask follow-ups, sound polite. Phrases and a 2-week plan.",
+    excerpt:
+      "Good English is not the same as good communication. Twelve habits — with phrases you can use today and a 2-week plan — for offices, interviews and daily life.",
+    tag: "Workplace English",
+    img: "presentation",
+    imgAlt: "Professional speaking confidently in a small team meeting",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-16",
+    dateModified: "2026-11-16",
+    readingTime: 5,
+    wordCount: 838,
+    relatedCourses: ["/course-interactive-speaking", "/course-spoken-english"],
+    keywords: [
+      "how to improve communication skills",
+      "how to improve communication skills in english",
+      "how to improve english and communication skills",
+      "communication skills tips",
+      "how to speak confidently in english at work",
+      "polite english phrases for office",
+    ],
+    shortAnswer:
+      "Lead with the point, use short sentences, slow down, pause instead of saying “umm”, listen for one key word, check understanding out loud, ask a follow-up question, soften requests, say no with an alternative, and practise real situations with feedback from a person.",
+    faqs: [
+      {
+        q: "How can I improve my communication skills in English?",
+        a: "Work on habits as well as language: say your main point first, keep sentences short, slow down slightly, replace fillers with pauses, check understanding out loud and ask one follow-up question in every conversation. Then rehearse the situations you actually face — status updates, calls, interviews — and get feedback from a person once a week.",
+      },
+      {
+        q: "Are communication skills and English skills the same?",
+        a: "No. English skills are grammar, vocabulary and pronunciation; communication skills are clarity, listening, tone and confidence. Someone with simple English can communicate very well, and someone with perfect grammar can still ramble. At work you are judged mostly on communication, so train both.",
+      },
+      {
+        q: "How do I stop saying “umm” and “basically” when I speak?",
+        a: "Record yourself speaking for one minute, count the fillers, and record again while deliberately pausing instead. Most people cut fillers in half within two weeks once they hear them. A one-second pause sounds more confident than any filler.",
+      },
+      {
+        q: "Is there a course to improve communication skills in English?",
+        a: "Learn With Smile’s Interactive Speaking (3 months, ₹1,599/month inclusive of taxes, approximately 6 learners, live online) practises meetings, calls, presentations and polite disagreement. If everyday English is still hard, Basic Spoken English (₹1,199/month) comes first.",
+      },
+    ],
+    howTo: {
+      name: "2-week plan to improve communication skills in English",
+      description: "Ten minutes a day on one communication habit at a time.",
+      totalTime: "P14D",
+      steps: [
+        "Days 1–3: answer three questions aloud with the answer in the first sentence.",
+        "Days 4–6: record a 1-minute talk, count fillers, and record again.",
+        "Days 7–9: ask one follow-up question in every conversation.",
+        "Days 10–12: rewrite three blunt messages using polite phrases.",
+        "Days 13–14: role-play one difficult call or meeting and ask for feedback.",
+      ],
+    },
+  },
+  {
+    slug: "how-to-improve-english-vocabulary-for-speaking",
+    title: "How to Improve English Vocabulary for Speaking (Not Just Exams)",
+    seoTitle: "How to Improve English Vocabulary for Speaking",
+    description:
+      "Improve your English vocabulary for speaking: learn chunks not single words, the 5-5-5 method, word families and better words for “very good”.",
+    excerpt:
+      "You already know more words than you use. Chunks, the 5-5-5 method, word families and swaps for overused words move them from reading into speaking.",
+    tag: "Spoken English",
+    img: "girlReading",
+    imgAlt: "Learner noting useful English phrases in a notebook",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-16",
+    dateModified: "2026-11-16",
+    readingTime: 4,
+    wordCount: 765,
+    relatedCourses: ["/course-spoken-english", "/course-intermediate-english"],
+    keywords: [
+      "how to improve english vocabulary",
+      "how to improve vocabulary for speaking english",
+      "how to improve english words vocabulary",
+      "english vocabulary for daily conversation",
+      "word families in english",
+      "learn english chunks phrases",
+    ],
+    shortAnswer:
+      "Learn chunks instead of single words, choose words from your own life, use the 5-5-5 method (5 words, 5 spoken sentences, use each within 5 days), learn word families together, replace overused words, and say every new word aloud the day you learn it.",
+    faqs: [
+      {
+        q: "How can I improve my English vocabulary for speaking?",
+        a: "Turn passive words into active ones: learn ready-made chunks (“sorry for the delay”, “as far as I know”), pick words from your own work and life, say a real sentence aloud with each new word, and use it in a conversation within five days. Five words a day used properly beats twenty words copied into a notebook.",
+      },
+      {
+        q: "How many words do I need to speak English fluently?",
+        a: "Everyday conversation runs on roughly 1,000–2,000 common words plus a few hundred chunks. Most adults who studied English at school already recognise these; the work is making them come out when speaking.",
+      },
+      {
+        q: "What is the 5-5-5 vocabulary method?",
+        a: "Pick 5 useful words a day, say 5 real sentences aloud using them, and use each one in a real conversation, message or voice note within 5 days. About 100 active words a month is enough to change how you sound in three months.",
+      },
+    ],
+  },
+  {
     slug: "daily-use-english-sentences-with-hindi",
     title: "Daily Use English Sentences with Hindi Meaning: 90+ Lines by Situation",
     seoTitle: "Daily Use English Sentences with Hindi Meaning",

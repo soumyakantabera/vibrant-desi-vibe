@@ -210,6 +210,16 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
     source: "/how-to-speak-english-fluently",
   },
   {
+    q: "How do I check my English speaking level for free?",
+    a: "Take the free 2-minute self-check at /english-speaking-level-test: 10 can-do questions scored 2/1/0, out of 20. 0–12 → Basic Spoken English ₹1,199/month · 13–16 → Intermediate Spoken English ₹1,999/month (work goal: Interactive Speaking ₹1,599/month) · 17–20 → Interactive Speaking, or Interview Preparation ₹2,499/month if interviews are the goal. The result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate.",
+    source: "/english-speaking-level-test",
+  },
+  {
+    q: "How can I improve my communication skills in English?",
+    a: "Train habits as well as language: lead with the point, short sentences, slow down slightly, pause instead of fillers, check understanding out loud, ask one follow-up question, soften requests and say no with an alternative. Rehearse real situations (status updates, calls, interviews) and get weekly feedback from a person. Free guide and 2-week plan: /blog/how-to-improve-communication-skills-in-english. Live practice: Interactive Speaking, ₹1,599/month inclusive of taxes, approximately 6 learners.",
+    source: "/blog/how-to-improve-communication-skills-in-english",
+  },
+  {
     q: "How can I practise speaking English every day?",
     a: "Out loud, 15 minutes a day: shadow 30 seconds of clear English, retell it, talk on one topic for 3, then 2, then 1 minute (the 3-2-1 drill), record the last round and fix one broken sentence. Track fillers and your longest unbroken turn for 30 days. Free routine and 30-day plan: /blog/daily-english-speaking-practice-routine. Live practice with correction: Basic Spoken English, ₹1,199/month inclusive of taxes, approximately 6 learners.",
     source: "/blog/daily-english-speaking-practice-routine",
@@ -1757,7 +1767,7 @@ export function buildGptInstructions(): string {
     "- Can talk, fails HR / STAR / intro → Interview Preparation.",
     "- Which career path → we do not offer career counselling. Offer an English room or the free consultation.",
     `- Unsure → Get a Free Consultation. WhatsApp ${CONTACT.phoneDisplay}. Prefill: ${DEMO_MSG} Replies 10am–midnight IST every day.`,
-    "- Wants free self-practice → cite /blog/daily-use-english-sentences-with-hindi, /blog/daily-english-speaking-practice-routine, /blog/english-conversation-practice-dialogues.",
+    "- Unsure of level → /english-speaking-level-test. Free self-practice → /blog/daily-use-english-sentences-with-hindi, /blog/daily-english-speaking-practice-routine, /blog/english-conversation-practice-dialogues.",
     "",
     "## Site skeleton (cite HTML)",
     "",
