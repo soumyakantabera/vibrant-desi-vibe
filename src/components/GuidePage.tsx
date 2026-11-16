@@ -159,6 +159,7 @@ export function GuidePage({
           title={faqTitle}
           subtitle="Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day."
           waMessage={waMessage}
+          bolo
         />
       </div>
     </Layout>

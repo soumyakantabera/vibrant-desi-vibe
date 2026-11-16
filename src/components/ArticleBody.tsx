@@ -9,6 +9,7 @@ import { Icon } from "@/components/Icon";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { headingIcon, tone } from "@/lib/tones";
+import { BoloCard, BoloSays } from "@/components/mascots/BoloCard";
 
 /**
  * Renders an article body (see src/content/blog/blocks.ts).
@@ -72,32 +73,23 @@ function bold(text: string, nextKey: () => number): ReactNode[] {
 
 export function WaStrip({ message }: { message: string }) {
   return (
-    <aside
-      className="mt-8 flex gap-4 rounded-2xl border border-sunshine/40 bg-amber-soft p-5 md:p-6"
-      data-cta-location="mid_article"
-    >
-      <span
-        aria-hidden="true"
-        className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-tile-saffron text-white sm:grid"
-      >
-        <Icon name="compass" size={22} />
-      </span>
-      <div>
-        <p className="font-display font-extrabold text-ink">{CONSULTATION.headline}</p>
-        <p className="mt-1 text-sm text-ink/80 leading-relaxed">{CONSULTATION.punch}</p>
+    <BoloCard as="aside" className="mt-8" data-cta-location="mid_article">
+      <BoloSays pose="talk" size={76}>
+        <p className="font-display font-extrabold leading-snug text-ink">{CONSULTATION.headline}</p>
+        <p className="mt-1 text-sm leading-relaxed text-ink/80">{CONSULTATION.punch}</p>
         <p className="mt-1 text-xs font-semibold text-brand-deep">
           <FeeText text={CONSULTATION.hook} />
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          <WaButton message={message} variant="sun" size="sm">
-            {DEMO_CTA}
-          </WaButton>
-          <WaButton message={message} variant="wa" size="sm">
-            {CHAT_CTA}
-          </WaButton>
-        </div>
+      </BoloSays>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <WaButton message={message} variant="sun" className="btn-chunky w-full">
+          {DEMO_CTA}
+        </WaButton>
+        <WaButton message={message} variant="wa" className="btn-chunky w-full">
+          {CHAT_CTA}
+        </WaButton>
       </div>
-    </aside>
+    </BoloCard>
   );
 }
 
@@ -317,62 +309,34 @@ function BlockView({ block, section }: { block: Block; section: number }) {
 
     case "cta":
       return (
-        <div
-          className="relative mt-10 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-deep via-brand to-teal p-6 text-cream shadow-lg md:p-8"
-          data-cta-location="blog"
-        >
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-sunshine/25"
-          />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-10 right-16 h-24 w-24 rounded-full bg-white/10"
-          />
-          <div className="relative flex items-start gap-4">
-            <span
-              aria-hidden="true"
-              className="hidden h-12 w-12 shrink-0 place-items-center rounded-2xl bg-sunshine text-ink shadow sm:grid"
+        <BoloCard className="mt-10" data-cta-location="blog">
+          <BoloSays pose="cheer" size={80}>
+            <p className="leading-relaxed text-ink">{inline(block.text)}</p>
+          </BoloSays>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            {block.course === "/free-consultation" ? (
+              <WaButton
+                message={DEMO_MSG}
+                variant="sun"
+                goal="free_consultation"
+                className="btn-chunky w-full"
+              >
+                {block.label}
+              </WaButton>
+            ) : (
+              <Link to={block.course} className="btn btn-sun btn-chunky w-full">
+                {block.label} <Icon name="arrow-right" size={16} />
+              </Link>
+            )}
+            <WaButton
+              message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+              variant="wa"
+              className="btn-chunky w-full"
             >
-              <Icon name="rocket" size={24} />
-            </span>
-            <div>
-              <ul className="mb-3 hidden flex-wrap gap-2 text-xs font-display font-bold sm:flex">
-                {[
-                  ["globe", "Live online"],
-                  ["users", "≈6 per batch"],
-                  ["teacher", "Same teacher"],
-                ].map(([icon, label]) => (
-                  <li
-                    key={label}
-                    className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1"
-                  >
-                    <Icon name={icon} size={13} /> {label}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-white/95 leading-relaxed">{inline(block.text)}</p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                {block.course === "/free-consultation" ? (
-                  <WaButton message={DEMO_MSG} variant="sun" size="sm" goal="free_consultation">
-                    {block.label}
-                  </WaButton>
-                ) : (
-                  <Link to={block.course} className="btn btn-sun btn-sm">
-                    {block.label} <Icon name="arrow-right" size={14} />
-                  </Link>
-                )}
-                <WaButton
-                  message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
-                  variant="wa"
-                  size="sm"
-                >
-                  Chat on WhatsApp
-                </WaButton>
-              </div>
-            </div>
+              Chat on WhatsApp
+            </WaButton>
           </div>
-        </div>
+        </BoloCard>
       );
   }
 }

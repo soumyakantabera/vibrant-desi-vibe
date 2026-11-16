@@ -1016,6 +1016,30 @@ button.btn.btn-wa svg.lws-icon {
   color: #053b1e !important;
 }
 
+/* Chunky 3D press — the Bolo theme's buttons (Nov 2026). A solid shadow
+   under the button reads as a key; pressing pushes it down. No hover lift. */
+a.btn.btn-chunky,
+button.btn.btn-chunky {
+  border-radius: 1rem;
+}
+a.btn.btn-chunky.btn-wa,
+button.btn.btn-chunky.btn-wa {
+  box-shadow: 0 5px 0 0 #128c7e;
+}
+a.btn.btn-chunky.btn-sun,
+button.btn.btn-chunky.btn-sun {
+  box-shadow: 0 5px 0 0 #1d3fae;
+}
+a.btn.btn-chunky:hover,
+button.btn.btn-chunky:hover {
+  transform: none;
+}
+a.btn.btn-chunky:active,
+button.btn.btn-chunky:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 0 rgba(20, 33, 61, 0.3);
+}
+
 /* Floating WhatsApp mark: official simple-icons glyph on a white disc. */
 [data-cta-location="fab"] svg:not(.lucide):not(.lws-icon) {
   fill: #25d366;

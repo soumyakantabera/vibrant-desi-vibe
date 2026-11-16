@@ -181,6 +181,7 @@ function BlogPostPage() {
         faqs={post.faqs ?? []}
         title="Questions this article answers"
         waMessage={waMessage}
+        bolo
       />
     </Layout>
   );
