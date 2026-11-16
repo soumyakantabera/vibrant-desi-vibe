@@ -57,6 +57,8 @@ import { Route as GuidesRouteImport } from './routes/guides'
 import { Route as FreeEnglishSpeakingPracticeVsPaidClassRouteImport } from './routes/free-english-speaking-practice-vs-paid-class'
 import { Route as FreeConsultationRouteImport } from './routes/free-consultation'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as EnglishSpeakingTestHindiRouteImport } from './routes/english-speaking-test-hindi'
+import { Route as EnglishSpeakingTestBengaliRouteImport } from './routes/english-speaking-test-bengali'
 import { Route as EnglishSpeakingLevelTestRouteImport } from './routes/english-speaking-level-test'
 import { Route as EnglishInstituteComparisonIndiaRouteImport } from './routes/english-institute-comparison-india'
 import { Route as EnglishHindiBengaliMediumRouteImport } from './routes/english-hindi-bengali-medium'
@@ -365,6 +367,18 @@ const FounderRoute = FounderRouteImport.update({
   path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnglishSpeakingTestHindiRoute =
+  EnglishSpeakingTestHindiRouteImport.update({
+    id: '/english-speaking-test-hindi',
+    path: '/english-speaking-test-hindi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EnglishSpeakingTestBengaliRoute =
+  EnglishSpeakingTestBengaliRouteImport.update({
+    id: '/english-speaking-test-bengali',
+    path: '/english-speaking-test-bengali',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EnglishSpeakingLevelTestRoute =
   EnglishSpeakingLevelTestRouteImport.update({
     id: '/english-speaking-level-test',
@@ -576,6 +590,8 @@ export interface FileRoutesByFullPath {
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/english-speaking-level-test': typeof EnglishSpeakingLevelTestRoute
+  '/english-speaking-test-bengali': typeof EnglishSpeakingTestBengaliRoute
+  '/english-speaking-test-hindi': typeof EnglishSpeakingTestHindiRoute
   '/founder': typeof FounderRoute
   '/free-consultation': typeof FreeConsultationRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
@@ -658,6 +674,8 @@ export interface FileRoutesByTo {
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/english-speaking-level-test': typeof EnglishSpeakingLevelTestRoute
+  '/english-speaking-test-bengali': typeof EnglishSpeakingTestBengaliRoute
+  '/english-speaking-test-hindi': typeof EnglishSpeakingTestHindiRoute
   '/founder': typeof FounderRoute
   '/free-consultation': typeof FreeConsultationRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
@@ -741,6 +759,8 @@ export interface FileRoutesById {
   '/english-hindi-bengali-medium': typeof EnglishHindiBengaliMediumRoute
   '/english-institute-comparison-india': typeof EnglishInstituteComparisonIndiaRoute
   '/english-speaking-level-test': typeof EnglishSpeakingLevelTestRoute
+  '/english-speaking-test-bengali': typeof EnglishSpeakingTestBengaliRoute
+  '/english-speaking-test-hindi': typeof EnglishSpeakingTestHindiRoute
   '/founder': typeof FounderRoute
   '/free-consultation': typeof FreeConsultationRoute
   '/free-english-speaking-practice-vs-paid-class': typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
@@ -825,6 +845,8 @@ export interface FileRouteTypes {
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
     | '/english-speaking-level-test'
+    | '/english-speaking-test-bengali'
+    | '/english-speaking-test-hindi'
     | '/founder'
     | '/free-consultation'
     | '/free-english-speaking-practice-vs-paid-class'
@@ -907,6 +929,8 @@ export interface FileRouteTypes {
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
     | '/english-speaking-level-test'
+    | '/english-speaking-test-bengali'
+    | '/english-speaking-test-hindi'
     | '/founder'
     | '/free-consultation'
     | '/free-english-speaking-practice-vs-paid-class'
@@ -989,6 +1013,8 @@ export interface FileRouteTypes {
     | '/english-hindi-bengali-medium'
     | '/english-institute-comparison-india'
     | '/english-speaking-level-test'
+    | '/english-speaking-test-bengali'
+    | '/english-speaking-test-hindi'
     | '/founder'
     | '/free-consultation'
     | '/free-english-speaking-practice-vs-paid-class'
@@ -1072,6 +1098,8 @@ export interface RootRouteChildren {
   EnglishHindiBengaliMediumRoute: typeof EnglishHindiBengaliMediumRoute
   EnglishInstituteComparisonIndiaRoute: typeof EnglishInstituteComparisonIndiaRoute
   EnglishSpeakingLevelTestRoute: typeof EnglishSpeakingLevelTestRoute
+  EnglishSpeakingTestBengaliRoute: typeof EnglishSpeakingTestBengaliRoute
+  EnglishSpeakingTestHindiRoute: typeof EnglishSpeakingTestHindiRoute
   FounderRoute: typeof FounderRoute
   FreeConsultationRoute: typeof FreeConsultationRoute
   FreeEnglishSpeakingPracticeVsPaidClassRoute: typeof FreeEnglishSpeakingPracticeVsPaidClassRoute
@@ -1462,6 +1490,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/english-speaking-test-hindi': {
+      id: '/english-speaking-test-hindi'
+      path: '/english-speaking-test-hindi'
+      fullPath: '/english-speaking-test-hindi'
+      preLoaderRoute: typeof EnglishSpeakingTestHindiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english-speaking-test-bengali': {
+      id: '/english-speaking-test-bengali'
+      path: '/english-speaking-test-bengali'
+      fullPath: '/english-speaking-test-bengali'
+      preLoaderRoute: typeof EnglishSpeakingTestBengaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/english-speaking-level-test': {
       id: '/english-speaking-level-test'
       path: '/english-speaking-level-test'
@@ -1722,6 +1764,8 @@ const rootRouteChildren: RootRouteChildren = {
   EnglishHindiBengaliMediumRoute: EnglishHindiBengaliMediumRoute,
   EnglishInstituteComparisonIndiaRoute: EnglishInstituteComparisonIndiaRoute,
   EnglishSpeakingLevelTestRoute: EnglishSpeakingLevelTestRoute,
+  EnglishSpeakingTestBengaliRoute: EnglishSpeakingTestBengaliRoute,
+  EnglishSpeakingTestHindiRoute: EnglishSpeakingTestHindiRoute,
   FounderRoute: FounderRoute,
   FreeConsultationRoute: FreeConsultationRoute,
   FreeEnglishSpeakingPracticeVsPaidClassRoute:

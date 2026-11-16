@@ -2,6 +2,10 @@ import type { ArticleBody } from "@/content/blog/blocks";
 
 /** /spoken-english-in-hindi — written in Hindi for Hindi-first searchers. */
 export const body: ArticleBody = [
+  {
+    t: "p",
+    text: "**पहले अपना लेवल जानिए:** [2 मिनट का फ़्री English speaking test, हिंदी में](/english-speaking-test-hindi) — 10 आसान सवाल, नतीजा सीधे WhatsApp पर।",
+  },
   { t: "h2", text: "पहले सच: कितना समय लगता है?" },
   {
     t: "p",

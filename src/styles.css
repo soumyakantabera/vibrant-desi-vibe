@@ -786,6 +786,12 @@ section > .container-x {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.35);
   }
+  /* Letter-spacing and small caps split Devanagari and Bengali clusters. */
+  :lang(hi) .eyebrow,
+  :lang(bn) .eyebrow {
+    letter-spacing: 0;
+    font-size: 0.8125rem;
+  }
 
   .btn {
     display: inline-flex;

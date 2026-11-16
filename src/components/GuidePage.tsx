@@ -7,6 +7,7 @@ import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
+import { LevelTestPromo } from "@/components/LevelTestPromo";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
@@ -46,6 +47,8 @@ export function GuidePage({
   lang,
   packageBand = true,
   beforeBody,
+  heroCta,
+  levelTestPromo = true,
   children,
 }: {
   eyebrow: string;
@@ -70,6 +73,10 @@ export function GuidePage({
   packageBand?: boolean;
   /** Interactive block shown first, above the short answer (the level test, city facts). */
   beforeBody?: ReactNode;
+  /** A jump button in the hero, e.g. straight down to the level test. */
+  heroCta?: { href: string; label: string };
+  /** The "take the free level test" card after the article. Off on the test pages. */
+  levelTestPromo?: boolean;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
@@ -103,6 +110,11 @@ export function GuidePage({
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl text-cream leading-[1.1]">{h1}</h1>
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
+          {heroCta && (
+            <a href={heroCta.href} className="btn btn-sun btn-lg mt-6 inline-flex">
+              {heroCta.label} <Icon name="arrow-right" size={18} className="rotate-90" />
+            </a>
+          )}
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
               Last updated <time dateTime={lastUpdated}>{formatIsoDate(lastUpdated)}</time>. Fees
@@ -125,6 +137,12 @@ export function GuidePage({
           </div>
         </div>
       </article>
+
+      {levelTestPromo && (
+        <div className="pb-10 md:pb-14" lang="en-IN">
+          <LevelTestPromo />
+        </div>
+      )}
 
       <div lang="en-IN">
         <WhyDifferent compact visuals={false} />

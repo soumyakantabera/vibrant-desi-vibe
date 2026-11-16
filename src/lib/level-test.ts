@@ -88,28 +88,33 @@ export const LEVEL_BANDS: LevelBand[] = [
   },
 ];
 
-export type LevelRoom = { path: string; title: string; fee: string; why: string };
+export type LevelRoomId = "basic" | "intermediate" | "interactive" | "interview";
+export type LevelRoom = { id: LevelRoomId; path: string; title: string; fee: string; why: string };
 
-const ROOMS: Record<string, LevelRoom> = {
+const ROOMS: Record<LevelRoomId, LevelRoom> = {
   basic: {
+    id: "basic",
     path: "/course-spoken-english",
     title: "Basic Spoken English",
     fee: "₹1,199/month · 6 months",
     why: "Sounds, sentence patterns and everyday vocabulary, with speaking in every class. Also taught through Hindi or Marathi.",
   },
   intermediate: {
+    id: "intermediate",
     path: "/course-intermediate-english",
     title: "Intermediate Spoken English",
     fee: "₹1,999/month · 4 months",
     why: "30 minutes of grammar and an hour of communication per class: tenses, flow, fewer fillers, longer answers.",
   },
   interactive: {
+    id: "interactive",
     path: "/course-interactive-speaking",
     title: "Interactive Speaking",
     fee: "₹1,599/month · 3 months",
     why: "Role-plays, meetings, client calls and presentations until speaking under pressure feels ordinary.",
   },
   interview: {
+    id: "interview",
     path: "/course-interview-preparation",
     title: "Interview Preparation",
     fee: "₹2,499/month · 2 months",

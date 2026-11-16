@@ -159,12 +159,16 @@ fi
 cmp -s dist/chatgpt-actions.md dist/.well-known/chatgpt-actions.md || { echo "::error::.well-known/chatgpt-actions.md out of sync"; exit 1; }
 
 # Free level test and the city pages restored in November 2026.
-for p in english-speaking-level-test spoken-english-classes-pune spoken-english-classes-chennai spoken-english-classes-ahmedabad spoken-english-classes-patna spoken-english-classes-jaipur spoken-english-classes-lucknow; do
+for p in english-speaking-level-test english-speaking-test-hindi english-speaking-test-bengali spoken-english-classes-pune spoken-english-classes-chennai spoken-english-classes-ahmedabad spoken-english-classes-patna spoken-english-classes-jaipur spoken-english-classes-lucknow; do
   test -s "dist/$p.html" || { echo "::error::missing dist/$p.html"; exit 1; }
   grep -q "/$p<" dist/sitemap.xml || { echo "::error::$p not in sitemap"; exit 1; }
   grep -q '"FAQPage"' "dist/$p.html" || { echo "::error::$p has no FAQPage"; exit 1; }
   if grep -q 'http-equiv="refresh"' "dist/$p.html"; then echo "::error::$p is still a redirect"; exit 1; fi
 done
-grep -q 'name="lt-goal"' dist/english-speaking-level-test.html || { echo "::error::level test form not prerendered"; exit 1; }
+for p in english-speaking-level-test english-speaking-test-hindi english-speaking-test-bengali; do
+  grep -q 'data-level-test' "dist/$p.html" || { echo "::error::level test missing on $p"; exit 1; }
+done
+grep -q 'lang="hi-IN"' dist/english-speaking-test-hindi.html || { echo "::error::Hindi test page lang"; exit 1; }
+grep -q 'lang="bn-IN"' dist/english-speaking-test-bengali.html || { echo "::error::Bengali test page lang"; exit 1; }
 
 echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."

@@ -211,7 +211,7 @@ const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
   },
   {
     q: "How do I check my English speaking level for free?",
-    a: "Take the free 2-minute self-check at /english-speaking-level-test: 10 can-do questions scored 2/1/0, out of 20. 0–12 → Basic Spoken English ₹1,199/month · 13–16 → Intermediate Spoken English ₹1,999/month (work goal: Interactive Speaking ₹1,599/month) · 17–20 → Interactive Speaking, or Interview Preparation ₹2,499/month if interviews are the goal. The result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate.",
+    a: "Take the free 2-minute self-check at /english-speaking-level-test: 10 can-do questions scored 2/1/0, out of 20. 0–12 → Basic Spoken English ₹1,199/month · 13–16 → Intermediate Spoken English ₹1,999/month (work goal: Interactive Speaking ₹1,599/month) · 17–20 → Interactive Speaking, or Interview Preparation ₹2,499/month if interviews are the goal. The result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate. Also in Hindi (/english-speaking-test-hindi) and Bengali (/english-speaking-test-bengali); the language can be switched inside the test.",
     source: "/english-speaking-level-test",
   },
   {

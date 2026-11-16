@@ -1,7 +1,9 @@
 import type { ArticleBody } from "@/content/blog/blocks";
 import { LEVEL_KEY_ROWS, LEVEL_QUESTIONS } from "@/lib/level-test";
+import { OTHER_LANG_LINE } from "@/content/pages/level-test-lang";
 
 export const body: ArticleBody = [
+  { t: "p", text: OTHER_LANG_LINE },
   { t: "h2", text: "How the scoring works" },
   {
     t: "p",
