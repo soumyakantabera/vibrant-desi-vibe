@@ -19,15 +19,15 @@ function Page() {
   return (
     <GuidePage
       lang="hi-IN"
-      eyebrow="फ़्री सेल्फ़-चेक · 2 मिनट · कोई साइन-अप नहीं"
+      eyebrow="फ़्री सेल्फ़-चेक · 1 मिनट · कोई साइन-अप नहीं"
       breadcrumb="English speaking test (हिंदी)"
       h1={
         <>
-          English बोलने का लेवल टेस्ट — <span className="text-sunshine">हिंदी में, 2 मिनट में</span>
+          English बोलने का लेवल टेस्ट — <span className="text-sunshine">हिंदी में, 1 मिनट में</span>
         </>
       }
-      standfirst="10 आसान सवाल, हर स्क्रीन पर एक। आप असल में कितना बोल पाते हैं, उसका ईमानदार जवाब दीजिए — और जानिए आपका लेवल (लगभग A1–B2) और कौन-सा कोर्स सही है।"
-      shortAnswer="हर सवाल पर 2, 1 या 0 नंबर। 0–12: Basic Spoken English — Hindi to English (₹1,199/माह)। 13–16: Intermediate Spoken English (₹1,999/माह)। 17–20: Interactive Speaking (₹1,599/माह), या इंटरव्यू लक्ष्य हो तो Interview Preparation (₹2,499/माह)। टीचर WhatsApp पर फ़्री में लेवल कन्फ़र्म करती हैं।"
+      standfirst="4 आसान सवाल, हर स्क्रीन पर एक। आप असल में कितना बोल पाते हैं, उसका ईमानदार जवाब दीजिए — और जानिए आपका लेवल (लगभग A1–B2) और कौन-सा कोर्स सही है।"
+      shortAnswer="हर सवाल पर 2, 1 या 0 नंबर (कुल 8)। 0–4: Basic Spoken English — Hindi to English (₹1,199/माह)। 5–6: Intermediate Spoken English (₹1,999/माह)। 7–8: Interactive Speaking (₹1,599/माह), या इंटरव्यू लक्ष्य हो तो Interview Preparation (₹2,499/माह)। टीचर WhatsApp पर फ़्री में लेवल कन्फ़र्म करती हैं।"
       heroImage={IMG.studentLaptop2}
       heroAlt="Adult learner checking their English speaking level on a laptop"
       lastUpdated={page.dateModified}

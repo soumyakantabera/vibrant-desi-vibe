@@ -1,8 +1,10 @@
 /**
  * The free English speaking level self-check at /english-speaking-level-test.
  *
- * A self-assessment, not an exam: ten can-do statements ordered from first
- * sentences to unscripted interviews, scored 0 / 1 / 2. The score and the
+ * A self-assessment, not an exam: four can-do statements, one per level, from
+ * first sentences to unscripted interviews, scored 0 / 1 / 2 (out of 8), plus
+ * a goal — five taps in all. Cut from ten questions in November 2026: people
+ * stopped halfway through ten. The score and the
  * learner's goal pick one room and prefill the WhatsApp message, so the chat
  * opens with the information a teacher needs to place them.
  *
@@ -14,16 +16,13 @@ export const LEVEL_TEST_PATH = "/english-speaking-level-test";
 
 export const LEVEL_QUESTIONS: string[] = [
   "Introduce yourself in 3–4 sentences: name, city, work or studies.",
-  "Ask and answer simple questions at a shop or on a phone call.",
-  "Describe your daily routine in the present tense.",
   "Tell someone what you did last weekend, in the past tense.",
-  "Follow a customer-care call without asking them to repeat again and again.",
-  "Speak for one minute on a familiar topic without stopping.",
-  "Give an opinion with a reason: “I think … because …”.",
-  "Use tenses correctly most of the time without stopping to think.",
-  "Speak in a meeting, a group or an interview without freezing.",
-  "Handle an unexpected question smoothly, in English only.",
+  "Speak for one minute on a familiar topic without stopping, with tenses mostly right.",
+  "Speak in a meeting or an interview — even with an unexpected question — without freezing.",
 ];
+
+/** Highest possible score: 2 points per question. */
+export const LEVEL_MAX = LEVEL_QUESTIONS.length * 2;
 
 export const LEVEL_OPTIONS = [
   { label: "Yes, easily", points: 2 },
@@ -41,7 +40,7 @@ export const LEVEL_GOALS: { id: LevelGoal; label: string }[] = [
 
 export type LevelBand = {
   id: "starting" | "building" | "connecting" | "performing";
-  /** Score range, inclusive, out of 20. */
+  /** Score range, inclusive, out of LEVEL_MAX (8). */
   min: number;
   max: number;
   name: string;
@@ -54,15 +53,15 @@ export const LEVEL_BANDS: LevelBand[] = [
   {
     id: "starting",
     min: 0,
-    max: 6,
+    max: 2,
     name: "Starting out",
     cefr: "around A1",
     meaning: "You understand some English but cannot yet build your own sentences when speaking.",
   },
   {
     id: "building",
-    min: 7,
-    max: 12,
+    min: 3,
+    max: 4,
     name: "Building basics",
     cefr: "around A2",
     meaning:
@@ -70,8 +69,8 @@ export const LEVEL_BANDS: LevelBand[] = [
   },
   {
     id: "connecting",
-    min: 13,
-    max: 16,
+    min: 5,
+    max: 6,
     name: "Connecting sentences",
     cefr: "around B1",
     meaning:
@@ -79,8 +78,8 @@ export const LEVEL_BANDS: LevelBand[] = [
   },
   {
     id: "performing",
-    min: 17,
-    max: 20,
+    min: 7,
+    max: 8,
     name: "Ready to perform",
     cefr: "around B2",
     meaning:
@@ -140,20 +139,31 @@ export function levelMessage(score: number, goal: LevelGoal): string {
   const room = roomFor(score, goal);
   const label = LEVEL_GOALS.find((g) => g.id === goal)?.label ?? goal;
   const goalLabel = label.charAt(0).toLowerCase() + label.slice(1);
-  return `Hi, I took the English speaking level test on your website. My score is ${score}/20 (${band.name}). My goal is ${goalLabel}. It suggested ${room.title}. I'd like to book a free group consultation to confirm my level. Please send me the booking link.`;
+  return `Hi, I took the English speaking level test on your website. My score is ${score}/${LEVEL_MAX} (${band.name}). My goal is ${goalLabel}. It suggested ${room.title}. I'd like to book a free group consultation to confirm my level. Please send me the booking link.`;
 }
+
+/** "0–2" style range for a band, for keys and copy. */
+export function bandRange(b: LevelBand): string {
+  return `${b.min}–${b.max}`;
+}
+
+const band = (id: LevelBand["id"]) => LEVEL_BANDS.find((b) => b.id === id)!;
 
 /** Plain-text scoring key, rendered on the page so it works without JavaScript. */
 export const LEVEL_KEY_ROWS: string[][] = [
-  ["0–6", "Starting out (around A1)", "Basic Spoken English — ₹1,199/month"],
-  ["7–12", "Building basics (around A2)", "Basic Spoken English — ₹1,199/month"],
+  [bandRange(band("starting")), "Starting out (around A1)", "Basic Spoken English — ₹1,199/month"],
   [
-    "13–16",
+    bandRange(band("building")),
+    "Building basics (around A2)",
+    "Basic Spoken English — ₹1,199/month",
+  ],
+  [
+    bandRange(band("connecting")),
     "Connecting sentences (around B1)",
     "Intermediate Spoken English — ₹1,999/month (work goal: Interactive Speaking — ₹1,599/month)",
   ],
   [
-    "17–20",
+    bandRange(band("performing")),
     "Ready to perform (around B2)",
     "Interactive Speaking — ₹1,599/month (interview goal: Interview Preparation — ₹2,499/month)",
   ],

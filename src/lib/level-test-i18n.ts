@@ -8,7 +8,7 @@
  *
  * Kept free of Vite-only imports (the page bodies and llms builders read it).
  */
-import type { LevelBand, LevelGoal, LevelRoomId } from "@/lib/level-test";
+import { LEVEL_MAX, type LevelBand, type LevelGoal, type LevelRoomId } from "@/lib/level-test";
 
 export type TestLang = "en" | "hi" | "bn";
 
@@ -30,7 +30,7 @@ export type TestCopy = {
   hint: string;
   stepOf: (n: number, total: number) => string;
   back: string;
-  /** The ten can-do questions, in order, phrased as questions. */
+  /** The four can-do questions, in order (one per level), phrased as questions. */
   questions: string[];
   /** Index by points: [0] "Not yet", [1] "With difficulty", [2] "Yes, easily". */
   options: [string, string, string];
@@ -52,21 +52,15 @@ export type TestCopy = {
 export const TEST_COPY: Record<TestLang, TestCopy> = {
   en: {
     title: "Find your English speaking level",
-    sub: "11 quick taps · 2 minutes · free",
+    sub: "5 quick taps · 1 minute · free",
     hint: "Tap the answer that is honestly true for you today.",
     stepOf: (n, t) => `Question ${n} of ${t}`,
     back: "Back",
     questions: [
       "Can you introduce yourself in 3–4 sentences: name, city, work or studies?",
-      "Can you ask and answer simple questions at a shop or on a phone call?",
-      "Can you describe your daily routine in the present tense?",
       "Can you tell someone what you did last weekend, in the past tense?",
-      "Can you follow a customer-care call without asking them to repeat again and again?",
-      "Can you speak for one minute on a familiar topic without stopping?",
-      "Can you give an opinion with a reason: “I think … because …”?",
-      "Can you use tenses correctly most of the time without stopping to think?",
-      "Can you speak in a meeting, a group or an interview without freezing?",
-      "Can you handle an unexpected question smoothly, in English only?",
+      "Can you speak for one minute on a familiar topic without stopping, with tenses mostly right?",
+      "Can you speak in a meeting or an interview — even with an unexpected question — without freezing?",
     ],
     options: ["Not yet", "With difficulty", "Yes, easily"],
     goalQuestion: "What do you need English for first?",
@@ -129,26 +123,20 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     languageLabel: "Language",
     scaleLabel: "Level scale",
     message: ({ score, band, goal, course }) =>
-      `Hi, I took the English speaking level test on your website. My score is ${score}/20 (${band}). My goal is ${goal.charAt(0).toLowerCase() + goal.slice(1)}. It suggested ${course}. I'd like to book a free group consultation to confirm my level. Please send me the booking link.`,
+      `Hi, I took the English speaking level test on your website. My score is ${score}/${LEVEL_MAX} (${band}). My goal is ${goal.charAt(0).toLowerCase() + goal.slice(1)}. It suggested ${course}. I'd like to book a free group consultation to confirm my level. Please send me the booking link.`,
   },
 
   hi: {
     title: "अपना English बोलने का लेवल जानें",
-    sub: "11 आसान टैप · 2 मिनट · बिल्कुल फ़्री",
+    sub: "5 आसान टैप · 1 मिनट · बिल्कुल फ़्री",
     hint: "जो आज आपके लिए सच में सही है, वही चुनें।",
     stepOf: (n, t) => `सवाल ${n} / ${t}`,
     back: "पीछे",
     questions: [
       "क्या आप 3–4 वाक्यों में English में अपना परिचय दे सकते हैं — नाम, शहर, काम या पढ़ाई?",
-      "क्या आप दुकान पर या फ़ोन कॉल पर आसान सवाल पूछ सकते हैं और उनका जवाब दे सकते हैं?",
-      "क्या आप अपनी रोज़ की दिनचर्या English में बता सकते हैं (present tense)?",
       "क्या आप बता सकते हैं कि पिछले वीकेंड आपने क्या किया (past tense)?",
-      "क्या आप कस्टमर-केयर कॉल को बार-बार दोहराने को कहे बिना समझ लेते हैं?",
-      "क्या आप किसी जाने-पहचाने विषय पर एक मिनट बिना रुके English बोल सकते हैं?",
-      "क्या आप कारण के साथ अपनी राय दे सकते हैं — “I think … because …”?",
-      "क्या आप ज़्यादातर बिना रुके-सोचे सही tense बोल लेते हैं?",
-      "क्या आप मीटिंग, ग्रुप या इंटरव्यू में बिना अटके English बोल सकते हैं?",
-      "क्या आप अचानक आए सवाल का जवाब आराम से, सिर्फ़ English में दे सकते हैं?",
+      "क्या आप किसी जाने-पहचाने विषय पर एक मिनट बिना रुके बोल सकते हैं, ज़्यादातर सही tense के साथ?",
+      "क्या आप मीटिंग या इंटरव्यू में — अचानक आए सवाल पर भी — बिना अटके English बोल सकते हैं?",
     ],
     options: ["अभी नहीं", "मुश्किल से", "हाँ, आसानी से"],
     goalQuestion: "आपको सबसे पहले English किस लिए चाहिए?",
@@ -209,26 +197,20 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     languageLabel: "भाषा",
     scaleLabel: "लेवल स्केल",
     message: ({ score, band, goal, course }) =>
-      `नमस्ते, मैंने आपकी वेबसाइट पर English speaking level test दिया। मेरा स्कोर ${score}/20 है (${band})। मेरा लक्ष्य: ${goal}। सुझाया गया कोर्स: ${course}। लेवल कन्फ़र्म करने के लिए मुझे फ़्री ग्रुप कंसल्टेशन बुक करना है। Please send me the booking link.`,
+      `नमस्ते, मैंने आपकी वेबसाइट पर English speaking level test दिया। मेरा स्कोर ${score}/${LEVEL_MAX} है (${band})। मेरा लक्ष्य: ${goal}। सुझाया गया कोर्स: ${course}। लेवल कन्फ़र्म करने के लिए मुझे फ़्री ग्रुप कंसल्टेशन बुक करना है। Please send me the booking link.`,
   },
 
   bn: {
     title: "আপনার ইংরেজি বলার লেভেল জানুন",
-    sub: "11টা সহজ ট্যাপ · 2 মিনিট · একদম ফ্রি",
+    sub: "5টা সহজ ট্যাপ · 1 মিনিট · একদম ফ্রি",
     hint: "আজ আপনার ক্ষেত্রে যেটা সত্যিই ঠিক, সেটাই বেছে নিন।",
     stepOf: (n, t) => `প্রশ্ন ${n} / ${t}`,
     back: "আগের প্রশ্ন",
     questions: [
       "আপনি কি 3–4টি বাক্যে ইংরেজিতে নিজের পরিচয় দিতে পারেন — নাম, শহর, কাজ বা পড়াশোনা?",
-      "দোকানে বা ফোনে সহজ প্রশ্ন করতে আর তার উত্তর দিতে পারেন?",
-      "নিজের রোজকার রুটিন ইংরেজিতে বলতে পারেন (present tense)?",
       "গত উইকেন্ডে কী করেছেন তা ইংরেজিতে বলতে পারেন (past tense)?",
-      "কাস্টমার-কেয়ার কলে বারবার রিপিট করতে না বলে কথা বুঝতে পারেন?",
-      "চেনা কোনো বিষয়ে এক মিনিট না থেমে ইংরেজিতে বলতে পারেন?",
-      "কারণসহ নিজের মত দিতে পারেন — “I think … because …”?",
-      "বেশিরভাগ সময় না থেমে-ভেবে ঠিক tense ব্যবহার করতে পারেন?",
-      "মিটিং, গ্রুপ বা ইন্টারভিউতে আটকে না গিয়ে ইংরেজিতে বলতে পারেন?",
-      "হঠাৎ আসা প্রশ্নের উত্তর সহজভাবে, শুধু ইংরেজিতে দিতে পারেন?",
+      "চেনা কোনো বিষয়ে এক মিনিট না থেমে বলতে পারেন, বেশিরভাগ সময় ঠিক tense-এ?",
+      "মিটিং বা ইন্টারভিউতে — হঠাৎ প্রশ্ন এলেও — আটকে না গিয়ে ইংরেজিতে বলতে পারেন?",
     ],
     options: ["এখনও না", "কষ্ট করে", "হ্যাঁ, সহজেই"],
     goalQuestion: "সবার আগে ইংরেজি কীসের জন্য দরকার?",
@@ -288,6 +270,6 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     languageLabel: "ভাষা",
     scaleLabel: "লেভেল স্কেল",
     message: ({ score, band, goal, course }) =>
-      `নমস্কার, আপনাদের ওয়েবসাইটে English speaking level test দিয়েছি। আমার স্কোর ${score}/20 (${band})। আমার লক্ষ্য: ${goal}। সাজেস্ট করা কোর্স: ${course}। লেভেল কনফার্ম করতে ফ্রি গ্রুপ কনসালটেশন বুক করতে চাই। Please send me the booking link.`,
+      `নমস্কার, আপনাদের ওয়েবসাইটে English speaking level test দিয়েছি। আমার স্কোর ${score}/${LEVEL_MAX} (${band})। আমার লক্ষ্য: ${goal}। সাজেস্ট করা কোর্স: ${course}। লেভেল কনফার্ম করতে ফ্রি গ্রুপ কনসালটেশন বুক করতে চাই। Please send me the booking link.`,
   },
 };

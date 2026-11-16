@@ -5,6 +5,7 @@ import { Icon, type IconName } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
 import {
   LEVEL_BANDS,
+  LEVEL_MAX,
   LEVEL_QUESTIONS,
   bandFor,
   roomFor,
@@ -18,8 +19,8 @@ import { tone } from "@/lib/tones";
  * The speaking level test, one question per screen.
  *
  * Why a wizard: on a phone, eleven questions with three answers each is a long
- * scroll and people stop halfway. One big question, three big colour-coded
- * buttons and an automatic move to the next question keeps it to eleven taps.
+ * scroll and people stop halfway. One question, three colour-coded buttons
+ * and an automatic move to the next question keeps it to five taps.
  *
  * Language: English, Hindi and Bengali are switched in place — answers are
  * kept — and the WhatsApp message goes out in the chosen language. Scoring
@@ -29,10 +30,10 @@ import { tone } from "@/lib/tones";
  * every question and the scoring key.
  */
 
-const QUESTION_COUNT = LEVEL_QUESTIONS.length; // 10
-const GOAL_STEP = QUESTION_COUNT; // step 10
-const RESULT_STEP = QUESTION_COUNT + 1; // step 11
-const TOTAL_TAPS = QUESTION_COUNT + 1; // 10 answers + 1 goal
+const QUESTION_COUNT = LEVEL_QUESTIONS.length; // 4
+const GOAL_STEP = QUESTION_COUNT; // step 4
+const RESULT_STEP = QUESTION_COUNT + 1; // step 5
+const TOTAL_TAPS = QUESTION_COUNT + 1; // 4 answers + 1 goal
 
 /** Answers, best first: points → icon and colours. */
 const ANSWERS: {
@@ -159,12 +160,12 @@ export function LevelTest({ lang: initialLang = "en" }: { lang?: TestLang }) {
         <div className="relative flex items-start gap-4">
           <span
             aria-hidden="true"
-            className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-sunshine text-ink shadow md:h-14 md:w-14"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-sunshine text-ink shadow md:h-12 md:w-12"
           >
-            <Icon name="target" size={28} />
+            <Icon name="target" size={24} />
           </span>
           <div>
-            <h2 id="level-test-title" className="text-2xl leading-tight text-white md:text-3xl">
+            <h2 id="level-test-title" className="text-lg leading-tight text-white md:text-xl">
               {t.title}
             </h2>
             <p className="mt-2 inline-flex rounded-full bg-sunshine px-3 py-1 text-sm font-display font-bold text-ink">
@@ -252,19 +253,19 @@ export function LevelTest({ lang: initialLang = "en" }: { lang?: TestLang }) {
               <div className="flex items-center gap-3">
                 <span
                   aria-hidden="true"
-                  className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-tile-blue text-white shadow"
+                  className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-tile-blue text-white shadow"
                 >
-                  <Icon name="target" size={24} />
+                  <Icon name="target" size={20} />
                 </span>
                 <h3
                   ref={headingRef}
                   tabIndex={-1}
-                  className="text-xl font-display font-bold leading-snug text-ink outline-none md:text-2xl"
+                  className="text-base font-display font-bold leading-snug text-ink outline-none"
                 >
                   {t.goalQuestion}
                 </h3>
               </div>
-              <div className="mt-5 grid gap-3">
+              <div className="mt-4 grid gap-2.5">
                 {GOALS.map((g) => {
                   const gt = tone(g.tone);
                   const on = goal === g.id;
@@ -275,7 +276,7 @@ export function LevelTest({ lang: initialLang = "en" }: { lang?: TestLang }) {
                       aria-pressed={on}
                       disabled={moving}
                       onClick={() => chooseGoal(g.id)}
-                      className={`flex min-h-[64px] w-full items-center gap-4 rounded-2xl border-2 p-3.5 text-left text-base font-display font-bold transition active:scale-[0.98] md:text-lg ${
+                      className={`flex min-h-[56px] w-full items-center gap-3 rounded-2xl border-2 px-3 py-2.5 text-left text-sm font-display font-bold transition active:scale-[0.98] ${
                         on
                           ? `${gt.solid} border-transparent shadow-md`
                           : `${gt.soft} ${gt.border} ${gt.text}`
@@ -283,11 +284,11 @@ export function LevelTest({ lang: initialLang = "en" }: { lang?: TestLang }) {
                     >
                       <span
                         aria-hidden="true"
-                        className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${
+                        className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${
                           on ? "bg-white/20" : gt.solid
                         }`}
                       >
-                        <Icon name={g.icon} size={22} />
+                        <Icon name={g.icon} size={18} />
                       </span>
                       <span className="flex-1">{t.goals[g.id]}</span>
                       <Icon name="arrow-right" size={18} className="opacity-60" />
@@ -349,20 +350,20 @@ function QuestionStep({
       <div className="flex items-start gap-3">
         <span
           aria-hidden="true"
-          className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl font-display text-xl font-extrabold shadow ${qt.solid}`}
+          className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl font-display text-lg font-extrabold shadow ${qt.solid}`}
         >
           {n + 1}
         </span>
         <h3
           ref={headingRef}
           tabIndex={-1}
-          className="pt-1 text-xl font-display font-bold leading-snug text-ink outline-none md:text-2xl"
+          className="pt-1.5 text-base font-display font-bold leading-snug text-ink outline-none"
         >
           {text}
         </h3>
       </div>
-      <p className="mt-2 text-sm text-ink/65 sm:pl-[60px]">{hint}</p>
-      <div className="mt-5 grid gap-3 sm:pl-[60px]">
+      <p className="mt-1.5 text-xs text-ink/65 sm:pl-[52px]">{hint}</p>
+      <div className="mt-4 grid gap-2.5 sm:pl-[52px]">
         {ANSWERS.map((a) => {
           const on = selected === a.points;
           return (
@@ -372,17 +373,17 @@ function QuestionStep({
               aria-pressed={on}
               disabled={disabled}
               onClick={() => onPick(a.points)}
-              className={`flex min-h-[60px] w-full items-center gap-4 rounded-2xl border-2 p-3 text-left text-lg font-display font-bold transition active:scale-[0.98] ${
+              className={`flex min-h-[52px] w-full items-center gap-3 rounded-2xl border-2 px-3 py-2.5 text-left text-sm font-display font-bold transition active:scale-[0.98] ${
                 on ? `${a.picked} shadow-md` : a.idle
               }`}
             >
               <span
                 aria-hidden="true"
-                className={`grid h-10 w-10 shrink-0 place-items-center rounded-full ${
+                className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${
                   on ? "bg-white/25 text-white" : a.badge
                 }`}
               >
-                <Icon name={a.icon} size={22} />
+                <Icon name={a.icon} size={18} />
               </span>
               <span className="flex-1">{labels[a.points]}</span>
             </button>
@@ -436,18 +437,18 @@ function Result({
       <div className="flex items-start gap-4">
         <span
           aria-hidden="true"
-          className={`grid h-16 w-16 shrink-0 place-items-center rounded-2xl shadow-md ${bt.solid}`}
+          className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl shadow-md ${bt.solid}`}
         >
-          <Icon name={bs.icon} size={34} />
+          <Icon name={bs.icon} size={26} />
         </span>
         <div>
           <p className={`text-xs font-display font-bold ${label} ${bt.text}`}>{t.resultLabel}</p>
           <h3
             ref={headingRef}
             tabIndex={-1}
-            className="mt-1 text-2xl font-display font-extrabold leading-tight text-ink outline-none md:text-3xl"
+            className="mt-1 text-lg font-display font-extrabold leading-tight text-ink outline-none md:text-xl"
           >
-            {score}/20 · {copy.name}
+            {score}/{LEVEL_MAX} · {copy.name}
           </h3>
           <p className="text-sm text-ink/70">({copy.cefr})</p>
         </div>
@@ -476,7 +477,7 @@ function Result({
 
       <div className="mt-4 rounded-2xl bg-white p-4 shadow-sm">
         <p className={`text-xs font-display font-bold ${label} ${bt.text}`}>{t.suggested}</p>
-        <p className="mt-1 flex items-center gap-2 text-lg font-display font-extrabold text-ink">
+        <p className="mt-1 flex items-center gap-2 text-base font-display font-extrabold text-ink">
           <Icon name="school" size={20} className={bt.text} />
           <Link to={room.path} className="underline decoration-2 underline-offset-4">
             {room.title}

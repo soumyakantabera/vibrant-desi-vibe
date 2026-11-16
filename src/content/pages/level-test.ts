@@ -7,7 +7,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "How the scoring works" },
   {
     t: "p",
-    text: "Each question scores **2** for “Yes, easily”, **1** for “With difficulty” and **0** for “Not yet”, so the total is out of 20. The questions get harder in order: the first four are everyday basics, the middle three are connected speech, and the last three are speaking under pressure. Without JavaScript, add your own score with this key:",
+    text: "Each question scores **2** for “Yes, easily”, **1** for “With difficulty” and **0** for “Not yet”, so the total is out of 8. There is one question per level: everyday basics, the past tense, connected speech, and speaking under pressure. Without JavaScript, add your own score with this key:",
   },
   {
     t: "table",
@@ -20,7 +20,7 @@ export const body: ArticleBody = [
     text: "The CEFR labels (A1, A2, B1, B2) are a rough neighbourhood for people who know the European scale. This is a self-check, not a certified test; a teacher confirms the level in the free consultation by listening to you speak for a few minutes.",
   },
 
-  { t: "h2", text: "The ten questions" },
+  { t: "h2", text: "The four questions" },
   {
     t: "ol",
     items: LEVEL_QUESTIONS.map(

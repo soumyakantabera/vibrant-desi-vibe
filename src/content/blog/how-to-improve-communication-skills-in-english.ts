@@ -128,7 +128,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Not sure whether your gap is English or communication? Take the free [English speaking level test](/english-speaking-level-test) — it takes 2 minutes and suggests where to start.",
+    text: "Not sure whether your gap is English or communication? Take the free [English speaking level test](/english-speaking-level-test) — 4 questions, about a minute, and it suggests where to start.",
   },
 
   {

@@ -17,7 +17,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "hi-IN",
     title: "English Speaking Test हिंदी में | फ़्री लेवल टेस्ट",
     description:
-      "2 मिनट का फ़्री English speaking level test, हिंदी में: 10 आसान सवाल, आपका लेवल (A1–B2) और सही कोर्स। नतीजा सीधे WhatsApp पर। क्लास ₹1,199/माह से।",
+      "1 मिनट का फ़्री English speaking level test, हिंदी में: सिर्फ़ 4 आसान सवाल, आपका लेवल (A1–B2) और सही कोर्स। नतीजा सीधे WhatsApp पर। क्लास ₹1,199/माह से।",
     shortTitle: "English speaking test (Hindi)",
     keywords: [
       "english speaking test in hindi",
@@ -35,11 +35,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "English speaking test (Hindi)", path: LEVEL_TEST_LANG_PATHS.hi },
     ],
     summary:
-      "Hindi version of the free English speaking level self-check: 10 can-do questions in Hindi scored 0–2 plus a goal. 0–12 → Basic Spoken English — Hindi to English ₹1,199/mo; 13–16 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 17–20 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). The result opens WhatsApp with a Hindi message and the score.",
+      "Hindi version of the free English speaking level self-check: 4 can-do questions in Hindi scored 0–2 (out of 8) plus a goal. 0–4 → Basic Spoken English — Hindi to English ₹1,199/mo; 5–6 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 7–8 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). The result opens WhatsApp with a Hindi message and the score.",
     faqs: [
       {
         q: "मैं अपना English बोलने का लेवल फ़्री में कैसे जानूँ?",
-        a: "10 आसान सवालों का ईमानदारी से जवाब दें — हर सवाल पर 2, 1 या 0 नंबर, कुल 20 में से। 0–6 शुरुआत, 7–12 बेसिक बन रहा है, 13–16 वाक्य जोड़ने का लेवल, 17–20 परफ़ॉर्म करने को तैयार। यह टेस्ट 2 मिनट का है, फ़्री है, और नतीजा सीधे WhatsApp पर भेजा जा सकता है।",
+        a: "सिर्फ़ 4 आसान सवालों का ईमानदारी से जवाब दें — हर सवाल पर 2, 1 या 0 नंबर, कुल 8 में से। 0–2 शुरुआत, 3–4 बेसिक बन रहा है, 5–6 वाक्य जोड़ने का लेवल, 7–8 परफ़ॉर्म करने को तैयार। यह टेस्ट 1 मिनट का है, फ़्री है, और नतीजा सीधे WhatsApp पर भेजा जा सकता है।",
       },
       {
         q: "क्या यह टेस्ट कोई सर्टिफ़िकेट देता है?",
@@ -47,7 +47,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "कम स्कोर आया तो कहाँ से शुरू करूँ?",
-        a: "0–12 स्कोर पर Basic Spoken English — Hindi to English से शुरू करें: 6 महीने, ₹1,199/माह टैक्स सहित, लगभग 6 लोगों का लाइव बैच। टीचर ज़रूरत पड़ने पर हिंदी में समझाती हैं, फिर वापस English।",
+        a: "0–4 स्कोर पर Basic Spoken English — Hindi to English से शुरू करें: 6 महीने, ₹1,199/माह टैक्स सहित, लगभग 6 लोगों का लाइव बैच। टीचर ज़रूरत पड़ने पर हिंदी में समझाती हैं, फिर वापस English।",
       },
     ],
   },
@@ -56,7 +56,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "bn-IN",
     title: "English Speaking Test বাংলায় | ফ্রি লেভেল টেস্ট",
     description:
-      "2 মিনিটের ফ্রি English speaking level test, বাংলায়: 10টা সহজ প্রশ্ন, আপনার লেভেল (A1–B2) আর ঠিক কোর্স। ফলাফল সোজা WhatsApp-এ। কলকাতা থেকে, ₹1,199/মাস থেকে।",
+      "1 মিনিটের ফ্রি English speaking level test, বাংলায়: মাত্র 4টা সহজ প্রশ্ন, আপনার লেভেল (A1–B2) আর ঠিক কোর্স। ফলাফল সোজা WhatsApp-এ। কলকাতা থেকে, ₹1,199/মাস থেকে।",
     shortTitle: "English speaking test (Bengali)",
     keywords: [
       "english speaking test in bengali",
@@ -73,11 +73,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "English speaking test (Bengali)", path: LEVEL_TEST_LANG_PATHS.bn },
     ],
     summary:
-      "Bengali version of the free English speaking level self-check: 10 can-do questions in Bengali scored 0–2 plus a goal. 0–12 → Basic Spoken English ₹1,199/mo (teacher can explain in Bengali); 13–16 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 17–20 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). The result opens WhatsApp with a Bengali message and the score.",
+      "Bengali version of the free English speaking level self-check: 4 can-do questions in Bengali scored 0–2 (out of 8) plus a goal. 0–4 → Basic Spoken English ₹1,199/mo (teacher can explain in Bengali); 5–6 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 7–8 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). The result opens WhatsApp with a Bengali message and the score.",
     faqs: [
       {
         q: "নিজের ইংরেজি বলার লেভেল ফ্রিতে কীভাবে জানব?",
-        a: "10টা সহজ প্রশ্নের সৎ উত্তর দিন — প্রতিটিতে 2, 1 বা 0, মোট 20-এর মধ্যে। 0–6 শুরুর ধাপ, 7–12 বেসিক তৈরি হচ্ছে, 13–16 বাক্য জোড়ার ধাপ, 17–20 পারফর্ম করার জন্য তৈরি। টেস্টটা 2 মিনিটের, ফ্রি, আর ফলাফল সোজা WhatsApp-এ পাঠানো যায়।",
+        a: "মাত্র 4টা সহজ প্রশ্নের সৎ উত্তর দিন — প্রতিটিতে 2, 1 বা 0, মোট 8-এর মধ্যে। 0–2 শুরুর ধাপ, 3–4 বেসিক তৈরি হচ্ছে, 5–6 বাক্য জোড়ার ধাপ, 7–8 পারফর্ম করার জন্য তৈরি। টেস্টটা 1 মিনিটের, ফ্রি, আর ফলাফল সোজা WhatsApp-এ পাঠানো যায়।",
       },
       {
         q: "এই টেস্ট কি সার্টিফিকেট দেয়?",
@@ -85,15 +85,15 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "কম স্কোর হলে কোথা থেকে শুরু করব?",
-        a: "0–12 হলে Basic Spoken English দিয়ে শুরু করুন: 6 মাস, ₹1,199/মাস ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। দরকার হলে টিচার বাংলায় বুঝিয়ে দেন, তারপর আবার ইংরেজিতে।",
+        a: "0–4 হলে Basic Spoken English দিয়ে শুরু করুন: 6 মাস, ₹1,199/মাস ট্যাক্স সহ, প্রায় 6 জনের লাইভ ব্যাচ। দরকার হলে টিচার বাংলায় বুঝিয়ে দেন, তারপর আবার ইংরেজিতে।",
       },
     ],
   },
   [LEVEL_TEST_PATH]: {
     path: LEVEL_TEST_PATH,
-    title: "Free English Speaking Level Test | 2 Minutes",
+    title: "Free English Speaking Level Test | 1 Minute",
     description:
-      "Free 2-minute English speaking level test: 10 can-do questions, your level (A1–B2) and the course that fits, from ₹1,199/mo. Send your result on WhatsApp.",
+      "Free 1-minute English speaking level test: 4 can-do questions, your level (A1–B2) and the course that fits, from ₹1,199/mo. Send your result on WhatsApp.",
     shortTitle: "English speaking level test",
     keywords: [
       "english speaking test",
@@ -113,11 +113,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Speaking level test", path: LEVEL_TEST_PATH },
     ],
     summary:
-      "Free English speaking level self-check: 10 can-do questions scored 0–2 (out of 20) plus a goal. 0–12 → Basic Spoken English ₹1,199/mo; 13–16 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 17–20 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). Result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate.",
+      "Free English speaking level self-check: 4 can-do questions (one per level) scored 0–2, out of 8, plus a goal — 5 taps. 0–4 → Basic Spoken English ₹1,199/mo; 5–6 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 7–8 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). Result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate. Also in Hindi and Bengali.",
     faqs: [
       {
         q: "How can I test my English speaking level online for free?",
-        a: "Answer ten can-do questions honestly — from introducing yourself to handling an unexpected interview question — scoring 2, 1 or 0 for each. 0–6 is starting out, 7–12 building basics, 13–16 connecting sentences, 17–20 ready to perform. Learn With Smile’s free 2-minute test at /english-speaking-level-test does the scoring and suggests one course; a teacher confirms it in a free consultation.",
+        a: "Answer four can-do questions honestly — introducing yourself, the past tense, a one-minute talk, and a meeting or interview — scoring 2, 1 or 0 for each, out of 8. 0–2 is starting out, 3–4 building basics, 5–6 connecting sentences, 7–8 ready to perform. Learn With Smile’s free 1-minute test at /english-speaking-level-test does the scoring and suggests one course; a teacher confirms it in a free consultation.",
       },
       {
         q: "Is this English speaking test a certificate?",
@@ -125,7 +125,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "What English speaking level do I need for a job in India?",
-        a: "For most office and customer-facing roles, around B1 to B2: you can explain your work, answer follow-up questions and speak in a meeting without freezing. On this test that is roughly 13–20. Below that, start with Basic Spoken English; at 17+ with an interview coming, Interview Preparation.",
+        a: "For most office and customer-facing roles, around B1 to B2: you can explain your work, answer follow-up questions and speak in a meeting without freezing. On this test that is roughly 5–8 out of 8. Below that, start with Basic Spoken English; at 7–8 with an interview coming, Interview Preparation.",
       },
       {
         q: "What do A1, A2, B1 and B2 mean?",

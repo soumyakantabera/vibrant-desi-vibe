@@ -1,5 +1,5 @@
 import type { ArticleBody } from "@/content/blog/blocks";
-import { LEVEL_BANDS } from "@/lib/level-test";
+import { LEVEL_BANDS, bandRange } from "@/lib/level-test";
 import { LEVEL_TEST_LANG_PATHS, TEST_COPY, type TestLang } from "@/lib/level-test-i18n";
 
 /**
@@ -8,12 +8,10 @@ import { LEVEL_TEST_LANG_PATHS, TEST_COPY, type TestLang } from "@/lib/level-tes
  * and the level names on the page always match the test above them.
  */
 
-const RANGE: Record<(typeof LEVEL_BANDS)[number]["id"], string> = {
-  starting: "0–6",
-  building: "7–12",
-  connecting: "13–16",
-  performing: "17–20",
-};
+const RANGE = Object.fromEntries(LEVEL_BANDS.map((b) => [b.id, bandRange(b)])) as Record<
+  (typeof LEVEL_BANDS)[number]["id"],
+  string
+>;
 
 const WORDS: Record<
   Exclude<TestLang, "en">,
@@ -34,11 +32,11 @@ const WORDS: Record<
 > = {
   hi: {
     howH2: "स्कोर कैसे गिनें",
-    howP: "हर सवाल पर “हाँ, आसानी से” के **2**, “मुश्किल से” के **1** और “अभी नहीं” के **0** नंबर — कुल 20 में से। पहले चार सवाल रोज़ की बुनियादी बातें हैं, बीच के तीन जुड़ी हुई बातचीत, और आखिरी तीन दबाव में बोलना। JavaScript न चले तो यह तालिका देखकर खुद गिन लें:",
+    howP: "हर सवाल पर “हाँ, आसानी से” के **2**, “मुश्किल से” के **1** और “अभी नहीं” के **0** नंबर — कुल 8 में से। हर लेवल का एक सवाल है: बुनियादी परिचय, past tense, जुड़ी हुई बातचीत, और दबाव में बोलना। JavaScript न चले तो यह तालिका देखकर खुद गिन लें:",
     head: ["स्कोर", "लेवल", "शुरू करें"],
     workGoal: "ऑफ़िस/मीटिंग लक्ष्य हो तो",
     interviewGoal: "इंटरव्यू लक्ष्य हो तो",
-    questionsH2: "टेस्ट के दस सवाल",
+    questionsH2: "टेस्ट के चार सवाल",
     levelsH2: "हर लेवल का असली मतलब",
     levelsHead: ["लेवल", "CEFR", "मतलब"],
     notCertificate:
@@ -49,11 +47,11 @@ const WORDS: Record<
   },
   bn: {
     howH2: "স্কোর কীভাবে গুনবেন",
-    howP: "প্রতিটি প্রশ্নে “হ্যাঁ, সহজেই” হলে **2**, “কষ্ট করে” হলে **1**, “এখনও না” হলে **0** — মোট 20-এর মধ্যে। প্রথম চারটি রোজকার বেসিক, মাঝের তিনটি জোড়া লাগানো কথা, শেষ তিনটি চাপের মধ্যে বলা। JavaScript না চললে এই টেবিল দেখে নিজেই গুনে নিন:",
+    howP: "প্রতিটি প্রশ্নে “হ্যাঁ, সহজেই” হলে **2**, “কষ্ট করে” হলে **1**, “এখনও না” হলে **0** — মোট 8-এর মধ্যে। প্রতিটি লেভেলের একটা করে প্রশ্ন: বেসিক পরিচয়, past tense, জোড়া লাগানো কথা, আর চাপের মধ্যে বলা। JavaScript না চললে এই টেবিল দেখে নিজেই গুনে নিন:",
     head: ["স্কোর", "লেভেল", "শুরু করুন"],
     workGoal: "অফিস/মিটিং লক্ষ্য হলে",
     interviewGoal: "ইন্টারভিউ লক্ষ্য হলে",
-    questionsH2: "টেস্টের দশটি প্রশ্ন",
+    questionsH2: "টেস্টের চারটি প্রশ্ন",
     levelsH2: "প্রতিটি লেভেলের আসল মানে",
     levelsHead: ["লেভেল", "CEFR", "মানে"],
     notCertificate:

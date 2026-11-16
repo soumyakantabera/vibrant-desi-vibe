@@ -233,7 +233,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-speaking-level-test",
     title: "Free English speaking level test",
-    sub: "10 questions, 2 minutes. Your level and the one course that fits.",
+    sub: "4 questions, 1 minute. Your level and the one course that fits — in English, Hindi or Bengali.",
     icon: "target",
     color: "sunshine",
     group: "choose",

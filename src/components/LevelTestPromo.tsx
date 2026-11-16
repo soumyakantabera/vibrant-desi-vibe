@@ -36,7 +36,7 @@ export function LevelTestPromo() {
               Not sure where to start?
             </h2>
             <p className="mt-2 text-white/95">
-              Take the free 2-minute English speaking level test. 11 taps, your level and the one
+              Take the free 1-minute English speaking level test. 5 taps, your level and the one
               course that fits — and your result goes straight to WhatsApp.
             </p>
           </div>
