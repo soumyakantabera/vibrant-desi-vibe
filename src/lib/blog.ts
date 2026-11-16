@@ -20,6 +20,8 @@
  * under, for the same reason.
  */
 
+import { withJoinFaq } from "@/lib/join-faq";
+
 export type BlogPost = {
   /** URL segment: /blog/<slug>. */
   slug: string;
@@ -54,7 +56,7 @@ export type BlogPost = {
   howTo?: { name: string; description: string; steps: string[]; totalTime?: string };
 };
 
-export const BLOG_POSTS: BlogPost[] = [
+const RAW_POSTS: BlogPost[] = [
   {
     slug: "how-to-improve-communication-skills-in-english",
     title: "How to Improve Communication Skills in English: 12 Habits That Work",
@@ -641,6 +643,12 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 ];
+
+/** Posts, each with the WhatsApp "how do I join?" FAQ where theirs lack one. */
+export const BLOG_POSTS: BlogPost[] = RAW_POSTS.map((post) => ({
+  ...post,
+  faqs: withJoinFaq(post.faqs, { kind: "general" }),
+}));
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   BLOG_POSTS.find((p) => p.slug === slug);

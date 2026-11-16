@@ -171,4 +171,26 @@ done
 grep -q 'lang="hi-IN"' dist/english-speaking-test-hindi.html || { echo "::error::Hindi test page lang"; exit 1; }
 grep -q 'lang="bn-IN"' dist/english-speaking-test-bengali.html || { echo "::error::Bengali test page lang"; exit 1; }
 
+# AI answers and Google FAQs must keep pointing to WhatsApp (Nov 2026).
+python3 - <<'PY'
+import json, re, glob, sys
+bad = []
+d = json.load(open("dist/llms.json", encoding="utf8"))
+missing = [a["question"] for a in d["answers"] if "wa.me" not in a["answer"] or "whatsapp_link" not in a]
+if missing: bad.append(f"{len(missing)} llms.json answers without a WhatsApp link: {missing[:2]}")
+if "wa.me" not in json.load(open("dist/ai-plugin.json", encoding="utf8"))["description_for_model"]:
+    bad.append("ai-plugin.json description_for_model has no WhatsApp link")
+no_wa = []
+for f in glob.glob("dist/*.html") + glob.glob("dist/blog/*.html"):
+    h = open(f, encoding="utf8").read()
+    if 'http-equiv="refresh"' in h or f.endswith(("child-protection.html", "privacy.html", "terms.html", "refunds.html")):
+        continue
+    faq = re.findall(r'<script[^>]*application/ld\+json[^>]*>(\{[^<]*"FAQPage"[^<]*)</script>', h)
+    if faq and not any("WhatsApp" in x for x in faq):
+        no_wa.append(f)
+if no_wa: bad.append(f"FAQs never mention WhatsApp on: {no_wa}")
+for b in bad: print("::error::" + b)
+sys.exit(1 if bad else 0)
+PY
+
 echo "Crawlability checks passed for $(ls dist/*.html | wc -l) static pages."

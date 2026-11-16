@@ -5,6 +5,7 @@
  * JavaScript every page loads first.
  */
 import type { CourseData } from "@/components/CoursePage";
+import { withJoinFaq } from "@/lib/join-faq";
 import {
   CONTACT,
   CONTENT_REVISED,
@@ -46,7 +47,8 @@ function workloadISO(d: string): string | undefined {
  * the structured data as not matching the page.
  */
 export function courseFaqs(d: CourseData) {
-  return [...(d.faqs ?? []), ...(COURSE_SEO[d.slug]?.extraFaqs ?? []), OUTSIDE_INDIA_FEE_FAQ];
+  const faqs = [...(d.faqs ?? []), ...(COURSE_SEO[d.slug]?.extraFaqs ?? []), OUTSIDE_INDIA_FEE_FAQ];
+  return withJoinFaq(faqs, { kind: "course", title: d.title }) ?? faqs;
 }
 
 export function courseSeo(d: CourseData) {
