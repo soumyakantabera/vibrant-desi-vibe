@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
 import { WhyDifferent } from "@/components/WhyDifferent";
-import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
+import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
@@ -68,7 +68,7 @@ export function GuidePage({
   lang?: string;
   /** Off on pages that already show the full pricing grid. */
   packageBand?: boolean;
-  /** Interactive block shown between the short answer and the article (the level test). */
+  /** Interactive block shown first, above the short answer (the level test, city facts). */
   beforeBody?: ReactNode;
   children?: ReactNode;
 }) {
@@ -114,18 +114,8 @@ export function GuidePage({
 
       <article className="section" lang={lang}>
         <div className="container-x max-w-3xl">
-          {shortAnswer && (
-            <div
-              id="short-answer"
-              className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5"
-            >
-              <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
-                Short answer
-              </p>
-              <p className="mt-2 text-ink leading-relaxed font-medium">{shortAnswer}</p>
-            </div>
-          )}
           {beforeBody}
+          {shortAnswer && <ShortAnswer id="short-answer" text={shortAnswer} />}
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
           {/* The dated market strip is the same on every guide, so it follows the

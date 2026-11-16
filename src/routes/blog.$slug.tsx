@@ -2,7 +2,8 @@ import { PackageBand } from "@/components/package/PackageSections";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
-import { ArticleBody, ArticleToc } from "@/components/ArticleBody";
+import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
+import { tagStyle } from "@/lib/tones";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
@@ -69,8 +70,10 @@ function BlogPostPage() {
             </ol>
           </nav>
 
-          <span className="pill bg-cream/15 text-cream border-cream/25 mt-5 inline-flex">
-            {post.tag}
+          <span
+            className={`pill mt-5 inline-flex items-center gap-1.5 border-transparent ${tagStyle(post.tag).tone.solid}`}
+          >
+            <Icon name={tagStyle(post.tag).icon} size={14} /> {post.tag}
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl text-cream leading-[1.1]">{post.title}</h1>
           <p className="mt-4 text-lg text-white/95">{post.description}</p>
@@ -92,14 +95,7 @@ function BlogPostPage() {
 
       <article className="section">
         <div className="container-x max-w-3xl">
-          {post.shortAnswer && (
-            <div className="mb-8 rounded-2xl border border-brand/25 bg-brand-soft p-5">
-              <p className="text-xs uppercase tracking-[0.14em] font-display font-bold text-ink/60">
-                Short answer
-              </p>
-              <p className="mt-2 text-ink leading-relaxed font-medium">{post.shortAnswer}</p>
-            </div>
-          )}
+          {post.shortAnswer && <ShortAnswer text={post.shortAnswer} />}
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
 
@@ -155,10 +151,12 @@ function BlogPostPage() {
                   key={other.slug}
                   to="/blog/$slug"
                   params={{ slug: other.slug }}
-                  className="card-soft flex flex-col hover:shadow-md transition"
+                  className={`card-soft flex flex-col border-t-4 hover:shadow-md transition ${tagStyle(other.tag).tone.top}`}
                 >
-                  <span className="pill bg-brand-soft text-brand-deep border-brand/20 w-fit">
-                    {other.tag}
+                  <span
+                    className={`pill inline-flex w-fit items-center gap-1.5 ${tagStyle(other.tag).tone.soft} ${tagStyle(other.tag).tone.text} ${tagStyle(other.tag).tone.border}`}
+                  >
+                    <Icon name={tagStyle(other.tag).icon} size={13} /> {other.tag}
                   </span>
                   <h3 className="mt-3 font-display font-bold text-ink text-base">{other.title}</h3>
                   <p className="mt-2 text-sm text-ink/85 flex-1">{other.excerpt}</p>

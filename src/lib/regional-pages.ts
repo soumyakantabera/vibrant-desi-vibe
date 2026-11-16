@@ -8,6 +8,7 @@ import { NEED_BODIES } from "@/lib/needs-bodies";
 import { STATES, type StateInfo } from "@/lib/states";
 import { ALL_IN_ONE } from "@/lib/positioning";
 import { MEDIUM_COURSE } from "@/lib/regional-seo";
+import { CITY_PATHS } from "@/lib/cities";
 
 /** States whose biggest city already has its own city page. */
 const CITY_PAGE: Record<string, { name: string; path: string }> = {
@@ -16,6 +17,17 @@ const CITY_PAGE: Record<string, { name: string; path: string }> = {
   karnataka: { name: "Bengaluru", path: "/spoken-english-classes-bengaluru" },
   telangana: { name: "Hyderabad", path: "/spoken-english-classes-hyderabad" },
 };
+
+/** Every city in this state that has its own page, linked from the state page. */
+function cityGuides(st: StateInfo): string {
+  const links = new Map<string, string>();
+  const main = CITY_PAGE[st.slug];
+  if (main) links.set(main.name, main.path);
+  for (const c of st.cities) if (CITY_PATHS[c]) links.set(c, CITY_PATHS[c]);
+  if (!links.size) return "";
+  const list = [...links].map(([name, path]) => `[${name}](${path})`).join(", ");
+  return ` City guides with local detail: ${list}.`;
+}
 
 export function stateBody(st: StateInfo): ArticleBody {
   const mc = MEDIUM_COURSE[st.medium];
@@ -86,7 +98,7 @@ export function stateBody(st: StateInfo): ArticleBody {
     { t: "h2", text: "Cities our learners join from" },
     {
       t: "p",
-      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${CITY_PAGE[st.slug] ? ` In ${CITY_PAGE[st.slug].name}? Read the [${CITY_PAGE[st.slug].name} city guide](${CITY_PAGE[st.slug].path}).` : ""}`,
+      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${cityGuides(st)}`,
     },
     { t: "h2", text: "Before you choose a class" },
     {
