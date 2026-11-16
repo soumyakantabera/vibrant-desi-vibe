@@ -7,6 +7,7 @@ import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
+import { LevelTestPromo } from "@/components/LevelTestPromo";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
@@ -47,6 +48,7 @@ export function GuidePage({
   packageBand = true,
   beforeBody,
   heroCta,
+  levelTestPromo = true,
   children,
 }: {
   eyebrow: string;
@@ -73,6 +75,8 @@ export function GuidePage({
   beforeBody?: ReactNode;
   /** A jump button in the hero, e.g. straight down to the level test. */
   heroCta?: { href: string; label: string };
+  /** The "take the free level test" card after the article. Off on the test pages. */
+  levelTestPromo?: boolean;
   children?: ReactNode;
 }) {
   const toc = articleToc(body);
@@ -133,6 +137,12 @@ export function GuidePage({
           </div>
         </div>
       </article>
+
+      {levelTestPromo && (
+        <div className="pb-10 md:pb-14" lang="en-IN">
+          <LevelTestPromo />
+        </div>
+      )}
 
       <div lang="en-IN">
         <WhyDifferent compact visuals={false} />

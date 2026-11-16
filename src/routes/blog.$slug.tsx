@@ -8,6 +8,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
+import { LevelTestPromo } from "@/components/LevelTestPromo";
 import { IMG } from "@/lib/images";
 import { COURSES } from "@/lib/courses";
 import { getPostBySlug, getRelatedPosts } from "@/lib/blog";
@@ -106,6 +107,10 @@ function BlogPostPage() {
           )}
         </div>
       </article>
+
+      <div className="pb-10 md:pb-14">
+        <LevelTestPromo />
+      </div>
 
       <PackageBand />
 

@@ -19,7 +19,8 @@ type NavItem = {
 
 const MAIN: NavItem[] = [
   { to: "/", label: "Home" },
-  { to: "/why-us", label: "Why Us" },
+  { to: "/english-speaking-level-test", label: "Level test" },
+  { to: "/why-us", label: "Why Us", wideOnly: true },
   { to: "/bolo", label: "Bolo app" },
   { to: "/guides", label: "Guides" },
   { to: "/success-stories", label: "Stories" },
