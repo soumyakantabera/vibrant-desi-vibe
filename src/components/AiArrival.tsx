@@ -13,9 +13,10 @@ import { waLink } from "@/lib/whatsapp";
  * per visit, as a small Bolo card fixed to the bottom of the screen (nothing
  * on the page shifts).
  *
- * Where they came from is read from document.referrer, or — because ChatGPT
- * and others often send no referrer — from the `utm_source` they add to links
- * (chatgpt.com, perplexity, copilot …). Google covers AI Overviews and AI Mode,
+ * Where they came from is read from document.referrer only. Campaign URL
+ * parameters are deliberately not read: the build forbids tracking and
+ * campaign identifiers (see "Verify search and AI outputs" in
+ * .github/workflows/quality.yml). Google covers AI Overviews and AI Mode,
  * which arrive from google.* like ordinary results and cannot be told apart.
  *
  * Timing: AI-assistant visitors see the card after 1.2 s. Google visitors see
@@ -51,18 +52,6 @@ const HOSTS: [RegExp, Source][] = [
   [/(^|\.)google\.[a-z.]+$/, { name: "Google", kind: "search" }],
 ];
 
-/** utm_source value → source (ChatGPT adds utm_source=chatgpt.com to links). */
-const UTM: [RegExp, Source][] = [
-  [/chatgpt|openai/i, { name: "ChatGPT", kind: "ai" }],
-  [/perplexity/i, { name: "Perplexity", kind: "ai" }],
-  [/copilot/i, { name: "Copilot", kind: "ai" }],
-  [/gemini/i, { name: "Gemini", kind: "ai" }],
-  [/claude/i, { name: "Claude", kind: "ai" }],
-  [/deepseek/i, { name: "DeepSeek", kind: "ai" }],
-  [/meta\.?ai/i, { name: "Meta AI", kind: "ai" }],
-  [/grok/i, { name: "Grok", kind: "ai" }],
-];
-
 const KEY = "lws-ai-source";
 const SEEN = "lws-ai-card";
 
@@ -83,8 +72,6 @@ function write(key: string, value: string) {
 
 function detect(): Source | null {
   try {
-    const utm = new URLSearchParams(window.location.search).get("utm_source");
-    if (utm) for (const [re, s] of UTM) if (re.test(utm)) return s;
     if (!document.referrer) return null;
     const host = new URL(document.referrer).hostname;
     if (host === window.location.hostname) return null;
