@@ -20,9 +20,9 @@ export const MEDIUM_COURSE: Record<
     line: "a Hindi-speaking teacher explains what does not land in Hindi, and you speak English in every class",
   },
   marathi: {
-    path: "/course-spoken-english-marathi",
-    label: "Basic Spoken English — Marathi to English",
-    line: "a Marathi-speaking teacher explains what does not land in Marathi, and you speak English in every class",
+    path: "/course-spoken-english",
+    label: "Basic Spoken English",
+    line: "a patient teacher starts from zero, and you speak English in every class",
   },
   english: {
     path: "/course-spoken-english",

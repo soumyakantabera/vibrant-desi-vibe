@@ -106,33 +106,6 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       description: "Practice, Watch, Review: the daily part of every course.",
     },
   ],
-  "spoken-english-marathi": [
-    {
-      href: "/english-hindi-bengali-medium",
-      title: "From a regional-medium school? You still belong here",
-      description: "Explain in your language when a concept stalls, then back to English.",
-    },
-    {
-      href: "/spoken-english-classes-maharashtra",
-      title: "Spoken English in Maharashtra",
-      description: "Pune, Mumbai, Nagpur, Nashik — live online, Marathi-speaking teacher.",
-    },
-    {
-      href: "/spoken-english-for-homemakers-india",
-      title: "Spoken English for homemakers",
-      description: "Learn from home around family time: slots, fee and what a class looks like.",
-    },
-    {
-      href: "/online-vs-offline-spoken-english-classes",
-      title: "Online vs offline spoken English classes",
-      description: "Commute, batch size and speaking time compared, with fees.",
-    },
-    {
-      href: "/bolo",
-      title: "Bolo — daily practice app",
-      description: "Practice, Watch, Review: the daily part of every course.",
-    },
-  ],
   "spoken-english": [
     {
       href: "/spoken-english-for-beginners-india",
@@ -471,7 +444,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       {data.slug === "spoken-english" && (
         <section
           className="border-b border-border bg-bolo-mint/40 py-5"
-          aria-label="Also taught in Hindi or Marathi"
+          aria-label="Also taught in Hindi"
         >
           <div className="container-x flex flex-wrap items-center gap-3 text-sm md:text-base">
             <span className="font-bold text-ink">Prefer help in your own language?</span>
@@ -480,12 +453,6 @@ export function CoursePage({ data }: { data: CourseData }) {
               className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
             >
               Hindi to English <Icon name="arrow-right" size={16} />
-            </Link>
-            <Link
-              to="/course-spoken-english-marathi"
-              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
-            >
-              Marathi to English <Icon name="arrow-right" size={16} />
             </Link>
             <span className="text-ink/70">
               Same course and fee — a teacher who speaks your language.

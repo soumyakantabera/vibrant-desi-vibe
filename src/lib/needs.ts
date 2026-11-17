@@ -67,7 +67,7 @@ export const NEEDS: Record<NeedKey, Need> = {
       },
       {
         q: "Can I prepare for a BPO job if I studied in Hindi or Marathi medium?",
-        a: "Yes. Learn With Smile's Basic Spoken English is also taught Hindi to English and Marathi to English — a teacher who speaks your language explains what does not land, and you speak English in every class. ₹1,199/month, about 6 learners, daily practice in the Bolo app. Message us on WhatsApp for a free consultation.",
+        a: "Yes. Learn With Smile's Basic Spoken English is also taught Hindi to English — a teacher who speaks your language explains what does not land, and you speak English in every class. ₹1,199/month, about 6 learners, daily practice in the Bolo app. Message us on WhatsApp for a free consultation.",
       },
       {
         q: "Do you guarantee a BPO job?",
@@ -260,7 +260,7 @@ export const NEEDS: Record<NeedKey, Need> = {
       },
       {
         q: "I studied in Hindi or Marathi medium. Am I behind for placements?",
-        a: "You are behind on practice, not on ability. Basic Spoken English — Hindi to English or Marathi to English (₹1,199/month) starts from zero with a teacher who speaks your language.",
+        a: "You are behind on practice, not on ability. Basic Spoken English — Hindi to English (₹1,199/month) starts from zero with a teacher who speaks your language.",
       },
     ],
   },

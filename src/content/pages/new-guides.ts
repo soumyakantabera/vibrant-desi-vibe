@@ -765,7 +765,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "6 months, ₹1,199/month inclusive of taxes. Also taught [Hindi to English](/course-spoken-english-hindi) and [Marathi to English](/course-spoken-english-marathi). [Course page](/course-spoken-english).",
+        text: "6 months, ₹1,199/month inclusive of taxes. Also taught [Hindi to English](/course-spoken-english-hindi). [Course page](/course-spoken-english).",
       },
       { t: "h2", text: "Intermediate Spoken English — 30 + 60" },
       {

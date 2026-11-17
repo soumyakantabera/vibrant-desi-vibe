@@ -240,7 +240,7 @@ function Home() {
             <SectionHeader
               eyebrow={<MarketCopy inr="What we teach · from ₹1,199/month" usd="What we teach" />}
               title="Choose the Goal You Need Now"
-              subtitle="Four live courses for adults 15+, about 6 learners a batch, billed one month at a time — inclusive of taxes. Basic Spoken English is also taught Hindi to English and Marathi to English."
+              subtitle="Four live courses for adults 15+, about 6 learners a batch, billed one month at a time — inclusive of taxes. Basic Spoken English is also taught Hindi to English."
             />
             <PricingGrid />
             <ConsultStrip />

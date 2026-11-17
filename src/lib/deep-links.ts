@@ -14,7 +14,6 @@ import { faqAnchor, moduleAnchor, monthAnchor } from "@/lib/anchors";
 export const DEEP_LINK_COURSES = [
   "spoken-english",
   "spoken-english-hindi",
-  "spoken-english-marathi",
   "intermediate-english",
   "interactive-speaking",
   "interview-preparation",

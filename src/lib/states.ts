@@ -75,9 +75,9 @@ export const STATES: StateInfo[] = [
       { city: "Nashik", areas: ["College Road", "Gangapur Road", "Panchavati"] },
     ],
     languages: "Marathi, Hindi, English",
-    medium: "marathi",
+    medium: "english",
     intro:
-      "Marathi-medium graduates in Pune, Mumbai and the MIDC belts often know the answer and still freeze in an English interview. Live, small-batch English taught by a Marathi-speaking teacher was hard to find in our November 2026 research — we teach it.",
+      "Marathi-medium graduates in Pune, Mumbai and the MIDC belts often know the answer and still freeze in an English interview. Live, small-batch online classes with lots of speaking time close that gap.",
     hubs: [
       { need: "it", where: "Pune (Hinjewadi, Kharadi, Magarpatta), Mumbai and Thane IT parks" },
       {
@@ -104,17 +104,17 @@ export const STATES: StateInfo[] = [
     ],
     faqs: [
       {
-        q: "Is there a spoken English class in Maharashtra taught in Marathi?",
-        a: "Yes. Learn With Smile's Basic Spoken English — Marathi to English is taught live online by a Marathi-speaking teacher, in a batch of about 6: hard ideas explained in Marathi, speaking practice in English. 6 months, ₹1,199/month inclusive of taxes, with daily practice in the Bolo app. Attend from Pune, Mumbai, Nagpur, Nashik or anywhere. Message us on WhatsApp.",
+        q: "Is there a spoken English class in Maharashtra for beginners?",
+        a: "Yes. Learn With Smile's Basic Spoken English is taught live online in a batch of about 6 and starts from zero. 6 months, ₹1,199/month inclusive of taxes, with daily practice in the Bolo app. Attend from Pune, Mumbai, Nagpur, Nashik or anywhere. Message us on WhatsApp.",
       },
       {
         q: "What do spoken English classes cost in Pune or Mumbai?",
         a: "Public listings we checked in November 2026 show offline classes at roughly ₹3,000–₹10,000 a month in tier-2 cities, live online chain courses from about ₹7,500, and premium brands at ₹8,800–₹16,000 a module in Mumbai. Learn With Smile is ₹1,199/month for Basic Spoken English, including live classes, the Bolo practice app and a weekly teacher review.",
       },
     ],
-    title: "Spoken English Classes in Maharashtra | Marathi Medium",
+    title: "Spoken English Classes in Maharashtra | Live Online",
     description:
-      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra — taught by a Marathi-speaking teacher, about 6 per batch, ₹1,199/month incl. taxes.",
+      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra — live small batches of about 6, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes maharashtra",
       "spoken english classes pune online",

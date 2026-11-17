@@ -267,7 +267,6 @@ for bot in ("Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "
 SEM = {
     "spoken english course online": "/course-spoken-english",
     "spoken english in hindi": "/course-spoken-english-hindi",
-    "spoken english in marathi": "/course-spoken-english-marathi",
     "intermediate spoken english": "/course-intermediate-english",
     "interactive speaking": "/course-interactive-speaking",
     "business english": "/course-interactive-speaking",

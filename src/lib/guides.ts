@@ -105,7 +105,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-classes-maharashtra",
     title: "Spoken English in Maharashtra",
-    sub: "Marathi-speaking teacher · Pune, Mumbai, Nagpur",
+    sub: "Live online · Pune, Mumbai, Nagpur",
     icon: "globe",
     color: "brand",
     group: "state",

@@ -1860,9 +1860,8 @@ const INR_MONTHLY_FEE: Record<string, number> = {
   "intermediate-english": 1999,
   "interactive-speaking": 1599,
   "interview-preparation": 2499,
-  // Same course and fee, taught through Hindi / Marathi.
+  // Same course and fee, taught through Hindi.
   "spoken-english-hindi": 1199,
-  "spoken-english-marathi": 1199,
 };
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
@@ -1923,36 +1922,6 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       {
         q: "What is the fee for a Hindi-medium spoken English course?",
         a: "₹1,199 per month, inclusive of taxes, for 6 months — the same fee as Basic Spoken English. It includes up to 2 live classes a week (1 hr 30 min, about 6 learners), the Bolo practice app and a weekly teacher review. No material fee.",
-      },
-    ],
-  },
-  "spoken-english-marathi": {
-    title: "Spoken English in Marathi | Marathi to English ₹1,199/mo",
-    description:
-      "Learn English through Marathi: a Marathi-speaking teacher, live batch of about 6, daily Bolo practice, weekly review. 6 months, ₹1,199/month incl. taxes.",
-    shortTitle: "Basic Spoken English — Marathi to English",
-    keywords: [
-      "marathi to english speaking course",
-      "english speaking course in marathi",
-      "spoken english class marathi medium online",
-      "english bolayla shika online class",
-      "इंग्रजी बोलायला शिका",
-      "marathi medium english speaking class pune",
-      "spoken english classes maharashtra online",
-      "live english class taught in marathi",
-    ],
-    ogImage: "/og/spoken-english.jpg",
-    dateModified: "2026-11-03",
-    summary:
-      "Basic Spoken English — Marathi to English: the same 6-month Basic Spoken English course (₹1,199/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week, Bolo app included) taught by a Marathi-speaking teacher. Hard ideas are explained in Marathi; speaking practice is in English. For Marathi-medium students, graduates and working people in Pune, Mumbai, Nagpur, Nashik and across Maharashtra.",
-    extraFaqs: [
-      {
-        q: "Is there a live spoken English course taught in Marathi?",
-        a: "Yes. Learn With Smile's Basic Spoken English — Marathi to English is taught live by a Marathi-speaking teacher in a batch of about 6. Hard ideas are explained in Marathi; you practise speaking in English every class. 6 months, ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Message us on WhatsApp to book a free consultation.",
-      },
-      {
-        q: "I studied in a Marathi-medium school. Which English course should I take?",
-        a: "If you cannot yet finish a sentence out loud in English, take Basic Spoken English — Marathi to English: a Marathi-speaking teacher explains what does not land, and you speak English in every class. If basic sentences already work, Intermediate Spoken English (₹1,999/month) builds grammar and flow. A free consultation on WhatsApp places you.",
       },
     ],
   },
@@ -2114,7 +2083,7 @@ export function organizationLd() {
       height: 180,
     },
     image: abs("/og/default.jpg"),
-    description: `${ALL_IN_ONE} India fees inclusive of taxes; learners outside India pay the labeled fee, not the rupee figure. Basic Spoken English (also taught Hindi to English and Marathi to English), Intermediate, Interactive Speaking and Interview Preparation for adults 15+. The Bolo practice app is included in every course.`,
+    description: `${ALL_IN_ONE} India fees inclusive of taxes; learners outside India pay the labeled fee, not the rupee figure. Basic Spoken English (also taught Hindi to English), Intermediate, Interactive Speaking and Interview Preparation for adults 15+. The Bolo practice app is included in every course.`,
     audience: [
       { "@type": "EducationalAudience", educationalRole: "student", audienceType: "Adults 15+" },
     ],
