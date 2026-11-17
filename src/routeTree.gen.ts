@@ -75,7 +75,6 @@ import { Route as EnglishForBankPoInterviewRouteImport } from './routes/english-
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EducatorRouteImport } from './routes/educator'
-import { Route as CourseSpokenEnglishMarathiRouteImport } from './routes/course-spoken-english-marathi'
 import { Route as CourseSpokenEnglishHindiRouteImport } from './routes/course-spoken-english-hindi'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as CourseInterviewPreparationRouteImport } from './routes/course-interview-preparation'
@@ -471,12 +470,6 @@ const EducatorRoute = EducatorRouteImport.update({
   path: '/educator',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CourseSpokenEnglishMarathiRoute =
-  CourseSpokenEnglishMarathiRouteImport.update({
-    id: '/course-spoken-english-marathi',
-    path: '/course-spoken-english-marathi',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const CourseSpokenEnglishHindiRoute =
   CourseSpokenEnglishHindiRouteImport.update({
     id: '/course-spoken-english-hindi',
@@ -573,7 +566,6 @@ export interface FileRoutesByFullPath {
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/course-spoken-english-hindi': typeof CourseSpokenEnglishHindiRoute
-  '/course-spoken-english-marathi': typeof CourseSpokenEnglishMarathiRoute
   '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -657,7 +649,6 @@ export interface FileRoutesByTo {
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/course-spoken-english-hindi': typeof CourseSpokenEnglishHindiRoute
-  '/course-spoken-english-marathi': typeof CourseSpokenEnglishMarathiRoute
   '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -742,7 +733,6 @@ export interface FileRoutesById {
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
   '/course-spoken-english': typeof CourseSpokenEnglishRoute
   '/course-spoken-english-hindi': typeof CourseSpokenEnglishHindiRoute
-  '/course-spoken-english-marathi': typeof CourseSpokenEnglishMarathiRoute
   '/educator': typeof EducatorRoute
   '/english-career': typeof EnglishCareerRoute
   '/english-class-fees-india': typeof EnglishClassFeesIndiaRoute
@@ -828,7 +818,6 @@ export interface FileRouteTypes {
     | '/course-interview-preparation'
     | '/course-spoken-english'
     | '/course-spoken-english-hindi'
-    | '/course-spoken-english-marathi'
     | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
@@ -912,7 +901,6 @@ export interface FileRouteTypes {
     | '/course-interview-preparation'
     | '/course-spoken-english'
     | '/course-spoken-english-hindi'
-    | '/course-spoken-english-marathi'
     | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
@@ -996,7 +984,6 @@ export interface FileRouteTypes {
     | '/course-interview-preparation'
     | '/course-spoken-english'
     | '/course-spoken-english-hindi'
-    | '/course-spoken-english-marathi'
     | '/educator'
     | '/english-career'
     | '/english-class-fees-india'
@@ -1081,7 +1068,6 @@ export interface RootRouteChildren {
   CourseInterviewPreparationRoute: typeof CourseInterviewPreparationRoute
   CourseSpokenEnglishRoute: typeof CourseSpokenEnglishRoute
   CourseSpokenEnglishHindiRoute: typeof CourseSpokenEnglishHindiRoute
-  CourseSpokenEnglishMarathiRoute: typeof CourseSpokenEnglishMarathiRoute
   EducatorRoute: typeof EducatorRoute
   EnglishCareerRoute: typeof EnglishCareerRoute
   EnglishClassFeesIndiaRoute: typeof EnglishClassFeesIndiaRoute
@@ -1616,13 +1602,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EducatorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/course-spoken-english-marathi': {
-      id: '/course-spoken-english-marathi'
-      path: '/course-spoken-english-marathi'
-      fullPath: '/course-spoken-english-marathi'
-      preLoaderRoute: typeof CourseSpokenEnglishMarathiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/course-spoken-english-hindi': {
       id: '/course-spoken-english-hindi'
       path: '/course-spoken-english-hindi'
@@ -1746,7 +1725,6 @@ const rootRouteChildren: RootRouteChildren = {
   CourseInterviewPreparationRoute: CourseInterviewPreparationRoute,
   CourseSpokenEnglishRoute: CourseSpokenEnglishRoute,
   CourseSpokenEnglishHindiRoute: CourseSpokenEnglishHindiRoute,
-  CourseSpokenEnglishMarathiRoute: CourseSpokenEnglishMarathiRoute,
   EducatorRoute: EducatorRoute,
   EnglishCareerRoute: EnglishCareerRoute,
   EnglishClassFeesIndiaRoute: EnglishClassFeesIndiaRoute,
@@ -1827,3 +1805,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

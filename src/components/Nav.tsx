@@ -49,13 +49,6 @@ const ENGLISH_COURSES: {
     inr: "Hindi-speaking teacher · ₹1,199/month",
   },
   {
-    to: "/course-spoken-english-marathi",
-    label: "Basic Spoken English — Marathi to English",
-    icon: "translate",
-    slug: "spoken-english",
-    inr: "Marathi-speaking teacher · ₹1,199/month",
-  },
-  {
     to: "/course-intermediate-english",
     label: "Intermediate Spoken English",
     icon: "trend",

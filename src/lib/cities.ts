@@ -276,17 +276,13 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Marathi medium? There is a course for that" },
       {
         t: "p",
-        text: "Many Pune learners studied in Marathi medium and think in Marathi. [Basic Spoken English — Marathi to English](/course-spoken-english-marathi) is the same course and fee (₹1,199/month), taught by a Marathi-speaking teacher who explains a stuck concept in Marathi and moves you straight back to English. Hindi-medium learners can take the [Hindi to English](/course-spoken-english-hindi) version.",
+        text: "Many Pune learners studied in Marathi medium. [Basic Spoken English](/course-spoken-english) starts from zero, with short, simple sentences and a teacher who slows down until each idea lands. Hindi-medium learners can take the [Hindi to English](/course-spoken-english-hindi) version.",
       },
     ],
     localFaqs: [
       {
         q: "Are there spoken English classes in Pune with fees listed?",
         a: "Yes. Learn With Smile publishes its fees: Basic Spoken English ₹1,199/month (6 months), Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month — all inclusive of taxes, about 6 learners, live online. Pune learners pay the same as everyone else in India.",
-      },
-      {
-        q: "Is there a Marathi-medium spoken English course for Pune learners?",
-        a: "Yes. Basic Spoken English — Marathi to English has a Marathi-speaking teacher who explains hard ideas in Marathi while all speaking practice stays in English. Same 6 months and ₹1,199/month.",
       },
     ],
   },
@@ -640,11 +636,6 @@ export function cityFaqs(city: CityRecord): Faq[] {
 }
 
 /** City → its state page, so the two pages point at each other instead of competing. */
-const MARATHI = {
-  lang: "Marathi",
-  label: "Basic Spoken English — Marathi to English",
-  path: "/course-spoken-english-marathi",
-};
 const HINDI = {
   lang: "Hindi",
   label: "Basic Spoken English — Hindi to English",
@@ -654,11 +645,11 @@ const STATE_PAGE: Record<
   string,
   { name: string; path: string; medium?: { lang: string; label: string; path: string } }
 > = {
-  mumbai: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra", medium: MARATHI },
+  mumbai: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra" },
   delhi: { name: "Delhi NCR", path: "/spoken-english-classes-delhi-ncr", medium: HINDI },
   bengaluru: { name: "Karnataka", path: "/spoken-english-classes-karnataka" },
   hyderabad: { name: "Telangana", path: "/spoken-english-classes-telangana" },
-  pune: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra", medium: MARATHI },
+  pune: { name: "Maharashtra", path: "/spoken-english-classes-maharashtra" },
   chennai: { name: "Tamil Nadu", path: "/spoken-english-classes-tamil-nadu" },
   ahmedabad: { name: "Gujarat", path: "/spoken-english-classes-gujarat", medium: HINDI },
   patna: { name: "Bihar", path: "/spoken-english-classes-bihar", medium: HINDI },

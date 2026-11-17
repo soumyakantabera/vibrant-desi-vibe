@@ -64,7 +64,6 @@ def q(text: str, target: str, entity: str, kind: str, fee: str | None = None):
 
 MED_PATH = {
     "hindi": "/course-spoken-english-hindi",
-    "marathi": "/course-spoken-english-marathi",
     "english": "/course-spoken-english",
 }
 
@@ -128,8 +127,6 @@ NATIONAL = [
     ("hindi to english speaking course", "/course-spoken-english-hindi", "hindi", "₹1,199"),
     ("english speaking course in hindi live", "/course-spoken-english-hindi", "hindi", "₹1,199"),
     ("हिंदी से इंग्लिश बोलना सीखें", "/course-spoken-english-hindi", "हिंदी", None),
-    ("marathi to english speaking course", "/course-spoken-english-marathi", "marathi", "₹1,199"),
-    ("इंग्रजी बोलायला शिका", "/course-spoken-english-marathi", "मराठी", None),
     ("intermediate spoken english course", "/course-intermediate-english", "intermediate", "₹1,999"),
     ("intermediate english conditionals practice app", "/course-intermediate-english", "bolo", None),
     ("interactive speaking course stop freezing", "/course-interactive-speaking", "freez", "₹1,599"),

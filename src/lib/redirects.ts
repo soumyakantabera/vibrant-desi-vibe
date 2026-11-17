@@ -16,6 +16,8 @@ export const REDIRECTS: Record<string, string> = {
   // Business English was folded into Interactive Speaking (meetings, calls,
   // presentations) and Intermediate (emails, tone) in November 2026.
   "/course-business-english": "/course-interactive-speaking",
+  // The Marathi-medium Basic Spoken English course was retired November 2026.
+  "/course-spoken-english-marathi": "/course-spoken-english",
   ...Object.fromEntries(
     RETIRED_CITY_PATHS.map((from) => [from, RETIRED_CITY_TARGET[from] ?? RETIRED_CITY_REDIRECT]),
   ),
