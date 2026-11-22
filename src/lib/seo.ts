@@ -871,7 +871,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-11-04",
     summary:
-      "Course hub. Four programmes (Basic also in Hindi or Marathi) from ₹1,199/month, inclusive of taxes, billed one month at a time. Free consultation on WhatsApp to choose.",
+      "Course hub. Four programmes (Basic also taught Hindi to English and Bengali to English) from ₹1,199/month, inclusive of taxes, billed one month at a time. Free consultation on WhatsApp to choose.",
     faqs: [
       {
         q: "Which English course should I choose — Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation?",

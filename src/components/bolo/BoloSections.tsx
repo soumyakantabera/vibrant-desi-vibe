@@ -311,7 +311,7 @@ export function BoloTryIt() {
 }
 
 const LEVEL_TABS: { level: BoloLevel; label: string; course: string }[] = [
-  { level: "basic", label: "Basic", course: "Basic Spoken English (also Hindi / Marathi medium)" },
+  { level: "basic", label: "Basic", course: "Basic Spoken English (also Hindi / Bengali medium)" },
   { level: "intermediate", label: "Intermediate", course: "Intermediate Spoken English" },
   { level: "interactive", label: "Interactive", course: "Interactive Speaking" },
   { level: "interview", label: "Interview", course: "Interview Preparation" },

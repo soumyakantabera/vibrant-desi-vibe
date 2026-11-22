@@ -60,7 +60,7 @@ const STACK: {
     tone: "bg-[#CC3A55]",
     icon: "teacher",
     title: "Same teacher",
-    body: "Hindi, Marathi or English medium",
+    body: "Hindi, Bengali or English medium",
   },
 ];
 

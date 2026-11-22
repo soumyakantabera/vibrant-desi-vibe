@@ -98,7 +98,7 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     rooms: {
       basic: {
         fee: "₹1,199/month · 6 months",
-        why: "Sounds, sentence patterns and everyday vocabulary, with speaking in every class. Also taught through Hindi or Marathi.",
+        why: "Sounds, sentence patterns and everyday vocabulary, with speaking in every class. Also taught through Hindi or Bengali.",
       },
       intermediate: {
         fee: "₹1,999/month · 4 months",

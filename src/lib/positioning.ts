@@ -11,7 +11,7 @@
 import { FAIR_BILLING } from "@/lib/fair-fees";
 
 export const ALL_IN_ONE =
-  "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher — all in one monthly fee from ₹1,199, taught in English, Hindi or Marathi.";
+  "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher — all in one monthly fee from ₹1,199, taught in English, Hindi or Bengali.";
 
 export const ALL_IN_ONE_SHORT =
   "Daily practice, a live teacher and your own language — from ₹1,199/month.";
@@ -61,7 +61,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     teacher: "yes",
     teacherNote: "Yes — about 6 learners, same teacher",
     language: "yes",
-    languageNote: "Hindi, Marathi or English",
+    languageNote: "Hindi, Bengali or English",
     billing: "yes",
     billingNote: "Yes — no auto-debit, no loans, refund in writing",
     price: "From ₹1,199/month",
