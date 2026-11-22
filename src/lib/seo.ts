@@ -1299,13 +1299,15 @@ const RAW_PAGES: Record<string, PageSeo> = {
       "spoken english class gariahat",
       "english speaking classes kolkata bengali medium",
       "online english classes kolkata working professionals",
+      "spoken english in bengali kolkata",
+      "bengali to english speaking course kolkata",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: "2026-10-08",
+    dateModified: "2026-11-22",
     summary:
-      "Kolkata page. Live online Spoken English for Kolkata learners — why a small online batch beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, flexible afternoon/evening/night timings, and the same ₹1,199/month fee as everywhere else.",
+      "Kolkata page. Live online Spoken English for Kolkata learners — why a small online batch beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, Basic Spoken English — Bengali to English (/course-spoken-english-bengali) with a Bengali-speaking teacher, flexible afternoon/evening/night timings, and the same ₹1,199/month fee as everywhere else.",
     faqs: [
       {
         q: "Where in Kolkata are your spoken English classes held?",
@@ -1317,7 +1319,11 @@ const RAW_PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
-        a: "Yes. Instruction is in English and all practice stays in English, but when a concept is not landing the teacher will explain it in Bengali or Hindi and then go back to English. This matters: a strictly English-only classroom produces silence from genuine beginners, and silence is the one thing a speaking class cannot afford. As your level rises the first-language explanations naturally stop being needed.",
+        a: "Yes. Instruction is in English and all practice stays in English, but when a concept is not landing the teacher will explain it in Bengali or Hindi and then go back to English. This matters: a strictly English-only classroom produces silence from genuine beginners, and silence is the one thing a speaking class cannot afford. As your level rises the first-language explanations naturally stop being needed. If you want a teacher who explains in Bengali from the first class, choose Basic Spoken English — Bengali to English.",
+      },
+      {
+        q: "Is there a spoken English course taught in Bengali for Kolkata learners?",
+        a: "Yes. Basic Spoken English — Bengali to English is the same 6-month Basic Spoken English course, taught live online by a Bengali-speaking teacher in a batch of about 6. Hard grammar and vocabulary are explained in Bengali; the speaking practice is in English, and the share of English grows month by month. ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review.",
       },
       {
         q: "What batch timings do you run for people working in Sector V or Salt Lake?",

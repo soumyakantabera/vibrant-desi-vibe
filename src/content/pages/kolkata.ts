@@ -22,7 +22,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "**How it works.** Every class is live online, in a batch of about six, so you join from home. Our registered office is at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008, and the team is Kolkata-based.",
+    text: "**How it works.** Every class is live online, in a batch of about six, so you join from home. Our registered office is at 75/2/4 Raja Ram Mohan Roy Road, Kolkata 700008, and the team is Kolkata-based. If you think in Bengali, [Basic Spoken English — Bengali to English](/course-spoken-english-bengali) is the same course and fee, taught by a Bengali-speaking teacher.",
   },
 
   { t: "h2", text: "Why Kolkata learners choose online" },
@@ -119,7 +119,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "If you are starting from further back than any of these — you read English fine but cannot hold a five-minute conversation — start with [Basic Spoken English](/course-spoken-english) and come back to the specialised course afterwards.",
+    text: "If you are starting from further back than any of these — you read English fine but cannot hold a five-minute conversation — start with [Basic Spoken English](/course-spoken-english), or its [Bengali to English](/course-spoken-english-bengali) version if you want explanations in Bengali, and come back to the specialised course afterwards.",
   },
 
   { t: "h2", text: "Fees" },
@@ -130,6 +130,11 @@ export const body: ArticleBody = [
     head: ["Course", "Duration", "Fee"],
     rows: [
       ["Basic Spoken English", "6 months · up to 2 classes/week", "₹1,199/month"],
+      [
+        "[Basic Spoken English — Bengali to English](/course-spoken-english-bengali)",
+        "6 months · up to 2 classes/week · Bengali-speaking teacher",
+        "₹1,199/month",
+      ],
       ["Intermediate Spoken English", "4 months · up to 2 classes/week", "₹1,999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,599/month"],
       ["Interview Preparation", "2 months · up to 2 classes/week", "₹2,499/month"],

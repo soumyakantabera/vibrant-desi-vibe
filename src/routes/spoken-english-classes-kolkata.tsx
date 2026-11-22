@@ -62,7 +62,7 @@ function Page() {
           Approx. 6 Learners per Batch
         </>
       }
-      standfirst="Live online classes from a Kolkata-based team, attended from home. ₹1,199/month, inclusive of taxes, approximately 6 learners per batch, flexible afternoon, evening and night timings."
+      standfirst="Live online classes from a Kolkata-based team, attended from home. ₹1,199/month, inclusive of taxes, approximately 6 learners per batch, flexible afternoon, evening and night timings. Basic Spoken English is also taught Bengali to English."
       heroImage={IMG.groupClass}
       heroAlt="Kolkata learners in a live online English class"
       body={body}
