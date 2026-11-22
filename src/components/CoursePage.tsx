@@ -33,7 +33,7 @@ export type Project = { title: string; brief: string; deliverable: string };
 
 /** A short block in the learner's own language (Hindi / Bengali courses). */
 export type NativeSection = {
-  lang: "hi" | "mr" | "bn";
+  lang: "hi" | "bn";
   /** Section id on the page (`#hindi`, `#bengali`), also used by deep links. */
   anchor: string;
   /** English label for that anchor in deep-link lists. */

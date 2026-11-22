@@ -273,7 +273,7 @@ export const CITIES: CityRecord[] = [
           "**Students and freshers:** the 60-second introduction and the HR round. See [campus placement English](/english-for-campus-placements-india).",
         ],
       },
-      { t: "h2", text: "Marathi medium? There is a course for that" },
+      { t: "h2", text: "Studied in Marathi medium? Start from zero" },
       {
         t: "p",
         text: "Many Pune learners studied in Marathi medium. [Basic Spoken English](/course-spoken-english) starts from zero, with short, simple sentences and a teacher who slows down until each idea lands. Hindi-medium learners can take the [Hindi to English](/course-spoken-english-hindi) version.",

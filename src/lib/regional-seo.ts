@@ -19,15 +19,10 @@ export const MEDIUM_COURSE: Record<
     label: "Basic Spoken English — Hindi to English",
     line: "a Hindi-speaking teacher explains what does not land in Hindi, and you speak English in every class",
   },
-  marathi: {
-    path: "/course-spoken-english",
-    label: "Basic Spoken English",
-    line: "a patient teacher starts from zero, and you speak English in every class",
-  },
   english: {
     path: "/course-spoken-english",
     label: "Basic Spoken English",
-    line: "English-to-English teaching, with a Hindi-medium batch available if you think in Hindi",
+    line: "English-to-English teaching, with Hindi-medium and Bengali-medium batches available if you think in either language",
   },
 };
 
@@ -60,8 +55,8 @@ export function stateLocalFaqs(st: StateInfo): { q: string; a: string }[] {
       q: `Which language does the teacher explain in, for ${st.name}?`,
       a:
         st.medium === "english"
-          ? `${mc.label}: ${mc.line}. Explanations are in English or Hindi only. Tell us on WhatsApp which language you think in and we will say honestly whether a batch fits.`
-          : `Yes. ${mc.label}: ${mc.line}. The ${st.medium === "hindi" ? "Hindi" : "Marathi"} explanations are short and only where something does not land; the speaking is in English.`,
+          ? `${mc.label}: ${mc.line}. Explanations are in English, Hindi or Bengali only. Tell us on WhatsApp which language you think in and we will say honestly whether a batch fits.`
+          : `Yes. ${mc.label}: ${mc.line}. The Hindi explanations are short and only where something does not land; the speaking is in English.`,
     },
   ];
 }

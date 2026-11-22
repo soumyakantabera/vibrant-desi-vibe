@@ -115,7 +115,7 @@ for st in STATES:
         q(f"{n['label'].lower()} english {city}", sp, city, "need-local")
         q(f"{n['label'].lower()} english preparation", n["path"], n["label"].split(" ")[0], "need")
     # medium
-    if st["medium"] in ("hindi", "marathi"):
+    if st["medium"] == "hindi":
         lang = st["medium"].capitalize()
         q(f"{lang} medium spoken english class {name}", sp, lang, "medium-local")
         q(f"{lang} to english speaking course online", MED_PATH[st["medium"]], lang, "medium", "₹1,199")

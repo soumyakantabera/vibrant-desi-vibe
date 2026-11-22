@@ -10,7 +10,7 @@
  */
 import type { NeedKey } from "@/lib/needs";
 
-export type StateMedium = "hindi" | "marathi" | "english";
+export type StateMedium = "hindi" | "english";
 
 export type StateInfo = {
   slug: string;
@@ -99,7 +99,6 @@ export const STATES: StateInfo[] = [
     ],
     facts: [
       "Marathi is India's third-largest mother tongue (8.3 crore speakers, Census 2011).",
-      "Google AI Mode answers in Marathi since October 2025 — this page has a Marathi section for that reason.",
       "Many Pune voice-process roles ask for English and Marathi together.",
     ],
     faqs: [

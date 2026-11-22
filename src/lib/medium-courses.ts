@@ -10,14 +10,12 @@
  * The native-language block is short on purpose: Google prefers one primary
  * language per page, so these pages stay English-primary (en-IN) and the
  * Course JSON-LD declares the teaching language (hi-IN / bn-IN).
- *
- * The Marathi block is kept for reference; its course was retired in
- * November 2026 and /course-spoken-english-marathi redirects.
+
  */
 import type { CourseData, NativeSection } from "@/components/CoursePage";
 import { ALL_IN_ONE } from "@/lib/positioning";
 
-export type MediumLang = "hi" | "mr" | "bn";
+export type MediumLang = "hi" | "bn";
 
 const HINDI: NativeSection = {
   lang: "hi",
@@ -55,44 +53,6 @@ const HINDI: NativeSection = {
   cta: "WhatsApp पर फ़्री सलाह लें",
   waMessage:
     "Namaste, mujhe Hindi se English wala Basic Spoken English course join karna hai. Free consultation chahiye.",
-};
-
-const MARATHI: NativeSection = {
-  lang: "mr",
-  anchor: "marathi",
-  linkLabel: "In Marathi (मराठीत)",
-  label: "मराठीत वाचा",
-  heading: "मराठीतून इंग्रजी — बेसिक स्पोकन इंग्लिश",
-  intro:
-    "तुमचे शिक्षक मराठी बोलतात. एखादी गोष्ट समजली नाही तर ती मराठीत समजावून सांगितली जाते — आणि मग तीच गोष्ट तुम्ही इंग्रजीत बोलता. सुमारे 6 जणांची लाइव्ह बॅच, आठवड्याला 2 क्लासपर्यंत, आणि रोज Bolo ॲपमध्ये सराव. फी ₹1,199 दरमहा, करांसह.",
-  points: [
-    "6 महिन्यांचा कोर्स, आठवड्याला 2 लाइव्ह क्लासपर्यंत (1 तास 30 मिनिटे)",
-    "सुमारे 6 जणांची छोटी बॅच — प्रत्येक क्लासमध्ये तुम्ही बोलता",
-    "Bolo ॲप: रोज व्याकरण, शब्द, वाचन आणि बोलण्याचा सराव — स्ट्रीकसह",
-    "दर आठवड्याला शिक्षक तुमचे रेकॉर्डिंग ऐकून सुधारणा सांगतात",
-    "₹1,199 दरमहा, करांसह — सर्व काही एकाच फीमध्ये",
-  ],
-  faqs: [
-    {
-      q: "शिक्षक मराठीत समजावतील का?",
-      a: "हो. अवघड गोष्ट मराठीत समजावली जाते, पण बोलण्याचा सराव इंग्रजीतच होतो. हळूहळू मराठी कमी आणि इंग्रजी जास्त होत जाते.",
-    },
-    {
-      q: "मला अजिबात इंग्रजी येत नाही. मी जॉईन करू शकतो का?",
-      a: "हो, हा कोर्स अगदी सुरुवातीपासून आहे — 15 वर्षांवरील सर्वांसाठी.",
-    },
-    {
-      q: "फी किती आहे?",
-      a: "₹1,199 दरमहा, करांसह. लाइव्ह क्लास, Bolo ॲप आणि दर आठवड्याचा शिक्षकांचा रिव्ह्यू — सर्व याच फीमध्ये.",
-    },
-    {
-      q: "सुरुवात कशी करायची?",
-      a: "WhatsApp वर मेसेज करा. मोफत सल्ला मिळतो, मग तुम्ही तुमची बॅच निवडता.",
-    },
-  ],
-  cta: "WhatsApp वर मोफत सल्ला घ्या",
-  waMessage:
-    "Namaskar, mala Marathitun English wala Basic Spoken English course join karaycha aahe. Free consultation havay.",
 };
 
 const BENGALI: NativeSection = {
@@ -142,15 +102,6 @@ const MEDIUM = {
     who: "Hindi-speaking adults 15+ — from UP, Bihar, Delhi NCR, MP, Rajasthan, Jharkhand, or anyone who thinks in Hindi",
     waDemo:
       "Hi, I want a free consultation for Basic Spoken English — Hindi to English (taught by a Hindi-speaking teacher).",
-  },
-  mr: {
-    slug: "spoken-english-marathi",
-    name: "Marathi",
-    title: "Basic Spoken English — Marathi to English",
-    native: MARATHI,
-    who: "Marathi-speaking adults 15+ — Marathi-medium students, graduates and working people across Maharashtra and beyond",
-    waDemo:
-      "Hi, I want a free consultation for Basic Spoken English — Marathi to English (taught by a Marathi-speaking teacher).",
   },
   bn: {
     slug: "spoken-english-bengali",
