@@ -1153,7 +1153,10 @@ const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
     ],
     path: "/course-spoken-english",
     tone: "green",
-    mediums: [{ label: "Hindi", path: "/course-spoken-english-hindi" }],
+    mediums: [
+      { label: "Hindi", path: "/course-spoken-english-hindi" },
+      { label: "Bengali", path: "/course-spoken-english-bengali" },
+    ],
   },
   "intermediate-english": {
     tag: "Level up",

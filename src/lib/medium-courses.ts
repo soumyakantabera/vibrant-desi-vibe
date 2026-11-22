@@ -1,23 +1,26 @@
 /**
- * Basic Spoken English, taught through Hindi or Marathi (November 2026).
+ * Basic Spoken English, taught through Hindi or Bengali (November 2026).
  *
  * Same course as Basic Spoken English — 6 months, ₹1,199/month inclusive of
  * taxes, about 6 learners, up to 2 live classes a week, Bolo included — with
  * a teacher who speaks the learner's language. Hard concepts are explained in
- * Hindi or Marathi; the speaking practice is in English, and the share of
+ * Hindi or Bengali; the speaking practice is in English, and the share of
  * English grows month by month.
  *
  * The native-language block is short on purpose: Google prefers one primary
  * language per page, so these pages stay English-primary (en-IN) and the
- * Course JSON-LD declares the teaching language (hi-IN / mr-IN).
+ * Course JSON-LD declares the teaching language (hi-IN / bn-IN).
+
  */
 import type { CourseData, NativeSection } from "@/components/CoursePage";
 import { ALL_IN_ONE } from "@/lib/positioning";
 
-export type MediumLang = "hi" | "mr";
+export type MediumLang = "hi" | "bn";
 
 const HINDI: NativeSection = {
   lang: "hi",
+  anchor: "hindi",
+  linkLabel: "In Hindi (हिंदी में)",
   label: "हिंदी में पढ़ें",
   heading: "हिंदी से इंग्लिश — बेसिक स्पोकन इंग्लिश",
   intro:
@@ -52,40 +55,42 @@ const HINDI: NativeSection = {
     "Namaste, mujhe Hindi se English wala Basic Spoken English course join karna hai. Free consultation chahiye.",
 };
 
-const MARATHI: NativeSection = {
-  lang: "mr",
-  label: "मराठीत वाचा",
-  heading: "मराठीतून इंग्रजी — बेसिक स्पोकन इंग्लिश",
+const BENGALI: NativeSection = {
+  lang: "bn",
+  anchor: "bengali",
+  linkLabel: "In Bengali (বাংলায়)",
+  label: "বাংলায় পড়ুন",
+  heading: "বাংলা থেকে ইংরেজি — বেসিক স্পোকেন ইংলিশ",
   intro:
-    "तुमचे शिक्षक मराठी बोलतात. एखादी गोष्ट समजली नाही तर ती मराठीत समजावून सांगितली जाते — आणि मग तीच गोष्ट तुम्ही इंग्रजीत बोलता. सुमारे 6 जणांची लाइव्ह बॅच, आठवड्याला 2 क्लासपर्यंत, आणि रोज Bolo ॲपमध्ये सराव. फी ₹1,199 दरमहा, करांसह.",
+    "আপনার টিচার বাংলা জানেন। কোনো কিছু বুঝতে না পারলে সেটা বাংলায় বুঝিয়ে দেওয়া হয় — তারপর আপনি সেই কথাটাই ইংরেজিতে বলেন। প্রায় 6 জনের লাইভ ব্যাচ, সপ্তাহে ম্যাক্সিমাম 2টো ক্লাস, আর রোজ Bolo অ্যাপে প্র্যাকটিস। ফি ₹1,199 প্রতি মাসে, ট্যাক্স সহ।",
   points: [
-    "6 महिन्यांचा कोर्स, आठवड्याला 2 लाइव्ह क्लासपर्यंत (1 तास 30 मिनिटे)",
-    "सुमारे 6 जणांची छोटी बॅच — प्रत्येक क्लासमध्ये तुम्ही बोलता",
-    "Bolo ॲप: रोज व्याकरण, शब्द, वाचन आणि बोलण्याचा सराव — स्ट्रीकसह",
-    "दर आठवड्याला शिक्षक तुमचे रेकॉर्डिंग ऐकून सुधारणा सांगतात",
-    "₹1,199 दरमहा, करांसह — सर्व काही एकाच फीमध्ये",
+    "6 মাসের কোর্স, সপ্তাহে ম্যাক্সিমাম 2টো লাইভ ক্লাস (1 ঘণ্টা 30 মিনিট)",
+    "প্রায় 6 জনের ছোট ব্যাচ — প্রতিটা ক্লাসে আপনি কথা বলেন",
+    "Bolo অ্যাপ: রোজ গ্রামার, শব্দ, পড়া আর বলা — স্ট্রিক সহ",
+    "প্রতি সপ্তাহে টিচার আপনার রেকর্ডিং শুনে কোথায় ভুল হচ্ছে বলে দেন",
+    "₹1,199 প্রতি মাসে, ট্যাক্স সহ — সব কিছু একটাই ফি-তে",
   ],
   faqs: [
     {
-      q: "शिक्षक मराठीत समजावतील का?",
-      a: "हो. अवघड गोष्ट मराठीत समजावली जाते, पण बोलण्याचा सराव इंग्रजीतच होतो. हळूहळू मराठी कमी आणि इंग्रजी जास्त होत जाते.",
+      q: "টিচার কি বাংলায় বোঝাবেন?",
+      a: "হ্যাঁ। যেটা বুঝতে অসুবিধা হয়, সেটা বাংলায় বুঝিয়ে দেওয়া হয় — কিন্তু বলা হয় ইংরেজিতেই। মাস যত এগোয়, বাংলা তত কমে আর ইংরেজি তত বাড়ে।",
     },
     {
-      q: "मला अजिबात इंग्रजी येत नाही. मी जॉईन करू शकतो का?",
-      a: "हो, हा कोर्स अगदी सुरुवातीपासून आहे — 15 वर्षांवरील सर्वांसाठी.",
+      q: "আমি একদম ইংরেজি বলতে পারি না। আমি কি জয়েন করতে পারি?",
+      a: "হ্যাঁ, অবশ্যই। এই কোর্স একদম শুরু থেকে — 15 বছরের বেশি বয়সী যে কেউ জয়েন করতে পারেন।",
     },
     {
-      q: "फी किती आहे?",
-      a: "₹1,199 दरमहा, करांसह. लाइव्ह क्लास, Bolo ॲप आणि दर आठवड्याचा शिक्षकांचा रिव्ह्यू — सर्व याच फीमध्ये.",
+      q: "ফি কত?",
+      a: "₹1,199 প্রতি মাসে, ট্যাক্স সহ। লাইভ ক্লাস, Bolo অ্যাপ আর প্রতি সপ্তাহে টিচারের রিভিউ — সব এই ফি-তেই।",
     },
     {
-      q: "सुरुवात कशी करायची?",
-      a: "WhatsApp वर मेसेज करा. मोफत सल्ला मिळतो, मग तुम्ही तुमची बॅच निवडता.",
+      q: "কীভাবে শুরু করব?",
+      a: "শুধু WhatsApp-এ মেসেজ করুন। ফ্রি-তে পরামর্শ পাবেন, তারপর আপনি নিজের ব্যাচ বেছে নেবেন।",
     },
   ],
-  cta: "WhatsApp वर मोफत सल्ला घ्या",
+  cta: "WhatsApp-এ ফ্রি পরামর্শ নিন",
   waMessage:
-    "Namaskar, mala Marathitun English wala Basic Spoken English course join karaycha aahe. Free consultation havay.",
+    "Nomoskar, ami Bengali theke English wala Basic Spoken English course join korte chai. Free consultation chai.",
 };
 
 const MEDIUM = {
@@ -98,14 +103,14 @@ const MEDIUM = {
     waDemo:
       "Hi, I want a free consultation for Basic Spoken English — Hindi to English (taught by a Hindi-speaking teacher).",
   },
-  mr: {
-    slug: "spoken-english-marathi",
-    name: "Marathi",
-    title: "Basic Spoken English — Marathi to English",
-    native: MARATHI,
-    who: "Marathi-speaking adults 15+ — Marathi-medium students, graduates and working people across Maharashtra and beyond",
+  bn: {
+    slug: "spoken-english-bengali",
+    name: "Bengali",
+    title: "Basic Spoken English — Bengali to English",
+    native: BENGALI,
+    who: "Bengali-speaking adults 15+ — from Kolkata and the rest of West Bengal, Tripura, Assam's Barak Valley, or anyone who thinks in Bengali",
     waDemo:
-      "Hi, I want a free consultation for Basic Spoken English — Marathi to English (taught by a Marathi-speaking teacher).",
+      "Hi, I want a free consultation for Basic Spoken English — Bengali to English (taught by a Bengali-speaking teacher).",
   },
 } as const;
 

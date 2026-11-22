@@ -43,7 +43,7 @@ export const NEEDS: Record<NeedKey, Need> = {
     standfirst:
       "Many voice roles start with a spoken-English screen — Versant or SVAR — before HR and the client round. Here is what it checks and how to practise.",
     shortAnswer:
-      "Voice-process hiring usually tests spoken English early: an AI-scored test (Versant or SVAR) or a voice round, then HR and operations. Practise clear sentences, listening and repeating, and a calm customer call. If you cannot yet hold a simple conversation, start with Basic Spoken English (₹1,199/month, also taught in Hindi or Marathi); if you speak but freeze, Interactive Speaking.",
+      "Voice-process hiring usually tests spoken English early: an AI-scored test (Versant or SVAR) or a voice round, then HR and operations. Practise clear sentences, listening and repeating, and a calm customer call. If you cannot yet hold a simple conversation, start with Basic Spoken English (₹1,199/month, also taught in Hindi or Bengali); if you speak but freeze, Interactive Speaking.",
     course: {
       path: "/course-spoken-english-hindi",
       name: "Basic Spoken English — Hindi to English",
@@ -57,7 +57,7 @@ export const NEEDS: Record<NeedKey, Need> = {
       "voice and accent training online india",
     ],
     summary:
-      "Guide: English for BPO / voice-process jobs in India — Versant (Pearson, AI-scored, ~15–20 minutes) and SHL SVAR spoken tests appear early in many voice hiring processes, then HR, operations and client rounds. Practise sentence clarity, listen-and-repeat, and customer-call structure. Learn With Smile: Basic Spoken English ₹1,199/month (Hindi or Marathi medium available), Interactive Speaking ₹1,599/month. No job guarantee.",
+      "Guide: English for BPO / voice-process jobs in India — Versant (Pearson, AI-scored, ~15–20 minutes) and SHL SVAR spoken tests appear early in many voice hiring processes, then HR, operations and client rounds. Practise sentence clarity, listen-and-repeat, and customer-call structure. Learn With Smile: Basic Spoken English ₹1,199/month (also taught through Hindi or Bengali), Interactive Speaking ₹1,599/month. No job guarantee.",
     waMessage:
       "Hi, I am preparing for a BPO / voice-process job. Which English course should I take?",
     faqs: [
@@ -66,8 +66,8 @@ export const NEEDS: Record<NeedKey, Need> = {
         a: "Many voice-process employers use an AI-scored spoken test — Pearson's Versant or SHL's SVAR are common — usually early in the process, before HR and operations rounds. Companies rarely publish which test or cut-off they use, so the safest preparation is real speaking practice: reading aloud, listen-and-repeat, short answers and customer-call role-plays.",
       },
       {
-        q: "Can I prepare for a BPO job if I studied in Hindi or Marathi medium?",
-        a: "Yes. Learn With Smile's Basic Spoken English is also taught Hindi to English — a teacher who speaks your language explains what does not land, and you speak English in every class. ₹1,199/month, about 6 learners, daily practice in the Bolo app. Message us on WhatsApp for a free consultation.",
+        q: "Can I prepare for a BPO job if I studied in Hindi or Bengali medium?",
+        a: "Yes. Learn With Smile's Basic Spoken English is also taught Hindi to English and Bengali to English — a teacher who speaks your language explains what does not land, and you speak English in every class. ₹1,199/month, about 6 learners, daily practice in the Bolo app. Message us on WhatsApp for a free consultation.",
       },
       {
         q: "Do you guarantee a BPO job?",
@@ -250,7 +250,7 @@ export const NEEDS: Record<NeedKey, Need> = {
       "spoken english for college students online",
     ],
     summary:
-      "Guide: English for campus placements and higher-studies admissions — group discussions, communication assessments, HR rounds and admission interviews. Practise entering a GD, a 60-second introduction and 'why this course'. Learn With Smile: Basic Spoken English ₹1,199/month (also Hindi or Marathi medium), Intermediate Spoken English ₹1,999/month, Interview Preparation ₹2,499/month.",
+      "Guide: English for campus placements and higher-studies admissions — group discussions, communication assessments, HR rounds and admission interviews. Practise entering a GD, a 60-second introduction and 'why this course'. Learn With Smile: Basic Spoken English ₹1,199/month (also taught through Hindi or Bengali), Intermediate Spoken English ₹1,999/month, Interview Preparation ₹2,499/month.",
     waMessage:
       "Hi, I am a student preparing for placements / admission interviews. Which English course fits?",
     faqs: [
@@ -259,8 +259,8 @@ export const NEEDS: Record<NeedKey, Need> = {
         a: "Speak every day, not just read: a 60-second introduction, one group-discussion point and one HR answer, said out loud and recorded. Learn With Smile courses include the Bolo app for daily practice and a weekly teacher review; Intermediate Spoken English (₹1,999/month) builds flow, Interview Preparation (₹2,499/month) targets the interview.",
       },
       {
-        q: "I studied in Hindi or Marathi medium. Am I behind for placements?",
-        a: "You are behind on practice, not on ability. Basic Spoken English — Hindi to English (₹1,199/month) starts from zero with a teacher who speaks your language.",
+        q: "I studied in Hindi or Bengali medium. Am I behind for placements?",
+        a: "You are behind on practice, not on ability. Basic Spoken English — Hindi to English or Bengali to English (₹1,199/month) starts from zero with a teacher who speaks your language.",
       },
     ],
   },

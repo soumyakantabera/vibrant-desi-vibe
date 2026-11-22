@@ -871,7 +871,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-11-04",
     summary:
-      "Course hub. Four programmes (Basic also in Hindi or Marathi) from ₹1,199/month, inclusive of taxes, billed one month at a time. Free consultation on WhatsApp to choose.",
+      "Course hub. Four programmes (Basic also taught Hindi to English and Bengali to English) from ₹1,199/month, inclusive of taxes, billed one month at a time. Free consultation on WhatsApp to choose.",
     faqs: [
       {
         q: "Which English course should I choose — Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation?",
@@ -1299,13 +1299,15 @@ const RAW_PAGES: Record<string, PageSeo> = {
       "spoken english class gariahat",
       "english speaking classes kolkata bengali medium",
       "online english classes kolkata working professionals",
+      "spoken english in bengali kolkata",
+      "bengali to english speaking course kolkata",
     ],
     ogImage: "/og/spoken-english.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: "2026-10-08",
+    dateModified: "2026-11-22",
     summary:
-      "Kolkata page. Live online Spoken English for Kolkata learners — why a small online batch beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, flexible afternoon/evening/night timings, and the same ₹1,199/month fee as everywhere else.",
+      "Kolkata page. Live online Spoken English for Kolkata learners — why a small online batch beats a commute to Gariahat or Salt Lake, Bengali and Hindi support, Basic Spoken English — Bengali to English (/course-spoken-english-bengali) with a Bengali-speaking teacher, flexible afternoon/evening/night timings, and the same ₹1,199/month fee as everywhere else.",
     faqs: [
       {
         q: "Where in Kolkata are your spoken English classes held?",
@@ -1317,7 +1319,11 @@ const RAW_PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can the teacher explain in Bengali or Hindi if I don't understand?",
-        a: "Yes. Instruction is in English and all practice stays in English, but when a concept is not landing the teacher will explain it in Bengali or Hindi and then go back to English. This matters: a strictly English-only classroom produces silence from genuine beginners, and silence is the one thing a speaking class cannot afford. As your level rises the first-language explanations naturally stop being needed.",
+        a: "Yes. Instruction is in English and all practice stays in English, but when a concept is not landing the teacher will explain it in Bengali or Hindi and then go back to English. This matters: a strictly English-only classroom produces silence from genuine beginners, and silence is the one thing a speaking class cannot afford. As your level rises the first-language explanations naturally stop being needed. If you want a teacher who explains in Bengali from the first class, choose Basic Spoken English — Bengali to English.",
+      },
+      {
+        q: "Is there a spoken English course taught in Bengali for Kolkata learners?",
+        a: "Yes. Basic Spoken English — Bengali to English is the same 6-month Basic Spoken English course, taught live online by a Bengali-speaking teacher in a batch of about 6. Hard grammar and vocabulary are explained in Bengali; the speaking practice is in English, and the share of English grows month by month. ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review.",
       },
       {
         q: "What batch timings do you run for people working in Sector V or Salt Lake?",
@@ -1860,8 +1866,9 @@ const INR_MONTHLY_FEE: Record<string, number> = {
   "intermediate-english": 1999,
   "interactive-speaking": 1599,
   "interview-preparation": 2499,
-  // Same course and fee, taught through Hindi.
+  // Same course and fee, taught through Hindi or Bengali.
   "spoken-english-hindi": 1199,
+  "spoken-english-bengali": 1199,
 };
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
@@ -1922,6 +1929,41 @@ export const COURSE_SEO: Record<string, CourseSeoExtra> = {
       {
         q: "What is the fee for a Hindi-medium spoken English course?",
         a: "₹1,199 per month, inclusive of taxes, for 6 months — the same fee as Basic Spoken English. It includes up to 2 live classes a week (1 hr 30 min, about 6 learners), the Bolo practice app and a weekly teacher review. No material fee.",
+      },
+    ],
+  },
+  "spoken-english-bengali": {
+    title: "Spoken English in Bengali | Bengali to English, ₹1,199/mo",
+    description:
+      "Learn English through Bengali: a Bengali-speaking teacher, live batch of about 6, daily Bolo practice and weekly review. 6 months, ₹1,199/month incl. taxes.",
+    shortTitle: "Basic Spoken English — Bengali to English",
+    keywords: [
+      "bengali to english speaking course",
+      "spoken english in bengali",
+      "english speaking course in bengali",
+      "spoken english class bengali medium online",
+      "bangla theke english bolte shikhun",
+      "basic english speaking course in bengali for beginners",
+      "বাংলা থেকে ইংরেজি বলা শিখুন",
+      "live english class taught in bengali",
+      "spoken english classes kolkata online",
+    ],
+    ogImage: "/og/spoken-english.jpg",
+    dateModified: "2026-11-22",
+    summary:
+      "Basic Spoken English — Bengali to English: the same 6-month Basic Spoken English course (₹1,199/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week, Bolo app included) taught by a Bengali-speaking teacher. Hard ideas are explained in Bengali; speaking practice is in English, and the share of English grows month by month. For Bengali-speaking adults 15+ in Kolkata, the rest of West Bengal, Tripura, Assam's Barak Valley and anywhere else.",
+    extraFaqs: [
+      {
+        q: "Is there a live spoken English course taught in Bengali?",
+        a: "Yes. Learn With Smile's Basic Spoken English — Bengali to English is taught live by a Bengali-speaking teacher in a batch of about 6. Hard grammar and vocabulary are explained in Bengali; you practise speaking in English every class. 6 months, ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Message us on WhatsApp to book a free consultation.",
+      },
+      {
+        q: "What is the fee for a Bengali-medium spoken English course?",
+        a: "₹1,199 per month, inclusive of taxes, for 6 months — the same fee as Basic Spoken English. It includes up to 2 live classes a week (1 hr 30 min, about 6 learners), the Bolo practice app and a weekly teacher review. No material fee.",
+      },
+      {
+        q: "Will the teacher fix the mistakes Bengali speakers usually make?",
+        a: "Yes — that is the main advantage of a Bengali-speaking teacher. The common ones are he/she mix-ups (Bengali সে covers both), “I am agree”, “discussed about”, “since 2 years”, and sounds such as v/bh, s/sh and z/j. The teacher knows why each one happens and corrects the pattern, not just the sentence.",
       },
     ],
   },

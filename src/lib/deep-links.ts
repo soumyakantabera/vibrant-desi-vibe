@@ -14,6 +14,7 @@ import { faqAnchor, moduleAnchor, monthAnchor } from "@/lib/anchors";
 export const DEEP_LINK_COURSES = [
   "spoken-english",
   "spoken-english-hindi",
+  "spoken-english-bengali",
   "intermediate-english",
   "interactive-speaking",
   "interview-preparation",
@@ -42,11 +43,7 @@ export function courseDeepLinks(slug: string): {
     { label: `Fee: ${d.price}, ${d.duration}`, href: at("fees"), kind: "section" },
   ];
   if (d.native) {
-    links.push({
-      label: d.native.lang === "hi" ? "In Hindi (हिंदी में)" : "In Marathi (मराठीत)",
-      href: at(d.native.lang === "hi" ? "hindi" : "marathi"),
-      kind: "section",
-    });
+    links.push({ label: d.native.linkLabel, href: at(d.native.anchor), kind: "section" });
   }
   links.push({ label: "What you will be able to do", href: at("outcomes"), kind: "section" });
   if (d.visuals) {

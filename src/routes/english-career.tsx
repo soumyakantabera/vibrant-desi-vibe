@@ -20,6 +20,17 @@ import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
 
 type CoursePath = `/course-${CourseSlug}`;
 
+/** Basic Spoken English taught through the learner's language (same course and fee). */
+const MEDIUM_SLUGS = ["spoken-english-hindi", "spoken-english-bengali"] as const;
+const MEDIUM_LINKS = [
+  { to: "/course-spoken-english-hindi", label: "Hindi to English", slug: "spoken-english-hindi" },
+  {
+    to: "/course-spoken-english-bengali",
+    label: "Bengali to English",
+    slug: "spoken-english-bengali",
+  },
+] as const;
+
 export const Route = createFileRoute("/english-career")({
   component: Page,
   head: () => {
@@ -27,7 +38,7 @@ export const Route = createFileRoute("/english-career")({
     const head = pageHead("/english-career");
     // Course hub: an ItemList of every live programme gives Google (and AI
     // answer engines) the whole catalogue with prices from a single fetch.
-    const hubSlugs = [...COURSE_CATEGORIES.flatMap((g) => [...g.slugs])];
+    const hubSlugs: string[] = [...COURSE_CATEGORIES.flatMap((g) => [...g.slugs]), ...MEDIUM_SLUGS];
     head.scripts.push({
       type: "application/ld+json",
       children: JSON.stringify({
@@ -70,10 +81,17 @@ function Page() {
               Speak Better English. <span className="text-sunshine">Master In-Demand Skills.</span>
             </h1>
             <p className="mt-5 text-base md:text-lg text-white">
-              Four live programmes. Basic Spoken (also taught in Hindi or Marathi), Intermediate
-              Spoken, Interactive Speaking and Interview Preparation. Business English — meetings,
-              calls and emails — is taught inside Interactive Speaking and Intermediate. Interview
-              Preparation is the room when the HR screen is the bottleneck.{" "}
+              Four live programmes. Basic Spoken (also taught{" "}
+              <Link to="/course-spoken-english-hindi" className="underline hover:text-sunshine">
+                Hindi to English
+              </Link>{" "}
+              and{" "}
+              <Link to="/course-spoken-english-bengali" className="underline hover:text-sunshine">
+                Bengali to English
+              </Link>
+              ), Intermediate Spoken, Interactive Speaking and Interview Preparation. Business
+              English — meetings, calls and emails — is taught inside Interactive Speaking and
+              Intermediate. Interview Preparation is the room when the HR screen is the bottleneck.{" "}
               <FeeText text="From ₹1,199/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
@@ -216,6 +234,29 @@ function Page() {
                     );
                   })}
                 </Reveal>
+                {group.id === "speak-confidently" && (
+                  <div
+                    className="mt-5 flex flex-wrap items-center gap-3 rounded-2xl border border-border bg-bolo-mint/40 px-5 py-4"
+                    aria-label="Basic Spoken English in your language"
+                  >
+                    <span className="inline-flex items-center gap-2 font-display font-bold text-ink">
+                      <Icon name="translate" size={20} className="text-bolo-teal" />
+                      Basic Spoken English in your language:
+                    </span>
+                    {MEDIUM_LINKS.map((m) => (
+                      <Link
+                        key={m.to}
+                        to={m.to}
+                        className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-bold text-bolo-teal shadow-sm hover:underline"
+                      >
+                        {m.label} <Icon name="arrow-right" size={14} />
+                      </Link>
+                    ))}
+                    <span className="w-full text-sm text-ink/75 sm:w-auto">
+                      <FeeText text="Same course and fee (₹1,199/month) — a teacher who explains in your language." />
+                    </span>
+                  </div>
+                )}
               </section>
             ))}
           </div>

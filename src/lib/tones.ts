@@ -99,7 +99,7 @@ const HEADING_ICONS: [RegExp, IconName][] = [
   [/conversation|dialogue|talk|small talk/i, "messages"],
   [/speak|fluen|clear/i, "speak"],
   [/polite|confiden|tone/i, "smile"],
-  [/hindi|marathi|tamil|gujarati|language|medium/i, "languages"],
+  [/hindi|bengali|tamil|gujarati|language|medium/i, "languages"],
   [/travel|cab|auto|direction|city|neighbour/i, "location_on"],
   [/doctor|health|chemist/i, "heart"],
   [/home|family/i, "home"],

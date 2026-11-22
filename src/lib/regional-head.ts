@@ -34,7 +34,7 @@ export function stateHead(slug: string) {
       availableChannel: {
         "@type": "ServiceChannel",
         serviceUrl: abs("/free-consultation"),
-        availableLanguage: ["en-IN", "hi-IN", "mr-IN"],
+        availableLanguage: ["en-IN", "hi-IN", "bn-IN"],
       },
       offers: {
         "@type": "Offer",

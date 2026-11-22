@@ -115,7 +115,7 @@ for st in STATES:
         q(f"{n['label'].lower()} english {city}", sp, city, "need-local")
         q(f"{n['label'].lower()} english preparation", n["path"], n["label"].split(" ")[0], "need")
     # medium
-    if st["medium"] in ("hindi", "marathi"):
+    if st["medium"] == "hindi":
         lang = st["medium"].capitalize()
         q(f"{lang} medium spoken english class {name}", sp, lang, "medium-local")
         q(f"{lang} to english speaking course online", MED_PATH[st["medium"]], lang, "medium", "₹1,199")
@@ -127,6 +127,9 @@ NATIONAL = [
     ("hindi to english speaking course", "/course-spoken-english-hindi", "hindi", "₹1,199"),
     ("english speaking course in hindi live", "/course-spoken-english-hindi", "hindi", "₹1,199"),
     ("हिंदी से इंग्लिश बोलना सीखें", "/course-spoken-english-hindi", "हिंदी", None),
+    ("bengali to english speaking course", "/course-spoken-english-bengali", "bengali", "₹1,199"),
+    ("spoken english in bengali live class", "/course-spoken-english-bengali", "bengali", "₹1,199"),
+    ("বাংলা থেকে ইংরেজি বলা শিখুন", "/course-spoken-english-bengali", "বাংলা", None),
     ("intermediate spoken english course", "/course-intermediate-english", "intermediate", "₹1,999"),
     ("intermediate english conditionals practice app", "/course-intermediate-english", "bolo", None),
     ("interactive speaking course stop freezing", "/course-interactive-speaking", "freez", "₹1,599"),

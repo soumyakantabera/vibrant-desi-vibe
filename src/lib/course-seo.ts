@@ -124,7 +124,7 @@ export function courseSeo(d: CourseData) {
       description: extra?.description ?? d.metaDescription,
       url,
       image: [abs(ogImage)],
-      // The teaching language: Hindi/Marathi-medium courses are taught in that
+      // The teaching language: Hindi/Bengali-medium courses are taught in that
       // language with English practice; the page itself stays en-IN.
       inLanguage: d.native ? `${d.native.lang}-IN` : "en-IN",
       ...(d.native ? { availableLanguage: [`${d.native.lang}-IN`, "en-IN"] } : {}),

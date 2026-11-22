@@ -480,6 +480,6 @@ export const FOOTER_GUIDES = [
   { to: "/english-for-bpo-jobs-india", label: "English for BPO jobs" },
   { to: "/english-for-software-engineers-india", label: "English for IT jobs" },
   { to: "/english-for-bank-po-interview", label: "Bank PO interview English" },
-  { to: "/spoken-english-classes-maharashtra", label: "Maharashtra (Marathi medium)" },
+  { to: "/spoken-english-classes-maharashtra", label: "Maharashtra" },
   { to: "/spoken-english-classes-uttar-pradesh", label: "Uttar Pradesh (Hindi medium)" },
 ];

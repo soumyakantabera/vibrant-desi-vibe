@@ -96,7 +96,7 @@ const ROOMS: Record<LevelRoomId, LevelRoom> = {
     path: "/course-spoken-english",
     title: "Basic Spoken English",
     fee: "₹1,199/month · 6 months",
-    why: "Sounds, sentence patterns and everyday vocabulary, with speaking in every class. Also taught through Hindi or Marathi.",
+    why: "Sounds, sentence patterns and everyday vocabulary, with speaking in every class. Also taught through Hindi or Bengali.",
   },
   intermediate: {
     id: "intermediate",
