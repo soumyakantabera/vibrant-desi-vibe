@@ -31,9 +31,13 @@ import { faqAnchor, moduleAnchor } from "@/lib/anchors";
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
 
-/** A short block in the learner's own language (Hindi / Marathi courses). */
+/** A short block in the learner's own language (Hindi / Bengali courses). */
 export type NativeSection = {
-  lang: "hi" | "mr";
+  lang: "hi" | "mr" | "bn";
+  /** Section id on the page (`#hindi`, `#bengali`), also used by deep links. */
+  anchor: string;
+  /** English label for that anchor in deep-link lists. */
+  linkLabel: string;
   label: string;
   heading: string;
   intro: string;
@@ -79,6 +83,33 @@ export type CourseData = {
 };
 
 const RELATED_GUIDES: Record<string, { href: string; title: string; description: string }[]> = {
+  "spoken-english-bengali": [
+    {
+      href: "/spoken-english-in-bengali",
+      title: "বাংলায় স্পোকেন ইংলিশ গাইড",
+      description: "Bengali-language guide: daily practice, common mistakes, fees.",
+    },
+    {
+      href: "/english-hindi-bengali-medium",
+      title: "Hindi- or Bengali-medium? You still belong here",
+      description: "Explain in your language when a concept stalls, then back to English.",
+    },
+    {
+      href: "/spoken-english-classes-kolkata",
+      title: "Spoken English classes in Kolkata",
+      description: "Live online from our Kolkata office: slots, fees and Bengali-speaker errors.",
+    },
+    {
+      href: "/english-speaking-test-bengali",
+      title: "ইংরেজি বলার লেভেল টেস্ট",
+      description: "Free 1-minute self-check in Bengali — find your starting course.",
+    },
+    {
+      href: "/bolo",
+      title: "Bolo — daily practice app",
+      description: "Practice, Watch, Review: the daily part of every course.",
+    },
+  ],
   "spoken-english-hindi": [
     {
       href: "/spoken-english-in-hindi",
@@ -249,7 +280,7 @@ function NativeBlock({ native }: { native: NativeSection }) {
       className="section bg-bolo-mint/50"
       lang={native.lang}
       aria-labelledby="native-heading"
-      id={native.lang === "hi" ? "hindi" : "marathi"}
+      id={native.anchor}
     >
       <div className="container-x grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
         <div>
@@ -444,7 +475,7 @@ export function CoursePage({ data }: { data: CourseData }) {
       {data.slug === "spoken-english" && (
         <section
           className="border-b border-border bg-bolo-mint/40 py-5"
-          aria-label="Also taught in Hindi"
+          aria-label="Also taught in Hindi and Bengali"
         >
           <div className="container-x flex flex-wrap items-center gap-3 text-sm md:text-base">
             <span className="font-bold text-ink">Prefer help in your own language?</span>
@@ -453,6 +484,12 @@ export function CoursePage({ data }: { data: CourseData }) {
               className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
             >
               Hindi to English <Icon name="arrow-right" size={16} />
+            </Link>
+            <Link
+              to="/course-spoken-english-bengali"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 font-bold text-bolo-teal shadow-sm hover:underline"
+            >
+              Bengali to English <Icon name="arrow-right" size={16} />
             </Link>
             <span className="text-ink/70">
               Same course and fee — a teacher who speaks your language.

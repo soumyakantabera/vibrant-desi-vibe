@@ -49,6 +49,13 @@ const ENGLISH_COURSES: {
     inr: "Hindi-speaking teacher · ₹1,199/month",
   },
   {
+    to: "/course-spoken-english-bengali",
+    label: "Basic Spoken English — Bengali to English",
+    icon: "translate",
+    slug: "spoken-english",
+    inr: "Bengali-speaking teacher · ₹1,199/month",
+  },
+  {
     to: "/course-intermediate-english",
     label: "Intermediate Spoken English",
     icon: "trend",

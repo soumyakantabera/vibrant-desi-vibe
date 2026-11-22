@@ -43,7 +43,7 @@ export const NEEDS: Record<NeedKey, Need> = {
     standfirst:
       "Many voice roles start with a spoken-English screen — Versant or SVAR — before HR and the client round. Here is what it checks and how to practise.",
     shortAnswer:
-      "Voice-process hiring usually tests spoken English early: an AI-scored test (Versant or SVAR) or a voice round, then HR and operations. Practise clear sentences, listening and repeating, and a calm customer call. If you cannot yet hold a simple conversation, start with Basic Spoken English (₹1,199/month, also taught in Hindi or Marathi); if you speak but freeze, Interactive Speaking.",
+      "Voice-process hiring usually tests spoken English early: an AI-scored test (Versant or SVAR) or a voice round, then HR and operations. Practise clear sentences, listening and repeating, and a calm customer call. If you cannot yet hold a simple conversation, start with Basic Spoken English (₹1,199/month, also taught in Hindi or Bengali); if you speak but freeze, Interactive Speaking.",
     course: {
       path: "/course-spoken-english-hindi",
       name: "Basic Spoken English — Hindi to English",

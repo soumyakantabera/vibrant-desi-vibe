@@ -734,7 +734,7 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "Can learners from Tripura, Manipur or Meghalaya join?",
-        a: "Yes, from anywhere in India: the class is the same live online batch. For Bengali speakers in Tripura and the Barak Valley, the teacher can bridge briefly in Bengali or Hindi when something does not land; the speaking itself is in English. If you already speak English at school or work, Interactive Speaking (3 months, ₹1,599/month) is speaking practice for interviews, meetings and calls rather than a beginners' course.",
+        a: "Yes, from anywhere in India: the class is the same live online batch. For Bengali speakers in Tripura and the Barak Valley, Basic Spoken English — Bengali to English is the same course and fee, taught by a Bengali-speaking teacher who explains in Bengali when something does not land; the speaking itself is in English. If you already speak English at school or work, Interactive Speaking (3 months, ₹1,599/month) is speaking practice for interviews, meetings and calls rather than a beginners' course.",
       },
     ],
     title: "Spoken English Classes in Assam & North-East | Online",

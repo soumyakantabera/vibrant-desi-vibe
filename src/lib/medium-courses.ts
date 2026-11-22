@@ -1,23 +1,28 @@
 /**
- * Basic Spoken English, taught through Hindi or Marathi (November 2026).
+ * Basic Spoken English, taught through Hindi or Bengali (November 2026).
  *
  * Same course as Basic Spoken English — 6 months, ₹1,199/month inclusive of
  * taxes, about 6 learners, up to 2 live classes a week, Bolo included — with
  * a teacher who speaks the learner's language. Hard concepts are explained in
- * Hindi or Marathi; the speaking practice is in English, and the share of
+ * Hindi or Bengali; the speaking practice is in English, and the share of
  * English grows month by month.
  *
  * The native-language block is short on purpose: Google prefers one primary
  * language per page, so these pages stay English-primary (en-IN) and the
- * Course JSON-LD declares the teaching language (hi-IN / mr-IN).
+ * Course JSON-LD declares the teaching language (hi-IN / bn-IN).
+ *
+ * The Marathi block is kept for reference; its course was retired in
+ * November 2026 and /course-spoken-english-marathi redirects.
  */
 import type { CourseData, NativeSection } from "@/components/CoursePage";
 import { ALL_IN_ONE } from "@/lib/positioning";
 
-export type MediumLang = "hi" | "mr";
+export type MediumLang = "hi" | "mr" | "bn";
 
 const HINDI: NativeSection = {
   lang: "hi",
+  anchor: "hindi",
+  linkLabel: "In Hindi (हिंदी में)",
   label: "हिंदी में पढ़ें",
   heading: "हिंदी से इंग्लिश — बेसिक स्पोकन इंग्लिश",
   intro:
@@ -54,6 +59,8 @@ const HINDI: NativeSection = {
 
 const MARATHI: NativeSection = {
   lang: "mr",
+  anchor: "marathi",
+  linkLabel: "In Marathi (मराठीत)",
   label: "मराठीत वाचा",
   heading: "मराठीतून इंग्रजी — बेसिक स्पोकन इंग्लिश",
   intro:
@@ -88,6 +95,44 @@ const MARATHI: NativeSection = {
     "Namaskar, mala Marathitun English wala Basic Spoken English course join karaycha aahe. Free consultation havay.",
 };
 
+const BENGALI: NativeSection = {
+  lang: "bn",
+  anchor: "bengali",
+  linkLabel: "In Bengali (বাংলায়)",
+  label: "বাংলায় পড়ুন",
+  heading: "বাংলা থেকে ইংরেজি — বেসিক স্পোকেন ইংলিশ",
+  intro:
+    "আপনার টিচার বাংলা জানেন। কোনো কিছু বুঝতে না পারলে সেটা বাংলায় বুঝিয়ে দেওয়া হয় — তারপর আপনি সেই কথাটাই ইংরেজিতে বলেন। প্রায় 6 জনের লাইভ ব্যাচ, সপ্তাহে ম্যাক্সিমাম 2টো ক্লাস, আর রোজ Bolo অ্যাপে প্র্যাকটিস। ফি ₹1,199 প্রতি মাসে, ট্যাক্স সহ।",
+  points: [
+    "6 মাসের কোর্স, সপ্তাহে ম্যাক্সিমাম 2টো লাইভ ক্লাস (1 ঘণ্টা 30 মিনিট)",
+    "প্রায় 6 জনের ছোট ব্যাচ — প্রতিটা ক্লাসে আপনি কথা বলেন",
+    "Bolo অ্যাপ: রোজ গ্রামার, শব্দ, পড়া আর বলা — স্ট্রিক সহ",
+    "প্রতি সপ্তাহে টিচার আপনার রেকর্ডিং শুনে কোথায় ভুল হচ্ছে বলে দেন",
+    "₹1,199 প্রতি মাসে, ট্যাক্স সহ — সব কিছু একটাই ফি-তে",
+  ],
+  faqs: [
+    {
+      q: "টিচার কি বাংলায় বোঝাবেন?",
+      a: "হ্যাঁ। যেটা বুঝতে অসুবিধা হয়, সেটা বাংলায় বুঝিয়ে দেওয়া হয় — কিন্তু বলা হয় ইংরেজিতেই। মাস যত এগোয়, বাংলা তত কমে আর ইংরেজি তত বাড়ে।",
+    },
+    {
+      q: "আমি একদম ইংরেজি বলতে পারি না। আমি কি জয়েন করতে পারি?",
+      a: "হ্যাঁ, অবশ্যই। এই কোর্স একদম শুরু থেকে — 15 বছরের বেশি বয়সী যে কেউ জয়েন করতে পারেন।",
+    },
+    {
+      q: "ফি কত?",
+      a: "₹1,199 প্রতি মাসে, ট্যাক্স সহ। লাইভ ক্লাস, Bolo অ্যাপ আর প্রতি সপ্তাহে টিচারের রিভিউ — সব এই ফি-তেই।",
+    },
+    {
+      q: "কীভাবে শুরু করব?",
+      a: "শুধু WhatsApp-এ মেসেজ করুন। ফ্রি-তে পরামর্শ পাবেন, তারপর আপনি নিজের ব্যাচ বেছে নেবেন।",
+    },
+  ],
+  cta: "WhatsApp-এ ফ্রি পরামর্শ নিন",
+  waMessage:
+    "Nomoskar, ami Bengali theke English wala Basic Spoken English course join korte chai. Free consultation chai.",
+};
+
 const MEDIUM = {
   hi: {
     slug: "spoken-english-hindi",
@@ -106,6 +151,15 @@ const MEDIUM = {
     who: "Marathi-speaking adults 15+ — Marathi-medium students, graduates and working people across Maharashtra and beyond",
     waDemo:
       "Hi, I want a free consultation for Basic Spoken English — Marathi to English (taught by a Marathi-speaking teacher).",
+  },
+  bn: {
+    slug: "spoken-english-bengali",
+    name: "Bengali",
+    title: "Basic Spoken English — Bengali to English",
+    native: BENGALI,
+    who: "Bengali-speaking adults 15+ — from Kolkata and the rest of West Bengal, Tripura, Assam's Barak Valley, or anyone who thinks in Bengali",
+    waDemo:
+      "Hi, I want a free consultation for Basic Spoken English — Bengali to English (taught by a Bengali-speaking teacher).",
   },
 } as const;
 

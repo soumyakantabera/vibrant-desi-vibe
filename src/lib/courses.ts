@@ -818,6 +818,7 @@ export const COURSES: Record<string, CourseData> = {
   },
 };
 
-// Basic Spoken English taught through Hindi — same course and fee,
+// Basic Spoken English taught through Hindi or Bengali — same course and fee,
 // a teacher who speaks the learner's language (see src/lib/medium-courses.ts).
 COURSES["spoken-english-hindi"] = mediumCourse(COURSES["spoken-english"], "hi");
+COURSES["spoken-english-bengali"] = mediumCourse(COURSES["spoken-english"], "bn");

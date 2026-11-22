@@ -77,7 +77,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "As your level rises, the first-language explanations stop being needed. That is the point of them.",
+    text: "As your level rises, the first-language explanations stop being needed. That is the point of them. If you would rather start with a teacher who explains in Bengali from day one, take [Basic Spoken English — Bengali to English](/course-spoken-english-bengali): same course and fee, ₹1,199/month.",
   },
 
   { t: "h2", text: "What Kolkata learners are usually preparing for" },

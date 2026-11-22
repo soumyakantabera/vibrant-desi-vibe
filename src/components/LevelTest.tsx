@@ -346,21 +346,24 @@ function LangSwitch({ s }: { s: TestState }) {
   );
 }
 
+const MEDIUM_ROOM: Partial<Record<TestLang, { path: string; title: string }>> = {
+  hi: { path: "/course-spoken-english-hindi", title: "Basic Spoken English — Hindi to English" },
+  bn: {
+    path: "/course-spoken-english-bengali",
+    title: "Basic Spoken English — Bengali to English",
+  },
+};
+
 function Result({ s }: { s: TestState }) {
   const t = TEST_COPY[s.lang];
   const goal = s.goal as LevelGoal;
   const band = bandFor(s.score);
   const base = roomFor(s.score, goal);
-  // Someone taking the test in Hindi who needs the basics is pointed at the
-  // same course taught through Hindi (same fee, Hindi-speaking teacher).
-  const room =
-    s.lang === "hi" && base.id === "basic"
-      ? {
-          ...base,
-          path: "/course-spoken-english-hindi",
-          title: "Basic Spoken English — Hindi to English",
-        }
-      : base;
+  // Someone taking the test in Hindi or Bengali who needs the basics is
+  // pointed at the same course taught through that language (same fee,
+  // a teacher who speaks it).
+  const medium = base.id === "basic" ? MEDIUM_ROOM[s.lang] : undefined;
+  const room = medium ? { ...base, ...medium } : base;
   const bs = BAND_STYLE[band.id];
   const bt = tone(bs.tone);
   const copy = t.bands[band.id];
