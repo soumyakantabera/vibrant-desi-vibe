@@ -462,8 +462,8 @@ export const FEATURED_GUIDE_PATHS = [
   "/english-institute-comparison-india",
 ] as const;
 
-export const FEATURED_GUIDES = FEATURED_GUIDE_PATHS.map((to) =>
-  GUIDE_CARDS.find((g) => g.to === to)!,
+export const FEATURED_GUIDES = FEATURED_GUIDE_PATHS.map(
+  (to) => GUIDE_CARDS.find((g) => g.to === to)!,
 );
 
 export const FOOTER_GUIDES = [

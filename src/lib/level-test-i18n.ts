@@ -154,12 +154,14 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
       building: {
         name: "बेसिक बन रहा है",
         cefr: "लगभग A2",
-        meaning: "छोटे वाक्य बन जाते हैं, पर आप बार-बार रुकते हैं, हिंदी पर आ जाते हैं और tense गड़बड़ होते हैं।",
+        meaning:
+          "छोटे वाक्य बन जाते हैं, पर आप बार-बार रुकते हैं, हिंदी पर आ जाते हैं और tense गड़बड़ होते हैं।",
       },
       connecting: {
         name: "वाक्य जोड़ने का लेवल",
         cefr: "लगभग B1",
-        meaning: "जानी-पहचानी बातें कर लेते हैं, पर लंबे जवाब में grammar, flow और ‘umm’ परेशान करते हैं।",
+        meaning:
+          "जानी-पहचानी बातें कर लेते हैं, पर लंबे जवाब में grammar, flow और ‘umm’ परेशान करते हैं।",
       },
       performing: {
         name: "परफ़ॉर्म करने को तैयार",
@@ -231,7 +233,8 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
       connecting: {
         name: "বাক্য জোড়ার ধাপ",
         cefr: "প্রায় B1",
-        meaning: "চেনা বিষয়ে কথা বলতে পারেন, কিন্তু লম্বা উত্তরে grammar, flow আর ‘umm’ সমস্যা করে।",
+        meaning:
+          "চেনা বিষয়ে কথা বলতে পারেন, কিন্তু লম্বা উত্তরে grammar, flow আর ‘umm’ সমস্যা করে।",
       },
       performing: {
         name: "পারফর্ম করার জন্য তৈরি",
