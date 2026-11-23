@@ -1,9 +1,9 @@
-import { Link } from "@tanstack/react-router";
 import { FeeText } from "@/components/FeeText";
 import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
-import { CONSULTATION, CONSULTATION_PROOF, PROOF_CARD_CLASS } from "@/lib/consultation";
-import { DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
+import { PROOF_CARD_CLASS } from "@/lib/consultation";
+import { DEMO_BAND } from "@/lib/demo-session";
+import { CONSULT_CTA, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
 const PILL_CLASS = [
   "bg-terra-soft text-[#8A3626]",
@@ -13,9 +13,9 @@ const PILL_CLASS = [
 ] as const;
 
 /**
- * High-visibility consultation closer. Layout mounts the sun band on every
- * page so the offer is never a quiet footer link. Deep tone is for dark
- * sections that already sit on cream.
+ * High-visibility closer on every page: the ₹199 Demo Class, with the free
+ * consultation as the second, quieter option. Deep tone is for dark sections
+ * that already sit on cream.
  */
 export function ConsultOffer({
   tone = "sun",
@@ -37,54 +37,59 @@ export function ConsultOffer({
         <p
           className={`font-display text-xs uppercase tracking-[0.16em] font-extrabold ${sun ? "text-brand-deep" : "text-sunshine"}`}
         >
-          <FeeText text={CONSULTATION.hook} />
+          <FeeText text={DEMO_BAND.hook} />
         </p>
         <h2
           className={`section-title mt-3 font-display font-extrabold ${sun ? "text-ink" : "text-cream"}`}
         >
-          {CONSULTATION.headline}
+          {DEMO_BAND.headline}
         </h2>
         <p
           className={`mt-4 mx-auto max-w-2xl text-base md:text-lg leading-relaxed ${sun ? "text-ink/85" : "text-white"}`}
         >
-          {CONSULTATION.punch}
+          <FeeText text={DEMO_BAND.punch} />
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-2">
-          {CONSULTATION.pills.map((pill, i) => (
+          {DEMO_BAND.pills.map((pill, i) => (
             <span
               key={pill}
               className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs font-display font-extrabold ${PILL_CLASS[i] ?? PILL_CLASS[0]}`}
             >
-              {pill}
+              <FeeText text={pill} />
             </span>
           ))}
         </div>
         {!compact && (
           <div className="mt-7 grid gap-3 sm:grid-cols-3 text-left">
-            {CONSULTATION_PROOF.map((card) => (
+            {DEMO_BAND.proof.map((card) => (
               <div
                 key={card.kicker}
                 className={`rounded-2xl p-4 md:p-5 ${PROOF_CARD_CLASS[card.tone]}`}
               >
                 <p className="flex items-center gap-2 text-xs font-display font-extrabold uppercase tracking-[0.14em] opacity-90">
-                  <Icon name={card.icon} size={16} /> {card.kicker}
+                  <Icon name="check" size={16} /> {card.kicker}
                 </p>
                 <p className="mt-2 font-display text-xl font-extrabold text-white">{card.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-white/90">{card.body}</p>
+                <p className="mt-1 text-sm leading-relaxed text-white/90">
+                  <FeeText text={card.body} />
+                </p>
               </div>
             ))}
           </div>
         )}
-        <div className="mt-7 flex flex-wrap gap-3 justify-center">
-          <WaButton message={message ?? DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
+        <div className="mt-7 flex flex-wrap gap-3 justify-center" data-cta-location="demo_band">
+          <WaButton message={message ?? DEMO_MSG} variant="sun" size="lg">
             {DEMO_CTA}
           </WaButton>
-          <Link
-            to="/free-consultation"
-            className={sun ? "btn btn-outline btn-lg border-ink text-ink" : "btn btn-white btn-lg"}
+          <WaButton
+            message={message ?? DEMO_MSG}
+            kind="consult"
+            variant={sun ? "outline" : "white"}
+            size="lg"
+            className={sun ? "border-ink text-ink" : ""}
           >
-            See what you get
-          </Link>
+            {CONSULT_CTA}
+          </WaButton>
         </div>
       </div>
     </section>

@@ -507,7 +507,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Are there spoken English classes for homemakers in India?",
-        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
+        a: "Yes. Learn With Smile runs live batches from 3pm IST that homemakers actually attend. Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
       },
       {
         q: "I have been out of work for years. Is it too late?",
@@ -515,7 +515,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Is it too late to learn spoken English at 40 or 50?",
-        a: "No. Adults can learn to speak a new language at any age; what changes is time and confidence, not ability. Short daily practice and a small batch where mistakes are normal matter more than age. Learn With Smile classes are for adults 15+, with afternoon and evening batches.",
+        a: "No. Adults can learn to speak a new language at any age; what changes is time and confidence, not ability. Short daily practice and a small batch where mistakes are normal matter more than age. Learn With Smile classes are for adults 15+, with live batches between 3pm and 10pm IST.",
       },
     ],
   },
@@ -583,7 +583,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/how-to-join-learn-with-smile",
     title: "How to Join Learn With Smile | 4 Steps on WhatsApp",
     description:
-      "Message WhatsApp, get a free consultation, pick an afternoon, evening or night IST batch, pay one month via Razorpay. From ₹1,199/mo incl. taxes. No auto-debit.",
+      "Message WhatsApp, get a free consultation, pick a 3pm–10pm IST batch, pay one month via Razorpay. From ₹1,199/mo incl. taxes. No auto-debit.",
     shortTitle: "How to join",
     keywords: [
       "how to join learn with smile",

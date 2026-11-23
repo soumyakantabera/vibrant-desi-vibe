@@ -20,7 +20,7 @@ export function CityGuide({ slug }: { slug: string }) {
           Online, Approx. 6 Learners
         </>
       }
-      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹1,199/month, inclusive of taxes, approximately 6 learners, IST afternoon, evening and night batches.`}
+      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹1,199/month, inclusive of taxes, approximately 6 learners, 3pm–10pm IST batches.`}
       shortAnswer={`No classroom in ${city.name} — live online, around 6 learners, ₹1,199/month inclusive of taxes. You skip ${city.commute}.`}
       heroImage={IMG.groupClass}
       heroAlt={`${city.name} learners in a live online English class`}
@@ -52,7 +52,7 @@ function CityFacts({ name, areas, waMessage }: { name: string; areas: string; wa
     ["rupee", "₹1,199/month, incl. taxes"],
     ["users", "≈6 learners per batch"],
     ["globe", `Live online — no ${name} commute`],
-    ["clock", "Afternoon · evening · night IST"],
+    ["clock", "Batches 3pm–10pm IST"],
   ];
   const nearby = areas.split(", ").slice(0, 3).join(", ");
   return (

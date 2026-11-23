@@ -122,7 +122,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for NCR schedules" },
       {
         t: "p",
-        text: "Afternoon, evening and night batches, arranged around your schedule. If you work a US shift in Gurugram, an afternoon batch before the shift usually fits best; classes are recorded for revision, but the speaking only happens live, so pick a slot you can actually attend.",
+        text: "3pm–10pm IST batches, arranged around your schedule. If you work a US shift in Gurugram, an afternoon batch before the shift usually fits best; classes are recorded for revision, but the speaking only happens live, so pick a slot you can actually attend.",
       },
     ],
     localFaqs: [
@@ -175,7 +175,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for tech schedules" },
       {
         t: "p",
-        text: "Afternoon, evening or night batches — pick the one that misses your standups and client calls. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
+        text: "3pm–10pm IST batches — pick the one that misses your standups and client calls. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
       },
     ],
     localFaqs: [
@@ -228,7 +228,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for Hyderabad schedules" },
       {
         t: "p",
-        text: "Afternoon, evening and night batches. Support and GCC staff on rotational shifts can pick the slot that fits the roster — tell us your roster in the consultation.",
+        text: "3pm–10pm IST batches. Support and GCC staff on rotational shifts can pick the slot that fits the roster — tell us your roster in the consultation.",
       },
     ],
     localFaqs: [
@@ -474,7 +474,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "Do classes fit around hotel or shop shift timings?",
-        a: "Usually. There are afternoon, evening and night IST batches, and classes are recorded so a missed session during a busy season can be revised. Tell us your shift in the free consultation.",
+        a: "Usually. There are 3pm–10pm IST batches, and classes are recorded so a missed session during a busy season can be revised. Tell us your shift in the free consultation.",
       },
     ],
   },
@@ -625,7 +625,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
     },
     {
       q: `What batch timings work with a ${city.name} job?`,
-      a: `Afternoon, evening and night batches (IST), arranged around your working hours. Every class is recorded, so a missed session because of a release or a shift does not wipe the week. Message anytime; we reply 10am–midnight IST every day.`,
+      a: `Batches between 3pm and 10pm IST, arranged around your working hours. Every class is recorded, so a missed session because of a release or a shift does not wipe the week. Message anytime; we reply 10am–midnight IST every day.`,
     },
     {
       q: `Is online better than a coaching centre in ${city.name}?`,
@@ -662,7 +662,7 @@ export function cityBody(city: CityRecord): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹1,199/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
+      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹1,199/month inclusive of taxes, 3pm–10pm IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
     ...(st
       ? [

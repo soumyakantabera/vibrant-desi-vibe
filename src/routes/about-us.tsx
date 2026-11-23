@@ -48,7 +48,7 @@ const FEATURES: { icon: IconName; color: FeatureColor; t: string; d: string }[] 
     icon: "clock",
     color: "brand",
     t: "Flexible & Adaptable",
-    d: "Afternoon, evening, night — we fit your life.",
+    d: "3pm–10pm IST — we fit your life.",
   },
   {
     icon: "users",
@@ -137,8 +137,8 @@ function Page() {
                 , not the textbook.
               </p>
               <p>
-                Today our gamified live classrooms run afternoons, evenings and nights across
-                English and career skills — with a teacher who actually knows your name.
+                Today our gamified live classrooms run between 3pm and 10pm IST across English and
+                career skills — with a teacher who actually knows your name.
               </p>
             </div>
           </div>

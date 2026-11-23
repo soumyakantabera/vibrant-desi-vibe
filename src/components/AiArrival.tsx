@@ -147,7 +147,7 @@ export function AiArrival() {
 
   if (!source || !open) return null;
   const href = waLink(
-    `Hi, I found you through ${source.name}. I want a free consultation for spoken English.`,
+    `Hi, I found you through ${source.name}. I'm interested in your live spoken English classes (from ₹1,199/month, batches 3pm–10pm IST).`,
   );
   const headline =
     source.kind === "ai" ? `Came from ${source.name}?` : `Found us on ${source.name}?`;

@@ -23,7 +23,7 @@ import {
  */
 
 const WA =
-  "Hi, I want daily English practice with a live teacher. Please share the course and fee.";
+  "Hi, I want daily English practice with a live teacher (courses from ₹1,199/month, batches 3pm–10pm IST). Please suggest the right course.";
 
 /** What one monthly fee buys — the all-in-one stack. */
 const STACK: {

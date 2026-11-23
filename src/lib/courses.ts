@@ -18,7 +18,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,199/month",
     liveNote:
-      "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Interview English in this room · ✓ Batches 3pm–10pm IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "Introduce yourself fluently in any social or work setting",
       "Handle daily conversations — shops, travel, phone calls",
@@ -258,7 +258,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,999/month",
     liveNote:
-      "✓ 100% online live · ✓ English to English · ✓ 30 min grammar + 1 hr communication · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ English to English · ✓ 30 min grammar + 1 hr communication · ✓ Batches 3pm–10pm IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     prerequisites:
       "You can already make simple English sentences (roughly CEFR A2). If you cannot yet finish a sentence out loud, start with Basic Spoken English.",
     outcomes: [
@@ -514,7 +514,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹1,599/month",
     liveNote:
-      "✓ 100% online live · ✓ Meetings, client calls & interview rounds in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Meetings, client calls & interview rounds in this room · ✓ Batches 3pm–10pm IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "Speak for 2 minutes on any topic",
       "Lead group conversations",
@@ -704,7 +704,7 @@ export const COURSES: Record<string, CourseData> = {
     format: "Live batch · approximately 6 learners",
     price: "₹2,499/month",
     liveNote:
-      "✓ 100% online live · ✓ Recorded mocks · ✓ Afternoon · evening · night IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
+      "✓ 100% online live · ✓ Recorded mocks · ✓ Batches 3pm–10pm IST · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
       "A 60-second 'tell me about yourself' that lands",
       "HR questions — why you, why this company, strengths, notice period — without freezing",

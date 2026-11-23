@@ -42,7 +42,11 @@ function BlogPostPage() {
   const body = ARTICLE_BODIES[post.slug] ?? [];
   const related = getRelatedPosts(post.slug, 2);
   const heroImage = IMG[post.img as keyof typeof IMG] ?? IMG.blogDesk;
-  const waMessage = "Hi, I read your blog and I want a free consultation for spoken English.";
+  // Course-specific: every blog WhatsApp message names the post's main course
+  // and its fee, so a reader who only wanted free material does not send it.
+  const mainCourse =
+    COURSES[(post.relatedCourses[0] ?? "/course-spoken-english").replace(/^\/course-/, "")];
+  const waMessage = `Hi, I read your blog and I want a free consultation for ${mainCourse?.title ?? "Basic Spoken English"}.`;
   const toc = articleToc(body);
 
   return (

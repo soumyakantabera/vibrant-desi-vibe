@@ -75,12 +75,13 @@ import { Route as EnglishForBankPoInterviewRouteImport } from './routes/english-
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EducatorRouteImport } from './routes/educator'
-import { Route as CourseSpokenEnglishBengaliRouteImport } from './routes/course-spoken-english-bengali'
 import { Route as CourseSpokenEnglishHindiRouteImport } from './routes/course-spoken-english-hindi'
+import { Route as CourseSpokenEnglishBengaliRouteImport } from './routes/course-spoken-english-bengali'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as CourseInterviewPreparationRouteImport } from './routes/course-interview-preparation'
 import { Route as CourseIntermediateEnglishRouteImport } from './routes/course-intermediate-english'
 import { Route as CourseInteractiveSpeakingRouteImport } from './routes/course-interactive-speaking'
+import { Route as CourseDemoSessionRouteImport } from './routes/course-demo-session'
 import { Route as CourseCareerCounsellingRouteImport } from './routes/course-career-counselling'
 import { Route as ChildProtectionRouteImport } from './routes/child-protection'
 import { Route as BoloRouteImport } from './routes/bolo'
@@ -471,16 +472,16 @@ const EducatorRoute = EducatorRouteImport.update({
   path: '/educator',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CourseSpokenEnglishBengaliRoute =
-  CourseSpokenEnglishBengaliRouteImport.update({
-    id: '/course-spoken-english-bengali',
-    path: '/course-spoken-english-bengali',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const CourseSpokenEnglishHindiRoute =
   CourseSpokenEnglishHindiRouteImport.update({
     id: '/course-spoken-english-hindi',
     path: '/course-spoken-english-hindi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CourseSpokenEnglishBengaliRoute =
+  CourseSpokenEnglishBengaliRouteImport.update({
+    id: '/course-spoken-english-bengali',
+    path: '/course-spoken-english-bengali',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
@@ -506,6 +507,11 @@ const CourseInteractiveSpeakingRoute =
     path: '/course-interactive-speaking',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CourseDemoSessionRoute = CourseDemoSessionRouteImport.update({
+  id: '/course-demo-session',
+  path: '/course-demo-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CourseCareerCounsellingRoute = CourseCareerCounsellingRouteImport.update({
   id: '/course-career-counselling',
   path: '/course-career-counselling',
@@ -568,6 +574,7 @@ export interface FileRoutesByFullPath {
   '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
+  '/course-demo-session': typeof CourseDemoSessionRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-intermediate-english': typeof CourseIntermediateEnglishRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
@@ -652,6 +659,7 @@ export interface FileRoutesByTo {
   '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
+  '/course-demo-session': typeof CourseDemoSessionRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-intermediate-english': typeof CourseIntermediateEnglishRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
@@ -737,6 +745,7 @@ export interface FileRoutesById {
   '/bolo': typeof BoloRoute
   '/child-protection': typeof ChildProtectionRoute
   '/course-career-counselling': typeof CourseCareerCounsellingRoute
+  '/course-demo-session': typeof CourseDemoSessionRoute
   '/course-interactive-speaking': typeof CourseInteractiveSpeakingRoute
   '/course-intermediate-english': typeof CourseIntermediateEnglishRoute
   '/course-interview-preparation': typeof CourseInterviewPreparationRoute
@@ -823,6 +832,7 @@ export interface FileRouteTypes {
     | '/bolo'
     | '/child-protection'
     | '/course-career-counselling'
+    | '/course-demo-session'
     | '/course-interactive-speaking'
     | '/course-intermediate-english'
     | '/course-interview-preparation'
@@ -907,6 +917,7 @@ export interface FileRouteTypes {
     | '/bolo'
     | '/child-protection'
     | '/course-career-counselling'
+    | '/course-demo-session'
     | '/course-interactive-speaking'
     | '/course-intermediate-english'
     | '/course-interview-preparation'
@@ -991,6 +1002,7 @@ export interface FileRouteTypes {
     | '/bolo'
     | '/child-protection'
     | '/course-career-counselling'
+    | '/course-demo-session'
     | '/course-interactive-speaking'
     | '/course-intermediate-english'
     | '/course-interview-preparation'
@@ -1076,6 +1088,7 @@ export interface RootRouteChildren {
   BoloRoute: typeof BoloRoute
   ChildProtectionRoute: typeof ChildProtectionRoute
   CourseCareerCounsellingRoute: typeof CourseCareerCounsellingRoute
+  CourseDemoSessionRoute: typeof CourseDemoSessionRoute
   CourseInteractiveSpeakingRoute: typeof CourseInteractiveSpeakingRoute
   CourseIntermediateEnglishRoute: typeof CourseIntermediateEnglishRoute
   CourseInterviewPreparationRoute: typeof CourseInterviewPreparationRoute
@@ -1616,18 +1629,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EducatorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/course-spoken-english-bengali': {
-      id: '/course-spoken-english-bengali'
-      path: '/course-spoken-english-bengali'
-      fullPath: '/course-spoken-english-bengali'
-      preLoaderRoute: typeof CourseSpokenEnglishBengaliRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/course-spoken-english-hindi': {
       id: '/course-spoken-english-hindi'
       path: '/course-spoken-english-hindi'
       fullPath: '/course-spoken-english-hindi'
       preLoaderRoute: typeof CourseSpokenEnglishHindiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-spoken-english-bengali': {
+      id: '/course-spoken-english-bengali'
+      path: '/course-spoken-english-bengali'
+      fullPath: '/course-spoken-english-bengali'
+      preLoaderRoute: typeof CourseSpokenEnglishBengaliRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-spoken-english': {
@@ -1656,6 +1669,13 @@ declare module '@tanstack/react-router' {
       path: '/course-interactive-speaking'
       fullPath: '/course-interactive-speaking'
       preLoaderRoute: typeof CourseInteractiveSpeakingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-demo-session': {
+      id: '/course-demo-session'
+      path: '/course-demo-session'
+      fullPath: '/course-demo-session'
+      preLoaderRoute: typeof CourseDemoSessionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-career-counselling': {
@@ -1741,6 +1761,7 @@ const rootRouteChildren: RootRouteChildren = {
   BoloRoute: BoloRoute,
   ChildProtectionRoute: ChildProtectionRoute,
   CourseCareerCounsellingRoute: CourseCareerCounsellingRoute,
+  CourseDemoSessionRoute: CourseDemoSessionRoute,
   CourseInteractiveSpeakingRoute: CourseInteractiveSpeakingRoute,
   CourseIntermediateEnglishRoute: CourseIntermediateEnglishRoute,
   CourseInterviewPreparationRoute: CourseInterviewPreparationRoute,
@@ -1827,13 +1848,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

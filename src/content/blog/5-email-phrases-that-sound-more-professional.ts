@@ -208,7 +208,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace emails — subject lines, action requests, tone, follow-ups and escalation messages — are part of Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, a live batch of approximately 6 learners, up to twice a week in afternoon, evening or night IST slots. Recorded classes are available for revision.",
+    text: "Workplace emails — subject lines, action requests, tone, follow-ups and escalation messages — are part of Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, a live batch of approximately 6 learners, up to twice a week in 3pm–10pm IST slots. Recorded classes are available for revision.",
     course: "/course-intermediate-english",
     label: "See Intermediate Spoken English",
   },

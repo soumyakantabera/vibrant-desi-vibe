@@ -247,7 +247,7 @@ function Page() {
             {RATING.count} reviews. Named outcomes on Success Stories — not a guaranteed job.
           </FeatureCard>
           <FeatureCard icon="clock" color="indigo" title="Working-India slots">
-            Afternoon, evening, night IST. Same-week move if a seat is free.
+            Batches 3pm–10pm IST. Same-week move if a seat is free.
           </FeatureCard>
           <FeatureCard icon="gamepad" color="sage" title="Gamified every class">
             Flashcards, polls, quizzes, debates — so you speak, not spectate.

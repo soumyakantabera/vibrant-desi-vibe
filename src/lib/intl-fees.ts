@@ -12,6 +12,7 @@ export const INTL_SLUGS = [
   "intermediate-english",
   "interactive-speaking",
   "interview-preparation",
+  "demo-session",
 ] as const;
 
 export type IntlSlug = (typeof INTL_SLUGS)[number];
@@ -46,6 +47,7 @@ export const INTL_FEE: Record<IntlSlug, IntlFee> = {
   "intermediate-english": { display: money("89", "/mo"), big: money("89"), suffix: "/mo" },
   "interactive-speaking": { display: money("79", "/mo"), big: money("79"), suffix: "/mo" },
   "interview-preparation": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
+  "demo-session": { display: money("10"), big: money("10"), suffix: "" },
 };
 
 /** India tokens, longest first, so ₹2,499 is not eaten by ₹1,199. */
@@ -55,6 +57,7 @@ const INR_TO_INTL: [string, string][] = [
   ["₹1,599/month", INTL_FEE["interactive-speaking"].display],
   ["₹1,199/month", INTL_FEE["spoken-english"].display],
   ["₹1,199/mo", INTL_FEE["spoken-english"].display],
+  ["₹199", INTL_FEE["demo-session"].display],
   ["₹0", intlZero()],
 ];
 

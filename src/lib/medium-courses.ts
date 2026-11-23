@@ -50,9 +50,9 @@ const HINDI: NativeSection = {
       a: "बस WhatsApp पर मैसेज कीजिए। फ़्री में सलाह मिलती है, फिर आप अपना बैच चुन लेते हैं।",
     },
   ],
-  cta: "WhatsApp पर फ़्री सलाह लें",
+  cta: "WhatsApp पर बात कीजिए",
   waMessage:
-    "Namaste, mujhe Hindi se English wala Basic Spoken English course join karna hai. Free consultation chahiye.",
+    "Namaste, mujhe Hindi se English wala Basic Spoken English course (₹1,199/month) join karna hai. Batch 3pm–10pm IST ke beech chahiye. Mera goal:",
 };
 
 const BENGALI: NativeSection = {
@@ -88,9 +88,9 @@ const BENGALI: NativeSection = {
       a: "শুধু WhatsApp-এ মেসেজ করুন। ফ্রি-তে পরামর্শ পাবেন, তারপর আপনি নিজের ব্যাচ বেছে নেবেন।",
     },
   ],
-  cta: "WhatsApp-এ ফ্রি পরামর্শ নিন",
+  cta: "WhatsApp-এ কথা বলুন",
   waMessage:
-    "Nomoskar, ami Bengali theke English wala Basic Spoken English course join korte chai. Free consultation chai.",
+    "Nomoskar, ami Bengali theke English wala Basic Spoken English course (₹1,199/month) join korte chai. Batch 3pm–10pm IST-er moddhe chai. Amar goal:",
 };
 
 const MEDIUM = {
@@ -125,7 +125,7 @@ export function mediumCourse(base: CourseData, lang: MediumLang): CourseData {
     feeSlug: "spoken-english",
     title: m.title,
     tagline: `6 months, ₹1,199/month, inclusive of taxes, approx. 6 learners. Taught by a ${m.name}-speaking teacher: hard ideas explained in ${m.name}, practice in English — plus daily practice in the Bolo app.`,
-    liveNote: `✓ 100% online live · ✓ ${m.name}-speaking teacher · ✓ Practice in English, help in ${m.name} · ✓ Daily practice in Bolo · ✓ About 6 in a batch · ✓ Afternoon · evening · night slots`,
+    liveNote: `✓ 100% online live · ✓ ${m.name}-speaking teacher · ✓ Practice in English, help in ${m.name} · ✓ Daily practice in Bolo · ✓ About 6 in a batch · ✓ Batches 3pm–10pm IST`,
     prerequisites: `None. For ${m.who}, who cannot yet finish a sentence out loud in English.`,
     waDemo: m.waDemo,
     native: m.native,

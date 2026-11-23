@@ -274,7 +274,7 @@ SEM = {
     "interview preparation": "/course-interview-preparation",
     "english class fees": "/english-class-fees-india",
     "free consultation": "/free-consultation",
-    "free consultation demo class": "/free-consultation",
+    "spoken english demo class": "/course-demo-session",
 }
 for term, p in SEM.items():
     f = page_file(p)

@@ -38,10 +38,13 @@ let failed = 0;
 for (const [input, want] of cases) {
   const got = routeAsk(input);
   const answer = answerFor(got);
-  // Demo questions land on the free consultation; nobody is quoted a demo fee.
+  // Demo questions land on the ₹199 Demo Class, never on a "free class".
   const badSwap =
-    /₹199|\$10\b/.test(answer) ||
-    ((want === "demo_class" || want === "both") && !answer.includes("/free-consultation"));
+    /free class|free demo/i.test(
+      answer.replace(/Do not promise a free class|Do not invent a free class/g, ""),
+    ) ||
+    ((want === "demo_class" || want === "both") &&
+      !(answer.includes("/course-demo-session") && answer.includes("₹199")));
   if (got !== want || badSwap) {
     failed += 1;
     console.error(`FAIL ${JSON.stringify(input)}\n  want ${want}\n  got  ${got}\n  ${answer}`);

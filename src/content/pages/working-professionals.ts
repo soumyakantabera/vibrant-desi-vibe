@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **afternoon, evening and night** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹1,199/mo, Interactive Speaking ₹1,599/mo, Interactive ₹1,599/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **3pm–10pm IST** live batches. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹1,199/mo, Interactive Speaking ₹1,599/mo, Interactive ₹1,599/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
   },
   {
     t: "p",
@@ -14,18 +14,17 @@ export const body: ArticleBody = [
   { t: "h2", text: "The three slots" },
   {
     t: "table",
-    caption:
-      "Typical IST windows. Exact batch times are confirmed on WhatsApp after the consultation.",
+    caption: "Batches run between 3pm and 10pm IST. Exact batch times are confirmed on WhatsApp.",
     head: ["Slot", "Who it usually fits", "What to pick"],
     rows: [
       [
-        "Afternoon",
+        "Afternoon (from 3pm IST)",
         "Shift workers before a late shift, homemakers, students",
         "Spoken or Interactive",
       ],
       ["Evening", "Standard office end", "Interactive Speaking if meetings are the gap"],
       [
-        "Night",
+        "Night (until 10pm IST)",
         "Late finishes, Sector V / New Town shifts, BPO rosters",
         "Any of the three — timings are flexible, tell us yours",
       ],
@@ -82,7 +81,7 @@ export const body: ArticleBody = [
       ],
       [
         "Learn With Smile live batch",
-        "Afternoon, evening or night IST; about 6 learners",
+        "3pm–10pm IST; about 6 learners",
         "Fixed slots; group, not 1:1",
       ],
     ],
@@ -102,7 +101,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Tell us your shift. We will suggest afternoon, evening or night — and Spoken, Interactive or Business.",
+    text: "Tell us your shift. We will suggest a slot between 3pm and 10pm IST — and Spoken, Interactive or Business.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

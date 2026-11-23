@@ -42,10 +42,11 @@ export function publishedFeeLock(): string {
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
   const interview = INTL_FEE["interview-preparation"].display;
+  const demo = INTL_FEE["demo-session"].display;
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹1,199/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month. " +
-    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}. ` +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹1,199/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month; Demo Class ₹199 (one 90-minute live class, adjusted in the course fee on admission within 48 hours). " +
+    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}; Demo Class ${demo}. ` +
     "The India list applies to learners in India and the outside-India list applies to learners elsewhere. They are two separate price lists, not currency conversions of each other."
   );
 }
@@ -98,6 +99,9 @@ export const COURSE_FEE: Record<
     months: 2,
   },
 };
+
+/** The ₹199 Demo Class: one 90-minute live class, adjusted in the fee on admission. */
+export const DEMO_FEE = { inr: 199, display: "₹199" } as const;
 
 /**
  * Launch offer for new learners. Shown until the end of the last day, IST.

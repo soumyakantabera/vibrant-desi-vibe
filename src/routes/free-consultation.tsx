@@ -9,7 +9,7 @@ import { BrandIcon } from "@/components/BrandIcon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
 import { PaymentTrust } from "@/components/PaymentTrust";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
+import { CHAT_CTA, CHAT_MSG, CONSULT_CTA, CONSULT_MSG } from "@/lib/whatsapp";
 import {
   CONSULTATION,
   CONSULTATION_BOTTLENECKS,
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/free-consultation")({
 
 function Page() {
   return (
-    <Layout waMessage={DEMO_MSG} footerImage={IMG.womanLaptop}>
+    <Layout waMessage={CONSULT_MSG} footerImage={IMG.womanLaptop}>
       <section className="hero-teal relative">
         <div className="absolute inset-0 z-0">
           <SmartImage
@@ -43,7 +43,7 @@ function Page() {
         </div>
         <div className="hero-bob container-x pt-10 pb-12 md:py-24 text-cream max-w-3xl">
           <span className="eyebrow eyebrow-white">
-            <Icon name="compass" size={14} /> {DEMO_CTA}
+            <Icon name="compass" size={14} /> {CONSULT_CTA}
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
             Free group consultation. <span className="text-sunshine">Your plan in writing.</span>
@@ -53,8 +53,11 @@ function Page() {
             <FeeText text={CONSULTATION.hook} />
           </p>
           <p className="mt-3 text-sm text-white/90">
-            Looking for a demo class? We do not run a separate one — this free consultation is where
-            you start, with the course and fee in writing before you pay anything.
+            <FeeText text="Courses from ₹1,199/month, inclusive of taxes; batches 3pm–10pm IST. Want to sit in a real class instead? Book the" />{" "}
+            <Link to="/course-demo-session" className="font-semibold underline">
+              <FeeText text="₹199 Demo Class" />
+            </Link>{" "}
+            — adjusted in your fee if you join.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (
@@ -75,11 +78,11 @@ function Page() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3" data-cta-location="hero">
-            <WaButton message={DEMO_MSG} variant="wa" size="lg">
+            <WaButton message={CONSULT_MSG} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
-            <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
-              {DEMO_CTA}
+            <WaButton message={CONSULT_MSG} variant="sun" size="lg" goal="free_consultation">
+              {CONSULT_CTA}
             </WaButton>
           </div>
         </div>
@@ -142,13 +145,13 @@ function Page() {
             </ol>
             <div className="mt-8" data-cta-location="mid">
               <WaButton
-                message={DEMO_MSG}
+                message={CONSULT_MSG}
                 variant="sun"
                 size="lg"
                 className="w-full justify-center sm:w-auto"
                 goal="free_consultation"
               >
-                {DEMO_CTA}
+                {CONSULT_CTA}
               </WaButton>
             </div>
           </div>
@@ -354,11 +357,11 @@ function Page() {
             Interview Preparation or counselling — or tell you to stay free.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            <WaButton message={DEMO_MSG} variant="wa" size="lg">
+            <WaButton message={CONSULT_MSG} variant="wa" size="lg">
               {CHAT_CTA}
             </WaButton>
-            <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
-              {DEMO_CTA}
+            <WaButton message={CONSULT_MSG} variant="sun" size="lg" goal="free_consultation">
+              {CONSULT_CTA}
             </WaButton>
           </div>
           <PaymentTrust tone="light" align="center" className="mt-8" />

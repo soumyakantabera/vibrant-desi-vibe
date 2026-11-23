@@ -51,7 +51,7 @@ function Page() {
           Office by day. <span className="text-sunshine">Live English at night.</span>
         </>
       }
-      standfirst="Afternoon, evening and night IST batches. Live class; recording is revision. From ₹1,199/mo, inclusive of taxes. Message anytime. We reply 10am–midnight IST every day."
+      standfirst="3pm–10pm IST batches. Live class; recording is revision. From ₹1,199/mo, inclusive of taxes. Message anytime. We reply 10am–midnight IST every day."
       heroImage={IMG.studentLaptop}
       heroAlt="Working professional in an evening live English class"
       lastUpdated={UPDATED}
@@ -60,7 +60,7 @@ function Page() {
       faqTitle="English while you work"
       waMessage="Hi, I work and I want a free consultation for evening or night English."
       ctaTitle="Tell us your shift"
-      ctaBody="We suggest afternoon, evening or night — and Spoken, Interactive or Business."
+      ctaBody="We suggest a slot between 3pm and 10pm IST — and Spoken, Interactive or Business."
     />
   );
 }

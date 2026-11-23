@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Deferred } from "@/components/Deferred";
 import { FaqSection } from "@/components/FaqSection";
@@ -24,6 +24,8 @@ import { COURSES } from "@/lib/courses";
 import {
   waLink,
   withPageTag,
+  BATCH_HOURS,
+  CONSULT_CTA,
   DEMO_CTA,
   DEMO_MSG,
   CHAT_CTA,
@@ -137,26 +139,27 @@ function Home() {
               data-cta-location="hero"
             >
               <WaButton
-                message={CHAT_MSG}
-                size="lg"
-                className="w-full sm:w-auto justify-center"
-                goal="whatsapp_chat"
-              >
-                {CHAT_CTA}
-              </WaButton>
-              <WaButton
                 message={DEMO_MSG}
                 variant="sun"
                 size="lg"
                 className="w-full sm:w-auto justify-center"
-                goal="free_consultation"
               >
                 {DEMO_CTA}
               </WaButton>
+              <WaButton message={CHAT_MSG} size="lg" className="w-full sm:w-auto justify-center">
+                {CHAT_CTA}
+              </WaButton>
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
-              Tell us your goal. We reply with the right course and the fee — no pressure, no
-              payment to book.
+              <FeeText text="Sit one real 90-minute class for ₹199 — adjusted in your fee if you join within 48 hours." />{" "}
+              Batches {BATCH_HOURS}.
+            </p>
+            <p className="mt-1 text-sm text-white/90">
+              Not sure which course?{" "}
+              <Link to="/free-consultation" className="font-semibold underline">
+                {CONSULT_CTA}
+              </Link>{" "}
+              — free advice, not a class.
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 min-h-[2.5rem] text-sm font-semibold text-white/95 sm:min-h-0">
@@ -340,11 +343,7 @@ function Home() {
               ))}
             </Reveal>
             <div className="text-center mt-10">
-              <WaButton
-                message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
-                variant="sun"
-                size="lg"
-              >
+              <WaButton message={DEMO_MSG} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
             </div>
@@ -380,8 +379,8 @@ function Home() {
                   Chat on WhatsApp
                 </h3>
                 <p className="text-white/95 leading-relaxed mb-6">
-                  Tell us your goal in one message. We reply 10am–midnight IST every day and help
-                  you pick a course.
+                  Tell us your goal and preferred time ({BATCH_HOURS}) in one message. We reply
+                  10am–midnight IST every day with the course and its fee.
                 </p>
                 <WaButton message={CHAT_MSG} size="lg">
                   {CHAT_CTA}
@@ -395,7 +394,7 @@ function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-end group"
-                data-cta-goal="free_consultation"
+                data-cta-goal="whatsapp_demo"
               >
                 <SmartImage
                   src={IMG.womanLaptop}
@@ -407,14 +406,13 @@ function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/70 to-ink/20" />
                 <div className="relative p-7 text-cream">
                   <h3 className="text-cream text-2xl font-display font-extrabold mb-2 flex items-center gap-2">
-                    <Icon name="compass" size={22} /> {DEMO_CTA}
+                    <Icon name="play" size={22} /> <FeeText text={DEMO_CTA} />
                   </h3>
                   <p className="text-cream/95 mb-4">
-                    Ready when you are. Message us your goal — we reply 10am–midnight IST every day
-                    with the course and fee that actually fit.
+                    <FeeText text="Sit one real 90-minute class with the teacher and a batch of about 6. ₹199, adjusted in your course fee if you join within 48 hours." />
                   </p>
                   <span className="btn btn-sun btn-sm">
-                    <Icon name="compass" size={14} /> {DEMO_CTA}{" "}
+                    <Icon name="play" size={14} /> <FeeText text={DEMO_CTA} />{" "}
                     <Icon name="arrow-right" size={14} />
                   </span>
                 </div>

@@ -2,9 +2,9 @@
  * What the free consultation actually is — one source, used by the booking
  * page, FAQs, JSON-LD, llms.txt / llms.json, and the OpenAPI for ChatGPT Actions.
  *
- * Visible copy never calls this a class. There is no separate demo class
- * (retired November 2026): people who search "free demo class" land here, and
- * the page tells them the truth — advice, not a class.
+ * Visible copy never calls this a class. The real class is the paid ₹199 Demo
+ * Class (/course-demo-session), the main call to action since 23 Nov 2026;
+ * this consultation is the secondary, free option — advice, not a class.
  */
 import type { IconName } from "@/components/Icon";
 import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
@@ -22,15 +22,15 @@ export const CONSULTATION = {
   phoneDisplay: WHATSAPP_DISPLAY,
   headline: "Free group consultation. Your plan in writing.",
   /** Magnet under every consultation button. */
-  hook: "Free group consultation — we send a booking link on WhatsApp. No payment to book.",
+  hook: "Free group consultation before a paid course (from ₹1,199/month) — we send a booking link on WhatsApp.",
   punch:
     "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class, and it replaces a demo class.",
+  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹199 Demo Class, adjusted in the course fee on admission. Paid courses from ₹1,199/month; batches 3pm–10pm IST.",
   /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
   copilotSnippet:
-    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class — no separate demo class needed.",
+    "Live online spoken English classes from ₹1,199/month, about 6 per batch, batches 3pm–10pm IST. Book the ₹199 Demo Class (one 90-minute live class, adjusted in the fee if you join) on WhatsApp +91 96744 79949. Free consultation available — advice, not a class.",
 } as const;
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
@@ -307,7 +307,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do you offer a free demo class?",
-    a: "We do not run a separate demo class. Start with this free consultation: no payment, booked on WhatsApp. We name your speaking gap and put the course, fee, timings and batch size in writing before you pay anything. It is advice, not a class. If you then enrol, you pay one month at a time with no auto-debit, and a month cancelled before its first live class is refunded in full.",
+    a: "No free class. The Demo Class is ₹199, inclusive of taxes: one real 90-minute live class with the teacher and a batch of about 6, between 3pm and 10pm IST. Join any current course within 48 hours and the ₹199 is adjusted in the fee. This consultation is free, but it is advice, not a class. Book either on WhatsApp.",
   },
   {
     q: "Is the free consultation a full English class?",

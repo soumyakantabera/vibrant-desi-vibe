@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { Icon } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { waLink } from "@/lib/whatsapp";
+import { waLink, waMessageFor } from "@/lib/whatsapp";
+import { usePageLabel } from "@/lib/use-page-label";
 
 export type Testimonial = {
   quote: string;
@@ -56,7 +57,9 @@ export function TestimonialSlider({
 }
 
 function Card({ t, ctaLabel }: { t: Testimonial; ctaLabel: string }) {
-  const wa = waLink(t.waMessage);
+  const page = usePageLabel();
+  // The story names the course; the message books its ₹199 Demo Class.
+  const wa = waLink(waMessageFor("demo", t.waMessage, page));
   return (
     <article
       className="card-soft h-full flex flex-col bg-gradient-to-br from-white to-brand-soft/40"

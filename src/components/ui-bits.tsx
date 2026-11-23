@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { CHAT_MSG, DEMO_CTA, DEMO_MSG, consultRequest, waLink, withPageTag } from "@/lib/whatsapp";
+import { CONSULT_CTA, DEMO_CTA, waLink, waMessageFor, type WaKind } from "@/lib/whatsapp";
+import { FeeText } from "./FeeText";
 import { usePageLabel } from "@/lib/use-page-label";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
@@ -205,8 +206,8 @@ export function CoverageStrip({ invert = false }: { invert?: boolean }) {
           Kolkata, pan-India, now worldwide.
         </h2>
         <p className={`mt-2 max-w-2xl text-sm md:text-base ${body}`}>
-          About 6 learners in a live batch. Same teacher. Afternoon, evening and night IST. India
-          fees stay the India price. Learners outside India join the same class.
+          About 6 learners in a live batch. Same teacher. 3pm–10pm IST. India fees stay the India
+          price. Learners outside India join the same class.
         </p>
         <p className={`mt-4 font-display text-[11px] font-bold uppercase tracking-wider ${label}`}>
           States
@@ -255,8 +256,11 @@ export function WaButton({
   variant = "wa",
   size = "md",
   className = "",
-  goal = "whatsapp_click",
+  goal,
+  kind,
+  verbatim,
 }: {
+  /** The page's message. Template lines are rebuilt for the button's action. */
   message: string;
   children: ReactNode;
   variant?: "wa" | "primary" | "white" | "sun" | "coral" | "outline";
@@ -264,30 +268,44 @@ export function WaButton({
   className?: string;
   /** Which CTA fired, so conversions can be attributed to a page position. */
   goal?: string;
+  /** Demo, consultation or chat. Read from the label when not given. */
+  kind?: WaKind;
+  /** Send `message` exactly as written (level-test score, a specific question). */
+  verbatim?: boolean;
 }) {
   const cls = `btn btn-${variant} ${size === "lg" ? "btn-lg" : size === "sm" ? "btn-sm" : ""} ${className}`;
-  const consult =
-    goal === "free_consultation" ||
-    children === DEMO_CTA ||
-    (Array.isArray(children) && children.some((c) => c === DEMO_CTA));
+  const has = (label: string) =>
+    children === label || (Array.isArray(children) && children.some((c) => c === label));
+  const action: WaKind =
+    kind ??
+    (has(DEMO_CTA) || goal === "whatsapp_demo"
+      ? "demo"
+      : has(CONSULT_CTA) || goal === "free_consultation"
+        ? "consult"
+        : "chat");
   const iconSize = size === "sm" ? 16 : size === "lg" ? 18 : 16;
   const page = usePageLabel();
-  // A chat button never sends the consultation request, and a consultation
-  // button always asks for the booking link. Generic messages carry the page.
-  const text = consult ? consultRequest(message) : message === DEMO_MSG ? CHAT_MSG : message;
   return (
     <a
-      href={waLink(withPageTag(text, page))}
+      href={waLink(verbatim ? message : waMessageFor(action, message, page))}
       target="_blank"
       rel="noopener noreferrer"
       className={cls}
-      data-cta-goal={goal}
+      data-cta-goal={
+        goal ??
+        (action === "demo"
+          ? "whatsapp_demo"
+          : action === "consult"
+            ? "free_consultation"
+            : "whatsapp_chat")
+      }
     >
-      {variant === "wa" && !consult && (
+      {action === "chat" && (variant === "wa" || variant === "white") && (
         <BrandIcon name="whatsapp" size={iconSize} color="#053b1e" />
       )}
-      {consult && <Icon name="compass" size={iconSize} />}
-      <span>{children}</span>
+      {action === "consult" && <Icon name="compass" size={iconSize} />}
+      {action === "demo" && <Icon name="play" size={iconSize} />}
+      <span>{typeof children === "string" ? <FeeText text={children} /> : children}</span>
     </a>
   );
 }

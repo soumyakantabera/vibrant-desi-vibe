@@ -442,6 +442,7 @@ function Result({ s }: { s: TestState }) {
 
       <WaButton
         message={message}
+        verbatim
         goal="level_test_result"
         size="lg"
         className="mt-5 w-full justify-center"

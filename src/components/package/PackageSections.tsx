@@ -6,6 +6,7 @@ import { IMG } from "@/lib/images";
 import { SwipeHint, WaButton } from "@/components/ui-bits";
 import { VideoArt } from "@/components/package/VideoArt";
 import { FeePair, FeeText, MarketCopy } from "@/components/FeeText";
+import { CONSULT_CTA, DEMO_CTA } from "@/lib/whatsapp";
 import { CountUp, LineDuo, VizIn } from "@/components/viz/Viz";
 import { BoloParrot } from "@/components/mascots/BoloParrot";
 import { MithuMacaw } from "@/components/mascots/MithuMacaw";
@@ -487,7 +488,7 @@ export function WeekStrip() {
             <h3 className="mt-2 text-xl font-bold md:text-2xl">{sel.title}</h3>
             <p className="mt-2 text-ink/80 md:text-lg">{sel.detail}</p>
             <p className="mt-3 text-sm text-ink/60">
-              Example week. Live days follow your batch slot — afternoon, evening or night.
+              Example week. Live days follow your batch slot — 3pm–10pm IST.
             </p>
           </div>
 
@@ -1318,7 +1319,7 @@ export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
                 )}
                 <div className="mt-auto flex flex-col gap-2 pt-1">
                   <WaButton
-                    message={`Hi, I want to join ${fee.name}. Please share the next batch and fee.`}
+                    message={`Hi, I want to join ${fee.name} (${fee.monthly}). Please share the next batch between 3pm and 10pm IST.`}
                     variant="wa"
                     size="sm"
                     className="w-full justify-center"
@@ -1389,19 +1390,25 @@ export function ConsultStrip() {
         <Chip tone="terra" icon="compass" />
         <p className="text-ink/80">
           <strong className="block text-lg font-bold text-ink md:text-xl">
-            Not sure which course? Start with a free consultation.
+            Want to hear a class before you pay a month?
           </strong>
-          No payment. We hear your goal, name the gap and put the course and fee in writing on
-          WhatsApp. Advice, not a class — then you decide.
+          <FeeText text="Sit one real 90-minute class for ₹199 — adjusted in your fee if you join within 48 hours. Not sure which course? The free consultation is advice, not a class." />
         </p>
       </div>
-      <WaButton
-        message="Hi, I want a free consultation to choose my spoken English course."
-        variant="primary"
-        className="shrink-0"
-      >
-        Get Free Consultation
-      </WaButton>
+      <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col lg:flex-row">
+        <WaButton
+          message="Hi, I want a free consultation to choose my spoken English course."
+          variant="sun"
+        >
+          {DEMO_CTA}
+        </WaButton>
+        <WaButton
+          message="Hi, I want a free consultation to choose my spoken English course."
+          variant="primary"
+        >
+          {CONSULT_CTA}
+        </WaButton>
+      </div>
     </div>
   );
 }

@@ -283,7 +283,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Which spoken English class suits working professionals in Delhi NCR?",
-        a: "Learn With Smile runs live online batches of about 6 in afternoon, evening and night IST slots, plus the Bolo app for daily practice between classes. Interactive Speaking (₹1,599/month) for meetings and calls; Basic Spoken English — Hindi to English (₹1,199/month) if you are starting out.",
+        a: "Learn With Smile runs live online batches of about 6 in 3pm–10pm IST slots, plus the Bolo app for daily practice between classes. Interactive Speaking (₹1,599/month) for meetings and calls; Basic Spoken English — Hindi to English (₹1,199/month) if you are starting out.",
       },
       {
         q: "Is there a Hindi-medium spoken English class in Delhi?",
@@ -613,7 +613,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there an online spoken English class for Ahmedabad or Surat?",
-        a: "Yes. Learn With Smile teaches live online in batches of about 6, in afternoon, evening and night IST slots. Basic Spoken English is ₹1,199/month (also taught Hindi to English), with daily practice in the Bolo app and a weekly teacher review.",
+        a: "Yes. Learn With Smile teaches live online in batches of about 6, in 3pm–10pm IST slots. Basic Spoken English is ₹1,199/month (also taught Hindi to English), with daily practice in the Bolo app and a weekly teacher review.",
       },
     ],
     title: "Spoken English Classes in Gujarat | Live Online",
@@ -675,7 +675,7 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "Is there an online spoken English class for Chennai or Coimbatore IT jobs?",
-        a: "Yes. Interactive Speaking (3 months, ₹1,599/month) practises standups, status updates, client calls and interview rounds live, in afternoon, evening and night IST slots that fit around shifts on OMR or in Coimbatore. Every class is recorded for revision, and Bolo gives daily practice between classes.",
+        a: "Yes. Interactive Speaking (3 months, ₹1,599/month) practises standups, status updates, client calls and interview rounds live, in 3pm–10pm IST slots that fit around shifts on OMR or in Coimbatore. Every class is recorded for revision, and Bolo gives daily practice between classes.",
       },
     ],
     title: "Spoken English Classes in Tamil Nadu | Live Online",
@@ -724,7 +724,7 @@ export const STATES: StateInfo[] = [
     facts: [
       "Bengali is widely spoken in the Barak Valley (Silchar) and in Tripura; our teachers can bridge briefly in Bengali or Hindi.",
       "In Meghalaya, Mizoram and Nagaland English is already a school and official language, so learners there usually need speaking practice, not a beginners' course.",
-      "Classes run on IST like everywhere in India; afternoon, evening and night slots fit an early North-East working day.",
+      "Classes run on IST like everywhere in India; 3pm–10pm IST slots fit an early North-East working day.",
     ],
     faqs: [
       {

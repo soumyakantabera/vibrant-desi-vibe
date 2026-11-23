@@ -66,6 +66,10 @@ export function courseSeo(d: CourseData) {
   const courseInstance: Record<string, unknown> = {
     "@type": "CourseInstance",
     courseMode: "Online",
+    // Google's Course info needs courseWorkload or courseSchedule on the
+    // instance; the workload is the honest one (no invented repeat count).
+    ...(workload ? { courseWorkload: workload } : {}),
+    description: `Live online batch of about 6 learners. Batch timings 3pm–10pm IST (Asia/Kolkata); exact slot confirmed on WhatsApp.`,
     inLanguage: "en-IN",
     location: { "@type": "VirtualLocation", url },
     maximumAttendeeCapacity: 6,

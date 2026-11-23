@@ -76,6 +76,13 @@ const ENGLISH_COURSES: {
     slug: "interview-preparation",
     inr: "2 months · ₹2,499/month, inclusive of taxes",
   },
+  {
+    to: "/course-demo-session",
+    label: "₹199 Demo Class",
+    icon: "play",
+    slug: "demo-session",
+    inr: "One 90-min live class · adjusted in your fee if you join",
+  },
 ];
 
 /** On the home page, the logo and "Home" scroll back to the top instead of doing nothing. */

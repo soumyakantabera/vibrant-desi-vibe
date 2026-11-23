@@ -1,26 +1,51 @@
-import {
-  CHAT_CTA,
-  CHAT_MSG,
-  DEMO_CTA,
-  DEMO_MSG,
-  consultRequest,
-  waLink,
-  withPageTag,
-} from "@/lib/whatsapp";
+import { useEffect } from "react";
+import { CHAT_CTA, DEMO_CTA, waLink, waMessageFor } from "@/lib/whatsapp";
+import { applyIntlFees } from "@/lib/intl-fees";
 import { usePageLabel } from "@/lib/use-page-label";
 import { BrandIcon } from "./BrandIcon";
+import { FeeText } from "./FeeText";
 import { Icon } from "./Icon";
 
 /** Phone bottom bar: each label stays on one line (type scales 10.5–12px with the
  * screen, so it fits down to 320px wide); the 40px tap height is kept. */
 const BAR_BTN = "justify-center gap-1 whitespace-nowrap px-1.5 text-[clamp(10.5px,3.2vw,12px)]";
 
+/**
+ * WhatsApp messages state the India fee. For a visitor outside India (the boot
+ * script's `lws-intl` class), swap those figures for the international list the
+ * moment a wa.me link is pressed, so the chat opens with the price they saw.
+ * Prerendered HTML and crawlers keep the rupee text.
+ */
+function useIntlWhatsAppFees() {
+  useEffect(() => {
+    const swap = (e: Event) => {
+      if (!document.documentElement.classList.contains("lws-intl")) return;
+      const a = (e.target as Element | null)?.closest?.("a[href^='https://wa.me/']");
+      if (!(a instanceof HTMLAnchorElement)) return;
+      const url = new URL(a.href);
+      const text = url.searchParams.get("text");
+      if (!text) return;
+      const next = applyIntlFees(text, true);
+      if (next === text) return;
+      // encodeURIComponent, not searchParams: "+" for a space can show literally in WhatsApp.
+      a.href = `${url.origin}${url.pathname}?text=${encodeURIComponent(next)}`;
+    };
+    document.addEventListener("pointerdown", swap, true);
+    document.addEventListener("click", swap, true);
+    return () => {
+      document.removeEventListener("pointerdown", swap, true);
+      document.removeEventListener("click", swap, true);
+    };
+  }, []);
+}
+
 export function WhatsAppFab({ message }: { message?: string }) {
+  useIntlWhatsAppFees();
   const page = usePageLabel();
-  // Chat asks a question; the consultation button uses the page's own message
-  // (it usually names the course or city) as a booking-link request.
-  const whatsapp = waLink(withPageTag(CHAT_MSG, page));
-  const consult = waLink(withPageTag(message ? consultRequest(message) : DEMO_MSG, page));
+  // Chat asks a question and already states the fee; the second button books
+  // the ₹199 Demo Class. Both name the course when the page's message does.
+  const whatsapp = waLink(waMessageFor("chat", message, page));
+  const demo = waLink(waMessageFor("demo", message, page));
   return (
     <>
       <a
@@ -54,13 +79,13 @@ export function WhatsAppFab({ message }: { message?: string }) {
           <BrandIcon name="whatsapp" size={14} color="#053b1e" /> {CHAT_CTA}
         </a>
         <a
-          href={consult}
+          href={demo}
           target="_blank"
           rel="noopener noreferrer"
           className={`btn btn-sun btn-sm ${BAR_BTN}`}
-          data-cta-goal="free_consultation"
+          data-cta-goal="whatsapp_demo"
         >
-          <Icon name="compass" size={14} /> {DEMO_CTA}
+          <Icon name="play" size={14} /> <FeeText text={DEMO_CTA} />
         </a>
       </div>
     </>

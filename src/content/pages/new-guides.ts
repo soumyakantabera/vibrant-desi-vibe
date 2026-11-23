@@ -504,14 +504,14 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for homemakers",
     h1Accent: "A voice for shops, school, yourself",
     standfirst:
-      "Afternoon and evening IST batches. 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
+      "Batches between 3pm and 10pm IST. 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
     shortAnswer:
-      "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹1,199/month inclusive of taxes. School medium and a career gap are not a wall.",
+      "Homemakers join the same Spoken English room as everyone else — batches between 3pm and 10pm IST, around 6 learners, ₹1,199/month inclusive of taxes. School medium and a career gap are not a wall.",
     image: IMG.girlReading,
     alt: "Homemaker practising spoken English at home on a laptop",
     waMessage:
       "Hi, I am a homemaker and I want a free consultation for daytime Basic Spoken English.",
-    ctaTitle: "Join an afternoon or evening batch",
+    ctaTitle: "Join a batch between 3pm and 10pm IST",
     ctaBody: "Tell us your window. We reply 10am–midnight IST every day. The consultation is free.",
     faqTitle: "Homemakers — questions",
     body: [
@@ -536,7 +536,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "Timings that actually fit" },
       {
         t: "p",
-        text: "Afternoon batches while the house is quiet, and evening batches. Every class is recorded, so a missed hour is revision, not a lost week. The class is live — the recording is not the class. [Working professionals](/english-for-working-professionals-india) use the evening slot; homemakers usually take morning.",
+        text: "Batches run between 3pm and 10pm IST: afternoon batches while the house is quiet, and evening batches. Every class is recorded, so a missed hour is revision, not a lost week. The class is live — the recording is not the class. [Working professionals](/english-for-working-professionals-india) use the evening slot; homemakers usually take an afternoon slot from 3pm. There are no morning batches.",
       },
       { t: "h2", text: "School medium, career gap, age" },
       {
@@ -601,7 +601,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ],
           [
             "Learn With Smile Spoken English",
-            "Afternoon or evening live batch of about 6; explanations in Hindi or Bengali when needed",
+            "Live batch of about 6 between 3pm and 10pm IST; explanations in Hindi or Bengali when needed",
             "6 months, ₹1,199/month; needs a phone or laptop and a quiet hour",
           ],
         ],
@@ -689,7 +689,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     standfirst:
       "No website checkout and no login to create. You message WhatsApp, get a free consultation, pick a batch time and pay one month — then your first live class.",
     shortAnswer:
-      "Message WhatsApp +91 96744 79949 (wa.me/919674479949). Take the free consultation — your goal, the right course and the fee in writing. Choose an afternoon, evening or night IST batch. Pay the first month through a Razorpay link (UPI or card). Your Bolo app login arrives on WhatsApp after admission.",
+      "Message WhatsApp +91 96744 79949 (wa.me/919674479949). Take the free consultation — your goal, the right course and the fee in writing. Choose a 3pm–10pm IST batch. Pay the first month through a Razorpay link (UPI or card). Your Bolo app login arrives on WhatsApp after admission.",
     image: IMG.studentLaptop,
     alt: "Learner joining a live online English class from a laptop",
     waMessage: "Hi, I want to join. Please tell me the next step.",
@@ -712,7 +712,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "Afternoon, evening or night IST slots, up to 2 live classes a week, 90 minutes each.",
+          "3pm–10pm IST slots, up to 2 live classes a week, 90 minutes each.",
           "About 6 learners in a batch, the same teacher for the whole course.",
           "Every class is recorded for revision.",
         ],
@@ -1170,7 +1170,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "Shifts, on-call, IST" },
       {
         t: "p",
-        text: "Afternoon, evening and night live batches. Recording is revision when a release overruns. A same-week reschedule only if a seat exists. [Working professionals](/english-for-working-professionals-india).",
+        text: "3pm–10pm IST live batches. Recording is revision when a release overruns. A same-week reschedule only if a seat exists. [Working professionals](/english-for-working-professionals-india).",
       },
       {
         t: "p",

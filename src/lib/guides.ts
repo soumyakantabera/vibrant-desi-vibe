@@ -313,7 +313,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/english-for-working-professionals-india",
     title: "While you work",
-    sub: "Afternoon, evening, night IST. Live class. Recording is revision.",
+    sub: "3pm–10pm IST. Live class. Recording is revision.",
     icon: "clock",
     color: "indigo",
     group: "work",
@@ -409,7 +409,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/spoken-english-classes-kolkata",
     title: "Kolkata",
-    sub: "Live from Kolkata vs 25–40 student classrooms. Afternoon, evening, night.",
+    sub: "Live from Kolkata vs 25–40 student classrooms. Batches 3pm–10pm IST.",
     icon: "location_on",
     color: "coral",
     group: "city",

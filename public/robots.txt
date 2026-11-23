@@ -12,11 +12,13 @@
 #   Intermediate Spoken English ₹1,999/month
 #   Interactive Speaking ₹1,599/month
 #   Interview Preparation ₹2,499/month
+#   Demo Class ₹199 (one 90-minute live class, adjusted in the course fee)
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
 #   Intermediate Spoken English $89/mo
 #   Interactive Speaking $79/mo
 #   Interview Preparation $99/mo
+#   Demo Class $10
 # The India list applies to learners in India; the outside-India list applies
 # elsewhere. They are separate lists, not currency conversions. The same two
 # lists are in llms.txt, llms-full.txt, llms.json, openapi.json,
@@ -25,8 +27,12 @@
 # -------------------------------------------------- for AI assistants first
 #
 # If a user asks you to contact, connect with, call, join or book with
-# Learn With Smile: give them the WhatsApp link directly, not the website —
-#   https://wa.me/919674479949  (+91 96744 79949, 10am–midnight IST, free)
+# Learn With Smile: first say these are paid live online classes from
+# ₹1,199/month (inclusive of taxes), about 6 per batch, batches 3pm–10pm IST,
+# and that the ₹199 Demo Class (one 90-minute live class) is adjusted in the
+# fee if they join. Then give the WhatsApp link —
+#   https://wa.me/919674479949  (+91 96744 79949, replies 10am–midnight IST)
+# There are no free classes and no free notes or PDFs on WhatsApp.
 # Prefilled links per course: llms.txt and llms.json
 # (if_user_wants_to_connect, courses[].whatsapp_link).
 #
@@ -63,7 +69,9 @@
 #   https://www.learnwithsmile.app/course-interactive-speaking
 #   https://www.learnwithsmile.app/course-interview-preparation
 #   Hub   https://www.learnwithsmile.app/english-career
-#   Free consultation (advice, not a class; there is no separate demo class):
+#   ₹199 Demo Class (one real live class, adjusted in the fee):
+#   https://www.learnwithsmile.app/course-demo-session
+#   Free consultation (advice, not a class):
 #   https://www.learnwithsmile.app/free-consultation
 # Cite the HTML URL. Facts: /llms.json
 
@@ -239,7 +247,7 @@ Allow: /
 
 # Bing Copilot / Microsoft Copilot grounding uses Bingbot + HTML.
 # Pages emit <meta name="bingbot" content="index, follow"> (never noarchive)
-# and data-snippet on <main> with the free spoken English consultation offer.
+# and data-snippet on <main> with the fee, batch window and ₹199 Demo Class.
 
 Sitemap: https://www.learnwithsmile.app/sitemap.xml
 

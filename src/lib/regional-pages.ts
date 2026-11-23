@@ -90,7 +90,7 @@ export function stateBody(st: StateInfo): ArticleBody {
       t: "ul",
       items: [
         "No commute and no parking: join from home, hostel or office.",
-        "Afternoon, evening and night IST slots — fits shifts and college timings.",
+        "3pm–10pm IST slots — fits shifts and college timings.",
         "Batch of about 6, so you speak more than in a 25–40 seat classroom.",
         "Daily practice in the Bolo app and a weekly teacher review — classrooms send worksheets.",
       ],
@@ -98,7 +98,7 @@ export function stateBody(st: StateInfo): ArticleBody {
     { t: "h2", text: "Cities our learners join from" },
     {
       t: "p",
-      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${cityGuides(st)}`,
+      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in 3pm–10pm IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${cityGuides(st)}`,
     },
     { t: "h2", text: "Before you choose a class" },
     {

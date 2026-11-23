@@ -22,9 +22,16 @@ import {
 } from "@/components/CourseVisuals";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
-import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import {
+  BATCH_HOURS,
+  DEMO_CTA,
+  CHAT_CTA,
+  WHATSAPP_DISPLAY,
+  waLink,
+  waMessageFor,
+} from "@/lib/whatsapp";
+import { usePageLabel } from "@/lib/use-page-label";
 import { LevelTestButton } from "@/components/LevelTestPromo";
-import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 import { faqAnchor, moduleAnchor } from "@/lib/anchors";
 
@@ -217,7 +224,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/english-for-working-professionals-india",
       title: "English while you work",
-      description: "Afternoon, evening and night IST. Live class; recording is revision.",
+      description: "3pm–10pm IST. Live class; recording is revision.",
     },
     {
       href: "/workplace-english-course-online-india",
@@ -302,6 +309,7 @@ function NativeBlock({ native }: { native: NativeSection }) {
           <div className="mt-6">
             <WaButton
               message={native.waMessage}
+              verbatim
               variant="wa"
               size="lg"
               goal={`native_${native.lang}`}
@@ -329,7 +337,9 @@ export function CoursePage({ data }: { data: CourseData }) {
   const feeKey = data.feeSlug ?? data.slug;
   const teacherNote = TEACHER_NOTE[data.slug] ?? TEACHER_NOTE[feeKey];
   const waPrimary = data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
-  const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
+  // Sent as written: the person has seen the fee and is asking to join, not for free notes.
+  const waSyllabus = `Hi, I'm considering ${data.title} (${data.price}). Please send the syllabus and the next batch timings (${BATCH_HOURS}).`;
+  const page = usePageLabel();
   const faqs = courseFaqs(data);
   const snapshot = (
     <SnapshotCard
@@ -431,24 +441,27 @@ export function CoursePage({ data }: { data: CourseData }) {
             </div>
             <p className="mt-3 text-sm text-white/90">
               {shownLive ??
-                "✓ 100% online live · ✓ About 6 in a batch · ✓ Flexible afternoon · evening · night slots · ✓ Kolkata, pan-India, now worldwide"}
+                "✓ 100% online live · ✓ About 6 in a batch · ✓ Batches 3pm–10pm IST · ✓ Kolkata, pan-India, now worldwide"}
             </p>
             <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
-              <WaButton message={waPrimary} variant="wa" size="lg">
-                {CHAT_CTA}
-              </WaButton>
               <WaButton message={waPrimary} variant="sun" size="lg">
                 {DEMO_CTA}
+              </WaButton>
+              <WaButton message={waPrimary} variant="wa" size="lg">
+                {CHAT_CTA}
               </WaButton>
               <LevelTestButton />
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
-              <FeeText text={CONSULTATION.hook} />
+              <FeeText text="Sit one real 90-minute class for ₹199 — adjusted in your fee if you join within 48 hours." />{" "}
+              <Link to="/course-demo-session" className="underline">
+                How the demo works
+              </Link>
             </p>
             <p className="mt-2 text-sm text-white/95">
               WhatsApp{" "}
               <a
-                href={waLink(waPrimary)}
+                href={waLink(waMessageFor("chat", waPrimary, page))}
                 className="font-semibold underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -585,9 +598,12 @@ export function CoursePage({ data }: { data: CourseData }) {
             data-cta-location="syllabus"
           >
             <div>
-              <strong className="text-cream block text-lg">Want a printable syllabus PDF?</strong>
+              <strong className="text-cream block text-lg">
+                Planning to join? Get the syllabus
+              </strong>
               <p className="text-white text-sm mt-1">
-                We'll reply on WhatsApp with current batch timings and pricing.
+                We'll reply on WhatsApp with the syllabus and the next batch timings ({BATCH_HOURS}
+                ).
               </p>
             </div>
             <WaButton message={waSyllabus} variant="wa">

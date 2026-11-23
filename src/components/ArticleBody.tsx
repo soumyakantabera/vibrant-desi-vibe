@@ -6,8 +6,8 @@ import type { ArticleBody as ArticleBodyBlocks, Block } from "@/content/blog/blo
 import { headingId } from "@/content/blog/blocks";
 import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
-import { CONSULTATION } from "@/lib/consultation";
+import { CHAT_CTA, CONSULT_MSG, DEMO_CTA } from "@/lib/whatsapp";
+import { DEMO_BAND } from "@/lib/demo-session";
 import { headingIcon, tone } from "@/lib/tones";
 import { BoloCard, BoloSays } from "@/components/mascots/BoloCard";
 
@@ -75,10 +75,12 @@ export function WaStrip({ message }: { message: string }) {
   return (
     <BoloCard as="aside" className="mt-8" data-cta-location="mid_article">
       <BoloSays pose="talk" size={76}>
-        <p className="font-display font-extrabold leading-snug text-ink">{CONSULTATION.headline}</p>
-        <p className="mt-1 text-sm leading-relaxed text-ink/80">{CONSULTATION.punch}</p>
+        <p className="font-display font-extrabold leading-snug text-ink">{DEMO_BAND.headline}</p>
+        <p className="mt-1 text-sm leading-relaxed text-ink/80">
+          <FeeText text={DEMO_BAND.punch} />
+        </p>
         <p className="mt-1 text-xs font-semibold text-brand-deep">
-          <FeeText text={CONSULTATION.hook} />
+          <FeeText text={DEMO_BAND.hook} />
         </p>
       </BoloSays>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -316,7 +318,7 @@ function BlockView({ block, section }: { block: Block; section: number }) {
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {block.course === "/free-consultation" ? (
               <WaButton
-                message={DEMO_MSG}
+                message={CONSULT_MSG}
                 variant="sun"
                 goal="free_consultation"
                 className="btn-chunky w-full"

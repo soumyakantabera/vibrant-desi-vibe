@@ -73,7 +73,7 @@ if ! grep -q 'child-protection' dist/llms.json; then
   echo "::error::llms.json is missing child-protection"; exit 1
 fi
 if ! grep -q '"if_user_wants_to_connect"' dist/llms.json \
-   || ! grep -q 'give the WhatsApp link, not the website' dist/llms.txt; then
+   || ! grep -q 'state the fee and batch window, then give the WhatsApp link' dist/llms.txt; then
   echo "::error::llms files lost the WhatsApp-first contact rule"; exit 1
 fi
 if ! grep -q 'g.page' dist/index.html; then

@@ -31,6 +31,7 @@ const COMPANY = [
   { to: "/educator", label: "Educator" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/blog", label: "Blog" },
+  { to: "/course-demo-session", label: "₹199 Demo Class" },
   { to: "/free-consultation", label: "Get Free Consultation" },
 ];
 
@@ -196,6 +197,7 @@ function EnrolmentNote() {
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
   const interview = INTL_FEE["interview-preparation"].display;
+  const demo = INTL_FEE["demo-session"].display;
   return (
     <MarketCopy
       inr="Fees on this site are India pricing, in Indian Rupees, inclusive of taxes. These published figures are for learners in India."
@@ -203,9 +205,9 @@ function EnrolmentNote() {
         <>
           Fees shown to a learner outside India are the international list, in {intlUnit()}. These
           published figures are Basic Spoken English {spoken}, Intermediate Spoken English{" "}
-          {intermediate}, Interactive Speaking {interactive} and Interview Preparation {interview}.
-          They are the labeled fee, not a conversion of the India price. The fee confirmed on
-          WhatsApp is the contract price.
+          {intermediate}, Interactive Speaking {interactive}, Interview Preparation {interview} and
+          the Demo Class {demo}. They are the labeled fee, not a conversion of the India price. The
+          fee confirmed on WhatsApp is the contract price.
         </>
       }
     />

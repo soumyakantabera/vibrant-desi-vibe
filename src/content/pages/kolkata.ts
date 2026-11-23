@@ -145,13 +145,13 @@ export const body: ArticleBody = [
     text: `All figures are inclusive of taxes. ${admissionCaption()} Chat on WhatsApp to book one.`,
   },
 
-  { t: "h2", text: "Batch timings" },
+  { t: "h2", text: "Batch timings: 3pm to 10pm IST" },
   {
     t: "ul",
     items: [
-      "**Afternoon** — homemakers, students and anyone on a late shift",
+      "**Afternoon, from 3pm** — homemakers, students and anyone on a late shift",
       "**Evening** — after office, the usual choice for working professionals",
-      "**Night** — for Sector V and BPO staff whose shifts run late",
+      "**Night, until 10pm** — for Sector V and BPO staff whose shifts run late",
     ],
   },
   {

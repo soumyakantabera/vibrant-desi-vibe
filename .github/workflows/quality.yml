@@ -114,15 +114,25 @@ jobs:
             echo "::error::The homepage course list went back to category cards"
             exit 1
           fi
-          if grep -REqi 'Book the ₹199 Demo Class|course-demo-session"' dist/index.html dist/free-consultation.html; then
-            echo "::error::The retired Demo Class is back on the homepage or consultation page"
+          # Lead quality (Nov 2026): the ₹199 Demo Class is the main CTA, and
+          # WhatsApp messages carry the fee and the 3pm–10pm IST batch window.
+          test -s dist/course-demo-session.html
+          grep -q 'data-cta-goal="whatsapp_demo"' dist/index.html
+          grep -q '₹199 Demo Class' dist/course-demo-session.html
+          grep -q '"price":199' dist/course-demo-session.html
+          grep -q 'course-demo-session' dist/sitemap.xml
+          grep -q 'getDemoClass' dist/openapi.json
+          grep -q '3pm–10pm IST' dist/llms.txt
+          grep -q 'wa.me/919674479949?text=Hi%2C%20I%20want%20to%20book%20the%20%E2%82%B9199%20Demo%20Class' dist/index.html
+          if grep -q 'question%20about%20your%20spoken%20English%20classes.' dist/index.html; then
+            echo "::error::A WhatsApp message without the fee is back on the homepage"
             exit 1
           fi
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
           grep -q '4 Programmes' dist/english-career.html
           grep -q '6 months · 1 hr 30 min · up to 2 classes/week' dist/course-spoken-english.html
-          grep -q 'afternoon · evening · night' dist/course-spoken-english.html
+          grep -q 'Batches 3pm–10pm IST' dist/course-spoken-english.html
           grep -q 'Meetings, Updates &amp; Client Calls' dist/course-interactive-speaking.html
           grep -q 'Workplace Messages &amp; Emails' dist/course-intermediate-english.html
           grep -q 'Workplace English' dist/workplace-english-course-online-india.html
@@ -156,8 +166,8 @@ jobs:
           grep -q 'published_fees' dist/llms.json
           # Contact = the WhatsApp link itself, said first in every AI file.
           grep -q '"if_user_wants_to_connect"' dist/llms.json
-          grep -q 'give the WhatsApp link, not the website' dist/llms.txt
-          grep -q 'First rule — contact means the WhatsApp link' dist/chatgpt-actions.md
+          grep -q 'state the fee and batch window, then give the WhatsApp link' dist/llms.txt
+          grep -q 'First rule — fee first, then the WhatsApp link' dist/chatgpt-actions.md
           grep -q '^whatsapp: "https://wa.me/919674479949' dist/index.md
           grep -q 'wa.me/919674479949' dist/robots.txt
           grep -q 'Two published price lists' dist/llms.txt
