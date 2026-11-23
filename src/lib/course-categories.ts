@@ -11,9 +11,9 @@ export type CategoryTone = "brand" | "indigo" | "sun" | "coral" | "play";
 export const COURSE_CATEGORIES = [
   {
     id: "speak-confidently",
-    title: "Speak Confidently · From ₹1,199/month, inclusive of taxes",
+    title: "Speak Confidently · From ₹999/month, inclusive of taxes",
     description:
-      "Quality live English from ₹1,199/month, inclusive of taxes. 6-month Basic Spoken English, 4-month Intermediate Spoken English (₹1,999/month) or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English is also a dedicated room when the HR screen is the bottleneck. Batches of approximately 6 learners.",
+      "Quality live English from ₹999/month, inclusive of taxes. 6-month Basic Spoken English, 4-month Intermediate Spoken English (₹1,999/month) or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English is also a dedicated room when the HR screen is the bottleneck. Batches of approximately 6 learners.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",

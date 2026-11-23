@@ -101,7 +101,7 @@ const BRANDS: Brand[] = [
     name: "Learn With Smile",
     short: "LWS",
     tone: "green",
-    fee: "₹1,199–₹2,499/mo, tax incl.",
+    fee: "₹999–₹2,499/mo, tax incl.",
     us: true,
   },
   {
@@ -164,7 +164,7 @@ const SCORE = BRANDS.map((_, bi) =>
 
 /** Typical monthly spend, ₹ (assumptions are printed under the chart). */
 const SPEND: [number, number][] = [
-  [1199, 2499],
+  [999, 2499],
   [2700, 2700],
   [8000, 15000],
   [2000, 32000],

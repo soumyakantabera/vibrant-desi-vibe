@@ -36,7 +36,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "₹1,199/month live teaching, inclusive of taxes",
+                name: "₹999/month live teaching, inclusive of taxes",
               },
               {
                 "@type": "ListItem",
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/why-us")({
               {
                 "@type": "ListItem",
                 position: 4,
-                name: "500+ learners across 11 Indian states from ₹1,199/month",
+                name: "500+ learners across 11 Indian states from ₹999/month",
               },
             ],
           }),
@@ -83,16 +83,16 @@ const MARKET = [
     icon: "trophy" as const,
     tag: "Brand-name groups",
     title: "Curriculum. Limited talking.",
-    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹1,199/mo, inclusive of taxes. Sit IELTS with the test board when a visa or university form actually asks — we do not sell that paper.",
+    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹999/mo, inclusive of taxes. Sit IELTS with the test board when a visa or university form actually asks — we do not sell that paper.",
     stat: "₹8,800–₹16,000 / module",
   },
   {
     color: "brand" as const,
     icon: "smile" as const,
     tag: "Learn With Smile",
-    title: "₹1,199/mo. 7 years. 500+.",
+    title: "₹999/mo. 7 years. 500+.",
     body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. Inclusive of taxes. Batches have approximately 6 learners so you actually speak.`,
-    stat: "From ₹1,199/mo · inclusive of taxes",
+    stat: "From ₹999/mo · inclusive of taxes",
   },
 ];
 
@@ -123,7 +123,7 @@ function Page() {
             <p className="mt-5 text-base text-white md:text-lg">
               A teacher who knows your name. 500+ learners, 7 years, about 6 in a batch. You speak
               every class. Kolkata, pan-India, now worldwide.{" "}
-              <FeeText text="From ₹1,199/mo, inclusive of taxes." />
+              <FeeText text="From ₹999/mo, inclusive of taxes." />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">
@@ -142,7 +142,7 @@ function Page() {
               <SnapshotCard
                 badge={`Why ${RATING.count} Google reviews`}
                 eyebrow="What you actually get"
-                headline={feeHeadline("₹1,199/mo", "spoken-english")}
+                headline={feeHeadline("₹999/mo", "spoken-english")}
                 subnote={
                   <MarketCopy
                     inr="inclusive of taxes · Kolkata-born · heard across India"
@@ -236,7 +236,7 @@ function Page() {
           <FeatureCard
             icon="rupee"
             color="sunshine"
-            title={<FeeText text="From ₹1,199/mo, inclusive of taxes" />}
+            title={<FeeText text="From ₹999/mo, inclusive of taxes" />}
           >
             <MarketCopy
               inr="No material fee. Monthly UPI."
@@ -279,7 +279,7 @@ function Page() {
         eyebrow="Why Us FAQs"
         title="How We Teach — Questions Answered"
         subtitle={
-          <FeeText text="₹1,199/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6." />
+          <FeeText text="₹999/mo, inclusive of taxes. 7 years, 500+ learners, live vs recorded, batch of around 6." />
         }
         waMessage="Hi, I want a free consultation to know how your spoken English classes work."
       />
@@ -296,7 +296,7 @@ function Page() {
           <div className="text-cream">
             <h2 className="text-cream section-title">Ready to start?</h2>
             <p className="mt-3 text-white/95">
-              <FeeText text="Chat on WhatsApp. 7 years, 500+ learners, from ₹1,199/mo, inclusive of taxes." />
+              <FeeText text="Chat on WhatsApp. 7 years, 500+ learners, from ₹999/mo, inclusive of taxes." />
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <WaButton message={wa} variant="wa" size="lg">

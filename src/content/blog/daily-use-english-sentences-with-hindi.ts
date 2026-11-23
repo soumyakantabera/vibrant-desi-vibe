@@ -231,7 +231,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "If Hindi is the language you think in, Basic Spoken English — Hindi to English is taught by a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. 6 months, ₹1,199/month inclusive of taxes, a live batch of approximately 6 learners, afternoon, evening and night IST slots.",
+    text: "If Hindi is the language you think in, Basic Spoken English — Hindi to English is taught by a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. 6 months, ₹999/month inclusive of taxes, a live batch of approximately 6 learners, afternoon, evening and night IST slots.",
     course: "/course-spoken-english-hindi",
     label: "See Spoken English — Hindi to English",
   },

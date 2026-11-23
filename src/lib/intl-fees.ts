@@ -48,13 +48,13 @@ export const INTL_FEE: Record<IntlSlug, IntlFee> = {
   "interview-preparation": { display: money("99", "/mo"), big: money("99"), suffix: "/mo" },
 };
 
-/** India tokens, longest first, so ₹2,499 is not eaten by ₹1,199. */
+/** India tokens, longest first. */
 const INR_TO_INTL: [string, string][] = [
   ["₹2,499/month", INTL_FEE["interview-preparation"].display],
   ["₹1,999/month", INTL_FEE["intermediate-english"].display],
   ["₹1,599/month", INTL_FEE["interactive-speaking"].display],
-  ["₹1,199/month", INTL_FEE["spoken-english"].display],
-  ["₹1,199/mo", INTL_FEE["spoken-english"].display],
+  ["₹999/month", INTL_FEE["spoken-english"].display],
+  ["₹999/mo", INTL_FEE["spoken-english"].display],
   ["₹0", intlZero()],
 ];
 

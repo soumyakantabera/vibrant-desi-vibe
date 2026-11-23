@@ -136,7 +136,7 @@ export const CONSULTATION_BOTTLENECKS: {
     icon: "mic",
     ifThis: "Cannot finish a sentence in a shop or on a phone call",
     weName: "Spoken English is the gap",
-    weRecommend: "Spoken English — 6 months, ₹1,199/mo, ≈6 learners",
+    weRecommend: "Spoken English — 6 months, ₹999/mo, ≈6 learners",
     href: "/course-spoken-english",
   },
   {
@@ -240,7 +240,7 @@ export const CONSULTATION_VS_MARKET: {
     theirSession:
       "A free demo class for a child (typically 4–13). Public speaking packages often ₹13,000–₹65,000 per course.",
     weDoInstead:
-      "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹1,199/mo.",
+      "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹999/mo.",
   },
   {
     icon: "headset",
@@ -256,7 +256,7 @@ export const CONSULTATION_VS_MARKET: {
     theirSession:
       "Any available native-speaker tutor. Accent and idiom. ₹8,000–₹15,000/month if daily. No fixed 6-month plan.",
     weDoInstead:
-      "A named teacher, a syllabus, ≈6 learners, from ₹1,199/mo. Native chat is a later buy.",
+      "A named teacher, a syllabus, ≈6 learners, from ₹999/mo. Native chat is a later buy.",
   },
   {
     icon: "school",
@@ -291,7 +291,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How is your free consultation different from other institutes’ free sessions?",
-    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling — you start with a call. Brand-name groups sell a CEFR module. Exam shops focus on IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹1,199/month inclusive of taxes.",
+    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling — you start with a call. Brand-name groups sell a CEFR module. Exam shops focus on IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹999/month inclusive of taxes.",
   },
   {
     q: "How do I get a free consultation at Learn With Smile?",
@@ -303,7 +303,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹1,199/month, approximately 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze, or chat is fine but meetings and calls are not → Interactive Speaking (3 months, ₹1,599/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹999/month, approximately 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze, or chat is fine but meetings and calls are not → Interactive Speaking (3 months, ₹1,599/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Do you offer a free demo class?",

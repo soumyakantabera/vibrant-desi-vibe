@@ -102,7 +102,7 @@ function Page() {
           </h1>
           <p className="mt-5 text-lg text-white">
             Seven years of teaching, 500+ learners, and one belief: learning should be simple,
-            practical and enjoyable. From ₹1,199/mo, inclusive of taxes. A Kolkata classroom,
+            practical and enjoyable. From ₹999/mo, inclusive of taxes. A Kolkata classroom,
             learners across India.
           </p>
         </div>

@@ -14,7 +14,7 @@ export const body: ArticleBody = [
       [
         "You cannot finish a sentence / freeze in shops and calls",
         "Basic Spoken English",
-        "₹1,199/mo, 6 months, approx. 6 learners",
+        "₹999/mo, 6 months, approx. 6 learners",
         "Everyday chat in ~6 months",
       ],
       [

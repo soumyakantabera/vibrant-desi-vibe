@@ -250,7 +250,7 @@ export function PackageBand({ title }: { title?: string }) {
             {title ?? (
               <>
                 Live classes, the Bolo app and the same teacher — from{" "}
-                <FeeText text="₹1,199/month" />.
+                <FeeText text="₹999/month" />.
               </>
             )}
           </h2>
