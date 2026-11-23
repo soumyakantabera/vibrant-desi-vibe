@@ -114,16 +114,16 @@ jobs:
             echo "::error::The homepage course list went back to category cards"
             exit 1
           fi
-          # Lead quality (Nov 2026): the ₹199 Demo Class is the main CTA, and
+          # Lead quality (Nov 2026): the ₹99 Demo Class is the main CTA, and
           # WhatsApp messages carry the fee and the 3pm–10pm IST batch window.
           test -s dist/course-demo-session.html
           grep -q 'data-cta-goal="whatsapp_demo"' dist/index.html
-          grep -q '₹199 Demo Class' dist/course-demo-session.html
-          grep -q '"price":199' dist/course-demo-session.html
+          grep -q '₹99 Demo Class' dist/course-demo-session.html
+          grep -q '"price":99' dist/course-demo-session.html
           grep -q 'course-demo-session' dist/sitemap.xml
           grep -q 'getDemoClass' dist/openapi.json
           grep -q '3pm–10pm IST' dist/llms.txt
-          grep -q 'wa.me/919674479949?text=Hi%2C%20I%20want%20to%20book%20the%20%E2%82%B9199%20Demo%20Class' dist/index.html
+          grep -q 'wa.me/919674479949?text=Hi%2C%20I%20want%20to%20book%20the%20%E2%82%B999%20Demo%20Class' dist/index.html
           if grep -q 'question%20about%20your%20spoken%20English%20classes.' dist/index.html; then
             echo "::error::A WhatsApp message without the fee is back on the homepage"
             exit 1

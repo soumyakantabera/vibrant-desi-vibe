@@ -78,7 +78,7 @@ const ENGLISH_COURSES: {
   },
   {
     to: "/course-demo-session",
-    label: "₹199 Demo Class",
+    label: "₹99 Demo Class",
     icon: "play",
     slug: "demo-session",
     inr: "One 90-min live class · adjusted in your fee if you join",

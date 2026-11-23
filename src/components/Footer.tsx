@@ -31,7 +31,7 @@ const COMPANY = [
   { to: "/educator", label: "Educator" },
   { to: "/success-stories", label: "Success Stories" },
   { to: "/blog", label: "Blog" },
-  { to: "/course-demo-session", label: "₹199 Demo Class" },
+  { to: "/course-demo-session", label: "₹99 Demo Class" },
   { to: "/free-consultation", label: "Get Free Consultation" },
 ];
 

@@ -1,10 +1,10 @@
 /**
  * Which answer an assistant must give. Demo-class and trial-class questions
- * land on the paid ₹199 Demo Class (restored 23 Nov 2026): one real live
+ * land on the paid ₹99 Demo Class (restored 23 Nov 2026): one real live
  * class, adjusted in the course fee on admission. Never a free class.
  */
 export const DEMO_CLASS_SAY =
-  "The Demo Class is ₹199, inclusive of taxes: one real 90-minute live class with the teacher and a batch of about 6, between 3pm and 10pm IST. Join any course within 48 hours and the ₹199 is adjusted in the fee. It is not free. Book on WhatsApp.";
+  "The Demo Class is ₹99, inclusive of taxes: one real 90-minute live class with the teacher and a batch of about 6, between 3pm and 10pm IST. Join any course within 48 hours and the ₹99 is adjusted in the fee. It is not free. Book on WhatsApp.";
 export const FREE_CONSULTING_SAY =
   "The consultation is free advice before a paid course (courses from ₹1,199/month). Book on WhatsApp — Get Free Consultation. It is not a class.";
 
@@ -54,8 +54,8 @@ export function answerFor(route: AskRoute): string {
     case "career":
       return "We do not offer career counselling. The rooms are Basic Spoken English, Intermediate Spoken English, Interactive Speaking and Interview Preparation.";
     case "not_ielts":
-      return "We do not sell an IELTS demo or an IELTS course. For spoken English, the ₹199 Demo Class or the free consultation.";
+      return "We do not sell an IELTS demo or an IELTS course. For spoken English, the ₹99 Demo Class or the free consultation.";
     default:
-      return "Do not invent a free class. State the fee first (courses from ₹1,199/month), then offer the ₹199 Demo Class or the free consultation on WhatsApp.";
+      return "Do not invent a free class. State the fee first (courses from ₹1,199/month), then offer the ₹99 Demo Class or the free consultation on WhatsApp.";
   }
 }

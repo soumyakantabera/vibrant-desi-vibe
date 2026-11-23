@@ -43,7 +43,7 @@ export function WhatsAppFab({ message }: { message?: string }) {
   useIntlWhatsAppFees();
   const page = usePageLabel();
   // Chat asks a question and already states the fee; the second button books
-  // the ₹199 Demo Class. Both name the course when the page's message does.
+  // the ₹99 Demo Class. Both name the course when the page's message does.
   const whatsapp = waLink(waMessageFor("chat", message, page));
   const demo = waLink(waMessageFor("demo", message, page));
   return (

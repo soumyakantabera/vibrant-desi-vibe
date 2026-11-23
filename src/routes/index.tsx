@@ -151,7 +151,7 @@ function Home() {
               </WaButton>
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
-              <FeeText text="Sit one real 90-minute class for ₹199 — adjusted in your fee if you join within 48 hours." />{" "}
+              <FeeText text="Sit one real 90-minute class for ₹99 — adjusted in your fee if you join within 48 hours." />{" "}
               Batches {BATCH_HOURS}.
             </p>
             <p className="mt-1 text-sm text-white/90">
@@ -409,7 +409,7 @@ function Home() {
                     <Icon name="play" size={22} /> <FeeText text={DEMO_CTA} />
                   </h3>
                   <p className="text-cream/95 mb-4">
-                    <FeeText text="Sit one real 90-minute class with the teacher and a batch of about 6. ₹199, adjusted in your course fee if you join within 48 hours." />
+                    <FeeText text="Sit one real 90-minute class with the teacher and a batch of about 6. ₹99, adjusted in your course fee if you join within 48 hours." />
                   </p>
                   <span className="btn btn-sun btn-sm">
                     <Icon name="play" size={14} /> <FeeText text={DEMO_CTA} />{" "}

@@ -6,11 +6,11 @@ Date: 23 November 2026
 
 WhatsApp leads were good, then went cold: people who send "price?" and disappear, or who want free material. The owner chose to fix it this way:
 
-| Question                       | Owner's decision                                                                                        |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| Main offer                     | Bring back the **₹199 Demo Class** (adjusted in the fee). Free consultation stays as the second option. |
-| Qualifier step before WhatsApp | No extra step. State the **batch timings: 3pm–10pm IST** everywhere instead.                            |
-| Blog pages                     | Keep WhatsApp, but every message names the **course and its fee**.                                      |
+| Question                       | Owner's decision                                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| Main offer                     | Bring back the Demo Class at **₹99** (was ₹199; adjusted in the fee). Free consultation stays as the second option. |
+| Qualifier step before WhatsApp | No extra step. State the **batch timings: 3pm–10pm IST** everywhere instead.                                        |
+| Blog pages                     | Keep WhatsApp, but every message names the **course and its fee**.                                                  |
 
 ## What changed in November (from git history)
 
@@ -26,14 +26,14 @@ WhatsApp leads were good, then went cold: people who send "price?" and disappear
 
 **Offer and calls to action**
 
-- `/course-demo-session` is restored: one 90-minute live class for ₹199, adjusted in the fee if the learner joins within 48 hours. The page has a "good fit / not what we offer" block (no free notes or PDFs, no morning batches, no under-15s), FAQ and How-to markup, and a Service + Offer (₹199) in the JSON-LD. Terms section restored.
-- **Book ₹199 Demo Class** is the main button on the homepage hero, the phone sticky bar, course pages, the band at the bottom of every page, articles and under the price cards. The second button is "Chat on WhatsApp"; "Get Free Consultation" is a quieter third option.
+- `/course-demo-session` is restored: one 90-minute live class for ₹99, adjusted in the fee if the learner joins within 48 hours. The page has a "good fit / not what we offer" block (no free notes or PDFs, no morning batches, no under-15s), FAQ and How-to markup, and a Service + Offer (₹99) in the JSON-LD. Terms section restored.
+- **Book ₹99 Demo Class** is the main button on the homepage hero, the phone sticky bar, course pages, the band at the bottom of every page, articles and under the price cards. The second button is "Chat on WhatsApp"; "Get Free Consultation" is a quieter third option.
 - Nav, footer and the outside-India fee list ($10) include the demo.
 
 **WhatsApp messages** (`src/lib/whatsapp.ts`, `waMessageFor`)
 
 - Every message names the course and its fee and ends with a prompt the learner completes, for example:
-  - _Demo:_ "Hi, I want to book the ₹199 Demo Class for Interview Preparation — a 90-minute live class, adjusted in my course fee if I join. (From the Interview Preparation page.) My goal and preferred batch time (3pm–10pm IST):"
+  - _Demo:_ "Hi, I want to book the ₹99 Demo Class for Interview Preparation — a 90-minute live class, adjusted in my course fee if I join. (From the Interview Preparation page.) My goal and preferred batch time (3pm–10pm IST):"
   - _Chat:_ "Hi, I'm interested in Interview Preparation (₹2,499/month, live online, batches 3pm–10pm IST). … My question:"
 - Blog posts use their main related course. Testimonials, price cards, the Hindi/Bengali course blocks, the AI-visitor popup and the syllabus request all state the fee.
 - Visitors outside India: the fee in the message switches to the international list when they tap, matching what they saw on the page.
@@ -47,25 +47,25 @@ WhatsApp leads were good, then went cold: people who send "price?" and disappear
 
 - Free-demo keywords are removed from the consultation cluster. Demo searches now map to the paid demo page.
 - `/free-consultation`'s title and description include "from ₹1,199/month".
-- The Copilot grounding snippet on every page (`data-snippet`) now leads with the fee, the batch window and the ₹199 demo.
+- The Copilot grounding snippet on every page (`data-snippet`) now leads with the fee, the batch window and the ₹99 demo.
 - The sitemap includes `/course-demo-session`, and the old redirect to `/free-consultation` is removed.
 
 **AI assistants (ChatGPT Actions, Copilot, Gemini, Perplexity)**
 
 - The connect rule in llms.txt, llms-full.txt, llms.json, openapi.json, chatgpt-actions.md, ai-plugin.json and robots.txt is now: **state the fee and the 3pm–10pm IST batch window first, then give the WhatsApp link**. It also says there are no free classes and no free PDFs.
-- New `getDemoClass` Action. Demo, trial and free-demo questions get the ₹199 answer. For general learning questions, the GPT points to guides instead of pushing WhatsApp.
+- New `getDemoClass` Action. Demo, trial and free-demo questions get the ₹99 answer. For general learning questions, the GPT points to guides instead of pushing WhatsApp.
 - Per-question AI links now carry the fee.
 
 **Checks**
 
-- CI and deploy checks updated: they assert the demo page, its ₹199 price in the schema, the fee in homepage WhatsApp messages, and the new AI connect rule.
+- CI and deploy checks updated: they assert the demo page, its ₹99 price in the schema, the fee in homepage WhatsApp messages, and the new AI connect rule.
 - Production build: 95 pages. SEO audit: 0 errors. 5,518 deep links checked, 0 broken. Typecheck and lint pass, with no new warnings.
 - Browser smoke test on 9 pages, phone and desktop: no new errors and no horizontal scroll. The outside-India swap was verified.
 
 ## Owner actions (outside the code)
 
-1. **WhatsApp Business greeting and quick replies.** Change them to match the new messages. Reply to a demo request with the ₹199 Razorpay link and two batch slots between 3pm and 10pm. Add a label _Demo paid_.
-2. **Google Business Profile.** Add "₹199 Demo Class (adjusted in fee)" as a service with its price. Remove any wording that promises a free class.
+1. **WhatsApp Business greeting and quick replies.** Change them to match the new messages. Reply to a demo request with the ₹99 Razorpay link and two batch slots between 3pm and 10pm. Add a label _Demo paid_.
+2. **Google Business Profile.** Add "₹99 Demo Class (adjusted in fee)" as a service with its price. Remove any wording that promises a free class.
 3. **Search Console and Bing Webmaster Tools.** Request indexing for `/course-demo-session`, `/`, `/free-consultation` and the four course pages. IndexNow runs automatically on deploy.
-4. **Justdial, UrbanPro and Sulekha listings.** Use the same facts as the site: from ₹1,199/month, about 6 per batch, 3pm–10pm IST, ₹199 Demo Class.
-5. **Measure for 2 weeks.** In the daily tally, count _demo requests_, _demos paid_ and _enrolled_, and note which page each first message names. If demos paid stay near zero, try lowering friction (for example ₹99) before going back to free.
+4. **Justdial, UrbanPro and Sulekha listings.** Use the same facts as the site: from ₹1,199/month, about 6 per batch, 3pm–10pm IST, ₹99 Demo Class.
+5. **Measure for 2 weeks.** In the daily tally, count _demo requests_, _demos paid_ and _enrolled_, and note which page each first message names. If demos paid stay near zero, look at the WhatsApp reply speed and wording before dropping the payment.

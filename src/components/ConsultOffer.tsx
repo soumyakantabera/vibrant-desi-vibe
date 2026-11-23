@@ -13,7 +13,7 @@ const PILL_CLASS = [
 ] as const;
 
 /**
- * High-visibility closer on every page: the ₹199 Demo Class, with the free
+ * High-visibility closer on every page: the ₹99 Demo Class, with the free
  * consultation as the second, quieter option. Deep tone is for dark sections
  * that already sit on cream.
  */

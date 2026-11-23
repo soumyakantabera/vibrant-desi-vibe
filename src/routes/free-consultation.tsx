@@ -55,7 +55,7 @@ function Page() {
           <p className="mt-3 text-sm text-white/90">
             <FeeText text="Courses from ₹1,199/month, inclusive of taxes; batches 3pm–10pm IST. Want to sit in a real class instead? Book the" />{" "}
             <Link to="/course-demo-session" className="font-semibold underline">
-              <FeeText text="₹199 Demo Class" />
+              <FeeText text="₹99 Demo Class" />
             </Link>{" "}
             — adjusted in your fee if you join.
           </p>

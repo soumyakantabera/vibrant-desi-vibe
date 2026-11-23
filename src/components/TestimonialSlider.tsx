@@ -58,7 +58,7 @@ export function TestimonialSlider({
 
 function Card({ t, ctaLabel }: { t: Testimonial; ctaLabel: string }) {
   const page = usePageLabel();
-  // The story names the course; the message books its ₹199 Demo Class.
+  // The story names the course; the message books its ₹99 Demo Class.
   const wa = waLink(waMessageFor("demo", t.waMessage, page));
   return (
     <article

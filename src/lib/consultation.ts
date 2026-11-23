@@ -2,7 +2,7 @@
  * What the free consultation actually is — one source, used by the booking
  * page, FAQs, JSON-LD, llms.txt / llms.json, and the OpenAPI for ChatGPT Actions.
  *
- * Visible copy never calls this a class. The real class is the paid ₹199 Demo
+ * Visible copy never calls this a class. The real class is the paid ₹99 Demo
  * Class (/course-demo-session), the main call to action since 23 Nov 2026;
  * this consultation is the secondary, free option — advice, not a class.
  */
@@ -27,10 +27,10 @@ export const CONSULTATION = {
     "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹199 Demo Class, adjusted in the course fee on admission. Paid courses from ₹1,199/month; batches 3pm–10pm IST.",
+  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹99 Demo Class, adjusted in the course fee on admission. Paid courses from ₹1,199/month; batches 3pm–10pm IST.",
   /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
   copilotSnippet:
-    "Live online spoken English classes from ₹1,199/month, about 6 per batch, batches 3pm–10pm IST. Book the ₹199 Demo Class (one 90-minute live class, adjusted in the fee if you join) on WhatsApp +91 96744 79949. Free consultation available — advice, not a class.",
+    "Live online spoken English classes from ₹1,199/month, about 6 per batch, batches 3pm–10pm IST. Book the ₹99 Demo Class (one 90-minute live class, adjusted in the fee if you join) on WhatsApp +91 96744 79949. Free consultation available — advice, not a class.",
 } as const;
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
@@ -307,7 +307,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do you offer a free demo class?",
-    a: "No free class. The Demo Class is ₹199, inclusive of taxes: one real 90-minute live class with the teacher and a batch of about 6, between 3pm and 10pm IST. Join any current course within 48 hours and the ₹199 is adjusted in the fee. This consultation is free, but it is advice, not a class. Book either on WhatsApp.",
+    a: "No free class. The Demo Class is ₹99, inclusive of taxes: one real 90-minute live class with the teacher and a batch of about 6, between 3pm and 10pm IST. Join any current course within 48 hours and the ₹99 is adjusted in the fee. This consultation is free, but it is advice, not a class. Book either on WhatsApp.",
   },
   {
     q: "Is the free consultation a full English class?",

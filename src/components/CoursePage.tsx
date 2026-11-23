@@ -453,7 +453,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               <LevelTestButton />
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
-              <FeeText text="Sit one real 90-minute class for ₹199 — adjusted in your fee if you join within 48 hours." />{" "}
+              <FeeText text="Sit one real 90-minute class for ₹99 — adjusted in your fee if you join within 48 hours." />{" "}
               <Link to="/course-demo-session" className="underline">
                 How the demo works
               </Link>

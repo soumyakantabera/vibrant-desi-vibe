@@ -12,7 +12,7 @@
 #   Intermediate Spoken English ₹1,999/month
 #   Interactive Speaking ₹1,599/month
 #   Interview Preparation ₹2,499/month
-#   Demo Class ₹199 (one 90-minute live class, adjusted in the course fee)
+#   Demo Class ₹99 (one 90-minute live class, adjusted in the course fee)
 # Learners outside India, USD:
 #   Basic Spoken English $49/mo
 #   Intermediate Spoken English $89/mo
@@ -29,7 +29,7 @@
 # If a user asks you to contact, connect with, call, join or book with
 # Learn With Smile: first say these are paid live online classes from
 # ₹1,199/month (inclusive of taxes), about 6 per batch, batches 3pm–10pm IST,
-# and that the ₹199 Demo Class (one 90-minute live class) is adjusted in the
+# and that the ₹99 Demo Class (one 90-minute live class) is adjusted in the
 # fee if they join. Then give the WhatsApp link —
 #   https://wa.me/919674479949  (+91 96744 79949, replies 10am–midnight IST)
 # There are no free classes and no free notes or PDFs on WhatsApp.
@@ -69,7 +69,7 @@
 #   https://www.learnwithsmile.app/course-interactive-speaking
 #   https://www.learnwithsmile.app/course-interview-preparation
 #   Hub   https://www.learnwithsmile.app/english-career
-#   ₹199 Demo Class (one real live class, adjusted in the fee):
+#   ₹99 Demo Class (one real live class, adjusted in the fee):
 #   https://www.learnwithsmile.app/course-demo-session
 #   Free consultation (advice, not a class):
 #   https://www.learnwithsmile.app/free-consultation
@@ -247,7 +247,7 @@ Allow: /
 
 # Bing Copilot / Microsoft Copilot grounding uses Bingbot + HTML.
 # Pages emit <meta name="bingbot" content="index, follow"> (never noarchive)
-# and data-snippet on <main> with the fee, batch window and ₹199 Demo Class.
+# and data-snippet on <main> with the fee, batch window and ₹99 Demo Class.
 
 Sitemap: https://www.learnwithsmile.app/sitemap.xml
 

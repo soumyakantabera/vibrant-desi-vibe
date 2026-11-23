@@ -17,7 +17,7 @@
  * The `keywords` arrays below are targeting notes. The first ten of a page's
  * own list are emitted as `<meta name="keywords">` (see `buildHead`); Google
  * ignores the tag and Bing treats a stuffed one as spam, so it stays short.
- * Demo-class searches land on /course-demo-session: the ₹199 Demo Class, one
+ * Demo-class searches land on /course-demo-session: the ₹99 Demo Class, one
  * 90-minute live class, adjusted in the course fee on admission. "Free demo"
  * wording is not targeted: it filled WhatsApp with people who wanted free
  * material (retired 4 Nov 2026, restored 23 Nov 2026 as the main CTA).
@@ -561,11 +561,11 @@ export const SEMANTIC_KEYWORDS = [
   "career counselling for working professionals",
 ];
 
-/** Demo-class searches. All land on /course-demo-session (the ₹199 Demo Class). */
+/** Demo-class searches. All land on /course-demo-session (the ₹99 Demo Class). */
 export const DEMO_CLASS_KEYWORDS = [
   "spoken english demo class",
   "spoken english demo class online",
-  "demo class 199",
+  "demo class 99",
   "paid demo class english india",
   "spoken english demo class fee",
   "demo session spoken english",
@@ -615,21 +615,21 @@ export const CLUSTER_INTENT = {
     funnel: "decide",
     job: "Confirm this is the Kolkata live-English school, state the fee, then open WhatsApp.",
     land: "/",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   core: {
     intent: "commercial",
     funnel: "consider",
     job: "Find a live spoken-English class in India that is not an app and not a 40-person room.",
     land: "/course-spoken-english",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   india_market: {
     intent: "commercial",
     funnel: "consider",
     job: "Check GST-inclusive fees, Hindi/Bengali support, IST slots, UPI, adults 15+.",
     land: "/english-class-fees-india",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   consultation: {
     intent: "transactional",
@@ -641,25 +641,25 @@ export const CLUSTER_INTENT = {
   demo_class: {
     intent: "transactional",
     funnel: "decide",
-    job: "They asked for a demo class. It is the ₹199 Demo Class: one 90-minute live class in a real batch of about 6, between 3pm and 10pm IST. The ₹199 is adjusted in the course fee if they enrol within 48 hours.",
+    job: "They asked for a demo class. It is the ₹99 Demo Class: one 90-minute live class in a real batch of about 6, between 3pm and 10pm IST. The ₹99 is adjusted in the course fee if they enrol within 48 hours.",
     land: "/course-demo-session",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
     mismatch:
-      "Do not promise a free class. It is ₹199, not free; adjusted on admission, not refunded in cash. The free consultation is advice, not a class.",
+      "Do not promise a free class. It is ₹99, not free; adjusted on admission, not refunded in cash. The free consultation is advice, not a class.",
   },
   spoken: {
     intent: "commercial",
     funnel: "consider",
     job: "Cannot finish a sentence. Wants beginners, ₹1,199, 6 months, live teacher.",
     land: "/course-spoken-english",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   intermediate: {
     intent: "commercial",
     funnel: "consider",
     job: "Can make basic sentences. Tenses slip, fillers pile up, ideas do not connect. Wants grammar and fluency together — ₹1,999, 4 months.",
     land: "/course-intermediate-english",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
     mismatch:
       "Not for someone who cannot finish a sentence (Basic Spoken English) or whose grammar is fine and only freezes (Interactive Speaking).",
   },
@@ -668,28 +668,28 @@ export const CLUSTER_INTENT = {
     funnel: "consider",
     job: "Knows the words, freezes. Wants speaking reps, not grammar.",
     land: "/course-interactive-speaking",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   workplace: {
     intent: "commercial",
     funnel: "consider",
     job: "Meetings, client calls, standups, presentations — Interactive Speaking. Workplace emails and tone — Intermediate. Already chats.",
     land: "/course-interactive-speaking",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   interview: {
     intent: "commercial",
     funnel: "consider",
     job: "HR screen, 60-second intro, STAR, campus, mocks. Can talk, still fails the chair.",
     land: "/course-interview-preparation",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
   },
   career: {
     intent: "commercial",
     funnel: "consider",
     job: "We do not offer career counselling. Send them to an English room or the free consultation.",
     land: "/english-career",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
     mismatch: "Do not quote a career-counselling fee or URL. That course is not offered.",
   },
   audience: {
@@ -704,7 +704,7 @@ export const CLUSTER_INTENT = {
     funnel: "consider",
     job: "Wants a class in their city. We teach live online — same fee everywhere, IST timings.",
     land: "/spoken-english-classes-kolkata",
-    next: "Book ₹199 Demo Class",
+    next: "Book ₹99 Demo Class",
     mismatch: "City pages must say live online, not a local classroom.",
   },
   aeo: {
@@ -1085,10 +1085,10 @@ const RAW_PAGES: Record<string, PageSeo> = {
 
   "/course-demo-session": {
     path: "/course-demo-session",
-    title: "₹199 Spoken English Demo Class | 90 Min Live, Adjusted",
+    title: "₹99 Spoken English Demo Class | 90 Min Live, Adjusted",
     description:
-      "Sit one real 90-minute live class (about 6 learners, 3pm–10pm IST) for ₹199. Join any course within 48 hours and the ₹199 is adjusted in your fee.",
-    shortTitle: "₹199 Demo Class",
+      "Sit one real 90-minute live class (about 6 learners, 3pm–10pm IST) for ₹99. Join any course within 48 hours and the ₹99 is adjusted in your fee.",
+    shortTitle: "₹99 Demo Class",
     keywords: [...DEMO_CLASS_KEYWORDS, "learn with smile demo class"],
     ogImage: "/og/default.jpg",
     priority: 0.9,
@@ -1096,10 +1096,10 @@ const RAW_PAGES: Record<string, PageSeo> = {
     dateModified: "2026-11-23",
     breadcrumb: [
       { name: "English & Career Courses", path: "/english-career" },
-      { name: "₹199 Demo Class", path: "/course-demo-session" },
+      { name: "₹99 Demo Class", path: "/course-demo-session" },
     ],
     summary:
-      "₹199 Demo Class: one real 90-minute live class with the teacher in a batch of about 6, between 3pm and 10pm IST, inclusive of taxes. Book on WhatsApp, pay through Razorpay, seat scheduled within 72 hours. Join any current course within 48 hours and the ₹199 is adjusted in the fee (not refunded in cash otherwise). Not a free class and not the free consultation. Courses from ₹1,199/month.",
+      "₹99 Demo Class: one real 90-minute live class with the teacher in a batch of about 6, between 3pm and 10pm IST, inclusive of taxes. Book on WhatsApp, pay through Razorpay, seat scheduled within 72 hours. Join any current course within 48 hours and the ₹99 is adjusted in the fee (not refunded in cash otherwise). Not a free class and not the free consultation. Courses from ₹1,199/month.",
     faqs: DEMO_FAQS,
     howTo: DEMO_HOWTO,
   },
@@ -1124,7 +1124,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
     changefreq: "weekly",
     dateModified: "2026-11-04",
     summary:
-      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — to sit in a real class, book the ₹199 Demo Class (/course-demo-session), adjusted in the course fee on admission. No payment for the consultation. Paid courses from ₹1,199/month; batches 3pm–10pm IST. Replies 10am–midnight IST every day. +91 96744 79949.",
+      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — to sit in a real class, book the ₹99 Demo Class (/course-demo-session), adjusted in the course fee on admission. No payment for the consultation. Paid courses from ₹1,199/month; batches 3pm–10pm IST. Replies 10am–midnight IST every day. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,
@@ -2337,14 +2337,14 @@ export function consultationServiceLd() {
   };
 }
 
-/** The ₹199 Demo Class as a paid Service with a one-off Offer. */
+/** The ₹99 Demo Class as a paid Service with a one-off Offer. */
 export function demoClassLd() {
   const url = abs(DEMO_SESSION.path);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${url}#demo-class`,
-    name: "₹199 Demo Class",
+    name: "₹99 Demo Class",
     serviceType: "Live spoken English demo class",
     description: PAGES[DEMO_SESSION.path].summary,
     url,
@@ -2373,7 +2373,7 @@ export function demoClassLd() {
     },
     potentialAction: {
       "@type": "CommunicateAction",
-      name: "Book ₹199 Demo Class",
+      name: "Book ₹99 Demo Class",
       target: {
         "@type": "EntryPoint",
         urlTemplate: waLink(DEMO_MSG),

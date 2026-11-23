@@ -58,11 +58,11 @@ function DemoClassPage() {
               <Icon name="arrow-right" size={14} className="rotate-180" /> All courses
             </Link>
             <h1 className="mt-3 text-3xl font-extrabold leading-[1.05] text-cream sm:text-4xl md:text-6xl">
-              {fee("₹199 Demo Class")}
+              {fee("₹99 Demo Class")}
             </h1>
             <p className="mt-4 text-base text-white sm:text-lg max-w-2xl">
               One real live class: 90 minutes with our teacher in a batch of about 6, between{" "}
-              {BATCH_HOURS}. Join any course within 48 hours and the {fee("₹199")} is adjusted in
+              {BATCH_HOURS}. Join any course within 48 hours and the {fee("₹99")} is adjusted in
               your fee — so if you are serious, it costs you nothing.
             </p>
           </div>
@@ -72,7 +72,7 @@ function DemoClassPage() {
                 Pay now
               </p>
               <p className="mt-1 font-display text-3xl font-extrabold leading-none text-white sm:text-4xl">
-                {fee("₹199")}
+                {fee("₹99")}
               </p>
               <p className="mt-1 text-xs font-semibold text-white/90">
                 <MarketCopy inr="90 min · tax included" usd={`90 min · ${intlUnit()}`} />
@@ -169,14 +169,14 @@ function DemoClassPage() {
       <section className="section">
         <div className="container-x grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div>
-            <p className="eyebrow eyebrow-sun">Why {fee("₹199")}?</p>
+            <p className="eyebrow eyebrow-sun">Why {fee("₹99")}?</p>
             <h2 className="mt-3 text-ink section-title">
               The seat goes to someone who plans to join
             </h2>
             <p className="mt-4 text-ink/85 leading-relaxed">
-              A batch has about 6 learners, and the teacher’s time is the course. The {fee("₹199")}{" "}
+              A batch has about 6 learners, and the teacher’s time is the course. The {fee("₹99")}{" "}
               only stays if you watch and leave. Join the course you sat, or any course we currently
-              offer, within 48 hours and we take {fee("₹199")} off that fee.
+              offer, within 48 hours and we take {fee("₹99")} off that fee.
             </p>
             <p className="mt-3 text-sm text-ink/70">
               The written rule is in our{" "}
@@ -203,7 +203,7 @@ function DemoClassPage() {
         </div>
       </section>
 
-      <FaqSection faqs={page.faqs ?? DEMO_FAQS} title="Before you pay ₹199" waMessage={DEMO_MSG} />
+      <FaqSection faqs={page.faqs ?? DEMO_FAQS} title="Before you pay ₹99" waMessage={DEMO_MSG} />
     </Layout>
   );
 }

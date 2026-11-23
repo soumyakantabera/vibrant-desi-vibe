@@ -57,7 +57,7 @@ const INR_TO_INTL: [string, string][] = [
   ["₹1,599/month", INTL_FEE["interactive-speaking"].display],
   ["₹1,199/month", INTL_FEE["spoken-english"].display],
   ["₹1,199/mo", INTL_FEE["spoken-english"].display],
-  ["₹199", INTL_FEE["demo-session"].display],
+  ["₹99", INTL_FEE["demo-session"].display],
   ["₹0", intlZero()],
 ];
 

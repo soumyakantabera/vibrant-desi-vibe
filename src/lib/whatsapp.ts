@@ -7,13 +7,13 @@ export const CALL_LINK = `tel:+${WHATSAPP_PHONE}`;
 /** Every live batch runs inside this window. Stated on the site, in schema and in messages. */
 export const BATCH_HOURS = "3pm–10pm IST";
 
-/** The paid seat in a live class. ₹199, adjusted in the course fee on admission. */
-export const DEMO_PRICE = "₹199";
+/** The paid seat in a live class. ₹99, adjusted in the course fee on admission. */
+export const DEMO_PRICE = "₹99";
 
 /**
  * Three WhatsApp actions, three first messages (November 2026 lead-quality fix).
  *
- *  - "Book ₹199 Demo Class" — the main action. A small payment is the filter:
+ *  - "Book ₹99 Demo Class" — the main action. A small payment is the filter:
  *    from 4 Nov to 23 Nov 2026, when every button offered something free,
  *    chats were mostly "price?" and requests for free material.
  *  - "Chat on WhatsApp" — a question. The message already states the course,

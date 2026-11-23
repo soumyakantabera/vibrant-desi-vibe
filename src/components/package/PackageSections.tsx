@@ -1392,7 +1392,7 @@ export function ConsultStrip() {
           <strong className="block text-lg font-bold text-ink md:text-xl">
             Want to hear a class before you pay a month?
           </strong>
-          <FeeText text="Sit one real 90-minute class for ₹199 — adjusted in your fee if you join within 48 hours. Not sure which course? The free consultation is advice, not a class." />
+          <FeeText text="Sit one real 90-minute class for ₹99 — adjusted in your fee if you join within 48 hours. Not sure which course? The free consultation is advice, not a class." />
         </p>
       </div>
       <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col lg:flex-row">
