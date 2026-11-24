@@ -61,7 +61,7 @@ export const FX_LISTS: Record<string, FxList> = {
   },
   CA: { label: "Canada", code: [67, 65, 68], mark: [67, 36], fee: fx("69", "129", "109", "139") },
   GB: { label: "United Kingdom", code: [71, 66, 80], mark: [163], fee: fx("39", "69", "59", "79") },
-  EU: { label: "euro area", code: [69, 85, 82], mark: [8364], fee: fx("39", "79", "69", "89") },
+  EU: { label: "euro area", code: [69, 85, 82], mark: [8364], fee: fx("49", "79", "69", "89") },
   CH: {
     label: "Switzerland and Liechtenstein",
     code: [67, 72, 70],
