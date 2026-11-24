@@ -195,9 +195,7 @@ function Page() {
                     <span className="block text-sm text-brand-deep font-medium">
                       {id === "sunanda" ? "Lead Educator" : "Co-Educator"}
                     </span>
-                    <span className="block text-sm text-ink/75">
-                      {e.role.split(" · ")[1]}
-                    </span>
+                    <span className="block text-sm text-ink/75">{e.role.split(" · ")[1]}</span>
                   </a>
                 </li>
               );
