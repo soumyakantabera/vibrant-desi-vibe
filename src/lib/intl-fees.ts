@@ -47,6 +47,8 @@ type FxList = {
   /** Print the mark with a space after it (CHF 39, AED 179). */
   spaced?: boolean;
   fee: Record<IntlSlug, string>;
+  /** One-off Demo Class fee (about 5 in the default currency). */
+  demo: string;
 };
 
 const DEFAULT_FX = "D";
@@ -58,36 +60,65 @@ export const FX_LISTS: Record<string, FxList> = {
     code: [85, 83, 68],
     mark: [36],
     fee: fx("49", "89", "79", "99"),
+    demo: "5",
   },
-  CA: { label: "Canada", code: [67, 65, 68], mark: [67, 36], fee: fx("69", "129", "109", "139") },
-  GB: { label: "United Kingdom", code: [71, 66, 80], mark: [163], fee: fx("49", "69", "59", "79") },
-  EU: { label: "euro area", code: [69, 85, 82], mark: [8364], fee: fx("49", "79", "69", "89") },
+  CA: {
+    label: "Canada",
+    code: [67, 65, 68],
+    mark: [67, 36],
+    fee: fx("69", "129", "109", "139"),
+    demo: "7",
+  },
+  GB: {
+    label: "United Kingdom",
+    code: [71, 66, 80],
+    mark: [163],
+    fee: fx("49", "69", "59", "79"),
+    demo: "4",
+  },
+  EU: {
+    label: "euro area",
+    code: [69, 85, 82],
+    mark: [8364],
+    fee: fx("49", "79", "69", "89"),
+    demo: "5",
+  },
   CH: {
     label: "Switzerland and Liechtenstein",
     code: [67, 72, 70],
     mark: [67, 72, 70],
     spaced: true,
     fee: fx("49", "69", "59", "79"),
+    demo: "5",
   },
   AU: {
     label: "Australia",
     code: [65, 85, 68],
     mark: [65, 36],
     fee: fx("69", "129", "119", "149"),
+    demo: "8",
   },
   NZ: {
     label: "New Zealand",
     code: [78, 90, 68],
     mark: [78, 90, 36],
     fee: fx("79", "149", "129", "169"),
+    demo: "9",
   },
-  SG: { label: "Singapore", code: [83, 71, 68], mark: [83, 36], fee: fx("59", "109", "99", "129") },
+  SG: {
+    label: "Singapore",
+    code: [83, 71, 68],
+    mark: [83, 36],
+    fee: fx("59", "109", "99", "129"),
+    demo: "7",
+  },
   AE: {
     label: "United Arab Emirates",
     code: [65, 69, 68],
     mark: [65, 69, 68],
     spaced: true,
     fee: fx("179", "329", "289", "359"),
+    demo: "19",
   },
   SA: {
     label: "Saudi Arabia",
@@ -95,6 +126,7 @@ export const FX_LISTS: Record<string, FxList> = {
     mark: [83, 65, 82],
     spaced: true,
     fee: fx("179", "329", "299", "369"),
+    demo: "19",
   },
   QA: {
     label: "Qatar",
@@ -102,6 +134,7 @@ export const FX_LISTS: Record<string, FxList> = {
     mark: [81, 65, 82],
     spaced: true,
     fee: fx("179", "319", "289", "359"),
+    demo: "19",
   },
 };
 
@@ -232,8 +265,19 @@ for (const slug of INTL_SLUGS) {
   Object.defineProperty(INTL_FEE, slug, { enumerable: true, get: () => feeOf(slug) });
 }
 
+/** The Demo Class fee (one class, no "/mo") for the list in force, or a named list. */
+export function intlDemo(key?: string): string {
+  const l = key ? FX_LISTS[key] : list();
+  return money(l.demo, "", key);
+}
+
 /** Each local-currency list, labeled, for assistant files and schema. */
-export function localFeeLists(): { label: string; code: string; fees: Record<IntlSlug, string> }[] {
+export function localFeeLists(): {
+  label: string;
+  code: string;
+  fees: Record<IntlSlug, string>;
+  demo: string;
+}[] {
   return Object.keys(FX_LISTS)
     .filter((key) => key !== DEFAULT_FX)
     .map((key) => ({
@@ -242,6 +286,7 @@ export function localFeeLists(): { label: string; code: string; fees: Record<Int
       fees: Object.fromEntries(
         INTL_SLUGS.map((slug) => [slug, feeOf(slug, key).display]),
       ) as Record<IntlSlug, string>,
+      demo: intlDemo(key),
     }));
 }
 
@@ -253,11 +298,11 @@ export function feeCurrencies(): string {
 /** One sentence naming each local-currency list (default-list wording stays elsewhere). */
 export function localFeeSentence(): string {
   const parts = localFeeLists().map(
-    (l) => `${l.label} (${l.code}) ${INTL_SLUGS.map((slug) => l.fees[slug]).join(", ")}`,
+    (l) => `${l.label} (${l.code}) ${INTL_SLUGS.map((slug) => l.fees[slug]).join(", ")}, ${l.demo}`,
   );
   return (
     "Outside India, some countries see the outside-India list in their own currency " +
-    "(Basic Spoken English, Intermediate Spoken English, Interactive Speaking, Interview Preparation): " +
+    "(Basic Spoken English, Intermediate Spoken English, Interactive Speaking, Interview Preparation, then the one-off Demo Class): " +
     parts.join("; ") +
     "."
   );
@@ -273,14 +318,19 @@ export function fxBootData() {
     d: {
       m: FX_LISTS[DEFAULT_FX].mark,
       c: FX_LISTS[DEFAULT_FX].code,
-      f: INTL_SLUGS.map((s) => FX_LISTS[DEFAULT_FX].fee[s]),
+      f: [...INTL_SLUGS.map((s) => FX_LISTS[DEFAULT_FX].fee[s]), FX_LISTS[DEFAULT_FX].demo],
     },
     l: Object.fromEntries(
       Object.entries(FX_LISTS)
         .filter(([key]) => key !== DEFAULT_FX)
         .map(([key, l]) => [
           key,
-          { m: l.mark, s: l.spaced ? 1 : 0, c: l.code, f: INTL_SLUGS.map((s) => l.fee[s]) },
+          {
+            m: l.mark,
+            s: l.spaced ? 1 : 0,
+            c: l.code,
+            f: [...INTL_SLUGS.map((s) => l.fee[s]), l.demo],
+          },
         ]),
     ),
   };
@@ -310,7 +360,8 @@ export function applyIntlFees(text: string, intl: boolean): string {
   if (!intl || !text) return text;
   let next = text;
   for (const [from, to] of inrToIntl()) next = next.replaceAll(from, to);
-  return next;
+  // The ₹99 Demo Class, never the front of ₹999.
+  return next.replace(/₹99(?![\d,])/g, intlDemo());
 }
 
 /**

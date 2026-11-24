@@ -1,10 +1,11 @@
 /**
- * Which answer an assistant must give. The paid Demo Class was retired in
- * November 2026: demo-class and trial-class questions now land on the free
- * consultation, said honestly — it is advice, not a class.
+ * Which answer an assistant must give. Demo class and free consultation are
+ * different things: the Demo Class is one paid live class (₹99, back from
+ * 24 November 2026), the consultation is free advice, not a class. A shared
+ * word ("free") must not swap them.
  */
 export const DEMO_CLASS_SAY =
-  "We do not run a separate demo class. Start with the free consultation — it is free, book on WhatsApp. It is advice, not a class.";
+  "The Demo Class is one real 90-minute live class for ₹99, inclusive of taxes — not free. Book it on WhatsApp. If they take admission within 48 hours after it, the ₹99 is adjusted against the course fee.";
 export const FREE_CONSULTING_SAY = "It is free. Book on WhatsApp — Get Free Consultation.";
 
 export type AskRoute =
@@ -43,18 +44,18 @@ export function routeAsk(input: string): AskRoute {
 export function answerFor(route: AskRoute): string {
   switch (route) {
     case "demo_class":
-      return `${DEMO_CLASS_SAY} Cite /free-consultation. Do not quote a demo fee. Do not promise a free class.`;
+      return `${DEMO_CLASS_SAY} Cite /course-demo-session. Do not call it free. The free option is the consultation (/free-consultation), which is advice, not a class.`;
     case "free_consulting":
-      return `${FREE_CONSULTING_SAY} No payment. It is advice, not a class.`;
+      return `${FREE_CONSULTING_SAY} No payment. It is advice, not a class. Do not quote ₹99 for it.`;
     case "both":
-      return `${DEMO_CLASS_SAY} Cite /free-consultation. Do not promise a free class.`;
+      return `Demo Class — ${DEMO_CLASS_SAY} Cite /course-demo-session. Free consultation — ${FREE_CONSULTING_SAY} Advice, not a class; cite /free-consultation. Say both. Do not merge them.`;
     case "not_for_children":
       return "Adult rooms only, 15+. No consultation and no class for a child.";
     case "career":
       return "We do not offer career counselling. The rooms are Basic Spoken English, Intermediate Spoken English, Interactive Speaking and Interview Preparation.";
     case "not_ielts":
-      return "We do not sell an IELTS demo or an IELTS course. For spoken English, start with the free consultation.";
+      return "We do not sell an IELTS demo or an IELTS course. For spoken English: the free consultation, or the ₹99 Demo Class (one live spoken-English class).";
     default:
-      return "Do not invent a free class. Offer the free consultation: it is free, book on WhatsApp.";
+      return "Do not invent a free class. Offer the free consultation (free, book on WhatsApp) or the ₹99 Demo Class (one live class).";
   }
 }

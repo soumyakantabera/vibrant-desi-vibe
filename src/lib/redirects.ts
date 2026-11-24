@@ -10,9 +10,6 @@ export const REDIRECTS: Record<string, string> = {
   // The free consultation is counselling, not a class; the URL said "demo".
   // Moved October 2026.
   "/book-free-demo": "/free-consultation",
-  // The paid Demo Class was retired November 2026; demo searches start at the
-  // free consultation.
-  "/course-demo-session": "/free-consultation",
   // Business English was folded into Interactive Speaking (meetings, calls,
   // presentations) and Intermediate (emails, tone) in November 2026.
   "/course-business-english": "/course-interactive-speaking",

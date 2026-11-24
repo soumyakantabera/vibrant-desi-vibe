@@ -24,7 +24,7 @@ export function admissionShort(): string {
   return "inclusive of taxes, no material fee";
 }
 
-import { INTL_FEE, intlUnit, localFeeSentence } from "@/lib/intl-fees";
+import { INTL_FEE, intlDemo, intlUnit, localFeeSentence } from "@/lib/intl-fees";
 
 /**
  * The fee rule assistants, ads review, and search crawlers must follow.
@@ -42,10 +42,11 @@ export function publishedFeeLock({ localLists = true }: { localLists?: boolean }
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;
   const interview = INTL_FEE["interview-preparation"].display;
+  const demo = intlDemo();
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month. " +
-    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}. ` +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month; Demo Class ₹99 (one live class). " +
+    `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}; Demo Class ${demo} (one live class). ` +
     (localLists
       ? `${localFeeSentence()} `
       : "Local-currency lists: getSiteFacts outside_india.local_currency. ") +
@@ -115,6 +116,9 @@ export const LAUNCH_OFFER = {
   detail:
     "New learners who enrol by 30 November 2026 get one extra month of Bolo — the practice app with daily exercises, video lessons and teacher review — after their course, at no cost. The course fee does not change.",
 } as const;
+
+/** The ₹99 Demo Class fee, India list. Rule and booking: src/lib/demo-session.ts. */
+export const DEMO_FEE = { inr: 99, display: "₹99" } as const;
 
 export function launchOfferActive(now: number = Date.now()): boolean {
   return now <= new Date(LAUNCH_OFFER.endsAt).getTime();

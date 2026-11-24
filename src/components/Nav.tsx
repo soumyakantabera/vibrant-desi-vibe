@@ -31,7 +31,8 @@ const ENGLISH_COURSES: {
   to: string;
   label: string;
   icon?: IconName;
-  slug: IntlSlug;
+  /** Fee list the row quotes; absent for the one-off Demo Class. */
+  slug?: IntlSlug;
   inr: string;
 }[] = [
   {
@@ -75,6 +76,12 @@ const ENGLISH_COURSES: {
     icon: "clipboard",
     slug: "interview-preparation",
     inr: "2 months · ₹2,499/month, inclusive of taxes",
+  },
+  {
+    to: "/course-demo-session",
+    label: "Demo Class",
+    icon: "play",
+    inr: "One live class · ₹99 · adjusted if you join",
   },
 ];
 

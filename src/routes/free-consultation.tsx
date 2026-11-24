@@ -53,8 +53,11 @@ function Page() {
             <FeeText text={CONSULTATION.hook} />
           </p>
           <p className="mt-3 text-sm text-white/90">
-            Looking for a demo class? We do not run a separate one — this free consultation is where
-            you start, with the course and fee in writing before you pay anything.
+            Want to sit in a real class instead?{" "}
+            <Link to="/course-demo-session" className="font-semibold text-sunshine underline">
+              Book the <FeeText text="₹99" /> Demo Class
+            </Link>{" "}
+            — one live class, adjusted in your fee if you join within 48 hours.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (

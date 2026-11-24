@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Deferred } from "@/components/Deferred";
 import { FaqSection } from "@/components/FaqSection";
@@ -160,6 +160,13 @@ function Home() {
               Tell us your goal. We reply with the right course and the fee — no pressure, no
               payment to book.
             </p>
+            <p className="mt-2 text-sm font-semibold text-white">
+              Want to see a class first?{" "}
+              <Link to="/course-demo-session" className="text-sunshine underline">
+                Sit one live class for <FeeText text="₹99" /> — the Demo Class
+              </Link>
+              .
+            </p>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 min-h-[2.5rem] text-sm font-semibold text-white/95 sm:min-h-0">
               WhatsApp{" "}
@@ -246,6 +253,13 @@ function Home() {
             />
             <PricingGrid />
             <ConsultStrip />
+            <p className="mt-5 text-center text-sm font-semibold text-ink/80">
+              Want to see the teaching before you pay for a month?{" "}
+              <Link to="/course-demo-session" className="text-brand-deep underline">
+                Book the <FeeText text="₹99" /> Demo Class
+              </Link>{" "}
+              — one live class, adjusted in your fee if you join within 48 hours.
+            </p>
             <div className="mt-7 text-center">
               <p className="text-sm text-ink/75">
                 <MarketCopy
