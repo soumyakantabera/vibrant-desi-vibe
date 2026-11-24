@@ -8,7 +8,7 @@ import {
   type Educator,
 } from "@/lib/educators";
 import { Layout } from "@/components/Layout";
-import { WaButton } from "@/components/ui-bits";
+import { SectionHeader, WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
 import { IMG } from "@/lib/images";
 import { SmartImage } from "@/components/SmartImage";
@@ -30,76 +30,53 @@ export const Route = createFileRoute("/educator")({
   },
 });
 
-/** Accent per educator, matching the tile on their course page. */
-const ACCENT: Record<Educator["tone"], { band: string; text: string; soft: string }> = {
-  green: { band: "from-tile-green to-tile-blue", text: "text-brand-deep", soft: "bg-brand-soft" },
-  violet: { band: "from-tile-violet to-tile-blue", text: "text-tile-violet", soft: "bg-plum-soft" },
-  coral: { band: "from-tile-red to-tile-saffron", text: "text-coral-deep", soft: "bg-terra-soft" },
-  teal: { band: "from-tile-teal to-tile-saffron", text: "text-teal", soft: "bg-teal-soft" },
-};
-
 function EducatorCard({ educator: e, reverse }: { educator: Educator; reverse?: boolean }) {
-  const a = ACCENT[e.tone];
   const lead = e.id === "sunanda";
   return (
     <article
       id={e.id}
       aria-labelledby={`${e.id}-name`}
-      className={`scroll-mt-24 mx-auto max-w-5xl rounded-3xl border border-border bg-white/90 shadow-md p-5 sm:p-7 grid gap-6 md:gap-8 items-start ${reverse ? "md:grid-cols-[1fr_240px] md:[&>*:first-child]:order-2" : "md:grid-cols-[240px_1fr]"}`}
+      className={`scroll-mt-24 grid gap-8 lg:gap-10 items-start ${reverse ? "md:grid-cols-[1fr_280px] md:[&>*:first-child]:order-2" : "md:grid-cols-[280px_1fr]"}`}
     >
-      <div className="relative mx-auto w-full max-w-[180px] md:max-w-[240px] md:sticky md:top-24">
-        <div
-          aria-hidden
-          className={`absolute -inset-2 rounded-[1.4rem] bg-gradient-to-br ${a.band} ${reverse ? "-rotate-2" : "rotate-2"}`}
-        />
-        <SmartImage
-          src={e.image}
-          alt={`${e.name}, ${e.role} at Learn With Smile`}
-          ratio="4/5"
-          position="top"
-          className="relative rounded-2xl shadow-lg w-full border-4 border-cream"
-          sizes="240px"
-        />
-      </div>
+      <SmartImage
+        src={e.image}
+        alt={`${e.name}, ${e.role} at Learn With Smile`}
+        ratio="4/5"
+        position="top"
+        className="rounded-3xl shadow-xl w-full max-w-[280px] mx-auto border-4 border-cream"
+        sizes="(min-width: 768px) 280px, 80vw"
+      />
       <div>
         <span className="eyebrow eyebrow-indigo">
           <Icon name={e.icon} size={12} /> {e.role}
         </span>
-        <h2
-          id={`${e.id}-name`}
-          className="mt-2 text-ink font-display font-bold text-2xl md:text-3xl leading-tight"
-        >
+        <h2 id={`${e.id}-name`} className="mt-3 text-ink section-title">
           {e.name}
         </h2>
-        <p className={`mt-1 text-sm font-display font-bold ${a.text}`}>{e.headline}</p>
-        <p className="mt-3 text-sm text-ink/85 leading-relaxed">{e.bio}</p>
-
-        <div className="mt-4 flex flex-wrap gap-2">
+        <p className="mt-4 text-ink/85 leading-relaxed">{e.bio}</p>
+        <p className="mt-3 text-sm text-ink/80 flex flex-wrap items-center gap-x-4 gap-y-1">
           {e.courses.map((c) => (
             <Link
               key={c.slug}
               to={c.href}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-display font-bold text-white bg-gradient-to-r ${a.band} hover:opacity-90`}
+              className="inline-flex items-center gap-1.5 font-bold text-brand-deep hover:underline"
             >
               <Icon name="book" size={14} /> {c.title} course
             </Link>
           ))}
-          {e.languages.map((l) => (
-            <span
-              key={l.code}
-              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium text-ink ${a.soft}`}
-            >
-              <Icon name="languages" size={14} /> {l.label}
-            </span>
-          ))}
-        </div>
+          <span className="inline-flex items-center gap-1.5">
+            <Icon name="languages" size={14} className="text-brand" />
+            {e.languages.map((l) => l.label).join(", ")}
+          </span>
+        </p>
 
-        <div className="mt-4 grid sm:grid-cols-2 gap-3">
+        <div className="mt-5 grid sm:grid-cols-2 gap-3">
           <div className="card-soft bg-brand-soft/30">
             <h3 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
-              <Icon name="trophy" size={16} className="text-brand" /> Background
+              <Icon name="trophy" size={16} className="text-brand" />{" "}
+              {lead ? "Credentials" : "Background"}
             </h3>
-            <ul className="space-y-1 text-xs text-ink/85">
+            <ul className="space-y-1.5 text-sm text-ink/85">
               {e.background.map((c) => (
                 <li key={c} className="flex gap-2">
                   <Icon name="check" size={13} className="text-brand mt-1 shrink-0" />
@@ -112,7 +89,7 @@ function EducatorCard({ educator: e, reverse }: { educator: Educator; reverse?: 
             <h3 className="font-display font-bold text-ink text-sm mb-2 flex items-center gap-2">
               <Icon name="book" size={16} className="text-coral" /> Teaches
             </h3>
-            <ul className="space-y-1 text-xs text-ink/85">
+            <ul className="space-y-1.5 text-sm text-ink/85">
               {e.focus.map((t) => (
                 <li key={t} className="flex gap-2">
                   <Icon name="check" size={13} className="text-coral mt-1 shrink-0" />
@@ -123,8 +100,8 @@ function EducatorCard({ educator: e, reverse }: { educator: Educator; reverse?: 
           </div>
         </div>
 
-        <div className="mt-3 card-soft bg-gradient-to-br from-brand-soft to-cream">
-          <h3 className="font-display font-bold text-ink text-sm mb-2 flex items-start gap-2">
+        <div className="mt-4 card-soft bg-gradient-to-br from-brand-soft to-cream">
+          <h3 className="font-display font-bold text-ink mb-2 flex items-start gap-2">
             <Icon name="heart" size={16} className="mt-1 shrink-0 text-coral" />
             <span>
               {lead
@@ -132,7 +109,7 @@ function EducatorCard({ educator: e, reverse }: { educator: Educator; reverse?: 
                 : `What ${e.name.split(" ")[0]} promises every learner`}
             </span>
           </h3>
-          <ul className="space-y-1 text-xs text-ink/85">
+          <ul className="space-y-2 text-sm text-ink/85">
             {e.promises.map((p) => (
               <li key={p} className="flex gap-2">
                 <Icon name="check" size={14} className="text-brand mt-0.5 shrink-0" />
@@ -142,8 +119,8 @@ function EducatorCard({ educator: e, reverse }: { educator: Educator; reverse?: 
           </ul>
         </div>
 
-        <div className="mt-4">
-          <WaButton message={e.waMessage} variant="wa" size="sm">
+        <div className="mt-5">
+          <WaButton message={e.waMessage} variant="wa" size="md">
             {lead ? CHAT_CTA : DEMO_CTA}
           </WaButton>
         </div>
@@ -188,34 +165,38 @@ function Page() {
       {/* Team strip: who teaches what, one tap to each profile */}
       <section className="section pb-0">
         <div className="container-x">
+          <SectionHeader
+            eyebrow={
+              <>
+                <Icon name="users" size={12} /> The Team
+              </>
+            }
+            eyebrowTone="indigo"
+            title="Who teaches which course"
+          />
           <ul className="mx-auto max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-3">
             {EDUCATOR_ORDER.map((id) => {
               const e = EDUCATORS[id];
-              const a = ACCENT[e.tone];
               return (
                 <li key={id}>
                   <a
                     href={`#${id}`}
-                    className="group block h-full rounded-2xl border border-border bg-white p-2.5 shadow-sm hover:shadow-lg transition-shadow"
+                    className="block h-full p-3 bg-white rounded-xl border border-border hover:border-brand transition-colors"
                   >
-                    <span className={`block rounded-2xl p-1 bg-gradient-to-br ${a.band}`}>
-                      <SmartImage
-                        src={e.image}
-                        alt=""
-                        ratio="1/1"
-                        position="top"
-                        className="rounded-xl w-full"
-                        sizes="(min-width: 768px) 200px, 45vw"
-                      />
-                    </span>
-                    <span className="mt-2 block text-sm font-display font-bold text-ink">
-                      {e.name}
-                    </span>
-                    <span className={`block text-xs font-medium ${a.text}`}>
+                    <SmartImage
+                      src={e.image}
+                      alt=""
+                      ratio="1/1"
+                      position="top"
+                      className="rounded-lg w-full"
+                      sizes="(min-width: 768px) 200px, 45vw"
+                    />
+                    <span className="mt-3 block font-display font-bold text-ink">{e.name}</span>
+                    <span className="block text-sm text-brand-deep font-medium">
                       {id === "sunanda" ? "Lead Educator" : "Co-Educator"}
                     </span>
-                    <span className="block text-xs text-ink/75">
-                      {e.courses.map((c) => c.title).join(" · ")}
+                    <span className="block text-sm text-ink/75">
+                      {e.role.split(" · ")[1]}
                     </span>
                   </a>
                 </li>
@@ -233,20 +214,17 @@ function Page() {
 
       <section className="section bg-brand-soft/40" aria-labelledby="co-educators-heading">
         <div className="container-x">
-          <div className="mx-auto max-w-5xl">
-            <span className="eyebrow eyebrow-coral">
-              <Icon name="users" size={12} /> Co-Educators
-            </span>
-            <h2 id="co-educators-heading" className="mt-3 text-ink section-title">
-              The teachers who run your live batch
-            </h2>
-            <p className="mt-3 text-ink/85 leading-relaxed">
-              Each co-educator is trained in the Learn With Smile method and mentored by Sunanda, so
-              every course is taught the same way: live online, about 6 learners, speaking in every
-              class and the same teacher from the first session to the last.
-            </p>
-          </div>
-          <div className="mt-8 space-y-8">
+          <SectionHeader
+            eyebrow={
+              <>
+                <Icon name="users" size={12} /> Co-Educators
+              </>
+            }
+            eyebrowTone="coral"
+            title={<span id="co-educators-heading">The teachers who run your live batch</span>}
+            subtitle="Each co-educator is trained in the Learn With Smile method and mentored by Sunanda, so every course is taught the same way: live online, about 6 learners, speaking in every class and the same teacher from the first session to the last."
+          />
+          <div className="space-y-16">
             {CO_EDUCATORS.map((e, i) => (
               <EducatorCard key={e.id} educator={e} reverse={i % 2 === 0} />
             ))}

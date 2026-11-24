@@ -13,9 +13,6 @@ import type { IconName } from "@/components/Icon";
 
 export type EducatorId = "sunanda" | "janvi" | "aryakanya" | "sneha";
 
-/** Accent used by the tile and the profile card. Maps to the solid tile colours. */
-export type EducatorTone = "green" | "violet" | "coral" | "teal";
-
 export type Educator = {
   id: EducatorId;
   name: string;
@@ -40,7 +37,6 @@ export type Educator = {
   promises: string[];
   /** Spoken in class, for the language chips and knowsLanguage. */
   languages: { label: string; code: string }[];
-  tone: EducatorTone;
   icon: IconName;
   waMessage: string;
 };
@@ -87,7 +83,6 @@ export const EDUCATORS: Record<EducatorId, Educator> = {
       { label: "Hindi", code: "hi-IN" },
       { label: "Bengali", code: "bn-IN" },
     ],
-    tone: "green",
     icon: "school",
     waMessage: "Hi Sunanda, I want a free consultation for the Intermediate English Course.",
   },
@@ -132,7 +127,6 @@ export const EDUCATORS: Record<EducatorId, Educator> = {
       { label: "English", code: "en-IN" },
       { label: "Hindi", code: "hi-IN" },
     ],
-    tone: "violet",
     icon: "mic",
     waMessage: "Hi, I want a free demo of the Interactive Speaking Course with Janvi.",
   },
@@ -177,7 +171,6 @@ export const EDUCATORS: Record<EducatorId, Educator> = {
       { label: "English", code: "en-IN" },
       { label: "Hindi", code: "hi-IN" },
     ],
-    tone: "coral",
     icon: "messages",
     waMessage: "Hi, I want a free demo of the Basic Spoken English Course with Aryakanya.",
   },
@@ -228,7 +221,6 @@ export const EDUCATORS: Record<EducatorId, Educator> = {
       { label: "Hindi", code: "hi-IN" },
       { label: "Bengali", code: "bn-IN" },
     ],
-    tone: "teal",
     icon: "languages",
     waMessage: "Hi, I want a free demo of Spoken English in Hindi/Bengali with Sneha.",
   },
