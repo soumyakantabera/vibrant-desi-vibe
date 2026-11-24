@@ -34,7 +34,7 @@ export function stateBody(st: StateInfo): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** ${st.intro} Learn With Smile teaches live online in batches of about 6 — [${mc.label}](${mc.path}) is ₹1,199/month inclusive of taxes, with daily practice in the [Bolo app](/bolo) and a weekly teacher review.`,
+      text: `**Short answer.** ${st.intro} Learn With Smile teaches live online in batches of about 6 — [${mc.label}](${mc.path}) is ₹999/month inclusive of taxes, with daily practice in the [Bolo app](/bolo) and a weekly teacher review.`,
     },
     { t: "h2", text: `Where English matters in ${st.name}` },
     {
@@ -57,7 +57,7 @@ export function stateBody(st: StateInfo): ArticleBody {
         ...st.prices.map((p) => [p.what, p.range]),
         [
           "**Learn With Smile** — live batch of about 6 + Bolo app + weekly review + same teacher",
-          "**₹1,199/month** (Basic Spoken English)",
+          "**₹999/month** (Basic Spoken English)",
         ],
       ],
     },
@@ -69,7 +69,7 @@ export function stateBody(st: StateInfo): ArticleBody {
     },
     {
       t: "cta",
-      text: `Start with ${mc.label} — ₹1,199/month, about 6 learners, live online.`,
+      text: `Start with ${mc.label} — ₹999/month, about 6 learners, live online.`,
       course: mc.path,
       label: mc.label,
     },

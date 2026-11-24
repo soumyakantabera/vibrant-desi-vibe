@@ -51,8 +51,7 @@ export function CompareDiff() {
       </h2>
       <p className="mt-2 text-sm text-ink/80 leading-relaxed">
         PlanetSpark is live 1:1 for <strong>kids 4–13</strong> (₹13,000–₹65,000/course, a free demo
-        class). We are live small-batch for <strong>adults 15+</strong> from ₹1,199/month. Full
-        table:{" "}
+        class). We are live small-batch for <strong>adults 15+</strong> from ₹999/month. Full table:{" "}
         <Link to="/english-institute-comparison-india" className="font-semibold underline">
           compare institutes, 2026
         </Link>

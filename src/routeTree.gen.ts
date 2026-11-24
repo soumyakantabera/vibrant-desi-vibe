@@ -75,8 +75,8 @@ import { Route as EnglishForBankPoInterviewRouteImport } from './routes/english-
 import { Route as EnglishClassFeesIndiaRouteImport } from './routes/english-class-fees-india'
 import { Route as EnglishCareerRouteImport } from './routes/english-career'
 import { Route as EducatorRouteImport } from './routes/educator'
-import { Route as CourseSpokenEnglishBengaliRouteImport } from './routes/course-spoken-english-bengali'
 import { Route as CourseSpokenEnglishHindiRouteImport } from './routes/course-spoken-english-hindi'
+import { Route as CourseSpokenEnglishBengaliRouteImport } from './routes/course-spoken-english-bengali'
 import { Route as CourseSpokenEnglishRouteImport } from './routes/course-spoken-english'
 import { Route as CourseInterviewPreparationRouteImport } from './routes/course-interview-preparation'
 import { Route as CourseIntermediateEnglishRouteImport } from './routes/course-intermediate-english'
@@ -471,16 +471,16 @@ const EducatorRoute = EducatorRouteImport.update({
   path: '/educator',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CourseSpokenEnglishBengaliRoute =
-  CourseSpokenEnglishBengaliRouteImport.update({
-    id: '/course-spoken-english-bengali',
-    path: '/course-spoken-english-bengali',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const CourseSpokenEnglishHindiRoute =
   CourseSpokenEnglishHindiRouteImport.update({
     id: '/course-spoken-english-hindi',
     path: '/course-spoken-english-hindi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CourseSpokenEnglishBengaliRoute =
+  CourseSpokenEnglishBengaliRouteImport.update({
+    id: '/course-spoken-english-bengali',
+    path: '/course-spoken-english-bengali',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CourseSpokenEnglishRoute = CourseSpokenEnglishRouteImport.update({
@@ -1616,18 +1616,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EducatorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/course-spoken-english-bengali': {
-      id: '/course-spoken-english-bengali'
-      path: '/course-spoken-english-bengali'
-      fullPath: '/course-spoken-english-bengali'
-      preLoaderRoute: typeof CourseSpokenEnglishBengaliRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/course-spoken-english-hindi': {
       id: '/course-spoken-english-hindi'
       path: '/course-spoken-english-hindi'
       fullPath: '/course-spoken-english-hindi'
       preLoaderRoute: typeof CourseSpokenEnglishHindiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course-spoken-english-bengali': {
+      id: '/course-spoken-english-bengali'
+      path: '/course-spoken-english-bengali'
+      fullPath: '/course-spoken-english-bengali'
+      preLoaderRoute: typeof CourseSpokenEnglishBengaliRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/course-spoken-english': {
@@ -1827,13 +1827,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

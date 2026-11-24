@@ -133,7 +133,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Interactive Speaking trains these habits live: meetings, calls, presentations and polite disagreement, practised in a batch of approximately 6 learners until they feel normal. 3 months, ₹1,599/month inclusive of taxes. If everyday English itself is the gap, start with Basic Spoken English at ₹1,199/month.",
+    text: "Interactive Speaking trains these habits live: meetings, calls, presentations and polite disagreement, practised in a batch of approximately 6 learners until they feel normal. 3 months, ₹1,599/month inclusive of taxes. If everyday English itself is the gap, start with Basic Spoken English at ₹999/month.",
     course: "/course-interactive-speaking",
     label: "See Interactive Speaking",
   },

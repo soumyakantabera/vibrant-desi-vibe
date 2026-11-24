@@ -146,7 +146,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Basic Spoken English runs this kind of practice live: up to two classes a week in a batch of approximately 6 learners, so you speak in every class, plus daily practice and a weekly teacher review in the Bolo app. 6 months, ₹1,199/month inclusive of taxes.",
+    text: "Basic Spoken English runs this kind of practice live: up to two classes a week in a batch of approximately 6 learners, so you speak in every class, plus daily practice and a weekly teacher review in the Bolo app. 6 months, ₹999/month inclusive of taxes.",
     course: "/course-spoken-english",
     label: "See Basic Spoken English",
   },

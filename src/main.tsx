@@ -65,6 +65,12 @@ async function start() {
   // not blink them back to their placeholders.
   recordPaintedImages();
 
+  // Print the visitor's local-currency fee list into the prerendered page
+  // first, so the static copies kept below show it too (boot-script.ts).
+  const market = (window as Window & { __lwsMarket?: { fx?: () => void } }).__lwsMarket;
+  market?.fx?.();
+  (window as Window & { __lwsFxReact?: boolean }).__lwsFxReact = true;
+
   // Keep the prerendered HTML of below-the-fold blocks so React can show it
   // as-is and build those blocks only when they scroll near (Deferred.tsx).
   captureDeferred();

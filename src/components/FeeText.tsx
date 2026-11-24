@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { INTL_FEE, intlZero, type IntlSlug } from "@/lib/intl-fees";
+import { useFxList } from "@/hooks/use-intl-market";
 
 /**
  * Both fee labels are in the first HTML byte. A class on <html>, set by the
@@ -7,18 +8,20 @@ import { INTL_FEE, intlZero, type IntlSlug } from "@/lib/intl-fees";
  * must not swap the text later — that swap is the flash visitors outside
  * India were seeing.
  */
-const TOKENS: { inr: string; usd: string }[] = [
-  { inr: "₹2,499/month", usd: INTL_FEE["interview-preparation"].display },
-  { inr: "₹1,999/month", usd: INTL_FEE["intermediate-english"].display },
-  { inr: "₹1,599/month", usd: INTL_FEE["interactive-speaking"].display },
-  { inr: "₹1,199/month", usd: INTL_FEE["spoken-english"].display },
-  { inr: "₹1,199/mo", usd: INTL_FEE["spoken-english"].display },
-  { inr: "₹2,499", usd: INTL_FEE["interview-preparation"].big },
-  { inr: "₹1,999", usd: INTL_FEE["intermediate-english"].big },
-  { inr: "₹1,599", usd: INTL_FEE["interactive-speaking"].big },
-  { inr: "₹1,199", usd: INTL_FEE["spoken-english"].big },
-  { inr: "₹0", usd: intlZero() },
-];
+function tokens(): { inr: string; usd: string }[] {
+  return [
+    { inr: "₹2,499/month", usd: INTL_FEE["interview-preparation"].display },
+    { inr: "₹1,999/month", usd: INTL_FEE["intermediate-english"].display },
+    { inr: "₹1,599/month", usd: INTL_FEE["interactive-speaking"].display },
+    { inr: "₹999/month", usd: INTL_FEE["spoken-english"].display },
+    { inr: "₹999/mo", usd: INTL_FEE["spoken-english"].display },
+    { inr: "₹2,499", usd: INTL_FEE["interview-preparation"].big },
+    { inr: "₹1,999", usd: INTL_FEE["intermediate-english"].big },
+    { inr: "₹1,599", usd: INTL_FEE["interactive-speaking"].big },
+    { inr: "₹999", usd: INTL_FEE["spoken-english"].big },
+    { inr: "₹0", usd: intlZero() },
+  ];
+}
 
 export function FeePair({ inr, usd }: { inr: string; usd: string }) {
   return (
@@ -39,6 +42,7 @@ export function MarketCopy({ inr, usd }: { inr: ReactNode; usd: ReactNode }) {
 }
 
 function partsOf(text: string): { inr: string; usd?: string }[] {
+  const TOKENS = tokens();
   const out: { inr: string; usd?: string }[] = [];
   let i = 0;
   while (i < text.length) {
@@ -64,6 +68,7 @@ function partsOf(text: string): { inr: string; usd?: string }[] {
 
 /** Leave a sentence that already states both lists alone. */
 export function FeeText({ text }: { text: string }) {
+  useFxList();
   if (!text) return null;
   if (text.includes("outside India")) return <>{text}</>;
   const parts = partsOf(text);

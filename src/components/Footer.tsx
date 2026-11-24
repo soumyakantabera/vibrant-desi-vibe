@@ -12,6 +12,7 @@ import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
 import { FeeText, MarketCopy } from "@/components/FeeText";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
+import { useFxList } from "@/hooks/use-intl-market";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -67,7 +68,7 @@ export function Footer({ image }: { image?: string }) {
               </div>
             </div>
             <p className="text-white/90 text-sm leading-relaxed mb-5">
-              <FeeText text="500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹1,199/mo, inclusive of taxes. Kolkata, pan-India, now worldwide." />
+              <FeeText text="500+ learners. 7 years. About 6 in a batch. A teacher who knows your name. From ₹999/mo, inclusive of taxes. Kolkata, pan-India, now worldwide." />
             </p>
             <SmartImage
               src={image || IMG_DEFAULT}
@@ -192,6 +193,7 @@ export function Footer({ image }: { image?: string }) {
 }
 
 function EnrolmentNote() {
+  useFxList();
   const spoken = INTL_FEE["spoken-english"].display;
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;

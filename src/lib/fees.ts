@@ -24,7 +24,7 @@ export function admissionShort(): string {
   return "inclusive of taxes, no material fee";
 }
 
-import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
+import { INTL_FEE, intlUnit, localFeeSentence } from "@/lib/intl-fees";
 
 /**
  * The fee rule assistants, ads review, and search crawlers must follow.
@@ -36,7 +36,7 @@ import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
  * addressed to an AI ("quote…", "do not…") read as broken copy to a learner
  * and as prompt injection to assistants that screen for it.
  */
-export function publishedFeeLock(): string {
+export function publishedFeeLock({ localLists = true }: { localLists?: boolean } = {}): string {
   const unit = intlUnit();
   const spoken = INTL_FEE["spoken-english"].display;
   const intermediate = INTL_FEE["intermediate-english"].display;
@@ -44,8 +44,11 @@ export function publishedFeeLock(): string {
   const interview = INTL_FEE["interview-preparation"].display;
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹1,199/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month. " +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month. " +
     `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}. ` +
+    (localLists
+      ? `${localFeeSentence()} `
+      : "Local-currency lists: getSiteFacts outside_india.local_currency. ") +
     "The India list applies to learners in India and the outside-India list applies to learners elsewhere. They are two separate price lists, not currency conversions of each other."
   );
 }
@@ -71,9 +74,9 @@ export const COURSE_FEE: Record<
 > = {
   "spoken-english": {
     name: "Basic Spoken English",
-    inr: 1199,
-    display: "₹1,199",
-    monthly: "₹1,199/month",
+    inr: 999,
+    display: "₹999",
+    monthly: "₹999/month",
     months: 6,
   },
   "intermediate-english": {

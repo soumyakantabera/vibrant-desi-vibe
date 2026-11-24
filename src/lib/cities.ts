@@ -44,9 +44,9 @@ export const CITIES: CityRecord[] = [
     industries: "finance, media, BPO, hospitality and startups",
     medium: "Hindi, Marathi or English-medium schooling",
     localRoom: "Dadar, Andheri or Thane classrooms of 25–40",
-    title: "Spoken English Mumbai | Live, From ₹1,199",
+    title: "Spoken English Mumbai | Live, From ₹999",
     description:
-      "Live online spoken English for Mumbai and Thane: banking, media, BPO and hospitality English. About 6 per batch, ₹1,199/month incl. taxes, IST batches.",
+      "Live online spoken English for Mumbai and Thane: banking, media, BPO and hospitality English. About 6 per batch, ₹999/month incl. taxes, IST batches.",
     local: [
       { t: "h2", text: "English at work in Mumbai" },
       {
@@ -79,7 +79,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "I work at a bank in Mumbai. Spoken English or a Business English course?",
-        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹1,199/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹999/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
       },
     ],
   },
@@ -96,9 +96,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT, consulting, government-adjacent roles, BPO and startups",
     medium: "Hindi-medium or English-medium schooling",
     localRoom: "Karol Bagh, Connaught Place or Gurugram rooms of 25–40",
-    title: "Spoken English Classes Delhi | Live From ₹1,199",
+    title: "Spoken English Classes Delhi | Live From ₹999",
     description:
-      "Live online spoken English for Delhi, Gurugram and Noida. Hindi-medium welcome; batches for office and shift workers. About 6 per batch, ₹1,199/month.",
+      "Live online spoken English for Delhi, Gurugram and Noida. Hindi-medium welcome; batches for office and shift workers. About 6 per batch, ₹999/month.",
     local: [
       { t: "h2", text: "English at work in Delhi NCR" },
       {
@@ -132,7 +132,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "Is the fee different for Gurugram or Noida?",
-        a: "No. Basic Spoken English is ₹1,199/month inclusive of taxes for every learner in India, whether you join from Delhi, Gurugram, Noida, Ghaziabad or Faridabad. Batches are about 6 learners.",
+        a: "No. Basic Spoken English is ₹999/month inclusive of taxes for every learner in India, whether you join from Delhi, Gurugram, Noida, Ghaziabad or Faridabad. Batches are about 6 learners.",
       },
     ],
   },
@@ -149,9 +149,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT product, services, startups and GCCs",
     medium: "Kannada, Hindi or English-medium schooling",
     localRoom: "Koramangala or Indiranagar classrooms of 25–40",
-    title: "Spoken English Bengaluru | Live From ₹1,199",
+    title: "Spoken English Bengaluru | Live From ₹999",
     description:
-      "Live spoken English for Bengaluru IT and GCC teams: standups, client calls and interviews. About 6 per batch, ₹1,199/month incl. taxes, IST batches.",
+      "Live spoken English for Bengaluru IT and GCC teams: standups, client calls and interviews. About 6 per batch, ₹999/month incl. taxes, IST batches.",
     local: [
       { t: "h2", text: "English at work in Bengaluru" },
       {
@@ -202,9 +202,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT, pharma, GCCs and customer support",
     medium: "Telugu, Hindi, Urdu or English-medium schooling",
     localRoom: "Ameerpet or Madhapur classrooms of 25–40",
-    title: "Spoken English Hyderabad | Live From ₹1,199",
+    title: "Spoken English Hyderabad | Live From ₹999",
     description:
-      "Live spoken English for Hyderabad: HITEC City IT, pharma and support roles. About 6 per batch, ₹1,199/month inclusive of taxes, IST batches.",
+      "Live spoken English for Hyderabad: HITEC City IT, pharma and support roles. About 6 per batch, ₹999/month inclusive of taxes, IST batches.",
     local: [
       { t: "h2", text: "English at work in Hyderabad" },
       {
@@ -234,7 +234,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I work in pharma in Hyderabad. Which course helps with audits and client calls?",
-        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Interactive Speaking (₹1,599/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹1,199/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
+        a: "If everyday conversation is fine and the difficulty is explaining work clearly in meetings, calls and emails, Interactive Speaking (₹1,599/month, 3 months). If you hesitate even in daily conversation, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes. We teach communication, not regulatory content.",
       },
       {
         q: "Is the Hindi bridge a problem if I mainly speak Telugu?",
@@ -256,9 +256,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT services, automotive and manufacturing, BFSI back offices and colleges",
     medium: "Marathi, Hindi or English-medium schooling",
     localRoom: "Kothrud, Deccan or FC Road classrooms of 25–40",
-    title: "Spoken English Classes Pune | Live, ₹1,199/mo",
+    title: "Spoken English Classes Pune | Live, ₹999/mo",
     description:
-      "Spoken English classes for Pune: live online, about 6 per batch, ₹1,199/month incl. taxes. Marathi-medium learners welcome, IT and campus interview English.",
+      "Spoken English classes for Pune: live online, about 6 per batch, ₹999/month incl. taxes. Marathi-medium learners welcome, IT and campus interview English.",
     local: [
       { t: "h2", text: "English at work and college in Pune" },
       {
@@ -282,7 +282,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "Are there spoken English classes in Pune with fees listed?",
-        a: "Yes. Learn With Smile publishes its fees: Basic Spoken English ₹1,199/month (6 months), Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month — all inclusive of taxes, about 6 learners, live online. Pune learners pay the same as everyone else in India.",
+        a: "Yes. Learn With Smile publishes its fees: Basic Spoken English ₹999/month (6 months), Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month — all inclusive of taxes, about 6 learners, live online. Pune learners pay the same as everyone else in India.",
       },
     ],
   },
@@ -299,9 +299,9 @@ export const CITIES: CityRecord[] = [
     industries: "IT and GCCs on OMR, automobile plants, healthcare and BPO",
     medium: "Tamil or English-medium schooling",
     localRoom: "T Nagar or Tambaram classrooms of 25–40",
-    title: "Spoken English Classes Chennai | Live, ₹1,199",
+    title: "Spoken English Classes Chennai | Live, ₹999",
     description:
-      "Spoken English classes for Chennai learners: live online, about 6 per batch, ₹1,199/month incl. taxes. OMR IT, BPO and interview English. No commute.",
+      "Spoken English classes for Chennai learners: live online, about 6 per batch, ₹999/month incl. taxes. OMR IT, BPO and interview English. No commute.",
     local: [
       { t: "h2", text: "English at work in Chennai" },
       {
@@ -347,9 +347,9 @@ export const CITIES: CityRecord[] = [
     industries: "family businesses, textiles, pharma, diamonds and trading, and GIFT City finance",
     medium: "Gujarati, Hindi or English-medium schooling",
     localRoom: "Navrangpura or Satellite classrooms of 25–40",
-    title: "Spoken English Classes Ahmedabad | Live ₹1,199",
+    title: "Spoken English Classes Ahmedabad | Live ₹999",
     description:
-      "Spoken English classes for Ahmedabad and Gandhinagar: live online, about 6 per batch, ₹1,199/month incl. taxes. Business, export and interview English.",
+      "Spoken English classes for Ahmedabad and Gandhinagar: live online, about 6 per batch, ₹999/month incl. taxes. Business, export and interview English.",
     local: [
       { t: "h2", text: "English for Ahmedabad business" },
       {
@@ -367,13 +367,13 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Gujarati or Hindi medium" },
       {
         t: "p",
-        text: "Gujarati is not used as a bridge language. Most Ahmedabad learners are comfortable in Hindi, and the [Hindi to English course](/course-spoken-english-hindi) explains stuck concepts in Hindi before moving you back to English — same ₹1,199/month.",
+        text: "Gujarati is not used as a bridge language. Most Ahmedabad learners are comfortable in Hindi, and the [Hindi to English course](/course-spoken-english-hindi) explains stuck concepts in Hindi before moving you back to English — same ₹999/month.",
       },
     ],
     localFaqs: [
       {
         q: "I run a family business in Ahmedabad. Which course helps with buyer calls?",
-        a: "If basic conversation is fine but calls with buyers feel stiff, Interactive Speaking (3 months, ₹1,599/month) practises calls, negotiation phrases and presentations. If everyday sentences are still hard, start with Basic Spoken English (₹1,199/month). Both live, about 6 learners, inclusive of taxes.",
+        a: "If basic conversation is fine but calls with buyers feel stiff, Interactive Speaking (3 months, ₹1,599/month) practises calls, negotiation phrases and presentations. If everyday sentences are still hard, start with Basic Spoken English (₹999/month). Both live, about 6 learners, inclusive of taxes.",
       },
       {
         q: "Can the teacher explain in Gujarati?",
@@ -395,9 +395,9 @@ export const CITIES: CityRecord[] = [
       "government job aspirants, banking, teaching, healthcare and students moving to metros",
     medium: "Hindi-medium or English-medium schooling",
     localRoom: "Boring Road or Ashok Rajpath coaching rooms of 30–60",
-    title: "Spoken English Classes Patna | Live Online ₹1,199",
+    title: "Spoken English Classes Patna | Live Online ₹999",
     description:
-      "Spoken English classes for Patna, taught through Hindi: live online, about 6 per batch, ₹1,199/month incl. taxes. Interview and job English. No coaching rush.",
+      "Spoken English classes for Patna, taught through Hindi: live online, about 6 per batch, ₹999/month incl. taxes. Interview and job English. No coaching rush.",
     local: [
       { t: "h2", text: "Why Patna learners want spoken English" },
       {
@@ -421,7 +421,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I know grammar from exam preparation but cannot speak. Where do I start?",
-        a: "Usually Intermediate Spoken English (4 months, ₹1,999/month) or Interactive Speaking (3 months, ₹1,599/month), because the rules exist and the speaking does not. If even simple sentences are hard to say aloud, start with Basic Spoken English — Hindi to English at ₹1,199/month. The free level test at /english-speaking-level-test suggests one.",
+        a: "Usually Intermediate Spoken English (4 months, ₹1,999/month) or Interactive Speaking (3 months, ₹1,599/month), because the rules exist and the speaking does not. If even simple sentences are hard to say aloud, start with Basic Spoken English — Hindi to English at ₹999/month. The free level test at /english-speaking-level-test suggests one.",
       },
       {
         q: "Is an online class better than a Boring Road coaching centre?",
@@ -444,9 +444,9 @@ export const CITIES: CityRecord[] = [
       "tourism and hospitality, gems and jewellery, IT in Sitapura and Mahindra SEZ, and students",
     medium: "Hindi-medium or English-medium schooling",
     localRoom: "Malviya Nagar or Raja Park classrooms of 25–40",
-    title: "Spoken English Classes Jaipur | Live, ₹1,199/mo",
+    title: "Spoken English Classes Jaipur | Live, ₹999/mo",
     description:
-      "Spoken English classes for Jaipur, taught through Hindi: live online, about 6 per batch, ₹1,199/month incl. taxes. Hospitality, IT and interview English.",
+      "Spoken English classes for Jaipur, taught through Hindi: live online, about 6 per batch, ₹999/month incl. taxes. Hospitality, IT and interview English.",
     local: [
       { t: "h2", text: "English at work in Jaipur" },
       {
@@ -464,13 +464,13 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Taught through Hindi" },
       {
         t: "p",
-        text: "Most Jaipur learners are comfortable in Hindi. [Basic Spoken English — Hindi to English](/course-spoken-english-hindi) explains stuck ideas in Hindi and keeps speaking practice in English, at the same ₹1,199/month.",
+        text: "Most Jaipur learners are comfortable in Hindi. [Basic Spoken English — Hindi to English](/course-spoken-english-hindi) explains stuck ideas in Hindi and keeps speaking practice in English, at the same ₹999/month.",
       },
     ],
     localFaqs: [
       {
         q: "I work in a Jaipur hotel. Which English course fits?",
-        a: "If you can manage basic guest conversations but freeze on complaints or long questions, Interactive Speaking (3 months, ₹1,599/month) practises exactly those situations. If guest conversations are still hard, start with Basic Spoken English — Hindi to English (₹1,199/month). Both live online, about 6 learners, inclusive of taxes.",
+        a: "If you can manage basic guest conversations but freeze on complaints or long questions, Interactive Speaking (3 months, ₹1,599/month) practises exactly those situations. If guest conversations are still hard, start with Basic Spoken English — Hindi to English (₹999/month). Both live online, about 6 learners, inclusive of taxes.",
       },
       {
         q: "Do classes fit around hotel or shop shift timings?",
@@ -491,9 +491,9 @@ export const CITIES: CityRecord[] = [
     industries: "government and secretariat jobs, banking, healthcare, teaching and students",
     medium: "Hindi-medium or English-medium schooling",
     localRoom: "Hazratganj or Aliganj classrooms of 25–40",
-    title: "Spoken English Classes Lucknow | Live, ₹1,199",
+    title: "Spoken English Classes Lucknow | Live, ₹999",
     description:
-      "Spoken English classes for Lucknow, taught through Hindi: live online, about 6 per batch, ₹1,199/month incl. taxes. Interview, office and daily English.",
+      "Spoken English classes for Lucknow, taught through Hindi: live online, about 6 per batch, ₹999/month incl. taxes. Interview, office and daily English.",
     local: [
       { t: "h2", text: "Why Lucknow learners want spoken English" },
       {
@@ -511,13 +511,13 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Taught through Hindi" },
       {
         t: "p",
-        text: "[Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept is not landing and then moves you back to English — same course and fee, ₹1,199/month.",
+        text: "[Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept is not landing and then moves you back to English — same course and fee, ₹999/month.",
       },
     ],
     localFaqs: [
       {
         q: "Is there a Hindi-medium spoken English class for Lucknow learners?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: 6 months, ₹1,199/month inclusive of taxes, about 6 learners per batch.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: 6 months, ₹999/month inclusive of taxes, about 6 learners per batch.",
       },
       {
         q: "I have a bank interview coming up. Which course?",
@@ -617,7 +617,7 @@ export function cityFaqs(city: CityRecord): Faq[] {
     },
     {
       q: `How much do spoken English classes cost in ${city.name}?`,
-      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹1,199 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
+      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹999 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
     },
     {
       q: `Can the teacher explain if I studied in ${city.medium}?`,
@@ -662,7 +662,7 @@ export function cityBody(city: CityRecord): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹1,199/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
+      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹999/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
     ...(st
       ? [
@@ -692,7 +692,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       caption: `Same pan-India fees. ${admissionCaption()} ${city.name} is not a different price list.`,
       head: ["Course", "Duration", "Fee"],
       rows: [
-        ["Basic Spoken English", "6 months, ~6 learners", "₹1,199/month"],
+        ["Basic Spoken English", "6 months, ~6 learners", "₹999/month"],
         ["Intermediate Spoken English", "4 months", "₹1,999/month"],
         ["Interactive Speaking", "3 months", "₹1,599/month"],
         ["Interview Preparation", "2 months, ~6 learners", "₹2,499/month"],
@@ -713,7 +713,7 @@ export function cityBody(city: CityRecord): ArticleBody {
     },
     {
       t: "cta",
-      text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹1,199/mo, inclusive of taxes.`,
+      text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹999/mo, inclusive of taxes.`,
       course: "/free-consultation",
       label: "Get Free Consultation",
     },

@@ -322,5 +322,5 @@ export const MARKET_PRICE: [string, string, string, string] = [
   "₹299–₹2,500 / month",
   "₹2,700–₹5,500 / month",
   "₹1,500–₹6,000 / 3 months",
-  "₹1,199–₹2,499 / month",
+  "₹999–₹2,499 / month",
 ];

@@ -97,7 +97,7 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     },
     rooms: {
       basic: {
-        fee: "₹1,199/month · 6 months",
+        fee: "₹999/month · 6 months",
         why: "Sounds, sentence patterns and everyday vocabulary, with speaking in every class. Also taught through Hindi or Bengali.",
       },
       intermediate: {
@@ -171,7 +171,7 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     },
     rooms: {
       basic: {
-        fee: "₹1,199/माह · 6 महीने",
+        fee: "₹999/माह · 6 महीने",
         why: "आवाज़ें, वाक्य-पैटर्न और रोज़ के शब्द — हर क्लास में बोलने की प्रैक्टिस। Hindi to English वर्शन में टीचर ज़रूरत पड़ने पर हिंदी में समझाती हैं।",
       },
       intermediate: {
@@ -244,7 +244,7 @@ export const TEST_COPY: Record<TestLang, TestCopy> = {
     },
     rooms: {
       basic: {
-        fee: "₹1,199/মাস · 6 মাস",
+        fee: "₹999/মাস · 6 মাস",
         why: "উচ্চারণ, বাক্যের প্যাটার্ন আর রোজকার শব্দ — প্রতি ক্লাসে বলার প্র্যাকটিস। দরকার হলে টিচার বাংলায় বুঝিয়ে দেন।",
       },
       intermediate: {

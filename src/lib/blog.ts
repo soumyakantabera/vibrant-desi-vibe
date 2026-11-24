@@ -99,7 +99,7 @@ const RAW_POSTS: BlogPost[] = [
       },
       {
         q: "Is there a course to improve communication skills in English?",
-        a: "Learn With Smile’s Interactive Speaking (3 months, ₹1,599/month inclusive of taxes, approximately 6 learners, live online) practises meetings, calls, presentations and polite disagreement. If everyday English is still hard, Basic Spoken English (₹1,199/month) comes first.",
+        a: "Learn With Smile’s Interactive Speaking (3 months, ₹1,599/month inclusive of taxes, approximately 6 learners, live online) practises meetings, calls, presentations and polite disagreement. If everyday English is still hard, Basic Spoken English (₹999/month) comes first.",
       },
     ],
     howTo: {
@@ -200,7 +200,7 @@ const RAW_POSTS: BlogPost[] = [
       },
       {
         q: "Is there a spoken English course taught in Hindi?",
-        a: "Yes. Learn With Smile’s Basic Spoken English — Hindi to English has a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. It is 6 months, ₹1,199/month inclusive of taxes, live online in a batch of approximately 6 learners.",
+        a: "Yes. Learn With Smile’s Basic Spoken English — Hindi to English has a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. It is 6 months, ₹999/month inclusive of taxes, live online in a batch of approximately 6 learners.",
       },
     ],
     howTo: {
@@ -379,7 +379,7 @@ const RAW_POSTS: BlogPost[] = [
     title: "Spoken English or IELTS? Which Course Fits in 2 Minutes",
     seoTitle: "Spoken English or IELTS? Pick in 2 Minutes",
     description:
-      "Spoken English ₹1,199/mo, 6 months. Workplace ₹2,499/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
+      "Spoken English ₹999/mo, 6 months. Workplace ₹2,499/mo. A 2-minute picker so you do not buy Band 7 coaching when you still cannot hold a call.",
     excerpt: "Different clocks, different fees. Buy the course that matches the bottleneck.",
     tag: "Spoken English",
     img: "ielts",
@@ -401,7 +401,7 @@ const RAW_POSTS: BlogPost[] = [
     faqs: [
       {
         q: "Should I take Spoken English or IELTS first?",
-        a: "If you cannot finish a sentence on a phone call, start with Spoken English (6 months, ₹1,199/month, approx. 6 learners). If a university, visa or HR form asks for a band, sit IELTS with the test board — we do not sell that paper. Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
+        a: "If you cannot finish a sentence on a phone call, start with Spoken English (6 months, ₹999/month, approx. 6 learners). If a university, visa or HR form asks for a band, sit IELTS with the test board — we do not sell that paper. Most Indian job interviews hear you speak; they do not ask for an IELTS PDF.",
       },
       {
         q: "Is IELTS useful for a job in India?",

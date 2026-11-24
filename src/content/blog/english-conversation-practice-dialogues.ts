@@ -194,7 +194,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "If you know the words but freeze when a real person is waiting for your reply, Interactive Speaking is built around exactly this: role-plays, calls and meetings in a live batch of approximately 6 learners. 3 months, ₹1,599/month inclusive of taxes. Complete beginners start with Basic Spoken English at ₹1,199/month.",
+    text: "If you know the words but freeze when a real person is waiting for your reply, Interactive Speaking is built around exactly this: role-plays, calls and meetings in a live batch of approximately 6 learners. 3 months, ₹1,599/month inclusive of taxes. Complete beginners start with Basic Spoken English at ₹999/month.",
     course: "/course-interactive-speaking",
     label: "See Interactive Speaking",
   },

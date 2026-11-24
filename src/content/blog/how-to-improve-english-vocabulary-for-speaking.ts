@@ -102,7 +102,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "In Basic Spoken English, everyday vocabulary is practised in speech, not on worksheets — live classes in a batch of approximately 6, plus daily vocabulary practice and a weekly teacher review in the Bolo app. 6 months, ₹1,199/month inclusive of taxes. Also taught through [Hindi](/course-spoken-english-hindi) or [Bengali](/course-spoken-english-bengali).",
+    text: "In Basic Spoken English, everyday vocabulary is practised in speech, not on worksheets — live classes in a batch of approximately 6, plus daily vocabulary practice and a weekly teacher review in the Bolo app. 6 months, ₹999/month inclusive of taxes. Also taught through [Hindi](/course-spoken-english-hindi) or [Bengali](/course-spoken-english-bengali).",
     course: "/course-spoken-english",
     label: "See Basic Spoken English",
   },

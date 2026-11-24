@@ -10,6 +10,7 @@ import { COMPARE_REVISED_LABEL } from "@/lib/compare";
 import { RATING } from "@/lib/seo";
 import { TALK_TIME } from "@/lib/package";
 import { BlockMeter, SmileGauge, WeekArc } from "@/components/viz/Signature";
+import { useFxList } from "@/hooks/use-intl-market";
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
@@ -101,7 +102,7 @@ const BRANDS: Brand[] = [
     name: "Learn With Smile",
     short: "LWS",
     tone: "green",
-    fee: "₹1,199–₹2,499/mo, tax incl.",
+    fee: "₹999–₹2,499/mo, tax incl.",
     us: true,
   },
   {
@@ -164,7 +165,7 @@ const SCORE = BRANDS.map((_, bi) =>
 
 /** Typical monthly spend, ₹ (assumptions are printed under the chart). */
 const SPEND: [number, number][] = [
-  [1199, 2499],
+  [999, 2499],
   [2700, 2700],
   [8000, 15000],
   [2000, 32000],
@@ -494,6 +495,7 @@ const GAP_TILES: { tone: Deep; icon: IconName; who: string; gets: string; misses
 ];
 
 export function MarketGap() {
+  useFxList();
   return (
     <section className="section bg-white" id="market">
       <div className="container-x">
@@ -647,7 +649,7 @@ export function MarketGap() {
                     {b.us ? (
                       <MarketCopy
                         inr={<FeeText text={b.fee} />}
-                        usd={`From ${INTL_FEE["spoken-english"].display}/mo`}
+                        usd={`From ${INTL_FEE["spoken-english"].display}`}
                       />
                     ) : (
                       <MarketCopy inr={b.fee} usd="Varies" />
