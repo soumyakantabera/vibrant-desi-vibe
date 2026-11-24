@@ -12,6 +12,7 @@ import { CONTACT } from "@/lib/seo";
 import { FOOTER_GUIDES } from "@/lib/guides";
 import { FeeText, MarketCopy } from "@/components/FeeText";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
+import { useFxList } from "@/hooks/use-intl-market";
 
 const TRACKS = [{ to: "/english-career", label: "English & Career Hub" }];
 
@@ -192,6 +193,7 @@ export function Footer({ image }: { image?: string }) {
 }
 
 function EnrolmentNote() {
+  useFxList();
   const spoken = INTL_FEE["spoken-english"].display;
   const intermediate = INTL_FEE["intermediate-english"].display;
   const interactive = INTL_FEE["interactive-speaking"].display;

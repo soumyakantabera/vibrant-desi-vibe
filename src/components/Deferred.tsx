@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useFxList } from "@/hooks/use-intl-market";
 
 /**
  * Below-the-fold block that is not rebuilt by React on page load.
@@ -64,6 +65,12 @@ export function Deferred({ id, children }: { id: string; children: ReactNode }) 
   });
   const [live, setLive] = useState(html === null);
   const ref = useRef<HTMLDivElement>(null);
+  // The static copy has the fee list of page load; a new country needs live text.
+  const fxList = useFxList();
+  const [fxAtLoad] = useState(fxList);
+  useEffect(() => {
+    if (fxList !== fxAtLoad) setLive(true);
+  }, [fxList, fxAtLoad]);
   const pending = useRef<Pending | null>(null);
 
   useEffect(() => {

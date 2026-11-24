@@ -10,6 +10,7 @@ import { COMPARE_REVISED_LABEL } from "@/lib/compare";
 import { RATING } from "@/lib/seo";
 import { TALK_TIME } from "@/lib/package";
 import { BlockMeter, SmileGauge, WeekArc } from "@/components/viz/Signature";
+import { useFxList } from "@/hooks/use-intl-market";
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
@@ -494,6 +495,7 @@ const GAP_TILES: { tone: Deep; icon: IconName; who: string; gets: string; misses
 ];
 
 export function MarketGap() {
+  useFxList();
   return (
     <section className="section bg-white" id="market">
       <div className="container-x">
@@ -647,7 +649,7 @@ export function MarketGap() {
                     {b.us ? (
                       <MarketCopy
                         inr={<FeeText text={b.fee} />}
-                        usd={`From ${INTL_FEE["spoken-english"].display}/mo`}
+                        usd={`From ${INTL_FEE["spoken-english"].display}`}
                       />
                     ) : (
                       <MarketCopy inr={b.fee} usd="Varies" />

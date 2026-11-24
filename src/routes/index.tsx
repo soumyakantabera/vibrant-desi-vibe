@@ -39,6 +39,7 @@ import {
   PricingGrid,
 } from "@/components/package/PackageSections";
 import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
+import { useFxList } from "@/hooks/use-intl-market";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -77,6 +78,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  useFxList();
   return (
     <Layout
       waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."

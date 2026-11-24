@@ -17,6 +17,7 @@ import { COURSE_CATEGORIES, type CourseSlug } from "@/lib/course-categories";
 import { CHAT_CTA, DEMO_CTA } from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { INTL_FEE, intlUnit } from "@/lib/intl-fees";
+import { useFxList } from "@/hooks/use-intl-market";
 
 type CoursePath = `/course-${CourseSlug}`;
 
@@ -64,6 +65,7 @@ export const Route = createFileRoute("/english-career")({
 });
 
 function Page() {
+  useFxList();
   const wa = "Hi, I want a free consultation for English and Career.";
   return (
     <Layout waMessage={wa} footerImage={IMG.groupClass}>

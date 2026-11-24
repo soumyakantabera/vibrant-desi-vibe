@@ -29,7 +29,7 @@ import { BOLO_FAQ } from "@/lib/bolo";
 import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
 import { FAIR_BILLING } from "@/lib/fair-fees";
 import { LEVELS, levelForCourse } from "@/lib/bolo-levels";
-import { intlUnit } from "@/lib/intl-fees";
+import { feeCurrencies } from "@/lib/intl-fees";
 import { EXTRA_PAGES } from "@/lib/guide-pages";
 import { joinKindForPage, withJoinFaq } from "@/lib/join-faq";
 import { REGIONAL_PAGES } from "@/lib/regional-seo";
@@ -2133,7 +2133,7 @@ export function organizationLd() {
     email: CONTACT.email,
     telephone: CONTACT.phone,
     priceRange: "₹999–₹2,499/month",
-    currenciesAccepted: `INR, ${intlUnit()}`,
+    currenciesAccepted: feeCurrencies(),
     paymentAccepted: "UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm",
     foundingDate: String(FOUNDING_YEAR),
     employee: {

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { COUNTRY_EVENT, readStoredCountry, type CountryChoice } from "@/lib/country";
-import { isSearchOrLlmBot } from "@/lib/intl-fees";
+import { currentFxList, isSearchOrLlmBot, subscribeFx } from "@/lib/intl-fees";
 
 /**
  * False on the server, on the first client paint, in India, and for crawlers.
@@ -35,4 +35,13 @@ export function useIntlMarket(): boolean {
   }, []);
 
   return intl;
+}
+
+/**
+ * The local-currency fee list in force (a key of FX_LISTS). Call it in any
+ * component that builds a string from INTL_FEE or intlUnit(), so the text
+ * follows the visitor's country when it changes after load.
+ */
+export function useFxList(): string {
+  return useSyncExternalStore(subscribeFx, currentFxList, currentFxList);
 }

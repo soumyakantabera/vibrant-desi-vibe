@@ -17,6 +17,7 @@ import { SmartImage } from "@/components/SmartImage";
 import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
+import { useFxList } from "@/hooks/use-intl-market";
 
 export const Route = createFileRoute("/why-us")({
   component: Page,
@@ -97,6 +98,7 @@ const MARKET = [
 ];
 
 function Page() {
+  useFxList();
   const wa = "Hi, I want a free consultation for spoken English at Learn With Smile.";
   return (
     <Layout waMessage={wa} footerImage={IMG.liveClass}>

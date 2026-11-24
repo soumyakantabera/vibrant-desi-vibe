@@ -34,6 +34,7 @@ import {
   type PartKey,
   type VideoCourse,
 } from "@/lib/package";
+import { useFxList } from "@/hooks/use-intl-market";
 
 /* ------------------------------------------------------------ tokens */
 
@@ -249,8 +250,8 @@ export function PackageBand({ title }: { title?: string }) {
           <h2 className="mt-2 font-extrabold text-ink section-title">
             {title ?? (
               <>
-                Live classes, the Bolo app and the same teacher — from{" "}
-                <FeeText text="₹999/month" />.
+                Live classes, the Bolo app and the same teacher — from <FeeText text="₹999/month" />
+                .
               </>
             )}
           </h2>
@@ -982,6 +983,7 @@ function MarkIcon({ m }: { m: Mark }) {
 }
 
 export function MarketCompare() {
+  useFxList();
   return (
     <section className="section bg-paper" id="compare">
       <div className="container-x">
@@ -1218,6 +1220,7 @@ const PLAN_INCLUDES: { tone: Tone; icon: IconName; text: string; short: string }
 ];
 
 export function PricingGrid({ showOffer = true }: { showOffer?: boolean }) {
+  useFxList();
   const [offer, setOffer] = useState(() => showOffer && launchOfferActive());
   useEffect(() => {
     if (!launchOfferActive()) setOffer(false);
@@ -1450,6 +1453,7 @@ export function BoloEmpty() {
 }
 
 export function CourseIncluded({ slug }: { slug: FeeSlug }) {
+  useFxList();
   const pkg = COURSE_PACKAGE[slug];
   const fee = COURSE_FEE[slug];
   const topics = VIDEO_TOPICS.filter((v) => v.tags.includes(pkg.videoTag)).slice(0, 4);

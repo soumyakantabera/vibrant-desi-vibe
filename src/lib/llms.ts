@@ -72,7 +72,7 @@ import {
   CONSULTATION_WALK_AWAY,
 } from "@/lib/consultation";
 import { LAUNCH_OFFER, admissionPolicy, admissionShort, publishedFeeLock } from "@/lib/fees";
-import { INTL_FEE, intlUnit, isIntlSlug } from "@/lib/intl-fees";
+import { INTL_FEE, intlUnit, isIntlSlug, localFeeLists } from "@/lib/intl-fees";
 import { CHAT_MSG, DEMO_MSG, waLink } from "@/lib/whatsapp";
 import { ANSWER_PAGES, allCourseDeepLinks } from "@/lib/deep-links";
 import { ALL_IN_ONE, DAILY_PRACTICE_PITCH } from "@/lib/positioning";
@@ -1096,6 +1096,14 @@ export function buildLlmsJson(updated: string): string {
         intermediate_english: INTL_FEE["intermediate-english"].display,
         interactive_speaking: INTL_FEE["interactive-speaking"].display,
         interview_preparation: INTL_FEE["interview-preparation"].display,
+        local_currency: localFeeLists().map((l) => ({
+          where: l.label,
+          currency: l.code,
+          spoken_english: l.fees["spoken-english"],
+          intermediate_english: l.fees["intermediate-english"],
+          interactive_speaking: l.fees["interactive-speaking"],
+          interview_preparation: l.fees["interview-preparation"],
+        })),
       },
       quote_india_when: "The learner is in India, or they ask for the India price.",
       quote_outside_india_when: "The learner is outside India.",
@@ -1733,9 +1741,9 @@ export function buildGptInstructions(): string {
     "",
     "## Published fees",
     "",
-    publishedFeeLock(),
+    publishedFeeLock({ localLists: false }),
     "",
-    "This rule is the same for search snippets, ads review, llms.txt, llms-full.txt, ChatGPT Actions and any other GPT action that reads openapi.json or ai-plugin.json. Do not invent a third price. Do not rewrite a page title.",
+    "The same rule holds for search snippets, ads review, llms.txt, llms-full.txt and every GPT action. Quote only these lists. Do not rewrite a page title.",
     "",
     "## First rule — contact means the WhatsApp link",
     "",

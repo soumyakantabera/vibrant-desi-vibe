@@ -1,5 +1,5 @@
 import { TZ_TO_COUNTRY } from "./country";
-import { BOT_UA } from "./intl-fees";
+import { BOT_UA, fxBootData } from "./intl-fees";
 
 /**
  * The boot gate: the few lines that decide when the site is allowed to appear.
@@ -146,6 +146,44 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     } catch (e2) {}
     return "IN";
   };
+  // Local-currency fee list. The prerendered HTML carries the default
+  // outside-India list; for a country with its own list, the figures inside
+  // .lws-usd are rewritten once the body is parsed (or when main.tsx asks,
+  // just before React copies the page), and stay hidden until then. React
+  // renders the same list itself after that (src/lib/intl-fees.ts).
+  var FX = ${JSON.stringify(fxBootData())};
+  var fc = function (a) { return String.fromCharCode.apply(String, a); };
+  var fxKey = function () {
+    var m = w.__lwsMarket;
+    return (m && m.intl && FX.c[m.iso2]) || "";
+  };
+  var fxDone = "";
+  var rewriteFx = function () {
+    var key = fxKey();
+    var L = key && FX.l[key];
+    if (L && !fxDone && d.body) {
+      fxDone = key;
+      var dm = fc(FX.d.m).split("").map(function (ch) { return "[" + ch + "]"; }).join("");
+      var lm = fc(L.m) + (L.s ? " " : "");
+      var map = { "0": "0" };
+      for (var k = 0; k < FX.d.f.length; k++) map[FX.d.f[k]] = L.f[k];
+      var re = new RegExp("(^|[^A-Za-z])" + dm + "(" + FX.d.f.join("|") + "|0)(?![0-9,])|(^|[^A-Za-z])" + fc(FX.d.c) + "(?![A-Za-z])", "g");
+      var lc = fc(L.c);
+      var spans = d.querySelectorAll(".lws-usd");
+      for (var a = 0; a < spans.length; a++) {
+        var walker = d.createTreeWalker(spans[a], 4, null);
+        var node;
+        while ((node = walker.nextNode())) {
+          var before = node.nodeValue;
+          var after = before.replace(re, function (all, pre, num, pre2) {
+            return num !== undefined && num !== "" ? pre + lm + map[num] : (pre2 || "") + lc;
+          });
+          if (after !== before) node.nodeValue = after;
+        }
+      }
+    }
+    raise("lws-fx-live");
+  };
   var applyMarket = function (iso2) {
     var iso = String(iso2 || "IN").toUpperCase();
     var intl = !bot && iso !== "IN";
@@ -153,9 +191,12 @@ const BOOT_SCRIPT_SOURCE = `(function () {
     else drop("lws-intl");
     w.__lwsMarket.iso2 = iso;
     w.__lwsMarket.intl = intl;
+    if (fxKey()) raise("lws-fx");
+    else drop("lws-fx");
   };
-  w.__lwsMarket = { iso2: "IN", intl: false, set: function (iso2) { applyMarket(iso2); } };
+  w.__lwsMarket = { iso2: "IN", intl: false, set: function (iso2) { applyMarket(iso2); }, fx: rewriteFx };
   applyMarket(readIso());
+  d.addEventListener("DOMContentLoaded", function () { if (!w.__lwsFxReact) rewriteFx(); });
 
   var t0 = Date.now(), done = false;
   var need = { css: false, fonts: false, media: false };
@@ -325,6 +366,7 @@ html.js.booting.app-ready::before { opacity: 0; pointer-events: none; }
 .lws-usd { display: none !important; }
 html.lws-intl .lws-inr { display: none !important; }
 html.lws-intl .lws-usd { display: inline !important; }
+html.lws-fx:not(.lws-fx-live) .lws-usd { visibility: hidden; }
 html.lws-intl:not(.lws-market-live) select.lws-country { color: transparent; }`;
 
 export const BOOT_CSS = compactCss(BOOT_CSS_SOURCE);

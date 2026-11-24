@@ -27,6 +27,7 @@ import { LevelTestButton } from "@/components/LevelTestPromo";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 import { faqAnchor, moduleAnchor } from "@/lib/anchors";
+import { useFxList } from "@/hooks/use-intl-market";
 
 export type Module = { title: string; items: string[] };
 export type Project = { title: string; brief: string; deliverable: string };
@@ -324,6 +325,7 @@ function NativeBlock({ native }: { native: NativeSection }) {
 }
 
 export function CoursePage({ data }: { data: CourseData }) {
+  useFxList();
   const shownTagline = <FeeText text={data.tagline} />;
   const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
   const feeKey = data.feeSlug ?? data.slug;
