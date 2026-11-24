@@ -106,11 +106,12 @@ export function BoloSection() {
             })}
           </VizIn>
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Link to="/bolo" className="btn btn-primary">
+            <TryBoloButton />
+            <Link to="/bolo" className="btn btn-outline">
               See everything in Bolo <Icon name="arrow-right" size={18} />
             </Link>
             <span className="text-sm font-semibold text-ink/70">
-              Included in every course fee · login on WhatsApp after admission
+              Free demo, no payment · the full app comes with every course
             </span>
           </div>
         </div>
@@ -126,6 +127,30 @@ export function BoloSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * "Try Bolo free": the public Bolo demo (BOLO.demoUrl). Opens in a new tab.
+ * The full app still comes with a paid course; copy says "try", not "free app".
+ */
+export function TryBoloButton({
+  size = "md",
+  className = "",
+}: {
+  size?: "md" | "lg";
+  className?: string;
+}) {
+  return (
+    <a
+      href={BOLO.demoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cta-goal="bolo_demo"
+      className={`btn ${size === "lg" ? "btn-lg" : ""} bg-bolo-teal text-white shadow-[0_10px_24px_-12px_rgba(10,124,115,.7)] hover:bg-bolo-teal-deep ${className}`}
+    >
+      <Icon name="play" size={size === "lg" ? 18 : 16} /> {BOLO.demoCta}
+    </a>
   );
 }
 
@@ -169,6 +194,7 @@ export function BoloHero() {
             ))}
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
+            <TryBoloButton size="lg" />
             <WaButton message={BOLO_WA} variant="wa" size="lg" goal="bolo_hero">
               Ask about Bolo on WhatsApp
             </WaButton>
@@ -176,6 +202,9 @@ export function BoloHero() {
               Get a free consultation
             </Link>
           </div>
+          <p className="mt-3 text-sm font-semibold text-ink/70">
+            Try the Bolo demo free, with no payment. The full app comes with every paid course.
+          </p>
           <div className="mt-8 hidden items-end gap-1 md:flex">
             <BoloParrot pose="wave" size={120} decorative animated />
             <MithuMacaw pose="perch" size={150} decorative animated flip />
@@ -304,6 +333,12 @@ export function BoloTryIt() {
               </li>
             ))}
           </ol>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <TryBoloButton />
+            <span className="text-sm text-ink/70">
+              Open the real Bolo demo in your browser. Free, no payment.
+            </span>
+          </div>
         </div>
       </div>
     </section>

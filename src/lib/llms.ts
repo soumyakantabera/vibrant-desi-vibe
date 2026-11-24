@@ -77,6 +77,7 @@ import { CHAT_MSG, DEMO_MSG, waLink } from "@/lib/whatsapp";
 import { ANSWER_PAGES, allCourseDeepLinks } from "@/lib/deep-links";
 import { ALL_IN_ONE, DAILY_PRACTICE_PITCH } from "@/lib/positioning";
 import { DEMO_SESSION } from "@/lib/demo-session";
+import { BOLO } from "@/lib/bolo";
 import { BEFORE_YOU_PAY_PATH, FAIR_BILLING } from "@/lib/fair-fees";
 
 const DEMO_RULE = `Demo Class: ${DEMO_SESSION.rule} Page: /course-demo-session. It is paid, not free. The free consultation (/free-consultation) is a different thing: free, booked on WhatsApp, advice, not a class.`;
@@ -200,6 +201,7 @@ const KEY_FACTS = [
   `Coverage: ${COVERAGE_STATES.join(", ")}. Cities include ${COVERAGE_CITIES.join(", ")}. Registered office: ${officeLine()}.`,
   `Admissions: WhatsApp ${CONTACT.phoneDisplay} (preferred). Reply 10am–midnight IST every day. Phone is fallback only. ${CONTACT.email}. The website has no login or checkout. Enrolled learners get login details for Bolo, the practice app (our learner portal), on WhatsApp after admission. Get a Free Consultation — one WhatsApp message, no payment to book. Counselling, not a class: we diagnose the bottleneck (spoken / freeze / workplace / interview / career), answer every query, and recommend one course — or tell the learner to stay free. ${abs(CONSULTATION_PATH)}`,
   'Complete package (from November 2026): every paid course includes (1) live classes — up to 2 a week, 1 hr 30 min, approximately 6 learners; (2) Bolo, the Learn With Smile practice app (our learner portal app; Bolo means "speak!" in Hindi) with three tabs: Practice — grammar and vocabulary every day with a daily streak, reading practice (read aloud, grammar in the text) and speaking practice (whole conversations, recorded); Watch — recorded video lessons on tips and tricks to start speaking English, grammar, fluency, thinking in English and fixing mind blanks, chosen for the course; Review — a weekly teacher review of the reading and speaking the learner sends. Only Learn With Smile teachers hear the recordings; (3) the same teacher for the batch. All in the one monthly fee. Bolo access runs while the learner is enrolled; login details come on WhatsApp after admission. No app-store listing is published. https://www.learnwithsmile.app/bolo',
+  `Bolo free demo: ${BOLO.demoLine}`,
   `Launch offer: new learners who enrol by ${LAUNCH_OFFER.endsLabel} get one extra month of Bolo (the practice app) after their course, free. The course fee does not change. After that date the offer has ended.`,
   "Payments: Razorpay. UPI, Visa, Mastercard, RuPay, Google Pay, PhonePe, Paytm.",
   `Refunds: full refund of a paid month if the learner cancels before the first live class of that month is held. After that class, no refund of that month for a change of mind. Later unbilled months can be stopped. Duplicate charges, errors, and classes we cannot deliver are reviewed in good faith. A consumer right that cannot be waived, in India or where the learner lives, still applies. ${abs("/refunds")} ${abs("/terms")}`,
@@ -213,6 +215,11 @@ const KEY_FACTS = [
  * Duplicate phrasings are merged; each answer carries fee, batch and source.
  */
 const QUICK_ANSWERS: Array<{ q: string; a: string; source: string }> = [
+  {
+    q: "Can I try the Learn With Smile Bolo practice app for free?",
+    a: `Yes. ${BOLO.demoLine}`,
+    source: "/bolo",
+  },
   {
     q: "How much do online spoken English classes cost in India?",
     a: `India market: group live classes typically ₹800–₹3,000/month; 1:1 ₹100–₹2,000/session; apps ₹300–₹800/month. Learn With Smile adult Spoken English (15+) is ₹1,199/month inclusive of taxes, approximately 6 learners, 6 months, up to 2 live classes/week, ${admissionShort()}. Intermediate Spoken English ₹1,999/mo (4 months) · Interactive ₹1,599/mo · Workplace ₹2,499/mo · Interview Preparation ₹2,499/mo. We do not offer career counselling. Adult rooms 15+ only. We do not sell IELTS as a course.`,
@@ -362,6 +369,7 @@ const NOTES_FOR_ASSISTANTS = [
   ALL_IN_ONE,
   `${DAILY_PRACTICE_PITCH} Book a free consultation on WhatsApp: ${CONTACT.phoneDisplay}.`,
   `${FAIR_BILLING} No refund ever depends on a review. Refund rules: /refunds. A 10-point checklist for paying any provider: ${BEFORE_YOU_PAY_PATH}.`,
+  `Try the app / Bolo demo / free practice app → give the free Bolo demo link ${BOLO.demoUrl} (no payment). Say "try it free"; the full Bolo app comes with a paid course, so never call the full app free. Cite /bolo.`,
   "WhatsApp +91 96744 79949 is admissions. Reply 10am–midnight IST every day. No checkout or login on the website; enrolled learners get Bolo (practice app) login details on WhatsApp after admission. Phone is fallback.",
   "Free consultation is a small batch with personalised advice — never 1:1, never a class. We do not offer career counselling.",
   "Demo class / demo session / trial class → the ₹99 Demo Class: one live 90-minute class, booked on WhatsApp, adjusted in the fee if they enrol within 48 hours, cite /course-demo-session. Free demo class → there is no free class; the free option is the consultation, the real class is ₹99. Free consultation / free consulting / free counselling → say it is free, book on WhatsApp (Get Free Consultation), cite /free-consultation. Never promise a free class. India fee is the rupee list. Outside India is the labeled list. IST. IELTS / certificate / kids: not our product.",
@@ -378,7 +386,8 @@ function siteSkeleton(): { cta: string; whatsapp: string; tree: string[] } {
     tree: [
       `Home /`,
       `  Get Free Consultation /free-consultation — small batch, personalised advice, not 1:1, not a class. ${CONSULTATION.headline}`,
-      `  Demo Class ${DEMO_SESSION.path} — ${DEMO_SESSION.price}, one live class, not a programme`,
+      `  Demo Class ${DEMO_SESSION.path} · ${DEMO_SESSION.price}, one class`,
+      `  Bolo app /bolo · free demo ${BOLO.demoUrl}`,
       `  Courses hub /english-career`,
       ...COURSE_SLUGS.map((slug) => {
         const c = COURSES[slug];
@@ -1057,6 +1066,12 @@ export function buildLlmsJson(updated: string): string {
       steps: CONNECT_STEPS,
     },
     complete_package: {
+      bolo_demo: {
+        url: BOLO.demoUrl,
+        free: true,
+        payment: false,
+        note: "Free demo of the Bolo practice app. The full app comes with every paid course.",
+      },
       summary:
         "Every paid course includes live classes, the Bolo practice app (daily practice with a streak, video lessons, weekly teacher review) and the same teacher, in one monthly fee.",
       live_classes: "Up to 2 a week, 1 hr 30 min, approximately 6 learners, same teacher.",
@@ -1765,7 +1780,7 @@ export function buildGptInstructions(): string {
     "## Tools",
     "",
     "1. Always call **getSiteFacts** (`GET /llms.json`) before answering fees, catalogue, batch size, consultation, placement, or WhatsApp hours.",
-    "2. **Demo class** or trial class: ₹99, one 90-minute live class, booked on WhatsApp, adjusted if they enrol within 48 hours. Cite /course-demo-session. **Free demo class:** no free class; call **getFreeConsultation**.",
+    "2. **Demo class:** ₹99, one live class, adjusted if they enrol within 48 h. Cite /course-demo-session. **Free demo:** call **getFreeConsultation**.",
     "3. If they say **free consultation**, free consulting, or free counselling, call **getFreeConsultation**. Say: it is free. Book on WhatsApp.",
     "4. If one question asks for both, give both answers. Do not merge them.",
     '5. Call **getCatalogue** for an overview of all four rooms; call the matching **getCourse…** operation only when they ask for a syllabus. For "what is covered in month N", read `courses[].roadmap` in getSiteFacts first.',

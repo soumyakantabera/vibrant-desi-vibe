@@ -9,8 +9,9 @@
  * - Say only what Bolo does today: daily practice with streaks, video lessons,
  *   recordings sent to the teacher and the weekly review. No download counts,
  *   store ratings, AI-tutor claims or video counts.
- * - No store badges or app links until there is one to give. Login details
- *   come on WhatsApp after admission.
+ * - No store badges. The one public link is the free demo (BOLO.demoUrl,
+ *   from 24 November 2026); the full app's login details come on WhatsApp
+ *   after admission. Say "try it free", never that the full app is free.
  * - Only our teachers hear a learner's recordings.
  * - Website copy around Bolo stays calm. Inside Bolo screens and mascot speech
  *   the voice is casual, short and second person, with a light Hinglish touch.
@@ -29,6 +30,11 @@ export const BOLO = {
     "Bolo comes with every paid course. Login details come on WhatsApp after admission, and access runs while you are enrolled.",
   synonym: "Bolo is our learner portal app",
   privacy: "Only our teachers hear your recordings.",
+  /** Free public demo of the app. No payment. */
+  demoUrl: "https://bolo.learnwithsmile.app/demo",
+  demoCta: "Try Bolo free",
+  demoLine:
+    "Try the Bolo app free, with no payment, at https://bolo.learnwithsmile.app/demo. The full app, with practice set for your course, video lessons and the weekly teacher review, comes with every paid course.",
 } as const;
 
 export type BoloTabKey = "practice" | "watch" | "review";
@@ -160,6 +166,10 @@ export const BOLO_FAQ: { q: string; a: string }[] = [
     a: "Bolo is the Learn With Smile practice app — our learner portal app. It holds your daily practice (grammar, vocabulary, reading and speaking) with a streak, recorded video lessons chosen for your course, and the weekly review your teacher writes on the reading and speaking you send.",
   },
   {
+    q: "Can I try Bolo for free?",
+    a: "Yes. Try the Bolo demo free, with no payment, at https://bolo.learnwithsmile.app/demo. It shows how daily practice in Bolo works. The full app, with practice set for your course, video lessons and the weekly review from your teacher, comes with every paid course.",
+  },
+  {
     q: "Does Bolo cost extra?",
     a: "No. Bolo is included in every paid course fee. There is no separate app fee and no material fee.",
   },
@@ -169,7 +179,7 @@ export const BOLO_FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Can I use Bolo without live classes?",
-    a: "No. Bolo is the practice between your live classes. It is part of a course, not a separate product.",
+    a: "You can try the free demo on its own at https://bolo.learnwithsmile.app/demo. The full Bolo app is the practice between your live classes: it is part of a course, not a separate product.",
   },
   {
     q: "Who hears my recordings?",
