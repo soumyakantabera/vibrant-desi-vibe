@@ -152,11 +152,7 @@ const band = (id: LevelBand["id"]) => LEVEL_BANDS.find((b) => b.id === id)!;
 /** Plain-text scoring key, rendered on the page so it works without JavaScript. */
 export const LEVEL_KEY_ROWS: string[][] = [
   [bandRange(band("starting")), "Starting out (around A1)", "Basic Spoken English — ₹999/month"],
-  [
-    bandRange(band("building")),
-    "Building basics (around A2)",
-    "Basic Spoken English — ₹999/month",
-  ],
+  [bandRange(band("building")), "Building basics (around A2)", "Basic Spoken English — ₹999/month"],
   [
     bandRange(band("connecting")),
     "Connecting sentences (around B1)",
