@@ -81,12 +81,6 @@ export const FX_LISTS: Record<string, FxList> = {
     mark: [78, 90, 36],
     fee: fx("79", "149", "129", "169"),
   },
-  BD: {
-    label: "Bangladesh",
-    code: [66, 68, 84],
-    mark: [2547],
-    fee: fx("5,999", "10,999", "9,799", "12,299"),
-  },
   SG: { label: "Singapore", code: [83, 71, 68], mark: [83, 36], fee: fx("59", "109", "99", "129") },
   AE: {
     label: "United Arab Emirates",
@@ -131,7 +125,6 @@ export const FX_COUNTRY: Record<string, string> = {
   NR: "AU",
   TV: "AU",
   NZ: "NZ",
-  BD: "BD",
   SG: "SG",
   AE: "AE",
   SA: "SA",
