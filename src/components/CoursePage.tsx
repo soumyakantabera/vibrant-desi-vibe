@@ -9,6 +9,8 @@ import { SmartImage } from "@/components/SmartImage";
 import { Reveal } from "@/components/Reveal";
 import { CourseIncluded } from "@/components/package/PackageSections";
 import { WhyDifferent } from "@/components/WhyDifferent";
+import { CourseEducator } from "@/components/CourseEducator";
+import { educatorForCourse } from "@/lib/educators";
 import { levelForCourse } from "@/lib/bolo-levels";
 import { COURSE_FEE, type FeeSlug } from "@/lib/fees";
 
@@ -331,6 +333,7 @@ export function CoursePage({ data }: { data: CourseData }) {
   const shownLive = data.liveNote != null ? <FeeText text={data.liveNote} /> : null;
   const feeKey = data.feeSlug ?? data.slug;
   const teacherNote = TEACHER_NOTE[data.slug] ?? TEACHER_NOTE[feeKey];
+  const educator = educatorForCourse(data.slug);
   const waPrimary = data.waDemo ?? `Hi, I want a free consultation for ${data.title}.`;
   const waSyllabus = `Hi, I want a free consultation for ${data.title} and the fees.`;
   const faqs = courseFaqs(data);
@@ -552,6 +555,9 @@ export function CoursePage({ data }: { data: CourseData }) {
           <CoverageMap title={data.title} visuals={data.visuals} />
         </>
       )}
+
+      {/* MEET YOUR EDUCATOR — the named teacher of this course */}
+      {educator && <CourseEducator educator={educator} slug={data.slug} />}
 
       {/* COMPLETE PACKAGE — live classes + Bolo + same teacher */}
       {isPackageSlug(feeKey) && <CourseIncluded slug={feeKey} />}

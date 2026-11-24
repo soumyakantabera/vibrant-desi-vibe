@@ -1,4 +1,4 @@
-// All imagery is AI-generated, Indian-context only.
+// Stock imagery is AI-generated, Indian-context only. Educator portraits are real photos.
 import { IMAGE_META, type ImageMeta } from "./image-meta";
 import heroClass from "@/assets/hero-class.jpg";
 import studentLaptop from "@/assets/student-laptop.jpg";
@@ -15,6 +15,9 @@ import spokenEnglish from "@/assets/spoken-english.jpg";
 import businessEnglish from "@/assets/business-english.jpg";
 import interactiveSpeaking from "@/assets/interactive-speaking.jpg";
 import careerCounselling from "@/assets/career-counselling.jpg";
+import educatorJanvi from "@/assets/educator-janvi.jpg";
+import educatorAryakanya from "@/assets/educator-aryakanya.jpg";
+import educatorSneha from "@/assets/educator-sneha.jpg";
 
 export const IMG = {
   // Heroes / banners
@@ -36,6 +39,10 @@ export const IMG = {
   girlReading: studentLaptop,
   manStudying: ielts,
   founder,
+  // Real photos of the co-educators (not AI-generated).
+  educatorJanvi,
+  educatorAryakanya,
+  educatorSneha,
 
   // Courses — distinct image per topic
   presentation,
@@ -79,6 +86,9 @@ const META_BY_URL: Record<string, ImageMeta> = {
   [businessEnglish]: IMAGE_META["business-english.jpg"],
   [interactiveSpeaking]: IMAGE_META["interactive-speaking.jpg"],
   [careerCounselling]: IMAGE_META["career-counselling.jpg"],
+  [educatorJanvi]: IMAGE_META["educator-janvi.jpg"],
+  [educatorAryakanya]: IMAGE_META["educator-aryakanya.jpg"],
+  [educatorSneha]: IMAGE_META["educator-sneha.jpg"],
 };
 
 /* ------------------------------------------------------- modern formats */
@@ -127,6 +137,9 @@ const STEM_BY_URL: Record<string, string> = {
   [businessEnglish]: "business-english",
   [interactiveSpeaking]: "interactive-speaking",
   [careerCounselling]: "career-counselling",
+  [educatorJanvi]: "educator-janvi",
+  [educatorAryakanya]: "educator-aryakanya",
+  [educatorSneha]: "educator-sneha",
 };
 
 /**
