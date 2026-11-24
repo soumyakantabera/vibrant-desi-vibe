@@ -102,7 +102,7 @@ const BRANDS: Brand[] = [
     name: "Learn With Smile",
     short: "LWS",
     tone: "green",
-    fee: "₹999–₹2,499/mo, tax incl.",
+    fee: "₹1,199–₹2,499/mo, tax incl.",
     us: true,
   },
   {

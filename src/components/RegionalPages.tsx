@@ -18,8 +18,8 @@ export function StatePage({ slug }: { slug: string }) {
           learners
         </>
       }
-      standfirst={`${st.cities.slice(0, 4).join(", ")} and the rest of ${st.name}: live classes, daily practice in the Bolo app and a weekly teacher review — from ₹999/month, inclusive of taxes.`}
-      shortAnswer={`${st.intro} From ₹999/month, inclusive of taxes.`}
+      standfirst={`${st.cities.slice(0, 4).join(", ")} and the rest of ${st.name}: live classes, daily practice in the Bolo app and a weekly teacher review — from ₹1,199/month, inclusive of taxes.`}
+      shortAnswer={`${st.intro} From ₹1,199/month, inclusive of taxes.`}
       heroImage={IMG.groupClass}
       heroAlt={`Learners from ${st.name} in a live online English class`}
       lastUpdated={page?.dateModified}

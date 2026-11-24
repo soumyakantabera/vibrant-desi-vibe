@@ -94,7 +94,7 @@ function Page() {
               ), Intermediate Spoken, Interactive Speaking and Interview Preparation. Business
               English — meetings, calls and emails — is taught inside Interactive Speaking and
               Intermediate. Interview Preparation is the room when the HR screen is the bottleneck.{" "}
-              <FeeText text="From ₹999/month, inclusive of taxes." />
+              <FeeText text="From ₹1,199/month, inclusive of taxes." />
             </p>
             <p className="mt-3 text-sm text-white/90 max-w-2xl">
               Adult rooms for learners 15+: about 6 learners, 1 hr 30 min, up to 2 classes/week.
@@ -132,10 +132,10 @@ function Page() {
               <SnapshotCard
                 badge="Live · English Track"
                 eyebrow="Whole track from"
-                headline={feeHeadline("₹999/month", "spoken-english")}
+                headline={feeHeadline("₹1,199/month", "spoken-english")}
                 subnote={
                   <MarketCopy
-                    inr="₹999–₹2,499/month · inclusive of taxes · Razorpay"
+                    inr="₹1,199–₹2,499/month · inclusive of taxes · Razorpay"
                     usd={`${intlUnit()} · ${INTL_FEE["spoken-english"].display} to ${INTL_FEE["interview-preparation"].display}`}
                   />
                 }
@@ -172,7 +172,7 @@ function Page() {
           <SectionHeader
             eyebrow="Clear Categories"
             title={
-              <FeeText text="4 Programmes · Small live rooms · From ₹999/month, inclusive of taxes" />
+              <FeeText text="4 Programmes · Small live rooms · From ₹1,199/month, inclusive of taxes" />
             }
             subtitle="Basic Spoken, Intermediate Spoken, Interactive, Workplace and Interview Preparation. Pick the outcome, then the fee and duration."
           />
@@ -255,7 +255,7 @@ function Page() {
                       </Link>
                     ))}
                     <span className="w-full text-sm text-ink/75 sm:w-auto">
-                      <FeeText text="Same course and fee (₹999/month) — a teacher who explains in your language." />
+                      <FeeText text="Same course and fee (₹1,199/month) — a teacher who explains in your language." />
                     </span>
                   </div>
                 )}

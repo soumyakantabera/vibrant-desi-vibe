@@ -22,7 +22,7 @@ export function cityHead(slug: string) {
       "@type": "Service",
       "@id": `${abs(city.path)}#service`,
       serviceType: "Spoken English Classes",
-      name: `Live Spoken English for ${city.name} — Approx. 6 learners, ₹999/mo, inclusive of taxes`,
+      name: `Live Spoken English for ${city.name} — Approx. 6 learners, ₹1,199/mo, inclusive of taxes`,
       url: abs(city.path),
       provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: [

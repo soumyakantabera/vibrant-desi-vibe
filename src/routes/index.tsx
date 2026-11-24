@@ -130,7 +130,7 @@ function Home() {
             <p className="mt-3 max-w-xl text-base text-white md:text-lg">
               Real teachers. Small batches. The complete package from{" "}
               <strong className="text-sunshine">
-                <FeeText text="₹999/mo" />
+                <FeeText text="₹1,199/mo" />
               </strong>
               <MarketCopy inr=", inclusive of taxes." usd={`. ${intlUnit()}.`} /> For everyone:
               adults, professionals and graduates.
@@ -190,7 +190,7 @@ function Home() {
             >
               {[
                 "7 years · about 6 a batch · pan-India & now worldwide",
-                "From ₹999/month, inclusive of taxes",
+                "From ₹1,199/month, inclusive of taxes",
                 "500+ Learners",
                 "Bolo app: daily practice + weekly teacher review",
               ].map((s) => (
@@ -208,7 +208,7 @@ function Home() {
             <div className="relative w-full max-w-[28rem] lg:max-w-none">
               <SnapshotCard
                 eyebrow="Complete package from"
-                headline={feeHeadline("₹999/month", "spoken-english")}
+                headline={feeHeadline("₹1,199/month", "spoken-english")}
                 subnote={
                   <MarketCopy
                     inr="Billed monthly · inclusive of taxes · no auto-debit"
@@ -251,7 +251,7 @@ function Home() {
         <section id="pricing" className="section bg-cream scroll-mt-20" data-cta-location="pricing">
           <div className="container-x">
             <SectionHeader
-              eyebrow={<MarketCopy inr="What we teach · from ₹999/month" usd="What we teach" />}
+              eyebrow={<MarketCopy inr="What we teach · from ₹1,199/month" usd="What we teach" />}
               title="Choose the Goal You Need Now"
               subtitle="Four live courses for adults 15+, about 6 learners a batch, billed one month at a time — inclusive of taxes. Basic Spoken English is also taught Hindi to English and Bengali to English."
             />
@@ -287,7 +287,7 @@ function Home() {
       </Deferred>
 
       <Deferred id="home-different">
-        {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹999 */}
+        {/* WHY WE'RE DIFFERENT — live class + app reel + all-in-one at ₹1,199 */}
         {/* The scored matrix in MarketGap below is the homepage comparison. */}
         <WhyDifferent table={false} />
 
@@ -318,7 +318,7 @@ function Home() {
               <GlassCard
                 icon="users"
                 title="Small Live Batches"
-                pricing={<FeeText text="Approx. 6 learners · From ₹999/mo, inclusive of taxes" />}
+                pricing={<FeeText text="Approx. 6 learners · From ₹1,199/mo, inclusive of taxes" />}
               >
                 Scheduled English cohorts usually have around 6 learners. You practise with
                 classmates, speak in every class and receive corrections during the lesson.
@@ -334,7 +334,7 @@ function Home() {
                 {
                   n: 1,
                   lbl: "Choose Course",
-                  sub: "4 programmes · from ₹999/mo, inclusive of taxes",
+                  sub: "4 programmes · from ₹1,199/mo, inclusive of taxes",
                   c: "sunshine",
                 },
                 { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },

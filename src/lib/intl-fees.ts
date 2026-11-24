@@ -372,8 +372,8 @@ function inrToIntl(): [string, string][] {
     ["₹2,499/month", INTL_FEE["interview-preparation"].display],
     ["₹1,999/month", INTL_FEE["intermediate-english"].display],
     ["₹1,599/month", INTL_FEE["interactive-speaking"].display],
-    ["₹999/month", INTL_FEE["spoken-english"].display],
-    ["₹999/mo", INTL_FEE["spoken-english"].display],
+    ["₹1,199/month", INTL_FEE["spoken-english"].display],
+    ["₹1,199/mo", INTL_FEE["spoken-english"].display],
     ["₹0", intlZero()],
   ];
 }
@@ -390,7 +390,7 @@ export function applyIntlFees(text: string, intl: boolean): string {
   if (!intl || !text) return text;
   let next = text;
   for (const [from, to] of inrToIntl()) next = next.replaceAll(from, to);
-  // The ₹99 Demo Class, never the front of ₹999.
+  // The ₹99 Demo Class, never the front of a longer figure.
   return next.replace(/₹99(?![\d,])/g, intlDemo());
 }
 

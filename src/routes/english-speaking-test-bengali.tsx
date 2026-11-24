@@ -27,7 +27,7 @@ function Page() {
         </>
       }
       standfirst="4টা সহজ প্রশ্ন, প্রতি স্ক্রিনে একটা। আপনি আসলে কতটা বলতে পারেন তার সৎ উত্তর দিন — জেনে নিন আপনার লেভেল (প্রায় A1–B2) আর কোন কোর্সটা ঠিক।"
-      shortAnswer="প্রতিটি প্রশ্নে 2, 1 বা 0 (মোট 8)। 0–4: Basic Spoken English (₹999/মাস)। 5–6: Intermediate Spoken English (₹1,999/মাস)। 7–8: Interactive Speaking (₹1,599/মাস), বা ইন্টারভিউ লক্ষ্য হলে Interview Preparation (₹2,499/মাস)। টিচার WhatsApp-এ ফ্রিতে লেভেল কনফার্ম করেন।"
+      shortAnswer="প্রতিটি প্রশ্নে 2, 1 বা 0 (মোট 8)। 0–4: Basic Spoken English (₹1,199/মাস)। 5–6: Intermediate Spoken English (₹1,999/মাস)। 7–8: Interactive Speaking (₹1,599/মাস), বা ইন্টারভিউ লক্ষ্য হলে Interview Preparation (₹2,499/মাস)। টিচার WhatsApp-এ ফ্রিতে লেভেল কনফার্ম করেন।"
       heroImage={IMG.studentLaptop2}
       heroAlt="Adult learner checking their English speaking level on a laptop"
       lastUpdated={page.dateModified}

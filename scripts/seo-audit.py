@@ -76,7 +76,7 @@ locs = [l.replace(SITE, "") or "/" for l in re.findall(r"<loc>([^<]+)</loc>", si
 titles: dict[str, list[str]] = defaultdict(list)
 descs: dict[str, list[str]] = defaultdict(list)
 FEES = {
-    "Basic Spoken English": "₹999",
+    "Basic Spoken English": "₹1,199",
     "Intermediate Spoken English": "₹1,999",
     "Interactive Speaking": "₹1,599",
     "Business English": "₹2,499",

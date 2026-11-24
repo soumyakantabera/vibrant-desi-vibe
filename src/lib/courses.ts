@@ -7,7 +7,7 @@ export const COURSES: Record<string, CourseData> = {
     slug: "spoken-english",
     title: "Basic Spoken English",
     tagline:
-      "6 months, ₹999/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, interview English (HR, tell-me-about-yourself), up to 2 classes/week.",
+      "6 months, ₹1,199/month, inclusive of taxes, approx. 6 learners. Speak from zero — 2,000+ words, live correction, interview English (HR, tell-me-about-yourself), up to 2 classes/week.",
     category: "Speak Confidently",
     categoryColor: "brand",
     icon: "mic",
@@ -16,7 +16,7 @@ export const COURSES: Record<string, CourseData> = {
     footerImage: IMG.studentLaptop2,
     duration: "6 months · 1 hr 30 min · up to 2 classes/week",
     format: "Live batch · approximately 6 learners",
-    price: "₹999/month",
+    price: "₹1,199/month",
     liveNote:
       "✓ 100% online live · ✓ Interview English in this room · ✓ Flexible afternoon · evening · night slots · ✓ About 6 in a batch · ✓ Kolkata, pan-India, now worldwide",
     outcomes: [
@@ -240,7 +240,7 @@ export const COURSES: Record<string, CourseData> = {
         "Month spans are the plan for a typical batch. The course is extendable — if a phase needs longer, your teacher holds it.",
     },
     metaDescription:
-      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹999/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
+      "Live online Spoken English classes for Indian learners. 6 months · up to 2 classes/week · approximately 6 learners per batch. ₹1,199/month, inclusive of taxes. Includes interview English — HR, tell-me-about-yourself, STAR.",
   },
   "intermediate-english": {
     slug: "intermediate-english",
@@ -472,7 +472,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "Should I take Intermediate or Basic Spoken English?",
-        a: "One test: can you finish a simple sentence out loud — “I work in a bank and I live in Pune”? If yes, and the problem is wrong tenses, broken flow and fillers, take Intermediate Spoken English (4 months, ₹1,999/month). If you cannot finish that sentence yet, start with Basic Spoken English (₹999/month). The free consultation decides it in one conversation.",
+        a: "One test: can you finish a simple sentence out loud — “I work in a bank and I live in Pune”? If yes, and the problem is wrong tenses, broken flow and fillers, take Intermediate Spoken English (4 months, ₹1,999/month). If you cannot finish that sentence yet, start with Basic Spoken English (₹1,199/month). The free consultation decides it in one conversation.",
       },
       {
         q: "How is Intermediate different from Interactive Speaking?",
@@ -776,7 +776,7 @@ export const COURSES: Record<string, CourseData> = {
       },
       {
         q: "How is this different from Spoken English or Interactive Speaking?",
-        a: "Spoken English builds the sentence from zero. Interactive builds freeze-free talk. Interview Preparation assumes you can already talk and drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. If you cannot yet form a sentence, start with Spoken English at ₹999/month.",
+        a: "Spoken English builds the sentence from zero. Interactive builds freeze-free talk. Interview Preparation assumes you can already talk and drills only the job conversation — intro, HR, STAR, panel, salary — with recorded mocks. If you cannot yet form a sentence, start with Spoken English at ₹1,199/month.",
       },
       {
         q: "Is there a separate career course?",

@@ -50,7 +50,7 @@ export const body: ArticleBody = [
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
       ["Commute, up to twice a week", "45–90 min each way", "None"],
       ["Class recordings", "Rarely", "Every class"],
-      ["Fee", "₹1,500–₹6,000 for 3 months", "₹999/month, inclusive of taxes"],
+      ["Fee", "₹1,500–₹6,000 for 3 months", "₹1,199/month, inclusive of taxes"],
     ],
   },
   {
@@ -77,7 +77,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "As your level rises, the first-language explanations stop being needed. That is the point of them. If you would rather start with a teacher who explains in Bengali from day one, take [Basic Spoken English — Bengali to English](/course-spoken-english-bengali): same course and fee, ₹999/month.",
+    text: "As your level rises, the first-language explanations stop being needed. That is the point of them. If you would rather start with a teacher who explains in Bengali from day one, take [Basic Spoken English — Bengali to English](/course-spoken-english-bengali): same course and fee, ₹1,199/month.",
   },
 
   { t: "h2", text: "What Kolkata learners are usually preparing for" },
@@ -129,11 +129,11 @@ export const body: ArticleBody = [
       "Same fees for a learner in Kolkata as anywhere else in India. There is no local pricing.",
     head: ["Course", "Duration", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months · up to 2 classes/week", "₹999/month"],
+      ["Basic Spoken English", "6 months · up to 2 classes/week", "₹1,199/month"],
       [
         "[Basic Spoken English — Bengali to English](/course-spoken-english-bengali)",
         "6 months · up to 2 classes/week · Bengali-speaking teacher",
-        "₹999/month",
+        "₹1,199/month",
       ],
       ["Intermediate Spoken English", "4 months · up to 2 classes/week", "₹1,999/month"],
       ["Interactive Speaking", "3 months · up to 2 classes/week", "₹1,599/month"],

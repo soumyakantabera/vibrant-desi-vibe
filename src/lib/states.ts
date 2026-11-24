@@ -104,16 +104,16 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a spoken English class in Maharashtra for beginners?",
-        a: "Yes. Learn With Smile's Basic Spoken English is taught live online in a batch of about 6 and starts from zero. 6 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app. Attend from Pune, Mumbai, Nagpur, Nashik or anywhere. Message us on WhatsApp.",
+        a: "Yes. Learn With Smile's Basic Spoken English is taught live online in a batch of about 6 and starts from zero. 6 months, ₹1,199/month inclusive of taxes, with daily practice in the Bolo app. Attend from Pune, Mumbai, Nagpur, Nashik or anywhere. Message us on WhatsApp.",
       },
       {
         q: "What do spoken English classes cost in Pune or Mumbai?",
-        a: "Public listings we checked in November 2026 show offline classes at roughly ₹3,000–₹10,000 a month in tier-2 cities, live online chain courses from about ₹7,500, and premium brands at ₹8,800–₹16,000 a module in Mumbai. Learn With Smile is ₹999/month for Basic Spoken English, including live classes, the Bolo practice app and a weekly teacher review.",
+        a: "Public listings we checked in November 2026 show offline classes at roughly ₹3,000–₹10,000 a month in tier-2 cities, live online chain courses from about ₹7,500, and premium brands at ₹8,800–₹16,000 a module in Mumbai. Learn With Smile is ₹1,199/month for Basic Spoken English, including live classes, the Bolo practice app and a weekly teacher review.",
       },
     ],
     title: "Spoken English Classes in Maharashtra | Live Online",
     description:
-      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra — live small batches of about 6, ₹999/month incl. taxes.",
+      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra — live small batches of about 6, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes maharashtra",
       "spoken english classes pune online",
@@ -164,16 +164,16 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a live spoken English class in Hindi for UP learners?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher, about 6 learners per batch, 6 months, ₹999/month inclusive of taxes, with daily practice in the Bolo app. Learners join from Lucknow, Noida, Kanpur, Varanasi, Prayagraj and across UP. Message us on WhatsApp.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher, about 6 learners per batch, 6 months, ₹1,199/month inclusive of taxes, with daily practice in the Bolo app. Learners join from Lucknow, Noida, Kanpur, Varanasi, Prayagraj and across UP. Message us on WhatsApp.",
       },
       {
         q: "Which English course helps for Noida BPO jobs?",
-        a: "If you cannot yet hold a simple conversation, start with Basic Spoken English — Hindi to English (₹999/month). If you speak but freeze, Interactive Speaking (₹1,599/month). Our guide to BPO English explains the voice round and spoken tests.",
+        a: "If you cannot yet hold a simple conversation, start with Basic Spoken English — Hindi to English (₹1,199/month). If you speak but freeze, Interactive Speaking (₹1,599/month). Our guide to BPO English explains the voice round and spoken tests.",
       },
     ],
     title: "Spoken English Classes in Uttar Pradesh | Hindi Medium",
     description:
-      "Live online spoken English for Lucknow, Noida, Kanpur and all of UP — taught by a Hindi-speaking teacher, about 6 per batch, daily practice app, ₹999/month.",
+      "Live online spoken English for Lucknow, Noida, Kanpur and all of UP — taught by a Hindi-speaking teacher, about 6 per batch, daily practice app, ₹1,199/month.",
     keywords: [
       "spoken english classes lucknow online",
       "spoken english classes uttar pradesh",
@@ -217,7 +217,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a spoken English class in Hindi for Bihar students?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, 6 months, ₹999/month inclusive of taxes, with daily Bolo practice and a weekly teacher review. Join from Patna, Gaya, Muzaffarpur or wherever you work. Message us on WhatsApp.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, 6 months, ₹1,199/month inclusive of taxes, with daily Bolo practice and a weekly teacher review. Join from Patna, Gaya, Muzaffarpur or wherever you work. Message us on WhatsApp.",
       },
       {
         q: "I'm moving from Bihar to Delhi or Bengaluru for work. Which course?",
@@ -226,7 +226,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Bihar | Hindi Medium, Live",
     description:
-      "Live online spoken English for Patna, Gaya, Muzaffarpur and all of Bihar — Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹999/month.",
+      "Live online spoken English for Patna, Gaya, Muzaffarpur and all of Bihar — Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹1,199/month.",
     keywords: [
       "spoken english classes patna online",
       "spoken english classes bihar",
@@ -283,16 +283,16 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Which spoken English class suits working professionals in Delhi NCR?",
-        a: "Learn With Smile runs live online batches of about 6 in afternoon, evening and night IST slots, plus the Bolo app for daily practice between classes. Interactive Speaking (₹1,599/month) for meetings and calls; Basic Spoken English — Hindi to English (₹999/month) if you are starting out.",
+        a: "Learn With Smile runs live online batches of about 6 in afternoon, evening and night IST slots, plus the Bolo app for daily practice between classes. Interactive Speaking (₹1,599/month) for meetings and calls; Basic Spoken English — Hindi to English (₹1,199/month) if you are starting out.",
       },
       {
         q: "Is there a Hindi-medium spoken English class in Delhi?",
-        a: "Yes — Basic Spoken English — Hindi to English, taught live online by a Hindi-speaking teacher, ₹999/month inclusive of taxes. You attend from anywhere in NCR; no commute.",
+        a: "Yes — Basic Spoken English — Hindi to English, taught live online by a Hindi-speaking teacher, ₹1,199/month inclusive of taxes. You attend from anywhere in NCR; no commute.",
       },
     ],
     title: "Spoken English Classes in Noida, Gurugram & NCR",
     description:
-      "Live online spoken English for Noida, Gurugram, Ghaziabad and Faridabad — Hindi-speaking teacher, night slots, about 6 per batch, ₹999/month incl. taxes.",
+      "Live online spoken English for Noida, Gurugram, Ghaziabad and Faridabad — Hindi-speaking teacher, night slots, about 6 per batch, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes noida",
       "english speaking course gurugram",
@@ -335,7 +335,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a Hindi-medium spoken English class for Indore or Bhopal?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, ₹999/month inclusive of taxes, daily practice in the Bolo app. Join from Indore, Bhopal, Gwalior, Jabalpur or anywhere in MP.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, ₹1,199/month inclusive of taxes, daily practice in the Bolo app. Join from Indore, Bhopal, Gwalior, Jabalpur or anywhere in MP.",
       },
       {
         q: "I know grammar from exam prep but can't speak. Which course?",
@@ -344,7 +344,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Madhya Pradesh | Hindi Medium",
     description:
-      "Live online spoken English for Indore, Bhopal, Gwalior and Jabalpur — speaking practice, not just grammar. Hindi-speaking teacher, about 6 per batch, ₹999/month.",
+      "Live online spoken English for Indore, Bhopal, Gwalior and Jabalpur — speaking practice, not just grammar. Hindi-speaking teacher, about 6 per batch, ₹1,199/month.",
     keywords: [
       "spoken english classes indore online",
       "spoken english classes bhopal",
@@ -390,12 +390,12 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a live English speaking class in Hindi for Jaipur?",
-        a: "Yes. Basic Spoken English — Hindi to English: a Hindi-speaking teacher, about 6 learners, live online, ₹999/month inclusive of taxes, daily Bolo practice. Join from Jaipur, Jodhpur, Kota, Udaipur or anywhere.",
+        a: "Yes. Basic Spoken English — Hindi to English: a Hindi-speaking teacher, about 6 learners, live online, ₹1,199/month inclusive of taxes, daily Bolo practice. Join from Jaipur, Jodhpur, Kota, Udaipur or anywhere.",
       },
     ],
     title: "Spoken English Classes in Rajasthan | Hindi Medium",
     description:
-      "Live online spoken English for Jaipur, Jodhpur, Kota and Udaipur — Hindi-speaking teacher, about 6 per batch, Bolo app practice, ₹999/month incl. taxes.",
+      "Live online spoken English for Jaipur, Jodhpur, Kota and Udaipur — Hindi-speaking teacher, about 6 per batch, Bolo app practice, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes jaipur online",
       "spoken english classes rajasthan",
@@ -455,12 +455,12 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "I moved to Bengaluru from a Hindi-speaking state. Is there a Hindi-medium option?",
-        a: "Yes — Basic Spoken English — Hindi to English, taught by a Hindi-speaking teacher, ₹999/month inclusive of taxes.",
+        a: "Yes — Basic Spoken English — Hindi to English, taught by a Hindi-speaking teacher, ₹1,199/month inclusive of taxes.",
       },
     ],
     title: "Spoken English Classes in Karnataka | Mysuru & Mangaluru",
     description:
-      "Live online spoken English across Karnataka — Mysuru, Mangaluru, Hubballi, Belagavi. Interviews and client calls, about 6 per batch, ₹999/month incl. taxes.",
+      "Live online spoken English across Karnataka — Mysuru, Mangaluru, Hubballi, Belagavi. Interviews and client calls, about 6 per batch, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes karnataka",
       "spoken english classes mysore online",
@@ -512,12 +512,12 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Which spoken English course is best for Hyderabad IT freshers?",
-        a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Interactive Speaking (₹1,599/month). Starting from zero, Basic Spoken English (₹999/month) — also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
+        a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Interactive Speaking (₹1,599/month). Starting from zero, Basic Spoken English (₹1,199/month) — also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
       },
     ],
     title: "Spoken English Classes in Telangana | Warangal & Karimnagar",
     description:
-      "Live online spoken English across Telangana — Warangal, Karimnagar, Secunderabad and beyond. Hindi-medium option, about 6 per batch, ₹999/month incl. taxes.",
+      "Live online spoken English across Telangana — Warangal, Karimnagar, Secunderabad and beyond. Hindi-medium option, about 6 per batch, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes telangana",
       "english speaking course warangal online",
@@ -562,12 +562,12 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there a Hindi-medium spoken English class for Ranchi or Jamshedpur?",
-        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, ₹999/month inclusive of taxes, daily practice in the Bolo app.",
+        a: "Yes. Basic Spoken English — Hindi to English is taught live online by a Hindi-speaking teacher: about 6 learners, ₹1,199/month inclusive of taxes, daily practice in the Bolo app.",
       },
     ],
     title: "Spoken English Classes in Jharkhand | Hindi Medium",
     description:
-      "Live online spoken English for Ranchi, Jamshedpur, Dhanbad and Bokaro — Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹999/month.",
+      "Live online spoken English for Ranchi, Jamshedpur, Dhanbad and Bokaro — Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹1,199/month.",
     keywords: [
       "spoken english classes ranchi online",
       "spoken english classes jamshedpur",
@@ -613,12 +613,12 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there an online spoken English class for Ahmedabad or Surat?",
-        a: "Yes. Learn With Smile teaches live online in batches of about 6, in afternoon, evening and night IST slots. Basic Spoken English is ₹999/month (also taught Hindi to English), with daily practice in the Bolo app and a weekly teacher review.",
+        a: "Yes. Learn With Smile teaches live online in batches of about 6, in afternoon, evening and night IST slots. Basic Spoken English is ₹1,199/month (also taught Hindi to English), with daily practice in the Bolo app and a weekly teacher review.",
       },
     ],
     title: "Spoken English Classes in Gujarat | Live Online",
     description:
-      "Live online spoken English for Ahmedabad, Surat, Vadodara and Rajkot — small batch of about 6, Hindi-medium option, daily Bolo practice, ₹999/month incl. taxes.",
+      "Live online spoken English for Ahmedabad, Surat, Vadodara and Rajkot — small batch of about 6, Hindi-medium option, daily Bolo practice, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes ahmedabad online",
       "spoken english classes surat online",
@@ -666,12 +666,12 @@ export const STATES: StateInfo[] = [
     facts: [
       "Tamil is a mother tongue for about 6.9 crore people (Census 2011).",
       "Tamil-medium spoken English is already offered by other institutes; we do not teach in Tamil, and we say so.",
-      "Even in Chennai an institute sells English taught through Hindi (₹3,800 a month), so Hindi-speaking learners here have a real choice; our Hindi-to-English course is ₹999 a month.",
+      "Even in Chennai an institute sells English taught through Hindi (₹3,800 a month), so Hindi-speaking learners here have a real choice; our Hindi-to-English course is ₹1,199 a month.",
     ],
     faqs: [
       {
         q: "Do you teach spoken English in Tamil?",
-        a: "No. Learn With Smile teaches in English, with Hindi explanations in the Hindi-to-English course. If you need concepts explained in Tamil, a Tamil-medium institute will suit you better. If you already read English and freeze when you speak it, our live online batch of about 6 is built for that: ₹999/month inclusive of taxes for Basic Spoken English, ₹1,599/month for Interactive Speaking (meetings, client calls, interviews).",
+        a: "No. Learn With Smile teaches in English, with Hindi explanations in the Hindi-to-English course. If you need concepts explained in Tamil, a Tamil-medium institute will suit you better. If you already read English and freeze when you speak it, our live online batch of about 6 is built for that: ₹1,199/month inclusive of taxes for Basic Spoken English, ₹1,599/month for Interactive Speaking (meetings, client calls, interviews).",
       },
       {
         q: "Is there an online spoken English class for Chennai or Coimbatore IT jobs?",
@@ -680,7 +680,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Tamil Nadu | Live Online",
     description:
-      "Live online spoken English for Chennai, Coimbatore, Madurai and Trichy — batch of about 6, IT and interview speaking, daily Bolo practice, from ₹999/mo.",
+      "Live online spoken English for Chennai, Coimbatore, Madurai and Trichy — batch of about 6, IT and interview speaking, daily Bolo practice, from ₹1,199/mo.",
     keywords: [
       "spoken english classes chennai online",
       "spoken english classes coimbatore online",
@@ -729,7 +729,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there an online spoken English class for Guwahati?",
-        a: "Yes. Learn With Smile teaches live online in batches of about 6 — there is no classroom in Guwahati; our only office is in Kolkata. Basic Spoken English is ₹999/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Our teachers can bridge in Bengali or Hindi when a concept does not land.",
+        a: "Yes. Learn With Smile teaches live online in batches of about 6 — there is no classroom in Guwahati; our only office is in Kolkata. Basic Spoken English is ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Our teachers can bridge in Bengali or Hindi when a concept does not land.",
       },
       {
         q: "Can learners from Tripura, Manipur or Meghalaya join?",
@@ -738,7 +738,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Assam & North-East | Online",
     description:
-      "Live online spoken English for Guwahati, Dibrugarh, Silchar, Agartala and Imphal — batch of about 6, Bengali/Hindi help, from ₹999/mo incl. taxes.",
+      "Live online spoken English for Guwahati, Dibrugarh, Silchar, Agartala and Imphal — batch of about 6, Bengali/Hindi help, from ₹1,199/mo incl. taxes.",
     keywords: [
       "spoken english classes guwahati online",
       "english speaking course assam",

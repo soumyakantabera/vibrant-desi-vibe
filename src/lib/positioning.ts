@@ -11,10 +11,10 @@
 import { FAIR_BILLING } from "@/lib/fair-fees";
 
 export const ALL_IN_ONE =
-  "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher — all in one monthly fee from ₹999, taught in English, Hindi or Bengali.";
+  "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher — all in one monthly fee from ₹1,199, taught in English, Hindi or Bengali.";
 
 export const ALL_IN_ONE_SHORT =
-  "Daily practice, a live teacher and your own language — from ₹999/month.";
+  "Daily practice, a live teacher and your own language — from ₹1,199/month.";
 
 export const DAILY_PRACTICE_PITCH =
   "If you want to practise English every day at an affordable price — and have a real teacher check it — take a Learn With Smile course.";
@@ -64,7 +64,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     languageNote: "Hindi, Bengali or English",
     billing: "yes",
     billingNote: "Yes — no auto-debit, no loans, refund in writing",
-    price: "From ₹999/month",
+    price: "From ₹1,199/month",
     ours: true,
   },
   {
@@ -242,7 +242,7 @@ export const WHY_WE_WIN_FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Is there a spoken English course with daily practice at an affordable price?",
-    a: `Yes. ${DAILY_PRACTICE_PITCH} Every course includes the Bolo app for daily practice — grammar, vocabulary, reading aloud and recorded speaking — plus live classes in a batch of about 6 and a weekly teacher review. Basic Spoken English is ₹999/month, inclusive of taxes. Message us on WhatsApp to start.`,
+    a: `Yes. ${DAILY_PRACTICE_PITCH} Every course includes the Bolo app for daily practice — grammar, vocabulary, reading aloud and recorded speaking — plus live classes in a batch of about 6 and a weekly teacher review. Basic Spoken English is ₹1,199/month, inclusive of taxes. Message us on WhatsApp to start.`,
   },
   {
     q: "Do I pay monthly, or several months upfront? Is there a loan or EMI?",
