@@ -29,6 +29,21 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     w: 1024,
     h: 1024,
   },
+  "educator-aryakanya.jpg": {
+    blur: "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACwBQCdASoUABkAPu1gq1CppKOisBgIATAdiWMAuzKAhgASKL/kfSE6ffIduuj4aRrAiKgM5lAA/sLv+YMKtTRXOPZLitRLmSeiLW0GTXV1Y9ybQiBv/+W9mQ4utTMBMkE7LLz8B1A/YkLcK/Oxq8cOhoNM5xVWlGyZucvu4iPam9V3I/dRkiA5zlKYAjUx3QvUSXK/Fd50IFiOinkpY7dlmmnICHk4CAA=",
+    w: 800,
+    h: 1000,
+  },
+  "educator-janvi.jpg": {
+    blur: "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBQCdASoUABkAPuliq02pJaQiMBgMASAdCWgAvln4AF3pV390efHCJkQ7H1/rOsI4lxQcAP7etJbijRObGDDFKFyVp6dEONesB0iPBkyit2d71foVrUZGvQu4QvBRr5l8oSHbjgP1ROYiI2KEqbYHkIcRsncb4cFZoFSyBreouz6KVnax5BFlxplAzxWurKECKswl5ggHsQu10nyFSAAA",
+    w: 800,
+    h: 1000,
+  },
+  "educator-sneha.jpg": {
+    blur: "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAACQBQCdASoUABkAPu1wsFIppiSiqAgBMB2JYgCxHtpBjEoi+Ci/Vg/fzHjc5S42ExoTeCzHAAD+0z7x5G62jc9+b2th6B3hSy9l+TERdT5jaBYbFX289oKw/ESe9o8h+cNLzoW5uxfSMK95DX/gh872STKnp9YCyaPHpQXCQAb8lOdTilUW8cbuQtLetBe2O0vy1q0NXtm20zP0ZOLMGWxadUofYNi9FtJq8bdOqV3vmtUuwIO2HRjGetCw4SMezJlJKe+MmZLNkk8k1AAAAA==",
+    w: 800,
+    h: 1000,
+  },
   "founder-soumya.jpg": {
     blur: "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACQBACdASoWABYAPzmMulYvKSWjqA1R4CcJQBmDgYgfNbufG1MMZvz6q//txEAA/tWoZotbvqYSeq8qGMVkRlRtIFQozbvwEW6/FaURpyL2xK0Ix9FqT6Ql5MnWVk7Tky6e+etW/jqAiQqHJ5SAAA==",
     w: 1024,

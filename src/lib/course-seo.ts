@@ -5,6 +5,7 @@
  * JavaScript every page loads first.
  */
 import type { CourseData } from "@/components/CoursePage";
+import { EDUCATORS, educatorForCourse, educatorHref, educatorLdId } from "@/lib/educators";
 import { withJoinFaq } from "@/lib/join-faq";
 import {
   CONTACT,
@@ -59,6 +60,7 @@ export function courseSeo(d: CourseData) {
   const workload = workloadISO(d.duration);
   const faqs = courseFaqs(d);
   const ogImage = extra?.ogImage ?? "/og/default.jpg";
+  const teacher = educatorForCourse(d.slug) ?? EDUCATORS.sunanda;
 
   // Batch days and total sessions vary. Do not turn the visible maximum of two
   // classes per week into an exact repeatCount or invent a future batch date.
@@ -71,11 +73,14 @@ export function courseSeo(d: CourseData) {
     maximumAttendeeCapacity: 6,
     instructor: {
       "@type": "Person",
-      "@id": `${abs("/educator")}#person`,
-      name: "Sunanda Dey",
-      // Links to the Person entity described on /educator, rather than leaving a
-      // bare name string that resolves to nothing.
-      url: abs("/educator"),
+      // The named teacher of this course (src/lib/educators.ts), linked to the
+      // Person entity on /educator rather than a bare name string. Courses with
+      // no co-educator assigned fall back to the lead educator.
+      "@id": educatorLdId(teacher),
+      name: teacher.name,
+      jobTitle: teacher.jobTitle,
+      image: abs(teacher.ogImage),
+      url: abs(educatorHref(teacher)),
       worksFor: {
         "@type": "EducationalOrganization",
         "@id": `${SITE_URL}/#organization`,

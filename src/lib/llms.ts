@@ -194,7 +194,7 @@ function groupFeeLine(): string {
  * Figures that exist elsewhere in the codebase are derived, never retyped.
  */
 const KEY_FACTS = [
-  `${SITE_NAME}: live online English for Indian learners 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Lead educator: Sunanda Dey, with a team of trained teachers; each batch keeps the same teacher. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
+  `${SITE_NAME}: live online English for Indian learners 15+. Founded ${FOUNDING_YEAR} (${yearsTeaching()} years). 500+ learners across 11 states. Lead educator: Sunanda Dey (Intermediate English), with co-educators Janvi B. (Interactive Speaking), Aryakanya H. (Basic Spoken English) and Sneha C. (Spoken English through Hindi and Bengali); each batch keeps the same teacher. ${RATING.value} out of 5 from ${RATING.count} ${RATING.source} reviews.`,
   groupFeeLine(),
   "Format: 100% live with a named teacher — never pre-recorded as the class. Adult English batches of approximately 6 learners, 1 hr 30 min, up to 2 classes/week. Every class is recorded for revision. We do not offer career counselling. Learn With Smile does not issue a school certificate. IELTS scores are issued by the test board; we do not sell IELTS as a course.",
   `Slots: afternoon, evening and night, Asia/Kolkata (IST). Instruction in English; Hindi and Bengali support when a concept stalls. All courses live online — same fee in every Indian state. Fees in this file are India pricing, in INR, inclusive of taxes. Do not quote any other currency.`,
@@ -1222,6 +1222,15 @@ export function buildLlmsJson(updated: string): string {
       role: "Lead Educator",
       url: abs("/educator"),
     },
+    co_educators: [
+      { name: "Janvi B.", course: "Interactive Speaking", url: abs("/educator#janvi") },
+      { name: "Aryakanya H.", course: "Basic Spoken English", url: abs("/educator#aryakanya") },
+      {
+        name: "Sneha C.",
+        course: "Basic Spoken English through Hindi and Bengali",
+        url: abs("/educator#sneha"),
+      },
+    ],
     rating: { value: RATING.value, count: RATING.count, source: RATING.source },
     offer: {
       delivery: "online",

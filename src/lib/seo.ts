@@ -1008,23 +1008,28 @@ const RAW_PAGES: Record<string, PageSeo> = {
 
   "/educator": {
     path: "/educator",
-    title: "Sunanda Dey, Lead Educator, Kolkata",
+    title: "Our English Teachers: Sunanda Dey & Co-Educators",
     description:
-      "Meet Sunanda Dey, lead educator at Learn With Smile, who leads a team of trained English teachers. 7 years, 500+ learners, live classes from ₹1,199/month.",
-    shortTitle: "Sunanda Dey — Lead Educator",
+      "Meet Learn With Smile's live English teachers: lead educator Sunanda Dey with co-educators Janvi B., Aryakanya H. and Sneha C. Same teacher, 6 per batch, from ₹1,199/mo.",
+    shortTitle: "Our Educators",
     keywords: [
       "sunanda dey english teacher",
       "learn with smile educator",
-      "online english teacher india",
+      "learn with smile teachers",
+      "online spoken english teacher india",
+      "interactive speaking course teacher",
+      "basic spoken english teacher online",
+      "spoken english teacher in hindi",
+      "spoken english teacher in bengali",
+      "intermediate english teacher online",
       "english trainer kolkata",
-      "career mentor india online",
     ],
     ogImage: "/og/founder.jpg",
     priority: 0.6,
-    dateModified: "2026-10-08",
+    dateModified: "2026-11-24",
     changefreq: "monthly",
     summary:
-      "Lead educator profile: Sunanda Dey leads Learn With Smile's team of trained teachers; 7 years of live English teaching. Each batch keeps the same teacher.",
+      "Educator profiles: lead educator Sunanda Dey (Intermediate English) and co-educators Janvi B. (Interactive Speaking), Aryakanya H. (Basic Spoken English) and Sneha C. (Spoken English through Hindi and Bengali). Each batch keeps the same teacher.",
   },
 
   "/success-stories": {
