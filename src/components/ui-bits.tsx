@@ -259,7 +259,7 @@ export function WaButton({
 }: {
   message: string;
   children: ReactNode;
-  variant?: "wa" | "primary" | "white" | "sun" | "coral" | "outline";
+  variant?: "wa" | "primary" | "white" | "sun" | "coral" | "demo" | "outline";
   size?: "sm" | "md" | "lg";
   className?: string;
   /** Which CTA fired, so conversions can be attributed to a page position. */
