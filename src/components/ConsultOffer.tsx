@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { FeeText } from "@/components/FeeText";
 import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
+import { DemoButton } from "@/components/DemoButton";
 import { CONSULTATION, CONSULTATION_PROOF, PROOF_CARD_CLASS } from "@/lib/consultation";
 import { DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
 
@@ -79,6 +80,7 @@ export function ConsultOffer({
           <WaButton message={message ?? DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
             {DEMO_CTA}
           </WaButton>
+          <DemoButton />
           <Link
             to="/free-consultation"
             className={sun ? "btn btn-outline btn-lg border-ink text-ink" : "btn btn-white btn-lg"}

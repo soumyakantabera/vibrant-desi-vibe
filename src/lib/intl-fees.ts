@@ -29,9 +29,11 @@ function chars(codes: readonly number[]): string {
 }
 
 /**
- * Local-currency fee lists for learners outside India. Every list sits near
- * the international list (Basic about 49 in the default currency) and ends in
- * 9. Countries not listed here get the default list.
+ * Local-currency fee lists for learners outside India. Most lists sit near
+ * the international list (Basic about 49 in the default currency) and end in
+ * 9. The Gulf (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Oman) is priced
+ * lower on purpose, Basic about $35 (November 2026); dinar and rial lists use
+ * whole numbers. Countries not listed here get the default list.
  *
  * Currency codes and marks are character codes, never literals, so the script
  * bundle carries no readable price list. Digits are the visible figure.
@@ -112,29 +114,54 @@ export const FX_LISTS: Record<string, FxList> = {
     fee: fx("59", "109", "99", "129"),
     demo: "7",
   },
+  // Gulf: one regional sweet spot below the $49 default (Basic about $35).
   AE: {
     label: "United Arab Emirates",
     code: [65, 69, 68],
     mark: [65, 69, 68],
     spaced: true,
-    fee: fx("179", "329", "289", "359"),
-    demo: "19",
+    fee: fx("129", "229", "199", "259"),
+    demo: "15",
   },
   SA: {
     label: "Saudi Arabia",
     code: [83, 65, 82],
     mark: [83, 65, 82],
     spaced: true,
-    fee: fx("179", "329", "299", "369"),
-    demo: "19",
+    fee: fx("129", "229", "199", "259"),
+    demo: "15",
   },
   QA: {
     label: "Qatar",
     code: [81, 65, 82],
     mark: [81, 65, 82],
     spaced: true,
-    fee: fx("179", "319", "289", "359"),
-    demo: "19",
+    fee: fx("129", "229", "199", "259"),
+    demo: "15",
+  },
+  KW: {
+    label: "Kuwait",
+    code: [75, 87, 68],
+    mark: [75, 87, 68],
+    spaced: true,
+    fee: fx("10", "19", "17", "21"),
+    demo: "1",
+  },
+  BH: {
+    label: "Bahrain",
+    code: [66, 72, 68],
+    mark: [66, 72, 68],
+    spaced: true,
+    fee: fx("13", "24", "21", "26"),
+    demo: "2",
+  },
+  OM: {
+    label: "Oman",
+    code: [79, 77, 82],
+    mark: [79, 77, 82],
+    spaced: true,
+    fee: fx("13", "24", "21", "26"),
+    demo: "2",
   },
 };
 
@@ -162,6 +189,9 @@ export const FX_COUNTRY: Record<string, string> = {
   AE: "AE",
   SA: "SA",
   QA: "QA",
+  KW: "KW",
+  BH: "BH",
+  OM: "OM",
   // Euro area, plus the microstates and Montenegro that use the euro.
   ...Object.fromEntries(
     [

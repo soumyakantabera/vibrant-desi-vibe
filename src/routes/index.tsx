@@ -1,3 +1,4 @@
+import { DemoButton } from "@/components/DemoButton";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Deferred } from "@/components/Deferred";
@@ -160,13 +161,16 @@ function Home() {
               Tell us your goal. We reply with the right course and the fee — no pressure, no
               payment to book.
             </p>
-            <p className="mt-2 text-sm font-semibold text-white">
-              Want to see a class first?{" "}
-              <Link to="/course-demo-session" className="text-sunshine underline">
-                Sit one live class for <FeeText text="₹99" /> — the Demo Class
-              </Link>
-              .
-            </p>
+            <div className="mt-4">
+              <DemoButton className="w-full sm:w-auto justify-center" />
+              <p className="mt-2 text-sm text-white/95">
+                Want to see a class first? One live class, adjusted in your fee if you join within
+                48 hours.{" "}
+                <Link to="/course-demo-session" className="font-semibold text-sunshine underline">
+                  How the Demo Class works
+                </Link>
+              </p>
+            </div>
             <PaymentTrust tone="dark" className="mt-4" />
             <p className="mt-3 min-h-[2.5rem] text-sm font-semibold text-white/95 sm:min-h-0">
               WhatsApp{" "}
@@ -253,13 +257,16 @@ function Home() {
             />
             <PricingGrid />
             <ConsultStrip />
-            <p className="mt-5 text-center text-sm font-semibold text-ink/80">
-              Want to see the teaching before you pay for a month?{" "}
-              <Link to="/course-demo-session" className="text-brand-deep underline">
-                Book the <FeeText text="₹99" /> Demo Class
-              </Link>{" "}
-              — one live class, adjusted in your fee if you join within 48 hours.
-            </p>
+            <div className="mt-6 text-center">
+              <DemoButton />
+              <p className="mt-2 text-sm text-ink/80">
+                See the teaching before you pay for a month: one live class, adjusted in your fee if
+                you join within 48 hours.{" "}
+                <Link to="/course-demo-session" className="font-semibold text-brand-deep underline">
+                  How it works
+                </Link>
+              </p>
+            </div>
             <div className="mt-7 text-center">
               <p className="text-sm text-ink/75">
                 <MarketCopy

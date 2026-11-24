@@ -1,3 +1,4 @@
+import { DemoButton } from "@/components/DemoButton";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FeeText } from "@/components/FeeText";
 import { PAGES, pageHead } from "@/lib/seo";
@@ -53,11 +54,11 @@ function Page() {
             <FeeText text={CONSULTATION.hook} />
           </p>
           <p className="mt-3 text-sm text-white/90">
-            Want to sit in a real class instead?{" "}
+            Want to sit in a real class instead? The{" "}
             <Link to="/course-demo-session" className="font-semibold text-sunshine underline">
-              Book the <FeeText text="₹99" /> Demo Class
+              Demo Class
             </Link>{" "}
-            — one live class, adjusted in your fee if you join within 48 hours.
+            is one live class, adjusted in your fee if you join within 48 hours.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (
@@ -84,6 +85,7 @@ function Page() {
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
               {DEMO_CTA}
             </WaButton>
+            <DemoButton />
           </div>
         </div>
       </section>
