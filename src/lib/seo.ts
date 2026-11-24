@@ -27,7 +27,7 @@ import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { publishedFeeLock } from "@/lib/fees";
 import { DEMO_FAQS, DEMO_SESSION } from "@/lib/demo-session";
-import { BOLO_FAQ } from "@/lib/bolo";
+import { BOLO, BOLO_FAQ } from "@/lib/bolo";
 import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
 import { FAIR_BILLING } from "@/lib/fair-fees";
 import { LEVELS, levelForCourse } from "@/lib/bolo-levels";
@@ -330,6 +330,8 @@ export const CONSULTATION_KEYWORDS = [
 /** The complete package — live classes + the Bolo practice app. */
 export const PACKAGE_KEYWORDS = [
   "spoken english course with daily practice",
+  "free english practice app demo",
+  "try english speaking practice app free",
   "online english classes with practice portal",
   "spoken english course with recorded videos",
   "live english classes and daily practice india",
@@ -913,13 +915,17 @@ const RAW_PAGES: Record<string, PageSeo> = {
       "english learner portal with video lessons",
       "english practice between classes",
       "app where teacher reviews my english speaking",
+      "bolo app demo",
+      "try bolo app free",
+      "free english practice app demo india",
+      "english practice app free trial",
     ],
     ogImage: "/og/bolo.jpg",
     priority: 0.8,
     changefreq: "monthly",
-    dateModified: "2026-11-03",
+    dateModified: "2026-11-24",
     summary:
-      "Bolo is the Learn With Smile practice app (our learner portal app; Bolo means “speak!” in Hindi). Three tabs: Practice — daily grammar, vocabulary, reading and recorded speaking with a daily streak; Watch — video lessons picked for the course; Review — a weekly teacher review of the reading and speaking the learner sends. Only our teachers hear the recordings. Included in every course fee from ₹1,199/month, inclusive of taxes; login details come on WhatsApp after admission. Mascots: Bolo, a rose-ringed parakeet, and Mithu, a scarlet macaw.",
+      "Bolo is the Learn With Smile practice app (our learner portal app; Bolo means “speak!” in Hindi). Three tabs: Practice — daily grammar, vocabulary, reading and recorded speaking with a daily streak; Watch — video lessons picked for the course; Review — a weekly teacher review of the reading and speaking the learner sends. Only our teachers hear the recordings. Included in every course fee from ₹1,199/month, inclusive of taxes; login details come on WhatsApp after admission. Free demo, no payment: https://bolo.learnwithsmile.app/demo. Mascots: Bolo, a rose-ringed parakeet, and Mithu, a scarlet macaw.",
     faqs: BOLO_FAQ,
   },
 
@@ -2362,6 +2368,33 @@ export function consultationServiceLd() {
   };
 }
 
+/** Bolo, the practice app. The offer is the free public demo; the full app comes with a course. */
+export function boloAppLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": `${abs(BOLO.path)}#app`,
+    name: BOLO.name,
+    alternateName: ["Bolo app", "Bolo by Learn With Smile", "Learn With Smile practice app"],
+    description: BOLO.oneLine,
+    url: abs(BOLO.path),
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Any (runs in a web browser)",
+    inLanguage: "en-IN",
+    provider: { "@id": `${SITE_URL}/#organization` },
+    offers: {
+      "@type": "Offer",
+      name: "Bolo demo",
+      url: BOLO.demoUrl,
+      price: 0,
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      description:
+        "Free demo of the Bolo practice app, no payment. The full app comes with every paid course.",
+    },
+  };
+}
+
 /** The ₹99 Demo Class: one paid seat in a live batch. India price. */
 export function demoServiceLd() {
   return {
@@ -2704,6 +2737,7 @@ export function pageHead(path: string): HeadResult {
   if (page.howTo) jsonLd.push(howToLd(page.howTo));
   if (path === CONSULTATION_PATH) jsonLd.push(consultationServiceLd());
   if (path === DEMO_SESSION.path) jsonLd.push(demoServiceLd());
+  if (path === BOLO.path) jsonLd.push(boloAppLd());
 
   const head = buildHead({
     path: page.path,
