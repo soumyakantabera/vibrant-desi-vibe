@@ -94,7 +94,7 @@ for st in STATES:
         f"live english class {name} small batch",
         f"spoken english with daily practice app {name}",
     ]:
-        q(t, sp, name, "state", "₹999" if "fees" in t else None)
+        q(t, sp, name, "state", "₹1,199" if "fees" in t else None)
     # city-level
     for city in st["cities"]:
         for t in [
@@ -102,7 +102,7 @@ for st in STATES:
             f"english speaking course {city} online",
             f"spoken english class {city} fees",
         ]:
-            q(t, CITY_PAGE.get(city, sp), city, "city", "₹999" if "fees" in t else None)
+            q(t, CITY_PAGE.get(city, sp), city, "city", "₹1,199" if "fees" in t else None)
     # locality-level ("near me" offline searchers)
     for loc in st["localities"]:
         for area in loc["areas"]:
@@ -118,17 +118,17 @@ for st in STATES:
     if st["medium"] == "hindi":
         lang = st["medium"].capitalize()
         q(f"{lang} medium spoken english class {name}", sp, lang, "medium-local")
-        q(f"{lang} to english speaking course online", MED_PATH[st["medium"]], lang, "medium", "₹999")
+        q(f"{lang} to english speaking course online", MED_PATH[st["medium"]], lang, "medium", "₹1,199")
 
 # national / course / app / comparison intents
 NATIONAL = [
-    ("spoken english course online india", "/course-spoken-english", "spoken english", "₹999"),
-    ("basic spoken english course fees", "/course-spoken-english", "basic spoken english", "₹999"),
-    ("hindi to english speaking course", "/course-spoken-english-hindi", "hindi", "₹999"),
-    ("english speaking course in hindi live", "/course-spoken-english-hindi", "hindi", "₹999"),
+    ("spoken english course online india", "/course-spoken-english", "spoken english", "₹1,199"),
+    ("basic spoken english course fees", "/course-spoken-english", "basic spoken english", "₹1,199"),
+    ("hindi to english speaking course", "/course-spoken-english-hindi", "hindi", "₹1,199"),
+    ("english speaking course in hindi live", "/course-spoken-english-hindi", "hindi", "₹1,199"),
     ("हिंदी से इंग्लिश बोलना सीखें", "/course-spoken-english-hindi", "हिंदी", None),
-    ("bengali to english speaking course", "/course-spoken-english-bengali", "bengali", "₹999"),
-    ("spoken english in bengali live class", "/course-spoken-english-bengali", "bengali", "₹999"),
+    ("bengali to english speaking course", "/course-spoken-english-bengali", "bengali", "₹1,199"),
+    ("spoken english in bengali live class", "/course-spoken-english-bengali", "bengali", "₹1,199"),
     ("বাংলা থেকে ইংরেজি বলা শিখুন", "/course-spoken-english-bengali", "বাংলা", None),
     ("intermediate spoken english course", "/course-intermediate-english", "intermediate", "₹1,999"),
     ("intermediate english conditionals practice app", "/course-intermediate-english", "bolo", None),
@@ -139,48 +139,48 @@ NATIONAL = [
     ("english practice app with teacher review", "/bolo", "bolo", None),
     ("bolo app learn with smile", "/bolo", "bolo", None),
     ("daily english practice app streak india", "/bolo", "streak", None),
-    ("cheapest live spoken english class india", "/", "₹999", "₹999"),
-    ("all in one spoken english course low fee", "/", "all-in-one", "₹999"),
-    ("spoken english course with daily practice affordable", "/", "daily practice", "₹999"),
-    ("english class fees india 2026", "/english-class-fees-india", "fee", "₹999"),
+    ("cheapest live spoken english class india", "/", "₹1,199", "₹1,199"),
+    ("all in one spoken english course low fee", "/", "all-in-one", "₹1,199"),
+    ("spoken english course with daily practice affordable", "/", "daily practice", "₹1,199"),
+    ("english class fees india 2026", "/english-class-fees-india", "fee", "₹1,199"),
     ("free spoken english consultation whatsapp", "/free-consultation", "consultation", None),
     ("spoken english free demo class", "/free-consultation", "demo class", None),
-    ("spoken english classes kolkata", "/spoken-english-classes-kolkata", "kolkata", "₹999"),
+    ("spoken english classes kolkata", "/spoken-english-classes-kolkata", "kolkata", "₹1,199"),
     ("spoken english course refund policy india", "/before-you-pay-spoken-english-course", "refund", None),
     ("english speaking course emi loan", "/before-you-pay-spoken-english-course", "emi", None),
     ("english course monthly payment no auto debit", "/before-you-pay-spoken-english-course", "auto-debit", None),
     ("english app subscription auto renew cancel", "/before-you-pay-spoken-english-course", "auto-renew", None),
     ("learn with smile refund", "/refunds", "2 working days", None),
     # November 2026 high-volume informational demand (OpenRush, India)
-    ("daily use english sentences with hindi", "/blog/daily-use-english-sentences-with-hindi", "hindi meaning", "₹999"),
+    ("daily use english sentences with hindi", "/blog/daily-use-english-sentences-with-hindi", "hindi meaning", "₹1,199"),
     ("500 daily use english sentences with hindi", "/blog/daily-use-english-sentences-with-hindi", "upi", None),
     ("daily use sentences hindi to english", "/blog/daily-use-english-sentences-with-hindi", "क्या", None),
     ("what is your good name correct english", "/blog/daily-use-english-sentences-with-hindi", "good name", None),
-    ("daily english speaking practice", "/blog/daily-english-speaking-practice-routine", "15-minute", "₹999"),
+    ("daily english speaking practice", "/blog/daily-english-speaking-practice-routine", "15-minute", "₹1,199"),
     ("english speaking practice alone at home", "/blog/daily-english-speaking-practice-routine", "alone", None),
     ("3-2-1 rule of speaking", "/blog/daily-english-speaking-practice-routine", "3-2-1", None),
     ("30 day english speaking practice plan", "/blog/daily-english-speaking-practice-routine", "30-day", None),
     ("english conversation practice for beginners", "/blog/english-conversation-practice-dialogues", "dialogue", None),
     ("english conversation for hr phone screen", "/blog/english-conversation-practice-dialogues", "hr", None),
-    ("how to speak english fluently", "/how-to-speak-english-fluently", "fluent", "₹999"),
+    ("how to speak english fluently", "/how-to-speak-english-fluently", "fluent", "₹1,199"),
     ("can i learn english in 30 days", "/how-to-speak-english-fluently", "30 days", None),
-    ("english speaking test online free", "/english-speaking-level-test", "level", "₹999"),
+    ("english speaking test online free", "/english-speaking-level-test", "level", "₹1,199"),
     ("check my english speaking level", "/english-speaking-level-test", "a1", None),
-    ("english speaking test in hindi", "/english-speaking-test-hindi", "लेवल", "₹999"),
+    ("english speaking test in hindi", "/english-speaking-test-hindi", "लेवल", "₹1,199"),
     ("english bolne ka level test", "/english-speaking-test-hindi", "सवाल", None),
-    ("english speaking test in bengali", "/english-speaking-test-bengali", "লেভেল", "₹999"),
+    ("english speaking test in bengali", "/english-speaking-test-bengali", "লেভেল", "₹1,199"),
     ("ইংরেজি বলার লেভেল টেস্ট", "/english-speaking-test-bengali", "প্রশ্ন", None),
-    ("english spoken classes in pune", "/spoken-english-classes-pune", "hinjewadi", "₹999"),
+    ("english spoken classes in pune", "/spoken-english-classes-pune", "hinjewadi", "₹1,199"),
     ("marathi medium spoken english pune", "/spoken-english-classes-pune", "marathi", None),
-    ("english spoken classes in chennai", "/spoken-english-classes-chennai", "omr", "₹999"),
+    ("english spoken classes in chennai", "/spoken-english-classes-chennai", "omr", "₹1,199"),
     ("spoken english classes in chennai tambaram", "/spoken-english-classes-chennai", "tambaram", None),
-    ("top 10 spoken english classes in ahmedabad with fees", "/spoken-english-classes-ahmedabad", "gift city", "₹999"),
-    ("spoken english classes in patna", "/spoken-english-classes-patna", "boring road", "₹999"),
-    ("best english spoken classes in jaipur", "/spoken-english-classes-jaipur", "sitapura", "₹999"),
-    ("english spoken classes in lucknow", "/spoken-english-classes-lucknow", "gomti nagar", "₹999"),
+    ("top 10 spoken english classes in ahmedabad with fees", "/spoken-english-classes-ahmedabad", "gift city", "₹1,199"),
+    ("spoken english classes in patna", "/spoken-english-classes-patna", "boring road", "₹1,199"),
+    ("best english spoken classes in jaipur", "/spoken-english-classes-jaipur", "sitapura", "₹1,199"),
+    ("english spoken classes in lucknow", "/spoken-english-classes-lucknow", "gomti nagar", "₹1,199"),
     ("how to improve communication skills in english", "/blog/how-to-improve-communication-skills-in-english", "communication", "₹1,599"),
     ("how to stop saying umm while speaking english", "/blog/how-to-improve-communication-skills-in-english", "filler", None),
-    ("how to improve english vocabulary for speaking", "/blog/how-to-improve-english-vocabulary-for-speaking", "chunk", "₹999"),
+    ("how to improve english vocabulary for speaking", "/blog/how-to-improve-english-vocabulary-for-speaking", "chunk", "₹1,199"),
     ("5-5-5 vocabulary method", "/blog/how-to-improve-english-vocabulary-for-speaking", "5-5-5", None),
 ]
 for t, path, ent, fee in NATIONAL:
@@ -200,7 +200,7 @@ variants = cycle(
 st_cycle = cycle([(st, c) for st in STATES for c in st["cities"]])
 while len(queries) < 1000:
     (st, city), (tpl, fee) = next(st_cycle), next(variants)
-    q(tpl.format(city=city), CITY_PAGE.get(city, st["path"]), city, "variant", "₹999" if fee else None)
+    q(tpl.format(city=city), CITY_PAGE.get(city, st["path"]), city, "variant", "₹1,199" if fee else None)
 queries = queries[:1000]
 
 # ------------------------------------------------------------ checks

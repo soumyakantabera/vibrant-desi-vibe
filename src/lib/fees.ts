@@ -45,7 +45,7 @@ export function publishedFeeLock({ localLists = true }: { localLists?: boolean }
   const demo = intlDemo();
   return (
     "Two published price lists. " +
-    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹999/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month; Demo Class ₹99 (one live class). " +
+    "Learners in India, Indian Rupees, inclusive of taxes: Basic Spoken English ₹1,199/month; Intermediate Spoken English ₹1,999/month; Interactive Speaking ₹1,599/month; Interview Preparation ₹2,499/month; Demo Class ₹99 (one live class). " +
     `Learners outside India, ${unit}: Basic Spoken English ${spoken}; Intermediate Spoken English ${intermediate}; Interactive Speaking ${interactive}; Interview Preparation ${interview}; Demo Class ${demo} (one live class). ` +
     (localLists
       ? `${localFeeSentence()} `
@@ -75,9 +75,9 @@ export const COURSE_FEE: Record<
 > = {
   "spoken-english": {
     name: "Basic Spoken English",
-    inr: 999,
-    display: "₹999",
-    monthly: "₹999/month",
+    inr: 1199,
+    display: "₹1,199",
+    monthly: "₹1,199/month",
     months: 6,
   },
   "intermediate-english": {

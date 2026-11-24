@@ -13,13 +13,13 @@ function tokens(): { inr: string; usd: string }[] {
     { inr: "₹2,499/month", usd: INTL_FEE["interview-preparation"].display },
     { inr: "₹1,999/month", usd: INTL_FEE["intermediate-english"].display },
     { inr: "₹1,599/month", usd: INTL_FEE["interactive-speaking"].display },
-    { inr: "₹999/month", usd: INTL_FEE["spoken-english"].display },
-    { inr: "₹999/mo", usd: INTL_FEE["spoken-english"].display },
+    { inr: "₹1,199/month", usd: INTL_FEE["spoken-english"].display },
+    { inr: "₹1,199/mo", usd: INTL_FEE["spoken-english"].display },
     { inr: "₹2,499", usd: INTL_FEE["interview-preparation"].big },
     { inr: "₹1,999", usd: INTL_FEE["intermediate-english"].big },
     { inr: "₹1,599", usd: INTL_FEE["interactive-speaking"].big },
-    { inr: "₹999", usd: INTL_FEE["spoken-english"].big },
-    // The one-off Demo Class. After ₹999, so ₹999 is never read as ₹99.
+    { inr: "₹1,199", usd: INTL_FEE["spoken-english"].big },
+    // The one-off Demo Class (one class, not a monthly fee).
     { inr: "₹99", usd: intlDemo() },
     { inr: "₹0", usd: intlZero() },
   ];

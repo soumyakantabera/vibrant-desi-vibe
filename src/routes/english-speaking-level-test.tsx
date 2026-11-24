@@ -25,7 +25,7 @@ function Page() {
         </>
       }
       standfirst="Four honest questions about what you can actually say, from introducing yourself to an unexpected interview question. Get your level (around A1–B2) and the one course that fits."
-      shortAnswer="Score each of 4 can-do questions 2, 1 or 0 (out of 8). 0–4: start with Basic Spoken English (₹999/month). 5–6: Intermediate Spoken English (₹1,999/month). 7–8: Interactive Speaking (₹1,599/month), or Interview Preparation (₹2,499/month) if interviews are the goal. A teacher confirms it free on WhatsApp."
+      shortAnswer="Score each of 4 can-do questions 2, 1 or 0 (out of 8). 0–4: start with Basic Spoken English (₹1,199/month). 5–6: Intermediate Spoken English (₹1,999/month). 7–8: Interactive Speaking (₹1,599/month), or Interview Preparation (₹2,499/month) if interviews are the goal. A teacher confirms it free on WhatsApp."
       heroImage={IMG.studentLaptop2}
       heroAlt="Adult learner checking their English speaking level on a laptop"
       lastUpdated={page.dateModified}

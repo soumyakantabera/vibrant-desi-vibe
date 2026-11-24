@@ -66,7 +66,7 @@ function Page() {
             Fees, the month-by-month roadmap, each syllabus module and every question on every
             course page — each one links straight to the answer, not the top of the page. Live
             online spoken English for adults, about 6 learners a batch,{" "}
-            <FeeText text="from ₹999/month" />, inclusive of taxes.
+            <FeeText text="from ₹1,199/month" />, inclusive of taxes.
           </p>
         </div>
       </section>
