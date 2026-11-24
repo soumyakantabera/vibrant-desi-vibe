@@ -15,8 +15,8 @@ export type LegalDoc = {
 };
 
 export const LEGAL_UPDATED = "2026-10-08";
-/** Terms and Refunds: billing promises added 3 Nov 2026. */
-export const BILLING_UPDATED = "2026-11-04";
+/** Terms and Refunds: billing promises 3 Nov 2026; ₹99 Demo Class 24 Nov 2026. */
+export const BILLING_UPDATED = "2026-11-24";
 /** Privacy: AI-assistant note in WhatsApp messages (4 Nov 2026). */
 export const PRIVACY_UPDATED = "2026-11-04";
 
@@ -231,6 +231,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
         heading: "Who we are and what we offer",
         paragraphs: [
           "Learn With Smile is LEARN WITH SMILE SOLE PROPRIETORSHIP, GSTIN 19CFGPD7931C1ZL, registered at 75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008. We offer live online English communication classes: Spoken English, Interactive Speaking and Interview Preparation. We do not offer career counselling. Every class is taught live by a trained teacher over the internet.",
+          "We also offer a paid Demo Class: one 90-minute seat in a live batch, at ₹99 inclusive of taxes, for a learner who wants to see a real class before enrolling. It is not a course and it is not the free consultation. The fee rule for that class is only in the Demo Class section below.",
           "We are not a university, board or test authority. We do not issue a school certificate. IELTS and similar exam scores are issued only by the relevant test board. We do not sell IELTS as a course. Interview Preparation is a live English room for HR screens and mocks — it is not a placement guarantee.",
         ],
       },
@@ -259,10 +260,13 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
       },
       {
         id: "demo-session",
-        heading: "Demo Class (no longer offered)",
+        heading: "Demo Class",
         paragraphs: [
-          "We no longer sell the paid Demo Class; it was retired on 4 November 2026. Anyone who wants to see whether a course fits is offered the free consultation instead, which is advice, not a class.",
-          "A Demo Class paid for before 4 November 2026 is honoured on the terms that applied when it was paid: the session is held as booked, the fee is not refunded in cash, and it is adjusted against a course fee if you take admission within 48 hours after the session.",
+          "The Demo Class is one paid seat in a live batch. It lasts 90 minutes. For a learner in India the fee is ₹99, inclusive of taxes. For a learner outside India it is the demo fee shown before payment, confirmed on WhatsApp. It is one class, not a trial week, not the free consultation and not a free class.",
+          "Message us on WhatsApp first (+91 96744 79949). We send a slot and the payment link. The class has to be scheduled within 72 hours after payment. If you do not contact us, we cannot place you in a batch, and the fee is not held as a credit for a later week.",
+          "The Demo Class fee is not refunded in cash. Within 48 hours after the class, if you take admission in the course you attended, or in any other course we currently offer, that fee is adjusted against the course fee.",
+          "By paying and asking us to schedule within 72 hours, you ask us to hold the class promptly. Missing it, joining late, or changing your mind after it was held does not create a cash refund.",
+          "A ₹199 Demo Class paid for before 4 November 2026 is honoured on the terms that applied when it was paid.",
           "Nothing in this section removes a right that cannot be waived under Indian law or under the law where you live.",
         ],
       },
@@ -371,7 +375,7 @@ export const LEGAL: Record<LegalDoc["path"], LegalDoc> = {
           "Cancel on WhatsApp or by email before the first live class of a paid month has been held, and we refund that month in full to the original payment method where the provider allows it.",
           "Once that first class has been held, we do not refund the month because you changed your mind, missed later classes, found the work difficult, or did not obtain a job, visa, band score or other result. Your internet, electricity or device, or a later inability to attend the IST slot you confirmed, is also not a refund of that month.",
           "You may still stop any later month before it is billed. If the law where you live gives a longer withdrawal right that cannot be waived, that right still applies, including where asking us to start the class ends the right only for the teaching already given.",
-          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. A Demo Class paid before 4 November 2026 follows the Demo Class section of the Terms.",
+          "The free consultation includes no class, so there is no refund of a class you expected to sit for free. The ₹99 Demo Class fee is not refunded in cash; it is adjusted against a course fee if you take admission within 48 hours after the class. The full rule is in the Demo Class section of the Terms.",
         ],
       },
       SCHEDULE_AND_LATENESS,

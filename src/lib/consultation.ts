@@ -2,9 +2,9 @@
  * What the free consultation actually is — one source, used by the booking
  * page, FAQs, JSON-LD, llms.txt / llms.json, and the OpenAPI for ChatGPT Actions.
  *
- * Visible copy never calls this a class. There is no separate demo class
- * (retired November 2026): people who search "free demo class" land here, and
- * the page tells them the truth — advice, not a class.
+ * Visible copy never calls this a class. People who search "free demo class"
+ * land here, and the page tells them the truth — advice, not a class. The real
+ * class is the paid ₹99 Demo Class at /course-demo-session (src/lib/demo-session.ts).
  */
 import type { IconName } from "@/components/Icon";
 import { WHATSAPP_DISPLAY } from "@/lib/whatsapp";
@@ -27,10 +27,10 @@ export const CONSULTATION = {
     "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class, and it replaces a demo class.",
+  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹99 Demo Class.",
   /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
   copilotSnippet:
-    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class — no separate demo class needed.",
+    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class. To see a real class, book the ₹99 Demo Class.",
 } as const;
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
@@ -307,7 +307,7 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do you offer a free demo class?",
-    a: "We do not run a separate demo class. Start with this free consultation: no payment, booked on WhatsApp. We name your speaking gap and put the course, fee, timings and batch size in writing before you pay anything. It is advice, not a class. If you then enrol, you pay one month at a time with no auto-debit, and a month cancelled before its first live class is refunded in full.",
+    a: "The free option is this consultation: no payment, booked on WhatsApp. It is advice, not a class. To sit in one real 90-minute live class, book the ₹99 Demo Class (/course-demo-session) — adjusted in your fee if you join within 48 hours. In the consultation we name your speaking gap and put the course, fee, timings and batch size in writing before you pay anything. It is advice, not a class. If you then enrol, you pay one month at a time with no auto-debit, and a month cancelled before its first live class is refunded in full.",
   },
   {
     q: "Is the free consultation a full English class?",

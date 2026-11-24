@@ -114,10 +114,14 @@ jobs:
             echo "::error::The homepage course list went back to category cards"
             exit 1
           fi
-          if grep -REqi 'Book the ₹199 Demo Class|course-demo-session"' dist/index.html dist/free-consultation.html; then
-            echo "::error::The retired Demo Class is back on the homepage or consultation page"
+          if grep -REqi '₹199 Demo Class|no separate demo class' dist/index.html dist/free-consultation.html dist/course-demo-session.html dist/llms.txt; then
+            echo "::error::The retired ₹199 demo or the old no-demo line is back"
             exit 1
           fi
+          grep -q 'href="/course-demo-session"' dist/index.html
+          grep -q 'Demo Class' dist/course-demo-session.html
+          grep -q '₹99' dist/course-demo-session.html
+          grep -q 'course-demo-session' dist/sitemap.xml
           grep -q 'id="speak-confidently"' dist/english-career.html
           grep -q 'id="work-and-career"' dist/english-career.html
           grep -q '4 Programmes' dist/english-career.html

@@ -17,14 +17,16 @@
  * The `keywords` arrays below are targeting notes. The first ten of a page's
  * own list are emitted as `<meta name="keywords">` (see `buildHead`); Google
  * ignores the tag and Bing treats a stuffed one as spam, so it stays short.
- * There is no demo class (retired November 2026). Demo-class searches land on
- * the free consultation, and its copy says plainly that it is advice, not a
- * class — or the snippet over-promises.
+ * The Demo Class is back (24 November 2026): one live class for ₹99, booked on
+ * WhatsApp, at /course-demo-session. It is paid, not free. "Free demo class"
+ * searches still meet the free consultation too, and its copy says plainly
+ * that it is advice, not a class — or the snippet over-promises.
  */
 
 import { verificationMeta } from "@/lib/analytics";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog";
 import { publishedFeeLock } from "@/lib/fees";
+import { DEMO_FAQS, DEMO_SESSION } from "@/lib/demo-session";
 import { BOLO_FAQ } from "@/lib/bolo";
 import { ALL_IN_ONE, WHY_WE_WIN_FAQ } from "@/lib/positioning";
 import { FAIR_BILLING } from "@/lib/fair-fees";
@@ -252,9 +254,9 @@ export const INDIA_MARKET_KEYWORDS = [
 
 /**
  * Pushed onto every page's meta keywords, titles and SEM targeting.
- * Visible UI says "Get Free Consultation". Meta also targets demo-class and
- * trial-class searches (there is no separate demo class), and counselling /
- * consulting / consultation queries.
+ * Visible UI says "Get Free Consultation". Meta also targets free-demo and
+ * free-trial searches (the free option is this consultation; the real class
+ * is the ₹99 Demo Class), and counselling / consulting / consultation queries.
  */
 export const CONSULTATION_KEYWORDS = [
   "get free consultation",
@@ -572,8 +574,12 @@ export const SEMANTIC_KEYWORDS = [
   "career counselling for working professionals",
 ];
 
-/** Demo-class searches. All land on /free-consultation (no separate demo class). */
+/** Demo-class searches. They land on /course-demo-session (₹99, one live class). */
 export const DEMO_CLASS_KEYWORDS = [
+  "₹99 demo class spoken english",
+  "99 rupees demo class english",
+  "paid demo class spoken english",
+  "spoken english demo class 99",
   "demo session spoken english",
   "spoken english demo class online",
   "see english class before joining",
@@ -646,11 +652,11 @@ export const CLUSTER_INTENT = {
   demo_class: {
     intent: "transactional",
     funnel: "decide",
-    job: "They asked for a demo class. Say: there is no separate demo class — start with the free consultation. It is free, book on WhatsApp.",
-    land: "/free-consultation",
-    next: "Get Free Consultation",
+    job: "They asked for a demo class. Say: the Demo Class is one real 90-minute live class for ₹99, booked on WhatsApp, adjusted in the course fee if they enrol within 48 hours. The free option is the consultation (advice, not a class).",
+    land: "/course-demo-session",
+    next: "Book the ₹99 Demo Class",
     mismatch:
-      "Do not promise a free class. Do not quote a demo fee. The consultation is advice, not a class.",
+      "Do not call the Demo Class free. Do not promise more than one class. The free consultation is advice, not a class.",
   },
   spoken: {
     intent: "commercial",
@@ -835,7 +841,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Can I sit a real class before I buy a course?",
-        a: "We do not run a separate demo class. Start with the free consultation on WhatsApp: no payment, and you get the course, fee, timings and batch size in writing. Then you pay one month at a time, with no auto-debit — and a month cancelled before its first live class is refunded in full.",
+        a: "Yes. Book the ₹99 Demo Class on WhatsApp: one real 90-minute live class in a batch of about 6, inclusive of taxes. If you take admission within 48 hours after it, the ₹99 is adjusted against your course fee. If you would rather get advice first, the free consultation costs nothing. Either way you pay one month at a time, with no auto-debit.",
       },
       {
         q: "Do you teach students outside Kolkata and West Bengal?",
@@ -1090,9 +1096,9 @@ const RAW_PAGES: Record<string, PageSeo> = {
 
   "/free-consultation": {
     path: "/free-consultation",
-    title: "Free Spoken English Consultation (No Demo Class Needed)",
+    title: "Free Spoken English Consultation (or a ₹99 Demo Class)",
     description:
-      "Looking for a demo class? Start with a free WhatsApp consultation: we find your speaking gap and recommend a live batch, fee in writing. Advice, not a class.",
+      "Free WhatsApp consultation: we find your speaking gap and recommend one live batch, fee in writing. Advice, not a class. Want a real class? ₹99 Demo Class.",
     shortTitle: "Get Free Consultation",
     keywords: [
       ...CONSULTATION_KEYWORDS,
@@ -1102,22 +1108,54 @@ const RAW_PAGES: Record<string, PageSeo> = {
       "book free demo class online india",
       "free demo class spoken english whatsapp",
       "best free english consultation vs demo class",
-      ...DEMO_CLASS_KEYWORDS,
       "engvarta vs learn with smile consultation",
       "british council counsellor vs free consultation",
     ],
     ogImage: "/og/default.jpg",
     priority: 0.9,
     changefreq: "weekly",
-    dateModified: "2026-11-04",
+    dateModified: "2026-11-24",
     summary:
-      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — there is no separate demo class; this is where demo-class enquiries start. No payment. Replies 10am–midnight IST every day. +91 96744 79949.",
+      "Get Free Consultation: a free group slot, booked through a link we send on WhatsApp. Bottleneck named, course and fee in writing, then you decide. Advice, not a class — to sit in a real class, book the ₹99 Demo Class (/course-demo-session). No payment for the consultation. Replies 10am–midnight IST every day. +91 96744 79949.",
     faqs: CONSULTATION_FAQS,
     howTo: {
       name: CONSULTATION_HOWTO.name,
       description: CONSULTATION_HOWTO.description,
       totalTime: CONSULTATION_HOWTO.totalTime,
       steps: [...CONSULTATION_HOWTO.steps],
+    },
+  },
+
+  "/course-demo-session": {
+    path: DEMO_SESSION.path,
+    title: "₹99 Demo Class: One Live Spoken English Class",
+    description:
+      "Sit one real 90-minute live English class in a batch of about 6 for ₹99, inclusive of taxes. Book on WhatsApp. Adjusted in your fee if you join in 48 hours.",
+    shortTitle: "₹99 Demo Class",
+    keywords: [
+      ...DEMO_CLASS_KEYWORDS,
+      "demo class",
+      "spoken english demo class",
+      "online english demo class india",
+      "english class trial before joining",
+      "book demo class whatsapp",
+    ],
+    ogImage: "/og/default.jpg",
+    priority: 0.8,
+    changefreq: "weekly",
+    dateModified: "2026-11-24",
+    summary: `₹99 Demo Class: ${DEMO_SESSION.rule} Book on WhatsApp +91 96744 79949 (10am–midnight IST). Not the free consultation, which is advice, not a class.`,
+    faqs: DEMO_FAQS,
+    howTo: {
+      name: "Book the ₹99 Demo Class",
+      description: "How to sit one live Learn With Smile class before you enrol.",
+      totalTime: "PT90M",
+      steps: [
+        "Message us on WhatsApp and ask for the Demo Class. We send a slot and the payment link.",
+        "Pay ₹99, inclusive of taxes. We place you in a live batch within 72 hours of payment.",
+        "Sit the 90-minute class with the teacher and a batch of about 6.",
+        "Take admission within 48 hours if it fits, and the ₹99 is adjusted against your course fee.",
+      ],
     },
   },
 
@@ -2324,6 +2362,42 @@ export function consultationServiceLd() {
   };
 }
 
+/** The ₹99 Demo Class: one paid seat in a live batch. India price. */
+export function demoServiceLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${abs(DEMO_SESSION.path)}#demo`,
+    name: "Demo Class",
+    alternateName: ["₹99 Demo Class", "Spoken English demo class", "Trial English class"],
+    serviceType: "Live spoken English class (single session)",
+    description: DEMO_SESSION.rule,
+    url: abs(DEMO_SESSION.path),
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: { "@type": "Country", name: "India" },
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "student",
+      audienceType: "Adults 15+",
+    },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: CONTACT.whatsapp,
+      servicePhone: CONTACT.phone,
+    },
+    offers: {
+      "@type": "Offer",
+      url: abs(DEMO_SESSION.path),
+      price: DEMO_SESSION.inr,
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      eligibleRegion: { "@type": "Country", name: "India" },
+      description:
+        "Inclusive of taxes. Adjusted against the course fee if you take admission within 48 hours after the class.",
+    },
+  };
+}
+
 export function webSiteLd() {
   return {
     "@context": "https://schema.org",
@@ -2629,6 +2703,7 @@ export function pageHead(path: string): HeadResult {
   if (page.faqs?.length) jsonLd.push(faqLd(page.faqs));
   if (page.howTo) jsonLd.push(howToLd(page.howTo));
   if (path === CONSULTATION_PATH) jsonLd.push(consultationServiceLd());
+  if (path === DEMO_SESSION.path) jsonLd.push(demoServiceLd());
 
   const head = buildHead({
     path: page.path,

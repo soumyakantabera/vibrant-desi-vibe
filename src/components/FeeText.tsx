@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { INTL_FEE, intlZero, type IntlSlug } from "@/lib/intl-fees";
+import { INTL_FEE, intlDemo, intlZero, type IntlSlug } from "@/lib/intl-fees";
 import { useFxList } from "@/hooks/use-intl-market";
 
 /**
@@ -19,6 +19,8 @@ function tokens(): { inr: string; usd: string }[] {
     { inr: "₹1,999", usd: INTL_FEE["intermediate-english"].big },
     { inr: "₹1,599", usd: INTL_FEE["interactive-speaking"].big },
     { inr: "₹999", usd: INTL_FEE["spoken-english"].big },
+    // The one-off Demo Class. After ₹999, so ₹999 is never read as ₹99.
+    { inr: "₹99", usd: intlDemo() },
     { inr: "₹0", usd: intlZero() },
   ];
 }

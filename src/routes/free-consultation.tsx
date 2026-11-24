@@ -1,3 +1,4 @@
+import { DemoButton } from "@/components/DemoButton";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FeeText } from "@/components/FeeText";
 import { PAGES, pageHead } from "@/lib/seo";
@@ -53,8 +54,11 @@ function Page() {
             <FeeText text={CONSULTATION.hook} />
           </p>
           <p className="mt-3 text-sm text-white/90">
-            Looking for a demo class? We do not run a separate one — this free consultation is where
-            you start, with the course and fee in writing before you pay anything.
+            Want to sit in a real class instead? The{" "}
+            <Link to="/course-demo-session" className="font-semibold text-sunshine underline">
+              Demo Class
+            </Link>{" "}
+            is one live class, adjusted in your fee if you join within 48 hours.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {CONSULTATION.pills.map((pill, i) => (
@@ -81,6 +85,7 @@ function Page() {
             <WaButton message={DEMO_MSG} variant="sun" size="lg" goal="free_consultation">
               {DEMO_CTA}
             </WaButton>
+            <DemoButton />
           </div>
         </div>
       </section>

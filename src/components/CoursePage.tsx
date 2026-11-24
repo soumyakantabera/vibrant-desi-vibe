@@ -1,3 +1,4 @@
+import { DemoButton } from "@/components/DemoButton";
 import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
@@ -442,6 +443,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               <WaButton message={waPrimary} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
+              <DemoButton />
               <LevelTestButton />
             </div>
             <p className="mt-3 text-sm font-semibold text-sunshine">
@@ -533,10 +535,11 @@ export function CoursePage({ data }: { data: CourseData }) {
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap gap-3">
               <WaButton message={waPrimary} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
+              <DemoButton />
             </div>
           </div>
         </div>
