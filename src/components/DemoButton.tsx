@@ -19,7 +19,7 @@ export function DemoButton({
   return (
     <WaButton
       message={DEMO_SESSION.enrolMessage}
-      variant="coral"
+      variant="demo"
       size={size}
       goal="whatsapp_demo"
       className={className}

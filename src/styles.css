@@ -902,6 +902,17 @@ section > .container-x {
   .btn-coral:hover {
     background: #c2614c;
   }
+  /* Demo Class: brand amber, the same accent as the hero highlights. Distinct
+     from WhatsApp green and the blue consultation button. Ink text, 7.7:1. */
+  .btn-demo {
+    background: var(--sunshine);
+    color: var(--ink);
+    box-shadow: 0 10px 24px -12px rgba(178, 112, 0, 0.6);
+  }
+  .btn-demo:hover {
+    background: #ffb51f;
+    box-shadow: 0 14px 28px -12px rgba(178, 112, 0, 0.7);
+  }
   .btn-outline {
     background: transparent;
     color: var(--brand-deep);
@@ -933,8 +944,11 @@ section > .container-x {
   /* Light-fill buttons must keep dark text even inside dark sections, where the
      contrast safety-net (higher specificity) would otherwise flip it to light
      and leave it unreadable on yellow/coral. Neither changes text on hover. */
-  .btn-coral {
+  .btn-coral,
+  .btn-demo,
+  .btn-demo * {
     color: var(--ink) !important;
+    -webkit-text-fill-color: var(--ink) !important;
   }
 
   .card-soft {
