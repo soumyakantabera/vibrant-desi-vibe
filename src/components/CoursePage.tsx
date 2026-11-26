@@ -27,6 +27,8 @@ import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
 import { LevelTestButton } from "@/components/LevelTestPromo";
+import { CourseFitCheck } from "@/components/CourseFitCheck";
+import { fitSlugForCourse } from "@/lib/course-fit";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 import { faqAnchor, moduleAnchor } from "@/lib/anchors";
@@ -677,6 +679,14 @@ export function CoursePage({ data }: { data: CourseData }) {
                 </a>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {fitSlugForCourse(data.slug) && (
+        <section className="section pt-0" id="set-your-goal">
+          <div className="container-x max-w-3xl">
+            <CourseFitCheck slugs={[fitSlugForCourse(data.slug)!]} />
           </div>
         </section>
       )}

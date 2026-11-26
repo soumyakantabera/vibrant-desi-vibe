@@ -96,10 +96,6 @@ export const FIT_SEND = [
   "English only, or Hindi or Bengali explanations",
 ];
 
-/** Prefilled first message with the five blanks, so the chat starts qualified. */
-export const FIT_WA_MESSAGE =
-  "Hi, I read the course-fit check and I can attend live classes. My level/score: __ · Situation I want to handle: __ · Deadline: __ · IST slot (afternoon/evening/night): __ · English only / Hindi / Bengali: __";
-
 /**
  * Which rooms a page is about, from its path. Course and blog pages are passed
  * in explicitly; for guides the path is a reliable signal because every guide
@@ -128,6 +124,12 @@ export function fitSlugsForPath(path: string): FitCourseSlug[] {
   return [...FIT_COURSE_SLUGS];
 }
 
+/** A course page's slug as a fit slug; Hindi and Bengali editions are Basic. */
+export function fitSlugForCourse(slug: string): FitCourseSlug | null {
+  const base = slug.replace(/-(hindi|bengali)$/, "");
+  return (FIT_COURSE_SLUGS as readonly string[]).includes(base) ? (base as FitCourseSlug) : null;
+}
+
 /** Keep only the four rooms from a list of course paths (blog relatedCourses). */
 export function fitSlugsFromCoursePaths(paths: string[]): FitCourseSlug[] {
   const slugs = paths
@@ -135,3 +137,106 @@ export function fitSlugsFromCoursePaths(paths: string[]): FitCourseSlug[] {
     .filter((s): s is FitCourseSlug => (FIT_COURSE_SLUGS as readonly string[]).includes(s));
   return slugs.length ? slugs : [...FIT_COURSE_SLUGS];
 }
+
+/* ------------------------------------------------------------ set your goal */
+
+/**
+ * "Set your goal": the reader picks a goal, where they are today, a deadline,
+ * an IST slot and an explanation language, and ticks that they can keep two
+ * live slots a week. One course comes back, and the WhatsApp message carries
+ * the answers instead of blanks. Goals mirror the level test (LEVEL_GOALS) so a
+ * learner who did both sees the same words.
+ */
+export type FitGoal = "everyday" | "work" | "interview";
+export type FitToday = "build" | "errors" | "freeze" | "judged";
+export type FitDeadline = "none" | "1m" | "3m" | "later";
+export type FitSlot = "afternoon" | "evening" | "night";
+export type FitLang = "english" | "hindi" | "bengali";
+
+export const FIT_GOALS: { id: FitGoal; label: string }[] = [
+  { id: "everyday", label: "Everyday conversation and confidence" },
+  { id: "work", label: "Meetings, client calls and office English" },
+  { id: "interview", label: "Job interviews and HR rounds" },
+];
+
+export const FIT_TODAY: { id: FitToday; label: string }[] = [
+  { id: "build", label: "I cannot build sentences yet" },
+  { id: "errors", label: "I speak, with tense errors and fillers" },
+  { id: "freeze", label: "I know the English and freeze" },
+  { id: "judged", label: "I am fine until someone is judging me" },
+];
+
+export const FIT_DEADLINES: { id: FitDeadline; label: string; months: number | null }[] = [
+  { id: "none", label: "No fixed date", months: null },
+  { id: "1m", label: "Within a month", months: 1 },
+  { id: "3m", label: "In 1–3 months", months: 3 },
+  { id: "later", label: "3+ months away", months: null },
+];
+
+export const FIT_SLOTS: { id: FitSlot; label: string }[] = [
+  { id: "afternoon", label: "Afternoon IST" },
+  { id: "evening", label: "Evening IST" },
+  { id: "night", label: "Night IST" },
+];
+
+export const FIT_LANGS: { id: FitLang; label: string }[] = [
+  { id: "english", label: "English only" },
+  { id: "hindi", label: "Hindi explanations" },
+  { id: "bengali", label: "Bengali explanations" },
+];
+
+export type FitAnswers = {
+  goal?: FitGoal;
+  today?: FitToday;
+  deadline?: FitDeadline;
+  slot?: FitSlot;
+  lang?: FitLang;
+  committed?: boolean;
+};
+
+/** Same rules as the level test's roomFor(), expressed in the reader's words. */
+export function courseForGoal(goal: FitGoal, today: FitToday): FitCourseSlug {
+  if (today === "build") return "spoken-english";
+  if (today === "errors") return goal === "work" ? "interactive-speaking" : "intermediate-english";
+  return goal === "interview" ? "interview-preparation" : "interactive-speaking";
+}
+
+/** Basic Spoken English has Hindi and Bengali editions at the same fee. */
+export function coursePathFor(slug: FitCourseSlug, lang?: FitLang): string {
+  if (slug === "spoken-english" && (lang === "hindi" || lang === "bengali")) {
+    return `/course-spoken-english-${lang}`;
+  }
+  return `/course-${slug}`;
+}
+
+/**
+ * An honest note when the deadline is shorter than the course: we say what is
+ * realistic instead of letting the reader assume the whole course fits.
+ */
+export function deadlineNote(slug: FitCourseSlug, deadline?: FitDeadline): string | null {
+  const months = FIT_DEADLINES.find((d) => d.id === deadline)?.months;
+  if (!months || months >= fitRow(slug).months) return null;
+  return `Your deadline is shorter than this ${fitRow(slug).months}-month course. Say so in your message: the teacher will tell you honestly what can change by then, usually hesitation and your prepared answers, not full fluency.`;
+}
+
+const labelOf = <T extends string>(list: { id: T; label: string }[], id?: T) =>
+  list.find((x) => x.id === id)?.label;
+
+/** The first WhatsApp message, filled with the reader's own answers. */
+export function goalMessage(a: FitAnswers): string {
+  const slug = a.goal && a.today ? courseForGoal(a.goal, a.today) : null;
+  const parts = [
+    "Hi, I set my goal on your website.",
+    a.goal && `Goal: ${labelOf(FIT_GOALS, a.goal)}.`,
+    a.today && `Today: ${labelOf(FIT_TODAY, a.today)}.`,
+    a.deadline && `Deadline: ${labelOf(FIT_DEADLINES, a.deadline)}.`,
+    a.slot && `Slot: ${labelOf(FIT_SLOTS, a.slot)}.`,
+    a.lang && `${labelOf(FIT_LANGS, a.lang)}.`,
+    a.committed && "I can attend two live classes a week and practise daily.",
+    slug && `Suggested: ${fitRow(slug).title}.`,
+    "Please confirm the course and send the free group consultation link.",
+  ];
+  return parts.filter(Boolean).join(" ");
+}
+
+export const FIT_GOAL_STORAGE_KEY = "lws.goal.v1";

@@ -22,6 +22,7 @@ import {
   CONSULTATION_WALK_AWAY,
   PROOF_CARD_CLASS,
 } from "@/lib/consultation";
+import { CourseFitCheck } from "@/components/CourseFitCheck";
 
 export const Route = createFileRoute("/free-consultation")({
   component: Page,
@@ -335,6 +336,12 @@ function Page() {
               .
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section className="section pt-0" id="set-your-goal">
+        <div className="container-x max-w-3xl">
+          <CourseFitCheck />
         </div>
       </section>
 

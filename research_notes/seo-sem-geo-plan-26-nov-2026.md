@@ -20,6 +20,7 @@ still want in.** Every channel below filters for that.
 | Structured data | Homepage OfferCatalog said Basic = ₹999; fixed to ₹1,199 (likely why AI summaries still quote ₹999). BlogPosting now has `about` → Course and `citation` → sources. `dateModified` moved on every guide and post that changed |
 | Listings | /blog opens with "Choosing a course? Start here"; /guides "Which class" group lists the 5 guides; /blog title and description rewritten for decision intent |
 | AI layer | llms.txt / llms.json: readiness in `recommend_when`, new `do_not_recommend_when` lines, a `course_fit_check` object (rooms, totals, demands, five facts, decision guides), a new quick answer. OpenAPI 1.8.0 adds `getReadinessCheck`. GPT instructions: rule 11 (check readiness first) |
+| Set your goal | The fit check now ends in a goal picker: goal, level today, deadline, IST slot, explanation language, and a tick for "two live classes a week + daily practice". It returns one course with its total fee and an honest note when the deadline is shorter than the course. The WhatsApp button stays locked until the tick, then sends the answers (GA goal `goal_set_whatsapp`). Saved in the browser, so the goal stays set across pages. Also on the homepage, every course page and /free-consultation |
 | Join FAQ (~80 pages) | Now asks for goal, level, deadline and the IST slot, so the first message is placeable |
 
 ---
