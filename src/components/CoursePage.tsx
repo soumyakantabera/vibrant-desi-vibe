@@ -25,7 +25,7 @@ import {
 } from "@/components/CourseVisuals";
 import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
-import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink } from "@/lib/whatsapp";
+import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink, TEACHER_PROMISE } from "@/lib/whatsapp";
 import { LevelTestButton } from "@/components/LevelTestPromo";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
@@ -461,8 +461,8 @@ export function CoursePage({ data }: { data: CourseData }) {
                 rel="noopener noreferrer"
               >
                 {WHATSAPP_DISPLAY}
-              </a>{" "}
-              — we reply 10am–midnight IST every day.
+              </a>
+              . {TEACHER_PROMISE}
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
           </div>

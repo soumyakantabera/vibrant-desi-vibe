@@ -6,7 +6,7 @@ import type { ArticleBody as ArticleBodyBlocks, Block } from "@/content/blog/blo
 import { headingId } from "@/content/blog/blocks";
 import { WaButton } from "@/components/ui-bits";
 import { Icon } from "@/components/Icon";
-import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG } from "@/lib/whatsapp";
+import { CHAT_CTA, CHAT_MSG, DEMO_CTA, DEMO_MSG, TEACHER_PROMISE } from "@/lib/whatsapp";
 import { CONSULTATION } from "@/lib/consultation";
 import { headingIcon, tone } from "@/lib/tones";
 import { BoloCard, BoloSays } from "@/components/mascots/BoloCard";
@@ -89,6 +89,7 @@ export function WaStrip({ message }: { message: string }) {
           {CHAT_CTA}
         </WaButton>
       </div>
+      <p className="mt-3 text-xs leading-relaxed text-ink/75">{TEACHER_PROMISE}</p>
     </BoloCard>
   );
 }
@@ -328,14 +329,11 @@ function BlockView({ block, section }: { block: Block; section: number }) {
                 {block.label} <Icon name="arrow-right" size={16} />
               </Link>
             )}
-            <WaButton
-              message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
-              variant="wa"
-              className="btn-chunky w-full"
-            >
-              Chat on WhatsApp
+            <WaButton message={CHAT_MSG} variant="wa" className="btn-chunky w-full">
+              {CHAT_CTA}
             </WaButton>
           </div>
+          <p className="mt-3 text-xs leading-relaxed text-ink/75">{TEACHER_PROMISE}</p>
         </BoloCard>
       );
   }

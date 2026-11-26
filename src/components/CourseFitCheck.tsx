@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 
 import { Icon } from "@/components/Icon";
 import { WaButton } from "@/components/ui-bits";
+import { CHAT_CTA, TEACHER_PROMISE } from "@/lib/whatsapp";
 import {
   FIT_DEMANDS,
   FIT_NOT_FOR,
@@ -120,13 +121,10 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
         <h3 className="font-display text-xl font-extrabold text-ink">
           Ready to commit? Talk to a teacher, not a call centre.
         </h3>
-        <p className="mt-2 text-sm text-ink/85">
-          Every message is read by a teacher. You get the course that fits you, the fee and the next
-          batch date, in writing, 10am–midnight IST. No sales calls, no pressure, no payment to ask.
-        </p>
+        <p className="mt-2 text-sm text-ink/85">{TEACHER_PROMISE}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <WaButton message={FIT_WA_MESSAGE} goal="fit_check_whatsapp" size="lg">
-            I&apos;m ready, message a teacher
+            {CHAT_CTA}
           </WaButton>
           <Link
             to="/english-speaking-level-test"

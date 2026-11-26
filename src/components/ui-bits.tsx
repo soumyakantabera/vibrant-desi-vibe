@@ -2,7 +2,15 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Icon, type IconName } from "./Icon";
 import { BrandIcon } from "./BrandIcon";
-import { CHAT_MSG, DEMO_CTA, DEMO_MSG, consultRequest, waLink, withPageTag } from "@/lib/whatsapp";
+import {
+  CHAT_MSG,
+  DEMO_CTA,
+  DEMO_MSG,
+  chatRequest,
+  consultRequest,
+  waLink,
+  withPageTag,
+} from "@/lib/whatsapp";
 import { usePageLabel } from "@/lib/use-page-label";
 import { COVERAGE_CITIES, COVERAGE_STATES } from "@/lib/seo";
 import { FEATURED_GUIDES } from "@/lib/guides";
@@ -274,7 +282,11 @@ export function WaButton({
   const page = usePageLabel();
   // A chat button never sends the consultation request, and a consultation
   // button always asks for the booking link. Generic messages carry the page.
-  const text = consult ? consultRequest(message) : message === DEMO_MSG ? CHAT_MSG : message;
+  const text = consult
+    ? consultRequest(message)
+    : message === DEMO_MSG
+      ? CHAT_MSG
+      : chatRequest(message);
   return (
     <a
       href={waLink(withPageTag(text, page))}

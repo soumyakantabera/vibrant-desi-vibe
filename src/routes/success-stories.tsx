@@ -118,7 +118,7 @@ function Page() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <WaButton
-              message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+              message="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
               variant="sun"
               size="lg"
             >

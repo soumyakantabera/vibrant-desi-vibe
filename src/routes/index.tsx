@@ -30,6 +30,7 @@ import {
   CHAT_CTA,
   CHAT_MSG,
   WHATSAPP_DISPLAY,
+  TEACHER_PROMISE,
 } from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
@@ -82,7 +83,7 @@ function Home() {
   useFxList();
   return (
     <Layout
-      waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+      waMessage="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -157,10 +158,7 @@ function Home() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <p className="mt-3 text-sm font-semibold text-sunshine">
-              Tell us your goal. We reply with the right course and the fee — no pressure, no
-              payment to book.
-            </p>
+            <p className="mt-3 text-sm font-semibold text-sunshine">{TEACHER_PROMISE}</p>
             <div className="mt-4">
               <DemoButton className="w-full sm:w-auto justify-center" />
               <p className="mt-2 text-sm text-white/95">
@@ -364,7 +362,7 @@ function Home() {
             </Reveal>
             <div className="text-center mt-10">
               <WaButton
-                message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+                message="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
                 variant="sun"
                 size="lg"
               >
@@ -452,7 +450,7 @@ function Home() {
           eyebrow="Common Questions"
           title="Your Questions, Answered Plainly"
           subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-          waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+          waMessage="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
         />
 
         {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}

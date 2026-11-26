@@ -1859,7 +1859,9 @@ export function buildGptInstructions(): string {
     "",
     "## First rule — contact means the WhatsApp link",
     "",
-    CONNECT_RULE,
+    // The full link is listed just below; repeating it here only costs characters
+    // against the 8,000-character Instructions limit.
+    CONNECT_RULE.replace(WA_START, "the first link below"),
     "",
     ...CONNECT_STEPS.map((line) => `- ${line}`),
     "",
@@ -1904,7 +1906,7 @@ export function buildGptInstructions(): string {
     "- Meetings, standups, client calls, presentations → Interactive Speaking. Workplace emails and tone → Intermediate Spoken English.",
     "- Can talk, fails HR / STAR / intro → Interview Preparation.",
     "- Which career path → we do not offer career counselling. Offer an English room or the free consultation.",
-    `- Unsure → Get a Free Consultation. WhatsApp ${CONTACT.phoneDisplay}. Prefill: ${DEMO_MSG} Replies 10am–midnight IST every day.`,
+    `- Unsure → Get a Free Consultation (first link above). WhatsApp ${CONTACT.phoneDisplay}. Replies 10am–midnight IST every day.`,
     "- Unsure of level → /english-speaking-level-test.",
     "",
     "## Site skeleton (cite HTML)",

@@ -21,9 +21,20 @@ export const CONSULT_ICON = "compass" as const;
 export const CHAT_CTA = "Chat on WhatsApp";
 /** The consultation request: a free group slot, booked through a link we send. */
 export const DEMO_MSG =
-  "Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link.";
-/** A plain question — the chat button. */
-export const CHAT_MSG = "Hi, I have a question about your spoken English classes.";
+  "Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link.";
+/**
+ * The chat button. Worded as intent, not a vague question (Nov 2026): the
+ * learner says they are ready, and the teacher replies with course and batch.
+ */
+export const CHAT_MSG =
+  "Hi, I'm serious about improving my spoken English and ready for live classes. Please tell me which course fits me and when the next batch begins.";
+
+/**
+ * The line under the WhatsApp buttons: who replies, what they send, and what
+ * we do not do. Shows we are serious, so the people who message are too.
+ */
+export const TEACHER_PROMISE =
+  "A teacher, not a call centre, replies 10am–midnight IST with your course, fee and next batch date, in writing. No sales calls, no pressure, no payment to ask.";
 
 function sentence(message: string): string {
   const t = message.trim().replace(/\s+/g, " ");
@@ -33,7 +44,7 @@ function sentence(message: string): string {
 /** Page-specific consultation request, e.g. waConsult("Business English"). */
 export function waConsult(forWhat?: string): string {
   if (!forWhat?.trim()) return DEMO_MSG;
-  return `Hi, I'd like to book a free group consultation for ${forWhat.trim()}. Please send me the booking link.`;
+  return `Hi, I'm serious about improving my ${forWhat.trim()} and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link.`;
 }
 
 /**
@@ -44,8 +55,21 @@ export function waConsult(forWhat?: string): string {
 export function consultRequest(message: string): string {
   const t = sentence(message);
   if (/booking link/i.test(t)) return t;
-  if (/consultation/i.test(t)) return `${t} Please send me the booking link.`;
+  if (/consultation/i.test(t)) {
+    return `${t} I'm ready for two live classes a week. Please send me the booking link.`;
+  }
   return DEMO_MSG;
+}
+
+/**
+ * Chat-button messages keep the page's own words (course, city) and gain the
+ * commitment line, so every first chat opens on intent. Messages that already
+ * say it are left alone.
+ */
+export function chatRequest(message: string): string {
+  const t = sentence(message);
+  if (/serious|ready for|booking link/i.test(t)) return t;
+  return `${t} I'm serious about this and ready for live classes.`;
 }
 
 /**
