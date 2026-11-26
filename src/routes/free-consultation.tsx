@@ -343,7 +343,7 @@ function Page() {
         eyebrow="Before You Book"
         title="Questions about the consultation"
         subtitle="Message anytime. We reply 10am–midnight IST every day."
-        waMessage="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
+        waMessage="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
       />
 
       <section

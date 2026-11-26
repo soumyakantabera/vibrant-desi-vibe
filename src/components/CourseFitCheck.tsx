@@ -37,9 +37,7 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
         Is this course for you? A 1-minute fit check
       </h2>
       <p className="mt-3 text-ink/85">
-        We take a small number of adults in each batch and teach them properly, so we are upfront
-        about what it takes. Read this first. If it fits your life, message a teacher directly
-        below.
+        Small batches, taught properly. Here is what it takes. If it fits your life, message us.
       </p>
 
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
@@ -118,9 +116,7 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
       </div>
 
       <div className="mt-8 rounded-2xl bg-brand-soft/50 p-5">
-        <h3 className="font-display text-xl font-extrabold text-ink">
-          Ready to commit? Talk to a teacher, not a call centre.
-        </h3>
+        <h3 className="font-display text-xl font-extrabold text-ink">In? Talk to a teacher.</h3>
         <p className="mt-2 text-sm text-ink/85">{TEACHER_PROMISE}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <WaButton message={FIT_WA_MESSAGE} goal="fit_check_whatsapp" size="lg">

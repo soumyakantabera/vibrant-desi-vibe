@@ -83,7 +83,7 @@ function Home() {
   useFxList();
   return (
     <Layout
-      waMessage="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
+      waMessage="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -362,7 +362,7 @@ function Home() {
             </Reveal>
             <div className="text-center mt-10">
               <WaButton
-                message="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
+                message="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
                 variant="sun"
                 size="lg"
               >
@@ -450,7 +450,7 @@ function Home() {
           eyebrow="Common Questions"
           title="Your Questions, Answered Plainly"
           subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-          waMessage="Hi, I'm serious about improving my spoken English and ready for two live classes a week. I'd like to book a free group consultation. Please send me the booking link."
+          waMessage="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
         />
 
         {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}

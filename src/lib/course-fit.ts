@@ -102,7 +102,7 @@ export const FIT_SEND = [
  * and the teacher asks the rest.
  */
 export const FIT_WA_MESSAGE =
-  "Hi, I've read what the course asks: two live classes a week and daily practice. I'm ready to start. Please tell me which course fits me and when the next batch begins.";
+  "Hi, I've read what it takes: two live classes a week, daily practice. I'm in. Which course and batch fit me?";
 
 /**
  * Which rooms a page is about, from its path. Course and blog pages are passed
