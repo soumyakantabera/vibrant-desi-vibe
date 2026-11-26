@@ -5,7 +5,6 @@ import { WaButton } from "@/components/ui-bits";
 import {
   FIT_DEMANDS,
   FIT_NOT_FOR,
-  FIT_SEND,
   FIT_WA_MESSAGE,
   fitRow,
   fitSlugsForPath,
@@ -37,9 +36,9 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
         Is this course for you? A 1-minute fit check
       </h2>
       <p className="mt-3 text-ink/85">
-        We would rather talk to fewer people who are ready than many who are not. Read what the
-        course asks of you, then send the five facts below. A teacher can then reply with one course
-        instead of ten questions.
+        We take a small number of adults in each batch and teach them properly, so we are upfront
+        about what it takes. Read this first. If it fits your life, message a teacher directly
+        below.
       </p>
 
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
@@ -117,18 +116,17 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
         </div>
       </div>
 
-      <div className="mt-6">
-        <h3 className="flex items-center gap-2 font-display font-bold text-ink">
-          <Icon name="whatsapp" size={18} /> Still in? Send these five
+      <div className="mt-8 rounded-2xl bg-brand-soft/50 p-5">
+        <h3 className="font-display text-xl font-extrabold text-ink">
+          Ready to commit? Talk to a teacher, not a call centre.
         </h3>
-        <ol className="mt-2 list-decimal space-y-1 pl-6 text-sm text-ink/90">
-          {FIT_SEND.map((d) => (
-            <li key={d}>{d}</li>
-          ))}
-        </ol>
+        <p className="mt-2 text-sm text-ink/85">
+          Every message is read by a teacher. You get the course that fits you, the fee and the next
+          batch date, in writing, 10am–midnight IST. No sales calls, no pressure, no payment to ask.
+        </p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
-          <WaButton message={FIT_WA_MESSAGE} goal="fit_check_whatsapp">
-            Send my five facts
+          <WaButton message={FIT_WA_MESSAGE} goal="fit_check_whatsapp" size="lg">
+            I&apos;m ready, message a teacher
           </WaButton>
           <Link
             to="/english-speaking-level-test"

@@ -143,8 +143,9 @@ Every blog post and guide now ends with a course-fit check that:
 1. States what the course demands: live slots, months, daily practice, total fee.
 2. States who should not join (children, exam score seekers, 1:1 seekers,
    "fluent in 30 days" seekers, anyone who cannot attend live).
-3. Lists the five facts to send on WhatsApp (level, situation, deadline, IST
-   slot, bridge language), so the first message can be answered with one course.
+3. Ends with one direct WhatsApp button. Its prefilled message says the learner
+   has read the commitment and is ready, so the chat opens on intent; the
+   teacher asks for level, goal and slot in the reply.
 
 The point is fewer, better WhatsApp chats: people who have read the commitment
 and still want in.

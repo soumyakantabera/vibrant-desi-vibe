@@ -96,9 +96,13 @@ export const FIT_SEND = [
   "English only, or Hindi or Bengali explanations",
 ];
 
-/** Prefilled first message with the five blanks, so the chat starts qualified. */
+/**
+ * The first WhatsApp message: one tap, no blanks to fill. It says the learner
+ * has read what the course asks and is ready, so the chat opens on commitment
+ * and the teacher asks the rest.
+ */
 export const FIT_WA_MESSAGE =
-  "Hi, I read the course-fit check and I can attend live classes. My level/score: __ · Situation I want to handle: __ · Deadline: __ · IST slot (afternoon/evening/night): __ · English only / Hindi / Bengali: __";
+  "Hi, I've read what the course asks: two live classes a week and daily practice. I'm ready to start. Please tell me which course fits me and when the next batch begins.";
 
 /**
  * Which rooms a page is about, from its path. Course and blog pages are passed

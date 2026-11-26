@@ -15,7 +15,7 @@ still want in.** Every channel below filters for that.
 | Area | Change |
 | --- | --- |
 | New decision guides | 5 posts answering "which course should I take?" for real buyer searches: readiness check, fluency level, tutor vs group, Coursera/Udemy/book vs live, public speaking vs spoken English |
-| Every blog post and guide | Course-fit check: what the course asks, total fee, who it is not for, the five facts to send. The WhatsApp button prefills those five blanks. On 77 pages (57 guides + 20 posts) via the shared templates |
+| Every blog post and guide | Course-fit check: what the course asks, total fee, who it is not for, then one direct WhatsApp button ("I'm ready, message a teacher") whose prefilled message says the learner has read the commitment and is ready to start. On 77 pages (57 guides + 20 posts) via the shared templates |
 | Market facts | British Council and Cambly prices re-verified on their own pages and corrected everywhere (pages, FAQs, llms files). The old figures were not supported |
 | Structured data | Homepage OfferCatalog said Basic = ₹999; fixed to ₹1,199 (likely why AI summaries still quote ₹999). BlogPosting now has `about` → Course and `citation` → sources. `dateModified` moved on every guide and post that changed |
 | Listings | /blog opens with "Choosing a course? Start here"; /guides "Which class" group lists the 5 guides; /blog title and description rewritten for decision intent |
