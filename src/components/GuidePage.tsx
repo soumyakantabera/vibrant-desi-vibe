@@ -8,6 +8,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
 import { LevelTestPromo } from "@/components/LevelTestPromo";
+import { CourseFitCheck } from "@/components/CourseFitCheck";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
@@ -134,6 +135,9 @@ export function GuidePage({
               page's own answer instead of opening it. */}
           <div lang="en-IN">
             <CompareDiff />
+          </div>
+          <div lang="en-IN">
+            <CourseFitCheck />
           </div>
         </div>
       </article>

@@ -19,7 +19,7 @@ type Faq = { q: string; a: string };
 
 export const WA_URL = `https://wa.me/${WHATSAPP_PHONE}`;
 
-const HOW = `A real person replies 10am–midnight IST every day. Tell us your goal and we reply with the right course, the fee and a free group consultation link, in writing. Asking is free and there is no payment to book.`;
+const HOW = `A real person replies 10am–midnight IST every day. Send your goal, your level (or level-test score), any deadline and the IST slot you can attend twice a week, and we reply with one course, the fee and a free group consultation link, in writing. Asking is free and there is no payment to book.`;
 
 export type JoinFaqKind =
   | { kind: "general" }

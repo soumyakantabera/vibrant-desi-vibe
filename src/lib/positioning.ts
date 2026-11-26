@@ -114,7 +114,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     languageNote: "English only",
     billing: "part",
     billingNote: "Plans auto-renew until you turn renewal off",
-    price: "₹8,000–₹15,000/month if daily",
+    price: "₹5,999–₹10,999/month for 15–30 min a day",
     logos: [{ slug: "cambly", name: "Cambly" }],
     source: {
       label: "Cambly Help — Renewal",
@@ -165,7 +165,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     languageNote: "English only",
     billing: "part",
     billingNote: "Paid per module, upfront",
-    price: "₹8,800–₹16,000 per module",
+    price: "₹8,900–₹10,350 per 15–22.5 hours",
     logos: [{ slug: "british-council", name: "British Council" }],
     source: {
       label: "British Council India — English",

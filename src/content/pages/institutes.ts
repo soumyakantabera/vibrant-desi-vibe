@@ -38,7 +38,7 @@ export const body: ArticleBody = [
       ],
       [
         "Cambly",
-        "~₹8,000–₹15,000/mo if daily",
+        "₹5,999–₹10,999/month for 15–30 min a day",
         "Fluent adults who want native chat and accent.",
         "Book any available tutor.",
       ],
@@ -56,7 +56,7 @@ export const body: ArticleBody = [
       ],
       [
         "British Council English Online",
-        "₹8,800–₹16,000 / 6-class module",
+        "₹8,900–₹10,350 / 15–22.5 hrs",
         "Adults who want a CEFR classroom or a brand badge.",
         "Sold by CEFR module.",
       ],
@@ -142,7 +142,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We do not sell IELTS as a course. Sit the paper when the form asks.",
-      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹1,199/month, inclusive of taxes.",
+      "A **brand-name CEFR module** (₹8,900–₹10,350 for 15–22.5 hours on its India pricing pages) is a different product: you are buying that classroom and syllabus. We train speaking from ₹1,199/month, inclusive of taxes.",
       "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
       "The student is a **child** — a kids platform, not an adult batch of around 6.",
       "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our classes are online.",

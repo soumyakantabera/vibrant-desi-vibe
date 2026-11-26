@@ -39,7 +39,7 @@ const ROWS = [
     icon: "globe" as const,
     tag: "Native 1:1",
     title: "Cambly",
-    fee: "₹8k–₹15k/mo if daily",
+    fee: "₹5,999–₹10,999/mo (15–30 min a day)",
     body: "On-demand native video. Tutor quality varies. Beginners often freeze. Accent is the product, not a beginner map.",
   },
   {
@@ -63,7 +63,7 @@ const ROWS = [
     icon: "trophy" as const,
     tag: "Exam & CEFR",
     title: "British Council",
-    fee: "₹8,800–₹16,000 / module",
+    fee: "₹8,900–₹10,350 / 15–22.5 hrs",
     body: "CEFR groups, often 8–12. Strong classroom if you want that syllabus. When a form needs IELTS, sit it with IDP, the IELTS provider in India. We train the speaking you need for work and interviews.",
   },
   {

@@ -65,6 +65,10 @@ function formatDate(iso: string): string {
 
 function Page() {
   const posts = getPostsSorted();
+  // Course-decision guides lead the page: a reader deciding what to buy should
+  // not have to scroll past daily-practice articles to find them.
+  const decide = posts.filter((p) => p.tag === "Guides");
+  const rest = posts.filter((p) => p.tag !== "Guides");
 
   return (
     <Layout
@@ -87,20 +91,56 @@ function Page() {
             <Icon name="book" size={14} /> Blog
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl text-cream leading-[1.05]">
-            Tips & Stories for <span className="text-sunshine">Indian Learners</span>
+            Choose the right course, <span className="text-sunshine">then practise</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Practical, hype-free articles on English and career building — written by teachers who
-            run live classes from ₹1,199/mo, inclusive of taxes.
+            Hype-free guides for adults who are serious about speaking English: which course fits,
+            what it costs in total, what it asks of you, and who should wait. Written by teachers
+            who run live classes from ₹1,199/mo, inclusive of taxes.
           </p>
         </div>
       </section>
+
+      {decide.length > 0 && (
+        <section className="section pb-0">
+          <div className="container-x">
+            <SectionHeader
+              eyebrow="Choosing a course? Start here"
+              title="Which course, for whom, and what it asks of you"
+            />
+            <ol className="grid gap-3 md:grid-cols-2">
+              {decide.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: p.slug }}
+                    className="card-soft group flex h-full items-start gap-3 hover:shadow-md transition"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${tagStyle(p.tag).tone.soft} ${tagStyle(p.tag).tone.text}`}
+                    >
+                      <Icon name={tagStyle(p.tag).icon} size={20} />
+                    </span>
+                    <span>
+                      <span className="block font-display font-bold text-ink group-hover:text-brand transition">
+                        {p.title}
+                      </span>
+                      <span className="mt-1 block text-sm text-ink/85">{p.excerpt}</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
 
       <section className="section">
         <div className="container-x">
           <SectionHeader eyebrow="Latest Posts" title="Read · Apply · Discuss on WhatsApp" />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-            {posts.map((p) => (
+            {rest.map((p) => (
               <article
                 key={p.slug}
                 className={`card-soft flex flex-col border-t-4 ${tagStyle(p.tag).tone.top}`}

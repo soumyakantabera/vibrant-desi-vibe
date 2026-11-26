@@ -953,7 +953,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How is Learn With Smile different from 1:1 apps and brand-name English groups?",
-        a: "Cambly is on-demand 1:1 with native speakers at roughly ₹8,000–₹15,000/month if you practise daily; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules at ₹8,800–₹16,000 and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹1,199/month inclusive of taxes, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, sit that paper with IDP, the IELTS provider in India — we do not sell IELTS as a course.",
+        a: "Cambly is on-demand 1:1 with native speakers at ₹5,999–₹10,999/month on its India page for 15–30 minutes a day; tutor training varies and beginners often freeze at native speed. Brand-name CEFR groups (often 8–12) run modules and credit packs at ₹8,900–₹10,350 for 15–22.5 hours and teach a published syllabus. Learn With Smile is a named live teacher, 7 years, 500+ learners, from ₹1,199/month inclusive of taxes, and approximately 6 learners per batch so every adult still speaks. Most Indian employers mark the interview, not a PDF. When a visa or university form needs IELTS, sit that paper with IDP, the IELTS provider in India — we do not sell IELTS as a course.",
       },
       {
         q: "Are Kolkata offline spoken English classes better than online?",
@@ -1086,11 +1086,14 @@ const RAW_PAGES: Record<string, PageSeo> = {
 
   "/blog": {
     path: "/blog",
-    title: "English & Career Blog | Tips for Indian Learners",
+    title: "Spoken English Blog: Choose the Right Course",
     description:
-      "Notes from teachers who run live classes: IELTS Band 7, interview answers, business English, how long fluency takes. From ₹1,199/month, inclusive of taxes.",
+      "Course-decision guides from teachers who run live classes: which course fits, tutor vs group, total fees, readiness checks, interview and work English.",
     shortTitle: "Blog",
     keywords: [
+      "which spoken english course should i take",
+      "is spoken english course worth it",
+      "english tutor vs group class",
       "english learning tips india",
       "ielts writing task 2 template band 7",
       "professional email phrases english",
@@ -1593,11 +1596,11 @@ const RAW_PAGES: Record<string, PageSeo> = {
     changefreq: "monthly",
     dateModified: "2026-10-30",
     summary:
-      "Named 2026 comparison: Learn With Smile from ₹1,199/month (approx. 6 learners, 500+, 7 years) vs EngVarta (₹2,700 / 25 calls), Cambly (₹8k–₹15k/mo if daily), British Council modules (₹8,800–₹16,000), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months). Written by one of the providers.",
+      "Named 2026 comparison: Learn With Smile from ₹1,199/month (approx. 6 learners, 500+, 7 years) vs EngVarta (₹2,700 / 25 calls), Cambly (₹5,999–₹10,999/mo for 15–30 min a day), British Council (₹8,900–₹10,350 per 15–22.5 hours), Veta-style classrooms (₹3,500–₹10,000 / 2–4 months). Written by one of the providers.",
     faqs: [
       {
         q: "Which spoken English institute is best in India in 2026?",
-        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (~₹8,000–₹15,000/month if daily) fits fluent learners who want native chat. British Council modules (often ₹8,800–₹16,000) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile adult Spoken fits learners 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹1,199/month inclusive of taxes. We do not run kids or teen rooms — this comparison is about the adult room.",
+        a: "There is no single best. EngVarta-style 1:1 (about ₹2,700 for 25 × 15-minute calls) fits hesitant people who already speak. Cambly (₹5,999–₹10,999/month for 15–30 minutes a day) fits fluent learners who want native chat. British Council modules (₹8,900–₹10,350 per 15–22.5 hours) fit people who need a recognised syllabus or certificate. Veta-style classrooms (₹3,500–₹10,000 for 2–4 months) fit people who want a neighbourhood room. Learn With Smile adult Spoken fits learners 15+ who want a 6-month syllabus, a named teacher and approximately 6 learners per batch, from ₹1,199/month inclusive of taxes. We do not run kids or teen rooms — this comparison is about the adult room.",
       },
       {
         q: "How does Learn With Smile compare to EngVarta?",
@@ -1605,7 +1608,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
       },
       {
         q: "Is British Council worth it versus a ₹1,199/month class?",
-        a: "A brand-name CEFR module buys that classroom and syllabus — often ₹8,800–₹16,000 for six classes. IELTS is a different paper: visas and universities read that score. We do not sell IELTS coaching. Speaking for work and interviews starts at ₹1,199/month. Sit the exam with the test board when a form asks — not as a default.",
+        a: "A brand-name CEFR module buys that classroom and syllabus — ₹8,900–₹10,350 for 15–22.5 hours on its India pricing pages. IELTS is a different paper: visas and universities read that score. We do not sell IELTS coaching. Speaking for work and interviews starts at ₹1,199/month. Sit the exam with the test board when a form asks — not as a default.",
       },
       {
         q: "Is Veta or a Kolkata classroom better than an online batch of 6?",
@@ -1873,8 +1876,43 @@ const RAW_PAGES: Record<string, PageSeo> = {
  * the page's own FAQs never say how to get in touch (see src/lib/join-faq.ts).
  * Hindi and Bengali pages keep their own-language FAQs as written.
  */
+/**
+ * 26 Nov 2026: every guide gained the course-fit check (src/lib/course-fit.ts)
+ * and the market prices were re-verified against the providers' own pages
+ * (research_notes/market-research-serious-learners-nov-2026.md). That is a
+ * visible content change, so their dateModified moves. Pages that are not
+ * guides, and did not change, keep their own date.
+ */
+const FIT_CHECK_REVISED = "2026-11-26";
+const NOT_A_GUIDE = new Set([
+  "/",
+  "/about-us",
+  "/founder",
+  "/educator",
+  "/free-consultation",
+  "/success-stories",
+  "/bolo",
+  "/answers",
+  "/guides",
+  "/blog",
+  "/privacy",
+  "/terms",
+  "/refunds",
+  "/child-protection",
+  "/course-demo-session",
+  "/course-career-counselling",
+  "/english-career",
+]);
+
+function revised(path: string, page: PageSeo): PageSeo {
+  if (NOT_A_GUIDE.has(path)) return page;
+  if (page.dateModified && page.dateModified >= FIT_CHECK_REVISED) return page;
+  return { ...page, dateModified: FIT_CHECK_REVISED };
+}
+
 export const PAGES: Record<string, PageSeo> = Object.fromEntries(
-  Object.entries(RAW_PAGES).map(([path, page]) => {
+  Object.entries(RAW_PAGES).map(([path, raw]) => {
+    const page = revised(path, raw);
     const kind = page.lang && page.lang !== "en-IN" ? null : joinKindForPage(path, page.shortTitle);
     return [path, kind ? { ...page, faqs: withJoinFaq(page.faqs, kind) } : page];
   }),
@@ -1911,13 +1949,13 @@ export type CourseSeoExtra = {
  * `price` strings in src/lib/courses.ts.
  */
 const INR_MONTHLY_FEE: Record<string, number> = {
-  "spoken-english": 999,
+  "spoken-english": 1199,
   "intermediate-english": 1999,
   "interactive-speaking": 1599,
   "interview-preparation": 2499,
   // Same course and fee, taught through Hindi or Bengali.
-  "spoken-english-hindi": 999,
-  "spoken-english-bengali": 999,
+  "spoken-english-hindi": 1199,
+  "spoken-english-bengali": 1199,
 };
 
 export const COURSE_SEO: Record<string, CourseSeoExtra> = {
@@ -2816,6 +2854,22 @@ export function blogPostHead(post: BlogPost): HeadResult {
       },
       publisher: { "@id": `${SITE_URL}/#organization` },
       isPartOf: { "@id": `${abs("/blog")}#blog` },
+      // The courses the article helps the reader choose between. Same @id as
+      // the Course node on each course page, so the graph connects.
+      about: post.relatedCourses.map((course) => ({
+        "@type": "Course",
+        "@id": `${abs(course)}#course`,
+        url: abs(course),
+      })),
+      ...(post.sources?.length
+        ? {
+            citation: post.sources.map((src) => ({
+              "@type": "CreativeWork",
+              name: src.name,
+              url: src.url,
+            })),
+          }
+        : {}),
     },
     breadcrumbLd([
       { name: "Home", path: "/" },

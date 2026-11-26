@@ -80,7 +80,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Online 1:1 (EngVarta from about ₹108/session, Cambly around $10/hour) can move hesitation faster *if you already have language*. They do not give a 6-month syllabus. You practise what you can already say. That is why beginners stall on them.",
+    text: "Online 1:1 (EngVarta from about ₹108/session, Cambly ₹5,999–₹10,999 a month for 15–30 minutes a day) can move hesitation faster *if you already have language*. They do not give a 6-month syllabus. You practise what you can already say. That is why beginners stall on them.",
   },
 
   { t: "h2", text: "A 6-month map you can actually follow" },

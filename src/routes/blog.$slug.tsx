@@ -3,6 +3,8 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 
 import { Layout } from "@/components/Layout";
 import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
+import { CourseFitCheck } from "@/components/CourseFitCheck";
+import { fitSlugsFromCoursePaths } from "@/lib/course-fit";
 import { tagStyle } from "@/lib/tones";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
@@ -99,6 +101,29 @@ function BlogPostPage() {
           {post.shortAnswer && <ShortAnswer text={post.shortAnswer} />}
           <ArticleToc items={toc} />
           <ArticleBody body={body} waMessage={waMessage} />
+          <CourseFitCheck slugs={fitSlugsFromCoursePaths(post.relatedCourses)} />
+
+          {post.sources && post.sources.length > 0 && (
+            <section aria-labelledby="sources-title" className="mt-10">
+              <h2 id="sources-title" className="font-display font-bold text-ink text-lg">
+                Sources
+              </h2>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink/85">
+                {post.sources.map((src: { name: string; url: string }) => (
+                  <li key={src.url}>
+                    <a
+                      href={src.url}
+                      rel="noopener"
+                      target="_blank"
+                      className="text-brand underline decoration-1 underline-offset-2 hover:decoration-2"
+                    >
+                      {src.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {post.dateModified !== post.datePublished && (
             <p className="mt-10 text-xs text-ink/70">

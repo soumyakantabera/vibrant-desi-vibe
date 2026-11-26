@@ -254,7 +254,7 @@ export const CONSULTATION_VS_MARKET: {
     icon: "globe",
     them: "Cambly / native-speaker apps",
     theirSession:
-      "Any available native-speaker tutor. Accent and idiom. ₹8,000–₹15,000/month if daily. No fixed 6-month plan.",
+      "Any available native-speaker tutor. Accent and idiom. ₹5,999–₹10,999/month for 15–30 min a day. No fixed 6-month plan.",
     weDoInstead:
       "A named teacher, a syllabus, ≈6 learners, from ₹1,199/mo. Native chat is a later buy.",
   },
@@ -262,7 +262,7 @@ export const CONSULTATION_VS_MARKET: {
     icon: "school",
     them: "British Council English Online",
     theirSession:
-      "A counsellor recommends a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
+      "A counsellor recommends a CEFR module, ₹8,900–₹10,350 for 15–22.5 hours on its India pricing pages. Buy it for the badge.",
     weDoInstead:
       "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
   },

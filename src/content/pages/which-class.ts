@@ -114,7 +114,7 @@ export const body: ArticleBody = [
       ],
       [
         "British Council counsellor",
-        "A recommended CEFR module, often ₹8,800–₹16,000",
+        "A recommended CEFR module, ₹8,900–₹10,350 for 15–22.5 hours",
         "We say if you need that badge. Speaking for work in India is a smaller, cheaper room.",
       ],
       [

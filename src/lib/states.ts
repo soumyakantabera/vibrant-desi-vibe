@@ -95,7 +95,7 @@ export const STATES: StateInfo[] = [
       { what: "Offline classes, Nashik / Nagpur", range: "₹3,000–₹10,000 a month" },
       { what: "Live online chain course", range: "from ₹7,500 a course" },
       { what: "1:1 practice apps", range: "₹2,700 for 25 short sessions" },
-      { what: "Premium brands (Mumbai)", range: "₹8,800–₹16,000 a module" },
+      { what: "Premium brands (Mumbai)", range: "₹8,900–₹10,350 per 15–22.5 hours" },
     ],
     facts: [
       "Marathi is India's third-largest mother tongue (8.3 crore speakers, Census 2011).",
@@ -108,7 +108,7 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "What do spoken English classes cost in Pune or Mumbai?",
-        a: "Public listings we checked in November 2026 show offline classes at roughly ₹3,000–₹10,000 a month in tier-2 cities, live online chain courses from about ₹7,500, and premium brands at ₹8,800–₹16,000 a module in Mumbai. Learn With Smile is ₹1,199/month for Basic Spoken English, including live classes, the Bolo practice app and a weekly teacher review.",
+        a: "Public listings we checked in November 2026 show offline classes at roughly ₹3,000–₹10,000 a month in tier-2 cities, live online chain courses from about ₹7,500, and premium brands at ₹8,900–₹10,350 per 15–22.5 hours in Mumbai. Learn With Smile is ₹1,199/month for Basic Spoken English, including live classes, the Bolo practice app and a weekly teacher review.",
       },
     ],
     title: "Spoken English Classes in Maharashtra | Live Online",

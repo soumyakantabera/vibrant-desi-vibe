@@ -1055,7 +1055,11 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         head: ["Format", "Typical fee", "Room"],
         rows: [
           ["Large institute classroom", "₹15,000–₹35,000 package", "20–40 learners"],
-          ["British Council-style module", "Often ₹8,800–₹16,000", "Brand syllabus / certificate"],
+          [
+            "British Council-style module",
+            "₹8,900–₹10,350 / 15–22.5 hrs",
+            "Brand syllabus / certificate",
+          ],
           ["1:1 online tutor", "₹500–₹2,000 / session", "Minutes, variable marking"],
           [
             "Learn With Smile",

@@ -54,9 +54,262 @@ export type BlogPost = {
   faqs?: { q: string; a: string }[];
   /** HowTo JSON-LD for phrase / template posts. */
   howTo?: { name: string; description: string; steps: string[]; totalTime?: string };
+  /**
+   * Primary sources for the numbers in the article. Shown under the article and
+   * emitted as BlogPosting `citation`, so a reader (or an AI answer) can check
+   * every figure. Full log: research_notes/market-research-serious-learners-nov-2026.md.
+   */
+  sources?: { name: string; url: string }[];
 };
 
+const SRC = {
+  cambridgeHours: {
+    name: "Cambridge English — Guided learning hours",
+    url: "https://support.cambridgeenglish.org/hc/en-gb/articles/202838506-Guided-learning-hours",
+  },
+  moocPivot: {
+    name: "Reich & Ruipérez-Valiente, “The MOOC pivot”, Science (2019)",
+    url: "https://tsl.mit.edu/research/the-mooc-pivot/",
+  },
+  moocIntent: {
+    name: "Reich, “MOOC completion and retention in the context of student intent”, EDUCAUSE Review (2014)",
+    url: "https://er.educause.edu/articles/2014/12/mooc-completion-and-retention-in-the-context-of-student-intent",
+  },
+  niti: {
+    name: "NITI Aayog — Expanding Quality Higher Education through States and State Public Universities (2025)",
+    url: "https://niti.gov.in/sites/default/files/2025-02/Expanding-Quality-Higher-Education-through-SPUs.pdf",
+  },
+  ets: {
+    name: "ETS — English and AI: India’s career formula (TOEIC Global English Skills Report, 2026)",
+    url: "https://www.ets.org/insights-and-perspectives/english-and-ai-india-career-formula.html",
+  },
+  bcIndia: {
+    name: "British Council India — Programmes and pricing",
+    url: "https://www.britishcouncil.in/english/adults/classes/programmes-pricing",
+  },
+  aiSpeaking: {
+    name: "Frontiers in Psychology (2025) — AI and human-facilitated speaking practice",
+    url: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1745942/full",
+  },
+} as const;
+
+/**
+ * Course-decision guides (26 Nov 2026). Each answers "which course should I
+ * take?" for one high-intent search, says who should not join, and ends with
+ * the five facts to send on WhatsApp. Research and sources:
+ * research_notes/market-research-serious-learners-nov-2026.md.
+ */
+const DECISION_POSTS: BlogPost[] = [
+  {
+    slug: "is-a-spoken-english-course-worth-it",
+    title: "Is a Spoken English Course Worth It? A 7-Point Check Before You Pay",
+    seoTitle: "Is a Spoken English Course Worth It? 7-Point Check",
+    description:
+      "Before paying for a spoken English course, run 7 checks: one goal, two fixed slots, daily practice, course length, budget. Who should wait, who should start.",
+    excerpt:
+      "The course is rarely the problem. The calendar is. Seven checks to run before paying anyone, with the total fee for each course and who should wait.",
+    tag: "Guides",
+    img: "womanLaptop",
+    imgAlt: "Adult learner planning a weekly study schedule on a laptop",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-26",
+    dateModified: "2026-11-26",
+    readingTime: 4,
+    wordCount: 689,
+    relatedCourses: [
+      "/course-spoken-english",
+      "/course-intermediate-english",
+      "/course-interactive-speaking",
+      "/course-interview-preparation",
+    ],
+    keywords: [
+      "is spoken english course worth it",
+      "should i join spoken english class",
+      "spoken english course fees india",
+      "spoken english course duration",
+      "how many hours to learn english speaking",
+    ],
+    shortAnswer:
+      "Worth it if you can name one situation to fix, protect up to two 90-minute live slots a week, practise 15–20 minutes on other days, and fund the whole course (₹4,797–₹7,996 in total at Learn With Smile, inclusive of taxes). Fail three of the seven checks and you should wait.",
+    sources: [SRC.niti, SRC.ets, SRC.cambridgeHours],
+    faqs: [
+      {
+        q: "Is a spoken English course worth the money?",
+        a: "It is worth it when you have one clear situation to fix, can attend live classes twice a week for the whole course, and practise between classes. Without the time, no course works. Cambridge English’s guidance is about 180–200 guided learning hours to reach A2 and 350–400 for B1, so the hours matter more than the brand.",
+      },
+      {
+        q: "How much does a full spoken English course cost at Learn With Smile?",
+        a: "Inclusive of taxes and billed monthly: Basic Spoken English ₹7,194 over 6 months (₹1,199/month), Intermediate ₹7,996 over 4 months (₹1,999/month), Interactive Speaking ₹4,797 over 3 months (₹1,599/month) and Interview Preparation ₹4,998 over 2 months (₹2,499/month). No EMI, no auto-debit.",
+      },
+      {
+        q: "Who should not join a spoken English course yet?",
+        a: "Anyone who cannot attend two fixed live slots a week, anyone expecting fluency in 30 days, and anyone who has not yet tried 15 minutes of daily practice. Start with free daily practice for 3–4 weeks; if you keep it up, you are ready to pay.",
+      },
+    ],
+  },
+  {
+    slug: "english-fluency-course-which-level",
+    title: "English Fluency Course: Which Level Do You Actually Need?",
+    seoTitle: "English Fluency Course: Which Level Do You Need?",
+    description:
+      "Fluency is four different problems. Find yours in a minute and match it to the right course: building sentences, accuracy, freezing or interviews. With fees.",
+    excerpt:
+      "“Fluency course” covers four different problems. Find yours in one minute, then match it to one course instead of buying three.",
+    tag: "Guides",
+    img: "speaking",
+    imgAlt: "Adult learner speaking during a live online English class",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-26",
+    dateModified: "2026-11-26",
+    readingTime: 4,
+    wordCount: 777,
+    relatedCourses: [
+      "/course-spoken-english",
+      "/course-intermediate-english",
+      "/course-interactive-speaking",
+    ],
+    keywords: [
+      "english speaking fluency course",
+      "english fluency course",
+      "fluent english speaking course",
+      "professional english speaking course",
+      "which english course should i take",
+    ],
+    shortAnswer:
+      "Cannot build sentences → Basic Spoken English (₹1,199/month, 6 months). Speak with errors and fillers → Intermediate (₹1,999/month, 4 months). Know it and freeze → Interactive Speaking (₹1,599/month, 3 months). Freeze only in interviews → Interview Preparation (₹2,499/month, 2 months).",
+    sources: [SRC.cambridgeHours],
+    faqs: [
+      {
+        q: "Which English fluency course should I take?",
+        a: "Match the course to the gap. If you cannot introduce yourself for 30 seconds, take Basic Spoken English. If you speak with tense errors and fillers, take Intermediate Spoken English. If you know the English and freeze in meetings or calls, take Interactive Speaking. If only interviews go wrong, take Interview Preparation.",
+      },
+      {
+        q: "What is the difference between fluency and accuracy in English?",
+        a: "Fluency is how smoothly you keep talking, without long pauses or translating in your head. Accuracy is how correct the English is. Many Indian professionals are accurate but not fluent: correct in writing, silent in meetings. That is a speaking-practice problem, not a grammar problem.",
+      },
+      {
+        q: "Can I become fluent in English in 30 days?",
+        a: "Not from zero. Cambridge English puts reaching A2 at about 180–200 guided learning hours and B1 at 350–400. In 30 days a learner who already knows English can reduce hesitation, but a course promising fluency in 30 days is selling hope, not hours.",
+      },
+    ],
+  },
+  {
+    slug: "online-english-tutor-vs-group-class",
+    title: "Online English Tutor or Small Group Class: Which Should You Pay For?",
+    seoTitle: "Online English Tutor vs Small Group Class (India)",
+    description:
+      "1:1 online English tutor or a small live group? What each gives you, when a tutor is the right buy, the batch-size test, and which group room fits your level.",
+    excerpt:
+      "A tutor gives you the most minutes. A small group gives you structure and an audience. Decide which you are short of before you pay for either.",
+    tag: "Guides",
+    img: "groupClass",
+    imgAlt: "Small group of adults in a live online English class",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-26",
+    dateModified: "2026-11-26",
+    readingTime: 3,
+    wordCount: 594,
+    relatedCourses: ["/course-interactive-speaking", "/course-spoken-english"],
+    keywords: [
+      "english tutor online",
+      "online english tutor india",
+      "online english classes for adults",
+      "1 on 1 english tutor vs group class",
+      "small batch english class online",
+    ],
+    shortAnswer:
+      "Choose a 1:1 tutor for accent work, an unpredictable timetable or a conversation partner. Choose a small live group (about 6) if you freeze when people listen, need a plan with an end date, or want structure without paying per hour.",
+    faqs: [
+      {
+        q: "Is a 1:1 English tutor better than a group class?",
+        a: "Not always. A tutor gives you more speaking minutes, but only one listener. If you freeze in meetings, calls or interviews, speaking in front of a small group is closer to the real situation. Group size matters more than the label: ask for the usual headcount as a number.",
+      },
+      {
+        q: "Does Learn With Smile offer 1:1 English tutoring?",
+        a: "No. Every Learn With Smile class is a live batch of about 6 adults with the same teacher. If you need 1:1 lessons, a tutor marketplace is the better fit, and we will say so in the free consultation.",
+      },
+    ],
+  },
+  {
+    slug: "self-paced-english-course-vs-live-class",
+    title: "Coursera, Udemy, a Book or a Live Class: Which English Course Fits You?",
+    seoTitle: "Coursera, Udemy or a Live English Class? How to Choose",
+    description:
+      "Books, recorded courses (Coursera, Udemy), big-brand live courses and small live batches train different things. Completion data, costs and which fits you.",
+    excerpt:
+      "A book or a video teaches what to say. Only practice with a listener trains you to say it under pressure. What each format trains, and the completion data nobody advertises.",
+    tag: "Guides",
+    img: "studentLaptop",
+    imgAlt: "Learner comparing an online English course with a live class",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-26",
+    dateModified: "2026-11-26",
+    readingTime: 4,
+    wordCount: 765,
+    relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
+    keywords: [
+      "best english speaking course online",
+      "coursera english speaking course",
+      "udemy english speaking course",
+      "british council english speaking course",
+      "rapidex english speaking course",
+      "self paced vs live english class",
+    ],
+    shortAnswer:
+      "Use a book or recorded course for input (rules, patterns, vocabulary) and a live class for output (speaking with correction). In Harvard and MIT’s edX data, 52% of registrants never opened the course, so a self-paced course only works if discipline is not your gap.",
+    sources: [SRC.moocPivot, SRC.moocIntent, SRC.bcIndia, SRC.aiSpeaking],
+    faqs: [
+      {
+        q: "Is a Coursera or Udemy course enough to speak English fluently?",
+        a: "They are good for input: rules, phrases and examples at your own pace. They cannot hear you or correct you. If you already understand English but freeze when speaking, you need live practice with a listener, not another recorded course.",
+      },
+      {
+        q: "Is the Rapidex English Speaking Course book enough?",
+        a: "It is a useful, cheap source of sentence patterns, especially for Hindi speakers. A book cannot make you speak aloud or correct your mistakes, so use it for input and pair it with daily speaking practice or a live class.",
+      },
+    ],
+  },
+  {
+    slug: "public-speaking-course-or-spoken-english-course",
+    title: "Public Speaking Course or Spoken English Course: Which Do You Need?",
+    seoTitle: "Public Speaking Course or Spoken English Course?",
+    description:
+      "Could you give the talk in Hindi or Bengali? Then English is the gap, not the stage. How to tell, and which fits: a public speaking or spoken English course.",
+    excerpt:
+      "One question decides it: could you give the same talk in your first language? If yes, the gap is English. If no, it is the stage.",
+    tag: "Guides",
+    img: "presentation",
+    imgAlt: "Professional presenting to colleagues in a meeting",
+    author: "Sunanda Dey",
+    datePublished: "2026-11-26",
+    dateModified: "2026-11-26",
+    readingTime: 3,
+    wordCount: 564,
+    relatedCourses: ["/course-interactive-speaking", "/course-intermediate-english"],
+    keywords: [
+      "public speaking course",
+      "public speaking course online",
+      "public speaking course online india",
+      "public speaking vs spoken english",
+      "english for presentations course",
+    ],
+    shortAnswer:
+      "If you could give the talk confidently in your first language, your gap is English under pressure: take a spoken English course (Interactive Speaking covers presentations and Q&A). If you would freeze in any language, take a public speaking course or club.",
+    faqs: [
+      {
+        q: "Do I need a public speaking course or a spoken English course?",
+        a: "Ask whether you could give the same talk confidently in Hindi, Bengali or your first language. If yes, English is the gap and a spoken English course is the right buy. If you would freeze in any language, the gap is stage fear and structure, and a public speaking course or club fits better.",
+      },
+      {
+        q: "Does Learn With Smile teach public speaking?",
+        a: "Not as a separate course. Presentations with Q&A are part of Interactive Speaking (3 months, ₹1,599/month inclusive of taxes) and Intermediate Spoken English ends with a 2–3 minute presentation. If English is not your gap, a public speaking club is the better choice.",
+      },
+    ],
+  },
+];
+
 const RAW_POSTS: BlogPost[] = [
+  ...DECISION_POSTS,
   {
     slug: "how-to-improve-communication-skills-in-english",
     title: "How to Improve Communication Skills in English: 12 Habits That Work",
@@ -332,7 +585,7 @@ const RAW_POSTS: BlogPost[] = [
     datePublished: "2026-09-02",
     dateModified: "2026-11-03",
     readingTime: 8,
-    wordCount: 969,
+    wordCount: 1047,
     relatedCourses: ["/course-spoken-english"],
     keywords: [
       "how to choose spoken english class india",
@@ -423,7 +676,7 @@ const RAW_POSTS: BlogPost[] = [
     datePublished: "2026-09-02",
     dateModified: "2026-09-11",
     readingTime: 6,
-    wordCount: 578,
+    wordCount: 612,
     relatedCourses: ["/course-spoken-english", "/course-interactive-speaking"],
     keywords: [
       "speaking minutes in english class",
@@ -634,7 +887,7 @@ const RAW_POSTS: BlogPost[] = [
     datePublished: "2026-08-27",
     dateModified: "2026-08-27",
     readingTime: 9,
-    wordCount: 1874,
+    wordCount: 1837,
     relatedCourses: ["/course-interview-preparation", "/course-spoken-english"],
     keywords: [
       "bpo to client facing role",
@@ -645,8 +898,15 @@ const RAW_POSTS: BlogPost[] = [
 ];
 
 /** Posts, each with the WhatsApp "how do I join?" FAQ where theirs lack one. */
+/**
+ * 26 Nov 2026: every article gained the course-fit check and re-verified
+ * market prices, so its dateModified moves to that day (never backwards).
+ */
+const FIT_CHECK_REVISED = "2026-11-26";
+
 export const BLOG_POSTS: BlogPost[] = RAW_POSTS.map((post) => ({
   ...post,
+  dateModified: post.dateModified < FIT_CHECK_REVISED ? FIT_CHECK_REVISED : post.dateModified,
   faqs: withJoinFaq(post.faqs, { kind: "general" }),
 }));
 

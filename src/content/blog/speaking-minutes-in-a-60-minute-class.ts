@@ -46,7 +46,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "EngVarta-style sessions from ~₹108 are the cheapest *speaking minute* in India if you already have language. Cambly at ~$10/hour is the most expensive speaking minute. British Council modules (often ₹8,800–₹16,000) sell a CEFR level and a brand — speaking time is 4–6 minutes in a 8–12 group, which is honest, just not cheap.",
+    text: "EngVarta-style sessions from ~₹108 are the cheapest *speaking minute* in India if you already have language. Cambly’s India plans (₹5,999–₹10,999 a month for 15–30 minutes a day, roughly ₹1,300 an hour) are the most expensive speaking minute. British Council (classroom modules ₹8,900–₹9,900 for 22.5 hours; online credit packs from ₹10,350 for 15 hours) sells a CEFR level and a brand — speaking time is 4–6 minutes in a 8–12 group, which is honest, just not cheap.",
   },
 
   { t: "h2", text: "How to audit a live class in 15 minutes" },

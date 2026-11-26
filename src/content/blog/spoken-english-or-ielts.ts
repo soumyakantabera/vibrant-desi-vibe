@@ -64,7 +64,7 @@ export const body: ArticleBody = [
     items: [
       "**Exam shops (EEC-style, ~₹7,500 spoken + IELTS/PTE add-ons):** built for study-abroad. Fine if the visa is the goal. Heavy if you only needed meeting English.",
       "**Franchise rooms (Veta-style, ₹3,500–₹10,000 / 2–4 months):** often one “spoken” batch for everyone. Beginners and Band 6 candidates share a 30-person room.",
-      "**British Council:** the cleanest IELTS and CEFR ladder. Modules often ₹8,800–₹16,000. Buy it for the badge.",
+      "**British Council:** the cleanest IELTS and CEFR ladder. Modules and credit packs ₹8,900–₹10,350 for 15–22.5 hours. Buy it for the badge.",
       "**EngVarta / Cambly:** no course picker. You talk. Useful after you can talk.",
     ],
   },

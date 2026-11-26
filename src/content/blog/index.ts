@@ -26,6 +26,11 @@ import { body as dailyPractice } from "./daily-english-speaking-practice-routine
 import { body as conversationDialogues } from "./english-conversation-practice-dialogues";
 import { body as communicationSkills } from "./how-to-improve-communication-skills-in-english";
 import { body as vocabulary } from "./how-to-improve-english-vocabulary-for-speaking";
+import { body as worthIt } from "./is-a-spoken-english-course-worth-it";
+import { body as fluencyLevel } from "./english-fluency-course-which-level";
+import { body as tutorVsGroup } from "./online-english-tutor-vs-group-class";
+import { body as selfPacedVsLive } from "./self-paced-english-course-vs-live-class";
+import { body as publicSpeaking } from "./public-speaking-course-or-spoken-english-course";
 
 export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "5-speaking-habits-that-killed-my-hesitation": speakingHabits,
@@ -43,4 +48,9 @@ export const ARTICLE_BODIES: Record<string, ArticleBody> = {
   "english-conversation-practice-dialogues": conversationDialogues,
   "how-to-improve-communication-skills-in-english": communicationSkills,
   "how-to-improve-english-vocabulary-for-speaking": vocabulary,
+  "is-a-spoken-english-course-worth-it": worthIt,
+  "english-fluency-course-which-level": fluencyLevel,
+  "online-english-tutor-vs-group-class": tutorVsGroup,
+  "self-paced-english-course-vs-live-class": selfPacedVsLive,
+  "public-speaking-course-or-spoken-english-course": publicSpeaking,
 };

@@ -279,7 +279,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/guides",
     title: "English Class Guides | Fees, Fit, Cities",
     description:
-      "Honest guides to choosing a live English class in India: which course fits, fees, how long it takes, beginners, IT, workplace and cities.",
+      "Honest guides to choosing a live English class in India: which course fits, the total fee, how long it takes, who should not join. Beginners, IT, cities.",
     shortTitle: "Guides",
     keywords: [
       "spoken english class guides india",

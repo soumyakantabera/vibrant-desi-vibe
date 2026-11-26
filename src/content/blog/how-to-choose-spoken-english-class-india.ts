@@ -3,10 +3,10 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most “best institute” pages in India are written by the institute. This is a **10-check** you can run on anyone — us included — in one week, using public numbers: fees, batch cap, Google review *patterns*, and a consultation you can count.",
+    text: "Most “best institute” pages in India are written by the institute. This is an **11-check** you can run on anyone — us included — in one week, using public numbers: fees, batch cap, Google review *patterns*, and a consultation you can count.",
   },
 
-  { t: "h2", text: "The 10 checks" },
+  { t: "h2", text: "The 11 checks" },
   {
     t: "ol",
     items: [
@@ -17,6 +17,7 @@ export const body: ArticleBody = [
       "**What the free session actually is.** A class you speak in, a counsellor pitch, or counselling that names your bottleneck. If they only pitch, leave. Ours is a small-batch consultation with personalised advice — [what you get](/free-consultation).",
       "**Google reviews as patterns, not stars.** Read the 3-star comments. They name batch size, fees, and “I never spoke”. 5-star walls with no specifics are ads.",
       "**Certificate vs speaking.** Visa/university → British Council or similar. Job interview in India → they will judge you in 60 seconds, not your PDF. We do not issue a certificate; we say so.",
+      "**Price per live hour, not per month.** Divide the monthly fee by the live hours you actually get. Ours: ₹1,199 for up to about 12 live hours a month is roughly ₹100 an hour. British Council’s published India rates work out near ₹440–₹690 an hour; Cambly’s India plans near ₹1,300 an hour. Then ask how many of those minutes you speak.",
       "**Months paid today.** One month, not a year. If the discount needs 6–12 months upfront, the discount is the trap. We bill one month at a time.",
       "**Loans, EMIs and auto-debit.** No EMI form, no saved card, no UPI mandate. A subscription you did not switch on keeps charging after you stop. We have none of these.",
       "**Refund rule in writing.** Ask for it on WhatsApp before you pay. Ours: a month cancelled before its first class is refunded in full, started within 2 working days. More in [Before you pay](/before-you-pay-spoken-english-course).",
@@ -33,9 +34,12 @@ export const body: ArticleBody = [
         "Trial is only a counsellor pitch",
         "Exam shop (EEC-style visa stack, spoken add-on ~₹7,500)",
       ],
-      ["₹8k–₹16k per module, CEFR levels", "British Council English Online — buy for the badge"],
+      ["₹8,900–₹10,350 per 15–22.5 hours, CEFR levels", "British Council — buy for the badge"],
       ["₹100–₹400 per 1:1, no syllabus", "EngVarta-style daily practice"],
-      ["~$10/hour native video", "Cambly — accent, not a 6-month map"],
+      [
+        "₹5,999–₹10,999/month for 15–30 min a day, native video",
+        "Cambly — accent, not a 6-month map",
+      ],
       ["Parent app, games, under-14", "PlanetSpark-style 1:1. Never our adult batch."],
       [
         "₹1,199/mo, approximately 6 learners, inclusive of taxes",
@@ -51,7 +55,7 @@ export const body: ArticleBody = [
       "**Ignore the average until you have 50+ reviews.** Our 5.0★ from 125 is a small, local sample. EngVarta’s 4.5★ from 9,100+ Play reviews is a different dataset. Do not compare them as the same unit.",
       "**Search the word “batch”.** If learners complain they never spoke, the star rating is lying.",
       "**Search “GST”, “material”, “registration”.** Hidden rupees show up here, not in the 5-star pile.",
-      "**Named outcomes beat adjectives.** “Salary doubled in 4 months, Pune CS role” is evidence. “Best institute in India” is not.",
+      "**Named outcomes beat adjectives.** “Moved from back office to a client-facing role after 4 months; the review names the batch and the teacher” is evidence. “Best institute in India” is not.",
     ],
   },
 
@@ -70,7 +74,10 @@ export const body: ArticleBody = [
     rows: [
       ["15 minutes of talk, no diagnosis", "EngVarta-style 1:1. Fine after you can already speak."],
       ["Native video, any available tutor", "Cambly. Accent, not a 6-month plan."],
-      ["Counsellor + CEFR levels, ₹8k–₹16k", "British Council English Online — buy for the badge"],
+      [
+        "Counsellor + CEFR levels, credit packs from ₹10,350",
+        "British Council — buy for the badge",
+      ],
       ["Walk-in, 25–40 in the room", "Veta-style / city classroom"],
       ["Visa stack, IELTS add-on", "Exam shop. Fine if the form asked."],
       [
