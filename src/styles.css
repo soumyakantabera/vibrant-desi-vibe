@@ -1583,6 +1583,10 @@ html.js [data-viz="in"] .viz-draw {
 main [id] {
   scroll-margin-top: 6rem;
 }
+/* Course pages add a sticky jump-link bar under the header. */
+main:has([data-jump-links]) [id] {
+  scroll-margin-top: 8.5rem;
+}
 /* Photo bands with centred copy (e.g. "How live classes work"): one even
    teal veil, since text and cards run edge to edge. */
 .band-veil {

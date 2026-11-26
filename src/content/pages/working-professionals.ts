@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **afternoon, evening and night** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹1,199/mo, Interactive Speaking ₹1,599/mo, Interactive ₹1,599/mo, inclusive of taxes. Approx. 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
+    text: "**Short answer.** You can keep the job and still speak better English. Learn With Smile runs **afternoon, evening and night** live batches on IST. The class is live. The recording is revision if a release or a shift overruns. Spoken English from ₹1,199/mo, Interactive Speaking ₹1,599/mo, Interactive ₹1,599/mo, inclusive of taxes. About 6 learners. Message anytime; we reply **10am–midnight IST every day**.",
   },
   {
     t: "p",
@@ -27,7 +27,7 @@ export const body: ArticleBody = [
       [
         "Night",
         "Late finishes, Sector V / New Town shifts, BPO rosters",
-        "Any of the three — timings are flexible, tell us yours",
+        "Any of the three: timings are flexible, tell us yours",
       ],
     ],
   },
@@ -35,7 +35,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "If you miss a class" },
   {
     t: "p",
-    text: "Every class is recorded so a missed session does not wipe the week. A reschedule can be requested **only within the same week**, and only if the teacher and a seat exist. That is the honest limit. Direct teacher contact on WhatsApp is there when you genuinely need help — not as a second timetable of 1:1 classes.",
+    text: "Every class is recorded so a missed session does not wipe the week. A reschedule can be requested **only within the same week**, and only if the teacher and a seat exist. That is the honest limit. Direct teacher contact on WhatsApp is there when you genuinely need help, not as a second timetable of 1:1 classes.",
   },
 
   { t: "h2", text: "Which course while you work" },
@@ -102,7 +102,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Tell us your shift. We will suggest afternoon, evening or night — and Spoken, Interactive or Business.",
+    text: "Tell us your shift. We will suggest afternoon, evening or night, and Spoken, Interactive or Business.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

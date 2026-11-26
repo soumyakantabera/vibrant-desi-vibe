@@ -29,7 +29,7 @@ export const DEMO_SESSION = {
 export const DEMO_FAQS: { q: string; a: string }[] = [
   {
     q: "What do I actually sit in?",
-    a: "One real live class: 90 minutes, with our teacher, in a batch of about 6. It is the class enrolled learners attend — not a counselling call and not a recording.",
+    a: "One real live class: 90 minutes, with our teacher, in a batch of about 6. It is the class enrolled learners attend, not a counselling call and not a recording.",
   },
   {
     q: "How much is the Demo Class?",
@@ -37,14 +37,14 @@ export const DEMO_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Is the ₹99 adjusted if I join a course?",
-    a: "Yes. Take admission within 48 hours after the Demo Class — in that course or any course we currently offer — and the ₹99 is adjusted against your course fee. It is not refunded in cash. The written rule is in the Demo Class section of our Terms.",
+    a: "Yes. Take admission within 48 hours after the Demo Class (in that course or any course we currently offer) and the ₹99 is adjusted against your course fee. It is not refunded in cash. The written rule is in the Demo Class section of our Terms.",
   },
   {
     q: "How do I book it?",
     a: "Message us on WhatsApp at +91 96744 79949 and ask for the Demo Class. We send a slot and the payment link, and place you in a live batch within 72 hours of payment. We reply 10am–midnight IST every day.",
   },
   {
-    q: "Demo Class or free consultation — which should I pick?",
+    q: "Demo Class or free consultation, which should I pick?",
     a: "Pick the free consultation if you are not sure which course fits: we name your speaking gap and put the course, fee and timing in writing. Pick the ₹99 Demo Class if you want to see the teaching yourself before you pay for a month.",
   },
   {

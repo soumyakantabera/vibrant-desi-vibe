@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most vocabulary advice is built for exams: learn ten difficult words a day, write them in a notebook, revise on Sunday. That builds **passive** vocabulary — words you recognise when you read them. Speaking needs **active** vocabulary — words that come out of your mouth when someone is waiting. They are trained differently.",
+    text: "Most vocabulary advice is built for exams: learn ten difficult words a day, write them in a notebook, revise on Sunday. That builds **passive** vocabulary: words you recognise when you read them. Speaking needs **active** vocabulary: words that come out of your mouth when someone is waiting. They are trained differently.",
   },
   {
     t: "p",
@@ -30,16 +30,16 @@ export const body: ArticleBody = [
   { t: "h2", text: "2. Learn words for your own life first" },
   {
     t: "p",
-    text: "A word you will use this week is worth ten words you might use someday. List the situations you actually face — your job, your family, your city, your hobbies — and learn the 20 words you are missing for each. An accountant needs “reconcile”, “invoice” and “pending approval” long before “ubiquitous”.",
+    text: "A word you will use this week is worth ten words you might use someday. List the situations you actually face (your job, your family, your city, your hobbies) and learn the 20 words you are missing for each. An accountant needs “reconcile”, “invoice” and “pending approval” long before “ubiquitous”.",
   },
 
   { t: "h2", text: "3. Use the 5-5-5 method" },
   {
     t: "ol",
     items: [
-      "**5 words** a day — chosen from your own life or something you read or heard today.",
-      "**5 sentences** — say one real sentence aloud with each word, about yourself.",
-      "**5 days later** — use each word in a conversation, a message or a voice note. If you have not used it, it is not yours yet.",
+      "**5 words** a day: chosen from your own life or something you read or heard today.",
+      "**5 sentences**: say one real sentence aloud with each word, about yourself.",
+      "**5 days later**: use each word in a conversation, a message or a voice note. If you have not used it, it is not yours yet.",
     ],
   },
   {
@@ -61,7 +61,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "When you know the family, you can rescue a sentence that started the wrong way — and you stop saying “I am very success” or “give me explain”.",
+    text: "When you know the family, you can rescue a sentence that started the wrong way, and you stop saying “I am very success” or “give me explain”.",
   },
 
   { t: "h2", text: "5. Replace overused words" },
@@ -74,7 +74,7 @@ export const body: ArticleBody = [
       ["very big", "huge · massive · significant"],
       ["do", "complete · handle · prepare · finish"],
       ["get", "receive · buy · understand · become"],
-      ["basically / actually", "(pause instead — or nothing at all)"],
+      ["basically / actually", "(pause instead, or nothing at all)"],
     ],
   },
 
@@ -87,7 +87,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "7. Say new words out loud the day you learn them" },
   {
     t: "p",
-    text: "A word you have only seen is stored with its spelling, not its sound — which is why many learners freeze or mispronounce it when speaking. Say it aloud, check the pronunciation with a dictionary app, and use it in a [daily speaking practice routine](/blog/daily-english-speaking-practice-routine) the same day.",
+    text: "A word you have only seen is stored with its spelling, not its sound, which is why many learners freeze or mispronounce it when speaking. Say it aloud, check the pronunciation with a dictionary app, and use it in a [daily speaking practice routine](/blog/daily-english-speaking-practice-routine) the same day.",
   },
 
   { t: "h2", text: "How long does it take to build speaking vocabulary?" },
@@ -102,7 +102,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "In Basic Spoken English, everyday vocabulary is practised in speech, not on worksheets — live classes in a batch of approximately 6, plus daily vocabulary practice and a weekly teacher review in the Bolo app. 6 months, ₹1,199/month inclusive of taxes. Also taught through [Hindi](/course-spoken-english-hindi) or [Bengali](/course-spoken-english-bengali).",
+    text: "In Basic Spoken English, everyday vocabulary is practised in speech, not on worksheets: live classes in a batch of about 6, plus daily vocabulary practice and a weekly teacher review in the Bolo app. 6 months, ₹1,199/month inclusive of taxes. Also taught through [Hindi](/course-spoken-english-hindi) or [Bengali](/course-spoken-english-bengali).",
     course: "/course-spoken-english",
     label: "See Basic Spoken English",
   },

@@ -46,15 +46,15 @@ export const body: ArticleBody = [
   { t: "h2", text: "What is the 3-2-1 speaking rule?" },
   {
     t: "p",
-    text: "It is a fluency drill adapted from the classroom “4-3-2” technique: you tell the same story or opinion three times, with less time each round. Because you already know **what** to say by round two, your brain can spend its effort on **how** to say it — so sentences get longer, pauses get shorter and fillers drop. It is the single most useful drill in this routine if you freeze when speaking.",
+    text: "It is a fluency drill adapted from the classroom “4-3-2” technique: you tell the same story or opinion three times, with less time each round. Because you already know **what** to say by round two, your brain can spend its effort on **how** to say it, so sentences get longer, pauses get shorter and fillers drop. It is the single most useful drill in this routine if you freeze when speaking.",
   },
   {
     t: "example",
-    label: "Topic: “My daily commute” — round 3 (1 minute)",
+    label: "Topic: “My daily commute”. Round 3 (1 minute)",
     lines: [
       "I take the metro to work, usually around 8:30.",
       "It takes about forty minutes, door to door.",
-      "Honestly, I use that time to listen to podcasts — it's the only quiet part of my day.",
+      "Honestly, I use that time to listen to podcasts: it's the only quiet part of my day.",
       "The worst part is the last ten minutes, because the station is always crowded.",
     ],
   },
@@ -126,7 +126,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Can I practise speaking English alone?" },
   {
     t: "p",
-    text: "Yes — this whole routine is built for practising alone. Talking to yourself, narrating what you are doing (“I’m making tea, I’m adding sugar…”) and recording yourself all count. What practice alone cannot give you is **a listener who reacts** and **someone who hears the same mistake every week and stops it**. That is the gap a teacher or a small live batch fills.",
+    text: "Yes, this whole routine is built for practising alone. Talking to yourself, narrating what you are doing (“I’m making tea, I’m adding sugar…”) and recording yourself all count. What practice alone cannot give you is **a listener who reacts** and **someone who hears the same mistake every week and stops it**. That is the gap a teacher or a small live batch fills.",
   },
 
   { t: "h2", text: "Signs you need more than self-practice" },
@@ -135,7 +135,7 @@ export const body: ArticleBody = [
     items: [
       "After 30 days, your recordings still have the **same grammar mistake** in every round.",
       "You can retell a clip, but you **cannot start a conversation** with a real person.",
-      "You speak fine alone but **freeze when someone is waiting** — on calls, in interviews, in meetings.",
+      "You speak fine alone but **freeze when someone is waiting**: on calls, in interviews, in meetings.",
       "You do not know **what to practise next**, so you keep repeating week 1 topics.",
     ],
   },
@@ -146,7 +146,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Basic Spoken English runs this kind of practice live: up to two classes a week in a batch of approximately 6 learners, so you speak in every class, plus daily practice and a weekly teacher review in the Bolo app. 6 months, ₹1,199/month inclusive of taxes.",
+    text: "Basic Spoken English runs this kind of practice live: up to two classes a week in a batch of about 6 learners, so you speak in every class, plus daily practice and a weekly teacher review in the Bolo app. 6 months, ₹1,199/month inclusive of taxes.",
     course: "/course-spoken-english",
     label: "See Basic Spoken English",
   },

@@ -16,9 +16,9 @@ export const body: ArticleBody = [
     caption: "Your mic, one 60-minute class. Assumes the teacher is not lecturing the whole hour.",
     head: ["Batch", "Speaking pool", "Your minutes"],
     rows: [
-      ["1:1 (Cambly, EngVarta)", "50–55 min", "50–55 min — no classmates, no syllabus required"],
+      ["1:1 (Cambly, EngVarta)", "50–55 min", "50–55 min: no classmates, no syllabus required"],
       [
-        "Approx. 6 learners (Learn With Smile)",
+        "About 6 learners (Learn With Smile)",
         "40–45 min",
         "About 8–10 min of you, plus hearing classmates",
       ],
@@ -33,7 +33,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Approx. 6 learners → about **7–8 hours of you speaking** in 6 months.",
+      "About 6 learners → about **7–8 hours of you speaking** in 6 months.",
       "30-student room → about **1–1.5 hours of you speaking** in 6 months.",
       "Daily 1:1 at 25 min → you can hit 5 hours in **two weeks**. Different product.",
     ],
@@ -42,11 +42,11 @@ export const body: ArticleBody = [
   { t: "h2", text: "What the institutes are actually selling" },
   {
     t: "p",
-    text: "Franchise classrooms in Kolkata, Pune, Chennai (Veta-style 2–4 months, ₹3,500–₹10,000) sell **presence**. Exam shops (EEC-style spoken English around ₹7,500) sell **a visa stack**. Native apps sell **minutes**. We sell **minutes + a 6-month map** at ₹1,199/month, inclusive of taxes, with approximately 6 learners per batch.",
+    text: "Franchise classrooms in Kolkata, Pune, Chennai (Veta-style 2–4 months, ₹3,500–₹10,000) sell **presence**. Exam shops (EEC-style spoken English around ₹7,500) sell **a visa stack**. Native apps sell **minutes**. We sell **minutes + a 6-month map** at ₹1,199/month, inclusive of taxes, with about 6 learners per batch.",
   },
   {
     t: "p",
-    text: "EngVarta-style sessions from ~₹108 are the cheapest *speaking minute* in India if you already have language. Cambly’s India plans (₹5,999–₹10,999 a month for 15–30 minutes a day, roughly ₹1,300 an hour) are the most expensive speaking minute. British Council (classroom modules ₹8,900–₹9,900 for 22.5 hours; online credit packs from ₹10,350 for 15 hours) sells a CEFR level and a brand — speaking time is 4–6 minutes in a 8–12 group, which is honest, just not cheap.",
+    text: "EngVarta-style sessions from ~₹108 are the cheapest *speaking minute* in India if you already have language. Cambly’s India plans (₹5,999–₹10,999 a month for 15–30 minutes a day, roughly ₹1,300 an hour) are the most expensive speaking minute. British Council (classroom modules ₹8,900–₹9,900 for 22.5 hours; online credit packs from ₹10,350 for 15 hours) sells a CEFR level and a brand: speaking time is 4–6 minutes in a 8–12 group, which is honest, just not cheap.",
   },
 
   { t: "h2", text: "How to audit a live class in 15 minutes" },
@@ -62,12 +62,12 @@ export const body: ArticleBody = [
   { t: "h2", text: "Cost per speaking minute, roughly" },
   {
     t: "p",
-    text: "A ₹1,199/month batch of around 6, two hours a week, is about 8–10 minutes of you per hour — call it 70 minutes of you a month. That is roughly ₹17 a speaking minute, inclusive of taxes, plus hearing five classmates. A 30-student ₹2,000/month room can be more expensive per minute you actually spoke. 1:1 at ₹108/15 min is ~₹7 a minute and has no 6-month map. Pick the unit you are buying.",
+    text: "A ₹1,199/month batch of around 6, two hours a week, is about 8–10 minutes of you per hour: call it 70 minutes of you a month. That is roughly ₹17 a speaking minute, inclusive of taxes, plus hearing five classmates. A 30-student ₹2,000/month room can be more expensive per minute you actually spoke. 1:1 at ₹108/15 min is ~₹7 a minute and has no 6-month map. Pick the unit you are buying.",
   },
   { t: "h2", text: "Online vs a city classroom" },
   {
     t: "p",
-    text: "Add commute. [Online vs offline](/online-vs-offline-spoken-english-classes) and the city pages — [Mumbai](/spoken-english-classes-mumbai), [Delhi](/spoken-english-classes-delhi), [Bengaluru](/spoken-english-classes-bengaluru) — do that math in local terms. A 90-minute local each way for 2 minutes on the mic is the expensive class, whatever the brochure says.",
+    text: "Add commute. [Online vs offline](/online-vs-offline-spoken-english-classes) and the city pages ([Mumbai](/spoken-english-classes-mumbai), [Delhi](/spoken-english-classes-delhi), [Bengaluru](/spoken-english-classes-bengaluru)) do that math in local terms. A 90-minute local each way for 2 minutes on the mic is the expensive class, whatever the brochure says.",
   },
   {
     t: "cta",
@@ -80,9 +80,9 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "You need a **certificate** — buy the badge, not the mic.",
-      "You already speak and only need **daily reps** — buy 1:1 sessions.",
-      "Your child is **under 14** — buy a kids platform. Adult minutes are the wrong unit.",
+      "You need a **certificate**: buy the badge, not the mic.",
+      "You already speak and only need **daily reps**. Buy 1:1 sessions.",
+      "Your child is **under 14**: buy a kids platform. Adult minutes are the wrong unit.",
     ],
   },
 ];

@@ -234,8 +234,8 @@ function Page() {
         <div className="container-x max-w-2xl text-center text-cream">
           <h2 className="text-cream section-title">Compare in a class.</h2>
           <p className="mt-3 text-white">
-            Approximately 6 learners. From ₹1,199/mo, inclusive of taxes. Spoken, Interactive,
-            Workplace and Interview Preparation.
+            About 6 learners. From ₹1,199/mo, inclusive of taxes. Spoken, Interactive, Workplace and
+            Interview Preparation.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <WaButton message={waMessage} variant="wa" size="lg">

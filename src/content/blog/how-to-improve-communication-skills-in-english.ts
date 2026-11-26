@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Communication skills are not the same as English skills. Plenty of people with perfect grammar ramble, interrupt or go quiet at the wrong moment — and plenty of people with simple English are clear, warm and easy to work with. If you want to communicate well **in English**, you need both: enough language to say what you mean, and the habits that make people understand and trust you.",
+    text: "Communication skills are not the same as English skills. Plenty of people with perfect grammar ramble, interrupt or go quiet at the wrong moment, and plenty of people with simple English are clear, warm and easy to work with. If you want to communicate well **in English**, you need both: enough language to say what you mean, and the habits that make people understand and trust you.",
   },
   {
     t: "p",
@@ -14,7 +14,7 @@ export const body: ArticleBody = [
   { t: "h3", text: "1. Lead with the point" },
   {
     t: "p",
-    text: "Indian schooling often trains us to give background first and the answer last. Listeners — especially busy managers and interviewers — lose patience before the point arrives. Say the answer in the first sentence, then the reason.",
+    text: "Indian schooling often trains us to give background first and the answer last. Listeners, especially busy managers and interviewers, lose patience before the point arrives. Say the answer in the first sentence, then the reason.",
   },
   {
     t: "example",
@@ -32,7 +32,7 @@ export const body: ArticleBody = [
   { t: "h3", text: "3. Slow down by 20%" },
   {
     t: "p",
-    text: "Nervous speakers speed up. Speaking a little slower makes your accent easier to follow, gives your brain time to find the next word, and sounds more confident — not less.",
+    text: "Nervous speakers speed up. Speaking a little slower makes your accent easier to follow, gives your brain time to find the next word, and sounds more confident, not less.",
   },
   { t: "h3", text: "4. Pause instead of filling" },
   {
@@ -51,7 +51,7 @@ export const body: ArticleBody = [
     t: "example",
     label: "Clarifying phrases",
     lines: [
-      "Just to check — you need the final version, not the draft?",
+      "Just to check: you need the final version, not the draft?",
       "So if I understood correctly, the meeting moves to 4 pm.",
       "Sorry, could you say the last part again?",
     ],
@@ -82,7 +82,7 @@ export const body: ArticleBody = [
   { t: "h3", text: "9. Say no with an alternative" },
   {
     t: "p",
-    text: "A flat no closes the conversation; a no with an option keeps it open. “I can’t take this on this week, but I can start on Monday” is still a no — and it sounds like teamwork.",
+    text: "A flat no closes the conversation; a no with an option keeps it open. “I can’t take this on this week, but I can start on Monday” is still a no, and it sounds like teamwork.",
   },
   { t: "h3", text: "10. Watch your body language on video" },
   {
@@ -94,7 +94,7 @@ export const body: ArticleBody = [
   { t: "h3", text: "11. Practise situations, not topics" },
   {
     t: "p",
-    text: "Reading about communication changes little. Rehearsing the exact situations you face — a status update, a complaint call, an interview introduction, a disagreement with a colleague — changes a lot. Try our [10 conversation practice dialogues](/blog/english-conversation-practice-dialogues) and the [English for office meetings](/blog/english-for-office-meetings) phrases.",
+    text: "Reading about communication changes little. Rehearsing the exact situations you face (a status update, a complaint call, an interview introduction, a disagreement with a colleague) changes a lot. Try our [10 conversation practice dialogues](/blog/english-conversation-practice-dialogues) and the [English for office meetings](/blog/english-for-office-meetings) phrases.",
   },
   { t: "h3", text: "12. Get feedback from a person" },
   {
@@ -128,12 +128,12 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Not sure whether your gap is English or communication? Take the free [English speaking level test](/english-speaking-level-test) — 4 questions, about a minute, and it suggests where to start.",
+    text: "Not sure whether your gap is English or communication? Take the free [English speaking level test](/english-speaking-level-test): 4 questions, about a minute, and it suggests where to start.",
   },
 
   {
     t: "cta",
-    text: "Interactive Speaking trains these habits live: meetings, calls, presentations and polite disagreement, practised in a batch of approximately 6 learners until they feel normal. 3 months, ₹1,599/month inclusive of taxes. If everyday English itself is the gap, start with Basic Spoken English at ₹1,199/month.",
+    text: "Interactive Speaking trains these habits live: meetings, calls, presentations and polite disagreement, practised in a batch of about 6 learners until they feel normal. 3 months, ₹1,599/month inclusive of taxes. If everyday English itself is the gap, start with Basic Spoken English at ₹1,199/month.",
     course: "/course-interactive-speaking",
     label: "See Interactive Speaking",
   },

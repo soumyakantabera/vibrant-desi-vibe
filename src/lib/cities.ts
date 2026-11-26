@@ -51,12 +51,12 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "English at work in Mumbai" },
       {
         t: "p",
-        text: "Mumbai English is fast and transactional. A relationship manager confirms a KYC document, a production coordinator chases a shoot schedule, a front desk handles a complaint at 11pm, an agent in Malad or Powai takes a UK or US call. The conversation does not wait while you translate in your head — so the practice has to be speaking at speed, not grammar worksheets.",
+        text: "Mumbai English is fast and transactional. A relationship manager confirms a KYC document, a production coordinator chases a shoot schedule, a front desk handles a complaint at 11pm, an agent in Malad or Powai takes a UK or US call. The conversation does not wait while you translate in your head, so the practice has to be speaking at speed, not grammar worksheets.",
       },
       {
         t: "ul",
         items: [
-          "**Banking, insurance and NBFC desks:** explain a product, a charge or a delay in plain English, without hiding behind jargon — and say what happens next.",
+          "**Banking, insurance and NBFC desks:** explain a product, a charge or a delay in plain English, without hiding behind jargon, and say what happens next.",
           "**Media, advertising and events:** briefs, call sheets and quick calls where the decision and the owner must be clear by the end.",
           "**Hospitality and retail:** greet, handle a complaint, and say no politely without sounding rude.",
           "**International processes (BPO/KPO):** accent is not the test. Clarity, empathy phrases and call control are. See [client-call English](/english-for-client-calls-india).",
@@ -69,7 +69,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         t: "p",
-        text: "**Language bridge.** Hindi works well as a bridge for most Mumbai learners: when a concept stalls, the teacher explains it in Hindi and you go straight back to English. Marathi is not used as a bridge — if Marathi is your only comfortable language, mention it in the consultation so we can judge the fit honestly.",
+        text: "**Language bridge.** Hindi works well as a bridge for most Mumbai learners: when a concept stalls, the teacher explains it in Hindi and you go straight back to English. Marathi is not used as a bridge: if Marathi is your only comfortable language, mention it in the consultation so we can judge the fit honestly.",
       },
     ],
     localFaqs: [
@@ -79,7 +79,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "I work at a bank in Mumbai. Spoken English or a Business English course?",
-        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months) — it now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹1,199/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
+        a: "If daily conversation is already fine but you freeze when explaining a product, a charge or a delay to a customer, take Interactive Speaking (₹1,599/month, 3 months). It now carries our Business English work: client calls, meetings and explaining a product. If daily conversation itself is hard, start with Basic Spoken English (₹1,199/month, 6 months). Both are live, about 6 learners, inclusive of taxes.",
       },
     ],
   },
@@ -108,7 +108,7 @@ export const CITIES: CityRecord[] = [
       {
         t: "ul",
         items: [
-          "**Gurugram international processes:** call opening, verification, empathy, escalation and a clean close — on a US or UK line.",
+          "**Gurugram international processes:** call opening, verification, empathy, escalation and a clean close. On a US or UK line.",
           "**Noida IT and media:** standups, status updates, written tickets and client demos. See [English for IT professionals](/english-for-it-professionals-india).",
           "**Delhi legal, government-facing and business roles:** formal emails, explaining a proposal clearly, and holding your ground with senior people in a meeting.",
           "**Job seekers:** HR rounds where “tell me about yourself” decides whether there is a next round. See [Interview Preparation](/course-interview-preparation).",
@@ -117,7 +117,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Hindi-medium in Delhi is the usual starting point" },
       {
         t: "p",
-        text: "Many NCR learners studied in Hindi-medium schools and understand far more English than they can say. That gap is exactly what a small live batch closes: you already understand the question, so every class is spent getting your answer out in English. When a grammar point stalls, the teacher explains it in Hindi and you go back to English — the room never turns into a Hindi lecture.",
+        text: "Many NCR learners studied in Hindi-medium schools and understand far more English than they can say. That gap is exactly what a small live batch closes: you already understand the question, so every class is spent getting your answer out in English. When a grammar point stalls, the teacher explains it in Hindi and you go back to English: the room never turns into a Hindi lecture.",
       },
       { t: "h2", text: "Timings for NCR schedules" },
       {
@@ -128,7 +128,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "I work a night shift in Gurugram. Can I still join?",
-        a: "Usually, yes — night-shift learners usually take an afternoon batch before the shift. Tell us your shift in the free consultation on WhatsApp and we suggest the slot that holds. Recordings help with revision, but speaking practice only happens in the live class.",
+        a: "Usually, yes: night-shift learners usually take an afternoon batch before the shift. Tell us your shift in the free consultation on WhatsApp and we suggest the slot that holds. Recordings help with revision, but speaking practice only happens in the live class.",
       },
       {
         q: "Is the fee different for Gurugram or Noida?",
@@ -161,7 +161,7 @@ export const CITIES: CityRecord[] = [
       {
         t: "ul",
         items: [
-          "**Standups:** yesterday, today, blocker — in under a minute, without reading from notes.",
+          "**Standups:** yesterday, today, blocker. In under a minute, without reading from notes.",
           "**Client calls with US, UK or European teams:** confirm requirements, push back on scope politely, and summarise next steps before the call ends.",
           "**GCC roles:** speak up in meetings where the decision-makers are abroad and the call moves fast.",
           "**Switching jobs:** product companies often add a managerial or culture round where communication is assessed directly. See [Interview Preparation](/course-interview-preparation).",
@@ -170,18 +170,18 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "A note on language for Bengaluru learners" },
       {
         t: "p",
-        text: "Bengaluru rooms draw people from every state. When a concept stalls, the teacher can bridge in Hindi or Bengali; Kannada, Tamil, Telugu and Malayalam are not used as bridges. If you are comfortable in neither Hindi nor Bengali, that is often fine for [Interactive Speaking](/course-interactive-speaking), where you already have the English and the work is fluency — say so in the consultation and we will advise honestly.",
+        text: "Bengaluru rooms draw people from every state. When a concept stalls, the teacher can bridge in Hindi or Bengali; Kannada, Tamil, Telugu and Malayalam are not used as bridges. If you are comfortable in neither Hindi nor Bengali, that is often fine for [Interactive Speaking](/course-interactive-speaking), where you already have the English and the work is fluency: say so in the consultation and we will advise honestly.",
       },
       { t: "h2", text: "Timings for tech schedules" },
       {
         t: "p",
-        text: "Afternoon, evening or night batches — pick the one that misses your standups and client calls. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
+        text: "Afternoon, evening or night batches: pick the one that misses your standups and client calls. Release weeks happen; classes are recorded so a missed session can be revised, and rescheduling can be requested within the same week, subject to slot availability.",
       },
     ],
     localFaqs: [
       {
         q: "I can write English but freeze in standups. Which course?",
-        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,599/month, 3 months) trains speaking on the spot — including meetings and client calls. Live, about 6 learners, inclusive of taxes.",
+        a: "If you know the words but they do not come out under pressure, Interactive Speaking (₹1,599/month, 3 months) trains speaking on the spot, including meetings and client calls. Live, about 6 learners, inclusive of taxes.",
       },
       {
         q: "I don't speak Hindi. Can I still join from Bengaluru?",
@@ -209,7 +209,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "English at work in Hyderabad" },
       {
         t: "p",
-        text: "Hyderabad's jobs cluster in a few places — IT services and GCCs around HITEC City, Gachibowli and Madhapur; pharma and life sciences; and large customer-support operations. Each has a recognisable English moment, and most learners arrive knowing exactly which one costs them.",
+        text: "Hyderabad's jobs cluster in a few places: IT services and GCCs around HITEC City, Gachibowli and Madhapur; pharma and life sciences; and large customer-support operations. Each has a recognisable English moment, and most learners arrive knowing exactly which one costs them.",
       },
       {
         t: "ul",
@@ -228,7 +228,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Timings for Hyderabad schedules" },
       {
         t: "p",
-        text: "Afternoon, evening and night batches. Support and GCC staff on rotational shifts can pick the slot that fits the roster — tell us your roster in the consultation.",
+        text: "Afternoon, evening and night batches. Support and GCC staff on rotational shifts can pick the slot that fits the roster: tell us your roster in the consultation.",
       },
     ],
     localFaqs: [
@@ -269,7 +269,7 @@ export const CITIES: CityRecord[] = [
         t: "ul",
         items: [
           "**IT services:** status updates, client calls with US or European teams, and the appraisal conversation. See [English for IT professionals](/english-for-it-professionals-india).",
-          "**Automotive and manufacturing:** explain a delay, a defect or a shift handover clearly to a manager or an auditor — short sentences, the right numbers.",
+          "**Automotive and manufacturing:** explain a delay, a defect or a shift handover clearly to a manager or an auditor. Short sentences, the right numbers.",
           "**Students and freshers:** the 60-second introduction and the HR round. See [campus placement English](/english-for-campus-placements-india).",
         ],
       },
@@ -282,7 +282,7 @@ export const CITIES: CityRecord[] = [
     localFaqs: [
       {
         q: "Are there spoken English classes in Pune with fees listed?",
-        a: "Yes. Learn With Smile publishes its fees: Basic Spoken English ₹1,199/month (6 months), Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month — all inclusive of taxes, about 6 learners, live online. Pune learners pay the same as everyone else in India.",
+        a: "Yes. Learn With Smile publishes its fees: Basic Spoken English ₹1,199/month (6 months), Intermediate ₹1,999/month, Interactive Speaking ₹1,599/month, Interview Preparation ₹2,499/month. All inclusive of taxes, about 6 learners, live online. Pune learners pay the same as everyone else in India.",
       },
     ],
   },
@@ -306,20 +306,20 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "English at work in Chennai" },
       {
         t: "p",
-        text: "Chennai learners often read and write English well — Tamil Nadu’s colleges see to that — and still go quiet when they have to speak it fast. The gap shows up on OMR client calls, in BPO and healthcare process interviews, and in the automobile corridor around Sriperumbudur and Oragadam when a supervisor has to brief a visiting team.",
+        text: "Chennai learners often read and write English well, Tamil Nadu’s colleges see to that, and still go quiet when they have to speak it fast. The gap shows up on OMR client calls, in BPO and healthcare process interviews, and in the automobile corridor around Sriperumbudur and Oragadam when a supervisor has to brief a visiting team.",
       },
       {
         t: "ul",
         items: [
           "**OMR IT and GCCs:** standups, demos and the one-on-one with a manager abroad.",
           "**BPO, KPO and healthcare process roles:** call openings, empathy phrases and closing a call cleanly. See [English for BPO jobs](/english-for-bpo-jobs-india).",
-          "**Freshers from engineering and arts colleges:** the HR round and group discussion, where speaking — not grammar — decides the result.",
+          "**Freshers from engineering and arts colleges:** the HR round and group discussion, where speaking, not grammar, decides the result.",
         ],
       },
       { t: "h2", text: "A straight answer on Tamil" },
       {
         t: "p",
-        text: "Our teachers do not use Tamil as a bridge language. For most Chennai learners that is not a problem: if you can read English and follow a class, [Interactive Speaking](/course-interactive-speaking) or [Intermediate Spoken English](/course-intermediate-english) works in English throughout. If you are a complete beginner who needs explanations in Tamil, a local Tamil-medium class may suit you better at the start — we will tell you honestly in the free consultation.",
+        text: "Our teachers do not use Tamil as a bridge language. For most Chennai learners that is not a problem: if you can read English and follow a class, [Interactive Speaking](/course-interactive-speaking) or [Intermediate Spoken English](/course-intermediate-english) works in English throughout. If you are a complete beginner who needs explanations in Tamil, a local Tamil-medium class may suit you better at the start: we will tell you honestly in the free consultation.",
       },
     ],
     localFaqs: [
@@ -359,7 +359,7 @@ export const CITIES: CityRecord[] = [
       {
         t: "ul",
         items: [
-          "**Export and trading:** price, quantity, delivery dates and a polite no to a discount — on a call, not just on email.",
+          "**Export and trading:** price, quantity, delivery dates and a polite no to a discount. On a call, not just on email.",
           "**Pharma and healthcare sales:** a two-minute product explanation that sounds natural, not memorised.",
           "**GIFT City and finance roles:** meetings with overseas teams. See [English for client calls](/english-for-client-calls-india).",
         ],
@@ -367,7 +367,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Gujarati or Hindi medium" },
       {
         t: "p",
-        text: "Gujarati is not used as a bridge language. Most Ahmedabad learners are comfortable in Hindi, and the [Hindi to English course](/course-spoken-english-hindi) explains stuck concepts in Hindi before moving you back to English — same ₹1,199/month.",
+        text: "Gujarati is not used as a bridge language. Most Ahmedabad learners are comfortable in Hindi, and the [Hindi to English course](/course-spoken-english-hindi) explains stuck concepts in Hindi before moving you back to English: same ₹1,199/month.",
       },
     ],
     localFaqs: [
@@ -377,7 +377,7 @@ export const CITIES: CityRecord[] = [
       },
       {
         q: "Can the teacher explain in Gujarati?",
-        a: "No — Hindi or Bengali are the bridge languages. Most Ahmedabad learners take the Hindi to English version without difficulty. If you are comfortable only in Gujarati, tell us in the free consultation and we will advise honestly.",
+        a: "No, Hindi or Bengali are the bridge languages. Most Ahmedabad learners take the Hindi to English version without difficulty. If you are comfortable only in Gujarati, tell us in the free consultation and we will advise honestly.",
       },
     ],
   },
@@ -402,7 +402,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Why Patna learners want spoken English" },
       {
         t: "p",
-        text: "Patna is a city of preparation. Many learners have spent years on competitive exams and know grammar rules better than most graduates elsewhere — and still cannot answer “Tell me about yourself” in English in an interview. Others are about to move to Delhi, Bengaluru or Pune for work and know that English will be the first test in the new city.",
+        text: "Patna is a city of preparation. Many learners have spent years on competitive exams and know grammar rules better than most graduates elsewhere, and still cannot answer “Tell me about yourself” in English in an interview. Others are about to move to Delhi, Bengaluru or Pune for work and know that English will be the first test in the new city.",
       },
       {
         t: "ul",
@@ -415,7 +415,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Taught through Hindi" },
       {
         t: "p",
-        text: "Most Patna learners think in Hindi. [Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept stalls, then switches you back to English. Grammar you already know from exam preparation becomes sentences you can say — that is usually the fastest part of the journey.",
+        text: "Most Patna learners think in Hindi. [Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept stalls, then switches you back to English. Grammar you already know from exam preparation becomes sentences you can say: that is usually the fastest part of the journey.",
       },
     ],
     localFaqs: [
@@ -451,7 +451,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "English at work in Jaipur" },
       {
         t: "p",
-        text: "Jaipur’s English is face to face. A hotel front desk checks in a foreign family, a guide explains Amber Fort, a jeweller on Johari Bazaar quotes a price to a visiting buyer, and an IT team in Sitapura or Mahindra World City joins a client call. In each case the person usually knows the words — what is missing is the confidence to keep talking when the other person replies.",
+        text: "Jaipur’s English is face to face. A hotel front desk checks in a foreign family, a guide explains Amber Fort, a jeweller on Johari Bazaar quotes a price to a visiting buyer, and an IT team in Sitapura or Mahindra World City joins a client call. In each case the person usually knows the words: what is missing is the confidence to keep talking when the other person replies.",
       },
       {
         t: "ul",
@@ -498,7 +498,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Why Lucknow learners want spoken English" },
       {
         t: "p",
-        text: "Lucknow learners are often polished speakers in Hindi and Urdu — tehzeeb is not the problem. The problem is that English feels like a performance rather than a conversation. It shows up in bank and government interviews, in private-sector jobs in Gomti Nagar, and for students preparing to move to Noida, Delhi or Bengaluru.",
+        text: "Lucknow learners are often polished speakers in Hindi and Urdu: tehzeeb is not the problem. The problem is that English feels like a performance rather than a conversation. It shows up in bank and government interviews, in private-sector jobs in Gomti Nagar, and for students preparing to move to Noida, Delhi or Bengaluru.",
       },
       {
         t: "ul",
@@ -511,7 +511,7 @@ export const CITIES: CityRecord[] = [
       { t: "h2", text: "Taught through Hindi" },
       {
         t: "p",
-        text: "[Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept is not landing and then moves you back to English — same course and fee, ₹1,199/month.",
+        text: "[Basic Spoken English — Hindi to English](/course-spoken-english-hindi) uses a Hindi-speaking teacher who explains in Hindi when a concept is not landing and then moves you back to English: same course and fee, ₹1,199/month.",
       },
     ],
     localFaqs: [
@@ -613,11 +613,11 @@ export function cityFaqs(city: CityRecord): Faq[] {
   return [
     {
       q: `Where in ${city.name} are your spoken English classes held?`,
-      a: `Not in a ${city.name} classroom — every class for ${city.name} learners is live online. Our registered office is in Kolkata. Learners join from ${city.neighborhoods}; batch timings are IST and flexible.`,
+      a: `Not in a ${city.name} classroom: every class for ${city.name} learners is live online. Our registered office is in Kolkata. Learners join from ${city.neighborhoods}; batch timings are IST and flexible.`,
     },
     {
       q: `How much do spoken English classes cost in ${city.name}?`,
-      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹1,199 per month for Basic Spoken English in a batch of approximately 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
+      a: `Offline centres in ${city.name} generally charge ₹1,500–₹6,000 for a 3-month spoken English course, often in batches of 25–40. Learn With Smile charges ₹1,199 per month for Basic Spoken English in a batch of about 6 learners, inclusive of taxes, ${admissionShort()}. The fee is the same in ${city.name} as in Kolkata or Kochi.`,
     },
     {
       q: `Can the teacher explain if I studied in ${city.medium}?`,
@@ -662,7 +662,7 @@ export function cityBody(city: CityRecord): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: approximately 6 learners, ₹1,199/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
+      text: `**Short answer.** Spoken English classes in ${city.name} do not have to mean ${city.commute}. Learn With Smile is live online: about 6 learners, ₹1,199/month inclusive of taxes, afternoon / evening / night IST. Learners join from ${city.neighborhoods}. The office is in Kolkata; it is not a walk-in campus.`,
     },
     ...(st
       ? [
@@ -682,7 +682,7 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "ul",
       items: [
         `**Commute.** ${city.commute} is longer than the class.`,
-        `**Industry English.** ${city.industries} need names, numbers and a next step — not a fake accent. That is [client-call English](/english-for-client-calls-india) and [Business English](/workplace-english-course-online-india).`,
+        `**Industry English.** ${city.industries} need names, numbers and a next step, not a fake accent. That is [client-call English](/english-for-client-calls-india) and [Business English](/workplace-english-course-online-india).`,
         `**School medium.** ${city.medium} is not a wall. [Hindi- and Bengali-medium learners](/english-hindi-bengali-medium) are the majority of our rooms.`,
       ],
     },
@@ -707,13 +707,13 @@ export function cityBody(city: CityRecord): ArticleBody {
       t: "ul",
       items: [
         "No classroom in " + city.name + " — every class is live online.",
-        "No certificate. Indian interviews hear you. Visas read an exam board score — sit IELTS with the test board when a form asks; we do not sell that paper.",
+        "No certificate. Indian interviews hear you. Visas read an exam board score: sit IELTS with the test board when a form asks; we do not sell that paper.",
         "No 30-day fluency from zero. Everyday conversation is about 6 months of live practice. [How long it takes](/how-long-to-learn-spoken-english).",
       ],
     },
     {
       t: "cta",
-      text: `Sit in the next ${city.name} IST slot. Approx. 6 learners. From ₹1,199/mo, inclusive of taxes.`,
+      text: `Sit in the next ${city.name} IST slot. About 6 learners. From ₹1,199/mo, inclusive of taxes.`,
       course: "/free-consultation",
       label: "Get Free Consultation",
     },

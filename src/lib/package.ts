@@ -54,7 +54,7 @@ export const PART_TONE: Record<
 };
 
 export const PACKAGE_ONE_LINE =
-  "Every course includes live classes, the Bolo app — daily practice with a streak, video lessons and a weekly teacher review of your reading and speaking — and the same teacher, in one monthly fee.";
+  "Every course includes live classes, the Bolo app (daily practice with a streak, video lessons and a weekly teacher review of your reading and speaking) and the same teacher, in one monthly fee.";
 
 export const WEEK: {
   day: string;
@@ -95,7 +95,7 @@ export const WEEK: {
     tab: "Practice",
     title: "Speaking practice",
     detail:
-      "Daily grammar and vocabulary, then a whole conversation from start to finish — recorded for your teacher.",
+      "Daily grammar and vocabulary, then a whole conversation from start to finish: recorded for your teacher.",
     video: true,
   },
   {
@@ -103,7 +103,7 @@ export const WEEK: {
     kind: "Live class",
     title: "Role-plays + real talk",
     detail:
-      "Your second live class: conversations, role-plays and course-specific practice — interviews, meetings or daily talk.",
+      "Your second live class: conversations, role-plays and course-specific practice. Interviews, meetings or daily talk.",
   },
   {
     day: "Sat",
@@ -119,7 +119,7 @@ export const WEEK: {
     tab: "Watch",
     title: "Catch up + videos",
     detail:
-      "Daily grammar and vocabulary at your pace, and any video lesson in Bolo — tips, grammar, fluency.",
+      "Daily grammar and vocabulary at your pace, and any video lesson in Bolo: tips, grammar, fluency.",
     video: true,
   },
 ];
@@ -134,7 +134,7 @@ export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: Vi
   {
     cat: "Tips & tricks",
     title: "Tips and tricks to start speaking",
-    blurb: "Simple ways to say your first sentences out loud — and keep going.",
+    blurb: "Simple ways to say your first sentences out loud, and keep going.",
     tags: ["Spoken English", "Intermediate", "Interactive Speaking", "Interview Prep"],
   },
   {
@@ -170,7 +170,7 @@ export const VIDEO_TOPICS: { cat: string; title: string; blurb: string; tags: Vi
   {
     cat: "Workplace",
     title: "Meetings and email phrases",
-    blurb: "Agree, disagree, update and follow up — politely and clearly.",
+    blurb: "Agree, disagree, update and follow up: politely and clearly.",
     tags: ["Interactive Speaking"],
   },
   {
@@ -197,7 +197,7 @@ export const BEFORE_NOW: { row: string; before: string; now: string }[] = [
   {
     row: "Live classes",
     before: "Up to 2 a week, about 6 learners",
-    now: "Up to 2 a week, about 6 learners — unchanged",
+    now: "Up to 2 a week, about 6 learners: unchanged",
   },
   {
     row: "Between classes",
@@ -244,7 +244,7 @@ export const COURSE_PACKAGE: Record<
   }
 > = {
   "spoken-english": {
-    live: "Build sentences from zero, speak in every round and get corrected live — including interview English.",
+    live: "Build sentences from zero, speak in every round and get corrected live, including interview English.",
     portal:
       "Daily conversations, word and phrase brush-ups, reading aloud and grammar inside simple texts.",
     videos: "Grammar basics, thinking in English, what to say when your mind goes blank.",
@@ -265,7 +265,7 @@ export const COURSE_PACKAGE: Record<
     videoTag: "Intermediate",
   },
   "interactive-speaking": {
-    live: "Debates, stories and role-plays — team meetings, status updates, client calls and presentations — that make you talk before you overthink.",
+    live: "Debates, stories and role-plays (team meetings, status updates, client calls and presentations) that make you talk before you overthink.",
     portal:
       "Whole-conversation practice, phrase brush-ups and reading for rhythm between sessions.",
     videos:

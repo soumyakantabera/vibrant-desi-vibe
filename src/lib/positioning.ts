@@ -11,13 +11,13 @@
 import { FAIR_BILLING } from "@/lib/fair-fees";
 
 export const ALL_IN_ONE =
-  "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher — all in one monthly fee from ₹1,199, taught in English, Hindi or Bengali.";
+  "Learn With Smile is the all-in-one way to learn spoken English at a low cost: live classes in a small batch, the Bolo daily-practice app, video lessons, a weekly teacher review and the same teacher. All in one monthly fee from ₹1,199, taught in English, Hindi or Bengali.";
 
 export const ALL_IN_ONE_SHORT =
-  "Daily practice, a live teacher and your own language — from ₹1,199/month.";
+  "Daily practice, a live teacher and your own language: from ₹1,199/month.";
 
 export const DAILY_PRACTICE_PITCH =
-  "If you want to practise English every day at an affordable price — and have a real teacher check it — take a Learn With Smile course.";
+  "If you want to practise English every day at an affordable price (and have a real teacher check it) take a Learn With Smile course.";
 
 /** "unknown": the provider does not publish it — we say so rather than guess. */
 export type Mark = "yes" | "no" | "part" | "unknown";
@@ -57,13 +57,13 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     what: "Learn With Smile",
     examples: "live batch of about 6 + Bolo app",
     daily: "yes",
-    dailyNote: "Yes — the Bolo app, every day, with a streak",
+    dailyNote: "Yes, the Bolo app, every day, with a streak",
     teacher: "yes",
-    teacherNote: "Yes — about 6 learners, same teacher",
+    teacherNote: "Yes, about 6 learners, same teacher",
     language: "yes",
     languageNote: "Hindi, Bengali or English",
     billing: "yes",
-    billingNote: "Yes — no auto-debit, no loans, refund in writing",
+    billingNote: "Yes, no auto-debit, no loans, refund in writing",
     price: "From ₹1,199/month",
     ours: true,
   },
@@ -81,7 +81,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     price: "From ₹58/month (their page)",
     logos: [{ slug: "josh-skills", name: "Josh Skills" }],
     source: {
-      label: "Josh Talks — English speaking app",
+      label: "Josh Talks: English speaking app",
       url: "https://www.joshtalks.com/english-speaking/best-english-speaking-app",
     },
   },
@@ -91,7 +91,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     daily: "part",
     dailyNote: "Only the calls you buy",
     teacher: "yes",
-    teacherNote: "Yes — 1:1 calls of about 15 minutes",
+    teacherNote: "Yes, 1:1 calls of about 15 minutes",
     language: "part",
     languageNote: "Guides for Hindi and Marathi speakers; calls in English",
     billing: "part",
@@ -109,7 +109,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     daily: "part",
     dailyNote: "Only the lessons you book",
     teacher: "yes",
-    teacherNote: "Yes — 1:1, tutor of your choice",
+    teacherNote: "Yes, 1:1, tutor of your choice",
     language: "no",
     languageNote: "English only",
     billing: "part",
@@ -117,7 +117,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     price: "₹5,999–₹10,999/month for 15–30 min a day",
     logos: [{ slug: "cambly", name: "Cambly" }],
     source: {
-      label: "Cambly Help — Renewal",
+      label: "Cambly Help: Renewal",
       url: "https://studentsupport.cambly.com/hc/en-us/articles/360050272511-Renewal",
     },
   },
@@ -127,7 +127,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     daily: "part",
     dailyNote: "Only the lessons you book",
     teacher: "yes",
-    teacherNote: "Yes — 1:1, tutor you choose",
+    teacherNote: "Yes, 1:1, tutor you choose",
     language: "part",
     languageNote: "Depends on the tutor",
     billing: "part",
@@ -135,7 +135,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     price: "₹250–₹4,000 per lesson",
     logos: [{ slug: "preply", name: "Preply" }],
     source: {
-      label: "Preply Help — How subscriptions work",
+      label: "Preply Help: How subscriptions work",
       url: "https://help.preply.com/en/articles/4966680-how-subscriptions-work",
     },
   },
@@ -145,14 +145,14 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     daily: "part",
     dailyNote: "Only the lessons you book",
     teacher: "yes",
-    teacherNote: "Yes — 1:1, tutor you choose",
+    teacherNote: "Yes, 1:1, tutor you choose",
     language: "part",
     languageNote: "Depends on the tutor",
     billing: "yes",
     billingNote: "Pay per lesson with credits; refunds as credits",
     price: "₹250–₹4,000 per lesson",
     logos: [{ slug: "italki", name: "italki" }],
-    source: { label: "italki — pricing", url: "https://www.italki.com/en/blog/italki-price" },
+    source: { label: "italki: pricing", url: "https://www.italki.com/en/blog/italki-price" },
   },
   {
     what: "British Council",
@@ -160,7 +160,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     daily: "part",
     dailyNote: "Self-study material alongside classes",
     teacher: "yes",
-    teacherNote: "Yes — live group classes",
+    teacherNote: "Yes, live group classes",
     language: "no",
     languageNote: "English only",
     billing: "part",
@@ -168,7 +168,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     price: "₹8,900–₹10,350 per 15–22.5 hours",
     logos: [{ slug: "british-council", name: "British Council" }],
     source: {
-      label: "British Council India — English",
+      label: "British Council India: English",
       url: "https://www.britishcouncil.in/english",
     },
   },
@@ -189,7 +189,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
       { slug: "elsa-speak", name: "ELSA Speak" },
     ],
     source: {
-      label: "ELSA Help — Subscriptions and cancellation",
+      label: "ELSA Help: Subscriptions and cancellation",
       url: "https://elsanow.freshdesk.com/en/support/solutions/articles/31000177556-understanding-subscriptions-and-cancellation",
     },
   },
@@ -199,7 +199,7 @@ export const DIFFERENT_ROWS: CompareRow[] = [
     daily: "unknown",
     dailyNote: "Not stated on the page we checked",
     teacher: "yes",
-    teacherNote: "Yes — live 1:1 classes",
+    teacherNote: "Yes, live 1:1 classes",
     language: "unknown",
     languageNote: "Not stated on the page we checked",
     billing: "part",
@@ -242,7 +242,7 @@ export const WHY_WE_WIN_FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Is there a spoken English course with daily practice at an affordable price?",
-    a: `Yes. ${DAILY_PRACTICE_PITCH} Every course includes the Bolo app for daily practice — grammar, vocabulary, reading aloud and recorded speaking — plus live classes in a batch of about 6 and a weekly teacher review. Basic Spoken English is ₹1,199/month, inclusive of taxes. Message us on WhatsApp to start.`,
+    a: `Yes. ${DAILY_PRACTICE_PITCH} Every course includes the Bolo app for daily practice (grammar, vocabulary, reading aloud and recorded speaking) plus live classes in a batch of about 6 and a weekly teacher review. Basic Spoken English is ₹1,199/month, inclusive of taxes. Message us on WhatsApp to start.`,
   },
   {
     q: "Do I pay monthly, or several months upfront? Is there a loan or EMI?",

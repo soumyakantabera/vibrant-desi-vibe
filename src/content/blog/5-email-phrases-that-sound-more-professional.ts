@@ -7,11 +7,11 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "None of it is wrong. It is grammatical, it is polite, and inside India it reads as perfectly professional. The trouble starts when the reader is in London or Singapore or Austin, because to them that vocabulary sounds like something from 1955 — and, unfairly, people who write in dated English get read as junior. Not less competent, exactly. Just less senior than they are.",
+    text: "None of it is wrong. It is grammatical, it is polite, and inside India it reads as perfectly professional. The trouble starts when the reader is in London or Singapore or Austin, because to them that vocabulary sounds like something from 1955, and, unfairly, people who write in dated English get read as junior. Not less competent, exactly. Just less senior than they are.",
   },
   {
     t: "p",
-    text: "That is a bad reason to be passed over, and it is one of the easiest things to fix. Below are five swaps. None of them makes your English harder — a few actually make it simpler.",
+    text: "That is a bad reason to be passed over, and it is one of the easiest things to fix. Below are five swaps. None of them makes your English harder: a few actually make it simpler.",
   },
 
   { t: "h2", text: '1. "Sorry for the delay" → "Thanks for your patience"' },
@@ -21,7 +21,7 @@ export const body: ArticleBody = [
     rows: [
       [
         "Sorry for the delayed response, I was caught up with other work.",
-        "Thanks for your patience on this — here's where it stands.",
+        "Thanks for your patience on this: here's where it stands.",
       ],
       [
         "Apologies for the late reply.",
@@ -35,7 +35,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "The bigger issue is what happens when you apologise habitually. One apology reads as courteous. An apology at the top of every third email reads as someone who is always slightly behind and knows it. In India that habit is taught as politeness, which is exactly why it is worth unlearning in writing — it is not being read as politeness.",
+    text: "The bigger issue is what happens when you apologise habitually. One apology reads as courteous. An apology at the top of every third email reads as someone who is always slightly behind and knows it. In India that habit is taught as politeness, which is exactly why it is worth unlearning in writing: it is not being read as politeness.",
   },
   {
     t: "p",
@@ -82,7 +82,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "That is seven: *just*, *thinking*, *maybe*, *possibly*, *consider*, *perhaps*, *slightly* — plus a request for permission at the end. Each one on its own is fine. Stacked, they say *I do not think my own suggestion is worth your time*, and the reader takes you at your word.",
+    text: "That is seven: *just*, *thinking*, *maybe*, *possibly*, *consider*, *perhaps*, *slightly*, plus a request for permission at the end. Each one on its own is fine. Stacked, they say *I do not think my own suggestion is worth your time*, and the reader takes you at your word.",
   },
   {
     t: "example",
@@ -93,7 +93,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "That is not blunt. Look at the last sentence — it is still open, it still invites disagreement, it still leaves the decision with them. What changed is that the recommendation itself is now stated clearly, once, so there is something concrete to agree or disagree with.",
+    text: "That is not blunt. Look at the last sentence: it is still open, it still invites disagreement, it still leaves the decision with them. What changed is that the recommendation itself is now stated clearly, once, so there is something concrete to agree or disagree with.",
   },
   {
     t: "p",
@@ -107,7 +107,7 @@ export const body: ArticleBody = [
     rows: [
       [
         "Please find attached herewith the report.",
-        "I've attached the Q3 report — the summary is on page 2.",
+        "I've attached the Q3 report: the summary is on page 2.",
       ],
       [
         "PFA for your kind perusal.",
@@ -136,13 +136,13 @@ export const body: ArticleBody = [
     t: "example",
     label: "After",
     lines: [
-      "Following up on the vendor contract — I'll assume we're going ahead with the current terms unless I hear otherwise by Friday.",
+      "Following up on the vendor contract: I'll assume we're going ahead with the current terms unless I hear otherwise by Friday.",
       "If something's stuck at your end, tell me what it is and I'll see if I can move it.",
     ],
   },
   {
     t: "p",
-    text: "Three things changed. You **named the item**, so the reader does not have to scroll to work out which thread this is. You **stated a default**, which turns silence into a decision rather than a dead end — and often gets you a fast reply from someone who does not want that default. And you **offered help**, which reframes the chase as support instead of pressure.",
+    text: "Three things changed. You **named the item**, so the reader does not have to scroll to work out which thread this is. You **stated a default**, which turns silence into a decision rather than a dead end, and often gets you a fast reply from someone who does not want that default. And you **offered help**, which reframes the chase as support instead of pressure.",
   },
   {
     t: "p",
@@ -208,7 +208,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Workplace emails — subject lines, action requests, tone, follow-ups and escalation messages — are part of Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, a live batch of approximately 6 learners, up to twice a week in afternoon, evening or night IST slots. Recorded classes are available for revision.",
+    text: "Workplace emails (subject lines, action requests, tone, follow-ups and escalation messages) are part of Intermediate Spoken English: 4 months, ₹1,999/month inclusive of taxes, a live batch of about 6 learners, up to twice a week in afternoon, evening or night IST slots. Recorded classes are available for revision.",
     course: "/course-intermediate-english",
     label: "See Intermediate Spoken English",
   },

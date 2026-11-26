@@ -217,11 +217,11 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "**Pick one table** — not the whole page. Today is “phone calls”, tomorrow is “office”.",
+      "**Pick one table**, not the whole page. Today is “phone calls”, tomorrow is “office”.",
       "**Read each line aloud three times**: once slowly, once at normal speed, once without looking.",
       "**Cover the English column** and say the English from the Hindi. This is the step that builds recall.",
       "**Record a 60-second voice note** using five of the sentences in a made-up situation (“I’m calling about my order…”).",
-      "**Use one sentence for real** before you sleep — with a shopkeeper, a colleague, a family member.",
+      "**Use one sentence for real** before you sleep: with a shopkeeper, a colleague, a family member.",
     ],
   },
   {
@@ -231,7 +231,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "If Hindi is the language you think in, Basic Spoken English — Hindi to English is taught by a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. 6 months, ₹1,199/month inclusive of taxes, a live batch of approximately 6 learners, afternoon, evening and night IST slots.",
+    text: "If Hindi is the language you think in, Basic Spoken English — Hindi to English is taught by a Hindi-speaking teacher who explains in Hindi when a concept stalls, then moves you back to English. 6 months, ₹1,199/month inclusive of taxes, a live batch of about 6 learners, afternoon, evening and night IST slots.",
     course: "/course-spoken-english-hindi",
     label: "See Spoken English — Hindi to English",
   },

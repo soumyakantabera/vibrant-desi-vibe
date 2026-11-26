@@ -13,7 +13,7 @@ export const COURSE_CATEGORIES = [
     id: "speak-confidently",
     title: "Speak Confidently · From ₹1,199/month, inclusive of taxes",
     description:
-      "Quality live English from ₹1,199/month, inclusive of taxes. 6-month Basic Spoken English, 4-month Intermediate Spoken English (₹1,999/month) or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English is also a dedicated room when the HR screen is the bottleneck. Batches of approximately 6 learners.",
+      "Quality live English from ₹1,199/month, inclusive of taxes. 6-month Basic Spoken English, 4-month Intermediate Spoken English (₹1,999/month) or 3-month Interactive Speaking — 1 hr 30 min, up to 2 classes/week. Interview English is also a dedicated room when the HR screen is the bottleneck. Batches of about 6 learners.",
     icon: "mic",
     tone: "brand",
     featuredSlug: "spoken-english",
@@ -23,7 +23,7 @@ export const COURSE_CATEGORIES = [
     id: "work-and-career",
     title: "Work & Career · from ₹2,499/month, inclusive of taxes",
     description:
-      "Interview Preparation ₹2,499/month: HR screens, the 60-second intro, STAR answers and recorded mocks. Meetings, client calls and workplace emails are now inside Interactive Speaking and Intermediate. Batches of approximately 6 learners.",
+      "Interview Preparation ₹2,499/month: HR screens, the 60-second intro, STAR answers and recorded mocks. Meetings, client calls and workplace emails are now inside Interactive Speaking and Intermediate. Batches of about 6 learners.",
     icon: "headset",
     tone: "indigo",
     featuredSlug: "interview-preparation",

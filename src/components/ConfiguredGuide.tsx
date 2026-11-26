@@ -14,7 +14,7 @@ export function ConfiguredGuide({ path }: { path: string }) {
       breadcrumb={view.breadcrumb}
       h1={
         <>
-          {view.h1} — <span className="text-sunshine">{view.h1Accent}</span>
+          {view.h1}: <span className="text-sunshine">{view.h1Accent}</span>
         </>
       }
       standfirst={view.standfirst}

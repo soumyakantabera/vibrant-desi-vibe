@@ -308,7 +308,7 @@ function Home() {
               subtitle={
                 <span className="text-white/90">
                   One named teacher. Up to 2 classes a week. Every session live — never a recording
-                  as the class. Batches of approximately 6 learners mean you still get the mic.
+                  as the class. Batches of about 6 learners mean you still get the mic.
                 </span>
               }
             />
@@ -316,7 +316,7 @@ function Home() {
               <GlassCard
                 icon="users"
                 title="Small Live Batches"
-                pricing={<FeeText text="Approx. 6 learners · From ₹1,199/mo, inclusive of taxes" />}
+                pricing={<FeeText text="About 6 learners · From ₹1,199/mo, inclusive of taxes" />}
               >
                 Scheduled English cohorts usually have around 6 learners. You practise with
                 classmates, speak in every class and receive corrections during the lesson.
@@ -337,7 +337,7 @@ function Home() {
                 },
                 { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
                 { n: 3, lbl: "WhatsApp Us", sub: "Replies 10am–midnight IST every day", c: "wa" },
-                { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
+                { n: 4, lbl: "Join a Class", sub: "About 6 per batch", c: "sage" },
               ].map((s) => (
                 <div key={s.n} className="text-center">
                   <div

@@ -27,6 +27,7 @@ import { intlUnit, isIntlSlug } from "@/lib/intl-fees";
 import { FeePair, FeeText, feeHeadline } from "@/components/FeeText";
 import { DEMO_CTA, CHAT_CTA, WHATSAPP_DISPLAY, waLink, TEACHER_PROMISE } from "@/lib/whatsapp";
 import { LevelTestButton } from "@/components/LevelTestPromo";
+import { RATING } from "@/lib/rating";
 import { CONSULTATION } from "@/lib/consultation";
 import { courseFaqs } from "@/lib/course-seo";
 import { faqAnchor, moduleAnchor } from "@/lib/anchors";
@@ -106,11 +107,11 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/english-speaking-test-bengali",
       title: "ইংরেজি বলার লেভেল টেস্ট",
-      description: "Free 1-minute self-check in Bengali — find your starting course.",
+      description: "Free 1-minute self-check in Bengali: find your starting course.",
     },
     {
       href: "/bolo",
-      title: "Bolo — daily practice app",
+      title: "Bolo: daily practice app",
       description: "Practice, Watch, Review: the daily part of every course.",
     },
   ],
@@ -137,7 +138,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     },
     {
       href: "/bolo",
-      title: "Bolo — daily practice app",
+      title: "Bolo: daily practice app",
       description: "Practice, Watch, Review: the daily part of every course.",
     },
   ],
@@ -155,7 +156,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/spoken-business-or-interactive-english",
       title: "Which English class do I need?",
-      description: "Spoken, Interactive or Business — pick the bottleneck, not all three.",
+      description: "Spoken, Interactive or Business: pick the bottleneck, not all three.",
     },
     {
       href: "/english-hindi-bengali-medium",
@@ -173,7 +174,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       href: "/intermediate-spoken-english-course-india",
       title: "Intermediate spoken English, explained",
       description:
-        "Basic sentences work, flow does not. What the 4 months fix — and what they do not.",
+        "Basic sentences work, flow does not. What the 4 months fix, and what they do not.",
     },
     {
       href: "/spoken-business-or-interactive-english",
@@ -184,12 +185,12 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
       href: "/how-to-speak-english-fluently",
       title: "How to speak English fluently",
       description:
-        "Free drills for the days between classes — shadowing, recordings, 60-second turns.",
+        "Free drills for the days between classes: shadowing, recordings, 60-second turns.",
     },
     {
       href: "/blog/5-speaking-habits-that-killed-my-hesitation",
       title: "5 speaking habits that reduce hesitation",
-      description: "Cut the um, ah, like — the same filler drills used in the Foundation phase.",
+      description: "Cut the um, ah, like: the same filler drills used in the Foundation phase.",
     },
   ],
   "interactive-speaking": [
@@ -200,7 +201,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     },
     {
       href: "/spoken-business-or-interactive-english",
-      title: "Which class — Spoken or Interactive?",
+      title: "Which class: Spoken or Interactive?",
       description: "Interactive assumes there is language to retrieve. Spoken first if not.",
     },
     {
@@ -211,7 +212,7 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/english-for-client-calls-india",
       title: "English for client calls",
-      description: "Names, numbers, next step — clarity, not a fake accent.",
+      description: "Names, numbers, next step: clarity, not a fake accent.",
     },
     {
       href: "/english-for-presentations-india",
@@ -263,18 +264,18 @@ const RELATED_GUIDES: Record<string, { href: string; title: string; description:
     {
       href: "/english-for-presentations-india",
       title: "Explain your work in 3 minutes",
-      description: "The same muscle as a technical round — numbers, names, next step.",
+      description: "The same muscle as a technical round: numbers, names, next step.",
     },
   ],
 };
 
 const TEACHER_NOTE: Record<string, string> = {
-  "spoken-english": "Same teacher every class. They hear you speak — and they remember your words.",
+  "spoken-english": "Same teacher every class. They hear you speak, and they remember your words.",
   "intermediate-english":
     "Same teacher for all 4 months. They hear your tense slip in month 1 and check it is gone by month 4.",
   "interactive-speaking": "You talk every hour. Your teacher tracks hesitation week by week.",
   "interview-preparation":
-    "The same teacher on every mock. They hear the freeze on the 60-second intro — and they mark it until it stops.",
+    "The same teacher on every mock. They hear the freeze on the 60-second intro, and they mark it until it stops.",
 };
 
 /** The learner's-language block: short, real text, marked with its own lang. */
@@ -327,6 +328,21 @@ function NativeBlock({ native }: { native: NativeSection }) {
   );
 }
 
+/**
+ * Jump-link click. Sections lower down render as they scroll into view, so a
+ * far target (the FAQ) moves while the smooth scroll runs. Scroll once, then
+ * re-aim after those sections have rendered.
+ */
+function jumpTo(e: { preventDefault: () => void }, href: string) {
+  const el = document.getElementById(href.slice(1));
+  if (!el) return;
+  e.preventDefault();
+  history.replaceState(null, "", href);
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 700);
+  window.setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 1500);
+}
+
 export function CoursePage({ data }: { data: CourseData }) {
   useFxList();
   const shownTagline = <FeeText text={data.tagline} />;
@@ -357,7 +373,7 @@ export function CoursePage({ data }: { data: CourseData }) {
         {
           tone: "brand",
           icon: SnapIcons.people,
-          big: data.snapshotBatchBig ?? "Approx. 6 learners",
+          big: data.snapshotBatchBig ?? "About 6 learners",
           small: "in a live batch · up to 2 classes a week, 90 min",
         },
         {
@@ -398,9 +414,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 {data.title}
               </h1>
             </div>
-            <p className="mt-4 text-lg text-white max-w-2xl">{shownTagline}</p>
-            {teacherNote && <p className="mt-2 text-base text-white/90">{teacherNote}</p>}
-            <div className="mt-6 space-y-3 text-sm">
+            <div className="mt-5 space-y-3 text-sm">
               <div className="flex flex-wrap gap-3">
                 <span
                   id="fees"
@@ -435,25 +449,37 @@ export function CoursePage({ data }: { data: CourseData }) {
                 </div>
               )}
             </div>
-            <p className="mt-3 text-sm text-white/90">
-              {shownLive ??
-                "✓ 100% online live · ✓ About 6 in a batch · ✓ Flexible afternoon · evening · night slots · ✓ Kolkata, pan-India, now worldwide"}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3" data-cta-location="hero">
+            <div className="mt-6 flex flex-wrap gap-3" data-cta-location="hero">
               <WaButton message={waPrimary} variant="wa" size="lg">
                 {CHAT_CTA}
               </WaButton>
               <WaButton message={waPrimary} variant="sun" size="lg">
                 {DEMO_CTA}
               </WaButton>
-              <DemoButton />
+            </div>
+            <p className="mt-3 text-sm text-white/95">
+              <a
+                href={RATING.readUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sunshine hover:underline"
+              >
+                ★ {RATING.value} · {RATING.count} {RATING.source} reviews
+              </a>{" "}
+              · {TEACHER_PROMISE}
+            </p>
+            <p className="mt-5 text-lg text-white max-w-2xl">{shownTagline}</p>
+            {teacherNote && <p className="mt-2 text-base text-white/90">{teacherNote}</p>}
+            <p className="mt-3 text-sm text-white/90">
+              {shownLive ??
+                "✓ 100% online live · ✓ About 6 in a batch · ✓ Flexible afternoon · evening · night slots · ✓ Kolkata, pan-India, now worldwide"}
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <DemoButton size="md" />
               <LevelTestButton />
             </div>
-            <p className="mt-3 text-sm font-semibold text-sunshine">
-              <FeeText text={CONSULTATION.hook} />
-            </p>
-            <p className="mt-2 text-sm text-white/95">
-              WhatsApp{" "}
+            <p className="mt-3 text-sm text-white/90">
+              <FeeText text={CONSULTATION.hook} /> WhatsApp{" "}
               <a
                 href={waLink(waPrimary)}
                 className="font-semibold underline"
@@ -462,13 +488,41 @@ export function CoursePage({ data }: { data: CourseData }) {
               >
                 {WHATSAPP_DISPLAY}
               </a>
-              . {TEACHER_PROMISE}
+              .
             </p>
             <PaymentTrust tone="dark" className="mt-4" />
           </div>
           <div className="hidden lg:block relative">{snapshot}</div>
         </div>
       </section>
+
+      {/* Jump links: serious buyers go straight to fees, syllabus and questions. */}
+      <nav
+        aria-label="On this page"
+        data-jump-links=""
+        className="sticky top-16 lg:top-[72px] z-20 border-b border-border bg-white/95 backdrop-blur"
+      >
+        <div className="container-x flex gap-2 overflow-x-auto py-2.5 text-sm font-display font-bold no-scrollbar">
+          {[
+            isPackageSlug(feeKey) && { href: "#included", label: "Fees & what's included" },
+            { href: "#syllabus", label: "What you'll learn" },
+            { href: "#outcomes", label: "Outcomes" },
+            data.testimonials?.length ? { href: "#stories", label: "Reviews" } : null,
+            faqs.length > 0 && { href: "#faq", label: "FAQ" },
+          ]
+            .filter((l): l is { href: string; label: string } => Boolean(l))
+            .map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={(e) => jumpTo(e, l.href)}
+                className="shrink-0 rounded-full border border-border px-3.5 py-1.5 text-ink/85 hover:border-brand hover:text-brand"
+              >
+                {l.label}
+              </a>
+            ))}
+        </div>
+      </nav>
 
       {/* Mobile snapshot card */}
       <section className="hero-light lg:hidden bg-paper py-8">
@@ -523,7 +577,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               eyebrow="What You'll Achieve"
               eyebrowTone="sun"
               title={<>By the end, you'll be able to…</>}
-              subtitle="Real, measurable outcomes — not just lecture hours."
+              subtitle="Real, measurable outcomes, not just lecture hours."
             />
             <ul className="grid sm:grid-cols-2 gap-3">
               {data.outcomes.map((o) => (
@@ -617,7 +671,7 @@ export function CoursePage({ data }: { data: CourseData }) {
               eyebrow="Capstone Projects"
               eyebrowTone="sun"
               title="Two India-Context Projects in This Course"
-              subtitle="You don't just learn — you ship. Every learner builds these two portfolio-grade projects with direct teacher feedback during class or outside class when genuinely needed."
+              subtitle="You don't just learn: you ship. Every learner builds these two portfolio-grade projects with direct teacher feedback during class or outside class when genuinely needed."
             />
             <Reveal stagger className="grid md:grid-cols-2 gap-5">
               {data.projects.map((p, i) => (
@@ -689,7 +743,7 @@ export function CoursePage({ data }: { data: CourseData }) {
                 align="left"
                 eyebrow="FAQs"
                 title={`${data.title} — Questions & Answers`}
-                subtitle="Anything else? Message anytime — WhatsApp replies during 10am–midnight IST every day."
+                subtitle="Anything else? Message anytime: WhatsApp replies during 10am–midnight IST every day."
               />
               <SmartImage
                 src={data.footerImage}

@@ -16,12 +16,12 @@ export function CityGuide({ slug }: { slug: string }) {
       breadcrumb={`Spoken English classes in ${city.name}`}
       h1={
         <>
-          Spoken English Classes in <span className="text-sunshine">{city.name}</span> — Live
-          Online, Approx. 6 Learners
+          Spoken English Classes in <span className="text-sunshine">{city.name}</span>: Live Online,
+          About 6 Learners
         </>
       }
-      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹1,199/month, inclusive of taxes, approximately 6 learners, IST afternoon, evening and night batches.`}
-      shortAnswer={`No classroom in ${city.name} — live online, around 6 learners, ₹1,199/month inclusive of taxes. You skip ${city.commute}.`}
+      standfirst={`Taught live, attended from ${city.neighborhoods}. ₹1,199/month, inclusive of taxes, about 6 learners, IST afternoon, evening and night batches.`}
+      shortAnswer={`No classroom in ${city.name}. Classes are live online, about 6 learners, ₹1,199/month inclusive of taxes. You skip ${city.commute}.`}
       heroImage={IMG.groupClass}
       heroAlt={`${city.name} learners in a live online English class`}
       lastUpdated={page?.dateModified}
@@ -34,10 +34,10 @@ export function CityGuide({ slug }: { slug: string }) {
         />
       }
       faqs={page?.faqs ?? []}
-      faqTitle={`Spoken English in ${city.name} — questions`}
+      faqTitle={`Questions about spoken English in ${city.name}`}
       waMessage={`Hi, I am in ${city.name} and I want a free consultation for Basic Spoken English.`}
       ctaTitle="Get a free consultation for your city"
-      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one — not a full class. Same fee everywhere in India."
+      ctaBody="Message us on WhatsApp. We discuss courses, curriculum and your requirements one by one, not a full class. Same fee everywhere in India."
     />
   );
 }
@@ -51,7 +51,7 @@ function CityFacts({ name, areas, waMessage }: { name: string; areas: string; wa
   const facts: [IconName, string][] = [
     ["rupee", "₹1,199/month, incl. taxes"],
     ["users", "≈6 learners per batch"],
-    ["globe", `Live online — no ${name} commute`],
+    ["globe", `Live online: no ${name} commute`],
     ["clock", "Afternoon · evening · night IST"],
   ];
   const nearby = areas.split(", ").slice(0, 3).join(", ");

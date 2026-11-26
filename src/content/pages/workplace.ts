@@ -3,7 +3,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most people who want better English at work do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. This guide covers those moments — and, if you need live practice, what our [Business English course](/course-interactive-speaking) does. Not an MBA module.",
+    text: "Most people who want better English at work do not need to discuss balance sheets in formal vocabulary. They need to explain why a task is late, ask a client to clarify one sentence, give a two-minute update, write a follow-up that gets a reply, and speak before the meeting moves on without them. This guide covers those moments, and, if you need live practice, what our [Business English course](/course-interactive-speaking) does. Not an MBA module.",
   },
   {
     t: "p",
@@ -33,7 +33,7 @@ export const body: ArticleBody = [
       ],
       [
         "You need interview answers rather than day-to-day office communication",
-        "Take Interview Preparation — 2 months, ₹2,499/month. HR screens, STAR and recorded mocks. Interactive Speaking covers meetings after you have the job.",
+        "Take Interview Preparation: 2 months, ₹2,499/month. HR screens, STAR and recorded mocks. Interactive Speaking covers meetings after you have the job.",
       ],
     ],
   },
@@ -88,7 +88,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "**Live speaking time:** not a webinar where the teacher talks for forty minutes.",
-      "**Role-plays with consequences:** delays, complaints, unclear requirements and disagreement — not only easy introductions.",
+      "**Role-plays with consequences:** delays, complaints, unclear requirements and disagreement, not only easy introductions.",
       "**Correction during practice:** specific enough that you know what to change next time.",
       "**Writing tied to a situation:** updates, follow-ups and escalation messages, not generic grammar worksheets.",
       "**A level check:** beginners and confident professionals should not be pushed into the same class.",
@@ -112,7 +112,7 @@ export const body: ArticleBody = [
       ["Duration", "3 months"],
       ["Frequency", "Up to 2 class days per week"],
       ["Format", "100% live online batch"],
-      ["Batch size", "approximately 6 learners"],
+      ["Batch size", "about 6 learners"],
       ["Fee", "₹1,599/month, inclusive of taxes (Intermediate: ₹1,999/month, 4 months)"],
       ["Consult", "Chat on WhatsApp"],
       ["Certificate", "Not currently issued"],

@@ -150,7 +150,7 @@ const BRANDS: Brand[] = [
 
 const FEATURES: { label: string; marks: [M, M, M, M, M, M] }[] = [
   { label: "Live human teacher", marks: ["y", "y", "y", "y", "y", "n"] },
-  { label: "Small live batch — you speak with peers", marks: ["y", "n", "n", "n", "p", "n"] },
+  { label: "Small live batch: you speak with peers", marks: ["y", "n", "n", "n", "p", "n"] },
   { label: "Fixed course map (syllabus)", marks: ["y", "n", "n", "p", "y", "p"] },
   { label: "Daily practice app included", marks: ["y", "n", "n", "n", "p", "y"] },
   { label: "Teacher reviews your practice every week", marks: ["y", "p", "n", "p", "p", "n"] },

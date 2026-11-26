@@ -11,7 +11,7 @@ export const body: ArticleBody = [
     text: "An English-only room sounds strict. For a genuine beginner it produces silence. Silence is the one thing a speaking class cannot afford. Support in your language is how you **get to** English, not a way to avoid it.",
   },
 
-  { t: "h2", text: "What “medium” actually decided — and what it did not" },
+  { t: "h2", text: "What “medium” actually decided, and what it did not" },
   {
     t: "p",
     text: "School medium decided how much English you **heard** between 6 and 16. It did not decide whether you can run a standup at 28. Kavya (Hyderabad, advocate) and Ananya (Bengaluru, data analyst) both had to build speaking in a live room. Their stories are on [real results](/success-stories).",
@@ -19,7 +19,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "You can **read** more than you speak — that is the usual Hindi/Bengali-medium pattern. Spoken class closes that gap.",
+      "You can **read** more than you speak: that is the usual Hindi/Bengali-medium pattern. Spoken class closes that gap.",
       "You do not need to “think in English” on day one. You need to finish a sentence out loud.",
       "Grammar explained in Hindi or Bengali, then practised in English, is faster than grammar explained in English you cannot follow.",
     ],
@@ -56,17 +56,17 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Working a shift? Afternoon, evening and night IST batches — [English for working professionals](/english-for-working-professionals-india). Freeze after you already have the words? [Interactive](/interactive-english-class-hesitation).",
+    text: "Working a shift? Afternoon, evening and night IST batches: [English for working professionals](/english-for-working-professionals-india). Freeze after you already have the words? [Interactive](/interactive-english-class-hesitation).",
   },
 
   { t: "h2", text: "How the bilingual bridge works in class" },
   {
     t: "example",
-    label: "A stalled concept — explained in Hindi, practised in English",
+    label: "A stalled concept: explained in Hindi, practised in English",
     lines: [
       "Learner: “Yesterday I am going to market.”",
       "Teacher (Hindi): “कल की बात है, तो ‘went’ — बीते समय वाला रूप।”",
-      "Teacher (English): “Yesterday I went to the market. Your turn — what did you do yesterday?”",
+      "Teacher (English): “Yesterday I went to the market. Your turn: what did you do yesterday?”",
       "Learner: “Yesterday I went to office.” Teacher: “To the office. Once more?”",
     ],
   },

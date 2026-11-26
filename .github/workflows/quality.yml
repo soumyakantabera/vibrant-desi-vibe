@@ -139,7 +139,7 @@ jobs:
           grep -q 'english-for-office-meetings' dist/sitemap.xml
           grep -q 'english-for-bpo-customer-support' dist/sitemap.xml
           grep -q 'does not issue a school certificate' dist/llms.txt
-          grep -q 'approximately 6 learners' dist/llms.txt
+          grep -q 'about 6 learners' dist/llms.txt
           grep -q '## Brand' dist/llms.txt
           grep -q '"name": "Learn With Smile"' dist/llms.json
           grep -q 'getSiteFacts' dist/openapi.json

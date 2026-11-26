@@ -99,7 +99,7 @@ const MEDIUM = {
     name: "Hindi",
     title: "Basic Spoken English — Hindi to English",
     native: HINDI,
-    who: "Hindi-speaking adults 15+ — from UP, Bihar, Delhi NCR, MP, Rajasthan, Jharkhand, or anyone who thinks in Hindi",
+    who: "Hindi-speaking adults 15+: from UP, Bihar, Delhi NCR, MP, Rajasthan, Jharkhand, or anyone who thinks in Hindi",
     waDemo:
       "Hi, I want a free consultation for Basic Spoken English — Hindi to English (taught by a Hindi-speaking teacher).",
   },
@@ -108,7 +108,7 @@ const MEDIUM = {
     name: "Bengali",
     title: "Basic Spoken English — Bengali to English",
     native: BENGALI,
-    who: "Bengali-speaking adults 15+ — from Kolkata and the rest of West Bengal, Tripura, Assam's Barak Valley, or anyone who thinks in Bengali",
+    who: "Bengali-speaking adults 15+: from Kolkata and the rest of West Bengal, Tripura, Assam's Barak Valley, or anyone who thinks in Bengali",
     waDemo:
       "Hi, I want a free consultation for Basic Spoken English — Bengali to English (taught by a Bengali-speaking teacher).",
   },
@@ -124,7 +124,7 @@ export function mediumCourse(base: CourseData, lang: MediumLang): CourseData {
     slug: m.slug,
     feeSlug: "spoken-english",
     title: m.title,
-    tagline: `6 months, ₹1,199/month, inclusive of taxes, approx. 6 learners. Taught by a ${m.name}-speaking teacher: hard ideas explained in ${m.name}, practice in English — plus daily practice in the Bolo app.`,
+    tagline: `6 months, ₹1,199/month, inclusive of taxes, about 6 learners. Taught by a ${m.name}-speaking teacher: hard ideas explained in ${m.name}, practice in English, plus daily practice in the Bolo app.`,
     liveNote: `✓ 100% online live · ✓ ${m.name}-speaking teacher · ✓ Practice in English, help in ${m.name} · ✓ Daily practice in Bolo · ✓ About 6 in a batch · ✓ Afternoon · evening · night slots`,
     prerequisites: `None. For ${m.who}, who cannot yet finish a sentence out loud in English.`,
     waDemo: m.waDemo,
@@ -145,7 +145,7 @@ export function mediumCourse(base: CourseData, lang: MediumLang): CourseData {
       },
       {
         q: "What daily practice do I get?",
-        a: "Bolo, the Learn With Smile practice app: daily grammar and vocabulary, reading aloud, speaking practice you record, video lessons and a weekly teacher review — with a streak to keep you going. It is included in the fee.",
+        a: "Bolo, the Learn With Smile practice app: daily grammar and vocabulary, reading aloud, speaking practice you record, video lessons and a weekly teacher review. With a streak to keep you going. It is included in the fee.",
       },
       {
         q: "Why choose this over a free app or a cheaper recorded course?",

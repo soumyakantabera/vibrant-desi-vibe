@@ -55,7 +55,7 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "**Batch size — by a very long way the biggest factor.** A teacher earning a viable hourly rate divides it among everyone in the room. That single constraint explains most of the difference between a ₹500 class and a ₹2,000 one.",
+      "**Batch size: by a very long way the biggest factor.** A teacher earning a viable hourly rate divides it among everyone in the room. That single constraint explains most of the difference between a ₹500 class and a ₹2,000 one.",
       "**Live versus recorded.** Recorded content is produced once and sold indefinitely. Live teaching costs the teacher's hour every single time.",
       "**Where the teacher is.** A tutor in the US or UK charges several times an Indian teacher's rate for the same hour. What you are buying with that premium is accent and idiom.",
       "**Course length.** A two-month intensive and a six-month course at the same monthly fee are very different total costs. Compare the total, not the monthly.",
@@ -183,7 +183,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "What a paid class buys is three things free options do not: a fixed syllabus so you are not guessing what to study next, someone who corrects the same mistake until it disappears, and a schedule you are accountable to. If you already have the discipline and just need practice, spend nothing and use [our five speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation) instead — four of the five cost nothing.",
+    text: "What a paid class buys is three things free options do not: a fixed syllabus so you are not guessing what to study next, someone who corrects the same mistake until it disappears, and a schedule you are accountable to. If you already have the discipline and just need practice, spend nothing and use [our five speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation) instead: four of the five cost nothing.",
   },
 
   { t: "h2", text: "Our fees, in full" },
@@ -192,15 +192,15 @@ export const body: ArticleBody = [
     caption: admissionCaption(),
     head: ["Course", "Duration", "Format", "Fee"],
     rows: [
-      ["Basic Spoken English", "6 months", "Live batch, approx. 6 learners", "₹1,199/month"],
-      ["Intermediate Spoken English", "4 months", "Live batch, approx. 6 learners", "₹1,999/month"],
-      ["Interactive Speaking", "3 months", "Live batch, approx. 6 learners", "₹1,599/month"],
-      ["Interview Preparation", "2 months", "Live batch, approx. 6 learners", "₹2,499/month"],
+      ["Basic Spoken English", "6 months", "Live batch, about 6 learners", "₹1,199/month"],
+      ["Intermediate Spoken English", "4 months", "Live batch, about 6 learners", "₹1,999/month"],
+      ["Interactive Speaking", "3 months", "Live batch, about 6 learners", "₹1,599/month"],
+      ["Interview Preparation", "2 months", "Live batch, about 6 learners", "₹2,499/month"],
     ],
   },
   {
     t: "p",
-    text: "If an exam form asks for IELTS, sit that paper with IDP, the IELTS provider in India — we do not sell IELTS as a course. The free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template) is still useful as structure. If you cannot yet hold a conversation, start with Spoken English.",
+    text: "If an exam form asks for IELTS, sit that paper with IDP, the IELTS provider in India: we do not sell IELTS as a course. The free [Band 7 four-paragraph writing template](/blog/band-7-writing-4-paragraph-template) is still useful as structure. If you cannot yet hold a conversation, start with Spoken English.",
   },
   {
     t: "p",

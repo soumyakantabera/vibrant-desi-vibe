@@ -250,7 +250,7 @@ export function PackageBand({ title }: { title?: string }) {
           <h2 className="mt-2 font-extrabold text-ink section-title">
             {title ?? (
               <>
-                Live classes, the Bolo app and the same teacher — from{" "}
+                Live classes, the Bolo app and the same teacher, from{" "}
                 <FeeText text="₹1,199/month" />.
               </>
             )}
@@ -270,11 +270,11 @@ export function PackageBand({ title }: { title?: string }) {
 
 export function PackageStrip({ bare = false }: { bare?: boolean }) {
   const items: { key: PartKey; title: string; body: string }[] = [
-    { key: "live", title: "Live classes", body: "Up to 2 a week · 90 min · approx. 6 learners." },
+    { key: "live", title: "Live classes", body: "Up to 2 a week · 90 min · about 6 learners." },
     {
       key: "portal",
       title: "Practice",
-      body: "Daily grammar, vocabulary, reading, speaking — with a streak.",
+      body: "Daily grammar, vocabulary, reading, speaking: with a streak.",
     },
     {
       key: "videos",
@@ -414,7 +414,7 @@ export function WeekStrip() {
               Not “just 2 classes”. <span className="text-brand">English every day.</span>
             </>
           }
-          sub="Two live classes build the habit. Bolo keeps it going every day with a streak, and every week your teacher reviews your reading and speaking — so nothing fades between classes."
+          sub="Two live classes build the habit. Bolo keeps it going every day with a streak, and every week your teacher reviews your reading and speaking, so nothing fades between classes."
         />
         {!still && (
           <div className="mb-3 flex justify-end">
@@ -488,7 +488,7 @@ export function WeekStrip() {
             <h3 className="mt-2 text-xl font-bold md:text-2xl">{sel.title}</h3>
             <p className="mt-2 text-ink/80 md:text-lg">{sel.detail}</p>
             <p className="mt-3 text-sm text-ink/60">
-              Example week. Live days follow your batch slot — afternoon, evening or night.
+              Example week. Live days follow your batch slot: afternoon, evening or night.
             </p>
           </div>
 
@@ -578,13 +578,13 @@ const LOOP: { tone: Tone; icon: IconName; title: string; body: string }[] = [
     tone: "teal",
     icon: "pen",
     title: "Practise daily",
-    body: "Grammar and vocabulary every day in Bolo — keep the streak.",
+    body: "Grammar and vocabulary every day in Bolo: keep the streak.",
   },
   {
     tone: "amber",
     icon: "speak",
     title: "Submit reading & speaking",
-    body: "Read aloud and record a conversation — sent from Bolo.",
+    body: "Read aloud and record a conversation: sent from Bolo.",
   },
   {
     tone: "plum",
@@ -617,7 +617,7 @@ export function ReviewLoop() {
         <div>
           <Head
             tone="plum"
-            eyebrow="Bolo · Review — the weekly loop"
+            eyebrow="Bolo · Review: the weekly loop"
             title={
               <>
                 Practice that a teacher <span className="text-plum">actually checks.</span>
@@ -718,14 +718,14 @@ const TIPS: { tone: Tone; icon: IconName; title: string; trick: string }[] = [
     icon: "clock",
     title: "Use a starter phrase",
     trick:
-      "“Let me think…” or “That’s a good question” gives you three seconds — without a silence.",
+      "“Let me think…” or “That’s a good question” gives you three seconds: without a silence.",
   },
   {
     tone: "amber",
     icon: "brain",
     title: "Think in English labels",
     trick:
-      "Name things around you in English — door, laptop, late — so words come without translating.",
+      "Name things around you in English (door, laptop, late) so words come without translating.",
   },
   {
     tone: "plum",
@@ -744,7 +744,7 @@ const TIPS: { tone: Tone; icon: IconName; title: string; trick: string }[] = [
     tone: "terra",
     icon: "mic",
     title: "Record once a week",
-    trick: "Listen back once and you will hear what to fix — your teacher reviews it too.",
+    trick: "Listen back once and you will hear what to fix: your teacher reviews it too.",
   },
 ];
 
@@ -755,9 +755,9 @@ export function TipsTiles() {
       <div className="container-x">
         <Head
           tone="amber"
-          eyebrow="Bolo · Watch — tips to start speaking"
+          eyebrow="Bolo · Watch: tips to start speaking"
           title="Small tricks that get you talking"
-          sub="Bolo’s video lessons include tips and tricks to start speaking English. Here is a taste — tap a tile to flip it."
+          sub="Bolo’s video lessons include tips and tricks to start speaking English. Here is a taste: tap a tile to flip it."
         />
         <VizIn className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TIPS.map((tip, n) => {
@@ -859,9 +859,9 @@ export function VideoLibrary({ initial = "All" }: { initial?: "All" | VideoCours
       <div className="container-x">
         <Head
           tone="amber"
-          eyebrow="Bolo · Watch — video lessons"
+          eyebrow="Bolo · Watch: video lessons"
           title="Watch it again whenever you need it"
-          sub="Tips and tricks to start speaking, grammar, fluency, thinking in English and what to do when your mind goes blank — chosen for your course."
+          sub="Tips and tricks to start speaking, grammar, fluency, thinking in English and what to do when your mind goes blank: chosen for your course."
           aside={
             <div className="flex gap-2">
               <button
@@ -990,7 +990,7 @@ export function MarketCompare() {
         <Head
           tone="teal"
           eyebrow="How the options compare"
-          title="An app, a tutor, a big batch — or all of it together"
+          title="An app, a tutor, a big batch, or all of it together"
           sub="AI apps give practice without people. Tutor apps give a person without a course. Big classrooms give a course without speaking time. Our package joins the parts that work."
         />
 
@@ -1111,7 +1111,7 @@ export function MarketCompare() {
         </VizIn>
         <p className="mt-3 text-xs text-ink/60">
           Compared by category, not by brand. Costs are typical ranges from public 2026 price pages
-          in India and differ by provider and plan — check each one before you decide.
+          in India and differ by provider and plan, so check each one before you decide.
         </p>
       </div>
     </section>
@@ -1147,7 +1147,7 @@ const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
     tag: "Start here",
     icon: "mic",
     image: IMG.spokenEnglish,
-    for: "Cannot finish a sentence yet? Speak from zero — daily talk first.",
+    for: "Cannot finish a sentence yet? Speak from zero: daily talk first.",
     highlights: [
       "2,000+ everyday words, corrected live",
       "Introduce yourself and answer HR questions out loud",
@@ -1164,7 +1164,7 @@ const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
     tag: "Level up",
     icon: "trend",
     image: IMG.speaking,
-    for: "Basic sentences work — make them correct, connected and work-ready.",
+    for: "Basic sentences work: make them correct, connected and work-ready.",
     highlights: [
       "Tenses, connectors and modals inside real speech",
       "Debates and 2–3 minute talks with fewer fillers",
@@ -1177,9 +1177,9 @@ const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
     tag: "Unfreeze",
     icon: "messages",
     image: IMG.interactiveSpeaking,
-    for: "You know the words but freeze — in a chat, a meeting or a client call.",
+    for: "You know the words but freeze: in a chat, a meeting or a client call.",
     highlights: [
-      "90 minutes of speaking — no grammar lecture",
+      "90 minutes of speaking: no grammar lecture",
       "Team meetings, status updates, client calls",
       "Interview rounds: 90-second pitch, HR, STAR",
     ],
@@ -1190,7 +1190,7 @@ const PLAN_COPY: Record<FeeSlug, PlanCopy> = {
     tag: "Get hired",
     icon: "clipboard",
     image: IMG.interview,
-    for: "You can talk — the interview is the gap.",
+    for: "You can talk: the interview is the gap.",
     highlights: [
       "60-second intro, HR and STAR answers",
       "Panel and salary rounds, rehearsed live",
@@ -1205,7 +1205,7 @@ const PLAN_INCLUDES: { tone: Tone; icon: IconName; text: string; short: string }
   {
     tone: "green",
     icon: "users",
-    text: "Live classes · approx. 6 learners",
+    text: "Live classes · about 6 learners",
     short: "Live · ~6 a batch",
   },
   { tone: "teal", icon: "pen", text: "Bolo app: daily practice + streak", short: "Daily practice" },
@@ -1395,7 +1395,7 @@ export function ConsultStrip() {
             Not sure which course? Start with a free consultation.
           </strong>
           No payment. We hear your goal, name the gap and put the course and fee in writing on
-          WhatsApp. Advice, not a class — then you decide.
+          WhatsApp. Advice, not a class. Then you decide.
         </p>
       </div>
       <WaButton
@@ -1416,19 +1416,19 @@ function CourseGuideLink({ slug }: { slug: FeeSlug }) {
   if (slug === "spoken-english")
     return (
       <Link to="/how-to-speak-english-fluently" className={cls}>
-        How to speak English fluently — the guide
+        How to speak English fluently: the guide
       </Link>
     );
   if (slug === "intermediate-english")
     return (
       <Link to="/intermediate-spoken-english-course-india" className={cls}>
-        Intermediate spoken English — the guide
+        Intermediate spoken English: the guide
       </Link>
     );
   if (slug === "interactive-speaking")
     return (
       <Link to="/interactive-english-class-hesitation" className={cls}>
-        Why you freeze when you speak — the guide
+        Why you freeze when you speak: the guide
       </Link>
     );
   return (
@@ -1437,7 +1437,7 @@ function CourseGuideLink({ slug }: { slug: FeeSlug }) {
       params={{ slug: "tell-me-about-yourself-in-60-seconds" }}
       className={cls}
     >
-      Tell me about yourself in 60 seconds — the guide
+      Tell me about yourself in 60 seconds: the guide
     </Link>
   );
 }
@@ -1465,7 +1465,7 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
           title={`${fee.name}: the complete package`}
           sub={
             <MarketCopy
-              inr={`${fee.monthly}, inclusive of taxes — live classes, the Bolo practice app and the same teacher, all included.`}
+              inr={`${fee.monthly}, inclusive of taxes: live classes, the Bolo practice app and the same teacher, all included.`}
               usd={`${INTL_FEE[slug].display} for live classes, the Bolo practice app and the same teacher.`}
             />
           }
@@ -1474,7 +1474,7 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
           {[
             `${fee.months} months · up to 2 classes/week`,
             "1 hr 30 min per class",
-            "Approx. 6 learners",
+            "About 6 learners",
             "Bolo: daily practice + weekly review",
           ].map((f) => (
             <li key={f} className="rounded-full border border-border bg-white px-3 py-1.5">
@@ -1515,7 +1515,7 @@ export function CourseIncluded({ slug }: { slug: FeeSlug }) {
         </p>
         <div className="mt-5 rounded-3xl border border-border bg-white p-5 md:p-6">
           <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#6A4A10]">
-            In Bolo · Watch — videos picked for this course
+            In Bolo · Watch: videos picked for this course
           </p>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {topics.map((t, n) => {

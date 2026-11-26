@@ -42,7 +42,7 @@ const STACK: {
     tone: "bg-bolo-teal",
     icon: "pen",
     title: "Bolo daily practice",
-    body: "Grammar, words, reading, speaking — with a streak",
+    body: "Grammar, words, reading, speaking: with a streak",
   },
   {
     tone: "bg-[#B35F00]",
@@ -179,7 +179,7 @@ export function WhyDifferent({
             Why we're different
           </span>
           <h2 id="why-different-title" className="section-title mt-3 font-bold text-ink">
-            Daily practice, a live teacher and your own language —{" "}
+            Daily practice, a live teacher and your own language,{" "}
             <span className="text-brand">
               <FeeText text="from ₹1,199/month" />
             </span>

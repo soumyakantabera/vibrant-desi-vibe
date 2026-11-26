@@ -82,7 +82,7 @@ export const STATES: StateInfo[] = [
       { need: "it", where: "Pune (Hinjewadi, Kharadi, Magarpatta), Mumbai and Thane IT parks" },
       {
         need: "bpo",
-        where: "Pune and Navi Mumbai voice processes — many ask for English and Marathi",
+        where: "Pune and Navi Mumbai voice processes: many ask for English and Marathi",
       },
       { need: "analyst", where: "Mumbai BFSI and Pune GCCs" },
       { need: "bank", where: "Mumbai head offices; PO aspirants statewide" },
@@ -113,7 +113,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Maharashtra | Live Online",
     description:
-      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra — live small batches of about 6, ₹1,199/month incl. taxes.",
+      "Live online spoken English for Pune, Nagpur, Nashik and all of Maharashtra: live small batches of about 6, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes maharashtra",
       "spoken english classes pune online",
@@ -138,7 +138,7 @@ export const STATES: StateInfo[] = [
     languages: "Hindi, Urdu, English",
     medium: "hindi",
     intro:
-      "From Noida's voice processes to Lucknow's colleges, the jobs ask for 'good English communication' — and most learners think in Hindi. In our research no Lucknow seller said they teach live in Hindi; we do.",
+      "From Noida's voice processes to Lucknow's colleges, the jobs ask for 'good English communication', and most learners think in Hindi. In our research no Lucknow seller said they teach live in Hindi; we do.",
     hubs: [
       {
         need: "bpo",
@@ -173,7 +173,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Uttar Pradesh | Hindi Medium",
     description:
-      "Live online spoken English for Lucknow, Noida, Kanpur and all of UP — taught by a Hindi-speaking teacher, about 6 per batch, daily practice app, ₹1,199/month.",
+      "Live online spoken English for Lucknow, Noida, Kanpur and all of UP: taught by a Hindi-speaking teacher, about 6 per batch, daily practice app, ₹1,199/month.",
     keywords: [
       "spoken english classes lucknow online",
       "spoken english classes uttar pradesh",
@@ -197,7 +197,7 @@ export const STATES: StateInfo[] = [
     languages: "Hindi, Bhojpuri, Maithili, Magahi, Urdu, English",
     medium: "hindi",
     intro:
-      "Many learners from Bihar move to Delhi, Pune or Bengaluru for work, where English is the neutral language at the office. Searching in Hindi for a live Hindi-medium English class in Patna returned no institute at all in our research — only recorded courses.",
+      "Many learners from Bihar move to Delhi, Pune or Bengaluru for work, where English is the neutral language at the office. Searching in Hindi for a live Hindi-medium English class in Patna returned no institute at all in our research, only recorded courses.",
     hubs: [
       { need: "govt", where: "Patna's UPSC / BPSC aspirants" },
       { need: "bank", where: "Bank PO and clerk aspirants statewide" },
@@ -261,7 +261,7 @@ export const STATES: StateInfo[] = [
     languages: "Hindi, Punjabi, Urdu, English",
     medium: "hindi",
     intro:
-      "Delhi NCR led India's fresher hiring in August 2026 (19% share). Working people here rarely make a fixed 7 PM batch — evening and night slots and a practice app that fits around shifts matter more than a classroom nearby.",
+      "Delhi NCR led India's fresher hiring in August 2026 (19% share). Working people here rarely make a fixed 7 PM batch: evening and night slots and a practice app that fits around shifts matter more than a classroom nearby.",
     hubs: [
       { need: "it", where: "Gurugram Cyber City, Noida Sectors 62/63 and the Expressway GCCs" },
       { need: "bpo", where: "Gurugram and Noida voice and international processes" },
@@ -287,12 +287,12 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "Is there a Hindi-medium spoken English class in Delhi?",
-        a: "Yes — Basic Spoken English — Hindi to English, taught live online by a Hindi-speaking teacher, ₹1,199/month inclusive of taxes. You attend from anywhere in NCR; no commute.",
+        a: "Yes, Basic Spoken English — Hindi to English, taught live online by a Hindi-speaking teacher, ₹1,199/month inclusive of taxes. You attend from anywhere in NCR; no commute.",
       },
     ],
     title: "Spoken English Classes in Noida, Gurugram & NCR",
     description:
-      "Live online spoken English for Noida, Gurugram, Ghaziabad and Faridabad — Hindi-speaking teacher, night slots, about 6 per batch, ₹1,199/month incl. taxes.",
+      "Live online spoken English for Noida, Gurugram, Ghaziabad and Faridabad: Hindi-speaking teacher, night slots, about 6 per batch, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes noida",
       "english speaking course gurugram",
@@ -315,7 +315,7 @@ export const STATES: StateInfo[] = [
     languages: "Hindi, English",
     medium: "hindi",
     intro:
-      "In MP, many local centres teach English grammar in Hindi for competitive exams — and very little speaking. Learners can write the rule and still cannot say the sentence. We fix the speaking.",
+      "In MP, many local centres teach English grammar in Hindi for competitive exams, and very little speaking. Learners can write the rule and still cannot say the sentence. We fix the speaking.",
     hubs: [
       { need: "it", where: "Indore's IT parks and Super Corridor" },
       { need: "govt", where: "MPPSC and UPSC aspirants in Indore and Bhopal" },
@@ -330,7 +330,7 @@ export const STATES: StateInfo[] = [
     ],
     facts: [
       "Jabalpur centres mostly teach grammar in Hindi for written exams, with little conversation practice (local guide, 2026).",
-      "Hindi-dominant daily life makes practice partners rare — daily app practice fills that gap.",
+      "Hindi-dominant daily life makes practice partners rare: daily app practice fills that gap.",
     ],
     faqs: [
       {
@@ -370,7 +370,7 @@ export const STATES: StateInfo[] = [
     languages: "Hindi, Rajasthani, English",
     medium: "hindi",
     intro:
-      "Rajasthan's learners are often told an app is 'best for Hindi-medium beginners' — then find it teaches only in English. Our Hindi-medium course has a Hindi-speaking teacher who explains when you are stuck.",
+      "Rajasthan's learners are often told an app is 'best for Hindi-medium beginners', then find it teaches only in English. Our Hindi-medium course has a Hindi-speaking teacher who explains when you are stuck.",
     hubs: [
       { need: "campus", where: "Kota and Jaipur students, placements and admission interviews" },
       { need: "govt", where: "RPSC and UPSC aspirants in Jaipur" },
@@ -395,7 +395,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Rajasthan | Hindi Medium",
     description:
-      "Live online spoken English for Jaipur, Jodhpur, Kota and Udaipur — Hindi-speaking teacher, about 6 per batch, Bolo app practice, ₹1,199/month incl. taxes.",
+      "Live online spoken English for Jaipur, Jodhpur, Kota and Udaipur: Hindi-speaking teacher, about 6 per batch, Bolo app practice, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes jaipur online",
       "spoken english classes rajasthan",
@@ -430,7 +430,7 @@ export const STATES: StateInfo[] = [
     languages: "Kannada, English, Hindi (widely spoken by migrants)",
     medium: "english",
     intro:
-      "In Bengaluru, English is the office language and about 44% of the city are migrants. Kannada-medium graduates and Hindi-speaking newcomers both need workplace English — for GCC interviews, standups and client calls.",
+      "In Bengaluru, English is the office language and about 44% of the city are migrants. Kannada-medium graduates and Hindi-speaking newcomers both need workplace English: for GCC interviews, standups and client calls.",
     hubs: [
       { need: "it", where: "Bengaluru's Whitefield, Electronic City, Outer Ring Road GCCs" },
       { need: "analyst", where: "Bengaluru analytics and product companies" },
@@ -455,12 +455,12 @@ export const STATES: StateInfo[] = [
       },
       {
         q: "I moved to Bengaluru from a Hindi-speaking state. Is there a Hindi-medium option?",
-        a: "Yes — Basic Spoken English — Hindi to English, taught by a Hindi-speaking teacher, ₹1,199/month inclusive of taxes.",
+        a: "Yes, Basic Spoken English — Hindi to English, taught by a Hindi-speaking teacher, ₹1,199/month inclusive of taxes.",
       },
     ],
     title: "Spoken English Classes in Karnataka | Mysuru & Mangaluru",
     description:
-      "Live online spoken English across Karnataka — Mysuru, Mangaluru, Hubballi, Belagavi. Interviews and client calls, about 6 per batch, ₹1,199/month incl. taxes.",
+      "Live online spoken English across Karnataka: Mysuru, Mangaluru, Hubballi, Belagavi. Interviews and client calls, about 6 per batch, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes karnataka",
       "spoken english classes mysore online",
@@ -507,17 +507,17 @@ export const STATES: StateInfo[] = [
     ],
     facts: [
       "Hyderabad had 11% of India's fresher hiring in August 2026.",
-      "GCCs pay campus hires far more than IT services firms in Hyderabad — and test communication first.",
+      "GCCs pay campus hires far more than IT services firms in Hyderabad, and test communication first.",
     ],
     faqs: [
       {
         q: "Which spoken English course is best for Hyderabad IT freshers?",
-        a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Interactive Speaking (₹1,599/month). Starting from zero, Basic Spoken English (₹1,199/month) — also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
+        a: "If you can talk but freeze in interviews, Interview Preparation (₹2,499/month). For standups and client calls, Interactive Speaking (₹1,599/month). Starting from zero, Basic Spoken English (₹1,199/month): also taught Hindi to English. All live online, about 6 per batch, Bolo app included.",
       },
     ],
     title: "Spoken English Classes in Telangana | Warangal & Karimnagar",
     description:
-      "Live online spoken English across Telangana — Warangal, Karimnagar, Secunderabad and beyond. Hindi-medium option, about 6 per batch, ₹1,199/month incl. taxes.",
+      "Live online spoken English across Telangana: Warangal, Karimnagar, Secunderabad and beyond. Hindi-medium option, about 6 per batch, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes telangana",
       "english speaking course warangal online",
@@ -567,7 +567,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Jharkhand | Hindi Medium",
     description:
-      "Live online spoken English for Ranchi, Jamshedpur, Dhanbad and Bokaro — Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹1,199/month.",
+      "Live online spoken English for Ranchi, Jamshedpur, Dhanbad and Bokaro: Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹1,199/month.",
     keywords: [
       "spoken english classes ranchi online",
       "spoken english classes jamshedpur",
@@ -645,7 +645,7 @@ export const STATES: StateInfo[] = [
     languages: "Tamil, English; Hindi and Urdu in some Chennai communities",
     medium: "english",
     intro:
-      "Tamil Nadu's spoken-English market is classroom chains and short crash courses in Chennai and Coimbatore. We do not teach in Tamil — explanations are in English, or Hindi for Hindi speakers — so the fit here is people who already read English and freeze when they have to speak it: in IT and support work, interviews and meetings.",
+      "Tamil Nadu's spoken-English market is classroom chains and short crash courses in Chennai and Coimbatore. We do not teach in Tamil (explanations are in English, or Hindi for Hindi speakers) so the fit here is people who already read English and freeze when they have to speak it: in IT and support work, interviews and meetings.",
     hubs: [
       { need: "it", where: "Chennai's OMR IT corridor and Coimbatore's IT parks" },
       { need: "bpo", where: "Chennai and Coimbatore support and back-office centres" },
@@ -680,7 +680,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Tamil Nadu | Live Online",
     description:
-      "Live online spoken English for Chennai, Coimbatore, Madurai and Trichy — batch of about 6, IT and interview speaking, daily Bolo practice, from ₹1,199/mo.",
+      "Live online spoken English for Chennai, Coimbatore, Madurai and Trichy: batch of about 6, IT and interview speaking, daily Bolo practice, from ₹1,199/mo.",
     keywords: [
       "spoken english classes chennai online",
       "spoken english classes coimbatore online",
@@ -729,7 +729,7 @@ export const STATES: StateInfo[] = [
     faqs: [
       {
         q: "Is there an online spoken English class for Guwahati?",
-        a: "Yes. Learn With Smile teaches live online in batches of about 6 — there is no classroom in Guwahati; our only office is in Kolkata. Basic Spoken English is ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Our teachers can bridge in Bengali or Hindi when a concept does not land.",
+        a: "Yes. Learn With Smile teaches live online in batches of about 6: there is no classroom in Guwahati; our only office is in Kolkata. Basic Spoken English is ₹1,199/month inclusive of taxes, with daily practice in the Bolo app and a weekly teacher review. Our teachers can bridge in Bengali or Hindi when a concept does not land.",
       },
       {
         q: "Can learners from Tripura, Manipur or Meghalaya join?",
@@ -738,7 +738,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Assam & North-East | Online",
     description:
-      "Live online spoken English for Guwahati, Dibrugarh, Silchar, Agartala and Imphal — batch of about 6, Bengali/Hindi help, from ₹1,199/mo incl. taxes.",
+      "Live online spoken English for Guwahati, Dibrugarh, Silchar, Agartala and Imphal: batch of about 6, Bengali/Hindi help, from ₹1,199/mo incl. taxes.",
     keywords: [
       "spoken english classes guwahati online",
       "english speaking course assam",

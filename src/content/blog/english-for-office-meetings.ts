@@ -30,7 +30,7 @@ export const body: ArticleBody = [
     head: ["Situation", "Say this"],
     rows: [
       ["You have one point to add", "Can I add one point here?"],
-      ["Someone is still speaking", "Sorry to jump in — may I clarify one detail?"],
+      ["Someone is still speaking", "Sorry to jump in: may I clarify one detail?"],
       [
         "The discussion has moved on",
         "Before we close this topic, there is one risk we should check.",
@@ -173,7 +173,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Interactive Speaking practises team meetings, status updates, client calls and presentations for 3 months, up to twice a week, in a live batch of approximately 6 learners. The fee is ₹1,599/month inclusive of taxes. Workplace emails are covered in Intermediate Spoken English.",
+    text: "Interactive Speaking practises team meetings, status updates, client calls and presentations for 3 months, up to twice a week, in a live batch of about 6 learners. The fee is ₹1,599/month inclusive of taxes. Workplace emails are covered in Intermediate Spoken English.",
     course: "/course-interactive-speaking",
     label: "See the Interactive Speaking syllabus",
   },

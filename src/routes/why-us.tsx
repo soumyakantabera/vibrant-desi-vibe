@@ -92,7 +92,7 @@ const MARKET = [
     icon: "smile" as const,
     tag: "Learn With Smile",
     title: "₹1,199/mo. 7 years. 500+.",
-    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. Inclusive of taxes. Batches have approximately 6 learners so you actually speak.`,
+    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. Inclusive of taxes. Batches have about 6 learners so you actually speak.`,
     stat: "From ₹1,199/mo · inclusive of taxes",
   },
 ];
@@ -254,7 +254,7 @@ function Page() {
           <FeatureCard icon="gamepad" color="sage" title="Gamified every class">
             Flashcards, polls, quizzes, debates — so you speak, not spectate.
           </FeatureCard>
-          <FeatureCard icon="users" color="brand" title="Approximately 6 learners per batch">
+          <FeatureCard icon="users" color="brand" title="About 6 learners per batch">
             Secondary to quality: enough peers to practise with, few enough that you still talk.
           </FeatureCard>
           <FeatureCard icon="shield" color="coral" title="Chat on WhatsApp">

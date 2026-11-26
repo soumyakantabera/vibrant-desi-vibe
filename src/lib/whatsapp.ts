@@ -33,8 +33,7 @@ export const CHAT_MSG =
  * The line under the WhatsApp buttons: who replies, what they send, and what
  * we do not do. Shows we are serious, so the people who message are too.
  */
-export const TEACHER_PROMISE =
-  "A teacher replies on WhatsApp, 10am to midnight IST. No sales calls.";
+export const TEACHER_PROMISE = "A teacher replies on WhatsApp within 24 hours. No sales calls.";
 
 function sentence(message: string): string {
   const t = message.trim().replace(/\s+/g, " ");

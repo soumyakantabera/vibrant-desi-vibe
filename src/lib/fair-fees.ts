@@ -72,7 +72,7 @@ export const COMPLAINT_PATTERNS: { pattern: string; detail: string }[] = [
   {
     pattern: "No refund once you start",
     detail:
-      "Some institutes state no refund at all, or refund only a trial — check this before you pay, not after.",
+      "Some institutes state no refund at all, or refund only a trial: check this before you pay, not after.",
   },
 ];
 
@@ -112,7 +112,7 @@ export const BEFORE_YOU_PAY: { check: string; ask: string; warning: string; ours
     check: "Is the deadline real?",
     ask: "What happens if I decide next week?",
     warning:
-      "'Only 2 seats left today' with no date — false urgency is a dark pattern under India's 2023 guidelines.",
+      "'Only 2 seats left today' with no date: false urgency is a dark pattern under India's 2023 guidelines.",
     ours: "Offers carry a printed end date. You can decide next week.",
   },
   {

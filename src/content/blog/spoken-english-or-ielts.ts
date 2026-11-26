@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Three products get sold as “English class” in India: **Spoken English**, **Business English**, and **IELTS**. They have different clocks, different fees, and different failure modes. Pick the wrong one and you spend 3 months practising the exam when you still cannot hold a phone call — or you spend 6 months chatting when you needed Band 7 writing.",
+    text: "Three products get sold as “English class” in India: **Spoken English**, **Business English**, and **IELTS**. They have different clocks, different fees, and different failure modes. Pick the wrong one and you spend 3 months practising the exam when you still cannot hold a phone call, or you spend 6 months chatting when you needed Band 7 writing.",
   },
 
   { t: "h2", text: "The 2-minute picker" },
@@ -14,19 +14,19 @@ export const body: ArticleBody = [
       [
         "You cannot finish a sentence / freeze in shops and calls",
         "Basic Spoken English",
-        "₹1,199/mo, 6 months, approx. 6 learners",
+        "₹1,199/mo, 6 months, about 6 learners",
         "Everyday chat in ~6 months",
       ],
       [
         "You can chat, but meetings and client calls go silent",
         "Interactive Speaking (meetings, client calls)",
-        "₹1,599/mo, 3 months, approx. 6 learners",
+        "₹1,599/mo, 3 months, about 6 learners",
         "Work talk in ~3 months",
       ],
       [
         "You freeze only when speaking, grammar is fine",
         "Interactive Speaking",
-        "₹1,599/mo, 3 months, approx. 6 learners",
+        "₹1,599/mo, 3 months, about 6 learners",
         "Hesitation, not knowledge",
       ],
       [
@@ -55,7 +55,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "If you are Band 5.5 because you cannot talk, start with Spoken English. If you are Band 6 in Speaking and 5.5 in Writing, skip Spoken English and sit IELTS with a dedicated exam coach — we published a free [Band 7 writing](/blog/band-7-writing-4-paragraph-template) template. We do not sell IELTS as a course.",
+    text: "If you are Band 5.5 because you cannot talk, start with Spoken English. If you are Band 6 in Speaking and 5.5 in Writing, skip Spoken English and sit IELTS with a dedicated exam coach: we published a free [Band 7 writing](/blog/band-7-writing-4-paragraph-template) template. We do not sell IELTS as a course.",
   },
 
   { t: "h2", text: "What other institutes mix together" },
@@ -71,7 +71,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "The cost of getting this wrong" },
   {
     t: "p",
-    text: "IELTS first when you cannot hold a call: three months of cue cards, still silent in a shop, exam fee on top. Spoken English first when a university form asked for Band 7: six months of chat, Writing Task 2 still at 6.0. The picker above is cheaper than either detour. If you cannot tell which row is you, [the free consultation](/free-consultation) diagnoses it live — bottleneck named, one room, fee in writing. Not a class. Fees: [IELTS coaching fees](/ielts-coaching-fees-india) and [class fees](/english-class-fees-india).",
+    text: "IELTS first when you cannot hold a call: three months of cue cards, still silent in a shop, exam fee on top. Spoken English first when a university form asked for Band 7: six months of chat, Writing Task 2 still at 6.0. The picker above is cheaper than either detour. If you cannot tell which row is you, [the free consultation](/free-consultation) diagnoses it live: bottleneck named, one room, fee in writing. Not a class. Fees: [IELTS coaching fees](/ielts-coaching-fees-india) and [class fees](/english-class-fees-india).",
   },
   { t: "h2", text: "HR asked for IELTS for a job in India" },
   {
@@ -80,7 +80,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "Not sure? Get a free consultation. We will tell you if IELTS is the wrong buy — and which of Spoken, Interactive or Workplace is the actual gap.",
+    text: "Not sure? Get a free consultation. We will tell you if IELTS is the wrong buy, and which of Spoken, Interactive or Workplace is the actual gap.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },
