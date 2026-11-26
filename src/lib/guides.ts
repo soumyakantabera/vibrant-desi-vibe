@@ -217,7 +217,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/blog/is-a-spoken-english-course-worth-it",
     title: "Are you ready to pay? 7 checks",
-    sub: "Two fixed slots, daily practice, full course length, total fee. Fail three and wait.",
+    sub: "Check your time, budget and goal before you pay.",
     icon: "clipboard",
     color: "sunshine",
     group: "choose",
@@ -225,7 +225,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/blog/english-fluency-course-which-level",
     title: "Which fluency level you need",
-    sub: "Four different problems sold as one “fluency course”. Find yours in a minute.",
+    sub: "Four different gaps get called fluency. Find yours.",
     icon: "target",
     color: "brand",
     group: "choose",
@@ -233,7 +233,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/blog/online-english-tutor-vs-group-class",
     title: "1:1 tutor or small group?",
-    sub: "Minutes vs structure vs an audience. When a tutor is the better buy.",
+    sub: "When a tutor suits you better, and when a group does.",
     icon: "users",
     color: "indigo",
     group: "choose",
@@ -241,7 +241,7 @@ export const GUIDE_CARDS: GuideCard[] = [
   {
     to: "/blog/self-paced-english-course-vs-live-class",
     title: "Coursera, Udemy, a book or live?",
-    sub: "What each format trains, completion data, cost per live hour.",
+    sub: "What each one teaches, and how many people finish.",
     icon: "computer",
     color: "coral",
     group: "choose",

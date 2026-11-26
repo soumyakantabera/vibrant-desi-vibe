@@ -82,7 +82,7 @@ export const NEEDS: Record<NeedKey, Need> = {
     label: "Software / IT and GCC jobs",
     title: "English for Software Engineers | Interviews & Standups",
     description:
-      "IT and GCC hiring tests English in the communication round and in explaining your project. How to practise standups, demos and HR answers — live, about 6 per batch.",
+      "IT and GCC hiring tests your English in the communication round and when you explain your project. Practise standups, demos and HR answers live, 6 per batch.",
     h1: "English for software engineers and IT freshers",
     eyebrow: "Jobs · software / IT / GCC",
     standfirst:
@@ -198,7 +198,7 @@ export const NEEDS: Record<NeedKey, Need> = {
     label: "Government job interview",
     title: "English for Govt Job Interviews | UPSC & State PSC",
     description:
-      "UPSC lets you choose the interview language. If you choose English, practise speaking to a panel calmly. What we help with, what we don't — live, about 6 per batch.",
+      "UPSC lets you pick the interview language. If you pick English, practise speaking calmly to a panel. What we can help with, live, about 6 per batch.",
     h1: "English for government job interviews",
     eyebrow: "Government · interview / personality test",
     standfirst:

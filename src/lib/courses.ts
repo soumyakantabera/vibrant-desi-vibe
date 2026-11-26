@@ -783,7 +783,7 @@ export const COURSES: Record<string, CourseData> = {
         a: "No. Interview Preparation is a live batch about how you sound when someone already invited you to the screen. We do not offer career counselling.",
       },
       {
-        q: "Do you guarantee I will get the job?",
+        q: "Can you promise I will get the job?",
         a: "No. We rehearse the English of the interview. The offer depends on the role, the panel and your work. We do not sell a placement.",
       },
       {

@@ -34,7 +34,7 @@ export const CHAT_MSG =
  * we do not do. Shows we are serious, so the people who message are too.
  */
 export const TEACHER_PROMISE =
-  "A teacher replies, not a sales team: course, fee and start date in writing, 10am–midnight IST. No calls, no pressure.";
+  "A teacher replies on WhatsApp, 10am to midnight IST. No sales calls.";
 
 function sentence(message: string): string {
   const t = message.trim().replace(/\s+/g, " ");

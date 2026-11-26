@@ -56,7 +56,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "bn-IN",
     title: "English Speaking Test বাংলায় | ফ্রি লেভেল টেস্ট",
     description:
-      "1 মিনিটের ফ্রি English speaking level test, বাংলায়: মাত্র 4টা সহজ প্রশ্ন, আপনার লেভেল (A1–B2) আর ঠিক কোর্স। ফলাফল সোজা WhatsApp-এ। কলকাতা থেকে, ₹1,199/মাস থেকে।",
+      "1 মিনিটের ফ্রি English speaking level test, বাংলায়: মাত্র 4টা সহজ প্রশ্ন, আপনার লেভেল (A1–B2) আর ঠিক কোর্স। ফলাফল সোজা WhatsApp-এ। ₹1,199/মাস থেকে।",
     shortTitle: "English speaking test (Bengali)",
     keywords: [
       "english speaking test in bengali",

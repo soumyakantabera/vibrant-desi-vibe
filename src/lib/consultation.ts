@@ -22,9 +22,9 @@ export const CONSULTATION = {
   phoneDisplay: WHATSAPP_DISPLAY,
   headline: "Free group consultation. Your plan in writing.",
   /** Magnet under every consultation button. */
-  hook: "Free group consultation — we send a booking link on WhatsApp. No payment to book.",
+  hook: "Free group consultation. We send the booking link on WhatsApp; booking is free.",
   punch:
-    "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
+    "A free group slot with our team. Tell us your goal, and we name what is holding you back and send the right course and fee in writing. It is advice, not a class, and you decide after.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
   what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹99 Demo Class.",

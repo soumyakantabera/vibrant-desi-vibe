@@ -29,12 +29,10 @@ export type FitCourseSlug = (typeof FIT_COURSE_SLUGS)[number];
 
 /** Who each room is for, in one line the learner can test themselves against. */
 const FIT_LINE: Record<FitCourseSlug, string> = {
-  "spoken-english":
-    "You cannot yet hold a basic conversation or introduce yourself for 30 seconds.",
-  "intermediate-english":
-    "You speak in simple sentences, with tense errors, fillers and broken flow.",
-  "interactive-speaking": "You know the English and freeze in meetings, calls or debates.",
-  "interview-preparation": "You can talk, and still lose HR rounds, STAR answers or your intro.",
+  "spoken-english": "You can't yet introduce yourself for 30 seconds.",
+  "intermediate-english": "You get by in simple sentences, with errors and fillers.",
+  "interactive-speaking": "You know the English but freeze in meetings and calls.",
+  "interview-preparation": "You can talk, yet interviews go wrong.",
 };
 
 function months(slug: FitCourseSlug): number {
@@ -73,18 +71,18 @@ export function fitRow(slug: FitCourseSlug): FitRow {
 
 /** What every room asks of the learner. Same for all four. */
 export const FIT_DEMANDS = [
-  "Up to two 90-minute live classes a week, in a fixed afternoon, evening or night IST slot.",
-  "15–20 minutes of speaking practice on the days between classes. Live classes give about 12 hours a month; the rest of the progress happens in between.",
-  "Speaking out loud in front of about 5 other adults in every class, mistakes included.",
-  "The whole course length. You pay one month at a time, but the plan needs the months.",
+  "Two 90-minute live classes a week, at a fixed time.",
+  "15–20 minutes of practice on the other days.",
+  "Speaking up in front of about 5 others, mistakes and all.",
+  "Staying for the whole course. You pay monthly.",
 ];
 
 /** Who should not message us for a course. */
 export const FIT_NOT_FOR = [
-  "Children under 15. Batches are adults only.",
-  "Anyone who needs an IELTS, PTE or TOEFL score, or a certificate.",
-  "Anyone who wants 1:1 private lessons or a walk-in classroom.",
-  "Anyone expecting fluency in 30 days, or a promised job, salary or band.",
+  "Under 15s. Batches are adults only.",
+  "Anyone after an IELTS score or a certificate.",
+  "Anyone who wants 1:1 lessons or a classroom.",
+  "Anyone hoping for fluency in 30 days.",
 ];
 
 /** The five facts that let a teacher answer the first message with one course. */
@@ -102,7 +100,7 @@ export const FIT_SEND = [
  * and the teacher asks the rest.
  */
 export const FIT_WA_MESSAGE =
-  "Hi, I've read what it takes: two live classes a week, daily practice. I'm in. Which course and batch fit me?";
+  "Hi, I've read what the course takes and I'm in. Which course and batch suit me?";
 
 /**
  * Which rooms a page is about, from its path. Course and blog pages are passed

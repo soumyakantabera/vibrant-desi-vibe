@@ -94,9 +94,9 @@ function Page() {
             Choose the right course, <span className="text-sunshine">then practise</span>
           </h1>
           <p className="mt-5 text-lg text-white">
-            Hype-free guides for adults who are serious about speaking English: which course fits,
-            what it costs in total, what it asks of you, and who should wait. Written by teachers
-            who run live classes from ₹1,199/mo, inclusive of taxes.
+            Guides for adults choosing an English course: which one fits, what it costs and what it
+            asks of you. Written by teachers who run live classes from ₹1,199/mo, inclusive of
+            taxes.
           </p>
         </div>
       </section>
@@ -106,7 +106,7 @@ function Page() {
           <div className="container-x">
             <SectionHeader
               eyebrow="Choosing a course? Start here"
-              title="Which course, for whom, and what it asks of you"
+              title="Which course is right for you"
             />
             <ol className="grid gap-3 md:grid-cols-2">
               {decide.map((p) => (

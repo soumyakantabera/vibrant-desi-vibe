@@ -226,7 +226,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Bihar | Hindi Medium, Live",
     description:
-      "Live online spoken English for Patna, Gaya, Muzaffarpur and all of Bihar — Hindi-speaking teacher, about 6 per batch, daily practice in the Bolo app, ₹1,199/month.",
+      "Live online spoken English for Patna, Gaya, Muzaffarpur and all of Bihar. Hindi-speaking teacher, about 6 per batch, daily Bolo app practice, ₹1,199/month.",
     keywords: [
       "spoken english classes patna online",
       "spoken english classes bihar",
@@ -344,7 +344,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Madhya Pradesh | Hindi Medium",
     description:
-      "Live online spoken English for Indore, Bhopal, Gwalior and Jabalpur — speaking practice, not just grammar. Hindi-speaking teacher, about 6 per batch, ₹1,199/month.",
+      "Live online spoken English for Indore, Bhopal, Gwalior and Jabalpur, with speaking in every class. Hindi-speaking teacher, about 6 per batch, ₹1,199/month.",
     keywords: [
       "spoken english classes indore online",
       "spoken english classes bhopal",
@@ -618,7 +618,7 @@ export const STATES: StateInfo[] = [
     ],
     title: "Spoken English Classes in Gujarat | Live Online",
     description:
-      "Live online spoken English for Ahmedabad, Surat, Vadodara and Rajkot — small batch of about 6, Hindi-medium option, daily Bolo practice, ₹1,199/month incl. taxes.",
+      "Live online spoken English for Ahmedabad, Surat, Vadodara and Rajkot. About 6 per batch, Hindi-medium option, daily Bolo practice, ₹1,199/month incl. taxes.",
     keywords: [
       "spoken english classes ahmedabad online",
       "spoken english classes surat online",

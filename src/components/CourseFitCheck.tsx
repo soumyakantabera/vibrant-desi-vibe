@@ -28,16 +28,16 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
       className="mt-12 rounded-3xl border border-brand/25 bg-white p-5 shadow-sm md:p-7"
     >
       <p className="eyebrow">
-        <Icon name="clipboard" size={14} /> Before you message us
+        <Icon name="clipboard" size={14} /> Before you join
       </p>
       <h2
         id="course-fit-check-title"
         className="mt-2 font-display text-2xl font-extrabold text-ink md:text-3xl"
       >
-        Is this course for you? A 1-minute fit check
+        Is this right for you?
       </h2>
       <p className="mt-3 text-ink/85">
-        Small batches, taught properly. Here is what it takes. If it fits your life, message us.
+        Here is what each course takes, so you can decide before you message us.
       </p>
 
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
@@ -82,14 +82,13 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
         </table>
       </div>
       <p className="mt-2 text-xs text-ink/70">
-        Inclusive of taxes, billed one month at a time. No EMI, no auto-debit. About 6 learners per
-        batch.
+        Inclusive of taxes, paid monthly. About 6 per batch.
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <div className="rounded-2xl bg-paper p-4">
           <h3 className="flex items-center gap-2 font-display font-bold text-ink">
-            <Icon name="clock" size={18} /> What it asks of you
+            <Icon name="clock" size={18} /> What it takes
           </h3>
           <ul className="mt-2 space-y-2 text-sm text-ink/90">
             {FIT_DEMANDS.map((d) => (
@@ -102,7 +101,7 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
         </div>
         <div className="rounded-2xl bg-paper p-4">
           <h3 className="flex items-center gap-2 font-display font-bold text-ink">
-            <Icon name="ban" size={18} /> Not the right fit
+            <Icon name="ban" size={18} /> Not for
           </h3>
           <ul className="mt-2 space-y-2 text-sm text-ink/90">
             {FIT_NOT_FOR.map((d) => (
@@ -116,7 +115,7 @@ export function CourseFitCheck({ slugs }: { slugs?: FitCourseSlug[] }) {
       </div>
 
       <div className="mt-8 rounded-2xl bg-brand-soft/50 p-5">
-        <h3 className="font-display text-xl font-extrabold text-ink">In? Talk to a teacher.</h3>
+        <h3 className="font-display text-xl font-extrabold text-ink">Sounds like you?</h3>
         <p className="mt-2 text-sm text-ink/85">{TEACHER_PROMISE}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <WaButton message={FIT_WA_MESSAGE} goal="fit_check_whatsapp" size="lg">

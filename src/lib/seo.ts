@@ -1010,7 +1010,7 @@ const RAW_PAGES: Record<string, PageSeo> = {
     path: "/educator",
     title: "Our English Teachers: Sunanda Dey & Co-Educators",
     description:
-      "Meet Learn With Smile's live English teachers: lead educator Sunanda Dey with co-educators Janvi B., Aryakanya H. and Sneha C. Same teacher, 6 per batch, from ₹1,199/mo.",
+      "Meet Learn With Smile's live English teachers: Sunanda Dey with Janvi B., Aryakanya H. and Sneha C. Same teacher, about 6 per batch, from ₹1,199/mo.",
     shortTitle: "Our Educators",
     keywords: [
       "sunanda dey english teacher",
