@@ -65,7 +65,7 @@ export const body: ArticleBody = [
   { t: "h3", text: "1. Daily 1:1 practice apps (Indian tutors)" },
   {
     t: "p",
-    text: "**Roughly ₹100–₹400 per session.** You get a phone or video call with a tutor, on demand, most days. There is usually no fixed syllabus — you talk, they correct.",
+    text: "**Roughly ₹100–₹400 per session.** You get a phone or video call with a tutor, on demand, most days. There is usually no fixed syllabus: you talk, they correct.",
   },
   {
     t: "p",
@@ -89,7 +89,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "**If the learner is under about 14, use one of these rather than us.** PlanetSpark is the named kids 1:1 in this market: public speaking and English, typically ages 4–13, course bundles often **₹13,000–₹65,000**, with a free demo class for the child. Teaching children is a different skill — parent reporting, short attention, safeguarding. Our classes are 15+. Putting a nine-year-old into an adult batch of around 6 wastes your money. Judge kids platforms on the individual teacher and the trial, and be sceptical of long prepaid packages.",
+    text: "**If the learner is under about 14, use one of these rather than us.** PlanetSpark is the named kids 1:1 in this market: public speaking and English, typically ages 4–13, course bundles often **₹13,000–₹65,000**, with a free demo class for the child. Teaching children is a different skill: parent reporting, short attention, safeguarding. Our classes are 15+. Putting a nine-year-old into an adult batch of around 6 wastes your money. Judge kids platforms on the individual teacher and the trial, and be sceptical of long prepaid packages.",
   },
 
   { t: "h3", text: "4. Established institutions" },
@@ -99,7 +99,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "**If you need a recognised certificate, go here, and we will not pretend otherwise — we do not currently issue one.** For a visa application, a university requirement or an HR checklist that specifies a credential, this is the category that satisfies it. Be clear about what the fee is buying, though: the awarding body's recognition, plus a well-structured curriculum. It is not buying a smaller batch, and these courses often run 15–25 students.",
+    text: "**If you need a recognised certificate, go here, and we will not pretend otherwise: we do not currently issue one.** For a visa application, a university requirement or an HR checklist that specifies a credential, this is the category that satisfies it. Be clear about what the fee is buying, though: the awarding body's recognition, plus a well-structured curriculum. It is not buying a smaller batch, and these courses often run 15–25 students.",
   },
 
   { t: "h3", text: "5. Small live batches" },
@@ -109,7 +109,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "This is our category, so weigh it accordingly. The argument for it is that it is the only format that gives you a syllabus *and* real speaking time *and* an Indian price at once. The argument against is that it is a fixed schedule — if you cannot commit to the same slot up to twice a week for three months, an on-demand app will serve you better than a course you stop attending.",
+    text: "This is our category, so weigh it accordingly. The argument for it is that it is the only format that gives you a syllabus *and* real speaking time *and* an Indian price at once. The argument against is that it is a fixed schedule: if you cannot commit to the same slot up to twice a week for three months, an on-demand app will serve you better than a course you stop attending.",
   },
 
   { t: "h3", text: "6. Large live batches" },
@@ -150,14 +150,14 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**A fixed syllabus** — you want somebody to decide what you study next, in what order.",
-      "**Real speaking time** — approximately 6 learners per batch, so you speak in every class and get corrected by name.",
-      "**An Indian budget** — ₹1,199–₹2,499 a month, inclusive of taxes, billed monthly with no lock-in.",
+      "**A fixed syllabus**: you want somebody to decide what you study next, in what order.",
+      "**Real speaking time**: about 6 learners per batch, so you speak in every class and get corrected by name.",
+      "**An Indian budget**: ₹1,199–₹2,499 a month, inclusive of taxes, billed monthly with no lock-in.",
     ],
   },
   {
     t: "p",
-    text: "If you only want the second one, a 1:1 app is cheaper and more flexible. If you need a certificate, we are the wrong choice outright. If the learner is a child, so are we. And if you cannot commit to a fixed weekly slot, do not buy a course — buy practice.",
+    text: "If you only want the second one, a 1:1 app is cheaper and more flexible. If you need a certificate, we are the wrong choice outright. If the learner is a child, so are we. And if you cannot commit to a fixed weekly slot, do not buy a course: buy practice.",
   },
 
   { t: "h2", text: "How to actually decide, in one week" },
@@ -168,8 +168,8 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "Pick three options from different categories above — say one app, one small batch, one large batch.",
-      "Take the free trial or consultation of each in the same week, while your impressions are comparable. Ask what the free session **is** — a class you speak in, a pitch, or counselling. Ours is counselling: we name the bottleneck and put the fee in writing. You will not get 8 minutes on a mic with us until you enrol.",
+      "Pick three options from different categories above: say one app, one small batch, one large batch.",
+      "Take the free trial or consultation of each in the same week, while your impressions are comparable. Ask what the free session **is**: a class you speak in, a pitch, or counselling. Ours is counselling: we name the bottleneck and put the fee in writing. You will not get 8 minutes on a mic with us until you enrol.",
       "In each one, count how many minutes **you** spoke. Not the teacher, not the class. You.",
       "Ask each provider one question: what is the actual batch size, not the maximum?",
       "Then pick, and give it three months before judging it. Nothing in language learning shows results in three weeks.",
@@ -177,7 +177,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "That week costs nothing and will tell you more than any amount of reading. If one of the three is us, judge the diagnosis and the printed cap — not speaking minutes you will not get in counselling.",
+    text: "That week costs nothing and will tell you more than any amount of reading. If one of the three is us, judge the diagnosis and the printed cap, not speaking minutes you will not get in counselling.",
   },
   {
     t: "cta",

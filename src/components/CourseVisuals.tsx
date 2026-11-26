@@ -89,7 +89,7 @@ export function ClassSplit({ title, visuals }: { title: string; visuals: CourseV
           eyebrow="Inside Every Class"
           eyebrowTone="coral"
           title={<span id="class-split-title">What one {total}-minute class looks like</span>}
-          subtitle={`The same rhythm every session of ${title} — so you always know what the hour is for.`}
+          subtitle={`The same rhythm every session of ${title}, so you always know what the hour is for.`}
         />
         <div className="max-w-4xl mx-auto">
           <div
@@ -407,7 +407,7 @@ export const LADDER: { slug: string; step: string; who: string }[] = [
   {
     slug: "intermediate-english",
     step: "Level up",
-    who: "Basic sentences work — grammar, flow and work emails do not",
+    who: "Basic sentences work: grammar, flow and work emails do not",
   },
   {
     slug: "interactive-speaking",
@@ -430,7 +430,7 @@ export function CourseLadder({ highlight }: { highlight?: string }) {
         <SectionHeader
           eyebrow="The English Ladder"
           eyebrowTone="indigo"
-          title={<span id="ladder-title">Find your step — then the duration and fee</span>}
+          title={<span id="ladder-title">Find your step, then the duration and fee</span>}
           subtitle="Four live rooms for adults 15+, about 6 learners each. Bar length is the course length in months."
         />
         <ol className="max-w-4xl mx-auto space-y-3">

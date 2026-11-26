@@ -7,11 +7,11 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Here is what we see in almost every beginner batch we teach. Hesitation is not a vocabulary problem. It is a habit — a checking step that has been installed between thinking and speaking. You think of a sentence, and instead of saying it, you stop to inspect it first. Is that the right tense? Should it be *a* or *the*? Is that word too simple?",
+    text: "Here is what we see in almost every beginner batch we teach. Hesitation is not a vocabulary problem. It is a habit: a checking step that has been installed between thinking and speaking. You think of a sentence, and instead of saying it, you stop to inspect it first. Is that the right tense? Should it be *a* or *the*? Is that word too simple?",
   },
   {
     t: "p",
-    text: "That inspection takes about two seconds. Two seconds of silence feels enormous when someone is looking at you, so you panic, and the sentence collapses before it leaves your mouth. Then you conclude your English is not good enough, and you go back to studying grammar — which makes the checking step bigger and the pause longer.",
+    text: "That inspection takes about two seconds. Two seconds of silence feels enormous when someone is looking at you, so you panic, and the sentence collapses before it leaves your mouth. Then you conclude your English is not good enough, and you go back to studying grammar, which makes the checking step bigger and the pause longer.",
   },
   {
     t: "quote",
@@ -25,7 +25,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Habit 1: Narrate something boring for two minutes" },
   {
     t: "p",
-    text: "Every day, pick the dullest thing you are doing — making tea, folding clothes, walking to the bus stop — and describe it out loud in English while you do it. Two minutes. Nobody is listening.",
+    text: "Every day, pick the dullest thing you are doing (making tea, folding clothes, walking to the bus stop) and describe it out loud in English while you do it. Two minutes. Nobody is listening.",
   },
   {
     t: "example",
@@ -40,7 +40,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "This feels wrong to most Indian learners, because we were taught that an uncorrected mistake becomes permanent. In writing, that is fair. In speaking, the thing you are training here is not accuracy — it is the ability to keep going. Accuracy comes back later, in class, where someone can hear you. What you cannot practise anywhere else is the habit of continuing through a wobbly sentence instead of stopping dead.",
+    text: "This feels wrong to most Indian learners, because we were taught that an uncorrected mistake becomes permanent. In writing, that is fair. In speaking, the thing you are training here is not accuracy: it is the ability to keep going. Accuracy comes back later, in class, where someone can hear you. What you cannot practise anywhere else is the habit of continuing through a wobbly sentence instead of stopping dead.",
   },
   {
     t: "p",
@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Habit 2: Answer one question for exactly sixty seconds" },
   {
     t: "p",
-    text: "Set a timer for sixty seconds. Pick a question — any question — and talk until the timer goes. Some to start with:",
+    text: "Set a timer for sixty seconds. Pick a question, any question, and talk until the timer goes. Some to start with:",
   },
   {
     t: "ul",
@@ -68,7 +68,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "You will find sixty seconds is much longer than you expect. Most people run out of things to say at around twenty-five and then discover they can, in fact, keep talking — which is the whole lesson.",
+    text: "You will find sixty seconds is much longer than you expect. Most people run out of things to say at around twenty-five and then discover they can, in fact, keep talking, which is the whole lesson.",
   },
   {
     t: "p",
@@ -78,7 +78,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Habit 3: Learn five sentence frames, not five words" },
   {
     t: "p",
-    text: "Most vocabulary advice tells you to learn five new words a day. After thirty days you have 150 words you can recognise and cannot use, because a word on its own has nowhere to go. A frame does have somewhere to go — it is a sentence with a hole in it, and any word drops in.",
+    text: "Most vocabulary advice tells you to learn five new words a day. After thirty days you have 150 words you can recognise and cannot use, because a word on its own has nowhere to go. A frame does have somewhere to go: it is a sentence with a hole in it, and any word drops in.",
   },
   {
     t: "table",
@@ -154,7 +154,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Pauses before a specific word almost always mean vocabulary — note the word, look it up once, move on.",
+      "Pauses before a specific word almost always mean vocabulary: note the word, look it up once, move on.",
       "Pauses at the start of every sentence mean you are planning the whole sentence before starting it. Frames fix this.",
       "Pauses in the middle of a sentence usually mean tense-checking. This is the one that fades on its own with the daily narration.",
       "Pauses after a mistake mean you are still stopping to inspect. Habit 1 is the drill for that, and it is worth going back to.",
@@ -184,7 +184,7 @@ export const body: ArticleBody = [
       ],
       [
         "Week 4",
-        "Pauses are shorter and fall in different places. You are still making the same grammar mistakes — but you are making them fluently, and you are being understood.",
+        "Pauses are shorter and fall in different places. You are still making the same grammar mistakes, but you are making them fluently, and you are being understood.",
       ],
     ],
   },
@@ -198,7 +198,7 @@ export const body: ArticleBody = [
   },
   {
     t: "cta",
-    text: "If you want the fourth habit built in — a real batch of approximately 6 learners, where you speak in every class and someone corrects the same mistake until it goes away — the consultation is free. Message us on WhatsApp and we'll put you in the next available batch.",
+    text: "If you want the fourth habit built in (a real batch of about 6 learners, where you speak in every class and someone corrects the same mistake until it goes away), the consultation is free. Message us on WhatsApp and we'll put you in the next available batch.",
     course: "/course-interactive-speaking",
     label: "See the Interactive Speaking course",
   },

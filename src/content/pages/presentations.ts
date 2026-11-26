@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Explaining your work in English is three beats: **one outcome, three points, one ask.** You do not need a TED talk. You need 3 minutes that a manager can repeat. [Interactive Speaking](/course-interactive-speaking) drills this live. Rohan now walks working papers with partners in Mumbai — [his story](/success-stories).",
+    text: "**Short answer.** Explaining your work in English is three beats: **one outcome, three points, one ask.** You do not need a TED talk. You need 3 minutes that a manager can repeat. [Interactive Speaking](/course-interactive-speaking) drills this live. Rohan now walks working papers with partners in Mumbai: [his story](/success-stories).",
   },
 
   { t: "h2", text: "The 3-minute spine" },
@@ -27,7 +27,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Where Indians usually lose the room" },
   {
     t: "table",
-    caption: "Fixes we practise in class — not accent tips.",
+    caption: "Fixes we practise in class, not accent tips.",
     head: ["Habit", "What the room hears", "Swap"],
     rows: [
       ["History first", "We are lost", "Outcome first, then how"],
@@ -99,7 +99,7 @@ export const body: ArticleBody = [
       ["Point at data", "“The number that matters is the drop from 48 hours to 12.”"],
       [
         "Handle a question you can't answer",
-        "“Good question — I'll check and send it by end of day.”",
+        "“Good question: I'll check and send it by end of day.”",
       ],
       ["Close", "“So the ask is: approve the form for Pune this week.”"],
     ],

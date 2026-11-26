@@ -58,7 +58,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
   },
   {
     name: "Cambly",
-    fee: "₹8,000–₹15,000/mo if daily",
+    fee: "₹5,999–₹10,999/month for 15–30 min a day",
     extra: "Book any available tutor",
     batch: "1:1 native video",
     session: "Book a tutor. No fixed course plan.",
@@ -82,7 +82,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
   },
   {
     name: "British Council Online",
-    fee: "₹8,800–₹16,000 / module",
+    fee: "₹8,900–₹10,350 / 15–22.5 hrs",
     extra: "CEFR classroom / badge",
     batch: "Often 8–12",
     session: "Sold by CEFR module",
@@ -93,7 +93,7 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
     fee: "₹300–₹1,200/mo",
     extra: "AI. No named teacher.",
     batch: "Solo app",
-    session: "None — you tap Start",
+    session: "None, you tap Start",
     tone: "indigo",
   },
   {
@@ -106,4 +106,4 @@ export const MARKET_COMPARE: readonly MarketRow[] = [
   },
 ] as const;
 
-export const COMPARE_BLURB = `Updated ${COMPARE_REVISED_LABEL}. Online 2026 fee bands — confirm on their site before you pay. We sell one of the rows. PlanetSpark is for children. We are adults 15+.`;
+export const COMPARE_BLURB = `Updated ${COMPARE_REVISED_LABEL}. Online 2026 fee bands: confirm on their site before you pay. We sell one of the rows. PlanetSpark is for children. We are adults 15+.`;

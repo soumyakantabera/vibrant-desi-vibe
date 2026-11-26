@@ -9,7 +9,7 @@ import { BEFORE_YOU_PAY, COMPLAINT_PATTERNS, FAIR_PROMISES } from "@/lib/fair-fe
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "Most complaints about English courses in India are not about the teaching. They are about **money**: a year paid in the first call, a refund that never comes, a subscription that renews on its own. Ten minutes of questions before you pay prevents almost all of it. Run this checklist on anyone — Learn With Smile included.",
+    text: "Most complaints about English courses in India are not about the teaching. They are about **money**: a year paid in the first call, a refund that never comes, a subscription that renews on its own. Ten minutes of questions before you pay prevents almost all of it. Run this checklist on anyone: Learn With Smile included.",
   },
 
   { t: "h2", text: "What goes wrong most often" },
@@ -34,7 +34,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Get the answers **in writing** — a WhatsApp message counts. A promise that exists only in a sales call is the one most often disputed later.",
+    text: "Get the answers **in writing**: a WhatsApp message counts. A promise that exists only in a sales call is the one most often disputed later.",
   },
 
   { t: "h2", text: "What Indian rules say" },
@@ -65,15 +65,15 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "[How to choose a spoken English class in India](/blog/how-to-choose-spoken-english-class-india) — batch size, speaking minutes, named teacher.",
-      "[English class fees in India](/english-class-fees-india) — what each kind of course costs in 2026.",
-      "[Compare English institutes](/english-institute-comparison-india) — apps, tutors, classrooms and us, side by side.",
-      "[Free practice vs a paid live class](/free-english-speaking-practice-vs-paid-class) — when free is enough.",
+      "[How to choose a spoken English class in India](/blog/how-to-choose-spoken-english-class-india): batch size, speaking minutes, named teacher.",
+      "[English class fees in India](/english-class-fees-india): what each kind of course costs in 2026.",
+      "[Compare English institutes](/english-institute-comparison-india): apps, tutors, classrooms and us, side by side.",
+      "[Free practice vs a paid live class](/free-english-speaking-practice-vs-paid-class): when free is enough.",
     ],
   },
   {
     t: "cta",
-    text: "Ask us every question on this list before you pay. The free consultation is counselling on WhatsApp — you get the course, the fee and the refund rule in writing.",
+    text: "Ask us every question on this list before you pay. The free consultation is counselling on WhatsApp: you get the course, the fee and the refund rule in writing.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

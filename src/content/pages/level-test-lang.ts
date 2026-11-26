@@ -115,4 +115,4 @@ export function levelTestBody(lang: Exclude<TestLang, "en">): ArticleBody {
 }
 
 /** For the English page: one line pointing at the other two languages. */
-export const OTHER_LANG_LINE = `Prefer Hindi or Bengali? Take the same test [हिंदी में](${LEVEL_TEST_LANG_PATHS.hi}) or [বাংলায়](${LEVEL_TEST_LANG_PATHS.bn}) — or switch language inside the test above.`;
+export const OTHER_LANG_LINE = `Prefer Hindi or Bengali? Take the same test [हिंदी में](${LEVEL_TEST_LANG_PATHS.hi}) or [বাংলায়](${LEVEL_TEST_LANG_PATHS.bn}), or switch language inside the test above.`;

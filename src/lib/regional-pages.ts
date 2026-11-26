@@ -34,7 +34,7 @@ export function stateBody(st: StateInfo): ArticleBody {
   return [
     {
       t: "p",
-      text: `**Short answer.** ${st.intro} Learn With Smile teaches live online in batches of about 6 — [${mc.label}](${mc.path}) is ₹1,199/month inclusive of taxes, with daily practice in the [Bolo app](/bolo) and a weekly teacher review.`,
+      text: `**Short answer.** ${st.intro} Learn With Smile teaches live online in batches of about 6: [${mc.label}](${mc.path}) is ₹1,199/month inclusive of taxes, with daily practice in the [Bolo app](/bolo) and a weekly teacher review.`,
     },
     { t: "h2", text: `Where English matters in ${st.name}` },
     {
@@ -56,7 +56,7 @@ export function stateBody(st: StateInfo): ArticleBody {
       rows: [
         ...st.prices.map((p) => [p.what, p.range]),
         [
-          "**Learn With Smile** — live batch of about 6 + Bolo app + weekly review + same teacher",
+          "**Learn With Smile**: live batch of about 6 + Bolo app + weekly review + same teacher",
           "**₹1,199/month** (Basic Spoken English)",
         ],
       ],
@@ -69,11 +69,11 @@ export function stateBody(st: StateInfo): ArticleBody {
     },
     {
       t: "cta",
-      text: `Start with ${mc.label} — ₹1,199/month, about 6 learners, live online.`,
+      text: `Start with ${mc.label}: ₹1,199/month, about 6 learners, live online.`,
       course: mc.path,
       label: mc.label,
     },
-    { t: "h2", text: `${st.name} — facts that shape how you learn` },
+    { t: "h2", text: `${st.name}: facts that shape how you learn` },
     { t: "ul", items: st.facts },
     { t: "h2", text: `Searching for "spoken English classes near me" in ${st.name}?` },
     {
@@ -82,7 +82,7 @@ export function stateBody(st: StateInfo): ArticleBody {
     },
     {
       t: "table",
-      caption: `Areas in ${st.name} our learners join from — online, no travel.`,
+      caption: `Areas in ${st.name} our learners join from: online, no travel.`,
       head: ["City", "Areas"],
       rows: st.localities.map((l) => [l.city, l.areas.join(", ")]),
     },
@@ -90,15 +90,15 @@ export function stateBody(st: StateInfo): ArticleBody {
       t: "ul",
       items: [
         "No commute and no parking: join from home, hostel or office.",
-        "Afternoon, evening and night IST slots — fits shifts and college timings.",
+        "Afternoon, evening and night IST slots: fits shifts and college timings.",
         "Batch of about 6, so you speak more than in a 25–40 seat classroom.",
-        "Daily practice in the Bolo app and a weekly teacher review — classrooms send worksheets.",
+        "Daily practice in the Bolo app and a weekly teacher review: classrooms send worksheets.",
       ],
     },
     { t: "h2", text: "Cities our learners join from" },
     {
       t: "p",
-      text: `${st.cities.join(", ")} — and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${cityGuides(st)}`,
+      text: `${st.cities.join(", ")}, and anywhere else in ${st.name}. Classes are live online in afternoon, evening and night IST slots; there is no classroom to travel to (our only office is in Kolkata). Languages you will hear in ${st.name}: ${st.languages}.${cityGuides(st)}`,
     },
     { t: "h2", text: "Before you choose a class" },
     {
@@ -111,7 +111,7 @@ export function stateBody(st: StateInfo): ArticleBody {
         `About to pay anyone? Run the [10 checks before you pay](/before-you-pay-spoken-english-course): months upfront, loans, auto-debit, refund in writing.`,
         ...(st.languages.includes("Bengali")
           ? [
-              `Think in Bengali? [Spoken English in Bengali](/spoken-english-in-bengali) — a guide written in Bengali.`,
+              `Think in Bengali? [Spoken English in Bengali](/spoken-english-in-bengali): a guide written in Bengali.`,
             ]
           : []),
       ],

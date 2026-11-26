@@ -22,7 +22,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Two of the four have nothing to do with how good your English is. Task Response and Coherence are both about **organisation and answering the question** — and they are worth half your score. That is why a candidate with strong English can sit at 6.5 for months, and why a fixed structure moves people faster than another vocabulary list does.",
+    text: "Two of the four have nothing to do with how good your English is. Task Response and Coherence are both about **organisation and answering the question**, and they are worth half your score. That is why a candidate with strong English can sit at 6.5 for months, and why a fixed structure moves people faster than another vocabulary list does.",
   },
   {
     t: "p",
@@ -48,7 +48,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "The introduction: two sentences, and one of them is your position" },
   {
     t: "p",
-    text: "Sentence one paraphrases the question. Sentence two states what you think. That is the entire introduction — no background sentence about how the world is changing rapidly, no definitions, nothing.",
+    text: "Sentence one paraphrases the question. Sentence two states what you think. That is the entire introduction: no background sentence about how the world is changing rapidly, no definitions, nothing.",
   },
   {
     t: "example",
@@ -82,11 +82,11 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "**Topic sentence** — the one idea this paragraph argues, in one sentence.",
-      "**Explanation** — why that is true.",
-      "**Development** — what follows from it, or what it causes.",
-      "**Example** — one specific case.",
-      "**Link** — tie it back to the question.",
+      "**Topic sentence**: the one idea this paragraph argues, in one sentence.",
+      "**Explanation**: why that is true.",
+      "**Development**: what follows from it, or what it causes.",
+      "**Example**: one specific case.",
+      "**Link**: tie it back to the question.",
     ],
   },
   {
@@ -146,7 +146,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Sentence one restates your position. Sentence two closes it. **Nothing new goes here** — a fresh idea in the conclusion is a Coherence penalty, because you have raised something you never developed.",
+    text: "Sentence one restates your position. Sentence two closes it. **Nothing new goes here**: a fresh idea in the conclusion is a Coherence penalty, because you have raised something you never developed.",
   },
   {
     t: "p",
@@ -171,7 +171,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "The five minutes of planning is the part everyone skips, and it is the part that protects Task Response. Candidates who start writing immediately routinely answer a slightly different question from the one on the paper — and Task Response is 25% of the mark.",
+    text: "The five minutes of planning is the part everyone skips, and it is the part that protects Task Response. Candidates who start writing immediately routinely answer a slightly different question from the one on the paper, and Task Response is 25% of the mark.",
   },
   {
     t: "p",
@@ -181,7 +181,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       'Third-person **-s** — "the government require" → "requires". This is the single most common error in Indian candidates\' essays.',
-      "Articles — a, an, the. Check every singular countable noun has one.",
+      "Articles: a, an, the. Check every singular countable noun has one.",
       'Plurals — "many student" → "many students".',
       "Subject–verb agreement across a long sentence, where the subject and verb have drifted apart.",
     ],
@@ -206,11 +206,11 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Realistically, from a Band 5.5–6 starting point — which is where most Indian graduates begin — expect about three months to reach a reliable 7, and expect Writing to be the slowest of the four. The thing that moves it is not reading more model essays. It is writing one essay a week and having a person mark it against these four criteria, so the same error gets caught until it stops happening.",
+    text: "Realistically, from a Band 5.5–6 starting point (which is where most Indian graduates begin), expect about three months to reach a reliable 7, and expect Writing to be the slowest of the four. The thing that moves it is not reading more model essays. It is writing one essay a week and having a person mark it against these four criteria, so the same error gets caught until it stops happening.",
   },
   {
     t: "cta",
-    text: "We do not sell IELTS as a course. If speaking is the actual gap, Spoken English is the room — approximately 6 learners, ₹1,199/month, inclusive of taxes. Use this template with a dedicated exam marker if a form asked for the band.",
+    text: "We do not sell IELTS as a course. If speaking is the actual gap, Spoken English is the room: about 6 learners, ₹1,199/month, inclusive of taxes. Use this template with a dedicated exam marker if a form asked for the band.",
     course: "/course-spoken-english",
     label: "See Spoken English",
   },

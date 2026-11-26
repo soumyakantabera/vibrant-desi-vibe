@@ -30,6 +30,7 @@ import {
   CHAT_CTA,
   CHAT_MSG,
   WHATSAPP_DISPLAY,
+  TEACHER_PROMISE,
 } from "@/lib/whatsapp";
 import { FeeText, MarketCopy, feeHeadline } from "@/components/FeeText";
 import { intlUnit } from "@/lib/intl-fees";
@@ -82,7 +83,7 @@ function Home() {
   useFxList();
   return (
     <Layout
-      waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+      waMessage="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
       footerImage={IMG.graduation}
     >
       {/* HERO */}
@@ -157,10 +158,7 @@ function Home() {
                 {DEMO_CTA}
               </WaButton>
             </div>
-            <p className="mt-3 text-sm font-semibold text-sunshine">
-              Tell us your goal. We reply with the right course and the fee — no pressure, no
-              payment to book.
-            </p>
+            <p className="mt-3 text-sm font-semibold text-sunshine">{TEACHER_PROMISE}</p>
             <div className="mt-4">
               <DemoButton className="w-full sm:w-auto justify-center" />
               <p className="mt-2 text-sm text-white/95">
@@ -310,7 +308,7 @@ function Home() {
               subtitle={
                 <span className="text-white/90">
                   One named teacher. Up to 2 classes a week. Every session live — never a recording
-                  as the class. Batches of approximately 6 learners mean you still get the mic.
+                  as the class. Batches of about 6 learners mean you still get the mic.
                 </span>
               }
             />
@@ -318,7 +316,7 @@ function Home() {
               <GlassCard
                 icon="users"
                 title="Small Live Batches"
-                pricing={<FeeText text="Approx. 6 learners · From ₹1,199/mo, inclusive of taxes" />}
+                pricing={<FeeText text="About 6 learners · From ₹1,199/mo, inclusive of taxes" />}
               >
                 Scheduled English cohorts usually have around 6 learners. You practise with
                 classmates, speak in every class and receive corrections during the lesson.
@@ -339,7 +337,7 @@ function Home() {
                 },
                 { n: 2, lbl: "Share Your Goal", sub: "We match you in 1 message", c: "coral" },
                 { n: 3, lbl: "WhatsApp Us", sub: "Replies 10am–midnight IST every day", c: "wa" },
-                { n: 4, lbl: "Join a Class", sub: "Approx. 6 per batch", c: "sage" },
+                { n: 4, lbl: "Join a Class", sub: "About 6 per batch", c: "sage" },
               ].map((s) => (
                 <div key={s.n} className="text-center">
                   <div
@@ -364,7 +362,7 @@ function Home() {
             </Reveal>
             <div className="text-center mt-10">
               <WaButton
-                message="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+                message="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
                 variant="sun"
                 size="lg"
               >
@@ -452,7 +450,7 @@ function Home() {
           eyebrow="Common Questions"
           title="Your Questions, Answered Plainly"
           subtitle="Fees, batch sizes, timelines and whether this actually works — answered plainly."
-          waMessage="Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link."
+          waMessage="Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link."
         />
 
         {/* GOOGLE MAPS — KOLKATA OUTLET (compact) */}

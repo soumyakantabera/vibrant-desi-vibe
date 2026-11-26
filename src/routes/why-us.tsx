@@ -76,23 +76,23 @@ const MARKET = [
     icon: "globe" as const,
     tag: "Native-speaker apps",
     title: "1:1. Pricey. Quality varies.",
-    body: "Cambly-style apps: ₹8,000–₹15,000/month if you practise daily. Beginners freeze at native speed. Tutor training is uneven — a consistent complaint on reviews. No syllabus, no named teacher who remembers your errors next week.",
-    stat: "₹8k–₹15k / month",
+    body: "Cambly-style apps: ₹5,999–₹10,999/month on Cambly’s India page for 15–30 minutes a day, roughly ₹1,300 an hour. Beginners freeze at native speed. Tutor training is uneven — a consistent complaint on reviews. No syllabus, no named teacher who remembers your errors next week.",
+    stat: "₹6k–₹11k / month",
   },
   {
     color: "sunshine" as const,
     icon: "trophy" as const,
     tag: "Brand-name groups",
     title: "Curriculum. Limited talking.",
-    body: "Structured CEFR groups, often 8–12. Modules ₹8,800–₹16,000. Real curriculum. We train speaking from ₹1,199/mo, inclusive of taxes. Sit IELTS with the test board when a visa or university form actually asks — we do not sell that paper.",
-    stat: "₹8,800–₹16,000 / module",
+    body: "Structured CEFR groups, often 8–12. British Council India lists classroom modules at ₹8,900–₹9,900 for 22.5 hours and online credit packs from ₹10,350 for 15 hours. Real curriculum. We train speaking from ₹1,199/mo, inclusive of taxes. Sit IELTS with the test board when a visa or university form actually asks — we do not sell that paper.",
+    stat: "₹8,900+ / 22.5 hrs",
   },
   {
     color: "brand" as const,
     icon: "smile" as const,
     tag: "Learn With Smile",
     title: "₹1,199/mo. 7 years. 500+.",
-    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. Inclusive of taxes. Batches have approximately 6 learners so you actually speak.`,
+    body: `${RATING_DISPLAY} on ${RATING.source} (${RATING.count} reviews). Named teacher, 7 years, 500+ learners. Inclusive of taxes. Batches have about 6 learners so you actually speak.`,
     stat: "From ₹1,199/mo · inclusive of taxes",
   },
 ];
@@ -254,7 +254,7 @@ function Page() {
           <FeatureCard icon="gamepad" color="sage" title="Gamified every class">
             Flashcards, polls, quizzes, debates — so you speak, not spectate.
           </FeatureCard>
-          <FeatureCard icon="users" color="brand" title="Approximately 6 learners per batch">
+          <FeatureCard icon="users" color="brand" title="About 6 learners per batch">
             Secondary to quality: enough peers to practise with, few enough that you still talk.
           </FeatureCard>
           <FeatureCard icon="shield" color="coral" title="Chat on WhatsApp">

@@ -56,7 +56,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     lang: "bn-IN",
     title: "English Speaking Test বাংলায় | ফ্রি লেভেল টেস্ট",
     description:
-      "1 মিনিটের ফ্রি English speaking level test, বাংলায়: মাত্র 4টা সহজ প্রশ্ন, আপনার লেভেল (A1–B2) আর ঠিক কোর্স। ফলাফল সোজা WhatsApp-এ। কলকাতা থেকে, ₹1,199/মাস থেকে।",
+      "1 মিনিটের ফ্রি English speaking level test, বাংলায়: মাত্র 4টা সহজ প্রশ্ন, আপনার লেভেল (A1–B2) আর ঠিক কোর্স। ফলাফল সোজা WhatsApp-এ। ₹1,199/মাস থেকে।",
     shortTitle: "English speaking test (Bengali)",
     keywords: [
       "english speaking test in bengali",
@@ -113,11 +113,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Speaking level test", path: LEVEL_TEST_PATH },
     ],
     summary:
-      "Free English speaking level self-check: 4 can-do questions (one per level) scored 0–2, out of 8, plus a goal — 5 taps. 0–4 → Basic Spoken English ₹1,199/mo; 5–6 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 7–8 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). Result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate. Also in Hindi and Bengali.",
+      "Free English speaking level self-check: 4 can-do questions (one per level) scored 0–2, out of 8, plus a goal. 5 taps. 0–4 → Basic Spoken English ₹1,199/mo; 5–6 → Intermediate ₹1,999/mo (work goal: Interactive ₹1,599/mo); 7–8 → Interactive Speaking ₹1,599/mo (interview goal: Interview Preparation ₹2,499/mo). Result opens WhatsApp with the score prefilled; a teacher confirms the level in a free group consultation. Self-check, not a certificate. Also in Hindi and Bengali.",
     faqs: [
       {
         q: "How can I test my English speaking level online for free?",
-        a: "Answer four can-do questions honestly — introducing yourself, the past tense, a one-minute talk, and a meeting or interview — scoring 2, 1 or 0 for each, out of 8. 0–2 is starting out, 3–4 building basics, 5–6 connecting sentences, 7–8 ready to perform. Learn With Smile’s free 1-minute test at /english-speaking-level-test does the scoring and suggests one course; a teacher confirms it in a free consultation.",
+        a: "Answer four can-do questions honestly (introducing yourself, the past tense, a one-minute talk, and a meeting or interview) scoring 2, 1 or 0 for each, out of 8. 0–2 is starting out, 3–4 building basics, 5–6 connecting sentences, 7–8 ready to perform. Learn With Smile’s free 1-minute test at /english-speaking-level-test does the scoring and suggests one course; a teacher confirms it in a free consultation.",
       },
       {
         q: "Is this English speaking test a certificate?",
@@ -133,7 +133,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "What should I do after the test?",
-        a: "Tap “Send my result on WhatsApp”. The message carries your score, level and goal, so a teacher can confirm your level and suggest one room in a free group consultation — advice, not a class. Fees start at ₹1,199/month inclusive of taxes, billed one month at a time.",
+        a: "Tap “Send my result on WhatsApp”. The message carries your score, level and goal, so a teacher can confirm your level and suggest one room in a free group consultation: advice, not a class. Fees start at ₹1,199/month inclusive of taxes, billed one month at a time.",
       },
     ],
   },
@@ -141,7 +141,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: BEFORE_YOU_PAY_PATH,
     title: "Before You Pay for a Spoken English Course | 10 Checks",
     description:
-      "Refunds, loans, EMIs, auto-renewal, hidden charges: 10 checks to run on any spoken English course in India before you pay — and how we answer each.",
+      "Refunds, loans, EMIs, auto-renewal, hidden charges: 10 checks to run on any spoken English course in India before you pay, and how we answer each.",
     shortTitle: "Before you pay for an English course",
     keywords: [
       "spoken english course refund policy",
@@ -173,7 +173,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Should I take a loan or EMI to pay for an English course?",
-        a: "Usually not. A spoken English course is a monthly habit, not a one-off purchase; a loan locks you into a year whether or not the class works for you. Learn With Smile never offers or arranges a loan or EMI — fees start at ₹1,199 a month, inclusive of taxes.",
+        a: "Usually not. A spoken English course is a monthly habit, not a one-off purchase; a loan locks you into a year whether or not the class works for you. Learn With Smile never offers or arranges a loan or EMI: fees start at ₹1,199 a month, inclusive of taxes.",
       },
       {
         q: "How do I stop an English app subscription from renewing?",
@@ -279,7 +279,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     path: "/guides",
     title: "English Class Guides | Fees, Fit, Cities",
     description:
-      "Honest guides to choosing a live English class in India: which course fits, fees, how long it takes, beginners, IT, workplace and cities.",
+      "Honest guides to choosing a live English class in India: which course fits, the total fee, how long it takes, who should not join. Beginners, IT, cities.",
     shortTitle: "Guides",
     keywords: [
       "spoken english class guides india",
@@ -301,11 +301,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Where should I start if I want a live English class in India?",
-        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹1,199/month, approx. 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, or meetings and calls are the gap, take Interactive Speaking (₹1,599/month). Unsure? Get a free consultation — we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
+        a: "If you cannot hold a conversation, start with Spoken English for beginners (6 months, ₹1,199/month, about 6 learners). If basic sentences work but grammar and flow do not, take Intermediate Spoken English (4 months, ₹1,999/month). If you freeze with words you already have, or meetings and calls are the gap, take Interactive Speaking (₹1,599/month). Unsure? Get a free consultation: we diagnose the bottleneck and place you in one room. Fees, comparisons and city pages are linked from this hub. Chat on WhatsApp; we reply 10am–midnight IST every day.",
       },
       {
         q: "What do I get in the free consultation?",
-        a: "A named diagnosis of your problem, one course recommendation with fee and IST slot in writing, and answers to every question you bring. It is counselling, not a class — unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/free-consultation",
+        a: "A named diagnosis of your problem, one course recommendation with fee and IST slot in writing, and answers to every question you bring. It is counselling, not a class: unlike a counsellor pitch or 15 minutes of app talk. Details: https://www.learnwithsmile.app/free-consultation",
       },
     ],
   },
@@ -329,11 +329,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Beginners", path: "/spoken-english-for-beginners-india" },
     ],
     summary:
-      "Beginner Spoken English: sounds, sentences, a 2-minute turn in 6 months. ₹1,199/month, approx. 6 learners, inclusive of taxes. Live, not recorded-as-class.",
+      "Beginner Spoken English: sounds, sentences, a 2-minute turn in 6 months. ₹1,199/month, about 6 learners, inclusive of taxes. Live, not recorded-as-class.",
     faqs: [
       {
         q: "Can a complete beginner learn spoken English online in India?",
-        a: "Yes, if the room is small enough that you speak every hour and someone corrects the same error until it goes. Learn With Smile Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners, up to 2 live classes a week. 30-day fluency from zero is marketing.",
+        a: "Yes, if the room is small enough that you speak every hour and someone corrects the same error until it goes. Learn With Smile Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, about 6 learners, up to 2 live classes a week. 30-day fluency from zero is marketing.",
       },
       {
         q: "I studied in Hindi or Bengali medium. Can I still join a beginner class?",
@@ -345,7 +345,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Should a beginner start with an app or a live class?",
-        a: "Either can start the habit. Apps are good for vocabulary and a daily routine but rarely make you speak in full sentences. If after a month you can read simple English but cannot say it without notes, a small live class is the next step — a beginner needs someone to hear the sentence and correct it.",
+        a: "Either can start the habit. Apps are good for vocabulary and a daily routine but rarely make you speak in full sentences. If after a month you can read simple English but cannot say it without notes, a small live class is the next step: a beginner needs someone to hear the sentence and correct it.",
       },
     ],
   },
@@ -373,23 +373,23 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Intermediate spoken English", path: "/intermediate-spoken-english-course-india" },
     ],
     summary:
-      "Intermediate spoken English guide: who is intermediate (simple sentences work, accuracy and flow do not), a self-test, what 4 months cover month by month, free drills (shadowing, 60-second turns, filler counting), and when a class helps. Course: ₹1,999/month, 4 months, approx. 6 learners, 30 min grammar + 1 hr communication.",
+      "Intermediate spoken English guide: who is intermediate (simple sentences work, accuracy and flow do not), a self-test, what 4 months cover month by month, free drills (shadowing, 60-second turns, filler counting), and when a class helps. Course: ₹1,999/month, 4 months, about 6 learners, 30 min grammar + 1 hr communication.",
     faqs: [
       {
         q: "How do I know if I am an intermediate English speaker?",
-        a: "You can introduce yourself, order food and answer simple questions in English, but tenses slip when you talk fast, you fill gaps with um and like, and longer ideas come out as short broken sentences. Roughly CEFR A2–B1. If you cannot yet finish a simple sentence aloud, you are a beginner — start with Basic Spoken English.",
+        a: "You can introduce yourself, order food and answer simple questions in English, but tenses slip when you talk fast, you fill gaps with um and like, and longer ideas come out as short broken sentences. Roughly CEFR A2–B1. If you cannot yet finish a simple sentence aloud, you are a beginner: start with Basic Spoken English.",
       },
       {
         q: "How can I improve my English from intermediate to fluent?",
-        a: "Three things together: fix the few grammar patterns you repeat wrongly (usually tenses, articles and agreement), speak in timed 60–90 second turns every day, and listen to real English — podcasts, news, talks — then retell it. Record yourself and count fillers. A live class adds a teacher who hears the same error and a group to debate and present to.",
+        a: "Three things together: fix the few grammar patterns you repeat wrongly (usually tenses, articles and agreement), speak in timed 60–90 second turns every day, and listen to real English (podcasts, news, talks) then retell it. Record yourself and count fillers. A live class adds a teacher who hears the same error and a group to debate and present to.",
       },
       {
         q: "What is the fee for the intermediate course at Learn With Smile?",
-        a: "Intermediate Spoken English is ₹1,999 per month, inclusive of taxes, for 4 months — up to 2 live classes a week of 90 minutes, approximately 6 learners. Each class is 30 minutes of grammar and 1 hour of communication. The course is extendable.",
+        a: "Intermediate Spoken English is ₹1,999 per month, inclusive of taxes, for 4 months: up to 2 live classes a week of 90 minutes, about 6 learners. Each class is 30 minutes of grammar and 1 hour of communication. The course is extendable.",
       },
       {
         q: "Is an intermediate course the same as an advanced spoken English course?",
-        a: "Many Indian institutes call the step after basic “advanced”. Here it is called Intermediate: grammar accuracy plus connected speech, debates and presentations. Workplace English — meetings, client calls, emails — is a separate room, Business English.",
+        a: "Many Indian institutes call the step after basic “advanced”. Here it is called Intermediate: grammar accuracy plus connected speech, debates and presentations. Workplace English (meetings, client calls, emails) is a separate room, Business English.",
       },
     ],
   },
@@ -419,7 +419,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How can I speak English fluently?",
-        a: "Speak every day in short turns, get the same errors corrected, and keep a map so you are not guessing. From zero, everyday conversation usually takes about 6 months of live practice — not 30 days. A batch of around 6 gives 8–10 minutes per hour; a room of 30 often gives 1–2.",
+        a: "Speak every day in short turns, get the same errors corrected, and keep a map so you are not guessing. From zero, everyday conversation usually takes about 6 months of live practice, not 30 days. A batch of around 6 gives 8–10 minutes per hour; a room of 30 often gives 1–2.",
       },
       {
         q: "Can I become fluent in English without a class?",
@@ -435,7 +435,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "How can I speak English fluently and confidently?",
-        a: "Confidence follows repetition in front of a listener. Speak out loud every day (a 15-minute routine of shadowing, retelling and timed talks works), learn phrases in chunks rather than single words, record yourself and fix one sentence a day, and get regular turns in front of real people — a partner, a group or a small live batch where mistakes are normal.",
+        a: "Confidence follows repetition in front of a listener. Speak out loud every day (a 15-minute routine of shadowing, retelling and timed talks works), learn phrases in chunks rather than single words, record yourself and fix one sentence a day, and get regular turns in front of real people: a partner, a group or a small live batch where mistakes are normal.",
       },
       {
         q: "What are the rules for speaking English well?",
@@ -467,11 +467,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       { name: "Freshers", path: "/spoken-english-for-freshers-india" },
     ],
     summary:
-      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interview Preparation — 2 months, ₹2,499/month. No placement guarantee.",
+      "Freshers: if you cannot hold a conversation, Spoken English first. If chat is fine and interviews fail, Interview Preparation: 2 months, ₹2,499/month. No placement guarantee.",
     faqs: [
       {
         q: "Which English course should a fresher take in India?",
-        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹1,199/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month) — 60-second intro, STAR, recorded mocks. Both are live, approximately 6 learners, inclusive of taxes. We do not promise a job.",
+        a: "If you cannot hold a two-minute conversation, take Basic Spoken English (6 months, ₹1,199/month). If you can chat and still bomb HR screens, take Interview Preparation (2 months, ₹2,499/month): 60-second intro, STAR, recorded mocks. Both are live, about 6 learners, inclusive of taxes. We do not promise a job.",
       },
       {
         q: "Do I need IELTS for campus placements in India?",
@@ -479,7 +479,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Is the college placement cell's training enough for interviews?",
-        a: "For many freshers it is a good start — it is free and covers aptitude, group discussion and company patterns. What it rarely gives is repeated speaking practice with someone correcting your answers. If your HR round still collapses after placement training, a small live batch with mock interviews fills that gap.",
+        a: "For many freshers it is a good start: it is free and covers aptitude, group discussion and company patterns. What it rarely gives is repeated speaking practice with someone correcting your answers. If your HR round still collapses after placement training, a small live batch with mock interviews fills that gap.",
       },
     ],
   },
@@ -507,7 +507,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Are there spoken English classes for homemakers in India?",
-        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. The class is for adults 15+, not children.",
+        a: "Yes. Learn With Smile runs live IST afternoon batches that homemakers actually attend. Basic Spoken English is 6 months, ₹1,199/month inclusive of taxes, about 6 learners. The class is for adults 15+, not children.",
       },
       {
         q: "I have been out of work for years. Is it too late?",
@@ -571,7 +571,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Do I have to pay before I talk to someone?",
-        a: "No. The free consultation on WhatsApp (+91 96744 79949) has no payment. You get the course, fee, timings and batch size in writing first, then decide. If you enrol, you pay one month at a time through Razorpay — UPI or card — with no auto-debit, no loans and no EMI.",
+        a: "No. The free consultation on WhatsApp (+91 96744 79949) has no payment. You get the course, fee, timings and batch size in writing first, then decide. If you enrol, you pay one month at a time through Razorpay, UPI or card, with no auto-debit, no loans and no EMI.",
       },
       {
         q: "Can I get a refund?",
@@ -655,7 +655,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
       },
       {
         q: "Is the class recorded?",
-        a: "Yes. Every class is recorded and shared for revision. The class itself is live — the recording is not the class.",
+        a: "Yes. Every class is recorded and shared for revision. The class itself is live: the recording is not the class.",
       },
       {
         q: "What do I do between classes?",
@@ -687,11 +687,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Are online spoken English classes better than offline coaching centres?",
-        a: "For speaking minutes, a live batch of around 6 is usually better than a 25–40 student classroom. You also skip the commute. Offline still wins on peer energy in the same room. Price is not the tell — ask the cap before you ask the fee.",
+        a: "For speaking minutes, a live batch of around 6 is usually better than a 25–40 student classroom. You also skip the commute. Offline still wins on peer energy in the same room. Price is not the tell: ask the cap before you ask the fee.",
       },
       {
         q: "Which is cheaper, online or offline spoken English classes?",
-        a: "On the brochure, offline centres often look cheaper — ₹1,500–₹6,000 for three months in a city classroom of 25–40. Add commute time and the minutes you actually speak (1–2 an hour in a big room, 8–10 in a batch of about 6) and an online small batch usually costs less per minute of speaking. Learn With Smile Spoken English is ₹1,199/month, inclusive of taxes.",
+        a: "On the brochure, offline centres often look cheaper: ₹1,500–₹6,000 for three months in a city classroom of 25–40. Add commute time and the minutes you actually speak (1–2 an hour in a big room, 8–10 in a batch of about 6) and an online small batch usually costs less per minute of speaking. Learn With Smile Spoken English is ₹1,199/month, inclusive of taxes.",
       },
     ],
   },
@@ -751,7 +751,7 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "How much does IELTS coaching cost in India in 2026?",
-        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate — ₹19,000 since April 2026, paid to IDP, the IELTS provider in India. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹1,199/month.",
+        a: "Full IELTS courses typically run ₹8,000–₹35,000, with large-institute classrooms at the higher end and 20–40 students per batch. The IELTS exam fee is separate: ₹19,000 since April 2026, paid to IDP, the IELTS provider in India. Learn With Smile does not sell IELTS as a course. If you cannot yet hold a conversation, start with Spoken English at ₹1,199/month.",
       },
       {
         q: "Does IELTS coaching guarantee Band 7?",
@@ -787,11 +787,11 @@ const NEW_GUIDES: Record<string, PageSeo> = {
     faqs: [
       {
         q: "Which English course is best for IT professionals in India?",
-        a: "If daily English is still the gap, Basic Spoken English (₹1,199/month, 6 months). If chat is fine and standups, tickets or clients go silent, Interactive Speaking (₹1,599/month, 3 months). Both live, approximately 6 learners, inclusive of taxes. We do not guarantee a promotion.",
+        a: "If daily English is still the gap, Basic Spoken English (₹1,199/month, 6 months). If chat is fine and standups, tickets or clients go silent, Interactive Speaking (₹1,599/month, 3 months). Both live, about 6 learners, inclusive of taxes. We do not guarantee a promotion.",
       },
       {
         q: "Is Toastmasters or a course better for IT professionals?",
-        a: "They do different jobs. Toastmasters is good for prepared speaking — presentations and confidence in front of a group — with feedback from fellow members. A Business English course drills unprepared work English — standups, client calls, clarifying and pushing back — with a teacher correcting the same errors every week. Many people do both. If calls and standups are the problem, start with the course.",
+        a: "They do different jobs. Toastmasters is good for prepared speaking (presentations and confidence in front of a group) with feedback from fellow members. A Business English course drills unprepared work English (standups, client calls, clarifying and pushing back) with a teacher correcting the same errors every week. Many people do both. If calls and standups are the problem, start with the course.",
       },
     ],
   },
@@ -833,7 +833,7 @@ function cityPage(city: (typeof CITIES)[number]): PageSeo {
       { name: "Guides", path: "/guides" },
       { name: city.name, path: city.path },
     ],
-    summary: `Live online Spoken English for ${city.name}, ${city.state}. ₹1,199/month inclusive of taxes, approximately 6 learners, IST batches. Office in Kolkata, not a local campus.`,
+    summary: `Live online Spoken English for ${city.name}, ${city.state}. ₹1,199/month inclusive of taxes, about 6 learners, IST batches. Office in Kolkata, not a local campus.`,
     faqs: cityFaqs(city),
   };
 }

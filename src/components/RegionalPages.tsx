@@ -14,20 +14,20 @@ export function StatePage({ slug }: { slug: string }) {
       breadcrumb={`Spoken English in ${st.name}`}
       h1={
         <>
-          Spoken English for <span className="text-sunshine">{st.name}</span> — live online, about 6
+          Spoken English for <span className="text-sunshine">{st.name}</span>: live online, about 6
           learners
         </>
       }
-      standfirst={`${st.cities.slice(0, 4).join(", ")} and the rest of ${st.name}: live classes, daily practice in the Bolo app and a weekly teacher review — from ₹1,199/month, inclusive of taxes.`}
+      standfirst={`${st.cities.slice(0, 4).join(", ")} and the rest of ${st.name}: live classes, daily practice in the Bolo app and a weekly teacher review. From ₹1,199/month, inclusive of taxes.`}
       shortAnswer={`${st.intro} From ₹1,199/month, inclusive of taxes.`}
       heroImage={IMG.groupClass}
       heroAlt={`Learners from ${st.name} in a live online English class`}
       lastUpdated={page?.dateModified}
       body={stateBody(st)}
       faqs={page?.faqs ?? []}
-      faqTitle={`Spoken English in ${st.name} — questions`}
+      faqTitle={`Questions about spoken English in ${st.name}`}
       waMessage={`Hi, I am from ${st.name} and I want a free consultation for spoken English.`}
-      ctaTitle={`Get a free consultation — ${st.name}`}
+      ctaTitle={`Free consultation for ${st.name}`}
       ctaBody="Message us on WhatsApp. We find your speaking gap and recommend one course, with the fee in writing."
     />
   );
@@ -48,7 +48,7 @@ export function NeedGuide({ need }: { need: NeedKey }) {
       lastUpdated={page?.dateModified}
       body={needBody(n)}
       faqs={page?.faqs ?? []}
-      faqTitle={`${n.h1} — questions`}
+      faqTitle={`Questions about ${n.h1.charAt(0).toLowerCase()}${n.h1.slice(1)}`}
       waMessage={n.waMessage}
       ctaTitle="Get a free consultation"
       ctaBody="Tell us the job, exam interview or course you are preparing for. We recommend one course, with the fee in writing."

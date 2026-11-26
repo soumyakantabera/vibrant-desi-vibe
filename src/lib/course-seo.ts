@@ -154,7 +154,7 @@ export function courseSeo(d: CourseData) {
       hasPart: [
         {
           "@type": "LearningResource",
-          name: "Bolo practice app — daily practice",
+          name: "Bolo practice app: daily practice",
           learningResourceType: "Interactive practice",
           description:
             "Whole-conversation practice, word and phrase brush-ups, reading fluency, grammar in real texts and interactive grammar practice between live classes.",
@@ -162,7 +162,7 @@ export function courseSeo(d: CourseData) {
         },
         {
           "@type": "LearningResource",
-          name: "Bolo practice app — video lessons",
+          name: "Bolo practice app: video lessons",
           learningResourceType: "Video lessons",
           description:
             "Recorded lessons on grammar, speaking and fluency, thinking in English, fixing mind blanks and small natural phrases, chosen for the course.",
@@ -198,7 +198,7 @@ export function courseSeo(d: CourseData) {
   const head = buildHead({
     path,
     // Hand-written in COURSE_SEO rather than assembled here: the generated
-    // "<title> Online \u2014 <price>, Approx. 6 Learners per Batch | Learn With Smile" form ran
+    // "<title> Online \u2014 <price>, About 6 Learners per Batch | Learn With Smile" form ran
     // to 70\u201387 characters and truncated in the SERP on all four courses.
     title: extra?.title ?? d.title,
     description: extra?.description ?? d.metaDescription,

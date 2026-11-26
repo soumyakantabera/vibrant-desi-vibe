@@ -7,7 +7,10 @@ import { ArticleBody, ArticleToc, ShortAnswer } from "@/components/ArticleBody";
 import { FaqSection } from "@/components/FaqSection";
 import { SmartImage } from "@/components/SmartImage";
 import { WaButton } from "@/components/ui-bits";
+import { RATING } from "@/lib/rating";
+import { CHAT_CTA, DEMO_CTA, TEACHER_PROMISE } from "@/lib/whatsapp";
 import { LevelTestPromo } from "@/components/LevelTestPromo";
+import { CourseFitCheck } from "@/components/CourseFitCheck";
 import { Icon } from "@/components/Icon";
 import { articleToc, type ArticleBody as ArticleBlocks } from "@/content/blog/blocks";
 import type { Faq } from "@/lib/seo";
@@ -110,10 +113,32 @@ export function GuidePage({
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl text-cream leading-[1.1]">{h1}</h1>
           <p className="mt-5 text-lg text-white/95">{standfirst}</p>
-          {heroCta && (
+          {heroCta ? (
             <a href={heroCta.href} className="btn btn-sun btn-lg mt-6 inline-flex">
               {heroCta.label} <Icon name="arrow-right" size={18} className="rotate-90" />
             </a>
+          ) : (
+            <div lang="en-IN">
+              <div className="mt-6 flex flex-wrap gap-3" data-cta-location="hero">
+                <WaButton message={waMessage} variant="wa" size="lg">
+                  {CHAT_CTA}
+                </WaButton>
+                <WaButton message={waMessage} variant="sun" size="lg">
+                  {DEMO_CTA}
+                </WaButton>
+              </div>
+              <p className="mt-3 text-sm text-white/95">
+                <a
+                  href={RATING.readUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-sunshine hover:underline"
+                >
+                  ★ {RATING.value} · {RATING.count} {RATING.source} reviews
+                </a>{" "}
+                · {TEACHER_PROMISE}
+              </p>
+            </div>
           )}
           {lastUpdated && (
             <p className="mt-4 text-sm text-white/80">
@@ -134,6 +159,9 @@ export function GuidePage({
               page's own answer instead of opening it. */}
           <div lang="en-IN">
             <CompareDiff />
+          </div>
+          <div lang="en-IN">
+            <CourseFitCheck />
           </div>
         </div>
       </article>

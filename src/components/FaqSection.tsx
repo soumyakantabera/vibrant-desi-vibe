@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { SectionHeader, WaButton } from "@/components/ui-bits";
+import { TEACHER_PROMISE } from "@/lib/whatsapp";
 import { Icon } from "@/components/Icon";
 import type { Faq } from "@/lib/seo";
 import { faqAnchor } from "@/lib/anchors";
@@ -21,7 +22,7 @@ export function FaqSection({
   eyebrow = "FAQs",
   title = "Questions People Actually Ask",
   subtitle = "Straight answers. Message anytime; WhatsApp replies 10am–midnight IST every day.",
-  waMessage = "Hi, I'd like to book a free group consultation for spoken English. Please send me the booking link.",
+  waMessage = "Hi, I'm serious about my spoken English and can do two live classes a week. Please send the free consultation booking link.",
   className = "section bg-cream",
   bolo = false,
 }: {
@@ -69,10 +70,7 @@ export function FaqSection({
               <p className="font-display font-extrabold leading-snug text-ink">
                 Still have a question?
               </p>
-              <p className="mt-1 text-sm leading-relaxed text-ink/80">
-                Ask on WhatsApp — a real person replies, 10am–midnight IST every day. Free, and no
-                payment to ask.
-              </p>
+              <p className="mt-1 text-sm leading-relaxed text-ink/80">{TEACHER_PROMISE}</p>
             </BoloSays>
             <WaButton message={waMessage} variant="wa" size="lg" className="btn-chunky mt-3 w-full">
               Chat on WhatsApp
@@ -83,6 +81,7 @@ export function FaqSection({
             <WaButton message={waMessage} variant="wa" size="lg">
               Chat on WhatsApp
             </WaButton>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-ink/75">{TEACHER_PROMISE}</p>
           </div>
         )}
       </div>

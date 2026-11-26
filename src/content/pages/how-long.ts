@@ -9,7 +9,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice — up to 2 classes a week plus 10–15 minutes a day. Business English — meetings, calls, updates — is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
+    text: "**Short answer.** Everyday conversation from zero usually takes **about 6 months** of live practice: up to 2 classes a week plus 10–15 minutes a day. Business English (meetings, calls, updates) is typically **about 3 months** if you already chat. Anyone selling fluency in 30 days is selling a course, not a result.",
   },
   {
     t: "p",
@@ -50,7 +50,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Why “30 days fluent” is a marketing unit, not a learning unit" },
   {
     t: "p",
-    text: "A complete beginner needs sounds, 1,000+ words, tense patterns, and the habit of opening their mouth. That is not a 30-day stack. What *can* move in 30 days is hesitation — if you already have the language and you are just afraid to use it. That is a different problem, and it is the one [Interactive Speaking](/course-interactive-speaking) is for (₹1,599/month, 3 months).",
+    text: "A complete beginner needs sounds, 1,000+ words, tense patterns, and the habit of opening their mouth. That is not a 30-day stack. What *can* move in 30 days is hesitation: if you already have the language and you are just afraid to use it. That is a different problem, and it is the one [Interactive Speaking](/course-interactive-speaking) is for (₹1,599/month, 3 months).",
   },
   {
     t: "ul",
@@ -73,14 +73,14 @@ export const body: ArticleBody = [
     ],
   },
 
-  { t: "h2", text: "Offline institutes vs live online — same months, different minutes" },
+  { t: "h2", text: "Offline institutes vs live online: same months, different minutes" },
   {
     t: "p",
-    text: "A Kolkata or Pune classroom of 25–40 for a 3-month package (often ₹1,500–₹7,500) still runs on the same six-month clock for a genuine beginner — because you do not get enough turns. Franchise brands (Veta-style 2–4 month courses in the ₹3,500–₹10,000 band) and exam shops (EEC-style spoken English around ₹7,500 plus IELTS/PTE) are built for volume. The month count on the brochure is not the speaking-minute count.",
+    text: "A Kolkata or Pune classroom of 25–40 for a 3-month package (often ₹1,500–₹7,500) still runs on the same six-month clock for a genuine beginner, because you do not get enough turns. Franchise brands (Veta-style 2–4 month courses in the ₹3,500–₹10,000 band) and exam shops (EEC-style spoken English around ₹7,500 plus IELTS/PTE) are built for volume. The month count on the brochure is not the speaking-minute count.",
   },
   {
     t: "p",
-    text: "Online 1:1 (EngVarta from about ₹108/session, Cambly around $10/hour) can move hesitation faster *if you already have language*. They do not give a 6-month syllabus. You practise what you can already say. That is why beginners stall on them.",
+    text: "Online 1:1 (EngVarta from about ₹108/session, Cambly ₹5,999–₹10,999 a month for 15–30 minutes a day) can move hesitation faster *if you already have language*. They do not give a 6-month syllabus. You practise what you can already say. That is why beginners stall on them.",
   },
 
   { t: "h2", text: "A 6-month map you can actually follow" },
@@ -103,10 +103,10 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "Need a **recognised exam score** for a visa or university — that is IELTS (or similar). Sit it with IDP, the IELTS provider in India, when the form asks. We do not sell IELTS as a course.",
-      "Need **daily 1:1 reps** and already speak — EngVarta-style sessions, not a twice-a-week batch.",
-      "The learner is **under 14** — PlanetSpark or similar. Adult batches waste a child's time.",
-      "Need **Band 7 writing** more than speaking — use a dedicated exam coach or the free [four-paragraph template](/blog/band-7-writing-4-paragraph-template), not Spoken English.",
+      "Need a **recognised exam score** for a visa or university: that is IELTS (or similar). Sit it with IDP, the IELTS provider in India, when the form asks. We do not sell IELTS as a course.",
+      "Need **daily 1:1 reps** and already speak. EngVarta-style sessions, not a twice-a-week batch.",
+      "The learner is **under 14**: PlanetSpark or similar. Adult batches waste a child's time.",
+      "Need **Band 7 writing** more than speaking: use a dedicated exam coach or the free [four-paragraph template](/blog/band-7-writing-4-paragraph-template), not Spoken English.",
     ],
   },
 ];

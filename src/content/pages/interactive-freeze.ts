@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Freeze is usually a habit, not a vocabulary hole. If you know the words and still go silent, you need a room where you talk every hour — games, debates, 1-minute prompts — not another grammar PDF. [Interactive Speaking](/course-interactive-speaking) is 3 months, ₹1,599/mo, inclusive of taxes, approx. 6 learners, up to 2 live classes a week.",
+    text: "**Short answer.** Freeze is usually a habit, not a vocabulary hole. If you know the words and still go silent, you need a room where you talk every hour (games, debates, 1-minute prompts), not another grammar PDF. [Interactive Speaking](/course-interactive-speaking) is 3 months, ₹1,599/mo, inclusive of taxes, about 6 learners, up to 2 live classes a week.",
   },
   {
     t: "p",
@@ -27,7 +27,7 @@ export const body: ArticleBody = [
     caption: "A typical 60-minute Interactive class. You are on the mic every block.",
     head: ["Block", "Minutes", "What you do"],
     rows: [
-      ["Warm-up", "8–10", "Word games, associations — mouth moving before the topic lands"],
+      ["Warm-up", "8–10", "Word games, associations: mouth moving before the topic lands"],
       ["Prompt", "10–12", "One-minute talks. Same clock every week so the freeze has less room"],
       [
         "Story or role-play",
@@ -39,7 +39,7 @@ export const body: ArticleBody = [
     ],
   },
 
-  { t: "h2", text: "Who this is for — and who should pick Spoken instead" },
+  { t: "h2", text: "Who this is for, and who should pick Spoken instead" },
   {
     t: "ul",
     items: [
@@ -47,14 +47,14 @@ export const body: ArticleBody = [
       "**For you** if you rehearse answers in your head and then say nothing.",
       "**For you** if you already finished a spoken course and still freeze in meetings.",
       "**Spoken first** if you still translate every sentence from Hindi or Bengali.",
-      "**Also for you** if the freeze is only in client calls and status updates — this room now practises them; see [client-call English](/english-for-client-calls-india).",
+      "**Also for you** if the freeze is only in client calls and status updates: this room now practises them; see [client-call English](/english-for-client-calls-india).",
     ],
   },
 
   { t: "h2", text: "Numbers, clearly" },
   {
     t: "p",
-    text: "3 months. ₹1,599/month inclusive of taxes. Approx. 6 learners. Up to 2 live classes a week. Recording is for revision if you miss a slot — the class itself is live. Habits that help between classes: [5 speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation).",
+    text: "3 months. ₹1,599/month inclusive of taxes. About 6 learners. Up to 2 live classes a week. Recording is for revision if you miss a slot: the class itself is live. Habits that help between classes: [5 speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation).",
   },
   {
     t: "p",
@@ -79,7 +79,7 @@ export const body: ArticleBody = [
       [
         "AI voice chat",
         "Private, unlimited speaking with no audience",
-        "No real people — and the freeze is usually about people",
+        "No real people, and the freeze is usually about people",
       ],
       [
         "1:1 tutor",
@@ -97,7 +97,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "“That's a good question — let me think for a second.”",
+      "“That's a good question: let me think for a second.”",
       "“The way I see it…”",
       "“There are two things here. First…”",
       "“What I mean is…”",

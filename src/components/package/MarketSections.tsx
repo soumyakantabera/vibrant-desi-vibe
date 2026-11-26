@@ -116,7 +116,7 @@ const BRANDS: Brand[] = [
     name: "Cambly",
     short: "Cambly",
     tone: "red",
-    fee: "₹8,000–₹15,000/mo if daily",
+    fee: "₹5,999–₹10,999/month for 15–30 min a day",
     logos: [{ slug: "cambly", name: "Cambly" }],
   },
   {
@@ -133,7 +133,7 @@ const BRANDS: Brand[] = [
     name: "British Council Online",
     short: "British Council",
     tone: "violet",
-    fee: "₹8,800–₹16,000 / module",
+    fee: "₹8,900–₹10,350 / 15–22.5 hrs",
     logos: [{ slug: "british-council", name: "British Council" }],
   },
   {
@@ -150,7 +150,7 @@ const BRANDS: Brand[] = [
 
 const FEATURES: { label: string; marks: [M, M, M, M, M, M] }[] = [
   { label: "Live human teacher", marks: ["y", "y", "y", "y", "y", "n"] },
-  { label: "Small live batch — you speak with peers", marks: ["y", "n", "n", "n", "p", "n"] },
+  { label: "Small live batch: you speak with peers", marks: ["y", "n", "n", "n", "p", "n"] },
   { label: "Fixed course map (syllabus)", marks: ["y", "n", "n", "p", "y", "p"] },
   { label: "Daily practice app included", marks: ["y", "n", "n", "n", "p", "y"] },
   { label: "Teacher reviews your practice every week", marks: ["y", "p", "n", "p", "p", "n"] },

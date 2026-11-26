@@ -114,7 +114,7 @@ export const LAUNCH_OFFER = {
   headline: "Launch offer: one extra month of Bolo, free",
   short: "+1 month of Bolo free",
   detail:
-    "New learners who enrol by 30 November 2026 get one extra month of Bolo — the practice app with daily exercises, video lessons and teacher review — after their course, at no cost. The course fee does not change.",
+    "New learners who enrol by 30 November 2026 get one extra month of Bolo (the practice app with daily exercises, video lessons and teacher review) after their course, at no cost. The course fee does not change.",
 } as const;
 
 /** The ₹99 Demo Class fee, India list. Rule and booking: src/lib/demo-session.ts. */

@@ -18,7 +18,7 @@ export const body: ArticleBody = [
   {
     t: "table",
     caption:
-      "Pick the bottleneck, then the course. Fees are inclusive of taxes. Approx. 6 learners in every English batch.",
+      "Pick the bottleneck, then the course. Fees are inclusive of taxes. About 6 learners in every English batch.",
     head: ["If this is you", "Take this", "Time & fee", "Done looks like"],
     rows: [
       [
@@ -34,7 +34,7 @@ export const body: ArticleBody = [
         "Connected speech, 60–90 second turns, 2–3 minute presentation + Q&A",
       ],
       [
-        "You know the words. You freeze — in chat, meetings or client calls.",
+        "You know the words. You freeze: in chat, meetings or client calls.",
         "Interactive Speaking (includes Business English speaking)",
         "3 months · ₹1,599/mo",
         "Standups, status updates, client calls, debates, presentations",
@@ -54,51 +54,51 @@ export const body: ArticleBody = [
     ],
   },
 
-  { t: "h2", text: "Spoken English — when daily life is the gap" },
+  { t: "h2", text: "Spoken English: when daily life is the gap" },
   {
     t: "p",
     text: "Spoken English is the 6-month map: sounds, sentences, vocabulary, then real conversations. It is for Hindi- and Bengali-medium beginners, people who read more than they speak, and anyone who still translates in their head. You speak every hour in a batch of around 6. See [how long it takes](/how-long-to-learn-spoken-english) and Kavya’s story on [real results](/success-stories).",
   },
 
-  { t: "h2", text: "Interactive English — when freeze is the gap" },
+  { t: "h2", text: "Interactive English: when freeze is the gap" },
   {
     t: "p",
     text: "Interactive is not a grammar lecture. It is games, debates, storytelling and 1-minute prompts so the checking step between thinking and speaking gets shorter. If you can write a decent message but go silent on a call, this is the room. Ananya’s standup story is this problem. Read the full freeze guide: [Interactive English when you freeze](/interactive-english-class-hesitation).",
   },
 
-  { t: "h2", text: "Business English — when work is the gap" },
+  { t: "h2", text: "Business English: when work is the gap" },
   {
     t: "p",
-    text: "Business English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Since November 2026 we teach it inside two rooms: the speaking side — meetings, standups, client calls, presentations — in [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo), and workplace emails and tone in [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). Neha’s tax-desk calls and Aditya’s BI Analyst switch came out of our earlier Business English batches. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
+    text: "Business English is meetings, client calls, updates, emails and explaining your work. It assumes you can already chat. Since November 2026 we teach it inside two rooms: the speaking side (meetings, standups, client calls, presentations) in [Interactive Speaking](/course-interactive-speaking) (3 months, ₹1,599/mo), and workplace emails and tone in [Intermediate Spoken English](/course-intermediate-english) (4 months, ₹1,999/mo). Neha’s tax-desk calls and Aditya’s BI Analyst switch came out of our earlier Business English batches. Deep dives: [client-call English](/english-for-client-calls-india) and [explain your work in 3 minutes](/english-for-presentations-india).",
   },
 
   { t: "h2", text: "What not to buy first" },
   {
     t: "ul",
     items: [
-      "Do not buy IELTS because a cousin went abroad. Sit it with the test board when a **form** asks — we do not sell that paper.",
-      "Do not buy 1:1 chat apps if you cannot form a sentence yet — there is nothing to practise.",
+      "Do not buy IELTS because a cousin went abroad. Sit it with the test board when a **form** asks: we do not sell that paper.",
+      "Do not buy 1:1 chat apps if you cannot form a sentence yet. There is nothing to practise.",
       "Do not buy a 30-day fluency pack. Everyday talk is about 6 months live.",
-      "Interview Preparation is for people who already speak and now fail the job conversation — 2 months, ₹2,499/mo. Sneha’s story is that lane. If you cannot form a sentence yet, start with Spoken English.",
+      "Interview Preparation is for people who already speak and now fail the job conversation: 2 months, ₹2,499/mo. Sneha’s story is that lane. If you cannot form a sentence yet, start with Spoken English.",
     ],
   },
 
   {
     t: "p",
-    text: "Working late or on shifts? IST afternoon, evening and night batches — [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here — [that guide](/english-hindi-bengali-medium).",
+    text: "Working late or on shifts? IST afternoon, evening and night batches: [English for working professionals](/english-for-working-professionals-india). Hindi- or Bengali-medium? You still belong here: [that guide](/english-hindi-bengali-medium).",
   },
 
-  { t: "h2", text: "How the free consultation places you — vs a pitch" },
+  { t: "h2", text: "How the free consultation places you: vs a pitch" },
   {
     t: "p",
-    text: "This page is the picker you can run yourself. The [free consultation](/free-consultation) is the same picker, live, on your actual goal — not a generic table, and not a counsellor pitch for a course you did not ask for.",
+    text: "This page is the picker you can run yourself. The [free consultation](/free-consultation) is the same picker, live, on your actual goal, not a generic table, and not a counsellor pitch for a course you did not ask for.",
   },
   {
     t: "ul",
     items: [
       "**You describe the problem.** Shop, freeze, standup, HR screen, career change, visa form.",
       "**We name the bottleneck.** One sentence. Not three rooms.",
-      "**You leave with one recommendation** — Basic Spoken, Intermediate, Interactive, Workplace, Interview Preparation, sit IELTS with the test board, or stay free — plus fee, duration and IST slot in writing.",
+      "**You leave with one recommendation** (Basic Spoken, Intermediate, Interactive, Workplace, Interview Preparation, sit IELTS with the test board, or stay free) plus fee, duration and IST slot in writing.",
       "**Every question you brought gets an answer.** Fees, GST, recordings, certificate, kids, refunds. If we cannot answer it, we say so.",
     ],
   },
@@ -114,7 +114,7 @@ export const body: ArticleBody = [
       ],
       [
         "British Council counsellor",
-        "A recommended CEFR module, often ₹8,800–₹16,000",
+        "A recommended CEFR module, ₹8,900–₹10,350 for 15–22.5 hours",
         "We say if you need that badge. Speaking for work in India is a smaller, cheaper room.",
       ],
       [
@@ -136,7 +136,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "Unsure? Get a free consultation. We diagnose the bottleneck and place you in one room — Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation — not all of them.",
+    text: "Unsure? Get a free consultation. We diagnose the bottleneck and place you in one room (Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation), not all of them.",
     course: "/free-consultation",
     label: "Get Free Consultation",
   },

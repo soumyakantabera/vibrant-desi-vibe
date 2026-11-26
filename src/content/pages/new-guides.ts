@@ -27,20 +27,20 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for beginners in India",
     h1Accent: "Zero to a 2-minute turn",
     standfirst:
-      "Sounds, sentences, then a two-minute turn. 6 months, approximately 6 learners, ₹1,199/month inclusive of taxes. Live IST. No 30-day fluency ads.",
+      "Sounds, sentences, then a two-minute turn. 6 months, about 6 learners, ₹1,199/month inclusive of taxes. Live IST. No 30-day fluency ads.",
     shortAnswer:
-      "If you cannot finish a sentence yet, this is the room — not IELTS, not a 1:1 app, not a 30-student classroom. 6 months, ₹1,199/month, around 6 learners, inclusive of taxes.",
+      "If you cannot finish a sentence yet, this is the room, not IELTS, not a 1:1 app, not a 30-student classroom. 6 months, ₹1,199/month, around 6 learners, inclusive of taxes.",
     image: IMG.spokenEnglish,
     alt: "Beginner adult practising spoken English in a small live online class",
     waMessage: "Hi, I am a beginner and I want a free consultation for Basic Spoken English.",
     ctaTitle: "Get a free consultation first",
     ctaBody:
-      "We will tell you if you are a beginner — including when Interactive would be the wrong buy. Counselling, not a class.",
-    faqTitle: "Beginner Spoken English — questions",
+      "We will tell you if you are a beginner, including when Interactive would be the wrong buy. Counselling, not a class.",
+    faqTitle: "Beginner Spoken English: questions",
     body: [
       {
         t: "p",
-        text: "A beginner is someone who **cannot yet finish a sentence out loud**. You may read English. You may write WhatsApp messages with help. You freeze in a shop, a phone call, or a two-minute turn. That is this course. If you already have the words and freeze anyway, go to [Interactive](/interactive-english-class-hesitation). If a form asks for a band, sit IELTS with the test board — we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
+        text: "A beginner is someone who **cannot yet finish a sentence out loud**. You may read English. You may write WhatsApp messages with help. You freeze in a shop, a phone call, or a two-minute turn. That is this course. If you already have the words and freeze anyway, go to [Interactive](/interactive-english-class-hesitation). If a form asks for a band, sit IELTS with the test board: we do not sell that paper. Market fees: [IELTS coaching fees](/ielts-coaching-fees-india).",
       },
       { t: "h2", text: "What 6 months actually covers" },
       {
@@ -53,7 +53,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "Everyday conversation is the finish line — not a client deck, not Band 7. Those are later rooms. Time ranges: [how long spoken English takes](/how-long-to-learn-spoken-english).",
+        text: "Everyday conversation is the finish line, not a client deck, not Band 7. Those are later rooms. Time ranges: [how long spoken English takes](/how-long-to-learn-spoken-english).",
       },
       { t: "h2", text: "Why apps and 30-student rooms fail beginners" },
       {
@@ -108,12 +108,12 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "**Duolingo-style apps** are fine for a daily vocabulary habit in the first month.",
           "**YouTube teachers in Hindi or Bengali** explain basic grammar well, for free.",
           "**AI voice chat** lets you say your first sentences to something that answers back.",
-          "**Move to a live class** when you can read simple sentences but cannot say them without notes — that gap needs someone to hear you and correct you.",
+          "**Move to a live class** when you can read simple sentences but cannot say them without notes: that gap needs someone to hear you and correct you.",
         ],
       },
       {
         t: "cta",
-        text: "Beginners sit in the Spoken English room. Approx. 6 learners. ₹1,199/mo, inclusive of taxes.",
+        text: "Beginners sit in the Spoken English room. About 6 learners. ₹1,199/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -126,16 +126,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Intermediate spoken English in India",
     h1Accent: "From basic sentences to fluent talk",
     standfirst:
-      "You can say the sentence. It just comes out with the wrong tense, three ums and no link to the next idea. That is intermediate — and it is a different problem from being a beginner.",
+      "You can say the sentence. It just comes out with the wrong tense, three ums and no link to the next idea. That is intermediate, and it is a different problem from being a beginner.",
     shortAnswer:
-      "If simple sentences work but accuracy and flow do not, you need grammar and speaking in the same class — not a beginner course, not a speaking club. Our Intermediate Spoken English is 4 months, ₹1,999/month inclusive of taxes, about 6 learners, 30 min grammar + 1 hour communication every class.",
+      "If simple sentences work but accuracy and flow do not, you need grammar and speaking in the same class, not a beginner course, not a speaking club. Our Intermediate Spoken English is 4 months, ₹1,999/month inclusive of taxes, about 6 learners, 30 min grammar + 1 hour communication every class.",
     image: IMG.speaking,
     alt: "Adult learner with headphones in a live intermediate spoken English class",
     waMessage: "Hi, I want a free consultation for Intermediate Spoken English.",
     ctaTitle: "Not sure you are intermediate?",
     ctaBody:
-      "Send one voice note introducing yourself. In the free consultation we tell you honestly — Basic, Intermediate or Interactive. Counselling, not a class.",
-    faqTitle: "Intermediate spoken English — questions",
+      "Send one voice note introducing yourself. In the free consultation we tell you honestly: Basic, Intermediate or Interactive. Counselling, not a class.",
+    faqTitle: "Intermediate spoken English: questions",
     body: [
       {
         t: "p",
@@ -147,7 +147,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         items: [
           "Set a timer for 60 seconds. Talk about the last film or match you watched. Record it.",
           "Play it back. Count every um, ah, like and basically.",
-          "Count the tense mistakes — especially past simple vs present perfect.",
+          "Count the tense mistakes: especially past simple vs present perfect.",
           "Count how many times you used because, although, so, however, if.",
         ],
       },
@@ -159,29 +159,29 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "You could not finish 60 seconds, or stopped to translate every sentence",
             "Beginner",
-            "[Basic Spoken English](/course-spoken-english) — 6 months, ₹1,199/month",
+            "[Basic Spoken English](/course-spoken-english): 6 months, ₹1,199/month",
           ],
           [
             "You finished, but with 8+ fillers, tense slips and almost no connectors",
             "Intermediate",
-            "[Intermediate Spoken English](/course-intermediate-english) — 4 months, ₹1,999/month",
+            "[Intermediate Spoken English](/course-intermediate-english): 4 months, ₹1,999/month",
           ],
           [
             "Clean grammar on the recording, but you freeze in front of people",
             "Freeze, not grammar",
-            "[Interactive Speaking](/course-interactive-speaking) — 3 months, ₹1,599/month",
+            "[Interactive Speaking](/course-interactive-speaking): 3 months, ₹1,599/month",
           ],
           [
             "Fine in chat, lost in meetings and client calls",
             "Workplace",
-            "[Interactive Speaking](/course-interactive-speaking) — 3 months, ₹1,599/month",
+            "[Interactive Speaking](/course-interactive-speaking): 3 months, ₹1,599/month",
           ],
         ],
       },
       { t: "h2", text: "What 4 months actually cover" },
       {
         t: "p",
-        text: "Every 90-minute class has the same rhythm: **30 minutes of grammar, then one hour of communication** — speaking, writing, active listening and reading. The grammar from the first half goes straight into a timed turn, a role-play or a discussion in the second.",
+        text: "Every 90-minute class has the same rhythm: **30 minutes of grammar, then one hour of communication**. Speaking, writing, active listening and reading. The grammar from the first half goes straight into a timed turn, a role-play or a discussion in the second.",
       },
       {
         t: "table",
@@ -203,7 +203,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Month 4",
             "Fluency & Confidence",
-            "Conditionals — zero, first, second",
+            "Conditionals: zero, first, second",
             "Debates, polite interrupting, decision-making language, 2–3 minute presentations + Q&A, role-play, storytelling",
           ],
         ],
@@ -219,7 +219,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "**More grammar books.** You already know the rule. You need to use it at speaking speed, with someone who hears the slip.",
           "**Only a speaking club.** Talking more with the same errors makes the errors faster. Practice without correction is rehearsal of mistakes.",
           "**Only an app.** Good for vocabulary and listening. It rarely makes you argue, interrupt politely or answer a question after a presentation.",
-          "**A beginner batch.** Too slow — you stop attending by week three.",
+          "**A beginner batch.** Too slow: you stop attending by week three.",
         ],
       },
       { t: "h2", text: "Five drills you can start free today" },
@@ -229,13 +229,13 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "**Shadow speaking.** Play 30 seconds of a podcast or news clip, pause, repeat it with the same rhythm. Ten minutes a day.",
           "**The filler count.** One 60-second recording a day. Write the filler count on a calendar. Watch the number fall.",
           "**Connector swap.** Retell your day using because, although, so, however and if at least once each.",
-          "**Conditional chain.** \u201cIf I wake up early, I will… If I had a car, I would…\u201d — five lines, out loud.",
+          "**Conditional chain.** \u201cIf I wake up early, I will… If I had a car, I would…\u201d: five lines, out loud.",
           "**Retell, don't summarise.** Listen to a 2-minute clip and retell it in your own words in 60 seconds.",
         ],
       },
       {
         t: "example",
-        label: "Same idea — beginner vs intermediate target",
+        label: "Same idea: beginner vs intermediate target",
         lines: [
           "Before: I went office. Traffic was there. I was late. Boss was angry.",
           "After:  I was late to the office because the traffic was terrible, so my manager was a little upset.",
@@ -247,7 +247,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "Not native-level English in 4 months. Connected, more accurate speech — yes.",
+          "Not native-level English in 4 months. Connected, more accurate speech: yes.",
           "No certificate or band score. Exam English is a separate paper; we do not sell IELTS.",
           "No job outcome. Clearer English removes one barrier; it is not a placement.",
         ],
@@ -267,20 +267,20 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "How to speak English fluently",
     h1Accent: "Minutes, not 30-day ads",
     standfirst:
-      "Fluency is the minutes you spoke, corrected, and spoke again. From zero, everyday conversation is about 6 months of live practice — ₹1,199/month, around 6 learners, inclusive of taxes.",
+      "Fluency is the minutes you spoke, corrected, and spoke again. From zero, everyday conversation is about 6 months of live practice: ₹1,199/month, around 6 learners, inclusive of taxes.",
     shortAnswer:
-      "Speak every day in short turns, get the same errors corrected, and follow a map. From zero that is about 6 months live — not 30 days. A batch of around 6 beats a room of 30. Free drills below; pay only if you need a seat.",
+      "Speak every day in short turns, get the same errors corrected, and follow a map. From zero that is about 6 months live, not 30 days. A batch of around 6 beats a room of 30. Free drills below; pay only if you need a seat.",
     image: IMG.speaking,
     alt: "Adult learner speaking English aloud during a live class",
     waMessage: "Hi, I want a free consultation to speak English fluently.",
     ctaTitle: "Practise fluency in a live room",
     ctaBody:
       "If you already have a partner and a map, stay free. If you need a teacher who remembers your errors, get a free consultation.",
-    faqTitle: "Fluency — straight answers",
+    faqTitle: "Fluency: straight answers",
     body: [
       {
         t: "p",
-        text: "People search “how to speak English fluently” because the ads promised 30 days and the classroom gave them a notebook. Fluency is not a personality. It is **retrieval speed** — can you finish the sentence before the inspection in your head cancels it.",
+        text: "People search “how to speak English fluently” because the ads promised 30 days and the classroom gave them a notebook. Fluency is not a personality. It is **retrieval speed**: can you finish the sentence before the inspection in your head cancels it.",
       },
       { t: "h2", text: "The only arithmetic that matters" },
       {
@@ -325,7 +325,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "ELSA and other pronunciation apps",
             "Individual sounds and word stress",
-            "Pronunciation is not fluency — you still need conversation",
+            "Pronunciation is not fluency: you still need conversation",
           ],
           [
             "AI voice chat (ChatGPT, Gemini)",
@@ -352,7 +352,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "The 4-3-2 drill" },
       {
         t: "p",
-        text: "A classic fluency exercise from language-teaching research: tell the same short story three times — in 4 minutes, then 3, then 2. The content stays the same, so your brain stops inventing and starts retrieving. Speed and smoothness go up within one session. Do it alone with a timer, or with a partner who just listens.",
+        text: "A classic fluency exercise from language-teaching research: tell the same short story three times. In 4 minutes, then 3, then 2. The content stays the same, so your brain stops inventing and starts retrieving. Speed and smoothness go up within one session. Do it alone with a timer, or with a partner who just listens.",
       },
       {
         t: "example",
@@ -366,7 +366,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Fluency is a room you speak in, not a poster. Approx. 6 learners. From ₹1,199/mo.",
+        text: "Fluency is a room you speak in, not a poster. About 6 learners. From ₹1,199/mo.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -387,7 +387,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     waMessage: "Hi, I am a fresher and I want a free consultation for Interview Preparation.",
     ctaTitle: "Practise the chair before the drive",
     ctaBody: "We will not promise a job. We will put you on the mic in a batch of around 6.",
-    faqTitle: "Freshers — questions",
+    faqTitle: "Freshers: questions",
     body: [
       {
         t: "p",
@@ -418,7 +418,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "60-second intro until it is boring — boring is the goal.",
+          "60-second intro until it is boring: boring is the goal.",
           "STAR answers for internships, projects and part-time work. No fake experience.",
           "Salary and notice-period sentences you can say without apologising.",
         ],
@@ -467,10 +467,10 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "A 60-second fresher answer" },
       {
         t: "example",
-        label: "Tell me about yourself — illustrative B.Com fresher",
+        label: "Tell me about yourself: illustrative B.Com fresher",
         lines: [
           "I'm Priya, a B.Com graduate from Kolkata, applying for the accounts executive role.",
-          "In my final year I handled GST invoices for a family business — about 40 a month — and learned Tally on the job.",
+          "In my final year I handled GST invoices for a family business, about 40 a month, and learned Tally on the job.",
           "I also managed the budget for our college fest with a team of four and finished under plan.",
           "I'm looking for a role where I can build on that accounting work, which is why this position fits.",
         ],
@@ -491,7 +491,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Freshers sit in one room — Spoken, Interview Preparation or Interactive — not three. Message us.",
+        text: "Freshers sit in one room (Spoken, Interview Preparation or Interactive), not three. Message us.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -504,16 +504,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for homemakers",
     h1Accent: "A voice for shops, school, yourself",
     standfirst:
-      "Afternoon and evening IST batches. 6 months, ₹1,199/month inclusive of taxes, approximately 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
+      "Afternoon and evening IST batches. 6 months, ₹1,199/month inclusive of taxes, about 6 learners. Adults 15+. Not a children’s class. Not a certificate mill.",
     shortAnswer:
-      "Homemakers join the same Spoken English room as everyone else — afternoon and evening IST, around 6 learners, ₹1,199/month inclusive of taxes. School medium and a career gap are not a wall.",
+      "Homemakers join the same Spoken English room as everyone else: afternoon and evening IST, around 6 learners, ₹1,199/month inclusive of taxes. School medium and a career gap are not a wall.",
     image: IMG.girlReading,
     alt: "Homemaker practising spoken English at home on a laptop",
     waMessage:
       "Hi, I am a homemaker and I want a free consultation for daytime Basic Spoken English.",
     ctaTitle: "Join an afternoon or evening batch",
     ctaBody: "Tell us your window. We reply 10am–midnight IST every day. The consultation is free.",
-    faqTitle: "Homemakers — questions",
+    faqTitle: "Homemakers: questions",
     body: [
       {
         t: "p",
@@ -531,17 +531,17 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "If work meetings and client calls are the next job, that is [Business English](/workplace-english-course-online-india) after this room — not instead of it.",
+        text: "If work meetings and client calls are the next job, that is [Business English](/workplace-english-course-online-india) after this room, not instead of it.",
       },
       { t: "h2", text: "Timings that actually fit" },
       {
         t: "p",
-        text: "Afternoon batches while the house is quiet, and evening batches. Every class is recorded, so a missed hour is revision, not a lost week. The class is live — the recording is not the class. [Working professionals](/english-for-working-professionals-india) use the evening slot; homemakers usually take morning.",
+        text: "Afternoon batches while the house is quiet, and evening batches. Every class is recorded, so a missed hour is revision, not a lost week. The class is live: the recording is not the class. [Working professionals](/english-for-working-professionals-india) use the evening slot; homemakers usually take morning.",
       },
       { t: "h2", text: "School medium, career gap, age" },
       {
         t: "p",
-        text: "Hindi-medium, Bengali-medium, a decade at home: none of these is a wall. They are the starting point. We explain in Hindi or Bengali when a concept stalls, then go back to English. Adults 15+. Under-14s need a children’s platform — we will say so.",
+        text: "Hindi-medium, Bengali-medium, a decade at home: none of these is a wall. They are the starting point. We explain in Hindi or Bengali when a concept stalls, then go back to English. Adults 15+. Under-14s need a children’s platform: we will say so.",
       },
       { t: "h2", text: "Sentences for this week, not a textbook" },
       {
@@ -608,7 +608,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "Daytime Spoken English. Approx. 6 learners. ₹1,199/mo, inclusive of taxes.",
+        text: "Daytime Spoken English. About 6 learners. ₹1,199/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -621,22 +621,22 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Is Learn With Smile genuine?",
     h1Accent: "The facts you can check",
     standfirst:
-      "A registered Kolkata business, 7 years of live online classes, a public Google rating, monthly billing and a written refund rule — with a link for each so you can check it yourself.",
-    shortAnswer: `Yes. Learn With Smile is a registered sole proprietorship in Kolkata (GSTIN 19CFGPD7931C1ZL) that has taught live online spoken English for 7 years to 500+ adult learners. It is rated ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. You pay one month at a time through Razorpay — no auto-debit, no loans — and the refund rule is in writing.`,
+      "A registered Kolkata business, 7 years of live online classes, a public Google rating, monthly billing and a written refund rule: with a link for each so you can check it yourself.",
+    shortAnswer: `Yes. Learn With Smile is a registered sole proprietorship in Kolkata (GSTIN 19CFGPD7931C1ZL) that has taught live online spoken English for 7 years to 500+ adult learners. It is rated ${RATING.value}★ from ${RATING.count} ${RATING.source} reviews. You pay one month at a time through Razorpay (no auto-debit, no loans) and the refund rule is in writing.`,
     image: IMG.teacherWoman,
     alt: "Learn With Smile teacher taking a live online English class",
     waMessage: "Hi, I want to check a few things before I join. Can I get a free consultation?",
     ctaTitle: "Ask us anything first",
     ctaBody:
       "The consultation is free and there is no payment to book. We reply 10am–midnight IST every day.",
-    faqTitle: "Trust — questions",
+    faqTitle: "Trust: questions",
     body: [
       { t: "h2", text: "Who runs it" },
       {
         t: "ul",
         items: [
           "**Legal name:** LEARN WITH SMILE SOLE PROPRIETORSHIP.",
-          "**GSTIN:** 19CFGPD7931C1ZL — you can look it up on the GST portal.",
+          "**GSTIN:** 19CFGPD7931C1ZL. You can look it up on the GST portal.",
           "**Office:** 75/2/4, Raja Ram Mohan Roy Road, Kolkata 700008. One office; every class is live online.",
           "**Lead educator:** Sunanda Dey, with a team of trained teachers. Each batch keeps the same teacher. See [the educator page](/educator).",
           "**Teaching since:** 7 years, 500+ adult learners.",
@@ -645,7 +645,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "Where to read the reviews" },
       {
         t: "p",
-        text: `The only rating this site shows is the public Google Business Profile: **${RATING.value}★ from ${RATING.count} ${RATING.source} reviews**. Read every review there — [open the Google profile](${RATING.readUrl}). The learner stories on [success stories](/success-stories) are labelled as stories, not as reviews.`,
+        text: `The only rating this site shows is the public Google Business Profile: **${RATING.value}★ from ${RATING.count} ${RATING.source} reviews**. Read every review there: [open the Google profile](${RATING.readUrl}). The learner stories on [success stories](/success-stories) are labelled as stories, not as reviews.`,
       },
       { t: "h2", text: "How you pay" },
       {
@@ -668,7 +668,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         items: [
           "No school or government certificate.",
           "No job, salary or fluency guarantee.",
-          "No IELTS course — IELTS scores come from the test board.",
+          "No IELTS course: IELTS scores come from the test board.",
           "No classes for children under 15.",
           "No career counselling.",
         ],
@@ -676,7 +676,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "Check it yourself" },
       {
         t: "p",
-        text: "Message WhatsApp **+91 96744 79949** and ask for the free consultation. You get the course, fee, timings and batch size in writing before you pay anything — compare that with what this page says.",
+        text: "Message WhatsApp **+91 96744 79949** and ask for the free consultation. You get the course, fee, timings and batch size in writing before you pay anything: compare that with what this page says.",
       },
     ],
   },
@@ -687,28 +687,28 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "How to join Learn With Smile",
     h1Accent: "4 steps, all on WhatsApp",
     standfirst:
-      "No website checkout and no login to create. You message WhatsApp, get a free consultation, pick a batch time and pay one month — then your first live class.",
+      "No website checkout and no login to create. You message WhatsApp, get a free consultation, pick a batch time and pay one month, then your first live class.",
     shortAnswer:
-      "Message WhatsApp +91 96744 79949 (wa.me/919674479949). Take the free consultation — your goal, the right course and the fee in writing. Choose an afternoon, evening or night IST batch. Pay the first month through a Razorpay link (UPI or card). Your Bolo app login arrives on WhatsApp after admission.",
+      "Message WhatsApp +91 96744 79949 (wa.me/919674479949). Take the free consultation: your goal, the right course and the fee in writing. Choose an afternoon, evening or night IST batch. Pay the first month through a Razorpay link (UPI or card). Your Bolo app login arrives on WhatsApp after admission.",
     image: IMG.studentLaptop,
     alt: "Learner joining a live online English class from a laptop",
     waMessage: "Hi, I want to join. Please tell me the next step.",
     ctaTitle: "Start step 1 now",
     ctaBody:
       "Message us on WhatsApp. We reply 10am–midnight IST every day. The consultation is free.",
-    faqTitle: "Joining — questions",
+    faqTitle: "Joining: questions",
     body: [
-      { t: "h2", text: "Step 1 — Message WhatsApp" },
+      { t: "h2", text: "Step 1: Message WhatsApp" },
       {
         t: "p",
-        text: "Send a message to **+91 96744 79949**. Say what you want English for — daily talk, a job interview, meetings, or not sure. Admissions reply 10am–midnight IST every day. Phone is only a fallback.",
+        text: "Send a message to **+91 96744 79949**. Say what you want English for: daily talk, a job interview, meetings, or not sure. Admissions reply 10am–midnight IST every day. Phone is only a fallback.",
       },
-      { t: "h2", text: "Step 2 — Free consultation" },
+      { t: "h2", text: "Step 2: Free consultation" },
       {
         t: "p",
-        text: "We send a booking link for a free group consultation. We hear your goal, name the bottleneck and recommend **one** course — with the fee, duration, batch size and IST slot in writing. It is advice, not a class, and there is no payment to book. [What the consultation is](/free-consultation).",
+        text: "We send a booking link for a free group consultation. We hear your goal, name the bottleneck and recommend **one** course: with the fee, duration, batch size and IST slot in writing. It is advice, not a class, and there is no payment to book. [What the consultation is](/free-consultation).",
       },
-      { t: "h2", text: "Step 3 — Choose your batch time" },
+      { t: "h2", text: "Step 3: Choose your batch time" },
       {
         t: "ul",
         items: [
@@ -717,10 +717,10 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "Every class is recorded for revision.",
         ],
       },
-      { t: "h2", text: "Step 4 — Pay the first month" },
+      { t: "h2", text: "Step 4: Pay the first month" },
       {
         t: "p",
-        text: "You get a Razorpay link on WhatsApp: UPI, Google Pay, PhonePe, Paytm, Visa, Mastercard or RuPay. One month at a time, inclusive of taxes — Basic Spoken English ₹1,199/month, Intermediate ₹1,999, Interactive Speaking ₹1,599, Interview Preparation ₹2,499. No auto-debit, no loans. Cancel before the month's first class for a full refund ([refunds](/refunds)).",
+        text: "You get a Razorpay link on WhatsApp: UPI, Google Pay, PhonePe, Paytm, Visa, Mastercard or RuPay. One month at a time, inclusive of taxes: Basic Spoken English ₹1,199/month, Intermediate ₹1,999, Interactive Speaking ₹1,599, Interview Preparation ₹2,499. No auto-debit, no loans. Cancel before the month's first class for a full refund ([refunds](/refunds)).",
       },
       { t: "h2", text: "After you join" },
       {
@@ -736,17 +736,17 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "What happens in one live class",
     h1Accent: "90 minutes, about 6 learners",
     standfirst:
-      "The same teacher, about 6 learners, everyone on the mic. Here is how the 90 minutes are split in each course — and what you do between classes.",
+      "The same teacher, about 6 learners, everyone on the mic. Here is how the 90 minutes are split in each course, and what you do between classes.",
     shortAnswer:
       "One class is 90 minutes, live, with about 6 learners and the same teacher every time. In Basic and Intermediate Spoken English: 30 minutes of grammar, then 60 minutes of speaking, reading and listening that use it. In Interactive Speaking: all 90 minutes are speaking. Between classes you practise daily in the Bolo app, and your teacher reviews your reading and speaking every week.",
     image: IMG.groupClass,
     alt: "Small live online English batch with a teacher",
     waMessage: "Hi, I want to know which class format fits me. Can I get a free consultation?",
     ctaTitle: "Find the class that fits",
-    ctaBody: "Tell us your goal on WhatsApp — we recommend one course and send the fee in writing.",
-    faqTitle: "The class — questions",
+    ctaBody: "Tell us your goal on WhatsApp: we recommend one course and send the fee in writing.",
+    faqTitle: "The class: questions",
     body: [
-      { t: "h2", text: "Basic Spoken English — 30 + 60" },
+      { t: "h2", text: "Basic Spoken English: 30 + 60" },
       {
         t: "table",
         head: ["Block", "Minutes", "What happens"],
@@ -754,7 +754,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Grammar",
             "30",
-            "One structure at a time — to be, nouns, pronouns, present simple — taught through sentences you will say today.",
+            "One structure at a time (to be, nouns, pronouns, present simple) taught through sentences you will say today.",
           ],
           [
             "Communication",
@@ -767,7 +767,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "p",
         text: "6 months, ₹1,199/month inclusive of taxes. Also taught [Hindi to English](/course-spoken-english-hindi) and [Bengali to English](/course-spoken-english-bengali). [Course page](/course-spoken-english).",
       },
-      { t: "h2", text: "Intermediate Spoken English — 30 + 60" },
+      { t: "h2", text: "Intermediate Spoken English: 30 + 60" },
       {
         t: "table",
         head: ["Block", "Minutes", "What happens"],
@@ -775,7 +775,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Grammar",
             "30",
-            "Parts of speech, tenses, agreement, connectors, modals, conditionals — one structure per class, used in a sentence before the block ends.",
+            "Parts of speech, tenses, agreement, connectors, modals, conditionals: one structure per class, used in a sentence before the block ends.",
           ],
           [
             "Communication",
@@ -788,17 +788,17 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "p",
         text: "4 months, ₹1,999/month inclusive of taxes. [Course page](/course-intermediate-english).",
       },
-      { t: "h2", text: "Interactive Speaking — 90 minutes of speaking" },
+      { t: "h2", text: "Interactive Speaking: 90 minutes of speaking" },
       {
         t: "p",
-        text: "No grammar lecture. Debates, stories, role-plays, team meetings, status updates, client calls, presentations and interview rounds — with you on the mic in every block. 3 months, ₹1,599/month inclusive of taxes. [Course page](/course-interactive-speaking).",
+        text: "No grammar lecture. Debates, stories, role-plays, team meetings, status updates, client calls, presentations and interview rounds: with you on the mic in every block. 3 months, ₹1,599/month inclusive of taxes. [Course page](/course-interactive-speaking).",
       },
       { t: "h2", text: "Between classes" },
       {
         t: "ul",
         items: [
           "**Bolo · Practice:** grammar and vocabulary every day with a streak, plus reading and speaking practice.",
-          "**Bolo · Watch:** video lessons chosen for your course — tips to start speaking, grammar, fluency, what to do when your mind goes blank.",
+          "**Bolo · Watch:** video lessons chosen for your course. Tips to start speaking, grammar, fluency, what to do when your mind goes blank.",
           "**Bolo · Review:** every week your teacher reviews the reading and speaking you send.",
           "**Recordings:** every live class is recorded for revision. A missed class can be rescheduled within the same week if a seat is free.",
         ],
@@ -825,7 +825,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     ctaTitle: "Count minutes in their room. Diagnose yours with us.",
     ctaBody:
       "Our consultation is counselling, not a class. If a neighbourhood room fits you better, we will say so.",
-    faqTitle: "Online vs offline — questions",
+    faqTitle: "Online vs offline: questions",
     body: [
       {
         t: "p",
@@ -836,7 +836,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "table",
         head: ["", "Typical city classroom", "Learn With Smile live online"],
         rows: [
-          ["Headcount", "25–40", "Approximately 6"],
+          ["Headcount", "25–40", "About 6"],
           ["Your mic in 60 min", "1–2 min, sometimes weekly", "8–10 min, every class"],
           ["Commute", "45–120 min each way", "None"],
           [
@@ -845,7 +845,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
             "₹1,199/mo Spoken, inclusive of taxes",
           ],
           ["Peer energy", "Same room", "Debates, prompts, WhatsApp group"],
-          ["Campus", "Walk-in centre", "Online — join from home"],
+          ["Campus", "Walk-in centre", "Online: join from home"],
         ],
       },
       { t: "h2", text: "When offline is still the right buy" },
@@ -870,14 +870,14 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           "Offline: a 60-minute class plus 45 minutes each way = 2.5 hours per class.",
           "26 classes × 2.5 hours = 65 hours, of which 26 are class.",
           "Online: 26 classes × 1 hour = 26 hours.",
-          "Difference: about 39 hours — roughly a full working week.",
+          "Difference: about 39 hours. Roughly a full working week.",
         ],
       },
       { t: "h2", text: "Questions to ask any centre, online or offline" },
       {
         t: "ol",
         items: [
-          "What is the maximum batch size — in writing?",
+          "What is the maximum batch size: in writing?",
           "How many minutes will I speak in a 60-minute class?",
           "Is GST included in the fee?",
           "Who is the teacher, and will it be the same person every class?",
@@ -887,20 +887,20 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "p",
-        text: "Any provider — including us — should answer all six before you pay. Vague answers to the first two are the most common warning sign.",
+        text: "Any provider, including us, should answer all six before you pay. Vague answers to the first two are the most common warning sign.",
       },
       { t: "h2", text: "Formats people combine" },
       {
         t: "ul",
         items: [
-          "**Offline centre + free online practice** — the building for discipline, AI or exchange apps for extra speaking minutes.",
-          "**Online class + a local club** — the class for correction, a Toastmasters or college club for speaking in front of people.",
-          "**1:1 tutor for a deadline** — two or three weeks of 1:1 before a specific interview can be worth it; it gets expensive as a six-month habit.",
+          "**Offline centre + free online practice**: the building for discipline, AI or exchange apps for extra speaking minutes.",
+          "**Online class + a local club**: the class for correction, a Toastmasters or college club for speaking in front of people.",
+          "**1:1 tutor for a deadline**. Two or three weeks of 1:1 before a specific interview can be worth it; it gets expensive as a six-month habit.",
         ],
       },
       {
         t: "cta",
-        text: "Count minutes in our room. Approx. 6 learners. From ₹1,199/mo, inclusive of taxes.",
+        text: "Count minutes in our room. About 6 learners. From ₹1,199/mo, inclusive of taxes.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },
@@ -921,7 +921,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     waMessage: "Hi, I want a free consultation to know if I need a paid spoken English class.",
     ctaTitle: "Unsure? Ask us to talk you out of it",
     ctaBody: "We will tell you if free is enough. That is a better first message than a brochure.",
-    faqTitle: "Free vs paid — questions",
+    faqTitle: "Free vs paid: questions",
     body: [
       {
         t: "p",
@@ -932,7 +932,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         t: "ol",
         items: [
           "One 10-minute voice note a day, listened back once.",
-          "One human conversation a day — family, colleague, exchange partner.",
+          "One human conversation a day: family, colleague, exchange partner.",
           "One page of sentences you will actually say this week, said with the paper face down.",
           "The [five speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation) we give beginners.",
         ],
@@ -941,7 +941,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "**A map.** 6-month Spoken English, 3-month Interactive or Workplace — you are not guessing.",
+          "**A map.** 6-month Spoken English, 3-month Interactive or Workplace: you are not guessing.",
           "**A named teacher** who heard last Tuesday’s error.",
           "**A seat** in a batch of around 6, so you cannot hide. Inclusive of taxes. No material fee.",
         ],
@@ -978,7 +978,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Duolingo and similar apps",
             "A daily habit, vocabulary, basic sentences",
-            "Very little free speaking — tapping is not talking",
+            "Very little free speaking: tapping is not talking",
           ],
           [
             "Toastmasters (low cost, not free)",
@@ -1009,14 +1009,14 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           ],
           [
             "4",
-            "One real conversation a day — shop, office, phone",
+            "One real conversation a day: shop, office, phone",
             "Fewer pauses than week 1? Free is working. Stay free.",
           ],
         ],
       },
       {
         t: "p",
-        text: "If week 4 sounds like week 1, the missing piece is usually **correction and accountability**, not more content. That is the part worth paying for — and the only part we would ask you to pay for.",
+        text: "If week 4 sounds like week 1, the missing piece is usually **correction and accountability**, not more content. That is the part worth paying for, and the only part we would ask you to pay for.",
       },
       {
         t: "cta",
@@ -1033,19 +1033,19 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "IELTS coaching fees in India, 2026",
     h1Accent: "Market fees, not our product",
     standfirst:
-      "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room, plus the exam fee — ₹19,000 from April 2026, paid to IDP. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English.",
+      "Market: ₹8,000–₹35,000 for a full course, often 20–40 in a room, plus the exam fee. ₹19,000 from April 2026, paid to IDP. Learn With Smile does not sell IELTS as a course. If you cannot hold a conversation yet, start with Spoken English.",
     shortAnswer:
-      "Budget ₹8,000–₹35,000 for coaching plus the exam fee — ₹19,000 for Academic or General Training since 1 April 2026, paid to IDP. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first — start with Spoken English at ₹1,199/month.",
+      "Budget ₹8,000–₹35,000 for coaching plus the exam fee: ₹19,000 for Academic or General Training since 1 April 2026, paid to IDP. Learn With Smile does not run an IELTS room. If you cannot hold a conversation yet, do not buy IELTS first: start with Spoken English at ₹1,199/month.",
     image: IMG.ielts,
     alt: "IELTS candidate preparing Writing Task 2 with a teacher",
     waMessage: "Hi, I want a free consultation for IELTS or Basic Spoken English.",
     ctaTitle: "Check if Spoken English is the right buy first",
     ctaBody: "If speaking is the gap, we will say so before you pay an exam shop for mocks.",
-    faqTitle: "IELTS fees — questions",
+    faqTitle: "IELTS fees: questions",
     body: [
       {
         t: "p",
-        text: "Two invoices get mixed up. **Coaching** is what an institute charges. **The exam** is what IDP charges — ₹19,000 for IELTS Academic or General Training in India since 1 April 2026, ₹19,250 for IELTS for UKVI. IDP has been the only IELTS provider in India since 2021. No honest coaching price includes it; check the current fee on IDP's site before you book.",
+        text: "Two invoices get mixed up. **Coaching** is what an institute charges. **The exam** is what IDP charges: ₹19,000 for IELTS Academic or General Training in India since 1 April 2026, ₹19,250 for IELTS for UKVI. IDP has been the only IELTS provider in India since 2021. No honest coaching price includes it; check the current fee on IDP's site before you book.",
       },
       { t: "h2", text: "What coaching costs in India in 2026" },
       {
@@ -1055,11 +1055,15 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
         head: ["Format", "Typical fee", "Room"],
         rows: [
           ["Large institute classroom", "₹15,000–₹35,000 package", "20–40 learners"],
-          ["British Council-style module", "Often ₹8,800–₹16,000", "Brand syllabus / certificate"],
+          [
+            "British Council-style module",
+            "₹8,900–₹10,350 / 15–22.5 hrs",
+            "Brand syllabus / certificate",
+          ],
           ["1:1 online tutor", "₹500–₹2,000 / session", "Minutes, variable marking"],
           [
             "Learn With Smile",
-            "Does not sell IELTS — Spoken English from ₹1,199/month",
+            "Does not sell IELTS: Spoken English from ₹1,199/month",
             "~6 learners, live speaking",
           ],
         ],
@@ -1072,7 +1076,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "The exam fee — ₹19,000 since April 2026, paid to IDP. Check before booking.",
+          "The exam fee: ₹19,000 since April 2026, paid to IDP. Check before booking.",
           "A guaranteed band. No ethical coach can promise Band 7.",
           "A school certificate from Learn With Smile. We do not issue one, and we do not sell IELTS.",
           "Speaking ability. If you cannot hold a conversation, cue-card drills will not build the sentence.",
@@ -1100,7 +1104,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "The IELTS, IDP and British Council websites all publish free practice tests and sample answers — start there before paying anyone.",
+          "The IELTS, IDP and British Council websites all publish free practice tests and sample answers: start there before paying anyone.",
           "Take one full practice test under timed conditions. The weakest of the four skills tells you what, if anything, to pay for.",
           "Writing Task 2 rewards a fixed structure: [the four-paragraph template](/blog/band-7-writing-4-paragraph-template).",
         ],
@@ -1111,7 +1115,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "If speaking is the gap, start here. ₹1,199/mo, approx. 6 learners. Inclusive of taxes.",
+        text: "If speaking is the gap, start here. ₹1,199/mo, about 6 learners. Inclusive of taxes.",
         course: "/course-spoken-english",
         label: "See Spoken English",
       },
@@ -1124,16 +1128,16 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
     h1: "Spoken English for IT professionals in India",
     h1Accent: "Standups, tickets, client calls",
     standfirst:
-      "You can write the ticket. The standup still goes silent. Interactive Speaking ₹1,599/month, or Spoken ₹1,199/month if daily English is the gap. Approximately 6 learners. Inclusive of taxes. IST live.",
+      "You can write the ticket. The standup still goes silent. Interactive Speaking ₹1,599/month, or Spoken ₹1,199/month if daily English is the gap. About 6 learners. Inclusive of taxes. IST live.",
     shortAnswer:
-      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Interactive Speaking — 3 months, ₹1,599/month, around 6 learners. No promotion guarantee.",
+      "If you cannot chat yet, take Spoken English. If chat is fine and standups, tickets or clients freeze, take Interactive Speaking: 3 months, ₹1,599/month, around 6 learners. No promotion guarantee.",
     image: IMG.businessEnglish,
     alt: "IT professional speaking in an English standup on a video call",
     waMessage:
       "Hi, I work in IT, I freeze on calls, and I want a free consultation for spoken English.",
     ctaTitle: "Practise the standup live",
     ctaBody: "Bring a real ticket. We will not rewrite your career. We will put you on the mic.",
-    faqTitle: "IT English — questions",
+    faqTitle: "IT English: questions",
     body: [
       {
         t: "p",
@@ -1161,7 +1165,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       {
         t: "ul",
         items: [
-          "Standup: yesterday, today, stuck — 60–90 seconds, no 18-slide deck.",
+          "Standup: yesterday, today, stuck. 60–90 seconds, no 18-slide deck.",
           "Ticket English: action, owner, deadline. Not “please do the needful”.",
           "Client call: names, numbers twice, next step, a time if you do not have the answer.",
           "Email: the five swaps in [professional phrases](/blog/5-email-phrases-that-sound-more-professional).",
@@ -1185,12 +1189,12 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
           [
             "Company L&D or soft-skills workshop",
             "Free to you; matches company norms",
-            "Usually one-off or large groups — little repeated speaking with feedback",
+            "Usually one-off or large groups: little repeated speaking with feedback",
           ],
           [
             "Self-paced video courses (LinkedIn Learning, Coursera)",
             "Frameworks for emails, meetings and presenting; any time",
-            "Nobody hears you speak — you can finish the course and still freeze",
+            "Nobody hears you speak: you can finish the course and still freeze",
           ],
           [
             "Toastmasters club",
@@ -1217,7 +1221,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       { t: "h2", text: "A standup, before and after" },
       {
         t: "example",
-        label: "Before — what goes silent",
+        label: "Before: what goes silent",
         lines: [
           "“Actually yesterday I was working on that ticket only, the API one, and there were some issues, so I was checking…”",
           "(pause)",
@@ -1226,11 +1230,11 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "example",
-        label: "After — 60 seconds, three beats",
+        label: "After: 60 seconds, three beats",
         lines: [
           "Yesterday: I fixed the login timeout on the payments API. It's in review.",
           "Today: I'll finish the retry logic and update the ticket by 3pm IST.",
-          "Blocker: I need staging access from DevOps — Arjun, can you check after this call?",
+          "Blocker: I need staging access from DevOps. Arjun, can you check after this call?",
         ],
       },
       {
@@ -1246,7 +1250,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
             "You didn't catch it",
             "“Sorry, could you repeat the last part? I want to get the number right.”",
           ],
-          ["You don't know yet", "“I don't have that yet — I'll confirm by 4pm IST.”"],
+          ["You don't know yet", "“I don't have that yet: I'll confirm by 4pm IST.”"],
           [
             "Pushing back on scope",
             "“We can do that, but it moves the release to Thursday. Which matters more?”",
@@ -1259,7 +1263,7 @@ export const NEW_GUIDE_VIEWS: Record<string, GuideView> = {
       },
       {
         t: "cta",
-        text: "IT English is a standup you can finish. Approx. 6 learners. From ₹1,199/mo.",
+        text: "IT English is a standup you can finish. About 6 learners. From ₹1,199/mo.",
         course: "/free-consultation",
         label: "Get Free Consultation",
       },

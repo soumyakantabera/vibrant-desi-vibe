@@ -25,7 +25,7 @@ export const BOLO = {
   meaning: "Bolo means “speak!” in Hindi.",
   tagline: "A little English every day, between your live classes.",
   oneLine:
-    "Bolo is the Learn With Smile practice app: daily grammar, vocabulary, reading and speaking practice with a streak, recorded video lessons, and a weekly review from your teacher — included in every course fee.",
+    "Bolo is the Learn With Smile practice app: daily grammar, vocabulary, reading and speaking practice with a streak, recorded video lessons, and a weekly review from your teacher. Included in every course fee.",
   access:
     "Bolo comes with every paid course. Login details come on WhatsApp after admission, and access runs while you are enrolled.",
   synonym: "Bolo is our learner portal app",
@@ -73,7 +73,7 @@ export const BOLO_TABS: BoloTab[] = [
     key: "watch",
     label: "Watch",
     title: "Video lessons chosen for your course",
-    casual: "Headphones on — tips to start speaking, in short videos.",
+    casual: "Headphones on: tips to start speaking, in short videos.",
     body: "Recorded lessons to revise any time: tips and tricks to start speaking, grammar you actually use, fluency, thinking in English and what to say when your mind goes blank.",
     points: [
       "Tips and tricks to start speaking English",
@@ -107,11 +107,11 @@ export const BOLO_LINES = {
   streak: "Streak safe! See you tomorrow.",
   correct: "Sahi jawab! That's the one.",
   wrong: "Almost! Here's the trick —",
-  perfect: "5 out of 5 — shabaash!",
+  perfect: "5 out of 5: shabaash!",
   watch: "Headphones on. This one's only 4 minutes.",
-  review: "I checked your week. Two small fixes — you've got this.",
+  review: "I checked your week. Two small fixes: you've got this.",
   lost: "Even I fly into the wrong tree sometimes.",
-  empty: "Nothing here yet — try another course.",
+  empty: "Nothing here yet: try another course.",
 } as const;
 
 export const BOLO_MASCOTS = [
@@ -163,7 +163,7 @@ export const BOLO_FOR_COURSE: Record<FeeSlug, string> = {
 export const BOLO_FAQ: { q: string; a: string }[] = [
   {
     q: "What is Bolo?",
-    a: "Bolo is the Learn With Smile practice app — our learner portal app. It holds your daily practice (grammar, vocabulary, reading and speaking) with a streak, recorded video lessons chosen for your course, and the weekly review your teacher writes on the reading and speaking you send.",
+    a: "Bolo is the Learn With Smile practice app: our learner portal app. It holds your daily practice (grammar, vocabulary, reading and speaking) with a streak, recorded video lessons chosen for your course, and the weekly review your teacher writes on the reading and speaking you send.",
   },
   {
     q: "Can I try Bolo for free?",
@@ -187,7 +187,7 @@ export const BOLO_FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Does Bolo have streaks?",
-    a: "Yes. Bolo keeps a daily practice streak, so a little English happens every day — not just on class days.",
+    a: "Yes. Bolo keeps a daily practice streak, so a little English happens every day, not just on class days.",
   },
   {
     q: "What happens to Bolo after my course ends?",

@@ -18,7 +18,7 @@ import { admissionCaption } from "@/lib/fees";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "If you have looked for spoken English classes in Kolkata, you have probably found the same two things: coaching centres in Gariahat, Salt Lake and around Rashbehari that run large batches, and online platforms that could be anywhere. This page is about a third option — a live online batch of about six, run by a Kolkata-based team — and about being honest regarding when a big centre is the better choice.",
+    text: "If you have looked for spoken English classes in Kolkata, you have probably found the same two things: coaching centres in Gariahat, Salt Lake and around Rashbehari that run large batches, and online platforms that could be anywhere. This page is about a third option (a live online batch of about six, run by a Kolkata-based team) and about being honest regarding when a big centre is the better choice.",
   },
   {
     t: "p",
@@ -32,7 +32,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "A spoken English course runs up to two classes a week for three to six months. If you live in Behala or Dum Dum and a centre is in Gariahat or Sector V, a trip can take 45 to 90 minutes each way — twice a week for six months, that is roughly 75 to 155 hours on the road, more time than you will spend in class.",
+    text: "A spoken English course runs up to two classes a week for three to six months. If you live in Behala or Dum Dum and a centre is in Gariahat or Sector V, a trip can take 45 to 90 minutes each way: twice a week for six months, that is roughly 75 to 155 hours on the road, more time than you will spend in class.",
   },
   {
     t: "p",
@@ -43,10 +43,10 @@ export const body: ArticleBody = [
   {
     t: "table",
     caption:
-      "Typical figures. Ask any provider — online or in Kolkata — for their actual cap before you ask anything else.",
+      "Typical figures. Ask any provider, online or in Kolkata, for their actual cap before you ask anything else.",
     head: ["", "Typical Kolkata coaching centre", "Learn With Smile (online)"],
     rows: [
-      ["Students per batch", "25–40", "Approximately 6"],
+      ["Students per batch", "25–40", "About 6"],
       ["Your speaking time in a 60-min class", "1–2 minutes", "8–10 minutes"],
       ["Commute, up to twice a week", "45–90 min each way", "None"],
       ["Class recordings", "Rarely", "Every class"],
@@ -59,13 +59,13 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "So if a provider will not tell you their batch size, that is your answer. If they say 30 and the price is ₹500 a month, that is consistent and honest — it just means you are buying lectures rather than practice, and you should know which one you need.",
+    text: "So if a provider will not tell you their batch size, that is your answer. If they say 30 and the price is ₹500 a month, that is consistent and honest: it just means you are buying lectures rather than practice, and you should know which one you need.",
   },
 
   { t: "h2", text: "Bengali and Hindi in an English classroom" },
   {
     t: "p",
-    text: "Instruction is in English and all practice stays in English. But when a concept is not landing — usually tenses, articles or prepositions — the teacher will explain it in Bengali or Hindi, and then go straight back to English.",
+    text: "Instruction is in English and all practice stays in English. But when a concept is not landing (usually tenses, articles or prepositions), the teacher will explain it in Bengali or Hindi, and then go straight back to English.",
   },
   {
     t: "p",
@@ -91,7 +91,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "The technical interview is usually not the problem. The problem is the client call six months in, where you understand every word and cannot get a sentence out. That is business English rather than general fluency — meetings, status updates and disagreeing with a senior politely — which is covered in [Interactive Speaking](/course-interactive-speaking).",
+    text: "The technical interview is usually not the problem. The problem is the client call six months in, where you understand every word and cannot get a sentence out. That is business English rather than general fluency (meetings, status updates and disagreeing with a senior politely) which is covered in [Interactive Speaking](/course-interactive-speaking).",
   },
   {
     t: "h3",
@@ -99,7 +99,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Kolkata has a large voice and back-office sector, and the ceiling in it is well known: back-office work pays less than client-facing work and the jump requires evidence, not just accent training. We wrote a full month-by-month plan for that move — [BPO to client-facing role](/blog/bpo-to-client-facing-role-roadmap) — and the honest short version is that it takes about six months and the pay rise arrives at the move after this one.",
+    text: "Kolkata has a large voice and back-office sector, and the ceiling in it is well known: back-office work pays less than client-facing work and the jump requires evidence, not just accent training. We wrote a full month-by-month plan for that move, [BPO to client-facing role](/blog/bpo-to-client-facing-role-roadmap), and the honest short version is that it takes about six months and the pay rise arrives at the move after this one.",
   },
   {
     t: "h3",
@@ -115,11 +115,11 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Group discussion and HR rounds fail more candidates than aptitude tests do, and both are speaking problems. Interview English — 60-second intro, STAR, salary talk — is practised inside [Spoken English](/course-spoken-english) and [Interactive Speaking](/course-interactive-speaking).",
+    text: "Group discussion and HR rounds fail more candidates than aptitude tests do, and both are speaking problems. Interview English (60-second intro, STAR, salary talk) is practised inside [Spoken English](/course-spoken-english) and [Interactive Speaking](/course-interactive-speaking).",
   },
   {
     t: "p",
-    text: "If you are starting from further back than any of these — you read English fine but cannot hold a five-minute conversation — start with [Basic Spoken English](/course-spoken-english), or its [Bengali to English](/course-spoken-english-bengali) version if you want explanations in Bengali, and come back to the specialised course afterwards.",
+    text: "If you are starting from further back than any of these (you read English fine but cannot hold a five-minute conversation), start with [Basic Spoken English](/course-spoken-english), or its [Bengali to English](/course-spoken-english-bengali) version if you want explanations in Bengali, and come back to the specialised course afterwards.",
   },
 
   { t: "h2", text: "Fees" },
@@ -149,14 +149,14 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**Afternoon** — homemakers, students and anyone on a late shift",
-      "**Evening** — after office, the usual choice for working professionals",
-      "**Night** — for Sector V and BPO staff whose shifts run late",
+      "**Afternoon**: homemakers, students and anyone on a late shift",
+      "**Evening**: after office, the usual choice for working professionals",
+      "**Night**: for Sector V and BPO staff whose shifts run late",
     ],
   },
   {
     t: "p",
-    text: "Timings are flexible — tell us yours and we will fit a batch around it. Every class is recorded, so a missed session because of a release, escalation or shift change does not mean losing the lesson. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
+    text: "Timings are flexible: tell us yours and we will fit a batch around it. Every class is recorded, so a missed session because of a release, escalation or shift change does not mean losing the lesson. A reschedule can be requested only within the same week and depends on teacher and slot availability.",
   },
 
   { t: "h2", text: "When a Kolkata coaching centre is the better choice" },
@@ -169,13 +169,13 @@ export const body: ArticleBody = [
     items: [
       "**You want people around you.** A physical classroom gives you peers you actually see, and for some learners that is what keeps them turning up. We use live polls, debates and a WhatsApp batch group instead, and it is not the same thing.",
       "**Your internet is unreliable.** A speaking class where the audio drops is worse than no class. If your connection cannot hold a video call for an hour, fix that first or choose a classroom.",
-      "**You need a recognised certificate.** We do not currently issue one. If a visa, a university or an HR checklist requires a credential, go to an established institution and expect to pay considerably more — that fee buys the certificate, not better teaching.",
+      "**You need a recognised certificate.** We do not currently issue one. If a visa, a university or an HR checklist requires a credential, go to an established institution and expect to pay considerably more: that fee buys the certificate, not better teaching.",
       "**The learner is a child.** Our classes are built for learners from about 15 upwards. Teaching a nine-year-old is a different profession.",
     ],
   },
   {
     t: "cta",
-    text: "If none of those apply, chat on WhatsApp — we will suggest the batch that fits your timing. Not sure yet? Get a free consultation first.",
+    text: "If none of those apply, chat on WhatsApp: we will suggest the batch that fits your timing. Not sure yet? Get a free consultation first.",
     course: "/course-spoken-english",
     label: "See the Spoken English course",
   },

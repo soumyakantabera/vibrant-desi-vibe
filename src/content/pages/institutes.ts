@@ -18,7 +18,7 @@ export const body: ArticleBody = [
     text: "Five products get sold as “English class.” They are not the same: a 15-minute app call, a native-speaker chat, a CEFR module, a 30-student classroom, and a named live batch of around 6. Pick the bottleneck, not the brand.",
   },
 
-  { t: "h2", text: `Named comparison — online 2026 (updated ${COMPARE_REVISED_LABEL})` },
+  { t: "h2", text: `Named comparison: online 2026 (updated ${COMPARE_REVISED_LABEL})` },
   {
     t: "table",
     caption: `Public online ranges checked ${COMPARE_REVISED_LABEL}. Confirm on their site. ${admissionCaption()}`,
@@ -38,7 +38,7 @@ export const body: ArticleBody = [
       ],
       [
         "Cambly",
-        "~₹8,000–₹15,000/mo if daily",
+        "₹5,999–₹10,999/month for 15–30 min a day",
         "Fluent adults who want native chat and accent.",
         "Book any available tutor.",
       ],
@@ -56,7 +56,7 @@ export const body: ArticleBody = [
       ],
       [
         "British Council English Online",
-        "₹8,800–₹16,000 / 6-class module",
+        "₹8,900–₹10,350 / 15–22.5 hrs",
         "Adults who want a CEFR classroom or a brand badge.",
         "Sold by CEFR module.",
       ],
@@ -64,7 +64,7 @@ export const body: ArticleBody = [
         "ELSA / Duolingo / Speak",
         "₹300–₹1,200/mo",
         "Solo pronunciation and vocab. No named teacher. No batch.",
-        "None — you tap Start.",
+        "None, you tap Start.",
       ],
       [
         "IELTS / Leap-style exam shops",
@@ -76,7 +76,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "**PlanetSpark is not a rival for our adult room.** It is a kids 1:1 public-speaking product (typically 4–13). If the learner is a child, use PlanetSpark or a kids platform — not us. If the learner is 15+, PlanetSpark is the wrong buy and we are one of the adult options.",
+    text: "**PlanetSpark is not a rival for our adult room.** It is a kids 1:1 public-speaking product (typically 4–13). If the learner is a child, use PlanetSpark or a kids platform, not us. If the learner is 15+, PlanetSpark is the wrong buy and we are one of the adult options.",
   },
 
   { t: "h2", text: "Our fees, so the row is not a slogan" },
@@ -104,22 +104,22 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**Veta-style / local Kolkata rooms:** praise for energy and a nice teacher; complaints cluster on **batch size**, **too little speaking**, and extra material/GST fees. Veta Barrackpore lists **4.7★ from 273** reviews — more volume than us.",
+      "**Veta-style / local Kolkata rooms:** praise for energy and a nice teacher; complaints cluster on **batch size**, **too little speaking**, and extra material/GST fees. Veta Barrackpore lists **4.7★ from 273** reviews: more volume than us.",
       "**British Council:** praise for **curriculum** and **brand**; complaints on **module cost** and limited talking in the group slot. Centres in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, Ahmedabad, Bengaluru.",
       "**Cambly:** praise for **convenience** and **native chat**; complaints that **the tutor changes from lesson to lesson** and on cost if you practise daily.",
-      "**EngVarta:** praise for **price per session** and **daily habit**; complaints on **no syllabus** and variable tutor quality. They also publish the “best course 2026” listicles — treat those as marketing, not a referee.",
-      "**Us:** 5.0★ on Google from 125 reviews. Small sample next to Play-store apps. Treat it as named outcomes — not a 9,000-review dataset.",
+      "**EngVarta:** praise for **price per session** and **daily habit**; complaints on **no syllabus** and variable tutor quality. They also publish the “best course 2026” listicles: treat those as marketing, not a referee.",
+      "**Us:** 5.0★ on Google from 125 reviews. Small sample next to Play-store apps. Treat it as named outcomes, not a 9,000-review dataset.",
     ],
   },
 
-  { t: "h2", text: "Speaking minutes — the number almost no brochure prints" },
+  { t: "h2", text: "Speaking minutes: the number almost no brochure prints" },
   {
     t: "table",
     head: ["Room", "Learners", "60-min class, your mic"],
     rows: [
       ["Typical offline franchise / city classroom", "25–40", "1–2 minutes"],
       ["British Council-style group", "8–12", "4–6 minutes"],
-      ["Learn With Smile English batch", "Approximately 6 learners", "About 8–10 minutes"],
+      ["Learn With Smile English batch", "About 6 learners", "About 8–10 minutes"],
       ["EngVarta / Cambly 1:1", "1", "15–50 minutes, no 6-month map"],
     ],
   },
@@ -130,7 +130,7 @@ export const body: ArticleBody = [
 
   {
     t: "h2",
-    text: "West Bengal, Maharashtra, Delhi, South India — same products, different rooms",
+    text: "West Bengal, Maharashtra, Delhi, South India: same products, different rooms",
   },
   {
     t: "p",
@@ -142,17 +142,17 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "A visa, university or some HR forms ask for **IELTS** (or similar). That score comes from the test board, not from any school. We do not sell IELTS as a course. Sit the paper when the form asks.",
-      "A **brand-name CEFR module** (often ₹8,800–₹16,000 for six classes) is a different product: you are buying that classroom and syllabus. We train speaking from ₹1,199/month, inclusive of taxes.",
-      "You want **daily 1:1** and already speak — an app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
-      "The student is a **child** — a kids platform, not an adult batch of around 6.",
-      "You want a **walk-in classroom** in Barrackpore or Salt Lake — a franchise centre is the product. Our classes are online.",
+      "A **brand-name CEFR module** (₹8,900–₹10,350 for 15–22.5 hours on its India pricing pages) is a different product: you are buying that classroom and syllabus. We train speaking from ₹1,199/month, inclusive of taxes.",
+      "You want **daily 1:1** and already speak. An app like EngVarta is cheaper per talking minute. Use it as reps. Use us for the 6-month map.",
+      "The student is a **child**: a kids platform, not an adult batch of around 6.",
+      "You want a **walk-in classroom** in Barrackpore or Salt Lake: a franchise centre is the product. Our classes are online.",
     ],
   },
 
   { t: "h2", text: "Their free session vs ours" },
   {
     t: "p",
-    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling — you pick a 15-minute call. Cambly matches you with an available tutor. British Council sells a CEFR module. A city classroom seats you in 25–40. Exam shops focus on IELTS. [Our consultation](/free-consultation) is a small batch with personalised advice: we name the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
+    text: "The first hour you spend with an institute is the tell. EngVarta has no counselling: you pick a 15-minute call. Cambly matches you with an available tutor. British Council sells a CEFR module. A city classroom seats you in 25–40. Exam shops focus on IELTS. [Our consultation](/free-consultation) is a small batch with personalised advice: we name the bottleneck, answer every query, and place you in one course, or tell you to stay free. You will not sit a full class for free. That is the paid room of around 6.",
   },
 
   {

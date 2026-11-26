@@ -10,7 +10,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
   bpo: [
     {
       t: "p",
-      text: "**Short answer.** In many voice-process hiring drives, spoken English is checked **first** — by an AI-scored test such as Pearson's **Versant** or SHL's **SVAR**, or by a voice round — and only then come HR, operations and the client round. Employers rarely publish the test or the cut-off, so practise the skills, not tricks.",
+      text: "**Short answer.** In many voice-process hiring drives, spoken English is checked **first** (by an AI-scored test such as Pearson's **Versant** or SHL's **SVAR**, or by a voice round) and only then come HR, operations and the client round. Employers rarely publish the test or the cut-off, so practise the skills, not tricks.",
     },
     { t: "h2", text: "What the spoken-English screen checks" },
     {
@@ -32,10 +32,10 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     { t: "h2", text: "A customer call in four lines" },
     {
       t: "example",
-      label: "Voice process — billing query",
+      label: "Voice process: billing query",
       lines: [
         "Thank you for calling. May I have your registered mobile number, please?",
-        "I understand — you were charged twice this month. Let me check that for you.",
+        "I understand: you were charged twice this month. Let me check that for you.",
         "I've raised a refund request. You'll get an SMS confirmation within 24 hours.",
         "Is there anything else I can help you with today?",
       ],
@@ -48,7 +48,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     {
       t: "ul",
       items: [
-        "Read a short paragraph aloud and record it — in Bolo, your teacher reviews it every week.",
+        "Read a short paragraph aloud and record it: in Bolo, your teacher reviews it every week.",
         "Listen to one sentence, pause, repeat it with the same rhythm (shadowing).",
         "Answer three simple questions out loud in full sentences, no notes.",
         "Role-play one customer call a day with a friend or in your live batch.",
@@ -56,7 +56,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Start from zero with a teacher who can explain in Hindi — ₹1,199/month, about 6 per batch, daily practice in Bolo.",
+      text: "Start from zero with a teacher who can explain in Hindi: ₹1,199/month, about 6 per batch, daily practice in Bolo.",
       course: "/course-spoken-english-hindi",
       label: "Basic Spoken English — Hindi to English",
     },
@@ -69,12 +69,12 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
   it: [
     {
       t: "p",
-      text: "**Short answer.** In IT services and GCC hiring, English is checked twice: a **communication assessment** (first, or alongside aptitude — some employers use Versant) and the **HR/technical round**, where you must explain your project clearly. After you join, the test never stops: standups, demos, client calls.",
+      text: "**Short answer.** In IT services and GCC hiring, English is checked twice: a **communication assessment** (first, or alongside aptitude. Some employers use Versant) and the **HR/technical round**, where you must explain your project clearly. After you join, the test never stops: standups, demos, client calls.",
     },
     { t: "h2", text: "Explain your project in 60 seconds" },
     {
       t: "example",
-      label: "Interview — tell me about your project",
+      label: "Interview: tell me about your project",
       lines: [
         "I built a leave-management app for our college hostel.",
         "The problem: requests were on paper and wardens lost track.",
@@ -100,14 +100,14 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
         ["Today", "Today I'll write tests and fix the timeout bug.", "“I will try to do…”"],
         [
           "Blocker",
-          "I'm blocked on the staging key — can someone share it?",
+          "I'm blocked on the staging key: can someone share it?",
           "Silence until the next day",
         ],
       ],
     },
     {
       t: "cta",
-      text: "Practise standups, demos and client calls in a live batch of about 6 — Interactive Speaking, 3 months, ₹1,599/month.",
+      text: "Practise standups, demos and client calls in a live batch of about 6: Interactive Speaking, 3 months, ₹1,599/month.",
       course: "/course-interactive-speaking",
       label: "Interactive Speaking",
     },
@@ -142,14 +142,14 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
       t: "table",
       head: ["Instead of", "Say"],
       rows: [
-        ["“Statistically significant”", "“This isn't random — it's real.”"],
+        ["“Statistically significant”", "“This isn't random: it's real.”"],
         ["“Correlation of 0.8”", "“When one goes up, the other almost always does too.”"],
         ["“The query shows…”", "“The data shows…”"],
       ],
     },
     {
       t: "cta",
-      text: "Practise explaining your real dashboards in a live batch — Interactive Speaking, 3 months, ₹1,599/month.",
+      text: "Practise explaining your real dashboards in a live batch: Interactive Speaking, 3 months, ₹1,599/month.",
       course: "/course-interactive-speaking",
       label: "Interactive Speaking",
     },
@@ -157,7 +157,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
   bank: [
     {
       t: "p",
-      text: "**Short answer.** The written exam gets you to the panel; the interview checks how you **speak**. IBPS does not publish a rule that the interview must be in English, and candidates report answering in English or Hindi. If you choose English, practise these answers out loud — not in your head.",
+      text: "**Short answer.** The written exam gets you to the panel; the interview checks how you **speak**. IBPS does not publish a rule that the interview must be in English, and candidates report answering in English or Hindi. If you choose English, practise these answers out loud, not in your head.",
     },
     { t: "h2", text: "Three answers to practise first" },
     {
@@ -180,7 +180,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Practise your interview answers live, in a batch of about 6 — 2 months, ₹2,499/month.",
+      text: "Practise your interview answers live, in a batch of about 6: 2 months, ₹2,499/month.",
       course: "/course-interview-preparation",
       label: "Interview Preparation",
     },
@@ -193,15 +193,15 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
   govt: [
     {
       t: "p",
-      text: "**Short answer.** For the UPSC personality test you **choose** the interview language — English, Hindi or another listed Indian language (an interpreter is arranged for languages other than English and Hindi; check the current notice). State PSCs set their own rules. SSC removed interviews for non-gazetted posts in 2016. Choose the language you speak most calmly in.",
+      text: "**Short answer.** For the UPSC personality test you **choose** the interview language: English, Hindi or another listed Indian language (an interpreter is arranged for languages other than English and Hindi; check the current notice). State PSCs set their own rules. SSC removed interviews for non-gazetted posts in 2016. Choose the language you speak most calmly in.",
     },
     { t: "h2", text: "If you choose English: answer like this" },
     {
       t: "example",
-      label: "Panel question — should India ban single-use plastic completely?",
+      label: "Panel question: should India ban single-use plastic completely?",
       lines: [
         "I think a complete ban is right in principle, Sir.",
-        "But it needs cheap alternatives first — otherwise small vendors lose income.",
+        "But it needs cheap alternatives first: otherwise small vendors lose income.",
         "For example, cloth bags could be made through self-help groups.",
         "So: a phased ban, with support for small businesses.",
       ],
@@ -212,7 +212,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Practise panel-style answers live, in a batch of about 6 — 2 months, ₹2,499/month.",
+      text: "Practise panel-style answers live, in a batch of about 6: 2 months, ₹2,499/month.",
       course: "/course-interview-preparation",
       label: "Interview Preparation",
     },
@@ -230,7 +230,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     { t: "h2", text: "How to enter a group discussion" },
     {
       t: "example",
-      label: "GD — Should college attendance be optional?",
+      label: "GD: Should college attendance be optional?",
       lines: [
         "I'd like to start with one point: attendance and learning are not the same thing.",
         "Building on what Riya said, recorded lectures already exist —",
@@ -248,7 +248,7 @@ export const NEED_BODIES: Record<NeedKey, ArticleBody> = {
     },
     {
       t: "cta",
-      text: "Build flow and confidence — 4 months, ₹1,999/month, about 6 learners, debates every week.",
+      text: "Build flow and confidence: 4 months, ₹1,999/month, about 6 learners, debates every week.",
       course: "/course-intermediate-english",
       label: "Intermediate Spoken English",
     },

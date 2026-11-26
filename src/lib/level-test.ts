@@ -18,7 +18,7 @@ export const LEVEL_QUESTIONS: string[] = [
   "Introduce yourself in 3–4 sentences: name, city, work or studies.",
   "Tell someone what you did last weekend, in the past tense.",
   "Speak for one minute on a familiar topic without stopping, with tenses mostly right.",
-  "Speak in a meeting or an interview — even with an unexpected question — without freezing.",
+  "Speak in a meeting or an interview, even with an unexpected question, without freezing.",
 ];
 
 /** Highest possible score: 2 points per question. */
@@ -83,7 +83,7 @@ export const LEVEL_BANDS: LevelBand[] = [
     name: "Ready to perform",
     cefr: "around B2",
     meaning:
-      "You have the English; pressure is the problem — meetings, calls, interviews, unexpected questions.",
+      "You have the English; pressure is the problem: meetings, calls, interviews, unexpected questions.",
   },
 ];
 
@@ -151,20 +151,20 @@ const band = (id: LevelBand["id"]) => LEVEL_BANDS.find((b) => b.id === id)!;
 
 /** Plain-text scoring key, rendered on the page so it works without JavaScript. */
 export const LEVEL_KEY_ROWS: string[][] = [
-  [bandRange(band("starting")), "Starting out (around A1)", "Basic Spoken English — ₹1,199/month"],
+  [bandRange(band("starting")), "Starting out (around A1)", "Basic Spoken English: ₹1,199/month"],
   [
     bandRange(band("building")),
     "Building basics (around A2)",
-    "Basic Spoken English — ₹1,199/month",
+    "Basic Spoken English: ₹1,199/month",
   ],
   [
     bandRange(band("connecting")),
     "Connecting sentences (around B1)",
-    "Intermediate Spoken English — ₹1,999/month (work goal: Interactive Speaking — ₹1,599/month)",
+    "Intermediate Spoken English (₹1,999/month (work goal: Interactive Speaking) ₹1,599/month)",
   ],
   [
     bandRange(band("performing")),
     "Ready to perform (around B2)",
-    "Interactive Speaking — ₹1,599/month (interview goal: Interview Preparation — ₹2,499/month)",
+    "Interactive Speaking (₹1,599/month (interview goal: Interview Preparation) ₹2,499/month)",
   ],
 ];

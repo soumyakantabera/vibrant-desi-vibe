@@ -58,7 +58,7 @@ export function LevelTestPromo() {
             </h2>
             <p className="relative mt-1 text-sm text-ink/80">
               Take my free 1-minute speaking level test. 5 taps, your level and the one course that
-              fits — your result goes straight to WhatsApp.
+              fits. Your result goes straight to WhatsApp.
             </p>
           </div>
         </div>

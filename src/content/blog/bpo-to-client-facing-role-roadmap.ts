@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "The standard advice for getting out of back-office BPO work is: improve your English. So people spend six months on English — an app, a course, YouTube, all of it — genuinely get better, start applying, and the interviews still do not convert.",
+    text: "The standard advice for getting out of back-office BPO work is: improve your English. So people spend six months on English (an app, a course, YouTube, all of it) genuinely get better, start applying, and the interviews still do not convert.",
   },
   {
     t: "p",
@@ -11,7 +11,7 @@ export const body: ArticleBody = [
   },
   {
     t: "quote",
-    text: "The barrier is evidence, not English. English is what lets you present the evidence — but you have to have some.",
+    text: "The barrier is evidence, not English. English is what lets you present the evidence, but you have to have some.",
   },
   {
     t: "p",
@@ -30,7 +30,7 @@ export const body: ArticleBody = [
       [
         "Customer Success",
         "Keeping existing accounts happy and renewing",
-        "**Yes — the highest-probability target.** Your domain knowledge transfers directly.",
+        "**Yes, the highest-probability target.** Your domain knowledge transfers directly.",
       ],
       [
         "Account Management",
@@ -75,7 +75,7 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**Volunteer for client calls, even silently.** Ask your manager if you can sit in on the weekly client call as a listener. Do this for four weeks and then ask to present one section — usually the numbers, which is the safest thing to present.",
+      "**Volunteer for client calls, even silently.** Ask your manager if you can sit in on the weekly client call as a listener. Do this for four weeks and then ask to present one section, usually the numbers, which is the safest thing to present.",
       "**Take the escalations nobody wants.** An angry customer handled well is the single most useful story you will have in an interview. Ask to own the ones that come back a second time.",
       "**Write the SOP.** Every process has undocumented steps. Writing them down is unglamorous, visible to management, and gives you a concrete artefact with your name on it.",
       "**Train new joiners.** This is the best proxy for client-facing work there is, and it is usually available for the asking. Explaining a complicated system to someone who does not understand it, patiently, is exactly the skill being hired for.",
@@ -88,7 +88,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "You cannot reconstruct these later. In month five you will sit down to write your CV and try to remember what your average handling time was in month one, and you will either guess — which is dangerous, because you may be asked to defend it — or leave it out. A note on your phone is enough.",
+    text: "You cannot reconstruct these later. In month five you will sit down to write your CV and try to remember what your average handling time was in month one, and you will either guess (which is dangerous, because you may be asked to defend it) or leave it out. A note on your phone is enough.",
   },
 
   { t: "h2", text: "Months 3–4: two specific English skills" },
@@ -105,10 +105,10 @@ export const body: ArticleBody = [
   {
     t: "ol",
     items: [
-      "**Situation** — one sentence of context.",
-      "**Complication** — what went wrong.",
-      "**Resolution** — what you did.",
-      "**Next step** — what happens now, with a time on it.",
+      "**Situation**: one sentence of context.",
+      "**Complication**: what went wrong.",
+      "**Resolution**: what you did.",
+      "**Next step**: what happens now, with a time on it.",
     ],
   },
   {
@@ -116,14 +116,14 @@ export const body: ArticleBody = [
     label: "Worked example",
     lines: [
       "**(Situation)** Your refunds normally clear within 24 hours.",
-      "**(Complication)** Between the 3rd and the 7th, about 40 of them didn't — our payment partner changed a validation rule and our system kept retrying instead of flagging it.",
+      "**(Complication)** Between the 3rd and the 7th, about 40 of them didn't: our payment partner changed a validation rule and our system kept retrying instead of flagging it.",
       "**(Resolution)** We processed all 40 manually on the 7th, and we've added an alert so a retry loop now raises a ticket after two attempts instead of running silently.",
       "**(Next step)** I'll send you the list of affected transactions today, and I'll confirm on Friday that the alert has fired correctly through a full week.",
     ],
   },
   {
     t: "p",
-    text: "Practise this on real incidents from your own queue. Four beats, out loud, sixty seconds. It is the same structural discipline as the [interview answer](/blog/tell-me-about-yourself-in-60-seconds) — structure first, then words.",
+    text: "Practise this on real incidents from your own queue. Four beats, out loud, sixty seconds. It is the same structural discipline as the [interview answer](/blog/tell-me-about-yourself-in-60-seconds): structure first, then words.",
   },
 
   { t: "h3", text: "Skill 2: saying difficult things" },
@@ -138,14 +138,14 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "**\"I don't know — I'll find out and come back to you by end of day.\"** The most useful sentence in the entire job. People invent an answer instead, because not knowing feels like failure, and inventing is what destroys trust.",
+      "**\"I don't know: I'll find out and come back to you by end of day.\"** The most useful sentence in the entire job. People invent an answer instead, because not knowing feels like failure, and inventing is what destroys trust.",
       "**\"That timeline won't work. Here's what I can do instead.\"** Refusing while offering something is the whole skill.",
       "**\"That's fair, and I'm sorry it happened. Here's what we've changed.\"** Accepting a complaint without either arguing or grovelling.",
     ],
   },
   {
     t: "p",
-    text: "Say them out loud. They are short, and they are still hard, because the difficulty is not linguistic. If you want to practise this with someone rather than alone, that is what [Interactive Speaking](/course-interactive-speaking) role-plays are for — but a colleague who will run the scenario with you works too.",
+    text: "Say them out loud. They are short, and they are still hard, because the difficulty is not linguistic. If you want to practise this with someone rather than alone, that is what [Interactive Speaking](/course-interactive-speaking) role-plays are for, but a colleague who will run the scenario with you works too.",
   },
 
   { t: "h2", text: "Month 5: rewrite the CV, and apply internally first" },
@@ -177,7 +177,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Then — and this is the highest-value line in this article — **apply internally before you apply anywhere else.**",
+    text: "Then (and this is the highest-value line in this article) **apply internally before you apply anywhere else.**",
   },
   {
     t: "p",
@@ -187,7 +187,7 @@ export const body: ArticleBody = [
     t: "ul",
     items: [
       "Your evidence is verifiable. The hiring manager can walk over and ask your current manager whether you really cut resolution time. Externally, they can only take your word for it.",
-      "Your domain knowledge is worth something to them specifically — same product, same clients, same systems. To an external employer it is generic.",
+      "Your domain knowledge is worth something to them specifically: same product, same clients, same systems. To an external employer it is generic.",
       'Internal moves often waive the "must have client-facing experience" filter that would auto-reject your CV externally.',
       "The people you helped in months 1–2 are in the building, and some of them will be asked about you.",
     ],
@@ -206,7 +206,7 @@ export const body: ArticleBody = [
     t: "ol",
     items: [
       '**"Tell me about a difficult customer."** Pick one where you were partly at fault. Answers where the customer was simply unreasonable and you were flawless are not believed.',
-      '**"You\'ve been in a back-office role — why do you think you can do this?"** Do not get defensive. Name the client-facing work you did anyway, with numbers. This is exactly what months 1–2 were for.',
+      '**"You\'ve been in a back-office role: why do you think you can do this?"** Do not get defensive. Name the client-facing work you did anyway, with numbers. This is exactly what months 1–2 were for.',
       '**"How would you handle a client asking for something we can\'t deliver?"** This is sentence two from the rehearsal list. Refuse, then offer the alternative.',
       '**"Where do you see yourself in three years?"** Say account ownership. Saying "management" this early reads as wanting to leave the job you are applying for.',
     ],
@@ -235,7 +235,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "One last thing: none of the first four months requires spending money. Volunteering for calls, taking escalations, writing the SOP, training joiners, keeping a note of your numbers — that is free, and it is most of the work. Pay for help with the parts you genuinely cannot do alone, which for most people is rehearsing the difficult conversations and getting the interview answers heard by somebody honest.",
+    text: "One last thing: none of the first four months requires spending money. Volunteering for calls, taking escalations, writing the SOP, training joiners, keeping a note of your numbers: that is free, and it is most of the work. Pay for help with the parts you genuinely cannot do alone, which for most people is rehearsing the difficult conversations and getting the interview answers heard by somebody honest.",
   },
   {
     t: "cta",

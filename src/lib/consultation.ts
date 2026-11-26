@@ -22,15 +22,15 @@ export const CONSULTATION = {
   phoneDisplay: WHATSAPP_DISPLAY,
   headline: "Free group consultation. Your plan in writing.",
   /** Magnet under every consultation button. */
-  hook: "Free group consultation — we send a booking link on WhatsApp. No payment to book.",
+  hook: "Free group consultation. We send the booking link on WhatsApp; booking is free.",
   punch:
-    "A free group slot with our team. You tell us your goal, we name the bottleneck and put the right course and its fee in writing. Then you enrol — or you walk. It is advice, not a class.",
+    "A free group slot with our team. Tell us your goal, and we name what is holding you back and send the right course and fee in writing. It is advice, not a class, and you decide after.",
   pills: ["100% free", "Small batch", "Spoken English", "Fee in writing"],
   /** One line for heroes, JSON-LD and assistants. */
-  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing — then you decide. It is advice, not a class; to sit in a real class, book the ₹99 Demo Class.",
+  what: "A free group consultation slot for spoken English, booked through a link we send on WhatsApp. We hear each person's goal, name the bottleneck and put the course and fee in writing, then you decide. It is advice, not a class; to sit in a real class, book the ₹99 Demo Class.",
   /** Bing Copilot / GEO grounding on every page (`data-snippet`). */
   copilotSnippet:
-    "Get a free group spoken English consultation — book through the link we send on WhatsApp +91 96744 79949. Advice, not a class. To see a real class, book the ₹99 Demo Class.",
+    "Get a free group spoken English consultation: book through the link we send on WhatsApp +91 96744 79949. Advice, not a class. To see a real class, book the ₹99 Demo Class.",
 } as const;
 
 /** Same three cards on /free-consultation and the sitewide yellow band. White type, brand colours. */
@@ -80,13 +80,13 @@ export const CONSULTATION_WALK_AWAY: {
     icon: "compass",
     color: "brand",
     title: "Your bottleneck, named",
-    body: "Cannot form a sentence, freeze on words you already have, business English, interview English, or a career choice. We say which one is actually in the way — in one sentence.",
+    body: "Cannot form a sentence, freeze on words you already have, business English, interview English, or a career choice. We say which one is actually in the way: in one sentence.",
   },
   {
     icon: "check",
     color: "sunshine",
     title: "One course, not three",
-    body: "Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation — with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
+    body: "Basic Spoken, Intermediate, Interactive, Workplace or Interview Preparation: with fee, duration, batch size and IST slots in writing on WhatsApp. Or we tell you the right buy is not us.",
   },
   {
     icon: "book",
@@ -111,17 +111,17 @@ export const CONSULTATION_STEPS: { icon: IconName; title: string; body: string }
   {
     icon: "clock",
     title: "We reply 10am–midnight IST every day",
-    body: "We send a booking link — pick a free group consultation slot that suits you. Phone is a fallback only if you ask.",
+    body: "We send a booking link: pick a free group consultation slot that suits you. Phone is a fallback only if you ask.",
   },
   {
     icon: "mic",
     title: "Personalised advice for your problem",
-    body: "Shop, freeze, standup, client call, HR screen — whatever you actually need English for. In the group slot we ask each person, one by one. Not a packed pitch.",
+    body: "Shop, freeze, standup, client call, HR screen: whatever you actually need English for. In the group slot we ask each person, one by one. Not a packed pitch.",
   },
   {
     icon: "compass",
     title: "We name the bottleneck and the room",
-    body: "One recommendation. Fee, duration and timing in writing. You decide — no payment until you enrol, and then one month at a time.",
+    body: "One recommendation. Fee, duration and timing in writing. You decide: no payment until you enrol, and then one month at a time.",
   },
 ];
 
@@ -136,35 +136,35 @@ export const CONSULTATION_BOTTLENECKS: {
     icon: "mic",
     ifThis: "Cannot finish a sentence in a shop or on a phone call",
     weName: "Spoken English is the gap",
-    weRecommend: "Spoken English — 6 months, ₹1,199/mo, ≈6 learners",
+    weRecommend: "Spoken English: 6 months, ₹1,199/mo, ≈6 learners",
     href: "/course-spoken-english",
   },
   {
     icon: "trend",
     ifThis: "Basic sentences work. Tenses slip, fillers pile up, ideas do not connect.",
     weName: "Accuracy and flow are the gap",
-    weRecommend: "Intermediate Spoken English — 4 months, ₹1,999/mo, 30 min grammar + 1 hr talk",
+    weRecommend: "Intermediate Spoken English: 4 months, ₹1,999/mo, 30 min grammar + 1 hr talk",
     href: "/course-intermediate-english",
   },
   {
     icon: "record_voice_over",
     ifThis: "You know the words. You freeze when you speak.",
     weName: "Freeze is the gap, not grammar",
-    weRecommend: "Interactive Speaking — 3 months, ₹1,599/mo",
+    weRecommend: "Interactive Speaking: 3 months, ₹1,599/mo",
     href: "/course-interactive-speaking",
   },
   {
     icon: "headset",
     ifThis: "Chat is fine. Meetings, calls or emails are not.",
     weName: "Workplace speaking is the gap",
-    weRecommend: "Interactive Speaking — 3 months, ₹1,599/mo",
+    weRecommend: "Interactive Speaking: 3 months, ₹1,599/mo",
     href: "/course-interactive-speaking",
   },
   {
     icon: "clipboard",
     ifThis: "Interviews fail on the 60-second intro, not the CV",
     weName: "Interview English is the gap",
-    weRecommend: "Interview Preparation — 2 months, ₹2,499/mo, recorded mocks",
+    weRecommend: "Interview Preparation: 2 months, ₹2,499/mo, recorded mocks",
     href: "/course-interview-preparation",
   },
   {
@@ -179,7 +179,7 @@ export const CONSULTATION_BOTTLENECKS: {
 export const CONSULTATION_QUERIES: { icon: IconName; text: string }[] = [
   {
     icon: "compass",
-    text: "Which course do I actually need — Basic Spoken, Intermediate, Interactive, Workplace, Interview Preparation, or counselling?",
+    text: "Which course do I actually need: Basic Spoken, Intermediate, Interactive, Workplace, Interview Preparation, or counselling?",
   },
   { icon: "rupee", text: "What is the fee, and is GST included?" },
   {
@@ -240,7 +240,7 @@ export const CONSULTATION_VS_MARKET: {
     theirSession:
       "A free demo class for a child (typically 4–13). Public speaking packages often ₹13,000–₹65,000 per course.",
     weDoInstead:
-      "We do not take children. Adults 15+ get a free consultation — counselling, not a demo class — then a live batch of ≈6 from ₹1,199/mo.",
+      "We do not take children. Adults 15+ get a free consultation (counselling, not a demo class) then a live batch of ≈6 from ₹1,199/mo.",
   },
   {
     icon: "headset",
@@ -254,7 +254,7 @@ export const CONSULTATION_VS_MARKET: {
     icon: "globe",
     them: "Cambly / native-speaker apps",
     theirSession:
-      "Any available native-speaker tutor. Accent and idiom. ₹8,000–₹15,000/month if daily. No fixed 6-month plan.",
+      "Any available native-speaker tutor. Accent and idiom. ₹5,999–₹10,999/month for 15–30 min a day. No fixed 6-month plan.",
     weDoInstead:
       "A named teacher, a syllabus, ≈6 learners, from ₹1,199/mo. Native chat is a later buy.",
   },
@@ -262,7 +262,7 @@ export const CONSULTATION_VS_MARKET: {
     icon: "school",
     them: "British Council English Online",
     theirSession:
-      "A counsellor recommends a CEFR module, often ₹8,800–₹16,000 for six classes. Buy it for the badge.",
+      "A counsellor recommends a CEFR module, ₹8,900–₹10,350 for 15–22.5 hours on its India pricing pages. Buy it for the badge.",
     weDoInstead:
       "We say if you need that badge. If you need speaking for work in India, the room is cheaper and smaller.",
   },
@@ -272,7 +272,7 @@ export const CONSULTATION_VS_MARKET: {
     theirSession:
       "Walk-in. Sit in 25–40, or a pitch that still will not print the cap. Commute on top.",
     weDoInstead:
-      "Cap is approximately 6, printed. Consultation is a small batch with personalised advice, not a packed room you sample.",
+      "Cap is about 6, printed. Consultation is a small batch with personalised advice, not a packed room you sample.",
   },
   {
     icon: "trophy",
@@ -287,15 +287,15 @@ export const CONSULTATION_VS_MARKET: {
 export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   {
     q: "What do I actually get in the free consultation?",
-    a: "It is 100% free, in a small batch, with personalised advice — we hear each person's requirements one by one. Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck — cannot hold a conversation, freeze, business English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought — fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
+    a: "It is 100% free, in a small batch, with personalised advice: we hear each person's requirements one by one. Four things, in writing on WhatsApp: (1) a named diagnosis of your bottleneck (cannot hold a conversation, freeze, business English, interview English, or career choice; (2) one course recommendation with fee, duration, batch size and IST slots, or an honest ‘this is not us’; (3) answers to the questions you brought) fees, GST, recordings, refunds, Hindi/Bengali, certificate, IELTS, kids, timings; (4) no obligation to enrol. It is counselling, not a class.",
   },
   {
     q: "How is your free consultation different from other institutes’ free sessions?",
-    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling — you start with a call. Brand-name groups sell a CEFR module. Exam shops focus on IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course — or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, approximately 6 learners, from ₹1,199/month inclusive of taxes.",
+    a: "Most free sessions in India are either a counsellor pitch or 20 minutes in a crowded room. Apps like EngVarta skip counselling: you start with a call. Brand-name groups sell a CEFR module. Exam shops focus on IELTS. Learn With Smile is a small-batch consultation with personalised advice: we diagnose the bottleneck, answer every query, and place you in one course, or tell you to stay free. You will not sit a full class for free. Speaking minutes are the paid room, about 6 learners, from ₹1,199/month inclusive of taxes.",
   },
   {
     q: "How do I get a free consultation at Learn With Smile?",
-    a: `Tap Get Free Consultation — it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. 100% free. Small batch. Personalised advice. We reply 10am–midnight IST every day. No payment, card or UPI to book.`,
+    a: `Tap Get Free Consultation: it opens WhatsApp with a message ready to send. Or message ${WHATSAPP_DISPLAY}. 100% free. Small batch. Personalised advice. We reply 10am–midnight IST every day. No payment, card or UPI to book.`,
   },
   {
     q: "Will every question I have be answered in the consultation?",
@@ -303,11 +303,11 @@ export const CONSULTATION_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do you decide which course I should take?",
-    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹1,199/month, approximately 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze, or chat is fine but meetings and calls are not → Interactive Speaking (3 months, ₹1,599/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
+    a: "From the problem you describe, not from a brochure. Cannot finish a sentence → Spoken English (6 months, ₹1,199/month, about 6 learners). Basic sentences work, grammar and flow do not → Intermediate Spoken English (4 months, ₹1,999/month). Know the words and freeze, or chat is fine but meetings and calls are not → Interactive Speaking (3 months, ₹1,599/month). Interviews fail on the 60-second intro → Interview Preparation (2 months, ₹2,499/month). We do not offer career counselling. Visa or university form → sit IELTS with the test board; we do not sell that paper. One room, not three.",
   },
   {
     q: "Do you offer a free demo class?",
-    a: "The free option is this consultation: no payment, booked on WhatsApp. It is advice, not a class. To sit in one real 90-minute live class, book the ₹99 Demo Class (/course-demo-session) — adjusted in your fee if you join within 48 hours. In the consultation we name your speaking gap and put the course, fee, timings and batch size in writing before you pay anything. It is advice, not a class. If you then enrol, you pay one month at a time with no auto-debit, and a month cancelled before its first live class is refunded in full.",
+    a: "The free option is this consultation: no payment, booked on WhatsApp. It is advice, not a class. To sit in one real 90-minute live class, book the ₹99 Demo Class (/course-demo-session): adjusted in your fee if you join within 48 hours. In the consultation we name your speaking gap and put the course, fee, timings and batch size in writing before you pay anything. It is advice, not a class. If you then enrol, you pay one month at a time with no auto-debit, and a month cancelled before its first live class is refunded in full.",
   },
   {
     q: "Is the free consultation a full English class?",

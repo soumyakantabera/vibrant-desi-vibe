@@ -4,7 +4,7 @@ import type { ArticleBody } from "@/content/blog/blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Interactive Speaking](/course-interactive-speaking) practises that live — 3 months, ₹2,499/mo, inclusive of taxes, approx. 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
+    text: "**Short answer.** Client-call English is **clarity**, not a fake accent: names, numbers, what happens next. [Interactive Speaking](/course-interactive-speaking) practises that live: 3 months, ₹2,499/mo, inclusive of taxes, about 6 learners. Neha now takes the Mumbai client call herself. [Her story](/success-stories).",
   },
   {
     t: "p",
@@ -39,7 +39,7 @@ export const body: ArticleBody = [
     ],
   },
 
-  { t: "h2", text: "Difficult client — still structure" },
+  { t: "h2", text: "Difficult client: still structure" },
   {
     t: "p",
     text: "Acknowledge. State the fact. Give the next step. Offer a time. You do not need a bigger vocabulary. You need a spine. Role-plays in Business English and [Interactive](/course-interactive-speaking) are where that spine gets used under mild pressure.",
@@ -65,7 +65,7 @@ export const body: ArticleBody = [
     label: "Five minutes, open to close",
     lines: [
       "Open: “Hi Sarah, thanks for joining. I have ten minutes on the invoice issue and next steps.”",
-      "Clarify: “Just to confirm — you need the corrected file before the audit on the 15th? One-five?”",
+      "Clarify: “Just to confirm. You need the corrected file before the audit on the 15th? One-five?”",
       "Bad news: “Two line items were rejected. That's on our side, and here's the fix.”",
       "Commit: “I'll send the corrected sheet by 4pm IST today.”",
       "Recap: “So: I send the sheet by 4pm, you confirm the GSTIN, and we close this on Friday.”",
@@ -90,7 +90,7 @@ export const body: ArticleBody = [
       [
         "AI voice role-play",
         "Rehearsing a difficult call the night before",
-        "It plays along — a real client won't",
+        "It plays along: a real client won't",
       ],
       [
         "Interactive Speaking class",

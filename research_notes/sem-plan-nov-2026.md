@@ -1,5 +1,9 @@
 # Paid search plan — Google Ads (prepared 3 Nov 2026, not yet live)
 
+> **Superseded 26 Nov 2026** by `seo-sem-geo-plan-26-nov-2026.md`. Fees below
+> are out of date (Basic is ₹1,199/month, not ₹999) and the Marathi-medium page
+> now redirects to Basic Spoken English. Use the new plan's ad groups and negatives.
+
 Search volumes are **not** in this plan: Google Keyword Planner needs the
 account owner's login. Run every group below through Keyword Planner
 (location: India; language: English + Hindi) before setting budgets.

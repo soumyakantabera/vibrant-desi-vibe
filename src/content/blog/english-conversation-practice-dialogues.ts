@@ -3,7 +3,7 @@ import type { ArticleBody } from "./blocks";
 export const body: ArticleBody = [
   {
     t: "p",
-    text: "A conversation is not a list of sentences. It is **reacting** — answering what the other person actually said, asking a follow-up, and closing politely. These ten short dialogues are built from situations Indian adults meet every week. Read each one aloud with a partner, then swap roles, then try it again with the right-hand side covered.",
+    text: "A conversation is not a list of sentences. It is **reacting**: answering what the other person actually said, asking a follow-up, and closing politely. These ten short dialogues are built from situations Indian adults meet every week. Read each one aloud with a partner, then swap roles, then try it again with the right-hand side covered.",
   },
   {
     t: "p",
@@ -18,7 +18,7 @@ export const body: ArticleBody = [
       "B: Hi Meera, I’m Arjun. Yes, we shifted last Sunday.",
       "A: Welcome! Where did you move from?",
       "B: From Nagpur. My office moved me here.",
-      "A: Oh, nice. If you need anything — a plumber, the milk man’s number — just ask.",
+      "A: Oh, nice. If you need anything (a plumber, the milk man’s number) just ask.",
       "B: Thank you, that’s really kind. I’ll definitely need the plumber.",
     ],
   },
@@ -165,7 +165,7 @@ export const body: ArticleBody = [
     lines: [
       "A: Morning! How was your weekend?",
       "B: Pretty relaxed, actually. We watched the match at a friend’s place. Yours?",
-      "A: Busy — my cousin’s engagement. Lots of food, very little sleep.",
+      "A: Busy. My cousin’s engagement. Lots of food, very little sleep.",
       "B: Ha, that sounds fun. Are you ready for the review today?",
       "A: Mostly. I still have to update two slides.",
       "B: You’ll be fine. Let’s grab a coffee after.",
@@ -194,7 +194,7 @@ export const body: ArticleBody = [
 
   {
     t: "cta",
-    text: "If you know the words but freeze when a real person is waiting for your reply, Interactive Speaking is built around exactly this: role-plays, calls and meetings in a live batch of approximately 6 learners. 3 months, ₹1,599/month inclusive of taxes. Complete beginners start with Basic Spoken English at ₹1,199/month.",
+    text: "If you know the words but freeze when a real person is waiting for your reply, Interactive Speaking is built around exactly this: role-plays, calls and meetings in a live batch of about 6 learners. 3 months, ₹1,599/month inclusive of taxes. Complete beginners start with Basic Spoken English at ₹1,199/month.",
     course: "/course-interactive-speaking",
     label: "See Interactive Speaking",
   },

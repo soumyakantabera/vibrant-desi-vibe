@@ -38,7 +38,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Three parts, roughly twenty seconds each. It is a small structure, and that is the point — it is short enough to hold in your head under pressure, which is when you will need it.",
+    text: "Three parts, roughly twenty seconds each. It is a small structure, and that is the point: it is short enough to hold in your head under pressure, which is when you will need it.",
   },
 
   { t: "h2", text: "Present: where you are, in two sentences" },
@@ -56,7 +56,7 @@ export const body: ArticleBody = [
   },
   {
     t: "p",
-    text: "Now the harder part — what to **leave out**. Indian interview convention has traditionally invited a personal introduction, and a lot of coaching still teaches it. Drop all of it:",
+    text: "Now the harder part: what to **leave out**. Indian interview convention has traditionally invited a personal introduction, and a lot of coaching still teaches it. Drop all of it:",
   },
   {
     t: "ul",
@@ -97,7 +97,7 @@ export const body: ArticleBody = [
       ],
       [
         "I worked on process improvement.",
-        "I rewrote our refund SOP after we kept missing the 24-hour window — misses dropped to about one a month.",
+        "I rewrote our refund SOP after we kept missing the 24-hour window: misses dropped to about one a month.",
       ],
     ],
   },
@@ -116,7 +116,7 @@ export const body: ArticleBody = [
     label: "Good",
     lines: [
       "I want to move into a role where I'm working with clients directly rather than only fixing problems after they escalate.",
-      "That's why I applied here — your customer success team owns the account from onboarding onwards, which is the part I've been doing informally anyway.",
+      "That's why I applied here: your customer success team owns the account from onboarding onwards, which is the part I've been doing informally anyway.",
     ],
   },
   {
@@ -130,12 +130,12 @@ export const body: ArticleBody = [
 
   { t: "h2", text: "Three complete answers" },
 
-  { t: "h3", text: "Fresher — engineering graduate, no work experience" },
+  { t: "h3", text: "Fresher: engineering graduate, no work experience" },
   {
     t: "example",
     label: "~60 seconds",
     lines: [
-      "**(Present)** I graduated this year in electronics from a college in Pune, and for the last eight months I've been building small automation scripts for a friend's logistics business — mostly cleaning up their daily order data.",
+      "**(Present)** I graduated this year in electronics from a college in Pune, and for the last eight months I've been building small automation scripts for a friend's logistics business: mostly cleaning up their daily order data.",
       "**(Past)** In my final year I led a four-person team on our capstone project. The part I ended up doing was coordination: keeping everyone on schedule and presenting to our guide every fortnight. We were one of two teams that finished on time.",
       "**(Future)** I want to start in a role where I'm writing code every day but talking to the people using it, rather than sitting one step removed. Your associate engineer role sits inside the product team rather than in a separate delivery pool, which is why I applied here specifically.",
     ],
@@ -145,12 +145,12 @@ export const body: ArticleBody = [
     text: "Notice a fresher does not need work experience for this to work. The capstone project supplies the Past. What matters is that it is described as an outcome, not a duty.",
   },
 
-  { t: "h3", text: "Career switcher — BPO to customer success" },
+  { t: "h3", text: "Career switcher: BPO to customer success" },
   {
     t: "example",
     label: "~70 seconds",
     lines: [
-      "**(Present)** I'm a senior process associate at a BPO in Kolkata, handling billing escalations for a US healthcare client — about 30 cases a day, and I've been the escalation point for my team for the last year.",
+      "**(Present)** I'm a senior process associate at a BPO in Kolkata, handling billing escalations for a US healthcare client: about 30 cases a day, and I've been the escalation point for my team for the last year.",
       "**(Past)** Two things I'd point to. I rewrote our refund SOP after we kept breaching the 24-hour window, and misses dropped to roughly one a month. And I've trained eleven new joiners, which meant explaining a complicated billing system to people who'd never seen it.",
       "**(Future)** Both of those are really account management, just without the title, and that's the direction I want to go. Your customer success team handles renewals for existing accounts, which is closer to what I already do than a straight sales role would be.",
     ],
@@ -160,12 +160,12 @@ export const body: ArticleBody = [
     text: 'The switcher\'s whole job in this answer is to make the switch sound like a continuation rather than a jump. "Both of those are really account management, just without the title" does that in one sentence.',
   },
 
-  { t: "h3", text: "Experienced — six years, moving up" },
+  { t: "h3", text: "Experienced: six years, moving up" },
   {
     t: "example",
     label: "~70 seconds",
     lines: [
-      "**(Present)** I've been a marketing executive at a mid-size D2C brand in Mumbai for three years, running our email and retention programme end to end — roughly 200,000 subscribers.",
+      "**(Present)** I've been a marketing executive at a mid-size D2C brand in Mumbai for three years, running our email and retention programme end to end: roughly 200,000 subscribers.",
       "**(Past)** Before that I was at an agency for three years, which is where I learned to work to a brief and a deadline. The thing I'm proudest of in the current role is rebuilding our win-back flow last year; it recovered about 8% of lapsed customers, against 3% before.",
       "**(Future)** I've taken retention as far as I can as an individual contributor, and what I want next is to own the whole lifecycle with a small team. That's what this role is, which is why I'm here rather than looking sideways.",
     ],
@@ -185,7 +185,7 @@ export const body: ArticleBody = [
   { t: "h2", text: "Practise the beats, not the words" },
   {
     t: "p",
-    text: "A word-for-word memorised answer has a distinctive flat rhythm — the stress lands in the wrong places, because you are reciting rather than saying. Experienced interviewers hear it immediately, and it reads as rehearsed in a way that makes everything after it sound rehearsed too.",
+    text: "A word-for-word memorised answer has a distinctive flat rhythm: the stress lands in the wrong places, because you are reciting rather than saying. Experienced interviewers hear it immediately, and it reads as rehearsed in a way that makes everything after it sound rehearsed too.",
   },
   {
     t: "p",
@@ -198,21 +198,21 @@ export const body: ArticleBody = [
   {
     t: "ul",
     items: [
-      "The three beats — Present, Past, Future — in that order.",
+      "The three beats (Present, Past, Future) in that order.",
       "Your numbers. 40 accounts a day, 48 hours to 20, eleven new joiners, 8% against 3%. These are the only things you should be able to say identically every time.",
     ],
   },
   {
     t: "p",
-    text: "Then say it out loud, differently, ten times. Record two of those and listen for whether you actually reached the Future part — most people run long on Present and never get there.",
+    text: "Then say it out loud, differently, ten times. Record two of those and listen for whether you actually reached the Future part: most people run long on Present and never get there.",
   },
   {
     t: "p",
-    text: "Honestly, this is one of those things that is hard to fix alone, because the failure mode is invisible from the inside: your answer sounds fine in your head and flat out loud. Someone has to hear it. A friend works. So does recording yourself, if you can stand listening back — see our post on [speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation) for how to review a recording without demoralising yourself.",
+    text: "Honestly, this is one of those things that is hard to fix alone, because the failure mode is invisible from the inside: your answer sounds fine in your head and flat out loud. Someone has to hear it. A friend works. So does recording yourself, if you can stand listening back: see our post on [speaking habits](/blog/5-speaking-habits-that-killed-my-hesitation) for how to review a recording without demoralising yourself.",
   },
   {
     t: "cta",
-    text: "Interview English is a module in Spoken English and Interactive Speaking. If the interview is the only freeze and you already talk, [Interview Preparation](/course-interview-preparation) is the 2-month room — HR screens, STAR, recorded mocks, batch of about 6.",
+    text: "Interview English is a module in Spoken English and Interactive Speaking. If the interview is the only freeze and you already talk, [Interview Preparation](/course-interview-preparation) is the 2-month room: HR screens, STAR, recorded mocks, batch of about 6.",
     course: "/course-spoken-english",
     label: "See Spoken English",
   },
