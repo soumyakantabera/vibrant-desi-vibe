@@ -41,7 +41,6 @@ import {
 } from "@/components/package/PackageSections";
 import { GoogleProof, MarketGap } from "@/components/package/MarketSections";
 import { useFxList } from "@/hooks/use-intl-market";
-import { CourseFitCheck } from "@/components/CourseFitCheck";
 
 const heroSources = imageSources(IMG.heroClass);
 
@@ -445,12 +444,6 @@ function Home() {
               </a>
             </Reveal>
             <PaymentTrust tone="light" align="center" className="mt-8" />
-          </div>
-        </section>
-
-        <section className="section pt-0" id="set-your-goal">
-          <div className="container-x max-w-3xl">
-            <CourseFitCheck />
           </div>
         </section>
 
